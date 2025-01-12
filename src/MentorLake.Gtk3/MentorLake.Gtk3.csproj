@@ -7,9 +7,9 @@
 		<PackageId>MentorLake.Gtk3</PackageId>
 		<Authors>MentorLake</Authors>
 		<Company>MentorLake</Company>
-		<PackageDescription>GTK4 language bindings</PackageDescription>
-		<RepositoryUrl>https://github.com/MentorLake/gtk4.git</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/MentorLake/gtk4.git</PackageProjectUrl>
+		<PackageDescription>GTK3 language bindings</PackageDescription>
+		<RepositoryUrl>https://github.com/MentorLake/gtk3.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/MentorLake/gtk3.git</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>

@@ -118,6 +118,11 @@ public static class GOptionContextHandleExtensions
 		return context;
 	}
 
+	public static GOptionContextHandle New(string parameter_string)
+	{
+		return GOptionContextExterns.g_option_context_new(parameter_string);
+	}
+
 }
 internal class GOptionContextExterns
 {
@@ -180,6 +185,9 @@ internal class GOptionContextExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_option_context_set_translation_domain(GOptionContextHandle context, string domain);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GOptionContextHandle g_option_context_new(string parameter_string);
 
 }
 

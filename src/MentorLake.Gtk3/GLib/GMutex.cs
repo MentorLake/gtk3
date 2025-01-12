@@ -42,6 +42,11 @@ public static class GMutexHandleExtensions
 		return mutex;
 	}
 
+	public static GMutexHandle New()
+	{
+		return GMutexExterns.g_mutex_new();
+	}
+
 }
 internal class GMutexExterns
 {
@@ -62,6 +67,9 @@ internal class GMutexExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_mutex_unlock(GMutexHandle mutex);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GMutexHandle g_mutex_new();
 
 }
 

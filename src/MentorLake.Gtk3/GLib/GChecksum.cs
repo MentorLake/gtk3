@@ -46,6 +46,11 @@ public static class GChecksumHandleExtensions
 		return checksum;
 	}
 
+	public static UIntPtr TypeGetLength(GChecksumType checksum_type)
+	{
+		return GChecksumExterns.g_checksum_type_get_length(checksum_type);
+	}
+
 }
 internal class GChecksumExterns
 {
@@ -69,6 +74,9 @@ internal class GChecksumExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_checksum_update(GChecksumHandle checksum, string data, UIntPtr length);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern UIntPtr g_checksum_type_get_length(GChecksumType checksum_type);
 
 }
 

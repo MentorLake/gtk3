@@ -33,6 +33,11 @@ public static class GdkColorHandleExtensions
 		return GdkColorExterns.gdk_color_to_string(color);
 	}
 
+	public static bool Parse(string spec, out GdkColor color)
+	{
+		return GdkColorExterns.gdk_color_parse(spec, out color);
+	}
+
 }
 internal class GdkColorExterns
 {
@@ -50,6 +55,9 @@ internal class GdkColorExterns
 
 	[DllImport(Libraries.Gdk3)]
 	internal static extern string gdk_color_to_string(GdkColorHandle color);
+
+	[DllImport(Libraries.Gdk3)]
+	internal static extern bool gdk_color_parse(string spec, out GdkColor color);
 
 }
 

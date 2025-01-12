@@ -125,6 +125,16 @@ public static class GtkPaperSizeHandleExtensions
 		return size;
 	}
 
+	public static string GetDefault()
+	{
+		return GtkPaperSizeExterns.gtk_paper_size_get_default();
+	}
+
+	public static GListHandle GetPaperSizes(bool include_custom)
+	{
+		return GtkPaperSizeExterns.gtk_paper_size_get_paper_sizes(include_custom);
+	}
+
 }
 internal class GtkPaperSizeExterns
 {
@@ -199,6 +209,13 @@ internal class GtkPaperSizeExterns
 
 	[DllImport(Libraries.Gtk3)]
 	internal static extern void gtk_paper_size_to_key_file(GtkPaperSizeHandle size, GKeyFileHandle key_file, string group_name);
+
+	[DllImport(Libraries.Gtk3)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_paper_size_get_default();
+
+	[DllImport(Libraries.Gtk3)]
+	internal static extern GListHandle gtk_paper_size_get_paper_sizes(bool include_custom);
 
 }
 

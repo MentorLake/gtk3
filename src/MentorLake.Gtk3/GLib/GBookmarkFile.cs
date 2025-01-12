@@ -262,6 +262,11 @@ public static class GBookmarkFileHandleExtensions
 		return GBookmarkFileExterns.g_bookmark_file_to_file(bookmark, filename, out error);
 	}
 
+	public static GQuark ErrorQuark()
+	{
+		return GBookmarkFileExterns.g_bookmark_file_error_quark();
+	}
+
 }
 internal class GBookmarkFileExterns
 {
@@ -408,6 +413,9 @@ internal class GBookmarkFileExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern bool g_bookmark_file_to_file(GBookmarkFileHandle bookmark, string filename, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_bookmark_file_error_quark();
 
 }
 

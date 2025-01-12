@@ -47,6 +47,11 @@ public static class GCompletionHandleExtensions
 		return cmp;
 	}
 
+	public static GCompletionHandle New(GCompletionFunc func)
+	{
+		return GCompletionExterns.g_completion_new(func);
+	}
+
 }
 internal class GCompletionExterns
 {
@@ -70,6 +75,9 @@ internal class GCompletionExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_completion_set_compare(GCompletionHandle cmp, GCompletionStrncmpFunc strncmp_func);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GCompletionHandle g_completion_new(GCompletionFunc func);
 
 }
 

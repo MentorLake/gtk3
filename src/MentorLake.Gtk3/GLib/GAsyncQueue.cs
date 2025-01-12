@@ -150,6 +150,16 @@ public static class GAsyncQueueHandleExtensions
 		return queue;
 	}
 
+	public static GAsyncQueueHandle New()
+	{
+		return GAsyncQueueExterns.g_async_queue_new();
+	}
+
+	public static GAsyncQueueHandle NewFull(GDestroyNotify item_free_func)
+	{
+		return GAsyncQueueExterns.g_async_queue_new_full(item_free_func);
+	}
+
 }
 internal class GAsyncQueueExterns
 {
@@ -230,6 +240,12 @@ internal class GAsyncQueueExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_async_queue_unref_and_unlock(GAsyncQueueHandle queue);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GAsyncQueueHandle g_async_queue_new();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GAsyncQueueHandle g_async_queue_new_full(GDestroyNotify item_free_func);
 
 }
 

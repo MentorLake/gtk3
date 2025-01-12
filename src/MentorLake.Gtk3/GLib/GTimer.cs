@@ -47,6 +47,11 @@ public static class GTimerHandleExtensions
 		return timer;
 	}
 
+	public static GTimerHandle New()
+	{
+		return GTimerExterns.g_timer_new();
+	}
+
 }
 internal class GTimerExterns
 {
@@ -70,6 +75,9 @@ internal class GTimerExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_timer_stop(GTimerHandle timer);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GTimerHandle g_timer_new();
 
 }
 

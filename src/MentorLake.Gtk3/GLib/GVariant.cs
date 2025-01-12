@@ -177,7 +177,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_classify(value);
 	}
 
-	public static int Compare(this IntPtr one, IntPtr two)
+	public static int Compare(IntPtr one, IntPtr two)
 	{
 		return GVariantExterns.g_variant_compare(one, two);
 	}
@@ -207,7 +207,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_dup_strv(value, out length);
 	}
 
-	public static bool Equal(this IntPtr one, IntPtr two)
+	public static bool Equal(IntPtr one, IntPtr two)
 	{
 		return GVariantExterns.g_variant_equal(one, two);
 	}
@@ -355,7 +355,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_get_variant(value);
 	}
 
-	public static uint Hash(this IntPtr value)
+	public static uint Hash(IntPtr value)
 	{
 		return GVariantExterns.g_variant_hash(value);
 	}
@@ -435,6 +435,36 @@ public static class GVariantHandleExtensions
 	{
 		GVariantExterns.g_variant_unref(value);
 		return value;
+	}
+
+	public static bool IsObjectPath(string @string)
+	{
+		return GVariantExterns.g_variant_is_object_path(@string);
+	}
+
+	public static bool IsSignature(string @string)
+	{
+		return GVariantExterns.g_variant_is_signature(@string);
+	}
+
+	public static GVariantHandle Parse(GVariantTypeHandle type, string text, string limit, ref string endptr, out GErrorHandle error)
+	{
+		return GVariantExterns.g_variant_parse(type, text, limit, ref endptr, out error);
+	}
+
+	public static string ParseErrorPrintContext(GErrorHandle error, string source_str)
+	{
+		return GVariantExterns.g_variant_parse_error_print_context(error, source_str);
+	}
+
+	public static GQuark ParseErrorQuark()
+	{
+		return GVariantExterns.g_variant_parse_error_quark();
+	}
+
+	public static GQuark ParserGetErrorQuark()
+	{
+		return GVariantExterns.g_variant_parser_get_error_quark();
 	}
 
 }
@@ -694,6 +724,24 @@ internal class GVariantExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_variant_unref(GVariantHandle value);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_variant_is_object_path(string @string);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_variant_is_signature(string @string);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GVariantHandle g_variant_parse(GVariantTypeHandle type, string text, string limit, ref string endptr, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern string g_variant_parse_error_print_context(GErrorHandle error, string source_str);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_variant_parse_error_quark();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_variant_parser_get_error_quark();
 
 }
 

@@ -183,6 +183,26 @@ public static class GdkEventHandleExtensions
 		return GdkEventExterns.gdk_event_triggers_context_menu(@event);
 	}
 
+	public static GdkEventHandle Get()
+	{
+		return GdkEventExterns.gdk_event_get();
+	}
+
+	public static void HandlerSet(GdkEventFunc func, IntPtr data, GDestroyNotify notify)
+	{
+		GdkEventExterns.gdk_event_handler_set(func, data, notify);
+	}
+
+	public static GdkEventHandle Peek()
+	{
+		return GdkEventExterns.gdk_event_peek();
+	}
+
+	public static void RequestMotions(GdkEventMotionHandle @event)
+	{
+		GdkEventExterns.gdk_event_request_motions(@event);
+	}
+
 }
 internal class GdkEventExterns
 {
@@ -287,6 +307,18 @@ internal class GdkEventExterns
 
 	[DllImport(Libraries.Gdk3)]
 	internal static extern bool gdk_event_triggers_context_menu(GdkEventHandle @event);
+
+	[DllImport(Libraries.Gdk3)]
+	internal static extern GdkEventHandle gdk_event_get();
+
+	[DllImport(Libraries.Gdk3)]
+	internal static extern void gdk_event_handler_set(GdkEventFunc func, IntPtr data, GDestroyNotify notify);
+
+	[DllImport(Libraries.Gdk3)]
+	internal static extern GdkEventHandle gdk_event_peek();
+
+	[DllImport(Libraries.Gdk3)]
+	internal static extern void gdk_event_request_motions(GdkEventMotionHandle @event);
 
 }
 

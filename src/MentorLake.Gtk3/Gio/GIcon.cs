@@ -15,7 +15,7 @@ public static class GIconHandleExtensions
 		return GIconExterns.g_icon_equal(icon1, icon2);
 	}
 
-	public static uint Hash(this IntPtr icon)
+	public static uint Hash(IntPtr icon)
 	{
 		return GIconExterns.g_icon_hash(icon);
 	}

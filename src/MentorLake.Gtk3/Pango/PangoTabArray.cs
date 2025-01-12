@@ -90,6 +90,11 @@ public static class PangoTabArrayHandleExtensions
 		return PangoTabArrayExterns.pango_tab_array_to_string(tab_array);
 	}
 
+	public static PangoTabArrayHandle FromString(string text)
+	{
+		return PangoTabArrayExterns.pango_tab_array_from_string(text);
+	}
+
 }
 internal class PangoTabArrayExterns
 {
@@ -137,6 +142,9 @@ internal class PangoTabArrayExterns
 
 	[DllImport(Libraries.Pango)]
 	internal static extern string pango_tab_array_to_string(PangoTabArrayHandle tab_array);
+
+	[DllImport(Libraries.Pango)]
+	internal static extern PangoTabArrayHandle pango_tab_array_from_string(string text);
 
 }
 

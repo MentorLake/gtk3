@@ -16,62 +16,54 @@ public class GdkX11WindowHandle : GdkWindowHandle
 
 public static class GdkX11WindowHandleExtensions
 {
-	public static uint GetDesktop(this GdkX11WindowHandle window)
+	public static uint GetDesktop(GdkWindowHandle window)
 	{
 		return GdkX11WindowExterns.gdk_x11_window_get_desktop(window);
 	}
 
-	public static IntPtr GetXid(this GdkX11WindowHandle window)
+	public static IntPtr GetXid(GdkWindowHandle window)
 	{
 		return GdkX11WindowExterns.gdk_x11_window_get_xid(window);
 	}
 
-	public static GdkX11WindowHandle MoveToCurrentDesktop(this GdkX11WindowHandle window)
+	public static void MoveToCurrentDesktop(GdkWindowHandle window)
 	{
 		GdkX11WindowExterns.gdk_x11_window_move_to_current_desktop(window);
-		return window;
 	}
 
-	public static GdkX11WindowHandle MoveToDesktop(this GdkX11WindowHandle window, uint desktop)
+	public static void MoveToDesktop(GdkWindowHandle window, uint desktop)
 	{
 		GdkX11WindowExterns.gdk_x11_window_move_to_desktop(window, desktop);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetFrameExtents(this GdkX11WindowHandle window, int left, int right, int top, int bottom)
+	public static void SetFrameExtents(GdkWindowHandle window, int left, int right, int top, int bottom)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_frame_extents(window, left, right, top, bottom);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetFrameSyncEnabled(this GdkX11WindowHandle window, bool frame_sync_enabled)
+	public static void SetFrameSyncEnabled(GdkWindowHandle window, bool frame_sync_enabled)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_frame_sync_enabled(window, frame_sync_enabled);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetHideTitlebarWhenMaximized(this GdkX11WindowHandle window, bool hide_titlebar_when_maximized)
+	public static void SetHideTitlebarWhenMaximized(GdkWindowHandle window, bool hide_titlebar_when_maximized)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_hide_titlebar_when_maximized(window, hide_titlebar_when_maximized);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetThemeVariant(this GdkX11WindowHandle window, string variant)
+	public static void SetThemeVariant(GdkWindowHandle window, string variant)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_theme_variant(window, variant);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetUserTime(this GdkX11WindowHandle window, uint timestamp)
+	public static void SetUserTime(GdkWindowHandle window, uint timestamp)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_user_time(window, timestamp);
-		return window;
 	}
 
-	public static GdkX11WindowHandle SetUtf8Property(this GdkX11WindowHandle window, string name, string value)
+	public static void SetUtf8Property(GdkWindowHandle window, string name, string value)
 	{
 		GdkX11WindowExterns.gdk_x11_window_set_utf8_property(window, name, value);
-		return window;
 	}
 
 }

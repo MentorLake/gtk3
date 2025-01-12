@@ -34,6 +34,11 @@ public static class GStringChunkHandleExtensions
 		return GStringChunkExterns.g_string_chunk_insert_len(chunk, @string, len);
 	}
 
+	public static GStringChunkHandle New(UIntPtr size)
+	{
+		return GStringChunkExterns.g_string_chunk_new(size);
+	}
+
 }
 internal class GStringChunkExterns
 {
@@ -51,6 +56,9 @@ internal class GStringChunkExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern string g_string_chunk_insert_len(GStringChunkHandle chunk, string @string, UIntPtr len);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GStringChunkHandle g_string_chunk_new(UIntPtr size);
 
 }
 

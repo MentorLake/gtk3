@@ -32,6 +32,21 @@ public static class PangoLanguageHandleExtensions
 		return PangoLanguageExterns.pango_language_to_string(language);
 	}
 
+	public static PangoLanguageHandle FromString(string language)
+	{
+		return PangoLanguageExterns.pango_language_from_string(language);
+	}
+
+	public static PangoLanguageHandle GetDefault()
+	{
+		return PangoLanguageExterns.pango_language_get_default();
+	}
+
+	public static IntPtr GetPreferred()
+	{
+		return PangoLanguageExterns.pango_language_get_preferred();
+	}
+
 }
 internal class PangoLanguageExterns
 {
@@ -51,6 +66,15 @@ internal class PangoLanguageExterns
 	[DllImport(Libraries.Pango)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string pango_language_to_string(PangoLanguageHandle language);
+
+	[DllImport(Libraries.Pango)]
+	internal static extern PangoLanguageHandle pango_language_from_string(string language);
+
+	[DllImport(Libraries.Pango)]
+	internal static extern PangoLanguageHandle pango_language_get_default();
+
+	[DllImport(Libraries.Pango)]
+	internal static extern IntPtr pango_language_get_preferred();
 
 }
 

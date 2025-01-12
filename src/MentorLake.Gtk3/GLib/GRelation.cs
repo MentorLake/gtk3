@@ -51,6 +51,11 @@ public static class GRelationHandleExtensions
 		return GRelationExterns.g_relation_select(relation, key, field);
 	}
 
+	public static GRelationHandle New(int fields)
+	{
+		return GRelationExterns.g_relation_new(fields);
+	}
+
 }
 internal class GRelationExterns
 {
@@ -77,6 +82,9 @@ internal class GRelationExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern GTuplesHandle g_relation_select(GRelationHandle relation, IntPtr key, int field);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GRelationHandle g_relation_new(int fields);
 
 }
 

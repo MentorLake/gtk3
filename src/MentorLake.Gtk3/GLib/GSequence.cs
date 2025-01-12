@@ -96,6 +96,71 @@ public static class GSequenceHandleExtensions
 		return seq;
 	}
 
+	public static void ForeachRange(GSequenceIterHandle begin, GSequenceIterHandle end, GFunc func, IntPtr user_data)
+	{
+		GSequenceExterns.g_sequence_foreach_range(begin, end, func, user_data);
+	}
+
+	public static IntPtr Get(GSequenceIterHandle iter)
+	{
+		return GSequenceExterns.g_sequence_get(iter);
+	}
+
+	public static GSequenceIterHandle InsertBefore(GSequenceIterHandle iter, IntPtr data)
+	{
+		return GSequenceExterns.g_sequence_insert_before(iter, data);
+	}
+
+	public static void Move(GSequenceIterHandle src, GSequenceIterHandle dest)
+	{
+		GSequenceExterns.g_sequence_move(src, dest);
+	}
+
+	public static void MoveRange(GSequenceIterHandle dest, GSequenceIterHandle begin, GSequenceIterHandle end)
+	{
+		GSequenceExterns.g_sequence_move_range(dest, begin, end);
+	}
+
+	public static GSequenceHandle New(GDestroyNotify data_destroy)
+	{
+		return GSequenceExterns.g_sequence_new(data_destroy);
+	}
+
+	public static GSequenceIterHandle RangeGetMidpoint(GSequenceIterHandle begin, GSequenceIterHandle end)
+	{
+		return GSequenceExterns.g_sequence_range_get_midpoint(begin, end);
+	}
+
+	public static void Remove(GSequenceIterHandle iter)
+	{
+		GSequenceExterns.g_sequence_remove(iter);
+	}
+
+	public static void RemoveRange(GSequenceIterHandle begin, GSequenceIterHandle end)
+	{
+		GSequenceExterns.g_sequence_remove_range(begin, end);
+	}
+
+	public static void Set(GSequenceIterHandle iter, IntPtr data)
+	{
+		GSequenceExterns.g_sequence_set(iter, data);
+	}
+
+	public static void SortChanged(GSequenceIterHandle iter, GCompareDataFunc cmp_func, IntPtr cmp_data)
+	{
+		GSequenceExterns.g_sequence_sort_changed(iter, cmp_func, cmp_data);
+	}
+
+	public static void SortChangedIter(GSequenceIterHandle iter, GSequenceIterCompareFunc iter_cmp, IntPtr cmp_data)
+	{
+		GSequenceExterns.g_sequence_sort_changed_iter(iter, iter_cmp, cmp_data);
+	}
+
+	public static void Swap(GSequenceIterHandle a, GSequenceIterHandle b)
+	{
+		GSequenceExterns.g_sequence_swap(a, b);
+	}
+
 }
 internal class GSequenceExterns
 {
@@ -149,6 +214,45 @@ internal class GSequenceExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_sequence_sort_iter(GSequenceHandle seq, GSequenceIterCompareFunc cmp_func, IntPtr cmp_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_foreach_range(GSequenceIterHandle begin, GSequenceIterHandle end, GFunc func, IntPtr user_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern IntPtr g_sequence_get(GSequenceIterHandle iter);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GSequenceIterHandle g_sequence_insert_before(GSequenceIterHandle iter, IntPtr data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_move(GSequenceIterHandle src, GSequenceIterHandle dest);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_move_range(GSequenceIterHandle dest, GSequenceIterHandle begin, GSequenceIterHandle end);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GSequenceHandle g_sequence_new(GDestroyNotify data_destroy);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GSequenceIterHandle g_sequence_range_get_midpoint(GSequenceIterHandle begin, GSequenceIterHandle end);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_remove(GSequenceIterHandle iter);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_remove_range(GSequenceIterHandle begin, GSequenceIterHandle end);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_set(GSequenceIterHandle iter, IntPtr data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_sort_changed(GSequenceIterHandle iter, GCompareDataFunc cmp_func, IntPtr cmp_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_sort_changed_iter(GSequenceIterHandle iter, GSequenceIterCompareFunc iter_cmp, IntPtr cmp_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_sequence_swap(GSequenceIterHandle a, GSequenceIterHandle b);
 
 }
 

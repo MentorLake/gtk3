@@ -38,6 +38,16 @@ public static class GErrorHandleExtensions
 		return GErrorExterns.g_error_matches(error, domain, code);
 	}
 
+	public static GQuark DomainRegister(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear)
+	{
+		return GErrorExterns.g_error_domain_register(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
+	}
+
+	public static GQuark DomainRegisterStatic(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear)
+	{
+		return GErrorExterns.g_error_domain_register_static(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
+	}
+
 }
 internal class GErrorExterns
 {
@@ -58,6 +68,12 @@ internal class GErrorExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern bool g_error_matches(GErrorHandle error, GQuark domain, int code);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_error_domain_register(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_error_domain_register_static(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
 
 }
 

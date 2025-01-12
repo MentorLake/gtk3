@@ -56,42 +56,42 @@ public delegate void window_manager_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 public static class GdkX11ScreenHandleExtensions
 {
-	public static uint GetCurrentDesktop(this GdkX11ScreenHandle screen)
+	public static uint GetCurrentDesktop(GdkScreenHandle screen)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_current_desktop(screen);
 	}
 
-	public static ulong GetMonitorOutput(this GdkX11ScreenHandle screen, int monitor_num)
+	public static ulong GetMonitorOutput(GdkScreenHandle screen, int monitor_num)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_monitor_output(screen, monitor_num);
 	}
 
-	public static uint GetNumberOfDesktops(this GdkX11ScreenHandle screen)
+	public static uint GetNumberOfDesktops(GdkScreenHandle screen)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_number_of_desktops(screen);
 	}
 
-	public static int GetScreenNumber(this GdkX11ScreenHandle screen)
+	public static int GetScreenNumber(GdkScreenHandle screen)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_screen_number(screen);
 	}
 
-	public static string GetWindowManagerName(this GdkX11ScreenHandle screen)
+	public static string GetWindowManagerName(GdkScreenHandle screen)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_window_manager_name(screen);
 	}
 
-	public static IntPtr GetXscreen(this GdkX11ScreenHandle screen)
+	public static IntPtr GetXscreen(GdkScreenHandle screen)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_get_xscreen(screen);
 	}
 
-	public static GdkVisualHandle LookupVisual(this GdkX11ScreenHandle screen, VisualID xvisualid)
+	public static GdkVisualHandle LookupVisual(GdkScreenHandle screen, VisualID xvisualid)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_lookup_visual(screen, xvisualid);
 	}
 
-	public static bool SupportsNetWmHint(this GdkX11ScreenHandle screen, GdkAtom property)
+	public static bool SupportsNetWmHint(GdkScreenHandle screen, GdkAtom property)
 	{
 		return GdkX11ScreenExterns.gdk_x11_screen_supports_net_wm_hint(screen, property);
 	}

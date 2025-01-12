@@ -389,6 +389,21 @@ public static class GValueHandleExtensions
 		return value;
 	}
 
+	public static void RegisterTransformFunc(GType src_type, GType dest_type, GValueTransform transform_func)
+	{
+		GValueExterns.g_value_register_transform_func(src_type, dest_type, transform_func);
+	}
+
+	public static bool TypeCompatible(GType src_type, GType dest_type)
+	{
+		return GValueExterns.g_value_type_compatible(src_type, dest_type);
+	}
+
+	public static bool TypeTransformable(GType src_type, GType dest_type)
+	{
+		return GValueExterns.g_value_type_transformable(src_type, dest_type);
+	}
+
 }
 internal class GValueExterns
 {
@@ -598,6 +613,15 @@ internal class GValueExterns
 
 	[DllImport(Libraries.GObject)]
 	internal static extern void g_value_unset(GValueHandle value);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern void g_value_register_transform_func(GType src_type, GType dest_type, GValueTransform transform_func);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern bool g_value_type_compatible(GType src_type, GType dest_type);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern bool g_value_type_transformable(GType src_type, GType dest_type);
 
 }
 

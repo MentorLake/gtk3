@@ -224,7 +224,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_has_uri_scheme(file, uri_scheme);
 	}
 
-	public static uint Hash(this IntPtr file)
+	public static uint Hash(IntPtr file)
 	{
 		return GFileExterns.g_file_hash(file);
 	}

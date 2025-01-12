@@ -40,6 +40,11 @@ public static class GParamSpecPoolHandleExtensions
 		return pool;
 	}
 
+	public static GParamSpecPoolHandle New(bool type_prefixing)
+	{
+		return GParamSpecPoolExterns.g_param_spec_pool_new(type_prefixing);
+	}
+
 }
 internal class GParamSpecPoolExterns
 {
@@ -60,6 +65,9 @@ internal class GParamSpecPoolExterns
 
 	[DllImport(Libraries.GObject)]
 	internal static extern void g_param_spec_pool_remove(GParamSpecPoolHandle pool, GParamSpecHandle pspec);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern GParamSpecPoolHandle g_param_spec_pool_new(bool type_prefixing);
 
 }
 

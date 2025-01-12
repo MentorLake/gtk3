@@ -43,6 +43,11 @@ public static class GSrvTargetHandleExtensions
 		return GSrvTargetExterns.g_srv_target_get_weight(target);
 	}
 
+	public static GListHandle ListSort(GListHandle targets)
+	{
+		return GSrvTargetExterns.g_srv_target_list_sort(targets);
+	}
+
 }
 internal class GSrvTargetExterns
 {
@@ -66,6 +71,9 @@ internal class GSrvTargetExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern ushort g_srv_target_get_weight(GSrvTargetHandle target);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GListHandle g_srv_target_list_sort(GListHandle targets);
 
 }
 

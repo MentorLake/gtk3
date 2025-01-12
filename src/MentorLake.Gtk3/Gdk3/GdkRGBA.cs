@@ -12,7 +12,7 @@ public static class GdkRGBAHandleExtensions
 		return GdkRGBAExterns.gdk_rgba_copy(rgba);
 	}
 
-	public static bool GdkRgbaEqual(this IntPtr p1, IntPtr p2)
+	public static bool GdkRgbaEqual(IntPtr p1, IntPtr p2)
 	{
 		return GdkRGBAExterns.gdk_rgba_equal(p1, p2);
 	}
@@ -23,7 +23,7 @@ public static class GdkRGBAHandleExtensions
 		return rgba;
 	}
 
-	public static uint GdkRgbaHash(this IntPtr p)
+	public static uint GdkRgbaHash(IntPtr p)
 	{
 		return GdkRGBAExterns.gdk_rgba_hash(p);
 	}

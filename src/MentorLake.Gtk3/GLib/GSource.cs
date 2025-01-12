@@ -180,6 +180,26 @@ public static class GSourceHandleExtensions
 		return source;
 	}
 
+	public static bool Remove(uint tag)
+	{
+		return GSourceExterns.g_source_remove(tag);
+	}
+
+	public static bool RemoveByFuncsUserData(GSourceFuncsHandle funcs, IntPtr user_data)
+	{
+		return GSourceExterns.g_source_remove_by_funcs_user_data(funcs, user_data);
+	}
+
+	public static bool RemoveByUserData(IntPtr user_data)
+	{
+		return GSourceExterns.g_source_remove_by_user_data(user_data);
+	}
+
+	public static void SetNameById(uint tag, string name)
+	{
+		GSourceExterns.g_source_set_name_by_id(tag, name);
+	}
+
 }
 internal class GSourceExterns
 {
@@ -275,6 +295,18 @@ internal class GSourceExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_source_unref(GSourceHandle source);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_source_remove(uint tag);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_source_remove_by_funcs_user_data(GSourceFuncsHandle funcs, IntPtr user_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_source_remove_by_user_data(IntPtr user_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_source_set_name_by_id(uint tag, string name);
 
 }
 

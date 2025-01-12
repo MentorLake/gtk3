@@ -24,6 +24,11 @@ public static class GTestLogBufferHandleExtensions
 		return tbuffer;
 	}
 
+	public static GTestLogBufferHandle New()
+	{
+		return GTestLogBufferExterns.g_test_log_buffer_new();
+	}
+
 }
 internal class GTestLogBufferExterns
 {
@@ -35,6 +40,9 @@ internal class GTestLogBufferExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_test_log_buffer_push(GTestLogBufferHandle tbuffer, uint n_bytes, ref byte bytes);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GTestLogBufferHandle g_test_log_buffer_new();
 
 }
 

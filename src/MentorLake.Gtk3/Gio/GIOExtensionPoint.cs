@@ -28,6 +28,21 @@ public static class GIOExtensionPointHandleExtensions
 		return extension_point;
 	}
 
+	public static GIOExtensionHandle GIoExtensionPointImplement(string extension_point_name, GType type, string extension_name, int priority)
+	{
+		return GIOExtensionPointExterns.g_io_extension_point_implement(extension_point_name, type, extension_name, priority);
+	}
+
+	public static GIOExtensionPointHandle GIoExtensionPointLookup(string name)
+	{
+		return GIOExtensionPointExterns.g_io_extension_point_lookup(name);
+	}
+
+	public static GIOExtensionPointHandle GIoExtensionPointRegister(string name)
+	{
+		return GIOExtensionPointExterns.g_io_extension_point_register(name);
+	}
+
 }
 internal class GIOExtensionPointExterns
 {
@@ -42,6 +57,15 @@ internal class GIOExtensionPointExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_io_extension_point_set_required_type(GIOExtensionPointHandle extension_point, GType type);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIOExtensionHandle g_io_extension_point_implement(string extension_point_name, GType type, string extension_name, int priority);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIOExtensionPointHandle g_io_extension_point_lookup(string name);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIOExtensionPointHandle g_io_extension_point_register(string name);
 
 }
 

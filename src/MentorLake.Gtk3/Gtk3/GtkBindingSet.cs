@@ -18,6 +18,21 @@ public static class GtkBindingSetHandleExtensions
 		return binding_set;
 	}
 
+	public static GtkBindingSetHandle ByClass(IntPtr object_class)
+	{
+		return GtkBindingSetExterns.gtk_binding_set_by_class(object_class);
+	}
+
+	public static GtkBindingSetHandle Find(string set_name)
+	{
+		return GtkBindingSetExterns.gtk_binding_set_find(set_name);
+	}
+
+	public static GtkBindingSetHandle New(string set_name)
+	{
+		return GtkBindingSetExterns.gtk_binding_set_new(set_name);
+	}
+
 }
 internal class GtkBindingSetExterns
 {
@@ -26,6 +41,15 @@ internal class GtkBindingSetExterns
 
 	[DllImport(Libraries.Gtk3)]
 	internal static extern void gtk_binding_set_add_path(GtkBindingSetHandle binding_set, GtkPathType path_type, string path_pattern, GtkPathPriorityType priority);
+
+	[DllImport(Libraries.Gtk3)]
+	internal static extern GtkBindingSetHandle gtk_binding_set_by_class(IntPtr object_class);
+
+	[DllImport(Libraries.Gtk3)]
+	internal static extern GtkBindingSetHandle gtk_binding_set_find(string set_name);
+
+	[DllImport(Libraries.Gtk3)]
+	internal static extern GtkBindingSetHandle gtk_binding_set_new(string set_name);
 
 }
 

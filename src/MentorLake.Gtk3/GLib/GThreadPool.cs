@@ -49,6 +49,46 @@ public static class GThreadPoolHandleExtensions
 		return GThreadPoolExterns.g_thread_pool_unprocessed(pool);
 	}
 
+	public static uint GetMaxIdleTime()
+	{
+		return GThreadPoolExterns.g_thread_pool_get_max_idle_time();
+	}
+
+	public static int GetMaxUnusedThreads()
+	{
+		return GThreadPoolExterns.g_thread_pool_get_max_unused_threads();
+	}
+
+	public static uint GetNumUnusedThreads()
+	{
+		return GThreadPoolExterns.g_thread_pool_get_num_unused_threads();
+	}
+
+	public static GThreadPoolHandle New(GFunc func, IntPtr user_data, int max_threads, bool exclusive, out GErrorHandle error)
+	{
+		return GThreadPoolExterns.g_thread_pool_new(func, user_data, max_threads, exclusive, out error);
+	}
+
+	public static GThreadPoolHandle NewFull(GFunc func, IntPtr user_data, GDestroyNotify item_free_func, int max_threads, bool exclusive, out GErrorHandle error)
+	{
+		return GThreadPoolExterns.g_thread_pool_new_full(func, user_data, item_free_func, max_threads, exclusive, out error);
+	}
+
+	public static void SetMaxIdleTime(uint interval)
+	{
+		GThreadPoolExterns.g_thread_pool_set_max_idle_time(interval);
+	}
+
+	public static void SetMaxUnusedThreads(int max_threads)
+	{
+		GThreadPoolExterns.g_thread_pool_set_max_unused_threads(max_threads);
+	}
+
+	public static void StopUnusedThreads()
+	{
+		GThreadPoolExterns.g_thread_pool_stop_unused_threads();
+	}
+
 }
 internal class GThreadPoolExterns
 {
@@ -75,6 +115,30 @@ internal class GThreadPoolExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern uint g_thread_pool_unprocessed(GThreadPoolHandle pool);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern uint g_thread_pool_get_max_idle_time();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern int g_thread_pool_get_max_unused_threads();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern uint g_thread_pool_get_num_unused_threads();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GThreadPoolHandle g_thread_pool_new(GFunc func, IntPtr user_data, int max_threads, bool exclusive, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GThreadPoolHandle g_thread_pool_new_full(GFunc func, IntPtr user_data, GDestroyNotify item_free_func, int max_threads, bool exclusive, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_thread_pool_set_max_idle_time(uint interval);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_thread_pool_set_max_unused_threads(int max_threads);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_thread_pool_stop_unused_threads();
 
 }
 

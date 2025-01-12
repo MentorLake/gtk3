@@ -36,6 +36,11 @@ public static class GCacheHandleExtensions
 		return cache;
 	}
 
+	public static GCacheHandle New(GCacheNewFunc value_new_func, GCacheDestroyFunc value_destroy_func, GCacheDupFunc key_dup_func, GCacheDestroyFunc key_destroy_func, GHashFunc hash_key_func, GHashFunc hash_value_func, GEqualFunc key_equal_func)
+	{
+		return GCacheExterns.g_cache_new(value_new_func, value_destroy_func, key_dup_func, key_destroy_func, hash_key_func, hash_value_func, key_equal_func);
+	}
+
 }
 internal class GCacheExterns
 {
@@ -53,6 +58,9 @@ internal class GCacheExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_cache_value_foreach(GCacheHandle cache, GHFunc func, IntPtr user_data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GCacheHandle g_cache_new(GCacheNewFunc value_new_func, GCacheDestroyFunc value_destroy_func, GCacheDupFunc key_dup_func, GCacheDestroyFunc key_destroy_func, GHashFunc hash_key_func, GHashFunc hash_value_func, GEqualFunc key_equal_func);
 
 }
 

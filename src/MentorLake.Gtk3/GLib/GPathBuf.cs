@@ -69,6 +69,21 @@ public static class GPathBufHandleExtensions
 		return GPathBufExterns.g_path_buf_to_path(buf);
 	}
 
+	public static bool Equal(IntPtr v1, IntPtr v2)
+	{
+		return GPathBufExterns.g_path_buf_equal(v1, v2);
+	}
+
+	public static GPathBufHandle New()
+	{
+		return GPathBufExterns.g_path_buf_new();
+	}
+
+	public static GPathBufHandle NewFromPath(string path)
+	{
+		return GPathBufExterns.g_path_buf_new_from_path(path);
+	}
+
 }
 internal class GPathBufExterns
 {
@@ -107,6 +122,15 @@ internal class GPathBufExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern string g_path_buf_to_path(GPathBufHandle buf);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_path_buf_equal(IntPtr v1, IntPtr v2);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GPathBufHandle g_path_buf_new();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GPathBufHandle g_path_buf_new_from_path(string path);
 
 }
 

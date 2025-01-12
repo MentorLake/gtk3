@@ -117,7 +117,7 @@ public static class GDateTimeHandleExtensions
 		return GDateTimeExterns.g_date_time_add_years(datetime, years);
 	}
 
-	public static int Compare(this IntPtr dt1, IntPtr dt2)
+	public static int Compare(IntPtr dt1, IntPtr dt2)
 	{
 		return GDateTimeExterns.g_date_time_compare(dt1, dt2);
 	}
@@ -127,7 +127,7 @@ public static class GDateTimeHandleExtensions
 		return GDateTimeExterns.g_date_time_difference(end, begin);
 	}
 
-	public static bool Equal(this IntPtr dt1, IntPtr dt2)
+	public static bool Equal(IntPtr dt1, IntPtr dt2)
 	{
 		return GDateTimeExterns.g_date_time_equal(dt1, dt2);
 	}
@@ -223,7 +223,7 @@ public static class GDateTimeHandleExtensions
 		return datetime;
 	}
 
-	public static uint Hash(this IntPtr datetime)
+	public static uint Hash(IntPtr datetime)
 	{
 		return GDateTimeExterns.g_date_time_hash(datetime);
 	}

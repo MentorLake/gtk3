@@ -18,6 +18,11 @@ public static class GDBusAnnotationInfoHandleExtensions
 		return info;
 	}
 
+	public static string GDbusAnnotationInfoLookup(GDBusAnnotationInfoHandle[] annotations, string name)
+	{
+		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_lookup(annotations, name);
+	}
+
 }
 internal class GDBusAnnotationInfoExterns
 {
@@ -26,6 +31,10 @@ internal class GDBusAnnotationInfoExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_dbus_annotation_info_unref(GDBusAnnotationInfoHandle info);
+
+	[DllImport(Libraries.Gio)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_dbus_annotation_info_lookup(GDBusAnnotationInfoHandle[] annotations, string name);
 
 }
 

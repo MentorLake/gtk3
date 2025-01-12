@@ -6,12 +6,12 @@ public class GdkX11CursorHandle : GdkCursorHandle
 
 public static class GdkX11CursorHandleExtensions
 {
-	public static IntPtr GetXcursor(this GdkX11CursorHandle cursor)
+	public static IntPtr GetXcursor(GdkCursorHandle cursor)
 	{
 		return GdkX11CursorExterns.gdk_x11_cursor_get_xcursor(cursor);
 	}
 
-	public static IntPtr GetXdisplay(this GdkX11CursorHandle cursor)
+	public static IntPtr GetXdisplay(GdkCursorHandle cursor)
 	{
 		return GdkX11CursorExterns.gdk_x11_cursor_get_xdisplay(cursor);
 	}

@@ -47,7 +47,7 @@ public static class GVariantTypeHandleExtensions
 		return GVariantTypeExterns.g_variant_type_element(type);
 	}
 
-	public static bool Equal(this IntPtr type1, IntPtr type2)
+	public static bool Equal(IntPtr type1, IntPtr type2)
 	{
 		return GVariantTypeExterns.g_variant_type_equal(type1, type2);
 	}
@@ -68,7 +68,7 @@ public static class GVariantTypeHandleExtensions
 		return GVariantTypeExterns.g_variant_type_get_string_length(type);
 	}
 
-	public static uint Hash(this IntPtr type)
+	public static uint Hash(IntPtr type)
 	{
 		return GVariantTypeExterns.g_variant_type_hash(type);
 	}
@@ -141,6 +141,26 @@ public static class GVariantTypeHandleExtensions
 	public static GVariantTypeHandle Value(this GVariantTypeHandle type)
 	{
 		return GVariantTypeExterns.g_variant_type_value(type);
+	}
+
+	public static GVariantTypeHandle Checked(string type_string)
+	{
+		return GVariantTypeExterns.g_variant_type_checked_(type_string);
+	}
+
+	public static UIntPtr StringGetDepth(string type_string)
+	{
+		return GVariantTypeExterns.g_variant_type_string_get_depth_(type_string);
+	}
+
+	public static bool StringIsValid(string type_string)
+	{
+		return GVariantTypeExterns.g_variant_type_string_is_valid(type_string);
+	}
+
+	public static bool StringScan(string @string, string limit, out string endptr)
+	{
+		return GVariantTypeExterns.g_variant_type_string_scan(@string, limit, out endptr);
 	}
 
 }
@@ -226,6 +246,18 @@ internal class GVariantTypeExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern GVariantTypeHandle g_variant_type_value(GVariantTypeHandle type);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GVariantTypeHandle g_variant_type_checked_(string type_string);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern UIntPtr g_variant_type_string_get_depth_(string type_string);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_variant_type_string_is_valid(string type_string);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_variant_type_string_scan(string @string, string limit, out string endptr);
 
 }
 

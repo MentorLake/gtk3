@@ -7,9 +7,17 @@ public class GTypeValueTableHandle : BaseSafeHandle
 
 public static class GTypeValueTableHandleExtensions
 {
+	public static GTypeValueTableHandle Peek(GType type)
+	{
+		return GTypeValueTableExterns.g_type_value_table_peek(type);
+	}
+
 }
 internal class GTypeValueTableExterns
 {
+	[DllImport(Libraries.GObject)]
+	internal static extern GTypeValueTableHandle g_type_value_table_peek(GType type);
+
 }
 
 public struct GTypeValueTable

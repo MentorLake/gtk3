@@ -24,6 +24,11 @@ public static class GPrivateHandleExtensions
 		return key;
 	}
 
+	public static GPrivateHandle New(GDestroyNotify notify)
+	{
+		return GPrivateExterns.g_private_new(notify);
+	}
+
 }
 internal class GPrivateExterns
 {
@@ -35,6 +40,9 @@ internal class GPrivateExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_private_set(GPrivateHandle key, IntPtr value);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GPrivateHandle g_private_new(GDestroyNotify notify);
 
 }
 

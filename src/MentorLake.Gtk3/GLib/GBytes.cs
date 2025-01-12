@@ -27,12 +27,12 @@ public class GBytesHandle : BaseSafeHandle
 
 public static class GBytesHandleExtensions
 {
-	public static int Compare(this IntPtr bytes1, IntPtr bytes2)
+	public static int Compare(IntPtr bytes1, IntPtr bytes2)
 	{
 		return GBytesExterns.g_bytes_compare(bytes1, bytes2);
 	}
 
-	public static bool Equal(this IntPtr bytes1, IntPtr bytes2)
+	public static bool Equal(IntPtr bytes1, IntPtr bytes2)
 	{
 		return GBytesExterns.g_bytes_equal(bytes1, bytes2);
 	}
@@ -52,7 +52,7 @@ public static class GBytesHandleExtensions
 		return GBytesExterns.g_bytes_get_size(bytes);
 	}
 
-	public static uint Hash(this IntPtr bytes)
+	public static uint Hash(IntPtr bytes)
 	{
 		return GBytesExterns.g_bytes_hash(bytes);
 	}

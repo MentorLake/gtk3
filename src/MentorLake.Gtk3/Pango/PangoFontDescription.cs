@@ -187,6 +187,11 @@ public static class PangoFontDescriptionHandleExtensions
 		return desc;
 	}
 
+	public static PangoFontDescriptionHandle FromString(string str)
+	{
+		return PangoFontDescriptionExterns.pango_font_description_from_string(str);
+	}
+
 }
 internal class PangoFontDescriptionExterns
 {
@@ -290,6 +295,9 @@ internal class PangoFontDescriptionExterns
 
 	[DllImport(Libraries.Pango)]
 	internal static extern void pango_font_description_unset_fields(PangoFontDescriptionHandle desc, PangoFontMask to_unset);
+
+	[DllImport(Libraries.Pango)]
+	internal static extern PangoFontDescriptionHandle pango_font_description_from_string(string str);
 
 }
 

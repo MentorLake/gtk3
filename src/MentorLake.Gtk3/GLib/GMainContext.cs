@@ -148,6 +148,21 @@ public static class GMainContextHandleExtensions
 		return context;
 	}
 
+	public static GMainContextHandle Default()
+	{
+		return GMainContextExterns.g_main_context_default();
+	}
+
+	public static GMainContextHandle GetThreadDefault()
+	{
+		return GMainContextExterns.g_main_context_get_thread_default();
+	}
+
+	public static GMainContextHandle RefThreadDefault()
+	{
+		return GMainContextExterns.g_main_context_ref_thread_default();
+	}
+
 }
 internal class GMainContextExterns
 {
@@ -228,6 +243,15 @@ internal class GMainContextExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_main_context_wakeup(GMainContextHandle context);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GMainContextHandle g_main_context_default();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GMainContextHandle g_main_context_get_thread_default();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GMainContextHandle g_main_context_ref_thread_default();
 
 }
 

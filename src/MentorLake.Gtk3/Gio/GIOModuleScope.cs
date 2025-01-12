@@ -19,6 +19,11 @@ public static class GIOModuleScopeHandleExtensions
 		return scope;
 	}
 
+	public static GIOModuleScopeHandle GIoModuleScopeNew(GIOModuleScopeFlags flags)
+	{
+		return GIOModuleScopeExterns.g_io_module_scope_new(flags);
+	}
+
 }
 internal class GIOModuleScopeExterns
 {
@@ -27,6 +32,9 @@ internal class GIOModuleScopeExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_io_module_scope_free(GIOModuleScopeHandle scope);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIOModuleScopeHandle g_io_module_scope_new(GIOModuleScopeFlags flags);
 
 }
 

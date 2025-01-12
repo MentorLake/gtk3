@@ -55,6 +55,11 @@ public static class GResourceHandleExtensions
 		return resource;
 	}
 
+	public static GResourceHandle Load(string filename, out GErrorHandle error)
+	{
+		return GResourceExterns.g_resource_load(filename, out error);
+	}
+
 }
 internal class GResourceExterns
 {
@@ -84,6 +89,9 @@ internal class GResourceExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_resource_unref(GResourceHandle resource);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GResourceHandle g_resource_load(string filename, out GErrorHandle error);
 
 }
 

@@ -53,6 +53,11 @@ public static class GCondHandleExtensions
 		return GCondExterns.g_cond_wait_until(cond, mutex, end_time);
 	}
 
+	public static GCondHandle New()
+	{
+		return GCondExterns.g_cond_new();
+	}
+
 }
 internal class GCondExterns
 {
@@ -79,6 +84,9 @@ internal class GCondExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern bool g_cond_wait_until(GCondHandle cond, GMutexHandle mutex, long end_time);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GCondHandle g_cond_new();
 
 }
 

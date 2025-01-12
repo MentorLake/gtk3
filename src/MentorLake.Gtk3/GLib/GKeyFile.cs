@@ -268,6 +268,11 @@ public static class GKeyFileHandleExtensions
 		return key_file;
 	}
 
+	public static GQuark ErrorQuark()
+	{
+		return GKeyFileExterns.g_key_file_error_quark();
+	}
+
 }
 internal class GKeyFileExterns
 {
@@ -417,6 +422,9 @@ internal class GKeyFileExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_key_file_unref(GKeyFileHandle key_file);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_key_file_error_quark();
 
 }
 

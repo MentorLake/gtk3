@@ -40,6 +40,26 @@ public static class GTypeClassHandleExtensions
 		return g_class;
 	}
 
+	public static void AdjustPrivateOffset(IntPtr g_class, ref int private_size_or_offset)
+	{
+		GTypeClassExterns.g_type_class_adjust_private_offset(g_class, ref private_size_or_offset);
+	}
+
+	public static GTypeClassHandle Peek(GType type)
+	{
+		return GTypeClassExterns.g_type_class_peek(type);
+	}
+
+	public static GTypeClassHandle PeekStatic(GType type)
+	{
+		return GTypeClassExterns.g_type_class_peek_static(type);
+	}
+
+	public static GTypeClassHandle Ref(GType type)
+	{
+		return GTypeClassExterns.g_type_class_ref(type);
+	}
+
 }
 internal class GTypeClassExterns
 {
@@ -60,6 +80,18 @@ internal class GTypeClassExterns
 
 	[DllImport(Libraries.GObject)]
 	internal static extern void g_type_class_unref_uncached(GTypeClassHandle g_class);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern void g_type_class_adjust_private_offset(IntPtr g_class, ref int private_size_or_offset);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern GTypeClassHandle g_type_class_peek(GType type);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern GTypeClassHandle g_type_class_peek_static(GType type);
+
+	[DllImport(Libraries.GObject)]
+	internal static extern GTypeClassHandle g_type_class_ref(GType type);
 
 }
 

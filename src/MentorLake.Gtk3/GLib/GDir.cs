@@ -40,6 +40,11 @@ public static class GDirHandleExtensions
 		return dir;
 	}
 
+	public static string MakeTmp(string tmpl, out GErrorHandle error)
+	{
+		return GDirExterns.g_dir_make_tmp(tmpl, out error);
+	}
+
 }
 internal class GDirExterns
 {
@@ -60,6 +65,9 @@ internal class GDirExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_dir_unref(GDirHandle dir);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern string g_dir_make_tmp(string tmpl, out GErrorHandle error);
 
 }
 

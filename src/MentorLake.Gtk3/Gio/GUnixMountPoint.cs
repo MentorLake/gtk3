@@ -78,6 +78,11 @@ public static class GUnixMountPointHandleExtensions
 		return GUnixMountPointExterns.g_unix_mount_point_is_user_mountable(mount_point);
 	}
 
+	public static GUnixMountPointHandle At(string mount_path, out ulong time_read)
+	{
+		return GUnixMountPointExterns.g_unix_mount_point_at(mount_path, out time_read);
+	}
+
 }
 internal class GUnixMountPointExterns
 {
@@ -122,6 +127,9 @@ internal class GUnixMountPointExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_unix_mount_point_is_user_mountable(GUnixMountPointHandle mount_point);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GUnixMountPointHandle g_unix_mount_point_at(string mount_path, out ulong time_read);
 
 }
 

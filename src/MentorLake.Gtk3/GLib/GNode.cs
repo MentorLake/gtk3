@@ -137,6 +137,21 @@ public static class GNodeHandleExtensions
 		return node;
 	}
 
+	public static GNodeHandle New(IntPtr data)
+	{
+		return GNodeExterns.g_node_new(data);
+	}
+
+	public static void PopAllocator()
+	{
+		GNodeExterns.g_node_pop_allocator();
+	}
+
+	public static void PushAllocator(GAllocatorHandle allocator)
+	{
+		GNodeExterns.g_node_push_allocator(allocator);
+	}
+
 }
 internal class GNodeExterns
 {
@@ -214,6 +229,15 @@ internal class GNodeExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_node_unlink(GNodeHandle node);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GNodeHandle g_node_new(IntPtr data);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_node_pop_allocator();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_node_push_allocator(GAllocatorHandle allocator);
 
 }
 

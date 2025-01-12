@@ -83,6 +83,11 @@ public static class PangoAttrListHandleExtensions
 		return list;
 	}
 
+	public static PangoAttrListHandle FromString(string text)
+	{
+		return PangoAttrListExterns.pango_attr_list_from_string(text);
+	}
+
 }
 internal class PangoAttrListExterns
 {
@@ -127,6 +132,9 @@ internal class PangoAttrListExterns
 
 	[DllImport(Libraries.Pango)]
 	internal static extern void pango_attr_list_update(PangoAttrListHandle list, int pos, int remove, int add);
+
+	[DllImport(Libraries.Pango)]
+	internal static extern PangoAttrListHandle pango_attr_list_from_string(string text);
 
 }
 

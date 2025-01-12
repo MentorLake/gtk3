@@ -179,6 +179,16 @@ public static class GIOChannelHandleExtensions
 		return GIOChannelExterns.g_io_channel_write_unichar(channel, thechar, out error);
 	}
 
+	public static GIOChannelError GIoChannelErrorFromErrno(int en)
+	{
+		return GIOChannelExterns.g_io_channel_error_from_errno(en);
+	}
+
+	public static GQuark GIoChannelErrorQuark()
+	{
+		return GIOChannelExterns.g_io_channel_error_quark();
+	}
+
 }
 internal class GIOChannelExterns
 {
@@ -280,6 +290,12 @@ internal class GIOChannelExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern GIOStatus g_io_channel_write_unichar(GIOChannelHandle channel, char thechar, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GIOChannelError g_io_channel_error_from_errno(int en);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_io_channel_error_quark();
 
 }
 

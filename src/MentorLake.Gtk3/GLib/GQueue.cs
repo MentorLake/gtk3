@@ -238,6 +238,11 @@ public static class GQueueHandleExtensions
 		return queue;
 	}
 
+	public static GQueueHandle New()
+	{
+		return GQueueExterns.g_queue_new();
+	}
+
 }
 internal class GQueueExterns
 {
@@ -366,6 +371,9 @@ internal class GQueueExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_queue_unlink(GQueueHandle queue, GListHandle link_);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQueueHandle g_queue_new();
 
 }
 

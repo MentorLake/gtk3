@@ -47,6 +47,16 @@ public static class GMemChunkHandleExtensions
 		return mem_chunk;
 	}
 
+	public static void Info()
+	{
+		GMemChunkExterns.g_mem_chunk_info();
+	}
+
+	public static GMemChunkHandle New(string name, int atom_size, UIntPtr area_size, int type)
+	{
+		return GMemChunkExterns.g_mem_chunk_new(name, atom_size, area_size, type);
+	}
+
 }
 internal class GMemChunkExterns
 {
@@ -70,6 +80,12 @@ internal class GMemChunkExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_mem_chunk_reset(GMemChunkHandle mem_chunk);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern void g_mem_chunk_info();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GMemChunkHandle g_mem_chunk_new(string name, int atom_size, UIntPtr area_size, int type);
 
 }
 

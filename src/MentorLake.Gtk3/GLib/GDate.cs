@@ -217,6 +217,61 @@ public static class GDateHandleExtensions
 		return GDateExterns.g_date_valid(date);
 	}
 
+	public static byte GetDaysInMonth(GDateMonth month, GDateYear year)
+	{
+		return GDateExterns.g_date_get_days_in_month(month, year);
+	}
+
+	public static byte GetMondayWeeksInYear(GDateYear year)
+	{
+		return GDateExterns.g_date_get_monday_weeks_in_year(year);
+	}
+
+	public static byte GetSundayWeeksInYear(GDateYear year)
+	{
+		return GDateExterns.g_date_get_sunday_weeks_in_year(year);
+	}
+
+	public static bool IsLeapYear(GDateYear year)
+	{
+		return GDateExterns.g_date_is_leap_year(year);
+	}
+
+	public static UIntPtr Strftime(string s, UIntPtr slen, string format, GDateHandle date)
+	{
+		return GDateExterns.g_date_strftime(s, slen, format, date);
+	}
+
+	public static bool ValidDay(GDateDay day)
+	{
+		return GDateExterns.g_date_valid_day(day);
+	}
+
+	public static bool ValidDmy(GDateDay day, GDateMonth month, GDateYear year)
+	{
+		return GDateExterns.g_date_valid_dmy(day, month, year);
+	}
+
+	public static bool ValidJulian(uint julian_date)
+	{
+		return GDateExterns.g_date_valid_julian(julian_date);
+	}
+
+	public static bool ValidMonth(GDateMonth month)
+	{
+		return GDateExterns.g_date_valid_month(month);
+	}
+
+	public static bool ValidWeekday(GDateWeekday weekday)
+	{
+		return GDateExterns.g_date_valid_weekday(weekday);
+	}
+
+	public static bool ValidYear(GDateYear year)
+	{
+		return GDateExterns.g_date_valid_year(year);
+	}
+
 }
 internal class GDateExterns
 {
@@ -333,6 +388,39 @@ internal class GDateExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern bool g_date_valid(GDateHandle date);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern byte g_date_get_days_in_month(GDateMonth month, GDateYear year);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern byte g_date_get_monday_weeks_in_year(GDateYear year);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern byte g_date_get_sunday_weeks_in_year(GDateYear year);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_is_leap_year(GDateYear year);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern UIntPtr g_date_strftime(string s, UIntPtr slen, string format, GDateHandle date);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_day(GDateDay day);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_dmy(GDateDay day, GDateMonth month, GDateYear year);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_julian(uint julian_date);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_month(GDateMonth month);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_weekday(GDateWeekday weekday);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_date_valid_year(GDateYear year);
 
 }
 

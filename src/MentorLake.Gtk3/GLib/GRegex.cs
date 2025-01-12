@@ -108,6 +108,36 @@ public static class GRegexHandleExtensions
 		return regex;
 	}
 
+	public static bool CheckReplacement(string replacement, out bool has_references, out GErrorHandle error)
+	{
+		return GRegexExterns.g_regex_check_replacement(replacement, out has_references, out error);
+	}
+
+	public static GQuark ErrorQuark()
+	{
+		return GRegexExterns.g_regex_error_quark();
+	}
+
+	public static string EscapeNul(string @string, int length)
+	{
+		return GRegexExterns.g_regex_escape_nul(@string, length);
+	}
+
+	public static string EscapeString(string @string, int length)
+	{
+		return GRegexExterns.g_regex_escape_string(@string, length);
+	}
+
+	public static bool MatchSimple(string pattern, string @string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options)
+	{
+		return GRegexExterns.g_regex_match_simple(pattern, @string, compile_options, match_options);
+	}
+
+	public static IntPtr SplitSimple(string pattern, string @string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options)
+	{
+		return GRegexExterns.g_regex_split_simple(pattern, @string, compile_options, match_options);
+	}
+
 }
 internal class GRegexExterns
 {
@@ -170,6 +200,24 @@ internal class GRegexExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_regex_unref(GRegexHandle regex);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_regex_check_replacement(string replacement, out bool has_references, out GErrorHandle error);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GQuark g_regex_error_quark();
+
+	[DllImport(Libraries.GLib)]
+	internal static extern string g_regex_escape_nul(string @string, int length);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern string g_regex_escape_string(string @string, int length);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern bool g_regex_match_simple(string pattern, string @string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern IntPtr g_regex_split_simple(string pattern, string @string, GRegexCompileFlags compile_options, GRegexMatchFlags match_options);
 
 }
 

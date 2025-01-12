@@ -43,7 +43,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.accel_closures_changed handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.AccelClosuresChangedSignal()
 				{
@@ -70,7 +70,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.button_press_event handler = (GtkWidgetHandle self, GdkEventButton @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ButtonPressEventSignal()
 				{
@@ -97,7 +97,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.button_release_event handler = (GtkWidgetHandle self, GdkEventButton @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ButtonReleaseEventSignal()
 				{
@@ -124,7 +124,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.can_activate_accel handler = (GtkWidgetHandle self, uint signal_id, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.CanActivateAccelSignal()
 				{
@@ -151,7 +151,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.child_notify handler = (GtkWidgetHandle self, GParamSpecHandle child_property, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ChildNotifySignal()
 				{
@@ -178,7 +178,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.composited_changed handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.CompositedChangedSignal()
 				{
@@ -205,7 +205,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.configure_event handler = (GtkWidgetHandle self, GdkEventConfigure @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ConfigureEventSignal()
 				{
@@ -232,7 +232,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.damage_event handler = (GtkWidgetHandle self, GdkEventExpose @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DamageEventSignal()
 				{
@@ -259,7 +259,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.delete_event handler = (GtkWidgetHandle self, GdkEventHandle @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DeleteEventSignal()
 				{
@@ -286,7 +286,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.destroy handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DestroySignal()
 				{
@@ -313,7 +313,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.destroy_event handler = (GtkWidgetHandle self, GdkEventHandle @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DestroyEventSignal()
 				{
@@ -340,7 +340,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.direction_changed handler = (GtkWidgetHandle self, GtkTextDirection previous_direction, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DirectionChangedSignal()
 				{
@@ -367,7 +367,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_begin handler = (GtkWidgetHandle self, GdkDragContextHandle context, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragBeginSignal()
 				{
@@ -394,7 +394,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_data_delete handler = (GtkWidgetHandle self, GdkDragContextHandle context, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragDataDeleteSignal()
 				{
@@ -421,7 +421,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_data_get handler = (GtkWidgetHandle self, GdkDragContextHandle context, GtkSelectionDataHandle data, uint info, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragDataGetSignal()
 				{
@@ -448,7 +448,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_data_received handler = (GtkWidgetHandle self, GdkDragContextHandle context, int x, int y, GtkSelectionDataHandle data, uint info, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragDataReceivedSignal()
 				{
@@ -475,7 +475,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_drop handler = (GtkWidgetHandle self, GdkDragContextHandle context, int x, int y, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragDropSignal()
 				{
@@ -502,7 +502,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_end handler = (GtkWidgetHandle self, GdkDragContextHandle context, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragEndSignal()
 				{
@@ -529,7 +529,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_failed handler = (GtkWidgetHandle self, GdkDragContextHandle context, GtkDragResult result, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragFailedSignal()
 				{
@@ -556,7 +556,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_leave handler = (GtkWidgetHandle self, GdkDragContextHandle context, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragLeaveSignal()
 				{
@@ -583,7 +583,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.drag_motion handler = (GtkWidgetHandle self, GdkDragContextHandle context, int x, int y, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DragMotionSignal()
 				{
@@ -610,7 +610,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.draw handler = (GtkWidgetHandle self, cairo_tHandle cr, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.DrawSignal()
 				{
@@ -637,7 +637,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.enter_notify_event handler = (GtkWidgetHandle self, GdkEventCrossing @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.EnterNotifyEventSignal()
 				{
@@ -664,7 +664,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.@event handler = (GtkWidgetHandle self, GdkEventHandle @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.EventSignal()
 				{
@@ -691,7 +691,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.event_after handler = (GtkWidgetHandle self, GdkEventHandle @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.EventAfterSignal()
 				{
@@ -718,7 +718,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.focus handler = (GtkWidgetHandle self, GtkDirectionType direction, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.FocusSignal()
 				{
@@ -745,7 +745,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.focus_in_event handler = (GtkWidgetHandle self, GdkEventFocus @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.FocusInEventSignal()
 				{
@@ -772,7 +772,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.focus_out_event handler = (GtkWidgetHandle self, GdkEventFocus @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.FocusOutEventSignal()
 				{
@@ -799,7 +799,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.grab_broken_event handler = (GtkWidgetHandle self, GdkEventGrabBroken @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.GrabBrokenEventSignal()
 				{
@@ -826,7 +826,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.grab_focus handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.GrabFocusSignal()
 				{
@@ -853,7 +853,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.grab_notify handler = (GtkWidgetHandle self, bool was_grabbed, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.GrabNotifySignal()
 				{
@@ -880,7 +880,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.hide handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.HideSignal()
 				{
@@ -907,7 +907,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.hierarchy_changed handler = (GtkWidgetHandle self, GtkWidgetHandle previous_toplevel, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.HierarchyChangedSignal()
 				{
@@ -934,7 +934,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.key_press_event handler = (GtkWidgetHandle self, GdkEventKey @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.KeyPressEventSignal()
 				{
@@ -961,7 +961,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.key_release_event handler = (GtkWidgetHandle self, GdkEventKey @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.KeyReleaseEventSignal()
 				{
@@ -988,7 +988,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.keynav_failed handler = (GtkWidgetHandle self, GtkDirectionType direction, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.KeynavFailedSignal()
 				{
@@ -1015,7 +1015,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.leave_notify_event handler = (GtkWidgetHandle self, GdkEventCrossing @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.LeaveNotifyEventSignal()
 				{
@@ -1042,7 +1042,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.map handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.MapSignal()
 				{
@@ -1069,7 +1069,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.map_event handler = (GtkWidgetHandle self, GdkEventAny @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.MapEventSignal()
 				{
@@ -1096,7 +1096,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.mnemonic_activate handler = (GtkWidgetHandle self, bool group_cycling, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.MnemonicActivateSignal()
 				{
@@ -1123,7 +1123,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.motion_notify_event handler = (GtkWidgetHandle self, GdkEventMotion @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.MotionNotifyEventSignal()
 				{
@@ -1150,7 +1150,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.move_focus handler = (GtkWidgetHandle self, GtkDirectionType direction, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.MoveFocusSignal()
 				{
@@ -1177,7 +1177,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.parent_set handler = (GtkWidgetHandle self, GtkWidgetHandle old_parent, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ParentSetSignal()
 				{
@@ -1204,7 +1204,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.popup_menu handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.PopupMenuSignal()
 				{
@@ -1231,7 +1231,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.property_notify_event handler = (GtkWidgetHandle self, GdkEventProperty @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.PropertyNotifyEventSignal()
 				{
@@ -1258,7 +1258,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.proximity_in_event handler = (GtkWidgetHandle self, GdkEventProximity @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ProximityInEventSignal()
 				{
@@ -1285,7 +1285,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.proximity_out_event handler = (GtkWidgetHandle self, GdkEventProximity @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ProximityOutEventSignal()
 				{
@@ -1312,7 +1312,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.query_tooltip handler = (GtkWidgetHandle self, int x, int y, bool keyboard_mode, GtkTooltipHandle tooltip, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.QueryTooltipSignal()
 				{
@@ -1339,7 +1339,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.realize handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.RealizeSignal()
 				{
@@ -1366,7 +1366,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.screen_changed handler = (GtkWidgetHandle self, GdkScreenHandle previous_screen, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ScreenChangedSignal()
 				{
@@ -1393,7 +1393,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.scroll_event handler = (GtkWidgetHandle self, GdkEventScroll @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ScrollEventSignal()
 				{
@@ -1420,7 +1420,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.selection_clear_event handler = (GtkWidgetHandle self, GdkEventSelection @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SelectionClearEventSignal()
 				{
@@ -1447,7 +1447,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.selection_get handler = (GtkWidgetHandle self, GtkSelectionDataHandle data, uint info, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SelectionGetSignal()
 				{
@@ -1474,7 +1474,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.selection_notify_event handler = (GtkWidgetHandle self, GdkEventSelection @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SelectionNotifyEventSignal()
 				{
@@ -1501,7 +1501,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.selection_received handler = (GtkWidgetHandle self, GtkSelectionDataHandle data, uint time, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SelectionReceivedSignal()
 				{
@@ -1528,7 +1528,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.selection_request_event handler = (GtkWidgetHandle self, GdkEventSelection @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SelectionRequestEventSignal()
 				{
@@ -1555,7 +1555,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.show handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ShowSignal()
 				{
@@ -1582,7 +1582,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.show_help handler = (GtkWidgetHandle self, GtkWidgetHelpType help_type, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.ShowHelpSignal()
 				{
@@ -1609,7 +1609,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.size_allocate handler = (GtkWidgetHandle self, GtkAllocationHandle allocation, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.SizeAllocateSignal()
 				{
@@ -1636,7 +1636,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.state_changed handler = (GtkWidgetHandle self, GtkStateType state, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.StateChangedSignal()
 				{
@@ -1663,7 +1663,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.state_flags_changed handler = (GtkWidgetHandle self, GtkStateFlags flags, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.StateFlagsChangedSignal()
 				{
@@ -1690,7 +1690,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.style_set handler = (GtkWidgetHandle self, GtkStyleHandle previous_style, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.StyleSetSignal()
 				{
@@ -1717,7 +1717,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.style_updated handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.StyleUpdatedSignal()
 				{
@@ -1744,7 +1744,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.touch_event handler = (GtkWidgetHandle self, GdkEventHandle @object, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.TouchEventSignal()
 				{
@@ -1771,7 +1771,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.unmap handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.UnmapSignal()
 				{
@@ -1798,7 +1798,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.unmap_event handler = (GtkWidgetHandle self, GdkEventAny @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.UnmapEventSignal()
 				{
@@ -1825,7 +1825,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.unrealize handler = (GtkWidgetHandle self, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.UnrealizeSignal()
 				{
@@ -1852,7 +1852,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.visibility_notify_event handler = (GtkWidgetHandle self, GdkEventVisibility @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.VisibilityNotifyEventSignal()
 				{
@@ -1879,7 +1879,7 @@ public static class GtkWidgetSignalExtensions
 		{
 			GtkWidgetSignalDelegates.window_state_event handler = (GtkWidgetHandle self, GdkEventWindowState @event, IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GtkWidgetSignalStructs.WindowStateEventSignal()
 				{

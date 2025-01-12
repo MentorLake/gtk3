@@ -34,6 +34,11 @@ public static class GSettingsSchemaSourceHandleExtensions
 		return source;
 	}
 
+	public static GSettingsSchemaSourceHandle GetDefault()
+	{
+		return GSettingsSchemaSourceExterns.g_settings_schema_source_get_default();
+	}
+
 }
 internal class GSettingsSchemaSourceExterns
 {
@@ -51,6 +56,9 @@ internal class GSettingsSchemaSourceExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_settings_schema_source_unref(GSettingsSchemaSourceHandle source);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GSettingsSchemaSourceHandle g_settings_schema_source_get_default();
 
 }
 

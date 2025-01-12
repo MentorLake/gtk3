@@ -117,6 +117,11 @@ public static class GScannerHandleExtensions
 		return scanner;
 	}
 
+	public static GScannerHandle New(GScannerConfigHandle config_templ)
+	{
+		return GScannerExterns.g_scanner_new(config_templ);
+	}
+
 }
 internal class GScannerExterns
 {
@@ -179,6 +184,9 @@ internal class GScannerExterns
 
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_scanner_warn(GScannerHandle scanner, string format, IntPtr @__arglist);
+
+	[DllImport(Libraries.GLib)]
+	internal static extern GScannerHandle g_scanner_new(GScannerConfigHandle config_templ);
 
 }
 

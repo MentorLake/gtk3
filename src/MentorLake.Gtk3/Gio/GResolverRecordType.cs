@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GResolverRecordType
+{
+	G_RESOLVER_RECORD_SRV,
+	G_RESOLVER_RECORD_MX,
+	G_RESOLVER_RECORD_TXT,
+	G_RESOLVER_RECORD_SOA,
+	G_RESOLVER_RECORD_NS
+}

@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gtk3;
+
+public enum GtkSizeGroupMode
+{
+	GTK_SIZE_GROUP_NONE,
+	GTK_SIZE_GROUP_HORIZONTAL,
+	GTK_SIZE_GROUP_VERTICAL,
+	GTK_SIZE_GROUP_BOTH
+}

@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GEmblemOrigin
+{
+	G_EMBLEM_ORIGIN_UNKNOWN,
+	G_EMBLEM_ORIGIN_DEVICE,
+	G_EMBLEM_ORIGIN_LIVEMETADATA,
+	G_EMBLEM_ORIGIN_TAG
+}

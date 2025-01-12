@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GTlsChannelBindingType
+{
+	G_TLS_CHANNEL_BINDING_TLS_UNIQUE,
+	G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT,
+	G_TLS_CHANNEL_BINDING_TLS_EXPORTER
+}

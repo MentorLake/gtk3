@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GConverterResult
+{
+	G_CONVERTER_ERROR,
+	G_CONVERTER_CONVERTED,
+	G_CONVERTER_FINISHED,
+	G_CONVERTER_FLUSHED
+}

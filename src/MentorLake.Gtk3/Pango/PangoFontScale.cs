@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Pango;
+
+public enum PangoFontScale
+{
+	PANGO_FONT_SCALE_NONE,
+	PANGO_FONT_SCALE_SUPERSCRIPT,
+	PANGO_FONT_SCALE_SUBSCRIPT,
+	PANGO_FONT_SCALE_SMALL_CAPS
+}

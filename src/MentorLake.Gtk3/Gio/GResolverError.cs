@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GResolverError
+{
+	G_RESOLVER_ERROR_NOT_FOUND,
+	G_RESOLVER_ERROR_TEMPORARY_FAILURE,
+	G_RESOLVER_ERROR_INTERNAL
+}

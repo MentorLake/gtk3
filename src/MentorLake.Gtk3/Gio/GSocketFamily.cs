@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GSocketFamily
+{
+	G_SOCKET_FAMILY_INVALID,
+	G_SOCKET_FAMILY_UNIX,
+	G_SOCKET_FAMILY_IPV4,
+	G_SOCKET_FAMILY_IPV6
+}

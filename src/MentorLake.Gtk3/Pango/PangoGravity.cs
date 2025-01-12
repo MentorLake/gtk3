@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk3.Pango;
+
+public enum PangoGravity
+{
+	PANGO_GRAVITY_SOUTH,
+	PANGO_GRAVITY_EAST,
+	PANGO_GRAVITY_NORTH,
+	PANGO_GRAVITY_WEST,
+	PANGO_GRAVITY_AUTO
+}

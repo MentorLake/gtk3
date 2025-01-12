@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GFileAttributeStatus
+{
+	G_FILE_ATTRIBUTE_STATUS_UNSET,
+	G_FILE_ATTRIBUTE_STATUS_SET,
+	G_FILE_ATTRIBUTE_STATUS_ERROR_SETTING
+}

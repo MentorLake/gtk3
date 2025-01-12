@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GSocketType
+{
+	G_SOCKET_TYPE_INVALID,
+	G_SOCKET_TYPE_STREAM,
+	G_SOCKET_TYPE_DATAGRAM,
+	G_SOCKET_TYPE_SEQPACKET
+}

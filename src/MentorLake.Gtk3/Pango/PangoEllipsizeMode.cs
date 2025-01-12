@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Pango;
+
+public enum PangoEllipsizeMode
+{
+	PANGO_ELLIPSIZE_NONE,
+	PANGO_ELLIPSIZE_START,
+	PANGO_ELLIPSIZE_MIDDLE,
+	PANGO_ELLIPSIZE_END
+}

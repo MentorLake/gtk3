@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk3.Gtk3;
+
+public enum GtkWindowPosition
+{
+	GTK_WIN_POS_NONE,
+	GTK_WIN_POS_CENTER,
+	GTK_WIN_POS_MOUSE,
+	GTK_WIN_POS_CENTER_ALWAYS,
+	GTK_WIN_POS_CENTER_ON_PARENT
+}

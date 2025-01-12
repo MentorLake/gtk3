@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GTlsAuthenticationMode
+{
+	G_TLS_AUTHENTICATION_NONE,
+	G_TLS_AUTHENTICATION_REQUESTED,
+	G_TLS_AUTHENTICATION_REQUIRED
+}

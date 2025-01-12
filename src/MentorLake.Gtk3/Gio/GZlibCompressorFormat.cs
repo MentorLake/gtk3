@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GZlibCompressorFormat
+{
+	G_ZLIB_COMPRESSOR_FORMAT_ZLIB,
+	G_ZLIB_COMPRESSOR_FORMAT_GZIP,
+	G_ZLIB_COMPRESSOR_FORMAT_RAW
+}

@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GPasswordSave
+{
+	G_PASSWORD_SAVE_NEVER,
+	G_PASSWORD_SAVE_FOR_SESSION,
+	G_PASSWORD_SAVE_PERMANENTLY
+}

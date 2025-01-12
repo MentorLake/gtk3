@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GSocketListenerEvent
+{
+	G_SOCKET_LISTENER_BINDING,
+	G_SOCKET_LISTENER_BOUND,
+	G_SOCKET_LISTENER_LISTENING,
+	G_SOCKET_LISTENER_LISTENED
+}

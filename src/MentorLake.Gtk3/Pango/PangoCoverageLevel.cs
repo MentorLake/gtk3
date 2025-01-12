@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Pango;
+
+public enum PangoCoverageLevel
+{
+	PANGO_COVERAGE_NONE,
+	PANGO_COVERAGE_FALLBACK,
+	PANGO_COVERAGE_APPROXIMATE,
+	PANGO_COVERAGE_EXACT
+}

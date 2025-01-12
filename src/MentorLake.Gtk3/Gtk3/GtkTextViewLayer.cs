@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gtk3;
+
+public enum GtkTextViewLayer
+{
+	GTK_TEXT_VIEW_LAYER_BELOW,
+	GTK_TEXT_VIEW_LAYER_ABOVE,
+	GTK_TEXT_VIEW_LAYER_BELOW_TEXT,
+	GTK_TEXT_VIEW_LAYER_ABOVE_TEXT
+}

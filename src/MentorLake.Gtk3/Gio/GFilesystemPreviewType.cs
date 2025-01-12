@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GFilesystemPreviewType
+{
+	G_FILESYSTEM_PREVIEW_TYPE_IF_ALWAYS,
+	G_FILESYSTEM_PREVIEW_TYPE_IF_LOCAL,
+	G_FILESYSTEM_PREVIEW_TYPE_NEVER
+}

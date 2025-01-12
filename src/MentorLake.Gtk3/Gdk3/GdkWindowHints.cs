@@ -1,0 +1,15 @@
+namespace MentorLake.Gtk3.Gdk3;
+
+[Flags]
+public enum GdkWindowHints
+{
+	GDK_HINT_POS = 0,
+	GDK_HINT_MIN_SIZE = 1,
+	GDK_HINT_MAX_SIZE = 2,
+	GDK_HINT_BASE_SIZE = 4,
+	GDK_HINT_ASPECT = 8,
+	GDK_HINT_RESIZE_INC = 16,
+	GDK_HINT_WIN_GRAVITY = 32,
+	GDK_HINT_USER_POS = 64,
+	GDK_HINT_USER_SIZE = 128
+}

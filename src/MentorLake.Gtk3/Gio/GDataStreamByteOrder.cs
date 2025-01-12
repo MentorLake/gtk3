@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GDataStreamByteOrder
+{
+	G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN,
+	G_DATA_STREAM_BYTE_ORDER_LITTLE_ENDIAN,
+	G_DATA_STREAM_BYTE_ORDER_HOST_ENDIAN
+}

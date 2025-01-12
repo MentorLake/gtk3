@@ -1,0 +1,11 @@
+namespace MentorLake.Gtk3.Gio;
+
+[Flags]
+public enum GFileMonitorFlags
+{
+	G_FILE_MONITOR_NONE = 0,
+	G_FILE_MONITOR_WATCH_MOUNTS = 1,
+	G_FILE_MONITOR_SEND_MOVED = 2,
+	G_FILE_MONITOR_WATCH_HARD_LINKS = 4,
+	G_FILE_MONITOR_WATCH_MOVES = 8
+}

@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+[Flags]
+public enum GDBusPropertyInfoFlags
+{
+	G_DBUS_PROPERTY_INFO_FLAGS_NONE = 0,
+	G_DBUS_PROPERTY_INFO_FLAGS_READABLE = 1,
+	G_DBUS_PROPERTY_INFO_FLAGS_WRITABLE = 2
+}

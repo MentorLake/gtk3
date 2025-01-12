@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk3.GLib;
+
+[Flags]
+public enum GTestSubprocessFlags
+{
+	G_TEST_SUBPROCESS_DEFAULT = 0,
+	G_TEST_SUBPROCESS_INHERIT_STDIN = 1,
+	G_TEST_SUBPROCESS_INHERIT_STDOUT = 2,
+	G_TEST_SUBPROCESS_INHERIT_STDERR = 4
+}

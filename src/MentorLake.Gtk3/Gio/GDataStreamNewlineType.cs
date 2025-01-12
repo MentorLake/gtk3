@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.Gio;
+
+public enum GDataStreamNewlineType
+{
+	G_DATA_STREAM_NEWLINE_TYPE_LF,
+	G_DATA_STREAM_NEWLINE_TYPE_CR,
+	G_DATA_STREAM_NEWLINE_TYPE_CR_LF,
+	G_DATA_STREAM_NEWLINE_TYPE_ANY
+}

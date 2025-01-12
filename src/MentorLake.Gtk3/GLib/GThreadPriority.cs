@@ -1,0 +1,9 @@
+namespace MentorLake.Gtk3.GLib;
+
+public enum GThreadPriority
+{
+	G_THREAD_PRIORITY_LOW,
+	G_THREAD_PRIORITY_NORMAL,
+	G_THREAD_PRIORITY_HIGH,
+	G_THREAD_PRIORITY_URGENT
+}

@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gtk3;
+
+public enum GtkPrintDuplex
+{
+	GTK_PRINT_DUPLEX_SIMPLEX,
+	GTK_PRINT_DUPLEX_HORIZONTAL,
+	GTK_PRINT_DUPLEX_VERTICAL
+}

@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Gtk3;
+
+public enum GtkBaselinePosition
+{
+	GTK_BASELINE_POSITION_TOP,
+	GTK_BASELINE_POSITION_CENTER,
+	GTK_BASELINE_POSITION_BOTTOM
+}

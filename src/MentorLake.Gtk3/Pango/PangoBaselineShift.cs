@@ -1,0 +1,8 @@
+namespace MentorLake.Gtk3.Pango;
+
+public enum PangoBaselineShift
+{
+	PANGO_BASELINE_SHIFT_NONE,
+	PANGO_BASELINE_SHIFT_SUPERSCRIPT,
+	PANGO_BASELINE_SHIFT_SUBSCRIPT
+}

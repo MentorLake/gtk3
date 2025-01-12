@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Gdk3;
 
-public class Gdk3GlobalFunction
+public class Gdk3GlobalFunctions
 {
 	[DllImport(Libraries.Gdk3)]
 	internal static extern void gdk_cairo_set_source_rgba(cairo_tHandle cr, GdkRGBAHandle rgba);

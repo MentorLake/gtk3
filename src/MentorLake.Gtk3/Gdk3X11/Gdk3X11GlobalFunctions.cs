@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Gdk3X11;
 
-public class Gdk3X11GlobalFunction
+public class Gdk3X11GlobalFunctions
 {
 	[DllImport(Libraries.Gdk3X11)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

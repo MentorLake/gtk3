@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Pango;
 
-public class PangoGlobalFunction
+public class PangoGlobalFunctions
 {
 	[DllImport(Libraries.Pango)]
 	internal static extern GMarkupParseContextHandle pango_markup_parser_new(char accel_marker);

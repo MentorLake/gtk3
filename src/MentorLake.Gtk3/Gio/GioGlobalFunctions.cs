@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Gio;
 
-public class GioGlobalFunction
+public class GioGlobalFunctions
 {
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_simple_async_report_error_in_idle(GObjectHandle @object, GAsyncReadyCallback callback, IntPtr user_data, GQuark domain, int code, string format, IntPtr @__arglist);

@@ -1,5 +1,5 @@
 namespace MentorLake.Gtk3.GdkPixbuf;
 
-public class GdkPixbufGlobalFunction
+public class GdkPixbufGlobalFunctions
 {
 }

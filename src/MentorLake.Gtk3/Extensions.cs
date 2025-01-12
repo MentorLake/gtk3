@@ -38,12 +38,12 @@ public static class Extensions
 
 	public static List<string> GetSignals(this GObjectHandle o)
 	{
-		var typeName = GObjectGlobalFunctionExterns.g_type_name_from_instance(o);
-		var gtype = GObjectGlobalFunctionExterns.g_type_from_name(typeName);
-		var idArrayPointer = GObjectGlobalFunctionExterns.g_signal_list_ids(gtype, out var size);
+		var typeName = GObjectGlobalFunctions.g_type_name_from_instance(o);
+		var gtype = GObjectGlobalFunctions.g_type_from_name(typeName);
+		var idArrayPointer = GObjectGlobalFunctions.g_signal_list_ids(gtype, out var size);
 		var ids = idArrayPointer.MarshalIntArray((int)size);
 		Marshal.FreeHGlobal(idArrayPointer);
-		return ids.Select(id => GObjectGlobalFunctionExterns.g_signal_name((uint)id)).ToList();
+		return ids.Select(id => GObjectGlobalFunctions.g_signal_name((uint)id)).ToList();
 	}
 
 	private static readonly Dictionary<object, object> s_managedData = new();

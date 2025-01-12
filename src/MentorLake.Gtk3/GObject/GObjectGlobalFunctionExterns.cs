@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.GObject;
 
-internal class GObjectGlobalFunctionExterns
+public class GObjectGlobalFunction
 {
 	[DllImport(Libraries.GObject)]
 	internal static extern GType g_type_from_name(string name);

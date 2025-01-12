@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Atk;
 
-internal class AtkGlobalFunctionExterns
+public class AtkGlobalFunction
 {
 	[DllImport(Libraries.Atk)]
 	internal static extern uint atk_get_binary_age();

@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.Gtk3;
 
-internal class Gtk3GlobalFunctionExterns
+public class Gtk3GlobalFunction
 {
 	[DllImport(Libraries.Gtk3)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace MentorLake.Gtk3.Cairo;
 
-public static class Methods
+public static class CairoGlobalFunctions
 {
 	[DllImport(Libraries.Cairo)]
 	public static extern int cairo_version();

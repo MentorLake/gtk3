@@ -1,6 +1,6 @@
 namespace MentorLake.Gtk3.GLib;
 
-internal class GLibGlobalFunctionExterns
+public class GLibGlobalFunction
 {
 	[DllImport(Libraries.GLib)]
 	internal static extern void g_dataset_destroy(IntPtr dataset_location);

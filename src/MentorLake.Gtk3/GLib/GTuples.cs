@@ -7,7 +7,7 @@ public class GTuplesHandle : BaseSafeHandle
 
 public static class GTuplesHandleExtensions
 {
-	public static GTuplesHandle Destroy(this GTuplesHandle tuples)
+	public static T Destroy<T>(this T tuples) where T : GTuplesHandle
 	{
 		GTuplesExterns.g_tuples_destroy(tuples);
 		return tuples;

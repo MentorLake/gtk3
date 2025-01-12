@@ -68,7 +68,7 @@ public static class GtkGesturePanHandleExtensions
 		return GtkGesturePanExterns.gtk_gesture_pan_get_orientation(gesture);
 	}
 
-	public static GtkGesturePanHandle SetOrientation(this GtkGesturePanHandle gesture, GtkOrientation orientation)
+	public static T SetOrientation<T>(this T gesture, GtkOrientation orientation) where T : GtkGesturePanHandle
 	{
 		GtkGesturePanExterns.gtk_gesture_pan_set_orientation(gesture, orientation);
 		return gesture;

@@ -12,13 +12,13 @@ public class GResourceHandle : BaseSafeHandle
 
 public static class GResourceHandleExtensions
 {
-	public static GResourceHandle sRegister(this GResourceHandle resource)
+	public static T sRegister<T>(this T resource) where T : GResourceHandle
 	{
 		GResourceExterns.g_resources_register(resource);
 		return resource;
 	}
 
-	public static GResourceHandle sUnregister(this GResourceHandle resource)
+	public static T sUnregister<T>(this T resource) where T : GResourceHandle
 	{
 		GResourceExterns.g_resources_unregister(resource);
 		return resource;
@@ -49,7 +49,7 @@ public static class GResourceHandleExtensions
 		return GResourceExterns.g_resource_ref(resource);
 	}
 
-	public static GResourceHandle Unref(this GResourceHandle resource)
+	public static T Unref<T>(this T resource) where T : GResourceHandle
 	{
 		GResourceExterns.g_resource_unref(resource);
 		return resource;

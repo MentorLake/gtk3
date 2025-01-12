@@ -11,13 +11,13 @@ public class GtkFixedHandle : GtkContainerHandle, AtkImplementorIfaceHandle, Gtk
 
 public static class GtkFixedHandleExtensions
 {
-	public static GtkFixedHandle Move(this GtkFixedHandle @fixed, GtkWidgetHandle widget, int x, int y)
+	public static T Move<T>(this T @fixed, GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
 		GtkFixedExterns.gtk_fixed_move(@fixed, widget, x, y);
 		return @fixed;
 	}
 
-	public static GtkFixedHandle Put(this GtkFixedHandle @fixed, GtkWidgetHandle widget, int x, int y)
+	public static T Put<T>(this T @fixed, GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
 		GtkFixedExterns.gtk_fixed_put(@fixed, widget, x, y);
 		return @fixed;

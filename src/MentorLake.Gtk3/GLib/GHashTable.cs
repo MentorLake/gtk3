@@ -17,7 +17,7 @@ public static class GHashTableHandleExtensions
 		return GHashTableExterns.g_hash_table_contains(hash_table, key);
 	}
 
-	public static GHashTableHandle Destroy(this GHashTableHandle hash_table)
+	public static T Destroy<T>(this T hash_table) where T : GHashTableHandle
 	{
 		GHashTableExterns.g_hash_table_destroy(hash_table);
 		return hash_table;
@@ -28,7 +28,7 @@ public static class GHashTableHandleExtensions
 		return GHashTableExterns.g_hash_table_find(hash_table, predicate, user_data);
 	}
 
-	public static GHashTableHandle Foreach(this GHashTableHandle hash_table, GHFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T hash_table, GHFunc func, IntPtr user_data) where T : GHashTableHandle
 	{
 		GHashTableExterns.g_hash_table_foreach(hash_table, func, user_data);
 		return hash_table;
@@ -109,7 +109,7 @@ public static class GHashTableHandleExtensions
 		return GHashTableExterns.g_hash_table_remove(hash_table, key);
 	}
 
-	public static GHashTableHandle RemoveAll(this GHashTableHandle hash_table)
+	public static T RemoveAll<T>(this T hash_table) where T : GHashTableHandle
 	{
 		GHashTableExterns.g_hash_table_remove_all(hash_table);
 		return hash_table;
@@ -130,7 +130,7 @@ public static class GHashTableHandleExtensions
 		return GHashTableExterns.g_hash_table_steal(hash_table, key);
 	}
 
-	public static GHashTableHandle StealAll(this GHashTableHandle hash_table)
+	public static T StealAll<T>(this T hash_table) where T : GHashTableHandle
 	{
 		GHashTableExterns.g_hash_table_steal_all(hash_table);
 		return hash_table;
@@ -151,7 +151,7 @@ public static class GHashTableHandleExtensions
 		return GHashTableExterns.g_hash_table_steal_extended(hash_table, lookup_key, out stolen_key, out stolen_value);
 	}
 
-	public static GHashTableHandle Unref(this GHashTableHandle hash_table)
+	public static T Unref<T>(this T hash_table) where T : GHashTableHandle
 	{
 		GHashTableExterns.g_hash_table_unref(hash_table);
 		return hash_table;

@@ -6,7 +6,7 @@ public class GInputStreamHandle : GObjectHandle
 
 public static class GInputStreamHandleExtensions
 {
-	public static GInputStreamHandle ClearPending(this GInputStreamHandle stream)
+	public static T ClearPending<T>(this T stream) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_clear_pending(stream);
 		return stream;
@@ -17,7 +17,7 @@ public static class GInputStreamHandleExtensions
 		return GInputStreamExterns.g_input_stream_close(stream, cancellable, out error);
 	}
 
-	public static GInputStreamHandle CloseAsync(this GInputStreamHandle stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CloseAsync<T>(this T stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_close_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -48,7 +48,7 @@ public static class GInputStreamHandleExtensions
 		return GInputStreamExterns.g_input_stream_read_all(stream, out buffer, count, out bytes_read, cancellable, out error);
 	}
 
-	public static GInputStreamHandle ReadAllAsync(this GInputStreamHandle stream, out IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadAllAsync<T>(this T stream, out IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_read_all_async(stream, out buffer, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -59,7 +59,7 @@ public static class GInputStreamHandleExtensions
 		return GInputStreamExterns.g_input_stream_read_all_finish(stream, result, out bytes_read, out error);
 	}
 
-	public static GInputStreamHandle ReadAsync(this GInputStreamHandle stream, out IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadAsync<T>(this T stream, out IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_read_async(stream, out buffer, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -70,7 +70,7 @@ public static class GInputStreamHandleExtensions
 		return GInputStreamExterns.g_input_stream_read_bytes(stream, count, cancellable, out error);
 	}
 
-	public static GInputStreamHandle ReadBytesAsync(this GInputStreamHandle stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadBytesAsync<T>(this T stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_read_bytes_async(stream, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -96,7 +96,7 @@ public static class GInputStreamHandleExtensions
 		return GInputStreamExterns.g_input_stream_skip(stream, count, cancellable, out error);
 	}
 
-	public static GInputStreamHandle SkipAsync(this GInputStreamHandle stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SkipAsync<T>(this T stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GInputStreamHandle
 	{
 		GInputStreamExterns.g_input_stream_skip_async(stream, count, io_priority, cancellable, callback, user_data);
 		return stream;

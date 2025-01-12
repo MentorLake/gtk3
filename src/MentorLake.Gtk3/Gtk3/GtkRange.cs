@@ -202,7 +202,7 @@ public static class GtkRangeHandleExtensions
 		return GtkRangeExterns.gtk_range_get_min_slider_size(range);
 	}
 
-	public static GtkRangeHandle GetRangeRect(this GtkRangeHandle range, out GdkRectangle range_rect)
+	public static T GetRangeRect<T>(this T range, out GdkRectangle range_rect) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_get_range_rect(range, out range_rect);
 		return range;
@@ -223,7 +223,7 @@ public static class GtkRangeHandleExtensions
 		return GtkRangeExterns.gtk_range_get_show_fill_level(range);
 	}
 
-	public static GtkRangeHandle GetSliderRange(this GtkRangeHandle range, out int slider_start, out int slider_end)
+	public static T GetSliderRange<T>(this T range, out int slider_start, out int slider_end) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_get_slider_range(range, out slider_start, out slider_end);
 		return range;
@@ -244,85 +244,85 @@ public static class GtkRangeHandleExtensions
 		return GtkRangeExterns.gtk_range_get_value(range);
 	}
 
-	public static GtkRangeHandle SetAdjustment(this GtkRangeHandle range, GtkAdjustmentHandle adjustment)
+	public static T SetAdjustment<T>(this T range, GtkAdjustmentHandle adjustment) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_adjustment(range, adjustment);
 		return range;
 	}
 
-	public static GtkRangeHandle SetFillLevel(this GtkRangeHandle range, double fill_level)
+	public static T SetFillLevel<T>(this T range, double fill_level) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_fill_level(range, fill_level);
 		return range;
 	}
 
-	public static GtkRangeHandle SetFlippable(this GtkRangeHandle range, bool flippable)
+	public static T SetFlippable<T>(this T range, bool flippable) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_flippable(range, flippable);
 		return range;
 	}
 
-	public static GtkRangeHandle SetIncrements(this GtkRangeHandle range, double step, double page)
+	public static T SetIncrements<T>(this T range, double step, double page) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_increments(range, step, page);
 		return range;
 	}
 
-	public static GtkRangeHandle SetInverted(this GtkRangeHandle range, bool setting)
+	public static T SetInverted<T>(this T range, bool setting) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_inverted(range, setting);
 		return range;
 	}
 
-	public static GtkRangeHandle SetLowerStepperSensitivity(this GtkRangeHandle range, GtkSensitivityType sensitivity)
+	public static T SetLowerStepperSensitivity<T>(this T range, GtkSensitivityType sensitivity) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_lower_stepper_sensitivity(range, sensitivity);
 		return range;
 	}
 
-	public static GtkRangeHandle SetMinSliderSize(this GtkRangeHandle range, int min_size)
+	public static T SetMinSliderSize<T>(this T range, int min_size) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_min_slider_size(range, min_size);
 		return range;
 	}
 
-	public static GtkRangeHandle SetRange(this GtkRangeHandle range, double min, double max)
+	public static T SetRange<T>(this T range, double min, double max) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_range(range, min, max);
 		return range;
 	}
 
-	public static GtkRangeHandle SetRestrictToFillLevel(this GtkRangeHandle range, bool restrict_to_fill_level)
+	public static T SetRestrictToFillLevel<T>(this T range, bool restrict_to_fill_level) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_restrict_to_fill_level(range, restrict_to_fill_level);
 		return range;
 	}
 
-	public static GtkRangeHandle SetRoundDigits(this GtkRangeHandle range, int round_digits)
+	public static T SetRoundDigits<T>(this T range, int round_digits) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_round_digits(range, round_digits);
 		return range;
 	}
 
-	public static GtkRangeHandle SetShowFillLevel(this GtkRangeHandle range, bool show_fill_level)
+	public static T SetShowFillLevel<T>(this T range, bool show_fill_level) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_show_fill_level(range, show_fill_level);
 		return range;
 	}
 
-	public static GtkRangeHandle SetSliderSizeFixed(this GtkRangeHandle range, bool size_fixed)
+	public static T SetSliderSizeFixed<T>(this T range, bool size_fixed) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_slider_size_fixed(range, size_fixed);
 		return range;
 	}
 
-	public static GtkRangeHandle SetUpperStepperSensitivity(this GtkRangeHandle range, GtkSensitivityType sensitivity)
+	public static T SetUpperStepperSensitivity<T>(this T range, GtkSensitivityType sensitivity) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_upper_stepper_sensitivity(range, sensitivity);
 		return range;
 	}
 
-	public static GtkRangeHandle SetValue(this GtkRangeHandle range, double value)
+	public static T SetValue<T>(this T range, double value) where T : GtkRangeHandle
 	{
 		GtkRangeExterns.gtk_range_set_value(range, value);
 		return range;

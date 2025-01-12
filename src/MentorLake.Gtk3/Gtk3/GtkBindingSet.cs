@@ -12,7 +12,7 @@ public static class GtkBindingSetHandleExtensions
 		return GtkBindingSetExterns.gtk_binding_set_activate(binding_set, keyval, modifiers, @object);
 	}
 
-	public static GtkBindingSetHandle AddPath(this GtkBindingSetHandle binding_set, GtkPathType path_type, string path_pattern, GtkPathPriorityType priority)
+	public static T AddPath<T>(this T binding_set, GtkPathType path_type, string path_pattern, GtkPathPriorityType priority) where T : GtkBindingSetHandle
 	{
 		GtkBindingSetExterns.gtk_binding_set_add_path(binding_set, path_type, path_pattern, priority);
 		return binding_set;

@@ -7,7 +7,7 @@ public class GCacheHandle : BaseSafeHandle
 
 public static class GCacheHandleExtensions
 {
-	public static GCacheHandle Destroy(this GCacheHandle cache)
+	public static T Destroy<T>(this T cache) where T : GCacheHandle
 	{
 		GCacheExterns.g_cache_destroy(cache);
 		return cache;
@@ -18,19 +18,19 @@ public static class GCacheHandleExtensions
 		return GCacheExterns.g_cache_insert(cache, key);
 	}
 
-	public static GCacheHandle KeyForeach(this GCacheHandle cache, GHFunc func, IntPtr user_data)
+	public static T KeyForeach<T>(this T cache, GHFunc func, IntPtr user_data) where T : GCacheHandle
 	{
 		GCacheExterns.g_cache_key_foreach(cache, func, user_data);
 		return cache;
 	}
 
-	public static GCacheHandle Remove(this GCacheHandle cache, IntPtr value)
+	public static T Remove<T>(this T cache, IntPtr value) where T : GCacheHandle
 	{
 		GCacheExterns.g_cache_remove(cache, value);
 		return cache;
 	}
 
-	public static GCacheHandle ValueForeach(this GCacheHandle cache, GHFunc func, IntPtr user_data)
+	public static T ValueForeach<T>(this T cache, GHFunc func, IntPtr user_data) where T : GCacheHandle
 	{
 		GCacheExterns.g_cache_value_foreach(cache, func, user_data);
 		return cache;

@@ -104,7 +104,7 @@ public delegate void response([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkInfoBarHandleExtensions
 {
-	public static GtkInfoBarHandle AddActionWidget(this GtkInfoBarHandle info_bar, GtkWidgetHandle child, int response_id)
+	public static T AddActionWidget<T>(this T info_bar, GtkWidgetHandle child, int response_id) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_add_action_widget(info_bar, child, response_id);
 		return info_bar;
@@ -115,7 +115,7 @@ public static class GtkInfoBarHandleExtensions
 		return GtkInfoBarExterns.gtk_info_bar_add_button(info_bar, button_text, response_id);
 	}
 
-	public static GtkInfoBarHandle AddButtons(this GtkInfoBarHandle info_bar, string first_button_text, IntPtr @__arglist)
+	public static T AddButtons<T>(this T info_bar, string first_button_text, IntPtr @__arglist) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_add_buttons(info_bar, first_button_text, @__arglist);
 		return info_bar;
@@ -146,37 +146,37 @@ public static class GtkInfoBarHandleExtensions
 		return GtkInfoBarExterns.gtk_info_bar_get_show_close_button(info_bar);
 	}
 
-	public static GtkInfoBarHandle Response(this GtkInfoBarHandle info_bar, int response_id)
+	public static T Response<T>(this T info_bar, int response_id) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_response(info_bar, response_id);
 		return info_bar;
 	}
 
-	public static GtkInfoBarHandle SetDefaultResponse(this GtkInfoBarHandle info_bar, int response_id)
+	public static T SetDefaultResponse<T>(this T info_bar, int response_id) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_set_default_response(info_bar, response_id);
 		return info_bar;
 	}
 
-	public static GtkInfoBarHandle SetMessageType(this GtkInfoBarHandle info_bar, GtkMessageType message_type)
+	public static T SetMessageType<T>(this T info_bar, GtkMessageType message_type) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_set_message_type(info_bar, message_type);
 		return info_bar;
 	}
 
-	public static GtkInfoBarHandle SetResponseSensitive(this GtkInfoBarHandle info_bar, int response_id, bool setting)
+	public static T SetResponseSensitive<T>(this T info_bar, int response_id, bool setting) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_set_response_sensitive(info_bar, response_id, setting);
 		return info_bar;
 	}
 
-	public static GtkInfoBarHandle SetRevealed(this GtkInfoBarHandle info_bar, bool revealed)
+	public static T SetRevealed<T>(this T info_bar, bool revealed) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_set_revealed(info_bar, revealed);
 		return info_bar;
 	}
 
-	public static GtkInfoBarHandle SetShowCloseButton(this GtkInfoBarHandle info_bar, bool setting)
+	public static T SetShowCloseButton<T>(this T info_bar, bool setting) where T : GtkInfoBarHandle
 	{
 		GtkInfoBarExterns.gtk_info_bar_set_show_close_button(info_bar, setting);
 		return info_bar;

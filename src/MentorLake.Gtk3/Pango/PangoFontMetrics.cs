@@ -57,7 +57,7 @@ public static class PangoFontMetricsHandleExtensions
 		return PangoFontMetricsExterns.pango_font_metrics_ref(metrics);
 	}
 
-	public static PangoFontMetricsHandle Unref(this PangoFontMetricsHandle metrics)
+	public static T Unref<T>(this T metrics) where T : PangoFontMetricsHandle
 	{
 		PangoFontMetricsExterns.pango_font_metrics_unref(metrics);
 		return metrics;

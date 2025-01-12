@@ -7,13 +7,13 @@ public class PangoLayoutLineHandle : BaseSafeHandle
 
 public static class PangoLayoutLineHandleExtensions
 {
-	public static PangoLayoutLineHandle GetExtents(this PangoLayoutLineHandle line, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetExtents<T>(this T line, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_get_extents(line, out ink_rect, out logical_rect);
 		return line;
 	}
 
-	public static PangoLayoutLineHandle GetHeight(this PangoLayoutLineHandle line, out int height)
+	public static T GetHeight<T>(this T line, out int height) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_get_height(line, out height);
 		return line;
@@ -24,7 +24,7 @@ public static class PangoLayoutLineHandleExtensions
 		return PangoLayoutLineExterns.pango_layout_line_get_length(line);
 	}
 
-	public static PangoLayoutLineHandle GetPixelExtents(this PangoLayoutLineHandle layout_line, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetPixelExtents<T>(this T layout_line, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_get_pixel_extents(layout_line, out ink_rect, out logical_rect);
 		return layout_line;
@@ -40,13 +40,13 @@ public static class PangoLayoutLineHandleExtensions
 		return PangoLayoutLineExterns.pango_layout_line_get_start_index(line);
 	}
 
-	public static PangoLayoutLineHandle GetXRanges(this PangoLayoutLineHandle line, int start_index, int end_index, out int[] ranges, out int n_ranges)
+	public static T GetXRanges<T>(this T line, int start_index, int end_index, out int[] ranges, out int n_ranges) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_get_x_ranges(line, start_index, end_index, out ranges, out n_ranges);
 		return line;
 	}
 
-	public static PangoLayoutLineHandle IndexToX(this PangoLayoutLineHandle line, int index_, bool trailing, out int x_pos)
+	public static T IndexToX<T>(this T line, int index_, bool trailing, out int x_pos) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_index_to_x(line, index_, trailing, out x_pos);
 		return line;
@@ -62,7 +62,7 @@ public static class PangoLayoutLineHandleExtensions
 		return PangoLayoutLineExterns.pango_layout_line_ref(line);
 	}
 
-	public static PangoLayoutLineHandle Unref(this PangoLayoutLineHandle line)
+	public static T Unref<T>(this T line) where T : PangoLayoutLineHandle
 	{
 		PangoLayoutLineExterns.pango_layout_line_unref(line);
 		return line;

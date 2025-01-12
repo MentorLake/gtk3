@@ -32,7 +32,7 @@ public static class PangoFontDescriptionHandleExtensions
 		return PangoFontDescriptionExterns.pango_font_description_equal(desc1, desc2);
 	}
 
-	public static PangoFontDescriptionHandle Free(this PangoFontDescriptionHandle desc)
+	public static T Free<T>(this T desc) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_free(desc);
 		return desc;
@@ -93,79 +93,79 @@ public static class PangoFontDescriptionHandleExtensions
 		return PangoFontDescriptionExterns.pango_font_description_hash(desc);
 	}
 
-	public static PangoFontDescriptionHandle Merge(this PangoFontDescriptionHandle desc, PangoFontDescriptionHandle desc_to_merge, bool replace_existing)
+	public static T Merge<T>(this T desc, PangoFontDescriptionHandle desc_to_merge, bool replace_existing) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_merge(desc, desc_to_merge, replace_existing);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle MergeStatic(this PangoFontDescriptionHandle desc, PangoFontDescriptionHandle desc_to_merge, bool replace_existing)
+	public static T MergeStatic<T>(this T desc, PangoFontDescriptionHandle desc_to_merge, bool replace_existing) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_merge_static(desc, desc_to_merge, replace_existing);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetAbsoluteSize(this PangoFontDescriptionHandle desc, double size)
+	public static T SetAbsoluteSize<T>(this T desc, double size) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_absolute_size(desc, size);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetFamily(this PangoFontDescriptionHandle desc, string family)
+	public static T SetFamily<T>(this T desc, string family) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_family(desc, family);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetFamilyStatic(this PangoFontDescriptionHandle desc, string family)
+	public static T SetFamilyStatic<T>(this T desc, string family) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_family_static(desc, family);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetGravity(this PangoFontDescriptionHandle desc, PangoGravity gravity)
+	public static T SetGravity<T>(this T desc, PangoGravity gravity) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_gravity(desc, gravity);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetSize(this PangoFontDescriptionHandle desc, int size)
+	public static T SetSize<T>(this T desc, int size) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_size(desc, size);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetStretch(this PangoFontDescriptionHandle desc, PangoStretch stretch)
+	public static T SetStretch<T>(this T desc, PangoStretch stretch) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_stretch(desc, stretch);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetStyle(this PangoFontDescriptionHandle desc, PangoStyle style)
+	public static T SetStyle<T>(this T desc, PangoStyle style) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_style(desc, style);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetVariant(this PangoFontDescriptionHandle desc, PangoVariant variant)
+	public static T SetVariant<T>(this T desc, PangoVariant variant) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_variant(desc, variant);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetVariations(this PangoFontDescriptionHandle desc, string variations)
+	public static T SetVariations<T>(this T desc, string variations) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_variations(desc, variations);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetVariationsStatic(this PangoFontDescriptionHandle desc, string variations)
+	public static T SetVariationsStatic<T>(this T desc, string variations) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_variations_static(desc, variations);
 		return desc;
 	}
 
-	public static PangoFontDescriptionHandle SetWeight(this PangoFontDescriptionHandle desc, PangoWeight weight)
+	public static T SetWeight<T>(this T desc, PangoWeight weight) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_set_weight(desc, weight);
 		return desc;
@@ -181,7 +181,7 @@ public static class PangoFontDescriptionHandleExtensions
 		return PangoFontDescriptionExterns.pango_font_description_to_string(desc);
 	}
 
-	public static PangoFontDescriptionHandle UnsetFields(this PangoFontDescriptionHandle desc, PangoFontMask to_unset)
+	public static T UnsetFields<T>(this T desc, PangoFontMask to_unset) where T : PangoFontDescriptionHandle
 	{
 		PangoFontDescriptionExterns.pango_font_description_unset_fields(desc, to_unset);
 		return desc;

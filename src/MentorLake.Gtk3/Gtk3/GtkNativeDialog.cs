@@ -57,7 +57,7 @@ public delegate void response([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkNativeDialogHandleExtensions
 {
-	public static GtkNativeDialogHandle Destroy(this GtkNativeDialogHandle self)
+	public static T Destroy<T>(this T self) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_destroy(self);
 		return self;
@@ -83,7 +83,7 @@ public static class GtkNativeDialogHandleExtensions
 		return GtkNativeDialogExterns.gtk_native_dialog_get_visible(self);
 	}
 
-	public static GtkNativeDialogHandle Hide(this GtkNativeDialogHandle self)
+	public static T Hide<T>(this T self) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_hide(self);
 		return self;
@@ -94,25 +94,25 @@ public static class GtkNativeDialogHandleExtensions
 		return GtkNativeDialogExterns.gtk_native_dialog_run(self);
 	}
 
-	public static GtkNativeDialogHandle SetModal(this GtkNativeDialogHandle self, bool modal)
+	public static T SetModal<T>(this T self, bool modal) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_set_modal(self, modal);
 		return self;
 	}
 
-	public static GtkNativeDialogHandle SetTitle(this GtkNativeDialogHandle self, string title)
+	public static T SetTitle<T>(this T self, string title) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_set_title(self, title);
 		return self;
 	}
 
-	public static GtkNativeDialogHandle SetTransientFor(this GtkNativeDialogHandle self, GtkWindowHandle parent)
+	public static T SetTransientFor<T>(this T self, GtkWindowHandle parent) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_set_transient_for(self, parent);
 		return self;
 	}
 
-	public static GtkNativeDialogHandle Show(this GtkNativeDialogHandle self)
+	public static T Show<T>(this T self) where T : GtkNativeDialogHandle
 	{
 		GtkNativeDialogExterns.gtk_native_dialog_show(self);
 		return self;

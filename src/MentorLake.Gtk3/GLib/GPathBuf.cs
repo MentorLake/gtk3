@@ -7,7 +7,7 @@ public class GPathBufHandle : BaseSafeHandle
 
 public static class GPathBufHandleExtensions
 {
-	public static GPathBufHandle Clear(this GPathBufHandle buf)
+	public static T Clear<T>(this T buf) where T : GPathBufHandle
 	{
 		GPathBufExterns.g_path_buf_clear(buf);
 		return buf;
@@ -23,7 +23,7 @@ public static class GPathBufHandleExtensions
 		return GPathBufExterns.g_path_buf_copy(buf);
 	}
 
-	public static GPathBufHandle Free(this GPathBufHandle buf)
+	public static T Free<T>(this T buf) where T : GPathBufHandle
 	{
 		GPathBufExterns.g_path_buf_free(buf);
 		return buf;

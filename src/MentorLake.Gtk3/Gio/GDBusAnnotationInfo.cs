@@ -12,7 +12,7 @@ public static class GDBusAnnotationInfoHandleExtensions
 		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_ref(info);
 	}
 
-	public static GDBusAnnotationInfoHandle GDbusAnnotationInfoUnref(this GDBusAnnotationInfoHandle info)
+	public static T GDbusAnnotationInfoUnref<T>(this T info) where T : GDBusAnnotationInfoHandle
 	{
 		GDBusAnnotationInfoExterns.g_dbus_annotation_info_unref(info);
 		return info;

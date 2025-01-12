@@ -47,7 +47,7 @@ public static class GtkCssSectionHandleExtensions
 		return GtkCssSectionExterns.gtk_css_section_ref(section);
 	}
 
-	public static GtkCssSectionHandle Unref(this GtkCssSectionHandle section)
+	public static T Unref<T>(this T section) where T : GtkCssSectionHandle
 	{
 		GtkCssSectionExterns.gtk_css_section_unref(section);
 		return section;

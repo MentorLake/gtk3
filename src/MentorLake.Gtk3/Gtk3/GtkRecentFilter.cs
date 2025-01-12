@@ -11,43 +11,43 @@ public class GtkRecentFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
 
 public static class GtkRecentFilterHandleExtensions
 {
-	public static GtkRecentFilterHandle AddAge(this GtkRecentFilterHandle filter, int days)
+	public static T AddAge<T>(this T filter, int days) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_age(filter, days);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddApplication(this GtkRecentFilterHandle filter, string application)
+	public static T AddApplication<T>(this T filter, string application) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_application(filter, application);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddCustom(this GtkRecentFilterHandle filter, GtkRecentFilterFlags needed, GtkRecentFilterFunc func, IntPtr data, GDestroyNotify data_destroy)
+	public static T AddCustom<T>(this T filter, GtkRecentFilterFlags needed, GtkRecentFilterFunc func, IntPtr data, GDestroyNotify data_destroy) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_custom(filter, needed, func, data, data_destroy);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddGroup(this GtkRecentFilterHandle filter, string group)
+	public static T AddGroup<T>(this T filter, string group) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_group(filter, group);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddMimeType(this GtkRecentFilterHandle filter, string mime_type)
+	public static T AddMimeType<T>(this T filter, string mime_type) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_mime_type(filter, mime_type);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddPattern(this GtkRecentFilterHandle filter, string pattern)
+	public static T AddPattern<T>(this T filter, string pattern) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_pattern(filter, pattern);
 		return filter;
 	}
 
-	public static GtkRecentFilterHandle AddPixbufFormats(this GtkRecentFilterHandle filter)
+	public static T AddPixbufFormats<T>(this T filter) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_add_pixbuf_formats(filter);
 		return filter;
@@ -68,7 +68,7 @@ public static class GtkRecentFilterHandleExtensions
 		return GtkRecentFilterExterns.gtk_recent_filter_get_needed(filter);
 	}
 
-	public static GtkRecentFilterHandle SetName(this GtkRecentFilterHandle filter, string name)
+	public static T SetName<T>(this T filter, string name) where T : GtkRecentFilterHandle
 	{
 		GtkRecentFilterExterns.gtk_recent_filter_set_name(filter, name);
 		return filter;

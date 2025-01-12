@@ -35,7 +35,7 @@ public static class AtkTextHandleExtensions
 		return AtkTextExterns.atk_text_get_character_count(text);
 	}
 
-	public static AtkTextHandle GetCharacterExtents(this AtkTextHandle text, int offset, out int x, out int y, out int width, out int height, AtkCoordType coords)
+	public static T GetCharacterExtents<T>(this T text, int offset, out int x, out int y, out int width, out int height, AtkCoordType coords) where T : AtkTextHandle
 	{
 		AtkTextExterns.atk_text_get_character_extents(text, offset, out x, out y, out width, out height, coords);
 		return text;
@@ -56,7 +56,7 @@ public static class AtkTextHandleExtensions
 		return AtkTextExterns.atk_text_get_offset_at_point(text, x, y, coords);
 	}
 
-	public static AtkTextHandle GetRangeExtents(this AtkTextHandle text, int start_offset, int end_offset, AtkCoordType coord_type, out AtkTextRectangle rect)
+	public static T GetRangeExtents<T>(this T text, int start_offset, int end_offset, AtkCoordType coord_type, out AtkTextRectangle rect) where T : AtkTextHandle
 	{
 		AtkTextExterns.atk_text_get_range_extents(text, start_offset, end_offset, coord_type, out rect);
 		return text;

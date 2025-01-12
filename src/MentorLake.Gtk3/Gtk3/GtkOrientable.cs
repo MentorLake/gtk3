@@ -15,7 +15,7 @@ public static class GtkOrientableHandleExtensions
 		return GtkOrientableExterns.gtk_orientable_get_orientation(orientable);
 	}
 
-	public static GtkOrientableHandle SetOrientation(this GtkOrientableHandle orientable, GtkOrientation orientation)
+	public static T SetOrientation<T>(this T orientable, GtkOrientation orientation) where T : GtkOrientableHandle
 	{
 		GtkOrientableExterns.gtk_orientable_set_orientation(orientable, orientation);
 		return orientable;

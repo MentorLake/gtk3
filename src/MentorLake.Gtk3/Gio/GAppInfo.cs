@@ -90,7 +90,7 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoExterns.g_app_info_launch_uris(appinfo, uris, context, out error);
 	}
 
-	public static GAppInfoHandle LaunchUrisAsync(this GAppInfoHandle appinfo, GListHandle uris, GAppLaunchContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LaunchUrisAsync<T>(this T appinfo, GListHandle uris, GAppLaunchContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GAppInfoHandle
 	{
 		GAppInfoExterns.g_app_info_launch_uris_async(appinfo, uris, context, cancellable, callback, user_data);
 		return appinfo;

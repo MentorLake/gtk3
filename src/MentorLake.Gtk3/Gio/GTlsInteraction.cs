@@ -11,7 +11,7 @@ public static class GTlsInteractionHandleExtensions
 		return GTlsInteractionExterns.g_tls_interaction_ask_password(interaction, password, cancellable, out error);
 	}
 
-	public static GTlsInteractionHandle AskPasswordAsync(this GTlsInteractionHandle interaction, GTlsPasswordHandle password, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T AskPasswordAsync<T>(this T interaction, GTlsPasswordHandle password, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsInteractionHandle
 	{
 		GTlsInteractionExterns.g_tls_interaction_ask_password_async(interaction, password, cancellable, callback, user_data);
 		return interaction;
@@ -37,7 +37,7 @@ public static class GTlsInteractionHandleExtensions
 		return GTlsInteractionExterns.g_tls_interaction_request_certificate(interaction, connection, flags, cancellable, out error);
 	}
 
-	public static GTlsInteractionHandle RequestCertificateAsync(this GTlsInteractionHandle interaction, GTlsConnectionHandle connection, GTlsCertificateRequestFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T RequestCertificateAsync<T>(this T interaction, GTlsConnectionHandle connection, GTlsCertificateRequestFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsInteractionHandle
 	{
 		GTlsInteractionExterns.g_tls_interaction_request_certificate_async(interaction, connection, flags, cancellable, callback, user_data);
 		return interaction;

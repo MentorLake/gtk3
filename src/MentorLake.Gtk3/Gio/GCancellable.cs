@@ -66,7 +66,7 @@ public delegate void cancelled([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GCancellableHandleExtensions
 {
-	public static GCancellableHandle Cancel(this GCancellableHandle cancellable)
+	public static T Cancel<T>(this T cancellable) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_cancel(cancellable);
 		return cancellable;
@@ -77,7 +77,7 @@ public static class GCancellableHandleExtensions
 		return GCancellableExterns.g_cancellable_connect(cancellable, callback, data, data_destroy_func);
 	}
 
-	public static GCancellableHandle Disconnect(this GCancellableHandle cancellable, ulong handler_id)
+	public static T Disconnect<T>(this T cancellable, ulong handler_id) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_disconnect(cancellable, handler_id);
 		return cancellable;
@@ -98,25 +98,25 @@ public static class GCancellableHandleExtensions
 		return GCancellableExterns.g_cancellable_make_pollfd(cancellable, pollfd);
 	}
 
-	public static GCancellableHandle PopCurrent(this GCancellableHandle cancellable)
+	public static T PopCurrent<T>(this T cancellable) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_pop_current(cancellable);
 		return cancellable;
 	}
 
-	public static GCancellableHandle PushCurrent(this GCancellableHandle cancellable)
+	public static T PushCurrent<T>(this T cancellable) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_push_current(cancellable);
 		return cancellable;
 	}
 
-	public static GCancellableHandle ReleaseFd(this GCancellableHandle cancellable)
+	public static T ReleaseFd<T>(this T cancellable) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_release_fd(cancellable);
 		return cancellable;
 	}
 
-	public static GCancellableHandle Reset(this GCancellableHandle cancellable)
+	public static T Reset<T>(this T cancellable) where T : GCancellableHandle
 	{
 		GCancellableExterns.g_cancellable_reset(cancellable);
 		return cancellable;

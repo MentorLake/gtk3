@@ -62,13 +62,13 @@ public delegate void custom_item_activated([MarshalAs(UnmanagedType.CustomMarsha
 
 public static class GtkAppChooserButtonHandleExtensions
 {
-	public static GtkAppChooserButtonHandle AppendCustomItem(this GtkAppChooserButtonHandle self, string name, string label, GIconHandle icon)
+	public static T AppendCustomItem<T>(this T self, string name, string label, GIconHandle icon) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_append_custom_item(self, name, label, icon);
 		return self;
 	}
 
-	public static GtkAppChooserButtonHandle AppendSeparator(this GtkAppChooserButtonHandle self)
+	public static T AppendSeparator<T>(this T self) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_append_separator(self);
 		return self;
@@ -89,25 +89,25 @@ public static class GtkAppChooserButtonHandleExtensions
 		return GtkAppChooserButtonExterns.gtk_app_chooser_button_get_show_dialog_item(self);
 	}
 
-	public static GtkAppChooserButtonHandle SetActiveCustomItem(this GtkAppChooserButtonHandle self, string name)
+	public static T SetActiveCustomItem<T>(this T self, string name) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_set_active_custom_item(self, name);
 		return self;
 	}
 
-	public static GtkAppChooserButtonHandle SetHeading(this GtkAppChooserButtonHandle self, string heading)
+	public static T SetHeading<T>(this T self, string heading) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_set_heading(self, heading);
 		return self;
 	}
 
-	public static GtkAppChooserButtonHandle SetShowDefaultItem(this GtkAppChooserButtonHandle self, bool setting)
+	public static T SetShowDefaultItem<T>(this T self, bool setting) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_set_show_default_item(self, setting);
 		return self;
 	}
 
-	public static GtkAppChooserButtonHandle SetShowDialogItem(this GtkAppChooserButtonHandle self, bool setting)
+	public static T SetShowDialogItem<T>(this T self, bool setting) where T : GtkAppChooserButtonHandle
 	{
 		GtkAppChooserButtonExterns.gtk_app_chooser_button_set_show_dialog_item(self, setting);
 		return self;

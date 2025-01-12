@@ -21,7 +21,7 @@ public class GThemedIconHandle : GObjectHandle, GIconHandle
 
 public static class GThemedIconHandleExtensions
 {
-	public static GThemedIconHandle AppendName(this GThemedIconHandle icon, string iconname)
+	public static T AppendName<T>(this T icon, string iconname) where T : GThemedIconHandle
 	{
 		GThemedIconExterns.g_themed_icon_append_name(icon, iconname);
 		return icon;
@@ -32,7 +32,7 @@ public static class GThemedIconHandleExtensions
 		return GThemedIconExterns.g_themed_icon_get_names(icon);
 	}
 
-	public static GThemedIconHandle PrependName(this GThemedIconHandle icon, string iconname)
+	public static T PrependName<T>(this T icon, string iconname) where T : GThemedIconHandle
 	{
 		GThemedIconExterns.g_themed_icon_prepend_name(icon, iconname);
 		return icon;

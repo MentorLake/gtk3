@@ -16,25 +16,25 @@ public class GtkFileFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
 
 public static class GtkFileFilterHandleExtensions
 {
-	public static GtkFileFilterHandle AddCustom(this GtkFileFilterHandle filter, GtkFileFilterFlags needed, GtkFileFilterFunc func, IntPtr data, GDestroyNotify notify)
+	public static T AddCustom<T>(this T filter, GtkFileFilterFlags needed, GtkFileFilterFunc func, IntPtr data, GDestroyNotify notify) where T : GtkFileFilterHandle
 	{
 		GtkFileFilterExterns.gtk_file_filter_add_custom(filter, needed, func, data, notify);
 		return filter;
 	}
 
-	public static GtkFileFilterHandle AddMimeType(this GtkFileFilterHandle filter, string mime_type)
+	public static T AddMimeType<T>(this T filter, string mime_type) where T : GtkFileFilterHandle
 	{
 		GtkFileFilterExterns.gtk_file_filter_add_mime_type(filter, mime_type);
 		return filter;
 	}
 
-	public static GtkFileFilterHandle AddPattern(this GtkFileFilterHandle filter, string pattern)
+	public static T AddPattern<T>(this T filter, string pattern) where T : GtkFileFilterHandle
 	{
 		GtkFileFilterExterns.gtk_file_filter_add_pattern(filter, pattern);
 		return filter;
 	}
 
-	public static GtkFileFilterHandle AddPixbufFormats(this GtkFileFilterHandle filter)
+	public static T AddPixbufFormats<T>(this T filter) where T : GtkFileFilterHandle
 	{
 		GtkFileFilterExterns.gtk_file_filter_add_pixbuf_formats(filter);
 		return filter;
@@ -55,7 +55,7 @@ public static class GtkFileFilterHandleExtensions
 		return GtkFileFilterExterns.gtk_file_filter_get_needed(filter);
 	}
 
-	public static GtkFileFilterHandle SetName(this GtkFileFilterHandle filter, string name)
+	public static T SetName<T>(this T filter, string name) where T : GtkFileFilterHandle
 	{
 		GtkFileFilterExterns.gtk_file_filter_set_name(filter, name);
 		return filter;

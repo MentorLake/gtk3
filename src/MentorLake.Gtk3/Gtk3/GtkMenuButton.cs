@@ -41,37 +41,37 @@ public static class GtkMenuButtonHandleExtensions
 		return GtkMenuButtonExterns.gtk_menu_button_get_use_popover(menu_button);
 	}
 
-	public static GtkMenuButtonHandle SetAlignWidget(this GtkMenuButtonHandle menu_button, GtkWidgetHandle align_widget)
+	public static T SetAlignWidget<T>(this T menu_button, GtkWidgetHandle align_widget) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_align_widget(menu_button, align_widget);
 		return menu_button;
 	}
 
-	public static GtkMenuButtonHandle SetDirection(this GtkMenuButtonHandle menu_button, GtkArrowType direction)
+	public static T SetDirection<T>(this T menu_button, GtkArrowType direction) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_direction(menu_button, direction);
 		return menu_button;
 	}
 
-	public static GtkMenuButtonHandle SetMenuModel(this GtkMenuButtonHandle menu_button, GMenuModelHandle menu_model)
+	public static T SetMenuModel<T>(this T menu_button, GMenuModelHandle menu_model) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_menu_model(menu_button, menu_model);
 		return menu_button;
 	}
 
-	public static GtkMenuButtonHandle SetPopover(this GtkMenuButtonHandle menu_button, GtkWidgetHandle popover)
+	public static T SetPopover<T>(this T menu_button, GtkWidgetHandle popover) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_popover(menu_button, popover);
 		return menu_button;
 	}
 
-	public static GtkMenuButtonHandle SetPopup(this GtkMenuButtonHandle menu_button, GtkWidgetHandle menu)
+	public static T SetPopup<T>(this T menu_button, GtkWidgetHandle menu) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_popup(menu_button, menu);
 		return menu_button;
 	}
 
-	public static GtkMenuButtonHandle SetUsePopover(this GtkMenuButtonHandle menu_button, bool use_popover)
+	public static T SetUsePopover<T>(this T menu_button, bool use_popover) where T : GtkMenuButtonHandle
 	{
 		GtkMenuButtonExterns.gtk_menu_button_set_use_popover(menu_button, use_popover);
 		return menu_button;

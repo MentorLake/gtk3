@@ -31,7 +31,7 @@ public static class GdkGLContextHandleExtensions
 		return GdkGLContextExterns.gdk_gl_context_get_forward_compatible(context);
 	}
 
-	public static GdkGLContextHandle GdkGlContextGetRequiredVersion(this GdkGLContextHandle context, out int major, out int minor)
+	public static T GdkGlContextGetRequiredVersion<T>(this T context, out int major, out int minor) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_get_required_version(context, out major, out minor);
 		return context;
@@ -47,7 +47,7 @@ public static class GdkGLContextHandleExtensions
 		return GdkGLContextExterns.gdk_gl_context_get_use_es(context);
 	}
 
-	public static GdkGLContextHandle GdkGlContextGetVersion(this GdkGLContextHandle context, out int major, out int minor)
+	public static T GdkGlContextGetVersion<T>(this T context, out int major, out int minor) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_get_version(context, out major, out minor);
 		return context;
@@ -63,7 +63,7 @@ public static class GdkGLContextHandleExtensions
 		return GdkGLContextExterns.gdk_gl_context_is_legacy(context);
 	}
 
-	public static GdkGLContextHandle GdkGlContextMakeCurrent(this GdkGLContextHandle context)
+	public static T GdkGlContextMakeCurrent<T>(this T context) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_make_current(context);
 		return context;
@@ -74,25 +74,25 @@ public static class GdkGLContextHandleExtensions
 		return GdkGLContextExterns.gdk_gl_context_realize(context, out error);
 	}
 
-	public static GdkGLContextHandle GdkGlContextSetDebugEnabled(this GdkGLContextHandle context, bool enabled)
+	public static T GdkGlContextSetDebugEnabled<T>(this T context, bool enabled) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_set_debug_enabled(context, enabled);
 		return context;
 	}
 
-	public static GdkGLContextHandle GdkGlContextSetForwardCompatible(this GdkGLContextHandle context, bool compatible)
+	public static T GdkGlContextSetForwardCompatible<T>(this T context, bool compatible) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_set_forward_compatible(context, compatible);
 		return context;
 	}
 
-	public static GdkGLContextHandle GdkGlContextSetRequiredVersion(this GdkGLContextHandle context, int major, int minor)
+	public static T GdkGlContextSetRequiredVersion<T>(this T context, int major, int minor) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_set_required_version(context, major, minor);
 		return context;
 	}
 
-	public static GdkGLContextHandle GdkGlContextSetUseEs(this GdkGLContextHandle context, int use_es)
+	public static T GdkGlContextSetUseEs<T>(this T context, int use_es) where T : GdkGLContextHandle
 	{
 		GdkGLContextExterns.gdk_gl_context_set_use_es(context, use_es);
 		return context;

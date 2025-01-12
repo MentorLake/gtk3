@@ -12,13 +12,13 @@ public static class GSequenceHandleExtensions
 		return GSequenceExterns.g_sequence_append(seq, data);
 	}
 
-	public static GSequenceHandle Foreach(this GSequenceHandle seq, GFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T seq, GFunc func, IntPtr user_data) where T : GSequenceHandle
 	{
 		GSequenceExterns.g_sequence_foreach(seq, func, user_data);
 		return seq;
 	}
 
-	public static GSequenceHandle Free(this GSequenceHandle seq)
+	public static T Free<T>(this T seq) where T : GSequenceHandle
 	{
 		GSequenceExterns.g_sequence_free(seq);
 		return seq;
@@ -84,13 +84,13 @@ public static class GSequenceHandleExtensions
 		return GSequenceExterns.g_sequence_search_iter(seq, data, iter_cmp, cmp_data);
 	}
 
-	public static GSequenceHandle Sort(this GSequenceHandle seq, GCompareDataFunc cmp_func, IntPtr cmp_data)
+	public static T Sort<T>(this T seq, GCompareDataFunc cmp_func, IntPtr cmp_data) where T : GSequenceHandle
 	{
 		GSequenceExterns.g_sequence_sort(seq, cmp_func, cmp_data);
 		return seq;
 	}
 
-	public static GSequenceHandle SortIter(this GSequenceHandle seq, GSequenceIterCompareFunc cmp_func, IntPtr cmp_data)
+	public static T SortIter<T>(this T seq, GSequenceIterCompareFunc cmp_func, IntPtr cmp_data) where T : GSequenceHandle
 	{
 		GSequenceExterns.g_sequence_sort_iter(seq, cmp_func, cmp_data);
 		return seq;

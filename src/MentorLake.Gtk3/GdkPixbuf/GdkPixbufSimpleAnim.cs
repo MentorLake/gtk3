@@ -11,7 +11,7 @@ public class GdkPixbufSimpleAnimHandle : GdkPixbufAnimationHandle
 
 public static class GdkPixbufSimpleAnimHandleExtensions
 {
-	public static GdkPixbufSimpleAnimHandle AddFrame(this GdkPixbufSimpleAnimHandle animation, GdkPixbufHandle pixbuf)
+	public static T AddFrame<T>(this T animation, GdkPixbufHandle pixbuf) where T : GdkPixbufSimpleAnimHandle
 	{
 		GdkPixbufSimpleAnimExterns.gdk_pixbuf_simple_anim_add_frame(animation, pixbuf);
 		return animation;
@@ -22,7 +22,7 @@ public static class GdkPixbufSimpleAnimHandleExtensions
 		return GdkPixbufSimpleAnimExterns.gdk_pixbuf_simple_anim_get_loop(animation);
 	}
 
-	public static GdkPixbufSimpleAnimHandle SetLoop(this GdkPixbufSimpleAnimHandle animation, bool loop)
+	public static T SetLoop<T>(this T animation, bool loop) where T : GdkPixbufSimpleAnimHandle
 	{
 		GdkPixbufSimpleAnimExterns.gdk_pixbuf_simple_anim_set_loop(animation, loop);
 		return animation;

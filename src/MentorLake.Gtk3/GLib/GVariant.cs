@@ -212,7 +212,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_equal(one, two);
 	}
 
-	public static GVariantHandle Get(this GVariantHandle value, string format_string, IntPtr @__arglist)
+	public static T Get<T>(this T value, string format_string, IntPtr @__arglist) where T : GVariantHandle
 	{
 		GVariantExterns.g_variant_get(value, format_string, @__arglist);
 		return value;
@@ -238,7 +238,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_get_bytestring_array(value, out length);
 	}
 
-	public static GVariantHandle GetChild(this GVariantHandle value, UIntPtr index_, string format_string, IntPtr @__arglist)
+	public static T GetChild<T>(this T value, UIntPtr index_, string format_string, IntPtr @__arglist) where T : GVariantHandle
 	{
 		GVariantExterns.g_variant_get_child(value, index_, format_string, @__arglist);
 		return value;
@@ -344,7 +344,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_get_uint64(value);
 	}
 
-	public static GVariantHandle GetVa(this GVariantHandle value, string format_string, ref string endptr, IntPtr app)
+	public static T GetVa<T>(this T value, string format_string, ref string endptr, IntPtr app) where T : GVariantHandle
 	{
 		GVariantExterns.g_variant_get_va(value, format_string, ref endptr, app);
 		return value;
@@ -420,7 +420,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_ref_sink(value);
 	}
 
-	public static GVariantHandle Store(this GVariantHandle value, IntPtr data)
+	public static T Store<T>(this T value, IntPtr data) where T : GVariantHandle
 	{
 		GVariantExterns.g_variant_store(value, data);
 		return value;
@@ -431,7 +431,7 @@ public static class GVariantHandleExtensions
 		return GVariantExterns.g_variant_take_ref(value);
 	}
 
-	public static GVariantHandle Unref(this GVariantHandle value)
+	public static T Unref<T>(this T value) where T : GVariantHandle
 	{
 		GVariantExterns.g_variant_unref(value);
 		return value;

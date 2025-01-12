@@ -12,7 +12,7 @@ public static class GdkPixbufFormatHandleExtensions
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_copy(format);
 	}
 
-	public static GdkPixbufFormatHandle Free(this GdkPixbufFormatHandle format)
+	public static T Free<T>(this T format) where T : GdkPixbufFormatHandle
 	{
 		GdkPixbufFormatExterns.gdk_pixbuf_format_free(format);
 		return format;
@@ -63,7 +63,7 @@ public static class GdkPixbufFormatHandleExtensions
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_writable(format);
 	}
 
-	public static GdkPixbufFormatHandle SetDisabled(this GdkPixbufFormatHandle format, bool disabled)
+	public static T SetDisabled<T>(this T format, bool disabled) where T : GdkPixbufFormatHandle
 	{
 		GdkPixbufFormatExterns.gdk_pixbuf_format_set_disabled(format, disabled);
 		return format;

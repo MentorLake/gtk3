@@ -56,7 +56,7 @@ public static class GtkPrintContextHandleExtensions
 		return GtkPrintContextExterns.gtk_print_context_get_width(context);
 	}
 
-	public static GtkPrintContextHandle SetCairoContext(this GtkPrintContextHandle context, cairo_tHandle cr, double dpi_x, double dpi_y)
+	public static T SetCairoContext<T>(this T context, cairo_tHandle cr, double dpi_x, double dpi_y) where T : GtkPrintContextHandle
 	{
 		GtkPrintContextExterns.gtk_print_context_set_cairo_context(context, cr, dpi_x, dpi_y);
 		return context;

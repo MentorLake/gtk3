@@ -12,13 +12,13 @@ public static class GPrivateHandleExtensions
 		return GPrivateExterns.g_private_get(key);
 	}
 
-	public static GPrivateHandle Replace(this GPrivateHandle key, IntPtr value)
+	public static T Replace<T>(this T key, IntPtr value) where T : GPrivateHandle
 	{
 		GPrivateExterns.g_private_replace(key, value);
 		return key;
 	}
 
-	public static GPrivateHandle Set(this GPrivateHandle key, IntPtr value)
+	public static T Set<T>(this T key, IntPtr value) where T : GPrivateHandle
 	{
 		GPrivateExterns.g_private_set(key, value);
 		return key;

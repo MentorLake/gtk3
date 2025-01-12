@@ -16,7 +16,7 @@ public static class GtkSeparatorToolItemHandleExtensions
 		return GtkSeparatorToolItemExterns.gtk_separator_tool_item_get_draw(item);
 	}
 
-	public static GtkSeparatorToolItemHandle SetDraw(this GtkSeparatorToolItemHandle item, bool draw)
+	public static T SetDraw<T>(this T item, bool draw) where T : GtkSeparatorToolItemHandle
 	{
 		GtkSeparatorToolItemExterns.gtk_separator_tool_item_set_draw(item, draw);
 		return item;

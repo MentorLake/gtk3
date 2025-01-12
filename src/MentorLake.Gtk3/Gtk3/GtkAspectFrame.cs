@@ -11,7 +11,7 @@ public class GtkAspectFrameHandle : GtkFrameHandle, AtkImplementorIfaceHandle, G
 
 public static class GtkAspectFrameHandleExtensions
 {
-	public static GtkAspectFrameHandle Set(this GtkAspectFrameHandle aspect_frame, float xalign, float yalign, float ratio, bool obey_child)
+	public static T Set<T>(this T aspect_frame, float xalign, float yalign, float ratio, bool obey_child) where T : GtkAspectFrameHandle
 	{
 		GtkAspectFrameExterns.gtk_aspect_frame_set(aspect_frame, xalign, yalign, ratio, obey_child);
 		return aspect_frame;

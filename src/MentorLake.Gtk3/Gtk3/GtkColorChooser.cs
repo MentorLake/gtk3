@@ -10,13 +10,13 @@ internal class GtkColorChooserHandleImpl : BaseSafeHandle, GtkColorChooserHandle
 
 public static class GtkColorChooserHandleExtensions
 {
-	public static GtkColorChooserHandle AddPalette(this GtkColorChooserHandle chooser, GtkOrientation orientation, int colors_per_line, int n_colors, GdkRGBA[] colors)
+	public static T AddPalette<T>(this T chooser, GtkOrientation orientation, int colors_per_line, int n_colors, GdkRGBA[] colors) where T : GtkColorChooserHandle
 	{
 		GtkColorChooserExterns.gtk_color_chooser_add_palette(chooser, orientation, colors_per_line, n_colors, colors);
 		return chooser;
 	}
 
-	public static GtkColorChooserHandle GetRgba(this GtkColorChooserHandle chooser, out GdkRGBA color)
+	public static T GetRgba<T>(this T chooser, out GdkRGBA color) where T : GtkColorChooserHandle
 	{
 		GtkColorChooserExterns.gtk_color_chooser_get_rgba(chooser, out color);
 		return chooser;
@@ -27,13 +27,13 @@ public static class GtkColorChooserHandleExtensions
 		return GtkColorChooserExterns.gtk_color_chooser_get_use_alpha(chooser);
 	}
 
-	public static GtkColorChooserHandle SetRgba(this GtkColorChooserHandle chooser, GdkRGBAHandle color)
+	public static T SetRgba<T>(this T chooser, GdkRGBAHandle color) where T : GtkColorChooserHandle
 	{
 		GtkColorChooserExterns.gtk_color_chooser_set_rgba(chooser, color);
 		return chooser;
 	}
 
-	public static GtkColorChooserHandle SetUseAlpha(this GtkColorChooserHandle chooser, bool use_alpha)
+	public static T SetUseAlpha<T>(this T chooser, bool use_alpha) where T : GtkColorChooserHandle
 	{
 		GtkColorChooserExterns.gtk_color_chooser_set_use_alpha(chooser, use_alpha);
 		return chooser;

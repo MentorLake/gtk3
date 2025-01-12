@@ -31,19 +31,19 @@ public static class GtkGestureSingleHandleExtensions
 		return GtkGestureSingleExterns.gtk_gesture_single_get_touch_only(gesture);
 	}
 
-	public static GtkGestureSingleHandle SetButton(this GtkGestureSingleHandle gesture, uint button)
+	public static T SetButton<T>(this T gesture, uint button) where T : GtkGestureSingleHandle
 	{
 		GtkGestureSingleExterns.gtk_gesture_single_set_button(gesture, button);
 		return gesture;
 	}
 
-	public static GtkGestureSingleHandle SetExclusive(this GtkGestureSingleHandle gesture, bool exclusive)
+	public static T SetExclusive<T>(this T gesture, bool exclusive) where T : GtkGestureSingleHandle
 	{
 		GtkGestureSingleExterns.gtk_gesture_single_set_exclusive(gesture, exclusive);
 		return gesture;
 	}
 
-	public static GtkGestureSingleHandle SetTouchOnly(this GtkGestureSingleHandle gesture, bool touch_only)
+	public static T SetTouchOnly<T>(this T gesture, bool touch_only) where T : GtkGestureSingleHandle
 	{
 		GtkGestureSingleExterns.gtk_gesture_single_set_touch_only(gesture, touch_only);
 		return gesture;

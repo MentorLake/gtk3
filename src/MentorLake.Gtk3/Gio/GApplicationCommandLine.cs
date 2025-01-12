@@ -11,7 +11,7 @@ public static class GApplicationCommandLineHandleExtensions
 		return GApplicationCommandLineExterns.g_application_command_line_create_file_for_arg(cmdline, arg);
 	}
 
-	public static GApplicationCommandLineHandle Done(this GApplicationCommandLineHandle cmdline)
+	public static T Done<T>(this T cmdline) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_done(cmdline);
 		return cmdline;
@@ -62,31 +62,31 @@ public static class GApplicationCommandLineHandleExtensions
 		return GApplicationCommandLineExterns.g_application_command_line_getenv(cmdline, name);
 	}
 
-	public static GApplicationCommandLineHandle Print(this GApplicationCommandLineHandle cmdline, string format, IntPtr @__arglist)
+	public static T Print<T>(this T cmdline, string format, IntPtr @__arglist) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_print(cmdline, format, @__arglist);
 		return cmdline;
 	}
 
-	public static GApplicationCommandLineHandle PrintLiteral(this GApplicationCommandLineHandle cmdline, string message)
+	public static T PrintLiteral<T>(this T cmdline, string message) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_print_literal(cmdline, message);
 		return cmdline;
 	}
 
-	public static GApplicationCommandLineHandle Printerr(this GApplicationCommandLineHandle cmdline, string format, IntPtr @__arglist)
+	public static T Printerr<T>(this T cmdline, string format, IntPtr @__arglist) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_printerr(cmdline, format, @__arglist);
 		return cmdline;
 	}
 
-	public static GApplicationCommandLineHandle PrinterrLiteral(this GApplicationCommandLineHandle cmdline, string message)
+	public static T PrinterrLiteral<T>(this T cmdline, string message) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_printerr_literal(cmdline, message);
 		return cmdline;
 	}
 
-	public static GApplicationCommandLineHandle SetExitStatus(this GApplicationCommandLineHandle cmdline, int exit_status)
+	public static T SetExitStatus<T>(this T cmdline, int exit_status) where T : GApplicationCommandLineHandle
 	{
 		GApplicationCommandLineExterns.g_application_command_line_set_exit_status(cmdline, exit_status);
 		return cmdline;

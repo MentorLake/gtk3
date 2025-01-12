@@ -41,49 +41,49 @@ public static class GtkHeaderBarHandleExtensions
 		return GtkHeaderBarExterns.gtk_header_bar_get_title(bar);
 	}
 
-	public static GtkHeaderBarHandle PackEnd(this GtkHeaderBarHandle bar, GtkWidgetHandle child)
+	public static T PackEnd<T>(this T bar, GtkWidgetHandle child) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_pack_end(bar, child);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle PackStart(this GtkHeaderBarHandle bar, GtkWidgetHandle child)
+	public static T PackStart<T>(this T bar, GtkWidgetHandle child) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_pack_start(bar, child);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetCustomTitle(this GtkHeaderBarHandle bar, GtkWidgetHandle title_widget)
+	public static T SetCustomTitle<T>(this T bar, GtkWidgetHandle title_widget) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_custom_title(bar, title_widget);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetDecorationLayout(this GtkHeaderBarHandle bar, string layout)
+	public static T SetDecorationLayout<T>(this T bar, string layout) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_decoration_layout(bar, layout);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetHasSubtitle(this GtkHeaderBarHandle bar, bool setting)
+	public static T SetHasSubtitle<T>(this T bar, bool setting) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_has_subtitle(bar, setting);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetShowCloseButton(this GtkHeaderBarHandle bar, bool setting)
+	public static T SetShowCloseButton<T>(this T bar, bool setting) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_show_close_button(bar, setting);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetSubtitle(this GtkHeaderBarHandle bar, string subtitle)
+	public static T SetSubtitle<T>(this T bar, string subtitle) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_subtitle(bar, subtitle);
 		return bar;
 	}
 
-	public static GtkHeaderBarHandle SetTitle(this GtkHeaderBarHandle bar, string title)
+	public static T SetTitle<T>(this T bar, string title) where T : GtkHeaderBarHandle
 	{
 		GtkHeaderBarExterns.gtk_header_bar_set_title(bar, title);
 		return bar;

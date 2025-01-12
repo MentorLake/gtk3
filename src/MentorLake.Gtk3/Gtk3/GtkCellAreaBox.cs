@@ -16,19 +16,19 @@ public static class GtkCellAreaBoxHandleExtensions
 		return GtkCellAreaBoxExterns.gtk_cell_area_box_get_spacing(box);
 	}
 
-	public static GtkCellAreaBoxHandle PackEnd(this GtkCellAreaBoxHandle box, GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed)
+	public static T PackEnd<T>(this T box, GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed) where T : GtkCellAreaBoxHandle
 	{
 		GtkCellAreaBoxExterns.gtk_cell_area_box_pack_end(box, renderer, expand, align, @fixed);
 		return box;
 	}
 
-	public static GtkCellAreaBoxHandle PackStart(this GtkCellAreaBoxHandle box, GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed)
+	public static T PackStart<T>(this T box, GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed) where T : GtkCellAreaBoxHandle
 	{
 		GtkCellAreaBoxExterns.gtk_cell_area_box_pack_start(box, renderer, expand, align, @fixed);
 		return box;
 	}
 
-	public static GtkCellAreaBoxHandle SetSpacing(this GtkCellAreaBoxHandle box, int spacing)
+	public static T SetSpacing<T>(this T box, int spacing) where T : GtkCellAreaBoxHandle
 	{
 		GtkCellAreaBoxExterns.gtk_cell_area_box_set_spacing(box, spacing);
 		return box;

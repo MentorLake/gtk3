@@ -26,13 +26,13 @@ public static class GtkMountOperationHandleExtensions
 		return GtkMountOperationExterns.gtk_mount_operation_is_showing(op);
 	}
 
-	public static GtkMountOperationHandle SetParent(this GtkMountOperationHandle op, GtkWindowHandle parent)
+	public static T SetParent<T>(this T op, GtkWindowHandle parent) where T : GtkMountOperationHandle
 	{
 		GtkMountOperationExterns.gtk_mount_operation_set_parent(op, parent);
 		return op;
 	}
 
-	public static GtkMountOperationHandle SetScreen(this GtkMountOperationHandle op, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T op, GdkScreenHandle screen) where T : GtkMountOperationHandle
 	{
 		GtkMountOperationExterns.gtk_mount_operation_set_screen(op, screen);
 		return op;

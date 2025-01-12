@@ -64,7 +64,7 @@ public delegate bool get_child_position([MarshalAs(UnmanagedType.CustomMarshaler
 
 public static class GtkOverlayHandleExtensions
 {
-	public static GtkOverlayHandle AddOverlay(this GtkOverlayHandle overlay, GtkWidgetHandle widget)
+	public static T AddOverlay<T>(this T overlay, GtkWidgetHandle widget) where T : GtkOverlayHandle
 	{
 		GtkOverlayExterns.gtk_overlay_add_overlay(overlay, widget);
 		return overlay;
@@ -75,13 +75,13 @@ public static class GtkOverlayHandleExtensions
 		return GtkOverlayExterns.gtk_overlay_get_overlay_pass_through(overlay, widget);
 	}
 
-	public static GtkOverlayHandle ReorderOverlay(this GtkOverlayHandle overlay, GtkWidgetHandle child, int index_)
+	public static T ReorderOverlay<T>(this T overlay, GtkWidgetHandle child, int index_) where T : GtkOverlayHandle
 	{
 		GtkOverlayExterns.gtk_overlay_reorder_overlay(overlay, child, index_);
 		return overlay;
 	}
 
-	public static GtkOverlayHandle SetOverlayPassThrough(this GtkOverlayHandle overlay, GtkWidgetHandle widget, bool pass_through)
+	public static T SetOverlayPassThrough<T>(this T overlay, GtkWidgetHandle widget, bool pass_through) where T : GtkOverlayHandle
 	{
 		GtkOverlayExterns.gtk_overlay_set_overlay_pass_through(overlay, widget, pass_through);
 		return overlay;

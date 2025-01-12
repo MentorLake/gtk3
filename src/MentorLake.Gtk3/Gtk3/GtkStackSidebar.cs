@@ -16,7 +16,7 @@ public static class GtkStackSidebarHandleExtensions
 		return GtkStackSidebarExterns.gtk_stack_sidebar_get_stack(sidebar);
 	}
 
-	public static GtkStackSidebarHandle SetStack(this GtkStackSidebarHandle sidebar, GtkStackHandle stack)
+	public static T SetStack<T>(this T sidebar, GtkStackHandle stack) where T : GtkStackSidebarHandle
 	{
 		GtkStackSidebarExterns.gtk_stack_sidebar_set_stack(sidebar, stack);
 		return sidebar;

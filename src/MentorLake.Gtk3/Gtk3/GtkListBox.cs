@@ -324,19 +324,19 @@ public delegate void unselect_all([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkListBoxHandleExtensions
 {
-	public static GtkListBoxHandle BindModel(this GtkListBoxHandle box, GListModelHandle model, GtkListBoxCreateWidgetFunc create_widget_func, IntPtr user_data, GDestroyNotify user_data_free_func)
+	public static T BindModel<T>(this T box, GListModelHandle model, GtkListBoxCreateWidgetFunc create_widget_func, IntPtr user_data, GDestroyNotify user_data_free_func) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_bind_model(box, model, create_widget_func, user_data, user_data_free_func);
 		return box;
 	}
 
-	public static GtkListBoxHandle DragHighlightRow(this GtkListBoxHandle box, GtkListBoxRowHandle row)
+	public static T DragHighlightRow<T>(this T box, GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_drag_highlight_row(box, row);
 		return box;
 	}
 
-	public static GtkListBoxHandle DragUnhighlightRow(this GtkListBoxHandle box)
+	public static T DragUnhighlightRow<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_drag_unhighlight_row(box);
 		return box;
@@ -377,103 +377,103 @@ public static class GtkListBoxHandleExtensions
 		return GtkListBoxExterns.gtk_list_box_get_selection_mode(box);
 	}
 
-	public static GtkListBoxHandle Insert(this GtkListBoxHandle box, GtkWidgetHandle child, int position)
+	public static T Insert<T>(this T box, GtkWidgetHandle child, int position) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_insert(box, child, position);
 		return box;
 	}
 
-	public static GtkListBoxHandle InvalidateFilter(this GtkListBoxHandle box)
+	public static T InvalidateFilter<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_invalidate_filter(box);
 		return box;
 	}
 
-	public static GtkListBoxHandle InvalidateHeaders(this GtkListBoxHandle box)
+	public static T InvalidateHeaders<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_invalidate_headers(box);
 		return box;
 	}
 
-	public static GtkListBoxHandle InvalidateSort(this GtkListBoxHandle box)
+	public static T InvalidateSort<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_invalidate_sort(box);
 		return box;
 	}
 
-	public static GtkListBoxHandle Prepend(this GtkListBoxHandle box, GtkWidgetHandle child)
+	public static T Prepend<T>(this T box, GtkWidgetHandle child) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_prepend(box, child);
 		return box;
 	}
 
-	public static GtkListBoxHandle SelectAll(this GtkListBoxHandle box)
+	public static T SelectAll<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_select_all(box);
 		return box;
 	}
 
-	public static GtkListBoxHandle SelectRow(this GtkListBoxHandle box, GtkListBoxRowHandle row)
+	public static T SelectRow<T>(this T box, GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_select_row(box, row);
 		return box;
 	}
 
-	public static GtkListBoxHandle SelectedForeach(this GtkListBoxHandle box, GtkListBoxForeachFunc func, IntPtr data)
+	public static T SelectedForeach<T>(this T box, GtkListBoxForeachFunc func, IntPtr data) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_selected_foreach(box, func, data);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetActivateOnSingleClick(this GtkListBoxHandle box, bool single)
+	public static T SetActivateOnSingleClick<T>(this T box, bool single) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_activate_on_single_click(box, single);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetAdjustment(this GtkListBoxHandle box, GtkAdjustmentHandle adjustment)
+	public static T SetAdjustment<T>(this T box, GtkAdjustmentHandle adjustment) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_adjustment(box, adjustment);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetFilterFunc(this GtkListBoxHandle box, GtkListBoxFilterFunc filter_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetFilterFunc<T>(this T box, GtkListBoxFilterFunc filter_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_filter_func(box, filter_func, user_data, destroy);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetHeaderFunc(this GtkListBoxHandle box, GtkListBoxUpdateHeaderFunc update_header, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetHeaderFunc<T>(this T box, GtkListBoxUpdateHeaderFunc update_header, IntPtr user_data, GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_header_func(box, update_header, user_data, destroy);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetPlaceholder(this GtkListBoxHandle box, GtkWidgetHandle placeholder)
+	public static T SetPlaceholder<T>(this T box, GtkWidgetHandle placeholder) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_placeholder(box, placeholder);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetSelectionMode(this GtkListBoxHandle box, GtkSelectionMode mode)
+	public static T SetSelectionMode<T>(this T box, GtkSelectionMode mode) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_selection_mode(box, mode);
 		return box;
 	}
 
-	public static GtkListBoxHandle SetSortFunc(this GtkListBoxHandle box, GtkListBoxSortFunc sort_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetSortFunc<T>(this T box, GtkListBoxSortFunc sort_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_set_sort_func(box, sort_func, user_data, destroy);
 		return box;
 	}
 
-	public static GtkListBoxHandle UnselectAll(this GtkListBoxHandle box)
+	public static T UnselectAll<T>(this T box) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_unselect_all(box);
 		return box;
 	}
 
-	public static GtkListBoxHandle UnselectRow(this GtkListBoxHandle box, GtkListBoxRowHandle row)
+	public static T UnselectRow<T>(this T box, GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
 		GtkListBoxExterns.gtk_list_box_unselect_row(box, row);
 		return box;

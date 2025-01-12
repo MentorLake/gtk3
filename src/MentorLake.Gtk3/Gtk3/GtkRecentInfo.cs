@@ -127,7 +127,7 @@ public static class GtkRecentInfoHandleExtensions
 		return GtkRecentInfoExterns.gtk_recent_info_ref(info);
 	}
 
-	public static GtkRecentInfoHandle Unref(this GtkRecentInfoHandle info)
+	public static T Unref<T>(this T info) where T : GtkRecentInfoHandle
 	{
 		GtkRecentInfoExterns.gtk_recent_info_unref(info);
 		return info;

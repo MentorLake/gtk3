@@ -22,7 +22,7 @@ public static class PangoTabArrayHandleExtensions
 		return PangoTabArrayExterns.pango_tab_array_copy(src);
 	}
 
-	public static PangoTabArrayHandle Free(this PangoTabArrayHandle tab_array)
+	public static T Free<T>(this T tab_array) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_free(tab_array);
 		return tab_array;
@@ -43,43 +43,43 @@ public static class PangoTabArrayHandleExtensions
 		return PangoTabArrayExterns.pango_tab_array_get_size(tab_array);
 	}
 
-	public static PangoTabArrayHandle GetTab(this PangoTabArrayHandle tab_array, int tab_index, out PangoTabAlign alignment, out int location)
+	public static T GetTab<T>(this T tab_array, int tab_index, out PangoTabAlign alignment, out int location) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_get_tab(tab_array, tab_index, out alignment, out location);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle GetTabs(this PangoTabArrayHandle tab_array, out PangoTabAlign[] alignments, out int[] locations)
+	public static T GetTabs<T>(this T tab_array, out PangoTabAlign[] alignments, out int[] locations) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_get_tabs(tab_array, out alignments, out locations);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle Resize(this PangoTabArrayHandle tab_array, int new_size)
+	public static T Resize<T>(this T tab_array, int new_size) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_resize(tab_array, new_size);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle SetDecimalPoint(this PangoTabArrayHandle tab_array, int tab_index, char decimal_point)
+	public static T SetDecimalPoint<T>(this T tab_array, int tab_index, char decimal_point) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_set_decimal_point(tab_array, tab_index, decimal_point);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle SetPositionsInPixels(this PangoTabArrayHandle tab_array, bool positions_in_pixels)
+	public static T SetPositionsInPixels<T>(this T tab_array, bool positions_in_pixels) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_set_positions_in_pixels(tab_array, positions_in_pixels);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle SetTab(this PangoTabArrayHandle tab_array, int tab_index, PangoTabAlign alignment, int location)
+	public static T SetTab<T>(this T tab_array, int tab_index, PangoTabAlign alignment, int location) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_set_tab(tab_array, tab_index, alignment, location);
 		return tab_array;
 	}
 
-	public static PangoTabArrayHandle Sort(this PangoTabArrayHandle tab_array)
+	public static T Sort<T>(this T tab_array) where T : PangoTabArrayHandle
 	{
 		PangoTabArrayExterns.pango_tab_array_sort(tab_array);
 		return tab_array;

@@ -26,7 +26,7 @@ public static class PangoFontFamilyHandleExtensions
 		return PangoFontFamilyExterns.pango_font_family_is_variable(family);
 	}
 
-	public static PangoFontFamilyHandle ListFaces(this PangoFontFamilyHandle family, out PangoFontFaceHandle[] faces, out int n_faces)
+	public static T ListFaces<T>(this T family, out PangoFontFaceHandle[] faces, out int n_faces) where T : PangoFontFamilyHandle
 	{
 		PangoFontFamilyExterns.pango_font_family_list_faces(family, out faces, out n_faces);
 		return family;

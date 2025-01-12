@@ -258,13 +258,13 @@ public delegate void toggle_size_request([MarshalAs(UnmanagedType.CustomMarshale
 
 public static class GtkMenuItemHandleExtensions
 {
-	public static GtkMenuItemHandle Activate(this GtkMenuItemHandle menu_item)
+	public static T Activate<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_activate(menu_item);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle Deselect(this GtkMenuItemHandle menu_item)
+	public static T Deselect<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_deselect(menu_item);
 		return menu_item;
@@ -300,55 +300,55 @@ public static class GtkMenuItemHandleExtensions
 		return GtkMenuItemExterns.gtk_menu_item_get_use_underline(menu_item);
 	}
 
-	public static GtkMenuItemHandle Select(this GtkMenuItemHandle menu_item)
+	public static T Select<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_select(menu_item);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetAccelPath(this GtkMenuItemHandle menu_item, string accel_path)
+	public static T SetAccelPath<T>(this T menu_item, string accel_path) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_accel_path(menu_item, accel_path);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetLabel(this GtkMenuItemHandle menu_item, string label)
+	public static T SetLabel<T>(this T menu_item, string label) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_label(menu_item, label);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetReserveIndicator(this GtkMenuItemHandle menu_item, bool reserve)
+	public static T SetReserveIndicator<T>(this T menu_item, bool reserve) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_reserve_indicator(menu_item, reserve);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetRightJustified(this GtkMenuItemHandle menu_item, bool right_justified)
+	public static T SetRightJustified<T>(this T menu_item, bool right_justified) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_right_justified(menu_item, right_justified);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetSubmenu(this GtkMenuItemHandle menu_item, GtkWidgetHandle submenu)
+	public static T SetSubmenu<T>(this T menu_item, GtkWidgetHandle submenu) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_submenu(menu_item, submenu);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle SetUseUnderline(this GtkMenuItemHandle menu_item, bool setting)
+	public static T SetUseUnderline<T>(this T menu_item, bool setting) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_set_use_underline(menu_item, setting);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle ToggleSizeAllocate(this GtkMenuItemHandle menu_item, int allocation)
+	public static T ToggleSizeAllocate<T>(this T menu_item, int allocation) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_toggle_size_allocate(menu_item, allocation);
 		return menu_item;
 	}
 
-	public static GtkMenuItemHandle ToggleSizeRequest(this GtkMenuItemHandle menu_item, ref int requisition)
+	public static T ToggleSizeRequest<T>(this T menu_item, ref int requisition) where T : GtkMenuItemHandle
 	{
 		GtkMenuItemExterns.gtk_menu_item_toggle_size_request(menu_item, ref requisition);
 		return menu_item;

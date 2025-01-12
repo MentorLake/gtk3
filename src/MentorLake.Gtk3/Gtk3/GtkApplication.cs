@@ -137,13 +137,13 @@ public delegate void window_removed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GtkApplicationHandleExtensions
 {
-	public static GtkApplicationHandle AddAccelerator(this GtkApplicationHandle application, string accelerator, string action_name, GVariantHandle parameter)
+	public static T AddAccelerator<T>(this T application, string accelerator, string action_name, GVariantHandle parameter) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_add_accelerator(application, accelerator, action_name, parameter);
 		return application;
 	}
 
-	public static GtkApplicationHandle AddWindow(this GtkApplicationHandle application, GtkWindowHandle window)
+	public static T AddWindow<T>(this T application, GtkWindowHandle window) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_add_window(application, window);
 		return application;
@@ -209,37 +209,37 @@ public static class GtkApplicationHandleExtensions
 		return GtkApplicationExterns.gtk_application_prefers_app_menu(application);
 	}
 
-	public static GtkApplicationHandle RemoveAccelerator(this GtkApplicationHandle application, string action_name, GVariantHandle parameter)
+	public static T RemoveAccelerator<T>(this T application, string action_name, GVariantHandle parameter) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_remove_accelerator(application, action_name, parameter);
 		return application;
 	}
 
-	public static GtkApplicationHandle RemoveWindow(this GtkApplicationHandle application, GtkWindowHandle window)
+	public static T RemoveWindow<T>(this T application, GtkWindowHandle window) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_remove_window(application, window);
 		return application;
 	}
 
-	public static GtkApplicationHandle SetAccelsForAction(this GtkApplicationHandle application, string detailed_action_name, string accels)
+	public static T SetAccelsForAction<T>(this T application, string detailed_action_name, string accels) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_set_accels_for_action(application, detailed_action_name, accels);
 		return application;
 	}
 
-	public static GtkApplicationHandle SetAppMenu(this GtkApplicationHandle application, GMenuModelHandle app_menu)
+	public static T SetAppMenu<T>(this T application, GMenuModelHandle app_menu) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_set_app_menu(application, app_menu);
 		return application;
 	}
 
-	public static GtkApplicationHandle SetMenubar(this GtkApplicationHandle application, GMenuModelHandle menubar)
+	public static T SetMenubar<T>(this T application, GMenuModelHandle menubar) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_set_menubar(application, menubar);
 		return application;
 	}
 
-	public static GtkApplicationHandle Uninhibit(this GtkApplicationHandle application, uint cookie)
+	public static T Uninhibit<T>(this T application, uint cookie) where T : GtkApplicationHandle
 	{
 		GtkApplicationExterns.gtk_application_uninhibit(application, cookie);
 		return application;

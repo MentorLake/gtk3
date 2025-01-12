@@ -106,7 +106,7 @@ public static class GDesktopAppInfoHandleExtensions
 		return GDesktopAppInfoExterns.g_desktop_app_info_has_key(info, key);
 	}
 
-	public static GDesktopAppInfoHandle LaunchAction(this GDesktopAppInfoHandle info, string action_name, GAppLaunchContextHandle launch_context)
+	public static T LaunchAction<T>(this T info, string action_name, GAppLaunchContextHandle launch_context) where T : GDesktopAppInfoHandle
 	{
 		GDesktopAppInfoExterns.g_desktop_app_info_launch_action(info, action_name, launch_context);
 		return info;

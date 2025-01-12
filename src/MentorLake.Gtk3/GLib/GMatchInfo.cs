@@ -37,7 +37,7 @@ public static class GMatchInfoHandleExtensions
 		return GMatchInfoExterns.g_match_info_fetch_pos(match_info, match_num, out start_pos, out end_pos);
 	}
 
-	public static GMatchInfoHandle Free(this GMatchInfoHandle match_info)
+	public static T Free<T>(this T match_info) where T : GMatchInfoHandle
 	{
 		GMatchInfoExterns.g_match_info_free(match_info);
 		return match_info;
@@ -78,7 +78,7 @@ public static class GMatchInfoHandleExtensions
 		return GMatchInfoExterns.g_match_info_ref(match_info);
 	}
 
-	public static GMatchInfoHandle Unref(this GMatchInfoHandle match_info)
+	public static T Unref<T>(this T match_info) where T : GMatchInfoHandle
 	{
 		GMatchInfoExterns.g_match_info_unref(match_info);
 		return match_info;

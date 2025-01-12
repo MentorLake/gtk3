@@ -31,7 +31,7 @@ public static class GCredentialsHandleExtensions
 		return GCredentialsExterns.g_credentials_is_same_user(credentials, other_credentials, out error);
 	}
 
-	public static GCredentialsHandle SetNative(this GCredentialsHandle credentials, GCredentialsType native_type, IntPtr native)
+	public static T SetNative<T>(this T credentials, GCredentialsType native_type, IntPtr native) where T : GCredentialsHandle
 	{
 		GCredentialsExterns.g_credentials_set_native(credentials, native_type, native);
 		return credentials;

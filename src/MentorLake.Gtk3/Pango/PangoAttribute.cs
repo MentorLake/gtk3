@@ -57,7 +57,7 @@ public static class PangoAttributeHandleExtensions
 		return PangoAttributeExterns.pango_attribute_copy(attr);
 	}
 
-	public static PangoAttributeHandle Destroy(this PangoAttributeHandle attr)
+	public static T Destroy<T>(this T attr) where T : PangoAttributeHandle
 	{
 		PangoAttributeExterns.pango_attribute_destroy(attr);
 		return attr;
@@ -68,7 +68,7 @@ public static class PangoAttributeHandleExtensions
 		return PangoAttributeExterns.pango_attribute_equal(attr1, attr2);
 	}
 
-	public static PangoAttributeHandle Init(this PangoAttributeHandle attr, PangoAttrClassHandle klass)
+	public static T Init<T>(this T attr, PangoAttrClassHandle klass) where T : PangoAttributeHandle
 	{
 		PangoAttributeExterns.pango_attribute_init(attr, klass);
 		return attr;

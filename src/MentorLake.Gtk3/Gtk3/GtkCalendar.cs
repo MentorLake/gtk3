@@ -283,13 +283,13 @@ public delegate void prev_year([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GtkCalendarHandleExtensions
 {
-	public static GtkCalendarHandle ClearMarks(this GtkCalendarHandle calendar)
+	public static T ClearMarks<T>(this T calendar) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_clear_marks(calendar);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle GetDate(this GtkCalendarHandle calendar, out uint year, out uint month, out uint day)
+	public static T GetDate<T>(this T calendar, out uint year, out uint month, out uint day) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_get_date(calendar, out year, out month, out day);
 		return calendar;
@@ -315,49 +315,49 @@ public static class GtkCalendarHandleExtensions
 		return GtkCalendarExterns.gtk_calendar_get_display_options(calendar);
 	}
 
-	public static GtkCalendarHandle MarkDay(this GtkCalendarHandle calendar, uint day)
+	public static T MarkDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_mark_day(calendar, day);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SelectDay(this GtkCalendarHandle calendar, uint day)
+	public static T SelectDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_select_day(calendar, day);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SelectMonth(this GtkCalendarHandle calendar, uint month, uint year)
+	public static T SelectMonth<T>(this T calendar, uint month, uint year) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_select_month(calendar, month, year);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SetDetailFunc(this GtkCalendarHandle calendar, GtkCalendarDetailFunc func, IntPtr data, GDestroyNotify destroy)
+	public static T SetDetailFunc<T>(this T calendar, GtkCalendarDetailFunc func, IntPtr data, GDestroyNotify destroy) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_set_detail_func(calendar, func, data, destroy);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SetDetailHeightRows(this GtkCalendarHandle calendar, int rows)
+	public static T SetDetailHeightRows<T>(this T calendar, int rows) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_set_detail_height_rows(calendar, rows);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SetDetailWidthChars(this GtkCalendarHandle calendar, int chars)
+	public static T SetDetailWidthChars<T>(this T calendar, int chars) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_set_detail_width_chars(calendar, chars);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle SetDisplayOptions(this GtkCalendarHandle calendar, GtkCalendarDisplayOptions flags)
+	public static T SetDisplayOptions<T>(this T calendar, GtkCalendarDisplayOptions flags) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_set_display_options(calendar, flags);
 		return calendar;
 	}
 
-	public static GtkCalendarHandle UnmarkDay(this GtkCalendarHandle calendar, uint day)
+	public static T UnmarkDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
 		GtkCalendarExterns.gtk_calendar_unmark_day(calendar, day);
 		return calendar;

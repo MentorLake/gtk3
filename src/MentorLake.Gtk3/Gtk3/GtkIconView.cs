@@ -335,7 +335,7 @@ public delegate void unselect_all([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkIconViewHandleExtensions
 {
-	public static GtkIconViewHandle ConvertWidgetToBinWindowCoords(this GtkIconViewHandle icon_view, int wx, int wy, out int bx, out int by)
+	public static T ConvertWidgetToBinWindowCoords<T>(this T icon_view, int wx, int wy, out int bx, out int by) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_convert_widget_to_bin_window_coords(icon_view, wx, wy, out bx, out by);
 		return icon_view;
@@ -346,13 +346,13 @@ public static class GtkIconViewHandleExtensions
 		return GtkIconViewExterns.gtk_icon_view_create_drag_icon(icon_view, path);
 	}
 
-	public static GtkIconViewHandle EnableModelDragDest(this GtkIconViewHandle icon_view, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions)
+	public static T EnableModelDragDest<T>(this T icon_view, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_enable_model_drag_dest(icon_view, targets, n_targets, actions);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle EnableModelDragSource(this GtkIconViewHandle icon_view, GdkModifierType start_button_mask, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions)
+	public static T EnableModelDragSource<T>(this T icon_view, GdkModifierType start_button_mask, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_enable_model_drag_source(icon_view, start_button_mask, targets, n_targets, actions);
 		return icon_view;
@@ -388,7 +388,7 @@ public static class GtkIconViewHandleExtensions
 		return GtkIconViewExterns.gtk_icon_view_get_dest_item_at_pos(icon_view, drag_x, drag_y, out path, out pos);
 	}
 
-	public static GtkIconViewHandle GetDragDestItem(this GtkIconViewHandle icon_view, out GtkTreePathHandle path, out GtkIconViewDropPosition pos)
+	public static T GetDragDestItem<T>(this T icon_view, out GtkTreePathHandle path, out GtkIconViewDropPosition pos) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_get_drag_dest_item(icon_view, out path, out pos);
 		return icon_view;
@@ -494,7 +494,7 @@ public static class GtkIconViewHandleExtensions
 		return GtkIconViewExterns.gtk_icon_view_get_visible_range(icon_view, out start_path, out end_path);
 	}
 
-	public static GtkIconViewHandle ItemActivated(this GtkIconViewHandle icon_view, GtkTreePathHandle path)
+	public static T ItemActivated<T>(this T icon_view, GtkTreePathHandle path) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_item_activated(icon_view, path);
 		return icon_view;
@@ -505,169 +505,169 @@ public static class GtkIconViewHandleExtensions
 		return GtkIconViewExterns.gtk_icon_view_path_is_selected(icon_view, path);
 	}
 
-	public static GtkIconViewHandle ScrollToPath(this GtkIconViewHandle icon_view, GtkTreePathHandle path, bool use_align, float row_align, float col_align)
+	public static T ScrollToPath<T>(this T icon_view, GtkTreePathHandle path, bool use_align, float row_align, float col_align) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_scroll_to_path(icon_view, path, use_align, row_align, col_align);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SelectAll(this GtkIconViewHandle icon_view)
+	public static T SelectAll<T>(this T icon_view) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_select_all(icon_view);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SelectPath(this GtkIconViewHandle icon_view, GtkTreePathHandle path)
+	public static T SelectPath<T>(this T icon_view, GtkTreePathHandle path) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_select_path(icon_view, path);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SelectedForeach(this GtkIconViewHandle icon_view, GtkIconViewForeachFunc func, IntPtr data)
+	public static T SelectedForeach<T>(this T icon_view, GtkIconViewForeachFunc func, IntPtr data) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_selected_foreach(icon_view, func, data);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetActivateOnSingleClick(this GtkIconViewHandle icon_view, bool single)
+	public static T SetActivateOnSingleClick<T>(this T icon_view, bool single) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_activate_on_single_click(icon_view, single);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetColumnSpacing(this GtkIconViewHandle icon_view, int column_spacing)
+	public static T SetColumnSpacing<T>(this T icon_view, int column_spacing) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_column_spacing(icon_view, column_spacing);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetColumns(this GtkIconViewHandle icon_view, int columns)
+	public static T SetColumns<T>(this T icon_view, int columns) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_columns(icon_view, columns);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetCursor(this GtkIconViewHandle icon_view, GtkTreePathHandle path, GtkCellRendererHandle cell, bool start_editing)
+	public static T SetCursor<T>(this T icon_view, GtkTreePathHandle path, GtkCellRendererHandle cell, bool start_editing) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_cursor(icon_view, path, cell, start_editing);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetDragDestItem(this GtkIconViewHandle icon_view, GtkTreePathHandle path, GtkIconViewDropPosition pos)
+	public static T SetDragDestItem<T>(this T icon_view, GtkTreePathHandle path, GtkIconViewDropPosition pos) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_drag_dest_item(icon_view, path, pos);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetItemOrientation(this GtkIconViewHandle icon_view, GtkOrientation orientation)
+	public static T SetItemOrientation<T>(this T icon_view, GtkOrientation orientation) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_item_orientation(icon_view, orientation);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetItemPadding(this GtkIconViewHandle icon_view, int item_padding)
+	public static T SetItemPadding<T>(this T icon_view, int item_padding) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_item_padding(icon_view, item_padding);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetItemWidth(this GtkIconViewHandle icon_view, int item_width)
+	public static T SetItemWidth<T>(this T icon_view, int item_width) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_item_width(icon_view, item_width);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetMargin(this GtkIconViewHandle icon_view, int margin)
+	public static T SetMargin<T>(this T icon_view, int margin) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_margin(icon_view, margin);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetMarkupColumn(this GtkIconViewHandle icon_view, int column)
+	public static T SetMarkupColumn<T>(this T icon_view, int column) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_markup_column(icon_view, column);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetModel(this GtkIconViewHandle icon_view, GtkTreeModelHandle model)
+	public static T SetModel<T>(this T icon_view, GtkTreeModelHandle model) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_model(icon_view, model);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetPixbufColumn(this GtkIconViewHandle icon_view, int column)
+	public static T SetPixbufColumn<T>(this T icon_view, int column) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_pixbuf_column(icon_view, column);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetReorderable(this GtkIconViewHandle icon_view, bool reorderable)
+	public static T SetReorderable<T>(this T icon_view, bool reorderable) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_reorderable(icon_view, reorderable);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetRowSpacing(this GtkIconViewHandle icon_view, int row_spacing)
+	public static T SetRowSpacing<T>(this T icon_view, int row_spacing) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_row_spacing(icon_view, row_spacing);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetSelectionMode(this GtkIconViewHandle icon_view, GtkSelectionMode mode)
+	public static T SetSelectionMode<T>(this T icon_view, GtkSelectionMode mode) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_selection_mode(icon_view, mode);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetSpacing(this GtkIconViewHandle icon_view, int spacing)
+	public static T SetSpacing<T>(this T icon_view, int spacing) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_spacing(icon_view, spacing);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetTextColumn(this GtkIconViewHandle icon_view, int column)
+	public static T SetTextColumn<T>(this T icon_view, int column) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_text_column(icon_view, column);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetTooltipCell(this GtkIconViewHandle icon_view, GtkTooltipHandle tooltip, GtkTreePathHandle path, GtkCellRendererHandle cell)
+	public static T SetTooltipCell<T>(this T icon_view, GtkTooltipHandle tooltip, GtkTreePathHandle path, GtkCellRendererHandle cell) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_tooltip_cell(icon_view, tooltip, path, cell);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetTooltipColumn(this GtkIconViewHandle icon_view, int column)
+	public static T SetTooltipColumn<T>(this T icon_view, int column) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_tooltip_column(icon_view, column);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle SetTooltipItem(this GtkIconViewHandle icon_view, GtkTooltipHandle tooltip, GtkTreePathHandle path)
+	public static T SetTooltipItem<T>(this T icon_view, GtkTooltipHandle tooltip, GtkTreePathHandle path) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_set_tooltip_item(icon_view, tooltip, path);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle UnselectAll(this GtkIconViewHandle icon_view)
+	public static T UnselectAll<T>(this T icon_view) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_unselect_all(icon_view);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle UnselectPath(this GtkIconViewHandle icon_view, GtkTreePathHandle path)
+	public static T UnselectPath<T>(this T icon_view, GtkTreePathHandle path) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_unselect_path(icon_view, path);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle UnsetModelDragDest(this GtkIconViewHandle icon_view)
+	public static T UnsetModelDragDest<T>(this T icon_view) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_unset_model_drag_dest(icon_view);
 		return icon_view;
 	}
 
-	public static GtkIconViewHandle UnsetModelDragSource(this GtkIconViewHandle icon_view)
+	public static T UnsetModelDragSource<T>(this T icon_view) where T : GtkIconViewHandle
 	{
 		GtkIconViewExterns.gtk_icon_view_unset_model_drag_source(icon_view);
 		return icon_view;

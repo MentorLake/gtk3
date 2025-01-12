@@ -12,7 +12,7 @@ public class GKeyFileHandle : BaseSafeHandle
 
 public static class GKeyFileHandleExtensions
 {
-	public static GKeyFileHandle Free(this GKeyFileHandle key_file)
+	public static T Free<T>(this T key_file) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_free(key_file);
 		return key_file;
@@ -168,13 +168,13 @@ public static class GKeyFileHandleExtensions
 		return GKeyFileExterns.g_key_file_save_to_file(key_file, filename, out error);
 	}
 
-	public static GKeyFileHandle SetBoolean(this GKeyFileHandle key_file, string group_name, string key, bool value)
+	public static T SetBoolean<T>(this T key_file, string group_name, string key, bool value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_boolean(key_file, group_name, key, value);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetBooleanList(this GKeyFileHandle key_file, string group_name, string key, bool[] list, UIntPtr length)
+	public static T SetBooleanList<T>(this T key_file, string group_name, string key, bool[] list, UIntPtr length) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_boolean_list(key_file, group_name, key, list, length);
 		return key_file;
@@ -185,73 +185,73 @@ public static class GKeyFileHandleExtensions
 		return GKeyFileExterns.g_key_file_set_comment(key_file, group_name, key, comment, out error);
 	}
 
-	public static GKeyFileHandle SetDouble(this GKeyFileHandle key_file, string group_name, string key, double value)
+	public static T SetDouble<T>(this T key_file, string group_name, string key, double value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_double(key_file, group_name, key, value);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetDoubleList(this GKeyFileHandle key_file, string group_name, string key, double[] list, UIntPtr length)
+	public static T SetDoubleList<T>(this T key_file, string group_name, string key, double[] list, UIntPtr length) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_double_list(key_file, group_name, key, list, length);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetInt64(this GKeyFileHandle key_file, string group_name, string key, long value)
+	public static T SetInt64<T>(this T key_file, string group_name, string key, long value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_int64(key_file, group_name, key, value);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetInteger(this GKeyFileHandle key_file, string group_name, string key, int value)
+	public static T SetInteger<T>(this T key_file, string group_name, string key, int value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_integer(key_file, group_name, key, value);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetIntegerList(this GKeyFileHandle key_file, string group_name, string key, int[] list, UIntPtr length)
+	public static T SetIntegerList<T>(this T key_file, string group_name, string key, int[] list, UIntPtr length) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_integer_list(key_file, group_name, key, list, length);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetListSeparator(this GKeyFileHandle key_file, char separator)
+	public static T SetListSeparator<T>(this T key_file, char separator) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_list_separator(key_file, separator);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetLocaleString(this GKeyFileHandle key_file, string group_name, string key, string locale, string @string)
+	public static T SetLocaleString<T>(this T key_file, string group_name, string key, string locale, string @string) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_locale_string(key_file, group_name, key, locale, @string);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetLocaleStringList(this GKeyFileHandle key_file, string group_name, string key, string locale, string list, UIntPtr length)
+	public static T SetLocaleStringList<T>(this T key_file, string group_name, string key, string locale, string list, UIntPtr length) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_locale_string_list(key_file, group_name, key, locale, list, length);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetString(this GKeyFileHandle key_file, string group_name, string key, string @string)
+	public static T SetString<T>(this T key_file, string group_name, string key, string @string) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_string(key_file, group_name, key, @string);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetStringList(this GKeyFileHandle key_file, string group_name, string key, string list, UIntPtr length)
+	public static T SetStringList<T>(this T key_file, string group_name, string key, string list, UIntPtr length) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_string_list(key_file, group_name, key, list, length);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetUint64(this GKeyFileHandle key_file, string group_name, string key, ulong value)
+	public static T SetUint64<T>(this T key_file, string group_name, string key, ulong value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_uint64(key_file, group_name, key, value);
 		return key_file;
 	}
 
-	public static GKeyFileHandle SetValue(this GKeyFileHandle key_file, string group_name, string key, string value)
+	public static T SetValue<T>(this T key_file, string group_name, string key, string value) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_set_value(key_file, group_name, key, value);
 		return key_file;
@@ -262,7 +262,7 @@ public static class GKeyFileHandleExtensions
 		return GKeyFileExterns.g_key_file_to_data(key_file, out length, out error);
 	}
 
-	public static GKeyFileHandle Unref(this GKeyFileHandle key_file)
+	public static T Unref<T>(this T key_file) where T : GKeyFileHandle
 	{
 		GKeyFileExterns.g_key_file_unref(key_file);
 		return key_file;

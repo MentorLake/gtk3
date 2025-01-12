@@ -6,7 +6,7 @@ public class PangoFontMapHandle : GObjectHandle, GListModelHandle
 
 public static class PangoFontMapHandleExtensions
 {
-	public static PangoFontMapHandle Changed(this PangoFontMapHandle fontmap)
+	public static T Changed<T>(this T fontmap) where T : PangoFontMapHandle
 	{
 		PangoFontMapExterns.pango_font_map_changed(fontmap);
 		return fontmap;
@@ -27,7 +27,7 @@ public static class PangoFontMapHandleExtensions
 		return PangoFontMapExterns.pango_font_map_get_serial(fontmap);
 	}
 
-	public static PangoFontMapHandle ListFamilies(this PangoFontMapHandle fontmap, out PangoFontFamilyHandle[] families, out int n_families)
+	public static T ListFamilies<T>(this T fontmap, out PangoFontFamilyHandle[] families, out int n_families) where T : PangoFontMapHandle
 	{
 		PangoFontMapExterns.pango_font_map_list_families(fontmap, out families, out n_families);
 		return fontmap;

@@ -46,7 +46,7 @@ public static class GdkVisualHandleExtensions
 		return GdkVisualExterns.gdk_visual_get_bits_per_rgb(visual);
 	}
 
-	public static GdkVisualHandle GetBluePixelDetails(this GdkVisualHandle visual, out uint mask, out int shift, out int precision)
+	public static T GetBluePixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
 		GdkVisualExterns.gdk_visual_get_blue_pixel_details(visual, out mask, out shift, out precision);
 		return visual;
@@ -67,13 +67,13 @@ public static class GdkVisualHandleExtensions
 		return GdkVisualExterns.gdk_visual_get_depth(visual);
 	}
 
-	public static GdkVisualHandle GetGreenPixelDetails(this GdkVisualHandle visual, out uint mask, out int shift, out int precision)
+	public static T GetGreenPixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
 		GdkVisualExterns.gdk_visual_get_green_pixel_details(visual, out mask, out shift, out precision);
 		return visual;
 	}
 
-	public static GdkVisualHandle GetRedPixelDetails(this GdkVisualHandle visual, out uint mask, out int shift, out int precision)
+	public static T GetRedPixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
 		GdkVisualExterns.gdk_visual_get_red_pixel_details(visual, out mask, out shift, out precision);
 		return visual;

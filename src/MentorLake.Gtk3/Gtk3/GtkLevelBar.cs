@@ -67,7 +67,7 @@ public delegate void offset_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GtkLevelBarHandleExtensions
 {
-	public static GtkLevelBarHandle AddOffsetValue(this GtkLevelBarHandle self, string name, double value)
+	public static T AddOffsetValue<T>(this T self, string name, double value) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_add_offset_value(self, name, value);
 		return self;
@@ -103,37 +103,37 @@ public static class GtkLevelBarHandleExtensions
 		return GtkLevelBarExterns.gtk_level_bar_get_value(self);
 	}
 
-	public static GtkLevelBarHandle RemoveOffsetValue(this GtkLevelBarHandle self, string name)
+	public static T RemoveOffsetValue<T>(this T self, string name) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_remove_offset_value(self, name);
 		return self;
 	}
 
-	public static GtkLevelBarHandle SetInverted(this GtkLevelBarHandle self, bool inverted)
+	public static T SetInverted<T>(this T self, bool inverted) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_set_inverted(self, inverted);
 		return self;
 	}
 
-	public static GtkLevelBarHandle SetMaxValue(this GtkLevelBarHandle self, double value)
+	public static T SetMaxValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_set_max_value(self, value);
 		return self;
 	}
 
-	public static GtkLevelBarHandle SetMinValue(this GtkLevelBarHandle self, double value)
+	public static T SetMinValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_set_min_value(self, value);
 		return self;
 	}
 
-	public static GtkLevelBarHandle SetMode(this GtkLevelBarHandle self, GtkLevelBarMode mode)
+	public static T SetMode<T>(this T self, GtkLevelBarMode mode) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_set_mode(self, mode);
 		return self;
 	}
 
-	public static GtkLevelBarHandle SetValue(this GtkLevelBarHandle self, double value)
+	public static T SetValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
 		GtkLevelBarExterns.gtk_level_bar_set_value(self, value);
 		return self;

@@ -25,7 +25,7 @@ public static class GDBusInterfaceHandleExtensions
 		return GDBusInterfaceExterns.g_dbus_interface_get_object(interface_);
 	}
 
-	public static GDBusInterfaceHandle GDbusInterfaceSetObject(this GDBusInterfaceHandle interface_, GDBusObjectHandle @object)
+	public static T GDbusInterfaceSetObject<T>(this T interface_, GDBusObjectHandle @object) where T : GDBusInterfaceHandle
 	{
 		GDBusInterfaceExterns.g_dbus_interface_set_object(interface_, @object);
 		return interface_;

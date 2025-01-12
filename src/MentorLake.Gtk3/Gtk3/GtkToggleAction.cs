@@ -71,19 +71,19 @@ public static class GtkToggleActionHandleExtensions
 		return GtkToggleActionExterns.gtk_toggle_action_get_draw_as_radio(action);
 	}
 
-	public static GtkToggleActionHandle SetActive(this GtkToggleActionHandle action, bool is_active)
+	public static T SetActive<T>(this T action, bool is_active) where T : GtkToggleActionHandle
 	{
 		GtkToggleActionExterns.gtk_toggle_action_set_active(action, is_active);
 		return action;
 	}
 
-	public static GtkToggleActionHandle SetDrawAsRadio(this GtkToggleActionHandle action, bool draw_as_radio)
+	public static T SetDrawAsRadio<T>(this T action, bool draw_as_radio) where T : GtkToggleActionHandle
 	{
 		GtkToggleActionExterns.gtk_toggle_action_set_draw_as_radio(action, draw_as_radio);
 		return action;
 	}
 
-	public static GtkToggleActionHandle Toggled(this GtkToggleActionHandle action)
+	public static T Toggled<T>(this T action) where T : GtkToggleActionHandle
 	{
 		GtkToggleActionExterns.gtk_toggle_action_toggled(action);
 		return action;

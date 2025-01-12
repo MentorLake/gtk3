@@ -11,7 +11,7 @@ public static class GFileInputStreamHandleExtensions
 		return GFileInputStreamExterns.g_file_input_stream_query_info(stream, attributes, cancellable, out error);
 	}
 
-	public static GFileInputStreamHandle QueryInfoAsync(this GFileInputStreamHandle stream, string attributes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T QueryInfoAsync<T>(this T stream, string attributes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileInputStreamHandle
 	{
 		GFileInputStreamExterns.g_file_input_stream_query_info_async(stream, attributes, io_priority, cancellable, callback, user_data);
 		return stream;

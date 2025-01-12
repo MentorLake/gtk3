@@ -17,7 +17,7 @@ public static class GRelationHandleExtensions
 		return GRelationExterns.g_relation_delete(relation, key, field);
 	}
 
-	public static GRelationHandle Destroy(this GRelationHandle relation)
+	public static T Destroy<T>(this T relation) where T : GRelationHandle
 	{
 		GRelationExterns.g_relation_destroy(relation);
 		return relation;
@@ -28,19 +28,19 @@ public static class GRelationHandleExtensions
 		return GRelationExterns.g_relation_exists(relation, @__arglist);
 	}
 
-	public static GRelationHandle Index(this GRelationHandle relation, int field, GHashFunc hash_func, GEqualFunc key_equal_func)
+	public static T Index<T>(this T relation, int field, GHashFunc hash_func, GEqualFunc key_equal_func) where T : GRelationHandle
 	{
 		GRelationExterns.g_relation_index(relation, field, hash_func, key_equal_func);
 		return relation;
 	}
 
-	public static GRelationHandle Insert(this GRelationHandle relation, IntPtr @__arglist)
+	public static T Insert<T>(this T relation, IntPtr @__arglist) where T : GRelationHandle
 	{
 		GRelationExterns.g_relation_insert(relation, @__arglist);
 		return relation;
 	}
 
-	public static GRelationHandle Print(this GRelationHandle relation)
+	public static T Print<T>(this T relation) where T : GRelationHandle
 	{
 		GRelationExterns.g_relation_print(relation);
 		return relation;

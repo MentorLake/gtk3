@@ -10,7 +10,7 @@ internal class GtkActivatableHandleImpl : BaseSafeHandle, GtkActivatableHandle
 
 public static class GtkActivatableHandleExtensions
 {
-	public static GtkActivatableHandle DoSetRelatedAction(this GtkActivatableHandle activatable, GtkActionHandle action)
+	public static T DoSetRelatedAction<T>(this T activatable, GtkActionHandle action) where T : GtkActivatableHandle
 	{
 		GtkActivatableExterns.gtk_activatable_do_set_related_action(activatable, action);
 		return activatable;
@@ -26,19 +26,19 @@ public static class GtkActivatableHandleExtensions
 		return GtkActivatableExterns.gtk_activatable_get_use_action_appearance(activatable);
 	}
 
-	public static GtkActivatableHandle SetRelatedAction(this GtkActivatableHandle activatable, GtkActionHandle action)
+	public static T SetRelatedAction<T>(this T activatable, GtkActionHandle action) where T : GtkActivatableHandle
 	{
 		GtkActivatableExterns.gtk_activatable_set_related_action(activatable, action);
 		return activatable;
 	}
 
-	public static GtkActivatableHandle SetUseActionAppearance(this GtkActivatableHandle activatable, bool use_appearance)
+	public static T SetUseActionAppearance<T>(this T activatable, bool use_appearance) where T : GtkActivatableHandle
 	{
 		GtkActivatableExterns.gtk_activatable_set_use_action_appearance(activatable, use_appearance);
 		return activatable;
 	}
 
-	public static GtkActivatableHandle SyncActionProperties(this GtkActivatableHandle activatable, GtkActionHandle action)
+	public static T SyncActionProperties<T>(this T activatable, GtkActionHandle action) where T : GtkActivatableHandle
 	{
 		GtkActivatableExterns.gtk_activatable_sync_action_properties(activatable, action);
 		return activatable;

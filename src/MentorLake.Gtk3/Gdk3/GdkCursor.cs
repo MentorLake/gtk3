@@ -56,7 +56,7 @@ public static class GdkCursorHandleExtensions
 		return GdkCursorExterns.gdk_cursor_ref(cursor);
 	}
 
-	public static GdkCursorHandle Unref(this GdkCursorHandle cursor)
+	public static T Unref<T>(this T cursor) where T : GdkCursorHandle
 	{
 		GdkCursorExterns.gdk_cursor_unref(cursor);
 		return cursor;

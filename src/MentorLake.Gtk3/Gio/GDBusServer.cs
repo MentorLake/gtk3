@@ -83,13 +83,13 @@ public static class GDBusServerHandleExtensions
 		return GDBusServerExterns.g_dbus_server_is_active(server);
 	}
 
-	public static GDBusServerHandle GDbusServerStart(this GDBusServerHandle server)
+	public static T GDbusServerStart<T>(this T server) where T : GDBusServerHandle
 	{
 		GDBusServerExterns.g_dbus_server_start(server);
 		return server;
 	}
 
-	public static GDBusServerHandle GDbusServerStop(this GDBusServerHandle server)
+	public static T GDbusServerStop<T>(this T server) where T : GDBusServerHandle
 	{
 		GDBusServerExterns.g_dbus_server_stop(server);
 		return server;

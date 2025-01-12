@@ -31,19 +31,19 @@ public static class GtkRevealerHandleExtensions
 		return GtkRevealerExterns.gtk_revealer_get_transition_type(revealer);
 	}
 
-	public static GtkRevealerHandle SetRevealChild(this GtkRevealerHandle revealer, bool reveal_child)
+	public static T SetRevealChild<T>(this T revealer, bool reveal_child) where T : GtkRevealerHandle
 	{
 		GtkRevealerExterns.gtk_revealer_set_reveal_child(revealer, reveal_child);
 		return revealer;
 	}
 
-	public static GtkRevealerHandle SetTransitionDuration(this GtkRevealerHandle revealer, uint duration)
+	public static T SetTransitionDuration<T>(this T revealer, uint duration) where T : GtkRevealerHandle
 	{
 		GtkRevealerExterns.gtk_revealer_set_transition_duration(revealer, duration);
 		return revealer;
 	}
 
-	public static GtkRevealerHandle SetTransitionType(this GtkRevealerHandle revealer, GtkRevealerTransitionType transition)
+	public static T SetTransitionType<T>(this T revealer, GtkRevealerTransitionType transition) where T : GtkRevealerHandle
 	{
 		GtkRevealerExterns.gtk_revealer_set_transition_type(revealer, transition);
 		return revealer;

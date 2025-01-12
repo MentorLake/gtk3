@@ -17,7 +17,7 @@ public static class AtkRangeHandleExtensions
 		return AtkRangeExterns.atk_range_copy(src);
 	}
 
-	public static AtkRangeHandle Free(this AtkRangeHandle range)
+	public static T Free<T>(this T range) where T : AtkRangeHandle
 	{
 		AtkRangeExterns.atk_range_free(range);
 		return range;

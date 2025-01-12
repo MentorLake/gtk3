@@ -12,31 +12,31 @@ public class GVariantBuilderHandle : BaseSafeHandle
 
 public static class GVariantBuilderHandleExtensions
 {
-	public static GVariantBuilderHandle Add(this GVariantBuilderHandle builder, string format_string, IntPtr @__arglist)
+	public static T Add<T>(this T builder, string format_string, IntPtr @__arglist) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_add(builder, format_string, @__arglist);
 		return builder;
 	}
 
-	public static GVariantBuilderHandle AddParsed(this GVariantBuilderHandle builder, string format, IntPtr @__arglist)
+	public static T AddParsed<T>(this T builder, string format, IntPtr @__arglist) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_add_parsed(builder, format, @__arglist);
 		return builder;
 	}
 
-	public static GVariantBuilderHandle AddValue(this GVariantBuilderHandle builder, GVariantHandle value)
+	public static T AddValue<T>(this T builder, GVariantHandle value) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_add_value(builder, value);
 		return builder;
 	}
 
-	public static GVariantBuilderHandle Clear(this GVariantBuilderHandle builder)
+	public static T Clear<T>(this T builder) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_clear(builder);
 		return builder;
 	}
 
-	public static GVariantBuilderHandle Close(this GVariantBuilderHandle builder)
+	public static T Close<T>(this T builder) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_close(builder);
 		return builder;
@@ -47,13 +47,13 @@ public static class GVariantBuilderHandleExtensions
 		return GVariantBuilderExterns.g_variant_builder_end(builder);
 	}
 
-	public static GVariantBuilderHandle Init(this GVariantBuilderHandle builder, GVariantTypeHandle type)
+	public static T Init<T>(this T builder, GVariantTypeHandle type) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_init(builder, type);
 		return builder;
 	}
 
-	public static GVariantBuilderHandle Open(this GVariantBuilderHandle builder, GVariantTypeHandle type)
+	public static T Open<T>(this T builder, GVariantTypeHandle type) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_open(builder, type);
 		return builder;
@@ -64,7 +64,7 @@ public static class GVariantBuilderHandleExtensions
 		return GVariantBuilderExterns.g_variant_builder_ref(builder);
 	}
 
-	public static GVariantBuilderHandle Unref(this GVariantBuilderHandle builder)
+	public static T Unref<T>(this T builder) where T : GVariantBuilderHandle
 	{
 		GVariantBuilderExterns.g_variant_builder_unref(builder);
 		return builder;

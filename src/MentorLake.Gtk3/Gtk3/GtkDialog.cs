@@ -104,7 +104,7 @@ public delegate void response([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkDialogHandleExtensions
 {
-	public static GtkDialogHandle AddActionWidget(this GtkDialogHandle dialog, GtkWidgetHandle child, int response_id)
+	public static T AddActionWidget<T>(this T dialog, GtkWidgetHandle child, int response_id) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_add_action_widget(dialog, child, response_id);
 		return dialog;
@@ -115,7 +115,7 @@ public static class GtkDialogHandleExtensions
 		return GtkDialogExterns.gtk_dialog_add_button(dialog, button_text, response_id);
 	}
 
-	public static GtkDialogHandle AddButtons(this GtkDialogHandle dialog, string first_button_text, IntPtr @__arglist)
+	public static T AddButtons<T>(this T dialog, string first_button_text, IntPtr @__arglist) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_add_buttons(dialog, first_button_text, @__arglist);
 		return dialog;
@@ -146,7 +146,7 @@ public static class GtkDialogHandleExtensions
 		return GtkDialogExterns.gtk_dialog_get_widget_for_response(dialog, response_id);
 	}
 
-	public static GtkDialogHandle Response(this GtkDialogHandle dialog, int response_id)
+	public static T Response<T>(this T dialog, int response_id) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_response(dialog, response_id);
 		return dialog;
@@ -157,25 +157,25 @@ public static class GtkDialogHandleExtensions
 		return GtkDialogExterns.gtk_dialog_run(dialog);
 	}
 
-	public static GtkDialogHandle SetAlternativeButtonOrder(this GtkDialogHandle dialog, int first_response_id, IntPtr @__arglist)
+	public static T SetAlternativeButtonOrder<T>(this T dialog, int first_response_id, IntPtr @__arglist) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_set_alternative_button_order(dialog, first_response_id, @__arglist);
 		return dialog;
 	}
 
-	public static GtkDialogHandle SetAlternativeButtonOrderFromArray(this GtkDialogHandle dialog, int n_params, int[] new_order)
+	public static T SetAlternativeButtonOrderFromArray<T>(this T dialog, int n_params, int[] new_order) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_set_alternative_button_order_from_array(dialog, n_params, new_order);
 		return dialog;
 	}
 
-	public static GtkDialogHandle SetDefaultResponse(this GtkDialogHandle dialog, int response_id)
+	public static T SetDefaultResponse<T>(this T dialog, int response_id) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_set_default_response(dialog, response_id);
 		return dialog;
 	}
 
-	public static GtkDialogHandle SetResponseSensitive(this GtkDialogHandle dialog, int response_id, bool setting)
+	public static T SetResponseSensitive<T>(this T dialog, int response_id, bool setting) where T : GtkDialogHandle
 	{
 		GtkDialogExterns.gtk_dialog_set_response_sensitive(dialog, response_id, setting);
 		return dialog;

@@ -110,13 +110,13 @@ public static class GtkSwitchHandleExtensions
 		return GtkSwitchExterns.gtk_switch_get_state(sw);
 	}
 
-	public static GtkSwitchHandle SetActive(this GtkSwitchHandle sw, bool is_active)
+	public static T SetActive<T>(this T sw, bool is_active) where T : GtkSwitchHandle
 	{
 		GtkSwitchExterns.gtk_switch_set_active(sw, is_active);
 		return sw;
 	}
 
-	public static GtkSwitchHandle SetState(this GtkSwitchHandle sw, bool state)
+	public static T SetState<T>(this T sw, bool state) where T : GtkSwitchHandle
 	{
 		GtkSwitchExterns.gtk_switch_set_state(sw, state);
 		return sw;

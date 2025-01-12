@@ -41,7 +41,7 @@ public static class GtkFontSelectionDialogHandleExtensions
 		return GtkFontSelectionDialogExterns.gtk_font_selection_dialog_set_font_name(fsd, fontname);
 	}
 
-	public static GtkFontSelectionDialogHandle SetPreviewText(this GtkFontSelectionDialogHandle fsd, string text)
+	public static T SetPreviewText<T>(this T fsd, string text) where T : GtkFontSelectionDialogHandle
 	{
 		GtkFontSelectionDialogExterns.gtk_font_selection_dialog_set_preview_text(fsd, text);
 		return fsd;

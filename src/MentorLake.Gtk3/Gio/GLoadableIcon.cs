@@ -15,7 +15,7 @@ public static class GLoadableIconHandleExtensions
 		return GLoadableIconExterns.g_loadable_icon_load(icon, size, out type, cancellable, out error);
 	}
 
-	public static GLoadableIconHandle LoadAsync(this GLoadableIconHandle icon, int size, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadAsync<T>(this T icon, int size, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GLoadableIconHandle
 	{
 		GLoadableIconExterns.g_loadable_icon_load_async(icon, size, cancellable, callback, user_data);
 		return icon;

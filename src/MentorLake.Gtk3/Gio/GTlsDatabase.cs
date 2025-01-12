@@ -16,7 +16,7 @@ public static class GTlsDatabaseHandleExtensions
 		return GTlsDatabaseExterns.g_tls_database_lookup_certificate_for_handle(self, handle, interaction, flags, cancellable, out error);
 	}
 
-	public static GTlsDatabaseHandle LookupCertificateForHandleAsync(this GTlsDatabaseHandle self, string handle, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupCertificateForHandleAsync<T>(this T self, string handle, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
 		GTlsDatabaseExterns.g_tls_database_lookup_certificate_for_handle_async(self, handle, interaction, flags, cancellable, callback, user_data);
 		return self;
@@ -32,7 +32,7 @@ public static class GTlsDatabaseHandleExtensions
 		return GTlsDatabaseExterns.g_tls_database_lookup_certificate_issuer(self, certificate, interaction, flags, cancellable, out error);
 	}
 
-	public static GTlsDatabaseHandle LookupCertificateIssuerAsync(this GTlsDatabaseHandle self, GTlsCertificateHandle certificate, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupCertificateIssuerAsync<T>(this T self, GTlsCertificateHandle certificate, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
 		GTlsDatabaseExterns.g_tls_database_lookup_certificate_issuer_async(self, certificate, interaction, flags, cancellable, callback, user_data);
 		return self;
@@ -48,7 +48,7 @@ public static class GTlsDatabaseHandleExtensions
 		return GTlsDatabaseExterns.g_tls_database_lookup_certificates_issued_by(self, issuer_raw_dn, interaction, flags, cancellable, out error);
 	}
 
-	public static GTlsDatabaseHandle LookupCertificatesIssuedByAsync(this GTlsDatabaseHandle self, GByteArray[] issuer_raw_dn, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupCertificatesIssuedByAsync<T>(this T self, GByteArray[] issuer_raw_dn, GTlsInteractionHandle interaction, GTlsDatabaseLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
 		GTlsDatabaseExterns.g_tls_database_lookup_certificates_issued_by_async(self, issuer_raw_dn, interaction, flags, cancellable, callback, user_data);
 		return self;
@@ -64,7 +64,7 @@ public static class GTlsDatabaseHandleExtensions
 		return GTlsDatabaseExterns.g_tls_database_verify_chain(self, chain, purpose, identity, interaction, flags, cancellable, out error);
 	}
 
-	public static GTlsDatabaseHandle VerifyChainAsync(this GTlsDatabaseHandle self, GTlsCertificateHandle chain, string purpose, GSocketConnectableHandle identity, GTlsInteractionHandle interaction, GTlsDatabaseVerifyFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T VerifyChainAsync<T>(this T self, GTlsCertificateHandle chain, string purpose, GSocketConnectableHandle identity, GTlsInteractionHandle interaction, GTlsDatabaseVerifyFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
 		GTlsDatabaseExterns.g_tls_database_verify_chain_async(self, chain, purpose, identity, interaction, flags, cancellable, callback, user_data);
 		return self;

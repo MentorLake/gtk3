@@ -12,7 +12,7 @@ public static class GDBusPropertyInfoHandleExtensions
 		return GDBusPropertyInfoExterns.g_dbus_property_info_ref(info);
 	}
 
-	public static GDBusPropertyInfoHandle GDbusPropertyInfoUnref(this GDBusPropertyInfoHandle info)
+	public static T GDbusPropertyInfoUnref<T>(this T info) where T : GDBusPropertyInfoHandle
 	{
 		GDBusPropertyInfoExterns.g_dbus_property_info_unref(info);
 		return info;

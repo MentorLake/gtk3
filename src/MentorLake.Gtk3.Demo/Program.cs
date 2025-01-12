@@ -16,15 +16,15 @@ public static class Program
 
 		appHandle.Signal_Activate().Subscribe(async e =>
 		{
-			var window = (GtkWindowHandle) GtkWindowHandle.New(GtkWindowType.GTK_WINDOW_TOPLEVEL)
+			var window = GtkWindowHandle.New(GtkWindowType.GTK_WINDOW_TOPLEVEL)
 				.Add(GtkBoxHandle.New(GtkOrientation.GTK_ORIENTATION_HORIZONTAL, 0)
 					.Add(GtkDrawingAreaHandle.New()
 						.SetManagedData("DrawingAreaKeyVal", "TestValue")
 						.With(d => d.Signal_Draw().Subscribe(arg =>
-							{
-								arg.Cr.CairoArc(0, 0, 10, 0, 180);
-								arg.Cr.CairoStroke();
-							}))
+						{
+							arg.Cr.CairoArc(0, 0, 10, 0, 180);
+							arg.Cr.CairoStroke();
+						}))
 						.SetSizeRequest(200, 200))
 					.Add(GtkButtonHandle.New()
 						.SetLabel("TEST")

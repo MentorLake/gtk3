@@ -12,7 +12,7 @@ public class PangoAttrListHandle : BaseSafeHandle
 
 public static class PangoAttrListHandleExtensions
 {
-	public static PangoAttrListHandle Change(this PangoAttrListHandle list, PangoAttributeHandle attr)
+	public static T Change<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_change(list, attr);
 		return list;
@@ -43,13 +43,13 @@ public static class PangoAttrListHandleExtensions
 		return PangoAttrListExterns.pango_attr_list_get_iterator(list);
 	}
 
-	public static PangoAttrListHandle Insert(this PangoAttrListHandle list, PangoAttributeHandle attr)
+	public static T Insert<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_insert(list, attr);
 		return list;
 	}
 
-	public static PangoAttrListHandle InsertBefore(this PangoAttrListHandle list, PangoAttributeHandle attr)
+	public static T InsertBefore<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_insert_before(list, attr);
 		return list;
@@ -60,7 +60,7 @@ public static class PangoAttrListHandleExtensions
 		return PangoAttrListExterns.pango_attr_list_ref(list);
 	}
 
-	public static PangoAttrListHandle Splice(this PangoAttrListHandle list, PangoAttrListHandle other, int pos, int len)
+	public static T Splice<T>(this T list, PangoAttrListHandle other, int pos, int len) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_splice(list, other, pos, len);
 		return list;
@@ -71,13 +71,13 @@ public static class PangoAttrListHandleExtensions
 		return PangoAttrListExterns.pango_attr_list_to_string(list);
 	}
 
-	public static PangoAttrListHandle Unref(this PangoAttrListHandle list)
+	public static T Unref<T>(this T list) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_unref(list);
 		return list;
 	}
 
-	public static PangoAttrListHandle Update(this PangoAttrListHandle list, int pos, int remove, int add)
+	public static T Update<T>(this T list, int pos, int remove, int add) where T : PangoAttrListHandle
 	{
 		PangoAttrListExterns.pango_attr_list_update(list, pos, remove, add);
 		return list;

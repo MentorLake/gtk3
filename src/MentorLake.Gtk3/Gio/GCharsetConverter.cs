@@ -21,7 +21,7 @@ public static class GCharsetConverterHandleExtensions
 		return GCharsetConverterExterns.g_charset_converter_get_use_fallback(converter);
 	}
 
-	public static GCharsetConverterHandle SetUseFallback(this GCharsetConverterHandle converter, bool use_fallback)
+	public static T SetUseFallback<T>(this T converter, bool use_fallback) where T : GCharsetConverterHandle
 	{
 		GCharsetConverterExterns.g_charset_converter_set_use_fallback(converter, use_fallback);
 		return converter;

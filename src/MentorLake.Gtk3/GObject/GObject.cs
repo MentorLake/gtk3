@@ -97,13 +97,13 @@ public delegate void notify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GObjectHandleExtensions
 {
-	public static GObjectHandle AddToggleRef(this GObjectHandle @object, GToggleNotify notify, IntPtr data)
+	public static T AddToggleRef<T>(this T @object, GToggleNotify notify, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_add_toggle_ref(@object, notify, data);
 		return @object;
 	}
 
-	public static GObjectHandle AddWeakPointer(this GObjectHandle @object, ref IntPtr weak_pointer_location)
+	public static T AddWeakPointer<T>(this T @object, ref IntPtr weak_pointer_location) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_add_weak_pointer(@object, ref weak_pointer_location);
 		return @object;
@@ -129,7 +129,7 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_connect(@object, signal_spec, @__arglist);
 	}
 
-	public static GObjectHandle Disconnect(this GObjectHandle @object, string signal_spec, IntPtr @__arglist)
+	public static T Disconnect<T>(this T @object, string signal_spec, IntPtr @__arglist) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_disconnect(@object, signal_spec, @__arglist);
 		return @object;
@@ -145,19 +145,19 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_dup_qdata(@object, quark, dup_func, user_data);
 	}
 
-	public static GObjectHandle ForceFloating(this GObjectHandle @object)
+	public static T ForceFloating<T>(this T @object) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_force_floating(@object);
 		return @object;
 	}
 
-	public static GObjectHandle FreezeNotify(this GObjectHandle @object)
+	public static T FreezeNotify<T>(this T @object) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_freeze_notify(@object);
 		return @object;
 	}
 
-	public static GObjectHandle Get(this GObjectHandle @object, string first_property_name, IntPtr @__arglist)
+	public static T Get<T>(this T @object, string first_property_name, IntPtr @__arglist) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_get(@object, first_property_name, @__arglist);
 		return @object;
@@ -168,7 +168,7 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_get_data(@object, key);
 	}
 
-	public static GObjectHandle GetProperty(this GObjectHandle @object, string property_name, out GValue value)
+	public static T GetProperty<T>(this T @object, string property_name, out GValue value) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_get_property(@object, property_name, out value);
 		return @object;
@@ -179,13 +179,13 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_get_qdata(@object, quark);
 	}
 
-	public static GObjectHandle GetValist(this GObjectHandle @object, string first_property_name, out IntPtr var_args)
+	public static T GetValist<T>(this T @object, string first_property_name, out IntPtr var_args) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_get_valist(@object, first_property_name, out var_args);
 		return @object;
 	}
 
-	public static GObjectHandle Getv(this GObjectHandle @object, uint n_properties, string[] names, GValue[] values)
+	public static T Getv<T>(this T @object, uint n_properties, string[] names, GValue[] values) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_getv(@object, n_properties, names, values);
 		return @object;
@@ -196,13 +196,13 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_is_floating(@object);
 	}
 
-	public static GObjectHandle Notify(this GObjectHandle @object, string property_name)
+	public static T Notify<T>(this T @object, string property_name) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_notify(@object, property_name);
 		return @object;
 	}
 
-	public static GObjectHandle NotifyByPspec(this GObjectHandle @object, GParamSpecHandle pspec)
+	public static T NotifyByPspec<T>(this T @object, GParamSpecHandle pspec) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_notify_by_pspec(@object, pspec);
 		return @object;
@@ -218,13 +218,13 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_ref_sink(@object);
 	}
 
-	public static GObjectHandle RemoveToggleRef(this GObjectHandle @object, GToggleNotify notify, IntPtr data)
+	public static T RemoveToggleRef<T>(this T @object, GToggleNotify notify, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_remove_toggle_ref(@object, notify, data);
 		return @object;
 	}
 
-	public static GObjectHandle RemoveWeakPointer(this GObjectHandle @object, ref IntPtr weak_pointer_location)
+	public static T RemoveWeakPointer<T>(this T @object, ref IntPtr weak_pointer_location) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_remove_weak_pointer(@object, ref weak_pointer_location);
 		return @object;
@@ -240,55 +240,55 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_replace_qdata(@object, quark, oldval, newval, destroy, out old_destroy);
 	}
 
-	public static GObjectHandle RunDispose(this GObjectHandle @object)
+	public static T RunDispose<T>(this T @object) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_run_dispose(@object);
 		return @object;
 	}
 
-	public static GObjectHandle Set(this GObjectHandle @object, string first_property_name, IntPtr @__arglist)
+	public static T Set<T>(this T @object, string first_property_name, IntPtr @__arglist) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set(@object, first_property_name, @__arglist);
 		return @object;
 	}
 
-	public static GObjectHandle SetData(this GObjectHandle @object, string key, IntPtr data)
+	public static T SetData<T>(this T @object, string key, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_data(@object, key, data);
 		return @object;
 	}
 
-	public static GObjectHandle SetDataFull(this GObjectHandle @object, string key, IntPtr data, GDestroyNotify destroy)
+	public static T SetDataFull<T>(this T @object, string key, IntPtr data, GDestroyNotify destroy) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_data_full(@object, key, data, destroy);
 		return @object;
 	}
 
-	public static GObjectHandle SetProperty(this GObjectHandle @object, string property_name, GValueHandle value)
+	public static T SetProperty<T>(this T @object, string property_name, GValueHandle value) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_property(@object, property_name, value);
 		return @object;
 	}
 
-	public static GObjectHandle SetQdata(this GObjectHandle @object, GQuark quark, IntPtr data)
+	public static T SetQdata<T>(this T @object, GQuark quark, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_qdata(@object, quark, data);
 		return @object;
 	}
 
-	public static GObjectHandle SetQdataFull(this GObjectHandle @object, GQuark quark, IntPtr data, GDestroyNotify destroy)
+	public static T SetQdataFull<T>(this T @object, GQuark quark, IntPtr data, GDestroyNotify destroy) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_qdata_full(@object, quark, data, destroy);
 		return @object;
 	}
 
-	public static GObjectHandle SetValist(this GObjectHandle @object, string first_property_name, IntPtr var_args)
+	public static T SetValist<T>(this T @object, string first_property_name, IntPtr var_args) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_set_valist(@object, first_property_name, var_args);
 		return @object;
 	}
 
-	public static GObjectHandle Setv(this GObjectHandle @object, uint n_properties, string[] names, GValue[] values)
+	public static T Setv<T>(this T @object, uint n_properties, string[] names, GValue[] values) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_setv(@object, n_properties, names, values);
 		return @object;
@@ -309,37 +309,37 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_object_take_ref(@object);
 	}
 
-	public static GObjectHandle ThawNotify(this GObjectHandle @object)
+	public static T ThawNotify<T>(this T @object) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_thaw_notify(@object);
 		return @object;
 	}
 
-	public static GObjectHandle Unref(this GObjectHandle @object)
+	public static T Unref<T>(this T @object) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_unref(@object);
 		return @object;
 	}
 
-	public static GObjectHandle WatchClosure(this GObjectHandle @object, GClosureHandle closure)
+	public static T WatchClosure<T>(this T @object, GClosureHandle closure) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_watch_closure(@object, closure);
 		return @object;
 	}
 
-	public static GObjectHandle WeakRef(this GObjectHandle @object, GWeakNotify notify, IntPtr data)
+	public static T WeakRef<T>(this T @object, GWeakNotify notify, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_weak_ref(@object, notify, data);
 		return @object;
 	}
 
-	public static GObjectHandle WeakUnref(this GObjectHandle @object, GWeakNotify notify, IntPtr data)
+	public static T WeakUnref<T>(this T @object, GWeakNotify notify, IntPtr data) where T : GObjectHandle
 	{
 		GObjectExterns.g_object_weak_unref(@object, notify, data);
 		return @object;
 	}
 
-	public static GObjectHandle GSignalStopEmissionByName(this GObjectHandle instance, string detailed_signal)
+	public static T GSignalStopEmissionByName<T>(this T instance, string detailed_signal) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_stop_emission_by_name(instance, detailed_signal);
 		return instance;
@@ -355,13 +355,13 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_signal_handlers_unblock_matched(instance, mask, signal_id, detail, closure, func, data);
 	}
 
-	public static GObjectHandle GSignalEmitByName(this GObjectHandle instance, string detailed_signal, IntPtr @__arglist)
+	public static T GSignalEmitByName<T>(this T instance, string detailed_signal, IntPtr @__arglist) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_emit_by_name(instance, detailed_signal, @__arglist);
 		return instance;
 	}
 
-	public static GObjectHandle GSignalHandlersDestroy(this GObjectHandle instance)
+	public static T GSignalHandlersDestroy<T>(this T instance) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_handlers_destroy(instance);
 		return instance;
@@ -377,7 +377,7 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_signal_connect_closure_by_id(instance, signal_id, detail, closure, after);
 	}
 
-	public static GObjectHandle GSignalEmit(this GObjectHandle instance, uint signal_id, GQuark detail, IntPtr @__arglist)
+	public static T GSignalEmit<T>(this T instance, uint signal_id, GQuark detail, IntPtr @__arglist) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_emit(instance, signal_id, detail, @__arglist);
 		return instance;
@@ -388,7 +388,7 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_signal_handlers_disconnect_matched(instance, mask, signal_id, detail, closure, func, data);
 	}
 
-	public static GObjectHandle GSignalHandlerUnblock(this GObjectHandle instance, ulong handler_id)
+	public static T GSignalHandlerUnblock<T>(this T instance, ulong handler_id) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_handler_unblock(instance, handler_id);
 		return instance;
@@ -409,13 +409,13 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_signal_get_invocation_hint(instance);
 	}
 
-	public static GObjectHandle GSignalHandlerBlock(this GObjectHandle instance, ulong handler_id)
+	public static T GSignalHandlerBlock<T>(this T instance, ulong handler_id) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_handler_block(instance, handler_id);
 		return instance;
 	}
 
-	public static GObjectHandle GSignalHandlerDisconnect(this GObjectHandle instance, ulong handler_id)
+	public static T GSignalHandlerDisconnect<T>(this T instance, ulong handler_id) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_handler_disconnect(instance, handler_id);
 		return instance;
@@ -431,7 +431,7 @@ public static class GObjectHandleExtensions
 		return GObjectExterns.g_signal_connect_closure(instance, detailed_signal, closure, after);
 	}
 
-	public static GObjectHandle GSignalStopEmission(this GObjectHandle instance, uint signal_id, GQuark detail)
+	public static T GSignalStopEmission<T>(this T instance, uint signal_id, GQuark detail) where T : GObjectHandle
 	{
 		GObjectExterns.g_signal_stop_emission(instance, signal_id, detail);
 		return instance;

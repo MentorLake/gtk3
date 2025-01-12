@@ -101,31 +101,31 @@ public static class GtkFontButtonHandleExtensions
 		return GtkFontButtonExterns.gtk_font_button_set_font_name(font_button, fontname);
 	}
 
-	public static GtkFontButtonHandle SetShowSize(this GtkFontButtonHandle font_button, bool show_size)
+	public static T SetShowSize<T>(this T font_button, bool show_size) where T : GtkFontButtonHandle
 	{
 		GtkFontButtonExterns.gtk_font_button_set_show_size(font_button, show_size);
 		return font_button;
 	}
 
-	public static GtkFontButtonHandle SetShowStyle(this GtkFontButtonHandle font_button, bool show_style)
+	public static T SetShowStyle<T>(this T font_button, bool show_style) where T : GtkFontButtonHandle
 	{
 		GtkFontButtonExterns.gtk_font_button_set_show_style(font_button, show_style);
 		return font_button;
 	}
 
-	public static GtkFontButtonHandle SetTitle(this GtkFontButtonHandle font_button, string title)
+	public static T SetTitle<T>(this T font_button, string title) where T : GtkFontButtonHandle
 	{
 		GtkFontButtonExterns.gtk_font_button_set_title(font_button, title);
 		return font_button;
 	}
 
-	public static GtkFontButtonHandle SetUseFont(this GtkFontButtonHandle font_button, bool use_font)
+	public static T SetUseFont<T>(this T font_button, bool use_font) where T : GtkFontButtonHandle
 	{
 		GtkFontButtonExterns.gtk_font_button_set_use_font(font_button, use_font);
 		return font_button;
 	}
 
-	public static GtkFontButtonHandle SetUseSize(this GtkFontButtonHandle font_button, bool use_size)
+	public static T SetUseSize<T>(this T font_button, bool use_size) where T : GtkFontButtonHandle
 	{
 		GtkFontButtonExterns.gtk_font_button_set_use_size(font_button, use_size);
 		return font_button;

@@ -178,7 +178,7 @@ public delegate bool scroll_child([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkScrolledWindowHandleExtensions
 {
-	public static GtkScrolledWindowHandle AddWithViewport(this GtkScrolledWindowHandle scrolled_window, GtkWidgetHandle child)
+	public static T AddWithViewport<T>(this T scrolled_window, GtkWidgetHandle child) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_add_with_viewport(scrolled_window, child);
 		return scrolled_window;
@@ -234,7 +234,7 @@ public static class GtkScrolledWindowHandleExtensions
 		return GtkScrolledWindowExterns.gtk_scrolled_window_get_placement(scrolled_window);
 	}
 
-	public static GtkScrolledWindowHandle GetPolicy(this GtkScrolledWindowHandle scrolled_window, out GtkPolicyType hscrollbar_policy, out GtkPolicyType vscrollbar_policy)
+	public static T GetPolicy<T>(this T scrolled_window, out GtkPolicyType hscrollbar_policy, out GtkPolicyType vscrollbar_policy) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_get_policy(scrolled_window, out hscrollbar_policy, out vscrollbar_policy);
 		return scrolled_window;
@@ -265,91 +265,91 @@ public static class GtkScrolledWindowHandleExtensions
 		return GtkScrolledWindowExterns.gtk_scrolled_window_get_vscrollbar(scrolled_window);
 	}
 
-	public static GtkScrolledWindowHandle SetCaptureButtonPress(this GtkScrolledWindowHandle scrolled_window, bool capture_button_press)
+	public static T SetCaptureButtonPress<T>(this T scrolled_window, bool capture_button_press) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_capture_button_press(scrolled_window, capture_button_press);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetHadjustment(this GtkScrolledWindowHandle scrolled_window, GtkAdjustmentHandle hadjustment)
+	public static T SetHadjustment<T>(this T scrolled_window, GtkAdjustmentHandle hadjustment) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_hadjustment(scrolled_window, hadjustment);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetKineticScrolling(this GtkScrolledWindowHandle scrolled_window, bool kinetic_scrolling)
+	public static T SetKineticScrolling<T>(this T scrolled_window, bool kinetic_scrolling) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_kinetic_scrolling(scrolled_window, kinetic_scrolling);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetMaxContentHeight(this GtkScrolledWindowHandle scrolled_window, int height)
+	public static T SetMaxContentHeight<T>(this T scrolled_window, int height) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_max_content_height(scrolled_window, height);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetMaxContentWidth(this GtkScrolledWindowHandle scrolled_window, int width)
+	public static T SetMaxContentWidth<T>(this T scrolled_window, int width) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_max_content_width(scrolled_window, width);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetMinContentHeight(this GtkScrolledWindowHandle scrolled_window, int height)
+	public static T SetMinContentHeight<T>(this T scrolled_window, int height) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_min_content_height(scrolled_window, height);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetMinContentWidth(this GtkScrolledWindowHandle scrolled_window, int width)
+	public static T SetMinContentWidth<T>(this T scrolled_window, int width) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_min_content_width(scrolled_window, width);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetOverlayScrolling(this GtkScrolledWindowHandle scrolled_window, bool overlay_scrolling)
+	public static T SetOverlayScrolling<T>(this T scrolled_window, bool overlay_scrolling) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_overlay_scrolling(scrolled_window, overlay_scrolling);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetPlacement(this GtkScrolledWindowHandle scrolled_window, GtkCornerType window_placement)
+	public static T SetPlacement<T>(this T scrolled_window, GtkCornerType window_placement) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_placement(scrolled_window, window_placement);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetPolicy(this GtkScrolledWindowHandle scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy)
+	public static T SetPolicy<T>(this T scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_policy(scrolled_window, hscrollbar_policy, vscrollbar_policy);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetPropagateNaturalHeight(this GtkScrolledWindowHandle scrolled_window, bool propagate)
+	public static T SetPropagateNaturalHeight<T>(this T scrolled_window, bool propagate) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_propagate_natural_height(scrolled_window, propagate);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetPropagateNaturalWidth(this GtkScrolledWindowHandle scrolled_window, bool propagate)
+	public static T SetPropagateNaturalWidth<T>(this T scrolled_window, bool propagate) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_propagate_natural_width(scrolled_window, propagate);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetShadowType(this GtkScrolledWindowHandle scrolled_window, GtkShadowType type)
+	public static T SetShadowType<T>(this T scrolled_window, GtkShadowType type) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_shadow_type(scrolled_window, type);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle SetVadjustment(this GtkScrolledWindowHandle scrolled_window, GtkAdjustmentHandle vadjustment)
+	public static T SetVadjustment<T>(this T scrolled_window, GtkAdjustmentHandle vadjustment) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_set_vadjustment(scrolled_window, vadjustment);
 		return scrolled_window;
 	}
 
-	public static GtkScrolledWindowHandle UnsetPlacement(this GtkScrolledWindowHandle scrolled_window)
+	public static T UnsetPlacement<T>(this T scrolled_window) where T : GtkScrolledWindowHandle
 	{
 		GtkScrolledWindowExterns.gtk_scrolled_window_unset_placement(scrolled_window);
 		return scrolled_window;

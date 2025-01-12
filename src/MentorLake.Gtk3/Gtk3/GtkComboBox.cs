@@ -323,25 +323,25 @@ public static class GtkComboBoxHandleExtensions
 		return GtkComboBoxExterns.gtk_combo_box_get_wrap_width(combo_box);
 	}
 
-	public static GtkComboBoxHandle Popdown(this GtkComboBoxHandle combo_box)
+	public static T Popdown<T>(this T combo_box) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_popdown(combo_box);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle Popup(this GtkComboBoxHandle combo_box)
+	public static T Popup<T>(this T combo_box) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_popup(combo_box);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle PopupForDevice(this GtkComboBoxHandle combo_box, GdkDeviceHandle device)
+	public static T PopupForDevice<T>(this T combo_box, GdkDeviceHandle device) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_popup_for_device(combo_box, device);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetActive(this GtkComboBoxHandle combo_box, int index_)
+	public static T SetActive<T>(this T combo_box, int index_) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_active(combo_box, index_);
 		return combo_box;
@@ -352,79 +352,79 @@ public static class GtkComboBoxHandleExtensions
 		return GtkComboBoxExterns.gtk_combo_box_set_active_id(combo_box, active_id);
 	}
 
-	public static GtkComboBoxHandle SetActiveIter(this GtkComboBoxHandle combo_box, GtkTreeIterHandle iter)
+	public static T SetActiveIter<T>(this T combo_box, GtkTreeIterHandle iter) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_active_iter(combo_box, iter);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetAddTearoffs(this GtkComboBoxHandle combo_box, bool add_tearoffs)
+	public static T SetAddTearoffs<T>(this T combo_box, bool add_tearoffs) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_add_tearoffs(combo_box, add_tearoffs);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetButtonSensitivity(this GtkComboBoxHandle combo_box, GtkSensitivityType sensitivity)
+	public static T SetButtonSensitivity<T>(this T combo_box, GtkSensitivityType sensitivity) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_button_sensitivity(combo_box, sensitivity);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetColumnSpanColumn(this GtkComboBoxHandle combo_box, int column_span)
+	public static T SetColumnSpanColumn<T>(this T combo_box, int column_span) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_column_span_column(combo_box, column_span);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetEntryTextColumn(this GtkComboBoxHandle combo_box, int text_column)
+	public static T SetEntryTextColumn<T>(this T combo_box, int text_column) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_entry_text_column(combo_box, text_column);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetFocusOnClick(this GtkComboBoxHandle combo, bool focus_on_click)
+	public static T SetFocusOnClick<T>(this T combo, bool focus_on_click) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_focus_on_click(combo, focus_on_click);
 		return combo;
 	}
 
-	public static GtkComboBoxHandle SetIdColumn(this GtkComboBoxHandle combo_box, int id_column)
+	public static T SetIdColumn<T>(this T combo_box, int id_column) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_id_column(combo_box, id_column);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetModel(this GtkComboBoxHandle combo_box, GtkTreeModelHandle model)
+	public static T SetModel<T>(this T combo_box, GtkTreeModelHandle model) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_model(combo_box, model);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetPopupFixedWidth(this GtkComboBoxHandle combo_box, bool @fixed)
+	public static T SetPopupFixedWidth<T>(this T combo_box, bool @fixed) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_popup_fixed_width(combo_box, @fixed);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetRowSeparatorFunc(this GtkComboBoxHandle combo_box, GtkTreeViewRowSeparatorFunc func, IntPtr data, GDestroyNotify destroy)
+	public static T SetRowSeparatorFunc<T>(this T combo_box, GtkTreeViewRowSeparatorFunc func, IntPtr data, GDestroyNotify destroy) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_row_separator_func(combo_box, func, data, destroy);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetRowSpanColumn(this GtkComboBoxHandle combo_box, int row_span)
+	public static T SetRowSpanColumn<T>(this T combo_box, int row_span) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_row_span_column(combo_box, row_span);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetTitle(this GtkComboBoxHandle combo_box, string title)
+	public static T SetTitle<T>(this T combo_box, string title) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_title(combo_box, title);
 		return combo_box;
 	}
 
-	public static GtkComboBoxHandle SetWrapWidth(this GtkComboBoxHandle combo_box, int width)
+	public static T SetWrapWidth<T>(this T combo_box, int width) where T : GtkComboBoxHandle
 	{
 		GtkComboBoxExterns.gtk_combo_box_set_wrap_width(combo_box, width);
 		return combo_box;

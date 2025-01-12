@@ -98,19 +98,19 @@ public delegate void value_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkAdjustmentHandleExtensions
 {
-	public static GtkAdjustmentHandle Changed(this GtkAdjustmentHandle adjustment)
+	public static T Changed<T>(this T adjustment) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_changed(adjustment);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle ClampPage(this GtkAdjustmentHandle adjustment, double lower, double upper)
+	public static T ClampPage<T>(this T adjustment, double lower, double upper) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_clamp_page(adjustment, lower, upper);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle Configure(this GtkAdjustmentHandle adjustment, double value, double lower, double upper, double step_increment, double page_increment, double page_size)
+	public static T Configure<T>(this T adjustment, double value, double lower, double upper, double step_increment, double page_increment, double page_size) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_configure(adjustment, value, lower, upper, step_increment, page_increment, page_size);
 		return adjustment;
@@ -151,43 +151,43 @@ public static class GtkAdjustmentHandleExtensions
 		return GtkAdjustmentExterns.gtk_adjustment_get_value(adjustment);
 	}
 
-	public static GtkAdjustmentHandle SetLower(this GtkAdjustmentHandle adjustment, double lower)
+	public static T SetLower<T>(this T adjustment, double lower) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_lower(adjustment, lower);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle SetPageIncrement(this GtkAdjustmentHandle adjustment, double page_increment)
+	public static T SetPageIncrement<T>(this T adjustment, double page_increment) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_page_increment(adjustment, page_increment);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle SetPageSize(this GtkAdjustmentHandle adjustment, double page_size)
+	public static T SetPageSize<T>(this T adjustment, double page_size) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_page_size(adjustment, page_size);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle SetStepIncrement(this GtkAdjustmentHandle adjustment, double step_increment)
+	public static T SetStepIncrement<T>(this T adjustment, double step_increment) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_step_increment(adjustment, step_increment);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle SetUpper(this GtkAdjustmentHandle adjustment, double upper)
+	public static T SetUpper<T>(this T adjustment, double upper) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_upper(adjustment, upper);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle SetValue(this GtkAdjustmentHandle adjustment, double value)
+	public static T SetValue<T>(this T adjustment, double value) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_set_value(adjustment, value);
 		return adjustment;
 	}
 
-	public static GtkAdjustmentHandle ValueChanged(this GtkAdjustmentHandle adjustment)
+	public static T ValueChanged<T>(this T adjustment) where T : GtkAdjustmentHandle
 	{
 		GtkAdjustmentExterns.gtk_adjustment_value_changed(adjustment);
 		return adjustment;

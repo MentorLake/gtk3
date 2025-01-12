@@ -125,37 +125,37 @@ public static class AtkTableHandleExtensions
 		return AtkTableExterns.atk_table_remove_row_selection(table, row);
 	}
 
-	public static AtkTableHandle SetCaption(this AtkTableHandle table, AtkObjectHandle caption)
+	public static T SetCaption<T>(this T table, AtkObjectHandle caption) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_caption(table, caption);
 		return table;
 	}
 
-	public static AtkTableHandle SetColumnDescription(this AtkTableHandle table, int column, string description)
+	public static T SetColumnDescription<T>(this T table, int column, string description) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_column_description(table, column, description);
 		return table;
 	}
 
-	public static AtkTableHandle SetColumnHeader(this AtkTableHandle table, int column, AtkObjectHandle header)
+	public static T SetColumnHeader<T>(this T table, int column, AtkObjectHandle header) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_column_header(table, column, header);
 		return table;
 	}
 
-	public static AtkTableHandle SetRowDescription(this AtkTableHandle table, int row, string description)
+	public static T SetRowDescription<T>(this T table, int row, string description) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_row_description(table, row, description);
 		return table;
 	}
 
-	public static AtkTableHandle SetRowHeader(this AtkTableHandle table, int row, AtkObjectHandle header)
+	public static T SetRowHeader<T>(this T table, int row, AtkObjectHandle header) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_row_header(table, row, header);
 		return table;
 	}
 
-	public static AtkTableHandle SetSummary(this AtkTableHandle table, AtkObjectHandle accessible)
+	public static T SetSummary<T>(this T table, AtkObjectHandle accessible) where T : AtkTableHandle
 	{
 		AtkTableExterns.atk_table_set_summary(table, accessible);
 		return table;

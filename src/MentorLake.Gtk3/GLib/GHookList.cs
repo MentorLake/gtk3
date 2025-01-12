@@ -7,37 +7,37 @@ public class GHookListHandle : BaseSafeHandle
 
 public static class GHookListHandleExtensions
 {
-	public static GHookListHandle Clear(this GHookListHandle hook_list)
+	public static T Clear<T>(this T hook_list) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_clear(hook_list);
 		return hook_list;
 	}
 
-	public static GHookListHandle Init(this GHookListHandle hook_list, uint hook_size)
+	public static T Init<T>(this T hook_list, uint hook_size) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_init(hook_list, hook_size);
 		return hook_list;
 	}
 
-	public static GHookListHandle Invoke(this GHookListHandle hook_list, bool may_recurse)
+	public static T Invoke<T>(this T hook_list, bool may_recurse) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_invoke(hook_list, may_recurse);
 		return hook_list;
 	}
 
-	public static GHookListHandle InvokeCheck(this GHookListHandle hook_list, bool may_recurse)
+	public static T InvokeCheck<T>(this T hook_list, bool may_recurse) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_invoke_check(hook_list, may_recurse);
 		return hook_list;
 	}
 
-	public static GHookListHandle Marshal(this GHookListHandle hook_list, bool may_recurse, GHookMarshaller marshaller, IntPtr marshal_data)
+	public static T Marshal<T>(this T hook_list, bool may_recurse, GHookMarshaller marshaller, IntPtr marshal_data) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_marshal(hook_list, may_recurse, marshaller, marshal_data);
 		return hook_list;
 	}
 
-	public static GHookListHandle MarshalCheck(this GHookListHandle hook_list, bool may_recurse, GHookCheckMarshaller marshaller, IntPtr marshal_data)
+	public static T MarshalCheck<T>(this T hook_list, bool may_recurse, GHookCheckMarshaller marshaller, IntPtr marshal_data) where T : GHookListHandle
 	{
 		GHookListExterns.g_hook_list_marshal_check(hook_list, may_recurse, marshaller, marshal_data);
 		return hook_list;

@@ -11,13 +11,13 @@ public class GtkTableHandle : GtkContainerHandle, AtkImplementorIfaceHandle, Gtk
 
 public static class GtkTableHandleExtensions
 {
-	public static GtkTableHandle Attach(this GtkTableHandle table, GtkWidgetHandle child, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, uint xpadding, uint ypadding)
+	public static T Attach<T>(this T table, GtkWidgetHandle child, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach, GtkAttachOptions xoptions, GtkAttachOptions yoptions, uint xpadding, uint ypadding) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_attach(table, child, left_attach, right_attach, top_attach, bottom_attach, xoptions, yoptions, xpadding, ypadding);
 		return table;
 	}
 
-	public static GtkTableHandle AttachDefaults(this GtkTableHandle table, GtkWidgetHandle widget, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach)
+	public static T AttachDefaults<T>(this T table, GtkWidgetHandle widget, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_attach_defaults(table, widget, left_attach, right_attach, top_attach, bottom_attach);
 		return table;
@@ -48,43 +48,43 @@ public static class GtkTableHandleExtensions
 		return GtkTableExterns.gtk_table_get_row_spacing(table, row);
 	}
 
-	public static GtkTableHandle GetSize(this GtkTableHandle table, out uint rows, out uint columns)
+	public static T GetSize<T>(this T table, out uint rows, out uint columns) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_get_size(table, out rows, out columns);
 		return table;
 	}
 
-	public static GtkTableHandle Resize(this GtkTableHandle table, uint rows, uint columns)
+	public static T Resize<T>(this T table, uint rows, uint columns) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_resize(table, rows, columns);
 		return table;
 	}
 
-	public static GtkTableHandle SetColSpacing(this GtkTableHandle table, uint column, uint spacing)
+	public static T SetColSpacing<T>(this T table, uint column, uint spacing) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_set_col_spacing(table, column, spacing);
 		return table;
 	}
 
-	public static GtkTableHandle SetColSpacings(this GtkTableHandle table, uint spacing)
+	public static T SetColSpacings<T>(this T table, uint spacing) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_set_col_spacings(table, spacing);
 		return table;
 	}
 
-	public static GtkTableHandle SetHomogeneous(this GtkTableHandle table, bool homogeneous)
+	public static T SetHomogeneous<T>(this T table, bool homogeneous) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_set_homogeneous(table, homogeneous);
 		return table;
 	}
 
-	public static GtkTableHandle SetRowSpacing(this GtkTableHandle table, uint row, uint spacing)
+	public static T SetRowSpacing<T>(this T table, uint row, uint spacing) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_set_row_spacing(table, row, spacing);
 		return table;
 	}
 
-	public static GtkTableHandle SetRowSpacings(this GtkTableHandle table, uint spacing)
+	public static T SetRowSpacings<T>(this T table, uint spacing) where T : GtkTableHandle
 	{
 		GtkTableExterns.gtk_table_set_row_spacings(table, spacing);
 		return table;

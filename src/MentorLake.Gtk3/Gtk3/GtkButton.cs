@@ -266,19 +266,19 @@ public delegate void released([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkButtonHandleExtensions
 {
-	public static GtkButtonHandle Clicked(this GtkButtonHandle button)
+	public static T Clicked<T>(this T button) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_clicked(button);
 		return button;
 	}
 
-	public static GtkButtonHandle Enter(this GtkButtonHandle button)
+	public static T Enter<T>(this T button) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_enter(button);
 		return button;
 	}
 
-	public static GtkButtonHandle GetAlignment(this GtkButtonHandle button, out float xalign, out float yalign)
+	public static T GetAlignment<T>(this T button, out float xalign, out float yalign) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_get_alignment(button, out xalign, out yalign);
 		return button;
@@ -329,73 +329,73 @@ public static class GtkButtonHandleExtensions
 		return GtkButtonExterns.gtk_button_get_use_underline(button);
 	}
 
-	public static GtkButtonHandle Leave(this GtkButtonHandle button)
+	public static T Leave<T>(this T button) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_leave(button);
 		return button;
 	}
 
-	public static GtkButtonHandle Pressed(this GtkButtonHandle button)
+	public static T Pressed<T>(this T button) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_pressed(button);
 		return button;
 	}
 
-	public static GtkButtonHandle Released(this GtkButtonHandle button)
+	public static T Released<T>(this T button) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_released(button);
 		return button;
 	}
 
-	public static GtkButtonHandle SetAlignment(this GtkButtonHandle button, float xalign, float yalign)
+	public static T SetAlignment<T>(this T button, float xalign, float yalign) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_alignment(button, xalign, yalign);
 		return button;
 	}
 
-	public static GtkButtonHandle SetAlwaysShowImage(this GtkButtonHandle button, bool always_show)
+	public static T SetAlwaysShowImage<T>(this T button, bool always_show) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_always_show_image(button, always_show);
 		return button;
 	}
 
-	public static GtkButtonHandle SetFocusOnClick(this GtkButtonHandle button, bool focus_on_click)
+	public static T SetFocusOnClick<T>(this T button, bool focus_on_click) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_focus_on_click(button, focus_on_click);
 		return button;
 	}
 
-	public static GtkButtonHandle SetImage(this GtkButtonHandle button, GtkWidgetHandle image)
+	public static T SetImage<T>(this T button, GtkWidgetHandle image) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_image(button, image);
 		return button;
 	}
 
-	public static GtkButtonHandle SetImagePosition(this GtkButtonHandle button, GtkPositionType position)
+	public static T SetImagePosition<T>(this T button, GtkPositionType position) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_image_position(button, position);
 		return button;
 	}
 
-	public static GtkButtonHandle SetLabel(this GtkButtonHandle button, string label)
+	public static T SetLabel<T>(this T button, string label) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_label(button, label);
 		return button;
 	}
 
-	public static GtkButtonHandle SetRelief(this GtkButtonHandle button, GtkReliefStyle relief)
+	public static T SetRelief<T>(this T button, GtkReliefStyle relief) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_relief(button, relief);
 		return button;
 	}
 
-	public static GtkButtonHandle SetUseStock(this GtkButtonHandle button, bool use_stock)
+	public static T SetUseStock<T>(this T button, bool use_stock) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_use_stock(button, use_stock);
 		return button;
 	}
 
-	public static GtkButtonHandle SetUseUnderline(this GtkButtonHandle button, bool use_underline)
+	public static T SetUseUnderline<T>(this T button, bool use_underline) where T : GtkButtonHandle
 	{
 		GtkButtonExterns.gtk_button_set_use_underline(button, use_underline);
 		return button;

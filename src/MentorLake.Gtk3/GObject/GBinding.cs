@@ -41,7 +41,7 @@ public static class GBindingHandleExtensions
 		return GBindingExterns.g_binding_get_target_property(binding);
 	}
 
-	public static GBindingHandle Unbind(this GBindingHandle binding)
+	public static T Unbind<T>(this T binding) where T : GBindingHandle
 	{
 		GBindingExterns.g_binding_unbind(binding);
 		return binding;

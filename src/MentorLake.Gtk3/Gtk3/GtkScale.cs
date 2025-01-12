@@ -68,13 +68,13 @@ public delegate string format_value([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GtkScaleHandleExtensions
 {
-	public static GtkScaleHandle AddMark(this GtkScaleHandle scale, double value, GtkPositionType position, string markup)
+	public static T AddMark<T>(this T scale, double value, GtkPositionType position, string markup) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_add_mark(scale, value, position, markup);
 		return scale;
 	}
 
-	public static GtkScaleHandle ClearMarks(this GtkScaleHandle scale)
+	public static T ClearMarks<T>(this T scale) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_clear_marks(scale);
 		return scale;
@@ -100,7 +100,7 @@ public static class GtkScaleHandleExtensions
 		return GtkScaleExterns.gtk_scale_get_layout(scale);
 	}
 
-	public static GtkScaleHandle GetLayoutOffsets(this GtkScaleHandle scale, out int x, out int y)
+	public static T GetLayoutOffsets<T>(this T scale, out int x, out int y) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_get_layout_offsets(scale, out x, out y);
 		return scale;
@@ -111,25 +111,25 @@ public static class GtkScaleHandleExtensions
 		return GtkScaleExterns.gtk_scale_get_value_pos(scale);
 	}
 
-	public static GtkScaleHandle SetDigits(this GtkScaleHandle scale, int digits)
+	public static T SetDigits<T>(this T scale, int digits) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_set_digits(scale, digits);
 		return scale;
 	}
 
-	public static GtkScaleHandle SetDrawValue(this GtkScaleHandle scale, bool draw_value)
+	public static T SetDrawValue<T>(this T scale, bool draw_value) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_set_draw_value(scale, draw_value);
 		return scale;
 	}
 
-	public static GtkScaleHandle SetHasOrigin(this GtkScaleHandle scale, bool has_origin)
+	public static T SetHasOrigin<T>(this T scale, bool has_origin) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_set_has_origin(scale, has_origin);
 		return scale;
 	}
 
-	public static GtkScaleHandle SetValuePos(this GtkScaleHandle scale, GtkPositionType pos)
+	public static T SetValuePos<T>(this T scale, GtkPositionType pos) where T : GtkScaleHandle
 	{
 		GtkScaleExterns.gtk_scale_set_value_pos(scale, pos);
 		return scale;

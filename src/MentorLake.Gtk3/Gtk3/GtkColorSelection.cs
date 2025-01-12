@@ -81,13 +81,13 @@ public static class GtkColorSelectionHandleExtensions
 		return GtkColorSelectionExterns.gtk_color_selection_get_current_alpha(colorsel);
 	}
 
-	public static GtkColorSelectionHandle GetCurrentColor(this GtkColorSelectionHandle colorsel, out GdkColor color)
+	public static T GetCurrentColor<T>(this T colorsel, out GdkColor color) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_get_current_color(colorsel, out color);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle GetCurrentRgba(this GtkColorSelectionHandle colorsel, out GdkRGBA rgba)
+	public static T GetCurrentRgba<T>(this T colorsel, out GdkRGBA rgba) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_get_current_rgba(colorsel, out rgba);
 		return colorsel;
@@ -108,13 +108,13 @@ public static class GtkColorSelectionHandleExtensions
 		return GtkColorSelectionExterns.gtk_color_selection_get_previous_alpha(colorsel);
 	}
 
-	public static GtkColorSelectionHandle GetPreviousColor(this GtkColorSelectionHandle colorsel, out GdkColor color)
+	public static T GetPreviousColor<T>(this T colorsel, out GdkColor color) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_get_previous_color(colorsel, out color);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle GetPreviousRgba(this GtkColorSelectionHandle colorsel, out GdkRGBA rgba)
+	public static T GetPreviousRgba<T>(this T colorsel, out GdkRGBA rgba) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_get_previous_rgba(colorsel, out rgba);
 		return colorsel;
@@ -125,49 +125,49 @@ public static class GtkColorSelectionHandleExtensions
 		return GtkColorSelectionExterns.gtk_color_selection_is_adjusting(colorsel);
 	}
 
-	public static GtkColorSelectionHandle SetCurrentAlpha(this GtkColorSelectionHandle colorsel, ushort alpha)
+	public static T SetCurrentAlpha<T>(this T colorsel, ushort alpha) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_current_alpha(colorsel, alpha);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetCurrentColor(this GtkColorSelectionHandle colorsel, GdkColorHandle color)
+	public static T SetCurrentColor<T>(this T colorsel, GdkColorHandle color) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_current_color(colorsel, color);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetCurrentRgba(this GtkColorSelectionHandle colorsel, GdkRGBAHandle rgba)
+	public static T SetCurrentRgba<T>(this T colorsel, GdkRGBAHandle rgba) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_current_rgba(colorsel, rgba);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetHasOpacityControl(this GtkColorSelectionHandle colorsel, bool has_opacity)
+	public static T SetHasOpacityControl<T>(this T colorsel, bool has_opacity) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_has_opacity_control(colorsel, has_opacity);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetHasPalette(this GtkColorSelectionHandle colorsel, bool has_palette)
+	public static T SetHasPalette<T>(this T colorsel, bool has_palette) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_has_palette(colorsel, has_palette);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetPreviousAlpha(this GtkColorSelectionHandle colorsel, ushort alpha)
+	public static T SetPreviousAlpha<T>(this T colorsel, ushort alpha) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_previous_alpha(colorsel, alpha);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetPreviousColor(this GtkColorSelectionHandle colorsel, GdkColorHandle color)
+	public static T SetPreviousColor<T>(this T colorsel, GdkColorHandle color) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_previous_color(colorsel, color);
 		return colorsel;
 	}
 
-	public static GtkColorSelectionHandle SetPreviousRgba(this GtkColorSelectionHandle colorsel, GdkRGBAHandle rgba)
+	public static T SetPreviousRgba<T>(this T colorsel, GdkRGBAHandle rgba) where T : GtkColorSelectionHandle
 	{
 		GtkColorSelectionExterns.gtk_color_selection_set_previous_rgba(colorsel, rgba);
 		return colorsel;

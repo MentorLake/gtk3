@@ -21,7 +21,7 @@ public static class GtkLayoutHandleExtensions
 		return GtkLayoutExterns.gtk_layout_get_hadjustment(layout);
 	}
 
-	public static GtkLayoutHandle GetSize(this GtkLayoutHandle layout, out uint width, out uint height)
+	public static T GetSize<T>(this T layout, out uint width, out uint height) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_get_size(layout, out width, out height);
 		return layout;
@@ -32,31 +32,31 @@ public static class GtkLayoutHandleExtensions
 		return GtkLayoutExterns.gtk_layout_get_vadjustment(layout);
 	}
 
-	public static GtkLayoutHandle Move(this GtkLayoutHandle layout, GtkWidgetHandle child_widget, int x, int y)
+	public static T Move<T>(this T layout, GtkWidgetHandle child_widget, int x, int y) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_move(layout, child_widget, x, y);
 		return layout;
 	}
 
-	public static GtkLayoutHandle Put(this GtkLayoutHandle layout, GtkWidgetHandle child_widget, int x, int y)
+	public static T Put<T>(this T layout, GtkWidgetHandle child_widget, int x, int y) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_put(layout, child_widget, x, y);
 		return layout;
 	}
 
-	public static GtkLayoutHandle SetHadjustment(this GtkLayoutHandle layout, GtkAdjustmentHandle adjustment)
+	public static T SetHadjustment<T>(this T layout, GtkAdjustmentHandle adjustment) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_set_hadjustment(layout, adjustment);
 		return layout;
 	}
 
-	public static GtkLayoutHandle SetSize(this GtkLayoutHandle layout, uint width, uint height)
+	public static T SetSize<T>(this T layout, uint width, uint height) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_set_size(layout, width, height);
 		return layout;
 	}
 
-	public static GtkLayoutHandle SetVadjustment(this GtkLayoutHandle layout, GtkAdjustmentHandle adjustment)
+	public static T SetVadjustment<T>(this T layout, GtkAdjustmentHandle adjustment) where T : GtkLayoutHandle
 	{
 		GtkLayoutExterns.gtk_layout_set_vadjustment(layout, adjustment);
 		return layout;

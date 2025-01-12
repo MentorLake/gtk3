@@ -7,7 +7,7 @@ public class GUriParamsIterHandle : BaseSafeHandle
 
 public static class GUriParamsIterHandleExtensions
 {
-	public static GUriParamsIterHandle Init(this GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, GUriParamsFlags flags)
+	public static T Init<T>(this T iter, string @params, UIntPtr length, string separators, GUriParamsFlags flags) where T : GUriParamsIterHandle
 	{
 		GUriParamsIterExterns.g_uri_params_iter_init(iter, @params, length, separators, flags);
 		return iter;

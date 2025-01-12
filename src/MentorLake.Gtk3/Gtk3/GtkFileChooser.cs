@@ -10,13 +10,13 @@ internal class GtkFileChooserHandleImpl : BaseSafeHandle, GtkFileChooserHandle
 
 public static class GtkFileChooserHandleExtensions
 {
-	public static GtkFileChooserHandle AddChoice(this GtkFileChooserHandle chooser, string id, string label, string[] options, string[] option_labels)
+	public static T AddChoice<T>(this T chooser, string id, string label, string[] options, string[] option_labels) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_add_choice(chooser, id, label, options, option_labels);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle AddFilter(this GtkFileChooserHandle chooser, GtkFileFilterHandle filter)
+	public static T AddFilter<T>(this T chooser, GtkFileFilterHandle filter) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_add_filter(chooser, filter);
 		return chooser;
@@ -172,13 +172,13 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_list_shortcut_folders(chooser);
 	}
 
-	public static GtkFileChooserHandle RemoveChoice(this GtkFileChooserHandle chooser, string id)
+	public static T RemoveChoice<T>(this T chooser, string id) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_remove_choice(chooser, id);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle RemoveFilter(this GtkFileChooserHandle chooser, GtkFileFilterHandle filter)
+	public static T RemoveFilter<T>(this T chooser, GtkFileFilterHandle filter) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_remove_filter(chooser, filter);
 		return chooser;
@@ -194,7 +194,7 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_remove_shortcut_folder_uri(chooser, uri, out error);
 	}
 
-	public static GtkFileChooserHandle SelectAll(this GtkFileChooserHandle chooser)
+	public static T SelectAll<T>(this T chooser) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_select_all(chooser);
 		return chooser;
@@ -215,19 +215,19 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_select_uri(chooser, uri);
 	}
 
-	public static GtkFileChooserHandle SetAction(this GtkFileChooserHandle chooser, GtkFileChooserAction action)
+	public static T SetAction<T>(this T chooser, GtkFileChooserAction action) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_action(chooser, action);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetChoice(this GtkFileChooserHandle chooser, string id, string option)
+	public static T SetChoice<T>(this T chooser, string id, string option) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_choice(chooser, id, option);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetCreateFolders(this GtkFileChooserHandle chooser, bool create_folders)
+	public static T SetCreateFolders<T>(this T chooser, bool create_folders) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_create_folders(chooser, create_folders);
 		return chooser;
@@ -248,19 +248,19 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_set_current_folder_uri(chooser, uri);
 	}
 
-	public static GtkFileChooserHandle SetCurrentName(this GtkFileChooserHandle chooser, string name)
+	public static T SetCurrentName<T>(this T chooser, string name) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_current_name(chooser, name);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetDoOverwriteConfirmation(this GtkFileChooserHandle chooser, bool do_overwrite_confirmation)
+	public static T SetDoOverwriteConfirmation<T>(this T chooser, bool do_overwrite_confirmation) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_do_overwrite_confirmation(chooser, do_overwrite_confirmation);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetExtraWidget(this GtkFileChooserHandle chooser, GtkWidgetHandle extra_widget)
+	public static T SetExtraWidget<T>(this T chooser, GtkWidgetHandle extra_widget) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_extra_widget(chooser, extra_widget);
 		return chooser;
@@ -276,37 +276,37 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_set_filename(chooser, filename);
 	}
 
-	public static GtkFileChooserHandle SetFilter(this GtkFileChooserHandle chooser, GtkFileFilterHandle filter)
+	public static T SetFilter<T>(this T chooser, GtkFileFilterHandle filter) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_filter(chooser, filter);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetLocalOnly(this GtkFileChooserHandle chooser, bool local_only)
+	public static T SetLocalOnly<T>(this T chooser, bool local_only) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_local_only(chooser, local_only);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetPreviewWidget(this GtkFileChooserHandle chooser, GtkWidgetHandle preview_widget)
+	public static T SetPreviewWidget<T>(this T chooser, GtkWidgetHandle preview_widget) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_preview_widget(chooser, preview_widget);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetPreviewWidgetActive(this GtkFileChooserHandle chooser, bool active)
+	public static T SetPreviewWidgetActive<T>(this T chooser, bool active) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_preview_widget_active(chooser, active);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetSelectMultiple(this GtkFileChooserHandle chooser, bool select_multiple)
+	public static T SetSelectMultiple<T>(this T chooser, bool select_multiple) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_select_multiple(chooser, select_multiple);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle SetShowHidden(this GtkFileChooserHandle chooser, bool show_hidden)
+	public static T SetShowHidden<T>(this T chooser, bool show_hidden) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_show_hidden(chooser, show_hidden);
 		return chooser;
@@ -317,31 +317,31 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserExterns.gtk_file_chooser_set_uri(chooser, uri);
 	}
 
-	public static GtkFileChooserHandle SetUsePreviewLabel(this GtkFileChooserHandle chooser, bool use_label)
+	public static T SetUsePreviewLabel<T>(this T chooser, bool use_label) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_set_use_preview_label(chooser, use_label);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle UnselectAll(this GtkFileChooserHandle chooser)
+	public static T UnselectAll<T>(this T chooser) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_unselect_all(chooser);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle UnselectFile(this GtkFileChooserHandle chooser, GFileHandle file)
+	public static T UnselectFile<T>(this T chooser, GFileHandle file) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_unselect_file(chooser, file);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle UnselectFilename(this GtkFileChooserHandle chooser, string filename)
+	public static T UnselectFilename<T>(this T chooser, string filename) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_unselect_filename(chooser, filename);
 		return chooser;
 	}
 
-	public static GtkFileChooserHandle UnselectUri(this GtkFileChooserHandle chooser, string uri)
+	public static T UnselectUri<T>(this T chooser, string uri) where T : GtkFileChooserHandle
 	{
 		GtkFileChooserExterns.gtk_file_chooser_unselect_uri(chooser, uri);
 		return chooser;

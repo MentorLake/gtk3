@@ -17,7 +17,7 @@ public static class GtkRequisitionHandleExtensions
 		return GtkRequisitionExterns.gtk_requisition_copy(requisition);
 	}
 
-	public static GtkRequisitionHandle Free(this GtkRequisitionHandle requisition)
+	public static T Free<T>(this T requisition) where T : GtkRequisitionHandle
 	{
 		GtkRequisitionExterns.gtk_requisition_free(requisition);
 		return requisition;

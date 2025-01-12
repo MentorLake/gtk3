@@ -47,7 +47,7 @@ public static class GSettingsSchemaKeyHandleExtensions
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_ref(key);
 	}
 
-	public static GSettingsSchemaKeyHandle Unref(this GSettingsSchemaKeyHandle key)
+	public static T Unref<T>(this T key) where T : GSettingsSchemaKeyHandle
 	{
 		GSettingsSchemaKeyExterns.g_settings_schema_key_unref(key);
 		return key;

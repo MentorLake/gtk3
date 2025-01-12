@@ -2724,25 +2724,25 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_activate(widget);
 	}
 
-	public static GtkWidgetHandle AddAccelerator(this GtkWidgetHandle widget, string accel_signal, GtkAccelGroupHandle accel_group, uint accel_key, GdkModifierType accel_mods, GtkAccelFlags accel_flags)
+	public static T AddAccelerator<T>(this T widget, string accel_signal, GtkAccelGroupHandle accel_group, uint accel_key, GdkModifierType accel_mods, GtkAccelFlags accel_flags) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_add_accelerator(widget, accel_signal, accel_group, accel_key, accel_mods, accel_flags);
 		return widget;
 	}
 
-	public static GtkWidgetHandle AddDeviceEvents(this GtkWidgetHandle widget, GdkDeviceHandle device, GdkEventMask events)
+	public static T AddDeviceEvents<T>(this T widget, GdkDeviceHandle device, GdkEventMask events) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_add_device_events(widget, device, events);
 		return widget;
 	}
 
-	public static GtkWidgetHandle AddEvents(this GtkWidgetHandle widget, int events)
+	public static T AddEvents<T>(this T widget, int events) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_add_events(widget, events);
 		return widget;
 	}
 
-	public static GtkWidgetHandle AddMnemonicLabel(this GtkWidgetHandle widget, GtkWidgetHandle label)
+	public static T AddMnemonicLabel<T>(this T widget, GtkWidgetHandle label) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_add_mnemonic_label(widget, label);
 		return widget;
@@ -2763,13 +2763,13 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_child_focus(widget, direction);
 	}
 
-	public static GtkWidgetHandle ChildNotify(this GtkWidgetHandle widget, string child_property)
+	public static T ChildNotify<T>(this T widget, string child_property) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_child_notify(widget, child_property);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ClassPath(this GtkWidgetHandle widget, out uint path_length, out string path, out string path_reversed)
+	public static T ClassPath<T>(this T widget, out uint path_length, out string path, out string path_reversed) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_class_path(widget, out path_length, out path, out path_reversed);
 		return widget;
@@ -2790,13 +2790,13 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_create_pango_layout(widget, text);
 	}
 
-	public static GtkWidgetHandle Destroy(this GtkWidgetHandle widget)
+	public static T Destroy<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_destroy(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Destroyed(this GtkWidgetHandle widget, ref GtkWidgetHandle widget_pointer)
+	public static T Destroyed<T>(this T widget, ref GtkWidgetHandle widget_pointer) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_destroyed(widget, ref widget_pointer);
 		return widget;
@@ -2822,19 +2822,19 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_drag_check_threshold(widget, start_x, start_y, current_x, current_y);
 	}
 
-	public static GtkWidgetHandle GtkDragDestAddImageTargets(this GtkWidgetHandle widget)
+	public static T GtkDragDestAddImageTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_add_image_targets(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestAddTextTargets(this GtkWidgetHandle widget)
+	public static T GtkDragDestAddTextTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_add_text_targets(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestAddUriTargets(this GtkWidgetHandle widget)
+	public static T GtkDragDestAddUriTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_add_uri_targets(widget);
 		return widget;
@@ -2855,61 +2855,61 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_drag_dest_get_track_motion(widget);
 	}
 
-	public static GtkWidgetHandle GtkDragDestSet(this GtkWidgetHandle widget, GtkDestDefaults flags, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions)
+	public static T GtkDragDestSet<T>(this T widget, GtkDestDefaults flags, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_set(widget, flags, targets, n_targets, actions);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestSetProxy(this GtkWidgetHandle widget, GdkWindowHandle proxy_window, GdkDragProtocol protocol, bool use_coordinates)
+	public static T GtkDragDestSetProxy<T>(this T widget, GdkWindowHandle proxy_window, GdkDragProtocol protocol, bool use_coordinates) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_set_proxy(widget, proxy_window, protocol, use_coordinates);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestSetTargetList(this GtkWidgetHandle widget, GtkTargetListHandle target_list)
+	public static T GtkDragDestSetTargetList<T>(this T widget, GtkTargetListHandle target_list) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_set_target_list(widget, target_list);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestSetTrackMotion(this GtkWidgetHandle widget, bool track_motion)
+	public static T GtkDragDestSetTrackMotion<T>(this T widget, bool track_motion) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_set_track_motion(widget, track_motion);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragDestUnset(this GtkWidgetHandle widget)
+	public static T GtkDragDestUnset<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_dest_unset(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragGetData(this GtkWidgetHandle widget, GdkDragContextHandle context, GdkAtom target, uint time_)
+	public static T GtkDragGetData<T>(this T widget, GdkDragContextHandle context, GdkAtom target, uint time_) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_get_data(widget, context, target, time_);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragHighlight(this GtkWidgetHandle widget)
+	public static T GtkDragHighlight<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_highlight(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceAddImageTargets(this GtkWidgetHandle widget)
+	public static T GtkDragSourceAddImageTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_add_image_targets(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceAddTextTargets(this GtkWidgetHandle widget)
+	public static T GtkDragSourceAddTextTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_add_text_targets(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceAddUriTargets(this GtkWidgetHandle widget)
+	public static T GtkDragSourceAddUriTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_add_uri_targets(widget);
 		return widget;
@@ -2920,67 +2920,67 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_drag_source_get_target_list(widget);
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSet(this GtkWidgetHandle widget, GdkModifierType start_button_mask, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions)
+	public static T GtkDragSourceSet<T>(this T widget, GdkModifierType start_button_mask, GtkTargetEntry[] targets, int n_targets, GdkDragAction actions) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set(widget, start_button_mask, targets, n_targets, actions);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSetIconGicon(this GtkWidgetHandle widget, GIconHandle icon)
+	public static T GtkDragSourceSetIconGicon<T>(this T widget, GIconHandle icon) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set_icon_gicon(widget, icon);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSetIconName(this GtkWidgetHandle widget, string icon_name)
+	public static T GtkDragSourceSetIconName<T>(this T widget, string icon_name) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set_icon_name(widget, icon_name);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSetIconPixbuf(this GtkWidgetHandle widget, GdkPixbufHandle pixbuf)
+	public static T GtkDragSourceSetIconPixbuf<T>(this T widget, GdkPixbufHandle pixbuf) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set_icon_pixbuf(widget, pixbuf);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSetIconStock(this GtkWidgetHandle widget, string stock_id)
+	public static T GtkDragSourceSetIconStock<T>(this T widget, string stock_id) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set_icon_stock(widget, stock_id);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceSetTargetList(this GtkWidgetHandle widget, GtkTargetListHandle target_list)
+	public static T GtkDragSourceSetTargetList<T>(this T widget, GtkTargetListHandle target_list) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_set_target_list(widget, target_list);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragSourceUnset(this GtkWidgetHandle widget)
+	public static T GtkDragSourceUnset<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_source_unset(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDragUnhighlight(this GtkWidgetHandle widget)
+	public static T GtkDragUnhighlight<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_drag_unhighlight(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Draw(this GtkWidgetHandle widget, cairo_tHandle cr)
+	public static T Draw<T>(this T widget, cairo_tHandle cr) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_draw(widget, cr);
 		return widget;
 	}
 
-	public static GtkWidgetHandle EnsureStyle(this GtkWidgetHandle widget)
+	public static T EnsureStyle<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_ensure_style(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ErrorBell(this GtkWidgetHandle widget)
+	public static T ErrorBell<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_error_bell(widget);
 		return widget;
@@ -2991,7 +2991,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_event(widget, @event);
 	}
 
-	public static GtkWidgetHandle FreezeChildNotify(this GtkWidgetHandle widget)
+	public static T FreezeChildNotify<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_freeze_child_notify(widget);
 		return widget;
@@ -3017,7 +3017,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_allocated_height(widget);
 	}
 
-	public static GtkWidgetHandle GetAllocatedSize(this GtkWidgetHandle widget, out GtkAllocation allocation, out int baseline)
+	public static T GetAllocatedSize<T>(this T widget, out GtkAllocation allocation, out int baseline) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_allocated_size(widget, out allocation, out baseline);
 		return widget;
@@ -3028,7 +3028,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_allocated_width(widget);
 	}
 
-	public static GtkWidgetHandle GetAllocation(this GtkWidgetHandle widget, out GtkAllocation allocation)
+	public static T GetAllocation<T>(this T widget, out GtkAllocation allocation) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_allocation(widget, out allocation);
 		return widget;
@@ -3054,7 +3054,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_can_focus(widget);
 	}
 
-	public static GtkWidgetHandle GetChildRequisition(this GtkWidgetHandle widget, out GtkRequisition requisition)
+	public static T GetChildRequisition<T>(this T widget, out GtkRequisition requisition) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_child_requisition(widget, out requisition);
 		return widget;
@@ -3065,7 +3065,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_child_visible(widget);
 	}
 
-	public static GtkWidgetHandle GetClip(this GtkWidgetHandle widget, out GtkAllocation clip)
+	public static T GetClip<T>(this T widget, out GtkAllocation clip) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_clip(widget, out clip);
 		return widget;
@@ -3236,43 +3236,43 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_path(widget);
 	}
 
-	public static GtkWidgetHandle GetPointer(this GtkWidgetHandle widget, out int x, out int y)
+	public static T GetPointer<T>(this T widget, out int x, out int y) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_pointer(widget, out x, out y);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredHeight(this GtkWidgetHandle widget, out int minimum_height, out int natural_height)
+	public static T GetPreferredHeight<T>(this T widget, out int minimum_height, out int natural_height) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_height(widget, out minimum_height, out natural_height);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredHeightAndBaselineForWidth(this GtkWidgetHandle widget, int width, out int minimum_height, out int natural_height, out int minimum_baseline, out int natural_baseline)
+	public static T GetPreferredHeightAndBaselineForWidth<T>(this T widget, int width, out int minimum_height, out int natural_height, out int minimum_baseline, out int natural_baseline) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_height_and_baseline_for_width(widget, width, out minimum_height, out natural_height, out minimum_baseline, out natural_baseline);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredHeightForWidth(this GtkWidgetHandle widget, int width, out int minimum_height, out int natural_height)
+	public static T GetPreferredHeightForWidth<T>(this T widget, int width, out int minimum_height, out int natural_height) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_height_for_width(widget, width, out minimum_height, out natural_height);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredSize(this GtkWidgetHandle widget, out GtkRequisition minimum_size, out GtkRequisition natural_size)
+	public static T GetPreferredSize<T>(this T widget, out GtkRequisition minimum_size, out GtkRequisition natural_size) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_size(widget, out minimum_size, out natural_size);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredWidth(this GtkWidgetHandle widget, out int minimum_width, out int natural_width)
+	public static T GetPreferredWidth<T>(this T widget, out int minimum_width, out int natural_width) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_width(widget, out minimum_width, out natural_width);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GetPreferredWidthForHeight(this GtkWidgetHandle widget, int height, out int minimum_width, out int natural_width)
+	public static T GetPreferredWidthForHeight<T>(this T widget, int height, out int minimum_width, out int natural_width) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_preferred_width_for_height(widget, height, out minimum_width, out natural_width);
 		return widget;
@@ -3293,7 +3293,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_request_mode(widget);
 	}
 
-	public static GtkWidgetHandle GetRequisition(this GtkWidgetHandle widget, out GtkRequisition requisition)
+	public static T GetRequisition<T>(this T widget, out GtkRequisition requisition) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_requisition(widget, out requisition);
 		return widget;
@@ -3324,7 +3324,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_settings(widget);
 	}
 
-	public static GtkWidgetHandle GetSizeRequest(this GtkWidgetHandle widget, out int width, out int height)
+	public static T GetSizeRequest<T>(this T widget, out int width, out int height) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_get_size_request(widget, out width, out height);
 		return widget;
@@ -3415,25 +3415,25 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_get_window(widget);
 	}
 
-	public static GtkWidgetHandle GtkGrabAdd(this GtkWidgetHandle widget)
+	public static T GtkGrabAdd<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_grab_add(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GrabDefault(this GtkWidgetHandle widget)
+	public static T GrabDefault<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_grab_default(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GrabFocus(this GtkWidgetHandle widget)
+	public static T GrabFocus<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_grab_focus(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkGrabRemove(this GtkWidgetHandle widget)
+	public static T GtkGrabRemove<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_grab_remove(widget);
 		return widget;
@@ -3469,7 +3469,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_has_visible_focus(widget);
 	}
 
-	public static GtkWidgetHandle Hide(this GtkWidgetHandle widget)
+	public static T Hide<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_hide(widget);
 		return widget;
@@ -3485,19 +3485,19 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_in_destruction(widget);
 	}
 
-	public static GtkWidgetHandle InitTemplate(this GtkWidgetHandle widget)
+	public static T InitTemplate<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_init_template(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle InputShapeCombineRegion(this GtkWidgetHandle widget, cairo_region_tHandle region)
+	public static T InputShapeCombineRegion<T>(this T widget, cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_input_shape_combine_region(widget, region);
 		return widget;
 	}
 
-	public static GtkWidgetHandle InsertActionGroup(this GtkWidgetHandle widget, string name, GActionGroupHandle group)
+	public static T InsertActionGroup<T>(this T widget, string name, GActionGroupHandle group) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_insert_action_group(widget, name, group);
 		return widget;
@@ -3563,7 +3563,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_list_mnemonic_labels(widget);
 	}
 
-	public static GtkWidgetHandle Map(this GtkWidgetHandle widget)
+	public static T Map<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_map(widget);
 		return widget;
@@ -3574,127 +3574,127 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_mnemonic_activate(widget, group_cycling);
 	}
 
-	public static GtkWidgetHandle ModifyBase(this GtkWidgetHandle widget, GtkStateType state, GdkColorHandle color)
+	public static T ModifyBase<T>(this T widget, GtkStateType state, GdkColorHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_base(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyBg(this GtkWidgetHandle widget, GtkStateType state, GdkColorHandle color)
+	public static T ModifyBg<T>(this T widget, GtkStateType state, GdkColorHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_bg(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyCursor(this GtkWidgetHandle widget, GdkColorHandle primary, GdkColorHandle secondary)
+	public static T ModifyCursor<T>(this T widget, GdkColorHandle primary, GdkColorHandle secondary) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_cursor(widget, primary, secondary);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyFg(this GtkWidgetHandle widget, GtkStateType state, GdkColorHandle color)
+	public static T ModifyFg<T>(this T widget, GtkStateType state, GdkColorHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_fg(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyFont(this GtkWidgetHandle widget, PangoFontDescriptionHandle font_desc)
+	public static T ModifyFont<T>(this T widget, PangoFontDescriptionHandle font_desc) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_font(widget, font_desc);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyStyle(this GtkWidgetHandle widget, GtkRcStyleHandle style)
+	public static T ModifyStyle<T>(this T widget, GtkRcStyleHandle style) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_style(widget, style);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ModifyText(this GtkWidgetHandle widget, GtkStateType state, GdkColorHandle color)
+	public static T ModifyText<T>(this T widget, GtkStateType state, GdkColorHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_modify_text(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle OverrideBackgroundColor(this GtkWidgetHandle widget, GtkStateFlags state, GdkRGBAHandle color)
+	public static T OverrideBackgroundColor<T>(this T widget, GtkStateFlags state, GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_override_background_color(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle OverrideColor(this GtkWidgetHandle widget, GtkStateFlags state, GdkRGBAHandle color)
+	public static T OverrideColor<T>(this T widget, GtkStateFlags state, GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_override_color(widget, state, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle OverrideCursor(this GtkWidgetHandle widget, GdkRGBAHandle cursor, GdkRGBAHandle secondary_cursor)
+	public static T OverrideCursor<T>(this T widget, GdkRGBAHandle cursor, GdkRGBAHandle secondary_cursor) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_override_cursor(widget, cursor, secondary_cursor);
 		return widget;
 	}
 
-	public static GtkWidgetHandle OverrideFont(this GtkWidgetHandle widget, PangoFontDescriptionHandle font_desc)
+	public static T OverrideFont<T>(this T widget, PangoFontDescriptionHandle font_desc) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_override_font(widget, font_desc);
 		return widget;
 	}
 
-	public static GtkWidgetHandle OverrideSymbolicColor(this GtkWidgetHandle widget, string name, GdkRGBAHandle color)
+	public static T OverrideSymbolicColor<T>(this T widget, string name, GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_override_symbolic_color(widget, name, color);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Path(this GtkWidgetHandle widget, out uint path_length, out string path, out string path_reversed)
+	public static T Path<T>(this T widget, out uint path_length, out string path, out string path_reversed) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_path(widget, out path_length, out path, out path_reversed);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueAllocate(this GtkWidgetHandle widget)
+	public static T QueueAllocate<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_allocate(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueComputeExpand(this GtkWidgetHandle widget)
+	public static T QueueComputeExpand<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_compute_expand(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueDraw(this GtkWidgetHandle widget)
+	public static T QueueDraw<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_draw(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueDrawArea(this GtkWidgetHandle widget, int x, int y, int width, int height)
+	public static T QueueDrawArea<T>(this T widget, int x, int y, int width, int height) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_draw_area(widget, x, y, width, height);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueDrawRegion(this GtkWidgetHandle widget, cairo_region_tHandle region)
+	public static T QueueDrawRegion<T>(this T widget, cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_draw_region(widget, region);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueResize(this GtkWidgetHandle widget)
+	public static T QueueResize<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_resize(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle QueueResizeNoRedraw(this GtkWidgetHandle widget)
+	public static T QueueResizeNoRedraw<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_queue_resize_no_redraw(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Realize(this GtkWidgetHandle widget)
+	public static T Realize<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_realize(widget);
 		return widget;
@@ -3705,7 +3705,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_region_intersect(widget, region);
 	}
 
-	public static GtkWidgetHandle RegisterWindow(this GtkWidgetHandle widget, GdkWindowHandle window)
+	public static T RegisterWindow<T>(this T widget, GdkWindowHandle window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_register_window(widget, window);
 		return widget;
@@ -3716,13 +3716,13 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_remove_accelerator(widget, accel_group, accel_key, accel_mods);
 	}
 
-	public static GtkWidgetHandle RemoveMnemonicLabel(this GtkWidgetHandle widget, GtkWidgetHandle label)
+	public static T RemoveMnemonicLabel<T>(this T widget, GtkWidgetHandle label) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_remove_mnemonic_label(widget, label);
 		return widget;
 	}
 
-	public static GtkWidgetHandle RemoveTickCallback(this GtkWidgetHandle widget, uint id)
+	public static T RemoveTickCallback<T>(this T widget, uint id) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_remove_tick_callback(widget, id);
 		return widget;
@@ -3738,19 +3738,19 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_render_icon_pixbuf(widget, stock_id, size);
 	}
 
-	public static GtkWidgetHandle Reparent(this GtkWidgetHandle widget, GtkWidgetHandle new_parent)
+	public static T Reparent<T>(this T widget, GtkWidgetHandle new_parent) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_reparent(widget, new_parent);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ResetRcStyles(this GtkWidgetHandle widget)
+	public static T ResetRcStyles<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_reset_rc_styles(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ResetStyle(this GtkWidgetHandle widget)
+	public static T ResetStyle<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_reset_style(widget);
 		return widget;
@@ -3766,379 +3766,379 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_send_focus_change(widget, @event);
 	}
 
-	public static GtkWidgetHandle SetAccelPath(this GtkWidgetHandle widget, string accel_path, GtkAccelGroupHandle accel_group)
+	public static T SetAccelPath<T>(this T widget, string accel_path, GtkAccelGroupHandle accel_group) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_accel_path(widget, accel_path, accel_group);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetAllocation(this GtkWidgetHandle widget, GtkAllocation[] allocation)
+	public static T SetAllocation<T>(this T widget, GtkAllocation[] allocation) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_allocation(widget, allocation);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetAppPaintable(this GtkWidgetHandle widget, bool app_paintable)
+	public static T SetAppPaintable<T>(this T widget, bool app_paintable) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_app_paintable(widget, app_paintable);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetCanDefault(this GtkWidgetHandle widget, bool can_default)
+	public static T SetCanDefault<T>(this T widget, bool can_default) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_can_default(widget, can_default);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetCanFocus(this GtkWidgetHandle widget, bool can_focus)
+	public static T SetCanFocus<T>(this T widget, bool can_focus) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_can_focus(widget, can_focus);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetChildVisible(this GtkWidgetHandle widget, bool is_visible)
+	public static T SetChildVisible<T>(this T widget, bool is_visible) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_child_visible(widget, is_visible);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetClip(this GtkWidgetHandle widget, GtkAllocation[] clip)
+	public static T SetClip<T>(this T widget, GtkAllocation[] clip) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_clip(widget, clip);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetCompositeName(this GtkWidgetHandle widget, string name)
+	public static T SetCompositeName<T>(this T widget, string name) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_composite_name(widget, name);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetDeviceEnabled(this GtkWidgetHandle widget, GdkDeviceHandle device, bool enabled)
+	public static T SetDeviceEnabled<T>(this T widget, GdkDeviceHandle device, bool enabled) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_device_enabled(widget, device, enabled);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetDeviceEvents(this GtkWidgetHandle widget, GdkDeviceHandle device, GdkEventMask events)
+	public static T SetDeviceEvents<T>(this T widget, GdkDeviceHandle device, GdkEventMask events) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_device_events(widget, device, events);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetDirection(this GtkWidgetHandle widget, GtkTextDirection dir)
+	public static T SetDirection<T>(this T widget, GtkTextDirection dir) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_direction(widget, dir);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetDoubleBuffered(this GtkWidgetHandle widget, bool double_buffered)
+	public static T SetDoubleBuffered<T>(this T widget, bool double_buffered) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_double_buffered(widget, double_buffered);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetEvents(this GtkWidgetHandle widget, int events)
+	public static T SetEvents<T>(this T widget, int events) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_events(widget, events);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetFocusOnClick(this GtkWidgetHandle widget, bool focus_on_click)
+	public static T SetFocusOnClick<T>(this T widget, bool focus_on_click) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_focus_on_click(widget, focus_on_click);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetFontMap(this GtkWidgetHandle widget, PangoFontMapHandle font_map)
+	public static T SetFontMap<T>(this T widget, PangoFontMapHandle font_map) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_font_map(widget, font_map);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetFontOptions(this GtkWidgetHandle widget, cairo_font_options_tHandle options)
+	public static T SetFontOptions<T>(this T widget, cairo_font_options_tHandle options) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_font_options(widget, options);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetHalign(this GtkWidgetHandle widget, GtkAlign align)
+	public static T SetHalign<T>(this T widget, GtkAlign align) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_halign(widget, align);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetHasTooltip(this GtkWidgetHandle widget, bool has_tooltip)
+	public static T SetHasTooltip<T>(this T widget, bool has_tooltip) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_has_tooltip(widget, has_tooltip);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetHasWindow(this GtkWidgetHandle widget, bool has_window)
+	public static T SetHasWindow<T>(this T widget, bool has_window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_has_window(widget, has_window);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetHexpand(this GtkWidgetHandle widget, bool expand)
+	public static T SetHexpand<T>(this T widget, bool expand) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_hexpand(widget, expand);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetHexpandSet(this GtkWidgetHandle widget, bool set)
+	public static T SetHexpandSet<T>(this T widget, bool set) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_hexpand_set(widget, set);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMapped(this GtkWidgetHandle widget, bool mapped)
+	public static T SetMapped<T>(this T widget, bool mapped) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_mapped(widget, mapped);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginBottom(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginBottom<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_bottom(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginEnd(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginEnd<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_end(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginLeft(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginLeft<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_left(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginRight(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginRight<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_right(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginStart(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginStart<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_start(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetMarginTop(this GtkWidgetHandle widget, int margin)
+	public static T SetMarginTop<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_margin_top(widget, margin);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetName(this GtkWidgetHandle widget, string name)
+	public static T SetName<T>(this T widget, string name) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_name(widget, name);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetNoShowAll(this GtkWidgetHandle widget, bool no_show_all)
+	public static T SetNoShowAll<T>(this T widget, bool no_show_all) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_no_show_all(widget, no_show_all);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetOpacity(this GtkWidgetHandle widget, double opacity)
+	public static T SetOpacity<T>(this T widget, double opacity) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_opacity(widget, opacity);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetParent(this GtkWidgetHandle widget, GtkWidgetHandle parent)
+	public static T SetParent<T>(this T widget, GtkWidgetHandle parent) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_parent(widget, parent);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetParentWindow(this GtkWidgetHandle widget, GdkWindowHandle parent_window)
+	public static T SetParentWindow<T>(this T widget, GdkWindowHandle parent_window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_parent_window(widget, parent_window);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetRealized(this GtkWidgetHandle widget, bool realized)
+	public static T SetRealized<T>(this T widget, bool realized) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_realized(widget, realized);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetReceivesDefault(this GtkWidgetHandle widget, bool receives_default)
+	public static T SetReceivesDefault<T>(this T widget, bool receives_default) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_receives_default(widget, receives_default);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetRedrawOnAllocate(this GtkWidgetHandle widget, bool redraw_on_allocate)
+	public static T SetRedrawOnAllocate<T>(this T widget, bool redraw_on_allocate) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_redraw_on_allocate(widget, redraw_on_allocate);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetSensitive(this GtkWidgetHandle widget, bool sensitive)
+	public static T SetSensitive<T>(this T widget, bool sensitive) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_sensitive(widget, sensitive);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetSizeRequest(this GtkWidgetHandle widget, int width, int height)
+	public static T SetSizeRequest<T>(this T widget, int width, int height) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_size_request(widget, width, height);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetState(this GtkWidgetHandle widget, GtkStateType state)
+	public static T SetState<T>(this T widget, GtkStateType state) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_state(widget, state);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetStateFlags(this GtkWidgetHandle widget, GtkStateFlags flags, bool clear)
+	public static T SetStateFlags<T>(this T widget, GtkStateFlags flags, bool clear) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_state_flags(widget, flags, clear);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetStyle(this GtkWidgetHandle widget, GtkStyleHandle style)
+	public static T SetStyle<T>(this T widget, GtkStyleHandle style) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_style(widget, style);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetSupportMultidevice(this GtkWidgetHandle widget, bool support_multidevice)
+	public static T SetSupportMultidevice<T>(this T widget, bool support_multidevice) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_support_multidevice(widget, support_multidevice);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetTooltipMarkup(this GtkWidgetHandle widget, string markup)
+	public static T SetTooltipMarkup<T>(this T widget, string markup) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_tooltip_markup(widget, markup);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetTooltipText(this GtkWidgetHandle widget, string text)
+	public static T SetTooltipText<T>(this T widget, string text) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_tooltip_text(widget, text);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetTooltipWindow(this GtkWidgetHandle widget, GtkWindowHandle custom_window)
+	public static T SetTooltipWindow<T>(this T widget, GtkWindowHandle custom_window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_tooltip_window(widget, custom_window);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetValign(this GtkWidgetHandle widget, GtkAlign align)
+	public static T SetValign<T>(this T widget, GtkAlign align) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_valign(widget, align);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetVexpand(this GtkWidgetHandle widget, bool expand)
+	public static T SetVexpand<T>(this T widget, bool expand) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_vexpand(widget, expand);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetVexpandSet(this GtkWidgetHandle widget, bool set)
+	public static T SetVexpandSet<T>(this T widget, bool set) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_vexpand_set(widget, set);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetVisible(this GtkWidgetHandle widget, bool visible)
+	public static T SetVisible<T>(this T widget, bool visible) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_visible(widget, visible);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetVisual(this GtkWidgetHandle widget, GdkVisualHandle visual)
+	public static T SetVisual<T>(this T widget, GdkVisualHandle visual) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_visual(widget, visual);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SetWindow(this GtkWidgetHandle widget, GdkWindowHandle window)
+	public static T SetWindow<T>(this T widget, GdkWindowHandle window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_set_window(widget, window);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ShapeCombineRegion(this GtkWidgetHandle widget, cairo_region_tHandle region)
+	public static T ShapeCombineRegion<T>(this T widget, cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_shape_combine_region(widget, region);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Show(this GtkWidgetHandle widget)
+	public static T Show<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_show(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ShowAll(this GtkWidgetHandle widget)
+	public static T ShowAll<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_show_all(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ShowNow(this GtkWidgetHandle widget)
+	public static T ShowNow<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_show_now(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SizeAllocate(this GtkWidgetHandle widget, GtkAllocationHandle allocation)
+	public static T SizeAllocate<T>(this T widget, GtkAllocationHandle allocation) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_size_allocate(widget, allocation);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SizeAllocateWithBaseline(this GtkWidgetHandle widget, GtkAllocationHandle allocation, int baseline)
+	public static T SizeAllocateWithBaseline<T>(this T widget, GtkAllocationHandle allocation, int baseline) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_size_allocate_with_baseline(widget, allocation, baseline);
 		return widget;
 	}
 
-	public static GtkWidgetHandle SizeRequest(this GtkWidgetHandle widget, out GtkRequisition requisition)
+	public static T SizeRequest<T>(this T widget, out GtkRequisition requisition) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_size_request(widget, out requisition);
 		return widget;
 	}
 
-	public static GtkWidgetHandle StyleAttach(this GtkWidgetHandle widget)
+	public static T StyleAttach<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_style_attach(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle StyleGet(this GtkWidgetHandle widget, string first_property_name, IntPtr @__arglist)
+	public static T StyleGet<T>(this T widget, string first_property_name, IntPtr @__arglist) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_style_get(widget, first_property_name, @__arglist);
 		return widget;
 	}
 
-	public static GtkWidgetHandle StyleGetProperty(this GtkWidgetHandle widget, string property_name, GValueHandle value)
+	public static T StyleGetProperty<T>(this T widget, string property_name, GValueHandle value) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_style_get_property(widget, property_name, value);
 		return widget;
 	}
 
-	public static GtkWidgetHandle StyleGetValist(this GtkWidgetHandle widget, string first_property_name, IntPtr var_args)
+	public static T StyleGetValist<T>(this T widget, string first_property_name, IntPtr var_args) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_style_get_valist(widget, first_property_name, var_args);
 		return widget;
 	}
 
-	public static GtkWidgetHandle ThawChildNotify(this GtkWidgetHandle widget)
+	public static T ThawChildNotify<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_thaw_child_notify(widget);
 		return widget;
@@ -4149,37 +4149,37 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_widget_translate_coordinates(src_widget, dest_widget, src_x, src_y, out dest_x, out dest_y);
 	}
 
-	public static GtkWidgetHandle TriggerTooltipQuery(this GtkWidgetHandle widget)
+	public static T TriggerTooltipQuery<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_trigger_tooltip_query(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Unmap(this GtkWidgetHandle widget)
+	public static T Unmap<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_unmap(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Unparent(this GtkWidgetHandle widget)
+	public static T Unparent<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_unparent(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle Unrealize(this GtkWidgetHandle widget)
+	public static T Unrealize<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_unrealize(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle UnregisterWindow(this GtkWidgetHandle widget, GdkWindowHandle window)
+	public static T UnregisterWindow<T>(this T widget, GdkWindowHandle window) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_unregister_window(widget, window);
 		return widget;
 	}
 
-	public static GtkWidgetHandle UnsetStateFlags(this GtkWidgetHandle widget, GtkStateFlags flags)
+	public static T UnsetStateFlags<T>(this T widget, GtkStateFlags flags) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_widget_unset_state_flags(widget, flags);
 		return widget;
@@ -4190,7 +4190,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_test_widget_send_key(widget, keyval, modifiers);
 	}
 
-	public static GtkWidgetHandle GtkTestSliderSetPerc(this GtkWidgetHandle widget, double percentage)
+	public static T GtkTestSliderSetPerc<T>(this T widget, double percentage) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_test_slider_set_perc(widget, percentage);
 		return widget;
@@ -4201,7 +4201,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_test_widget_click(widget, button, modifiers);
 	}
 
-	public static GtkWidgetHandle GtkSelectionAddTargets(this GtkWidgetHandle widget, GdkAtom selection, GtkTargetEntry[] targets, uint ntargets)
+	public static T GtkSelectionAddTargets<T>(this T widget, GdkAtom selection, GtkTargetEntry[] targets, uint ntargets) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_selection_add_targets(widget, selection, targets, ntargets);
 		return widget;
@@ -4217,13 +4217,13 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_test_text_get(widget);
 	}
 
-	public static GtkWidgetHandle GtkPropagateEvent(this GtkWidgetHandle widget, GdkEventHandle @event)
+	public static T GtkPropagateEvent<T>(this T widget, GdkEventHandle @event) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_propagate_event(widget, @event);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkTestWidgetWaitForDraw(this GtkWidgetHandle widget)
+	public static T GtkTestWidgetWaitForDraw<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_test_widget_wait_for_draw(widget);
 		return widget;
@@ -4239,7 +4239,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_selection_convert(widget, selection, target, time_);
 	}
 
-	public static GtkWidgetHandle GtkSelectionAddTarget(this GtkWidgetHandle widget, GdkAtom selection, GdkAtom target, uint info)
+	public static T GtkSelectionAddTarget<T>(this T widget, GdkAtom selection, GdkAtom target, uint info) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_selection_add_target(widget, selection, target, info);
 		return widget;
@@ -4250,7 +4250,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_rc_get_style(widget);
 	}
 
-	public static GtkWidgetHandle GtkSelectionClearTargets(this GtkWidgetHandle widget, GdkAtom selection)
+	public static T GtkSelectionClearTargets<T>(this T widget, GdkAtom selection) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_selection_clear_targets(widget, selection);
 		return widget;
@@ -4261,25 +4261,25 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_test_find_sibling(base_widget, widget_type);
 	}
 
-	public static GtkWidgetHandle GtkSelectionRemoveAll(this GtkWidgetHandle widget)
+	public static T GtkSelectionRemoveAll<T>(this T widget) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_selection_remove_all(widget);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDrawInsertionCursor(this GtkWidgetHandle widget, cairo_tHandle cr, GdkRectangleHandle location, bool is_primary, GtkTextDirection direction, bool draw_arrow)
+	public static T GtkDrawInsertionCursor<T>(this T widget, cairo_tHandle cr, GdkRectangleHandle location, bool is_primary, GtkTextDirection direction, bool draw_arrow) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_draw_insertion_cursor(widget, cr, location, is_primary, direction, draw_arrow);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkTestTextSet(this GtkWidgetHandle widget, string @string)
+	public static T GtkTestTextSet<T>(this T widget, string @string) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_test_text_set(widget, @string);
 		return widget;
 	}
 
-	public static GtkWidgetHandle GtkDeviceGrabRemove(this GtkWidgetHandle widget, GdkDeviceHandle device)
+	public static T GtkDeviceGrabRemove<T>(this T widget, GdkDeviceHandle device) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_device_grab_remove(widget, device);
 		return widget;
@@ -4290,7 +4290,7 @@ public static class GtkWidgetHandleExtensions
 		return GtkWidgetExterns.gtk_test_find_label(widget, label_pattern);
 	}
 
-	public static GtkWidgetHandle GtkDeviceGrabAdd(this GtkWidgetHandle widget, GdkDeviceHandle device, bool block_others)
+	public static T GtkDeviceGrabAdd<T>(this T widget, GdkDeviceHandle device, bool block_others) where T : GtkWidgetHandle
 	{
 		GtkWidgetExterns.gtk_device_grab_add(widget, device, block_others);
 		return widget;

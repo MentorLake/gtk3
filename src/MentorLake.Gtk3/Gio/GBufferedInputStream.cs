@@ -21,7 +21,7 @@ public static class GBufferedInputStreamHandleExtensions
 		return GBufferedInputStreamExterns.g_buffered_input_stream_fill(stream, count, cancellable, out error);
 	}
 
-	public static GBufferedInputStreamHandle FillAsync(this GBufferedInputStreamHandle stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T FillAsync<T>(this T stream, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GBufferedInputStreamHandle
 	{
 		GBufferedInputStreamExterns.g_buffered_input_stream_fill_async(stream, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -57,7 +57,7 @@ public static class GBufferedInputStreamHandleExtensions
 		return GBufferedInputStreamExterns.g_buffered_input_stream_read_byte(stream, cancellable, out error);
 	}
 
-	public static GBufferedInputStreamHandle SetBufferSize(this GBufferedInputStreamHandle stream, UIntPtr size)
+	public static T SetBufferSize<T>(this T stream, UIntPtr size) where T : GBufferedInputStreamHandle
 	{
 		GBufferedInputStreamExterns.g_buffered_input_stream_set_buffer_size(stream, size);
 		return stream;

@@ -17,13 +17,13 @@ public static class GChecksumHandleExtensions
 		return GChecksumExterns.g_checksum_copy(checksum);
 	}
 
-	public static GChecksumHandle Free(this GChecksumHandle checksum)
+	public static T Free<T>(this T checksum) where T : GChecksumHandle
 	{
 		GChecksumExterns.g_checksum_free(checksum);
 		return checksum;
 	}
 
-	public static GChecksumHandle GetDigest(this GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len)
+	public static T GetDigest<T>(this T checksum, byte[] buffer, ref UIntPtr digest_len) where T : GChecksumHandle
 	{
 		GChecksumExterns.g_checksum_get_digest(checksum, buffer, ref digest_len);
 		return checksum;
@@ -34,13 +34,13 @@ public static class GChecksumHandleExtensions
 		return GChecksumExterns.g_checksum_get_string(checksum);
 	}
 
-	public static GChecksumHandle Reset(this GChecksumHandle checksum)
+	public static T Reset<T>(this T checksum) where T : GChecksumHandle
 	{
 		GChecksumExterns.g_checksum_reset(checksum);
 		return checksum;
 	}
 
-	public static GChecksumHandle Update(this GChecksumHandle checksum, string data, UIntPtr length)
+	public static T Update<T>(this T checksum, string data, UIntPtr length) where T : GChecksumHandle
 	{
 		GChecksumExterns.g_checksum_update(checksum, data, length);
 		return checksum;

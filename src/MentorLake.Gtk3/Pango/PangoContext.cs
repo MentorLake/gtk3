@@ -11,7 +11,7 @@ public class PangoContextHandle : GObjectHandle
 
 public static class PangoContextHandleExtensions
 {
-	public static PangoContextHandle Changed(this PangoContextHandle context)
+	public static T Changed<T>(this T context) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_changed(context);
 		return context;
@@ -72,7 +72,7 @@ public static class PangoContextHandleExtensions
 		return PangoContextExterns.pango_context_get_serial(context);
 	}
 
-	public static PangoContextHandle ListFamilies(this PangoContextHandle context, out PangoFontFamilyHandle[] families, out int n_families)
+	public static T ListFamilies<T>(this T context, out PangoFontFamilyHandle[] families, out int n_families) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_list_families(context, out families, out n_families);
 		return context;
@@ -88,49 +88,49 @@ public static class PangoContextHandleExtensions
 		return PangoContextExterns.pango_context_load_fontset(context, desc, language);
 	}
 
-	public static PangoContextHandle SetBaseDir(this PangoContextHandle context, PangoDirection direction)
+	public static T SetBaseDir<T>(this T context, PangoDirection direction) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_base_dir(context, direction);
 		return context;
 	}
 
-	public static PangoContextHandle SetBaseGravity(this PangoContextHandle context, PangoGravity gravity)
+	public static T SetBaseGravity<T>(this T context, PangoGravity gravity) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_base_gravity(context, gravity);
 		return context;
 	}
 
-	public static PangoContextHandle SetFontDescription(this PangoContextHandle context, PangoFontDescriptionHandle desc)
+	public static T SetFontDescription<T>(this T context, PangoFontDescriptionHandle desc) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_font_description(context, desc);
 		return context;
 	}
 
-	public static PangoContextHandle SetFontMap(this PangoContextHandle context, PangoFontMapHandle font_map)
+	public static T SetFontMap<T>(this T context, PangoFontMapHandle font_map) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_font_map(context, font_map);
 		return context;
 	}
 
-	public static PangoContextHandle SetGravityHint(this PangoContextHandle context, PangoGravityHint hint)
+	public static T SetGravityHint<T>(this T context, PangoGravityHint hint) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_gravity_hint(context, hint);
 		return context;
 	}
 
-	public static PangoContextHandle SetLanguage(this PangoContextHandle context, PangoLanguageHandle language)
+	public static T SetLanguage<T>(this T context, PangoLanguageHandle language) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_language(context, language);
 		return context;
 	}
 
-	public static PangoContextHandle SetMatrix(this PangoContextHandle context, PangoMatrixHandle matrix)
+	public static T SetMatrix<T>(this T context, PangoMatrixHandle matrix) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_matrix(context, matrix);
 		return context;
 	}
 
-	public static PangoContextHandle SetRoundGlyphPositions(this PangoContextHandle context, bool round_positions)
+	public static T SetRoundGlyphPositions<T>(this T context, bool round_positions) where T : PangoContextHandle
 	{
 		PangoContextExterns.pango_context_set_round_glyph_positions(context, round_positions);
 		return context;

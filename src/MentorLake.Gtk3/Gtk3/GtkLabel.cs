@@ -255,7 +255,7 @@ public static class GtkLabelHandleExtensions
 		return GtkLabelExterns.gtk_label_get_layout(label);
 	}
 
-	public static GtkLabelHandle GetLayoutOffsets(this GtkLabelHandle label, out int x, out int y)
+	public static T GetLayoutOffsets<T>(this T label, out int x, out int y) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_get_layout_offsets(label, out x, out y);
 		return label;
@@ -341,145 +341,145 @@ public static class GtkLabelHandleExtensions
 		return GtkLabelExterns.gtk_label_get_yalign(label);
 	}
 
-	public static GtkLabelHandle SelectRegion(this GtkLabelHandle label, int start_offset, int end_offset)
+	public static T SelectRegion<T>(this T label, int start_offset, int end_offset) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_select_region(label, start_offset, end_offset);
 		return label;
 	}
 
-	public static GtkLabelHandle SetAngle(this GtkLabelHandle label, double angle)
+	public static T SetAngle<T>(this T label, double angle) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_angle(label, angle);
 		return label;
 	}
 
-	public static GtkLabelHandle SetAttributes(this GtkLabelHandle label, PangoAttrListHandle attrs)
+	public static T SetAttributes<T>(this T label, PangoAttrListHandle attrs) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_attributes(label, attrs);
 		return label;
 	}
 
-	public static GtkLabelHandle SetEllipsize(this GtkLabelHandle label, PangoEllipsizeMode mode)
+	public static T SetEllipsize<T>(this T label, PangoEllipsizeMode mode) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_ellipsize(label, mode);
 		return label;
 	}
 
-	public static GtkLabelHandle SetJustify(this GtkLabelHandle label, GtkJustification jtype)
+	public static T SetJustify<T>(this T label, GtkJustification jtype) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_justify(label, jtype);
 		return label;
 	}
 
-	public static GtkLabelHandle SetLabel(this GtkLabelHandle label, string str)
+	public static T SetLabel<T>(this T label, string str) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_label(label, str);
 		return label;
 	}
 
-	public static GtkLabelHandle SetLineWrap(this GtkLabelHandle label, bool wrap)
+	public static T SetLineWrap<T>(this T label, bool wrap) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_line_wrap(label, wrap);
 		return label;
 	}
 
-	public static GtkLabelHandle SetLineWrapMode(this GtkLabelHandle label, PangoWrapMode wrap_mode)
+	public static T SetLineWrapMode<T>(this T label, PangoWrapMode wrap_mode) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_line_wrap_mode(label, wrap_mode);
 		return label;
 	}
 
-	public static GtkLabelHandle SetLines(this GtkLabelHandle label, int lines)
+	public static T SetLines<T>(this T label, int lines) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_lines(label, lines);
 		return label;
 	}
 
-	public static GtkLabelHandle SetMarkup(this GtkLabelHandle label, string str)
+	public static T SetMarkup<T>(this T label, string str) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_markup(label, str);
 		return label;
 	}
 
-	public static GtkLabelHandle SetMarkupWithMnemonic(this GtkLabelHandle label, string str)
+	public static T SetMarkupWithMnemonic<T>(this T label, string str) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_markup_with_mnemonic(label, str);
 		return label;
 	}
 
-	public static GtkLabelHandle SetMaxWidthChars(this GtkLabelHandle label, int n_chars)
+	public static T SetMaxWidthChars<T>(this T label, int n_chars) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_max_width_chars(label, n_chars);
 		return label;
 	}
 
-	public static GtkLabelHandle SetMnemonicWidget(this GtkLabelHandle label, GtkWidgetHandle widget)
+	public static T SetMnemonicWidget<T>(this T label, GtkWidgetHandle widget) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_mnemonic_widget(label, widget);
 		return label;
 	}
 
-	public static GtkLabelHandle SetPattern(this GtkLabelHandle label, string pattern)
+	public static T SetPattern<T>(this T label, string pattern) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_pattern(label, pattern);
 		return label;
 	}
 
-	public static GtkLabelHandle SetSelectable(this GtkLabelHandle label, bool setting)
+	public static T SetSelectable<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_selectable(label, setting);
 		return label;
 	}
 
-	public static GtkLabelHandle SetSingleLineMode(this GtkLabelHandle label, bool single_line_mode)
+	public static T SetSingleLineMode<T>(this T label, bool single_line_mode) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_single_line_mode(label, single_line_mode);
 		return label;
 	}
 
-	public static GtkLabelHandle SetText(this GtkLabelHandle label, string str)
+	public static T SetText<T>(this T label, string str) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_text(label, str);
 		return label;
 	}
 
-	public static GtkLabelHandle SetTextWithMnemonic(this GtkLabelHandle label, string str)
+	public static T SetTextWithMnemonic<T>(this T label, string str) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_text_with_mnemonic(label, str);
 		return label;
 	}
 
-	public static GtkLabelHandle SetTrackVisitedLinks(this GtkLabelHandle label, bool track_links)
+	public static T SetTrackVisitedLinks<T>(this T label, bool track_links) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_track_visited_links(label, track_links);
 		return label;
 	}
 
-	public static GtkLabelHandle SetUseMarkup(this GtkLabelHandle label, bool setting)
+	public static T SetUseMarkup<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_use_markup(label, setting);
 		return label;
 	}
 
-	public static GtkLabelHandle SetUseUnderline(this GtkLabelHandle label, bool setting)
+	public static T SetUseUnderline<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_use_underline(label, setting);
 		return label;
 	}
 
-	public static GtkLabelHandle SetWidthChars(this GtkLabelHandle label, int n_chars)
+	public static T SetWidthChars<T>(this T label, int n_chars) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_width_chars(label, n_chars);
 		return label;
 	}
 
-	public static GtkLabelHandle SetXalign(this GtkLabelHandle label, float xalign)
+	public static T SetXalign<T>(this T label, float xalign) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_xalign(label, xalign);
 		return label;
 	}
 
-	public static GtkLabelHandle SetYalign(this GtkLabelHandle label, float yalign)
+	public static T SetYalign<T>(this T label, float yalign) where T : GtkLabelHandle
 	{
 		GtkLabelExterns.gtk_label_set_yalign(label, yalign);
 		return label;

@@ -22,19 +22,19 @@ public class GTreeHandle : BaseSafeHandle
 
 public static class GTreeHandleExtensions
 {
-	public static GTreeHandle Destroy(this GTreeHandle tree)
+	public static T Destroy<T>(this T tree) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_destroy(tree);
 		return tree;
 	}
 
-	public static GTreeHandle Foreach(this GTreeHandle tree, GTraverseFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T tree, GTraverseFunc func, IntPtr user_data) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_foreach(tree, func, user_data);
 		return tree;
 	}
 
-	public static GTreeHandle ForeachNode(this GTreeHandle tree, GTraverseNodeFunc func, IntPtr user_data)
+	public static T ForeachNode<T>(this T tree, GTraverseNodeFunc func, IntPtr user_data) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_foreach_node(tree, func, user_data);
 		return tree;
@@ -45,7 +45,7 @@ public static class GTreeHandleExtensions
 		return GTreeExterns.g_tree_height(tree);
 	}
 
-	public static GTreeHandle Insert(this GTreeHandle tree, IntPtr key, IntPtr value)
+	public static T Insert<T>(this T tree, IntPtr key, IntPtr value) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_insert(tree, key, value);
 		return tree;
@@ -101,13 +101,13 @@ public static class GTreeHandleExtensions
 		return GTreeExterns.g_tree_remove(tree, key);
 	}
 
-	public static GTreeHandle RemoveAll(this GTreeHandle tree)
+	public static T RemoveAll<T>(this T tree) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_remove_all(tree);
 		return tree;
 	}
 
-	public static GTreeHandle Replace(this GTreeHandle tree, IntPtr key, IntPtr value)
+	public static T Replace<T>(this T tree, IntPtr key, IntPtr value) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_replace(tree, key, value);
 		return tree;
@@ -133,13 +133,13 @@ public static class GTreeHandleExtensions
 		return GTreeExterns.g_tree_steal(tree, key);
 	}
 
-	public static GTreeHandle Traverse(this GTreeHandle tree, GTraverseFunc traverse_func, GTraverseType traverse_type, IntPtr user_data)
+	public static T Traverse<T>(this T tree, GTraverseFunc traverse_func, GTraverseType traverse_type, IntPtr user_data) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_traverse(tree, traverse_func, traverse_type, user_data);
 		return tree;
 	}
 
-	public static GTreeHandle Unref(this GTreeHandle tree)
+	public static T Unref<T>(this T tree) where T : GTreeHandle
 	{
 		GTreeExterns.g_tree_unref(tree);
 		return tree;

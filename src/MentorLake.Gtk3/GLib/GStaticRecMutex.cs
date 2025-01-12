@@ -7,25 +7,25 @@ public class GStaticRecMutexHandle : BaseSafeHandle
 
 public static class GStaticRecMutexHandleExtensions
 {
-	public static GStaticRecMutexHandle Free(this GStaticRecMutexHandle mutex)
+	public static T Free<T>(this T mutex) where T : GStaticRecMutexHandle
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_free(mutex);
 		return mutex;
 	}
 
-	public static GStaticRecMutexHandle Init(this GStaticRecMutexHandle mutex)
+	public static T Init<T>(this T mutex) where T : GStaticRecMutexHandle
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_init(mutex);
 		return mutex;
 	}
 
-	public static GStaticRecMutexHandle Lock(this GStaticRecMutexHandle mutex)
+	public static T Lock<T>(this T mutex) where T : GStaticRecMutexHandle
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_lock(mutex);
 		return mutex;
 	}
 
-	public static GStaticRecMutexHandle LockFull(this GStaticRecMutexHandle mutex, uint depth)
+	public static T LockFull<T>(this T mutex, uint depth) where T : GStaticRecMutexHandle
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_lock_full(mutex, depth);
 		return mutex;
@@ -36,7 +36,7 @@ public static class GStaticRecMutexHandleExtensions
 		return GStaticRecMutexExterns.g_static_rec_mutex_trylock(mutex);
 	}
 
-	public static GStaticRecMutexHandle Unlock(this GStaticRecMutexHandle mutex)
+	public static T Unlock<T>(this T mutex) where T : GStaticRecMutexHandle
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_unlock(mutex);
 		return mutex;

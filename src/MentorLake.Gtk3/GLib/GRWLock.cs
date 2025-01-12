@@ -7,19 +7,19 @@ public class GRWLockHandle : BaseSafeHandle
 
 public static class GRWLockHandleExtensions
 {
-	public static GRWLockHandle GRwLockClear(this GRWLockHandle rw_lock)
+	public static T GRwLockClear<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_clear(rw_lock);
 		return rw_lock;
 	}
 
-	public static GRWLockHandle GRwLockInit(this GRWLockHandle rw_lock)
+	public static T GRwLockInit<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_init(rw_lock);
 		return rw_lock;
 	}
 
-	public static GRWLockHandle GRwLockReaderLock(this GRWLockHandle rw_lock)
+	public static T GRwLockReaderLock<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_reader_lock(rw_lock);
 		return rw_lock;
@@ -30,13 +30,13 @@ public static class GRWLockHandleExtensions
 		return GRWLockExterns.g_rw_lock_reader_trylock(rw_lock);
 	}
 
-	public static GRWLockHandle GRwLockReaderUnlock(this GRWLockHandle rw_lock)
+	public static T GRwLockReaderUnlock<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_reader_unlock(rw_lock);
 		return rw_lock;
 	}
 
-	public static GRWLockHandle GRwLockWriterLock(this GRWLockHandle rw_lock)
+	public static T GRwLockWriterLock<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_writer_lock(rw_lock);
 		return rw_lock;
@@ -47,7 +47,7 @@ public static class GRWLockHandleExtensions
 		return GRWLockExterns.g_rw_lock_writer_trylock(rw_lock);
 	}
 
-	public static GRWLockHandle GRwLockWriterUnlock(this GRWLockHandle rw_lock)
+	public static T GRwLockWriterUnlock<T>(this T rw_lock) where T : GRWLockHandle
 	{
 		GRWLockExterns.g_rw_lock_writer_unlock(rw_lock);
 		return rw_lock;

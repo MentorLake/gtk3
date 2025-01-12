@@ -42,7 +42,7 @@ public static class GdkFrameTimingsHandleExtensions
 		return GdkFrameTimingsExterns.gdk_frame_timings_ref(timings);
 	}
 
-	public static GdkFrameTimingsHandle Unref(this GdkFrameTimingsHandle timings)
+	public static T Unref<T>(this T timings) where T : GdkFrameTimingsHandle
 	{
 		GdkFrameTimingsExterns.gdk_frame_timings_unref(timings);
 		return timings;

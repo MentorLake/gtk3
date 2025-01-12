@@ -66,7 +66,7 @@ public delegate void closed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GtkPopoverHandleExtensions
 {
-	public static GtkPopoverHandle BindModel(this GtkPopoverHandle popover, GMenuModelHandle model, string action_namespace)
+	public static T BindModel<T>(this T popover, GMenuModelHandle model, string action_namespace) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_bind_model(popover, model, action_namespace);
 		return popover;
@@ -107,55 +107,55 @@ public static class GtkPopoverHandleExtensions
 		return GtkPopoverExterns.gtk_popover_get_transitions_enabled(popover);
 	}
 
-	public static GtkPopoverHandle Popdown(this GtkPopoverHandle popover)
+	public static T Popdown<T>(this T popover) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_popdown(popover);
 		return popover;
 	}
 
-	public static GtkPopoverHandle Popup(this GtkPopoverHandle popover)
+	public static T Popup<T>(this T popover) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_popup(popover);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetConstrainTo(this GtkPopoverHandle popover, GtkPopoverConstraint constraint)
+	public static T SetConstrainTo<T>(this T popover, GtkPopoverConstraint constraint) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_constrain_to(popover, constraint);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetDefaultWidget(this GtkPopoverHandle popover, GtkWidgetHandle widget)
+	public static T SetDefaultWidget<T>(this T popover, GtkWidgetHandle widget) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_default_widget(popover, widget);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetModal(this GtkPopoverHandle popover, bool modal)
+	public static T SetModal<T>(this T popover, bool modal) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_modal(popover, modal);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetPointingTo(this GtkPopoverHandle popover, GdkRectangleHandle rect)
+	public static T SetPointingTo<T>(this T popover, GdkRectangleHandle rect) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_pointing_to(popover, rect);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetPosition(this GtkPopoverHandle popover, GtkPositionType position)
+	public static T SetPosition<T>(this T popover, GtkPositionType position) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_position(popover, position);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetRelativeTo(this GtkPopoverHandle popover, GtkWidgetHandle relative_to)
+	public static T SetRelativeTo<T>(this T popover, GtkWidgetHandle relative_to) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_relative_to(popover, relative_to);
 		return popover;
 	}
 
-	public static GtkPopoverHandle SetTransitionsEnabled(this GtkPopoverHandle popover, bool transitions_enabled)
+	public static T SetTransitionsEnabled<T>(this T popover, bool transitions_enabled) where T : GtkPopoverHandle
 	{
 		GtkPopoverExterns.gtk_popover_set_transitions_enabled(popover, transitions_enabled);
 		return popover;

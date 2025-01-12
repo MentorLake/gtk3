@@ -525,7 +525,7 @@ public delegate void unmount([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GtkPlacesSidebarHandleExtensions
 {
-	public static GtkPlacesSidebarHandle AddShortcut(this GtkPlacesSidebarHandle sidebar, GFileHandle location)
+	public static T AddShortcut<T>(this T sidebar, GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_add_shortcut(sidebar, location);
 		return sidebar;
@@ -591,73 +591,73 @@ public static class GtkPlacesSidebarHandleExtensions
 		return GtkPlacesSidebarExterns.gtk_places_sidebar_list_shortcuts(sidebar);
 	}
 
-	public static GtkPlacesSidebarHandle RemoveShortcut(this GtkPlacesSidebarHandle sidebar, GFileHandle location)
+	public static T RemoveShortcut<T>(this T sidebar, GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_remove_shortcut(sidebar, location);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetDropTargetsVisible(this GtkPlacesSidebarHandle sidebar, bool visible, GdkDragContextHandle context)
+	public static T SetDropTargetsVisible<T>(this T sidebar, bool visible, GdkDragContextHandle context) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_drop_targets_visible(sidebar, visible, context);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetLocalOnly(this GtkPlacesSidebarHandle sidebar, bool local_only)
+	public static T SetLocalOnly<T>(this T sidebar, bool local_only) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_local_only(sidebar, local_only);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetLocation(this GtkPlacesSidebarHandle sidebar, GFileHandle location)
+	public static T SetLocation<T>(this T sidebar, GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_location(sidebar, location);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetOpenFlags(this GtkPlacesSidebarHandle sidebar, GtkPlacesOpenFlags flags)
+	public static T SetOpenFlags<T>(this T sidebar, GtkPlacesOpenFlags flags) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_open_flags(sidebar, flags);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowConnectToServer(this GtkPlacesSidebarHandle sidebar, bool show_connect_to_server)
+	public static T SetShowConnectToServer<T>(this T sidebar, bool show_connect_to_server) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_connect_to_server(sidebar, show_connect_to_server);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowDesktop(this GtkPlacesSidebarHandle sidebar, bool show_desktop)
+	public static T SetShowDesktop<T>(this T sidebar, bool show_desktop) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_desktop(sidebar, show_desktop);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowEnterLocation(this GtkPlacesSidebarHandle sidebar, bool show_enter_location)
+	public static T SetShowEnterLocation<T>(this T sidebar, bool show_enter_location) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_enter_location(sidebar, show_enter_location);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowOtherLocations(this GtkPlacesSidebarHandle sidebar, bool show_other_locations)
+	public static T SetShowOtherLocations<T>(this T sidebar, bool show_other_locations) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_other_locations(sidebar, show_other_locations);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowRecent(this GtkPlacesSidebarHandle sidebar, bool show_recent)
+	public static T SetShowRecent<T>(this T sidebar, bool show_recent) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_recent(sidebar, show_recent);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowStarredLocation(this GtkPlacesSidebarHandle sidebar, bool show_starred_location)
+	public static T SetShowStarredLocation<T>(this T sidebar, bool show_starred_location) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_starred_location(sidebar, show_starred_location);
 		return sidebar;
 	}
 
-	public static GtkPlacesSidebarHandle SetShowTrash(this GtkPlacesSidebarHandle sidebar, bool show_trash)
+	public static T SetShowTrash<T>(this T sidebar, bool show_trash) where T : GtkPlacesSidebarHandle
 	{
 		GtkPlacesSidebarExterns.gtk_places_sidebar_set_show_trash(sidebar, show_trash);
 		return sidebar;

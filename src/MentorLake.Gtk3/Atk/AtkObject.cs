@@ -313,13 +313,13 @@ public static class AtkObjectHandleExtensions
 		return AtkObjectExterns.atk_object_get_role(accessible);
 	}
 
-	public static AtkObjectHandle Initialize(this AtkObjectHandle accessible, IntPtr data)
+	public static T Initialize<T>(this T accessible, IntPtr data) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_initialize(accessible, data);
 		return accessible;
 	}
 
-	public static AtkObjectHandle NotifyStateChange(this AtkObjectHandle accessible, AtkState state, bool value)
+	public static T NotifyStateChange<T>(this T accessible, AtkState state, bool value) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_notify_state_change(accessible, state, value);
 		return accessible;
@@ -345,7 +345,7 @@ public static class AtkObjectHandleExtensions
 		return AtkObjectExterns.atk_object_ref_state_set(accessible);
 	}
 
-	public static AtkObjectHandle RemovePropertyChangeHandler(this AtkObjectHandle accessible, uint handler_id)
+	public static T RemovePropertyChangeHandler<T>(this T accessible, uint handler_id) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_remove_property_change_handler(accessible, handler_id);
 		return accessible;
@@ -356,37 +356,37 @@ public static class AtkObjectHandleExtensions
 		return AtkObjectExterns.atk_object_remove_relationship(@object, relationship, target);
 	}
 
-	public static AtkObjectHandle SetAccessibleId(this AtkObjectHandle accessible, string name)
+	public static T SetAccessibleId<T>(this T accessible, string name) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_set_accessible_id(accessible, name);
 		return accessible;
 	}
 
-	public static AtkObjectHandle SetDescription(this AtkObjectHandle accessible, string description)
+	public static T SetDescription<T>(this T accessible, string description) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_set_description(accessible, description);
 		return accessible;
 	}
 
-	public static AtkObjectHandle SetName(this AtkObjectHandle accessible, string name)
+	public static T SetName<T>(this T accessible, string name) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_set_name(accessible, name);
 		return accessible;
 	}
 
-	public static AtkObjectHandle SetParent(this AtkObjectHandle accessible, AtkObjectHandle parent)
+	public static T SetParent<T>(this T accessible, AtkObjectHandle parent) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_set_parent(accessible, parent);
 		return accessible;
 	}
 
-	public static AtkObjectHandle SetRole(this AtkObjectHandle accessible, AtkRole role)
+	public static T SetRole<T>(this T accessible, AtkRole role) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_object_set_role(accessible, role);
 		return accessible;
 	}
 
-	public static AtkObjectHandle AtkFocusTrackerNotify(this AtkObjectHandle @object)
+	public static T AtkFocusTrackerNotify<T>(this T @object) where T : AtkObjectHandle
 	{
 		AtkObjectExterns.atk_focus_tracker_notify(@object);
 		return @object;

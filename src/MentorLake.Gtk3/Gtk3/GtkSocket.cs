@@ -99,7 +99,7 @@ public delegate bool plug_removed([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkSocketHandleExtensions
 {
-	public static GtkSocketHandle AddId(this GtkSocketHandle socket_, IntPtr window)
+	public static T AddId<T>(this T socket_, IntPtr window) where T : GtkSocketHandle
 	{
 		GtkSocketExterns.gtk_socket_add_id(socket_, window);
 		return socket_;

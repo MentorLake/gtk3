@@ -10,37 +10,37 @@ internal class GtkCellAccessibleParentHandleImpl : BaseSafeHandle, GtkCellAccess
 
 public static class GtkCellAccessibleParentHandleExtensions
 {
-	public static GtkCellAccessibleParentHandle Activate(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell)
+	public static T Activate<T>(this T parent, GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_activate(parent, cell);
 		return parent;
 	}
 
-	public static GtkCellAccessibleParentHandle Edit(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell)
+	public static T Edit<T>(this T parent, GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_edit(parent, cell);
 		return parent;
 	}
 
-	public static GtkCellAccessibleParentHandle ExpandCollapse(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell)
+	public static T ExpandCollapse<T>(this T parent, GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_expand_collapse(parent, cell);
 		return parent;
 	}
 
-	public static GtkCellAccessibleParentHandle GetCellArea(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell, out GdkRectangle cell_rect)
+	public static T GetCellArea<T>(this T parent, GtkCellAccessibleHandle cell, out GdkRectangle cell_rect) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_get_cell_area(parent, cell, out cell_rect);
 		return parent;
 	}
 
-	public static GtkCellAccessibleParentHandle GetCellExtents(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell, out int x, out int y, out int width, out int height, AtkCoordType coord_type)
+	public static T GetCellExtents<T>(this T parent, GtkCellAccessibleHandle cell, out int x, out int y, out int width, out int height, AtkCoordType coord_type) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_get_cell_extents(parent, cell, out x, out y, out width, out height, coord_type);
 		return parent;
 	}
 
-	public static GtkCellAccessibleParentHandle GetCellPosition(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell, out int row, out int column)
+	public static T GetCellPosition<T>(this T parent, GtkCellAccessibleHandle cell, out int row, out int column) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_get_cell_position(parent, cell, out row, out column);
 		return parent;
@@ -71,7 +71,7 @@ public static class GtkCellAccessibleParentHandleExtensions
 		return GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_grab_focus(parent, cell);
 	}
 
-	public static GtkCellAccessibleParentHandle UpdateRelationset(this GtkCellAccessibleParentHandle parent, GtkCellAccessibleHandle cell, AtkRelationSetHandle relationset)
+	public static T UpdateRelationset<T>(this T parent, GtkCellAccessibleHandle cell, AtkRelationSetHandle relationset) where T : GtkCellAccessibleParentHandle
 	{
 		GtkCellAccessibleParentExterns.gtk_cell_accessible_parent_update_relationset(parent, cell, relationset);
 		return parent;

@@ -10,7 +10,7 @@ internal class GAsyncInitableHandleImpl : BaseSafeHandle, GAsyncInitableHandle
 
 public static class GAsyncInitableHandleExtensions
 {
-	public static GAsyncInitableHandle InitAsync(this GAsyncInitableHandle initable, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T InitAsync<T>(this T initable, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GAsyncInitableHandle
 	{
 		GAsyncInitableExterns.g_async_initable_init_async(initable, io_priority, cancellable, callback, user_data);
 		return initable;

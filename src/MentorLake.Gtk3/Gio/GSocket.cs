@@ -251,37 +251,37 @@ public static class GSocketHandleExtensions
 		return GSocketExterns.g_socket_send_with_blocking(socket, buffer, size, blocking, cancellable, out error);
 	}
 
-	public static GSocketHandle SetBlocking(this GSocketHandle socket, bool blocking)
+	public static T SetBlocking<T>(this T socket, bool blocking) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_blocking(socket, blocking);
 		return socket;
 	}
 
-	public static GSocketHandle SetBroadcast(this GSocketHandle socket, bool broadcast)
+	public static T SetBroadcast<T>(this T socket, bool broadcast) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_broadcast(socket, broadcast);
 		return socket;
 	}
 
-	public static GSocketHandle SetKeepalive(this GSocketHandle socket, bool keepalive)
+	public static T SetKeepalive<T>(this T socket, bool keepalive) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_keepalive(socket, keepalive);
 		return socket;
 	}
 
-	public static GSocketHandle SetListenBacklog(this GSocketHandle socket, int backlog)
+	public static T SetListenBacklog<T>(this T socket, int backlog) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_listen_backlog(socket, backlog);
 		return socket;
 	}
 
-	public static GSocketHandle SetMulticastLoopback(this GSocketHandle socket, bool loopback)
+	public static T SetMulticastLoopback<T>(this T socket, bool loopback) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_multicast_loopback(socket, loopback);
 		return socket;
 	}
 
-	public static GSocketHandle SetMulticastTtl(this GSocketHandle socket, uint ttl)
+	public static T SetMulticastTtl<T>(this T socket, uint ttl) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_multicast_ttl(socket, ttl);
 		return socket;
@@ -292,13 +292,13 @@ public static class GSocketHandleExtensions
 		return GSocketExterns.g_socket_set_option(socket, level, optname, value, out error);
 	}
 
-	public static GSocketHandle SetTimeout(this GSocketHandle socket, uint timeout)
+	public static T SetTimeout<T>(this T socket, uint timeout) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_timeout(socket, timeout);
 		return socket;
 	}
 
-	public static GSocketHandle SetTtl(this GSocketHandle socket, uint ttl)
+	public static T SetTtl<T>(this T socket, uint ttl) where T : GSocketHandle
 	{
 		GSocketExterns.g_socket_set_ttl(socket, ttl);
 		return socket;

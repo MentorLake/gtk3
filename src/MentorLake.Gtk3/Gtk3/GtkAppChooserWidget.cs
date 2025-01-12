@@ -169,37 +169,37 @@ public static class GtkAppChooserWidgetHandleExtensions
 		return GtkAppChooserWidgetExterns.gtk_app_chooser_widget_get_show_recommended(self);
 	}
 
-	public static GtkAppChooserWidgetHandle SetDefaultText(this GtkAppChooserWidgetHandle self, string text)
+	public static T SetDefaultText<T>(this T self, string text) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_default_text(self, text);
 		return self;
 	}
 
-	public static GtkAppChooserWidgetHandle SetShowAll(this GtkAppChooserWidgetHandle self, bool setting)
+	public static T SetShowAll<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_show_all(self, setting);
 		return self;
 	}
 
-	public static GtkAppChooserWidgetHandle SetShowDefault(this GtkAppChooserWidgetHandle self, bool setting)
+	public static T SetShowDefault<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_show_default(self, setting);
 		return self;
 	}
 
-	public static GtkAppChooserWidgetHandle SetShowFallback(this GtkAppChooserWidgetHandle self, bool setting)
+	public static T SetShowFallback<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_show_fallback(self, setting);
 		return self;
 	}
 
-	public static GtkAppChooserWidgetHandle SetShowOther(this GtkAppChooserWidgetHandle self, bool setting)
+	public static T SetShowOther<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_show_other(self, setting);
 		return self;
 	}
 
-	public static GtkAppChooserWidgetHandle SetShowRecommended(this GtkAppChooserWidgetHandle self, bool setting)
+	public static T SetShowRecommended<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
 		GtkAppChooserWidgetExterns.gtk_app_chooser_widget_set_show_recommended(self, setting);
 		return self;

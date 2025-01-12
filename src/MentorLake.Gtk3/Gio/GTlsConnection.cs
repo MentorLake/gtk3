@@ -129,7 +129,7 @@ public static class GTlsConnectionHandleExtensions
 		return GTlsConnectionExterns.g_tls_connection_handshake(conn, cancellable, out error);
 	}
 
-	public static GTlsConnectionHandle HandshakeAsync(this GTlsConnectionHandle conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T HandshakeAsync<T>(this T conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_handshake_async(conn, io_priority, cancellable, callback, user_data);
 		return conn;
@@ -140,43 +140,43 @@ public static class GTlsConnectionHandleExtensions
 		return GTlsConnectionExterns.g_tls_connection_handshake_finish(conn, result, out error);
 	}
 
-	public static GTlsConnectionHandle SetAdvertisedProtocols(this GTlsConnectionHandle conn, string protocols)
+	public static T SetAdvertisedProtocols<T>(this T conn, string protocols) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_advertised_protocols(conn, protocols);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetCertificate(this GTlsConnectionHandle conn, GTlsCertificateHandle certificate)
+	public static T SetCertificate<T>(this T conn, GTlsCertificateHandle certificate) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_certificate(conn, certificate);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetDatabase(this GTlsConnectionHandle conn, GTlsDatabaseHandle database)
+	public static T SetDatabase<T>(this T conn, GTlsDatabaseHandle database) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_database(conn, database);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetInteraction(this GTlsConnectionHandle conn, GTlsInteractionHandle interaction)
+	public static T SetInteraction<T>(this T conn, GTlsInteractionHandle interaction) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_interaction(conn, interaction);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetRehandshakeMode(this GTlsConnectionHandle conn, GTlsRehandshakeMode mode)
+	public static T SetRehandshakeMode<T>(this T conn, GTlsRehandshakeMode mode) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_rehandshake_mode(conn, mode);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetRequireCloseNotify(this GTlsConnectionHandle conn, bool require_close_notify)
+	public static T SetRequireCloseNotify<T>(this T conn, bool require_close_notify) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_require_close_notify(conn, require_close_notify);
 		return conn;
 	}
 
-	public static GTlsConnectionHandle SetUseSystemCertdb(this GTlsConnectionHandle conn, bool use_system_certdb)
+	public static T SetUseSystemCertdb<T>(this T conn, bool use_system_certdb) where T : GTlsConnectionHandle
 	{
 		GTlsConnectionExterns.g_tls_connection_set_use_system_certdb(conn, use_system_certdb);
 		return conn;

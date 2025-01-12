@@ -35,7 +35,7 @@ public static class GDriveHandleExtensions
 		return GDriveExterns.g_drive_can_stop(drive);
 	}
 
-	public static GDriveHandle Eject(this GDriveHandle drive, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Eject<T>(this T drive, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDriveHandle
 	{
 		GDriveExterns.g_drive_eject(drive, flags, cancellable, callback, user_data);
 		return drive;
@@ -46,7 +46,7 @@ public static class GDriveHandleExtensions
 		return GDriveExterns.g_drive_eject_finish(drive, result, out error);
 	}
 
-	public static GDriveHandle EjectWithOperation(this GDriveHandle drive, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EjectWithOperation<T>(this T drive, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDriveHandle
 	{
 		GDriveExterns.g_drive_eject_with_operation(drive, flags, mount_operation, cancellable, callback, user_data);
 		return drive;
@@ -122,7 +122,7 @@ public static class GDriveHandleExtensions
 		return GDriveExterns.g_drive_is_removable(drive);
 	}
 
-	public static GDriveHandle PollForMedia(this GDriveHandle drive, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T PollForMedia<T>(this T drive, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDriveHandle
 	{
 		GDriveExterns.g_drive_poll_for_media(drive, cancellable, callback, user_data);
 		return drive;
@@ -133,7 +133,7 @@ public static class GDriveHandleExtensions
 		return GDriveExterns.g_drive_poll_for_media_finish(drive, result, out error);
 	}
 
-	public static GDriveHandle Start(this GDriveHandle drive, GDriveStartFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Start<T>(this T drive, GDriveStartFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDriveHandle
 	{
 		GDriveExterns.g_drive_start(drive, flags, mount_operation, cancellable, callback, user_data);
 		return drive;
@@ -144,7 +144,7 @@ public static class GDriveHandleExtensions
 		return GDriveExterns.g_drive_start_finish(drive, result, out error);
 	}
 
-	public static GDriveHandle Stop(this GDriveHandle drive, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Stop<T>(this T drive, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDriveHandle
 	{
 		GDriveExterns.g_drive_stop(drive, flags, mount_operation, cancellable, callback, user_data);
 		return drive;

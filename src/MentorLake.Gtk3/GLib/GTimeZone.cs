@@ -67,7 +67,7 @@ public static class GTimeZoneHandleExtensions
 		return GTimeZoneExterns.g_time_zone_ref(tz);
 	}
 
-	public static GTimeZoneHandle Unref(this GTimeZoneHandle tz)
+	public static T Unref<T>(this T tz) where T : GTimeZoneHandle
 	{
 		GTimeZoneExterns.g_time_zone_unref(tz);
 		return tz;

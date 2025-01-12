@@ -7,7 +7,7 @@ public class GTestLogBufferHandle : BaseSafeHandle
 
 public static class GTestLogBufferHandleExtensions
 {
-	public static GTestLogBufferHandle Free(this GTestLogBufferHandle tbuffer)
+	public static T Free<T>(this T tbuffer) where T : GTestLogBufferHandle
 	{
 		GTestLogBufferExterns.g_test_log_buffer_free(tbuffer);
 		return tbuffer;
@@ -18,7 +18,7 @@ public static class GTestLogBufferHandleExtensions
 		return GTestLogBufferExterns.g_test_log_buffer_pop(tbuffer);
 	}
 
-	public static GTestLogBufferHandle Push(this GTestLogBufferHandle tbuffer, uint n_bytes, ref byte bytes)
+	public static T Push<T>(this T tbuffer, uint n_bytes, ref byte bytes) where T : GTestLogBufferHandle
 	{
 		GTestLogBufferExterns.g_test_log_buffer_push(tbuffer, n_bytes, ref bytes);
 		return tbuffer;

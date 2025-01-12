@@ -450,13 +450,13 @@ public delegate void update_custom_widget([MarshalAs(UnmanagedType.CustomMarshal
 
 public static class GtkPrintOperationHandleExtensions
 {
-	public static GtkPrintOperationHandle Cancel(this GtkPrintOperationHandle op)
+	public static T Cancel<T>(this T op) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_cancel(op);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle DrawPageFinish(this GtkPrintOperationHandle op)
+	public static T DrawPageFinish<T>(this T op) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_draw_page_finish(op);
 		return op;
@@ -472,7 +472,7 @@ public static class GtkPrintOperationHandleExtensions
 		return GtkPrintOperationExterns.gtk_print_operation_get_embed_page_setup(op);
 	}
 
-	public static GtkPrintOperationHandle GetError(this GtkPrintOperationHandle op, out GErrorHandle error)
+	public static T GetError<T>(this T op, out GErrorHandle error) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_get_error(op, out error);
 		return op;
@@ -518,97 +518,97 @@ public static class GtkPrintOperationHandleExtensions
 		return GtkPrintOperationExterns.gtk_print_operation_run(op, action, parent, out error);
 	}
 
-	public static GtkPrintOperationHandle SetAllowAsync(this GtkPrintOperationHandle op, bool allow_async)
+	public static T SetAllowAsync<T>(this T op, bool allow_async) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_allow_async(op, allow_async);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetCurrentPage(this GtkPrintOperationHandle op, int current_page)
+	public static T SetCurrentPage<T>(this T op, int current_page) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_current_page(op, current_page);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetCustomTabLabel(this GtkPrintOperationHandle op, string label)
+	public static T SetCustomTabLabel<T>(this T op, string label) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_custom_tab_label(op, label);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetDefaultPageSetup(this GtkPrintOperationHandle op, GtkPageSetupHandle default_page_setup)
+	public static T SetDefaultPageSetup<T>(this T op, GtkPageSetupHandle default_page_setup) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_default_page_setup(op, default_page_setup);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetDeferDrawing(this GtkPrintOperationHandle op)
+	public static T SetDeferDrawing<T>(this T op) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_defer_drawing(op);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetEmbedPageSetup(this GtkPrintOperationHandle op, bool embed)
+	public static T SetEmbedPageSetup<T>(this T op, bool embed) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_embed_page_setup(op, embed);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetExportFilename(this GtkPrintOperationHandle op, string filename)
+	public static T SetExportFilename<T>(this T op, string filename) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_export_filename(op, filename);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetHasSelection(this GtkPrintOperationHandle op, bool has_selection)
+	public static T SetHasSelection<T>(this T op, bool has_selection) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_has_selection(op, has_selection);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetJobName(this GtkPrintOperationHandle op, string job_name)
+	public static T SetJobName<T>(this T op, string job_name) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_job_name(op, job_name);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetNPages(this GtkPrintOperationHandle op, int n_pages)
+	public static T SetNPages<T>(this T op, int n_pages) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_n_pages(op, n_pages);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetPrintSettings(this GtkPrintOperationHandle op, GtkPrintSettingsHandle print_settings)
+	public static T SetPrintSettings<T>(this T op, GtkPrintSettingsHandle print_settings) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_print_settings(op, print_settings);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetShowProgress(this GtkPrintOperationHandle op, bool show_progress)
+	public static T SetShowProgress<T>(this T op, bool show_progress) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_show_progress(op, show_progress);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetSupportSelection(this GtkPrintOperationHandle op, bool support_selection)
+	public static T SetSupportSelection<T>(this T op, bool support_selection) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_support_selection(op, support_selection);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetTrackPrintStatus(this GtkPrintOperationHandle op, bool track_status)
+	public static T SetTrackPrintStatus<T>(this T op, bool track_status) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_track_print_status(op, track_status);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetUnit(this GtkPrintOperationHandle op, GtkUnit unit)
+	public static T SetUnit<T>(this T op, GtkUnit unit) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_unit(op, unit);
 		return op;
 	}
 
-	public static GtkPrintOperationHandle SetUseFullPage(this GtkPrintOperationHandle op, bool full_page)
+	public static T SetUseFullPage<T>(this T op, bool full_page) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationExterns.gtk_print_operation_set_use_full_page(op, full_page);
 		return op;

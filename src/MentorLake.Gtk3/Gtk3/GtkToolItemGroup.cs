@@ -56,43 +56,43 @@ public static class GtkToolItemGroupHandleExtensions
 		return GtkToolItemGroupExterns.gtk_tool_item_group_get_nth_item(group, index);
 	}
 
-	public static GtkToolItemGroupHandle Insert(this GtkToolItemGroupHandle group, GtkToolItemHandle item, int position)
+	public static T Insert<T>(this T group, GtkToolItemHandle item, int position) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_insert(group, item, position);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetCollapsed(this GtkToolItemGroupHandle group, bool collapsed)
+	public static T SetCollapsed<T>(this T group, bool collapsed) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_collapsed(group, collapsed);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetEllipsize(this GtkToolItemGroupHandle group, PangoEllipsizeMode ellipsize)
+	public static T SetEllipsize<T>(this T group, PangoEllipsizeMode ellipsize) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_ellipsize(group, ellipsize);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetHeaderRelief(this GtkToolItemGroupHandle group, GtkReliefStyle style)
+	public static T SetHeaderRelief<T>(this T group, GtkReliefStyle style) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_header_relief(group, style);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetItemPosition(this GtkToolItemGroupHandle group, GtkToolItemHandle item, int position)
+	public static T SetItemPosition<T>(this T group, GtkToolItemHandle item, int position) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_item_position(group, item, position);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetLabel(this GtkToolItemGroupHandle group, string label)
+	public static T SetLabel<T>(this T group, string label) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_label(group, label);
 		return group;
 	}
 
-	public static GtkToolItemGroupHandle SetLabelWidget(this GtkToolItemGroupHandle group, GtkWidgetHandle label_widget)
+	public static T SetLabelWidget<T>(this T group, GtkWidgetHandle label_widget) where T : GtkToolItemGroupHandle
 	{
 		GtkToolItemGroupExterns.gtk_tool_item_group_set_label_widget(group, label_widget);
 		return group;

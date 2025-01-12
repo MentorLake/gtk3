@@ -128,7 +128,7 @@ public delegate void g_signal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GDBusProxyHandleExtensions
 {
-	public static GDBusProxyHandle GDbusProxyCall(this GDBusProxyHandle proxy, string method_name, GVariantHandle parameters, GDBusCallFlags flags, int timeout_msec, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusProxyCall<T>(this T proxy, string method_name, GVariantHandle parameters, GDBusCallFlags flags, int timeout_msec, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusProxyHandle
 	{
 		GDBusProxyExterns.g_dbus_proxy_call(proxy, method_name, parameters, flags, timeout_msec, cancellable, callback, user_data);
 		return proxy;
@@ -144,7 +144,7 @@ public static class GDBusProxyHandleExtensions
 		return GDBusProxyExterns.g_dbus_proxy_call_sync(proxy, method_name, parameters, flags, timeout_msec, cancellable, out error);
 	}
 
-	public static GDBusProxyHandle GDbusProxyCallWithUnixFdList(this GDBusProxyHandle proxy, string method_name, GVariantHandle parameters, GDBusCallFlags flags, int timeout_msec, GUnixFDListHandle fd_list, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusProxyCallWithUnixFdList<T>(this T proxy, string method_name, GVariantHandle parameters, GDBusCallFlags flags, int timeout_msec, GUnixFDListHandle fd_list, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusProxyHandle
 	{
 		GDBusProxyExterns.g_dbus_proxy_call_with_unix_fd_list(proxy, method_name, parameters, flags, timeout_msec, fd_list, cancellable, callback, user_data);
 		return proxy;
@@ -210,19 +210,19 @@ public static class GDBusProxyHandleExtensions
 		return GDBusProxyExterns.g_dbus_proxy_get_object_path(proxy);
 	}
 
-	public static GDBusProxyHandle GDbusProxySetCachedProperty(this GDBusProxyHandle proxy, string property_name, GVariantHandle value)
+	public static T GDbusProxySetCachedProperty<T>(this T proxy, string property_name, GVariantHandle value) where T : GDBusProxyHandle
 	{
 		GDBusProxyExterns.g_dbus_proxy_set_cached_property(proxy, property_name, value);
 		return proxy;
 	}
 
-	public static GDBusProxyHandle GDbusProxySetDefaultTimeout(this GDBusProxyHandle proxy, int timeout_msec)
+	public static T GDbusProxySetDefaultTimeout<T>(this T proxy, int timeout_msec) where T : GDBusProxyHandle
 	{
 		GDBusProxyExterns.g_dbus_proxy_set_default_timeout(proxy, timeout_msec);
 		return proxy;
 	}
 
-	public static GDBusProxyHandle GDbusProxySetInterfaceInfo(this GDBusProxyHandle proxy, GDBusInterfaceInfoHandle info)
+	public static T GDbusProxySetInterfaceInfo<T>(this T proxy, GDBusInterfaceInfoHandle info) where T : GDBusProxyHandle
 	{
 		GDBusProxyExterns.g_dbus_proxy_set_interface_info(proxy, info);
 		return proxy;

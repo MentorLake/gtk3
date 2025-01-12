@@ -256,19 +256,19 @@ public static class GtkIMContextHandleExtensions
 		return GtkIMContextExterns.gtk_im_context_filter_keypress(context, @event);
 	}
 
-	public static GtkIMContextHandle GtkImContextFocusIn(this GtkIMContextHandle context)
+	public static T GtkImContextFocusIn<T>(this T context) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_focus_in(context);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextFocusOut(this GtkIMContextHandle context)
+	public static T GtkImContextFocusOut<T>(this T context) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_focus_out(context);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextGetPreeditString(this GtkIMContextHandle context, out string str, out PangoAttrListHandle attrs, out int cursor_pos)
+	public static T GtkImContextGetPreeditString<T>(this T context, out string str, out PangoAttrListHandle attrs, out int cursor_pos) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_get_preedit_string(context, out str, out attrs, out cursor_pos);
 		return context;
@@ -279,31 +279,31 @@ public static class GtkIMContextHandleExtensions
 		return GtkIMContextExterns.gtk_im_context_get_surrounding(context, out text, out cursor_index);
 	}
 
-	public static GtkIMContextHandle GtkImContextReset(this GtkIMContextHandle context)
+	public static T GtkImContextReset<T>(this T context) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_reset(context);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextSetClientWindow(this GtkIMContextHandle context, GdkWindowHandle window)
+	public static T GtkImContextSetClientWindow<T>(this T context, GdkWindowHandle window) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_set_client_window(context, window);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextSetCursorLocation(this GtkIMContextHandle context, GdkRectangleHandle area)
+	public static T GtkImContextSetCursorLocation<T>(this T context, GdkRectangleHandle area) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_set_cursor_location(context, area);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextSetSurrounding(this GtkIMContextHandle context, string text, int len, int cursor_index)
+	public static T GtkImContextSetSurrounding<T>(this T context, string text, int len, int cursor_index) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_set_surrounding(context, text, len, cursor_index);
 		return context;
 	}
 
-	public static GtkIMContextHandle GtkImContextSetUsePreedit(this GtkIMContextHandle context, bool use_preedit)
+	public static T GtkImContextSetUsePreedit<T>(this T context, bool use_preedit) where T : GtkIMContextHandle
 	{
 		GtkIMContextExterns.gtk_im_context_set_use_preedit(context, use_preedit);
 		return context;

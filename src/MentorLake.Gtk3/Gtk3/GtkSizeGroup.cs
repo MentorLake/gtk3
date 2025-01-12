@@ -11,7 +11,7 @@ public class GtkSizeGroupHandle : GObjectHandle, GtkBuildableHandle
 
 public static class GtkSizeGroupHandleExtensions
 {
-	public static GtkSizeGroupHandle AddWidget(this GtkSizeGroupHandle size_group, GtkWidgetHandle widget)
+	public static T AddWidget<T>(this T size_group, GtkWidgetHandle widget) where T : GtkSizeGroupHandle
 	{
 		GtkSizeGroupExterns.gtk_size_group_add_widget(size_group, widget);
 		return size_group;
@@ -32,19 +32,19 @@ public static class GtkSizeGroupHandleExtensions
 		return GtkSizeGroupExterns.gtk_size_group_get_widgets(size_group);
 	}
 
-	public static GtkSizeGroupHandle RemoveWidget(this GtkSizeGroupHandle size_group, GtkWidgetHandle widget)
+	public static T RemoveWidget<T>(this T size_group, GtkWidgetHandle widget) where T : GtkSizeGroupHandle
 	{
 		GtkSizeGroupExterns.gtk_size_group_remove_widget(size_group, widget);
 		return size_group;
 	}
 
-	public static GtkSizeGroupHandle SetIgnoreHidden(this GtkSizeGroupHandle size_group, bool ignore_hidden)
+	public static T SetIgnoreHidden<T>(this T size_group, bool ignore_hidden) where T : GtkSizeGroupHandle
 	{
 		GtkSizeGroupExterns.gtk_size_group_set_ignore_hidden(size_group, ignore_hidden);
 		return size_group;
 	}
 
-	public static GtkSizeGroupHandle SetMode(this GtkSizeGroupHandle size_group, GtkSizeGroupMode mode)
+	public static T SetMode<T>(this T size_group, GtkSizeGroupMode mode) where T : GtkSizeGroupHandle
 	{
 		GtkSizeGroupExterns.gtk_size_group_set_mode(size_group, mode);
 		return size_group;

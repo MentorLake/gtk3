@@ -22,7 +22,7 @@ public static class GIOExtensionPointHandleExtensions
 		return GIOExtensionPointExterns.g_io_extension_point_get_required_type(extension_point);
 	}
 
-	public static GIOExtensionPointHandle GIoExtensionPointSetRequiredType(this GIOExtensionPointHandle extension_point, GType type)
+	public static T GIoExtensionPointSetRequiredType<T>(this T extension_point, GType type) where T : GIOExtensionPointHandle
 	{
 		GIOExtensionPointExterns.g_io_extension_point_set_required_type(extension_point, type);
 		return extension_point;

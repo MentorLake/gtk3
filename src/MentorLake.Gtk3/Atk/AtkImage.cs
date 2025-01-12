@@ -20,13 +20,13 @@ public static class AtkImageHandleExtensions
 		return AtkImageExterns.atk_image_get_image_locale(image);
 	}
 
-	public static AtkImageHandle GetImagePosition(this AtkImageHandle image, out int x, out int y, AtkCoordType coord_type)
+	public static T GetImagePosition<T>(this T image, out int x, out int y, AtkCoordType coord_type) where T : AtkImageHandle
 	{
 		AtkImageExterns.atk_image_get_image_position(image, out x, out y, coord_type);
 		return image;
 	}
 
-	public static AtkImageHandle GetImageSize(this AtkImageHandle image, out int width, out int height)
+	public static T GetImageSize<T>(this T image, out int width, out int height) where T : AtkImageHandle
 	{
 		AtkImageExterns.atk_image_get_image_size(image, out width, out height);
 		return image;

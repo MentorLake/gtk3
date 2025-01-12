@@ -17,7 +17,7 @@ public static class GtkTextAttributesHandleExtensions
 		return GtkTextAttributesExterns.gtk_text_attributes_copy(src);
 	}
 
-	public static GtkTextAttributesHandle CopyValues(this GtkTextAttributesHandle src, GtkTextAttributesHandle dest)
+	public static T CopyValues<T>(this T src, GtkTextAttributesHandle dest) where T : GtkTextAttributesHandle
 	{
 		GtkTextAttributesExterns.gtk_text_attributes_copy_values(src, dest);
 		return src;
@@ -28,7 +28,7 @@ public static class GtkTextAttributesHandleExtensions
 		return GtkTextAttributesExterns.gtk_text_attributes_ref(values);
 	}
 
-	public static GtkTextAttributesHandle Unref(this GtkTextAttributesHandle values)
+	public static T Unref<T>(this T values) where T : GtkTextAttributesHandle
 	{
 		GtkTextAttributesExterns.gtk_text_attributes_unref(values);
 		return values;

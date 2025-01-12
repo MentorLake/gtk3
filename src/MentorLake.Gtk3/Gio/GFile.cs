@@ -15,7 +15,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_append_to(file, flags, cancellable, out error);
 	}
 
-	public static GFileHandle AppendToAsync(this GFileHandle file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T AppendToAsync<T>(this T file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_append_to_async(file, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -36,7 +36,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_copy(source, destination, flags, cancellable, progress_callback, progress_callback_data, out error);
 	}
 
-	public static GFileHandle CopyAsync(this GFileHandle source, GFileHandle destination, GFileCopyFlags flags, int io_priority, GCancellableHandle cancellable, GFileProgressCallback progress_callback, IntPtr progress_callback_data, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CopyAsync<T>(this T source, GFileHandle destination, GFileCopyFlags flags, int io_priority, GCancellableHandle cancellable, GFileProgressCallback progress_callback, IntPtr progress_callback_data, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_copy_async(source, destination, flags, io_priority, cancellable, progress_callback, progress_callback_data, callback, user_data);
 		return source;
@@ -57,7 +57,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_create(file, flags, cancellable, out error);
 	}
 
-	public static GFileHandle CreateAsync(this GFileHandle file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CreateAsync<T>(this T file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_create_async(file, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -73,7 +73,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_create_readwrite(file, flags, cancellable, out error);
 	}
 
-	public static GFileHandle CreateReadwriteAsync(this GFileHandle file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CreateReadwriteAsync<T>(this T file, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_create_readwrite_async(file, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -89,7 +89,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_delete(file, cancellable, out error);
 	}
 
-	public static GFileHandle DeleteAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T DeleteAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_delete_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -105,7 +105,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_dup(file);
 	}
 
-	public static GFileHandle EjectMountable(this GFileHandle file, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EjectMountable<T>(this T file, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_eject_mountable(file, flags, cancellable, callback, user_data);
 		return file;
@@ -116,7 +116,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_eject_mountable_finish(file, result, out error);
 	}
 
-	public static GFileHandle EjectMountableWithOperation(this GFileHandle file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EjectMountableWithOperation<T>(this T file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_eject_mountable_with_operation(file, flags, mount_operation, cancellable, callback, user_data);
 		return file;
@@ -132,7 +132,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_enumerate_children(file, attributes, flags, cancellable, out error);
 	}
 
-	public static GFileHandle EnumerateChildrenAsync(this GFileHandle file, string attributes, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EnumerateChildrenAsync<T>(this T file, string attributes, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_enumerate_children_async(file, attributes, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -153,7 +153,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_find_enclosing_mount(file, cancellable, out error);
 	}
 
-	public static GFileHandle FindEnclosingMountAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T FindEnclosingMountAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_find_enclosing_mount_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -239,7 +239,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_load_bytes(file, cancellable, out etag_out, out error);
 	}
 
-	public static GFileHandle LoadBytesAsync(this GFileHandle file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadBytesAsync<T>(this T file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_load_bytes_async(file, cancellable, callback, user_data);
 		return file;
@@ -255,7 +255,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_load_contents(file, cancellable, out contents, out length, out etag_out, out error);
 	}
 
-	public static GFileHandle LoadContentsAsync(this GFileHandle file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadContentsAsync<T>(this T file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_load_contents_async(file, cancellable, callback, user_data);
 		return file;
@@ -266,7 +266,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_load_contents_finish(file, res, out contents, out length, out etag_out, out error);
 	}
 
-	public static GFileHandle LoadPartialContentsAsync(this GFileHandle file, GCancellableHandle cancellable, GFileReadMoreCallback read_more_callback, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadPartialContentsAsync<T>(this T file, GCancellableHandle cancellable, GFileReadMoreCallback read_more_callback, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_load_partial_contents_async(file, cancellable, read_more_callback, callback, user_data);
 		return file;
@@ -282,7 +282,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_make_directory(file, cancellable, out error);
 	}
 
-	public static GFileHandle MakeDirectoryAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MakeDirectoryAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_make_directory_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -303,7 +303,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_make_symbolic_link(file, symlink_value, cancellable, out error);
 	}
 
-	public static GFileHandle MakeSymbolicLinkAsync(this GFileHandle file, string symlink_value, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MakeSymbolicLinkAsync<T>(this T file, string symlink_value, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_make_symbolic_link_async(file, symlink_value, io_priority, cancellable, callback, user_data);
 		return file;
@@ -319,7 +319,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_measure_disk_usage(file, flags, cancellable, progress_callback, progress_data, out disk_usage, out num_dirs, out num_files, out error);
 	}
 
-	public static GFileHandle MeasureDiskUsageAsync(this GFileHandle file, GFileMeasureFlags flags, int io_priority, GCancellableHandle cancellable, GFileMeasureProgressCallback progress_callback, IntPtr progress_data, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MeasureDiskUsageAsync<T>(this T file, GFileMeasureFlags flags, int io_priority, GCancellableHandle cancellable, GFileMeasureProgressCallback progress_callback, IntPtr progress_data, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_measure_disk_usage_async(file, flags, io_priority, cancellable, progress_callback, progress_data, callback, user_data);
 		return file;
@@ -345,7 +345,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_monitor_file(file, flags, cancellable, out error);
 	}
 
-	public static GFileHandle MountEnclosingVolume(this GFileHandle location, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MountEnclosingVolume<T>(this T location, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_mount_enclosing_volume(location, flags, mount_operation, cancellable, callback, user_data);
 		return location;
@@ -356,7 +356,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_mount_enclosing_volume_finish(location, result, out error);
 	}
 
-	public static GFileHandle MountMountable(this GFileHandle file, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MountMountable<T>(this T file, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_mount_mountable(file, flags, mount_operation, cancellable, callback, user_data);
 		return file;
@@ -372,7 +372,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_move(source, destination, flags, cancellable, progress_callback, progress_callback_data, out error);
 	}
 
-	public static GFileHandle MoveAsync(this GFileHandle source, GFileHandle destination, GFileCopyFlags flags, int io_priority, GCancellableHandle cancellable, GFileProgressCallback progress_callback, IntPtr progress_callback_data, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T MoveAsync<T>(this T source, GFileHandle destination, GFileCopyFlags flags, int io_priority, GCancellableHandle cancellable, GFileProgressCallback progress_callback, IntPtr progress_callback_data, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_move_async(source, destination, flags, io_priority, cancellable, progress_callback, progress_callback_data, callback, user_data);
 		return source;
@@ -388,7 +388,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_open_readwrite(file, cancellable, out error);
 	}
 
-	public static GFileHandle OpenReadwriteAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T OpenReadwriteAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_open_readwrite_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -404,7 +404,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_peek_path(file);
 	}
 
-	public static GFileHandle PollMountable(this GFileHandle file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T PollMountable<T>(this T file, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_poll_mountable(file, cancellable, callback, user_data);
 		return file;
@@ -420,7 +420,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_query_default_handler(file, cancellable, out error);
 	}
 
-	public static GFileHandle QueryDefaultHandlerAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T QueryDefaultHandlerAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_query_default_handler_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -446,7 +446,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_query_filesystem_info(file, attributes, cancellable, out error);
 	}
 
-	public static GFileHandle QueryFilesystemInfoAsync(this GFileHandle file, string attributes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T QueryFilesystemInfoAsync<T>(this T file, string attributes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_query_filesystem_info_async(file, attributes, io_priority, cancellable, callback, user_data);
 		return file;
@@ -462,7 +462,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_query_info(file, attributes, flags, cancellable, out error);
 	}
 
-	public static GFileHandle QueryInfoAsync(this GFileHandle file, string attributes, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T QueryInfoAsync<T>(this T file, string attributes, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_query_info_async(file, attributes, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -488,7 +488,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_read(file, cancellable, out error);
 	}
 
-	public static GFileHandle ReadAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_read_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -504,7 +504,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_replace(file, etag, make_backup, flags, cancellable, out error);
 	}
 
-	public static GFileHandle ReplaceAsync(this GFileHandle file, string etag, bool make_backup, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReplaceAsync<T>(this T file, string etag, bool make_backup, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_replace_async(file, etag, make_backup, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -515,13 +515,13 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_replace_contents(file, contents, length, etag, make_backup, flags, out new_etag, cancellable, out error);
 	}
 
-	public static GFileHandle ReplaceContentsAsync(this GFileHandle file, string contents, UIntPtr length, string etag, bool make_backup, GFileCreateFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReplaceContentsAsync<T>(this T file, string contents, UIntPtr length, string etag, bool make_backup, GFileCreateFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_replace_contents_async(file, contents, length, etag, make_backup, flags, cancellable, callback, user_data);
 		return file;
 	}
 
-	public static GFileHandle ReplaceContentsBytesAsync(this GFileHandle file, GBytesHandle contents, string etag, bool make_backup, GFileCreateFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReplaceContentsBytesAsync<T>(this T file, GBytesHandle contents, string etag, bool make_backup, GFileCreateFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_replace_contents_bytes_async(file, contents, etag, make_backup, flags, cancellable, callback, user_data);
 		return file;
@@ -542,7 +542,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_replace_readwrite(file, etag, make_backup, flags, cancellable, out error);
 	}
 
-	public static GFileHandle ReplaceReadwriteAsync(this GFileHandle file, string etag, bool make_backup, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReplaceReadwriteAsync<T>(this T file, string etag, bool make_backup, GFileCreateFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_replace_readwrite_async(file, etag, make_backup, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -593,7 +593,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_set_attribute_uint64(file, attribute, value, flags, cancellable, out error);
 	}
 
-	public static GFileHandle SetAttributesAsync(this GFileHandle file, GFileInfoHandle info, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SetAttributesAsync<T>(this T file, GFileInfoHandle info, GFileQueryInfoFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_set_attributes_async(file, info, flags, io_priority, cancellable, callback, user_data);
 		return file;
@@ -614,7 +614,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_set_display_name(file, display_name, cancellable, out error);
 	}
 
-	public static GFileHandle SetDisplayNameAsync(this GFileHandle file, string display_name, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SetDisplayNameAsync<T>(this T file, string display_name, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_set_display_name_async(file, display_name, io_priority, cancellable, callback, user_data);
 		return file;
@@ -625,7 +625,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_set_display_name_finish(file, res, out error);
 	}
 
-	public static GFileHandle StartMountable(this GFileHandle file, GDriveStartFlags flags, GMountOperationHandle start_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T StartMountable<T>(this T file, GDriveStartFlags flags, GMountOperationHandle start_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_start_mountable(file, flags, start_operation, cancellable, callback, user_data);
 		return file;
@@ -636,7 +636,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_start_mountable_finish(file, result, out error);
 	}
 
-	public static GFileHandle StopMountable(this GFileHandle file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T StopMountable<T>(this T file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_stop_mountable(file, flags, mount_operation, cancellable, callback, user_data);
 		return file;
@@ -657,7 +657,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_trash(file, cancellable, out error);
 	}
 
-	public static GFileHandle TrashAsync(this GFileHandle file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T TrashAsync<T>(this T file, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_trash_async(file, io_priority, cancellable, callback, user_data);
 		return file;
@@ -668,7 +668,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_trash_finish(file, result, out error);
 	}
 
-	public static GFileHandle UnmountMountable(this GFileHandle file, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T UnmountMountable<T>(this T file, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_unmount_mountable(file, flags, cancellable, callback, user_data);
 		return file;
@@ -679,7 +679,7 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_unmount_mountable_finish(file, result, out error);
 	}
 
-	public static GFileHandle UnmountMountableWithOperation(this GFileHandle file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T UnmountMountableWithOperation<T>(this T file, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileExterns.g_file_unmount_mountable_with_operation(file, flags, mount_operation, cancellable, callback, user_data);
 		return file;

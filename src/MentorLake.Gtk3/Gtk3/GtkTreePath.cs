@@ -32,7 +32,7 @@ public class GtkTreePathHandle : BaseSafeHandle
 
 public static class GtkTreePathHandleExtensions
 {
-	public static GtkTreePathHandle AppendIndex(this GtkTreePathHandle path, int index_)
+	public static T AppendIndex<T>(this T path, int index_) where T : GtkTreePathHandle
 	{
 		GtkTreePathExterns.gtk_tree_path_append_index(path, index_);
 		return path;
@@ -48,13 +48,13 @@ public static class GtkTreePathHandleExtensions
 		return GtkTreePathExterns.gtk_tree_path_copy(path);
 	}
 
-	public static GtkTreePathHandle Down(this GtkTreePathHandle path)
+	public static T Down<T>(this T path) where T : GtkTreePathHandle
 	{
 		GtkTreePathExterns.gtk_tree_path_down(path);
 		return path;
 	}
 
-	public static GtkTreePathHandle Free(this GtkTreePathHandle path)
+	public static T Free<T>(this T path) where T : GtkTreePathHandle
 	{
 		GtkTreePathExterns.gtk_tree_path_free(path);
 		return path;
@@ -85,13 +85,13 @@ public static class GtkTreePathHandleExtensions
 		return GtkTreePathExterns.gtk_tree_path_is_descendant(path, ancestor);
 	}
 
-	public static GtkTreePathHandle Next(this GtkTreePathHandle path)
+	public static T Next<T>(this T path) where T : GtkTreePathHandle
 	{
 		GtkTreePathExterns.gtk_tree_path_next(path);
 		return path;
 	}
 
-	public static GtkTreePathHandle PrependIndex(this GtkTreePathHandle path, int index_)
+	public static T PrependIndex<T>(this T path, int index_) where T : GtkTreePathHandle
 	{
 		GtkTreePathExterns.gtk_tree_path_prepend_index(path, index_);
 		return path;

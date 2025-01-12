@@ -126,13 +126,13 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_apply_embedded_orientation(src);
 	}
 
-	public static GdkPixbufHandle Composite(this GdkPixbufHandle src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type, int overall_alpha)
+	public static T Composite<T>(this T src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type, int overall_alpha) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_composite(src, dest, dest_x, dest_y, dest_width, dest_height, offset_x, offset_y, scale_x, scale_y, interp_type, overall_alpha);
 		return src;
 	}
 
-	public static GdkPixbufHandle CompositeColor(this GdkPixbufHandle src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type, int overall_alpha, int check_x, int check_y, int check_size, uint color1, uint color2)
+	public static T CompositeColor<T>(this T src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type, int overall_alpha, int check_x, int check_y, int check_size, uint color1, uint color2) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_composite_color(src, dest, dest_x, dest_y, dest_width, dest_height, offset_x, offset_y, scale_x, scale_y, interp_type, overall_alpha, check_x, check_y, check_size, color1, color2);
 		return src;
@@ -148,7 +148,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_copy(pixbuf);
 	}
 
-	public static GdkPixbufHandle CopyArea(this GdkPixbufHandle src_pixbuf, int src_x, int src_y, int width, int height, GdkPixbufHandle dest_pixbuf, int dest_x, int dest_y)
+	public static T CopyArea<T>(this T src_pixbuf, int src_x, int src_y, int width, int height, GdkPixbufHandle dest_pixbuf, int dest_x, int dest_y) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_copy_area(src_pixbuf, src_x, src_y, width, height, dest_pixbuf, dest_x, dest_y);
 		return src_pixbuf;
@@ -159,7 +159,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_copy_options(src_pixbuf, dest_pixbuf);
 	}
 
-	public static GdkPixbufHandle Fill(this GdkPixbufHandle pixbuf, uint pixel)
+	public static T Fill<T>(this T pixbuf, uint pixel) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_fill(pixbuf, pixel);
 		return pixbuf;
@@ -260,7 +260,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_rotate_simple(src, angle);
 	}
 
-	public static GdkPixbufHandle SaturateAndPixelate(this GdkPixbufHandle src, GdkPixbufHandle dest, float saturation, bool pixelate)
+	public static T SaturateAndPixelate<T>(this T src, GdkPixbufHandle dest, float saturation, bool pixelate) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_saturate_and_pixelate(src, dest, saturation, pixelate);
 		return src;
@@ -296,7 +296,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_save_to_stream(pixbuf, stream, type, cancellable, out error, @__arglist);
 	}
 
-	public static GdkPixbufHandle SaveToStreamAsync(this GdkPixbufHandle pixbuf, GOutputStreamHandle stream, string type, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data, IntPtr @__arglist)
+	public static T SaveToStreamAsync<T>(this T pixbuf, GOutputStreamHandle stream, string type, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data, IntPtr @__arglist) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_save_to_stream_async(pixbuf, stream, type, cancellable, callback, user_data, @__arglist);
 		return pixbuf;
@@ -307,7 +307,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_save_to_streamv(pixbuf, stream, type, option_keys, option_values, cancellable, out error);
 	}
 
-	public static GdkPixbufHandle SaveToStreamvAsync(this GdkPixbufHandle pixbuf, GOutputStreamHandle stream, string type, string[] option_keys, string[] option_values, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SaveToStreamvAsync<T>(this T pixbuf, GOutputStreamHandle stream, string type, string[] option_keys, string[] option_values, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_save_to_streamv_async(pixbuf, stream, type, option_keys, option_values, cancellable, callback, user_data);
 		return pixbuf;
@@ -318,7 +318,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_savev(pixbuf, filename, type, option_keys, option_values, out error);
 	}
 
-	public static GdkPixbufHandle Scale(this GdkPixbufHandle src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type)
+	public static T Scale<T>(this T src, GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, GdkInterpType interp_type) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_scale(src, dest, dest_x, dest_y, dest_width, dest_height, offset_x, offset_y, scale_x, scale_y, interp_type);
 		return src;
@@ -334,7 +334,7 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufExterns.gdk_pixbuf_set_option(pixbuf, key, value);
 	}
 
-	public static GdkPixbufHandle Unref(this GdkPixbufHandle pixbuf)
+	public static T Unref<T>(this T pixbuf) where T : GdkPixbufHandle
 	{
 		GdkPixbufExterns.gdk_pixbuf_unref(pixbuf);
 		return pixbuf;

@@ -255,13 +255,13 @@ public delegate bool toggle_handle_focus([MarshalAs(UnmanagedType.CustomMarshale
 
 public static class GtkPanedHandleExtensions
 {
-	public static GtkPanedHandle Add1(this GtkPanedHandle paned, GtkWidgetHandle child)
+	public static T Add1<T>(this T paned, GtkWidgetHandle child) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_add1(paned, child);
 		return paned;
 	}
 
-	public static GtkPanedHandle Add2(this GtkPanedHandle paned, GtkWidgetHandle child)
+	public static T Add2<T>(this T paned, GtkWidgetHandle child) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_add2(paned, child);
 		return paned;
@@ -292,25 +292,25 @@ public static class GtkPanedHandleExtensions
 		return GtkPanedExterns.gtk_paned_get_wide_handle(paned);
 	}
 
-	public static GtkPanedHandle Pack1(this GtkPanedHandle paned, GtkWidgetHandle child, bool resize, bool shrink)
+	public static T Pack1<T>(this T paned, GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_pack1(paned, child, resize, shrink);
 		return paned;
 	}
 
-	public static GtkPanedHandle Pack2(this GtkPanedHandle paned, GtkWidgetHandle child, bool resize, bool shrink)
+	public static T Pack2<T>(this T paned, GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_pack2(paned, child, resize, shrink);
 		return paned;
 	}
 
-	public static GtkPanedHandle SetPosition(this GtkPanedHandle paned, int position)
+	public static T SetPosition<T>(this T paned, int position) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_set_position(paned, position);
 		return paned;
 	}
 
-	public static GtkPanedHandle SetWideHandle(this GtkPanedHandle paned, bool wide)
+	public static T SetWideHandle<T>(this T paned, bool wide) where T : GtkPanedHandle
 	{
 		GtkPanedExterns.gtk_paned_set_wide_handle(paned, wide);
 		return paned;

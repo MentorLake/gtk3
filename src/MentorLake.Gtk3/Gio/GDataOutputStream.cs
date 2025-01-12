@@ -56,7 +56,7 @@ public static class GDataOutputStreamHandleExtensions
 		return GDataOutputStreamExterns.g_data_output_stream_put_uint64(stream, data, cancellable, out error);
 	}
 
-	public static GDataOutputStreamHandle SetByteOrder(this GDataOutputStreamHandle stream, GDataStreamByteOrder order)
+	public static T SetByteOrder<T>(this T stream, GDataStreamByteOrder order) where T : GDataOutputStreamHandle
 	{
 		GDataOutputStreamExterns.g_data_output_stream_set_byte_order(stream, order);
 		return stream;

@@ -104,13 +104,13 @@ public delegate void move([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 
 public static class GtkHSVHandleExtensions
 {
-	public static GtkHSVHandle GtkHsvGetColor(this GtkHSVHandle hsv, out double h, out double s, out double v)
+	public static T GtkHsvGetColor<T>(this T hsv, out double h, out double s, out double v) where T : GtkHSVHandle
 	{
 		GtkHSVExterns.gtk_hsv_get_color(hsv, out h, out s, out v);
 		return hsv;
 	}
 
-	public static GtkHSVHandle GtkHsvGetMetrics(this GtkHSVHandle hsv, out int size, out int ring_width)
+	public static T GtkHsvGetMetrics<T>(this T hsv, out int size, out int ring_width) where T : GtkHSVHandle
 	{
 		GtkHSVExterns.gtk_hsv_get_metrics(hsv, out size, out ring_width);
 		return hsv;
@@ -121,13 +121,13 @@ public static class GtkHSVHandleExtensions
 		return GtkHSVExterns.gtk_hsv_is_adjusting(hsv);
 	}
 
-	public static GtkHSVHandle GtkHsvSetColor(this GtkHSVHandle hsv, double h, double s, double v)
+	public static T GtkHsvSetColor<T>(this T hsv, double h, double s, double v) where T : GtkHSVHandle
 	{
 		GtkHSVExterns.gtk_hsv_set_color(hsv, h, s, v);
 		return hsv;
 	}
 
-	public static GtkHSVHandle GtkHsvSetMetrics(this GtkHSVHandle hsv, int size, int ring_width)
+	public static T GtkHsvSetMetrics<T>(this T hsv, int size, int ring_width) where T : GtkHSVHandle
 	{
 		GtkHSVExterns.gtk_hsv_set_metrics(hsv, size, ring_width);
 		return hsv;

@@ -32,7 +32,7 @@ public static class GdkEventHandleExtensions
 		return GdkEventExterns.gdk_event_copy(@event);
 	}
 
-	public static GdkEventHandle Free(this GdkEventHandle @event)
+	public static T Free<T>(this T @event) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_free(@event);
 		return @event;
@@ -148,31 +148,31 @@ public static class GdkEventHandleExtensions
 		return GdkEventExterns.gdk_event_is_scroll_stop_event(@event);
 	}
 
-	public static GdkEventHandle Put(this GdkEventHandle @event)
+	public static T Put<T>(this T @event) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_put(@event);
 		return @event;
 	}
 
-	public static GdkEventHandle SetDevice(this GdkEventHandle @event, GdkDeviceHandle device)
+	public static T SetDevice<T>(this T @event, GdkDeviceHandle device) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_set_device(@event, device);
 		return @event;
 	}
 
-	public static GdkEventHandle SetDeviceTool(this GdkEventHandle @event, GdkDeviceToolHandle tool)
+	public static T SetDeviceTool<T>(this T @event, GdkDeviceToolHandle tool) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_set_device_tool(@event, tool);
 		return @event;
 	}
 
-	public static GdkEventHandle SetScreen(this GdkEventHandle @event, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T @event, GdkScreenHandle screen) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_set_screen(@event, screen);
 		return @event;
 	}
 
-	public static GdkEventHandle SetSourceDevice(this GdkEventHandle @event, GdkDeviceHandle device)
+	public static T SetSourceDevice<T>(this T @event, GdkDeviceHandle device) where T : GdkEventHandle
 	{
 		GdkEventExterns.gdk_event_set_source_device(@event, device);
 		return @event;

@@ -7,7 +7,7 @@ public class GTestCaseHandle : BaseSafeHandle
 
 public static class GTestCaseHandleExtensions
 {
-	public static GTestCaseHandle Free(this GTestCaseHandle test_case)
+	public static T Free<T>(this T test_case) where T : GTestCaseHandle
 	{
 		GTestCaseExterns.g_test_case_free(test_case);
 		return test_case;

@@ -6,7 +6,7 @@ public class GtkSocketAccessibleHandle : GtkContainerAccessibleHandle, AtkCompon
 
 public static class GtkSocketAccessibleHandleExtensions
 {
-	public static GtkSocketAccessibleHandle Embed(this GtkSocketAccessibleHandle socket, string path)
+	public static T Embed<T>(this T socket, string path) where T : GtkSocketAccessibleHandle
 	{
 		GtkSocketAccessibleExterns.gtk_socket_accessible_embed(socket, path);
 		return socket;

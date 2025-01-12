@@ -12,7 +12,7 @@ public static class GtkStockItemHandleExtensions
 		return GtkStockItemExterns.gtk_stock_item_copy(item);
 	}
 
-	public static GtkStockItemHandle Free(this GtkStockItemHandle item)
+	public static T Free<T>(this T item) where T : GtkStockItemHandle
 	{
 		GtkStockItemExterns.gtk_stock_item_free(item);
 		return item;

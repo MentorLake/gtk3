@@ -20,25 +20,25 @@ public static class GtkActionableHandleExtensions
 		return GtkActionableExterns.gtk_actionable_get_action_target_value(actionable);
 	}
 
-	public static GtkActionableHandle SetActionName(this GtkActionableHandle actionable, string action_name)
+	public static T SetActionName<T>(this T actionable, string action_name) where T : GtkActionableHandle
 	{
 		GtkActionableExterns.gtk_actionable_set_action_name(actionable, action_name);
 		return actionable;
 	}
 
-	public static GtkActionableHandle SetActionTarget(this GtkActionableHandle actionable, string format_string, IntPtr @__arglist)
+	public static T SetActionTarget<T>(this T actionable, string format_string, IntPtr @__arglist) where T : GtkActionableHandle
 	{
 		GtkActionableExterns.gtk_actionable_set_action_target(actionable, format_string, @__arglist);
 		return actionable;
 	}
 
-	public static GtkActionableHandle SetActionTargetValue(this GtkActionableHandle actionable, GVariantHandle target_value)
+	public static T SetActionTargetValue<T>(this T actionable, GVariantHandle target_value) where T : GtkActionableHandle
 	{
 		GtkActionableExterns.gtk_actionable_set_action_target_value(actionable, target_value);
 		return actionable;
 	}
 
-	public static GtkActionableHandle SetDetailedActionName(this GtkActionableHandle actionable, string detailed_action_name)
+	public static T SetDetailedActionName<T>(this T actionable, string detailed_action_name) where T : GtkActionableHandle
 	{
 		GtkActionableExterns.gtk_actionable_set_detailed_action_name(actionable, detailed_action_name);
 		return actionable;

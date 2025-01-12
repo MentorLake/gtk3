@@ -36,19 +36,19 @@ public static class GtkViewportHandleExtensions
 		return GtkViewportExterns.gtk_viewport_get_view_window(viewport);
 	}
 
-	public static GtkViewportHandle SetHadjustment(this GtkViewportHandle viewport, GtkAdjustmentHandle adjustment)
+	public static T SetHadjustment<T>(this T viewport, GtkAdjustmentHandle adjustment) where T : GtkViewportHandle
 	{
 		GtkViewportExterns.gtk_viewport_set_hadjustment(viewport, adjustment);
 		return viewport;
 	}
 
-	public static GtkViewportHandle SetShadowType(this GtkViewportHandle viewport, GtkShadowType type)
+	public static T SetShadowType<T>(this T viewport, GtkShadowType type) where T : GtkViewportHandle
 	{
 		GtkViewportExterns.gtk_viewport_set_shadow_type(viewport, type);
 		return viewport;
 	}
 
-	public static GtkViewportHandle SetVadjustment(this GtkViewportHandle viewport, GtkAdjustmentHandle adjustment)
+	public static T SetVadjustment<T>(this T viewport, GtkAdjustmentHandle adjustment) where T : GtkViewportHandle
 	{
 		GtkViewportExterns.gtk_viewport_set_vadjustment(viewport, adjustment);
 		return viewport;

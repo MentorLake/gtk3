@@ -12,7 +12,7 @@ public class PangoItemHandle : BaseSafeHandle
 
 public static class PangoItemHandleExtensions
 {
-	public static PangoItemHandle ApplyAttrs(this PangoItemHandle item, PangoAttrIteratorHandle iter)
+	public static T ApplyAttrs<T>(this T item, PangoAttrIteratorHandle iter) where T : PangoItemHandle
 	{
 		PangoItemExterns.pango_item_apply_attrs(item, iter);
 		return item;
@@ -23,7 +23,7 @@ public static class PangoItemHandleExtensions
 		return PangoItemExterns.pango_item_copy(item);
 	}
 
-	public static PangoItemHandle Free(this PangoItemHandle item)
+	public static T Free<T>(this T item) where T : PangoItemHandle
 	{
 		PangoItemExterns.pango_item_free(item);
 		return item;

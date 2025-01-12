@@ -12,7 +12,7 @@ public static class GHashTableIterHandleExtensions
 		return GHashTableIterExterns.g_hash_table_iter_get_hash_table(iter);
 	}
 
-	public static GHashTableIterHandle Init(this GHashTableIterHandle iter, GHashTableHandle hash_table)
+	public static T Init<T>(this T iter, GHashTableHandle hash_table) where T : GHashTableIterHandle
 	{
 		GHashTableIterExterns.g_hash_table_iter_init(iter, hash_table);
 		return iter;
@@ -23,19 +23,19 @@ public static class GHashTableIterHandleExtensions
 		return GHashTableIterExterns.g_hash_table_iter_next(iter, out key, out value);
 	}
 
-	public static GHashTableIterHandle Remove(this GHashTableIterHandle iter)
+	public static T Remove<T>(this T iter) where T : GHashTableIterHandle
 	{
 		GHashTableIterExterns.g_hash_table_iter_remove(iter);
 		return iter;
 	}
 
-	public static GHashTableIterHandle Replace(this GHashTableIterHandle iter, IntPtr value)
+	public static T Replace<T>(this T iter, IntPtr value) where T : GHashTableIterHandle
 	{
 		GHashTableIterExterns.g_hash_table_iter_replace(iter, value);
 		return iter;
 	}
 
-	public static GHashTableIterHandle Steal(this GHashTableIterHandle iter)
+	public static T Steal<T>(this T iter) where T : GHashTableIterHandle
 	{
 		GHashTableIterExterns.g_hash_table_iter_steal(iter);
 		return iter;

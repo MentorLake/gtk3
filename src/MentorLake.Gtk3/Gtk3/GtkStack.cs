@@ -11,13 +11,13 @@ public class GtkStackHandle : GtkContainerHandle, AtkImplementorIfaceHandle, Gtk
 
 public static class GtkStackHandleExtensions
 {
-	public static GtkStackHandle AddNamed(this GtkStackHandle stack, GtkWidgetHandle child, string name)
+	public static T AddNamed<T>(this T stack, GtkWidgetHandle child, string name) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_add_named(stack, child, name);
 		return stack;
 	}
 
-	public static GtkStackHandle AddTitled(this GtkStackHandle stack, GtkWidgetHandle child, string name, string title)
+	public static T AddTitled<T>(this T stack, GtkWidgetHandle child, string name, string title) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_add_titled(stack, child, name, title);
 		return stack;
@@ -73,55 +73,55 @@ public static class GtkStackHandleExtensions
 		return GtkStackExterns.gtk_stack_get_visible_child_name(stack);
 	}
 
-	public static GtkStackHandle SetHhomogeneous(this GtkStackHandle stack, bool hhomogeneous)
+	public static T SetHhomogeneous<T>(this T stack, bool hhomogeneous) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_hhomogeneous(stack, hhomogeneous);
 		return stack;
 	}
 
-	public static GtkStackHandle SetHomogeneous(this GtkStackHandle stack, bool homogeneous)
+	public static T SetHomogeneous<T>(this T stack, bool homogeneous) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_homogeneous(stack, homogeneous);
 		return stack;
 	}
 
-	public static GtkStackHandle SetInterpolateSize(this GtkStackHandle stack, bool interpolate_size)
+	public static T SetInterpolateSize<T>(this T stack, bool interpolate_size) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_interpolate_size(stack, interpolate_size);
 		return stack;
 	}
 
-	public static GtkStackHandle SetTransitionDuration(this GtkStackHandle stack, uint duration)
+	public static T SetTransitionDuration<T>(this T stack, uint duration) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_transition_duration(stack, duration);
 		return stack;
 	}
 
-	public static GtkStackHandle SetTransitionType(this GtkStackHandle stack, GtkStackTransitionType transition)
+	public static T SetTransitionType<T>(this T stack, GtkStackTransitionType transition) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_transition_type(stack, transition);
 		return stack;
 	}
 
-	public static GtkStackHandle SetVhomogeneous(this GtkStackHandle stack, bool vhomogeneous)
+	public static T SetVhomogeneous<T>(this T stack, bool vhomogeneous) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_vhomogeneous(stack, vhomogeneous);
 		return stack;
 	}
 
-	public static GtkStackHandle SetVisibleChild(this GtkStackHandle stack, GtkWidgetHandle child)
+	public static T SetVisibleChild<T>(this T stack, GtkWidgetHandle child) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_visible_child(stack, child);
 		return stack;
 	}
 
-	public static GtkStackHandle SetVisibleChildFull(this GtkStackHandle stack, string name, GtkStackTransitionType transition)
+	public static T SetVisibleChildFull<T>(this T stack, string name, GtkStackTransitionType transition) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_visible_child_full(stack, name, transition);
 		return stack;
 	}
 
-	public static GtkStackHandle SetVisibleChildName(this GtkStackHandle stack, string name)
+	public static T SetVisibleChildName<T>(this T stack, string name) where T : GtkStackHandle
 	{
 		GtkStackExterns.gtk_stack_set_visible_child_name(stack, name);
 		return stack;

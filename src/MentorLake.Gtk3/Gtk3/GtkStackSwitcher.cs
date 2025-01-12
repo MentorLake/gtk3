@@ -16,7 +16,7 @@ public static class GtkStackSwitcherHandleExtensions
 		return GtkStackSwitcherExterns.gtk_stack_switcher_get_stack(switcher);
 	}
 
-	public static GtkStackSwitcherHandle SetStack(this GtkStackSwitcherHandle switcher, GtkStackHandle stack)
+	public static T SetStack<T>(this T switcher, GtkStackHandle stack) where T : GtkStackSwitcherHandle
 	{
 		GtkStackSwitcherExterns.gtk_stack_switcher_set_stack(switcher, stack);
 		return switcher;

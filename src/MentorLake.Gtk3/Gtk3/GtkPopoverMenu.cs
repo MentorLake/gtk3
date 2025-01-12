@@ -11,7 +11,7 @@ public class GtkPopoverMenuHandle : GtkPopoverHandle, AtkImplementorIfaceHandle,
 
 public static class GtkPopoverMenuHandleExtensions
 {
-	public static GtkPopoverMenuHandle OpenSubmenu(this GtkPopoverMenuHandle popover, string name)
+	public static T OpenSubmenu<T>(this T popover, string name) where T : GtkPopoverMenuHandle
 	{
 		GtkPopoverMenuExterns.gtk_popover_menu_open_submenu(popover, name);
 		return popover;

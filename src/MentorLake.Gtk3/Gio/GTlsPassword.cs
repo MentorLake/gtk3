@@ -31,31 +31,31 @@ public static class GTlsPasswordHandleExtensions
 		return GTlsPasswordExterns.g_tls_password_get_warning(password);
 	}
 
-	public static GTlsPasswordHandle SetDescription(this GTlsPasswordHandle password, string description)
+	public static T SetDescription<T>(this T password, string description) where T : GTlsPasswordHandle
 	{
 		GTlsPasswordExterns.g_tls_password_set_description(password, description);
 		return password;
 	}
 
-	public static GTlsPasswordHandle SetFlags(this GTlsPasswordHandle password, GTlsPasswordFlags flags)
+	public static T SetFlags<T>(this T password, GTlsPasswordFlags flags) where T : GTlsPasswordHandle
 	{
 		GTlsPasswordExterns.g_tls_password_set_flags(password, flags);
 		return password;
 	}
 
-	public static GTlsPasswordHandle SetValue(this GTlsPasswordHandle password, string value, UIntPtr length)
+	public static T SetValue<T>(this T password, string value, UIntPtr length) where T : GTlsPasswordHandle
 	{
 		GTlsPasswordExterns.g_tls_password_set_value(password, value, length);
 		return password;
 	}
 
-	public static GTlsPasswordHandle SetValueFull(this GTlsPasswordHandle password, string value, UIntPtr length, GDestroyNotify destroy)
+	public static T SetValueFull<T>(this T password, string value, UIntPtr length, GDestroyNotify destroy) where T : GTlsPasswordHandle
 	{
 		GTlsPasswordExterns.g_tls_password_set_value_full(password, value, length, destroy);
 		return password;
 	}
 
-	public static GTlsPasswordHandle SetWarning(this GTlsPasswordHandle password, string warning)
+	public static T SetWarning<T>(this T password, string warning) where T : GTlsPasswordHandle
 	{
 		GTlsPasswordExterns.g_tls_password_set_warning(password, warning);
 		return password;

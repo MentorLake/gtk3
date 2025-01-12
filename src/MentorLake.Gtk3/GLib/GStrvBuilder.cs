@@ -12,19 +12,19 @@ public class GStrvBuilderHandle : BaseSafeHandle
 
 public static class GStrvBuilderHandleExtensions
 {
-	public static GStrvBuilderHandle Add(this GStrvBuilderHandle builder, string value)
+	public static T Add<T>(this T builder, string value) where T : GStrvBuilderHandle
 	{
 		GStrvBuilderExterns.g_strv_builder_add(builder, value);
 		return builder;
 	}
 
-	public static GStrvBuilderHandle AddMany(this GStrvBuilderHandle builder, IntPtr @__arglist)
+	public static T AddMany<T>(this T builder, IntPtr @__arglist) where T : GStrvBuilderHandle
 	{
 		GStrvBuilderExterns.g_strv_builder_add_many(builder, @__arglist);
 		return builder;
 	}
 
-	public static GStrvBuilderHandle Addv(this GStrvBuilderHandle builder, string[] value)
+	public static T Addv<T>(this T builder, string[] value) where T : GStrvBuilderHandle
 	{
 		GStrvBuilderExterns.g_strv_builder_addv(builder, value);
 		return builder;
@@ -40,13 +40,13 @@ public static class GStrvBuilderHandleExtensions
 		return GStrvBuilderExterns.g_strv_builder_ref(builder);
 	}
 
-	public static GStrvBuilderHandle Take(this GStrvBuilderHandle builder, string value)
+	public static T Take<T>(this T builder, string value) where T : GStrvBuilderHandle
 	{
 		GStrvBuilderExterns.g_strv_builder_take(builder, value);
 		return builder;
 	}
 
-	public static GStrvBuilderHandle Unref(this GStrvBuilderHandle builder)
+	public static T Unref<T>(this T builder) where T : GStrvBuilderHandle
 	{
 		GStrvBuilderExterns.g_strv_builder_unref(builder);
 		return builder;

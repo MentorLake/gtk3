@@ -61,7 +61,7 @@ public static class GdkMonitorHandleExtensions
 		return GdkMonitorExterns.gdk_monitor_get_display(monitor);
 	}
 
-	public static GdkMonitorHandle GetGeometry(this GdkMonitorHandle monitor, out GdkRectangle geometry)
+	public static T GetGeometry<T>(this T monitor, out GdkRectangle geometry) where T : GdkMonitorHandle
 	{
 		GdkMonitorExterns.gdk_monitor_get_geometry(monitor, out geometry);
 		return monitor;
@@ -102,7 +102,7 @@ public static class GdkMonitorHandleExtensions
 		return GdkMonitorExterns.gdk_monitor_get_width_mm(monitor);
 	}
 
-	public static GdkMonitorHandle GetWorkarea(this GdkMonitorHandle monitor, out GdkRectangle workarea)
+	public static T GetWorkarea<T>(this T monitor, out GdkRectangle workarea) where T : GdkMonitorHandle
 	{
 		GdkMonitorExterns.gdk_monitor_get_workarea(monitor, out workarea);
 		return monitor;

@@ -17,7 +17,7 @@ public class GIOChannelHandle : BaseSafeHandle
 
 public static class GIOChannelHandleExtensions
 {
-	public static GIOChannelHandle GIoChannelClose(this GIOChannelHandle channel)
+	public static T GIoChannelClose<T>(this T channel) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_close(channel);
 		return channel;
@@ -63,7 +63,7 @@ public static class GIOChannelHandleExtensions
 		return GIOChannelExterns.g_io_channel_get_line_term(channel, out length);
 	}
 
-	public static GIOChannelHandle GIoChannelInit(this GIOChannelHandle channel)
+	public static T GIoChannelInit<T>(this T channel) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_init(channel);
 		return channel;
@@ -114,19 +114,19 @@ public static class GIOChannelHandleExtensions
 		return GIOChannelExterns.g_io_channel_seek_position(channel, offset, type, out error);
 	}
 
-	public static GIOChannelHandle GIoChannelSetBufferSize(this GIOChannelHandle channel, UIntPtr size)
+	public static T GIoChannelSetBufferSize<T>(this T channel, UIntPtr size) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_set_buffer_size(channel, size);
 		return channel;
 	}
 
-	public static GIOChannelHandle GIoChannelSetBuffered(this GIOChannelHandle channel, bool buffered)
+	public static T GIoChannelSetBuffered<T>(this T channel, bool buffered) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_set_buffered(channel, buffered);
 		return channel;
 	}
 
-	public static GIOChannelHandle GIoChannelSetCloseOnUnref(this GIOChannelHandle channel, bool do_close)
+	public static T GIoChannelSetCloseOnUnref<T>(this T channel, bool do_close) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_set_close_on_unref(channel, do_close);
 		return channel;
@@ -142,7 +142,7 @@ public static class GIOChannelHandleExtensions
 		return GIOChannelExterns.g_io_channel_set_flags(channel, flags, out error);
 	}
 
-	public static GIOChannelHandle GIoChannelSetLineTerm(this GIOChannelHandle channel, string line_term, int length)
+	public static T GIoChannelSetLineTerm<T>(this T channel, string line_term, int length) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_set_line_term(channel, line_term, length);
 		return channel;
@@ -158,7 +158,7 @@ public static class GIOChannelHandleExtensions
 		return GIOChannelExterns.g_io_channel_unix_get_fd(channel);
 	}
 
-	public static GIOChannelHandle GIoChannelUnref(this GIOChannelHandle channel)
+	public static T GIoChannelUnref<T>(this T channel) where T : GIOChannelHandle
 	{
 		GIOChannelExterns.g_io_channel_unref(channel);
 		return channel;

@@ -67,7 +67,7 @@ public static class GBytesHandleExtensions
 		return GBytesExterns.g_bytes_ref(bytes);
 	}
 
-	public static GBytesHandle Unref(this GBytesHandle bytes)
+	public static T Unref<T>(this T bytes) where T : GBytesHandle
 	{
 		GBytesExterns.g_bytes_unref(bytes);
 		return bytes;

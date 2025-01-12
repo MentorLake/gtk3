@@ -11,7 +11,7 @@ public class GtkAccelLabelHandle : GtkLabelHandle, AtkImplementorIfaceHandle, Gt
 
 public static class GtkAccelLabelHandleExtensions
 {
-	public static GtkAccelLabelHandle GetAccel(this GtkAccelLabelHandle accel_label, out uint accelerator_key, out GdkModifierType accelerator_mods)
+	public static T GetAccel<T>(this T accel_label, out uint accelerator_key, out GdkModifierType accelerator_mods) where T : GtkAccelLabelHandle
 	{
 		GtkAccelLabelExterns.gtk_accel_label_get_accel(accel_label, out accelerator_key, out accelerator_mods);
 		return accel_label;
@@ -32,19 +32,19 @@ public static class GtkAccelLabelHandleExtensions
 		return GtkAccelLabelExterns.gtk_accel_label_refetch(accel_label);
 	}
 
-	public static GtkAccelLabelHandle SetAccel(this GtkAccelLabelHandle accel_label, uint accelerator_key, GdkModifierType accelerator_mods)
+	public static T SetAccel<T>(this T accel_label, uint accelerator_key, GdkModifierType accelerator_mods) where T : GtkAccelLabelHandle
 	{
 		GtkAccelLabelExterns.gtk_accel_label_set_accel(accel_label, accelerator_key, accelerator_mods);
 		return accel_label;
 	}
 
-	public static GtkAccelLabelHandle SetAccelClosure(this GtkAccelLabelHandle accel_label, GClosureHandle accel_closure)
+	public static T SetAccelClosure<T>(this T accel_label, GClosureHandle accel_closure) where T : GtkAccelLabelHandle
 	{
 		GtkAccelLabelExterns.gtk_accel_label_set_accel_closure(accel_label, accel_closure);
 		return accel_label;
 	}
 
-	public static GtkAccelLabelHandle SetAccelWidget(this GtkAccelLabelHandle accel_label, GtkWidgetHandle accel_widget)
+	public static T SetAccelWidget<T>(this T accel_label, GtkWidgetHandle accel_widget) where T : GtkAccelLabelHandle
 	{
 		GtkAccelLabelExterns.gtk_accel_label_set_accel_widget(accel_label, accel_widget);
 		return accel_label;

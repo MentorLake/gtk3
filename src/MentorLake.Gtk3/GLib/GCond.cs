@@ -7,31 +7,31 @@ public class GCondHandle : BaseSafeHandle
 
 public static class GCondHandleExtensions
 {
-	public static GCondHandle Broadcast(this GCondHandle cond)
+	public static T Broadcast<T>(this T cond) where T : GCondHandle
 	{
 		GCondExterns.g_cond_broadcast(cond);
 		return cond;
 	}
 
-	public static GCondHandle Clear(this GCondHandle cond)
+	public static T Clear<T>(this T cond) where T : GCondHandle
 	{
 		GCondExterns.g_cond_clear(cond);
 		return cond;
 	}
 
-	public static GCondHandle Free(this GCondHandle cond)
+	public static T Free<T>(this T cond) where T : GCondHandle
 	{
 		GCondExterns.g_cond_free(cond);
 		return cond;
 	}
 
-	public static GCondHandle Init(this GCondHandle cond)
+	public static T Init<T>(this T cond) where T : GCondHandle
 	{
 		GCondExterns.g_cond_init(cond);
 		return cond;
 	}
 
-	public static GCondHandle Signal(this GCondHandle cond)
+	public static T Signal<T>(this T cond) where T : GCondHandle
 	{
 		GCondExterns.g_cond_signal(cond);
 		return cond;
@@ -42,7 +42,7 @@ public static class GCondHandleExtensions
 		return GCondExterns.g_cond_timed_wait(cond, mutex, abs_time);
 	}
 
-	public static GCondHandle Wait(this GCondHandle cond, GMutexHandle mutex)
+	public static T Wait<T>(this T cond, GMutexHandle mutex) where T : GCondHandle
 	{
 		GCondExterns.g_cond_wait(cond, mutex);
 		return cond;

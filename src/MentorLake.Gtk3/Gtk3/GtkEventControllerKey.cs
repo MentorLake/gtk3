@@ -270,7 +270,7 @@ public static class GtkEventControllerKeyHandleExtensions
 		return GtkEventControllerKeyExterns.gtk_event_controller_key_get_im_context(controller);
 	}
 
-	public static GtkEventControllerKeyHandle SetImContext(this GtkEventControllerKeyHandle controller, GtkIMContextHandle im_context)
+	public static T SetImContext<T>(this T controller, GtkIMContextHandle im_context) where T : GtkEventControllerKeyHandle
 	{
 		GtkEventControllerKeyExterns.gtk_event_controller_key_set_im_context(controller, im_context);
 		return controller;

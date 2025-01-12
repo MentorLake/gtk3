@@ -61,7 +61,7 @@ public static class GdkPixbufAnimationHandleExtensions
 		return GdkPixbufAnimationExterns.gdk_pixbuf_animation_ref(animation);
 	}
 
-	public static GdkPixbufAnimationHandle Unref(this GdkPixbufAnimationHandle animation)
+	public static T Unref<T>(this T animation) where T : GdkPixbufAnimationHandle
 	{
 		GdkPixbufAnimationExterns.gdk_pixbuf_animation_unref(animation);
 		return animation;

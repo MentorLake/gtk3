@@ -31,7 +31,7 @@ public static class GtkPrintSettingsHandleExtensions
 		return GtkPrintSettingsExterns.gtk_print_settings_copy(other);
 	}
 
-	public static GtkPrintSettingsHandle Foreach(this GtkPrintSettingsHandle settings, GtkPrintSettingsFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T settings, GtkPrintSettingsFunc func, IntPtr user_data) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_foreach(settings, func, user_data);
 		return settings;
@@ -217,181 +217,181 @@ public static class GtkPrintSettingsHandleExtensions
 		return GtkPrintSettingsExterns.gtk_print_settings_load_key_file(settings, key_file, group_name, out error);
 	}
 
-	public static GtkPrintSettingsHandle Set(this GtkPrintSettingsHandle settings, string key, string value)
+	public static T Set<T>(this T settings, string key, string value) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set(settings, key, value);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetBool(this GtkPrintSettingsHandle settings, string key, bool value)
+	public static T SetBool<T>(this T settings, string key, bool value) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_bool(settings, key, value);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetCollate(this GtkPrintSettingsHandle settings, bool collate)
+	public static T SetCollate<T>(this T settings, bool collate) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_collate(settings, collate);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetDefaultSource(this GtkPrintSettingsHandle settings, string default_source)
+	public static T SetDefaultSource<T>(this T settings, string default_source) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_default_source(settings, default_source);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetDither(this GtkPrintSettingsHandle settings, string dither)
+	public static T SetDither<T>(this T settings, string dither) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_dither(settings, dither);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetDouble(this GtkPrintSettingsHandle settings, string key, double value)
+	public static T SetDouble<T>(this T settings, string key, double value) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_double(settings, key, value);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetDuplex(this GtkPrintSettingsHandle settings, GtkPrintDuplex duplex)
+	public static T SetDuplex<T>(this T settings, GtkPrintDuplex duplex) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_duplex(settings, duplex);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetFinishings(this GtkPrintSettingsHandle settings, string finishings)
+	public static T SetFinishings<T>(this T settings, string finishings) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_finishings(settings, finishings);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetInt(this GtkPrintSettingsHandle settings, string key, int value)
+	public static T SetInt<T>(this T settings, string key, int value) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_int(settings, key, value);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetLength(this GtkPrintSettingsHandle settings, string key, double value, GtkUnit unit)
+	public static T SetLength<T>(this T settings, string key, double value, GtkUnit unit) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_length(settings, key, value, unit);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetMediaType(this GtkPrintSettingsHandle settings, string media_type)
+	public static T SetMediaType<T>(this T settings, string media_type) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_media_type(settings, media_type);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetNCopies(this GtkPrintSettingsHandle settings, int num_copies)
+	public static T SetNCopies<T>(this T settings, int num_copies) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_n_copies(settings, num_copies);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetNumberUp(this GtkPrintSettingsHandle settings, int number_up)
+	public static T SetNumberUp<T>(this T settings, int number_up) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_number_up(settings, number_up);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetNumberUpLayout(this GtkPrintSettingsHandle settings, GtkNumberUpLayout number_up_layout)
+	public static T SetNumberUpLayout<T>(this T settings, GtkNumberUpLayout number_up_layout) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_number_up_layout(settings, number_up_layout);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetOrientation(this GtkPrintSettingsHandle settings, GtkPageOrientation orientation)
+	public static T SetOrientation<T>(this T settings, GtkPageOrientation orientation) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_orientation(settings, orientation);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetOutputBin(this GtkPrintSettingsHandle settings, string output_bin)
+	public static T SetOutputBin<T>(this T settings, string output_bin) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_output_bin(settings, output_bin);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPageRanges(this GtkPrintSettingsHandle settings, GtkPageRange[] page_ranges, int num_ranges)
+	public static T SetPageRanges<T>(this T settings, GtkPageRange[] page_ranges, int num_ranges) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_page_ranges(settings, page_ranges, num_ranges);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPageSet(this GtkPrintSettingsHandle settings, GtkPageSet page_set)
+	public static T SetPageSet<T>(this T settings, GtkPageSet page_set) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_page_set(settings, page_set);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPaperHeight(this GtkPrintSettingsHandle settings, double height, GtkUnit unit)
+	public static T SetPaperHeight<T>(this T settings, double height, GtkUnit unit) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_paper_height(settings, height, unit);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPaperSize(this GtkPrintSettingsHandle settings, GtkPaperSizeHandle paper_size)
+	public static T SetPaperSize<T>(this T settings, GtkPaperSizeHandle paper_size) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_paper_size(settings, paper_size);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPaperWidth(this GtkPrintSettingsHandle settings, double width, GtkUnit unit)
+	public static T SetPaperWidth<T>(this T settings, double width, GtkUnit unit) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_paper_width(settings, width, unit);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPrintPages(this GtkPrintSettingsHandle settings, GtkPrintPages pages)
+	public static T SetPrintPages<T>(this T settings, GtkPrintPages pages) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_print_pages(settings, pages);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPrinter(this GtkPrintSettingsHandle settings, string printer)
+	public static T SetPrinter<T>(this T settings, string printer) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_printer(settings, printer);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetPrinterLpi(this GtkPrintSettingsHandle settings, double lpi)
+	public static T SetPrinterLpi<T>(this T settings, double lpi) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_printer_lpi(settings, lpi);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetQuality(this GtkPrintSettingsHandle settings, GtkPrintQuality quality)
+	public static T SetQuality<T>(this T settings, GtkPrintQuality quality) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_quality(settings, quality);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetResolution(this GtkPrintSettingsHandle settings, int resolution)
+	public static T SetResolution<T>(this T settings, int resolution) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_resolution(settings, resolution);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetResolutionXy(this GtkPrintSettingsHandle settings, int resolution_x, int resolution_y)
+	public static T SetResolutionXy<T>(this T settings, int resolution_x, int resolution_y) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_resolution_xy(settings, resolution_x, resolution_y);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetReverse(this GtkPrintSettingsHandle settings, bool reverse)
+	public static T SetReverse<T>(this T settings, bool reverse) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_reverse(settings, reverse);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetScale(this GtkPrintSettingsHandle settings, double scale)
+	public static T SetScale<T>(this T settings, double scale) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_scale(settings, scale);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle SetUseColor(this GtkPrintSettingsHandle settings, bool use_color)
+	public static T SetUseColor<T>(this T settings, bool use_color) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_set_use_color(settings, use_color);
 		return settings;
@@ -407,13 +407,13 @@ public static class GtkPrintSettingsHandleExtensions
 		return GtkPrintSettingsExterns.gtk_print_settings_to_gvariant(settings);
 	}
 
-	public static GtkPrintSettingsHandle ToKeyFile(this GtkPrintSettingsHandle settings, GKeyFileHandle key_file, string group_name)
+	public static T ToKeyFile<T>(this T settings, GKeyFileHandle key_file, string group_name) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_to_key_file(settings, key_file, group_name);
 		return settings;
 	}
 
-	public static GtkPrintSettingsHandle Unset(this GtkPrintSettingsHandle settings, string key)
+	public static T Unset<T>(this T settings, string key) where T : GtkPrintSettingsHandle
 	{
 		GtkPrintSettingsExterns.gtk_print_settings_unset(settings, key);
 		return settings;

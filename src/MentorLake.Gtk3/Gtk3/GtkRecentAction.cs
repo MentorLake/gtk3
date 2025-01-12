@@ -21,7 +21,7 @@ public static class GtkRecentActionHandleExtensions
 		return GtkRecentActionExterns.gtk_recent_action_get_show_numbers(action);
 	}
 
-	public static GtkRecentActionHandle SetShowNumbers(this GtkRecentActionHandle action, bool show_numbers)
+	public static T SetShowNumbers<T>(this T action, bool show_numbers) where T : GtkRecentActionHandle
 	{
 		GtkRecentActionExterns.gtk_recent_action_set_show_numbers(action, show_numbers);
 		return action;

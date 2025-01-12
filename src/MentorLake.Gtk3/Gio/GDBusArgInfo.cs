@@ -12,7 +12,7 @@ public static class GDBusArgInfoHandleExtensions
 		return GDBusArgInfoExterns.g_dbus_arg_info_ref(info);
 	}
 
-	public static GDBusArgInfoHandle GDbusArgInfoUnref(this GDBusArgInfoHandle info)
+	public static T GDbusArgInfoUnref<T>(this T info) where T : GDBusArgInfoHandle
 	{
 		GDBusArgInfoExterns.g_dbus_arg_info_unref(info);
 		return info;

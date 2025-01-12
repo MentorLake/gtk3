@@ -16,43 +16,43 @@ public class GtkListStoreHandle : GObjectHandle, GtkBuildableHandle, GtkTreeDrag
 
 public static class GtkListStoreHandleExtensions
 {
-	public static GtkListStoreHandle Append(this GtkListStoreHandle list_store, out GtkTreeIter iter)
+	public static T Append<T>(this T list_store, out GtkTreeIter iter) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_append(list_store, out iter);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle Clear(this GtkListStoreHandle list_store)
+	public static T Clear<T>(this T list_store) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_clear(list_store);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle Insert(this GtkListStoreHandle list_store, out GtkTreeIter iter, int position)
+	public static T Insert<T>(this T list_store, out GtkTreeIter iter, int position) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_insert(list_store, out iter, position);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle InsertAfter(this GtkListStoreHandle list_store, out GtkTreeIter iter, GtkTreeIterHandle sibling)
+	public static T InsertAfter<T>(this T list_store, out GtkTreeIter iter, GtkTreeIterHandle sibling) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_insert_after(list_store, out iter, sibling);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle InsertBefore(this GtkListStoreHandle list_store, out GtkTreeIter iter, GtkTreeIterHandle sibling)
+	public static T InsertBefore<T>(this T list_store, out GtkTreeIter iter, GtkTreeIterHandle sibling) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_insert_before(list_store, out iter, sibling);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle InsertWithValues(this GtkListStoreHandle list_store, out GtkTreeIter iter, int position, IntPtr @__arglist)
+	public static T InsertWithValues<T>(this T list_store, out GtkTreeIter iter, int position, IntPtr @__arglist) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_insert_with_values(list_store, out iter, position, @__arglist);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle InsertWithValuesv(this GtkListStoreHandle list_store, out GtkTreeIter iter, int position, int[] columns, GValue[] values, int n_values)
+	public static T InsertWithValuesv<T>(this T list_store, out GtkTreeIter iter, int position, int[] columns, GValue[] values, int n_values) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_insert_with_valuesv(list_store, out iter, position, columns, values, n_values);
 		return list_store;
@@ -63,19 +63,19 @@ public static class GtkListStoreHandleExtensions
 		return GtkListStoreExterns.gtk_list_store_iter_is_valid(list_store, iter);
 	}
 
-	public static GtkListStoreHandle MoveAfter(this GtkListStoreHandle store, GtkTreeIterHandle iter, GtkTreeIterHandle position)
+	public static T MoveAfter<T>(this T store, GtkTreeIterHandle iter, GtkTreeIterHandle position) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_move_after(store, iter, position);
 		return store;
 	}
 
-	public static GtkListStoreHandle MoveBefore(this GtkListStoreHandle store, GtkTreeIterHandle iter, GtkTreeIterHandle position)
+	public static T MoveBefore<T>(this T store, GtkTreeIterHandle iter, GtkTreeIterHandle position) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_move_before(store, iter, position);
 		return store;
 	}
 
-	public static GtkListStoreHandle Prepend(this GtkListStoreHandle list_store, out GtkTreeIter iter)
+	public static T Prepend<T>(this T list_store, out GtkTreeIter iter) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_prepend(list_store, out iter);
 		return list_store;
@@ -86,43 +86,43 @@ public static class GtkListStoreHandleExtensions
 		return GtkListStoreExterns.gtk_list_store_remove(list_store, iter);
 	}
 
-	public static GtkListStoreHandle Reorder(this GtkListStoreHandle store, int[] new_order)
+	public static T Reorder<T>(this T store, int[] new_order) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_reorder(store, new_order);
 		return store;
 	}
 
-	public static GtkListStoreHandle Set(this GtkListStoreHandle list_store, GtkTreeIterHandle iter, IntPtr @__arglist)
+	public static T Set<T>(this T list_store, GtkTreeIterHandle iter, IntPtr @__arglist) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_set(list_store, iter, @__arglist);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle SetColumnTypes(this GtkListStoreHandle list_store, int n_columns, GType[] types)
+	public static T SetColumnTypes<T>(this T list_store, int n_columns, GType[] types) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_set_column_types(list_store, n_columns, types);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle SetValist(this GtkListStoreHandle list_store, GtkTreeIterHandle iter, IntPtr var_args)
+	public static T SetValist<T>(this T list_store, GtkTreeIterHandle iter, IntPtr var_args) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_set_valist(list_store, iter, var_args);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle SetValue(this GtkListStoreHandle list_store, GtkTreeIterHandle iter, int column, GValueHandle value)
+	public static T SetValue<T>(this T list_store, GtkTreeIterHandle iter, int column, GValueHandle value) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_set_value(list_store, iter, column, value);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle SetValuesv(this GtkListStoreHandle list_store, GtkTreeIterHandle iter, int[] columns, GValue[] values, int n_values)
+	public static T SetValuesv<T>(this T list_store, GtkTreeIterHandle iter, int[] columns, GValue[] values, int n_values) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_set_valuesv(list_store, iter, columns, values, n_values);
 		return list_store;
 	}
 
-	public static GtkListStoreHandle Swap(this GtkListStoreHandle store, GtkTreeIterHandle a, GtkTreeIterHandle b)
+	public static T Swap<T>(this T store, GtkTreeIterHandle a, GtkTreeIterHandle b) where T : GtkListStoreHandle
 	{
 		GtkListStoreExterns.gtk_list_store_swap(store, a, b);
 		return store;

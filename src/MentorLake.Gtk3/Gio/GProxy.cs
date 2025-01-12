@@ -15,7 +15,7 @@ public static class GProxyHandleExtensions
 		return GProxyExterns.g_proxy_connect(proxy, connection, proxy_address, cancellable, out error);
 	}
 
-	public static GProxyHandle ConnectAsync(this GProxyHandle proxy, GIOStreamHandle connection, GProxyAddressHandle proxy_address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectAsync<T>(this T proxy, GIOStreamHandle connection, GProxyAddressHandle proxy_address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GProxyHandle
 	{
 		GProxyExterns.g_proxy_connect_async(proxy, connection, proxy_address, cancellable, callback, user_data);
 		return proxy;

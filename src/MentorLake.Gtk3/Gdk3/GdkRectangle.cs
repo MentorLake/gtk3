@@ -17,7 +17,7 @@ public static class GdkRectangleHandleExtensions
 		return GdkRectangleExterns.gdk_rectangle_intersect(src1, src2, out dest);
 	}
 
-	public static GdkRectangleHandle Union(this GdkRectangleHandle src1, GdkRectangleHandle src2, out GdkRectangle dest)
+	public static T Union<T>(this T src1, GdkRectangleHandle src2, out GdkRectangle dest) where T : GdkRectangleHandle
 	{
 		GdkRectangleExterns.gdk_rectangle_union(src1, src2, out dest);
 		return src1;

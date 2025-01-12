@@ -17,19 +17,19 @@ public static class PangoGlyphItemHandleExtensions
 		return PangoGlyphItemExterns.pango_glyph_item_copy(orig);
 	}
 
-	public static PangoGlyphItemHandle Free(this PangoGlyphItemHandle glyph_item)
+	public static T Free<T>(this T glyph_item) where T : PangoGlyphItemHandle
 	{
 		PangoGlyphItemExterns.pango_glyph_item_free(glyph_item);
 		return glyph_item;
 	}
 
-	public static PangoGlyphItemHandle GetLogicalWidths(this PangoGlyphItemHandle glyph_item, string text, int[] logical_widths)
+	public static T GetLogicalWidths<T>(this T glyph_item, string text, int[] logical_widths) where T : PangoGlyphItemHandle
 	{
 		PangoGlyphItemExterns.pango_glyph_item_get_logical_widths(glyph_item, text, logical_widths);
 		return glyph_item;
 	}
 
-	public static PangoGlyphItemHandle LetterSpace(this PangoGlyphItemHandle glyph_item, string text, PangoLogAttr[] log_attrs, int letter_spacing)
+	public static T LetterSpace<T>(this T glyph_item, string text, PangoLogAttr[] log_attrs, int letter_spacing) where T : PangoGlyphItemHandle
 	{
 		PangoGlyphItemExterns.pango_glyph_item_letter_space(glyph_item, text, log_attrs, letter_spacing);
 		return glyph_item;

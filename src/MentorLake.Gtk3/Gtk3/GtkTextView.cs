@@ -637,13 +637,13 @@ public delegate void toggle_overwrite([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 public static class GtkTextViewHandleExtensions
 {
-	public static GtkTextViewHandle AddChildAtAnchor(this GtkTextViewHandle text_view, GtkWidgetHandle child, GtkTextChildAnchorHandle anchor)
+	public static T AddChildAtAnchor<T>(this T text_view, GtkWidgetHandle child, GtkTextChildAnchorHandle anchor) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_add_child_at_anchor(text_view, child, anchor);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle AddChildInWindow(this GtkTextViewHandle text_view, GtkWidgetHandle child, GtkTextWindowType which_window, int xpos, int ypos)
+	public static T AddChildInWindow<T>(this T text_view, GtkWidgetHandle child, GtkTextWindowType which_window, int xpos, int ypos) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_add_child_in_window(text_view, child, which_window, xpos, ypos);
 		return text_view;
@@ -659,7 +659,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_backward_display_line_start(text_view, iter);
 	}
 
-	public static GtkTextViewHandle BufferToWindowCoords(this GtkTextViewHandle text_view, GtkTextWindowType win, int buffer_x, int buffer_y, out int window_x, out int window_y)
+	public static T BufferToWindowCoords<T>(this T text_view, GtkTextWindowType win, int buffer_x, int buffer_y, out int window_x, out int window_y) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_buffer_to_window_coords(text_view, win, buffer_x, buffer_y, out window_x, out window_y);
 		return text_view;
@@ -695,7 +695,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_get_buffer(text_view);
 	}
 
-	public static GtkTextViewHandle GetCursorLocations(this GtkTextViewHandle text_view, GtkTextIterHandle iter, out GdkRectangle strong, out GdkRectangle weak)
+	public static T GetCursorLocations<T>(this T text_view, GtkTextIterHandle iter, out GdkRectangle strong, out GdkRectangle weak) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_get_cursor_locations(text_view, iter, out strong, out weak);
 		return text_view;
@@ -746,7 +746,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_get_iter_at_position(text_view, out iter, out trailing, x, y);
 	}
 
-	public static GtkTextViewHandle GetIterLocation(this GtkTextViewHandle text_view, GtkTextIterHandle iter, out GdkRectangle location)
+	public static T GetIterLocation<T>(this T text_view, GtkTextIterHandle iter, out GdkRectangle location) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_get_iter_location(text_view, iter, out location);
 		return text_view;
@@ -762,13 +762,13 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_get_left_margin(text_view);
 	}
 
-	public static GtkTextViewHandle GetLineAtY(this GtkTextViewHandle text_view, out GtkTextIter target_iter, int y, out int line_top)
+	public static T GetLineAtY<T>(this T text_view, out GtkTextIter target_iter, int y, out int line_top) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_get_line_at_y(text_view, out target_iter, y, out line_top);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle GetLineYrange(this GtkTextViewHandle text_view, GtkTextIterHandle iter, out int y, out int height)
+	public static T GetLineYrange<T>(this T text_view, GtkTextIterHandle iter, out int y, out int height) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_get_line_yrange(text_view, iter, out y, out height);
 		return text_view;
@@ -819,7 +819,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_get_vadjustment(text_view);
 	}
 
-	public static GtkTextViewHandle GetVisibleRect(this GtkTextViewHandle text_view, out GdkRectangle visible_rect)
+	public static T GetVisibleRect<T>(this T text_view, out GdkRectangle visible_rect) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_get_visible_rect(text_view, out visible_rect);
 		return text_view;
@@ -845,7 +845,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_im_context_filter_keypress(text_view, @event);
 	}
 
-	public static GtkTextViewHandle MoveChild(this GtkTextViewHandle text_view, GtkWidgetHandle child, int xpos, int ypos)
+	public static T MoveChild<T>(this T text_view, GtkWidgetHandle child, int xpos, int ypos) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_move_child(text_view, child, xpos, ypos);
 		return text_view;
@@ -866,19 +866,19 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_place_cursor_onscreen(text_view);
 	}
 
-	public static GtkTextViewHandle ResetCursorBlink(this GtkTextViewHandle text_view)
+	public static T ResetCursorBlink<T>(this T text_view) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_reset_cursor_blink(text_view);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle ResetImContext(this GtkTextViewHandle text_view)
+	public static T ResetImContext<T>(this T text_view) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_reset_im_context(text_view);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle ScrollMarkOnscreen(this GtkTextViewHandle text_view, GtkTextMarkHandle mark)
+	public static T ScrollMarkOnscreen<T>(this T text_view, GtkTextMarkHandle mark) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_scroll_mark_onscreen(text_view, mark);
 		return text_view;
@@ -889,127 +889,127 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_scroll_to_iter(text_view, iter, within_margin, use_align, xalign, yalign);
 	}
 
-	public static GtkTextViewHandle ScrollToMark(this GtkTextViewHandle text_view, GtkTextMarkHandle mark, double within_margin, bool use_align, double xalign, double yalign)
+	public static T ScrollToMark<T>(this T text_view, GtkTextMarkHandle mark, double within_margin, bool use_align, double xalign, double yalign) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_scroll_to_mark(text_view, mark, within_margin, use_align, xalign, yalign);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetAcceptsTab(this GtkTextViewHandle text_view, bool accepts_tab)
+	public static T SetAcceptsTab<T>(this T text_view, bool accepts_tab) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_accepts_tab(text_view, accepts_tab);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetBorderWindowSize(this GtkTextViewHandle text_view, GtkTextWindowType type, int size)
+	public static T SetBorderWindowSize<T>(this T text_view, GtkTextWindowType type, int size) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_border_window_size(text_view, type, size);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetBottomMargin(this GtkTextViewHandle text_view, int bottom_margin)
+	public static T SetBottomMargin<T>(this T text_view, int bottom_margin) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_bottom_margin(text_view, bottom_margin);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetBuffer(this GtkTextViewHandle text_view, GtkTextBufferHandle buffer)
+	public static T SetBuffer<T>(this T text_view, GtkTextBufferHandle buffer) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_buffer(text_view, buffer);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetCursorVisible(this GtkTextViewHandle text_view, bool setting)
+	public static T SetCursorVisible<T>(this T text_view, bool setting) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_cursor_visible(text_view, setting);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetEditable(this GtkTextViewHandle text_view, bool setting)
+	public static T SetEditable<T>(this T text_view, bool setting) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_editable(text_view, setting);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetIndent(this GtkTextViewHandle text_view, int indent)
+	public static T SetIndent<T>(this T text_view, int indent) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_indent(text_view, indent);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetInputHints(this GtkTextViewHandle text_view, GtkInputHints hints)
+	public static T SetInputHints<T>(this T text_view, GtkInputHints hints) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_input_hints(text_view, hints);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetInputPurpose(this GtkTextViewHandle text_view, GtkInputPurpose purpose)
+	public static T SetInputPurpose<T>(this T text_view, GtkInputPurpose purpose) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_input_purpose(text_view, purpose);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetJustification(this GtkTextViewHandle text_view, GtkJustification justification)
+	public static T SetJustification<T>(this T text_view, GtkJustification justification) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_justification(text_view, justification);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetLeftMargin(this GtkTextViewHandle text_view, int left_margin)
+	public static T SetLeftMargin<T>(this T text_view, int left_margin) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_left_margin(text_view, left_margin);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetMonospace(this GtkTextViewHandle text_view, bool monospace)
+	public static T SetMonospace<T>(this T text_view, bool monospace) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_monospace(text_view, monospace);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetOverwrite(this GtkTextViewHandle text_view, bool overwrite)
+	public static T SetOverwrite<T>(this T text_view, bool overwrite) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_overwrite(text_view, overwrite);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetPixelsAboveLines(this GtkTextViewHandle text_view, int pixels_above_lines)
+	public static T SetPixelsAboveLines<T>(this T text_view, int pixels_above_lines) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_pixels_above_lines(text_view, pixels_above_lines);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetPixelsBelowLines(this GtkTextViewHandle text_view, int pixels_below_lines)
+	public static T SetPixelsBelowLines<T>(this T text_view, int pixels_below_lines) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_pixels_below_lines(text_view, pixels_below_lines);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetPixelsInsideWrap(this GtkTextViewHandle text_view, int pixels_inside_wrap)
+	public static T SetPixelsInsideWrap<T>(this T text_view, int pixels_inside_wrap) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_pixels_inside_wrap(text_view, pixels_inside_wrap);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetRightMargin(this GtkTextViewHandle text_view, int right_margin)
+	public static T SetRightMargin<T>(this T text_view, int right_margin) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_right_margin(text_view, right_margin);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetTabs(this GtkTextViewHandle text_view, PangoTabArrayHandle tabs)
+	public static T SetTabs<T>(this T text_view, PangoTabArrayHandle tabs) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_tabs(text_view, tabs);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetTopMargin(this GtkTextViewHandle text_view, int top_margin)
+	public static T SetTopMargin<T>(this T text_view, int top_margin) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_top_margin(text_view, top_margin);
 		return text_view;
 	}
 
-	public static GtkTextViewHandle SetWrapMode(this GtkTextViewHandle text_view, GtkWrapMode wrap_mode)
+	public static T SetWrapMode<T>(this T text_view, GtkWrapMode wrap_mode) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_set_wrap_mode(text_view, wrap_mode);
 		return text_view;
@@ -1020,7 +1020,7 @@ public static class GtkTextViewHandleExtensions
 		return GtkTextViewExterns.gtk_text_view_starts_display_line(text_view, iter);
 	}
 
-	public static GtkTextViewHandle WindowToBufferCoords(this GtkTextViewHandle text_view, GtkTextWindowType win, int window_x, int window_y, out int buffer_x, out int buffer_y)
+	public static T WindowToBufferCoords<T>(this T text_view, GtkTextWindowType win, int window_x, int window_y, out int buffer_x, out int buffer_y) where T : GtkTextViewHandle
 	{
 		GtkTextViewExterns.gtk_text_view_window_to_buffer_coords(text_view, win, window_x, window_y, out buffer_x, out buffer_y);
 		return text_view;

@@ -7,19 +7,19 @@ public class GOptionContextHandle : BaseSafeHandle
 
 public static class GOptionContextHandleExtensions
 {
-	public static GOptionContextHandle AddGroup(this GOptionContextHandle context, GOptionGroupHandle group)
+	public static T AddGroup<T>(this T context, GOptionGroupHandle group) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_add_group(context, group);
 		return context;
 	}
 
-	public static GOptionContextHandle AddMainEntries(this GOptionContextHandle context, GOptionEntry[] entries, string translation_domain)
+	public static T AddMainEntries<T>(this T context, GOptionEntry[] entries, string translation_domain) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_add_main_entries(context, entries, translation_domain);
 		return context;
 	}
 
-	public static GOptionContextHandle Free(this GOptionContextHandle context)
+	public static T Free<T>(this T context) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_free(context);
 		return context;
@@ -70,49 +70,49 @@ public static class GOptionContextHandleExtensions
 		return GOptionContextExterns.g_option_context_parse_strv(context, ref arguments, out error);
 	}
 
-	public static GOptionContextHandle SetDescription(this GOptionContextHandle context, string description)
+	public static T SetDescription<T>(this T context, string description) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_description(context, description);
 		return context;
 	}
 
-	public static GOptionContextHandle SetHelpEnabled(this GOptionContextHandle context, bool help_enabled)
+	public static T SetHelpEnabled<T>(this T context, bool help_enabled) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_help_enabled(context, help_enabled);
 		return context;
 	}
 
-	public static GOptionContextHandle SetIgnoreUnknownOptions(this GOptionContextHandle context, bool ignore_unknown)
+	public static T SetIgnoreUnknownOptions<T>(this T context, bool ignore_unknown) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_ignore_unknown_options(context, ignore_unknown);
 		return context;
 	}
 
-	public static GOptionContextHandle SetMainGroup(this GOptionContextHandle context, GOptionGroupHandle group)
+	public static T SetMainGroup<T>(this T context, GOptionGroupHandle group) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_main_group(context, group);
 		return context;
 	}
 
-	public static GOptionContextHandle SetStrictPosix(this GOptionContextHandle context, bool strict_posix)
+	public static T SetStrictPosix<T>(this T context, bool strict_posix) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_strict_posix(context, strict_posix);
 		return context;
 	}
 
-	public static GOptionContextHandle SetSummary(this GOptionContextHandle context, string summary)
+	public static T SetSummary<T>(this T context, string summary) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_summary(context, summary);
 		return context;
 	}
 
-	public static GOptionContextHandle SetTranslateFunc(this GOptionContextHandle context, GTranslateFunc func, IntPtr data, GDestroyNotify destroy_notify)
+	public static T SetTranslateFunc<T>(this T context, GTranslateFunc func, IntPtr data, GDestroyNotify destroy_notify) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_translate_func(context, func, data, destroy_notify);
 		return context;
 	}
 
-	public static GOptionContextHandle SetTranslationDomain(this GOptionContextHandle context, string domain)
+	public static T SetTranslationDomain<T>(this T context, string domain) where T : GOptionContextHandle
 	{
 		GOptionContextExterns.g_option_context_set_translation_domain(context, domain);
 		return context;

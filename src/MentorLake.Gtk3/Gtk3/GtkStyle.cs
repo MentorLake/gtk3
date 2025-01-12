@@ -98,7 +98,7 @@ public delegate void unrealize([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GtkStyleHandleExtensions
 {
-	public static GtkStyleHandle ApplyDefaultBackground(this GtkStyleHandle style, cairo_tHandle cr, GdkWindowHandle window, GtkStateType state_type, int x, int y, int width, int height)
+	public static T ApplyDefaultBackground<T>(this T style, cairo_tHandle cr, GdkWindowHandle window, GtkStateType state_type, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_apply_default_background(style, cr, window, state_type, x, y, width, height);
 		return style;
@@ -114,25 +114,25 @@ public static class GtkStyleHandleExtensions
 		return GtkStyleExterns.gtk_style_copy(style);
 	}
 
-	public static GtkStyleHandle Detach(this GtkStyleHandle style)
+	public static T Detach<T>(this T style) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_detach(style);
 		return style;
 	}
 
-	public static GtkStyleHandle Get(this GtkStyleHandle style, GType widget_type, string first_property_name, IntPtr @__arglist)
+	public static T Get<T>(this T style, GType widget_type, string first_property_name, IntPtr @__arglist) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_get(style, widget_type, first_property_name, @__arglist);
 		return style;
 	}
 
-	public static GtkStyleHandle GetStyleProperty(this GtkStyleHandle style, GType widget_type, string property_name, out GValue value)
+	public static T GetStyleProperty<T>(this T style, GType widget_type, string property_name, out GValue value) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_get_style_property(style, widget_type, property_name, out value);
 		return style;
 	}
 
-	public static GtkStyleHandle GetValist(this GtkStyleHandle style, GType widget_type, string first_property_name, IntPtr var_args)
+	public static T GetValist<T>(this T style, GType widget_type, string first_property_name, IntPtr var_args) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_get_valist(style, widget_type, first_property_name, var_args);
 		return style;
@@ -158,127 +158,127 @@ public static class GtkStyleHandleExtensions
 		return GtkStyleExterns.gtk_style_render_icon(style, source, direction, state, size, widget, detail);
 	}
 
-	public static GtkStyleHandle SetBackground(this GtkStyleHandle style, GdkWindowHandle window, GtkStateType state_type)
+	public static T SetBackground<T>(this T style, GdkWindowHandle window, GtkStateType state_type) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_style_set_background(style, window, state_type);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintShadow(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintShadow<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_shadow(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintDiamond(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintDiamond<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_diamond(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintFlatBox(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintFlatBox<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_flat_box(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintCheck(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintCheck<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_check(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintLayout(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, bool use_text, GtkWidgetHandle widget, string detail, int x, int y, PangoLayoutHandle layout)
+	public static T GtkPaintLayout<T>(this T style, cairo_tHandle cr, GtkStateType state_type, bool use_text, GtkWidgetHandle widget, string detail, int x, int y, PangoLayoutHandle layout) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_layout(style, cr, state_type, use_text, widget, detail, x, y, layout);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintExpander(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x, int y, GtkExpanderStyle expander_style)
+	public static T GtkPaintExpander<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x, int y, GtkExpanderStyle expander_style) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_expander(style, cr, state_type, widget, detail, x, y, expander_style);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintTab(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintTab<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_tab(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintBoxGap(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side, int gap_x, int gap_width)
+	public static T GtkPaintBoxGap<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side, int gap_x, int gap_width) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_box_gap(style, cr, state_type, shadow_type, widget, detail, x, y, width, height, gap_side, gap_x, gap_width);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintExtension(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side)
+	public static T GtkPaintExtension<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_extension(style, cr, state_type, shadow_type, widget, detail, x, y, width, height, gap_side);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintFocus(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintFocus<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_focus(style, cr, state_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintResizeGrip(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, GdkWindowEdge edge, int x, int y, int width, int height)
+	public static T GtkPaintResizeGrip<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, GdkWindowEdge edge, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_resize_grip(style, cr, state_type, widget, detail, edge, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintShadowGap(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side, int gap_x, int gap_width)
+	public static T GtkPaintShadowGap<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkPositionType gap_side, int gap_x, int gap_width) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_shadow_gap(style, cr, state_type, shadow_type, widget, detail, x, y, width, height, gap_side, gap_x, gap_width);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintSlider(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkOrientation orientation)
+	public static T GtkPaintSlider<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkOrientation orientation) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_slider(style, cr, state_type, shadow_type, widget, detail, x, y, width, height, orientation);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintHandle(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkOrientation orientation)
+	public static T GtkPaintHandle<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height, GtkOrientation orientation) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_handle(style, cr, state_type, shadow_type, widget, detail, x, y, width, height, orientation);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintArrow(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, GtkArrowType arrow_type, bool fill, int x, int y, int width, int height)
+	public static T GtkPaintArrow<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, GtkArrowType arrow_type, bool fill, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_arrow(style, cr, state_type, shadow_type, widget, detail, arrow_type, fill, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintOption(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintOption<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_option(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintBox(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height)
+	public static T GtkPaintBox<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkShadowType shadow_type, GtkWidgetHandle widget, string detail, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_box(style, cr, state_type, shadow_type, widget, detail, x, y, width, height);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintHline(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x1, int x2, int y)
+	public static T GtkPaintHline<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int x1, int x2, int y) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_hline(style, cr, state_type, widget, detail, x1, x2, y);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintVline(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int y1_, int y2_, int x)
+	public static T GtkPaintVline<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, int y1_, int y2_, int x) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_vline(style, cr, state_type, widget, detail, y1_, y2_, x);
 		return style;
 	}
 
-	public static GtkStyleHandle GtkPaintSpinner(this GtkStyleHandle style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, uint step, int x, int y, int width, int height)
+	public static T GtkPaintSpinner<T>(this T style, cairo_tHandle cr, GtkStateType state_type, GtkWidgetHandle widget, string detail, uint step, int x, int y, int width, int height) where T : GtkStyleHandle
 	{
 		GtkStyleExterns.gtk_paint_spinner(style, cr, state_type, widget, detail, step, x, y, width, height);
 		return style;

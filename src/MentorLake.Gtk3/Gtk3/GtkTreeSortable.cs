@@ -20,25 +20,25 @@ public static class GtkTreeSortableHandleExtensions
 		return GtkTreeSortableExterns.gtk_tree_sortable_has_default_sort_func(sortable);
 	}
 
-	public static GtkTreeSortableHandle SetDefaultSortFunc(this GtkTreeSortableHandle sortable, GtkTreeIterCompareFunc sort_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetDefaultSortFunc<T>(this T sortable, GtkTreeIterCompareFunc sort_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkTreeSortableHandle
 	{
 		GtkTreeSortableExterns.gtk_tree_sortable_set_default_sort_func(sortable, sort_func, user_data, destroy);
 		return sortable;
 	}
 
-	public static GtkTreeSortableHandle SetSortColumnId(this GtkTreeSortableHandle sortable, int sort_column_id, GtkSortType order)
+	public static T SetSortColumnId<T>(this T sortable, int sort_column_id, GtkSortType order) where T : GtkTreeSortableHandle
 	{
 		GtkTreeSortableExterns.gtk_tree_sortable_set_sort_column_id(sortable, sort_column_id, order);
 		return sortable;
 	}
 
-	public static GtkTreeSortableHandle SetSortFunc(this GtkTreeSortableHandle sortable, int sort_column_id, GtkTreeIterCompareFunc sort_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetSortFunc<T>(this T sortable, int sort_column_id, GtkTreeIterCompareFunc sort_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkTreeSortableHandle
 	{
 		GtkTreeSortableExterns.gtk_tree_sortable_set_sort_func(sortable, sort_column_id, sort_func, user_data, destroy);
 		return sortable;
 	}
 
-	public static GtkTreeSortableHandle SortColumnChanged(this GtkTreeSortableHandle sortable)
+	public static T SortColumnChanged<T>(this T sortable) where T : GtkTreeSortableHandle
 	{
 		GtkTreeSortableExterns.gtk_tree_sortable_sort_column_changed(sortable);
 		return sortable;

@@ -21,7 +21,7 @@ public static class GUnixOutputStreamHandleExtensions
 		return GUnixOutputStreamExterns.g_unix_output_stream_get_fd(stream);
 	}
 
-	public static GUnixOutputStreamHandle SetCloseFd(this GUnixOutputStreamHandle stream, bool close_fd)
+	public static T SetCloseFd<T>(this T stream, bool close_fd) where T : GUnixOutputStreamHandle
 	{
 		GUnixOutputStreamExterns.g_unix_output_stream_set_close_fd(stream, close_fd);
 		return stream;

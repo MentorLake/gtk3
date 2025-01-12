@@ -11,49 +11,49 @@ public class GtkTooltipHandle : GObjectHandle
 
 public static class GtkTooltipHandleExtensions
 {
-	public static GtkTooltipHandle SetCustom(this GtkTooltipHandle tooltip, GtkWidgetHandle custom_widget)
+	public static T SetCustom<T>(this T tooltip, GtkWidgetHandle custom_widget) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_custom(tooltip, custom_widget);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetIcon(this GtkTooltipHandle tooltip, GdkPixbufHandle pixbuf)
+	public static T SetIcon<T>(this T tooltip, GdkPixbufHandle pixbuf) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_icon(tooltip, pixbuf);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetIconFromGicon(this GtkTooltipHandle tooltip, GIconHandle gicon, GtkIconSize size)
+	public static T SetIconFromGicon<T>(this T tooltip, GIconHandle gicon, GtkIconSize size) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_icon_from_gicon(tooltip, gicon, size);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetIconFromIconName(this GtkTooltipHandle tooltip, string icon_name, GtkIconSize size)
+	public static T SetIconFromIconName<T>(this T tooltip, string icon_name, GtkIconSize size) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_icon_from_icon_name(tooltip, icon_name, size);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetIconFromStock(this GtkTooltipHandle tooltip, string stock_id, GtkIconSize size)
+	public static T SetIconFromStock<T>(this T tooltip, string stock_id, GtkIconSize size) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_icon_from_stock(tooltip, stock_id, size);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetMarkup(this GtkTooltipHandle tooltip, string markup)
+	public static T SetMarkup<T>(this T tooltip, string markup) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_markup(tooltip, markup);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetText(this GtkTooltipHandle tooltip, string text)
+	public static T SetText<T>(this T tooltip, string text) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_text(tooltip, text);
 		return tooltip;
 	}
 
-	public static GtkTooltipHandle SetTipArea(this GtkTooltipHandle tooltip, GdkRectangleHandle rect)
+	public static T SetTipArea<T>(this T tooltip, GdkRectangleHandle rect) where T : GtkTooltipHandle
 	{
 		GtkTooltipExterns.gtk_tooltip_set_tip_area(tooltip, rect);
 		return tooltip;

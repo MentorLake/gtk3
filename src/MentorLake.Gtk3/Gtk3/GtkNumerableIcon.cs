@@ -41,31 +41,31 @@ public static class GtkNumerableIconHandleExtensions
 		return GtkNumerableIconExterns.gtk_numerable_icon_get_style_context(self);
 	}
 
-	public static GtkNumerableIconHandle SetBackgroundGicon(this GtkNumerableIconHandle self, GIconHandle icon)
+	public static T SetBackgroundGicon<T>(this T self, GIconHandle icon) where T : GtkNumerableIconHandle
 	{
 		GtkNumerableIconExterns.gtk_numerable_icon_set_background_gicon(self, icon);
 		return self;
 	}
 
-	public static GtkNumerableIconHandle SetBackgroundIconName(this GtkNumerableIconHandle self, string icon_name)
+	public static T SetBackgroundIconName<T>(this T self, string icon_name) where T : GtkNumerableIconHandle
 	{
 		GtkNumerableIconExterns.gtk_numerable_icon_set_background_icon_name(self, icon_name);
 		return self;
 	}
 
-	public static GtkNumerableIconHandle SetCount(this GtkNumerableIconHandle self, int count)
+	public static T SetCount<T>(this T self, int count) where T : GtkNumerableIconHandle
 	{
 		GtkNumerableIconExterns.gtk_numerable_icon_set_count(self, count);
 		return self;
 	}
 
-	public static GtkNumerableIconHandle SetLabel(this GtkNumerableIconHandle self, string label)
+	public static T SetLabel<T>(this T self, string label) where T : GtkNumerableIconHandle
 	{
 		GtkNumerableIconExterns.gtk_numerable_icon_set_label(self, label);
 		return self;
 	}
 
-	public static GtkNumerableIconHandle SetStyleContext(this GtkNumerableIconHandle self, GtkStyleContextHandle style)
+	public static T SetStyleContext<T>(this T self, GtkStyleContextHandle style) where T : GtkNumerableIconHandle
 	{
 		GtkNumerableIconExterns.gtk_numerable_icon_set_style_context(self, style);
 		return self;

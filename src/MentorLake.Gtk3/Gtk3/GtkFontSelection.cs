@@ -66,7 +66,7 @@ public static class GtkFontSelectionHandleExtensions
 		return GtkFontSelectionExterns.gtk_font_selection_set_font_name(fontsel, fontname);
 	}
 
-	public static GtkFontSelectionHandle SetPreviewText(this GtkFontSelectionHandle fontsel, string text)
+	public static T SetPreviewText<T>(this T fontsel, string text) where T : GtkFontSelectionHandle
 	{
 		GtkFontSelectionExterns.gtk_font_selection_set_preview_text(fontsel, text);
 		return fontsel;

@@ -47,25 +47,25 @@ public static class GSListHandleExtensions
 		return GSListExterns.g_slist_find_custom(list, data, func);
 	}
 
-	public static GSListHandle GSlistForeach(this GSListHandle list, GFunc func, IntPtr user_data)
+	public static T GSlistForeach<T>(this T list, GFunc func, IntPtr user_data) where T : GSListHandle
 	{
 		GSListExterns.g_slist_foreach(list, func, user_data);
 		return list;
 	}
 
-	public static GSListHandle GSlistFree(this GSListHandle list)
+	public static T GSlistFree<T>(this T list) where T : GSListHandle
 	{
 		GSListExterns.g_slist_free(list);
 		return list;
 	}
 
-	public static GSListHandle GSlistFree1(this GSListHandle list)
+	public static T GSlistFree1<T>(this T list) where T : GSListHandle
 	{
 		GSListExterns.g_slist_free_1(list);
 		return list;
 	}
 
-	public static GSListHandle GSlistFreeFull(this GSListHandle list, GDestroyNotify free_func)
+	public static T GSlistFreeFull<T>(this T list, GDestroyNotify free_func) where T : GSListHandle
 	{
 		GSListExterns.g_slist_free_full(list, free_func);
 		return list;

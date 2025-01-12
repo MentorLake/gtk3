@@ -16,7 +16,7 @@ public static class GZlibCompressorHandleExtensions
 		return GZlibCompressorExterns.g_zlib_compressor_get_file_info(compressor);
 	}
 
-	public static GZlibCompressorHandle SetFileInfo(this GZlibCompressorHandle compressor, GFileInfoHandle file_info)
+	public static T SetFileInfo<T>(this T compressor, GFileInfoHandle file_info) where T : GZlibCompressorHandle
 	{
 		GZlibCompressorExterns.g_zlib_compressor_set_file_info(compressor, file_info);
 		return compressor;

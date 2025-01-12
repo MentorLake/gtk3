@@ -249,13 +249,13 @@ public delegate void to_embedder([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 public static class GdkWindowHandleExtensions
 {
-	public static GdkWindowHandle AddFilter(this GdkWindowHandle window, GdkFilterFunc function, IntPtr data)
+	public static T AddFilter<T>(this T window, GdkFilterFunc function, IntPtr data) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_add_filter(window, function, data);
 		return window;
 	}
 
-	public static GdkWindowHandle Beep(this GdkWindowHandle window)
+	public static T Beep<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_beep(window);
 		return window;
@@ -266,55 +266,55 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_begin_draw_frame(window, region);
 	}
 
-	public static GdkWindowHandle BeginMoveDrag(this GdkWindowHandle window, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginMoveDrag<T>(this T window, int button, int root_x, int root_y, uint timestamp) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_move_drag(window, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GdkWindowHandle BeginMoveDragForDevice(this GdkWindowHandle window, GdkDeviceHandle device, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginMoveDragForDevice<T>(this T window, GdkDeviceHandle device, int button, int root_x, int root_y, uint timestamp) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_move_drag_for_device(window, device, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GdkWindowHandle BeginPaintRect(this GdkWindowHandle window, GdkRectangleHandle rectangle)
+	public static T BeginPaintRect<T>(this T window, GdkRectangleHandle rectangle) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_paint_rect(window, rectangle);
 		return window;
 	}
 
-	public static GdkWindowHandle BeginPaintRegion(this GdkWindowHandle window, cairo_region_tHandle region)
+	public static T BeginPaintRegion<T>(this T window, cairo_region_tHandle region) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_paint_region(window, region);
 		return window;
 	}
 
-	public static GdkWindowHandle BeginResizeDrag(this GdkWindowHandle window, GdkWindowEdge edge, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginResizeDrag<T>(this T window, GdkWindowEdge edge, int button, int root_x, int root_y, uint timestamp) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_resize_drag(window, edge, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GdkWindowHandle BeginResizeDragForDevice(this GdkWindowHandle window, GdkWindowEdge edge, GdkDeviceHandle device, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginResizeDragForDevice<T>(this T window, GdkWindowEdge edge, GdkDeviceHandle device, int button, int root_x, int root_y, uint timestamp) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_begin_resize_drag_for_device(window, edge, device, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GdkWindowHandle ConfigureFinished(this GdkWindowHandle window)
+	public static T ConfigureFinished<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_configure_finished(window);
 		return window;
 	}
 
-	public static GdkWindowHandle CoordsFromParent(this GdkWindowHandle window, double parent_x, double parent_y, out double x, out double y)
+	public static T CoordsFromParent<T>(this T window, double parent_x, double parent_y, out double x, out double y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_coords_from_parent(window, parent_x, parent_y, out x, out y);
 		return window;
 	}
 
-	public static GdkWindowHandle CoordsToParent(this GdkWindowHandle window, double x, double y, out double parent_x, out double parent_y)
+	public static T CoordsToParent<T>(this T window, double x, double y, out double parent_x, out double parent_y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_coords_to_parent(window, x, y, out parent_x, out parent_y);
 		return window;
@@ -335,37 +335,37 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_create_similar_surface(window, content, width, height);
 	}
 
-	public static GdkWindowHandle Deiconify(this GdkWindowHandle window)
+	public static T Deiconify<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_deiconify(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Destroy(this GdkWindowHandle window)
+	public static T Destroy<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_destroy(window);
 		return window;
 	}
 
-	public static GdkWindowHandle DestroyNotify(this GdkWindowHandle window)
+	public static T DestroyNotify<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_destroy_notify(window);
 		return window;
 	}
 
-	public static GdkWindowHandle EnableSynchronizedConfigure(this GdkWindowHandle window)
+	public static T EnableSynchronizedConfigure<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_enable_synchronized_configure(window);
 		return window;
 	}
 
-	public static GdkWindowHandle EndDrawFrame(this GdkWindowHandle window, GdkDrawingContextHandle context)
+	public static T EndDrawFrame<T>(this T window, GdkDrawingContextHandle context) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_end_draw_frame(window, context);
 		return window;
 	}
 
-	public static GdkWindowHandle EndPaint(this GdkWindowHandle window)
+	public static T EndPaint<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_end_paint(window);
 		return window;
@@ -376,43 +376,43 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_ensure_native(window);
 	}
 
-	public static GdkWindowHandle Flush(this GdkWindowHandle window)
+	public static T Flush<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_flush(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Focus(this GdkWindowHandle window, uint timestamp)
+	public static T Focus<T>(this T window, uint timestamp) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_focus(window, timestamp);
 		return window;
 	}
 
-	public static GdkWindowHandle FreezeToplevelUpdatesLibgtkOnly(this GdkWindowHandle window)
+	public static T FreezeToplevelUpdatesLibgtkOnly<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_freeze_toplevel_updates_libgtk_only(window);
 		return window;
 	}
 
-	public static GdkWindowHandle FreezeUpdates(this GdkWindowHandle window)
+	public static T FreezeUpdates<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_freeze_updates(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Fullscreen(this GdkWindowHandle window)
+	public static T Fullscreen<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_fullscreen(window);
 		return window;
 	}
 
-	public static GdkWindowHandle FullscreenOnMonitor(this GdkWindowHandle window, int monitor)
+	public static T FullscreenOnMonitor<T>(this T window, int monitor) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_fullscreen_on_monitor(window, monitor);
 		return window;
 	}
 
-	public static GdkWindowHandle GeometryChanged(this GdkWindowHandle window)
+	public static T GeometryChanged<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_geometry_changed(window);
 		return window;
@@ -518,7 +518,7 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_get_frame_clock(window);
 	}
 
-	public static GdkWindowHandle GetFrameExtents(this GdkWindowHandle window, out GdkRectangle rect)
+	public static T GetFrameExtents<T>(this T window, out GdkRectangle rect) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_frame_extents(window, out rect);
 		return window;
@@ -529,7 +529,7 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_get_fullscreen_mode(window);
 	}
 
-	public static GdkWindowHandle GetGeometry(this GdkWindowHandle window, out int x, out int y, out int width, out int height)
+	public static T GetGeometry<T>(this T window, out int x, out int y, out int width, out int height) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_geometry(window, out x, out y, out width, out height);
 		return window;
@@ -570,19 +570,19 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_get_pointer(window, out x, out y, out mask);
 	}
 
-	public static GdkWindowHandle GetPosition(this GdkWindowHandle window, out int x, out int y)
+	public static T GetPosition<T>(this T window, out int x, out int y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_position(window, out x, out y);
 		return window;
 	}
 
-	public static GdkWindowHandle GetRootCoords(this GdkWindowHandle window, int x, int y, out int root_x, out int root_y)
+	public static T GetRootCoords<T>(this T window, int x, int y, out int root_x, out int root_y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_root_coords(window, x, y, out root_x, out root_y);
 		return window;
 	}
 
-	public static GdkWindowHandle GetRootOrigin(this GdkWindowHandle window, out int x, out int y)
+	public static T GetRootOrigin<T>(this T window, out int x, out int y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_root_origin(window, out x, out y);
 		return window;
@@ -628,7 +628,7 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_get_update_area(window);
 	}
 
-	public static GdkWindowHandle GetUserData(this GdkWindowHandle window, out IntPtr data)
+	public static T GetUserData<T>(this T window, out IntPtr data) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_get_user_data(window, out data);
 		return window;
@@ -659,37 +659,37 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_has_native(window);
 	}
 
-	public static GdkWindowHandle Hide(this GdkWindowHandle window)
+	public static T Hide<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_hide(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Iconify(this GdkWindowHandle window)
+	public static T Iconify<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_iconify(window);
 		return window;
 	}
 
-	public static GdkWindowHandle InputShapeCombineRegion(this GdkWindowHandle window, cairo_region_tHandle shape_region, int offset_x, int offset_y)
+	public static T InputShapeCombineRegion<T>(this T window, cairo_region_tHandle shape_region, int offset_x, int offset_y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_input_shape_combine_region(window, shape_region, offset_x, offset_y);
 		return window;
 	}
 
-	public static GdkWindowHandle InvalidateMaybeRecurse(this GdkWindowHandle window, cairo_region_tHandle region, GdkWindowChildFunc child_func, IntPtr user_data)
+	public static T InvalidateMaybeRecurse<T>(this T window, cairo_region_tHandle region, GdkWindowChildFunc child_func, IntPtr user_data) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_invalidate_maybe_recurse(window, region, child_func, user_data);
 		return window;
 	}
 
-	public static GdkWindowHandle InvalidateRect(this GdkWindowHandle window, GdkRectangleHandle rect, bool invalidate_children)
+	public static T InvalidateRect<T>(this T window, GdkRectangleHandle rect, bool invalidate_children) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_invalidate_rect(window, rect, invalidate_children);
 		return window;
 	}
 
-	public static GdkWindowHandle InvalidateRegion(this GdkWindowHandle window, cairo_region_tHandle region, bool invalidate_children)
+	public static T InvalidateRegion<T>(this T window, cairo_region_tHandle region, bool invalidate_children) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_invalidate_region(window, region, invalidate_children);
 		return window;
@@ -720,55 +720,55 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_is_visible(window);
 	}
 
-	public static GdkWindowHandle Lower(this GdkWindowHandle window)
+	public static T Lower<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_lower(window);
 		return window;
 	}
 
-	public static GdkWindowHandle MarkPaintFromClip(this GdkWindowHandle window, cairo_tHandle cr)
+	public static T MarkPaintFromClip<T>(this T window, cairo_tHandle cr) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_mark_paint_from_clip(window, cr);
 		return window;
 	}
 
-	public static GdkWindowHandle Maximize(this GdkWindowHandle window)
+	public static T Maximize<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_maximize(window);
 		return window;
 	}
 
-	public static GdkWindowHandle MergeChildInputShapes(this GdkWindowHandle window)
+	public static T MergeChildInputShapes<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_merge_child_input_shapes(window);
 		return window;
 	}
 
-	public static GdkWindowHandle MergeChildShapes(this GdkWindowHandle window)
+	public static T MergeChildShapes<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_merge_child_shapes(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Move(this GdkWindowHandle window, int x, int y)
+	public static T Move<T>(this T window, int x, int y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_move(window, x, y);
 		return window;
 	}
 
-	public static GdkWindowHandle MoveRegion(this GdkWindowHandle window, cairo_region_tHandle region, int dx, int dy)
+	public static T MoveRegion<T>(this T window, cairo_region_tHandle region, int dx, int dy) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_move_region(window, region, dx, dy);
 		return window;
 	}
 
-	public static GdkWindowHandle MoveResize(this GdkWindowHandle window, int x, int y, int width, int height)
+	public static T MoveResize<T>(this T window, int x, int y, int width, int height) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_move_resize(window, x, y, width, height);
 		return window;
 	}
 
-	public static GdkWindowHandle MoveToRect(this GdkWindowHandle window, GdkRectangleHandle rect, GdkGravity rect_anchor, GdkGravity window_anchor, GdkAnchorHints anchor_hints, int rect_anchor_dx, int rect_anchor_dy)
+	public static T MoveToRect<T>(this T window, GdkRectangleHandle rect, GdkGravity rect_anchor, GdkGravity window_anchor, GdkAnchorHints anchor_hints, int rect_anchor_dx, int rect_anchor_dy) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_move_to_rect(window, rect, rect_anchor, window_anchor, anchor_hints, rect_anchor_dx, rect_anchor_dy);
 		return window;
@@ -779,253 +779,253 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_peek_children(window);
 	}
 
-	public static GdkWindowHandle ProcessUpdates(this GdkWindowHandle window, bool update_children)
+	public static T ProcessUpdates<T>(this T window, bool update_children) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_process_updates(window, update_children);
 		return window;
 	}
 
-	public static GdkWindowHandle Raise(this GdkWindowHandle window)
+	public static T Raise<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_raise(window);
 		return window;
 	}
 
-	public static GdkWindowHandle RegisterDnd(this GdkWindowHandle window)
+	public static T RegisterDnd<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_register_dnd(window);
 		return window;
 	}
 
-	public static GdkWindowHandle RemoveFilter(this GdkWindowHandle window, GdkFilterFunc function, IntPtr data)
+	public static T RemoveFilter<T>(this T window, GdkFilterFunc function, IntPtr data) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_remove_filter(window, function, data);
 		return window;
 	}
 
-	public static GdkWindowHandle Reparent(this GdkWindowHandle window, GdkWindowHandle new_parent, int x, int y)
+	public static T Reparent<T>(this T window, GdkWindowHandle new_parent, int x, int y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_reparent(window, new_parent, x, y);
 		return window;
 	}
 
-	public static GdkWindowHandle Resize(this GdkWindowHandle window, int width, int height)
+	public static T Resize<T>(this T window, int width, int height) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_resize(window, width, height);
 		return window;
 	}
 
-	public static GdkWindowHandle Restack(this GdkWindowHandle window, GdkWindowHandle sibling, bool above)
+	public static T Restack<T>(this T window, GdkWindowHandle sibling, bool above) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_restack(window, sibling, above);
 		return window;
 	}
 
-	public static GdkWindowHandle Scroll(this GdkWindowHandle window, int dx, int dy)
+	public static T Scroll<T>(this T window, int dx, int dy) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_scroll(window, dx, dy);
 		return window;
 	}
 
-	public static GdkWindowHandle SetAcceptFocus(this GdkWindowHandle window, bool accept_focus)
+	public static T SetAcceptFocus<T>(this T window, bool accept_focus) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_accept_focus(window, accept_focus);
 		return window;
 	}
 
-	public static GdkWindowHandle SetBackground(this GdkWindowHandle window, GdkColorHandle color)
+	public static T SetBackground<T>(this T window, GdkColorHandle color) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_background(window, color);
 		return window;
 	}
 
-	public static GdkWindowHandle SetBackgroundPattern(this GdkWindowHandle window, cairo_pattern_tHandle pattern)
+	public static T SetBackgroundPattern<T>(this T window, cairo_pattern_tHandle pattern) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_background_pattern(window, pattern);
 		return window;
 	}
 
-	public static GdkWindowHandle SetBackgroundRgba(this GdkWindowHandle window, GdkRGBAHandle rgba)
+	public static T SetBackgroundRgba<T>(this T window, GdkRGBAHandle rgba) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_background_rgba(window, rgba);
 		return window;
 	}
 
-	public static GdkWindowHandle SetChildInputShapes(this GdkWindowHandle window)
+	public static T SetChildInputShapes<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_child_input_shapes(window);
 		return window;
 	}
 
-	public static GdkWindowHandle SetChildShapes(this GdkWindowHandle window)
+	public static T SetChildShapes<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_child_shapes(window);
 		return window;
 	}
 
-	public static GdkWindowHandle SetComposited(this GdkWindowHandle window, bool composited)
+	public static T SetComposited<T>(this T window, bool composited) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_composited(window, composited);
 		return window;
 	}
 
-	public static GdkWindowHandle SetCursor(this GdkWindowHandle window, GdkCursorHandle cursor)
+	public static T SetCursor<T>(this T window, GdkCursorHandle cursor) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_cursor(window, cursor);
 		return window;
 	}
 
-	public static GdkWindowHandle SetDecorations(this GdkWindowHandle window, GdkWMDecoration decorations)
+	public static T SetDecorations<T>(this T window, GdkWMDecoration decorations) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_decorations(window, decorations);
 		return window;
 	}
 
-	public static GdkWindowHandle SetDeviceCursor(this GdkWindowHandle window, GdkDeviceHandle device, GdkCursorHandle cursor)
+	public static T SetDeviceCursor<T>(this T window, GdkDeviceHandle device, GdkCursorHandle cursor) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_device_cursor(window, device, cursor);
 		return window;
 	}
 
-	public static GdkWindowHandle SetDeviceEvents(this GdkWindowHandle window, GdkDeviceHandle device, GdkEventMask event_mask)
+	public static T SetDeviceEvents<T>(this T window, GdkDeviceHandle device, GdkEventMask event_mask) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_device_events(window, device, event_mask);
 		return window;
 	}
 
-	public static GdkWindowHandle SetEventCompression(this GdkWindowHandle window, bool event_compression)
+	public static T SetEventCompression<T>(this T window, bool event_compression) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_event_compression(window, event_compression);
 		return window;
 	}
 
-	public static GdkWindowHandle SetEvents(this GdkWindowHandle window, GdkEventMask event_mask)
+	public static T SetEvents<T>(this T window, GdkEventMask event_mask) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_events(window, event_mask);
 		return window;
 	}
 
-	public static GdkWindowHandle SetFocusOnMap(this GdkWindowHandle window, bool focus_on_map)
+	public static T SetFocusOnMap<T>(this T window, bool focus_on_map) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_focus_on_map(window, focus_on_map);
 		return window;
 	}
 
-	public static GdkWindowHandle SetFullscreenMode(this GdkWindowHandle window, GdkFullscreenMode mode)
+	public static T SetFullscreenMode<T>(this T window, GdkFullscreenMode mode) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_fullscreen_mode(window, mode);
 		return window;
 	}
 
-	public static GdkWindowHandle SetFunctions(this GdkWindowHandle window, GdkWMFunction functions)
+	public static T SetFunctions<T>(this T window, GdkWMFunction functions) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_functions(window, functions);
 		return window;
 	}
 
-	public static GdkWindowHandle SetGeometryHints(this GdkWindowHandle window, GdkGeometryHandle geometry, GdkWindowHints geom_mask)
+	public static T SetGeometryHints<T>(this T window, GdkGeometryHandle geometry, GdkWindowHints geom_mask) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_geometry_hints(window, geometry, geom_mask);
 		return window;
 	}
 
-	public static GdkWindowHandle SetGroup(this GdkWindowHandle window, GdkWindowHandle leader)
+	public static T SetGroup<T>(this T window, GdkWindowHandle leader) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_group(window, leader);
 		return window;
 	}
 
-	public static GdkWindowHandle SetIconList(this GdkWindowHandle window, GListHandle pixbufs)
+	public static T SetIconList<T>(this T window, GListHandle pixbufs) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_icon_list(window, pixbufs);
 		return window;
 	}
 
-	public static GdkWindowHandle SetIconName(this GdkWindowHandle window, string name)
+	public static T SetIconName<T>(this T window, string name) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_icon_name(window, name);
 		return window;
 	}
 
-	public static GdkWindowHandle SetInvalidateHandler(this GdkWindowHandle window, GdkWindowInvalidateHandlerFunc handler)
+	public static T SetInvalidateHandler<T>(this T window, GdkWindowInvalidateHandlerFunc handler) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_invalidate_handler(window, handler);
 		return window;
 	}
 
-	public static GdkWindowHandle SetKeepAbove(this GdkWindowHandle window, bool setting)
+	public static T SetKeepAbove<T>(this T window, bool setting) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_keep_above(window, setting);
 		return window;
 	}
 
-	public static GdkWindowHandle SetKeepBelow(this GdkWindowHandle window, bool setting)
+	public static T SetKeepBelow<T>(this T window, bool setting) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_keep_below(window, setting);
 		return window;
 	}
 
-	public static GdkWindowHandle SetModalHint(this GdkWindowHandle window, bool modal)
+	public static T SetModalHint<T>(this T window, bool modal) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_modal_hint(window, modal);
 		return window;
 	}
 
-	public static GdkWindowHandle SetOpacity(this GdkWindowHandle window, double opacity)
+	public static T SetOpacity<T>(this T window, double opacity) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_opacity(window, opacity);
 		return window;
 	}
 
-	public static GdkWindowHandle SetOpaqueRegion(this GdkWindowHandle window, cairo_region_tHandle region)
+	public static T SetOpaqueRegion<T>(this T window, cairo_region_tHandle region) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_opaque_region(window, region);
 		return window;
 	}
 
-	public static GdkWindowHandle SetOverrideRedirect(this GdkWindowHandle window, bool override_redirect)
+	public static T SetOverrideRedirect<T>(this T window, bool override_redirect) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_override_redirect(window, override_redirect);
 		return window;
 	}
 
-	public static GdkWindowHandle SetPassThrough(this GdkWindowHandle window, bool pass_through)
+	public static T SetPassThrough<T>(this T window, bool pass_through) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_pass_through(window, pass_through);
 		return window;
 	}
 
-	public static GdkWindowHandle SetRole(this GdkWindowHandle window, string role)
+	public static T SetRole<T>(this T window, string role) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_role(window, role);
 		return window;
 	}
 
-	public static GdkWindowHandle SetShadowWidth(this GdkWindowHandle window, int left, int right, int top, int bottom)
+	public static T SetShadowWidth<T>(this T window, int left, int right, int top, int bottom) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_shadow_width(window, left, right, top, bottom);
 		return window;
 	}
 
-	public static GdkWindowHandle SetSkipPagerHint(this GdkWindowHandle window, bool skips_pager)
+	public static T SetSkipPagerHint<T>(this T window, bool skips_pager) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_skip_pager_hint(window, skips_pager);
 		return window;
 	}
 
-	public static GdkWindowHandle SetSkipTaskbarHint(this GdkWindowHandle window, bool skips_taskbar)
+	public static T SetSkipTaskbarHint<T>(this T window, bool skips_taskbar) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_skip_taskbar_hint(window, skips_taskbar);
 		return window;
 	}
 
-	public static GdkWindowHandle SetSourceEvents(this GdkWindowHandle window, GdkInputSource source, GdkEventMask event_mask)
+	public static T SetSourceEvents<T>(this T window, GdkInputSource source, GdkEventMask event_mask) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_source_events(window, source, event_mask);
 		return window;
 	}
 
-	public static GdkWindowHandle SetStartupId(this GdkWindowHandle window, string startup_id)
+	public static T SetStartupId<T>(this T window, string startup_id) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_startup_id(window, startup_id);
 		return window;
@@ -1036,55 +1036,55 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_set_static_gravities(window, use_static);
 	}
 
-	public static GdkWindowHandle SetSupportMultidevice(this GdkWindowHandle window, bool support_multidevice)
+	public static T SetSupportMultidevice<T>(this T window, bool support_multidevice) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_support_multidevice(window, support_multidevice);
 		return window;
 	}
 
-	public static GdkWindowHandle SetTitle(this GdkWindowHandle window, string title)
+	public static T SetTitle<T>(this T window, string title) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_title(window, title);
 		return window;
 	}
 
-	public static GdkWindowHandle SetTransientFor(this GdkWindowHandle window, GdkWindowHandle parent)
+	public static T SetTransientFor<T>(this T window, GdkWindowHandle parent) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_transient_for(window, parent);
 		return window;
 	}
 
-	public static GdkWindowHandle SetTypeHint(this GdkWindowHandle window, GdkWindowTypeHint hint)
+	public static T SetTypeHint<T>(this T window, GdkWindowTypeHint hint) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_type_hint(window, hint);
 		return window;
 	}
 
-	public static GdkWindowHandle SetUrgencyHint(this GdkWindowHandle window, bool urgent)
+	public static T SetUrgencyHint<T>(this T window, bool urgent) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_urgency_hint(window, urgent);
 		return window;
 	}
 
-	public static GdkWindowHandle SetUserData(this GdkWindowHandle window, GObjectHandle user_data)
+	public static T SetUserData<T>(this T window, GObjectHandle user_data) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_set_user_data(window, user_data);
 		return window;
 	}
 
-	public static GdkWindowHandle ShapeCombineRegion(this GdkWindowHandle window, cairo_region_tHandle shape_region, int offset_x, int offset_y)
+	public static T ShapeCombineRegion<T>(this T window, cairo_region_tHandle shape_region, int offset_x, int offset_y) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_shape_combine_region(window, shape_region, offset_x, offset_y);
 		return window;
 	}
 
-	public static GdkWindowHandle Show(this GdkWindowHandle window)
+	public static T Show<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_show(window);
 		return window;
 	}
 
-	public static GdkWindowHandle ShowUnraised(this GdkWindowHandle window)
+	public static T ShowUnraised<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_show_unraised(window);
 		return window;
@@ -1095,49 +1095,49 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_window_show_window_menu(window, @event);
 	}
 
-	public static GdkWindowHandle Stick(this GdkWindowHandle window)
+	public static T Stick<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_stick(window);
 		return window;
 	}
 
-	public static GdkWindowHandle ThawToplevelUpdatesLibgtkOnly(this GdkWindowHandle window)
+	public static T ThawToplevelUpdatesLibgtkOnly<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_thaw_toplevel_updates_libgtk_only(window);
 		return window;
 	}
 
-	public static GdkWindowHandle ThawUpdates(this GdkWindowHandle window)
+	public static T ThawUpdates<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_thaw_updates(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Unfullscreen(this GdkWindowHandle window)
+	public static T Unfullscreen<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_unfullscreen(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Unmaximize(this GdkWindowHandle window)
+	public static T Unmaximize<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_unmaximize(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Unstick(this GdkWindowHandle window)
+	public static T Unstick<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_unstick(window);
 		return window;
 	}
 
-	public static GdkWindowHandle Withdraw(this GdkWindowHandle window)
+	public static T Withdraw<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_window_withdraw(window);
 		return window;
 	}
 
-	public static GdkWindowHandle GdkOffscreenWindowSetEmbedder(this GdkWindowHandle window, GdkWindowHandle embedder)
+	public static T GdkOffscreenWindowSetEmbedder<T>(this T window, GdkWindowHandle embedder) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_offscreen_window_set_embedder(window, embedder);
 		return window;
@@ -1148,7 +1148,7 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_keyboard_grab(window, owner_events, time_);
 	}
 
-	public static GdkWindowHandle GdkSelectionSendNotify(this GdkWindowHandle requestor, GdkAtom selection, GdkAtom target, GdkAtom property, uint time_)
+	public static T GdkSelectionSendNotify<T>(this T requestor, GdkAtom selection, GdkAtom target, GdkAtom property, uint time_) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_selection_send_notify(requestor, selection, target, property, time_);
 		return requestor;
@@ -1179,13 +1179,13 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_property_get(window, property, type, offset, length, pdelete, out actual_property_type, out actual_format, out actual_length, out data);
 	}
 
-	public static GdkWindowHandle GdkSelectionConvert(this GdkWindowHandle requestor, GdkAtom selection, GdkAtom target, uint time_)
+	public static T GdkSelectionConvert<T>(this T requestor, GdkAtom selection, GdkAtom target, uint time_) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_selection_convert(requestor, selection, target, time_);
 		return requestor;
 	}
 
-	public static GdkWindowHandle GdkPropertyChange(this GdkWindowHandle window, GdkAtom property, GdkAtom type, int format, GdkPropMode mode, string data, int nelements)
+	public static T GdkPropertyChange<T>(this T window, GdkAtom property, GdkAtom type, int format, GdkPropMode mode, string data, int nelements) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_property_change(window, property, type, format, mode, data, nelements);
 		return window;
@@ -1206,7 +1206,7 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_offscreen_window_get_surface(window);
 	}
 
-	public static GdkWindowHandle GdkSynthesizeWindowState(this GdkWindowHandle window, GdkWindowState unset_flags, GdkWindowState set_flags)
+	public static T GdkSynthesizeWindowState<T>(this T window, GdkWindowState unset_flags, GdkWindowState set_flags) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_synthesize_window_state(window, unset_flags, set_flags);
 		return window;
@@ -1217,13 +1217,13 @@ public static class GdkWindowHandleExtensions
 		return GdkWindowExterns.gdk_selection_property_get(requestor, ref data, prop_type, ref prop_format);
 	}
 
-	public static GdkWindowHandle GdkPropertyDelete(this GdkWindowHandle window, GdkAtom property)
+	public static T GdkPropertyDelete<T>(this T window, GdkAtom property) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_property_delete(window, property);
 		return window;
 	}
 
-	public static GdkWindowHandle GdkTestRenderSync(this GdkWindowHandle window)
+	public static T GdkTestRenderSync<T>(this T window) where T : GdkWindowHandle
 	{
 		GdkWindowExterns.gdk_test_render_sync(window);
 		return window;

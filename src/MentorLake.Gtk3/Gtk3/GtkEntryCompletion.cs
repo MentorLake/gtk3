@@ -223,7 +223,7 @@ public delegate void no_matches([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 
 public static class GtkEntryCompletionHandleExtensions
 {
-	public static GtkEntryCompletionHandle Complete(this GtkEntryCompletionHandle completion)
+	public static T Complete<T>(this T completion) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_complete(completion);
 		return completion;
@@ -234,7 +234,7 @@ public static class GtkEntryCompletionHandleExtensions
 		return GtkEntryCompletionExterns.gtk_entry_completion_compute_prefix(completion, key);
 	}
 
-	public static GtkEntryCompletionHandle DeleteAction(this GtkEntryCompletionHandle completion, int index_)
+	public static T DeleteAction<T>(this T completion, int index_) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_delete_action(completion, index_);
 		return completion;
@@ -290,73 +290,73 @@ public static class GtkEntryCompletionHandleExtensions
 		return GtkEntryCompletionExterns.gtk_entry_completion_get_text_column(completion);
 	}
 
-	public static GtkEntryCompletionHandle InsertActionMarkup(this GtkEntryCompletionHandle completion, int index_, string markup)
+	public static T InsertActionMarkup<T>(this T completion, int index_, string markup) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_insert_action_markup(completion, index_, markup);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle InsertActionText(this GtkEntryCompletionHandle completion, int index_, string text)
+	public static T InsertActionText<T>(this T completion, int index_, string text) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_insert_action_text(completion, index_, text);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle InsertPrefix(this GtkEntryCompletionHandle completion)
+	public static T InsertPrefix<T>(this T completion) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_insert_prefix(completion);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetInlineCompletion(this GtkEntryCompletionHandle completion, bool inline_completion)
+	public static T SetInlineCompletion<T>(this T completion, bool inline_completion) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_inline_completion(completion, inline_completion);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetInlineSelection(this GtkEntryCompletionHandle completion, bool inline_selection)
+	public static T SetInlineSelection<T>(this T completion, bool inline_selection) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_inline_selection(completion, inline_selection);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetMatchFunc(this GtkEntryCompletionHandle completion, GtkEntryCompletionMatchFunc func, IntPtr func_data, GDestroyNotify func_notify)
+	public static T SetMatchFunc<T>(this T completion, GtkEntryCompletionMatchFunc func, IntPtr func_data, GDestroyNotify func_notify) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_match_func(completion, func, func_data, func_notify);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetMinimumKeyLength(this GtkEntryCompletionHandle completion, int length)
+	public static T SetMinimumKeyLength<T>(this T completion, int length) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_minimum_key_length(completion, length);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetModel(this GtkEntryCompletionHandle completion, GtkTreeModelHandle model)
+	public static T SetModel<T>(this T completion, GtkTreeModelHandle model) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_model(completion, model);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetPopupCompletion(this GtkEntryCompletionHandle completion, bool popup_completion)
+	public static T SetPopupCompletion<T>(this T completion, bool popup_completion) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_popup_completion(completion, popup_completion);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetPopupSetWidth(this GtkEntryCompletionHandle completion, bool popup_set_width)
+	public static T SetPopupSetWidth<T>(this T completion, bool popup_set_width) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_popup_set_width(completion, popup_set_width);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetPopupSingleMatch(this GtkEntryCompletionHandle completion, bool popup_single_match)
+	public static T SetPopupSingleMatch<T>(this T completion, bool popup_single_match) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_popup_single_match(completion, popup_single_match);
 		return completion;
 	}
 
-	public static GtkEntryCompletionHandle SetTextColumn(this GtkEntryCompletionHandle completion, int column)
+	public static T SetTextColumn<T>(this T completion, int column) where T : GtkEntryCompletionHandle
 	{
 		GtkEntryCompletionExterns.gtk_entry_completion_set_text_column(completion, column);
 		return completion;

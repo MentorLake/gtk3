@@ -26,7 +26,7 @@ public class GTaskHandle : GObjectHandle, GAsyncResultHandle
 
 public static class GTaskHandleExtensions
 {
-	public static GTaskHandle AttachSource(this GTaskHandle task, GSourceHandle source, GSourceFunc callback)
+	public static T AttachSource<T>(this T task, GSourceHandle source, GSourceFunc callback) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_attach_source(task, source, callback);
 		return task;
@@ -107,13 +107,13 @@ public static class GTaskHandleExtensions
 		return GTaskExterns.g_task_propagate_value(task, out value, out error);
 	}
 
-	public static GTaskHandle ReturnBoolean(this GTaskHandle task, bool result)
+	public static T ReturnBoolean<T>(this T task, bool result) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_boolean(task, result);
 		return task;
 	}
 
-	public static GTaskHandle ReturnError(this GTaskHandle task, GErrorHandle error)
+	public static T ReturnError<T>(this T task, GErrorHandle error) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_error(task, error);
 		return task;
@@ -124,67 +124,67 @@ public static class GTaskHandleExtensions
 		return GTaskExterns.g_task_return_error_if_cancelled(task);
 	}
 
-	public static GTaskHandle ReturnInt(this GTaskHandle task, UIntPtr result)
+	public static T ReturnInt<T>(this T task, UIntPtr result) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_int(task, result);
 		return task;
 	}
 
-	public static GTaskHandle ReturnNewError(this GTaskHandle task, GQuark domain, int code, string format, IntPtr @__arglist)
+	public static T ReturnNewError<T>(this T task, GQuark domain, int code, string format, IntPtr @__arglist) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_new_error(task, domain, code, format, @__arglist);
 		return task;
 	}
 
-	public static GTaskHandle ReturnNewErrorLiteral(this GTaskHandle task, GQuark domain, int code, string message)
+	public static T ReturnNewErrorLiteral<T>(this T task, GQuark domain, int code, string message) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_new_error_literal(task, domain, code, message);
 		return task;
 	}
 
-	public static GTaskHandle ReturnPointer(this GTaskHandle task, IntPtr result, GDestroyNotify result_destroy)
+	public static T ReturnPointer<T>(this T task, IntPtr result, GDestroyNotify result_destroy) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_pointer(task, result, result_destroy);
 		return task;
 	}
 
-	public static GTaskHandle ReturnPrefixedError(this GTaskHandle task, GErrorHandle error, string format, IntPtr @__arglist)
+	public static T ReturnPrefixedError<T>(this T task, GErrorHandle error, string format, IntPtr @__arglist) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_prefixed_error(task, error, format, @__arglist);
 		return task;
 	}
 
-	public static GTaskHandle ReturnValue(this GTaskHandle task, GValueHandle result)
+	public static T ReturnValue<T>(this T task, GValueHandle result) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_return_value(task, result);
 		return task;
 	}
 
-	public static GTaskHandle RunInThread(this GTaskHandle task, GTaskThreadFunc task_func)
+	public static T RunInThread<T>(this T task, GTaskThreadFunc task_func) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_run_in_thread(task, task_func);
 		return task;
 	}
 
-	public static GTaskHandle RunInThreadSync(this GTaskHandle task, GTaskThreadFunc task_func)
+	public static T RunInThreadSync<T>(this T task, GTaskThreadFunc task_func) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_run_in_thread_sync(task, task_func);
 		return task;
 	}
 
-	public static GTaskHandle SetCheckCancellable(this GTaskHandle task, bool check_cancellable)
+	public static T SetCheckCancellable<T>(this T task, bool check_cancellable) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_check_cancellable(task, check_cancellable);
 		return task;
 	}
 
-	public static GTaskHandle SetName(this GTaskHandle task, string name)
+	public static T SetName<T>(this T task, string name) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_name(task, name);
 		return task;
 	}
 
-	public static GTaskHandle SetPriority(this GTaskHandle task, int priority)
+	public static T SetPriority<T>(this T task, int priority) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_priority(task, priority);
 		return task;
@@ -195,19 +195,19 @@ public static class GTaskHandleExtensions
 		return GTaskExterns.g_task_set_return_on_cancel(task, return_on_cancel);
 	}
 
-	public static GTaskHandle SetSourceTag(this GTaskHandle task, IntPtr source_tag)
+	public static T SetSourceTag<T>(this T task, IntPtr source_tag) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_source_tag(task, source_tag);
 		return task;
 	}
 
-	public static GTaskHandle SetStaticName(this GTaskHandle task, string name)
+	public static T SetStaticName<T>(this T task, string name) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_static_name(task, name);
 		return task;
 	}
 
-	public static GTaskHandle SetTaskData(this GTaskHandle task, IntPtr task_data, GDestroyNotify task_data_destroy)
+	public static T SetTaskData<T>(this T task, IntPtr task_data, GDestroyNotify task_data_destroy) where T : GTaskHandle
 	{
 		GTaskExterns.g_task_set_task_data(task, task_data, task_data_destroy);
 		return task;

@@ -20,7 +20,7 @@ public static class GtkAppChooserHandleExtensions
 		return GtkAppChooserExterns.gtk_app_chooser_get_content_type(self);
 	}
 
-	public static GtkAppChooserHandle Refresh(this GtkAppChooserHandle self)
+	public static T Refresh<T>(this T self) where T : GtkAppChooserHandle
 	{
 		GtkAppChooserExterns.gtk_app_chooser_refresh(self);
 		return self;

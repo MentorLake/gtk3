@@ -22,7 +22,7 @@ public static class GtkTreeRowReferenceHandleExtensions
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_copy(reference);
 	}
 
-	public static GtkTreeRowReferenceHandle Free(this GtkTreeRowReferenceHandle reference)
+	public static T Free<T>(this T reference) where T : GtkTreeRowReferenceHandle
 	{
 		GtkTreeRowReferenceExterns.gtk_tree_row_reference_free(reference);
 		return reference;

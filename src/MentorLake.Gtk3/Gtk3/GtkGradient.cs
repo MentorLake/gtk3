@@ -17,7 +17,7 @@ public class GtkGradientHandle : BaseSafeHandle
 
 public static class GtkGradientHandleExtensions
 {
-	public static GtkGradientHandle AddColorStop(this GtkGradientHandle gradient, double offset, GtkSymbolicColorHandle color)
+	public static T AddColorStop<T>(this T gradient, double offset, GtkSymbolicColorHandle color) where T : GtkGradientHandle
 	{
 		GtkGradientExterns.gtk_gradient_add_color_stop(gradient, offset, color);
 		return gradient;
@@ -43,7 +43,7 @@ public static class GtkGradientHandleExtensions
 		return GtkGradientExterns.gtk_gradient_to_string(gradient);
 	}
 
-	public static GtkGradientHandle Unref(this GtkGradientHandle gradient)
+	public static T Unref<T>(this T gradient) where T : GtkGradientHandle
 	{
 		GtkGradientExterns.gtk_gradient_unref(gradient);
 		return gradient;

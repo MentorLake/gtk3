@@ -6,25 +6,25 @@ public class GtkMiscHandle : GtkWidgetHandle, AtkImplementorIfaceHandle, GtkBuil
 
 public static class GtkMiscHandleExtensions
 {
-	public static GtkMiscHandle GetAlignment(this GtkMiscHandle misc, out float xalign, out float yalign)
+	public static T GetAlignment<T>(this T misc, out float xalign, out float yalign) where T : GtkMiscHandle
 	{
 		GtkMiscExterns.gtk_misc_get_alignment(misc, out xalign, out yalign);
 		return misc;
 	}
 
-	public static GtkMiscHandle GetPadding(this GtkMiscHandle misc, out int xpad, out int ypad)
+	public static T GetPadding<T>(this T misc, out int xpad, out int ypad) where T : GtkMiscHandle
 	{
 		GtkMiscExterns.gtk_misc_get_padding(misc, out xpad, out ypad);
 		return misc;
 	}
 
-	public static GtkMiscHandle SetAlignment(this GtkMiscHandle misc, float xalign, float yalign)
+	public static T SetAlignment<T>(this T misc, float xalign, float yalign) where T : GtkMiscHandle
 	{
 		GtkMiscExterns.gtk_misc_set_alignment(misc, xalign, yalign);
 		return misc;
 	}
 
-	public static GtkMiscHandle SetPadding(this GtkMiscHandle misc, int xpad, int ypad)
+	public static T SetPadding<T>(this T misc, int xpad, int ypad) where T : GtkMiscHandle
 	{
 		GtkMiscExterns.gtk_misc_set_padding(misc, xpad, ypad);
 		return misc;

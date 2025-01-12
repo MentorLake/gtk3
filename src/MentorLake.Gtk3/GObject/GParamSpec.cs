@@ -61,19 +61,19 @@ public static class GParamSpecHandleExtensions
 		return GParamSpecExterns.g_param_spec_ref_sink(pspec);
 	}
 
-	public static GParamSpecHandle SetQdata(this GParamSpecHandle pspec, GQuark quark, IntPtr data)
+	public static T SetQdata<T>(this T pspec, GQuark quark, IntPtr data) where T : GParamSpecHandle
 	{
 		GParamSpecExterns.g_param_spec_set_qdata(pspec, quark, data);
 		return pspec;
 	}
 
-	public static GParamSpecHandle SetQdataFull(this GParamSpecHandle pspec, GQuark quark, IntPtr data, GDestroyNotify destroy)
+	public static T SetQdataFull<T>(this T pspec, GQuark quark, IntPtr data, GDestroyNotify destroy) where T : GParamSpecHandle
 	{
 		GParamSpecExterns.g_param_spec_set_qdata_full(pspec, quark, data, destroy);
 		return pspec;
 	}
 
-	public static GParamSpecHandle Sink(this GParamSpecHandle pspec)
+	public static T Sink<T>(this T pspec) where T : GParamSpecHandle
 	{
 		GParamSpecExterns.g_param_spec_sink(pspec);
 		return pspec;
@@ -84,7 +84,7 @@ public static class GParamSpecHandleExtensions
 		return GParamSpecExterns.g_param_spec_steal_qdata(pspec, quark);
 	}
 
-	public static GParamSpecHandle Unref(this GParamSpecHandle pspec)
+	public static T Unref<T>(this T pspec) where T : GParamSpecHandle
 	{
 		GParamSpecExterns.g_param_spec_unref(pspec);
 		return pspec;
@@ -95,7 +95,7 @@ public static class GParamSpecHandleExtensions
 		return GParamSpecExterns.g_param_value_convert(pspec, src_value, dest_value, strict_validation);
 	}
 
-	public static GParamSpecHandle GParamValueSetDefault(this GParamSpecHandle pspec, GValueHandle value)
+	public static T GParamValueSetDefault<T>(this T pspec, GValueHandle value) where T : GParamSpecHandle
 	{
 		GParamSpecExterns.g_param_value_set_default(pspec, value);
 		return pspec;

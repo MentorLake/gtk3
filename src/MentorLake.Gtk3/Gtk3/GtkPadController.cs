@@ -11,13 +11,13 @@ public class GtkPadControllerHandle : GtkEventControllerHandle
 
 public static class GtkPadControllerHandleExtensions
 {
-	public static GtkPadControllerHandle SetAction(this GtkPadControllerHandle controller, GtkPadActionType type, int index, int mode, string label, string action_name)
+	public static T SetAction<T>(this T controller, GtkPadActionType type, int index, int mode, string label, string action_name) where T : GtkPadControllerHandle
 	{
 		GtkPadControllerExterns.gtk_pad_controller_set_action(controller, type, index, mode, label, action_name);
 		return controller;
 	}
 
-	public static GtkPadControllerHandle SetActionEntries(this GtkPadControllerHandle controller, GtkPadActionEntry[] entries, int n_entries)
+	public static T SetActionEntries<T>(this T controller, GtkPadActionEntry[] entries, int n_entries) where T : GtkPadControllerHandle
 	{
 		GtkPadControllerExterns.gtk_pad_controller_set_action_entries(controller, entries, n_entries);
 		return controller;

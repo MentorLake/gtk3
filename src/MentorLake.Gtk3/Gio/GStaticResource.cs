@@ -7,7 +7,7 @@ public class GStaticResourceHandle : BaseSafeHandle
 
 public static class GStaticResourceHandleExtensions
 {
-	public static GStaticResourceHandle Fini(this GStaticResourceHandle static_resource)
+	public static T Fini<T>(this T static_resource) where T : GStaticResourceHandle
 	{
 		GStaticResourceExterns.g_static_resource_fini(static_resource);
 		return static_resource;
@@ -18,7 +18,7 @@ public static class GStaticResourceHandleExtensions
 		return GStaticResourceExterns.g_static_resource_get_resource(static_resource);
 	}
 
-	public static GStaticResourceHandle Init(this GStaticResourceHandle static_resource)
+	public static T Init<T>(this T static_resource) where T : GStaticResourceHandle
 	{
 		GStaticResourceExterns.g_static_resource_init(static_resource);
 		return static_resource;

@@ -77,13 +77,13 @@ public static class GtkLinkButtonHandleExtensions
 		return GtkLinkButtonExterns.gtk_link_button_get_visited(link_button);
 	}
 
-	public static GtkLinkButtonHandle SetUri(this GtkLinkButtonHandle link_button, string uri)
+	public static T SetUri<T>(this T link_button, string uri) where T : GtkLinkButtonHandle
 	{
 		GtkLinkButtonExterns.gtk_link_button_set_uri(link_button, uri);
 		return link_button;
 	}
 
-	public static GtkLinkButtonHandle SetVisited(this GtkLinkButtonHandle link_button, bool visited)
+	public static T SetVisited<T>(this T link_button, bool visited) where T : GtkLinkButtonHandle
 	{
 		GtkLinkButtonExterns.gtk_link_button_set_visited(link_button, visited);
 		return link_button;

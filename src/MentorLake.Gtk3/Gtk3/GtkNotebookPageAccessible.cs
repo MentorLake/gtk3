@@ -11,7 +11,7 @@ public class GtkNotebookPageAccessibleHandle : AtkObjectHandle, AtkComponentHand
 
 public static class GtkNotebookPageAccessibleHandleExtensions
 {
-	public static GtkNotebookPageAccessibleHandle Invalidate(this GtkNotebookPageAccessibleHandle page)
+	public static T Invalidate<T>(this T page) where T : GtkNotebookPageAccessibleHandle
 	{
 		GtkNotebookPageAccessibleExterns.gtk_notebook_page_accessible_invalidate(page);
 		return page;

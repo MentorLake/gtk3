@@ -21,13 +21,13 @@ public static class GtkEventControllerHandleExtensions
 		return GtkEventControllerExterns.gtk_event_controller_handle_event(controller, @event);
 	}
 
-	public static GtkEventControllerHandle Reset(this GtkEventControllerHandle controller)
+	public static T Reset<T>(this T controller) where T : GtkEventControllerHandle
 	{
 		GtkEventControllerExterns.gtk_event_controller_reset(controller);
 		return controller;
 	}
 
-	public static GtkEventControllerHandle SetPropagationPhase(this GtkEventControllerHandle controller, GtkPropagationPhase phase)
+	public static T SetPropagationPhase<T>(this T controller, GtkPropagationPhase phase) where T : GtkEventControllerHandle
 	{
 		GtkEventControllerExterns.gtk_event_controller_set_propagation_phase(controller, phase);
 		return controller;

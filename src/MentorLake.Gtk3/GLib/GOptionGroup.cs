@@ -12,13 +12,13 @@ public class GOptionGroupHandle : BaseSafeHandle
 
 public static class GOptionGroupHandleExtensions
 {
-	public static GOptionGroupHandle AddEntries(this GOptionGroupHandle group, GOptionEntry[] entries)
+	public static T AddEntries<T>(this T group, GOptionEntry[] entries) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_add_entries(group, entries);
 		return group;
 	}
 
-	public static GOptionGroupHandle Free(this GOptionGroupHandle group)
+	public static T Free<T>(this T group) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_free(group);
 		return group;
@@ -29,31 +29,31 @@ public static class GOptionGroupHandleExtensions
 		return GOptionGroupExterns.g_option_group_ref(group);
 	}
 
-	public static GOptionGroupHandle SetErrorHook(this GOptionGroupHandle group, GOptionErrorFunc error_func)
+	public static T SetErrorHook<T>(this T group, GOptionErrorFunc error_func) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_set_error_hook(group, error_func);
 		return group;
 	}
 
-	public static GOptionGroupHandle SetParseHooks(this GOptionGroupHandle group, GOptionParseFunc pre_parse_func, GOptionParseFunc post_parse_func)
+	public static T SetParseHooks<T>(this T group, GOptionParseFunc pre_parse_func, GOptionParseFunc post_parse_func) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_set_parse_hooks(group, pre_parse_func, post_parse_func);
 		return group;
 	}
 
-	public static GOptionGroupHandle SetTranslateFunc(this GOptionGroupHandle group, GTranslateFunc func, IntPtr data, GDestroyNotify destroy_notify)
+	public static T SetTranslateFunc<T>(this T group, GTranslateFunc func, IntPtr data, GDestroyNotify destroy_notify) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_set_translate_func(group, func, data, destroy_notify);
 		return group;
 	}
 
-	public static GOptionGroupHandle SetTranslationDomain(this GOptionGroupHandle group, string domain)
+	public static T SetTranslationDomain<T>(this T group, string domain) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_set_translation_domain(group, domain);
 		return group;
 	}
 
-	public static GOptionGroupHandle Unref(this GOptionGroupHandle group)
+	public static T Unref<T>(this T group) where T : GOptionGroupHandle
 	{
 		GOptionGroupExterns.g_option_group_unref(group);
 		return group;

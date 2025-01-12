@@ -17,7 +17,7 @@ public static class GHmacHandleExtensions
 		return GHmacExterns.g_hmac_copy(hmac);
 	}
 
-	public static GHmacHandle GetDigest(this GHmacHandle hmac, byte[] buffer, ref UIntPtr digest_len)
+	public static T GetDigest<T>(this T hmac, byte[] buffer, ref UIntPtr digest_len) where T : GHmacHandle
 	{
 		GHmacExterns.g_hmac_get_digest(hmac, buffer, ref digest_len);
 		return hmac;
@@ -33,13 +33,13 @@ public static class GHmacHandleExtensions
 		return GHmacExterns.g_hmac_ref(hmac);
 	}
 
-	public static GHmacHandle Unref(this GHmacHandle hmac)
+	public static T Unref<T>(this T hmac) where T : GHmacHandle
 	{
 		GHmacExterns.g_hmac_unref(hmac);
 		return hmac;
 	}
 
-	public static GHmacHandle Update(this GHmacHandle hmac, string data, UIntPtr length)
+	public static T Update<T>(this T hmac, string data, UIntPtr length) where T : GHmacHandle
 	{
 		GHmacExterns.g_hmac_update(hmac, data, length);
 		return hmac;

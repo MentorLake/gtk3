@@ -21,7 +21,7 @@ public static class GtkRecentChooserMenuHandleExtensions
 		return GtkRecentChooserMenuExterns.gtk_recent_chooser_menu_get_show_numbers(menu);
 	}
 
-	public static GtkRecentChooserMenuHandle SetShowNumbers(this GtkRecentChooserMenuHandle menu, bool show_numbers)
+	public static T SetShowNumbers<T>(this T menu, bool show_numbers) where T : GtkRecentChooserMenuHandle
 	{
 		GtkRecentChooserMenuExterns.gtk_recent_chooser_menu_set_show_numbers(menu, show_numbers);
 		return menu;

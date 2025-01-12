@@ -103,7 +103,7 @@ public delegate void mounts_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GUnixMountMonitorHandleExtensions
 {
-	public static GUnixMountMonitorHandle SetRateLimit(this GUnixMountMonitorHandle mount_monitor, int limit_msec)
+	public static T SetRateLimit<T>(this T mount_monitor, int limit_msec) where T : GUnixMountMonitorHandle
 	{
 		GUnixMountMonitorExterns.g_unix_mount_monitor_set_rate_limit(mount_monitor, limit_msec);
 		return mount_monitor;

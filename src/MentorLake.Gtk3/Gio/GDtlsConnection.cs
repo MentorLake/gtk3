@@ -15,7 +15,7 @@ public static class GDtlsConnectionHandleExtensions
 		return GDtlsConnectionExterns.g_dtls_connection_close(conn, cancellable, out error);
 	}
 
-	public static GDtlsConnectionHandle CloseAsync(this GDtlsConnectionHandle conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CloseAsync<T>(this T conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_close_async(conn, io_priority, cancellable, callback, user_data);
 		return conn;
@@ -91,7 +91,7 @@ public static class GDtlsConnectionHandleExtensions
 		return GDtlsConnectionExterns.g_dtls_connection_handshake(conn, cancellable, out error);
 	}
 
-	public static GDtlsConnectionHandle HandshakeAsync(this GDtlsConnectionHandle conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T HandshakeAsync<T>(this T conn, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_handshake_async(conn, io_priority, cancellable, callback, user_data);
 		return conn;
@@ -102,37 +102,37 @@ public static class GDtlsConnectionHandleExtensions
 		return GDtlsConnectionExterns.g_dtls_connection_handshake_finish(conn, result, out error);
 	}
 
-	public static GDtlsConnectionHandle SetAdvertisedProtocols(this GDtlsConnectionHandle conn, string protocols)
+	public static T SetAdvertisedProtocols<T>(this T conn, string protocols) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_advertised_protocols(conn, protocols);
 		return conn;
 	}
 
-	public static GDtlsConnectionHandle SetCertificate(this GDtlsConnectionHandle conn, GTlsCertificateHandle certificate)
+	public static T SetCertificate<T>(this T conn, GTlsCertificateHandle certificate) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_certificate(conn, certificate);
 		return conn;
 	}
 
-	public static GDtlsConnectionHandle SetDatabase(this GDtlsConnectionHandle conn, GTlsDatabaseHandle database)
+	public static T SetDatabase<T>(this T conn, GTlsDatabaseHandle database) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_database(conn, database);
 		return conn;
 	}
 
-	public static GDtlsConnectionHandle SetInteraction(this GDtlsConnectionHandle conn, GTlsInteractionHandle interaction)
+	public static T SetInteraction<T>(this T conn, GTlsInteractionHandle interaction) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_interaction(conn, interaction);
 		return conn;
 	}
 
-	public static GDtlsConnectionHandle SetRehandshakeMode(this GDtlsConnectionHandle conn, GTlsRehandshakeMode mode)
+	public static T SetRehandshakeMode<T>(this T conn, GTlsRehandshakeMode mode) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_rehandshake_mode(conn, mode);
 		return conn;
 	}
 
-	public static GDtlsConnectionHandle SetRequireCloseNotify(this GDtlsConnectionHandle conn, bool require_close_notify)
+	public static T SetRequireCloseNotify<T>(this T conn, bool require_close_notify) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_set_require_close_notify(conn, require_close_notify);
 		return conn;
@@ -143,7 +143,7 @@ public static class GDtlsConnectionHandleExtensions
 		return GDtlsConnectionExterns.g_dtls_connection_shutdown(conn, shutdown_read, shutdown_write, cancellable, out error);
 	}
 
-	public static GDtlsConnectionHandle ShutdownAsync(this GDtlsConnectionHandle conn, bool shutdown_read, bool shutdown_write, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ShutdownAsync<T>(this T conn, bool shutdown_read, bool shutdown_write, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDtlsConnectionHandle
 	{
 		GDtlsConnectionExterns.g_dtls_connection_shutdown_async(conn, shutdown_read, shutdown_write, io_priority, cancellable, callback, user_data);
 		return conn;

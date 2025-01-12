@@ -63,7 +63,7 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 		return GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_export(interface_, connection, object_path, out error);
 	}
 
-	public static GDBusInterfaceSkeletonHandle GDbusInterfaceSkeletonFlush(this GDBusInterfaceSkeletonHandle interface_)
+	public static T GDbusInterfaceSkeletonFlush<T>(this T interface_) where T : GDBusInterfaceSkeletonHandle
 	{
 		GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_flush(interface_);
 		return interface_;
@@ -109,19 +109,19 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 		return GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_has_connection(interface_, connection);
 	}
 
-	public static GDBusInterfaceSkeletonHandle GDbusInterfaceSkeletonSetFlags(this GDBusInterfaceSkeletonHandle interface_, GDBusInterfaceSkeletonFlags flags)
+	public static T GDbusInterfaceSkeletonSetFlags<T>(this T interface_, GDBusInterfaceSkeletonFlags flags) where T : GDBusInterfaceSkeletonHandle
 	{
 		GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_set_flags(interface_, flags);
 		return interface_;
 	}
 
-	public static GDBusInterfaceSkeletonHandle GDbusInterfaceSkeletonUnexport(this GDBusInterfaceSkeletonHandle interface_)
+	public static T GDbusInterfaceSkeletonUnexport<T>(this T interface_) where T : GDBusInterfaceSkeletonHandle
 	{
 		GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_unexport(interface_);
 		return interface_;
 	}
 
-	public static GDBusInterfaceSkeletonHandle GDbusInterfaceSkeletonUnexportFromConnection(this GDBusInterfaceSkeletonHandle interface_, GDBusConnectionHandle connection)
+	public static T GDbusInterfaceSkeletonUnexportFromConnection<T>(this T interface_, GDBusConnectionHandle connection) where T : GDBusInterfaceSkeletonHandle
 	{
 		GDBusInterfaceSkeletonExterns.g_dbus_interface_skeleton_unexport_from_connection(interface_, connection);
 		return interface_;

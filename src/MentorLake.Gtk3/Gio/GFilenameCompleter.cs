@@ -71,7 +71,7 @@ public static class GFilenameCompleterHandleExtensions
 		return GFilenameCompleterExterns.g_filename_completer_get_completions(completer, initial_text);
 	}
 
-	public static GFilenameCompleterHandle SetDirsOnly(this GFilenameCompleterHandle completer, bool dirs_only)
+	public static T SetDirsOnly<T>(this T completer, bool dirs_only) where T : GFilenameCompleterHandle
 	{
 		GFilenameCompleterExterns.g_filename_completer_set_dirs_only(completer, dirs_only);
 		return completer;

@@ -17,7 +17,7 @@ public static class GUnixMountPointHandleExtensions
 		return GUnixMountPointExterns.g_unix_mount_point_copy(mount_point);
 	}
 
-	public static GUnixMountPointHandle Free(this GUnixMountPointHandle mount_point)
+	public static T Free<T>(this T mount_point) where T : GUnixMountPointHandle
 	{
 		GUnixMountPointExterns.g_unix_mount_point_free(mount_point);
 		return mount_point;

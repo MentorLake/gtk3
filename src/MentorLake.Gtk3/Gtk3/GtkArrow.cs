@@ -11,7 +11,7 @@ public class GtkArrowHandle : GtkMiscHandle, AtkImplementorIfaceHandle, GtkBuild
 
 public static class GtkArrowHandleExtensions
 {
-	public static GtkArrowHandle Set(this GtkArrowHandle arrow, GtkArrowType arrow_type, GtkShadowType shadow_type)
+	public static T Set<T>(this T arrow, GtkArrowType arrow_type, GtkShadowType shadow_type) where T : GtkArrowHandle
 	{
 		GtkArrowExterns.gtk_arrow_set(arrow, arrow_type, shadow_type);
 		return arrow;

@@ -20,7 +20,7 @@ public static class GVolumeHandleExtensions
 		return GVolumeExterns.g_volume_can_mount(volume);
 	}
 
-	public static GVolumeHandle Eject(this GVolumeHandle volume, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Eject<T>(this T volume, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
 		GVolumeExterns.g_volume_eject(volume, flags, cancellable, callback, user_data);
 		return volume;
@@ -31,7 +31,7 @@ public static class GVolumeHandleExtensions
 		return GVolumeExterns.g_volume_eject_finish(volume, result, out error);
 	}
 
-	public static GVolumeHandle EjectWithOperation(this GVolumeHandle volume, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EjectWithOperation<T>(this T volume, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
 		GVolumeExterns.g_volume_eject_with_operation(volume, flags, mount_operation, cancellable, callback, user_data);
 		return volume;
@@ -92,7 +92,7 @@ public static class GVolumeHandleExtensions
 		return GVolumeExterns.g_volume_get_uuid(volume);
 	}
 
-	public static GVolumeHandle Mount(this GVolumeHandle volume, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Mount<T>(this T volume, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
 		GVolumeExterns.g_volume_mount(volume, flags, mount_operation, cancellable, callback, user_data);
 		return volume;

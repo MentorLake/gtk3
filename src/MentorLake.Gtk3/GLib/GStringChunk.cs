@@ -7,13 +7,13 @@ public class GStringChunkHandle : BaseSafeHandle
 
 public static class GStringChunkHandleExtensions
 {
-	public static GStringChunkHandle Clear(this GStringChunkHandle chunk)
+	public static T Clear<T>(this T chunk) where T : GStringChunkHandle
 	{
 		GStringChunkExterns.g_string_chunk_clear(chunk);
 		return chunk;
 	}
 
-	public static GStringChunkHandle Free(this GStringChunkHandle chunk)
+	public static T Free<T>(this T chunk) where T : GStringChunkHandle
 	{
 		GStringChunkExterns.g_string_chunk_free(chunk);
 		return chunk;

@@ -16,7 +16,7 @@ public static class GFilterOutputStreamHandleExtensions
 		return GFilterOutputStreamExterns.g_filter_output_stream_get_close_base_stream(stream);
 	}
 
-	public static GFilterOutputStreamHandle SetCloseBaseStream(this GFilterOutputStreamHandle stream, bool close_base)
+	public static T SetCloseBaseStream<T>(this T stream, bool close_base) where T : GFilterOutputStreamHandle
 	{
 		GFilterOutputStreamExterns.g_filter_output_stream_set_close_base_stream(stream, close_base);
 		return stream;

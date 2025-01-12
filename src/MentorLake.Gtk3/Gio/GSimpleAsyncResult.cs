@@ -31,13 +31,13 @@ public class GSimpleAsyncResultHandle : GObjectHandle, GAsyncResultHandle
 
 public static class GSimpleAsyncResultHandleExtensions
 {
-	public static GSimpleAsyncResultHandle Complete(this GSimpleAsyncResultHandle simple)
+	public static T Complete<T>(this T simple) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_complete(simple);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle CompleteInIdle(this GSimpleAsyncResultHandle simple)
+	public static T CompleteInIdle<T>(this T simple) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_complete_in_idle(simple);
 		return simple;
@@ -68,61 +68,61 @@ public static class GSimpleAsyncResultHandleExtensions
 		return GSimpleAsyncResultExterns.g_simple_async_result_propagate_error(simple, out error);
 	}
 
-	public static GSimpleAsyncResultHandle RunInThread(this GSimpleAsyncResultHandle simple, GSimpleAsyncThreadFunc func, int io_priority, GCancellableHandle cancellable)
+	public static T RunInThread<T>(this T simple, GSimpleAsyncThreadFunc func, int io_priority, GCancellableHandle cancellable) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_run_in_thread(simple, func, io_priority, cancellable);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetCheckCancellable(this GSimpleAsyncResultHandle simple, GCancellableHandle check_cancellable)
+	public static T SetCheckCancellable<T>(this T simple, GCancellableHandle check_cancellable) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_check_cancellable(simple, check_cancellable);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetError(this GSimpleAsyncResultHandle simple, GQuark domain, int code, string format, IntPtr @__arglist)
+	public static T SetError<T>(this T simple, GQuark domain, int code, string format, IntPtr @__arglist) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_error(simple, domain, code, format, @__arglist);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetErrorVa(this GSimpleAsyncResultHandle simple, GQuark domain, int code, string format, IntPtr args)
+	public static T SetErrorVa<T>(this T simple, GQuark domain, int code, string format, IntPtr args) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_error_va(simple, domain, code, format, args);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetFromError(this GSimpleAsyncResultHandle simple, GErrorHandle error)
+	public static T SetFromError<T>(this T simple, GErrorHandle error) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_from_error(simple, error);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetHandleCancellation(this GSimpleAsyncResultHandle simple, bool handle_cancellation)
+	public static T SetHandleCancellation<T>(this T simple, bool handle_cancellation) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_handle_cancellation(simple, handle_cancellation);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetOpResGboolean(this GSimpleAsyncResultHandle simple, bool op_res)
+	public static T SetOpResGboolean<T>(this T simple, bool op_res) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_op_res_gboolean(simple, op_res);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetOpResGpointer(this GSimpleAsyncResultHandle simple, IntPtr op_res, GDestroyNotify destroy_op_res)
+	public static T SetOpResGpointer<T>(this T simple, IntPtr op_res, GDestroyNotify destroy_op_res) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_op_res_gpointer(simple, op_res, destroy_op_res);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle SetOpResGssize(this GSimpleAsyncResultHandle simple, UIntPtr op_res)
+	public static T SetOpResGssize<T>(this T simple, UIntPtr op_res) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_set_op_res_gssize(simple, op_res);
 		return simple;
 	}
 
-	public static GSimpleAsyncResultHandle TakeError(this GSimpleAsyncResultHandle simple, GErrorHandle error)
+	public static T TakeError<T>(this T simple, GErrorHandle error) where T : GSimpleAsyncResultHandle
 	{
 		GSimpleAsyncResultExterns.g_simple_async_result_take_error(simple, error);
 		return simple;

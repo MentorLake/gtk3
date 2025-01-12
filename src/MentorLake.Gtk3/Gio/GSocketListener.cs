@@ -68,7 +68,7 @@ public static class GSocketListenerHandleExtensions
 		return GSocketListenerExterns.g_socket_listener_accept(listener, out source_object, cancellable, out error);
 	}
 
-	public static GSocketListenerHandle AcceptAsync(this GSocketListenerHandle listener, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T AcceptAsync<T>(this T listener, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketListenerHandle
 	{
 		GSocketListenerExterns.g_socket_listener_accept_async(listener, cancellable, callback, user_data);
 		return listener;
@@ -84,7 +84,7 @@ public static class GSocketListenerHandleExtensions
 		return GSocketListenerExterns.g_socket_listener_accept_socket(listener, out source_object, cancellable, out error);
 	}
 
-	public static GSocketListenerHandle AcceptSocketAsync(this GSocketListenerHandle listener, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T AcceptSocketAsync<T>(this T listener, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketListenerHandle
 	{
 		GSocketListenerExterns.g_socket_listener_accept_socket_async(listener, cancellable, callback, user_data);
 		return listener;
@@ -115,13 +115,13 @@ public static class GSocketListenerHandleExtensions
 		return GSocketListenerExterns.g_socket_listener_add_socket(listener, socket, source_object, out error);
 	}
 
-	public static GSocketListenerHandle Close(this GSocketListenerHandle listener)
+	public static T Close<T>(this T listener) where T : GSocketListenerHandle
 	{
 		GSocketListenerExterns.g_socket_listener_close(listener);
 		return listener;
 	}
 
-	public static GSocketListenerHandle SetBacklog(this GSocketListenerHandle listener, int listen_backlog)
+	public static T SetBacklog<T>(this T listener, int listen_backlog) where T : GSocketListenerHandle
 	{
 		GSocketListenerExterns.g_socket_listener_set_backlog(listener, listen_backlog);
 		return listener;

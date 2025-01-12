@@ -146,7 +146,7 @@ public static class GtkGestureMultiPressHandleExtensions
 		return GtkGestureMultiPressExterns.gtk_gesture_multi_press_get_area(gesture, out rect);
 	}
 
-	public static GtkGestureMultiPressHandle SetArea(this GtkGestureMultiPressHandle gesture, GdkRectangleHandle rect)
+	public static T SetArea<T>(this T gesture, GdkRectangleHandle rect) where T : GtkGestureMultiPressHandle
 	{
 		GtkGestureMultiPressExterns.gtk_gesture_multi_press_set_area(gesture, rect);
 		return gesture;

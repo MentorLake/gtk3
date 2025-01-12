@@ -11,13 +11,13 @@ public class GEmblemedIconHandle : GObjectHandle, GIconHandle
 
 public static class GEmblemedIconHandleExtensions
 {
-	public static GEmblemedIconHandle AddEmblem(this GEmblemedIconHandle emblemed, GEmblemHandle emblem)
+	public static T AddEmblem<T>(this T emblemed, GEmblemHandle emblem) where T : GEmblemedIconHandle
 	{
 		GEmblemedIconExterns.g_emblemed_icon_add_emblem(emblemed, emblem);
 		return emblemed;
 	}
 
-	public static GEmblemedIconHandle ClearEmblems(this GEmblemedIconHandle emblemed)
+	public static T ClearEmblems<T>(this T emblemed) where T : GEmblemedIconHandle
 	{
 		GEmblemedIconExterns.g_emblemed_icon_clear_emblems(emblemed);
 		return emblemed;

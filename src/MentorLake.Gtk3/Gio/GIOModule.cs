@@ -16,13 +16,13 @@ public class GIOModuleHandle : GTypeModuleHandle, GTypePluginHandle
 
 public static class GIOModuleHandleExtensions
 {
-	public static GIOModuleHandle GIoModuleLoad(this GIOModuleHandle module)
+	public static T GIoModuleLoad<T>(this T module) where T : GIOModuleHandle
 	{
 		GIOModuleExterns.g_io_module_load(module);
 		return module;
 	}
 
-	public static GIOModuleHandle GIoModuleUnload(this GIOModuleHandle module)
+	public static T GIoModuleUnload<T>(this T module) where T : GIOModuleHandle
 	{
 		GIOModuleExterns.g_io_module_unload(module);
 		return module;

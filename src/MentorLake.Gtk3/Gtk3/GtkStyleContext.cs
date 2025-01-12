@@ -76,55 +76,55 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GtkStyleContextHandleExtensions
 {
-	public static GtkStyleContextHandle AddClass(this GtkStyleContextHandle context, string class_name)
+	public static T AddClass<T>(this T context, string class_name) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_add_class(context, class_name);
 		return context;
 	}
 
-	public static GtkStyleContextHandle AddProvider(this GtkStyleContextHandle context, GtkStyleProviderHandle provider, uint priority)
+	public static T AddProvider<T>(this T context, GtkStyleProviderHandle provider, uint priority) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_add_provider(context, provider, priority);
 		return context;
 	}
 
-	public static GtkStyleContextHandle AddRegion(this GtkStyleContextHandle context, string region_name, GtkRegionFlags flags)
+	public static T AddRegion<T>(this T context, string region_name, GtkRegionFlags flags) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_add_region(context, region_name, flags);
 		return context;
 	}
 
-	public static GtkStyleContextHandle CancelAnimations(this GtkStyleContextHandle context, IntPtr region_id)
+	public static T CancelAnimations<T>(this T context, IntPtr region_id) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_cancel_animations(context, region_id);
 		return context;
 	}
 
-	public static GtkStyleContextHandle Get(this GtkStyleContextHandle context, GtkStateFlags state, IntPtr @__arglist)
+	public static T Get<T>(this T context, GtkStateFlags state, IntPtr @__arglist) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get(context, state, @__arglist);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetBackgroundColor(this GtkStyleContextHandle context, GtkStateFlags state, out GdkRGBA color)
+	public static T GetBackgroundColor<T>(this T context, GtkStateFlags state, out GdkRGBA color) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_background_color(context, state, out color);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetBorder(this GtkStyleContextHandle context, GtkStateFlags state, out GtkBorder border)
+	public static T GetBorder<T>(this T context, GtkStateFlags state, out GtkBorder border) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_border(context, state, out border);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetBorderColor(this GtkStyleContextHandle context, GtkStateFlags state, out GdkRGBA color)
+	public static T GetBorderColor<T>(this T context, GtkStateFlags state, out GdkRGBA color) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_border_color(context, state, out color);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetColor(this GtkStyleContextHandle context, GtkStateFlags state, out GdkRGBA color)
+	public static T GetColor<T>(this T context, GtkStateFlags state, out GdkRGBA color) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_color(context, state, out color);
 		return context;
@@ -150,13 +150,13 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_get_junction_sides(context);
 	}
 
-	public static GtkStyleContextHandle GetMargin(this GtkStyleContextHandle context, GtkStateFlags state, out GtkBorder margin)
+	public static T GetMargin<T>(this T context, GtkStateFlags state, out GtkBorder margin) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_margin(context, state, out margin);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetPadding(this GtkStyleContextHandle context, GtkStateFlags state, out GtkBorder padding)
+	public static T GetPadding<T>(this T context, GtkStateFlags state, out GtkBorder padding) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_padding(context, state, out padding);
 		return context;
@@ -172,7 +172,7 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_get_path(context);
 	}
 
-	public static GtkStyleContextHandle GetProperty(this GtkStyleContextHandle context, string property, GtkStateFlags state, out GValue value)
+	public static T GetProperty<T>(this T context, string property, GtkStateFlags state, out GValue value) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_property(context, property, state, out value);
 		return context;
@@ -198,25 +198,25 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_get_state(context);
 	}
 
-	public static GtkStyleContextHandle GetStyle(this GtkStyleContextHandle context, IntPtr @__arglist)
+	public static T GetStyle<T>(this T context, IntPtr @__arglist) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_style(context, @__arglist);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetStyleProperty(this GtkStyleContextHandle context, string property_name, out GValue value)
+	public static T GetStyleProperty<T>(this T context, string property_name, out GValue value) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_style_property(context, property_name, out value);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetStyleValist(this GtkStyleContextHandle context, IntPtr args)
+	public static T GetStyleValist<T>(this T context, IntPtr args) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_style_valist(context, args);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GetValist(this GtkStyleContextHandle context, GtkStateFlags state, IntPtr args)
+	public static T GetValist<T>(this T context, GtkStateFlags state, IntPtr args) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_get_valist(context, state, args);
 		return context;
@@ -232,7 +232,7 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_has_region(context, region_name, out flags_return);
 	}
 
-	public static GtkStyleContextHandle Invalidate(this GtkStyleContextHandle context)
+	public static T Invalidate<T>(this T context) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_invalidate(context);
 		return context;
@@ -258,109 +258,109 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_lookup_icon_set(context, stock_id);
 	}
 
-	public static GtkStyleContextHandle NotifyStateChange(this GtkStyleContextHandle context, GdkWindowHandle window, IntPtr region_id, GtkStateType state, bool state_value)
+	public static T NotifyStateChange<T>(this T context, GdkWindowHandle window, IntPtr region_id, GtkStateType state, bool state_value) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_notify_state_change(context, window, region_id, state, state_value);
 		return context;
 	}
 
-	public static GtkStyleContextHandle PopAnimatableRegion(this GtkStyleContextHandle context)
+	public static T PopAnimatableRegion<T>(this T context) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_pop_animatable_region(context);
 		return context;
 	}
 
-	public static GtkStyleContextHandle PushAnimatableRegion(this GtkStyleContextHandle context, IntPtr region_id)
+	public static T PushAnimatableRegion<T>(this T context, IntPtr region_id) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_push_animatable_region(context, region_id);
 		return context;
 	}
 
-	public static GtkStyleContextHandle RemoveClass(this GtkStyleContextHandle context, string class_name)
+	public static T RemoveClass<T>(this T context, string class_name) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_remove_class(context, class_name);
 		return context;
 	}
 
-	public static GtkStyleContextHandle RemoveProvider(this GtkStyleContextHandle context, GtkStyleProviderHandle provider)
+	public static T RemoveProvider<T>(this T context, GtkStyleProviderHandle provider) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_remove_provider(context, provider);
 		return context;
 	}
 
-	public static GtkStyleContextHandle RemoveRegion(this GtkStyleContextHandle context, string region_name)
+	public static T RemoveRegion<T>(this T context, string region_name) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_remove_region(context, region_name);
 		return context;
 	}
 
-	public static GtkStyleContextHandle Restore(this GtkStyleContextHandle context)
+	public static T Restore<T>(this T context) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_restore(context);
 		return context;
 	}
 
-	public static GtkStyleContextHandle Save(this GtkStyleContextHandle context)
+	public static T Save<T>(this T context) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_save(context);
 		return context;
 	}
 
-	public static GtkStyleContextHandle ScrollAnimations(this GtkStyleContextHandle context, GdkWindowHandle window, int dx, int dy)
+	public static T ScrollAnimations<T>(this T context, GdkWindowHandle window, int dx, int dy) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_scroll_animations(context, window, dx, dy);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetBackground(this GtkStyleContextHandle context, GdkWindowHandle window)
+	public static T SetBackground<T>(this T context, GdkWindowHandle window) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_background(context, window);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetDirection(this GtkStyleContextHandle context, GtkTextDirection direction)
+	public static T SetDirection<T>(this T context, GtkTextDirection direction) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_direction(context, direction);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetFrameClock(this GtkStyleContextHandle context, GdkFrameClockHandle frame_clock)
+	public static T SetFrameClock<T>(this T context, GdkFrameClockHandle frame_clock) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_frame_clock(context, frame_clock);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetJunctionSides(this GtkStyleContextHandle context, GtkJunctionSides sides)
+	public static T SetJunctionSides<T>(this T context, GtkJunctionSides sides) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_junction_sides(context, sides);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetParent(this GtkStyleContextHandle context, GtkStyleContextHandle parent)
+	public static T SetParent<T>(this T context, GtkStyleContextHandle parent) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_parent(context, parent);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetPath(this GtkStyleContextHandle context, GtkWidgetPathHandle path)
+	public static T SetPath<T>(this T context, GtkWidgetPathHandle path) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_path(context, path);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetScale(this GtkStyleContextHandle context, int scale)
+	public static T SetScale<T>(this T context, int scale) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_scale(context, scale);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetScreen(this GtkStyleContextHandle context, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T context, GdkScreenHandle screen) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_screen(context, screen);
 		return context;
 	}
 
-	public static GtkStyleContextHandle SetState(this GtkStyleContextHandle context, GtkStateFlags flags)
+	public static T SetState<T>(this T context, GtkStateFlags flags) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_style_context_set_state(context, flags);
 		return context;
@@ -376,19 +376,19 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_style_context_to_string(context, flags);
 	}
 
-	public static GtkStyleContextHandle GtkRenderFrameGap(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height, GtkPositionType gap_side, double xy0_gap, double xy1_gap)
+	public static T GtkRenderFrameGap<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height, GtkPositionType gap_side, double xy0_gap, double xy1_gap) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_frame_gap(context, cr, x, y, width, height, gap_side, xy0_gap, xy1_gap);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderFrame(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderFrame<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_frame(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderIconSurface(this GtkStyleContextHandle context, cairo_tHandle cr, cairo_surface_tHandle surface, double x, double y)
+	public static T GtkRenderIconSurface<T>(this T context, cairo_tHandle cr, cairo_surface_tHandle surface, double x, double y) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_icon_surface(context, cr, surface, x, y);
 		return context;
@@ -399,91 +399,91 @@ public static class GtkStyleContextHandleExtensions
 		return GtkStyleContextExterns.gtk_render_icon_pixbuf(context, source, size);
 	}
 
-	public static GtkStyleContextHandle GtkRenderInsertionCursor(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, PangoLayoutHandle layout, int index, PangoDirection direction)
+	public static T GtkRenderInsertionCursor<T>(this T context, cairo_tHandle cr, double x, double y, PangoLayoutHandle layout, int index, PangoDirection direction) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_insertion_cursor(context, cr, x, y, layout, index, direction);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderExpander(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderExpander<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_expander(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderIcon(this GtkStyleContextHandle context, cairo_tHandle cr, GdkPixbufHandle pixbuf, double x, double y)
+	public static T GtkRenderIcon<T>(this T context, cairo_tHandle cr, GdkPixbufHandle pixbuf, double x, double y) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_icon(context, cr, pixbuf, x, y);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderLine(this GtkStyleContextHandle context, cairo_tHandle cr, double x0, double y0, double x1, double y1)
+	public static T GtkRenderLine<T>(this T context, cairo_tHandle cr, double x0, double y0, double x1, double y1) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_line(context, cr, x0, y0, x1, y1);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderBackground(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderBackground<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_background(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderLayout(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, PangoLayoutHandle layout)
+	public static T GtkRenderLayout<T>(this T context, cairo_tHandle cr, double x, double y, PangoLayoutHandle layout) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_layout(context, cr, x, y, layout);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderArrow(this GtkStyleContextHandle context, cairo_tHandle cr, double angle, double x, double y, double size)
+	public static T GtkRenderArrow<T>(this T context, cairo_tHandle cr, double angle, double x, double y, double size) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_arrow(context, cr, angle, x, y, size);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderExtension(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height, GtkPositionType gap_side)
+	public static T GtkRenderExtension<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height, GtkPositionType gap_side) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_extension(context, cr, x, y, width, height, gap_side);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderActivity(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderActivity<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_activity(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderHandle(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderHandle<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_handle(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderFocus(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderFocus<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_focus(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderSlider(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height, GtkOrientation orientation)
+	public static T GtkRenderSlider<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height, GtkOrientation orientation) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_slider(context, cr, x, y, width, height, orientation);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderBackgroundGetClip(this GtkStyleContextHandle context, double x, double y, double width, double height, out GdkRectangle out_clip)
+	public static T GtkRenderBackgroundGetClip<T>(this T context, double x, double y, double width, double height, out GdkRectangle out_clip) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_background_get_clip(context, x, y, width, height, out out_clip);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderCheck(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderCheck<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_check(context, cr, x, y, width, height);
 		return context;
 	}
 
-	public static GtkStyleContextHandle GtkRenderOption(this GtkStyleContextHandle context, cairo_tHandle cr, double x, double y, double width, double height)
+	public static T GtkRenderOption<T>(this T context, cairo_tHandle cr, double x, double y, double width, double height) where T : GtkStyleContextHandle
 	{
 		GtkStyleContextExterns.gtk_render_option(context, cr, x, y, width, height);
 		return context;

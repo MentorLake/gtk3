@@ -77,19 +77,19 @@ public static class GtkCellRendererToggleHandleExtensions
 		return GtkCellRendererToggleExterns.gtk_cell_renderer_toggle_get_radio(toggle);
 	}
 
-	public static GtkCellRendererToggleHandle SetActivatable(this GtkCellRendererToggleHandle toggle, bool setting)
+	public static T SetActivatable<T>(this T toggle, bool setting) where T : GtkCellRendererToggleHandle
 	{
 		GtkCellRendererToggleExterns.gtk_cell_renderer_toggle_set_activatable(toggle, setting);
 		return toggle;
 	}
 
-	public static GtkCellRendererToggleHandle SetActive(this GtkCellRendererToggleHandle toggle, bool setting)
+	public static T SetActive<T>(this T toggle, bool setting) where T : GtkCellRendererToggleHandle
 	{
 		GtkCellRendererToggleExterns.gtk_cell_renderer_toggle_set_active(toggle, setting);
 		return toggle;
 	}
 
-	public static GtkCellRendererToggleHandle SetRadio(this GtkCellRendererToggleHandle toggle, bool radio)
+	public static T SetRadio<T>(this T toggle, bool radio) where T : GtkCellRendererToggleHandle
 	{
 		GtkCellRendererToggleExterns.gtk_cell_renderer_toggle_set_radio(toggle, radio);
 		return toggle;

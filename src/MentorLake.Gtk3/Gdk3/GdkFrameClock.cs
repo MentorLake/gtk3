@@ -278,13 +278,13 @@ public delegate void update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GdkFrameClockHandleExtensions
 {
-	public static GdkFrameClockHandle BeginUpdating(this GdkFrameClockHandle frame_clock)
+	public static T BeginUpdating<T>(this T frame_clock) where T : GdkFrameClockHandle
 	{
 		GdkFrameClockExterns.gdk_frame_clock_begin_updating(frame_clock);
 		return frame_clock;
 	}
 
-	public static GdkFrameClockHandle EndUpdating(this GdkFrameClockHandle frame_clock)
+	public static T EndUpdating<T>(this T frame_clock) where T : GdkFrameClockHandle
 	{
 		GdkFrameClockExterns.gdk_frame_clock_end_updating(frame_clock);
 		return frame_clock;
@@ -310,7 +310,7 @@ public static class GdkFrameClockHandleExtensions
 		return GdkFrameClockExterns.gdk_frame_clock_get_history_start(frame_clock);
 	}
 
-	public static GdkFrameClockHandle GetRefreshInfo(this GdkFrameClockHandle frame_clock, long base_time, out long refresh_interval_return, out long presentation_time_return)
+	public static T GetRefreshInfo<T>(this T frame_clock, long base_time, out long refresh_interval_return, out long presentation_time_return) where T : GdkFrameClockHandle
 	{
 		GdkFrameClockExterns.gdk_frame_clock_get_refresh_info(frame_clock, base_time, out refresh_interval_return, out presentation_time_return);
 		return frame_clock;
@@ -321,7 +321,7 @@ public static class GdkFrameClockHandleExtensions
 		return GdkFrameClockExterns.gdk_frame_clock_get_timings(frame_clock, frame_counter);
 	}
 
-	public static GdkFrameClockHandle RequestPhase(this GdkFrameClockHandle frame_clock, GdkFrameClockPhase phase)
+	public static T RequestPhase<T>(this T frame_clock, GdkFrameClockPhase phase) where T : GdkFrameClockHandle
 	{
 		GdkFrameClockExterns.gdk_frame_clock_request_phase(frame_clock, phase);
 		return frame_clock;

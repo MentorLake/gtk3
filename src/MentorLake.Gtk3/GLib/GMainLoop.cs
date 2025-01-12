@@ -22,7 +22,7 @@ public static class GMainLoopHandleExtensions
 		return GMainLoopExterns.g_main_loop_is_running(loop);
 	}
 
-	public static GMainLoopHandle Quit(this GMainLoopHandle loop)
+	public static T Quit<T>(this T loop) where T : GMainLoopHandle
 	{
 		GMainLoopExterns.g_main_loop_quit(loop);
 		return loop;
@@ -33,13 +33,13 @@ public static class GMainLoopHandleExtensions
 		return GMainLoopExterns.g_main_loop_ref(loop);
 	}
 
-	public static GMainLoopHandle Run(this GMainLoopHandle loop)
+	public static T Run<T>(this T loop) where T : GMainLoopHandle
 	{
 		GMainLoopExterns.g_main_loop_run(loop);
 		return loop;
 	}
 
-	public static GMainLoopHandle Unref(this GMainLoopHandle loop)
+	public static T Unref<T>(this T loop) where T : GMainLoopHandle
 	{
 		GMainLoopExterns.g_main_loop_unref(loop);
 		return loop;

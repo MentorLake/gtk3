@@ -65,49 +65,49 @@ public static class GtkFontChooserHandleExtensions
 		return GtkFontChooserExterns.gtk_font_chooser_get_show_preview_entry(fontchooser);
 	}
 
-	public static GtkFontChooserHandle SetFilterFunc(this GtkFontChooserHandle fontchooser, GtkFontFilterFunc filter, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetFilterFunc<T>(this T fontchooser, GtkFontFilterFunc filter, IntPtr user_data, GDestroyNotify destroy) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_filter_func(fontchooser, filter, user_data, destroy);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetFont(this GtkFontChooserHandle fontchooser, string fontname)
+	public static T SetFont<T>(this T fontchooser, string fontname) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_font(fontchooser, fontname);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetFontDesc(this GtkFontChooserHandle fontchooser, PangoFontDescriptionHandle font_desc)
+	public static T SetFontDesc<T>(this T fontchooser, PangoFontDescriptionHandle font_desc) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_font_desc(fontchooser, font_desc);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetFontMap(this GtkFontChooserHandle fontchooser, PangoFontMapHandle fontmap)
+	public static T SetFontMap<T>(this T fontchooser, PangoFontMapHandle fontmap) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_font_map(fontchooser, fontmap);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetLanguage(this GtkFontChooserHandle fontchooser, string language)
+	public static T SetLanguage<T>(this T fontchooser, string language) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_language(fontchooser, language);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetLevel(this GtkFontChooserHandle fontchooser, GtkFontChooserLevel level)
+	public static T SetLevel<T>(this T fontchooser, GtkFontChooserLevel level) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_level(fontchooser, level);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetPreviewText(this GtkFontChooserHandle fontchooser, string text)
+	public static T SetPreviewText<T>(this T fontchooser, string text) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_preview_text(fontchooser, text);
 		return fontchooser;
 	}
 
-	public static GtkFontChooserHandle SetShowPreviewEntry(this GtkFontChooserHandle fontchooser, bool show_preview_entry)
+	public static T SetShowPreviewEntry<T>(this T fontchooser, bool show_preview_entry) where T : GtkFontChooserHandle
 	{
 		GtkFontChooserExterns.gtk_font_chooser_set_show_preview_entry(fontchooser, show_preview_entry);
 		return fontchooser;

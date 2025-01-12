@@ -76,13 +76,13 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GtkIconThemeHandleExtensions
 {
-	public static GtkIconThemeHandle AddResourcePath(this GtkIconThemeHandle icon_theme, string path)
+	public static T AddResourcePath<T>(this T icon_theme, string path) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_add_resource_path(icon_theme, path);
 		return icon_theme;
 	}
 
-	public static GtkIconThemeHandle AppendSearchPath(this GtkIconThemeHandle icon_theme, string path)
+	public static T AppendSearchPath<T>(this T icon_theme, string path) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_append_search_path(icon_theme, path);
 		return icon_theme;
@@ -108,7 +108,7 @@ public static class GtkIconThemeHandleExtensions
 		return GtkIconThemeExterns.gtk_icon_theme_get_icon_sizes(icon_theme, icon_name);
 	}
 
-	public static GtkIconThemeHandle GetSearchPath(this GtkIconThemeHandle icon_theme, out string[] path, out int n_elements)
+	public static T GetSearchPath<T>(this T icon_theme, out string[] path, out int n_elements) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_get_search_path(icon_theme, out path, out n_elements);
 		return icon_theme;
@@ -164,7 +164,7 @@ public static class GtkIconThemeHandleExtensions
 		return GtkIconThemeExterns.gtk_icon_theme_lookup_icon_for_scale(icon_theme, icon_name, size, scale, flags);
 	}
 
-	public static GtkIconThemeHandle PrependSearchPath(this GtkIconThemeHandle icon_theme, string path)
+	public static T PrependSearchPath<T>(this T icon_theme, string path) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_prepend_search_path(icon_theme, path);
 		return icon_theme;
@@ -175,19 +175,19 @@ public static class GtkIconThemeHandleExtensions
 		return GtkIconThemeExterns.gtk_icon_theme_rescan_if_needed(icon_theme);
 	}
 
-	public static GtkIconThemeHandle SetCustomTheme(this GtkIconThemeHandle icon_theme, string theme_name)
+	public static T SetCustomTheme<T>(this T icon_theme, string theme_name) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_set_custom_theme(icon_theme, theme_name);
 		return icon_theme;
 	}
 
-	public static GtkIconThemeHandle SetScreen(this GtkIconThemeHandle icon_theme, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T icon_theme, GdkScreenHandle screen) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_set_screen(icon_theme, screen);
 		return icon_theme;
 	}
 
-	public static GtkIconThemeHandle SetSearchPath(this GtkIconThemeHandle icon_theme, string[] path, int n_elements)
+	public static T SetSearchPath<T>(this T icon_theme, string[] path, int n_elements) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeExterns.gtk_icon_theme_set_search_path(icon_theme, path, n_elements);
 		return icon_theme;

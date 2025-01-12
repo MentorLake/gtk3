@@ -64,7 +64,7 @@ public delegate void @event([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GSocketClientHandleExtensions
 {
-	public static GSocketClientHandle AddApplicationProxy(this GSocketClientHandle client, string protocol)
+	public static T AddApplicationProxy<T>(this T client, string protocol) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_add_application_proxy(client, protocol);
 		return client;
@@ -75,7 +75,7 @@ public static class GSocketClientHandleExtensions
 		return GSocketClientExterns.g_socket_client_connect(client, connectable, cancellable, out error);
 	}
 
-	public static GSocketClientHandle ConnectAsync(this GSocketClientHandle client, GSocketConnectableHandle connectable, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectAsync<T>(this T client, GSocketConnectableHandle connectable, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_connect_async(client, connectable, cancellable, callback, user_data);
 		return client;
@@ -91,7 +91,7 @@ public static class GSocketClientHandleExtensions
 		return GSocketClientExterns.g_socket_client_connect_to_host(client, host_and_port, default_port, cancellable, out error);
 	}
 
-	public static GSocketClientHandle ConnectToHostAsync(this GSocketClientHandle client, string host_and_port, ushort default_port, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectToHostAsync<T>(this T client, string host_and_port, ushort default_port, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_connect_to_host_async(client, host_and_port, default_port, cancellable, callback, user_data);
 		return client;
@@ -107,7 +107,7 @@ public static class GSocketClientHandleExtensions
 		return GSocketClientExterns.g_socket_client_connect_to_service(client, domain, service, cancellable, out error);
 	}
 
-	public static GSocketClientHandle ConnectToServiceAsync(this GSocketClientHandle client, string domain, string service, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectToServiceAsync<T>(this T client, string domain, string service, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_connect_to_service_async(client, domain, service, cancellable, callback, user_data);
 		return client;
@@ -123,7 +123,7 @@ public static class GSocketClientHandleExtensions
 		return GSocketClientExterns.g_socket_client_connect_to_uri(client, uri, default_port, cancellable, out error);
 	}
 
-	public static GSocketClientHandle ConnectToUriAsync(this GSocketClientHandle client, string uri, ushort default_port, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectToUriAsync<T>(this T client, string uri, ushort default_port, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_connect_to_uri_async(client, uri, default_port, cancellable, callback, user_data);
 		return client;
@@ -179,55 +179,55 @@ public static class GSocketClientHandleExtensions
 		return GSocketClientExterns.g_socket_client_get_tls_validation_flags(client);
 	}
 
-	public static GSocketClientHandle SetEnableProxy(this GSocketClientHandle client, bool enable)
+	public static T SetEnableProxy<T>(this T client, bool enable) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_enable_proxy(client, enable);
 		return client;
 	}
 
-	public static GSocketClientHandle SetFamily(this GSocketClientHandle client, GSocketFamily family)
+	public static T SetFamily<T>(this T client, GSocketFamily family) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_family(client, family);
 		return client;
 	}
 
-	public static GSocketClientHandle SetLocalAddress(this GSocketClientHandle client, GSocketAddressHandle address)
+	public static T SetLocalAddress<T>(this T client, GSocketAddressHandle address) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_local_address(client, address);
 		return client;
 	}
 
-	public static GSocketClientHandle SetProtocol(this GSocketClientHandle client, GSocketProtocol protocol)
+	public static T SetProtocol<T>(this T client, GSocketProtocol protocol) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_protocol(client, protocol);
 		return client;
 	}
 
-	public static GSocketClientHandle SetProxyResolver(this GSocketClientHandle client, GProxyResolverHandle proxy_resolver)
+	public static T SetProxyResolver<T>(this T client, GProxyResolverHandle proxy_resolver) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_proxy_resolver(client, proxy_resolver);
 		return client;
 	}
 
-	public static GSocketClientHandle SetSocketType(this GSocketClientHandle client, GSocketType type)
+	public static T SetSocketType<T>(this T client, GSocketType type) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_socket_type(client, type);
 		return client;
 	}
 
-	public static GSocketClientHandle SetTimeout(this GSocketClientHandle client, uint timeout)
+	public static T SetTimeout<T>(this T client, uint timeout) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_timeout(client, timeout);
 		return client;
 	}
 
-	public static GSocketClientHandle SetTls(this GSocketClientHandle client, bool tls)
+	public static T SetTls<T>(this T client, bool tls) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_tls(client, tls);
 		return client;
 	}
 
-	public static GSocketClientHandle SetTlsValidationFlags(this GSocketClientHandle client, GTlsCertificateFlags flags)
+	public static T SetTlsValidationFlags<T>(this T client, GTlsCertificateFlags flags) where T : GSocketClientHandle
 	{
 		GSocketClientExterns.g_socket_client_set_tls_validation_flags(client, flags);
 		return client;

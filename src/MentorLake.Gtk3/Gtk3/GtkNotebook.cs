@@ -426,7 +426,7 @@ public static class GtkNotebookHandleExtensions
 		return GtkNotebookExterns.gtk_notebook_append_page_menu(notebook, child, tab_label, menu_label);
 	}
 
-	public static GtkNotebookHandle DetachTab(this GtkNotebookHandle notebook, GtkWidgetHandle child)
+	public static T DetachTab<T>(this T notebook, GtkWidgetHandle child) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_detach_tab(notebook, child);
 		return notebook;
@@ -527,7 +527,7 @@ public static class GtkNotebookHandleExtensions
 		return GtkNotebookExterns.gtk_notebook_insert_page_menu(notebook, child, tab_label, menu_label, position);
 	}
 
-	public static GtkNotebookHandle NextPage(this GtkNotebookHandle notebook)
+	public static T NextPage<T>(this T notebook) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_next_page(notebook);
 		return notebook;
@@ -538,13 +538,13 @@ public static class GtkNotebookHandleExtensions
 		return GtkNotebookExterns.gtk_notebook_page_num(notebook, child);
 	}
 
-	public static GtkNotebookHandle PopupDisable(this GtkNotebookHandle notebook)
+	public static T PopupDisable<T>(this T notebook) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_popup_disable(notebook);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle PopupEnable(this GtkNotebookHandle notebook)
+	public static T PopupEnable<T>(this T notebook) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_popup_enable(notebook);
 		return notebook;
@@ -560,97 +560,97 @@ public static class GtkNotebookHandleExtensions
 		return GtkNotebookExterns.gtk_notebook_prepend_page_menu(notebook, child, tab_label, menu_label);
 	}
 
-	public static GtkNotebookHandle PrevPage(this GtkNotebookHandle notebook)
+	public static T PrevPage<T>(this T notebook) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_prev_page(notebook);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle RemovePage(this GtkNotebookHandle notebook, int page_num)
+	public static T RemovePage<T>(this T notebook, int page_num) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_remove_page(notebook, page_num);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle ReorderChild(this GtkNotebookHandle notebook, GtkWidgetHandle child, int position)
+	public static T ReorderChild<T>(this T notebook, GtkWidgetHandle child, int position) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_reorder_child(notebook, child, position);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetActionWidget(this GtkNotebookHandle notebook, GtkWidgetHandle widget, GtkPackType pack_type)
+	public static T SetActionWidget<T>(this T notebook, GtkWidgetHandle widget, GtkPackType pack_type) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_action_widget(notebook, widget, pack_type);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetCurrentPage(this GtkNotebookHandle notebook, int page_num)
+	public static T SetCurrentPage<T>(this T notebook, int page_num) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_current_page(notebook, page_num);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetGroupName(this GtkNotebookHandle notebook, string group_name)
+	public static T SetGroupName<T>(this T notebook, string group_name) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_group_name(notebook, group_name);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetMenuLabel(this GtkNotebookHandle notebook, GtkWidgetHandle child, GtkWidgetHandle menu_label)
+	public static T SetMenuLabel<T>(this T notebook, GtkWidgetHandle child, GtkWidgetHandle menu_label) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_menu_label(notebook, child, menu_label);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetMenuLabelText(this GtkNotebookHandle notebook, GtkWidgetHandle child, string menu_text)
+	public static T SetMenuLabelText<T>(this T notebook, GtkWidgetHandle child, string menu_text) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_menu_label_text(notebook, child, menu_text);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetScrollable(this GtkNotebookHandle notebook, bool scrollable)
+	public static T SetScrollable<T>(this T notebook, bool scrollable) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_scrollable(notebook, scrollable);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetShowBorder(this GtkNotebookHandle notebook, bool show_border)
+	public static T SetShowBorder<T>(this T notebook, bool show_border) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_show_border(notebook, show_border);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetShowTabs(this GtkNotebookHandle notebook, bool show_tabs)
+	public static T SetShowTabs<T>(this T notebook, bool show_tabs) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_show_tabs(notebook, show_tabs);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetTabDetachable(this GtkNotebookHandle notebook, GtkWidgetHandle child, bool detachable)
+	public static T SetTabDetachable<T>(this T notebook, GtkWidgetHandle child, bool detachable) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_tab_detachable(notebook, child, detachable);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetTabLabel(this GtkNotebookHandle notebook, GtkWidgetHandle child, GtkWidgetHandle tab_label)
+	public static T SetTabLabel<T>(this T notebook, GtkWidgetHandle child, GtkWidgetHandle tab_label) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_tab_label(notebook, child, tab_label);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetTabLabelText(this GtkNotebookHandle notebook, GtkWidgetHandle child, string tab_text)
+	public static T SetTabLabelText<T>(this T notebook, GtkWidgetHandle child, string tab_text) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_tab_label_text(notebook, child, tab_text);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetTabPos(this GtkNotebookHandle notebook, GtkPositionType pos)
+	public static T SetTabPos<T>(this T notebook, GtkPositionType pos) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_tab_pos(notebook, pos);
 		return notebook;
 	}
 
-	public static GtkNotebookHandle SetTabReorderable(this GtkNotebookHandle notebook, GtkWidgetHandle child, bool reorderable)
+	public static T SetTabReorderable<T>(this T notebook, GtkWidgetHandle child, bool reorderable) where T : GtkNotebookHandle
 	{
 		GtkNotebookExterns.gtk_notebook_set_tab_reorderable(notebook, child, reorderable);
 		return notebook;

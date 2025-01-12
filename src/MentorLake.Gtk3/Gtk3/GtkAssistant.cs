@@ -210,7 +210,7 @@ public delegate void prepare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GtkAssistantHandleExtensions
 {
-	public static GtkAssistantHandle AddActionWidget(this GtkAssistantHandle assistant, GtkWidgetHandle child)
+	public static T AddActionWidget<T>(this T assistant, GtkWidgetHandle child) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_add_action_widget(assistant, child);
 		return assistant;
@@ -221,7 +221,7 @@ public static class GtkAssistantHandleExtensions
 		return GtkAssistantExterns.gtk_assistant_append_page(assistant, page);
 	}
 
-	public static GtkAssistantHandle Commit(this GtkAssistantHandle assistant)
+	public static T Commit<T>(this T assistant) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_commit(assistant);
 		return assistant;
@@ -277,7 +277,7 @@ public static class GtkAssistantHandleExtensions
 		return GtkAssistantExterns.gtk_assistant_insert_page(assistant, page, position);
 	}
 
-	public static GtkAssistantHandle NextPage(this GtkAssistantHandle assistant)
+	public static T NextPage<T>(this T assistant) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_next_page(assistant);
 		return assistant;
@@ -288,73 +288,73 @@ public static class GtkAssistantHandleExtensions
 		return GtkAssistantExterns.gtk_assistant_prepend_page(assistant, page);
 	}
 
-	public static GtkAssistantHandle PreviousPage(this GtkAssistantHandle assistant)
+	public static T PreviousPage<T>(this T assistant) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_previous_page(assistant);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle RemoveActionWidget(this GtkAssistantHandle assistant, GtkWidgetHandle child)
+	public static T RemoveActionWidget<T>(this T assistant, GtkWidgetHandle child) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_remove_action_widget(assistant, child);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle RemovePage(this GtkAssistantHandle assistant, int page_num)
+	public static T RemovePage<T>(this T assistant, int page_num) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_remove_page(assistant, page_num);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetCurrentPage(this GtkAssistantHandle assistant, int page_num)
+	public static T SetCurrentPage<T>(this T assistant, int page_num) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_current_page(assistant, page_num);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetForwardPageFunc(this GtkAssistantHandle assistant, GtkAssistantPageFunc page_func, IntPtr data, GDestroyNotify destroy)
+	public static T SetForwardPageFunc<T>(this T assistant, GtkAssistantPageFunc page_func, IntPtr data, GDestroyNotify destroy) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_forward_page_func(assistant, page_func, data, destroy);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageComplete(this GtkAssistantHandle assistant, GtkWidgetHandle page, bool complete)
+	public static T SetPageComplete<T>(this T assistant, GtkWidgetHandle page, bool complete) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_complete(assistant, page, complete);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageHasPadding(this GtkAssistantHandle assistant, GtkWidgetHandle page, bool has_padding)
+	public static T SetPageHasPadding<T>(this T assistant, GtkWidgetHandle page, bool has_padding) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_has_padding(assistant, page, has_padding);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageHeaderImage(this GtkAssistantHandle assistant, GtkWidgetHandle page, GdkPixbufHandle pixbuf)
+	public static T SetPageHeaderImage<T>(this T assistant, GtkWidgetHandle page, GdkPixbufHandle pixbuf) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_header_image(assistant, page, pixbuf);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageSideImage(this GtkAssistantHandle assistant, GtkWidgetHandle page, GdkPixbufHandle pixbuf)
+	public static T SetPageSideImage<T>(this T assistant, GtkWidgetHandle page, GdkPixbufHandle pixbuf) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_side_image(assistant, page, pixbuf);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageTitle(this GtkAssistantHandle assistant, GtkWidgetHandle page, string title)
+	public static T SetPageTitle<T>(this T assistant, GtkWidgetHandle page, string title) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_title(assistant, page, title);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle SetPageType(this GtkAssistantHandle assistant, GtkWidgetHandle page, GtkAssistantPageType type)
+	public static T SetPageType<T>(this T assistant, GtkWidgetHandle page, GtkAssistantPageType type) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_set_page_type(assistant, page, type);
 		return assistant;
 	}
 
-	public static GtkAssistantHandle UpdateButtonsState(this GtkAssistantHandle assistant)
+	public static T UpdateButtonsState<T>(this T assistant) where T : GtkAssistantHandle
 	{
 		GtkAssistantExterns.gtk_assistant_update_buttons_state(assistant);
 		return assistant;

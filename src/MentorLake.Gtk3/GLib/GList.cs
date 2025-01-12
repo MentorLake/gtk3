@@ -52,25 +52,25 @@ public static class GListHandleExtensions
 		return GListExterns.g_list_first(list);
 	}
 
-	public static GListHandle Foreach(this GListHandle list, GFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T list, GFunc func, IntPtr user_data) where T : GListHandle
 	{
 		GListExterns.g_list_foreach(list, func, user_data);
 		return list;
 	}
 
-	public static GListHandle Free(this GListHandle list)
+	public static T Free<T>(this T list) where T : GListHandle
 	{
 		GListExterns.g_list_free(list);
 		return list;
 	}
 
-	public static GListHandle Free1(this GListHandle list)
+	public static T Free1<T>(this T list) where T : GListHandle
 	{
 		GListExterns.g_list_free_1(list);
 		return list;
 	}
 
-	public static GListHandle FreeFull(this GListHandle list, GDestroyNotify free_func)
+	public static T FreeFull<T>(this T list, GDestroyNotify free_func) where T : GListHandle
 	{
 		GListExterns.g_list_free_full(list, free_func);
 		return list;

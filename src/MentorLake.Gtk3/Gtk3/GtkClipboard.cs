@@ -72,7 +72,7 @@ public delegate void owner_change([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkClipboardHandleExtensions
 {
-	public static GtkClipboardHandle Clear(this GtkClipboardHandle clipboard)
+	public static T Clear<T>(this T clipboard) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_clear(clipboard);
 		return clipboard;
@@ -93,55 +93,55 @@ public static class GtkClipboardHandleExtensions
 		return GtkClipboardExterns.gtk_clipboard_get_selection(clipboard);
 	}
 
-	public static GtkClipboardHandle RequestContents(this GtkClipboardHandle clipboard, GdkAtom target, GtkClipboardReceivedFunc callback, IntPtr user_data)
+	public static T RequestContents<T>(this T clipboard, GdkAtom target, GtkClipboardReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_contents(clipboard, target, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle RequestImage(this GtkClipboardHandle clipboard, GtkClipboardImageReceivedFunc callback, IntPtr user_data)
+	public static T RequestImage<T>(this T clipboard, GtkClipboardImageReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_image(clipboard, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle RequestRichText(this GtkClipboardHandle clipboard, GtkTextBufferHandle buffer, GtkClipboardRichTextReceivedFunc callback, IntPtr user_data)
+	public static T RequestRichText<T>(this T clipboard, GtkTextBufferHandle buffer, GtkClipboardRichTextReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_rich_text(clipboard, buffer, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle RequestTargets(this GtkClipboardHandle clipboard, GtkClipboardTargetsReceivedFunc callback, IntPtr user_data)
+	public static T RequestTargets<T>(this T clipboard, GtkClipboardTargetsReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_targets(clipboard, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle RequestText(this GtkClipboardHandle clipboard, GtkClipboardTextReceivedFunc callback, IntPtr user_data)
+	public static T RequestText<T>(this T clipboard, GtkClipboardTextReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_text(clipboard, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle RequestUris(this GtkClipboardHandle clipboard, GtkClipboardURIReceivedFunc callback, IntPtr user_data)
+	public static T RequestUris<T>(this T clipboard, GtkClipboardURIReceivedFunc callback, IntPtr user_data) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_request_uris(clipboard, callback, user_data);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle SetCanStore(this GtkClipboardHandle clipboard, GtkTargetEntry[] targets, int n_targets)
+	public static T SetCanStore<T>(this T clipboard, GtkTargetEntry[] targets, int n_targets) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_set_can_store(clipboard, targets, n_targets);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle SetImage(this GtkClipboardHandle clipboard, GdkPixbufHandle pixbuf)
+	public static T SetImage<T>(this T clipboard, GdkPixbufHandle pixbuf) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_set_image(clipboard, pixbuf);
 		return clipboard;
 	}
 
-	public static GtkClipboardHandle SetText(this GtkClipboardHandle clipboard, string text, int len)
+	public static T SetText<T>(this T clipboard, string text, int len) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_set_text(clipboard, text, len);
 		return clipboard;
@@ -157,7 +157,7 @@ public static class GtkClipboardHandleExtensions
 		return GtkClipboardExterns.gtk_clipboard_set_with_owner(clipboard, targets, n_targets, get_func, clear_func, owner);
 	}
 
-	public static GtkClipboardHandle Store(this GtkClipboardHandle clipboard)
+	public static T Store<T>(this T clipboard) where T : GtkClipboardHandle
 	{
 		GtkClipboardExterns.gtk_clipboard_store(clipboard);
 		return clipboard;

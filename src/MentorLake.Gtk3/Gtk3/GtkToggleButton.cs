@@ -86,25 +86,25 @@ public static class GtkToggleButtonHandleExtensions
 		return GtkToggleButtonExterns.gtk_toggle_button_get_mode(toggle_button);
 	}
 
-	public static GtkToggleButtonHandle SetActive(this GtkToggleButtonHandle toggle_button, bool is_active)
+	public static T SetActive<T>(this T toggle_button, bool is_active) where T : GtkToggleButtonHandle
 	{
 		GtkToggleButtonExterns.gtk_toggle_button_set_active(toggle_button, is_active);
 		return toggle_button;
 	}
 
-	public static GtkToggleButtonHandle SetInconsistent(this GtkToggleButtonHandle toggle_button, bool setting)
+	public static T SetInconsistent<T>(this T toggle_button, bool setting) where T : GtkToggleButtonHandle
 	{
 		GtkToggleButtonExterns.gtk_toggle_button_set_inconsistent(toggle_button, setting);
 		return toggle_button;
 	}
 
-	public static GtkToggleButtonHandle SetMode(this GtkToggleButtonHandle toggle_button, bool draw_indicator)
+	public static T SetMode<T>(this T toggle_button, bool draw_indicator) where T : GtkToggleButtonHandle
 	{
 		GtkToggleButtonExterns.gtk_toggle_button_set_mode(toggle_button, draw_indicator);
 		return toggle_button;
 	}
 
-	public static GtkToggleButtonHandle Toggled(this GtkToggleButtonHandle toggle_button)
+	public static T Toggled<T>(this T toggle_button) where T : GtkToggleButtonHandle
 	{
 		GtkToggleButtonExterns.gtk_toggle_button_toggled(toggle_button);
 		return toggle_button;

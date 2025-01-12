@@ -41,25 +41,25 @@ public static class GtkImageMenuItemHandleExtensions
 		return GtkImageMenuItemExterns.gtk_image_menu_item_get_use_stock(image_menu_item);
 	}
 
-	public static GtkImageMenuItemHandle SetAccelGroup(this GtkImageMenuItemHandle image_menu_item, GtkAccelGroupHandle accel_group)
+	public static T SetAccelGroup<T>(this T image_menu_item, GtkAccelGroupHandle accel_group) where T : GtkImageMenuItemHandle
 	{
 		GtkImageMenuItemExterns.gtk_image_menu_item_set_accel_group(image_menu_item, accel_group);
 		return image_menu_item;
 	}
 
-	public static GtkImageMenuItemHandle SetAlwaysShowImage(this GtkImageMenuItemHandle image_menu_item, bool always_show)
+	public static T SetAlwaysShowImage<T>(this T image_menu_item, bool always_show) where T : GtkImageMenuItemHandle
 	{
 		GtkImageMenuItemExterns.gtk_image_menu_item_set_always_show_image(image_menu_item, always_show);
 		return image_menu_item;
 	}
 
-	public static GtkImageMenuItemHandle SetImage(this GtkImageMenuItemHandle image_menu_item, GtkWidgetHandle image)
+	public static T SetImage<T>(this T image_menu_item, GtkWidgetHandle image) where T : GtkImageMenuItemHandle
 	{
 		GtkImageMenuItemExterns.gtk_image_menu_item_set_image(image_menu_item, image);
 		return image_menu_item;
 	}
 
-	public static GtkImageMenuItemHandle SetUseStock(this GtkImageMenuItemHandle image_menu_item, bool use_stock)
+	public static T SetUseStock<T>(this T image_menu_item, bool use_stock) where T : GtkImageMenuItemHandle
 	{
 		GtkImageMenuItemExterns.gtk_image_menu_item_set_use_stock(image_menu_item, use_stock);
 		return image_menu_item;

@@ -17,7 +17,7 @@ public static class GNodeHandleExtensions
 		return GNodeExterns.g_node_child_position(node, child);
 	}
 
-	public static GNodeHandle ChildrenForeach(this GNodeHandle node, GTraverseFlags flags, GNodeForeachFunc func, IntPtr data)
+	public static T ChildrenForeach<T>(this T node, GTraverseFlags flags, GNodeForeachFunc func, IntPtr data) where T : GNodeHandle
 	{
 		GNodeExterns.g_node_children_foreach(node, flags, func, data);
 		return node;
@@ -38,7 +38,7 @@ public static class GNodeHandleExtensions
 		return GNodeExterns.g_node_depth(node);
 	}
 
-	public static GNodeHandle Destroy(this GNodeHandle root)
+	public static T Destroy<T>(this T root) where T : GNodeHandle
 	{
 		GNodeExterns.g_node_destroy(root);
 		return root;
@@ -119,19 +119,19 @@ public static class GNodeHandleExtensions
 		return GNodeExterns.g_node_prepend(parent, node);
 	}
 
-	public static GNodeHandle ReverseChildren(this GNodeHandle node)
+	public static T ReverseChildren<T>(this T node) where T : GNodeHandle
 	{
 		GNodeExterns.g_node_reverse_children(node);
 		return node;
 	}
 
-	public static GNodeHandle Traverse(this GNodeHandle root, GTraverseType order, GTraverseFlags flags, int max_depth, GNodeTraverseFunc func, IntPtr data)
+	public static T Traverse<T>(this T root, GTraverseType order, GTraverseFlags flags, int max_depth, GNodeTraverseFunc func, IntPtr data) where T : GNodeHandle
 	{
 		GNodeExterns.g_node_traverse(root, order, flags, max_depth, func, data);
 		return root;
 	}
 
-	public static GNodeHandle Unlink(this GNodeHandle node)
+	public static T Unlink<T>(this T node) where T : GNodeHandle
 	{
 		GNodeExterns.g_node_unlink(node);
 		return node;

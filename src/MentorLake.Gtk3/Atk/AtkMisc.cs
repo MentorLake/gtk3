@@ -11,13 +11,13 @@ public class AtkMiscHandle : GObjectHandle
 
 public static class AtkMiscHandleExtensions
 {
-	public static AtkMiscHandle ThreadsEnter(this AtkMiscHandle misc)
+	public static T ThreadsEnter<T>(this T misc) where T : AtkMiscHandle
 	{
 		AtkMiscExterns.atk_misc_threads_enter(misc);
 		return misc;
 	}
 
-	public static AtkMiscHandle ThreadsLeave(this AtkMiscHandle misc)
+	public static T ThreadsLeave<T>(this T misc) where T : AtkMiscHandle
 	{
 		AtkMiscExterns.atk_misc_threads_leave(misc);
 		return misc;

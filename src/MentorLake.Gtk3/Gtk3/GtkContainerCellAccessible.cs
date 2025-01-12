@@ -11,7 +11,7 @@ public class GtkContainerCellAccessibleHandle : GtkCellAccessibleHandle, AtkActi
 
 public static class GtkContainerCellAccessibleHandleExtensions
 {
-	public static GtkContainerCellAccessibleHandle AddChild(this GtkContainerCellAccessibleHandle container, GtkCellAccessibleHandle child)
+	public static T AddChild<T>(this T container, GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{
 		GtkContainerCellAccessibleExterns.gtk_container_cell_accessible_add_child(container, child);
 		return container;
@@ -22,7 +22,7 @@ public static class GtkContainerCellAccessibleHandleExtensions
 		return GtkContainerCellAccessibleExterns.gtk_container_cell_accessible_get_children(container);
 	}
 
-	public static GtkContainerCellAccessibleHandle RemoveChild(this GtkContainerCellAccessibleHandle container, GtkCellAccessibleHandle child)
+	public static T RemoveChild<T>(this T container, GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{
 		GtkContainerCellAccessibleExterns.gtk_container_cell_accessible_remove_child(container, child);
 		return container;

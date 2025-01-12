@@ -7,7 +7,7 @@ public class GtkTextIterHandle : BaseSafeHandle
 
 public static class GtkTextIterHandleExtensions
 {
-	public static GtkTextIterHandle Assign(this GtkTextIterHandle iter, GtkTextIterHandle other)
+	public static T Assign<T>(this T iter, GtkTextIterHandle other) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_assign(iter, other);
 		return iter;
@@ -208,7 +208,7 @@ public static class GtkTextIterHandleExtensions
 		return GtkTextIterExterns.gtk_text_iter_forward_sentence_ends(iter, count);
 	}
 
-	public static GtkTextIterHandle ForwardToEnd(this GtkTextIterHandle iter)
+	public static T ForwardToEnd<T>(this T iter) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_forward_to_end(iter);
 		return iter;
@@ -264,7 +264,7 @@ public static class GtkTextIterHandleExtensions
 		return GtkTextIterExterns.gtk_text_iter_forward_word_ends(iter, count);
 	}
 
-	public static GtkTextIterHandle Free(this GtkTextIterHandle iter)
+	public static T Free<T>(this T iter) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_free(iter);
 		return iter;
@@ -410,43 +410,43 @@ public static class GtkTextIterHandleExtensions
 		return GtkTextIterExterns.gtk_text_iter_is_start(iter);
 	}
 
-	public static GtkTextIterHandle Order(this GtkTextIterHandle first, GtkTextIterHandle second)
+	public static T Order<T>(this T first, GtkTextIterHandle second) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_order(first, second);
 		return first;
 	}
 
-	public static GtkTextIterHandle SetLine(this GtkTextIterHandle iter, int line_number)
+	public static T SetLine<T>(this T iter, int line_number) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_line(iter, line_number);
 		return iter;
 	}
 
-	public static GtkTextIterHandle SetLineIndex(this GtkTextIterHandle iter, int byte_on_line)
+	public static T SetLineIndex<T>(this T iter, int byte_on_line) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_line_index(iter, byte_on_line);
 		return iter;
 	}
 
-	public static GtkTextIterHandle SetLineOffset(this GtkTextIterHandle iter, int char_on_line)
+	public static T SetLineOffset<T>(this T iter, int char_on_line) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_line_offset(iter, char_on_line);
 		return iter;
 	}
 
-	public static GtkTextIterHandle SetOffset(this GtkTextIterHandle iter, int char_offset)
+	public static T SetOffset<T>(this T iter, int char_offset) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_offset(iter, char_offset);
 		return iter;
 	}
 
-	public static GtkTextIterHandle SetVisibleLineIndex(this GtkTextIterHandle iter, int byte_on_line)
+	public static T SetVisibleLineIndex<T>(this T iter, int byte_on_line) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_visible_line_index(iter, byte_on_line);
 		return iter;
 	}
 
-	public static GtkTextIterHandle SetVisibleLineOffset(this GtkTextIterHandle iter, int char_on_line)
+	public static T SetVisibleLineOffset<T>(this T iter, int char_on_line) where T : GtkTextIterHandle
 	{
 		GtkTextIterExterns.gtk_text_iter_set_visible_line_offset(iter, char_on_line);
 		return iter;

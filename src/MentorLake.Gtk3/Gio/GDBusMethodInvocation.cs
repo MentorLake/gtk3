@@ -56,49 +56,49 @@ public static class GDBusMethodInvocationHandleExtensions
 		return GDBusMethodInvocationExterns.g_dbus_method_invocation_get_user_data(invocation);
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnDbusError(this GDBusMethodInvocationHandle invocation, string error_name, string error_message)
+	public static T GDbusMethodInvocationReturnDbusError<T>(this T invocation, string error_name, string error_message) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_dbus_error(invocation, error_name, error_message);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnError(this GDBusMethodInvocationHandle invocation, GQuark domain, int code, string format, IntPtr @__arglist)
+	public static T GDbusMethodInvocationReturnError<T>(this T invocation, GQuark domain, int code, string format, IntPtr @__arglist) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_error(invocation, domain, code, format, @__arglist);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnErrorLiteral(this GDBusMethodInvocationHandle invocation, GQuark domain, int code, string message)
+	public static T GDbusMethodInvocationReturnErrorLiteral<T>(this T invocation, GQuark domain, int code, string message) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_error_literal(invocation, domain, code, message);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnErrorValist(this GDBusMethodInvocationHandle invocation, GQuark domain, int code, string format, IntPtr var_args)
+	public static T GDbusMethodInvocationReturnErrorValist<T>(this T invocation, GQuark domain, int code, string format, IntPtr var_args) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_error_valist(invocation, domain, code, format, var_args);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnGerror(this GDBusMethodInvocationHandle invocation, GErrorHandle error)
+	public static T GDbusMethodInvocationReturnGerror<T>(this T invocation, GErrorHandle error) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_gerror(invocation, error);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnValue(this GDBusMethodInvocationHandle invocation, GVariantHandle parameters)
+	public static T GDbusMethodInvocationReturnValue<T>(this T invocation, GVariantHandle parameters) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_value(invocation, parameters);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationReturnValueWithUnixFdList(this GDBusMethodInvocationHandle invocation, GVariantHandle parameters, GUnixFDListHandle fd_list)
+	public static T GDbusMethodInvocationReturnValueWithUnixFdList<T>(this T invocation, GVariantHandle parameters, GUnixFDListHandle fd_list) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_return_value_with_unix_fd_list(invocation, parameters, fd_list);
 		return invocation;
 	}
 
-	public static GDBusMethodInvocationHandle GDbusMethodInvocationTakeError(this GDBusMethodInvocationHandle invocation, GErrorHandle error)
+	public static T GDbusMethodInvocationTakeError<T>(this T invocation, GErrorHandle error) where T : GDBusMethodInvocationHandle
 	{
 		GDBusMethodInvocationExterns.g_dbus_method_invocation_take_error(invocation, error);
 		return invocation;

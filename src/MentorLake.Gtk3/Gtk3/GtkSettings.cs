@@ -26,31 +26,31 @@ public class GtkSettingsHandle : GObjectHandle, GtkStyleProviderHandle
 
 public static class GtkSettingsHandleExtensions
 {
-	public static GtkSettingsHandle ResetProperty(this GtkSettingsHandle settings, string name)
+	public static T ResetProperty<T>(this T settings, string name) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_settings_reset_property(settings, name);
 		return settings;
 	}
 
-	public static GtkSettingsHandle SetDoubleProperty(this GtkSettingsHandle settings, string name, double v_double, string origin)
+	public static T SetDoubleProperty<T>(this T settings, string name, double v_double, string origin) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_settings_set_double_property(settings, name, v_double, origin);
 		return settings;
 	}
 
-	public static GtkSettingsHandle SetLongProperty(this GtkSettingsHandle settings, string name, long v_long, string origin)
+	public static T SetLongProperty<T>(this T settings, string name, long v_long, string origin) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_settings_set_long_property(settings, name, v_long, origin);
 		return settings;
 	}
 
-	public static GtkSettingsHandle SetPropertyValue(this GtkSettingsHandle settings, string name, GtkSettingsValueHandle svalue)
+	public static T SetPropertyValue<T>(this T settings, string name, GtkSettingsValueHandle svalue) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_settings_set_property_value(settings, name, svalue);
 		return settings;
 	}
 
-	public static GtkSettingsHandle SetStringProperty(this GtkSettingsHandle settings, string name, string v_string, string origin)
+	public static T SetStringProperty<T>(this T settings, string name, string v_string, string origin) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_settings_set_string_property(settings, name, v_string, origin);
 		return settings;
@@ -71,7 +71,7 @@ public static class GtkSettingsHandleExtensions
 		return GtkSettingsExterns.gtk_rc_get_style_by_paths(settings, widget_path, class_path, type);
 	}
 
-	public static GtkSettingsHandle GtkRcResetStyles(this GtkSettingsHandle settings)
+	public static T GtkRcResetStyles<T>(this T settings) where T : GtkSettingsHandle
 	{
 		GtkSettingsExterns.gtk_rc_reset_styles(settings);
 		return settings;

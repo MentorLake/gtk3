@@ -36,7 +36,7 @@ public static class GtkTextMarkHandleExtensions
 		return GtkTextMarkExterns.gtk_text_mark_get_visible(mark);
 	}
 
-	public static GtkTextMarkHandle SetVisible(this GtkTextMarkHandle mark, bool setting)
+	public static T SetVisible<T>(this T mark, bool setting) where T : GtkTextMarkHandle
 	{
 		GtkTextMarkExterns.gtk_text_mark_set_visible(mark, setting);
 		return mark;

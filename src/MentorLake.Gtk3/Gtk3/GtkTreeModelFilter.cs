@@ -6,7 +6,7 @@ public class GtkTreeModelFilterHandle : GObjectHandle, GtkTreeDragSourceHandle, 
 
 public static class GtkTreeModelFilterHandleExtensions
 {
-	public static GtkTreeModelFilterHandle ClearCache(this GtkTreeModelFilterHandle filter)
+	public static T ClearCache<T>(this T filter) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_clear_cache(filter);
 		return filter;
@@ -22,7 +22,7 @@ public static class GtkTreeModelFilterHandleExtensions
 		return GtkTreeModelFilterExterns.gtk_tree_model_filter_convert_child_path_to_path(filter, child_path);
 	}
 
-	public static GtkTreeModelFilterHandle ConvertIterToChildIter(this GtkTreeModelFilterHandle filter, out GtkTreeIter child_iter, GtkTreeIterHandle filter_iter)
+	public static T ConvertIterToChildIter<T>(this T filter, out GtkTreeIter child_iter, GtkTreeIterHandle filter_iter) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_convert_iter_to_child_iter(filter, out child_iter, filter_iter);
 		return filter;
@@ -38,25 +38,25 @@ public static class GtkTreeModelFilterHandleExtensions
 		return GtkTreeModelFilterExterns.gtk_tree_model_filter_get_model(filter);
 	}
 
-	public static GtkTreeModelFilterHandle Refilter(this GtkTreeModelFilterHandle filter)
+	public static T Refilter<T>(this T filter) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_refilter(filter);
 		return filter;
 	}
 
-	public static GtkTreeModelFilterHandle SetModifyFunc(this GtkTreeModelFilterHandle filter, int n_columns, GType[] types, GtkTreeModelFilterModifyFunc func, IntPtr data, GDestroyNotify destroy)
+	public static T SetModifyFunc<T>(this T filter, int n_columns, GType[] types, GtkTreeModelFilterModifyFunc func, IntPtr data, GDestroyNotify destroy) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_set_modify_func(filter, n_columns, types, func, data, destroy);
 		return filter;
 	}
 
-	public static GtkTreeModelFilterHandle SetVisibleColumn(this GtkTreeModelFilterHandle filter, int column)
+	public static T SetVisibleColumn<T>(this T filter, int column) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_set_visible_column(filter, column);
 		return filter;
 	}
 
-	public static GtkTreeModelFilterHandle SetVisibleFunc(this GtkTreeModelFilterHandle filter, GtkTreeModelFilterVisibleFunc func, IntPtr data, GDestroyNotify destroy)
+	public static T SetVisibleFunc<T>(this T filter, GtkTreeModelFilterVisibleFunc func, IntPtr data, GDestroyNotify destroy) where T : GtkTreeModelFilterHandle
 	{
 		GtkTreeModelFilterExterns.gtk_tree_model_filter_set_visible_func(filter, func, data, destroy);
 		return filter;

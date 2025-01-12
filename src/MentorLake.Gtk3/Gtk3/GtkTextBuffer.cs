@@ -524,25 +524,25 @@ public delegate void remove_tag([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 
 public static class GtkTextBufferHandleExtensions
 {
-	public static GtkTextBufferHandle AddMark(this GtkTextBufferHandle buffer, GtkTextMarkHandle mark, GtkTextIterHandle where)
+	public static T AddMark<T>(this T buffer, GtkTextMarkHandle mark, GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_add_mark(buffer, mark, where);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle AddSelectionClipboard(this GtkTextBufferHandle buffer, GtkClipboardHandle clipboard)
+	public static T AddSelectionClipboard<T>(this T buffer, GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_add_selection_clipboard(buffer, clipboard);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle ApplyTag(this GtkTextBufferHandle buffer, GtkTextTagHandle tag, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T ApplyTag<T>(this T buffer, GtkTextTagHandle tag, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_apply_tag(buffer, tag, start, end);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle ApplyTagByName(this GtkTextBufferHandle buffer, string name, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T ApplyTagByName<T>(this T buffer, string name, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_apply_tag_by_name(buffer, name, start, end);
 		return buffer;
@@ -553,13 +553,13 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_backspace(buffer, iter, interactive, default_editable);
 	}
 
-	public static GtkTextBufferHandle BeginUserAction(this GtkTextBufferHandle buffer)
+	public static T BeginUserAction<T>(this T buffer) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_begin_user_action(buffer);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle CopyClipboard(this GtkTextBufferHandle buffer, GtkClipboardHandle clipboard)
+	public static T CopyClipboard<T>(this T buffer, GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_copy_clipboard(buffer, clipboard);
 		return buffer;
@@ -580,13 +580,13 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_create_tag(buffer, tag_name, first_property_name, @__arglist);
 	}
 
-	public static GtkTextBufferHandle CutClipboard(this GtkTextBufferHandle buffer, GtkClipboardHandle clipboard, bool default_editable)
+	public static T CutClipboard<T>(this T buffer, GtkClipboardHandle clipboard, bool default_editable) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_cut_clipboard(buffer, clipboard, default_editable);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle Delete(this GtkTextBufferHandle buffer, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T Delete<T>(this T buffer, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_delete(buffer, start, end);
 		return buffer;
@@ -597,13 +597,13 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_delete_interactive(buffer, start_iter, end_iter, default_editable);
 	}
 
-	public static GtkTextBufferHandle DeleteMark(this GtkTextBufferHandle buffer, GtkTextMarkHandle mark)
+	public static T DeleteMark<T>(this T buffer, GtkTextMarkHandle mark) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_delete_mark(buffer, mark);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle DeleteMarkByName(this GtkTextBufferHandle buffer, string name)
+	public static T DeleteMarkByName<T>(this T buffer, string name) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_delete_mark_by_name(buffer, name);
 		return buffer;
@@ -624,19 +624,19 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_deserialize_get_can_create_tags(buffer, format);
 	}
 
-	public static GtkTextBufferHandle DeserializeSetCanCreateTags(this GtkTextBufferHandle buffer, GdkAtom format, bool can_create_tags)
+	public static T DeserializeSetCanCreateTags<T>(this T buffer, GdkAtom format, bool can_create_tags) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_deserialize_set_can_create_tags(buffer, format, can_create_tags);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle EndUserAction(this GtkTextBufferHandle buffer)
+	public static T EndUserAction<T>(this T buffer) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_end_user_action(buffer);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetBounds(this GtkTextBufferHandle buffer, out GtkTextIter start, out GtkTextIter end)
+	public static T GetBounds<T>(this T buffer, out GtkTextIter start, out GtkTextIter end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_bounds(buffer, out start, out end);
 		return buffer;
@@ -657,7 +657,7 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_get_deserialize_formats(buffer, out n_formats);
 	}
 
-	public static GtkTextBufferHandle GetEndIter(this GtkTextBufferHandle buffer, out GtkTextIter iter)
+	public static T GetEndIter<T>(this T buffer, out GtkTextIter iter) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_end_iter(buffer, out iter);
 		return buffer;
@@ -673,37 +673,37 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_get_insert(buffer);
 	}
 
-	public static GtkTextBufferHandle GetIterAtChildAnchor(this GtkTextBufferHandle buffer, out GtkTextIter iter, GtkTextChildAnchorHandle anchor)
+	public static T GetIterAtChildAnchor<T>(this T buffer, out GtkTextIter iter, GtkTextChildAnchorHandle anchor) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_child_anchor(buffer, out iter, anchor);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetIterAtLine(this GtkTextBufferHandle buffer, out GtkTextIter iter, int line_number)
+	public static T GetIterAtLine<T>(this T buffer, out GtkTextIter iter, int line_number) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_line(buffer, out iter, line_number);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetIterAtLineIndex(this GtkTextBufferHandle buffer, out GtkTextIter iter, int line_number, int byte_index)
+	public static T GetIterAtLineIndex<T>(this T buffer, out GtkTextIter iter, int line_number, int byte_index) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_line_index(buffer, out iter, line_number, byte_index);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetIterAtLineOffset(this GtkTextBufferHandle buffer, out GtkTextIter iter, int line_number, int char_offset)
+	public static T GetIterAtLineOffset<T>(this T buffer, out GtkTextIter iter, int line_number, int char_offset) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_line_offset(buffer, out iter, line_number, char_offset);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetIterAtMark(this GtkTextBufferHandle buffer, out GtkTextIter iter, GtkTextMarkHandle mark)
+	public static T GetIterAtMark<T>(this T buffer, out GtkTextIter iter, GtkTextMarkHandle mark) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_mark(buffer, out iter, mark);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle GetIterAtOffset(this GtkTextBufferHandle buffer, out GtkTextIter iter, int char_offset)
+	public static T GetIterAtOffset<T>(this T buffer, out GtkTextIter iter, int char_offset) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_iter_at_offset(buffer, out iter, char_offset);
 		return buffer;
@@ -749,7 +749,7 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_get_slice(buffer, start, end, include_hidden_chars);
 	}
 
-	public static GtkTextBufferHandle GetStartIter(this GtkTextBufferHandle buffer, out GtkTextIter iter)
+	public static T GetStartIter<T>(this T buffer, out GtkTextIter iter) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_get_start_iter(buffer, out iter);
 		return buffer;
@@ -765,19 +765,19 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_get_text(buffer, start, end, include_hidden_chars);
 	}
 
-	public static GtkTextBufferHandle Insert(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, string text, int len)
+	public static T Insert<T>(this T buffer, GtkTextIterHandle iter, string text, int len) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert(buffer, iter, text, len);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle InsertAtCursor(this GtkTextBufferHandle buffer, string text, int len)
+	public static T InsertAtCursor<T>(this T buffer, string text, int len) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_at_cursor(buffer, text, len);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle InsertChildAnchor(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, GtkTextChildAnchorHandle anchor)
+	public static T InsertChildAnchor<T>(this T buffer, GtkTextIterHandle iter, GtkTextChildAnchorHandle anchor) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_child_anchor(buffer, iter, anchor);
 		return buffer;
@@ -793,19 +793,19 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_insert_interactive_at_cursor(buffer, text, len, default_editable);
 	}
 
-	public static GtkTextBufferHandle InsertMarkup(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, string markup, int len)
+	public static T InsertMarkup<T>(this T buffer, GtkTextIterHandle iter, string markup, int len) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_markup(buffer, iter, markup, len);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle InsertPixbuf(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, GdkPixbufHandle pixbuf)
+	public static T InsertPixbuf<T>(this T buffer, GtkTextIterHandle iter, GdkPixbufHandle pixbuf) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_pixbuf(buffer, iter, pixbuf);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle InsertRange(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T InsertRange<T>(this T buffer, GtkTextIterHandle iter, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_range(buffer, iter, start, end);
 		return buffer;
@@ -816,37 +816,37 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_insert_range_interactive(buffer, iter, start, end, default_editable);
 	}
 
-	public static GtkTextBufferHandle InsertWithTags(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, string text, int len, GtkTextTagHandle first_tag, IntPtr @__arglist)
+	public static T InsertWithTags<T>(this T buffer, GtkTextIterHandle iter, string text, int len, GtkTextTagHandle first_tag, IntPtr @__arglist) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_with_tags(buffer, iter, text, len, first_tag, @__arglist);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle InsertWithTagsByName(this GtkTextBufferHandle buffer, GtkTextIterHandle iter, string text, int len, string first_tag_name, IntPtr @__arglist)
+	public static T InsertWithTagsByName<T>(this T buffer, GtkTextIterHandle iter, string text, int len, string first_tag_name, IntPtr @__arglist) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_insert_with_tags_by_name(buffer, iter, text, len, first_tag_name, @__arglist);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle MoveMark(this GtkTextBufferHandle buffer, GtkTextMarkHandle mark, GtkTextIterHandle where)
+	public static T MoveMark<T>(this T buffer, GtkTextMarkHandle mark, GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_move_mark(buffer, mark, where);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle MoveMarkByName(this GtkTextBufferHandle buffer, string name, GtkTextIterHandle where)
+	public static T MoveMarkByName<T>(this T buffer, string name, GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_move_mark_by_name(buffer, name, where);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle PasteClipboard(this GtkTextBufferHandle buffer, GtkClipboardHandle clipboard, GtkTextIterHandle override_location, bool default_editable)
+	public static T PasteClipboard<T>(this T buffer, GtkClipboardHandle clipboard, GtkTextIterHandle override_location, bool default_editable) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_paste_clipboard(buffer, clipboard, override_location, default_editable);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle PlaceCursor(this GtkTextBufferHandle buffer, GtkTextIterHandle where)
+	public static T PlaceCursor<T>(this T buffer, GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_place_cursor(buffer, where);
 		return buffer;
@@ -872,31 +872,31 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_register_serialize_tagset(buffer, tagset_name);
 	}
 
-	public static GtkTextBufferHandle RemoveAllTags(this GtkTextBufferHandle buffer, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T RemoveAllTags<T>(this T buffer, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_remove_all_tags(buffer, start, end);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle RemoveSelectionClipboard(this GtkTextBufferHandle buffer, GtkClipboardHandle clipboard)
+	public static T RemoveSelectionClipboard<T>(this T buffer, GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_remove_selection_clipboard(buffer, clipboard);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle RemoveTag(this GtkTextBufferHandle buffer, GtkTextTagHandle tag, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T RemoveTag<T>(this T buffer, GtkTextTagHandle tag, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_remove_tag(buffer, tag, start, end);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle RemoveTagByName(this GtkTextBufferHandle buffer, string name, GtkTextIterHandle start, GtkTextIterHandle end)
+	public static T RemoveTagByName<T>(this T buffer, string name, GtkTextIterHandle start, GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_remove_tag_by_name(buffer, name, start, end);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle SelectRange(this GtkTextBufferHandle buffer, GtkTextIterHandle ins, GtkTextIterHandle bound)
+	public static T SelectRange<T>(this T buffer, GtkTextIterHandle ins, GtkTextIterHandle bound) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_select_range(buffer, ins, bound);
 		return buffer;
@@ -907,25 +907,25 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferExterns.gtk_text_buffer_serialize(register_buffer, content_buffer, format, start, end, out length);
 	}
 
-	public static GtkTextBufferHandle SetModified(this GtkTextBufferHandle buffer, bool setting)
+	public static T SetModified<T>(this T buffer, bool setting) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_set_modified(buffer, setting);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle SetText(this GtkTextBufferHandle buffer, string text, int len)
+	public static T SetText<T>(this T buffer, string text, int len) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_set_text(buffer, text, len);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle UnregisterDeserializeFormat(this GtkTextBufferHandle buffer, GdkAtom format)
+	public static T UnregisterDeserializeFormat<T>(this T buffer, GdkAtom format) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_unregister_deserialize_format(buffer, format);
 		return buffer;
 	}
 
-	public static GtkTextBufferHandle UnregisterSerializeFormat(this GtkTextBufferHandle buffer, GdkAtom format)
+	public static T UnregisterSerializeFormat<T>(this T buffer, GdkAtom format) where T : GtkTextBufferHandle
 	{
 		GtkTextBufferExterns.gtk_text_buffer_unregister_serialize_format(buffer, format);
 		return buffer;

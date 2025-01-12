@@ -61,7 +61,7 @@ public delegate void activate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkListBoxRowHandleExtensions
 {
-	public static GtkListBoxRowHandle Changed(this GtkListBoxRowHandle row)
+	public static T Changed<T>(this T row) where T : GtkListBoxRowHandle
 	{
 		GtkListBoxRowExterns.gtk_list_box_row_changed(row);
 		return row;
@@ -92,19 +92,19 @@ public static class GtkListBoxRowHandleExtensions
 		return GtkListBoxRowExterns.gtk_list_box_row_is_selected(row);
 	}
 
-	public static GtkListBoxRowHandle SetActivatable(this GtkListBoxRowHandle row, bool activatable)
+	public static T SetActivatable<T>(this T row, bool activatable) where T : GtkListBoxRowHandle
 	{
 		GtkListBoxRowExterns.gtk_list_box_row_set_activatable(row, activatable);
 		return row;
 	}
 
-	public static GtkListBoxRowHandle SetHeader(this GtkListBoxRowHandle row, GtkWidgetHandle header)
+	public static T SetHeader<T>(this T row, GtkWidgetHandle header) where T : GtkListBoxRowHandle
 	{
 		GtkListBoxRowExterns.gtk_list_box_row_set_header(row, header);
 		return row;
 	}
 
-	public static GtkListBoxRowHandle SetSelectable(this GtkListBoxRowHandle row, bool selectable)
+	public static T SetSelectable<T>(this T row, bool selectable) where T : GtkListBoxRowHandle
 	{
 		GtkListBoxRowExterns.gtk_list_box_row_set_selectable(row, selectable);
 		return row;

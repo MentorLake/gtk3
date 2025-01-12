@@ -11,7 +11,7 @@ public class GIOStreamHandle : GObjectHandle
 
 public static class GIOStreamHandleExtensions
 {
-	public static GIOStreamHandle GIoStreamClearPending(this GIOStreamHandle stream)
+	public static T GIoStreamClearPending<T>(this T stream) where T : GIOStreamHandle
 	{
 		GIOStreamExterns.g_io_stream_clear_pending(stream);
 		return stream;
@@ -22,7 +22,7 @@ public static class GIOStreamHandleExtensions
 		return GIOStreamExterns.g_io_stream_close(stream, cancellable, out error);
 	}
 
-	public static GIOStreamHandle GIoStreamCloseAsync(this GIOStreamHandle stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GIoStreamCloseAsync<T>(this T stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GIOStreamHandle
 	{
 		GIOStreamExterns.g_io_stream_close_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -58,7 +58,7 @@ public static class GIOStreamHandleExtensions
 		return GIOStreamExterns.g_io_stream_set_pending(stream, out error);
 	}
 
-	public static GIOStreamHandle GIoStreamSpliceAsync(this GIOStreamHandle stream1, GIOStreamHandle stream2, GIOStreamSpliceFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GIoStreamSpliceAsync<T>(this T stream1, GIOStreamHandle stream2, GIOStreamSpliceFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GIOStreamHandle
 	{
 		GIOStreamExterns.g_io_stream_splice_async(stream1, stream2, flags, io_priority, cancellable, callback, user_data);
 		return stream1;

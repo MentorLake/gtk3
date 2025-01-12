@@ -27,13 +27,13 @@ public static class GThreadHandleExtensions
 		return GThreadExterns.g_thread_ref(thread);
 	}
 
-	public static GThreadHandle SetPriority(this GThreadHandle thread, GThreadPriority priority)
+	public static T SetPriority<T>(this T thread, GThreadPriority priority) where T : GThreadHandle
 	{
 		GThreadExterns.g_thread_set_priority(thread, priority);
 		return thread;
 	}
 
-	public static GThreadHandle Unref(this GThreadHandle thread)
+	public static T Unref<T>(this T thread) where T : GThreadHandle
 	{
 		GThreadExterns.g_thread_unref(thread);
 		return thread;

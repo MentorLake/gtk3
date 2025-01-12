@@ -10,13 +10,13 @@ internal class GActionHandleImpl : BaseSafeHandle, GActionHandle
 
 public static class GActionHandleExtensions
 {
-	public static GActionHandle Activate(this GActionHandle action, GVariantHandle parameter)
+	public static T Activate<T>(this T action, GVariantHandle parameter) where T : GActionHandle
 	{
 		GActionExterns.g_action_activate(action, parameter);
 		return action;
 	}
 
-	public static GActionHandle ChangeState(this GActionHandle action, GVariantHandle value)
+	public static T ChangeState<T>(this T action, GVariantHandle value) where T : GActionHandle
 	{
 		GActionExterns.g_action_change_state(action, value);
 		return action;

@@ -11,7 +11,7 @@ public class PangoFontsetSimpleHandle : PangoFontsetHandle
 
 public static class PangoFontsetSimpleHandleExtensions
 {
-	public static PangoFontsetSimpleHandle Append(this PangoFontsetSimpleHandle fontset, PangoFontHandle font)
+	public static T Append<T>(this T fontset, PangoFontHandle font) where T : PangoFontsetSimpleHandle
 	{
 		PangoFontsetSimpleExterns.pango_fontset_simple_append(fontset, font);
 		return fontset;

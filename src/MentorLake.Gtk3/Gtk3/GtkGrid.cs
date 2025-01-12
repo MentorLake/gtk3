@@ -11,13 +11,13 @@ public class GtkGridHandle : GtkContainerHandle, AtkImplementorIfaceHandle, GtkB
 
 public static class GtkGridHandleExtensions
 {
-	public static GtkGridHandle Attach(this GtkGridHandle grid, GtkWidgetHandle child, int left, int top, int width, int height)
+	public static T Attach<T>(this T grid, GtkWidgetHandle child, int left, int top, int width, int height) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_attach(grid, child, left, top, width, height);
 		return grid;
 	}
 
-	public static GtkGridHandle AttachNextTo(this GtkGridHandle grid, GtkWidgetHandle child, GtkWidgetHandle sibling, GtkPositionType side, int width, int height)
+	public static T AttachNextTo<T>(this T grid, GtkWidgetHandle child, GtkWidgetHandle sibling, GtkPositionType side, int width, int height) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_attach_next_to(grid, child, sibling, side, width, height);
 		return grid;
@@ -58,67 +58,67 @@ public static class GtkGridHandleExtensions
 		return GtkGridExterns.gtk_grid_get_row_spacing(grid);
 	}
 
-	public static GtkGridHandle InsertColumn(this GtkGridHandle grid, int position)
+	public static T InsertColumn<T>(this T grid, int position) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_insert_column(grid, position);
 		return grid;
 	}
 
-	public static GtkGridHandle InsertNextTo(this GtkGridHandle grid, GtkWidgetHandle sibling, GtkPositionType side)
+	public static T InsertNextTo<T>(this T grid, GtkWidgetHandle sibling, GtkPositionType side) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_insert_next_to(grid, sibling, side);
 		return grid;
 	}
 
-	public static GtkGridHandle InsertRow(this GtkGridHandle grid, int position)
+	public static T InsertRow<T>(this T grid, int position) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_insert_row(grid, position);
 		return grid;
 	}
 
-	public static GtkGridHandle RemoveColumn(this GtkGridHandle grid, int position)
+	public static T RemoveColumn<T>(this T grid, int position) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_remove_column(grid, position);
 		return grid;
 	}
 
-	public static GtkGridHandle RemoveRow(this GtkGridHandle grid, int position)
+	public static T RemoveRow<T>(this T grid, int position) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_remove_row(grid, position);
 		return grid;
 	}
 
-	public static GtkGridHandle SetBaselineRow(this GtkGridHandle grid, int row)
+	public static T SetBaselineRow<T>(this T grid, int row) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_baseline_row(grid, row);
 		return grid;
 	}
 
-	public static GtkGridHandle SetColumnHomogeneous(this GtkGridHandle grid, bool homogeneous)
+	public static T SetColumnHomogeneous<T>(this T grid, bool homogeneous) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_column_homogeneous(grid, homogeneous);
 		return grid;
 	}
 
-	public static GtkGridHandle SetColumnSpacing(this GtkGridHandle grid, uint spacing)
+	public static T SetColumnSpacing<T>(this T grid, uint spacing) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_column_spacing(grid, spacing);
 		return grid;
 	}
 
-	public static GtkGridHandle SetRowBaselinePosition(this GtkGridHandle grid, int row, GtkBaselinePosition pos)
+	public static T SetRowBaselinePosition<T>(this T grid, int row, GtkBaselinePosition pos) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_row_baseline_position(grid, row, pos);
 		return grid;
 	}
 
-	public static GtkGridHandle SetRowHomogeneous(this GtkGridHandle grid, bool homogeneous)
+	public static T SetRowHomogeneous<T>(this T grid, bool homogeneous) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_row_homogeneous(grid, homogeneous);
 		return grid;
 	}
 
-	public static GtkGridHandle SetRowSpacing(this GtkGridHandle grid, uint spacing)
+	public static T SetRowSpacing<T>(this T grid, uint spacing) where T : GtkGridHandle
 	{
 		GtkGridExterns.gtk_grid_set_row_spacing(grid, spacing);
 		return grid;

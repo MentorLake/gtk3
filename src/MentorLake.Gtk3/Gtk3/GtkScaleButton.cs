@@ -161,19 +161,19 @@ public static class GtkScaleButtonHandleExtensions
 		return GtkScaleButtonExterns.gtk_scale_button_get_value(button);
 	}
 
-	public static GtkScaleButtonHandle SetAdjustment(this GtkScaleButtonHandle button, GtkAdjustmentHandle adjustment)
+	public static T SetAdjustment<T>(this T button, GtkAdjustmentHandle adjustment) where T : GtkScaleButtonHandle
 	{
 		GtkScaleButtonExterns.gtk_scale_button_set_adjustment(button, adjustment);
 		return button;
 	}
 
-	public static GtkScaleButtonHandle SetIcons(this GtkScaleButtonHandle button, string[] icons)
+	public static T SetIcons<T>(this T button, string[] icons) where T : GtkScaleButtonHandle
 	{
 		GtkScaleButtonExterns.gtk_scale_button_set_icons(button, icons);
 		return button;
 	}
 
-	public static GtkScaleButtonHandle SetValue(this GtkScaleButtonHandle button, double value)
+	public static T SetValue<T>(this T button, double value) where T : GtkScaleButtonHandle
 	{
 		GtkScaleButtonExterns.gtk_scale_button_set_value(button, value);
 		return button;

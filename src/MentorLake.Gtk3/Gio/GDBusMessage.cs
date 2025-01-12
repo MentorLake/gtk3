@@ -136,7 +136,7 @@ public static class GDBusMessageHandleExtensions
 		return GDBusMessageExterns.g_dbus_message_get_unix_fd_list(message);
 	}
 
-	public static GDBusMessageHandle GDbusMessageLock(this GDBusMessageHandle message)
+	public static T GDbusMessageLock<T>(this T message) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_lock(message);
 		return message;
@@ -167,97 +167,97 @@ public static class GDBusMessageHandleExtensions
 		return GDBusMessageExterns.g_dbus_message_print(message, indent);
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetBody(this GDBusMessageHandle message, GVariantHandle body)
+	public static T GDbusMessageSetBody<T>(this T message, GVariantHandle body) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_body(message, body);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetByteOrder(this GDBusMessageHandle message, GDBusMessageByteOrder byte_order)
+	public static T GDbusMessageSetByteOrder<T>(this T message, GDBusMessageByteOrder byte_order) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_byte_order(message, byte_order);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetDestination(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetDestination<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_destination(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetErrorName(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetErrorName<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_error_name(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetFlags(this GDBusMessageHandle message, GDBusMessageFlags flags)
+	public static T GDbusMessageSetFlags<T>(this T message, GDBusMessageFlags flags) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_flags(message, flags);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetHeader(this GDBusMessageHandle message, GDBusMessageHeaderField header_field, GVariantHandle value)
+	public static T GDbusMessageSetHeader<T>(this T message, GDBusMessageHeaderField header_field, GVariantHandle value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_header(message, header_field, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetInterface(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetInterface<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_interface(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetMember(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetMember<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_member(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetMessageType(this GDBusMessageHandle message, GDBusMessageType type)
+	public static T GDbusMessageSetMessageType<T>(this T message, GDBusMessageType type) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_message_type(message, type);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetNumUnixFds(this GDBusMessageHandle message, uint value)
+	public static T GDbusMessageSetNumUnixFds<T>(this T message, uint value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_num_unix_fds(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetPath(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetPath<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_path(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetReplySerial(this GDBusMessageHandle message, uint value)
+	public static T GDbusMessageSetReplySerial<T>(this T message, uint value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_reply_serial(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetSender(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetSender<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_sender(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetSerial(this GDBusMessageHandle message, uint serial)
+	public static T GDbusMessageSetSerial<T>(this T message, uint serial) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_serial(message, serial);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetSignature(this GDBusMessageHandle message, string value)
+	public static T GDbusMessageSetSignature<T>(this T message, string value) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_signature(message, value);
 		return message;
 	}
 
-	public static GDBusMessageHandle GDbusMessageSetUnixFdList(this GDBusMessageHandle message, GUnixFDListHandle fd_list)
+	public static T GDbusMessageSetUnixFdList<T>(this T message, GUnixFDListHandle fd_list) where T : GDBusMessageHandle
 	{
 		GDBusMessageExterns.g_dbus_message_set_unix_fd_list(message, fd_list);
 		return message;

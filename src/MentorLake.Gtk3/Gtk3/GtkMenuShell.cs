@@ -322,37 +322,37 @@ public delegate void selection_done([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GtkMenuShellHandleExtensions
 {
-	public static GtkMenuShellHandle ActivateItem(this GtkMenuShellHandle menu_shell, GtkWidgetHandle menu_item, bool force_deactivate)
+	public static T ActivateItem<T>(this T menu_shell, GtkWidgetHandle menu_item, bool force_deactivate) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_activate_item(menu_shell, menu_item, force_deactivate);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle Append(this GtkMenuShellHandle menu_shell, GtkWidgetHandle child)
+	public static T Append<T>(this T menu_shell, GtkWidgetHandle child) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_append(menu_shell, child);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle BindModel(this GtkMenuShellHandle menu_shell, GMenuModelHandle model, string action_namespace, bool with_separators)
+	public static T BindModel<T>(this T menu_shell, GMenuModelHandle model, string action_namespace, bool with_separators) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_bind_model(menu_shell, model, action_namespace, with_separators);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle Cancel(this GtkMenuShellHandle menu_shell)
+	public static T Cancel<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_cancel(menu_shell);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle Deactivate(this GtkMenuShellHandle menu_shell)
+	public static T Deactivate<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_deactivate(menu_shell);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle Deselect(this GtkMenuShellHandle menu_shell)
+	public static T Deselect<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_deselect(menu_shell);
 		return menu_shell;
@@ -373,31 +373,31 @@ public static class GtkMenuShellHandleExtensions
 		return GtkMenuShellExterns.gtk_menu_shell_get_take_focus(menu_shell);
 	}
 
-	public static GtkMenuShellHandle Insert(this GtkMenuShellHandle menu_shell, GtkWidgetHandle child, int position)
+	public static T Insert<T>(this T menu_shell, GtkWidgetHandle child, int position) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_insert(menu_shell, child, position);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle Prepend(this GtkMenuShellHandle menu_shell, GtkWidgetHandle child)
+	public static T Prepend<T>(this T menu_shell, GtkWidgetHandle child) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_prepend(menu_shell, child);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle SelectFirst(this GtkMenuShellHandle menu_shell, bool search_sensitive)
+	public static T SelectFirst<T>(this T menu_shell, bool search_sensitive) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_select_first(menu_shell, search_sensitive);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle SelectItem(this GtkMenuShellHandle menu_shell, GtkWidgetHandle menu_item)
+	public static T SelectItem<T>(this T menu_shell, GtkWidgetHandle menu_item) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_select_item(menu_shell, menu_item);
 		return menu_shell;
 	}
 
-	public static GtkMenuShellHandle SetTakeFocus(this GtkMenuShellHandle menu_shell, bool take_focus)
+	public static T SetTakeFocus<T>(this T menu_shell, bool take_focus) where T : GtkMenuShellHandle
 	{
 		GtkMenuShellExterns.gtk_menu_shell_set_take_focus(menu_shell, take_focus);
 		return menu_shell;

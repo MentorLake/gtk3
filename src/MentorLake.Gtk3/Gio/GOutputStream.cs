@@ -6,7 +6,7 @@ public class GOutputStreamHandle : GObjectHandle
 
 public static class GOutputStreamHandleExtensions
 {
-	public static GOutputStreamHandle ClearPending(this GOutputStreamHandle stream)
+	public static T ClearPending<T>(this T stream) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_clear_pending(stream);
 		return stream;
@@ -17,7 +17,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_close(stream, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle CloseAsync(this GOutputStreamHandle stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CloseAsync<T>(this T stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_close_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -33,7 +33,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_flush(stream, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle FlushAsync(this GOutputStreamHandle stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T FlushAsync<T>(this T stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_flush_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -74,7 +74,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_splice(stream, source, flags, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle SpliceAsync(this GOutputStreamHandle stream, GInputStreamHandle source, GOutputStreamSpliceFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SpliceAsync<T>(this T stream, GInputStreamHandle source, GOutputStreamSpliceFlags flags, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_splice_async(stream, source, flags, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -100,7 +100,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_write_all(stream, buffer, count, out bytes_written, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle WriteAllAsync(this GOutputStreamHandle stream, IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WriteAllAsync<T>(this T stream, IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_write_all_async(stream, buffer, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -111,7 +111,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_write_all_finish(stream, result, out bytes_written, out error);
 	}
 
-	public static GOutputStreamHandle WriteAsync(this GOutputStreamHandle stream, IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WriteAsync<T>(this T stream, IntPtr buffer, UIntPtr count, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_write_async(stream, buffer, count, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -122,7 +122,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_write_bytes(stream, bytes, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle WriteBytesAsync(this GOutputStreamHandle stream, GBytesHandle bytes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WriteBytesAsync<T>(this T stream, GBytesHandle bytes, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_write_bytes_async(stream, bytes, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -148,7 +148,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_writev_all(stream, vectors, n_vectors, out bytes_written, cancellable, out error);
 	}
 
-	public static GOutputStreamHandle WritevAllAsync(this GOutputStreamHandle stream, GOutputVector[] vectors, UIntPtr n_vectors, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WritevAllAsync<T>(this T stream, GOutputVector[] vectors, UIntPtr n_vectors, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_writev_all_async(stream, vectors, n_vectors, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -159,7 +159,7 @@ public static class GOutputStreamHandleExtensions
 		return GOutputStreamExterns.g_output_stream_writev_all_finish(stream, result, out bytes_written, out error);
 	}
 
-	public static GOutputStreamHandle WritevAsync(this GOutputStreamHandle stream, GOutputVector[] vectors, UIntPtr n_vectors, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WritevAsync<T>(this T stream, GOutputVector[] vectors, UIntPtr n_vectors, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GOutputStreamHandle
 	{
 		GOutputStreamExterns.g_output_stream_writev_async(stream, vectors, n_vectors, io_priority, cancellable, callback, user_data);
 		return stream;

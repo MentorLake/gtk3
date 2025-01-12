@@ -170,67 +170,67 @@ public delegate void set_focus_child([MarshalAs(UnmanagedType.CustomMarshaler, M
 
 public static class GtkContainerHandleExtensions
 {
-	public static GtkContainerHandle Add(this GtkContainerHandle container, GtkWidgetHandle widget)
+	public static T Add<T>(this T container, GtkWidgetHandle widget) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_add(container, widget);
 		return container;
 	}
 
-	public static GtkContainerHandle AddWithProperties(this GtkContainerHandle container, GtkWidgetHandle widget, string first_prop_name, IntPtr @__arglist)
+	public static T AddWithProperties<T>(this T container, GtkWidgetHandle widget, string first_prop_name, IntPtr @__arglist) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_add_with_properties(container, widget, first_prop_name, @__arglist);
 		return container;
 	}
 
-	public static GtkContainerHandle CheckResize(this GtkContainerHandle container)
+	public static T CheckResize<T>(this T container) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_check_resize(container);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildGet(this GtkContainerHandle container, GtkWidgetHandle child, string first_prop_name, IntPtr @__arglist)
+	public static T ChildGet<T>(this T container, GtkWidgetHandle child, string first_prop_name, IntPtr @__arglist) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_get(container, child, first_prop_name, @__arglist);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildGetProperty(this GtkContainerHandle container, GtkWidgetHandle child, string property_name, GValueHandle value)
+	public static T ChildGetProperty<T>(this T container, GtkWidgetHandle child, string property_name, GValueHandle value) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_get_property(container, child, property_name, value);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildGetValist(this GtkContainerHandle container, GtkWidgetHandle child, string first_property_name, out IntPtr var_args)
+	public static T ChildGetValist<T>(this T container, GtkWidgetHandle child, string first_property_name, out IntPtr var_args) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_get_valist(container, child, first_property_name, out var_args);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildNotify(this GtkContainerHandle container, GtkWidgetHandle child, string child_property)
+	public static T ChildNotify<T>(this T container, GtkWidgetHandle child, string child_property) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_notify(container, child, child_property);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildNotifyByPspec(this GtkContainerHandle container, GtkWidgetHandle child, GParamSpecHandle pspec)
+	public static T ChildNotifyByPspec<T>(this T container, GtkWidgetHandle child, GParamSpecHandle pspec) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_notify_by_pspec(container, child, pspec);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildSet(this GtkContainerHandle container, GtkWidgetHandle child, string first_prop_name, IntPtr @__arglist)
+	public static T ChildSet<T>(this T container, GtkWidgetHandle child, string first_prop_name, IntPtr @__arglist) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_set(container, child, first_prop_name, @__arglist);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildSetProperty(this GtkContainerHandle container, GtkWidgetHandle child, string property_name, GValueHandle value)
+	public static T ChildSetProperty<T>(this T container, GtkWidgetHandle child, string property_name, GValueHandle value) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_set_property(container, child, property_name, value);
 		return container;
 	}
 
-	public static GtkContainerHandle ChildSetValist(this GtkContainerHandle container, GtkWidgetHandle child, string first_property_name, IntPtr var_args)
+	public static T ChildSetValist<T>(this T container, GtkWidgetHandle child, string first_property_name, IntPtr var_args) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_child_set_valist(container, child, first_property_name, var_args);
 		return container;
@@ -241,13 +241,13 @@ public static class GtkContainerHandleExtensions
 		return GtkContainerExterns.gtk_container_child_type(container);
 	}
 
-	public static GtkContainerHandle Forall(this GtkContainerHandle container, GtkCallback callback, IntPtr callback_data)
+	public static T Forall<T>(this T container, GtkCallback callback, IntPtr callback_data) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_forall(container, callback, callback_data);
 		return container;
 	}
 
-	public static GtkContainerHandle Foreach(this GtkContainerHandle container, GtkCallback callback, IntPtr callback_data)
+	public static T Foreach<T>(this T container, GtkCallback callback, IntPtr callback_data) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_foreach(container, callback, callback_data);
 		return container;
@@ -293,67 +293,67 @@ public static class GtkContainerHandleExtensions
 		return GtkContainerExterns.gtk_container_get_resize_mode(container);
 	}
 
-	public static GtkContainerHandle PropagateDraw(this GtkContainerHandle container, GtkWidgetHandle child, cairo_tHandle cr)
+	public static T PropagateDraw<T>(this T container, GtkWidgetHandle child, cairo_tHandle cr) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_propagate_draw(container, child, cr);
 		return container;
 	}
 
-	public static GtkContainerHandle Remove(this GtkContainerHandle container, GtkWidgetHandle widget)
+	public static T Remove<T>(this T container, GtkWidgetHandle widget) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_remove(container, widget);
 		return container;
 	}
 
-	public static GtkContainerHandle ResizeChildren(this GtkContainerHandle container)
+	public static T ResizeChildren<T>(this T container) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_resize_children(container);
 		return container;
 	}
 
-	public static GtkContainerHandle SetBorderWidth(this GtkContainerHandle container, uint border_width)
+	public static T SetBorderWidth<T>(this T container, uint border_width) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_border_width(container, border_width);
 		return container;
 	}
 
-	public static GtkContainerHandle SetFocusChain(this GtkContainerHandle container, GListHandle focusable_widgets)
+	public static T SetFocusChain<T>(this T container, GListHandle focusable_widgets) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_focus_chain(container, focusable_widgets);
 		return container;
 	}
 
-	public static GtkContainerHandle SetFocusChild(this GtkContainerHandle container, GtkWidgetHandle child)
+	public static T SetFocusChild<T>(this T container, GtkWidgetHandle child) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_focus_child(container, child);
 		return container;
 	}
 
-	public static GtkContainerHandle SetFocusHadjustment(this GtkContainerHandle container, GtkAdjustmentHandle adjustment)
+	public static T SetFocusHadjustment<T>(this T container, GtkAdjustmentHandle adjustment) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_focus_hadjustment(container, adjustment);
 		return container;
 	}
 
-	public static GtkContainerHandle SetFocusVadjustment(this GtkContainerHandle container, GtkAdjustmentHandle adjustment)
+	public static T SetFocusVadjustment<T>(this T container, GtkAdjustmentHandle adjustment) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_focus_vadjustment(container, adjustment);
 		return container;
 	}
 
-	public static GtkContainerHandle SetReallocateRedraws(this GtkContainerHandle container, bool needs_redraws)
+	public static T SetReallocateRedraws<T>(this T container, bool needs_redraws) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_reallocate_redraws(container, needs_redraws);
 		return container;
 	}
 
-	public static GtkContainerHandle SetResizeMode(this GtkContainerHandle container, GtkResizeMode resize_mode)
+	public static T SetResizeMode<T>(this T container, GtkResizeMode resize_mode) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_set_resize_mode(container, resize_mode);
 		return container;
 	}
 
-	public static GtkContainerHandle UnsetFocusChain(this GtkContainerHandle container)
+	public static T UnsetFocusChain<T>(this T container) where T : GtkContainerHandle
 	{
 		GtkContainerExterns.gtk_container_unset_focus_chain(container);
 		return container;

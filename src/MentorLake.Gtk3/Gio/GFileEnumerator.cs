@@ -11,7 +11,7 @@ public static class GFileEnumeratorHandleExtensions
 		return GFileEnumeratorExterns.g_file_enumerator_close(enumerator, cancellable, out error);
 	}
 
-	public static GFileEnumeratorHandle CloseAsync(this GFileEnumeratorHandle enumerator, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CloseAsync<T>(this T enumerator, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileEnumeratorHandle
 	{
 		GFileEnumeratorExterns.g_file_enumerator_close_async(enumerator, io_priority, cancellable, callback, user_data);
 		return enumerator;
@@ -52,7 +52,7 @@ public static class GFileEnumeratorHandleExtensions
 		return GFileEnumeratorExterns.g_file_enumerator_next_file(enumerator, cancellable, out error);
 	}
 
-	public static GFileEnumeratorHandle NextFilesAsync(this GFileEnumeratorHandle enumerator, int num_files, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T NextFilesAsync<T>(this T enumerator, int num_files, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GFileEnumeratorHandle
 	{
 		GFileEnumeratorExterns.g_file_enumerator_next_files_async(enumerator, num_files, io_priority, cancellable, callback, user_data);
 		return enumerator;
@@ -63,7 +63,7 @@ public static class GFileEnumeratorHandleExtensions
 		return GFileEnumeratorExterns.g_file_enumerator_next_files_finish(enumerator, result, out error);
 	}
 
-	public static GFileEnumeratorHandle SetPending(this GFileEnumeratorHandle enumerator, bool pending)
+	public static T SetPending<T>(this T enumerator, bool pending) where T : GFileEnumeratorHandle
 	{
 		GFileEnumeratorExterns.g_file_enumerator_set_pending(enumerator, pending);
 		return enumerator;

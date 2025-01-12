@@ -16,7 +16,7 @@ public class PangoLayoutHandle : GObjectHandle
 
 public static class PangoLayoutHandleExtensions
 {
-	public static PangoLayoutHandle ContextChanged(this PangoLayoutHandle layout)
+	public static T ContextChanged<T>(this T layout) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_context_changed(layout);
 		return layout;
@@ -47,7 +47,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_baseline(layout);
 	}
 
-	public static PangoLayoutHandle GetCaretPos(this PangoLayoutHandle layout, int index_, out PangoRectangle strong_pos, out PangoRectangle weak_pos)
+	public static T GetCaretPos<T>(this T layout, int index_, out PangoRectangle strong_pos, out PangoRectangle weak_pos) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_caret_pos(layout, index_, out strong_pos, out weak_pos);
 		return layout;
@@ -63,7 +63,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_context(layout);
 	}
 
-	public static PangoLayoutHandle GetCursorPos(this PangoLayoutHandle layout, int index_, out PangoRectangle strong_pos, out PangoRectangle weak_pos)
+	public static T GetCursorPos<T>(this T layout, int index_, out PangoRectangle strong_pos, out PangoRectangle weak_pos) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_cursor_pos(layout, index_, out strong_pos, out weak_pos);
 		return layout;
@@ -79,7 +79,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_ellipsize(layout);
 	}
 
-	public static PangoLayoutHandle GetExtents(this PangoLayoutHandle layout, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetExtents<T>(this T layout, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_extents(layout, out ink_rect, out logical_rect);
 		return layout;
@@ -145,7 +145,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_lines_readonly(layout);
 	}
 
-	public static PangoLayoutHandle GetLogAttrs(this PangoLayoutHandle layout, out PangoLogAttr[] attrs, out int n_attrs)
+	public static T GetLogAttrs<T>(this T layout, out PangoLogAttr[] attrs, out int n_attrs) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_log_attrs(layout, out attrs, out n_attrs);
 		return layout;
@@ -156,13 +156,13 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_log_attrs_readonly(layout, out n_attrs);
 	}
 
-	public static PangoLayoutHandle GetPixelExtents(this PangoLayoutHandle layout, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetPixelExtents<T>(this T layout, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_pixel_extents(layout, out ink_rect, out logical_rect);
 		return layout;
 	}
 
-	public static PangoLayoutHandle GetPixelSize(this PangoLayoutHandle layout, out int width, out int height)
+	public static T GetPixelSize<T>(this T layout, out int width, out int height) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_pixel_size(layout, out width, out height);
 		return layout;
@@ -178,7 +178,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_single_paragraph_mode(layout);
 	}
 
-	public static PangoLayoutHandle GetSize(this PangoLayoutHandle layout, out int width, out int height)
+	public static T GetSize<T>(this T layout, out int width, out int height) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_get_size(layout, out width, out height);
 		return layout;
@@ -214,13 +214,13 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_get_wrap(layout);
 	}
 
-	public static PangoLayoutHandle IndexToLineX(this PangoLayoutHandle layout, int index_, bool trailing, out int line, out int x_pos)
+	public static T IndexToLineX<T>(this T layout, int index_, bool trailing, out int line, out int x_pos) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_index_to_line_x(layout, index_, trailing, out line, out x_pos);
 		return layout;
 	}
 
-	public static PangoLayoutHandle IndexToPos(this PangoLayoutHandle layout, int index_, out PangoRectangle pos)
+	public static T IndexToPos<T>(this T layout, int index_, out PangoRectangle pos) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_index_to_pos(layout, index_, out pos);
 		return layout;
@@ -236,7 +236,7 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_is_wrapped(layout);
 	}
 
-	public static PangoLayoutHandle MoveCursorVisually(this PangoLayoutHandle layout, bool strong, int old_index, int old_trailing, int direction, out int new_index, out int new_trailing)
+	public static T MoveCursorVisually<T>(this T layout, bool strong, int old_index, int old_trailing, int direction, out int new_index, out int new_trailing) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_move_cursor_visually(layout, strong, old_index, old_trailing, direction, out new_index, out new_trailing);
 		return layout;
@@ -247,109 +247,109 @@ public static class PangoLayoutHandleExtensions
 		return PangoLayoutExterns.pango_layout_serialize(layout, flags);
 	}
 
-	public static PangoLayoutHandle SetAlignment(this PangoLayoutHandle layout, PangoAlignment alignment)
+	public static T SetAlignment<T>(this T layout, PangoAlignment alignment) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_alignment(layout, alignment);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetAttributes(this PangoLayoutHandle layout, PangoAttrListHandle attrs)
+	public static T SetAttributes<T>(this T layout, PangoAttrListHandle attrs) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_attributes(layout, attrs);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetAutoDir(this PangoLayoutHandle layout, bool auto_dir)
+	public static T SetAutoDir<T>(this T layout, bool auto_dir) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_auto_dir(layout, auto_dir);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetEllipsize(this PangoLayoutHandle layout, PangoEllipsizeMode ellipsize)
+	public static T SetEllipsize<T>(this T layout, PangoEllipsizeMode ellipsize) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_ellipsize(layout, ellipsize);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetFontDescription(this PangoLayoutHandle layout, PangoFontDescriptionHandle desc)
+	public static T SetFontDescription<T>(this T layout, PangoFontDescriptionHandle desc) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_font_description(layout, desc);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetHeight(this PangoLayoutHandle layout, int height)
+	public static T SetHeight<T>(this T layout, int height) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_height(layout, height);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetIndent(this PangoLayoutHandle layout, int indent)
+	public static T SetIndent<T>(this T layout, int indent) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_indent(layout, indent);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetJustify(this PangoLayoutHandle layout, bool justify)
+	public static T SetJustify<T>(this T layout, bool justify) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_justify(layout, justify);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetJustifyLastLine(this PangoLayoutHandle layout, bool justify)
+	public static T SetJustifyLastLine<T>(this T layout, bool justify) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_justify_last_line(layout, justify);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetLineSpacing(this PangoLayoutHandle layout, float factor)
+	public static T SetLineSpacing<T>(this T layout, float factor) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_line_spacing(layout, factor);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetMarkup(this PangoLayoutHandle layout, string markup, int length)
+	public static T SetMarkup<T>(this T layout, string markup, int length) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_markup(layout, markup, length);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetMarkupWithAccel(this PangoLayoutHandle layout, string markup, int length, char accel_marker, out string accel_char)
+	public static T SetMarkupWithAccel<T>(this T layout, string markup, int length, char accel_marker, out string accel_char) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_markup_with_accel(layout, markup, length, accel_marker, out accel_char);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetSingleParagraphMode(this PangoLayoutHandle layout, bool setting)
+	public static T SetSingleParagraphMode<T>(this T layout, bool setting) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_single_paragraph_mode(layout, setting);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetSpacing(this PangoLayoutHandle layout, int spacing)
+	public static T SetSpacing<T>(this T layout, int spacing) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_spacing(layout, spacing);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetTabs(this PangoLayoutHandle layout, PangoTabArrayHandle tabs)
+	public static T SetTabs<T>(this T layout, PangoTabArrayHandle tabs) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_tabs(layout, tabs);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetText(this PangoLayoutHandle layout, string text, int length)
+	public static T SetText<T>(this T layout, string text, int length) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_text(layout, text, length);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetWidth(this PangoLayoutHandle layout, int width)
+	public static T SetWidth<T>(this T layout, int width) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_width(layout, width);
 		return layout;
 	}
 
-	public static PangoLayoutHandle SetWrap(this PangoLayoutHandle layout, PangoWrapMode wrap)
+	public static T SetWrap<T>(this T layout, PangoWrapMode wrap) where T : PangoLayoutHandle
 	{
 		PangoLayoutExterns.pango_layout_set_wrap(layout, wrap);
 		return layout;

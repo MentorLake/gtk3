@@ -26,13 +26,13 @@ public static class GBufferedOutputStreamHandleExtensions
 		return GBufferedOutputStreamExterns.g_buffered_output_stream_get_buffer_size(stream);
 	}
 
-	public static GBufferedOutputStreamHandle SetAutoGrow(this GBufferedOutputStreamHandle stream, bool auto_grow)
+	public static T SetAutoGrow<T>(this T stream, bool auto_grow) where T : GBufferedOutputStreamHandle
 	{
 		GBufferedOutputStreamExterns.g_buffered_output_stream_set_auto_grow(stream, auto_grow);
 		return stream;
 	}
 
-	public static GBufferedOutputStreamHandle SetBufferSize(this GBufferedOutputStreamHandle stream, UIntPtr size)
+	public static T SetBufferSize<T>(this T stream, UIntPtr size) where T : GBufferedOutputStreamHandle
 	{
 		GBufferedOutputStreamExterns.g_buffered_output_stream_set_buffer_size(stream, size);
 		return stream;

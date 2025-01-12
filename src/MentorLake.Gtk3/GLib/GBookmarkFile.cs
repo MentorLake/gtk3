@@ -12,13 +12,13 @@ public class GBookmarkFileHandle : BaseSafeHandle
 
 public static class GBookmarkFileHandleExtensions
 {
-	public static GBookmarkFileHandle AddApplication(this GBookmarkFileHandle bookmark, string uri, string name, string exec)
+	public static T AddApplication<T>(this T bookmark, string uri, string name, string exec) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_add_application(bookmark, uri, name, exec);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle AddGroup(this GBookmarkFileHandle bookmark, string uri, string group)
+	public static T AddGroup<T>(this T bookmark, string uri, string group) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_add_group(bookmark, uri, group);
 		return bookmark;
@@ -29,7 +29,7 @@ public static class GBookmarkFileHandleExtensions
 		return GBookmarkFileExterns.g_bookmark_file_copy(bookmark);
 	}
 
-	public static GBookmarkFileHandle Free(this GBookmarkFileHandle bookmark)
+	public static T Free<T>(this T bookmark) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_free(bookmark);
 		return bookmark;
@@ -170,13 +170,13 @@ public static class GBookmarkFileHandleExtensions
 		return GBookmarkFileExterns.g_bookmark_file_remove_item(bookmark, uri, out error);
 	}
 
-	public static GBookmarkFileHandle SetAdded(this GBookmarkFileHandle bookmark, string uri, long added)
+	public static T SetAdded<T>(this T bookmark, string uri, long added) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_added(bookmark, uri, added);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetAddedDateTime(this GBookmarkFileHandle bookmark, string uri, GDateTimeHandle added)
+	public static T SetAddedDateTime<T>(this T bookmark, string uri, GDateTimeHandle added) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_added_date_time(bookmark, uri, added);
 		return bookmark;
@@ -192,61 +192,61 @@ public static class GBookmarkFileHandleExtensions
 		return GBookmarkFileExterns.g_bookmark_file_set_application_info(bookmark, uri, name, exec, count, stamp, out error);
 	}
 
-	public static GBookmarkFileHandle SetDescription(this GBookmarkFileHandle bookmark, string uri, string description)
+	public static T SetDescription<T>(this T bookmark, string uri, string description) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_description(bookmark, uri, description);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetGroups(this GBookmarkFileHandle bookmark, string uri, string[] groups, UIntPtr length)
+	public static T SetGroups<T>(this T bookmark, string uri, string[] groups, UIntPtr length) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_groups(bookmark, uri, groups, length);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetIcon(this GBookmarkFileHandle bookmark, string uri, string href, string mime_type)
+	public static T SetIcon<T>(this T bookmark, string uri, string href, string mime_type) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_icon(bookmark, uri, href, mime_type);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetIsPrivate(this GBookmarkFileHandle bookmark, string uri, bool is_private)
+	public static T SetIsPrivate<T>(this T bookmark, string uri, bool is_private) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_is_private(bookmark, uri, is_private);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetMimeType(this GBookmarkFileHandle bookmark, string uri, string mime_type)
+	public static T SetMimeType<T>(this T bookmark, string uri, string mime_type) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_mime_type(bookmark, uri, mime_type);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetModified(this GBookmarkFileHandle bookmark, string uri, long modified)
+	public static T SetModified<T>(this T bookmark, string uri, long modified) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_modified(bookmark, uri, modified);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetModifiedDateTime(this GBookmarkFileHandle bookmark, string uri, GDateTimeHandle modified)
+	public static T SetModifiedDateTime<T>(this T bookmark, string uri, GDateTimeHandle modified) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_modified_date_time(bookmark, uri, modified);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetTitle(this GBookmarkFileHandle bookmark, string uri, string title)
+	public static T SetTitle<T>(this T bookmark, string uri, string title) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_title(bookmark, uri, title);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetVisited(this GBookmarkFileHandle bookmark, string uri, long visited)
+	public static T SetVisited<T>(this T bookmark, string uri, long visited) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_visited(bookmark, uri, visited);
 		return bookmark;
 	}
 
-	public static GBookmarkFileHandle SetVisitedDateTime(this GBookmarkFileHandle bookmark, string uri, GDateTimeHandle visited)
+	public static T SetVisitedDateTime<T>(this T bookmark, string uri, GDateTimeHandle visited) where T : GBookmarkFileHandle
 	{
 		GBookmarkFileExterns.g_bookmark_file_set_visited_date_time(bookmark, uri, visited);
 		return bookmark;

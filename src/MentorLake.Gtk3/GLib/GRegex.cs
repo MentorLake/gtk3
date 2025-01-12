@@ -102,7 +102,7 @@ public static class GRegexHandleExtensions
 		return GRegexExterns.g_regex_split_full(regex, @string, string_len, start_position, match_options, max_tokens, out error);
 	}
 
-	public static GRegexHandle Unref(this GRegexHandle regex)
+	public static T Unref<T>(this T regex) where T : GRegexHandle
 	{
 		GRegexExterns.g_regex_unref(regex);
 		return regex;

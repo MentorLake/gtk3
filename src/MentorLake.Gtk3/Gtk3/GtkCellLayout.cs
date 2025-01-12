@@ -10,19 +10,19 @@ internal class GtkCellLayoutHandleImpl : BaseSafeHandle, GtkCellLayoutHandle
 
 public static class GtkCellLayoutHandleExtensions
 {
-	public static GtkCellLayoutHandle AddAttribute(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, string attribute, int column)
+	public static T AddAttribute<T>(this T cell_layout, GtkCellRendererHandle cell, string attribute, int column) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_add_attribute(cell_layout, cell, attribute, column);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle Clear(this GtkCellLayoutHandle cell_layout)
+	public static T Clear<T>(this T cell_layout) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_clear(cell_layout);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle ClearAttributes(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell)
+	public static T ClearAttributes<T>(this T cell_layout, GtkCellRendererHandle cell) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_clear_attributes(cell_layout, cell);
 		return cell_layout;
@@ -38,31 +38,31 @@ public static class GtkCellLayoutHandleExtensions
 		return GtkCellLayoutExterns.gtk_cell_layout_get_cells(cell_layout);
 	}
 
-	public static GtkCellLayoutHandle PackEnd(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, bool expand)
+	public static T PackEnd<T>(this T cell_layout, GtkCellRendererHandle cell, bool expand) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_pack_end(cell_layout, cell, expand);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle PackStart(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, bool expand)
+	public static T PackStart<T>(this T cell_layout, GtkCellRendererHandle cell, bool expand) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_pack_start(cell_layout, cell, expand);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle Reorder(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, int position)
+	public static T Reorder<T>(this T cell_layout, GtkCellRendererHandle cell, int position) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_reorder(cell_layout, cell, position);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle SetAttributes(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, IntPtr @__arglist)
+	public static T SetAttributes<T>(this T cell_layout, GtkCellRendererHandle cell, IntPtr @__arglist) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_set_attributes(cell_layout, cell, @__arglist);
 		return cell_layout;
 	}
 
-	public static GtkCellLayoutHandle SetCellDataFunc(this GtkCellLayoutHandle cell_layout, GtkCellRendererHandle cell, GtkCellLayoutDataFunc func, IntPtr func_data, GDestroyNotify destroy)
+	public static T SetCellDataFunc<T>(this T cell_layout, GtkCellRendererHandle cell, GtkCellLayoutDataFunc func, IntPtr func_data, GDestroyNotify destroy) where T : GtkCellLayoutHandle
 	{
 		GtkCellLayoutExterns.gtk_cell_layout_set_cell_data_func(cell_layout, cell, func, func_data, destroy);
 		return cell_layout;

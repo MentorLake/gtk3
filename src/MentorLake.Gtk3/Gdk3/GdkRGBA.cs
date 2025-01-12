@@ -17,7 +17,7 @@ public static class GdkRGBAHandleExtensions
 		return GdkRGBAExterns.gdk_rgba_equal(p1, p2);
 	}
 
-	public static GdkRGBAHandle GdkRgbaFree(this GdkRGBAHandle rgba)
+	public static T GdkRgbaFree<T>(this T rgba) where T : GdkRGBAHandle
 	{
 		GdkRGBAExterns.gdk_rgba_free(rgba);
 		return rgba;

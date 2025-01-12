@@ -12,7 +12,7 @@ public static class GDBusMethodInfoHandleExtensions
 		return GDBusMethodInfoExterns.g_dbus_method_info_ref(info);
 	}
 
-	public static GDBusMethodInfoHandle GDbusMethodInfoUnref(this GDBusMethodInfoHandle info)
+	public static T GDbusMethodInfoUnref<T>(this T info) where T : GDBusMethodInfoHandle
 	{
 		GDBusMethodInfoExterns.g_dbus_method_info_unref(info);
 		return info;

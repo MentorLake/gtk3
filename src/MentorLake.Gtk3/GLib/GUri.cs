@@ -82,7 +82,7 @@ public static class GUriHandleExtensions
 		return GUriExterns.g_uri_to_string_partial(uri, flags);
 	}
 
-	public static GUriHandle Unref(this GUriHandle uri)
+	public static T Unref<T>(this T uri) where T : GUriHandle
 	{
 		GUriExterns.g_uri_unref(uri);
 		return uri;

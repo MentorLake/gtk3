@@ -20,7 +20,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_can_unmount(mount);
 	}
 
-	public static GMountHandle Eject(this GMountHandle mount, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Eject<T>(this T mount, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_eject(mount, flags, cancellable, callback, user_data);
 		return mount;
@@ -31,7 +31,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_eject_finish(mount, result, out error);
 	}
 
-	public static GMountHandle EjectWithOperation(this GMountHandle mount, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T EjectWithOperation<T>(this T mount, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_eject_with_operation(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
@@ -87,7 +87,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_get_volume(mount);
 	}
 
-	public static GMountHandle GuessContentType(this GMountHandle mount, bool force_rescan, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GuessContentType<T>(this T mount, bool force_rescan, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_guess_content_type(mount, force_rescan, cancellable, callback, user_data);
 		return mount;
@@ -108,7 +108,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_is_shadowed(mount);
 	}
 
-	public static GMountHandle Remount(this GMountHandle mount, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Remount<T>(this T mount, GMountMountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_remount(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
@@ -119,13 +119,13 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_remount_finish(mount, result, out error);
 	}
 
-	public static GMountHandle Shadow(this GMountHandle mount)
+	public static T Shadow<T>(this T mount) where T : GMountHandle
 	{
 		GMountExterns.g_mount_shadow(mount);
 		return mount;
 	}
 
-	public static GMountHandle Unmount(this GMountHandle mount, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T Unmount<T>(this T mount, GMountUnmountFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_unmount(mount, flags, cancellable, callback, user_data);
 		return mount;
@@ -136,7 +136,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_unmount_finish(mount, result, out error);
 	}
 
-	public static GMountHandle UnmountWithOperation(this GMountHandle mount, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T UnmountWithOperation<T>(this T mount, GMountUnmountFlags flags, GMountOperationHandle mount_operation, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
 		GMountExterns.g_mount_unmount_with_operation(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
@@ -147,7 +147,7 @@ public static class GMountHandleExtensions
 		return GMountExterns.g_mount_unmount_with_operation_finish(mount, result, out error);
 	}
 
-	public static GMountHandle Unshadow(this GMountHandle mount)
+	public static T Unshadow<T>(this T mount) where T : GMountHandle
 	{
 		GMountExterns.g_mount_unshadow(mount);
 		return mount;

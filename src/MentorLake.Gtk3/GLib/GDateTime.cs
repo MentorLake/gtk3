@@ -217,7 +217,7 @@ public static class GDateTimeHandleExtensions
 		return GDateTimeExterns.g_date_time_get_year(datetime);
 	}
 
-	public static GDateTimeHandle GetYmd(this GDateTimeHandle datetime, out int year, out int month, out int day)
+	public static T GetYmd<T>(this T datetime, out int year, out int month, out int day) where T : GDateTimeHandle
 	{
 		GDateTimeExterns.g_date_time_get_ymd(datetime, out year, out month, out day);
 		return datetime;
@@ -268,7 +268,7 @@ public static class GDateTimeHandleExtensions
 		return GDateTimeExterns.g_date_time_to_utc(datetime);
 	}
 
-	public static GDateTimeHandle Unref(this GDateTimeHandle datetime)
+	public static T Unref<T>(this T datetime) where T : GDateTimeHandle
 	{
 		GDateTimeExterns.g_date_time_unref(datetime);
 		return datetime;

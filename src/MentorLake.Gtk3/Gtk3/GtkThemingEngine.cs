@@ -16,31 +16,31 @@ public class GtkThemingEngineHandle : GObjectHandle
 
 public static class GtkThemingEngineHandleExtensions
 {
-	public static GtkThemingEngineHandle Get(this GtkThemingEngineHandle engine, GtkStateFlags state, IntPtr @__arglist)
+	public static T Get<T>(this T engine, GtkStateFlags state, IntPtr @__arglist) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get(engine, state, @__arglist);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetBackgroundColor(this GtkThemingEngineHandle engine, GtkStateFlags state, out GdkRGBA color)
+	public static T GetBackgroundColor<T>(this T engine, GtkStateFlags state, out GdkRGBA color) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_background_color(engine, state, out color);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetBorder(this GtkThemingEngineHandle engine, GtkStateFlags state, out GtkBorder border)
+	public static T GetBorder<T>(this T engine, GtkStateFlags state, out GtkBorder border) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_border(engine, state, out border);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetBorderColor(this GtkThemingEngineHandle engine, GtkStateFlags state, out GdkRGBA color)
+	public static T GetBorderColor<T>(this T engine, GtkStateFlags state, out GdkRGBA color) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_border_color(engine, state, out color);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetColor(this GtkThemingEngineHandle engine, GtkStateFlags state, out GdkRGBA color)
+	public static T GetColor<T>(this T engine, GtkStateFlags state, out GdkRGBA color) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_color(engine, state, out color);
 		return engine;
@@ -61,13 +61,13 @@ public static class GtkThemingEngineHandleExtensions
 		return GtkThemingEngineExterns.gtk_theming_engine_get_junction_sides(engine);
 	}
 
-	public static GtkThemingEngineHandle GetMargin(this GtkThemingEngineHandle engine, GtkStateFlags state, out GtkBorder margin)
+	public static T GetMargin<T>(this T engine, GtkStateFlags state, out GtkBorder margin) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_margin(engine, state, out margin);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetPadding(this GtkThemingEngineHandle engine, GtkStateFlags state, out GtkBorder padding)
+	public static T GetPadding<T>(this T engine, GtkStateFlags state, out GtkBorder padding) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_padding(engine, state, out padding);
 		return engine;
@@ -78,7 +78,7 @@ public static class GtkThemingEngineHandleExtensions
 		return GtkThemingEngineExterns.gtk_theming_engine_get_path(engine);
 	}
 
-	public static GtkThemingEngineHandle GetProperty(this GtkThemingEngineHandle engine, string property, GtkStateFlags state, out GValue value)
+	public static T GetProperty<T>(this T engine, string property, GtkStateFlags state, out GValue value) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_property(engine, property, state, out value);
 		return engine;
@@ -94,25 +94,25 @@ public static class GtkThemingEngineHandleExtensions
 		return GtkThemingEngineExterns.gtk_theming_engine_get_state(engine);
 	}
 
-	public static GtkThemingEngineHandle GetStyle(this GtkThemingEngineHandle engine, IntPtr @__arglist)
+	public static T GetStyle<T>(this T engine, IntPtr @__arglist) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_style(engine, @__arglist);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetStyleProperty(this GtkThemingEngineHandle engine, string property_name, out GValue value)
+	public static T GetStyleProperty<T>(this T engine, string property_name, out GValue value) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_style_property(engine, property_name, out value);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetStyleValist(this GtkThemingEngineHandle engine, IntPtr args)
+	public static T GetStyleValist<T>(this T engine, IntPtr args) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_style_valist(engine, args);
 		return engine;
 	}
 
-	public static GtkThemingEngineHandle GetValist(this GtkThemingEngineHandle engine, GtkStateFlags state, IntPtr args)
+	public static T GetValist<T>(this T engine, GtkStateFlags state, IntPtr args) where T : GtkThemingEngineHandle
 	{
 		GtkThemingEngineExterns.gtk_theming_engine_get_valist(engine, state, args);
 		return engine;

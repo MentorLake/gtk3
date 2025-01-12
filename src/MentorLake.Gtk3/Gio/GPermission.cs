@@ -11,7 +11,7 @@ public static class GPermissionHandleExtensions
 		return GPermissionExterns.g_permission_acquire(permission, cancellable, out error);
 	}
 
-	public static GPermissionHandle AcquireAsync(this GPermissionHandle permission, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T AcquireAsync<T>(this T permission, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
 	{
 		GPermissionExterns.g_permission_acquire_async(permission, cancellable, callback, user_data);
 		return permission;
@@ -37,7 +37,7 @@ public static class GPermissionHandleExtensions
 		return GPermissionExterns.g_permission_get_can_release(permission);
 	}
 
-	public static GPermissionHandle ImplUpdate(this GPermissionHandle permission, bool allowed, bool can_acquire, bool can_release)
+	public static T ImplUpdate<T>(this T permission, bool allowed, bool can_acquire, bool can_release) where T : GPermissionHandle
 	{
 		GPermissionExterns.g_permission_impl_update(permission, allowed, can_acquire, can_release);
 		return permission;
@@ -48,7 +48,7 @@ public static class GPermissionHandleExtensions
 		return GPermissionExterns.g_permission_release(permission, cancellable, out error);
 	}
 
-	public static GPermissionHandle ReleaseAsync(this GPermissionHandle permission, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReleaseAsync<T>(this T permission, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
 	{
 		GPermissionExterns.g_permission_release_async(permission, cancellable, callback, user_data);
 		return permission;

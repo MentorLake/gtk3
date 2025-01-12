@@ -22,31 +22,31 @@ public class GDateHandle : BaseSafeHandle
 
 public static class GDateHandleExtensions
 {
-	public static GDateHandle AddDays(this GDateHandle date, uint n_days)
+	public static T AddDays<T>(this T date, uint n_days) where T : GDateHandle
 	{
 		GDateExterns.g_date_add_days(date, n_days);
 		return date;
 	}
 
-	public static GDateHandle AddMonths(this GDateHandle date, uint n_months)
+	public static T AddMonths<T>(this T date, uint n_months) where T : GDateHandle
 	{
 		GDateExterns.g_date_add_months(date, n_months);
 		return date;
 	}
 
-	public static GDateHandle AddYears(this GDateHandle date, uint n_years)
+	public static T AddYears<T>(this T date, uint n_years) where T : GDateHandle
 	{
 		GDateExterns.g_date_add_years(date, n_years);
 		return date;
 	}
 
-	public static GDateHandle Clamp(this GDateHandle date, GDateHandle min_date, GDateHandle max_date)
+	public static T Clamp<T>(this T date, GDateHandle min_date, GDateHandle max_date) where T : GDateHandle
 	{
 		GDateExterns.g_date_clamp(date, min_date, max_date);
 		return date;
 	}
 
-	public static GDateHandle Clear(this GDateHandle date, uint n_dates)
+	public static T Clear<T>(this T date, uint n_dates) where T : GDateHandle
 	{
 		GDateExterns.g_date_clear(date, n_dates);
 		return date;
@@ -67,7 +67,7 @@ public static class GDateHandleExtensions
 		return GDateExterns.g_date_days_between(date1, date2);
 	}
 
-	public static GDateHandle Free(this GDateHandle date)
+	public static T Free<T>(this T date) where T : GDateHandle
 	{
 		GDateExterns.g_date_free(date);
 		return date;
@@ -128,85 +128,85 @@ public static class GDateHandleExtensions
 		return GDateExterns.g_date_is_last_of_month(date);
 	}
 
-	public static GDateHandle Order(this GDateHandle date1, GDateHandle date2)
+	public static T Order<T>(this T date1, GDateHandle date2) where T : GDateHandle
 	{
 		GDateExterns.g_date_order(date1, date2);
 		return date1;
 	}
 
-	public static GDateHandle SetDay(this GDateHandle date, GDateDay day)
+	public static T SetDay<T>(this T date, GDateDay day) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_day(date, day);
 		return date;
 	}
 
-	public static GDateHandle SetDmy(this GDateHandle date, GDateDay day, GDateMonth month, GDateYear y)
+	public static T SetDmy<T>(this T date, GDateDay day, GDateMonth month, GDateYear y) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_dmy(date, day, month, y);
 		return date;
 	}
 
-	public static GDateHandle SetJulian(this GDateHandle date, uint julian_date)
+	public static T SetJulian<T>(this T date, uint julian_date) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_julian(date, julian_date);
 		return date;
 	}
 
-	public static GDateHandle SetMonth(this GDateHandle date, GDateMonth month)
+	public static T SetMonth<T>(this T date, GDateMonth month) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_month(date, month);
 		return date;
 	}
 
-	public static GDateHandle SetParse(this GDateHandle date, string str)
+	public static T SetParse<T>(this T date, string str) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_parse(date, str);
 		return date;
 	}
 
-	public static GDateHandle SetTime(this GDateHandle date, GTime time_)
+	public static T SetTime<T>(this T date, GTime time_) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_time(date, time_);
 		return date;
 	}
 
-	public static GDateHandle SetTimeT(this GDateHandle date, long timet)
+	public static T SetTimeT<T>(this T date, long timet) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_time_t(date, timet);
 		return date;
 	}
 
-	public static GDateHandle SetTimeVal(this GDateHandle date, GTimeValHandle timeval)
+	public static T SetTimeVal<T>(this T date, GTimeValHandle timeval) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_time_val(date, timeval);
 		return date;
 	}
 
-	public static GDateHandle SetYear(this GDateHandle date, GDateYear year)
+	public static T SetYear<T>(this T date, GDateYear year) where T : GDateHandle
 	{
 		GDateExterns.g_date_set_year(date, year);
 		return date;
 	}
 
-	public static GDateHandle SubtractDays(this GDateHandle date, uint n_days)
+	public static T SubtractDays<T>(this T date, uint n_days) where T : GDateHandle
 	{
 		GDateExterns.g_date_subtract_days(date, n_days);
 		return date;
 	}
 
-	public static GDateHandle SubtractMonths(this GDateHandle date, uint n_months)
+	public static T SubtractMonths<T>(this T date, uint n_months) where T : GDateHandle
 	{
 		GDateExterns.g_date_subtract_months(date, n_months);
 		return date;
 	}
 
-	public static GDateHandle SubtractYears(this GDateHandle date, uint n_years)
+	public static T SubtractYears<T>(this T date, uint n_years) where T : GDateHandle
 	{
 		GDateExterns.g_date_subtract_years(date, n_years);
 		return date;
 	}
 
-	public static GDateHandle ToStructTm(this GDateHandle date, IntPtr tm)
+	public static T ToStructTm<T>(this T date, IntPtr tm) where T : GDateHandle
 	{
 		GDateExterns.g_date_to_struct_tm(date, tm);
 		return date;

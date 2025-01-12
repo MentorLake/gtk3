@@ -7,7 +7,7 @@ public class GTestLogMsgHandle : BaseSafeHandle
 
 public static class GTestLogMsgHandleExtensions
 {
-	public static GTestLogMsgHandle Free(this GTestLogMsgHandle tmsg)
+	public static T Free<T>(this T tmsg) where T : GTestLogMsgHandle
 	{
 		GTestLogMsgExterns.g_test_log_msg_free(tmsg);
 		return tmsg;

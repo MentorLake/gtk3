@@ -21,7 +21,7 @@ public static class GtkInvisibleHandleExtensions
 		return GtkInvisibleExterns.gtk_invisible_get_screen(invisible);
 	}
 
-	public static GtkInvisibleHandle SetScreen(this GtkInvisibleHandle invisible, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T invisible, GdkScreenHandle screen) where T : GtkInvisibleHandle
 	{
 		GtkInvisibleExterns.gtk_invisible_set_screen(invisible, screen);
 		return invisible;

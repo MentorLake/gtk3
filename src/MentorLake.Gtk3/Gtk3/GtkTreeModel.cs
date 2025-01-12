@@ -15,13 +15,13 @@ public static class GtkTreeModelHandleExtensions
 		return GtkTreeModelExterns.gtk_tree_model_filter_new(child_model, root);
 	}
 
-	public static GtkTreeModelHandle Foreach(this GtkTreeModelHandle model, GtkTreeModelForeachFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T model, GtkTreeModelForeachFunc func, IntPtr user_data) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_foreach(model, func, user_data);
 		return model;
 	}
 
-	public static GtkTreeModelHandle Get(this GtkTreeModelHandle tree_model, GtkTreeIterHandle iter, IntPtr @__arglist)
+	public static T Get<T>(this T tree_model, GtkTreeIterHandle iter, IntPtr @__arglist) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_get(tree_model, iter, @__arglist);
 		return tree_model;
@@ -67,13 +67,13 @@ public static class GtkTreeModelHandleExtensions
 		return GtkTreeModelExterns.gtk_tree_model_get_string_from_iter(tree_model, iter);
 	}
 
-	public static GtkTreeModelHandle GetValist(this GtkTreeModelHandle tree_model, GtkTreeIterHandle iter, IntPtr var_args)
+	public static T GetValist<T>(this T tree_model, GtkTreeIterHandle iter, IntPtr var_args) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_get_valist(tree_model, iter, var_args);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle GetValue(this GtkTreeModelHandle tree_model, GtkTreeIterHandle iter, int column, out GValue value)
+	public static T GetValue<T>(this T tree_model, GtkTreeIterHandle iter, int column, out GValue value) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_get_value(tree_model, iter, column, out value);
 		return tree_model;
@@ -114,49 +114,49 @@ public static class GtkTreeModelHandleExtensions
 		return GtkTreeModelExterns.gtk_tree_model_iter_previous(tree_model, iter);
 	}
 
-	public static GtkTreeModelHandle RefNode(this GtkTreeModelHandle tree_model, GtkTreeIterHandle iter)
+	public static T RefNode<T>(this T tree_model, GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_ref_node(tree_model, iter);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowChanged(this GtkTreeModelHandle tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter)
+	public static T RowChanged<T>(this T tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_row_changed(tree_model, path, iter);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowDeleted(this GtkTreeModelHandle tree_model, GtkTreePathHandle path)
+	public static T RowDeleted<T>(this T tree_model, GtkTreePathHandle path) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_row_deleted(tree_model, path);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowHasChildToggled(this GtkTreeModelHandle tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter)
+	public static T RowHasChildToggled<T>(this T tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_row_has_child_toggled(tree_model, path, iter);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowInserted(this GtkTreeModelHandle tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter)
+	public static T RowInserted<T>(this T tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_row_inserted(tree_model, path, iter);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowsReordered(this GtkTreeModelHandle tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter, int[] new_order)
+	public static T RowsReordered<T>(this T tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter, int[] new_order) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_rows_reordered(tree_model, path, iter, new_order);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle RowsReorderedWithLength(this GtkTreeModelHandle tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter, int[] new_order, int length)
+	public static T RowsReorderedWithLength<T>(this T tree_model, GtkTreePathHandle path, GtkTreeIterHandle iter, int[] new_order, int length) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_rows_reordered_with_length(tree_model, path, iter, new_order, length);
 		return tree_model;
 	}
 
-	public static GtkTreeModelHandle UnrefNode(this GtkTreeModelHandle tree_model, GtkTreeIterHandle iter)
+	public static T UnrefNode<T>(this T tree_model, GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
 		GtkTreeModelExterns.gtk_tree_model_unref_node(tree_model, iter);
 		return tree_model;

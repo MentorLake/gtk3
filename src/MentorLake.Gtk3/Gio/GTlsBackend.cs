@@ -45,7 +45,7 @@ public static class GTlsBackendHandleExtensions
 		return GTlsBackendExterns.g_tls_backend_get_server_connection_type(backend);
 	}
 
-	public static GTlsBackendHandle SetDefaultDatabase(this GTlsBackendHandle backend, GTlsDatabaseHandle database)
+	public static T SetDefaultDatabase<T>(this T backend, GTlsDatabaseHandle database) where T : GTlsBackendHandle
 	{
 		GTlsBackendExterns.g_tls_backend_set_default_database(backend, database);
 		return backend;

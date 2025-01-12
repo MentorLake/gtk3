@@ -16,7 +16,7 @@ public static class AtkPlugHandleExtensions
 		return AtkPlugExterns.atk_plug_get_id(plug);
 	}
 
-	public static AtkPlugHandle SetChild(this AtkPlugHandle plug, AtkObjectHandle child)
+	public static T SetChild<T>(this T plug, AtkObjectHandle child) where T : AtkPlugHandle
 	{
 		AtkPlugExterns.atk_plug_set_child(plug, child);
 		return plug;

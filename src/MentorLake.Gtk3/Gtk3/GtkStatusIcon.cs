@@ -403,73 +403,73 @@ public static class GtkStatusIconHandleExtensions
 		return GtkStatusIconExterns.gtk_status_icon_is_embedded(status_icon);
 	}
 
-	public static GtkStatusIconHandle SetFromFile(this GtkStatusIconHandle status_icon, string filename)
+	public static T SetFromFile<T>(this T status_icon, string filename) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_from_file(status_icon, filename);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetFromGicon(this GtkStatusIconHandle status_icon, GIconHandle icon)
+	public static T SetFromGicon<T>(this T status_icon, GIconHandle icon) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_from_gicon(status_icon, icon);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetFromIconName(this GtkStatusIconHandle status_icon, string icon_name)
+	public static T SetFromIconName<T>(this T status_icon, string icon_name) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_from_icon_name(status_icon, icon_name);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetFromPixbuf(this GtkStatusIconHandle status_icon, GdkPixbufHandle pixbuf)
+	public static T SetFromPixbuf<T>(this T status_icon, GdkPixbufHandle pixbuf) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_from_pixbuf(status_icon, pixbuf);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetFromStock(this GtkStatusIconHandle status_icon, string stock_id)
+	public static T SetFromStock<T>(this T status_icon, string stock_id) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_from_stock(status_icon, stock_id);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetHasTooltip(this GtkStatusIconHandle status_icon, bool has_tooltip)
+	public static T SetHasTooltip<T>(this T status_icon, bool has_tooltip) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_has_tooltip(status_icon, has_tooltip);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetName(this GtkStatusIconHandle status_icon, string name)
+	public static T SetName<T>(this T status_icon, string name) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_name(status_icon, name);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetScreen(this GtkStatusIconHandle status_icon, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T status_icon, GdkScreenHandle screen) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_screen(status_icon, screen);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetTitle(this GtkStatusIconHandle status_icon, string title)
+	public static T SetTitle<T>(this T status_icon, string title) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_title(status_icon, title);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetTooltipMarkup(this GtkStatusIconHandle status_icon, string markup)
+	public static T SetTooltipMarkup<T>(this T status_icon, string markup) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_tooltip_markup(status_icon, markup);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetTooltipText(this GtkStatusIconHandle status_icon, string text)
+	public static T SetTooltipText<T>(this T status_icon, string text) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_tooltip_text(status_icon, text);
 		return status_icon;
 	}
 
-	public static GtkStatusIconHandle SetVisible(this GtkStatusIconHandle status_icon, bool visible)
+	public static T SetVisible<T>(this T status_icon, bool visible) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconExterns.gtk_status_icon_set_visible(status_icon, visible);
 		return status_icon;

@@ -21,7 +21,7 @@ public class GtkToolPaletteHandle : GtkContainerHandle, AtkImplementorIfaceHandl
 
 public static class GtkToolPaletteHandleExtensions
 {
-	public static GtkToolPaletteHandle AddDragDest(this GtkToolPaletteHandle palette, GtkWidgetHandle widget, GtkDestDefaults flags, GtkToolPaletteDragTargets targets, GdkDragAction actions)
+	public static T AddDragDest<T>(this T palette, GtkWidgetHandle widget, GtkDestDefaults flags, GtkToolPaletteDragTargets targets, GdkDragAction actions) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_add_drag_dest(palette, widget, flags, targets, actions);
 		return palette;
@@ -77,49 +77,49 @@ public static class GtkToolPaletteHandleExtensions
 		return GtkToolPaletteExterns.gtk_tool_palette_get_vadjustment(palette);
 	}
 
-	public static GtkToolPaletteHandle SetDragSource(this GtkToolPaletteHandle palette, GtkToolPaletteDragTargets targets)
+	public static T SetDragSource<T>(this T palette, GtkToolPaletteDragTargets targets) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_drag_source(palette, targets);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle SetExclusive(this GtkToolPaletteHandle palette, GtkToolItemGroupHandle group, bool exclusive)
+	public static T SetExclusive<T>(this T palette, GtkToolItemGroupHandle group, bool exclusive) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_exclusive(palette, group, exclusive);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle SetExpand(this GtkToolPaletteHandle palette, GtkToolItemGroupHandle group, bool expand)
+	public static T SetExpand<T>(this T palette, GtkToolItemGroupHandle group, bool expand) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_expand(palette, group, expand);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle SetGroupPosition(this GtkToolPaletteHandle palette, GtkToolItemGroupHandle group, int position)
+	public static T SetGroupPosition<T>(this T palette, GtkToolItemGroupHandle group, int position) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_group_position(palette, group, position);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle SetIconSize(this GtkToolPaletteHandle palette, GtkIconSize icon_size)
+	public static T SetIconSize<T>(this T palette, GtkIconSize icon_size) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_icon_size(palette, icon_size);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle SetStyle(this GtkToolPaletteHandle palette, GtkToolbarStyle style)
+	public static T SetStyle<T>(this T palette, GtkToolbarStyle style) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_set_style(palette, style);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle UnsetIconSize(this GtkToolPaletteHandle palette)
+	public static T UnsetIconSize<T>(this T palette) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_unset_icon_size(palette);
 		return palette;
 	}
 
-	public static GtkToolPaletteHandle UnsetStyle(this GtkToolPaletteHandle palette)
+	public static T UnsetStyle<T>(this T palette) where T : GtkToolPaletteHandle
 	{
 		GtkToolPaletteExterns.gtk_tool_palette_unset_style(palette);
 		return palette;

@@ -37,7 +37,7 @@ public static class GRandHandleExtensions
 		return GRandExterns.g_rand_double_range(rand_, begin, end);
 	}
 
-	public static GRandHandle Free(this GRandHandle rand_)
+	public static T Free<T>(this T rand_) where T : GRandHandle
 	{
 		GRandExterns.g_rand_free(rand_);
 		return rand_;
@@ -53,13 +53,13 @@ public static class GRandHandleExtensions
 		return GRandExterns.g_rand_int_range(rand_, begin, end);
 	}
 
-	public static GRandHandle SetSeed(this GRandHandle rand_, uint seed)
+	public static T SetSeed<T>(this T rand_, uint seed) where T : GRandHandle
 	{
 		GRandExterns.g_rand_set_seed(rand_, seed);
 		return rand_;
 	}
 
-	public static GRandHandle SetSeedArray(this GRandHandle rand_, ref uint seed, uint seed_length)
+	public static T SetSeedArray<T>(this T rand_, ref uint seed, uint seed_length) where T : GRandHandle
 	{
 		GRandExterns.g_rand_set_seed_array(rand_, ref seed, seed_length);
 		return rand_;

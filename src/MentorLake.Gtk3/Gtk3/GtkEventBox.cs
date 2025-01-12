@@ -21,13 +21,13 @@ public static class GtkEventBoxHandleExtensions
 		return GtkEventBoxExterns.gtk_event_box_get_visible_window(event_box);
 	}
 
-	public static GtkEventBoxHandle SetAboveChild(this GtkEventBoxHandle event_box, bool above_child)
+	public static T SetAboveChild<T>(this T event_box, bool above_child) where T : GtkEventBoxHandle
 	{
 		GtkEventBoxExterns.gtk_event_box_set_above_child(event_box, above_child);
 		return event_box;
 	}
 
-	public static GtkEventBoxHandle SetVisibleWindow(this GtkEventBoxHandle event_box, bool visible_window)
+	public static T SetVisibleWindow<T>(this T event_box, bool visible_window) where T : GtkEventBoxHandle
 	{
 		GtkEventBoxExterns.gtk_event_box_set_visible_window(event_box, visible_window);
 		return event_box;

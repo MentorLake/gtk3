@@ -91,13 +91,13 @@ public static class GtkRadioButtonHandleExtensions
 		return GtkRadioButtonExterns.gtk_radio_button_get_group(radio_button);
 	}
 
-	public static GtkRadioButtonHandle JoinGroup(this GtkRadioButtonHandle radio_button, GtkRadioButtonHandle group_source)
+	public static T JoinGroup<T>(this T radio_button, GtkRadioButtonHandle group_source) where T : GtkRadioButtonHandle
 	{
 		GtkRadioButtonExterns.gtk_radio_button_join_group(radio_button, group_source);
 		return radio_button;
 	}
 
-	public static GtkRadioButtonHandle SetGroup(this GtkRadioButtonHandle radio_button, GSListHandle group)
+	public static T SetGroup<T>(this T radio_button, GSListHandle group) where T : GtkRadioButtonHandle
 	{
 		GtkRadioButtonExterns.gtk_radio_button_set_group(radio_button, group);
 		return radio_button;

@@ -272,49 +272,49 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_activate_key(window, @event);
 	}
 
-	public static GtkWindowHandle AddAccelGroup(this GtkWindowHandle window, GtkAccelGroupHandle accel_group)
+	public static T AddAccelGroup<T>(this T window, GtkAccelGroupHandle accel_group) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_add_accel_group(window, accel_group);
 		return window;
 	}
 
-	public static GtkWindowHandle AddMnemonic(this GtkWindowHandle window, uint keyval, GtkWidgetHandle target)
+	public static T AddMnemonic<T>(this T window, uint keyval, GtkWidgetHandle target) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_add_mnemonic(window, keyval, target);
 		return window;
 	}
 
-	public static GtkWindowHandle BeginMoveDrag(this GtkWindowHandle window, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginMoveDrag<T>(this T window, int button, int root_x, int root_y, uint timestamp) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_begin_move_drag(window, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GtkWindowHandle BeginResizeDrag(this GtkWindowHandle window, GdkWindowEdge edge, int button, int root_x, int root_y, uint timestamp)
+	public static T BeginResizeDrag<T>(this T window, GdkWindowEdge edge, int button, int root_x, int root_y, uint timestamp) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_begin_resize_drag(window, edge, button, root_x, root_y, timestamp);
 		return window;
 	}
 
-	public static GtkWindowHandle Close(this GtkWindowHandle window)
+	public static T Close<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_close(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Deiconify(this GtkWindowHandle window)
+	public static T Deiconify<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_deiconify(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Fullscreen(this GtkWindowHandle window)
+	public static T Fullscreen<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_fullscreen(window);
 		return window;
 	}
 
-	public static GtkWindowHandle FullscreenOnMonitor(this GtkWindowHandle window, GdkScreenHandle screen, int monitor)
+	public static T FullscreenOnMonitor<T>(this T window, GdkScreenHandle screen, int monitor) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_fullscreen_on_monitor(window, screen, monitor);
 		return window;
@@ -340,7 +340,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_get_decorated(window);
 	}
 
-	public static GtkWindowHandle GetDefaultSize(this GtkWindowHandle window, out int width, out int height)
+	public static T GetDefaultSize<T>(this T window, out int width, out int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_get_default_size(window, out width, out height);
 		return window;
@@ -431,7 +431,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_get_opacity(window);
 	}
 
-	public static GtkWindowHandle GetPosition(this GtkWindowHandle window, out int root_x, out int root_y)
+	public static T GetPosition<T>(this T window, out int root_x, out int root_y) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_get_position(window, out root_x, out root_y);
 		return window;
@@ -457,7 +457,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_get_screen(window);
 	}
 
-	public static GtkWindowHandle GetSize(this GtkWindowHandle window, out int width, out int height)
+	public static T GetSize<T>(this T window, out int width, out int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_get_size(window, out width, out height);
 		return window;
@@ -513,7 +513,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_has_toplevel_focus(window);
 	}
 
-	public static GtkWindowHandle Iconify(this GtkWindowHandle window)
+	public static T Iconify<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_iconify(window);
 		return window;
@@ -529,7 +529,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_is_maximized(window);
 	}
 
-	public static GtkWindowHandle Maximize(this GtkWindowHandle window)
+	public static T Maximize<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_maximize(window);
 		return window;
@@ -540,7 +540,7 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_mnemonic_activate(window, keyval, modifier);
 	}
 
-	public static GtkWindowHandle Move(this GtkWindowHandle window, int x, int y)
+	public static T Move<T>(this T window, int x, int y) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_move(window, x, y);
 		return window;
@@ -551,13 +551,13 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_parse_geometry(window, geometry);
 	}
 
-	public static GtkWindowHandle Present(this GtkWindowHandle window)
+	public static T Present<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_present(window);
 		return window;
 	}
 
-	public static GtkWindowHandle PresentWithTime(this GtkWindowHandle window, uint timestamp)
+	public static T PresentWithTime<T>(this T window, uint timestamp) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_present_with_time(window, timestamp);
 		return window;
@@ -568,25 +568,25 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_propagate_key_event(window, @event);
 	}
 
-	public static GtkWindowHandle RemoveAccelGroup(this GtkWindowHandle window, GtkAccelGroupHandle accel_group)
+	public static T RemoveAccelGroup<T>(this T window, GtkAccelGroupHandle accel_group) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_remove_accel_group(window, accel_group);
 		return window;
 	}
 
-	public static GtkWindowHandle RemoveMnemonic(this GtkWindowHandle window, uint keyval, GtkWidgetHandle target)
+	public static T RemoveMnemonic<T>(this T window, uint keyval, GtkWidgetHandle target) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_remove_mnemonic(window, keyval, target);
 		return window;
 	}
 
-	public static GtkWindowHandle ReshowWithInitialSize(this GtkWindowHandle window)
+	public static T ReshowWithInitialSize<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_reshow_with_initial_size(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Resize(this GtkWindowHandle window, int width, int height)
+	public static T Resize<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_resize(window, width, height);
 		return window;
@@ -597,115 +597,115 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_resize_grip_is_visible(window);
 	}
 
-	public static GtkWindowHandle ResizeToGeometry(this GtkWindowHandle window, int width, int height)
+	public static T ResizeToGeometry<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_resize_to_geometry(window, width, height);
 		return window;
 	}
 
-	public static GtkWindowHandle SetAcceptFocus(this GtkWindowHandle window, bool setting)
+	public static T SetAcceptFocus<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_accept_focus(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetApplication(this GtkWindowHandle window, GtkApplicationHandle application)
+	public static T SetApplication<T>(this T window, GtkApplicationHandle application) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_application(window, application);
 		return window;
 	}
 
-	public static GtkWindowHandle SetAttachedTo(this GtkWindowHandle window, GtkWidgetHandle attach_widget)
+	public static T SetAttachedTo<T>(this T window, GtkWidgetHandle attach_widget) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_attached_to(window, attach_widget);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDecorated(this GtkWindowHandle window, bool setting)
+	public static T SetDecorated<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_decorated(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDefault(this GtkWindowHandle window, GtkWidgetHandle default_widget)
+	public static T SetDefault<T>(this T window, GtkWidgetHandle default_widget) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_default(window, default_widget);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDefaultGeometry(this GtkWindowHandle window, int width, int height)
+	public static T SetDefaultGeometry<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_default_geometry(window, width, height);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDefaultSize(this GtkWindowHandle window, int width, int height)
+	public static T SetDefaultSize<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_default_size(window, width, height);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDeletable(this GtkWindowHandle window, bool setting)
+	public static T SetDeletable<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_deletable(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetDestroyWithParent(this GtkWindowHandle window, bool setting)
+	public static T SetDestroyWithParent<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_destroy_with_parent(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetFocus(this GtkWindowHandle window, GtkWidgetHandle focus)
+	public static T SetFocus<T>(this T window, GtkWidgetHandle focus) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_focus(window, focus);
 		return window;
 	}
 
-	public static GtkWindowHandle SetFocusOnMap(this GtkWindowHandle window, bool setting)
+	public static T SetFocusOnMap<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_focus_on_map(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetFocusVisible(this GtkWindowHandle window, bool setting)
+	public static T SetFocusVisible<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_focus_visible(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetGeometryHints(this GtkWindowHandle window, GtkWidgetHandle geometry_widget, GdkGeometryHandle geometry, GdkWindowHints geom_mask)
+	public static T SetGeometryHints<T>(this T window, GtkWidgetHandle geometry_widget, GdkGeometryHandle geometry, GdkWindowHints geom_mask) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_geometry_hints(window, geometry_widget, geometry, geom_mask);
 		return window;
 	}
 
-	public static GtkWindowHandle SetGravity(this GtkWindowHandle window, GdkGravity gravity)
+	public static T SetGravity<T>(this T window, GdkGravity gravity) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_gravity(window, gravity);
 		return window;
 	}
 
-	public static GtkWindowHandle SetHasResizeGrip(this GtkWindowHandle window, bool value)
+	public static T SetHasResizeGrip<T>(this T window, bool value) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_has_resize_grip(window, value);
 		return window;
 	}
 
-	public static GtkWindowHandle SetHasUserRefCount(this GtkWindowHandle window, bool setting)
+	public static T SetHasUserRefCount<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_has_user_ref_count(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetHideTitlebarWhenMaximized(this GtkWindowHandle window, bool setting)
+	public static T SetHideTitlebarWhenMaximized<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_hide_titlebar_when_maximized(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetIcon(this GtkWindowHandle window, GdkPixbufHandle icon)
+	public static T SetIcon<T>(this T window, GdkPixbufHandle icon) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_icon(window, icon);
 		return window;
@@ -716,151 +716,151 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_window_set_icon_from_file(window, filename, out error);
 	}
 
-	public static GtkWindowHandle SetIconList(this GtkWindowHandle window, GListHandle list)
+	public static T SetIconList<T>(this T window, GListHandle list) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_icon_list(window, list);
 		return window;
 	}
 
-	public static GtkWindowHandle SetIconName(this GtkWindowHandle window, string name)
+	public static T SetIconName<T>(this T window, string name) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_icon_name(window, name);
 		return window;
 	}
 
-	public static GtkWindowHandle SetKeepAbove(this GtkWindowHandle window, bool setting)
+	public static T SetKeepAbove<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_keep_above(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetKeepBelow(this GtkWindowHandle window, bool setting)
+	public static T SetKeepBelow<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_keep_below(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetMnemonicModifier(this GtkWindowHandle window, GdkModifierType modifier)
+	public static T SetMnemonicModifier<T>(this T window, GdkModifierType modifier) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_mnemonic_modifier(window, modifier);
 		return window;
 	}
 
-	public static GtkWindowHandle SetMnemonicsVisible(this GtkWindowHandle window, bool setting)
+	public static T SetMnemonicsVisible<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_mnemonics_visible(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetModal(this GtkWindowHandle window, bool modal)
+	public static T SetModal<T>(this T window, bool modal) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_modal(window, modal);
 		return window;
 	}
 
-	public static GtkWindowHandle SetOpacity(this GtkWindowHandle window, double opacity)
+	public static T SetOpacity<T>(this T window, double opacity) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_opacity(window, opacity);
 		return window;
 	}
 
-	public static GtkWindowHandle SetPosition(this GtkWindowHandle window, GtkWindowPosition position)
+	public static T SetPosition<T>(this T window, GtkWindowPosition position) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_position(window, position);
 		return window;
 	}
 
-	public static GtkWindowHandle SetResizable(this GtkWindowHandle window, bool resizable)
+	public static T SetResizable<T>(this T window, bool resizable) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_resizable(window, resizable);
 		return window;
 	}
 
-	public static GtkWindowHandle SetRole(this GtkWindowHandle window, string role)
+	public static T SetRole<T>(this T window, string role) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_role(window, role);
 		return window;
 	}
 
-	public static GtkWindowHandle SetScreen(this GtkWindowHandle window, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T window, GdkScreenHandle screen) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_screen(window, screen);
 		return window;
 	}
 
-	public static GtkWindowHandle SetSkipPagerHint(this GtkWindowHandle window, bool setting)
+	public static T SetSkipPagerHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_skip_pager_hint(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetSkipTaskbarHint(this GtkWindowHandle window, bool setting)
+	public static T SetSkipTaskbarHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_skip_taskbar_hint(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetStartupId(this GtkWindowHandle window, string startup_id)
+	public static T SetStartupId<T>(this T window, string startup_id) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_startup_id(window, startup_id);
 		return window;
 	}
 
-	public static GtkWindowHandle SetTitle(this GtkWindowHandle window, string title)
+	public static T SetTitle<T>(this T window, string title) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_title(window, title);
 		return window;
 	}
 
-	public static GtkWindowHandle SetTitlebar(this GtkWindowHandle window, GtkWidgetHandle titlebar)
+	public static T SetTitlebar<T>(this T window, GtkWidgetHandle titlebar) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_titlebar(window, titlebar);
 		return window;
 	}
 
-	public static GtkWindowHandle SetTransientFor(this GtkWindowHandle window, GtkWindowHandle parent)
+	public static T SetTransientFor<T>(this T window, GtkWindowHandle parent) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_transient_for(window, parent);
 		return window;
 	}
 
-	public static GtkWindowHandle SetTypeHint(this GtkWindowHandle window, GdkWindowTypeHint hint)
+	public static T SetTypeHint<T>(this T window, GdkWindowTypeHint hint) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_type_hint(window, hint);
 		return window;
 	}
 
-	public static GtkWindowHandle SetUrgencyHint(this GtkWindowHandle window, bool setting)
+	public static T SetUrgencyHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_urgency_hint(window, setting);
 		return window;
 	}
 
-	public static GtkWindowHandle SetWmclass(this GtkWindowHandle window, string wmclass_name, string wmclass_class)
+	public static T SetWmclass<T>(this T window, string wmclass_name, string wmclass_class) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_set_wmclass(window, wmclass_name, wmclass_class);
 		return window;
 	}
 
-	public static GtkWindowHandle Stick(this GtkWindowHandle window)
+	public static T Stick<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_stick(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Unfullscreen(this GtkWindowHandle window)
+	public static T Unfullscreen<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_unfullscreen(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Unmaximize(this GtkWindowHandle window)
+	public static T Unmaximize<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_unmaximize(window);
 		return window;
 	}
 
-	public static GtkWindowHandle Unstick(this GtkWindowHandle window)
+	public static T Unstick<T>(this T window) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_window_unstick(window);
 		return window;
@@ -871,13 +871,13 @@ public static class GtkWindowHandleExtensions
 		return GtkWindowExterns.gtk_show_uri_on_window(parent, uri, timestamp, out error);
 	}
 
-	public static GtkWindowHandle GtkPrintRunPageSetupDialogAsync(this GtkWindowHandle parent, GtkPageSetupHandle page_setup, GtkPrintSettingsHandle settings, GtkPageSetupDoneFunc done_cb, IntPtr data)
+	public static T GtkPrintRunPageSetupDialogAsync<T>(this T parent, GtkPageSetupHandle page_setup, GtkPrintSettingsHandle settings, GtkPageSetupDoneFunc done_cb, IntPtr data) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_print_run_page_setup_dialog_async(parent, page_setup, settings, done_cb, data);
 		return parent;
 	}
 
-	public static GtkWindowHandle GtkShowAboutDialog(this GtkWindowHandle parent, string first_property_name, IntPtr @__arglist)
+	public static T GtkShowAboutDialog<T>(this T parent, string first_property_name, IntPtr @__arglist) where T : GtkWindowHandle
 	{
 		GtkWindowExterns.gtk_show_about_dialog(parent, first_property_name, @__arglist);
 		return parent;

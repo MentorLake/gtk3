@@ -86,25 +86,25 @@ public static class GtkCheckMenuItemHandleExtensions
 		return GtkCheckMenuItemExterns.gtk_check_menu_item_get_inconsistent(check_menu_item);
 	}
 
-	public static GtkCheckMenuItemHandle SetActive(this GtkCheckMenuItemHandle check_menu_item, bool is_active)
+	public static T SetActive<T>(this T check_menu_item, bool is_active) where T : GtkCheckMenuItemHandle
 	{
 		GtkCheckMenuItemExterns.gtk_check_menu_item_set_active(check_menu_item, is_active);
 		return check_menu_item;
 	}
 
-	public static GtkCheckMenuItemHandle SetDrawAsRadio(this GtkCheckMenuItemHandle check_menu_item, bool draw_as_radio)
+	public static T SetDrawAsRadio<T>(this T check_menu_item, bool draw_as_radio) where T : GtkCheckMenuItemHandle
 	{
 		GtkCheckMenuItemExterns.gtk_check_menu_item_set_draw_as_radio(check_menu_item, draw_as_radio);
 		return check_menu_item;
 	}
 
-	public static GtkCheckMenuItemHandle SetInconsistent(this GtkCheckMenuItemHandle check_menu_item, bool setting)
+	public static T SetInconsistent<T>(this T check_menu_item, bool setting) where T : GtkCheckMenuItemHandle
 	{
 		GtkCheckMenuItemExterns.gtk_check_menu_item_set_inconsistent(check_menu_item, setting);
 		return check_menu_item;
 	}
 
-	public static GtkCheckMenuItemHandle Toggled(this GtkCheckMenuItemHandle check_menu_item)
+	public static T Toggled<T>(this T check_menu_item) where T : GtkCheckMenuItemHandle
 	{
 		GtkCheckMenuItemExterns.gtk_check_menu_item_toggled(check_menu_item);
 		return check_menu_item;

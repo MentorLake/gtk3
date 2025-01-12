@@ -81,7 +81,7 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_by_address(resolver, address, cancellable, out error);
 	}
 
-	public static GResolverHandle LookupByAddressAsync(this GResolverHandle resolver, GInetAddressHandle address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupByAddressAsync<T>(this T resolver, GInetAddressHandle address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_lookup_by_address_async(resolver, address, cancellable, callback, user_data);
 		return resolver;
@@ -97,7 +97,7 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_by_name(resolver, hostname, cancellable, out error);
 	}
 
-	public static GResolverHandle LookupByNameAsync(this GResolverHandle resolver, string hostname, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupByNameAsync<T>(this T resolver, string hostname, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_lookup_by_name_async(resolver, hostname, cancellable, callback, user_data);
 		return resolver;
@@ -113,7 +113,7 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_by_name_with_flags(resolver, hostname, flags, cancellable, out error);
 	}
 
-	public static GResolverHandle LookupByNameWithFlagsAsync(this GResolverHandle resolver, string hostname, GResolverNameLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupByNameWithFlagsAsync<T>(this T resolver, string hostname, GResolverNameLookupFlags flags, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_lookup_by_name_with_flags_async(resolver, hostname, flags, cancellable, callback, user_data);
 		return resolver;
@@ -129,7 +129,7 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_records(resolver, rrname, record_type, cancellable, out error);
 	}
 
-	public static GResolverHandle LookupRecordsAsync(this GResolverHandle resolver, string rrname, GResolverRecordType record_type, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupRecordsAsync<T>(this T resolver, string rrname, GResolverRecordType record_type, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_lookup_records_async(resolver, rrname, record_type, cancellable, callback, user_data);
 		return resolver;
@@ -145,7 +145,7 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_service(resolver, service, protocol, domain, cancellable, out error);
 	}
 
-	public static GResolverHandle LookupServiceAsync(this GResolverHandle resolver, string service, string protocol, string domain, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupServiceAsync<T>(this T resolver, string service, string protocol, string domain, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_lookup_service_async(resolver, service, protocol, domain, cancellable, callback, user_data);
 		return resolver;
@@ -156,13 +156,13 @@ public static class GResolverHandleExtensions
 		return GResolverExterns.g_resolver_lookup_service_finish(resolver, result, out error);
 	}
 
-	public static GResolverHandle SetDefault(this GResolverHandle resolver)
+	public static T SetDefault<T>(this T resolver) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_set_default(resolver);
 		return resolver;
 	}
 
-	public static GResolverHandle SetTimeout(this GResolverHandle resolver, int timeout_ms)
+	public static T SetTimeout<T>(this T resolver, int timeout_ms) where T : GResolverHandle
 	{
 		GResolverExterns.g_resolver_set_timeout(resolver, timeout_ms);
 		return resolver;

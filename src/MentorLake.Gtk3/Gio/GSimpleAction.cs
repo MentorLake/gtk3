@@ -105,19 +105,19 @@ public delegate void change_state([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GSimpleActionHandleExtensions
 {
-	public static GSimpleActionHandle SetEnabled(this GSimpleActionHandle simple, bool enabled)
+	public static T SetEnabled<T>(this T simple, bool enabled) where T : GSimpleActionHandle
 	{
 		GSimpleActionExterns.g_simple_action_set_enabled(simple, enabled);
 		return simple;
 	}
 
-	public static GSimpleActionHandle SetState(this GSimpleActionHandle simple, GVariantHandle value)
+	public static T SetState<T>(this T simple, GVariantHandle value) where T : GSimpleActionHandle
 	{
 		GSimpleActionExterns.g_simple_action_set_state(simple, value);
 		return simple;
 	}
 
-	public static GSimpleActionHandle SetStateHint(this GSimpleActionHandle simple, GVariantHandle state_hint)
+	public static T SetStateHint<T>(this T simple, GVariantHandle state_hint) where T : GSimpleActionHandle
 	{
 		GSimpleActionExterns.g_simple_action_set_state_hint(simple, state_hint);
 		return simple;

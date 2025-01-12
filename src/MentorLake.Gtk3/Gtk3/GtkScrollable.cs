@@ -35,25 +35,25 @@ public static class GtkScrollableHandleExtensions
 		return GtkScrollableExterns.gtk_scrollable_get_vscroll_policy(scrollable);
 	}
 
-	public static GtkScrollableHandle SetHadjustment(this GtkScrollableHandle scrollable, GtkAdjustmentHandle hadjustment)
+	public static T SetHadjustment<T>(this T scrollable, GtkAdjustmentHandle hadjustment) where T : GtkScrollableHandle
 	{
 		GtkScrollableExterns.gtk_scrollable_set_hadjustment(scrollable, hadjustment);
 		return scrollable;
 	}
 
-	public static GtkScrollableHandle SetHscrollPolicy(this GtkScrollableHandle scrollable, GtkScrollablePolicy policy)
+	public static T SetHscrollPolicy<T>(this T scrollable, GtkScrollablePolicy policy) where T : GtkScrollableHandle
 	{
 		GtkScrollableExterns.gtk_scrollable_set_hscroll_policy(scrollable, policy);
 		return scrollable;
 	}
 
-	public static GtkScrollableHandle SetVadjustment(this GtkScrollableHandle scrollable, GtkAdjustmentHandle vadjustment)
+	public static T SetVadjustment<T>(this T scrollable, GtkAdjustmentHandle vadjustment) where T : GtkScrollableHandle
 	{
 		GtkScrollableExterns.gtk_scrollable_set_vadjustment(scrollable, vadjustment);
 		return scrollable;
 	}
 
-	public static GtkScrollableHandle SetVscrollPolicy(this GtkScrollableHandle scrollable, GtkScrollablePolicy policy)
+	public static T SetVscrollPolicy<T>(this T scrollable, GtkScrollablePolicy policy) where T : GtkScrollableHandle
 	{
 		GtkScrollableExterns.gtk_scrollable_set_vscroll_policy(scrollable, policy);
 		return scrollable;

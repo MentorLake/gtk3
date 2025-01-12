@@ -219,25 +219,25 @@ public delegate void writable_changed([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 public static class GSettingsHandleExtensions
 {
-	public static GSettingsHandle Apply(this GSettingsHandle settings)
+	public static T Apply<T>(this T settings) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_apply(settings);
 		return settings;
 	}
 
-	public static GSettingsHandle Bind(this GSettingsHandle settings, string key, GObjectHandle @object, string property, GSettingsBindFlags flags)
+	public static T Bind<T>(this T settings, string key, GObjectHandle @object, string property, GSettingsBindFlags flags) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_bind(settings, key, @object, property, flags);
 		return settings;
 	}
 
-	public static GSettingsHandle BindWithMapping(this GSettingsHandle settings, string key, GObjectHandle @object, string property, GSettingsBindFlags flags, GSettingsBindGetMapping get_mapping, GSettingsBindSetMapping set_mapping, IntPtr user_data, GDestroyNotify destroy)
+	public static T BindWithMapping<T>(this T settings, string key, GObjectHandle @object, string property, GSettingsBindFlags flags, GSettingsBindGetMapping get_mapping, GSettingsBindSetMapping set_mapping, IntPtr user_data, GDestroyNotify destroy) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_bind_with_mapping(settings, key, @object, property, flags, get_mapping, set_mapping, user_data, destroy);
 		return settings;
 	}
 
-	public static GSettingsHandle BindWritable(this GSettingsHandle settings, string key, GObjectHandle @object, string property, bool inverted)
+	public static T BindWritable<T>(this T settings, string key, GObjectHandle @object, string property, bool inverted) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_bind_writable(settings, key, @object, property, inverted);
 		return settings;
@@ -248,13 +248,13 @@ public static class GSettingsHandleExtensions
 		return GSettingsExterns.g_settings_create_action(settings, key);
 	}
 
-	public static GSettingsHandle Delay(this GSettingsHandle settings)
+	public static T Delay<T>(this T settings) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_delay(settings);
 		return settings;
 	}
 
-	public static GSettingsHandle Get(this GSettingsHandle settings, string key, string format, IntPtr @__arglist)
+	public static T Get<T>(this T settings, string key, string format, IntPtr @__arglist) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_get(settings, key, format, @__arglist);
 		return settings;
@@ -365,13 +365,13 @@ public static class GSettingsHandleExtensions
 		return GSettingsExterns.g_settings_range_check(settings, key, value);
 	}
 
-	public static GSettingsHandle Reset(this GSettingsHandle settings, string key)
+	public static T Reset<T>(this T settings, string key) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_reset(settings, key);
 		return settings;
 	}
 
-	public static GSettingsHandle Revert(this GSettingsHandle settings)
+	public static T Revert<T>(this T settings) where T : GSettingsHandle
 	{
 		GSettingsExterns.g_settings_revert(settings);
 		return settings;

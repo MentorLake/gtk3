@@ -41,61 +41,61 @@ public static class GMenuItemHandleExtensions
 		return GMenuItemExterns.g_menu_item_get_link(menu_item, link);
 	}
 
-	public static GMenuItemHandle SetActionAndTarget(this GMenuItemHandle menu_item, string action, string format_string, IntPtr @__arglist)
+	public static T SetActionAndTarget<T>(this T menu_item, string action, string format_string, IntPtr @__arglist) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_action_and_target(menu_item, action, format_string, @__arglist);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetActionAndTargetValue(this GMenuItemHandle menu_item, string action, GVariantHandle target_value)
+	public static T SetActionAndTargetValue<T>(this T menu_item, string action, GVariantHandle target_value) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_action_and_target_value(menu_item, action, target_value);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetAttribute(this GMenuItemHandle menu_item, string attribute, string format_string, IntPtr @__arglist)
+	public static T SetAttribute<T>(this T menu_item, string attribute, string format_string, IntPtr @__arglist) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_attribute(menu_item, attribute, format_string, @__arglist);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetAttributeValue(this GMenuItemHandle menu_item, string attribute, GVariantHandle value)
+	public static T SetAttributeValue<T>(this T menu_item, string attribute, GVariantHandle value) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_attribute_value(menu_item, attribute, value);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetDetailedAction(this GMenuItemHandle menu_item, string detailed_action)
+	public static T SetDetailedAction<T>(this T menu_item, string detailed_action) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_detailed_action(menu_item, detailed_action);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetIcon(this GMenuItemHandle menu_item, GIconHandle icon)
+	public static T SetIcon<T>(this T menu_item, GIconHandle icon) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_icon(menu_item, icon);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetLabel(this GMenuItemHandle menu_item, string label)
+	public static T SetLabel<T>(this T menu_item, string label) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_label(menu_item, label);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetLink(this GMenuItemHandle menu_item, string link, GMenuModelHandle model)
+	public static T SetLink<T>(this T menu_item, string link, GMenuModelHandle model) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_link(menu_item, link, model);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetSection(this GMenuItemHandle menu_item, GMenuModelHandle section)
+	public static T SetSection<T>(this T menu_item, GMenuModelHandle section) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_section(menu_item, section);
 		return menu_item;
 	}
 
-	public static GMenuItemHandle SetSubmenu(this GMenuItemHandle menu_item, GMenuModelHandle submenu)
+	public static T SetSubmenu<T>(this T menu_item, GMenuModelHandle submenu) where T : GMenuItemHandle
 	{
 		GMenuItemExterns.g_menu_item_set_submenu(menu_item, submenu);
 		return menu_item;

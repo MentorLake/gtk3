@@ -113,19 +113,19 @@ public delegate void popped_up([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GtkMenuHandleExtensions
 {
-	public static GtkMenuHandle Attach(this GtkMenuHandle menu, GtkWidgetHandle child, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach)
+	public static T Attach<T>(this T menu, GtkWidgetHandle child, uint left_attach, uint right_attach, uint top_attach, uint bottom_attach) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_attach(menu, child, left_attach, right_attach, top_attach, bottom_attach);
 		return menu;
 	}
 
-	public static GtkMenuHandle AttachToWidget(this GtkMenuHandle menu, GtkWidgetHandle attach_widget, GtkMenuDetachFunc detacher)
+	public static T AttachToWidget<T>(this T menu, GtkWidgetHandle attach_widget, GtkMenuDetachFunc detacher) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_attach_to_widget(menu, attach_widget, detacher);
 		return menu;
 	}
 
-	public static GtkMenuHandle Detach(this GtkMenuHandle menu)
+	public static T Detach<T>(this T menu) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_detach(menu);
 		return menu;
@@ -171,103 +171,103 @@ public static class GtkMenuHandleExtensions
 		return GtkMenuExterns.gtk_menu_get_title(menu);
 	}
 
-	public static GtkMenuHandle PlaceOnMonitor(this GtkMenuHandle menu, GdkMonitorHandle monitor)
+	public static T PlaceOnMonitor<T>(this T menu, GdkMonitorHandle monitor) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_place_on_monitor(menu, monitor);
 		return menu;
 	}
 
-	public static GtkMenuHandle Popdown(this GtkMenuHandle menu)
+	public static T Popdown<T>(this T menu) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popdown(menu);
 		return menu;
 	}
 
-	public static GtkMenuHandle Popup(this GtkMenuHandle menu, GtkWidgetHandle parent_menu_shell, GtkWidgetHandle parent_menu_item, GtkMenuPositionFunc func, IntPtr data, uint button, uint activate_time)
+	public static T Popup<T>(this T menu, GtkWidgetHandle parent_menu_shell, GtkWidgetHandle parent_menu_item, GtkMenuPositionFunc func, IntPtr data, uint button, uint activate_time) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popup(menu, parent_menu_shell, parent_menu_item, func, data, button, activate_time);
 		return menu;
 	}
 
-	public static GtkMenuHandle PopupAtPointer(this GtkMenuHandle menu, GdkEventHandle trigger_event)
+	public static T PopupAtPointer<T>(this T menu, GdkEventHandle trigger_event) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popup_at_pointer(menu, trigger_event);
 		return menu;
 	}
 
-	public static GtkMenuHandle PopupAtRect(this GtkMenuHandle menu, GdkWindowHandle rect_window, GdkRectangleHandle rect, GdkGravity rect_anchor, GdkGravity menu_anchor, GdkEventHandle trigger_event)
+	public static T PopupAtRect<T>(this T menu, GdkWindowHandle rect_window, GdkRectangleHandle rect, GdkGravity rect_anchor, GdkGravity menu_anchor, GdkEventHandle trigger_event) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popup_at_rect(menu, rect_window, rect, rect_anchor, menu_anchor, trigger_event);
 		return menu;
 	}
 
-	public static GtkMenuHandle PopupAtWidget(this GtkMenuHandle menu, GtkWidgetHandle widget, GdkGravity widget_anchor, GdkGravity menu_anchor, GdkEventHandle trigger_event)
+	public static T PopupAtWidget<T>(this T menu, GtkWidgetHandle widget, GdkGravity widget_anchor, GdkGravity menu_anchor, GdkEventHandle trigger_event) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popup_at_widget(menu, widget, widget_anchor, menu_anchor, trigger_event);
 		return menu;
 	}
 
-	public static GtkMenuHandle PopupForDevice(this GtkMenuHandle menu, GdkDeviceHandle device, GtkWidgetHandle parent_menu_shell, GtkWidgetHandle parent_menu_item, GtkMenuPositionFunc func, IntPtr data, GDestroyNotify destroy, uint button, uint activate_time)
+	public static T PopupForDevice<T>(this T menu, GdkDeviceHandle device, GtkWidgetHandle parent_menu_shell, GtkWidgetHandle parent_menu_item, GtkMenuPositionFunc func, IntPtr data, GDestroyNotify destroy, uint button, uint activate_time) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_popup_for_device(menu, device, parent_menu_shell, parent_menu_item, func, data, destroy, button, activate_time);
 		return menu;
 	}
 
-	public static GtkMenuHandle ReorderChild(this GtkMenuHandle menu, GtkWidgetHandle child, int position)
+	public static T ReorderChild<T>(this T menu, GtkWidgetHandle child, int position) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_reorder_child(menu, child, position);
 		return menu;
 	}
 
-	public static GtkMenuHandle Reposition(this GtkMenuHandle menu)
+	public static T Reposition<T>(this T menu) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_reposition(menu);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetAccelGroup(this GtkMenuHandle menu, GtkAccelGroupHandle accel_group)
+	public static T SetAccelGroup<T>(this T menu, GtkAccelGroupHandle accel_group) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_accel_group(menu, accel_group);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetAccelPath(this GtkMenuHandle menu, string accel_path)
+	public static T SetAccelPath<T>(this T menu, string accel_path) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_accel_path(menu, accel_path);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetActive(this GtkMenuHandle menu, uint index)
+	public static T SetActive<T>(this T menu, uint index) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_active(menu, index);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetMonitor(this GtkMenuHandle menu, int monitor_num)
+	public static T SetMonitor<T>(this T menu, int monitor_num) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_monitor(menu, monitor_num);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetReserveToggleSize(this GtkMenuHandle menu, bool reserve_toggle_size)
+	public static T SetReserveToggleSize<T>(this T menu, bool reserve_toggle_size) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_reserve_toggle_size(menu, reserve_toggle_size);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetScreen(this GtkMenuHandle menu, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T menu, GdkScreenHandle screen) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_screen(menu, screen);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetTearoffState(this GtkMenuHandle menu, bool torn_off)
+	public static T SetTearoffState<T>(this T menu, bool torn_off) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_tearoff_state(menu, torn_off);
 		return menu;
 	}
 
-	public static GtkMenuHandle SetTitle(this GtkMenuHandle menu, string title)
+	public static T SetTitle<T>(this T menu, string title) where T : GtkMenuHandle
 	{
 		GtkMenuExterns.gtk_menu_set_title(menu, title);
 		return menu;

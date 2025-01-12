@@ -50,7 +50,7 @@ public static class GtkToolShellHandleExtensions
 		return GtkToolShellExterns.gtk_tool_shell_get_text_size_group(shell);
 	}
 
-	public static GtkToolShellHandle RebuildMenu(this GtkToolShellHandle shell)
+	public static T RebuildMenu<T>(this T shell) where T : GtkToolShellHandle
 	{
 		GtkToolShellExterns.gtk_tool_shell_rebuild_menu(shell);
 		return shell;

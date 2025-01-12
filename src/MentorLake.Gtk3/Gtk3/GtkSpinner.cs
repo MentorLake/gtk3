@@ -11,13 +11,13 @@ public class GtkSpinnerHandle : GtkWidgetHandle, AtkImplementorIfaceHandle, GtkB
 
 public static class GtkSpinnerHandleExtensions
 {
-	public static GtkSpinnerHandle Start(this GtkSpinnerHandle spinner)
+	public static T Start<T>(this T spinner) where T : GtkSpinnerHandle
 	{
 		GtkSpinnerExterns.gtk_spinner_start(spinner);
 		return spinner;
 	}
 
-	public static GtkSpinnerHandle Stop(this GtkSpinnerHandle spinner)
+	public static T Stop<T>(this T spinner) where T : GtkSpinnerHandle
 	{
 		GtkSpinnerExterns.gtk_spinner_stop(spinner);
 		return spinner;

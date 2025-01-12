@@ -21,7 +21,7 @@ public static class GSocketConnectionHandleExtensions
 		return GSocketConnectionExterns.g_socket_connection_connect(connection, address, cancellable, out error);
 	}
 
-	public static GSocketConnectionHandle ConnectAsync(this GSocketConnectionHandle connection, GSocketAddressHandle address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ConnectAsync<T>(this T connection, GSocketAddressHandle address, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketConnectionHandle
 	{
 		GSocketConnectionExterns.g_socket_connection_connect_async(connection, address, cancellable, callback, user_data);
 		return connection;

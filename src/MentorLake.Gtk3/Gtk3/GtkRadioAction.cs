@@ -72,19 +72,19 @@ public static class GtkRadioActionHandleExtensions
 		return GtkRadioActionExterns.gtk_radio_action_get_group(action);
 	}
 
-	public static GtkRadioActionHandle JoinGroup(this GtkRadioActionHandle action, GtkRadioActionHandle group_source)
+	public static T JoinGroup<T>(this T action, GtkRadioActionHandle group_source) where T : GtkRadioActionHandle
 	{
 		GtkRadioActionExterns.gtk_radio_action_join_group(action, group_source);
 		return action;
 	}
 
-	public static GtkRadioActionHandle SetCurrentValue(this GtkRadioActionHandle action, int current_value)
+	public static T SetCurrentValue<T>(this T action, int current_value) where T : GtkRadioActionHandle
 	{
 		GtkRadioActionExterns.gtk_radio_action_set_current_value(action, current_value);
 		return action;
 	}
 
-	public static GtkRadioActionHandle SetGroup(this GtkRadioActionHandle action, GSListHandle group)
+	public static T SetGroup<T>(this T action, GSListHandle group) where T : GtkRadioActionHandle
 	{
 		GtkRadioActionExterns.gtk_radio_action_set_group(action, group);
 		return action;

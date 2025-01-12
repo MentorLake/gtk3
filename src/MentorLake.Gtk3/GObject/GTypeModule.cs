@@ -6,7 +6,7 @@ public class GTypeModuleHandle : GObjectHandle, GTypePluginHandle
 
 public static class GTypeModuleHandleExtensions
 {
-	public static GTypeModuleHandle AddInterface(this GTypeModuleHandle module, GType instance_type, GType interface_type, GInterfaceInfoHandle interface_info)
+	public static T AddInterface<T>(this T module, GType instance_type, GType interface_type, GInterfaceInfoHandle interface_info) where T : GTypeModuleHandle
 	{
 		GTypeModuleExterns.g_type_module_add_interface(module, instance_type, interface_type, interface_info);
 		return module;
@@ -27,13 +27,13 @@ public static class GTypeModuleHandleExtensions
 		return GTypeModuleExterns.g_type_module_register_type(module, parent_type, type_name, type_info, flags);
 	}
 
-	public static GTypeModuleHandle SetName(this GTypeModuleHandle module, string name)
+	public static T SetName<T>(this T module, string name) where T : GTypeModuleHandle
 	{
 		GTypeModuleExterns.g_type_module_set_name(module, name);
 		return module;
 	}
 
-	public static GTypeModuleHandle Unuse(this GTypeModuleHandle module)
+	public static T Unuse<T>(this T module) where T : GTypeModuleHandle
 	{
 		GTypeModuleExterns.g_type_module_unuse(module);
 		return module;

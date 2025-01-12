@@ -17,7 +17,7 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_copy(iter);
 	}
 
-	public static PangoLayoutIterHandle Free(this PangoLayoutIterHandle iter)
+	public static T Free<T>(this T iter) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_free(iter);
 		return iter;
@@ -28,13 +28,13 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_get_baseline(iter);
 	}
 
-	public static PangoLayoutIterHandle GetCharExtents(this PangoLayoutIterHandle iter, out PangoRectangle logical_rect)
+	public static T GetCharExtents<T>(this T iter, out PangoRectangle logical_rect) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_char_extents(iter, out logical_rect);
 		return iter;
 	}
 
-	public static PangoLayoutIterHandle GetClusterExtents(this PangoLayoutIterHandle iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetClusterExtents<T>(this T iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_cluster_extents(iter, out ink_rect, out logical_rect);
 		return iter;
@@ -50,7 +50,7 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_get_layout(iter);
 	}
 
-	public static PangoLayoutIterHandle GetLayoutExtents(this PangoLayoutIterHandle iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetLayoutExtents<T>(this T iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_layout_extents(iter, out ink_rect, out logical_rect);
 		return iter;
@@ -61,7 +61,7 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_get_line(iter);
 	}
 
-	public static PangoLayoutIterHandle GetLineExtents(this PangoLayoutIterHandle iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetLineExtents<T>(this T iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_line_extents(iter, out ink_rect, out logical_rect);
 		return iter;
@@ -72,7 +72,7 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_get_line_readonly(iter);
 	}
 
-	public static PangoLayoutIterHandle GetLineYrange(this PangoLayoutIterHandle iter, out int y0_, out int y1_)
+	public static T GetLineYrange<T>(this T iter, out int y0_, out int y1_) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_line_yrange(iter, out y0_, out y1_);
 		return iter;
@@ -88,7 +88,7 @@ public static class PangoLayoutIterHandleExtensions
 		return PangoLayoutIterExterns.pango_layout_iter_get_run_baseline(iter);
 	}
 
-	public static PangoLayoutIterHandle GetRunExtents(this PangoLayoutIterHandle iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetRunExtents<T>(this T iter, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoLayoutIterHandle
 	{
 		PangoLayoutIterExterns.pango_layout_iter_get_run_extents(iter, out ink_rect, out logical_rect);
 		return iter;

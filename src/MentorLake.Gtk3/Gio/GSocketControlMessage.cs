@@ -26,7 +26,7 @@ public static class GSocketControlMessageHandleExtensions
 		return GSocketControlMessageExterns.g_socket_control_message_get_size(message);
 	}
 
-	public static GSocketControlMessageHandle Serialize(this GSocketControlMessageHandle message, IntPtr data)
+	public static T Serialize<T>(this T message, IntPtr data) where T : GSocketControlMessageHandle
 	{
 		GSocketControlMessageExterns.g_socket_control_message_serialize(message, data);
 		return message;

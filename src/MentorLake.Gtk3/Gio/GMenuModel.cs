@@ -84,7 +84,7 @@ public static class GMenuModelHandleExtensions
 		return GMenuModelExterns.g_menu_model_is_mutable(model);
 	}
 
-	public static GMenuModelHandle ItemsChanged(this GMenuModelHandle model, int position, int removed, int added)
+	public static T ItemsChanged<T>(this T model, int position, int removed, int added) where T : GMenuModelHandle
 	{
 		GMenuModelExterns.g_menu_model_items_changed(model, position, removed, added);
 		return model;

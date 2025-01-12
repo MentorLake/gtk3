@@ -7,25 +7,25 @@ public class GMutexHandle : BaseSafeHandle
 
 public static class GMutexHandleExtensions
 {
-	public static GMutexHandle Clear(this GMutexHandle mutex)
+	public static T Clear<T>(this T mutex) where T : GMutexHandle
 	{
 		GMutexExterns.g_mutex_clear(mutex);
 		return mutex;
 	}
 
-	public static GMutexHandle Free(this GMutexHandle mutex)
+	public static T Free<T>(this T mutex) where T : GMutexHandle
 	{
 		GMutexExterns.g_mutex_free(mutex);
 		return mutex;
 	}
 
-	public static GMutexHandle Init(this GMutexHandle mutex)
+	public static T Init<T>(this T mutex) where T : GMutexHandle
 	{
 		GMutexExterns.g_mutex_init(mutex);
 		return mutex;
 	}
 
-	public static GMutexHandle Lock(this GMutexHandle mutex)
+	public static T Lock<T>(this T mutex) where T : GMutexHandle
 	{
 		GMutexExterns.g_mutex_lock(mutex);
 		return mutex;
@@ -36,7 +36,7 @@ public static class GMutexHandleExtensions
 		return GMutexExterns.g_mutex_trylock(mutex);
 	}
 
-	public static GMutexHandle Unlock(this GMutexHandle mutex)
+	public static T Unlock<T>(this T mutex) where T : GMutexHandle
 	{
 		GMutexExterns.g_mutex_unlock(mutex);
 		return mutex;

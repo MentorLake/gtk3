@@ -22,7 +22,7 @@ public static class GValueArrayHandleExtensions
 		return GValueArrayExterns.g_value_array_copy(value_array);
 	}
 
-	public static GValueArrayHandle Free(this GValueArrayHandle value_array)
+	public static T Free<T>(this T value_array) where T : GValueArrayHandle
 	{
 		GValueArrayExterns.g_value_array_free(value_array);
 		return value_array;

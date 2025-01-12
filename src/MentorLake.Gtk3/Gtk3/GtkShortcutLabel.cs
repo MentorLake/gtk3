@@ -21,13 +21,13 @@ public static class GtkShortcutLabelHandleExtensions
 		return GtkShortcutLabelExterns.gtk_shortcut_label_get_disabled_text(self);
 	}
 
-	public static GtkShortcutLabelHandle SetAccelerator(this GtkShortcutLabelHandle self, string accelerator)
+	public static T SetAccelerator<T>(this T self, string accelerator) where T : GtkShortcutLabelHandle
 	{
 		GtkShortcutLabelExterns.gtk_shortcut_label_set_accelerator(self, accelerator);
 		return self;
 	}
 
-	public static GtkShortcutLabelHandle SetDisabledText(this GtkShortcutLabelHandle self, string disabled_text)
+	public static T SetDisabledText<T>(this T self, string disabled_text) where T : GtkShortcutLabelHandle
 	{
 		GtkShortcutLabelExterns.gtk_shortcut_label_set_disabled_text(self, disabled_text);
 		return self;

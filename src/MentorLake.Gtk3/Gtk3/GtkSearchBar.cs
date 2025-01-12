@@ -11,7 +11,7 @@ public class GtkSearchBarHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBu
 
 public static class GtkSearchBarHandleExtensions
 {
-	public static GtkSearchBarHandle ConnectEntry(this GtkSearchBarHandle bar, GtkEntryHandle entry)
+	public static T ConnectEntry<T>(this T bar, GtkEntryHandle entry) where T : GtkSearchBarHandle
 	{
 		GtkSearchBarExterns.gtk_search_bar_connect_entry(bar, entry);
 		return bar;
@@ -32,13 +32,13 @@ public static class GtkSearchBarHandleExtensions
 		return GtkSearchBarExterns.gtk_search_bar_handle_event(bar, @event);
 	}
 
-	public static GtkSearchBarHandle SetSearchMode(this GtkSearchBarHandle bar, bool search_mode)
+	public static T SetSearchMode<T>(this T bar, bool search_mode) where T : GtkSearchBarHandle
 	{
 		GtkSearchBarExterns.gtk_search_bar_set_search_mode(bar, search_mode);
 		return bar;
 	}
 
-	public static GtkSearchBarHandle SetShowCloseButton(this GtkSearchBarHandle bar, bool visible)
+	public static T SetShowCloseButton<T>(this T bar, bool visible) where T : GtkSearchBarHandle
 	{
 		GtkSearchBarExterns.gtk_search_bar_set_show_close_button(bar, visible);
 		return bar;

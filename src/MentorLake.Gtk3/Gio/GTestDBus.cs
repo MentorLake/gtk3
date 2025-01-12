@@ -16,13 +16,13 @@ public class GTestDBusHandle : GObjectHandle
 
 public static class GTestDBusHandleExtensions
 {
-	public static GTestDBusHandle GTestDbusAddServiceDir(this GTestDBusHandle self, string path)
+	public static T GTestDbusAddServiceDir<T>(this T self, string path) where T : GTestDBusHandle
 	{
 		GTestDBusExterns.g_test_dbus_add_service_dir(self, path);
 		return self;
 	}
 
-	public static GTestDBusHandle GTestDbusDown(this GTestDBusHandle self)
+	public static T GTestDbusDown<T>(this T self) where T : GTestDBusHandle
 	{
 		GTestDBusExterns.g_test_dbus_down(self);
 		return self;
@@ -38,13 +38,13 @@ public static class GTestDBusHandleExtensions
 		return GTestDBusExterns.g_test_dbus_get_flags(self);
 	}
 
-	public static GTestDBusHandle GTestDbusStop(this GTestDBusHandle self)
+	public static T GTestDbusStop<T>(this T self) where T : GTestDBusHandle
 	{
 		GTestDBusExterns.g_test_dbus_stop(self);
 		return self;
 	}
 
-	public static GTestDBusHandle GTestDbusUp(this GTestDBusHandle self)
+	public static T GTestDbusUp<T>(this T self) where T : GTestDBusHandle
 	{
 		GTestDBusExterns.g_test_dbus_up(self);
 		return self;

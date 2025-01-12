@@ -93,7 +93,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_add_filter(connection, filter_function, user_data, user_data_free_func);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionCall(this GDBusConnectionHandle connection, string bus_name, string object_path, string interface_name, string method_name, GVariantHandle parameters, GVariantTypeHandle reply_type, GDBusCallFlags flags, int timeout_msec, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusConnectionCall<T>(this T connection, string bus_name, string object_path, string interface_name, string method_name, GVariantHandle parameters, GVariantTypeHandle reply_type, GDBusCallFlags flags, int timeout_msec, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_call(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, cancellable, callback, user_data);
 		return connection;
@@ -109,7 +109,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_call_sync(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, cancellable, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionCallWithUnixFdList(this GDBusConnectionHandle connection, string bus_name, string object_path, string interface_name, string method_name, GVariantHandle parameters, GVariantTypeHandle reply_type, GDBusCallFlags flags, int timeout_msec, GUnixFDListHandle fd_list, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusConnectionCallWithUnixFdList<T>(this T connection, string bus_name, string object_path, string interface_name, string method_name, GVariantHandle parameters, GVariantTypeHandle reply_type, GDBusCallFlags flags, int timeout_msec, GUnixFDListHandle fd_list, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_call_with_unix_fd_list(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, fd_list, cancellable, callback, user_data);
 		return connection;
@@ -125,7 +125,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_call_with_unix_fd_list_sync(connection, bus_name, object_path, interface_name, method_name, parameters, reply_type, flags, timeout_msec, fd_list, out out_fd_list, cancellable, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionClose(this GDBusConnectionHandle connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusConnectionClose<T>(this T connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_close(connection, cancellable, callback, user_data);
 		return connection;
@@ -156,7 +156,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_export_menu_model(connection, object_path, menu, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionFlush(this GDBusConnectionHandle connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusConnectionFlush<T>(this T connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_flush(connection, cancellable, callback, user_data);
 		return connection;
@@ -232,7 +232,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_register_subtree(connection, object_path, vtable, flags, user_data, user_data_free_func, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionRemoveFilter(this GDBusConnectionHandle connection, uint filter_id)
+	public static T GDbusConnectionRemoveFilter<T>(this T connection, uint filter_id) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_remove_filter(connection, filter_id);
 		return connection;
@@ -243,7 +243,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_send_message(connection, message, flags, out out_serial, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionSendMessageWithReply(this GDBusConnectionHandle connection, GDBusMessageHandle message, GDBusSendMessageFlags flags, int timeout_msec, out uint out_serial, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T GDbusConnectionSendMessageWithReply<T>(this T connection, GDBusMessageHandle message, GDBusSendMessageFlags flags, int timeout_msec, out uint out_serial, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_send_message_with_reply(connection, message, flags, timeout_msec, out out_serial, cancellable, callback, user_data);
 		return connection;
@@ -259,7 +259,7 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_send_message_with_reply_sync(connection, message, flags, timeout_msec, out out_serial, cancellable, out error);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionSetExitOnClose(this GDBusConnectionHandle connection, bool exit_on_close)
+	public static T GDbusConnectionSetExitOnClose<T>(this T connection, bool exit_on_close) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_set_exit_on_close(connection, exit_on_close);
 		return connection;
@@ -270,25 +270,25 @@ public static class GDBusConnectionHandleExtensions
 		return GDBusConnectionExterns.g_dbus_connection_signal_subscribe(connection, sender, interface_name, member, object_path, arg0, flags, callback, user_data, user_data_free_func);
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionSignalUnsubscribe(this GDBusConnectionHandle connection, uint subscription_id)
+	public static T GDbusConnectionSignalUnsubscribe<T>(this T connection, uint subscription_id) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_signal_unsubscribe(connection, subscription_id);
 		return connection;
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionStartMessageProcessing(this GDBusConnectionHandle connection)
+	public static T GDbusConnectionStartMessageProcessing<T>(this T connection) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_start_message_processing(connection);
 		return connection;
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionUnexportActionGroup(this GDBusConnectionHandle connection, uint export_id)
+	public static T GDbusConnectionUnexportActionGroup<T>(this T connection, uint export_id) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_unexport_action_group(connection, export_id);
 		return connection;
 	}
 
-	public static GDBusConnectionHandle GDbusConnectionUnexportMenuModel(this GDBusConnectionHandle connection, uint export_id)
+	public static T GDbusConnectionUnexportMenuModel<T>(this T connection, uint export_id) where T : GDBusConnectionHandle
 	{
 		GDBusConnectionExterns.g_dbus_connection_unexport_menu_model(connection, export_id);
 		return connection;

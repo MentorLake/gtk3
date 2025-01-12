@@ -25,13 +25,13 @@ public static class GDtlsClientConnectionHandleExtensions
 		return GDtlsClientConnectionExterns.g_dtls_client_connection_get_validation_flags(conn);
 	}
 
-	public static GDtlsClientConnectionHandle SetServerIdentity(this GDtlsClientConnectionHandle conn, GSocketConnectableHandle identity)
+	public static T SetServerIdentity<T>(this T conn, GSocketConnectableHandle identity) where T : GDtlsClientConnectionHandle
 	{
 		GDtlsClientConnectionExterns.g_dtls_client_connection_set_server_identity(conn, identity);
 		return conn;
 	}
 
-	public static GDtlsClientConnectionHandle SetValidationFlags(this GDtlsClientConnectionHandle conn, GTlsCertificateFlags flags)
+	public static T SetValidationFlags<T>(this T conn, GTlsCertificateFlags flags) where T : GDtlsClientConnectionHandle
 	{
 		GDtlsClientConnectionExterns.g_dtls_client_connection_set_validation_flags(conn, flags);
 		return conn;

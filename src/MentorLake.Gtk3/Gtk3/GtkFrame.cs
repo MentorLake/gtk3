@@ -16,7 +16,7 @@ public static class GtkFrameHandleExtensions
 		return GtkFrameExterns.gtk_frame_get_label(frame);
 	}
 
-	public static GtkFrameHandle GetLabelAlign(this GtkFrameHandle frame, out float xalign, out float yalign)
+	public static T GetLabelAlign<T>(this T frame, out float xalign, out float yalign) where T : GtkFrameHandle
 	{
 		GtkFrameExterns.gtk_frame_get_label_align(frame, out xalign, out yalign);
 		return frame;
@@ -32,25 +32,25 @@ public static class GtkFrameHandleExtensions
 		return GtkFrameExterns.gtk_frame_get_shadow_type(frame);
 	}
 
-	public static GtkFrameHandle SetLabel(this GtkFrameHandle frame, string label)
+	public static T SetLabel<T>(this T frame, string label) where T : GtkFrameHandle
 	{
 		GtkFrameExterns.gtk_frame_set_label(frame, label);
 		return frame;
 	}
 
-	public static GtkFrameHandle SetLabelAlign(this GtkFrameHandle frame, float xalign, float yalign)
+	public static T SetLabelAlign<T>(this T frame, float xalign, float yalign) where T : GtkFrameHandle
 	{
 		GtkFrameExterns.gtk_frame_set_label_align(frame, xalign, yalign);
 		return frame;
 	}
 
-	public static GtkFrameHandle SetLabelWidget(this GtkFrameHandle frame, GtkWidgetHandle label_widget)
+	public static T SetLabelWidget<T>(this T frame, GtkWidgetHandle label_widget) where T : GtkFrameHandle
 	{
 		GtkFrameExterns.gtk_frame_set_label_widget(frame, label_widget);
 		return frame;
 	}
 
-	public static GtkFrameHandle SetShadowType(this GtkFrameHandle frame, GtkShadowType type)
+	public static T SetShadowType<T>(this T frame, GtkShadowType type) where T : GtkFrameHandle
 	{
 		GtkFrameExterns.gtk_frame_set_shadow_type(frame, type);
 		return frame;

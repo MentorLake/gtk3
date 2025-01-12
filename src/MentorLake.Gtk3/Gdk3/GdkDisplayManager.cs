@@ -77,7 +77,7 @@ public static class GdkDisplayManagerHandleExtensions
 		return GdkDisplayManagerExterns.gdk_display_manager_open_display(manager, name);
 	}
 
-	public static GdkDisplayManagerHandle SetDefaultDisplay(this GdkDisplayManagerHandle manager, GdkDisplayHandle display)
+	public static T SetDefaultDisplay<T>(this T manager, GdkDisplayHandle display) where T : GdkDisplayManagerHandle
 	{
 		GdkDisplayManagerExterns.gdk_display_manager_set_default_display(manager, display);
 		return manager;

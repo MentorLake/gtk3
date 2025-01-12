@@ -12,7 +12,7 @@ public class GSettingsSchemaSourceHandle : BaseSafeHandle
 
 public static class GSettingsSchemaSourceHandleExtensions
 {
-	public static GSettingsSchemaSourceHandle ListSchemas(this GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable)
+	public static T ListSchemas<T>(this T source, bool recursive, out string[] non_relocatable, out string[] relocatable) where T : GSettingsSchemaSourceHandle
 	{
 		GSettingsSchemaSourceExterns.g_settings_schema_source_list_schemas(source, recursive, out non_relocatable, out relocatable);
 		return source;
@@ -28,7 +28,7 @@ public static class GSettingsSchemaSourceHandleExtensions
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_ref(source);
 	}
 
-	public static GSettingsSchemaSourceHandle Unref(this GSettingsSchemaSourceHandle source)
+	public static T Unref<T>(this T source) where T : GSettingsSchemaSourceHandle
 	{
 		GSettingsSchemaSourceExterns.g_settings_schema_source_unref(source);
 		return source;

@@ -91,13 +91,13 @@ public static class GtkRadioMenuItemHandleExtensions
 		return GtkRadioMenuItemExterns.gtk_radio_menu_item_get_group(radio_menu_item);
 	}
 
-	public static GtkRadioMenuItemHandle JoinGroup(this GtkRadioMenuItemHandle radio_menu_item, GtkRadioMenuItemHandle group_source)
+	public static T JoinGroup<T>(this T radio_menu_item, GtkRadioMenuItemHandle group_source) where T : GtkRadioMenuItemHandle
 	{
 		GtkRadioMenuItemExterns.gtk_radio_menu_item_join_group(radio_menu_item, group_source);
 		return radio_menu_item;
 	}
 
-	public static GtkRadioMenuItemHandle SetGroup(this GtkRadioMenuItemHandle radio_menu_item, GSListHandle group)
+	public static T SetGroup<T>(this T radio_menu_item, GSListHandle group) where T : GtkRadioMenuItemHandle
 	{
 		GtkRadioMenuItemExterns.gtk_radio_menu_item_set_group(radio_menu_item, group);
 		return radio_menu_item;

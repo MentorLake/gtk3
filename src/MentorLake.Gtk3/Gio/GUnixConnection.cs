@@ -11,7 +11,7 @@ public static class GUnixConnectionHandleExtensions
 		return GUnixConnectionExterns.g_unix_connection_receive_credentials(connection, cancellable, out error);
 	}
 
-	public static GUnixConnectionHandle ReceiveCredentialsAsync(this GUnixConnectionHandle connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReceiveCredentialsAsync<T>(this T connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GUnixConnectionHandle
 	{
 		GUnixConnectionExterns.g_unix_connection_receive_credentials_async(connection, cancellable, callback, user_data);
 		return connection;
@@ -32,7 +32,7 @@ public static class GUnixConnectionHandleExtensions
 		return GUnixConnectionExterns.g_unix_connection_send_credentials(connection, cancellable, out error);
 	}
 
-	public static GUnixConnectionHandle SendCredentialsAsync(this GUnixConnectionHandle connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T SendCredentialsAsync<T>(this T connection, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GUnixConnectionHandle
 	{
 		GUnixConnectionExterns.g_unix_connection_send_credentials_async(connection, cancellable, callback, user_data);
 		return connection;

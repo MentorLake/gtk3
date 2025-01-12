@@ -7,13 +7,13 @@ public class GQueueHandle : BaseSafeHandle
 
 public static class GQueueHandleExtensions
 {
-	public static GQueueHandle Clear(this GQueueHandle queue)
+	public static T Clear<T>(this T queue) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_clear(queue);
 		return queue;
 	}
 
-	public static GQueueHandle ClearFull(this GQueueHandle queue, GDestroyNotify free_func)
+	public static T ClearFull<T>(this T queue, GDestroyNotify free_func) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_clear_full(queue, free_func);
 		return queue;
@@ -24,7 +24,7 @@ public static class GQueueHandleExtensions
 		return GQueueExterns.g_queue_copy(queue);
 	}
 
-	public static GQueueHandle DeleteLink(this GQueueHandle queue, GListHandle link_)
+	public static T DeleteLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_delete_link(queue, link_);
 		return queue;
@@ -40,19 +40,19 @@ public static class GQueueHandleExtensions
 		return GQueueExterns.g_queue_find_custom(queue, data, func);
 	}
 
-	public static GQueueHandle Foreach(this GQueueHandle queue, GFunc func, IntPtr user_data)
+	public static T Foreach<T>(this T queue, GFunc func, IntPtr user_data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_foreach(queue, func, user_data);
 		return queue;
 	}
 
-	public static GQueueHandle Free(this GQueueHandle queue)
+	public static T Free<T>(this T queue) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_free(queue);
 		return queue;
 	}
 
-	public static GQueueHandle FreeFull(this GQueueHandle queue, GDestroyNotify free_func)
+	public static T FreeFull<T>(this T queue, GDestroyNotify free_func) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_free_full(queue, free_func);
 		return queue;
@@ -68,37 +68,37 @@ public static class GQueueHandleExtensions
 		return GQueueExterns.g_queue_index(queue, data);
 	}
 
-	public static GQueueHandle Init(this GQueueHandle queue)
+	public static T Init<T>(this T queue) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_init(queue);
 		return queue;
 	}
 
-	public static GQueueHandle InsertAfter(this GQueueHandle queue, GListHandle sibling, IntPtr data)
+	public static T InsertAfter<T>(this T queue, GListHandle sibling, IntPtr data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_insert_after(queue, sibling, data);
 		return queue;
 	}
 
-	public static GQueueHandle InsertAfterLink(this GQueueHandle queue, GListHandle sibling, GListHandle link_)
+	public static T InsertAfterLink<T>(this T queue, GListHandle sibling, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_insert_after_link(queue, sibling, link_);
 		return queue;
 	}
 
-	public static GQueueHandle InsertBefore(this GQueueHandle queue, GListHandle sibling, IntPtr data)
+	public static T InsertBefore<T>(this T queue, GListHandle sibling, IntPtr data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_insert_before(queue, sibling, data);
 		return queue;
 	}
 
-	public static GQueueHandle InsertBeforeLink(this GQueueHandle queue, GListHandle sibling, GListHandle link_)
+	public static T InsertBeforeLink<T>(this T queue, GListHandle sibling, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_insert_before_link(queue, sibling, link_);
 		return queue;
 	}
 
-	public static GQueueHandle InsertSorted(this GQueueHandle queue, IntPtr data, GCompareDataFunc func, IntPtr user_data)
+	public static T InsertSorted<T>(this T queue, IntPtr data, GCompareDataFunc func, IntPtr user_data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_insert_sorted(queue, data, func, user_data);
 		return queue;
@@ -174,37 +174,37 @@ public static class GQueueHandleExtensions
 		return GQueueExterns.g_queue_pop_tail_link(queue);
 	}
 
-	public static GQueueHandle PushHead(this GQueueHandle queue, IntPtr data)
+	public static T PushHead<T>(this T queue, IntPtr data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_head(queue, data);
 		return queue;
 	}
 
-	public static GQueueHandle PushHeadLink(this GQueueHandle queue, GListHandle link_)
+	public static T PushHeadLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_head_link(queue, link_);
 		return queue;
 	}
 
-	public static GQueueHandle PushNth(this GQueueHandle queue, IntPtr data, int n)
+	public static T PushNth<T>(this T queue, IntPtr data, int n) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_nth(queue, data, n);
 		return queue;
 	}
 
-	public static GQueueHandle PushNthLink(this GQueueHandle queue, int n, GListHandle link_)
+	public static T PushNthLink<T>(this T queue, int n, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_nth_link(queue, n, link_);
 		return queue;
 	}
 
-	public static GQueueHandle PushTail(this GQueueHandle queue, IntPtr data)
+	public static T PushTail<T>(this T queue, IntPtr data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_tail(queue, data);
 		return queue;
 	}
 
-	public static GQueueHandle PushTailLink(this GQueueHandle queue, GListHandle link_)
+	public static T PushTailLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_push_tail_link(queue, link_);
 		return queue;
@@ -220,19 +220,19 @@ public static class GQueueHandleExtensions
 		return GQueueExterns.g_queue_remove_all(queue, data);
 	}
 
-	public static GQueueHandle Reverse(this GQueueHandle queue)
+	public static T Reverse<T>(this T queue) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_reverse(queue);
 		return queue;
 	}
 
-	public static GQueueHandle Sort(this GQueueHandle queue, GCompareDataFunc compare_func, IntPtr user_data)
+	public static T Sort<T>(this T queue, GCompareDataFunc compare_func, IntPtr user_data) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_sort(queue, compare_func, user_data);
 		return queue;
 	}
 
-	public static GQueueHandle Unlink(this GQueueHandle queue, GListHandle link_)
+	public static T Unlink<T>(this T queue, GListHandle link_) where T : GQueueHandle
 	{
 		GQueueExterns.g_queue_unlink(queue, link_);
 		return queue;

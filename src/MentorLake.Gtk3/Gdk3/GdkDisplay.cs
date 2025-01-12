@@ -261,13 +261,13 @@ public delegate void seat_removed([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GdkDisplayHandleExtensions
 {
-	public static GdkDisplayHandle Beep(this GdkDisplayHandle display)
+	public static T Beep<T>(this T display) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_beep(display);
 		return display;
 	}
 
-	public static GdkDisplayHandle Close(this GdkDisplayHandle display)
+	public static T Close<T>(this T display) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_close(display);
 		return display;
@@ -278,7 +278,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_device_is_grabbed(display, device);
 	}
 
-	public static GdkDisplayHandle Flush(this GdkDisplayHandle display)
+	public static T Flush<T>(this T display) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_flush(display);
 		return display;
@@ -319,7 +319,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_get_event(display);
 	}
 
-	public static GdkDisplayHandle GetMaximalCursorSize(this GdkDisplayHandle display, out uint width, out uint height)
+	public static T GetMaximalCursorSize<T>(this T display, out uint width, out uint height) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_get_maximal_cursor_size(display, out width, out height);
 		return display;
@@ -355,7 +355,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_get_name(display);
 	}
 
-	public static GdkDisplayHandle GetPointer(this GdkDisplayHandle display, out GdkScreenHandle screen, out int x, out int y, out GdkModifierType mask)
+	public static T GetPointer<T>(this T display, out GdkScreenHandle screen, out int x, out int y, out GdkModifierType mask) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_get_pointer(display, out screen, out x, out y, out mask);
 		return display;
@@ -386,7 +386,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_is_closed(display);
 	}
 
-	public static GdkDisplayHandle KeyboardUngrab(this GdkDisplayHandle display, uint time_)
+	public static T KeyboardUngrab<T>(this T display, uint time_) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_keyboard_ungrab(display, time_);
 		return display;
@@ -402,7 +402,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_list_seats(display);
 	}
 
-	public static GdkDisplayHandle NotifyStartupComplete(this GdkDisplayHandle display, string startup_id)
+	public static T NotifyStartupComplete<T>(this T display, string startup_id) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_notify_startup_complete(display, startup_id);
 		return display;
@@ -418,13 +418,13 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_pointer_is_grabbed(display);
 	}
 
-	public static GdkDisplayHandle PointerUngrab(this GdkDisplayHandle display, uint time_)
+	public static T PointerUngrab<T>(this T display, uint time_) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_pointer_ungrab(display, time_);
 		return display;
 	}
 
-	public static GdkDisplayHandle PutEvent(this GdkDisplayHandle display, GdkEventHandle @event)
+	public static T PutEvent<T>(this T display, GdkEventHandle @event) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_put_event(display, @event);
 		return display;
@@ -435,19 +435,19 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_request_selection_notification(display, selection);
 	}
 
-	public static GdkDisplayHandle SetDoubleClickDistance(this GdkDisplayHandle display, uint distance)
+	public static T SetDoubleClickDistance<T>(this T display, uint distance) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_set_double_click_distance(display, distance);
 		return display;
 	}
 
-	public static GdkDisplayHandle SetDoubleClickTime(this GdkDisplayHandle display, uint msec)
+	public static T SetDoubleClickTime<T>(this T display, uint msec) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_set_double_click_time(display, msec);
 		return display;
 	}
 
-	public static GdkDisplayHandle StoreClipboard(this GdkDisplayHandle display, GdkWindowHandle clipboard_window, uint time_, GdkAtom[] targets, int n_targets)
+	public static T StoreClipboard<T>(this T display, GdkWindowHandle clipboard_window, uint time_, GdkAtom[] targets, int n_targets) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_store_clipboard(display, clipboard_window, time_, targets, n_targets);
 		return display;
@@ -488,13 +488,13 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_display_supports_shapes(display);
 	}
 
-	public static GdkDisplayHandle Sync(this GdkDisplayHandle display)
+	public static T Sync<T>(this T display) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_sync(display);
 		return display;
 	}
 
-	public static GdkDisplayHandle WarpPointer(this GdkDisplayHandle display, GdkScreenHandle screen, int x, int y)
+	public static T WarpPointer<T>(this T display, GdkScreenHandle screen, int x, int y) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_display_warp_pointer(display, screen, x, y);
 		return display;
@@ -520,7 +520,7 @@ public static class GdkDisplayHandleExtensions
 		return GdkDisplayExterns.gdk_selection_owner_set_for_display(display, owner, selection, time_, send_event);
 	}
 
-	public static GdkDisplayHandle GdkSelectionSendNotifyForDisplay(this GdkDisplayHandle display, GdkWindowHandle requestor, GdkAtom selection, GdkAtom target, GdkAtom property, uint time_)
+	public static T GdkSelectionSendNotifyForDisplay<T>(this T display, GdkWindowHandle requestor, GdkAtom selection, GdkAtom target, GdkAtom property, uint time_) where T : GdkDisplayHandle
 	{
 		GdkDisplayExterns.gdk_selection_send_notify_for_display(display, requestor, selection, target, property, time_);
 		return display;

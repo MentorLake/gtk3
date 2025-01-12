@@ -189,37 +189,37 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_activate_cell(area, widget, renderer, @event, cell_area, flags);
 	}
 
-	public static GtkCellAreaHandle Add(this GtkCellAreaHandle area, GtkCellRendererHandle renderer)
+	public static T Add<T>(this T area, GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_add(area, renderer);
 		return area;
 	}
 
-	public static GtkCellAreaHandle AddFocusSibling(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, GtkCellRendererHandle sibling)
+	public static T AddFocusSibling<T>(this T area, GtkCellRendererHandle renderer, GtkCellRendererHandle sibling) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_add_focus_sibling(area, renderer, sibling);
 		return area;
 	}
 
-	public static GtkCellAreaHandle AddWithProperties(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist)
+	public static T AddWithProperties<T>(this T area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_add_with_properties(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
-	public static GtkCellAreaHandle ApplyAttributes(this GtkCellAreaHandle area, GtkTreeModelHandle tree_model, GtkTreeIterHandle iter, bool is_expander, bool is_expanded)
+	public static T ApplyAttributes<T>(this T area, GtkTreeModelHandle tree_model, GtkTreeIterHandle iter, bool is_expander, bool is_expanded) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_apply_attributes(area, tree_model, iter, is_expander, is_expanded);
 		return area;
 	}
 
-	public static GtkCellAreaHandle AttributeConnect(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string attribute, int column)
+	public static T AttributeConnect<T>(this T area, GtkCellRendererHandle renderer, string attribute, int column) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_attribute_connect(area, renderer, attribute, column);
 		return area;
 	}
 
-	public static GtkCellAreaHandle AttributeDisconnect(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string attribute)
+	public static T AttributeDisconnect<T>(this T area, GtkCellRendererHandle renderer, string attribute) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_attribute_disconnect(area, renderer, attribute);
 		return area;
@@ -230,37 +230,37 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_attribute_get_column(area, renderer, attribute);
 	}
 
-	public static GtkCellAreaHandle CellGet(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist)
+	public static T CellGet<T>(this T area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_get(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
-	public static GtkCellAreaHandle CellGetProperty(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string property_name, GValueHandle value)
+	public static T CellGetProperty<T>(this T area, GtkCellRendererHandle renderer, string property_name, GValueHandle value) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_get_property(area, renderer, property_name, value);
 		return area;
 	}
 
-	public static GtkCellAreaHandle CellGetValist(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string first_property_name, out IntPtr var_args)
+	public static T CellGetValist<T>(this T area, GtkCellRendererHandle renderer, string first_property_name, out IntPtr var_args) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_get_valist(area, renderer, first_property_name, out var_args);
 		return area;
 	}
 
-	public static GtkCellAreaHandle CellSet(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist)
+	public static T CellSet<T>(this T area, GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_set(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
-	public static GtkCellAreaHandle CellSetProperty(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string property_name, GValueHandle value)
+	public static T CellSetProperty<T>(this T area, GtkCellRendererHandle renderer, string property_name, GValueHandle value) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_set_property(area, renderer, property_name, value);
 		return area;
 	}
 
-	public static GtkCellAreaHandle CellSetValist(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, string first_property_name, IntPtr var_args)
+	public static T CellSetValist<T>(this T area, GtkCellRendererHandle renderer, string first_property_name, IntPtr var_args) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_cell_set_valist(area, renderer, first_property_name, var_args);
 		return area;
@@ -286,19 +286,19 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_focus(area, direction);
 	}
 
-	public static GtkCellAreaHandle Foreach(this GtkCellAreaHandle area, GtkCellCallback callback, IntPtr callback_data)
+	public static T Foreach<T>(this T area, GtkCellCallback callback, IntPtr callback_data) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_foreach(area, callback, callback_data);
 		return area;
 	}
 
-	public static GtkCellAreaHandle ForeachAlloc(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, GdkRectangleHandle cell_area, GdkRectangleHandle background_area, GtkCellAllocCallback callback, IntPtr callback_data)
+	public static T ForeachAlloc<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, GdkRectangleHandle cell_area, GdkRectangleHandle background_area, GtkCellAllocCallback callback, IntPtr callback_data) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_foreach_alloc(area, context, widget, cell_area, background_area, callback, callback_data);
 		return area;
 	}
 
-	public static GtkCellAreaHandle GetCellAllocation(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, GtkCellRendererHandle renderer, GdkRectangleHandle cell_area, out GdkRectangle allocation)
+	public static T GetCellAllocation<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, GtkCellRendererHandle renderer, GdkRectangleHandle cell_area, out GdkRectangle allocation) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_get_cell_allocation(area, context, widget, renderer, cell_area, out allocation);
 		return area;
@@ -339,25 +339,25 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_get_focus_siblings(area, renderer);
 	}
 
-	public static GtkCellAreaHandle GetPreferredHeight(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, out int minimum_height, out int natural_height)
+	public static T GetPreferredHeight<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, out int minimum_height, out int natural_height) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_get_preferred_height(area, context, widget, out minimum_height, out natural_height);
 		return area;
 	}
 
-	public static GtkCellAreaHandle GetPreferredHeightForWidth(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, int width, out int minimum_height, out int natural_height)
+	public static T GetPreferredHeightForWidth<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, int width, out int minimum_height, out int natural_height) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_get_preferred_height_for_width(area, context, widget, width, out minimum_height, out natural_height);
 		return area;
 	}
 
-	public static GtkCellAreaHandle GetPreferredWidth(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, out int minimum_width, out int natural_width)
+	public static T GetPreferredWidth<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, out int minimum_width, out int natural_width) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_get_preferred_width(area, context, widget, out minimum_width, out natural_width);
 		return area;
 	}
 
-	public static GtkCellAreaHandle GetPreferredWidthForHeight(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, int height, out int minimum_width, out int natural_width)
+	public static T GetPreferredWidthForHeight<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, int height, out int minimum_width, out int natural_width) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_get_preferred_width_for_height(area, context, widget, height, out minimum_width, out natural_width);
 		return area;
@@ -373,7 +373,7 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_has_renderer(area, renderer);
 	}
 
-	public static GtkCellAreaHandle InnerCellArea(this GtkCellAreaHandle area, GtkWidgetHandle widget, GdkRectangleHandle cell_area, out GdkRectangle inner_area)
+	public static T InnerCellArea<T>(this T area, GtkWidgetHandle widget, GdkRectangleHandle cell_area, out GdkRectangle inner_area) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_inner_cell_area(area, widget, cell_area, out inner_area);
 		return area;
@@ -389,37 +389,37 @@ public static class GtkCellAreaHandleExtensions
 		return GtkCellAreaExterns.gtk_cell_area_is_focus_sibling(area, renderer, sibling);
 	}
 
-	public static GtkCellAreaHandle Remove(this GtkCellAreaHandle area, GtkCellRendererHandle renderer)
+	public static T Remove<T>(this T area, GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_remove(area, renderer);
 		return area;
 	}
 
-	public static GtkCellAreaHandle RemoveFocusSibling(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, GtkCellRendererHandle sibling)
+	public static T RemoveFocusSibling<T>(this T area, GtkCellRendererHandle renderer, GtkCellRendererHandle sibling) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_remove_focus_sibling(area, renderer, sibling);
 		return area;
 	}
 
-	public static GtkCellAreaHandle Render(this GtkCellAreaHandle area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, cairo_tHandle cr, GdkRectangleHandle background_area, GdkRectangleHandle cell_area, GtkCellRendererState flags, bool paint_focus)
+	public static T Render<T>(this T area, GtkCellAreaContextHandle context, GtkWidgetHandle widget, cairo_tHandle cr, GdkRectangleHandle background_area, GdkRectangleHandle cell_area, GtkCellRendererState flags, bool paint_focus) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_render(area, context, widget, cr, background_area, cell_area, flags, paint_focus);
 		return area;
 	}
 
-	public static GtkCellAreaHandle RequestRenderer(this GtkCellAreaHandle area, GtkCellRendererHandle renderer, GtkOrientation orientation, GtkWidgetHandle widget, int for_size, out int minimum_size, out int natural_size)
+	public static T RequestRenderer<T>(this T area, GtkCellRendererHandle renderer, GtkOrientation orientation, GtkWidgetHandle widget, int for_size, out int minimum_size, out int natural_size) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_request_renderer(area, renderer, orientation, widget, for_size, out minimum_size, out natural_size);
 		return area;
 	}
 
-	public static GtkCellAreaHandle SetFocusCell(this GtkCellAreaHandle area, GtkCellRendererHandle renderer)
+	public static T SetFocusCell<T>(this T area, GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_set_focus_cell(area, renderer);
 		return area;
 	}
 
-	public static GtkCellAreaHandle StopEditing(this GtkCellAreaHandle area, bool canceled)
+	public static T StopEditing<T>(this T area, bool canceled) where T : GtkCellAreaHandle
 	{
 		GtkCellAreaExterns.gtk_cell_area_stop_editing(area, canceled);
 		return area;

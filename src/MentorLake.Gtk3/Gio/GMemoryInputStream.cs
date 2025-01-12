@@ -21,13 +21,13 @@ public class GMemoryInputStreamHandle : GInputStreamHandle, GPollableInputStream
 
 public static class GMemoryInputStreamHandleExtensions
 {
-	public static GMemoryInputStreamHandle AddBytes(this GMemoryInputStreamHandle stream, GBytesHandle bytes)
+	public static T AddBytes<T>(this T stream, GBytesHandle bytes) where T : GMemoryInputStreamHandle
 	{
 		GMemoryInputStreamExterns.g_memory_input_stream_add_bytes(stream, bytes);
 		return stream;
 	}
 
-	public static GMemoryInputStreamHandle AddData(this GMemoryInputStreamHandle stream, IntPtr data, UIntPtr len, GDestroyNotify destroy)
+	public static T AddData<T>(this T stream, IntPtr data, UIntPtr len, GDestroyNotify destroy) where T : GMemoryInputStreamHandle
 	{
 		GMemoryInputStreamExterns.g_memory_input_stream_add_data(stream, data, len, destroy);
 		return stream;

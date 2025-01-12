@@ -10,7 +10,7 @@ internal class GTlsClientConnectionHandleImpl : BaseSafeHandle, GTlsClientConnec
 
 public static class GTlsClientConnectionHandleExtensions
 {
-	public static GTlsClientConnectionHandle CopySessionState(this GTlsClientConnectionHandle conn, GTlsClientConnectionHandle source)
+	public static T CopySessionState<T>(this T conn, GTlsClientConnectionHandle source) where T : GTlsClientConnectionHandle
 	{
 		GTlsClientConnectionExterns.g_tls_client_connection_copy_session_state(conn, source);
 		return conn;
@@ -36,19 +36,19 @@ public static class GTlsClientConnectionHandleExtensions
 		return GTlsClientConnectionExterns.g_tls_client_connection_get_validation_flags(conn);
 	}
 
-	public static GTlsClientConnectionHandle SetServerIdentity(this GTlsClientConnectionHandle conn, GSocketConnectableHandle identity)
+	public static T SetServerIdentity<T>(this T conn, GSocketConnectableHandle identity) where T : GTlsClientConnectionHandle
 	{
 		GTlsClientConnectionExterns.g_tls_client_connection_set_server_identity(conn, identity);
 		return conn;
 	}
 
-	public static GTlsClientConnectionHandle SetUseSsl3(this GTlsClientConnectionHandle conn, bool use_ssl3)
+	public static T SetUseSsl3<T>(this T conn, bool use_ssl3) where T : GTlsClientConnectionHandle
 	{
 		GTlsClientConnectionExterns.g_tls_client_connection_set_use_ssl3(conn, use_ssl3);
 		return conn;
 	}
 
-	public static GTlsClientConnectionHandle SetValidationFlags(this GTlsClientConnectionHandle conn, GTlsCertificateFlags flags)
+	public static T SetValidationFlags<T>(this T conn, GTlsCertificateFlags flags) where T : GTlsClientConnectionHandle
 	{
 		GTlsClientConnectionExterns.g_tls_client_connection_set_validation_flags(conn, flags);
 		return conn;

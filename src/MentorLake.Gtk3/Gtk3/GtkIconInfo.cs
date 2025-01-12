@@ -16,7 +16,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoExterns.gtk_icon_info_copy(icon_info);
 	}
 
-	public static GtkIconInfoHandle Free(this GtkIconInfoHandle icon_info)
+	public static T Free<T>(this T icon_info) where T : GtkIconInfoHandle
 	{
 		GtkIconInfoExterns.gtk_icon_info_free(icon_info);
 		return icon_info;
@@ -67,7 +67,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoExterns.gtk_icon_info_load_icon(icon_info, out error);
 	}
 
-	public static GtkIconInfoHandle LoadIconAsync(this GtkIconInfoHandle icon_info, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadIconAsync<T>(this T icon_info, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
 	{
 		GtkIconInfoExterns.gtk_icon_info_load_icon_async(icon_info, cancellable, callback, user_data);
 		return icon_info;
@@ -88,7 +88,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoExterns.gtk_icon_info_load_symbolic(icon_info, fg, success_color, warning_color, error_color, out was_symbolic, out error);
 	}
 
-	public static GtkIconInfoHandle LoadSymbolicAsync(this GtkIconInfoHandle icon_info, GdkRGBAHandle fg, GdkRGBAHandle success_color, GdkRGBAHandle warning_color, GdkRGBAHandle error_color, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadSymbolicAsync<T>(this T icon_info, GdkRGBAHandle fg, GdkRGBAHandle success_color, GdkRGBAHandle warning_color, GdkRGBAHandle error_color, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
 	{
 		GtkIconInfoExterns.gtk_icon_info_load_symbolic_async(icon_info, fg, success_color, warning_color, error_color, cancellable, callback, user_data);
 		return icon_info;
@@ -104,7 +104,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoExterns.gtk_icon_info_load_symbolic_for_context(icon_info, context, out was_symbolic, out error);
 	}
 
-	public static GtkIconInfoHandle LoadSymbolicForContextAsync(this GtkIconInfoHandle icon_info, GtkStyleContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LoadSymbolicForContextAsync<T>(this T icon_info, GtkStyleContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
 	{
 		GtkIconInfoExterns.gtk_icon_info_load_symbolic_for_context_async(icon_info, context, cancellable, callback, user_data);
 		return icon_info;
@@ -120,7 +120,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoExterns.gtk_icon_info_load_symbolic_for_style(icon_info, style, state, out was_symbolic, out error);
 	}
 
-	public static GtkIconInfoHandle SetRawCoordinates(this GtkIconInfoHandle icon_info, bool raw_coordinates)
+	public static T SetRawCoordinates<T>(this T icon_info, bool raw_coordinates) where T : GtkIconInfoHandle
 	{
 		GtkIconInfoExterns.gtk_icon_info_set_raw_coordinates(icon_info, raw_coordinates);
 		return icon_info;

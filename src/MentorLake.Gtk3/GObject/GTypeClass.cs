@@ -7,7 +7,7 @@ public class GTypeClassHandle : BaseSafeHandle
 
 public static class GTypeClassHandleExtensions
 {
-	public static GTypeClassHandle AddPrivate(this GTypeClassHandle g_class, UIntPtr private_size)
+	public static T AddPrivate<T>(this T g_class, UIntPtr private_size) where T : GTypeClassHandle
 	{
 		GTypeClassExterns.g_type_class_add_private(g_class, private_size);
 		return g_class;
@@ -28,13 +28,13 @@ public static class GTypeClassHandleExtensions
 		return GTypeClassExterns.g_type_class_peek_parent(g_class);
 	}
 
-	public static GTypeClassHandle Unref(this GTypeClassHandle g_class)
+	public static T Unref<T>(this T g_class) where T : GTypeClassHandle
 	{
 		GTypeClassExterns.g_type_class_unref(g_class);
 		return g_class;
 	}
 
-	public static GTypeClassHandle UnrefUncached(this GTypeClassHandle g_class)
+	public static T UnrefUncached<T>(this T g_class) where T : GTypeClassHandle
 	{
 		GTypeClassExterns.g_type_class_unref_uncached(g_class);
 		return g_class;

@@ -17,7 +17,7 @@ public static class GtkTargetEntryHandleExtensions
 		return GtkTargetEntryExterns.gtk_target_entry_copy(data);
 	}
 
-	public static GtkTargetEntryHandle Free(this GtkTargetEntryHandle data)
+	public static T Free<T>(this T data) where T : GtkTargetEntryHandle
 	{
 		GtkTargetEntryExterns.gtk_target_entry_free(data);
 		return data;

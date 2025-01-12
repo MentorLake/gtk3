@@ -56,37 +56,37 @@ public static class GtkCellViewHandleExtensions
 		return GtkCellViewExterns.gtk_cell_view_get_size_of_row(cell_view, path, out requisition);
 	}
 
-	public static GtkCellViewHandle SetBackgroundColor(this GtkCellViewHandle cell_view, GdkColorHandle color)
+	public static T SetBackgroundColor<T>(this T cell_view, GdkColorHandle color) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_background_color(cell_view, color);
 		return cell_view;
 	}
 
-	public static GtkCellViewHandle SetBackgroundRgba(this GtkCellViewHandle cell_view, GdkRGBAHandle rgba)
+	public static T SetBackgroundRgba<T>(this T cell_view, GdkRGBAHandle rgba) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_background_rgba(cell_view, rgba);
 		return cell_view;
 	}
 
-	public static GtkCellViewHandle SetDisplayedRow(this GtkCellViewHandle cell_view, GtkTreePathHandle path)
+	public static T SetDisplayedRow<T>(this T cell_view, GtkTreePathHandle path) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_displayed_row(cell_view, path);
 		return cell_view;
 	}
 
-	public static GtkCellViewHandle SetDrawSensitive(this GtkCellViewHandle cell_view, bool draw_sensitive)
+	public static T SetDrawSensitive<T>(this T cell_view, bool draw_sensitive) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_draw_sensitive(cell_view, draw_sensitive);
 		return cell_view;
 	}
 
-	public static GtkCellViewHandle SetFitModel(this GtkCellViewHandle cell_view, bool fit_model)
+	public static T SetFitModel<T>(this T cell_view, bool fit_model) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_fit_model(cell_view, fit_model);
 		return cell_view;
 	}
 
-	public static GtkCellViewHandle SetModel(this GtkCellViewHandle cell_view, GtkTreeModelHandle model)
+	public static T SetModel<T>(this T cell_view, GtkTreeModelHandle model) where T : GtkCellViewHandle
 	{
 		GtkCellViewExterns.gtk_cell_view_set_model(cell_view, model);
 		return cell_view;

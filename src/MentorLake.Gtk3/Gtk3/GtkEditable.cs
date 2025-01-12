@@ -10,25 +10,25 @@ internal class GtkEditableHandleImpl : BaseSafeHandle, GtkEditableHandle
 
 public static class GtkEditableHandleExtensions
 {
-	public static GtkEditableHandle CopyClipboard(this GtkEditableHandle editable)
+	public static T CopyClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_copy_clipboard(editable);
 		return editable;
 	}
 
-	public static GtkEditableHandle CutClipboard(this GtkEditableHandle editable)
+	public static T CutClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_cut_clipboard(editable);
 		return editable;
 	}
 
-	public static GtkEditableHandle DeleteSelection(this GtkEditableHandle editable)
+	public static T DeleteSelection<T>(this T editable) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_delete_selection(editable);
 		return editable;
 	}
 
-	public static GtkEditableHandle DeleteText(this GtkEditableHandle editable, int start_pos, int end_pos)
+	public static T DeleteText<T>(this T editable, int start_pos, int end_pos) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_delete_text(editable, start_pos, end_pos);
 		return editable;
@@ -54,31 +54,31 @@ public static class GtkEditableHandleExtensions
 		return GtkEditableExterns.gtk_editable_get_selection_bounds(editable, out start_pos, out end_pos);
 	}
 
-	public static GtkEditableHandle InsertText(this GtkEditableHandle editable, string new_text, int new_text_length, ref int position)
+	public static T InsertText<T>(this T editable, string new_text, int new_text_length, ref int position) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_insert_text(editable, new_text, new_text_length, ref position);
 		return editable;
 	}
 
-	public static GtkEditableHandle PasteClipboard(this GtkEditableHandle editable)
+	public static T PasteClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_paste_clipboard(editable);
 		return editable;
 	}
 
-	public static GtkEditableHandle SelectRegion(this GtkEditableHandle editable, int start_pos, int end_pos)
+	public static T SelectRegion<T>(this T editable, int start_pos, int end_pos) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_select_region(editable, start_pos, end_pos);
 		return editable;
 	}
 
-	public static GtkEditableHandle SetEditable(this GtkEditableHandle editable, bool is_editable)
+	public static T SetEditable<T>(this T editable, bool is_editable) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_set_editable(editable, is_editable);
 		return editable;
 	}
 
-	public static GtkEditableHandle SetPosition(this GtkEditableHandle editable, int position)
+	public static T SetPosition<T>(this T editable, int position) where T : GtkEditableHandle
 	{
 		GtkEditableExterns.gtk_editable_set_position(editable, position);
 		return editable;

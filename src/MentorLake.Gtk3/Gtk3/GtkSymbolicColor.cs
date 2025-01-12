@@ -52,7 +52,7 @@ public static class GtkSymbolicColorHandleExtensions
 		return GtkSymbolicColorExterns.gtk_symbolic_color_to_string(color);
 	}
 
-	public static GtkSymbolicColorHandle Unref(this GtkSymbolicColorHandle color)
+	public static T Unref<T>(this T color) where T : GtkSymbolicColorHandle
 	{
 		GtkSymbolicColorExterns.gtk_symbolic_color_unref(color);
 		return color;

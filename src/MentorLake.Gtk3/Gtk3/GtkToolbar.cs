@@ -220,43 +220,43 @@ public static class GtkToolbarHandleExtensions
 		return GtkToolbarExterns.gtk_toolbar_get_style(toolbar);
 	}
 
-	public static GtkToolbarHandle Insert(this GtkToolbarHandle toolbar, GtkToolItemHandle item, int pos)
+	public static T Insert<T>(this T toolbar, GtkToolItemHandle item, int pos) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_insert(toolbar, item, pos);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle SetDropHighlightItem(this GtkToolbarHandle toolbar, GtkToolItemHandle tool_item, int index_)
+	public static T SetDropHighlightItem<T>(this T toolbar, GtkToolItemHandle tool_item, int index_) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_set_drop_highlight_item(toolbar, tool_item, index_);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle SetIconSize(this GtkToolbarHandle toolbar, GtkIconSize icon_size)
+	public static T SetIconSize<T>(this T toolbar, GtkIconSize icon_size) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_set_icon_size(toolbar, icon_size);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle SetShowArrow(this GtkToolbarHandle toolbar, bool show_arrow)
+	public static T SetShowArrow<T>(this T toolbar, bool show_arrow) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_set_show_arrow(toolbar, show_arrow);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle SetStyle(this GtkToolbarHandle toolbar, GtkToolbarStyle style)
+	public static T SetStyle<T>(this T toolbar, GtkToolbarStyle style) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_set_style(toolbar, style);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle UnsetIconSize(this GtkToolbarHandle toolbar)
+	public static T UnsetIconSize<T>(this T toolbar) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_unset_icon_size(toolbar);
 		return toolbar;
 	}
 
-	public static GtkToolbarHandle UnsetStyle(this GtkToolbarHandle toolbar)
+	public static T UnsetStyle<T>(this T toolbar) where T : GtkToolbarHandle
 	{
 		GtkToolbarExterns.gtk_toolbar_unset_style(toolbar);
 		return toolbar;

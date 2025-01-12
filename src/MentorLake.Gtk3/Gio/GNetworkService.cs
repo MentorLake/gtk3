@@ -31,7 +31,7 @@ public static class GNetworkServiceHandleExtensions
 		return GNetworkServiceExterns.g_network_service_get_service(srv);
 	}
 
-	public static GNetworkServiceHandle SetScheme(this GNetworkServiceHandle srv, string scheme)
+	public static T SetScheme<T>(this T srv, string scheme) where T : GNetworkServiceHandle
 	{
 		GNetworkServiceExterns.g_network_service_set_scheme(srv, scheme);
 		return srv;

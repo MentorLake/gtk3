@@ -71,19 +71,19 @@ public static class GtkMenuToolButtonHandleExtensions
 		return GtkMenuToolButtonExterns.gtk_menu_tool_button_get_menu(button);
 	}
 
-	public static GtkMenuToolButtonHandle SetArrowTooltipMarkup(this GtkMenuToolButtonHandle button, string markup)
+	public static T SetArrowTooltipMarkup<T>(this T button, string markup) where T : GtkMenuToolButtonHandle
 	{
 		GtkMenuToolButtonExterns.gtk_menu_tool_button_set_arrow_tooltip_markup(button, markup);
 		return button;
 	}
 
-	public static GtkMenuToolButtonHandle SetArrowTooltipText(this GtkMenuToolButtonHandle button, string text)
+	public static T SetArrowTooltipText<T>(this T button, string text) where T : GtkMenuToolButtonHandle
 	{
 		GtkMenuToolButtonExterns.gtk_menu_tool_button_set_arrow_tooltip_text(button, text);
 		return button;
 	}
 
-	public static GtkMenuToolButtonHandle SetMenu(this GtkMenuToolButtonHandle button, GtkWidgetHandle menu)
+	public static T SetMenu<T>(this T button, GtkWidgetHandle menu) where T : GtkMenuToolButtonHandle
 	{
 		GtkMenuToolButtonExterns.gtk_menu_tool_button_set_menu(button, menu);
 		return button;

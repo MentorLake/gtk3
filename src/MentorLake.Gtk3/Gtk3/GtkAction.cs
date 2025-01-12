@@ -61,19 +61,19 @@ public delegate void activate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkActionHandleExtensions
 {
-	public static GtkActionHandle Activate(this GtkActionHandle action)
+	public static T Activate<T>(this T action) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_activate(action);
 		return action;
 	}
 
-	public static GtkActionHandle BlockActivate(this GtkActionHandle action)
+	public static T BlockActivate<T>(this T action) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_block_activate(action);
 		return action;
 	}
 
-	public static GtkActionHandle ConnectAccelerator(this GtkActionHandle action)
+	public static T ConnectAccelerator<T>(this T action) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_connect_accelerator(action);
 		return action;
@@ -99,7 +99,7 @@ public static class GtkActionHandleExtensions
 		return GtkActionExterns.gtk_action_create_tool_item(action);
 	}
 
-	public static GtkActionHandle DisconnectAccelerator(this GtkActionHandle action)
+	public static T DisconnectAccelerator<T>(this T action) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_disconnect_accelerator(action);
 		return action;
@@ -195,91 +195,91 @@ public static class GtkActionHandleExtensions
 		return GtkActionExterns.gtk_action_is_visible(action);
 	}
 
-	public static GtkActionHandle SetAccelGroup(this GtkActionHandle action, GtkAccelGroupHandle accel_group)
+	public static T SetAccelGroup<T>(this T action, GtkAccelGroupHandle accel_group) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_accel_group(action, accel_group);
 		return action;
 	}
 
-	public static GtkActionHandle SetAccelPath(this GtkActionHandle action, string accel_path)
+	public static T SetAccelPath<T>(this T action, string accel_path) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_accel_path(action, accel_path);
 		return action;
 	}
 
-	public static GtkActionHandle SetAlwaysShowImage(this GtkActionHandle action, bool always_show)
+	public static T SetAlwaysShowImage<T>(this T action, bool always_show) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_always_show_image(action, always_show);
 		return action;
 	}
 
-	public static GtkActionHandle SetGicon(this GtkActionHandle action, GIconHandle icon)
+	public static T SetGicon<T>(this T action, GIconHandle icon) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_gicon(action, icon);
 		return action;
 	}
 
-	public static GtkActionHandle SetIconName(this GtkActionHandle action, string icon_name)
+	public static T SetIconName<T>(this T action, string icon_name) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_icon_name(action, icon_name);
 		return action;
 	}
 
-	public static GtkActionHandle SetIsImportant(this GtkActionHandle action, bool is_important)
+	public static T SetIsImportant<T>(this T action, bool is_important) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_is_important(action, is_important);
 		return action;
 	}
 
-	public static GtkActionHandle SetLabel(this GtkActionHandle action, string label)
+	public static T SetLabel<T>(this T action, string label) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_label(action, label);
 		return action;
 	}
 
-	public static GtkActionHandle SetSensitive(this GtkActionHandle action, bool sensitive)
+	public static T SetSensitive<T>(this T action, bool sensitive) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_sensitive(action, sensitive);
 		return action;
 	}
 
-	public static GtkActionHandle SetShortLabel(this GtkActionHandle action, string short_label)
+	public static T SetShortLabel<T>(this T action, string short_label) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_short_label(action, short_label);
 		return action;
 	}
 
-	public static GtkActionHandle SetStockId(this GtkActionHandle action, string stock_id)
+	public static T SetStockId<T>(this T action, string stock_id) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_stock_id(action, stock_id);
 		return action;
 	}
 
-	public static GtkActionHandle SetTooltip(this GtkActionHandle action, string tooltip)
+	public static T SetTooltip<T>(this T action, string tooltip) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_tooltip(action, tooltip);
 		return action;
 	}
 
-	public static GtkActionHandle SetVisible(this GtkActionHandle action, bool visible)
+	public static T SetVisible<T>(this T action, bool visible) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_visible(action, visible);
 		return action;
 	}
 
-	public static GtkActionHandle SetVisibleHorizontal(this GtkActionHandle action, bool visible_horizontal)
+	public static T SetVisibleHorizontal<T>(this T action, bool visible_horizontal) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_visible_horizontal(action, visible_horizontal);
 		return action;
 	}
 
-	public static GtkActionHandle SetVisibleVertical(this GtkActionHandle action, bool visible_vertical)
+	public static T SetVisibleVertical<T>(this T action, bool visible_vertical) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_set_visible_vertical(action, visible_vertical);
 		return action;
 	}
 
-	public static GtkActionHandle UnblockActivate(this GtkActionHandle action)
+	public static T UnblockActivate<T>(this T action) where T : GtkActionHandle
 	{
 		GtkActionExterns.gtk_action_unblock_activate(action);
 		return action;

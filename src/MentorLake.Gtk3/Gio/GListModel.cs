@@ -30,7 +30,7 @@ public static class GListModelHandleExtensions
 		return GListModelExterns.g_list_model_get_object(list, position);
 	}
 
-	public static GListModelHandle ItemsChanged(this GListModelHandle list, uint position, uint removed, uint added)
+	public static T ItemsChanged<T>(this T list, uint position, uint removed, uint added) where T : GListModelHandle
 	{
 		GListModelExterns.g_list_model_items_changed(list, position, removed, added);
 		return list;

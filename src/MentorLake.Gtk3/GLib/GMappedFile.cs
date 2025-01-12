@@ -17,7 +17,7 @@ public class GMappedFileHandle : BaseSafeHandle
 
 public static class GMappedFileHandleExtensions
 {
-	public static GMappedFileHandle Free(this GMappedFileHandle file)
+	public static T Free<T>(this T file) where T : GMappedFileHandle
 	{
 		GMappedFileExterns.g_mapped_file_free(file);
 		return file;
@@ -43,7 +43,7 @@ public static class GMappedFileHandleExtensions
 		return GMappedFileExterns.g_mapped_file_ref(file);
 	}
 
-	public static GMappedFileHandle Unref(this GMappedFileHandle file)
+	public static T Unref<T>(this T file) where T : GMappedFileHandle
 	{
 		GMappedFileExterns.g_mapped_file_unref(file);
 		return file;

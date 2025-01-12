@@ -26,13 +26,13 @@ public class GtkBuilderHandle : GObjectHandle
 
 public static class GtkBuilderHandleExtensions
 {
-	public static GtkBuilderHandle AddCallbackSymbol(this GtkBuilderHandle builder, string callback_name, IntPtr callback_symbol)
+	public static T AddCallbackSymbol<T>(this T builder, string callback_name, IntPtr callback_symbol) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_add_callback_symbol(builder, callback_name, callback_symbol);
 		return builder;
 	}
 
-	public static GtkBuilderHandle AddCallbackSymbols(this GtkBuilderHandle builder, string first_callback_name, IntPtr first_callback_symbol, IntPtr @__arglist)
+	public static T AddCallbackSymbols<T>(this T builder, string first_callback_name, IntPtr first_callback_symbol, IntPtr @__arglist) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_add_callback_symbols(builder, first_callback_name, first_callback_symbol, @__arglist);
 		return builder;
@@ -68,19 +68,19 @@ public static class GtkBuilderHandleExtensions
 		return GtkBuilderExterns.gtk_builder_add_objects_from_string(builder, buffer, length, object_ids, out error);
 	}
 
-	public static GtkBuilderHandle ConnectSignals(this GtkBuilderHandle builder, IntPtr user_data)
+	public static T ConnectSignals<T>(this T builder, IntPtr user_data) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_connect_signals(builder, user_data);
 		return builder;
 	}
 
-	public static GtkBuilderHandle ConnectSignalsFull(this GtkBuilderHandle builder, GtkBuilderConnectFunc func, IntPtr user_data)
+	public static T ConnectSignalsFull<T>(this T builder, GtkBuilderConnectFunc func, IntPtr user_data) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_connect_signals_full(builder, func, user_data);
 		return builder;
 	}
 
-	public static GtkBuilderHandle ExposeObject(this GtkBuilderHandle builder, string name, GObjectHandle @object)
+	public static T ExposeObject<T>(this T builder, string name, GObjectHandle @object) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_expose_object(builder, name, @object);
 		return builder;
@@ -121,13 +121,13 @@ public static class GtkBuilderHandleExtensions
 		return GtkBuilderExterns.gtk_builder_lookup_callback_symbol(builder, callback_name);
 	}
 
-	public static GtkBuilderHandle SetApplication(this GtkBuilderHandle builder, GtkApplicationHandle application)
+	public static T SetApplication<T>(this T builder, GtkApplicationHandle application) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_set_application(builder, application);
 		return builder;
 	}
 
-	public static GtkBuilderHandle SetTranslationDomain(this GtkBuilderHandle builder, string domain)
+	public static T SetTranslationDomain<T>(this T builder, string domain) where T : GtkBuilderHandle
 	{
 		GtkBuilderExterns.gtk_builder_set_translation_domain(builder, domain);
 		return builder;

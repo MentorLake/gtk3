@@ -17,7 +17,7 @@ public static class GtkIconSourceHandleExtensions
 		return GtkIconSourceExterns.gtk_icon_source_copy(source);
 	}
 
-	public static GtkIconSourceHandle Free(this GtkIconSourceHandle source)
+	public static T Free<T>(this T source) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_free(source);
 		return source;
@@ -68,55 +68,55 @@ public static class GtkIconSourceHandleExtensions
 		return GtkIconSourceExterns.gtk_icon_source_get_state_wildcarded(source);
 	}
 
-	public static GtkIconSourceHandle SetDirection(this GtkIconSourceHandle source, GtkTextDirection direction)
+	public static T SetDirection<T>(this T source, GtkTextDirection direction) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_direction(source, direction);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetDirectionWildcarded(this GtkIconSourceHandle source, bool setting)
+	public static T SetDirectionWildcarded<T>(this T source, bool setting) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_direction_wildcarded(source, setting);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetFilename(this GtkIconSourceHandle source, string filename)
+	public static T SetFilename<T>(this T source, string filename) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_filename(source, filename);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetIconName(this GtkIconSourceHandle source, string icon_name)
+	public static T SetIconName<T>(this T source, string icon_name) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_icon_name(source, icon_name);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetPixbuf(this GtkIconSourceHandle source, GdkPixbufHandle pixbuf)
+	public static T SetPixbuf<T>(this T source, GdkPixbufHandle pixbuf) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_pixbuf(source, pixbuf);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetSize(this GtkIconSourceHandle source, GtkIconSize size)
+	public static T SetSize<T>(this T source, GtkIconSize size) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_size(source, size);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetSizeWildcarded(this GtkIconSourceHandle source, bool setting)
+	public static T SetSizeWildcarded<T>(this T source, bool setting) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_size_wildcarded(source, setting);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetState(this GtkIconSourceHandle source, GtkStateType state)
+	public static T SetState<T>(this T source, GtkStateType state) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_state(source, state);
 		return source;
 	}
 
-	public static GtkIconSourceHandle SetStateWildcarded(this GtkIconSourceHandle source, bool setting)
+	public static T SetStateWildcarded<T>(this T source, bool setting) where T : GtkIconSourceHandle
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_state_wildcarded(source, setting);
 		return source;

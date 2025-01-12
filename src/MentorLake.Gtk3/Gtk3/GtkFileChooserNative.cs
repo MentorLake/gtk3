@@ -21,13 +21,13 @@ public static class GtkFileChooserNativeHandleExtensions
 		return GtkFileChooserNativeExterns.gtk_file_chooser_native_get_cancel_label(self);
 	}
 
-	public static GtkFileChooserNativeHandle SetAcceptLabel(this GtkFileChooserNativeHandle self, string accept_label)
+	public static T SetAcceptLabel<T>(this T self, string accept_label) where T : GtkFileChooserNativeHandle
 	{
 		GtkFileChooserNativeExterns.gtk_file_chooser_native_set_accept_label(self, accept_label);
 		return self;
 	}
 
-	public static GtkFileChooserNativeHandle SetCancelLabel(this GtkFileChooserNativeHandle self, string cancel_label)
+	public static T SetCancelLabel<T>(this T self, string cancel_label) where T : GtkFileChooserNativeHandle
 	{
 		GtkFileChooserNativeExterns.gtk_file_chooser_native_set_cancel_label(self, cancel_label);
 		return self;

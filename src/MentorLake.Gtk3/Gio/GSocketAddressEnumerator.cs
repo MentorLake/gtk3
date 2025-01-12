@@ -11,7 +11,7 @@ public static class GSocketAddressEnumeratorHandleExtensions
 		return GSocketAddressEnumeratorExterns.g_socket_address_enumerator_next(enumerator, cancellable, out error);
 	}
 
-	public static GSocketAddressEnumeratorHandle NextAsync(this GSocketAddressEnumeratorHandle enumerator, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T NextAsync<T>(this T enumerator, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketAddressEnumeratorHandle
 	{
 		GSocketAddressEnumeratorExterns.g_socket_address_enumerator_next_async(enumerator, cancellable, callback, user_data);
 		return enumerator;

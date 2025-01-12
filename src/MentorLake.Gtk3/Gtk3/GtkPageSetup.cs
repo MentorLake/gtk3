@@ -91,43 +91,43 @@ public static class GtkPageSetupHandleExtensions
 		return GtkPageSetupExterns.gtk_page_setup_load_key_file(setup, key_file, group_name, out error);
 	}
 
-	public static GtkPageSetupHandle SetBottomMargin(this GtkPageSetupHandle setup, double margin, GtkUnit unit)
+	public static T SetBottomMargin<T>(this T setup, double margin, GtkUnit unit) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_bottom_margin(setup, margin, unit);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetLeftMargin(this GtkPageSetupHandle setup, double margin, GtkUnit unit)
+	public static T SetLeftMargin<T>(this T setup, double margin, GtkUnit unit) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_left_margin(setup, margin, unit);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetOrientation(this GtkPageSetupHandle setup, GtkPageOrientation orientation)
+	public static T SetOrientation<T>(this T setup, GtkPageOrientation orientation) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_orientation(setup, orientation);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetPaperSize(this GtkPageSetupHandle setup, GtkPaperSizeHandle size)
+	public static T SetPaperSize<T>(this T setup, GtkPaperSizeHandle size) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_paper_size(setup, size);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetPaperSizeAndDefaultMargins(this GtkPageSetupHandle setup, GtkPaperSizeHandle size)
+	public static T SetPaperSizeAndDefaultMargins<T>(this T setup, GtkPaperSizeHandle size) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_paper_size_and_default_margins(setup, size);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetRightMargin(this GtkPageSetupHandle setup, double margin, GtkUnit unit)
+	public static T SetRightMargin<T>(this T setup, double margin, GtkUnit unit) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_right_margin(setup, margin, unit);
 		return setup;
 	}
 
-	public static GtkPageSetupHandle SetTopMargin(this GtkPageSetupHandle setup, double margin, GtkUnit unit)
+	public static T SetTopMargin<T>(this T setup, double margin, GtkUnit unit) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_set_top_margin(setup, margin, unit);
 		return setup;
@@ -143,7 +143,7 @@ public static class GtkPageSetupHandleExtensions
 		return GtkPageSetupExterns.gtk_page_setup_to_gvariant(setup);
 	}
 
-	public static GtkPageSetupHandle ToKeyFile(this GtkPageSetupHandle setup, GKeyFileHandle key_file, string group_name)
+	public static T ToKeyFile<T>(this T setup, GKeyFileHandle key_file, string group_name) where T : GtkPageSetupHandle
 	{
 		GtkPageSetupExterns.gtk_page_setup_to_key_file(setup, key_file, group_name);
 		return setup;

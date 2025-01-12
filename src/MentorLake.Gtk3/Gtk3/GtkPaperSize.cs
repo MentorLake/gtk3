@@ -42,7 +42,7 @@ public static class GtkPaperSizeHandleExtensions
 		return GtkPaperSizeExterns.gtk_paper_size_copy(other);
 	}
 
-	public static GtkPaperSizeHandle Free(this GtkPaperSizeHandle size)
+	public static T Free<T>(this T size) where T : GtkPaperSizeHandle
 	{
 		GtkPaperSizeExterns.gtk_paper_size_free(size);
 		return size;
@@ -108,7 +108,7 @@ public static class GtkPaperSizeHandleExtensions
 		return GtkPaperSizeExterns.gtk_paper_size_is_ipp(size);
 	}
 
-	public static GtkPaperSizeHandle SetSize(this GtkPaperSizeHandle size, double width, double height, GtkUnit unit)
+	public static T SetSize<T>(this T size, double width, double height, GtkUnit unit) where T : GtkPaperSizeHandle
 	{
 		GtkPaperSizeExterns.gtk_paper_size_set_size(size, width, height, unit);
 		return size;
@@ -119,7 +119,7 @@ public static class GtkPaperSizeHandleExtensions
 		return GtkPaperSizeExterns.gtk_paper_size_to_gvariant(paper_size);
 	}
 
-	public static GtkPaperSizeHandle ToKeyFile(this GtkPaperSizeHandle size, GKeyFileHandle key_file, string group_name)
+	public static T ToKeyFile<T>(this T size, GKeyFileHandle key_file, string group_name) where T : GtkPaperSizeHandle
 	{
 		GtkPaperSizeExterns.gtk_paper_size_to_key_file(size, key_file, group_name);
 		return size;

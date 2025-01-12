@@ -7,7 +7,7 @@ public class GStaticMutexHandle : BaseSafeHandle
 
 public static class GStaticMutexHandleExtensions
 {
-	public static GStaticMutexHandle Free(this GStaticMutexHandle mutex)
+	public static T Free<T>(this T mutex) where T : GStaticMutexHandle
 	{
 		GStaticMutexExterns.g_static_mutex_free(mutex);
 		return mutex;
@@ -18,7 +18,7 @@ public static class GStaticMutexHandleExtensions
 		return GStaticMutexExterns.g_static_mutex_get_mutex_impl(mutex);
 	}
 
-	public static GStaticMutexHandle Init(this GStaticMutexHandle mutex)
+	public static T Init<T>(this T mutex) where T : GStaticMutexHandle
 	{
 		GStaticMutexExterns.g_static_mutex_init(mutex);
 		return mutex;

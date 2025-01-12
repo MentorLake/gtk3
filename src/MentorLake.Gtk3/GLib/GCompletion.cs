@@ -7,13 +7,13 @@ public class GCompletionHandle : BaseSafeHandle
 
 public static class GCompletionHandleExtensions
 {
-	public static GCompletionHandle AddItems(this GCompletionHandle cmp, GListHandle items)
+	public static T AddItems<T>(this T cmp, GListHandle items) where T : GCompletionHandle
 	{
 		GCompletionExterns.g_completion_add_items(cmp, items);
 		return cmp;
 	}
 
-	public static GCompletionHandle ClearItems(this GCompletionHandle cmp)
+	public static T ClearItems<T>(this T cmp) where T : GCompletionHandle
 	{
 		GCompletionExterns.g_completion_clear_items(cmp);
 		return cmp;
@@ -29,19 +29,19 @@ public static class GCompletionHandleExtensions
 		return GCompletionExterns.g_completion_complete_utf8(cmp, prefix, ref new_prefix);
 	}
 
-	public static GCompletionHandle Free(this GCompletionHandle cmp)
+	public static T Free<T>(this T cmp) where T : GCompletionHandle
 	{
 		GCompletionExterns.g_completion_free(cmp);
 		return cmp;
 	}
 
-	public static GCompletionHandle RemoveItems(this GCompletionHandle cmp, GListHandle items)
+	public static T RemoveItems<T>(this T cmp, GListHandle items) where T : GCompletionHandle
 	{
 		GCompletionExterns.g_completion_remove_items(cmp, items);
 		return cmp;
 	}
 
-	public static GCompletionHandle SetCompare(this GCompletionHandle cmp, GCompletionStrncmpFunc strncmp_func)
+	public static T SetCompare<T>(this T cmp, GCompletionStrncmpFunc strncmp_func) where T : GCompletionHandle
 	{
 		GCompletionExterns.g_completion_set_compare(cmp, strncmp_func);
 		return cmp;

@@ -181,7 +181,7 @@ public static class GtkEventControllerScrollHandleExtensions
 		return GtkEventControllerScrollExterns.gtk_event_controller_scroll_get_flags(controller);
 	}
 
-	public static GtkEventControllerScrollHandle SetFlags(this GtkEventControllerScrollHandle controller, GtkEventControllerScrollFlags flags)
+	public static T SetFlags<T>(this T controller, GtkEventControllerScrollFlags flags) where T : GtkEventControllerScrollHandle
 	{
 		GtkEventControllerScrollExterns.gtk_event_controller_scroll_set_flags(controller, flags);
 		return controller;

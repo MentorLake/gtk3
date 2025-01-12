@@ -11,7 +11,7 @@ public class AtkRelationHandle : GObjectHandle
 
 public static class AtkRelationHandleExtensions
 {
-	public static AtkRelationHandle AddTarget(this AtkRelationHandle relation, AtkObjectHandle target)
+	public static T AddTarget<T>(this T relation, AtkObjectHandle target) where T : AtkRelationHandle
 	{
 		AtkRelationExterns.atk_relation_add_target(relation, target);
 		return relation;

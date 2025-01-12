@@ -25,7 +25,7 @@ public static class AtkComponentHandleExtensions
 		return AtkComponentExterns.atk_component_get_alpha(component);
 	}
 
-	public static AtkComponentHandle GetExtents(this AtkComponentHandle component, out int x, out int y, out int width, out int height, AtkCoordType coord_type)
+	public static T GetExtents<T>(this T component, out int x, out int y, out int width, out int height, AtkCoordType coord_type) where T : AtkComponentHandle
 	{
 		AtkComponentExterns.atk_component_get_extents(component, out x, out y, out width, out height, coord_type);
 		return component;
@@ -41,13 +41,13 @@ public static class AtkComponentHandleExtensions
 		return AtkComponentExterns.atk_component_get_mdi_zorder(component);
 	}
 
-	public static AtkComponentHandle GetPosition(this AtkComponentHandle component, out int x, out int y, AtkCoordType coord_type)
+	public static T GetPosition<T>(this T component, out int x, out int y, AtkCoordType coord_type) where T : AtkComponentHandle
 	{
 		AtkComponentExterns.atk_component_get_position(component, out x, out y, coord_type);
 		return component;
 	}
 
-	public static AtkComponentHandle GetSize(this AtkComponentHandle component, out int width, out int height)
+	public static T GetSize<T>(this T component, out int width, out int height) where T : AtkComponentHandle
 	{
 		AtkComponentExterns.atk_component_get_size(component, out width, out height);
 		return component;
@@ -63,7 +63,7 @@ public static class AtkComponentHandleExtensions
 		return AtkComponentExterns.atk_component_ref_accessible_at_point(component, x, y, coord_type);
 	}
 
-	public static AtkComponentHandle RemoveFocusHandler(this AtkComponentHandle component, uint handler_id)
+	public static T RemoveFocusHandler<T>(this T component, uint handler_id) where T : AtkComponentHandle
 	{
 		AtkComponentExterns.atk_component_remove_focus_handler(component, handler_id);
 		return component;

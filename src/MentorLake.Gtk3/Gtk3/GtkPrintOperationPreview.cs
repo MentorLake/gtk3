@@ -10,7 +10,7 @@ internal class GtkPrintOperationPreviewHandleImpl : BaseSafeHandle, GtkPrintOper
 
 public static class GtkPrintOperationPreviewHandleExtensions
 {
-	public static GtkPrintOperationPreviewHandle EndPreview(this GtkPrintOperationPreviewHandle preview)
+	public static T EndPreview<T>(this T preview) where T : GtkPrintOperationPreviewHandle
 	{
 		GtkPrintOperationPreviewExterns.gtk_print_operation_preview_end_preview(preview);
 		return preview;
@@ -21,7 +21,7 @@ public static class GtkPrintOperationPreviewHandleExtensions
 		return GtkPrintOperationPreviewExterns.gtk_print_operation_preview_is_selected(preview, page_nr);
 	}
 
-	public static GtkPrintOperationPreviewHandle RenderPage(this GtkPrintOperationPreviewHandle preview, int page_nr)
+	public static T RenderPage<T>(this T preview, int page_nr) where T : GtkPrintOperationPreviewHandle
 	{
 		GtkPrintOperationPreviewExterns.gtk_print_operation_preview_render_page(preview, page_nr);
 		return preview;

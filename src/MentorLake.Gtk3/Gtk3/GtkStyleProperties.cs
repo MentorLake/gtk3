@@ -21,13 +21,13 @@ public class GtkStylePropertiesHandle : GObjectHandle, GtkStyleProviderHandle
 
 public static class GtkStylePropertiesHandleExtensions
 {
-	public static GtkStylePropertiesHandle Clear(this GtkStylePropertiesHandle props)
+	public static T Clear<T>(this T props) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_clear(props);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle Get(this GtkStylePropertiesHandle props, GtkStateFlags state, IntPtr @__arglist)
+	public static T Get<T>(this T props, GtkStateFlags state, IntPtr @__arglist) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_get(props, state, @__arglist);
 		return props;
@@ -38,7 +38,7 @@ public static class GtkStylePropertiesHandleExtensions
 		return GtkStylePropertiesExterns.gtk_style_properties_get_property(props, property, state, out value);
 	}
 
-	public static GtkStylePropertiesHandle GetValist(this GtkStylePropertiesHandle props, GtkStateFlags state, IntPtr args)
+	public static T GetValist<T>(this T props, GtkStateFlags state, IntPtr args) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_get_valist(props, state, args);
 		return props;
@@ -49,37 +49,37 @@ public static class GtkStylePropertiesHandleExtensions
 		return GtkStylePropertiesExterns.gtk_style_properties_lookup_color(props, name);
 	}
 
-	public static GtkStylePropertiesHandle MapColor(this GtkStylePropertiesHandle props, string name, GtkSymbolicColorHandle color)
+	public static T MapColor<T>(this T props, string name, GtkSymbolicColorHandle color) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_map_color(props, name, color);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle Merge(this GtkStylePropertiesHandle props, GtkStylePropertiesHandle props_to_merge, bool replace)
+	public static T Merge<T>(this T props, GtkStylePropertiesHandle props_to_merge, bool replace) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_merge(props, props_to_merge, replace);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle Set(this GtkStylePropertiesHandle props, GtkStateFlags state, IntPtr @__arglist)
+	public static T Set<T>(this T props, GtkStateFlags state, IntPtr @__arglist) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_set(props, state, @__arglist);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle SetProperty(this GtkStylePropertiesHandle props, string property, GtkStateFlags state, GValueHandle value)
+	public static T SetProperty<T>(this T props, string property, GtkStateFlags state, GValueHandle value) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_set_property(props, property, state, value);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle SetValist(this GtkStylePropertiesHandle props, GtkStateFlags state, IntPtr args)
+	public static T SetValist<T>(this T props, GtkStateFlags state, IntPtr args) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_set_valist(props, state, args);
 		return props;
 	}
 
-	public static GtkStylePropertiesHandle UnsetProperty(this GtkStylePropertiesHandle props, string property, GtkStateFlags state)
+	public static T UnsetProperty<T>(this T props, string property, GtkStateFlags state) where T : GtkStylePropertiesHandle
 	{
 		GtkStylePropertiesExterns.gtk_style_properties_unset_property(props, property, state);
 		return props;

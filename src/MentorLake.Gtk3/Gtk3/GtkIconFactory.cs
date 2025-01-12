@@ -16,13 +16,13 @@ public class GtkIconFactoryHandle : GObjectHandle, GtkBuildableHandle
 
 public static class GtkIconFactoryHandleExtensions
 {
-	public static GtkIconFactoryHandle Add(this GtkIconFactoryHandle factory, string stock_id, GtkIconSetHandle icon_set)
+	public static T Add<T>(this T factory, string stock_id, GtkIconSetHandle icon_set) where T : GtkIconFactoryHandle
 	{
 		GtkIconFactoryExterns.gtk_icon_factory_add(factory, stock_id, icon_set);
 		return factory;
 	}
 
-	public static GtkIconFactoryHandle AddDefault(this GtkIconFactoryHandle factory)
+	public static T AddDefault<T>(this T factory) where T : GtkIconFactoryHandle
 	{
 		GtkIconFactoryExterns.gtk_icon_factory_add_default(factory);
 		return factory;
@@ -33,7 +33,7 @@ public static class GtkIconFactoryHandleExtensions
 		return GtkIconFactoryExterns.gtk_icon_factory_lookup(factory, stock_id);
 	}
 
-	public static GtkIconFactoryHandle RemoveDefault(this GtkIconFactoryHandle factory)
+	public static T RemoveDefault<T>(this T factory) where T : GtkIconFactoryHandle
 	{
 		GtkIconFactoryExterns.gtk_icon_factory_remove_default(factory);
 		return factory;

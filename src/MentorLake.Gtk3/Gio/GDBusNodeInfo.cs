@@ -12,7 +12,7 @@ public class GDBusNodeInfoHandle : BaseSafeHandle
 
 public static class GDBusNodeInfoHandleExtensions
 {
-	public static GDBusNodeInfoHandle GDbusNodeInfoGenerateXml(this GDBusNodeInfoHandle info, uint indent, GStringHandle string_builder)
+	public static T GDbusNodeInfoGenerateXml<T>(this T info, uint indent, GStringHandle string_builder) where T : GDBusNodeInfoHandle
 	{
 		GDBusNodeInfoExterns.g_dbus_node_info_generate_xml(info, indent, string_builder);
 		return info;
@@ -28,7 +28,7 @@ public static class GDBusNodeInfoHandleExtensions
 		return GDBusNodeInfoExterns.g_dbus_node_info_ref(info);
 	}
 
-	public static GDBusNodeInfoHandle GDbusNodeInfoUnref(this GDBusNodeInfoHandle info)
+	public static T GDbusNodeInfoUnref<T>(this T info) where T : GDBusNodeInfoHandle
 	{
 		GDBusNodeInfoExterns.g_dbus_node_info_unref(info);
 		return info;

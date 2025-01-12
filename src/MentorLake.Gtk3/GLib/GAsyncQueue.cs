@@ -17,7 +17,7 @@ public static class GAsyncQueueHandleExtensions
 		return GAsyncQueueExterns.g_async_queue_length_unlocked(queue);
 	}
 
-	public static GAsyncQueueHandle Lock(this GAsyncQueueHandle queue)
+	public static T Lock<T>(this T queue) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_lock(queue);
 		return queue;
@@ -33,37 +33,37 @@ public static class GAsyncQueueHandleExtensions
 		return GAsyncQueueExterns.g_async_queue_pop_unlocked(queue);
 	}
 
-	public static GAsyncQueueHandle Push(this GAsyncQueueHandle queue, IntPtr data)
+	public static T Push<T>(this T queue, IntPtr data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push(queue, data);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle PushFront(this GAsyncQueueHandle queue, IntPtr item)
+	public static T PushFront<T>(this T queue, IntPtr item) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push_front(queue, item);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle PushFrontUnlocked(this GAsyncQueueHandle queue, IntPtr item)
+	public static T PushFrontUnlocked<T>(this T queue, IntPtr item) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push_front_unlocked(queue, item);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle PushSorted(this GAsyncQueueHandle queue, IntPtr data, GCompareDataFunc func, IntPtr user_data)
+	public static T PushSorted<T>(this T queue, IntPtr data, GCompareDataFunc func, IntPtr user_data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push_sorted(queue, data, func, user_data);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle PushSortedUnlocked(this GAsyncQueueHandle queue, IntPtr data, GCompareDataFunc func, IntPtr user_data)
+	public static T PushSortedUnlocked<T>(this T queue, IntPtr data, GCompareDataFunc func, IntPtr user_data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push_sorted_unlocked(queue, data, func, user_data);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle PushUnlocked(this GAsyncQueueHandle queue, IntPtr data)
+	public static T PushUnlocked<T>(this T queue, IntPtr data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_push_unlocked(queue, data);
 		return queue;
@@ -74,7 +74,7 @@ public static class GAsyncQueueHandleExtensions
 		return GAsyncQueueExterns.g_async_queue_ref(queue);
 	}
 
-	public static GAsyncQueueHandle RefUnlocked(this GAsyncQueueHandle queue)
+	public static T RefUnlocked<T>(this T queue) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_ref_unlocked(queue);
 		return queue;
@@ -90,13 +90,13 @@ public static class GAsyncQueueHandleExtensions
 		return GAsyncQueueExterns.g_async_queue_remove_unlocked(queue, item);
 	}
 
-	public static GAsyncQueueHandle Sort(this GAsyncQueueHandle queue, GCompareDataFunc func, IntPtr user_data)
+	public static T Sort<T>(this T queue, GCompareDataFunc func, IntPtr user_data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_sort(queue, func, user_data);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle SortUnlocked(this GAsyncQueueHandle queue, GCompareDataFunc func, IntPtr user_data)
+	public static T SortUnlocked<T>(this T queue, GCompareDataFunc func, IntPtr user_data) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_sort_unlocked(queue, func, user_data);
 		return queue;
@@ -132,19 +132,19 @@ public static class GAsyncQueueHandleExtensions
 		return GAsyncQueueExterns.g_async_queue_try_pop_unlocked(queue);
 	}
 
-	public static GAsyncQueueHandle Unlock(this GAsyncQueueHandle queue)
+	public static T Unlock<T>(this T queue) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_unlock(queue);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle Unref(this GAsyncQueueHandle queue)
+	public static T Unref<T>(this T queue) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_unref(queue);
 		return queue;
 	}
 
-	public static GAsyncQueueHandle UnrefAndUnlock(this GAsyncQueueHandle queue)
+	public static T UnrefAndUnlock<T>(this T queue) where T : GAsyncQueueHandle
 	{
 		GAsyncQueueExterns.g_async_queue_unref_and_unlock(queue);
 		return queue;

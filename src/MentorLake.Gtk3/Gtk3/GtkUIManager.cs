@@ -253,7 +253,7 @@ public delegate void pre_activate([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkUIManagerHandleExtensions
 {
-	public static GtkUIManagerHandle GtkUiManagerAddUi(this GtkUIManagerHandle manager, uint merge_id, string path, string name, string action, GtkUIManagerItemType type, bool top)
+	public static T GtkUiManagerAddUi<T>(this T manager, uint merge_id, string path, string name, string action, GtkUIManagerItemType type, bool top) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_add_ui(manager, merge_id, path, name, action, type, top);
 		return manager;
@@ -274,7 +274,7 @@ public static class GtkUIManagerHandleExtensions
 		return GtkUIManagerExterns.gtk_ui_manager_add_ui_from_string(manager, buffer, length, out error);
 	}
 
-	public static GtkUIManagerHandle GtkUiManagerEnsureUpdate(this GtkUIManagerHandle manager)
+	public static T GtkUiManagerEnsureUpdate<T>(this T manager) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_ensure_update(manager);
 		return manager;
@@ -315,7 +315,7 @@ public static class GtkUIManagerHandleExtensions
 		return GtkUIManagerExterns.gtk_ui_manager_get_widget(manager, path);
 	}
 
-	public static GtkUIManagerHandle GtkUiManagerInsertActionGroup(this GtkUIManagerHandle manager, GtkActionGroupHandle action_group, int pos)
+	public static T GtkUiManagerInsertActionGroup<T>(this T manager, GtkActionGroupHandle action_group, int pos) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_insert_action_group(manager, action_group, pos);
 		return manager;
@@ -326,19 +326,19 @@ public static class GtkUIManagerHandleExtensions
 		return GtkUIManagerExterns.gtk_ui_manager_new_merge_id(manager);
 	}
 
-	public static GtkUIManagerHandle GtkUiManagerRemoveActionGroup(this GtkUIManagerHandle manager, GtkActionGroupHandle action_group)
+	public static T GtkUiManagerRemoveActionGroup<T>(this T manager, GtkActionGroupHandle action_group) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_remove_action_group(manager, action_group);
 		return manager;
 	}
 
-	public static GtkUIManagerHandle GtkUiManagerRemoveUi(this GtkUIManagerHandle manager, uint merge_id)
+	public static T GtkUiManagerRemoveUi<T>(this T manager, uint merge_id) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_remove_ui(manager, merge_id);
 		return manager;
 	}
 
-	public static GtkUIManagerHandle GtkUiManagerSetAddTearoffs(this GtkUIManagerHandle manager, bool add_tearoffs)
+	public static T GtkUiManagerSetAddTearoffs<T>(this T manager, bool add_tearoffs) where T : GtkUIManagerHandle
 	{
 		GtkUIManagerExterns.gtk_ui_manager_set_add_tearoffs(manager, add_tearoffs);
 		return manager;

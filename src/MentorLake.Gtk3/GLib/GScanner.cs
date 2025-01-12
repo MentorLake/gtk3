@@ -27,7 +27,7 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_cur_value(scanner);
 	}
 
-	public static GScannerHandle Destroy(this GScannerHandle scanner)
+	public static T Destroy<T>(this T scanner) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_destroy(scanner);
 		return scanner;
@@ -38,7 +38,7 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_eof(scanner);
 	}
 
-	public static GScannerHandle Error(this GScannerHandle scanner, string format, IntPtr @__arglist)
+	public static T Error<T>(this T scanner, string format, IntPtr @__arglist) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_error(scanner, format, @__arglist);
 		return scanner;
@@ -49,13 +49,13 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_get_next_token(scanner);
 	}
 
-	public static GScannerHandle InputFile(this GScannerHandle scanner, int input_fd)
+	public static T InputFile<T>(this T scanner, int input_fd) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_input_file(scanner, input_fd);
 		return scanner;
 	}
 
-	public static GScannerHandle InputText(this GScannerHandle scanner, string text, uint text_len)
+	public static T InputText<T>(this T scanner, string text, uint text_len) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_input_text(scanner, text, text_len);
 		return scanner;
@@ -71,13 +71,13 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_peek_next_token(scanner);
 	}
 
-	public static GScannerHandle ScopeAddSymbol(this GScannerHandle scanner, uint scope_id, string symbol, IntPtr value)
+	public static T ScopeAddSymbol<T>(this T scanner, uint scope_id, string symbol, IntPtr value) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_scope_add_symbol(scanner, scope_id, symbol, value);
 		return scanner;
 	}
 
-	public static GScannerHandle ScopeForeachSymbol(this GScannerHandle scanner, uint scope_id, GHFunc func, IntPtr user_data)
+	public static T ScopeForeachSymbol<T>(this T scanner, uint scope_id, GHFunc func, IntPtr user_data) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_scope_foreach_symbol(scanner, scope_id, func, user_data);
 		return scanner;
@@ -88,7 +88,7 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_scope_lookup_symbol(scanner, scope_id, symbol);
 	}
 
-	public static GScannerHandle ScopeRemoveSymbol(this GScannerHandle scanner, uint scope_id, string symbol)
+	public static T ScopeRemoveSymbol<T>(this T scanner, uint scope_id, string symbol) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_scope_remove_symbol(scanner, scope_id, symbol);
 		return scanner;
@@ -99,19 +99,19 @@ public static class GScannerHandleExtensions
 		return GScannerExterns.g_scanner_set_scope(scanner, scope_id);
 	}
 
-	public static GScannerHandle SyncFileOffset(this GScannerHandle scanner)
+	public static T SyncFileOffset<T>(this T scanner) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_sync_file_offset(scanner);
 		return scanner;
 	}
 
-	public static GScannerHandle UnexpToken(this GScannerHandle scanner, GTokenType expected_token, string identifier_spec, string symbol_spec, string symbol_name, string message, int is_error)
+	public static T UnexpToken<T>(this T scanner, GTokenType expected_token, string identifier_spec, string symbol_spec, string symbol_name, string message, int is_error) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_unexp_token(scanner, expected_token, identifier_spec, symbol_spec, symbol_name, message, is_error);
 		return scanner;
 	}
 
-	public static GScannerHandle Warn(this GScannerHandle scanner, string format, IntPtr @__arglist)
+	public static T Warn<T>(this T scanner, string format, IntPtr @__arglist) where T : GScannerHandle
 	{
 		GScannerExterns.g_scanner_warn(scanner, format, @__arglist);
 		return scanner;

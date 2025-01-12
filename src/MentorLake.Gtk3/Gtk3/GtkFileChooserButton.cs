@@ -81,19 +81,19 @@ public static class GtkFileChooserButtonHandleExtensions
 		return GtkFileChooserButtonExterns.gtk_file_chooser_button_get_width_chars(button);
 	}
 
-	public static GtkFileChooserButtonHandle SetFocusOnClick(this GtkFileChooserButtonHandle button, bool focus_on_click)
+	public static T SetFocusOnClick<T>(this T button, bool focus_on_click) where T : GtkFileChooserButtonHandle
 	{
 		GtkFileChooserButtonExterns.gtk_file_chooser_button_set_focus_on_click(button, focus_on_click);
 		return button;
 	}
 
-	public static GtkFileChooserButtonHandle SetTitle(this GtkFileChooserButtonHandle button, string title)
+	public static T SetTitle<T>(this T button, string title) where T : GtkFileChooserButtonHandle
 	{
 		GtkFileChooserButtonExterns.gtk_file_chooser_button_set_title(button, title);
 		return button;
 	}
 
-	public static GtkFileChooserButtonHandle SetWidthChars(this GtkFileChooserButtonHandle button, int n_chars)
+	public static T SetWidthChars<T>(this T button, int n_chars) where T : GtkFileChooserButtonHandle
 	{
 		GtkFileChooserButtonExterns.gtk_file_chooser_button_set_width_chars(button, n_chars);
 		return button;

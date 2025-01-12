@@ -7,13 +7,13 @@ public class GIOModuleScopeHandle : BaseSafeHandle
 
 public static class GIOModuleScopeHandleExtensions
 {
-	public static GIOModuleScopeHandle GIoModuleScopeBlock(this GIOModuleScopeHandle scope, string basename)
+	public static T GIoModuleScopeBlock<T>(this T scope, string basename) where T : GIOModuleScopeHandle
 	{
 		GIOModuleScopeExterns.g_io_module_scope_block(scope, basename);
 		return scope;
 	}
 
-	public static GIOModuleScopeHandle GIoModuleScopeFree(this GIOModuleScopeHandle scope)
+	public static T GIoModuleScopeFree<T>(this T scope) where T : GIOModuleScopeHandle
 	{
 		GIOModuleScopeExterns.g_io_module_scope_free(scope);
 		return scope;

@@ -26,19 +26,19 @@ public static class GtkButtonBoxHandleExtensions
 		return GtkButtonBoxExterns.gtk_button_box_get_layout(widget);
 	}
 
-	public static GtkButtonBoxHandle SetChildNonHomogeneous(this GtkButtonBoxHandle widget, GtkWidgetHandle child, bool non_homogeneous)
+	public static T SetChildNonHomogeneous<T>(this T widget, GtkWidgetHandle child, bool non_homogeneous) where T : GtkButtonBoxHandle
 	{
 		GtkButtonBoxExterns.gtk_button_box_set_child_non_homogeneous(widget, child, non_homogeneous);
 		return widget;
 	}
 
-	public static GtkButtonBoxHandle SetChildSecondary(this GtkButtonBoxHandle widget, GtkWidgetHandle child, bool is_secondary)
+	public static T SetChildSecondary<T>(this T widget, GtkWidgetHandle child, bool is_secondary) where T : GtkButtonBoxHandle
 	{
 		GtkButtonBoxExterns.gtk_button_box_set_child_secondary(widget, child, is_secondary);
 		return widget;
 	}
 
-	public static GtkButtonBoxHandle SetLayout(this GtkButtonBoxHandle widget, GtkButtonBoxStyle layout_style)
+	public static T SetLayout<T>(this T widget, GtkButtonBoxStyle layout_style) where T : GtkButtonBoxHandle
 	{
 		GtkButtonBoxExterns.gtk_button_box_set_layout(widget, layout_style);
 		return widget;

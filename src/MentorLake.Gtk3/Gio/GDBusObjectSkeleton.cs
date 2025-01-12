@@ -64,31 +64,31 @@ public delegate bool authorize_method([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 public static class GDBusObjectSkeletonHandleExtensions
 {
-	public static GDBusObjectSkeletonHandle GDbusObjectSkeletonAddInterface(this GDBusObjectSkeletonHandle @object, GDBusInterfaceSkeletonHandle interface_)
+	public static T GDbusObjectSkeletonAddInterface<T>(this T @object, GDBusInterfaceSkeletonHandle interface_) where T : GDBusObjectSkeletonHandle
 	{
 		GDBusObjectSkeletonExterns.g_dbus_object_skeleton_add_interface(@object, interface_);
 		return @object;
 	}
 
-	public static GDBusObjectSkeletonHandle GDbusObjectSkeletonFlush(this GDBusObjectSkeletonHandle @object)
+	public static T GDbusObjectSkeletonFlush<T>(this T @object) where T : GDBusObjectSkeletonHandle
 	{
 		GDBusObjectSkeletonExterns.g_dbus_object_skeleton_flush(@object);
 		return @object;
 	}
 
-	public static GDBusObjectSkeletonHandle GDbusObjectSkeletonRemoveInterface(this GDBusObjectSkeletonHandle @object, GDBusInterfaceSkeletonHandle interface_)
+	public static T GDbusObjectSkeletonRemoveInterface<T>(this T @object, GDBusInterfaceSkeletonHandle interface_) where T : GDBusObjectSkeletonHandle
 	{
 		GDBusObjectSkeletonExterns.g_dbus_object_skeleton_remove_interface(@object, interface_);
 		return @object;
 	}
 
-	public static GDBusObjectSkeletonHandle GDbusObjectSkeletonRemoveInterfaceByName(this GDBusObjectSkeletonHandle @object, string interface_name)
+	public static T GDbusObjectSkeletonRemoveInterfaceByName<T>(this T @object, string interface_name) where T : GDBusObjectSkeletonHandle
 	{
 		GDBusObjectSkeletonExterns.g_dbus_object_skeleton_remove_interface_by_name(@object, interface_name);
 		return @object;
 	}
 
-	public static GDBusObjectSkeletonHandle GDbusObjectSkeletonSetObjectPath(this GDBusObjectSkeletonHandle @object, string object_path)
+	public static T GDbusObjectSkeletonSetObjectPath<T>(this T @object, string object_path) where T : GDBusObjectSkeletonHandle
 	{
 		GDBusObjectSkeletonExterns.g_dbus_object_skeleton_set_object_path(@object, object_path);
 		return @object;

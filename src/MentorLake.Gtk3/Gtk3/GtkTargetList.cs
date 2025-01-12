@@ -12,37 +12,37 @@ public class GtkTargetListHandle : BaseSafeHandle
 
 public static class GtkTargetListHandleExtensions
 {
-	public static GtkTargetListHandle Add(this GtkTargetListHandle list, GdkAtom target, uint flags, uint info)
+	public static T Add<T>(this T list, GdkAtom target, uint flags, uint info) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add(list, target, flags, info);
 		return list;
 	}
 
-	public static GtkTargetListHandle AddImageTargets(this GtkTargetListHandle list, uint info, bool writable)
+	public static T AddImageTargets<T>(this T list, uint info, bool writable) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add_image_targets(list, info, writable);
 		return list;
 	}
 
-	public static GtkTargetListHandle AddRichTextTargets(this GtkTargetListHandle list, uint info, bool deserializable, GtkTextBufferHandle buffer)
+	public static T AddRichTextTargets<T>(this T list, uint info, bool deserializable, GtkTextBufferHandle buffer) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add_rich_text_targets(list, info, deserializable, buffer);
 		return list;
 	}
 
-	public static GtkTargetListHandle AddTable(this GtkTargetListHandle list, GtkTargetEntry[] targets, uint ntargets)
+	public static T AddTable<T>(this T list, GtkTargetEntry[] targets, uint ntargets) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add_table(list, targets, ntargets);
 		return list;
 	}
 
-	public static GtkTargetListHandle AddTextTargets(this GtkTargetListHandle list, uint info)
+	public static T AddTextTargets<T>(this T list, uint info) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add_text_targets(list, info);
 		return list;
 	}
 
-	public static GtkTargetListHandle AddUriTargets(this GtkTargetListHandle list, uint info)
+	public static T AddUriTargets<T>(this T list, uint info) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_add_uri_targets(list, info);
 		return list;
@@ -58,13 +58,13 @@ public static class GtkTargetListHandleExtensions
 		return GtkTargetListExterns.gtk_target_list_ref(list);
 	}
 
-	public static GtkTargetListHandle Remove(this GtkTargetListHandle list, GdkAtom target)
+	public static T Remove<T>(this T list, GdkAtom target) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_remove(list, target);
 		return list;
 	}
 
-	public static GtkTargetListHandle Unref(this GtkTargetListHandle list)
+	public static T Unref<T>(this T list) where T : GtkTargetListHandle
 	{
 		GtkTargetListExterns.gtk_target_list_unref(list);
 		return list;

@@ -17,7 +17,7 @@ public static class GtkBorderHandleExtensions
 		return GtkBorderExterns.gtk_border_copy(border_);
 	}
 
-	public static GtkBorderHandle Free(this GtkBorderHandle border_)
+	public static T Free<T>(this T border_) where T : GtkBorderHandle
 	{
 		GtkBorderExterns.gtk_border_free(border_);
 		return border_;

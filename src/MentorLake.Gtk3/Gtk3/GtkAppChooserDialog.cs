@@ -26,7 +26,7 @@ public static class GtkAppChooserDialogHandleExtensions
 		return GtkAppChooserDialogExterns.gtk_app_chooser_dialog_get_widget(self);
 	}
 
-	public static GtkAppChooserDialogHandle SetHeading(this GtkAppChooserDialogHandle self, string heading)
+	public static T SetHeading<T>(this T self, string heading) where T : GtkAppChooserDialogHandle
 	{
 		GtkAppChooserDialogExterns.gtk_app_chooser_dialog_set_heading(self, heading);
 		return self;

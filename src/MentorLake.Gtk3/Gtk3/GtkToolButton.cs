@@ -96,37 +96,37 @@ public static class GtkToolButtonHandleExtensions
 		return GtkToolButtonExterns.gtk_tool_button_get_use_underline(button);
 	}
 
-	public static GtkToolButtonHandle SetIconName(this GtkToolButtonHandle button, string icon_name)
+	public static T SetIconName<T>(this T button, string icon_name) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_icon_name(button, icon_name);
 		return button;
 	}
 
-	public static GtkToolButtonHandle SetIconWidget(this GtkToolButtonHandle button, GtkWidgetHandle icon_widget)
+	public static T SetIconWidget<T>(this T button, GtkWidgetHandle icon_widget) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_icon_widget(button, icon_widget);
 		return button;
 	}
 
-	public static GtkToolButtonHandle SetLabel(this GtkToolButtonHandle button, string label)
+	public static T SetLabel<T>(this T button, string label) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_label(button, label);
 		return button;
 	}
 
-	public static GtkToolButtonHandle SetLabelWidget(this GtkToolButtonHandle button, GtkWidgetHandle label_widget)
+	public static T SetLabelWidget<T>(this T button, GtkWidgetHandle label_widget) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_label_widget(button, label_widget);
 		return button;
 	}
 
-	public static GtkToolButtonHandle SetStockId(this GtkToolButtonHandle button, string stock_id)
+	public static T SetStockId<T>(this T button, string stock_id) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_stock_id(button, stock_id);
 		return button;
 	}
 
-	public static GtkToolButtonHandle SetUseUnderline(this GtkToolButtonHandle button, bool use_underline)
+	public static T SetUseUnderline<T>(this T button, bool use_underline) where T : GtkToolButtonHandle
 	{
 		GtkToolButtonExterns.gtk_tool_button_set_use_underline(button, use_underline);
 		return button;

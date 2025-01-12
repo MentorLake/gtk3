@@ -12,7 +12,7 @@ public static class GtkSelectionDataHandleExtensions
 		return GtkSelectionDataExterns.gtk_selection_data_copy(data);
 	}
 
-	public static GtkSelectionDataHandle Free(this GtkSelectionDataHandle data)
+	public static T Free<T>(this T data) where T : GtkSelectionDataHandle
 	{
 		GtkSelectionDataExterns.gtk_selection_data_free(data);
 		return data;
@@ -78,7 +78,7 @@ public static class GtkSelectionDataHandleExtensions
 		return GtkSelectionDataExterns.gtk_selection_data_get_uris(selection_data);
 	}
 
-	public static GtkSelectionDataHandle Set(this GtkSelectionDataHandle selection_data, GdkAtom type, int format, string data, int length)
+	public static T Set<T>(this T selection_data, GdkAtom type, int format, string data, int length) where T : GtkSelectionDataHandle
 	{
 		GtkSelectionDataExterns.gtk_selection_data_set(selection_data, type, format, data, length);
 		return selection_data;

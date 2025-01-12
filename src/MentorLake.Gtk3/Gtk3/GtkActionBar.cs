@@ -16,19 +16,19 @@ public static class GtkActionBarHandleExtensions
 		return GtkActionBarExterns.gtk_action_bar_get_center_widget(action_bar);
 	}
 
-	public static GtkActionBarHandle PackEnd(this GtkActionBarHandle action_bar, GtkWidgetHandle child)
+	public static T PackEnd<T>(this T action_bar, GtkWidgetHandle child) where T : GtkActionBarHandle
 	{
 		GtkActionBarExterns.gtk_action_bar_pack_end(action_bar, child);
 		return action_bar;
 	}
 
-	public static GtkActionBarHandle PackStart(this GtkActionBarHandle action_bar, GtkWidgetHandle child)
+	public static T PackStart<T>(this T action_bar, GtkWidgetHandle child) where T : GtkActionBarHandle
 	{
 		GtkActionBarExterns.gtk_action_bar_pack_start(action_bar, child);
 		return action_bar;
 	}
 
-	public static GtkActionBarHandle SetCenterWidget(this GtkActionBarHandle action_bar, GtkWidgetHandle center_widget)
+	public static T SetCenterWidget<T>(this T action_bar, GtkWidgetHandle center_widget) where T : GtkActionBarHandle
 	{
 		GtkActionBarExterns.gtk_action_bar_set_center_widget(action_bar, center_widget);
 		return action_bar;

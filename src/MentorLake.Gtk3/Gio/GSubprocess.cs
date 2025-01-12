@@ -21,7 +21,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_communicate(subprocess, stdin_buf, cancellable, out stdout_buf, out stderr_buf, out error);
 	}
 
-	public static GSubprocessHandle CommunicateAsync(this GSubprocessHandle subprocess, GBytesHandle stdin_buf, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CommunicateAsync<T>(this T subprocess, GBytesHandle stdin_buf, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_communicate_async(subprocess, stdin_buf, cancellable, callback, user_data);
 		return subprocess;
@@ -37,7 +37,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_communicate_utf8(subprocess, stdin_buf, cancellable, out stdout_buf, out stderr_buf, out error);
 	}
 
-	public static GSubprocessHandle CommunicateUtf8Async(this GSubprocessHandle subprocess, string stdin_buf, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CommunicateUtf8Async<T>(this T subprocess, string stdin_buf, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_communicate_utf8_async(subprocess, stdin_buf, cancellable, callback, user_data);
 		return subprocess;
@@ -48,7 +48,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_communicate_utf8_finish(subprocess, result, out stdout_buf, out stderr_buf, out error);
 	}
 
-	public static GSubprocessHandle ForceExit(this GSubprocessHandle subprocess)
+	public static T ForceExit<T>(this T subprocess) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_force_exit(subprocess);
 		return subprocess;
@@ -104,7 +104,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_get_term_sig(subprocess);
 	}
 
-	public static GSubprocessHandle SendSignal(this GSubprocessHandle subprocess, int signal_num)
+	public static T SendSignal<T>(this T subprocess, int signal_num) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_send_signal(subprocess, signal_num);
 		return subprocess;
@@ -115,7 +115,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_wait(subprocess, cancellable, out error);
 	}
 
-	public static GSubprocessHandle WaitAsync(this GSubprocessHandle subprocess, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WaitAsync<T>(this T subprocess, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_wait_async(subprocess, cancellable, callback, user_data);
 		return subprocess;
@@ -126,7 +126,7 @@ public static class GSubprocessHandleExtensions
 		return GSubprocessExterns.g_subprocess_wait_check(subprocess, cancellable, out error);
 	}
 
-	public static GSubprocessHandle WaitCheckAsync(this GSubprocessHandle subprocess, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T WaitCheckAsync<T>(this T subprocess, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GSubprocessHandle
 	{
 		GSubprocessExterns.g_subprocess_wait_check_async(subprocess, cancellable, callback, user_data);
 		return subprocess;

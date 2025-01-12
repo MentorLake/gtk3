@@ -11,7 +11,7 @@ public class GtkWindowGroupHandle : GObjectHandle
 
 public static class GtkWindowGroupHandleExtensions
 {
-	public static GtkWindowGroupHandle AddWindow(this GtkWindowGroupHandle window_group, GtkWindowHandle window)
+	public static T AddWindow<T>(this T window_group, GtkWindowHandle window) where T : GtkWindowGroupHandle
 	{
 		GtkWindowGroupExterns.gtk_window_group_add_window(window_group, window);
 		return window_group;
@@ -32,7 +32,7 @@ public static class GtkWindowGroupHandleExtensions
 		return GtkWindowGroupExterns.gtk_window_group_list_windows(window_group);
 	}
 
-	public static GtkWindowGroupHandle RemoveWindow(this GtkWindowGroupHandle window_group, GtkWindowHandle window)
+	public static T RemoveWindow<T>(this T window_group, GtkWindowHandle window) where T : GtkWindowGroupHandle
 	{
 		GtkWindowGroupExterns.gtk_window_group_remove_window(window_group, window);
 		return window_group;

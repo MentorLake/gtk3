@@ -7,19 +7,19 @@ public class GTestSuiteHandle : BaseSafeHandle
 
 public static class GTestSuiteHandleExtensions
 {
-	public static GTestSuiteHandle Add(this GTestSuiteHandle suite, GTestCaseHandle test_case)
+	public static T Add<T>(this T suite, GTestCaseHandle test_case) where T : GTestSuiteHandle
 	{
 		GTestSuiteExterns.g_test_suite_add(suite, test_case);
 		return suite;
 	}
 
-	public static GTestSuiteHandle AddSuite(this GTestSuiteHandle suite, GTestSuiteHandle nestedsuite)
+	public static T AddSuite<T>(this T suite, GTestSuiteHandle nestedsuite) where T : GTestSuiteHandle
 	{
 		GTestSuiteExterns.g_test_suite_add_suite(suite, nestedsuite);
 		return suite;
 	}
 
-	public static GTestSuiteHandle Free(this GTestSuiteHandle suite)
+	public static T Free<T>(this T suite) where T : GTestSuiteHandle
 	{
 		GTestSuiteExterns.g_test_suite_free(suite);
 		return suite;

@@ -208,7 +208,7 @@ public static class GdkPixbufLoaderHandleExtensions
 		return GdkPixbufLoaderExterns.gdk_pixbuf_loader_get_pixbuf(loader);
 	}
 
-	public static GdkPixbufLoaderHandle SetSize(this GdkPixbufLoaderHandle loader, int width, int height)
+	public static T SetSize<T>(this T loader, int width, int height) where T : GdkPixbufLoaderHandle
 	{
 		GdkPixbufLoaderExterns.gdk_pixbuf_loader_set_size(loader, width, height);
 		return loader;

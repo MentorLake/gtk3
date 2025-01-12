@@ -12,7 +12,7 @@ public class GVariantDictHandle : BaseSafeHandle
 
 public static class GVariantDictHandleExtensions
 {
-	public static GVariantDictHandle Clear(this GVariantDictHandle dict)
+	public static T Clear<T>(this T dict) where T : GVariantDictHandle
 	{
 		GVariantDictExterns.g_variant_dict_clear(dict);
 		return dict;
@@ -28,19 +28,19 @@ public static class GVariantDictHandleExtensions
 		return GVariantDictExterns.g_variant_dict_end(dict);
 	}
 
-	public static GVariantDictHandle Init(this GVariantDictHandle dict, GVariantHandle from_asv)
+	public static T Init<T>(this T dict, GVariantHandle from_asv) where T : GVariantDictHandle
 	{
 		GVariantDictExterns.g_variant_dict_init(dict, from_asv);
 		return dict;
 	}
 
-	public static GVariantDictHandle Insert(this GVariantDictHandle dict, string key, string format_string, IntPtr @__arglist)
+	public static T Insert<T>(this T dict, string key, string format_string, IntPtr @__arglist) where T : GVariantDictHandle
 	{
 		GVariantDictExterns.g_variant_dict_insert(dict, key, format_string, @__arglist);
 		return dict;
 	}
 
-	public static GVariantDictHandle InsertValue(this GVariantDictHandle dict, string key, GVariantHandle value)
+	public static T InsertValue<T>(this T dict, string key, GVariantHandle value) where T : GVariantDictHandle
 	{
 		GVariantDictExterns.g_variant_dict_insert_value(dict, key, value);
 		return dict;
@@ -66,7 +66,7 @@ public static class GVariantDictHandleExtensions
 		return GVariantDictExterns.g_variant_dict_remove(dict, key);
 	}
 
-	public static GVariantDictHandle Unref(this GVariantDictHandle dict)
+	public static T Unref<T>(this T dict) where T : GVariantDictHandle
 	{
 		GVariantDictExterns.g_variant_dict_unref(dict);
 		return dict;

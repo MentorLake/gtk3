@@ -31,55 +31,55 @@ public static class GtkBoxHandleExtensions
 		return GtkBoxExterns.gtk_box_get_spacing(box);
 	}
 
-	public static GtkBoxHandle PackEnd(this GtkBoxHandle box, GtkWidgetHandle child, bool expand, bool fill, uint padding)
+	public static T PackEnd<T>(this T box, GtkWidgetHandle child, bool expand, bool fill, uint padding) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_pack_end(box, child, expand, fill, padding);
 		return box;
 	}
 
-	public static GtkBoxHandle PackStart(this GtkBoxHandle box, GtkWidgetHandle child, bool expand, bool fill, uint padding)
+	public static T PackStart<T>(this T box, GtkWidgetHandle child, bool expand, bool fill, uint padding) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_pack_start(box, child, expand, fill, padding);
 		return box;
 	}
 
-	public static GtkBoxHandle QueryChildPacking(this GtkBoxHandle box, GtkWidgetHandle child, out bool expand, out bool fill, out uint padding, out GtkPackType pack_type)
+	public static T QueryChildPacking<T>(this T box, GtkWidgetHandle child, out bool expand, out bool fill, out uint padding, out GtkPackType pack_type) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_query_child_packing(box, child, out expand, out fill, out padding, out pack_type);
 		return box;
 	}
 
-	public static GtkBoxHandle ReorderChild(this GtkBoxHandle box, GtkWidgetHandle child, int position)
+	public static T ReorderChild<T>(this T box, GtkWidgetHandle child, int position) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_reorder_child(box, child, position);
 		return box;
 	}
 
-	public static GtkBoxHandle SetBaselinePosition(this GtkBoxHandle box, GtkBaselinePosition position)
+	public static T SetBaselinePosition<T>(this T box, GtkBaselinePosition position) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_set_baseline_position(box, position);
 		return box;
 	}
 
-	public static GtkBoxHandle SetCenterWidget(this GtkBoxHandle box, GtkWidgetHandle widget)
+	public static T SetCenterWidget<T>(this T box, GtkWidgetHandle widget) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_set_center_widget(box, widget);
 		return box;
 	}
 
-	public static GtkBoxHandle SetChildPacking(this GtkBoxHandle box, GtkWidgetHandle child, bool expand, bool fill, uint padding, GtkPackType pack_type)
+	public static T SetChildPacking<T>(this T box, GtkWidgetHandle child, bool expand, bool fill, uint padding, GtkPackType pack_type) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_set_child_packing(box, child, expand, fill, padding, pack_type);
 		return box;
 	}
 
-	public static GtkBoxHandle SetHomogeneous(this GtkBoxHandle box, bool homogeneous)
+	public static T SetHomogeneous<T>(this T box, bool homogeneous) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_set_homogeneous(box, homogeneous);
 		return box;
 	}
 
-	public static GtkBoxHandle SetSpacing(this GtkBoxHandle box, int spacing)
+	public static T SetSpacing<T>(this T box, int spacing) where T : GtkBoxHandle
 	{
 		GtkBoxExterns.gtk_box_set_spacing(box, spacing);
 		return box;

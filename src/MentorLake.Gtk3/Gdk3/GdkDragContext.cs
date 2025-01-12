@@ -220,13 +220,13 @@ public static class GdkDragContextHandleExtensions
 		return GdkDragContextExterns.gdk_drag_context_manage_dnd(context, ipc_window, actions);
 	}
 
-	public static GdkDragContextHandle SetDevice(this GdkDragContextHandle context, GdkDeviceHandle device)
+	public static T SetDevice<T>(this T context, GdkDeviceHandle device) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_context_set_device(context, device);
 		return context;
 	}
 
-	public static GdkDragContextHandle SetHotspot(this GdkDragContextHandle context, int hot_x, int hot_y)
+	public static T SetHotspot<T>(this T context, int hot_x, int hot_y) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_context_set_hotspot(context, hot_x, hot_y);
 		return context;
@@ -237,13 +237,13 @@ public static class GdkDragContextHandleExtensions
 		return GdkDragContextExterns.gdk_drag_drop_succeeded(context);
 	}
 
-	public static GdkDragContextHandle GdkDragStatus(this GdkDragContextHandle context, GdkDragAction action, uint time_)
+	public static T GdkDragStatus<T>(this T context, GdkDragAction action, uint time_) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_status(context, action, time_);
 		return context;
 	}
 
-	public static GdkDragContextHandle GdkDragDropDone(this GdkDragContextHandle context, bool success)
+	public static T GdkDragDropDone<T>(this T context, bool success) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_drop_done(context, success);
 		return context;
@@ -254,19 +254,19 @@ public static class GdkDragContextHandleExtensions
 		return GdkDragContextExterns.gdk_drag_motion(context, dest_window, protocol, x_root, y_root, suggested_action, possible_actions, time_);
 	}
 
-	public static GdkDragContextHandle GdkDragFindWindowForScreen(this GdkDragContextHandle context, GdkWindowHandle drag_window, GdkScreenHandle screen, int x_root, int y_root, out GdkWindowHandle dest_window, out GdkDragProtocol protocol)
+	public static T GdkDragFindWindowForScreen<T>(this T context, GdkWindowHandle drag_window, GdkScreenHandle screen, int x_root, int y_root, out GdkWindowHandle dest_window, out GdkDragProtocol protocol) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_find_window_for_screen(context, drag_window, screen, x_root, y_root, out dest_window, out protocol);
 		return context;
 	}
 
-	public static GdkDragContextHandle GdkDropFinish(this GdkDragContextHandle context, bool success, uint time_)
+	public static T GdkDropFinish<T>(this T context, bool success, uint time_) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drop_finish(context, success, time_);
 		return context;
 	}
 
-	public static GdkDragContextHandle GdkDragDrop(this GdkDragContextHandle context, uint time_)
+	public static T GdkDragDrop<T>(this T context, uint time_) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_drop(context, time_);
 		return context;
@@ -277,13 +277,13 @@ public static class GdkDragContextHandleExtensions
 		return GdkDragContextExterns.gdk_drag_get_selection(context);
 	}
 
-	public static GdkDragContextHandle GdkDropReply(this GdkDragContextHandle context, bool accepted, uint time_)
+	public static T GdkDropReply<T>(this T context, bool accepted, uint time_) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drop_reply(context, accepted, time_);
 		return context;
 	}
 
-	public static GdkDragContextHandle GdkDragAbort(this GdkDragContextHandle context, uint time_)
+	public static T GdkDragAbort<T>(this T context, uint time_) where T : GdkDragContextHandle
 	{
 		GdkDragContextExterns.gdk_drag_abort(context, time_);
 		return context;

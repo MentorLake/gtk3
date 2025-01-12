@@ -76,13 +76,13 @@ public static class GtkColorButtonHandleExtensions
 		return GtkColorButtonExterns.gtk_color_button_get_alpha(button);
 	}
 
-	public static GtkColorButtonHandle GetColor(this GtkColorButtonHandle button, out GdkColor color)
+	public static T GetColor<T>(this T button, out GdkColor color) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_get_color(button, out color);
 		return button;
 	}
 
-	public static GtkColorButtonHandle GetRgba(this GtkColorButtonHandle button, out GdkRGBA rgba)
+	public static T GetRgba<T>(this T button, out GdkRGBA rgba) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_get_rgba(button, out rgba);
 		return button;
@@ -98,31 +98,31 @@ public static class GtkColorButtonHandleExtensions
 		return GtkColorButtonExterns.gtk_color_button_get_use_alpha(button);
 	}
 
-	public static GtkColorButtonHandle SetAlpha(this GtkColorButtonHandle button, ushort alpha)
+	public static T SetAlpha<T>(this T button, ushort alpha) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_set_alpha(button, alpha);
 		return button;
 	}
 
-	public static GtkColorButtonHandle SetColor(this GtkColorButtonHandle button, GdkColorHandle color)
+	public static T SetColor<T>(this T button, GdkColorHandle color) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_set_color(button, color);
 		return button;
 	}
 
-	public static GtkColorButtonHandle SetRgba(this GtkColorButtonHandle button, GdkRGBAHandle rgba)
+	public static T SetRgba<T>(this T button, GdkRGBAHandle rgba) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_set_rgba(button, rgba);
 		return button;
 	}
 
-	public static GtkColorButtonHandle SetTitle(this GtkColorButtonHandle button, string title)
+	public static T SetTitle<T>(this T button, string title) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_set_title(button, title);
 		return button;
 	}
 
-	public static GtkColorButtonHandle SetUseAlpha(this GtkColorButtonHandle button, bool use_alpha)
+	public static T SetUseAlpha<T>(this T button, bool use_alpha) where T : GtkColorButtonHandle
 	{
 		GtkColorButtonExterns.gtk_color_button_set_use_alpha(button, use_alpha);
 		return button;

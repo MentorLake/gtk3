@@ -11,7 +11,7 @@ public class AtkSocketHandle : AtkObjectHandle, AtkComponentHandle
 
 public static class AtkSocketHandleExtensions
 {
-	public static AtkSocketHandle Embed(this AtkSocketHandle obj, string plug_id)
+	public static T Embed<T>(this T obj, string plug_id) where T : AtkSocketHandle
 	{
 		AtkSocketExterns.atk_socket_embed(obj, plug_id);
 		return obj;

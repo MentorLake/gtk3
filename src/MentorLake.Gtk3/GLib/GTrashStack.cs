@@ -22,7 +22,7 @@ public static class GTrashStackHandleExtensions
 		return GTrashStackExterns.g_trash_stack_pop(ref stack_p);
 	}
 
-	public static GTrashStackHandle Push(this GTrashStackHandle stack_p, IntPtr data_p)
+	public static GTrashStackHandle Push<T>(this GTrashStackHandle stack_p, IntPtr data_p)
 	{
 		GTrashStackExterns.g_trash_stack_push(ref stack_p, data_p);
 		return stack_p;

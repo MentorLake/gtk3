@@ -174,7 +174,7 @@ public static class GtkToolItemHandleExtensions
 		return GtkToolItemExterns.gtk_tool_item_get_visible_vertical(tool_item);
 	}
 
-	public static GtkToolItemHandle RebuildMenu(this GtkToolItemHandle tool_item)
+	public static T RebuildMenu<T>(this T tool_item) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_rebuild_menu(tool_item);
 		return tool_item;
@@ -185,61 +185,61 @@ public static class GtkToolItemHandleExtensions
 		return GtkToolItemExterns.gtk_tool_item_retrieve_proxy_menu_item(tool_item);
 	}
 
-	public static GtkToolItemHandle SetExpand(this GtkToolItemHandle tool_item, bool expand)
+	public static T SetExpand<T>(this T tool_item, bool expand) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_expand(tool_item, expand);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetHomogeneous(this GtkToolItemHandle tool_item, bool homogeneous)
+	public static T SetHomogeneous<T>(this T tool_item, bool homogeneous) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_homogeneous(tool_item, homogeneous);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetIsImportant(this GtkToolItemHandle tool_item, bool is_important)
+	public static T SetIsImportant<T>(this T tool_item, bool is_important) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_is_important(tool_item, is_important);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetProxyMenuItem(this GtkToolItemHandle tool_item, string menu_item_id, GtkWidgetHandle menu_item)
+	public static T SetProxyMenuItem<T>(this T tool_item, string menu_item_id, GtkWidgetHandle menu_item) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_proxy_menu_item(tool_item, menu_item_id, menu_item);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetTooltipMarkup(this GtkToolItemHandle tool_item, string markup)
+	public static T SetTooltipMarkup<T>(this T tool_item, string markup) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_tooltip_markup(tool_item, markup);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetTooltipText(this GtkToolItemHandle tool_item, string text)
+	public static T SetTooltipText<T>(this T tool_item, string text) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_tooltip_text(tool_item, text);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetUseDragWindow(this GtkToolItemHandle tool_item, bool use_drag_window)
+	public static T SetUseDragWindow<T>(this T tool_item, bool use_drag_window) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_use_drag_window(tool_item, use_drag_window);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetVisibleHorizontal(this GtkToolItemHandle tool_item, bool visible_horizontal)
+	public static T SetVisibleHorizontal<T>(this T tool_item, bool visible_horizontal) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_visible_horizontal(tool_item, visible_horizontal);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle SetVisibleVertical(this GtkToolItemHandle tool_item, bool visible_vertical)
+	public static T SetVisibleVertical<T>(this T tool_item, bool visible_vertical) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_set_visible_vertical(tool_item, visible_vertical);
 		return tool_item;
 	}
 
-	public static GtkToolItemHandle ToolbarReconfigured(this GtkToolItemHandle tool_item)
+	public static T ToolbarReconfigured<T>(this T tool_item) where T : GtkToolItemHandle
 	{
 		GtkToolItemExterns.gtk_tool_item_toolbar_reconfigured(tool_item);
 		return tool_item;

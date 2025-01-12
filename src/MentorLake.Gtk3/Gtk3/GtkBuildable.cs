@@ -10,7 +10,7 @@ internal class GtkBuildableHandleImpl : BaseSafeHandle, GtkBuildableHandle
 
 public static class GtkBuildableHandleExtensions
 {
-	public static GtkBuildableHandle AddChild(this GtkBuildableHandle buildable, GtkBuilderHandle builder, GObjectHandle child, string type)
+	public static T AddChild<T>(this T buildable, GtkBuilderHandle builder, GObjectHandle child, string type) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_add_child(buildable, builder, child, type);
 		return buildable;
@@ -21,13 +21,13 @@ public static class GtkBuildableHandleExtensions
 		return GtkBuildableExterns.gtk_buildable_construct_child(buildable, builder, name);
 	}
 
-	public static GtkBuildableHandle CustomFinished(this GtkBuildableHandle buildable, GtkBuilderHandle builder, GObjectHandle child, string tagname, IntPtr data)
+	public static T CustomFinished<T>(this T buildable, GtkBuilderHandle builder, GObjectHandle child, string tagname, IntPtr data) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_custom_finished(buildable, builder, child, tagname, data);
 		return buildable;
 	}
 
-	public static GtkBuildableHandle CustomTagEnd(this GtkBuildableHandle buildable, GtkBuilderHandle builder, GObjectHandle child, string tagname, ref IntPtr data)
+	public static T CustomTagEnd<T>(this T buildable, GtkBuilderHandle builder, GObjectHandle child, string tagname, ref IntPtr data) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_custom_tag_end(buildable, builder, child, tagname, ref data);
 		return buildable;
@@ -48,19 +48,19 @@ public static class GtkBuildableHandleExtensions
 		return GtkBuildableExterns.gtk_buildable_get_name(buildable);
 	}
 
-	public static GtkBuildableHandle ParserFinished(this GtkBuildableHandle buildable, GtkBuilderHandle builder)
+	public static T ParserFinished<T>(this T buildable, GtkBuilderHandle builder) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_parser_finished(buildable, builder);
 		return buildable;
 	}
 
-	public static GtkBuildableHandle SetBuildableProperty(this GtkBuildableHandle buildable, GtkBuilderHandle builder, string name, GValueHandle value)
+	public static T SetBuildableProperty<T>(this T buildable, GtkBuilderHandle builder, string name, GValueHandle value) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_set_buildable_property(buildable, builder, name, value);
 		return buildable;
 	}
 
-	public static GtkBuildableHandle SetName(this GtkBuildableHandle buildable, string name)
+	public static T SetName<T>(this T buildable, string name) where T : GtkBuildableHandle
 	{
 		GtkBuildableExterns.gtk_buildable_set_name(buildable, name);
 		return buildable;

@@ -32,7 +32,7 @@ public static class GtkWidgetPathHandleExtensions
 		return GtkWidgetPathExterns.gtk_widget_path_copy(path);
 	}
 
-	public static GtkWidgetPathHandle Free(this GtkWidgetPathHandle path)
+	public static T Free<T>(this T path) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_free(path);
 		return path;
@@ -53,25 +53,25 @@ public static class GtkWidgetPathHandleExtensions
 		return GtkWidgetPathExterns.gtk_widget_path_is_type(path, type);
 	}
 
-	public static GtkWidgetPathHandle IterAddClass(this GtkWidgetPathHandle path, int pos, string name)
+	public static T IterAddClass<T>(this T path, int pos, string name) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_add_class(path, pos, name);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterAddRegion(this GtkWidgetPathHandle path, int pos, string name, GtkRegionFlags flags)
+	public static T IterAddRegion<T>(this T path, int pos, string name, GtkRegionFlags flags) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_add_region(path, pos, name, flags);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterClearClasses(this GtkWidgetPathHandle path, int pos)
+	public static T IterClearClasses<T>(this T path, int pos) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_clear_classes(path, pos);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterClearRegions(this GtkWidgetPathHandle path, int pos)
+	public static T IterClearRegions<T>(this T path, int pos) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_clear_regions(path, pos);
 		return path;
@@ -147,37 +147,37 @@ public static class GtkWidgetPathHandleExtensions
 		return GtkWidgetPathExterns.gtk_widget_path_iter_list_regions(path, pos);
 	}
 
-	public static GtkWidgetPathHandle IterRemoveClass(this GtkWidgetPathHandle path, int pos, string name)
+	public static T IterRemoveClass<T>(this T path, int pos, string name) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_remove_class(path, pos, name);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterRemoveRegion(this GtkWidgetPathHandle path, int pos, string name)
+	public static T IterRemoveRegion<T>(this T path, int pos, string name) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_remove_region(path, pos, name);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterSetName(this GtkWidgetPathHandle path, int pos, string name)
+	public static T IterSetName<T>(this T path, int pos, string name) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_set_name(path, pos, name);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterSetObjectName(this GtkWidgetPathHandle path, int pos, string name)
+	public static T IterSetObjectName<T>(this T path, int pos, string name) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_set_object_name(path, pos, name);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterSetObjectType(this GtkWidgetPathHandle path, int pos, GType type)
+	public static T IterSetObjectType<T>(this T path, int pos, GType type) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_set_object_type(path, pos, type);
 		return path;
 	}
 
-	public static GtkWidgetPathHandle IterSetState(this GtkWidgetPathHandle path, int pos, GtkStateFlags state)
+	public static T IterSetState<T>(this T path, int pos, GtkStateFlags state) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_iter_set_state(path, pos, state);
 		return path;
@@ -188,7 +188,7 @@ public static class GtkWidgetPathHandleExtensions
 		return GtkWidgetPathExterns.gtk_widget_path_length(path);
 	}
 
-	public static GtkWidgetPathHandle PrependType(this GtkWidgetPathHandle path, GType type)
+	public static T PrependType<T>(this T path, GType type) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_prepend_type(path, type);
 		return path;
@@ -204,7 +204,7 @@ public static class GtkWidgetPathHandleExtensions
 		return GtkWidgetPathExterns.gtk_widget_path_to_string(path);
 	}
 
-	public static GtkWidgetPathHandle Unref(this GtkWidgetPathHandle path)
+	public static T Unref<T>(this T path) where T : GtkWidgetPathHandle
 	{
 		GtkWidgetPathExterns.gtk_widget_path_unref(path);
 		return path;

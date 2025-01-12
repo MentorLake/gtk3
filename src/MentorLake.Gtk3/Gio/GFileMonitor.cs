@@ -64,7 +64,7 @@ public static class GFileMonitorHandleExtensions
 		return GFileMonitorExterns.g_file_monitor_cancel(monitor);
 	}
 
-	public static GFileMonitorHandle EmitEvent(this GFileMonitorHandle monitor, GFileHandle child, GFileHandle other_file, GFileMonitorEvent event_type)
+	public static T EmitEvent<T>(this T monitor, GFileHandle child, GFileHandle other_file, GFileMonitorEvent event_type) where T : GFileMonitorHandle
 	{
 		GFileMonitorExterns.g_file_monitor_emit_event(monitor, child, other_file, event_type);
 		return monitor;
@@ -75,7 +75,7 @@ public static class GFileMonitorHandleExtensions
 		return GFileMonitorExterns.g_file_monitor_is_cancelled(monitor);
 	}
 
-	public static GFileMonitorHandle SetRateLimit(this GFileMonitorHandle monitor, int limit_msecs)
+	public static T SetRateLimit<T>(this T monitor, int limit_msecs) where T : GFileMonitorHandle
 	{
 		GFileMonitorExterns.g_file_monitor_set_rate_limit(monitor, limit_msecs);
 		return monitor;

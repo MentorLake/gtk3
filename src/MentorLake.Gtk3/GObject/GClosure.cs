@@ -17,31 +17,31 @@ public class GClosureHandle : BaseSafeHandle
 
 public static class GClosureHandleExtensions
 {
-	public static GClosureHandle AddFinalizeNotifier(this GClosureHandle closure, IntPtr notify_data, GClosureNotify notify_func)
+	public static T AddFinalizeNotifier<T>(this T closure, IntPtr notify_data, GClosureNotify notify_func) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_add_finalize_notifier(closure, notify_data, notify_func);
 		return closure;
 	}
 
-	public static GClosureHandle AddInvalidateNotifier(this GClosureHandle closure, IntPtr notify_data, GClosureNotify notify_func)
+	public static T AddInvalidateNotifier<T>(this T closure, IntPtr notify_data, GClosureNotify notify_func) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_add_invalidate_notifier(closure, notify_data, notify_func);
 		return closure;
 	}
 
-	public static GClosureHandle AddMarshalGuards(this GClosureHandle closure, IntPtr pre_marshal_data, GClosureNotify pre_marshal_notify, IntPtr post_marshal_data, GClosureNotify post_marshal_notify)
+	public static T AddMarshalGuards<T>(this T closure, IntPtr pre_marshal_data, GClosureNotify pre_marshal_notify, IntPtr post_marshal_data, GClosureNotify post_marshal_notify) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_add_marshal_guards(closure, pre_marshal_data, pre_marshal_notify, post_marshal_data, post_marshal_notify);
 		return closure;
 	}
 
-	public static GClosureHandle Invalidate(this GClosureHandle closure)
+	public static T Invalidate<T>(this T closure) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_invalidate(closure);
 		return closure;
 	}
 
-	public static GClosureHandle Invoke(this GClosureHandle closure, out GValue return_value, uint n_param_values, GValue[] param_values, IntPtr invocation_hint)
+	public static T Invoke<T>(this T closure, out GValue return_value, uint n_param_values, GValue[] param_values, IntPtr invocation_hint) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_invoke(closure, out return_value, n_param_values, param_values, invocation_hint);
 		return closure;
@@ -52,37 +52,37 @@ public static class GClosureHandleExtensions
 		return GClosureExterns.g_closure_ref(closure);
 	}
 
-	public static GClosureHandle RemoveFinalizeNotifier(this GClosureHandle closure, IntPtr notify_data, GClosureNotify notify_func)
+	public static T RemoveFinalizeNotifier<T>(this T closure, IntPtr notify_data, GClosureNotify notify_func) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_remove_finalize_notifier(closure, notify_data, notify_func);
 		return closure;
 	}
 
-	public static GClosureHandle RemoveInvalidateNotifier(this GClosureHandle closure, IntPtr notify_data, GClosureNotify notify_func)
+	public static T RemoveInvalidateNotifier<T>(this T closure, IntPtr notify_data, GClosureNotify notify_func) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_remove_invalidate_notifier(closure, notify_data, notify_func);
 		return closure;
 	}
 
-	public static GClosureHandle SetMarshal(this GClosureHandle closure, GClosureMarshal marshal)
+	public static T SetMarshal<T>(this T closure, GClosureMarshal marshal) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_set_marshal(closure, marshal);
 		return closure;
 	}
 
-	public static GClosureHandle SetMetaMarshal(this GClosureHandle closure, IntPtr marshal_data, GClosureMarshal meta_marshal)
+	public static T SetMetaMarshal<T>(this T closure, IntPtr marshal_data, GClosureMarshal meta_marshal) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_set_meta_marshal(closure, marshal_data, meta_marshal);
 		return closure;
 	}
 
-	public static GClosureHandle Sink(this GClosureHandle closure)
+	public static T Sink<T>(this T closure) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_sink(closure);
 		return closure;
 	}
 
-	public static GClosureHandle Unref(this GClosureHandle closure)
+	public static T Unref<T>(this T closure) where T : GClosureHandle
 	{
 		GClosureExterns.g_closure_unref(closure);
 		return closure;

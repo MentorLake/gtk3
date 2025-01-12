@@ -7,13 +7,13 @@ public class GParamSpecPoolHandle : BaseSafeHandle
 
 public static class GParamSpecPoolHandleExtensions
 {
-	public static GParamSpecPoolHandle Free(this GParamSpecPoolHandle pool)
+	public static T Free<T>(this T pool) where T : GParamSpecPoolHandle
 	{
 		GParamSpecPoolExterns.g_param_spec_pool_free(pool);
 		return pool;
 	}
 
-	public static GParamSpecPoolHandle Insert(this GParamSpecPoolHandle pool, GParamSpecHandle pspec, GType owner_type)
+	public static T Insert<T>(this T pool, GParamSpecHandle pspec, GType owner_type) where T : GParamSpecPoolHandle
 	{
 		GParamSpecPoolExterns.g_param_spec_pool_insert(pool, pspec, owner_type);
 		return pool;
@@ -34,7 +34,7 @@ public static class GParamSpecPoolHandleExtensions
 		return GParamSpecPoolExterns.g_param_spec_pool_lookup(pool, param_name, owner_type, walk_ancestors);
 	}
 
-	public static GParamSpecPoolHandle Remove(this GParamSpecPoolHandle pool, GParamSpecHandle pspec)
+	public static T Remove<T>(this T pool, GParamSpecHandle pspec) where T : GParamSpecPoolHandle
 	{
 		GParamSpecPoolExterns.g_param_spec_pool_remove(pool, pspec);
 		return pool;

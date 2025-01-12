@@ -155,19 +155,19 @@ public static class GAppLaunchContextHandleExtensions
 		return GAppLaunchContextExterns.g_app_launch_context_get_startup_notify_id(context, info, files);
 	}
 
-	public static GAppLaunchContextHandle LaunchFailed(this GAppLaunchContextHandle context, string startup_notify_id)
+	public static T LaunchFailed<T>(this T context, string startup_notify_id) where T : GAppLaunchContextHandle
 	{
 		GAppLaunchContextExterns.g_app_launch_context_launch_failed(context, startup_notify_id);
 		return context;
 	}
 
-	public static GAppLaunchContextHandle Setenv(this GAppLaunchContextHandle context, string variable, string value)
+	public static T Setenv<T>(this T context, string variable, string value) where T : GAppLaunchContextHandle
 	{
 		GAppLaunchContextExterns.g_app_launch_context_setenv(context, variable, value);
 		return context;
 	}
 
-	public static GAppLaunchContextHandle Unsetenv(this GAppLaunchContextHandle context, string variable)
+	public static T Unsetenv<T>(this T context, string variable) where T : GAppLaunchContextHandle
 	{
 		GAppLaunchContextExterns.g_app_launch_context_unsetenv(context, variable);
 		return context;

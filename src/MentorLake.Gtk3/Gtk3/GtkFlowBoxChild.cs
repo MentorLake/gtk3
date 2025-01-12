@@ -61,7 +61,7 @@ public delegate void activate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkFlowBoxChildHandleExtensions
 {
-	public static GtkFlowBoxChildHandle Changed(this GtkFlowBoxChildHandle child)
+	public static T Changed<T>(this T child) where T : GtkFlowBoxChildHandle
 	{
 		GtkFlowBoxChildExterns.gtk_flow_box_child_changed(child);
 		return child;

@@ -115,13 +115,13 @@ public static class GtkAccelGroupHandleExtensions
 		return GtkAccelGroupExterns.gtk_accel_group_activate(accel_group, accel_quark, acceleratable, accel_key, accel_mods);
 	}
 
-	public static GtkAccelGroupHandle Connect(this GtkAccelGroupHandle accel_group, uint accel_key, GdkModifierType accel_mods, GtkAccelFlags accel_flags, GClosureHandle closure)
+	public static T Connect<T>(this T accel_group, uint accel_key, GdkModifierType accel_mods, GtkAccelFlags accel_flags, GClosureHandle closure) where T : GtkAccelGroupHandle
 	{
 		GtkAccelGroupExterns.gtk_accel_group_connect(accel_group, accel_key, accel_mods, accel_flags, closure);
 		return accel_group;
 	}
 
-	public static GtkAccelGroupHandle ConnectByPath(this GtkAccelGroupHandle accel_group, string accel_path, GClosureHandle closure)
+	public static T ConnectByPath<T>(this T accel_group, string accel_path, GClosureHandle closure) where T : GtkAccelGroupHandle
 	{
 		GtkAccelGroupExterns.gtk_accel_group_connect_by_path(accel_group, accel_path, closure);
 		return accel_group;
@@ -152,7 +152,7 @@ public static class GtkAccelGroupHandleExtensions
 		return GtkAccelGroupExterns.gtk_accel_group_get_modifier_mask(accel_group);
 	}
 
-	public static GtkAccelGroupHandle Lock(this GtkAccelGroupHandle accel_group)
+	public static T Lock<T>(this T accel_group) where T : GtkAccelGroupHandle
 	{
 		GtkAccelGroupExterns.gtk_accel_group_lock(accel_group);
 		return accel_group;
@@ -163,7 +163,7 @@ public static class GtkAccelGroupHandleExtensions
 		return GtkAccelGroupExterns.gtk_accel_group_query(accel_group, accel_key, accel_mods, out n_entries);
 	}
 
-	public static GtkAccelGroupHandle Unlock(this GtkAccelGroupHandle accel_group)
+	public static T Unlock<T>(this T accel_group) where T : GtkAccelGroupHandle
 	{
 		GtkAccelGroupExterns.gtk_accel_group_unlock(accel_group);
 		return accel_group;

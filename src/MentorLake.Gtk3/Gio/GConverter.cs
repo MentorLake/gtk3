@@ -15,7 +15,7 @@ public static class GConverterHandleExtensions
 		return GConverterExterns.g_converter_convert(converter, inbuf, inbuf_size, outbuf, outbuf_size, flags, out bytes_read, out bytes_written, out error);
 	}
 
-	public static GConverterHandle Reset(this GConverterHandle converter)
+	public static T Reset<T>(this T converter) where T : GConverterHandle
 	{
 		GConverterExterns.g_converter_reset(converter);
 		return converter;

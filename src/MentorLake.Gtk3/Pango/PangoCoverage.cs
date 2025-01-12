@@ -26,7 +26,7 @@ public static class PangoCoverageHandleExtensions
 		return PangoCoverageExterns.pango_coverage_get(coverage, index_);
 	}
 
-	public static PangoCoverageHandle Max(this PangoCoverageHandle coverage, PangoCoverageHandle other)
+	public static T Max<T>(this T coverage, PangoCoverageHandle other) where T : PangoCoverageHandle
 	{
 		PangoCoverageExterns.pango_coverage_max(coverage, other);
 		return coverage;
@@ -37,19 +37,19 @@ public static class PangoCoverageHandleExtensions
 		return PangoCoverageExterns.pango_coverage_ref(coverage);
 	}
 
-	public static PangoCoverageHandle Set(this PangoCoverageHandle coverage, int index_, PangoCoverageLevel level)
+	public static T Set<T>(this T coverage, int index_, PangoCoverageLevel level) where T : PangoCoverageHandle
 	{
 		PangoCoverageExterns.pango_coverage_set(coverage, index_, level);
 		return coverage;
 	}
 
-	public static PangoCoverageHandle ToBytes(this PangoCoverageHandle coverage, out string bytes, out int n_bytes)
+	public static T ToBytes<T>(this T coverage, out string bytes, out int n_bytes) where T : PangoCoverageHandle
 	{
 		PangoCoverageExterns.pango_coverage_to_bytes(coverage, out bytes, out n_bytes);
 		return coverage;
 	}
 
-	public static PangoCoverageHandle Unref(this PangoCoverageHandle coverage)
+	public static T Unref<T>(this T coverage) where T : PangoCoverageHandle
 	{
 		PangoCoverageExterns.pango_coverage_unref(coverage);
 		return coverage;

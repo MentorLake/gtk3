@@ -71,7 +71,7 @@ public static class GtkToggleToolButtonHandleExtensions
 		return GtkToggleToolButtonExterns.gtk_toggle_tool_button_get_active(button);
 	}
 
-	public static GtkToggleToolButtonHandle SetActive(this GtkToggleToolButtonHandle button, bool is_active)
+	public static T SetActive<T>(this T button, bool is_active) where T : GtkToggleToolButtonHandle
 	{
 		GtkToggleToolButtonExterns.gtk_toggle_tool_button_set_active(button, is_active);
 		return button;

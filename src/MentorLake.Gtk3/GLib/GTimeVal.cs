@@ -7,7 +7,7 @@ public class GTimeValHandle : BaseSafeHandle
 
 public static class GTimeValHandleExtensions
 {
-	public static GTimeValHandle Add(this GTimeValHandle time_, long microseconds)
+	public static T Add<T>(this T time_, long microseconds) where T : GTimeValHandle
 	{
 		GTimeValExterns.g_time_val_add(time_, microseconds);
 		return time_;

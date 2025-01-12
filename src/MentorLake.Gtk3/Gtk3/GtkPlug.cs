@@ -66,13 +66,13 @@ public delegate void embedded([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 
 public static class GtkPlugHandleExtensions
 {
-	public static GtkPlugHandle Construct(this GtkPlugHandle plug, IntPtr socket_id)
+	public static T Construct<T>(this T plug, IntPtr socket_id) where T : GtkPlugHandle
 	{
 		GtkPlugExterns.gtk_plug_construct(plug, socket_id);
 		return plug;
 	}
 
-	public static GtkPlugHandle ConstructForDisplay(this GtkPlugHandle plug, GdkDisplayHandle display, IntPtr socket_id)
+	public static T ConstructForDisplay<T>(this T plug, GdkDisplayHandle display, IntPtr socket_id) where T : GtkPlugHandle
 	{
 		GtkPlugExterns.gtk_plug_construct_for_display(plug, display, socket_id);
 		return plug;

@@ -88,7 +88,7 @@ public static class GtkCssProviderHandleExtensions
 		return GtkCssProviderExterns.gtk_css_provider_load_from_path(css_provider, path, out error);
 	}
 
-	public static GtkCssProviderHandle LoadFromResource(this GtkCssProviderHandle css_provider, string resource_path)
+	public static T LoadFromResource<T>(this T css_provider, string resource_path) where T : GtkCssProviderHandle
 	{
 		GtkCssProviderExterns.gtk_css_provider_load_from_resource(css_provider, resource_path);
 		return css_provider;

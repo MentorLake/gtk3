@@ -27,7 +27,7 @@ public static class GErrorHandleExtensions
 		return GErrorExterns.g_error_copy(error);
 	}
 
-	public static GErrorHandle Free(this GErrorHandle error)
+	public static T Free<T>(this T error) where T : GErrorHandle
 	{
 		GErrorExterns.g_error_free(error);
 		return error;

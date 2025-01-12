@@ -36,7 +36,7 @@ public static class PangoFontHandleExtensions
 		return PangoFontExterns.pango_font_get_face(font);
 	}
 
-	public static PangoFontHandle GetFeatures(this PangoFontHandle font, out hb_feature_t features, uint len, ref uint num_features)
+	public static T GetFeatures<T>(this T font, out hb_feature_t features, uint len, ref uint num_features) where T : PangoFontHandle
 	{
 		PangoFontExterns.pango_font_get_features(font, out features, len, ref num_features);
 		return font;
@@ -47,7 +47,7 @@ public static class PangoFontHandleExtensions
 		return PangoFontExterns.pango_font_get_font_map(font);
 	}
 
-	public static PangoFontHandle GetGlyphExtents(this PangoFontHandle font, PangoGlyph glyph, out PangoRectangle ink_rect, out PangoRectangle logical_rect)
+	public static T GetGlyphExtents<T>(this T font, PangoGlyph glyph, out PangoRectangle ink_rect, out PangoRectangle logical_rect) where T : PangoFontHandle
 	{
 		PangoFontExterns.pango_font_get_glyph_extents(font, glyph, out ink_rect, out logical_rect);
 		return font;

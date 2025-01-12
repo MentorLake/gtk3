@@ -144,7 +144,7 @@ public static class GtkTextTagTableHandleExtensions
 		return GtkTextTagTableExterns.gtk_text_tag_table_add(table, tag);
 	}
 
-	public static GtkTextTagTableHandle Foreach(this GtkTextTagTableHandle table, GtkTextTagTableForeach func, IntPtr data)
+	public static T Foreach<T>(this T table, GtkTextTagTableForeach func, IntPtr data) where T : GtkTextTagTableHandle
 	{
 		GtkTextTagTableExterns.gtk_text_tag_table_foreach(table, func, data);
 		return table;
@@ -160,7 +160,7 @@ public static class GtkTextTagTableHandleExtensions
 		return GtkTextTagTableExterns.gtk_text_tag_table_lookup(table, name);
 	}
 
-	public static GtkTextTagTableHandle Remove(this GtkTextTagTableHandle table, GtkTextTagHandle tag)
+	public static T Remove<T>(this T table, GtkTextTagHandle tag) where T : GtkTextTagTableHandle
 	{
 		GtkTextTagTableExterns.gtk_text_tag_table_remove(table, tag);
 		return table;

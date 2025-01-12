@@ -11,91 +11,91 @@ public class GMenuHandle : GMenuModelHandle
 
 public static class GMenuHandleExtensions
 {
-	public static GMenuHandle Append(this GMenuHandle menu, string label, string detailed_action)
+	public static T Append<T>(this T menu, string label, string detailed_action) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_append(menu, label, detailed_action);
 		return menu;
 	}
 
-	public static GMenuHandle AppendItem(this GMenuHandle menu, GMenuItemHandle item)
+	public static T AppendItem<T>(this T menu, GMenuItemHandle item) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_append_item(menu, item);
 		return menu;
 	}
 
-	public static GMenuHandle AppendSection(this GMenuHandle menu, string label, GMenuModelHandle section)
+	public static T AppendSection<T>(this T menu, string label, GMenuModelHandle section) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_append_section(menu, label, section);
 		return menu;
 	}
 
-	public static GMenuHandle AppendSubmenu(this GMenuHandle menu, string label, GMenuModelHandle submenu)
+	public static T AppendSubmenu<T>(this T menu, string label, GMenuModelHandle submenu) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_append_submenu(menu, label, submenu);
 		return menu;
 	}
 
-	public static GMenuHandle Freeze(this GMenuHandle menu)
+	public static T Freeze<T>(this T menu) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_freeze(menu);
 		return menu;
 	}
 
-	public static GMenuHandle Insert(this GMenuHandle menu, int position, string label, string detailed_action)
+	public static T Insert<T>(this T menu, int position, string label, string detailed_action) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_insert(menu, position, label, detailed_action);
 		return menu;
 	}
 
-	public static GMenuHandle InsertItem(this GMenuHandle menu, int position, GMenuItemHandle item)
+	public static T InsertItem<T>(this T menu, int position, GMenuItemHandle item) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_insert_item(menu, position, item);
 		return menu;
 	}
 
-	public static GMenuHandle InsertSection(this GMenuHandle menu, int position, string label, GMenuModelHandle section)
+	public static T InsertSection<T>(this T menu, int position, string label, GMenuModelHandle section) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_insert_section(menu, position, label, section);
 		return menu;
 	}
 
-	public static GMenuHandle InsertSubmenu(this GMenuHandle menu, int position, string label, GMenuModelHandle submenu)
+	public static T InsertSubmenu<T>(this T menu, int position, string label, GMenuModelHandle submenu) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_insert_submenu(menu, position, label, submenu);
 		return menu;
 	}
 
-	public static GMenuHandle Prepend(this GMenuHandle menu, string label, string detailed_action)
+	public static T Prepend<T>(this T menu, string label, string detailed_action) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_prepend(menu, label, detailed_action);
 		return menu;
 	}
 
-	public static GMenuHandle PrependItem(this GMenuHandle menu, GMenuItemHandle item)
+	public static T PrependItem<T>(this T menu, GMenuItemHandle item) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_prepend_item(menu, item);
 		return menu;
 	}
 
-	public static GMenuHandle PrependSection(this GMenuHandle menu, string label, GMenuModelHandle section)
+	public static T PrependSection<T>(this T menu, string label, GMenuModelHandle section) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_prepend_section(menu, label, section);
 		return menu;
 	}
 
-	public static GMenuHandle PrependSubmenu(this GMenuHandle menu, string label, GMenuModelHandle submenu)
+	public static T PrependSubmenu<T>(this T menu, string label, GMenuModelHandle submenu) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_prepend_submenu(menu, label, submenu);
 		return menu;
 	}
 
-	public static GMenuHandle Remove(this GMenuHandle menu, int position)
+	public static T Remove<T>(this T menu, int position) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_remove(menu, position);
 		return menu;
 	}
 
-	public static GMenuHandle RemoveAll(this GMenuHandle menu)
+	public static T RemoveAll<T>(this T menu) where T : GMenuHandle
 	{
 		GMenuExterns.g_menu_remove_all(menu);
 		return menu;

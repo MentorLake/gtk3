@@ -7,19 +7,19 @@ public class GDBusInterfaceInfoHandle : BaseSafeHandle
 
 public static class GDBusInterfaceInfoHandleExtensions
 {
-	public static GDBusInterfaceInfoHandle GDbusInterfaceInfoCacheBuild(this GDBusInterfaceInfoHandle info)
+	public static T GDbusInterfaceInfoCacheBuild<T>(this T info) where T : GDBusInterfaceInfoHandle
 	{
 		GDBusInterfaceInfoExterns.g_dbus_interface_info_cache_build(info);
 		return info;
 	}
 
-	public static GDBusInterfaceInfoHandle GDbusInterfaceInfoCacheRelease(this GDBusInterfaceInfoHandle info)
+	public static T GDbusInterfaceInfoCacheRelease<T>(this T info) where T : GDBusInterfaceInfoHandle
 	{
 		GDBusInterfaceInfoExterns.g_dbus_interface_info_cache_release(info);
 		return info;
 	}
 
-	public static GDBusInterfaceInfoHandle GDbusInterfaceInfoGenerateXml(this GDBusInterfaceInfoHandle info, uint indent, GStringHandle string_builder)
+	public static T GDbusInterfaceInfoGenerateXml<T>(this T info, uint indent, GStringHandle string_builder) where T : GDBusInterfaceInfoHandle
 	{
 		GDBusInterfaceInfoExterns.g_dbus_interface_info_generate_xml(info, indent, string_builder);
 		return info;
@@ -45,7 +45,7 @@ public static class GDBusInterfaceInfoHandleExtensions
 		return GDBusInterfaceInfoExterns.g_dbus_interface_info_ref(info);
 	}
 
-	public static GDBusInterfaceInfoHandle GDbusInterfaceInfoUnref(this GDBusInterfaceInfoHandle info)
+	public static T GDbusInterfaceInfoUnref<T>(this T info) where T : GDBusInterfaceInfoHandle
 	{
 		GDBusInterfaceInfoExterns.g_dbus_interface_info_unref(info);
 		return info;

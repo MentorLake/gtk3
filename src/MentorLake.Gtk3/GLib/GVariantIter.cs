@@ -12,7 +12,7 @@ public static class GVariantIterHandleExtensions
 		return GVariantIterExterns.g_variant_iter_copy(iter);
 	}
 
-	public static GVariantIterHandle Free(this GVariantIterHandle iter)
+	public static T Free<T>(this T iter) where T : GVariantIterHandle
 	{
 		GVariantIterExterns.g_variant_iter_free(iter);
 		return iter;

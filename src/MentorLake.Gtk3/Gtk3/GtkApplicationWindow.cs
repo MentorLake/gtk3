@@ -26,13 +26,13 @@ public static class GtkApplicationWindowHandleExtensions
 		return GtkApplicationWindowExterns.gtk_application_window_get_show_menubar(window);
 	}
 
-	public static GtkApplicationWindowHandle SetHelpOverlay(this GtkApplicationWindowHandle window, GtkShortcutsWindowHandle help_overlay)
+	public static T SetHelpOverlay<T>(this T window, GtkShortcutsWindowHandle help_overlay) where T : GtkApplicationWindowHandle
 	{
 		GtkApplicationWindowExterns.gtk_application_window_set_help_overlay(window, help_overlay);
 		return window;
 	}
 
-	public static GtkApplicationWindowHandle SetShowMenubar(this GtkApplicationWindowHandle window, bool show_menubar)
+	public static T SetShowMenubar<T>(this T window, bool show_menubar) where T : GtkApplicationWindowHandle
 	{
 		GtkApplicationWindowExterns.gtk_application_window_set_show_menubar(window, show_menubar);
 		return window;

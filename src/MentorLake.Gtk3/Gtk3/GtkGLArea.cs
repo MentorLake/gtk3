@@ -140,7 +140,7 @@ public delegate void resize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GtkGLAreaHandleExtensions
 {
-	public static GtkGLAreaHandle GtkGlAreaAttachBuffers(this GtkGLAreaHandle area)
+	public static T GtkGlAreaAttachBuffers<T>(this T area) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_attach_buffers(area);
 		return area;
@@ -176,7 +176,7 @@ public static class GtkGLAreaHandleExtensions
 		return GtkGLAreaExterns.gtk_gl_area_get_has_stencil_buffer(area);
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaGetRequiredVersion(this GtkGLAreaHandle area, out int major, out int minor)
+	public static T GtkGlAreaGetRequiredVersion<T>(this T area, out int major, out int minor) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_get_required_version(area, out major, out minor);
 		return area;
@@ -187,55 +187,55 @@ public static class GtkGLAreaHandleExtensions
 		return GtkGLAreaExterns.gtk_gl_area_get_use_es(area);
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaMakeCurrent(this GtkGLAreaHandle area)
+	public static T GtkGlAreaMakeCurrent<T>(this T area) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_make_current(area);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaQueueRender(this GtkGLAreaHandle area)
+	public static T GtkGlAreaQueueRender<T>(this T area) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_queue_render(area);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetAutoRender(this GtkGLAreaHandle area, bool auto_render)
+	public static T GtkGlAreaSetAutoRender<T>(this T area, bool auto_render) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_auto_render(area, auto_render);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetError(this GtkGLAreaHandle area, GErrorHandle error)
+	public static T GtkGlAreaSetError<T>(this T area, GErrorHandle error) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_error(area, error);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetHasAlpha(this GtkGLAreaHandle area, bool has_alpha)
+	public static T GtkGlAreaSetHasAlpha<T>(this T area, bool has_alpha) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_has_alpha(area, has_alpha);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetHasDepthBuffer(this GtkGLAreaHandle area, bool has_depth_buffer)
+	public static T GtkGlAreaSetHasDepthBuffer<T>(this T area, bool has_depth_buffer) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_has_depth_buffer(area, has_depth_buffer);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetHasStencilBuffer(this GtkGLAreaHandle area, bool has_stencil_buffer)
+	public static T GtkGlAreaSetHasStencilBuffer<T>(this T area, bool has_stencil_buffer) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_has_stencil_buffer(area, has_stencil_buffer);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetRequiredVersion(this GtkGLAreaHandle area, int major, int minor)
+	public static T GtkGlAreaSetRequiredVersion<T>(this T area, int major, int minor) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_required_version(area, major, minor);
 		return area;
 	}
 
-	public static GtkGLAreaHandle GtkGlAreaSetUseEs(this GtkGLAreaHandle area, bool use_es)
+	public static T GtkGlAreaSetUseEs<T>(this T area, bool use_es) where T : GtkGLAreaHandle
 	{
 		GtkGLAreaExterns.gtk_gl_area_set_use_es(area, use_es);
 		return area;

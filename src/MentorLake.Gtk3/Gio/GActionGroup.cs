@@ -10,37 +10,37 @@ internal class GActionGroupHandleImpl : BaseSafeHandle, GActionGroupHandle
 
 public static class GActionGroupHandleExtensions
 {
-	public static GActionGroupHandle ActionAdded(this GActionGroupHandle action_group, string action_name)
+	public static T ActionAdded<T>(this T action_group, string action_name) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_action_added(action_group, action_name);
 		return action_group;
 	}
 
-	public static GActionGroupHandle ActionEnabledChanged(this GActionGroupHandle action_group, string action_name, bool enabled)
+	public static T ActionEnabledChanged<T>(this T action_group, string action_name, bool enabled) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_action_enabled_changed(action_group, action_name, enabled);
 		return action_group;
 	}
 
-	public static GActionGroupHandle ActionRemoved(this GActionGroupHandle action_group, string action_name)
+	public static T ActionRemoved<T>(this T action_group, string action_name) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_action_removed(action_group, action_name);
 		return action_group;
 	}
 
-	public static GActionGroupHandle ActionStateChanged(this GActionGroupHandle action_group, string action_name, GVariantHandle state)
+	public static T ActionStateChanged<T>(this T action_group, string action_name, GVariantHandle state) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_action_state_changed(action_group, action_name, state);
 		return action_group;
 	}
 
-	public static GActionGroupHandle ActivateAction(this GActionGroupHandle action_group, string action_name, GVariantHandle parameter)
+	public static T ActivateAction<T>(this T action_group, string action_name, GVariantHandle parameter) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_activate_action(action_group, action_name, parameter);
 		return action_group;
 	}
 
-	public static GActionGroupHandle ChangeActionState(this GActionGroupHandle action_group, string action_name, GVariantHandle value)
+	public static T ChangeActionState<T>(this T action_group, string action_name, GVariantHandle value) where T : GActionGroupHandle
 	{
 		GActionGroupExterns.g_action_group_change_action_state(action_group, action_name, value);
 		return action_group;

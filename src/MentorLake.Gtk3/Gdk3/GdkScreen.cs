@@ -190,7 +190,7 @@ public static class GdkScreenHandleExtensions
 		return GdkScreenExterns.gdk_screen_get_monitor_at_window(screen, window);
 	}
 
-	public static GdkScreenHandle GetMonitorGeometry(this GdkScreenHandle screen, int monitor_num, out GdkRectangle dest)
+	public static T GetMonitorGeometry<T>(this T screen, int monitor_num, out GdkRectangle dest) where T : GdkScreenHandle
 	{
 		GdkScreenExterns.gdk_screen_get_monitor_geometry(screen, monitor_num, out dest);
 		return screen;
@@ -216,7 +216,7 @@ public static class GdkScreenHandleExtensions
 		return GdkScreenExterns.gdk_screen_get_monitor_width_mm(screen, monitor_num);
 	}
 
-	public static GdkScreenHandle GetMonitorWorkarea(this GdkScreenHandle screen, int monitor_num, out GdkRectangle dest)
+	public static T GetMonitorWorkarea<T>(this T screen, int monitor_num, out GdkRectangle dest) where T : GdkScreenHandle
 	{
 		GdkScreenExterns.gdk_screen_get_monitor_workarea(screen, monitor_num, out dest);
 		return screen;
@@ -297,13 +297,13 @@ public static class GdkScreenHandleExtensions
 		return GdkScreenExterns.gdk_screen_make_display_name(screen);
 	}
 
-	public static GdkScreenHandle SetFontOptions(this GdkScreenHandle screen, cairo_font_options_tHandle options)
+	public static T SetFontOptions<T>(this T screen, cairo_font_options_tHandle options) where T : GdkScreenHandle
 	{
 		GdkScreenExterns.gdk_screen_set_font_options(screen, options);
 		return screen;
 	}
 
-	public static GdkScreenHandle SetResolution(this GdkScreenHandle screen, double dpi)
+	public static T SetResolution<T>(this T screen, double dpi) where T : GdkScreenHandle
 	{
 		GdkScreenExterns.gdk_screen_set_resolution(screen, dpi);
 		return screen;

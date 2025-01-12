@@ -17,7 +17,7 @@ public static class GMarkupParseContextHandleExtensions
 		return GMarkupParseContextExterns.g_markup_parse_context_end_parse(context, out error);
 	}
 
-	public static GMarkupParseContextHandle Free(this GMarkupParseContextHandle context)
+	public static T Free<T>(this T context) where T : GMarkupParseContextHandle
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_free(context);
 		return context;
@@ -33,7 +33,7 @@ public static class GMarkupParseContextHandleExtensions
 		return GMarkupParseContextExterns.g_markup_parse_context_get_element_stack(context);
 	}
 
-	public static GMarkupParseContextHandle GetPosition(this GMarkupParseContextHandle context, out int line_number, out int char_number)
+	public static T GetPosition<T>(this T context, out int line_number, out int char_number) where T : GMarkupParseContextHandle
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_get_position(context, out line_number, out char_number);
 		return context;
@@ -54,7 +54,7 @@ public static class GMarkupParseContextHandleExtensions
 		return GMarkupParseContextExterns.g_markup_parse_context_pop(context);
 	}
 
-	public static GMarkupParseContextHandle Push(this GMarkupParseContextHandle context, GMarkupParserHandle parser, IntPtr user_data)
+	public static T Push<T>(this T context, GMarkupParserHandle parser, IntPtr user_data) where T : GMarkupParseContextHandle
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_push(context, parser, user_data);
 		return context;
@@ -65,7 +65,7 @@ public static class GMarkupParseContextHandleExtensions
 		return GMarkupParseContextExterns.g_markup_parse_context_ref(context);
 	}
 
-	public static GMarkupParseContextHandle Unref(this GMarkupParseContextHandle context)
+	public static T Unref<T>(this T context) where T : GMarkupParseContextHandle
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_unref(context);
 		return context;

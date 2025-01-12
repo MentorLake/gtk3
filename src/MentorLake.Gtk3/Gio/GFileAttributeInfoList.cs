@@ -12,7 +12,7 @@ public class GFileAttributeInfoListHandle : BaseSafeHandle
 
 public static class GFileAttributeInfoListHandleExtensions
 {
-	public static GFileAttributeInfoListHandle Add(this GFileAttributeInfoListHandle list, string name, GFileAttributeType type, GFileAttributeInfoFlags flags)
+	public static T Add<T>(this T list, string name, GFileAttributeType type, GFileAttributeInfoFlags flags) where T : GFileAttributeInfoListHandle
 	{
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_add(list, name, type, flags);
 		return list;
@@ -33,7 +33,7 @@ public static class GFileAttributeInfoListHandleExtensions
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_ref(list);
 	}
 
-	public static GFileAttributeInfoListHandle Unref(this GFileAttributeInfoListHandle list)
+	public static T Unref<T>(this T list) where T : GFileAttributeInfoListHandle
 	{
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_unref(list);
 		return list;

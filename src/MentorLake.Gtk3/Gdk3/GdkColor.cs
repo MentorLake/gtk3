@@ -17,7 +17,7 @@ public static class GdkColorHandleExtensions
 		return GdkColorExterns.gdk_color_equal(colora, colorb);
 	}
 
-	public static GdkColorHandle Free(this GdkColorHandle color)
+	public static T Free<T>(this T color) where T : GdkColorHandle
 	{
 		GdkColorExterns.gdk_color_free(color);
 		return color;

@@ -101,67 +101,67 @@ public static class GtkTreeSelectionHandleExtensions
 		return GtkTreeSelectionExterns.gtk_tree_selection_path_is_selected(selection, path);
 	}
 
-	public static GtkTreeSelectionHandle SelectAll(this GtkTreeSelectionHandle selection)
+	public static T SelectAll<T>(this T selection) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_select_all(selection);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SelectIter(this GtkTreeSelectionHandle selection, GtkTreeIterHandle iter)
+	public static T SelectIter<T>(this T selection, GtkTreeIterHandle iter) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_select_iter(selection, iter);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SelectPath(this GtkTreeSelectionHandle selection, GtkTreePathHandle path)
+	public static T SelectPath<T>(this T selection, GtkTreePathHandle path) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_select_path(selection, path);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SelectRange(this GtkTreeSelectionHandle selection, GtkTreePathHandle start_path, GtkTreePathHandle end_path)
+	public static T SelectRange<T>(this T selection, GtkTreePathHandle start_path, GtkTreePathHandle end_path) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_select_range(selection, start_path, end_path);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SelectedForeach(this GtkTreeSelectionHandle selection, GtkTreeSelectionForeachFunc func, IntPtr data)
+	public static T SelectedForeach<T>(this T selection, GtkTreeSelectionForeachFunc func, IntPtr data) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_selected_foreach(selection, func, data);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SetMode(this GtkTreeSelectionHandle selection, GtkSelectionMode type)
+	public static T SetMode<T>(this T selection, GtkSelectionMode type) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_set_mode(selection, type);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle SetSelectFunction(this GtkTreeSelectionHandle selection, GtkTreeSelectionFunc func, IntPtr data, GDestroyNotify destroy)
+	public static T SetSelectFunction<T>(this T selection, GtkTreeSelectionFunc func, IntPtr data, GDestroyNotify destroy) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_set_select_function(selection, func, data, destroy);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle UnselectAll(this GtkTreeSelectionHandle selection)
+	public static T UnselectAll<T>(this T selection) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_unselect_all(selection);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle UnselectIter(this GtkTreeSelectionHandle selection, GtkTreeIterHandle iter)
+	public static T UnselectIter<T>(this T selection, GtkTreeIterHandle iter) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_unselect_iter(selection, iter);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle UnselectPath(this GtkTreeSelectionHandle selection, GtkTreePathHandle path)
+	public static T UnselectPath<T>(this T selection, GtkTreePathHandle path) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_unselect_path(selection, path);
 		return selection;
 	}
 
-	public static GtkTreeSelectionHandle UnselectRange(this GtkTreeSelectionHandle selection, GtkTreePathHandle start_path, GtkTreePathHandle end_path)
+	public static T UnselectRange<T>(this T selection, GtkTreePathHandle start_path, GtkTreePathHandle end_path) where T : GtkTreeSelectionHandle
 	{
 		GtkTreeSelectionExterns.gtk_tree_selection_unselect_range(selection, start_path, end_path);
 		return selection;

@@ -63,7 +63,7 @@ public delegate bool authorize([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GDebugControllerDBusHandleExtensions
 {
-	public static GDebugControllerDBusHandle GDebugControllerDbusStop(this GDebugControllerDBusHandle self)
+	public static T GDebugControllerDbusStop<T>(this T self) where T : GDebugControllerDBusHandle
 	{
 		GDebugControllerDBusExterns.g_debug_controller_dbus_stop(self);
 		return self;

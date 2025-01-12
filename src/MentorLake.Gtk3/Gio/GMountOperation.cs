@@ -304,61 +304,61 @@ public static class GMountOperationHandleExtensions
 		return GMountOperationExterns.g_mount_operation_get_username(op);
 	}
 
-	public static GMountOperationHandle Reply(this GMountOperationHandle op, GMountOperationResult result)
+	public static T Reply<T>(this T op, GMountOperationResult result) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_reply(op, result);
 		return op;
 	}
 
-	public static GMountOperationHandle SetAnonymous(this GMountOperationHandle op, bool anonymous)
+	public static T SetAnonymous<T>(this T op, bool anonymous) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_anonymous(op, anonymous);
 		return op;
 	}
 
-	public static GMountOperationHandle SetChoice(this GMountOperationHandle op, int choice)
+	public static T SetChoice<T>(this T op, int choice) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_choice(op, choice);
 		return op;
 	}
 
-	public static GMountOperationHandle SetDomain(this GMountOperationHandle op, string domain)
+	public static T SetDomain<T>(this T op, string domain) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_domain(op, domain);
 		return op;
 	}
 
-	public static GMountOperationHandle SetIsTcryptHiddenVolume(this GMountOperationHandle op, bool hidden_volume)
+	public static T SetIsTcryptHiddenVolume<T>(this T op, bool hidden_volume) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_is_tcrypt_hidden_volume(op, hidden_volume);
 		return op;
 	}
 
-	public static GMountOperationHandle SetIsTcryptSystemVolume(this GMountOperationHandle op, bool system_volume)
+	public static T SetIsTcryptSystemVolume<T>(this T op, bool system_volume) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_is_tcrypt_system_volume(op, system_volume);
 		return op;
 	}
 
-	public static GMountOperationHandle SetPassword(this GMountOperationHandle op, string password)
+	public static T SetPassword<T>(this T op, string password) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_password(op, password);
 		return op;
 	}
 
-	public static GMountOperationHandle SetPasswordSave(this GMountOperationHandle op, GPasswordSave save)
+	public static T SetPasswordSave<T>(this T op, GPasswordSave save) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_password_save(op, save);
 		return op;
 	}
 
-	public static GMountOperationHandle SetPim(this GMountOperationHandle op, uint pim)
+	public static T SetPim<T>(this T op, uint pim) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_pim(op, pim);
 		return op;
 	}
 
-	public static GMountOperationHandle SetUsername(this GMountOperationHandle op, string username)
+	public static T SetUsername<T>(this T op, string username) where T : GMountOperationHandle
 	{
 		GMountOperationExterns.g_mount_operation_set_username(op, username);
 		return op;

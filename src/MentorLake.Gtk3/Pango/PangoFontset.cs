@@ -6,7 +6,7 @@ public class PangoFontsetHandle : GObjectHandle
 
 public static class PangoFontsetHandleExtensions
 {
-	public static PangoFontsetHandle Foreach(this PangoFontsetHandle fontset, PangoFontsetForeachFunc func, IntPtr data)
+	public static T Foreach<T>(this T fontset, PangoFontsetForeachFunc func, IntPtr data) where T : PangoFontsetHandle
 	{
 		PangoFontsetExterns.pango_fontset_foreach(fontset, func, data);
 		return fontset;

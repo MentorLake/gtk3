@@ -11,13 +11,13 @@ public class GFileInfoHandle : GObjectHandle
 
 public static class GFileInfoHandleExtensions
 {
-	public static GFileInfoHandle ClearStatus(this GFileInfoHandle info)
+	public static T ClearStatus<T>(this T info) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_clear_status(info);
 		return info;
 	}
 
-	public static GFileInfoHandle CopyInto(this GFileInfoHandle src_info, GFileInfoHandle dest_info)
+	public static T CopyInto<T>(this T src_info, GFileInfoHandle dest_info) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_copy_into(src_info, dest_info);
 		return src_info;
@@ -163,7 +163,7 @@ public static class GFileInfoHandleExtensions
 		return GFileInfoExterns.g_file_info_get_modification_date_time(info);
 	}
 
-	public static GFileInfoHandle GetModificationTime(this GFileInfoHandle info, out GTimeVal result)
+	public static T GetModificationTime<T>(this T info, out GTimeVal result) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_get_modification_time(info, out result);
 		return info;
@@ -209,61 +209,61 @@ public static class GFileInfoHandleExtensions
 		return GFileInfoExterns.g_file_info_list_attributes(info, name_space);
 	}
 
-	public static GFileInfoHandle RemoveAttribute(this GFileInfoHandle info, string attribute)
+	public static T RemoveAttribute<T>(this T info, string attribute) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_remove_attribute(info, attribute);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAccessDateTime(this GFileInfoHandle info, GDateTimeHandle atime)
+	public static T SetAccessDateTime<T>(this T info, GDateTimeHandle atime) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_access_date_time(info, atime);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttribute(this GFileInfoHandle info, string attribute, GFileAttributeType type, IntPtr value_p)
+	public static T SetAttribute<T>(this T info, string attribute, GFileAttributeType type, IntPtr value_p) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute(info, attribute, type, value_p);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeBoolean(this GFileInfoHandle info, string attribute, bool attr_value)
+	public static T SetAttributeBoolean<T>(this T info, string attribute, bool attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_boolean(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeByteString(this GFileInfoHandle info, string attribute, string attr_value)
+	public static T SetAttributeByteString<T>(this T info, string attribute, string attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_byte_string(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeFilePath(this GFileInfoHandle info, string attribute, string attr_value)
+	public static T SetAttributeFilePath<T>(this T info, string attribute, string attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_file_path(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeInt32(this GFileInfoHandle info, string attribute, int attr_value)
+	public static T SetAttributeInt32<T>(this T info, string attribute, int attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_int32(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeInt64(this GFileInfoHandle info, string attribute, long attr_value)
+	public static T SetAttributeInt64<T>(this T info, string attribute, long attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_int64(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeMask(this GFileInfoHandle info, GFileAttributeMatcherHandle mask)
+	public static T SetAttributeMask<T>(this T info, GFileAttributeMatcherHandle mask) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_mask(info, mask);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeObject(this GFileInfoHandle info, string attribute, GObjectHandle attr_value)
+	public static T SetAttributeObject<T>(this T info, string attribute, GObjectHandle attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_object(info, attribute, attr_value);
 		return info;
@@ -274,121 +274,121 @@ public static class GFileInfoHandleExtensions
 		return GFileInfoExterns.g_file_info_set_attribute_status(info, attribute, status);
 	}
 
-	public static GFileInfoHandle SetAttributeString(this GFileInfoHandle info, string attribute, string attr_value)
+	public static T SetAttributeString<T>(this T info, string attribute, string attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_string(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeStringv(this GFileInfoHandle info, string attribute, string[] attr_value)
+	public static T SetAttributeStringv<T>(this T info, string attribute, string[] attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_stringv(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeUint32(this GFileInfoHandle info, string attribute, uint attr_value)
+	public static T SetAttributeUint32<T>(this T info, string attribute, uint attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_uint32(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetAttributeUint64(this GFileInfoHandle info, string attribute, ulong attr_value)
+	public static T SetAttributeUint64<T>(this T info, string attribute, ulong attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_attribute_uint64(info, attribute, attr_value);
 		return info;
 	}
 
-	public static GFileInfoHandle SetContentType(this GFileInfoHandle info, string content_type)
+	public static T SetContentType<T>(this T info, string content_type) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_content_type(info, content_type);
 		return info;
 	}
 
-	public static GFileInfoHandle SetCreationDateTime(this GFileInfoHandle info, GDateTimeHandle creation_time)
+	public static T SetCreationDateTime<T>(this T info, GDateTimeHandle creation_time) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_creation_date_time(info, creation_time);
 		return info;
 	}
 
-	public static GFileInfoHandle SetDisplayName(this GFileInfoHandle info, string display_name)
+	public static T SetDisplayName<T>(this T info, string display_name) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_display_name(info, display_name);
 		return info;
 	}
 
-	public static GFileInfoHandle SetEditName(this GFileInfoHandle info, string edit_name)
+	public static T SetEditName<T>(this T info, string edit_name) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_edit_name(info, edit_name);
 		return info;
 	}
 
-	public static GFileInfoHandle SetFileType(this GFileInfoHandle info, GFileType type)
+	public static T SetFileType<T>(this T info, GFileType type) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_file_type(info, type);
 		return info;
 	}
 
-	public static GFileInfoHandle SetIcon(this GFileInfoHandle info, GIconHandle icon)
+	public static T SetIcon<T>(this T info, GIconHandle icon) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_icon(info, icon);
 		return info;
 	}
 
-	public static GFileInfoHandle SetIsHidden(this GFileInfoHandle info, bool is_hidden)
+	public static T SetIsHidden<T>(this T info, bool is_hidden) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_is_hidden(info, is_hidden);
 		return info;
 	}
 
-	public static GFileInfoHandle SetIsSymlink(this GFileInfoHandle info, bool is_symlink)
+	public static T SetIsSymlink<T>(this T info, bool is_symlink) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_is_symlink(info, is_symlink);
 		return info;
 	}
 
-	public static GFileInfoHandle SetModificationDateTime(this GFileInfoHandle info, GDateTimeHandle mtime)
+	public static T SetModificationDateTime<T>(this T info, GDateTimeHandle mtime) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_modification_date_time(info, mtime);
 		return info;
 	}
 
-	public static GFileInfoHandle SetModificationTime(this GFileInfoHandle info, GTimeValHandle mtime)
+	public static T SetModificationTime<T>(this T info, GTimeValHandle mtime) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_modification_time(info, mtime);
 		return info;
 	}
 
-	public static GFileInfoHandle SetName(this GFileInfoHandle info, string name)
+	public static T SetName<T>(this T info, string name) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_name(info, name);
 		return info;
 	}
 
-	public static GFileInfoHandle SetSize(this GFileInfoHandle info, int size)
+	public static T SetSize<T>(this T info, int size) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_size(info, size);
 		return info;
 	}
 
-	public static GFileInfoHandle SetSortOrder(this GFileInfoHandle info, int sort_order)
+	public static T SetSortOrder<T>(this T info, int sort_order) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_sort_order(info, sort_order);
 		return info;
 	}
 
-	public static GFileInfoHandle SetSymbolicIcon(this GFileInfoHandle info, GIconHandle icon)
+	public static T SetSymbolicIcon<T>(this T info, GIconHandle icon) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_symbolic_icon(info, icon);
 		return info;
 	}
 
-	public static GFileInfoHandle SetSymlinkTarget(this GFileInfoHandle info, string symlink_target)
+	public static T SetSymlinkTarget<T>(this T info, string symlink_target) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_set_symlink_target(info, symlink_target);
 		return info;
 	}
 
-	public static GFileInfoHandle UnsetAttributeMask(this GFileInfoHandle info)
+	public static T UnsetAttributeMask<T>(this T info) where T : GFileInfoHandle
 	{
 		GFileInfoExterns.g_file_info_unset_attribute_mask(info);
 		return info;

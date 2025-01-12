@@ -120,19 +120,19 @@ public static class GtkHandleBoxHandleExtensions
 		return GtkHandleBoxExterns.gtk_handle_box_get_snap_edge(handle_box);
 	}
 
-	public static GtkHandleBoxHandle SetHandlePosition(this GtkHandleBoxHandle handle_box, GtkPositionType position)
+	public static T SetHandlePosition<T>(this T handle_box, GtkPositionType position) where T : GtkHandleBoxHandle
 	{
 		GtkHandleBoxExterns.gtk_handle_box_set_handle_position(handle_box, position);
 		return handle_box;
 	}
 
-	public static GtkHandleBoxHandle SetShadowType(this GtkHandleBoxHandle handle_box, GtkShadowType type)
+	public static T SetShadowType<T>(this T handle_box, GtkShadowType type) where T : GtkHandleBoxHandle
 	{
 		GtkHandleBoxExterns.gtk_handle_box_set_shadow_type(handle_box, type);
 		return handle_box;
 	}
 
-	public static GtkHandleBoxHandle SetSnapEdge(this GtkHandleBoxHandle handle_box, GtkPositionType edge)
+	public static T SetSnapEdge<T>(this T handle_box, GtkPositionType edge) where T : GtkHandleBoxHandle
 	{
 		GtkHandleBoxExterns.gtk_handle_box_set_snap_edge(handle_box, edge);
 		return handle_box;

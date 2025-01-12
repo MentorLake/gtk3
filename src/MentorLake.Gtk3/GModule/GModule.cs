@@ -12,7 +12,7 @@ public static class GModuleHandleExtensions
 		return GModuleExterns.g_module_close(module);
 	}
 
-	public static GModuleHandle MakeResident(this GModuleHandle module)
+	public static T MakeResident<T>(this T module) where T : GModuleHandle
 	{
 		GModuleExterns.g_module_make_resident(module);
 		return module;

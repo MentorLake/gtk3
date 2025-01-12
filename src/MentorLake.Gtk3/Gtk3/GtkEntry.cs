@@ -604,7 +604,7 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_get_icon_activatable(entry, icon_pos);
 	}
 
-	public static GtkEntryHandle GetIconArea(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, out GdkRectangle icon_area)
+	public static T GetIconArea<T>(this T entry, GtkEntryIconPosition icon_pos, out GdkRectangle icon_area) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_get_icon_area(entry, icon_pos, out icon_area);
 		return entry;
@@ -680,7 +680,7 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_get_layout(entry);
 	}
 
-	public static GtkEntryHandle GetLayoutOffsets(this GtkEntryHandle entry, out int x, out int y)
+	public static T GetLayoutOffsets<T>(this T entry, out int x, out int y) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_get_layout_offsets(entry, out x, out y);
 		return entry;
@@ -726,7 +726,7 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_get_text(entry);
 	}
 
-	public static GtkEntryHandle GetTextArea(this GtkEntryHandle entry, out GdkRectangle text_area)
+	public static T GetTextArea<T>(this T entry, out GdkRectangle text_area) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_get_text_area(entry, out text_area);
 		return entry;
@@ -747,7 +747,7 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_get_width_chars(entry);
 	}
 
-	public static GtkEntryHandle GrabFocusWithoutSelecting(this GtkEntryHandle entry)
+	public static T GrabFocusWithoutSelecting<T>(this T entry) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_grab_focus_without_selecting(entry);
 		return entry;
@@ -763,193 +763,193 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_layout_index_to_text_index(entry, layout_index);
 	}
 
-	public static GtkEntryHandle ProgressPulse(this GtkEntryHandle entry)
+	public static T ProgressPulse<T>(this T entry) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_progress_pulse(entry);
 		return entry;
 	}
 
-	public static GtkEntryHandle ResetImContext(this GtkEntryHandle entry)
+	public static T ResetImContext<T>(this T entry) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_reset_im_context(entry);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetActivatesDefault(this GtkEntryHandle entry, bool setting)
+	public static T SetActivatesDefault<T>(this T entry, bool setting) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_activates_default(entry, setting);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetAlignment(this GtkEntryHandle entry, float xalign)
+	public static T SetAlignment<T>(this T entry, float xalign) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_alignment(entry, xalign);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetAttributes(this GtkEntryHandle entry, PangoAttrListHandle attrs)
+	public static T SetAttributes<T>(this T entry, PangoAttrListHandle attrs) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_attributes(entry, attrs);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetBuffer(this GtkEntryHandle entry, GtkEntryBufferHandle buffer)
+	public static T SetBuffer<T>(this T entry, GtkEntryBufferHandle buffer) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_buffer(entry, buffer);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetCompletion(this GtkEntryHandle entry, GtkEntryCompletionHandle completion)
+	public static T SetCompletion<T>(this T entry, GtkEntryCompletionHandle completion) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_completion(entry, completion);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetCursorHadjustment(this GtkEntryHandle entry, GtkAdjustmentHandle adjustment)
+	public static T SetCursorHadjustment<T>(this T entry, GtkAdjustmentHandle adjustment) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_cursor_hadjustment(entry, adjustment);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetHasFrame(this GtkEntryHandle entry, bool setting)
+	public static T SetHasFrame<T>(this T entry, bool setting) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_has_frame(entry, setting);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconActivatable(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, bool activatable)
+	public static T SetIconActivatable<T>(this T entry, GtkEntryIconPosition icon_pos, bool activatable) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_activatable(entry, icon_pos, activatable);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconDragSource(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, GtkTargetListHandle target_list, GdkDragAction actions)
+	public static T SetIconDragSource<T>(this T entry, GtkEntryIconPosition icon_pos, GtkTargetListHandle target_list, GdkDragAction actions) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_drag_source(entry, icon_pos, target_list, actions);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconFromGicon(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, GIconHandle icon)
+	public static T SetIconFromGicon<T>(this T entry, GtkEntryIconPosition icon_pos, GIconHandle icon) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_from_gicon(entry, icon_pos, icon);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconFromIconName(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, string icon_name)
+	public static T SetIconFromIconName<T>(this T entry, GtkEntryIconPosition icon_pos, string icon_name) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_from_icon_name(entry, icon_pos, icon_name);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconFromPixbuf(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, GdkPixbufHandle pixbuf)
+	public static T SetIconFromPixbuf<T>(this T entry, GtkEntryIconPosition icon_pos, GdkPixbufHandle pixbuf) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_from_pixbuf(entry, icon_pos, pixbuf);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconFromStock(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, string stock_id)
+	public static T SetIconFromStock<T>(this T entry, GtkEntryIconPosition icon_pos, string stock_id) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_from_stock(entry, icon_pos, stock_id);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconSensitive(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, bool sensitive)
+	public static T SetIconSensitive<T>(this T entry, GtkEntryIconPosition icon_pos, bool sensitive) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_sensitive(entry, icon_pos, sensitive);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconTooltipMarkup(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, string tooltip)
+	public static T SetIconTooltipMarkup<T>(this T entry, GtkEntryIconPosition icon_pos, string tooltip) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_tooltip_markup(entry, icon_pos, tooltip);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetIconTooltipText(this GtkEntryHandle entry, GtkEntryIconPosition icon_pos, string tooltip)
+	public static T SetIconTooltipText<T>(this T entry, GtkEntryIconPosition icon_pos, string tooltip) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_icon_tooltip_text(entry, icon_pos, tooltip);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetInnerBorder(this GtkEntryHandle entry, GtkBorderHandle border)
+	public static T SetInnerBorder<T>(this T entry, GtkBorderHandle border) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_inner_border(entry, border);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetInputHints(this GtkEntryHandle entry, GtkInputHints hints)
+	public static T SetInputHints<T>(this T entry, GtkInputHints hints) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_input_hints(entry, hints);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetInputPurpose(this GtkEntryHandle entry, GtkInputPurpose purpose)
+	public static T SetInputPurpose<T>(this T entry, GtkInputPurpose purpose) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_input_purpose(entry, purpose);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetInvisibleChar(this GtkEntryHandle entry, char ch)
+	public static T SetInvisibleChar<T>(this T entry, char ch) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_invisible_char(entry, ch);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetMaxLength(this GtkEntryHandle entry, int max)
+	public static T SetMaxLength<T>(this T entry, int max) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_max_length(entry, max);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetMaxWidthChars(this GtkEntryHandle entry, int n_chars)
+	public static T SetMaxWidthChars<T>(this T entry, int n_chars) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_max_width_chars(entry, n_chars);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetOverwriteMode(this GtkEntryHandle entry, bool overwrite)
+	public static T SetOverwriteMode<T>(this T entry, bool overwrite) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_overwrite_mode(entry, overwrite);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetPlaceholderText(this GtkEntryHandle entry, string text)
+	public static T SetPlaceholderText<T>(this T entry, string text) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_placeholder_text(entry, text);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetProgressFraction(this GtkEntryHandle entry, double fraction)
+	public static T SetProgressFraction<T>(this T entry, double fraction) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_progress_fraction(entry, fraction);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetProgressPulseStep(this GtkEntryHandle entry, double fraction)
+	public static T SetProgressPulseStep<T>(this T entry, double fraction) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_progress_pulse_step(entry, fraction);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetTabs(this GtkEntryHandle entry, PangoTabArrayHandle tabs)
+	public static T SetTabs<T>(this T entry, PangoTabArrayHandle tabs) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_tabs(entry, tabs);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetText(this GtkEntryHandle entry, string text)
+	public static T SetText<T>(this T entry, string text) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_text(entry, text);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetVisibility(this GtkEntryHandle entry, bool visible)
+	public static T SetVisibility<T>(this T entry, bool visible) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_visibility(entry, visible);
 		return entry;
 	}
 
-	public static GtkEntryHandle SetWidthChars(this GtkEntryHandle entry, int n_chars)
+	public static T SetWidthChars<T>(this T entry, int n_chars) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_set_width_chars(entry, n_chars);
 		return entry;
@@ -960,7 +960,7 @@ public static class GtkEntryHandleExtensions
 		return GtkEntryExterns.gtk_entry_text_index_to_layout_index(entry, text_index);
 	}
 
-	public static GtkEntryHandle UnsetInvisibleChar(this GtkEntryHandle entry)
+	public static T UnsetInvisibleChar<T>(this T entry) where T : GtkEntryHandle
 	{
 		GtkEntryExterns.gtk_entry_unset_invisible_char(entry);
 		return entry;

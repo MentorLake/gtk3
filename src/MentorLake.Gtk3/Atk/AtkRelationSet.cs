@@ -11,13 +11,13 @@ public class AtkRelationSetHandle : GObjectHandle
 
 public static class AtkRelationSetHandleExtensions
 {
-	public static AtkRelationSetHandle Add(this AtkRelationSetHandle set, AtkRelationHandle relation)
+	public static T Add<T>(this T set, AtkRelationHandle relation) where T : AtkRelationSetHandle
 	{
 		AtkRelationSetExterns.atk_relation_set_add(set, relation);
 		return set;
 	}
 
-	public static AtkRelationSetHandle AddRelationByType(this AtkRelationSetHandle set, AtkRelationType relationship, AtkObjectHandle target)
+	public static T AddRelationByType<T>(this T set, AtkRelationType relationship, AtkObjectHandle target) where T : AtkRelationSetHandle
 	{
 		AtkRelationSetExterns.atk_relation_set_add_relation_by_type(set, relationship, target);
 		return set;
@@ -48,7 +48,7 @@ public static class AtkRelationSetHandleExtensions
 		return AtkRelationSetExterns.atk_relation_set_get_relation_by_type(set, relationship);
 	}
 
-	public static AtkRelationSetHandle Remove(this AtkRelationSetHandle set, AtkRelationHandle relation)
+	public static T Remove<T>(this T set, AtkRelationHandle relation) where T : AtkRelationSetHandle
 	{
 		AtkRelationSetExterns.atk_relation_set_remove(set, relation);
 		return set;

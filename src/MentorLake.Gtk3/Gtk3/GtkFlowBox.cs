@@ -287,7 +287,7 @@ public delegate void unselect_all([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkFlowBoxHandleExtensions
 {
-	public static GtkFlowBoxHandle BindModel(this GtkFlowBoxHandle box, GListModelHandle model, GtkFlowBoxCreateWidgetFunc create_widget_func, IntPtr user_data, GDestroyNotify user_data_free_func)
+	public static T BindModel<T>(this T box, GListModelHandle model, GtkFlowBoxCreateWidgetFunc create_widget_func, IntPtr user_data, GDestroyNotify user_data_free_func) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_bind_model(box, model, create_widget_func, user_data, user_data_free_func);
 		return box;
@@ -343,115 +343,115 @@ public static class GtkFlowBoxHandleExtensions
 		return GtkFlowBoxExterns.gtk_flow_box_get_selection_mode(box);
 	}
 
-	public static GtkFlowBoxHandle Insert(this GtkFlowBoxHandle box, GtkWidgetHandle widget, int position)
+	public static T Insert<T>(this T box, GtkWidgetHandle widget, int position) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_insert(box, widget, position);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle InvalidateFilter(this GtkFlowBoxHandle box)
+	public static T InvalidateFilter<T>(this T box) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_invalidate_filter(box);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle InvalidateSort(this GtkFlowBoxHandle box)
+	public static T InvalidateSort<T>(this T box) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_invalidate_sort(box);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SelectAll(this GtkFlowBoxHandle box)
+	public static T SelectAll<T>(this T box) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_select_all(box);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SelectChild(this GtkFlowBoxHandle box, GtkFlowBoxChildHandle child)
+	public static T SelectChild<T>(this T box, GtkFlowBoxChildHandle child) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_select_child(box, child);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SelectedForeach(this GtkFlowBoxHandle box, GtkFlowBoxForeachFunc func, IntPtr data)
+	public static T SelectedForeach<T>(this T box, GtkFlowBoxForeachFunc func, IntPtr data) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_selected_foreach(box, func, data);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetActivateOnSingleClick(this GtkFlowBoxHandle box, bool single)
+	public static T SetActivateOnSingleClick<T>(this T box, bool single) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_activate_on_single_click(box, single);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetColumnSpacing(this GtkFlowBoxHandle box, uint spacing)
+	public static T SetColumnSpacing<T>(this T box, uint spacing) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_column_spacing(box, spacing);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetFilterFunc(this GtkFlowBoxHandle box, GtkFlowBoxFilterFunc filter_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetFilterFunc<T>(this T box, GtkFlowBoxFilterFunc filter_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_filter_func(box, filter_func, user_data, destroy);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetHadjustment(this GtkFlowBoxHandle box, GtkAdjustmentHandle adjustment)
+	public static T SetHadjustment<T>(this T box, GtkAdjustmentHandle adjustment) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_hadjustment(box, adjustment);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetHomogeneous(this GtkFlowBoxHandle box, bool homogeneous)
+	public static T SetHomogeneous<T>(this T box, bool homogeneous) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_homogeneous(box, homogeneous);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetMaxChildrenPerLine(this GtkFlowBoxHandle box, uint n_children)
+	public static T SetMaxChildrenPerLine<T>(this T box, uint n_children) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_max_children_per_line(box, n_children);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetMinChildrenPerLine(this GtkFlowBoxHandle box, uint n_children)
+	public static T SetMinChildrenPerLine<T>(this T box, uint n_children) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_min_children_per_line(box, n_children);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetRowSpacing(this GtkFlowBoxHandle box, uint spacing)
+	public static T SetRowSpacing<T>(this T box, uint spacing) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_row_spacing(box, spacing);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetSelectionMode(this GtkFlowBoxHandle box, GtkSelectionMode mode)
+	public static T SetSelectionMode<T>(this T box, GtkSelectionMode mode) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_selection_mode(box, mode);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetSortFunc(this GtkFlowBoxHandle box, GtkFlowBoxSortFunc sort_func, IntPtr user_data, GDestroyNotify destroy)
+	public static T SetSortFunc<T>(this T box, GtkFlowBoxSortFunc sort_func, IntPtr user_data, GDestroyNotify destroy) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_sort_func(box, sort_func, user_data, destroy);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle SetVadjustment(this GtkFlowBoxHandle box, GtkAdjustmentHandle adjustment)
+	public static T SetVadjustment<T>(this T box, GtkAdjustmentHandle adjustment) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_set_vadjustment(box, adjustment);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle UnselectAll(this GtkFlowBoxHandle box)
+	public static T UnselectAll<T>(this T box) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_unselect_all(box);
 		return box;
 	}
 
-	public static GtkFlowBoxHandle UnselectChild(this GtkFlowBoxHandle box, GtkFlowBoxChildHandle child)
+	public static T UnselectChild<T>(this T box, GtkFlowBoxChildHandle child) where T : GtkFlowBoxHandle
 	{
 		GtkFlowBoxExterns.gtk_flow_box_unselect_child(box, child);
 		return box;

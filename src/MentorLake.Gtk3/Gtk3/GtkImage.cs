@@ -56,7 +56,7 @@ public class GtkImageHandle : GtkMiscHandle, AtkImplementorIfaceHandle, GtkBuild
 
 public static class GtkImageHandleExtensions
 {
-	public static GtkImageHandle Clear(this GtkImageHandle image)
+	public static T Clear<T>(this T image) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_clear(image);
 		return image;
@@ -67,19 +67,19 @@ public static class GtkImageHandleExtensions
 		return GtkImageExterns.gtk_image_get_animation(image);
 	}
 
-	public static GtkImageHandle GetGicon(this GtkImageHandle image, out GIconHandle gicon, out GtkIconSize size)
+	public static T GetGicon<T>(this T image, out GIconHandle gicon, out GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_get_gicon(image, out gicon, out size);
 		return image;
 	}
 
-	public static GtkImageHandle GetIconName(this GtkImageHandle image, out string icon_name, out GtkIconSize size)
+	public static T GetIconName<T>(this T image, out string icon_name, out GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_get_icon_name(image, out icon_name, out size);
 		return image;
 	}
 
-	public static GtkImageHandle GetIconSet(this GtkImageHandle image, out GtkIconSetHandle icon_set, out GtkIconSize size)
+	public static T GetIconSet<T>(this T image, out GtkIconSetHandle icon_set, out GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_get_icon_set(image, out icon_set, out size);
 		return image;
@@ -95,7 +95,7 @@ public static class GtkImageHandleExtensions
 		return GtkImageExterns.gtk_image_get_pixel_size(image);
 	}
 
-	public static GtkImageHandle GetStock(this GtkImageHandle image, out string stock_id, out GtkIconSize size)
+	public static T GetStock<T>(this T image, out string stock_id, out GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_get_stock(image, out stock_id, out size);
 		return image;
@@ -106,61 +106,61 @@ public static class GtkImageHandleExtensions
 		return GtkImageExterns.gtk_image_get_storage_type(image);
 	}
 
-	public static GtkImageHandle SetFromAnimation(this GtkImageHandle image, GdkPixbufAnimationHandle animation)
+	public static T SetFromAnimation<T>(this T image, GdkPixbufAnimationHandle animation) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_animation(image, animation);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromFile(this GtkImageHandle image, string filename)
+	public static T SetFromFile<T>(this T image, string filename) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_file(image, filename);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromGicon(this GtkImageHandle image, GIconHandle icon, GtkIconSize size)
+	public static T SetFromGicon<T>(this T image, GIconHandle icon, GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_gicon(image, icon, size);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromIconName(this GtkImageHandle image, string icon_name, GtkIconSize size)
+	public static T SetFromIconName<T>(this T image, string icon_name, GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_icon_name(image, icon_name, size);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromIconSet(this GtkImageHandle image, GtkIconSetHandle icon_set, GtkIconSize size)
+	public static T SetFromIconSet<T>(this T image, GtkIconSetHandle icon_set, GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_icon_set(image, icon_set, size);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromPixbuf(this GtkImageHandle image, GdkPixbufHandle pixbuf)
+	public static T SetFromPixbuf<T>(this T image, GdkPixbufHandle pixbuf) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_pixbuf(image, pixbuf);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromResource(this GtkImageHandle image, string resource_path)
+	public static T SetFromResource<T>(this T image, string resource_path) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_resource(image, resource_path);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromStock(this GtkImageHandle image, string stock_id, GtkIconSize size)
+	public static T SetFromStock<T>(this T image, string stock_id, GtkIconSize size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_stock(image, stock_id, size);
 		return image;
 	}
 
-	public static GtkImageHandle SetFromSurface(this GtkImageHandle image, cairo_surface_tHandle surface)
+	public static T SetFromSurface<T>(this T image, cairo_surface_tHandle surface) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_from_surface(image, surface);
 		return image;
 	}
 
-	public static GtkImageHandle SetPixelSize(this GtkImageHandle image, int pixel_size)
+	public static T SetPixelSize<T>(this T image, int pixel_size) where T : GtkImageHandle
 	{
 		GtkImageExterns.gtk_image_set_pixel_size(image, pixel_size);
 		return image;

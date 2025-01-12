@@ -11,7 +11,7 @@ public class GtkTreeModelSortHandle : GObjectHandle, GtkTreeDragSourceHandle, Gt
 
 public static class GtkTreeModelSortHandleExtensions
 {
-	public static GtkTreeModelSortHandle ClearCache(this GtkTreeModelSortHandle tree_model_sort)
+	public static T ClearCache<T>(this T tree_model_sort) where T : GtkTreeModelSortHandle
 	{
 		GtkTreeModelSortExterns.gtk_tree_model_sort_clear_cache(tree_model_sort);
 		return tree_model_sort;
@@ -27,7 +27,7 @@ public static class GtkTreeModelSortHandleExtensions
 		return GtkTreeModelSortExterns.gtk_tree_model_sort_convert_child_path_to_path(tree_model_sort, child_path);
 	}
 
-	public static GtkTreeModelSortHandle ConvertIterToChildIter(this GtkTreeModelSortHandle tree_model_sort, out GtkTreeIter child_iter, GtkTreeIterHandle sorted_iter)
+	public static T ConvertIterToChildIter<T>(this T tree_model_sort, out GtkTreeIter child_iter, GtkTreeIterHandle sorted_iter) where T : GtkTreeModelSortHandle
 	{
 		GtkTreeModelSortExterns.gtk_tree_model_sort_convert_iter_to_child_iter(tree_model_sort, out child_iter, sorted_iter);
 		return tree_model_sort;
@@ -48,7 +48,7 @@ public static class GtkTreeModelSortHandleExtensions
 		return GtkTreeModelSortExterns.gtk_tree_model_sort_iter_is_valid(tree_model_sort, iter);
 	}
 
-	public static GtkTreeModelSortHandle ResetDefaultSortFunc(this GtkTreeModelSortHandle tree_model_sort)
+	public static T ResetDefaultSortFunc<T>(this T tree_model_sort) where T : GtkTreeModelSortHandle
 	{
 		GtkTreeModelSortExterns.gtk_tree_model_sort_reset_default_sort_func(tree_model_sort);
 		return tree_model_sort;

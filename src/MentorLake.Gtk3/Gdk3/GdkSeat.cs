@@ -201,7 +201,7 @@ public static class GdkSeatHandleExtensions
 		return GdkSeatExterns.gdk_seat_grab(seat, window, capabilities, owner_events, cursor, @event, prepare_func, prepare_func_data);
 	}
 
-	public static GdkSeatHandle Ungrab(this GdkSeatHandle seat)
+	public static T Ungrab<T>(this T seat) where T : GdkSeatHandle
 	{
 		GdkSeatExterns.gdk_seat_ungrab(seat);
 		return seat;

@@ -178,49 +178,49 @@ public delegate void pre_activate([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 public static class GtkActionGroupHandleExtensions
 {
-	public static GtkActionGroupHandle AddAction(this GtkActionGroupHandle action_group, GtkActionHandle action)
+	public static T AddAction<T>(this T action_group, GtkActionHandle action) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_action(action_group, action);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddActionWithAccel(this GtkActionGroupHandle action_group, GtkActionHandle action, string accelerator)
+	public static T AddActionWithAccel<T>(this T action_group, GtkActionHandle action, string accelerator) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_action_with_accel(action_group, action, accelerator);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddActions(this GtkActionGroupHandle action_group, GtkActionEntry[] entries, uint n_entries, IntPtr user_data)
+	public static T AddActions<T>(this T action_group, GtkActionEntry[] entries, uint n_entries, IntPtr user_data) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_actions(action_group, entries, n_entries, user_data);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddActionsFull(this GtkActionGroupHandle action_group, GtkActionEntry[] entries, uint n_entries, IntPtr user_data, GDestroyNotify destroy)
+	public static T AddActionsFull<T>(this T action_group, GtkActionEntry[] entries, uint n_entries, IntPtr user_data, GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_actions_full(action_group, entries, n_entries, user_data, destroy);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddRadioActions(this GtkActionGroupHandle action_group, GtkRadioActionEntry[] entries, uint n_entries, int value, IntPtr on_change, IntPtr user_data)
+	public static T AddRadioActions<T>(this T action_group, GtkRadioActionEntry[] entries, uint n_entries, int value, IntPtr on_change, IntPtr user_data) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_radio_actions(action_group, entries, n_entries, value, on_change, user_data);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddRadioActionsFull(this GtkActionGroupHandle action_group, GtkRadioActionEntry[] entries, uint n_entries, int value, IntPtr on_change, IntPtr user_data, GDestroyNotify destroy)
+	public static T AddRadioActionsFull<T>(this T action_group, GtkRadioActionEntry[] entries, uint n_entries, int value, IntPtr on_change, IntPtr user_data, GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_radio_actions_full(action_group, entries, n_entries, value, on_change, user_data, destroy);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddToggleActions(this GtkActionGroupHandle action_group, GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data)
+	public static T AddToggleActions<T>(this T action_group, GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_toggle_actions(action_group, entries, n_entries, user_data);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle AddToggleActionsFull(this GtkActionGroupHandle action_group, GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data, GDestroyNotify destroy)
+	public static T AddToggleActionsFull<T>(this T action_group, GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data, GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_add_toggle_actions_full(action_group, entries, n_entries, user_data, destroy);
 		return action_group;
@@ -256,37 +256,37 @@ public static class GtkActionGroupHandleExtensions
 		return GtkActionGroupExterns.gtk_action_group_list_actions(action_group);
 	}
 
-	public static GtkActionGroupHandle RemoveAction(this GtkActionGroupHandle action_group, GtkActionHandle action)
+	public static T RemoveAction<T>(this T action_group, GtkActionHandle action) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_remove_action(action_group, action);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle SetAccelGroup(this GtkActionGroupHandle action_group, GtkAccelGroupHandle accel_group)
+	public static T SetAccelGroup<T>(this T action_group, GtkAccelGroupHandle accel_group) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_set_accel_group(action_group, accel_group);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle SetSensitive(this GtkActionGroupHandle action_group, bool sensitive)
+	public static T SetSensitive<T>(this T action_group, bool sensitive) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_set_sensitive(action_group, sensitive);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle SetTranslateFunc(this GtkActionGroupHandle action_group, GtkTranslateFunc func, IntPtr data, GDestroyNotify notify)
+	public static T SetTranslateFunc<T>(this T action_group, GtkTranslateFunc func, IntPtr data, GDestroyNotify notify) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_set_translate_func(action_group, func, data, notify);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle SetTranslationDomain(this GtkActionGroupHandle action_group, string domain)
+	public static T SetTranslationDomain<T>(this T action_group, string domain) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_set_translation_domain(action_group, domain);
 		return action_group;
 	}
 
-	public static GtkActionGroupHandle SetVisible(this GtkActionGroupHandle action_group, bool visible)
+	public static T SetVisible<T>(this T action_group, bool visible) where T : GtkActionGroupHandle
 	{
 		GtkActionGroupExterns.gtk_action_group_set_visible(action_group, visible);
 		return action_group;

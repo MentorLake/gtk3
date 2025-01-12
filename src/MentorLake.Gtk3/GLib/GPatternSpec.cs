@@ -22,7 +22,7 @@ public static class GPatternSpecHandleExtensions
 		return GPatternSpecExterns.g_pattern_spec_equal(pspec1, pspec2);
 	}
 
-	public static GPatternSpecHandle Free(this GPatternSpecHandle pspec)
+	public static T Free<T>(this T pspec) where T : GPatternSpecHandle
 	{
 		GPatternSpecExterns.g_pattern_spec_free(pspec);
 		return pspec;

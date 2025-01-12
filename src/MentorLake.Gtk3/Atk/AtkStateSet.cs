@@ -16,7 +16,7 @@ public static class AtkStateSetHandleExtensions
 		return AtkStateSetExterns.atk_state_set_add_state(set, type);
 	}
 
-	public static AtkStateSetHandle AddStates(this AtkStateSetHandle set, AtkStateType[] types, int n_types)
+	public static T AddStates<T>(this T set, AtkStateType[] types, int n_types) where T : AtkStateSetHandle
 	{
 		AtkStateSetExterns.atk_state_set_add_states(set, types, n_types);
 		return set;
@@ -27,7 +27,7 @@ public static class AtkStateSetHandleExtensions
 		return AtkStateSetExterns.atk_state_set_and_sets(set, compare_set);
 	}
 
-	public static AtkStateSetHandle ClearStates(this AtkStateSetHandle set)
+	public static T ClearStates<T>(this T set) where T : AtkStateSetHandle
 	{
 		AtkStateSetExterns.atk_state_set_clear_states(set);
 		return set;

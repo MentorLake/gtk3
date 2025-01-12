@@ -140,7 +140,7 @@ public delegate void state_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GdkKeymapHandleExtensions
 {
-	public static GdkKeymapHandle AddVirtualModifiers(this GdkKeymapHandle keymap, ref GdkModifierType state)
+	public static T AddVirtualModifiers<T>(this T keymap, ref GdkModifierType state) where T : GdkKeymapHandle
 	{
 		GdkKeymapExterns.gdk_keymap_add_virtual_modifiers(keymap, ref state);
 		return keymap;

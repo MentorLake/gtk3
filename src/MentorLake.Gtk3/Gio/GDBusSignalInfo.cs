@@ -12,7 +12,7 @@ public static class GDBusSignalInfoHandleExtensions
 		return GDBusSignalInfoExterns.g_dbus_signal_info_ref(info);
 	}
 
-	public static GDBusSignalInfoHandle GDbusSignalInfoUnref(this GDBusSignalInfoHandle info)
+	public static T GDbusSignalInfoUnref<T>(this T info) where T : GDBusSignalInfoHandle
 	{
 		GDBusSignalInfoExterns.g_dbus_signal_info_unref(info);
 		return info;

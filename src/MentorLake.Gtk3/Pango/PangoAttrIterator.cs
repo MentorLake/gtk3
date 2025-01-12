@@ -12,7 +12,7 @@ public static class PangoAttrIteratorHandleExtensions
 		return PangoAttrIteratorExterns.pango_attr_iterator_copy(iterator);
 	}
 
-	public static PangoAttrIteratorHandle Destroy(this PangoAttrIteratorHandle iterator)
+	public static T Destroy<T>(this T iterator) where T : PangoAttrIteratorHandle
 	{
 		PangoAttrIteratorExterns.pango_attr_iterator_destroy(iterator);
 		return iterator;
@@ -28,7 +28,7 @@ public static class PangoAttrIteratorHandleExtensions
 		return PangoAttrIteratorExterns.pango_attr_iterator_get_attrs(iterator);
 	}
 
-	public static PangoAttrIteratorHandle GetFont(this PangoAttrIteratorHandle iterator, PangoFontDescriptionHandle desc, out PangoLanguageHandle language, out GSListHandle extra_attrs)
+	public static T GetFont<T>(this T iterator, PangoFontDescriptionHandle desc, out PangoLanguageHandle language, out GSListHandle extra_attrs) where T : PangoAttrIteratorHandle
 	{
 		PangoAttrIteratorExterns.pango_attr_iterator_get_font(iterator, desc, out language, out extra_attrs);
 		return iterator;
@@ -39,7 +39,7 @@ public static class PangoAttrIteratorHandleExtensions
 		return PangoAttrIteratorExterns.pango_attr_iterator_next(iterator);
 	}
 
-	public static PangoAttrIteratorHandle Range(this PangoAttrIteratorHandle iterator, out int start, out int end)
+	public static T Range<T>(this T iterator, out int start, out int end) where T : PangoAttrIteratorHandle
 	{
 		PangoAttrIteratorExterns.pango_attr_iterator_range(iterator, out start, out end);
 		return iterator;

@@ -12,7 +12,7 @@ public static class PangoColorHandleExtensions
 		return PangoColorExterns.pango_color_copy(src);
 	}
 
-	public static PangoColorHandle Free(this PangoColorHandle color)
+	public static T Free<T>(this T color) where T : PangoColorHandle
 	{
 		PangoColorExterns.pango_color_free(color);
 		return color;

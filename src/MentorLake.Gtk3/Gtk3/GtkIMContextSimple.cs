@@ -11,13 +11,13 @@ public class GtkIMContextSimpleHandle : GtkIMContextHandle
 
 public static class GtkIMContextSimpleHandleExtensions
 {
-	public static GtkIMContextSimpleHandle GtkImContextSimpleAddComposeFile(this GtkIMContextSimpleHandle context_simple, string compose_file)
+	public static T GtkImContextSimpleAddComposeFile<T>(this T context_simple, string compose_file) where T : GtkIMContextSimpleHandle
 	{
 		GtkIMContextSimpleExterns.gtk_im_context_simple_add_compose_file(context_simple, compose_file);
 		return context_simple;
 	}
 
-	public static GtkIMContextSimpleHandle GtkImContextSimpleAddTable(this GtkIMContextSimpleHandle context_simple, ushort[] data, int max_seq_len, int n_seqs)
+	public static T GtkImContextSimpleAddTable<T>(this T context_simple, ushort[] data, int max_seq_len, int n_seqs) where T : GtkIMContextSimpleHandle
 	{
 		GtkIMContextSimpleExterns.gtk_im_context_simple_add_table(context_simple, data, max_seq_len, n_seqs);
 		return context_simple;

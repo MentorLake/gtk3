@@ -99,43 +99,43 @@ public delegate void unbind([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GSignalGroupHandleExtensions
 {
-	public static GSignalGroupHandle Block(this GSignalGroupHandle self)
+	public static T Block<T>(this T self) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_block(self);
 		return self;
 	}
 
-	public static GSignalGroupHandle Connect(this GSignalGroupHandle self, string detailed_signal, IntPtr c_handler, IntPtr data)
+	public static T Connect<T>(this T self, string detailed_signal, IntPtr c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect(self, detailed_signal, c_handler, data);
 		return self;
 	}
 
-	public static GSignalGroupHandle ConnectAfter(this GSignalGroupHandle self, string detailed_signal, IntPtr c_handler, IntPtr data)
+	public static T ConnectAfter<T>(this T self, string detailed_signal, IntPtr c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect_after(self, detailed_signal, c_handler, data);
 		return self;
 	}
 
-	public static GSignalGroupHandle ConnectClosure(this GSignalGroupHandle self, string detailed_signal, GClosureHandle closure, bool after)
+	public static T ConnectClosure<T>(this T self, string detailed_signal, GClosureHandle closure, bool after) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect_closure(self, detailed_signal, closure, after);
 		return self;
 	}
 
-	public static GSignalGroupHandle ConnectData(this GSignalGroupHandle self, string detailed_signal, IntPtr c_handler, IntPtr data, GClosureNotify notify, GConnectFlags flags)
+	public static T ConnectData<T>(this T self, string detailed_signal, IntPtr c_handler, IntPtr data, GClosureNotify notify, GConnectFlags flags) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect_data(self, detailed_signal, c_handler, data, notify, flags);
 		return self;
 	}
 
-	public static GSignalGroupHandle ConnectObject(this GSignalGroupHandle self, string detailed_signal, IntPtr c_handler, IntPtr @object, GConnectFlags flags)
+	public static T ConnectObject<T>(this T self, string detailed_signal, IntPtr c_handler, IntPtr @object, GConnectFlags flags) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect_object(self, detailed_signal, c_handler, @object, flags);
 		return self;
 	}
 
-	public static GSignalGroupHandle ConnectSwapped(this GSignalGroupHandle self, string detailed_signal, IntPtr c_handler, IntPtr data)
+	public static T ConnectSwapped<T>(this T self, string detailed_signal, IntPtr c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_connect_swapped(self, detailed_signal, c_handler, data);
 		return self;
@@ -146,13 +146,13 @@ public static class GSignalGroupHandleExtensions
 		return GSignalGroupExterns.g_signal_group_dup_target(self);
 	}
 
-	public static GSignalGroupHandle SetTarget(this GSignalGroupHandle self, GObjectHandle target)
+	public static T SetTarget<T>(this T self, GObjectHandle target) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_set_target(self, target);
 		return self;
 	}
 
-	public static GSignalGroupHandle Unblock(this GSignalGroupHandle self)
+	public static T Unblock<T>(this T self) where T : GSignalGroupHandle
 	{
 		GSignalGroupExterns.g_signal_group_unblock(self);
 		return self;

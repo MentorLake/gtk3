@@ -11,7 +11,7 @@ public class GSubprocessLauncherHandle : GObjectHandle
 
 public static class GSubprocessLauncherHandleExtensions
 {
-	public static GSubprocessLauncherHandle Close(this GSubprocessLauncherHandle self)
+	public static T Close<T>(this T self) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_close(self);
 		return self;
@@ -22,49 +22,49 @@ public static class GSubprocessLauncherHandleExtensions
 		return GSubprocessLauncherExterns.g_subprocess_launcher_getenv(self, variable);
 	}
 
-	public static GSubprocessLauncherHandle SetChildSetup(this GSubprocessLauncherHandle self, GSpawnChildSetupFunc child_setup, IntPtr user_data, GDestroyNotify destroy_notify)
+	public static T SetChildSetup<T>(this T self, GSpawnChildSetupFunc child_setup, IntPtr user_data, GDestroyNotify destroy_notify) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_child_setup(self, child_setup, user_data, destroy_notify);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetCwd(this GSubprocessLauncherHandle self, string cwd)
+	public static T SetCwd<T>(this T self, string cwd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_cwd(self, cwd);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetEnviron(this GSubprocessLauncherHandle self, string[] env)
+	public static T SetEnviron<T>(this T self, string[] env) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_environ(self, env);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetFlags(this GSubprocessLauncherHandle self, GSubprocessFlags flags)
+	public static T SetFlags<T>(this T self, GSubprocessFlags flags) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_flags(self, flags);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetStderrFilePath(this GSubprocessLauncherHandle self, string path)
+	public static T SetStderrFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_stderr_file_path(self, path);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetStdinFilePath(this GSubprocessLauncherHandle self, string path)
+	public static T SetStdinFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_stdin_file_path(self, path);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle SetStdoutFilePath(this GSubprocessLauncherHandle self, string path)
+	public static T SetStdoutFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_set_stdout_file_path(self, path);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle Setenv(this GSubprocessLauncherHandle self, string variable, string value, bool overwrite)
+	public static T Setenv<T>(this T self, string variable, string value, bool overwrite) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_setenv(self, variable, value, overwrite);
 		return self;
@@ -80,31 +80,31 @@ public static class GSubprocessLauncherHandleExtensions
 		return GSubprocessLauncherExterns.g_subprocess_launcher_spawnv(self, argv, out error);
 	}
 
-	public static GSubprocessLauncherHandle TakeFd(this GSubprocessLauncherHandle self, int source_fd, int target_fd)
+	public static T TakeFd<T>(this T self, int source_fd, int target_fd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_take_fd(self, source_fd, target_fd);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle TakeStderrFd(this GSubprocessLauncherHandle self, int fd)
+	public static T TakeStderrFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_take_stderr_fd(self, fd);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle TakeStdinFd(this GSubprocessLauncherHandle self, int fd)
+	public static T TakeStdinFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_take_stdin_fd(self, fd);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle TakeStdoutFd(this GSubprocessLauncherHandle self, int fd)
+	public static T TakeStdoutFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_take_stdout_fd(self, fd);
 		return self;
 	}
 
-	public static GSubprocessLauncherHandle Unsetenv(this GSubprocessLauncherHandle self, string variable)
+	public static T Unsetenv<T>(this T self, string variable) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherExterns.g_subprocess_launcher_unsetenv(self, variable);
 		return self;

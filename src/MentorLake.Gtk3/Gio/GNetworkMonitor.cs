@@ -15,7 +15,7 @@ public static class GNetworkMonitorHandleExtensions
 		return GNetworkMonitorExterns.g_network_monitor_can_reach(monitor, connectable, cancellable, out error);
 	}
 
-	public static GNetworkMonitorHandle CanReachAsync(this GNetworkMonitorHandle monitor, GSocketConnectableHandle connectable, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T CanReachAsync<T>(this T monitor, GSocketConnectableHandle connectable, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GNetworkMonitorHandle
 	{
 		GNetworkMonitorExterns.g_network_monitor_can_reach_async(monitor, connectable, cancellable, callback, user_data);
 		return monitor;

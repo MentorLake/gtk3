@@ -12,7 +12,7 @@ public class GDirHandle : BaseSafeHandle
 
 public static class GDirHandleExtensions
 {
-	public static GDirHandle Close(this GDirHandle dir)
+	public static T Close<T>(this T dir) where T : GDirHandle
 	{
 		GDirExterns.g_dir_close(dir);
 		return dir;
@@ -28,13 +28,13 @@ public static class GDirHandleExtensions
 		return GDirExterns.g_dir_ref(dir);
 	}
 
-	public static GDirHandle Rewind(this GDirHandle dir)
+	public static T Rewind<T>(this T dir) where T : GDirHandle
 	{
 		GDirExterns.g_dir_rewind(dir);
 		return dir;
 	}
 
-	public static GDirHandle Unref(this GDirHandle dir)
+	public static T Unref<T>(this T dir) where T : GDirHandle
 	{
 		GDirExterns.g_dir_unref(dir);
 		return dir;

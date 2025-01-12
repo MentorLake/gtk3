@@ -16,7 +16,7 @@ public static class AtkRegistryHandleExtensions
 		return AtkRegistryExterns.atk_registry_get_factory_type(registry, type);
 	}
 
-	public static AtkRegistryHandle SetFactoryType(this AtkRegistryHandle registry, GType type, GType factory_type)
+	public static T SetFactoryType<T>(this T registry, GType type, GType factory_type) where T : AtkRegistryHandle
 	{
 		AtkRegistryExterns.atk_registry_set_factory_type(registry, type, factory_type);
 		return registry;

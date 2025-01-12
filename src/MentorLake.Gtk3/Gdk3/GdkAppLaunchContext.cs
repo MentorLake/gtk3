@@ -11,37 +11,37 @@ public class GdkAppLaunchContextHandle : GAppLaunchContextHandle
 
 public static class GdkAppLaunchContextHandleExtensions
 {
-	public static GdkAppLaunchContextHandle SetDesktop(this GdkAppLaunchContextHandle context, int desktop)
+	public static T SetDesktop<T>(this T context, int desktop) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_desktop(context, desktop);
 		return context;
 	}
 
-	public static GdkAppLaunchContextHandle SetDisplay(this GdkAppLaunchContextHandle context, GdkDisplayHandle display)
+	public static T SetDisplay<T>(this T context, GdkDisplayHandle display) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_display(context, display);
 		return context;
 	}
 
-	public static GdkAppLaunchContextHandle SetIcon(this GdkAppLaunchContextHandle context, GIconHandle icon)
+	public static T SetIcon<T>(this T context, GIconHandle icon) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_icon(context, icon);
 		return context;
 	}
 
-	public static GdkAppLaunchContextHandle SetIconName(this GdkAppLaunchContextHandle context, string icon_name)
+	public static T SetIconName<T>(this T context, string icon_name) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_icon_name(context, icon_name);
 		return context;
 	}
 
-	public static GdkAppLaunchContextHandle SetScreen(this GdkAppLaunchContextHandle context, GdkScreenHandle screen)
+	public static T SetScreen<T>(this T context, GdkScreenHandle screen) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_screen(context, screen);
 		return context;
 	}
 
-	public static GdkAppLaunchContextHandle SetTimestamp(this GdkAppLaunchContextHandle context, uint timestamp)
+	public static T SetTimestamp<T>(this T context, uint timestamp) where T : GdkAppLaunchContextHandle
 	{
 		GdkAppLaunchContextExterns.gdk_app_launch_context_set_timestamp(context, timestamp);
 		return context;

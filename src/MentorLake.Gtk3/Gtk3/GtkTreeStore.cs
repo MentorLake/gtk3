@@ -16,43 +16,43 @@ public class GtkTreeStoreHandle : GObjectHandle, GtkBuildableHandle, GtkTreeDrag
 
 public static class GtkTreeStoreHandleExtensions
 {
-	public static GtkTreeStoreHandle Append(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent)
+	public static T Append<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_append(tree_store, out iter, parent);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle Clear(this GtkTreeStoreHandle tree_store)
+	public static T Clear<T>(this T tree_store) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_clear(tree_store);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle Insert(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position)
+	public static T Insert<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_insert(tree_store, out iter, parent, position);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle InsertAfter(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, GtkTreeIterHandle sibling)
+	public static T InsertAfter<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, GtkTreeIterHandle sibling) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_insert_after(tree_store, out iter, parent, sibling);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle InsertBefore(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, GtkTreeIterHandle sibling)
+	public static T InsertBefore<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, GtkTreeIterHandle sibling) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_insert_before(tree_store, out iter, parent, sibling);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle InsertWithValues(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position, IntPtr @__arglist)
+	public static T InsertWithValues<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position, IntPtr @__arglist) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_insert_with_values(tree_store, out iter, parent, position, @__arglist);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle InsertWithValuesv(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position, int[] columns, GValue[] values, int n_values)
+	public static T InsertWithValuesv<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent, int position, int[] columns, GValue[] values, int n_values) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_insert_with_valuesv(tree_store, out iter, parent, position, columns, values, n_values);
 		return tree_store;
@@ -73,19 +73,19 @@ public static class GtkTreeStoreHandleExtensions
 		return GtkTreeStoreExterns.gtk_tree_store_iter_is_valid(tree_store, iter);
 	}
 
-	public static GtkTreeStoreHandle MoveAfter(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, GtkTreeIterHandle position)
+	public static T MoveAfter<T>(this T tree_store, GtkTreeIterHandle iter, GtkTreeIterHandle position) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_move_after(tree_store, iter, position);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle MoveBefore(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, GtkTreeIterHandle position)
+	public static T MoveBefore<T>(this T tree_store, GtkTreeIterHandle iter, GtkTreeIterHandle position) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_move_before(tree_store, iter, position);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle Prepend(this GtkTreeStoreHandle tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent)
+	public static T Prepend<T>(this T tree_store, out GtkTreeIter iter, GtkTreeIterHandle parent) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_prepend(tree_store, out iter, parent);
 		return tree_store;
@@ -96,43 +96,43 @@ public static class GtkTreeStoreHandleExtensions
 		return GtkTreeStoreExterns.gtk_tree_store_remove(tree_store, iter);
 	}
 
-	public static GtkTreeStoreHandle Reorder(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle parent, int[] new_order)
+	public static T Reorder<T>(this T tree_store, GtkTreeIterHandle parent, int[] new_order) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_reorder(tree_store, parent, new_order);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle Set(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, IntPtr @__arglist)
+	public static T Set<T>(this T tree_store, GtkTreeIterHandle iter, IntPtr @__arglist) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_set(tree_store, iter, @__arglist);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle SetColumnTypes(this GtkTreeStoreHandle tree_store, int n_columns, GType[] types)
+	public static T SetColumnTypes<T>(this T tree_store, int n_columns, GType[] types) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_set_column_types(tree_store, n_columns, types);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle SetValist(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, IntPtr var_args)
+	public static T SetValist<T>(this T tree_store, GtkTreeIterHandle iter, IntPtr var_args) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_set_valist(tree_store, iter, var_args);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle SetValue(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, int column, GValueHandle value)
+	public static T SetValue<T>(this T tree_store, GtkTreeIterHandle iter, int column, GValueHandle value) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_set_value(tree_store, iter, column, value);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle SetValuesv(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle iter, int[] columns, GValue[] values, int n_values)
+	public static T SetValuesv<T>(this T tree_store, GtkTreeIterHandle iter, int[] columns, GValue[] values, int n_values) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_set_valuesv(tree_store, iter, columns, values, n_values);
 		return tree_store;
 	}
 
-	public static GtkTreeStoreHandle Swap(this GtkTreeStoreHandle tree_store, GtkTreeIterHandle a, GtkTreeIterHandle b)
+	public static T Swap<T>(this T tree_store, GtkTreeIterHandle a, GtkTreeIterHandle b) where T : GtkTreeStoreHandle
 	{
 		GtkTreeStoreExterns.gtk_tree_store_swap(tree_store, a, b);
 		return tree_store;

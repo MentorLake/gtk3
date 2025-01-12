@@ -42,7 +42,7 @@ public static class GStringHandleExtensions
 		return GStringExterns.g_string_append_len(@string, val, len);
 	}
 
-	public static GStringHandle AppendPrintf(this GStringHandle @string, string format, IntPtr @__arglist)
+	public static T AppendPrintf<T>(this T @string, string format, IntPtr @__arglist) where T : GStringHandle
 	{
 		GStringExterns.g_string_append_printf(@string, format, @__arglist);
 		return @string;
@@ -58,7 +58,7 @@ public static class GStringHandleExtensions
 		return GStringExterns.g_string_append_uri_escaped(@string, unescaped, reserved_chars_allowed, allow_utf8);
 	}
 
-	public static GStringHandle AppendVprintf(this GStringHandle @string, string format, IntPtr args)
+	public static T AppendVprintf<T>(this T @string, string format, IntPtr args) where T : GStringHandle
 	{
 		GStringExterns.g_string_append_vprintf(@string, format, args);
 		return @string;
@@ -164,7 +164,7 @@ public static class GStringHandleExtensions
 		return GStringExterns.g_string_prepend_unichar(@string, wc);
 	}
 
-	public static GStringHandle Printf(this GStringHandle @string, string format, IntPtr @__arglist)
+	public static T Printf<T>(this T @string, string format, IntPtr @__arglist) where T : GStringHandle
 	{
 		GStringExterns.g_string_printf(@string, format, @__arglist);
 		return @string;
@@ -190,7 +190,7 @@ public static class GStringHandleExtensions
 		return GStringExterns.g_string_up(@string);
 	}
 
-	public static GStringHandle Vprintf(this GStringHandle @string, string format, IntPtr args)
+	public static T Vprintf<T>(this T @string, string format, IntPtr args) where T : GStringHandle
 	{
 		GStringExterns.g_string_vprintf(@string, format, args);
 		return @string;

@@ -106,49 +106,49 @@ public static class GtkExpanderHandleExtensions
 		return GtkExpanderExterns.gtk_expander_get_use_underline(expander);
 	}
 
-	public static GtkExpanderHandle SetExpanded(this GtkExpanderHandle expander, bool expanded)
+	public static T SetExpanded<T>(this T expander, bool expanded) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_expanded(expander, expanded);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetLabel(this GtkExpanderHandle expander, string label)
+	public static T SetLabel<T>(this T expander, string label) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_label(expander, label);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetLabelFill(this GtkExpanderHandle expander, bool label_fill)
+	public static T SetLabelFill<T>(this T expander, bool label_fill) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_label_fill(expander, label_fill);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetLabelWidget(this GtkExpanderHandle expander, GtkWidgetHandle label_widget)
+	public static T SetLabelWidget<T>(this T expander, GtkWidgetHandle label_widget) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_label_widget(expander, label_widget);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetResizeToplevel(this GtkExpanderHandle expander, bool resize_toplevel)
+	public static T SetResizeToplevel<T>(this T expander, bool resize_toplevel) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_resize_toplevel(expander, resize_toplevel);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetSpacing(this GtkExpanderHandle expander, int spacing)
+	public static T SetSpacing<T>(this T expander, int spacing) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_spacing(expander, spacing);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetUseMarkup(this GtkExpanderHandle expander, bool use_markup)
+	public static T SetUseMarkup<T>(this T expander, bool use_markup) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_use_markup(expander, use_markup);
 		return expander;
 	}
 
-	public static GtkExpanderHandle SetUseUnderline(this GtkExpanderHandle expander, bool use_underline)
+	public static T SetUseUnderline<T>(this T expander, bool use_underline) where T : GtkExpanderHandle
 	{
 		GtkExpanderExterns.gtk_expander_set_use_underline(expander, use_underline);
 		return expander;

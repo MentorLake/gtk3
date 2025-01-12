@@ -7,7 +7,7 @@ public class GValueHandle : BaseSafeHandle
 
 public static class GValueHandleExtensions
 {
-	public static GValueHandle Copy(this GValueHandle src_value, GValueHandle dest_value)
+	public static T Copy<T>(this T src_value, GValueHandle dest_value) where T : GValueHandle
 	{
 		GValueExterns.g_value_copy(src_value, dest_value);
 		return src_value;
@@ -153,7 +153,7 @@ public static class GValueHandleExtensions
 		return GValueExterns.g_value_init(value, g_type);
 	}
 
-	public static GValueHandle InitFromInstance(this GValueHandle value, GTypeInstanceHandle instance)
+	public static T InitFromInstance<T>(this T value, GTypeInstanceHandle instance) where T : GValueHandle
 	{
 		GValueExterns.g_value_init_from_instance(value, instance);
 		return value;
@@ -169,175 +169,175 @@ public static class GValueHandleExtensions
 		return GValueExterns.g_value_reset(value);
 	}
 
-	public static GValueHandle SetBoolean(this GValueHandle value, bool v_boolean)
+	public static T SetBoolean<T>(this T value, bool v_boolean) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_boolean(value, v_boolean);
 		return value;
 	}
 
-	public static GValueHandle SetBoxed(this GValueHandle value, IntPtr v_boxed)
+	public static T SetBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_boxed(value, v_boxed);
 		return value;
 	}
 
-	public static GValueHandle SetBoxedTakeOwnership(this GValueHandle value, IntPtr v_boxed)
+	public static T SetBoxedTakeOwnership<T>(this T value, IntPtr v_boxed) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_boxed_take_ownership(value, v_boxed);
 		return value;
 	}
 
-	public static GValueHandle SetChar(this GValueHandle value, char v_char)
+	public static T SetChar<T>(this T value, char v_char) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_char(value, v_char);
 		return value;
 	}
 
-	public static GValueHandle SetDouble(this GValueHandle value, double v_double)
+	public static T SetDouble<T>(this T value, double v_double) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_double(value, v_double);
 		return value;
 	}
 
-	public static GValueHandle SetEnum(this GValueHandle value, int v_enum)
+	public static T SetEnum<T>(this T value, int v_enum) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_enum(value, v_enum);
 		return value;
 	}
 
-	public static GValueHandle SetFlags(this GValueHandle value, uint v_flags)
+	public static T SetFlags<T>(this T value, uint v_flags) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_flags(value, v_flags);
 		return value;
 	}
 
-	public static GValueHandle SetFloat(this GValueHandle value, float v_float)
+	public static T SetFloat<T>(this T value, float v_float) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_float(value, v_float);
 		return value;
 	}
 
-	public static GValueHandle SetGtype(this GValueHandle value, GType v_gtype)
+	public static T SetGtype<T>(this T value, GType v_gtype) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_gtype(value, v_gtype);
 		return value;
 	}
 
-	public static GValueHandle SetInstance(this GValueHandle value, IntPtr instance)
+	public static T SetInstance<T>(this T value, IntPtr instance) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_instance(value, instance);
 		return value;
 	}
 
-	public static GValueHandle SetInt(this GValueHandle value, int v_int)
+	public static T SetInt<T>(this T value, int v_int) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_int(value, v_int);
 		return value;
 	}
 
-	public static GValueHandle SetInt64(this GValueHandle value, long v_int64)
+	public static T SetInt64<T>(this T value, long v_int64) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_int64(value, v_int64);
 		return value;
 	}
 
-	public static GValueHandle SetInternedString(this GValueHandle value, string v_string)
+	public static T SetInternedString<T>(this T value, string v_string) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_interned_string(value, v_string);
 		return value;
 	}
 
-	public static GValueHandle SetLong(this GValueHandle value, long v_long)
+	public static T SetLong<T>(this T value, long v_long) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_long(value, v_long);
 		return value;
 	}
 
-	public static GValueHandle SetObject(this GValueHandle value, GObjectHandle v_object)
+	public static T SetObject<T>(this T value, GObjectHandle v_object) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_object(value, v_object);
 		return value;
 	}
 
-	public static GValueHandle SetObjectTakeOwnership(this GValueHandle value, IntPtr v_object)
+	public static T SetObjectTakeOwnership<T>(this T value, IntPtr v_object) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_object_take_ownership(value, v_object);
 		return value;
 	}
 
-	public static GValueHandle SetParam(this GValueHandle value, GParamSpecHandle param)
+	public static T SetParam<T>(this T value, GParamSpecHandle param) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_param(value, param);
 		return value;
 	}
 
-	public static GValueHandle SetParamTakeOwnership(this GValueHandle value, GParamSpecHandle param)
+	public static T SetParamTakeOwnership<T>(this T value, GParamSpecHandle param) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_param_take_ownership(value, param);
 		return value;
 	}
 
-	public static GValueHandle SetPointer(this GValueHandle value, IntPtr v_pointer)
+	public static T SetPointer<T>(this T value, IntPtr v_pointer) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_pointer(value, v_pointer);
 		return value;
 	}
 
-	public static GValueHandle SetSchar(this GValueHandle value, byte v_char)
+	public static T SetSchar<T>(this T value, byte v_char) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_schar(value, v_char);
 		return value;
 	}
 
-	public static GValueHandle SetStaticBoxed(this GValueHandle value, IntPtr v_boxed)
+	public static T SetStaticBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_static_boxed(value, v_boxed);
 		return value;
 	}
 
-	public static GValueHandle SetStaticString(this GValueHandle value, string v_string)
+	public static T SetStaticString<T>(this T value, string v_string) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_static_string(value, v_string);
 		return value;
 	}
 
-	public static GValueHandle SetString(this GValueHandle value, string v_string)
+	public static T SetString<T>(this T value, string v_string) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_string(value, v_string);
 		return value;
 	}
 
-	public static GValueHandle SetStringTakeOwnership(this GValueHandle value, string v_string)
+	public static T SetStringTakeOwnership<T>(this T value, string v_string) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_string_take_ownership(value, v_string);
 		return value;
 	}
 
-	public static GValueHandle SetUchar(this GValueHandle value, char v_uchar)
+	public static T SetUchar<T>(this T value, char v_uchar) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_uchar(value, v_uchar);
 		return value;
 	}
 
-	public static GValueHandle SetUint(this GValueHandle value, uint v_uint)
+	public static T SetUint<T>(this T value, uint v_uint) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_uint(value, v_uint);
 		return value;
 	}
 
-	public static GValueHandle SetUint64(this GValueHandle value, ulong v_uint64)
+	public static T SetUint64<T>(this T value, ulong v_uint64) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_uint64(value, v_uint64);
 		return value;
 	}
 
-	public static GValueHandle SetUlong(this GValueHandle value, ulong v_ulong)
+	public static T SetUlong<T>(this T value, ulong v_ulong) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_ulong(value, v_ulong);
 		return value;
 	}
 
-	public static GValueHandle SetVariant(this GValueHandle value, GVariantHandle variant)
+	public static T SetVariant<T>(this T value, GVariantHandle variant) where T : GValueHandle
 	{
 		GValueExterns.g_value_set_variant(value, variant);
 		return value;
@@ -348,31 +348,31 @@ public static class GValueHandleExtensions
 		return GValueExterns.g_value_steal_string(value);
 	}
 
-	public static GValueHandle TakeBoxed(this GValueHandle value, IntPtr v_boxed)
+	public static T TakeBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
 	{
 		GValueExterns.g_value_take_boxed(value, v_boxed);
 		return value;
 	}
 
-	public static GValueHandle TakeObject(this GValueHandle value, IntPtr v_object)
+	public static T TakeObject<T>(this T value, IntPtr v_object) where T : GValueHandle
 	{
 		GValueExterns.g_value_take_object(value, v_object);
 		return value;
 	}
 
-	public static GValueHandle TakeParam(this GValueHandle value, GParamSpecHandle param)
+	public static T TakeParam<T>(this T value, GParamSpecHandle param) where T : GValueHandle
 	{
 		GValueExterns.g_value_take_param(value, param);
 		return value;
 	}
 
-	public static GValueHandle TakeString(this GValueHandle value, string v_string)
+	public static T TakeString<T>(this T value, string v_string) where T : GValueHandle
 	{
 		GValueExterns.g_value_take_string(value, v_string);
 		return value;
 	}
 
-	public static GValueHandle TakeVariant(this GValueHandle value, GVariantHandle variant)
+	public static T TakeVariant<T>(this T value, GVariantHandle variant) where T : GValueHandle
 	{
 		GValueExterns.g_value_take_variant(value, variant);
 		return value;
@@ -383,7 +383,7 @@ public static class GValueHandleExtensions
 		return GValueExterns.g_value_transform(src_value, dest_value);
 	}
 
-	public static GValueHandle Unset(this GValueHandle value)
+	public static T Unset<T>(this T value) where T : GValueHandle
 	{
 		GValueExterns.g_value_unset(value);
 		return value;

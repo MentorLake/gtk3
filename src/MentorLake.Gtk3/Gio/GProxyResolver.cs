@@ -20,7 +20,7 @@ public static class GProxyResolverHandleExtensions
 		return GProxyResolverExterns.g_proxy_resolver_lookup(resolver, uri, cancellable, out error);
 	}
 
-	public static GProxyResolverHandle LookupAsync(this GProxyResolverHandle resolver, string uri, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T LookupAsync<T>(this T resolver, string uri, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GProxyResolverHandle
 	{
 		GProxyResolverExterns.g_proxy_resolver_lookup_async(resolver, uri, cancellable, callback, user_data);
 		return resolver;

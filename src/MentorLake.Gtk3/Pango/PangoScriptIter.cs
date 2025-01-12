@@ -12,13 +12,13 @@ public class PangoScriptIterHandle : BaseSafeHandle
 
 public static class PangoScriptIterHandleExtensions
 {
-	public static PangoScriptIterHandle Free(this PangoScriptIterHandle iter)
+	public static T Free<T>(this T iter) where T : PangoScriptIterHandle
 	{
 		PangoScriptIterExterns.pango_script_iter_free(iter);
 		return iter;
 	}
 
-	public static PangoScriptIterHandle GetRange(this PangoScriptIterHandle iter, out string start, out string end, out PangoScript script)
+	public static T GetRange<T>(this T iter, out string start, out string end, out PangoScript script) where T : PangoScriptIterHandle
 	{
 		PangoScriptIterExterns.pango_script_iter_get_range(iter, out start, out end, out script);
 		return iter;

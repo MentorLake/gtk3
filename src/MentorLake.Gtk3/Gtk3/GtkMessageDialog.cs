@@ -16,13 +16,13 @@ public class GtkMessageDialogHandle : GtkDialogHandle, AtkImplementorIfaceHandle
 
 public static class GtkMessageDialogHandleExtensions
 {
-	public static GtkMessageDialogHandle FormatSecondaryMarkup(this GtkMessageDialogHandle message_dialog, string message_format, IntPtr @__arglist)
+	public static T FormatSecondaryMarkup<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
 		GtkMessageDialogExterns.gtk_message_dialog_format_secondary_markup(message_dialog, message_format, @__arglist);
 		return message_dialog;
 	}
 
-	public static GtkMessageDialogHandle FormatSecondaryText(this GtkMessageDialogHandle message_dialog, string message_format, IntPtr @__arglist)
+	public static T FormatSecondaryText<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
 		GtkMessageDialogExterns.gtk_message_dialog_format_secondary_text(message_dialog, message_format, @__arglist);
 		return message_dialog;
@@ -38,13 +38,13 @@ public static class GtkMessageDialogHandleExtensions
 		return GtkMessageDialogExterns.gtk_message_dialog_get_message_area(message_dialog);
 	}
 
-	public static GtkMessageDialogHandle SetImage(this GtkMessageDialogHandle dialog, GtkWidgetHandle image)
+	public static T SetImage<T>(this T dialog, GtkWidgetHandle image) where T : GtkMessageDialogHandle
 	{
 		GtkMessageDialogExterns.gtk_message_dialog_set_image(dialog, image);
 		return dialog;
 	}
 
-	public static GtkMessageDialogHandle SetMarkup(this GtkMessageDialogHandle message_dialog, string str)
+	public static T SetMarkup<T>(this T message_dialog, string str) where T : GtkMessageDialogHandle
 	{
 		GtkMessageDialogExterns.gtk_message_dialog_set_markup(message_dialog, str);
 		return message_dialog;

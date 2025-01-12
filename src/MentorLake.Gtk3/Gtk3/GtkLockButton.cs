@@ -16,7 +16,7 @@ public static class GtkLockButtonHandleExtensions
 		return GtkLockButtonExterns.gtk_lock_button_get_permission(button);
 	}
 
-	public static GtkLockButtonHandle SetPermission(this GtkLockButtonHandle button, GPermissionHandle permission)
+	public static T SetPermission<T>(this T button, GPermissionHandle permission) where T : GtkLockButtonHandle
 	{
 		GtkLockButtonExterns.gtk_lock_button_set_permission(button, permission);
 		return button;

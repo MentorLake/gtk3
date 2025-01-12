@@ -12,7 +12,7 @@ public static class GtkTreeIterHandleExtensions
 		return GtkTreeIterExterns.gtk_tree_iter_copy(iter);
 	}
 
-	public static GtkTreeIterHandle Free(this GtkTreeIterHandle iter)
+	public static T Free<T>(this T iter) where T : GtkTreeIterHandle
 	{
 		GtkTreeIterExterns.gtk_tree_iter_free(iter);
 		return iter;

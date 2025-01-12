@@ -15,7 +15,7 @@ public static class GDebugControllerHandleExtensions
 		return GDebugControllerExterns.g_debug_controller_get_debug_enabled(self);
 	}
 
-	public static GDebugControllerHandle SetDebugEnabled(this GDebugControllerHandle self, bool debug_enabled)
+	public static T SetDebugEnabled<T>(this T self, bool debug_enabled) where T : GDebugControllerHandle
 	{
 		GDebugControllerExterns.g_debug_controller_set_debug_enabled(self, debug_enabled);
 		return self;

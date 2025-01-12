@@ -7,7 +7,7 @@ public class PangoMatrixHandle : BaseSafeHandle
 
 public static class PangoMatrixHandleExtensions
 {
-	public static PangoMatrixHandle Concat(this PangoMatrixHandle matrix, PangoMatrixHandle new_matrix)
+	public static T Concat<T>(this T matrix, PangoMatrixHandle new_matrix) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_concat(matrix, new_matrix);
 		return matrix;
@@ -18,7 +18,7 @@ public static class PangoMatrixHandleExtensions
 		return PangoMatrixExterns.pango_matrix_copy(matrix);
 	}
 
-	public static PangoMatrixHandle Free(this PangoMatrixHandle matrix)
+	public static T Free<T>(this T matrix) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_free(matrix);
 		return matrix;
@@ -29,7 +29,7 @@ public static class PangoMatrixHandleExtensions
 		return PangoMatrixExterns.pango_matrix_get_font_scale_factor(matrix);
 	}
 
-	public static PangoMatrixHandle GetFontScaleFactors(this PangoMatrixHandle matrix, out double xscale, out double yscale)
+	public static T GetFontScaleFactors<T>(this T matrix, out double xscale, out double yscale) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_get_font_scale_factors(matrix, out xscale, out yscale);
 		return matrix;
@@ -40,43 +40,43 @@ public static class PangoMatrixHandleExtensions
 		return PangoMatrixExterns.pango_matrix_get_slant_ratio(matrix);
 	}
 
-	public static PangoMatrixHandle Rotate(this PangoMatrixHandle matrix, double degrees)
+	public static T Rotate<T>(this T matrix, double degrees) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_rotate(matrix, degrees);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle Scale(this PangoMatrixHandle matrix, double scale_x, double scale_y)
+	public static T Scale<T>(this T matrix, double scale_x, double scale_y) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_scale(matrix, scale_x, scale_y);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle TransformDistance(this PangoMatrixHandle matrix, ref double dx, ref double dy)
+	public static T TransformDistance<T>(this T matrix, ref double dx, ref double dy) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_transform_distance(matrix, ref dx, ref dy);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle TransformPixelRectangle(this PangoMatrixHandle matrix, PangoRectangleHandle rect)
+	public static T TransformPixelRectangle<T>(this T matrix, PangoRectangleHandle rect) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_transform_pixel_rectangle(matrix, rect);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle TransformPoint(this PangoMatrixHandle matrix, ref double x, ref double y)
+	public static T TransformPoint<T>(this T matrix, ref double x, ref double y) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_transform_point(matrix, ref x, ref y);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle TransformRectangle(this PangoMatrixHandle matrix, PangoRectangleHandle rect)
+	public static T TransformRectangle<T>(this T matrix, PangoRectangleHandle rect) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_transform_rectangle(matrix, rect);
 		return matrix;
 	}
 
-	public static PangoMatrixHandle Translate(this PangoMatrixHandle matrix, double tx, double ty)
+	public static T Translate<T>(this T matrix, double tx, double ty) where T : PangoMatrixHandle
 	{
 		PangoMatrixExterns.pango_matrix_translate(matrix, tx, ty);
 		return matrix;

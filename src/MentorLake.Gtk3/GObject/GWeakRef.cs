@@ -7,7 +7,7 @@ public class GWeakRefHandle : BaseSafeHandle
 
 public static class GWeakRefHandleExtensions
 {
-	public static GWeakRefHandle Clear(this GWeakRefHandle weak_ref)
+	public static T Clear<T>(this T weak_ref) where T : GWeakRefHandle
 	{
 		GWeakRefExterns.g_weak_ref_clear(weak_ref);
 		return weak_ref;
@@ -18,13 +18,13 @@ public static class GWeakRefHandleExtensions
 		return GWeakRefExterns.g_weak_ref_get(weak_ref);
 	}
 
-	public static GWeakRefHandle Init(this GWeakRefHandle weak_ref, GObjectHandle @object)
+	public static T Init<T>(this T weak_ref, GObjectHandle @object) where T : GWeakRefHandle
 	{
 		GWeakRefExterns.g_weak_ref_init(weak_ref, @object);
 		return weak_ref;
 	}
 
-	public static GWeakRefHandle Set(this GWeakRefHandle weak_ref, GObjectHandle @object)
+	public static T Set<T>(this T weak_ref, GObjectHandle @object) where T : GWeakRefHandle
 	{
 		GWeakRefExterns.g_weak_ref_set(weak_ref, @object);
 		return weak_ref;

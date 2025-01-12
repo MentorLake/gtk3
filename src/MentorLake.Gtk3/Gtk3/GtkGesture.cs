@@ -260,7 +260,7 @@ public static class GtkGestureHandleExtensions
 		return GtkGestureExterns.gtk_gesture_get_window(gesture);
 	}
 
-	public static GtkGestureHandle Group(this GtkGestureHandle group_gesture, GtkGestureHandle gesture)
+	public static T Group<T>(this T group_gesture, GtkGestureHandle gesture) where T : GtkGestureHandle
 	{
 		GtkGestureExterns.gtk_gesture_group(group_gesture, gesture);
 		return group_gesture;
@@ -296,13 +296,13 @@ public static class GtkGestureHandleExtensions
 		return GtkGestureExterns.gtk_gesture_set_state(gesture, state);
 	}
 
-	public static GtkGestureHandle SetWindow(this GtkGestureHandle gesture, GdkWindowHandle window)
+	public static T SetWindow<T>(this T gesture, GdkWindowHandle window) where T : GtkGestureHandle
 	{
 		GtkGestureExterns.gtk_gesture_set_window(gesture, window);
 		return gesture;
 	}
 
-	public static GtkGestureHandle Ungroup(this GtkGestureHandle gesture)
+	public static T Ungroup<T>(this T gesture) where T : GtkGestureHandle
 	{
 		GtkGestureExterns.gtk_gesture_ungroup(gesture);
 		return gesture;

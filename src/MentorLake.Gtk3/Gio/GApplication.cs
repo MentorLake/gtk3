@@ -301,31 +301,31 @@ public delegate void startup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GApplicationHandleExtensions
 {
-	public static GApplicationHandle Activate(this GApplicationHandle application)
+	public static T Activate<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_activate(application);
 		return application;
 	}
 
-	public static GApplicationHandle AddMainOption(this GApplicationHandle application, string long_name, char short_name, GOptionFlags flags, GOptionArg arg, string description, string arg_description)
+	public static T AddMainOption<T>(this T application, string long_name, char short_name, GOptionFlags flags, GOptionArg arg, string description, string arg_description) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_add_main_option(application, long_name, short_name, flags, arg, description, arg_description);
 		return application;
 	}
 
-	public static GApplicationHandle AddMainOptionEntries(this GApplicationHandle application, GOptionEntry[] entries)
+	public static T AddMainOptionEntries<T>(this T application, GOptionEntry[] entries) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_add_main_option_entries(application, entries);
 		return application;
 	}
 
-	public static GApplicationHandle AddOptionGroup(this GApplicationHandle application, GOptionGroupHandle group)
+	public static T AddOptionGroup<T>(this T application, GOptionGroupHandle group) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_add_option_group(application, group);
 		return application;
 	}
 
-	public static GApplicationHandle BindBusyProperty(this GApplicationHandle application, GObjectHandle @object, string property)
+	public static T BindBusyProperty<T>(this T application, GObjectHandle @object, string property) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_bind_busy_property(application, @object, property);
 		return application;
@@ -381,25 +381,25 @@ public static class GApplicationHandleExtensions
 		return GApplicationExterns.g_application_get_version(application);
 	}
 
-	public static GApplicationHandle Hold(this GApplicationHandle application)
+	public static T Hold<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_hold(application);
 		return application;
 	}
 
-	public static GApplicationHandle MarkBusy(this GApplicationHandle application)
+	public static T MarkBusy<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_mark_busy(application);
 		return application;
 	}
 
-	public static GApplicationHandle Open(this GApplicationHandle application, GFileHandle[] files, int n_files, string hint)
+	public static T Open<T>(this T application, GFileHandle[] files, int n_files, string hint) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_open(application, files, n_files, hint);
 		return application;
 	}
 
-	public static GApplicationHandle Quit(this GApplicationHandle application)
+	public static T Quit<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_quit(application);
 		return application;
@@ -410,7 +410,7 @@ public static class GApplicationHandleExtensions
 		return GApplicationExterns.g_application_register(application, cancellable, out error);
 	}
 
-	public static GApplicationHandle Release(this GApplicationHandle application)
+	public static T Release<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_release(application);
 		return application;
@@ -421,85 +421,85 @@ public static class GApplicationHandleExtensions
 		return GApplicationExterns.g_application_run(application, argc, argv);
 	}
 
-	public static GApplicationHandle SendNotification(this GApplicationHandle application, string id, GNotificationHandle notification)
+	public static T SendNotification<T>(this T application, string id, GNotificationHandle notification) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_send_notification(application, id, notification);
 		return application;
 	}
 
-	public static GApplicationHandle SetActionGroup(this GApplicationHandle application, GActionGroupHandle action_group)
+	public static T SetActionGroup<T>(this T application, GActionGroupHandle action_group) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_action_group(application, action_group);
 		return application;
 	}
 
-	public static GApplicationHandle SetApplicationId(this GApplicationHandle application, string application_id)
+	public static T SetApplicationId<T>(this T application, string application_id) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_application_id(application, application_id);
 		return application;
 	}
 
-	public static GApplicationHandle SetDefault(this GApplicationHandle application)
+	public static T SetDefault<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_default(application);
 		return application;
 	}
 
-	public static GApplicationHandle SetFlags(this GApplicationHandle application, GApplicationFlags flags)
+	public static T SetFlags<T>(this T application, GApplicationFlags flags) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_flags(application, flags);
 		return application;
 	}
 
-	public static GApplicationHandle SetInactivityTimeout(this GApplicationHandle application, uint inactivity_timeout)
+	public static T SetInactivityTimeout<T>(this T application, uint inactivity_timeout) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_inactivity_timeout(application, inactivity_timeout);
 		return application;
 	}
 
-	public static GApplicationHandle SetOptionContextDescription(this GApplicationHandle application, string description)
+	public static T SetOptionContextDescription<T>(this T application, string description) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_option_context_description(application, description);
 		return application;
 	}
 
-	public static GApplicationHandle SetOptionContextParameterString(this GApplicationHandle application, string parameter_string)
+	public static T SetOptionContextParameterString<T>(this T application, string parameter_string) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_option_context_parameter_string(application, parameter_string);
 		return application;
 	}
 
-	public static GApplicationHandle SetOptionContextSummary(this GApplicationHandle application, string summary)
+	public static T SetOptionContextSummary<T>(this T application, string summary) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_option_context_summary(application, summary);
 		return application;
 	}
 
-	public static GApplicationHandle SetResourceBasePath(this GApplicationHandle application, string resource_path)
+	public static T SetResourceBasePath<T>(this T application, string resource_path) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_resource_base_path(application, resource_path);
 		return application;
 	}
 
-	public static GApplicationHandle SetVersion(this GApplicationHandle application, string version)
+	public static T SetVersion<T>(this T application, string version) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_set_version(application, version);
 		return application;
 	}
 
-	public static GApplicationHandle UnbindBusyProperty(this GApplicationHandle application, GObjectHandle @object, string property)
+	public static T UnbindBusyProperty<T>(this T application, GObjectHandle @object, string property) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_unbind_busy_property(application, @object, property);
 		return application;
 	}
 
-	public static GApplicationHandle UnmarkBusy(this GApplicationHandle application)
+	public static T UnmarkBusy<T>(this T application) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_unmark_busy(application);
 		return application;
 	}
 
-	public static GApplicationHandle WithdrawNotification(this GApplicationHandle application, string id)
+	public static T WithdrawNotification<T>(this T application, string id) where T : GApplicationHandle
 	{
 		GApplicationExterns.g_application_withdraw_notification(application, id);
 		return application;

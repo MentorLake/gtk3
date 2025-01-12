@@ -112,7 +112,7 @@ public static class GtkStatusbarHandleExtensions
 		return GtkStatusbarExterns.gtk_statusbar_get_message_area(statusbar);
 	}
 
-	public static GtkStatusbarHandle Pop(this GtkStatusbarHandle statusbar, uint context_id)
+	public static T Pop<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
 		GtkStatusbarExterns.gtk_statusbar_pop(statusbar, context_id);
 		return statusbar;
@@ -123,13 +123,13 @@ public static class GtkStatusbarHandleExtensions
 		return GtkStatusbarExterns.gtk_statusbar_push(statusbar, context_id, text);
 	}
 
-	public static GtkStatusbarHandle Remove(this GtkStatusbarHandle statusbar, uint context_id, uint message_id)
+	public static T Remove<T>(this T statusbar, uint context_id, uint message_id) where T : GtkStatusbarHandle
 	{
 		GtkStatusbarExterns.gtk_statusbar_remove(statusbar, context_id, message_id);
 		return statusbar;
 	}
 
-	public static GtkStatusbarHandle RemoveAll(this GtkStatusbarHandle statusbar, uint context_id)
+	public static T RemoveAll<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
 		GtkStatusbarExterns.gtk_statusbar_remove_all(statusbar, context_id);
 		return statusbar;

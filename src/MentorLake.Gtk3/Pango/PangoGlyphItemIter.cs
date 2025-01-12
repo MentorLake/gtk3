@@ -12,7 +12,7 @@ public static class PangoGlyphItemIterHandleExtensions
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_copy(orig);
 	}
 
-	public static PangoGlyphItemIterHandle Free(this PangoGlyphItemIterHandle iter)
+	public static T Free<T>(this T iter) where T : PangoGlyphItemIterHandle
 	{
 		PangoGlyphItemIterExterns.pango_glyph_item_iter_free(iter);
 		return iter;

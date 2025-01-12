@@ -31,7 +31,7 @@ public static class GtkRadioToolButtonHandleExtensions
 		return GtkRadioToolButtonExterns.gtk_radio_tool_button_get_group(button);
 	}
 
-	public static GtkRadioToolButtonHandle SetGroup(this GtkRadioToolButtonHandle button, GSListHandle group)
+	public static T SetGroup<T>(this T button, GSListHandle group) where T : GtkRadioToolButtonHandle
 	{
 		GtkRadioToolButtonExterns.gtk_radio_tool_button_set_group(button, group);
 		return button;

@@ -10,7 +10,7 @@ internal class AtkValueHandleImpl : BaseSafeHandle, AtkValueHandle
 
 public static class AtkValueHandleExtensions
 {
-	public static AtkValueHandle GetCurrentValue(this AtkValueHandle obj, out GValue value)
+	public static T GetCurrentValue<T>(this T obj, out GValue value) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_get_current_value(obj, out value);
 		return obj;
@@ -21,19 +21,19 @@ public static class AtkValueHandleExtensions
 		return AtkValueExterns.atk_value_get_increment(obj);
 	}
 
-	public static AtkValueHandle GetMaximumValue(this AtkValueHandle obj, out GValue value)
+	public static T GetMaximumValue<T>(this T obj, out GValue value) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_get_maximum_value(obj, out value);
 		return obj;
 	}
 
-	public static AtkValueHandle GetMinimumIncrement(this AtkValueHandle obj, out GValue value)
+	public static T GetMinimumIncrement<T>(this T obj, out GValue value) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_get_minimum_increment(obj, out value);
 		return obj;
 	}
 
-	public static AtkValueHandle GetMinimumValue(this AtkValueHandle obj, out GValue value)
+	public static T GetMinimumValue<T>(this T obj, out GValue value) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_get_minimum_value(obj, out value);
 		return obj;
@@ -49,7 +49,7 @@ public static class AtkValueHandleExtensions
 		return AtkValueExterns.atk_value_get_sub_ranges(obj);
 	}
 
-	public static AtkValueHandle GetValueAndText(this AtkValueHandle obj, out double value, out string text)
+	public static T GetValueAndText<T>(this T obj, out double value, out string text) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_get_value_and_text(obj, out value, out text);
 		return obj;
@@ -60,7 +60,7 @@ public static class AtkValueHandleExtensions
 		return AtkValueExterns.atk_value_set_current_value(obj, value);
 	}
 
-	public static AtkValueHandle SetValue(this AtkValueHandle obj, double new_value)
+	public static T SetValue<T>(this T obj, double new_value) where T : AtkValueHandle
 	{
 		AtkValueExterns.atk_value_set_value(obj, new_value);
 		return obj;

@@ -17,7 +17,7 @@ public class GtkIconSetHandle : BaseSafeHandle
 
 public static class GtkIconSetHandleExtensions
 {
-	public static GtkIconSetHandle AddSource(this GtkIconSetHandle icon_set, GtkIconSourceHandle source)
+	public static T AddSource<T>(this T icon_set, GtkIconSourceHandle source) where T : GtkIconSetHandle
 	{
 		GtkIconSetExterns.gtk_icon_set_add_source(icon_set, source);
 		return icon_set;
@@ -28,7 +28,7 @@ public static class GtkIconSetHandleExtensions
 		return GtkIconSetExterns.gtk_icon_set_copy(icon_set);
 	}
 
-	public static GtkIconSetHandle GetSizes(this GtkIconSetHandle icon_set, out GtkIconSize[] sizes, out int n_sizes)
+	public static T GetSizes<T>(this T icon_set, out GtkIconSize[] sizes, out int n_sizes) where T : GtkIconSetHandle
 	{
 		GtkIconSetExterns.gtk_icon_set_get_sizes(icon_set, out sizes, out n_sizes);
 		return icon_set;
@@ -54,7 +54,7 @@ public static class GtkIconSetHandleExtensions
 		return GtkIconSetExterns.gtk_icon_set_render_icon_surface(icon_set, context, size, scale, for_window);
 	}
 
-	public static GtkIconSetHandle Unref(this GtkIconSetHandle icon_set)
+	public static T Unref<T>(this T icon_set) where T : GtkIconSetHandle
 	{
 		GtkIconSetExterns.gtk_icon_set_unref(icon_set);
 		return icon_set;

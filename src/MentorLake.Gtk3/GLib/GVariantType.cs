@@ -57,7 +57,7 @@ public static class GVariantTypeHandleExtensions
 		return GVariantTypeExterns.g_variant_type_first(type);
 	}
 
-	public static GVariantTypeHandle Free(this GVariantTypeHandle type)
+	public static T Free<T>(this T type) where T : GVariantTypeHandle
 	{
 		GVariantTypeExterns.g_variant_type_free(type);
 		return type;

@@ -179,13 +179,13 @@ public static class GdkDeviceHandleExtensions
 		return GdkDeviceExterns.gdk_device_get_name(device);
 	}
 
-	public static GdkDeviceHandle GetPosition(this GdkDeviceHandle device, out GdkScreenHandle screen, out int x, out int y)
+	public static T GetPosition<T>(this T device, out GdkScreenHandle screen, out int x, out int y) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_get_position(device, out screen, out x, out y);
 		return device;
 	}
 
-	public static GdkDeviceHandle GetPositionDouble(this GdkDeviceHandle device, out GdkScreenHandle screen, out double x, out double y)
+	public static T GetPositionDouble<T>(this T device, out GdkScreenHandle screen, out double x, out double y) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_get_position_double(device, out screen, out x, out y);
 		return device;
@@ -206,7 +206,7 @@ public static class GdkDeviceHandleExtensions
 		return GdkDeviceExterns.gdk_device_get_source(device);
 	}
 
-	public static GdkDeviceHandle GetState(this GdkDeviceHandle device, GdkWindowHandle window, double[] axes, out GdkModifierType mask)
+	public static T GetState<T>(this T device, GdkWindowHandle window, double[] axes, out GdkModifierType mask) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_get_state(device, window, axes, out mask);
 		return device;
@@ -242,13 +242,13 @@ public static class GdkDeviceHandleExtensions
 		return GdkDeviceExterns.gdk_device_list_slave_devices(device);
 	}
 
-	public static GdkDeviceHandle SetAxisUse(this GdkDeviceHandle device, uint index_, GdkAxisUse use)
+	public static T SetAxisUse<T>(this T device, uint index_, GdkAxisUse use) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_set_axis_use(device, index_, use);
 		return device;
 	}
 
-	public static GdkDeviceHandle SetKey(this GdkDeviceHandle device, uint index_, uint keyval, GdkModifierType modifiers)
+	public static T SetKey<T>(this T device, uint index_, uint keyval, GdkModifierType modifiers) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_set_key(device, index_, keyval, modifiers);
 		return device;
@@ -259,13 +259,13 @@ public static class GdkDeviceHandleExtensions
 		return GdkDeviceExterns.gdk_device_set_mode(device, mode);
 	}
 
-	public static GdkDeviceHandle Ungrab(this GdkDeviceHandle device, uint time_)
+	public static T Ungrab<T>(this T device, uint time_) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_ungrab(device, time_);
 		return device;
 	}
 
-	public static GdkDeviceHandle Warp(this GdkDeviceHandle device, GdkScreenHandle screen, int x, int y)
+	public static T Warp<T>(this T device, GdkScreenHandle screen, int x, int y) where T : GdkDeviceHandle
 	{
 		GdkDeviceExterns.gdk_device_warp(device, screen, x, y);
 		return device;

@@ -22,7 +22,7 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_acquire(context);
 	}
 
-	public static GMainContextHandle AddPoll(this GMainContextHandle context, GPollFDHandle fd, int priority)
+	public static T AddPoll<T>(this T context, GPollFDHandle fd, int priority) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_add_poll(context, fd, priority);
 		return context;
@@ -33,7 +33,7 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_check(context, max_priority, fds, n_fds);
 	}
 
-	public static GMainContextHandle Dispatch(this GMainContextHandle context)
+	public static T Dispatch<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_dispatch(context);
 		return context;
@@ -59,13 +59,13 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_get_poll_func(context);
 	}
 
-	public static GMainContextHandle Invoke(this GMainContextHandle context, GSourceFunc function, IntPtr data)
+	public static T Invoke<T>(this T context, GSourceFunc function, IntPtr data) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_invoke(context, function, data);
 		return context;
 	}
 
-	public static GMainContextHandle InvokeFull(this GMainContextHandle context, int priority, GSourceFunc function, IntPtr data, GDestroyNotify notify)
+	public static T InvokeFull<T>(this T context, int priority, GSourceFunc function, IntPtr data, GDestroyNotify notify) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_invoke_full(context, priority, function, data, notify);
 		return context;
@@ -86,7 +86,7 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_pending(context);
 	}
 
-	public static GMainContextHandle PopThreadDefault(this GMainContextHandle context)
+	public static T PopThreadDefault<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_pop_thread_default(context);
 		return context;
@@ -97,7 +97,7 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_prepare(context, out priority);
 	}
 
-	public static GMainContextHandle PushThreadDefault(this GMainContextHandle context)
+	public static T PushThreadDefault<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_push_thread_default(context);
 		return context;
@@ -113,25 +113,25 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_ref(context);
 	}
 
-	public static GMainContextHandle Release(this GMainContextHandle context)
+	public static T Release<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_release(context);
 		return context;
 	}
 
-	public static GMainContextHandle RemovePoll(this GMainContextHandle context, GPollFDHandle fd)
+	public static T RemovePoll<T>(this T context, GPollFDHandle fd) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_remove_poll(context, fd);
 		return context;
 	}
 
-	public static GMainContextHandle SetPollFunc(this GMainContextHandle context, GPollFunc func)
+	public static T SetPollFunc<T>(this T context, GPollFunc func) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_set_poll_func(context, func);
 		return context;
 	}
 
-	public static GMainContextHandle Unref(this GMainContextHandle context)
+	public static T Unref<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_unref(context);
 		return context;
@@ -142,7 +142,7 @@ public static class GMainContextHandleExtensions
 		return GMainContextExterns.g_main_context_wait(context, cond, mutex);
 	}
 
-	public static GMainContextHandle Wakeup(this GMainContextHandle context)
+	public static T Wakeup<T>(this T context) where T : GMainContextHandle
 	{
 		GMainContextExterns.g_main_context_wakeup(context);
 		return context;

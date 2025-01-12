@@ -108,13 +108,13 @@ public static class GtkEntryBufferHandleExtensions
 		return GtkEntryBufferExterns.gtk_entry_buffer_delete_text(buffer, position, n_chars);
 	}
 
-	public static GtkEntryBufferHandle EmitDeletedText(this GtkEntryBufferHandle buffer, uint position, uint n_chars)
+	public static T EmitDeletedText<T>(this T buffer, uint position, uint n_chars) where T : GtkEntryBufferHandle
 	{
 		GtkEntryBufferExterns.gtk_entry_buffer_emit_deleted_text(buffer, position, n_chars);
 		return buffer;
 	}
 
-	public static GtkEntryBufferHandle EmitInsertedText(this GtkEntryBufferHandle buffer, uint position, string chars, uint n_chars)
+	public static T EmitInsertedText<T>(this T buffer, uint position, string chars, uint n_chars) where T : GtkEntryBufferHandle
 	{
 		GtkEntryBufferExterns.gtk_entry_buffer_emit_inserted_text(buffer, position, chars, n_chars);
 		return buffer;
@@ -145,13 +145,13 @@ public static class GtkEntryBufferHandleExtensions
 		return GtkEntryBufferExterns.gtk_entry_buffer_insert_text(buffer, position, chars, n_chars);
 	}
 
-	public static GtkEntryBufferHandle SetMaxLength(this GtkEntryBufferHandle buffer, int max_length)
+	public static T SetMaxLength<T>(this T buffer, int max_length) where T : GtkEntryBufferHandle
 	{
 		GtkEntryBufferExterns.gtk_entry_buffer_set_max_length(buffer, max_length);
 		return buffer;
 	}
 
-	public static GtkEntryBufferHandle SetText(this GtkEntryBufferHandle buffer, string chars, int n_chars)
+	public static T SetText<T>(this T buffer, string chars, int n_chars) where T : GtkEntryBufferHandle
 	{
 		GtkEntryBufferExterns.gtk_entry_buffer_set_text(buffer, chars, n_chars);
 		return buffer;

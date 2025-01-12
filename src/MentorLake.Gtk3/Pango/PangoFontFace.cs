@@ -26,7 +26,7 @@ public static class PangoFontFaceHandleExtensions
 		return PangoFontFaceExterns.pango_font_face_is_synthesized(face);
 	}
 
-	public static PangoFontFaceHandle ListSizes(this PangoFontFaceHandle face, out int[] sizes, out int n_sizes)
+	public static T ListSizes<T>(this T face, out int[] sizes, out int n_sizes) where T : PangoFontFaceHandle
 	{
 		PangoFontFaceExterns.pango_font_face_list_sizes(face, out sizes, out n_sizes);
 		return face;

@@ -11,7 +11,7 @@ public static class GTcpConnectionHandleExtensions
 		return GTcpConnectionExterns.g_tcp_connection_get_graceful_disconnect(connection);
 	}
 
-	public static GTcpConnectionHandle SetGracefulDisconnect(this GTcpConnectionHandle connection, bool graceful_disconnect)
+	public static T SetGracefulDisconnect<T>(this T connection, bool graceful_disconnect) where T : GTcpConnectionHandle
 	{
 		GTcpConnectionExterns.g_tcp_connection_set_graceful_disconnect(connection, graceful_disconnect);
 		return connection;

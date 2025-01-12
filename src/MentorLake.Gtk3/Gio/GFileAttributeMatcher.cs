@@ -47,7 +47,7 @@ public static class GFileAttributeMatcherHandleExtensions
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_to_string(matcher);
 	}
 
-	public static GFileAttributeMatcherHandle Unref(this GFileAttributeMatcherHandle matcher)
+	public static T Unref<T>(this T matcher) where T : GFileAttributeMatcherHandle
 	{
 		GFileAttributeMatcherExterns.g_file_attribute_matcher_unref(matcher);
 		return matcher;

@@ -69,13 +69,13 @@ public static class GSocketServiceHandleExtensions
 		return GSocketServiceExterns.g_socket_service_is_active(service);
 	}
 
-	public static GSocketServiceHandle Start(this GSocketServiceHandle service)
+	public static T Start<T>(this T service) where T : GSocketServiceHandle
 	{
 		GSocketServiceExterns.g_socket_service_start(service);
 		return service;
 	}
 
-	public static GSocketServiceHandle Stop(this GSocketServiceHandle service)
+	public static T Stop<T>(this T service) where T : GSocketServiceHandle
 	{
 		GSocketServiceExterns.g_socket_service_stop(service);
 		return service;

@@ -17,31 +17,31 @@ public static class GMemChunkHandleExtensions
 		return GMemChunkExterns.g_mem_chunk_alloc0(mem_chunk);
 	}
 
-	public static GMemChunkHandle Clean(this GMemChunkHandle mem_chunk)
+	public static T Clean<T>(this T mem_chunk) where T : GMemChunkHandle
 	{
 		GMemChunkExterns.g_mem_chunk_clean(mem_chunk);
 		return mem_chunk;
 	}
 
-	public static GMemChunkHandle Destroy(this GMemChunkHandle mem_chunk)
+	public static T Destroy<T>(this T mem_chunk) where T : GMemChunkHandle
 	{
 		GMemChunkExterns.g_mem_chunk_destroy(mem_chunk);
 		return mem_chunk;
 	}
 
-	public static GMemChunkHandle Free(this GMemChunkHandle mem_chunk, IntPtr mem)
+	public static T Free<T>(this T mem_chunk, IntPtr mem) where T : GMemChunkHandle
 	{
 		GMemChunkExterns.g_mem_chunk_free(mem_chunk, mem);
 		return mem_chunk;
 	}
 
-	public static GMemChunkHandle Print(this GMemChunkHandle mem_chunk)
+	public static T Print<T>(this T mem_chunk) where T : GMemChunkHandle
 	{
 		GMemChunkExterns.g_mem_chunk_print(mem_chunk);
 		return mem_chunk;
 	}
 
-	public static GMemChunkHandle Reset(this GMemChunkHandle mem_chunk)
+	public static T Reset<T>(this T mem_chunk) where T : GMemChunkHandle
 	{
 		GMemChunkExterns.g_mem_chunk_reset(mem_chunk);
 		return mem_chunk;

@@ -63,7 +63,7 @@ public delegate void edited([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GtkCellRendererTextHandleExtensions
 {
-	public static GtkCellRendererTextHandle SetFixedHeightFromFont(this GtkCellRendererTextHandle renderer, int number_of_rows)
+	public static T SetFixedHeightFromFont<T>(this T renderer, int number_of_rows) where T : GtkCellRendererTextHandle
 	{
 		GtkCellRendererTextExterns.gtk_cell_renderer_text_set_fixed_height_from_font(renderer, number_of_rows);
 		return renderer;

@@ -17,7 +17,7 @@ public static class GSrvTargetHandleExtensions
 		return GSrvTargetExterns.g_srv_target_copy(target);
 	}
 
-	public static GSrvTargetHandle Free(this GSrvTargetHandle target)
+	public static T Free<T>(this T target) where T : GSrvTargetHandle
 	{
 		GSrvTargetExterns.g_srv_target_free(target);
 		return target;

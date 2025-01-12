@@ -41,43 +41,43 @@ public static class GtkProgressBarHandleExtensions
 		return GtkProgressBarExterns.gtk_progress_bar_get_text(pbar);
 	}
 
-	public static GtkProgressBarHandle Pulse(this GtkProgressBarHandle pbar)
+	public static T Pulse<T>(this T pbar) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_pulse(pbar);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetEllipsize(this GtkProgressBarHandle pbar, PangoEllipsizeMode mode)
+	public static T SetEllipsize<T>(this T pbar, PangoEllipsizeMode mode) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_ellipsize(pbar, mode);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetFraction(this GtkProgressBarHandle pbar, double fraction)
+	public static T SetFraction<T>(this T pbar, double fraction) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_fraction(pbar, fraction);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetInverted(this GtkProgressBarHandle pbar, bool inverted)
+	public static T SetInverted<T>(this T pbar, bool inverted) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_inverted(pbar, inverted);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetPulseStep(this GtkProgressBarHandle pbar, double fraction)
+	public static T SetPulseStep<T>(this T pbar, double fraction) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_pulse_step(pbar, fraction);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetShowText(this GtkProgressBarHandle pbar, bool show_text)
+	public static T SetShowText<T>(this T pbar, bool show_text) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_show_text(pbar, show_text);
 		return pbar;
 	}
 
-	public static GtkProgressBarHandle SetText(this GtkProgressBarHandle pbar, string text)
+	public static T SetText<T>(this T pbar, string text) where T : GtkProgressBarHandle
 	{
 		GtkProgressBarExterns.gtk_progress_bar_set_text(pbar, text);
 		return pbar;

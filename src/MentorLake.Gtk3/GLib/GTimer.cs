@@ -7,13 +7,13 @@ public class GTimerHandle : BaseSafeHandle
 
 public static class GTimerHandleExtensions
 {
-	public static GTimerHandle Continue(this GTimerHandle timer)
+	public static T Continue<T>(this T timer) where T : GTimerHandle
 	{
 		GTimerExterns.g_timer_continue(timer);
 		return timer;
 	}
 
-	public static GTimerHandle Destroy(this GTimerHandle timer)
+	public static T Destroy<T>(this T timer) where T : GTimerHandle
 	{
 		GTimerExterns.g_timer_destroy(timer);
 		return timer;
@@ -29,19 +29,19 @@ public static class GTimerHandleExtensions
 		return GTimerExterns.g_timer_is_active(timer);
 	}
 
-	public static GTimerHandle Reset(this GTimerHandle timer)
+	public static T Reset<T>(this T timer) where T : GTimerHandle
 	{
 		GTimerExterns.g_timer_reset(timer);
 		return timer;
 	}
 
-	public static GTimerHandle Start(this GTimerHandle timer)
+	public static T Start<T>(this T timer) where T : GTimerHandle
 	{
 		GTimerExterns.g_timer_start(timer);
 		return timer;
 	}
 
-	public static GTimerHandle Stop(this GTimerHandle timer)
+	public static T Stop<T>(this T timer) where T : GTimerHandle
 	{
 		GTimerExterns.g_timer_stop(timer);
 		return timer;

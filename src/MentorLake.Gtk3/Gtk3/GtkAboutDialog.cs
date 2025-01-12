@@ -63,7 +63,7 @@ public delegate bool activate_link([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkAboutDialogHandleExtensions
 {
-	public static GtkAboutDialogHandle AddCreditSection(this GtkAboutDialogHandle about, string section_name, string[] people)
+	public static T AddCreditSection<T>(this T about, string section_name, string[] people) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_add_credit_section(about, section_name, people);
 		return about;
@@ -144,91 +144,91 @@ public static class GtkAboutDialogHandleExtensions
 		return GtkAboutDialogExterns.gtk_about_dialog_get_wrap_license(about);
 	}
 
-	public static GtkAboutDialogHandle SetArtists(this GtkAboutDialogHandle about, string[] artists)
+	public static T SetArtists<T>(this T about, string[] artists) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_artists(about, artists);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetAuthors(this GtkAboutDialogHandle about, string[] authors)
+	public static T SetAuthors<T>(this T about, string[] authors) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_authors(about, authors);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetComments(this GtkAboutDialogHandle about, string comments)
+	public static T SetComments<T>(this T about, string comments) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_comments(about, comments);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetCopyright(this GtkAboutDialogHandle about, string copyright)
+	public static T SetCopyright<T>(this T about, string copyright) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_copyright(about, copyright);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetDocumenters(this GtkAboutDialogHandle about, string[] documenters)
+	public static T SetDocumenters<T>(this T about, string[] documenters) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_documenters(about, documenters);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetLicense(this GtkAboutDialogHandle about, string license)
+	public static T SetLicense<T>(this T about, string license) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_license(about, license);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetLicenseType(this GtkAboutDialogHandle about, GtkLicense license_type)
+	public static T SetLicenseType<T>(this T about, GtkLicense license_type) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_license_type(about, license_type);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetLogo(this GtkAboutDialogHandle about, GdkPixbufHandle logo)
+	public static T SetLogo<T>(this T about, GdkPixbufHandle logo) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_logo(about, logo);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetLogoIconName(this GtkAboutDialogHandle about, string icon_name)
+	public static T SetLogoIconName<T>(this T about, string icon_name) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_logo_icon_name(about, icon_name);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetProgramName(this GtkAboutDialogHandle about, string name)
+	public static T SetProgramName<T>(this T about, string name) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_program_name(about, name);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetTranslatorCredits(this GtkAboutDialogHandle about, string translator_credits)
+	public static T SetTranslatorCredits<T>(this T about, string translator_credits) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_translator_credits(about, translator_credits);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetVersion(this GtkAboutDialogHandle about, string version)
+	public static T SetVersion<T>(this T about, string version) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_version(about, version);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetWebsite(this GtkAboutDialogHandle about, string website)
+	public static T SetWebsite<T>(this T about, string website) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_website(about, website);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetWebsiteLabel(this GtkAboutDialogHandle about, string website_label)
+	public static T SetWebsiteLabel<T>(this T about, string website_label) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_website_label(about, website_label);
 		return about;
 	}
 
-	public static GtkAboutDialogHandle SetWrapLicense(this GtkAboutDialogHandle about, bool wrap_license)
+	public static T SetWrapLicense<T>(this T about, bool wrap_license) where T : GtkAboutDialogHandle
 	{
 		GtkAboutDialogExterns.gtk_about_dialog_set_wrap_license(about, wrap_license);
 		return about;

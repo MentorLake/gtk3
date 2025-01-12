@@ -65,7 +65,7 @@ public delegate bool @event([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 public static class GtkTextTagHandleExtensions
 {
-	public static GtkTextTagHandle Changed(this GtkTextTagHandle tag, bool size_changed)
+	public static T Changed<T>(this T tag, bool size_changed) where T : GtkTextTagHandle
 	{
 		GtkTextTagExterns.gtk_text_tag_changed(tag, size_changed);
 		return tag;
@@ -81,7 +81,7 @@ public static class GtkTextTagHandleExtensions
 		return GtkTextTagExterns.gtk_text_tag_get_priority(tag);
 	}
 
-	public static GtkTextTagHandle SetPriority(this GtkTextTagHandle tag, int priority)
+	public static T SetPriority<T>(this T tag, int priority) where T : GtkTextTagHandle
 	{
 		GtkTextTagExterns.gtk_text_tag_set_priority(tag, priority);
 		return tag;

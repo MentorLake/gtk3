@@ -46,7 +46,7 @@ public static class GDataInputStreamHandleExtensions
 		return GDataInputStreamExterns.g_data_input_stream_read_line(stream, out length, cancellable, out error);
 	}
 
-	public static GDataInputStreamHandle ReadLineAsync(this GDataInputStreamHandle stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadLineAsync<T>(this T stream, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
 		GDataInputStreamExterns.g_data_input_stream_read_line_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -87,7 +87,7 @@ public static class GDataInputStreamHandleExtensions
 		return GDataInputStreamExterns.g_data_input_stream_read_until(stream, stop_chars, out length, cancellable, out error);
 	}
 
-	public static GDataInputStreamHandle ReadUntilAsync(this GDataInputStreamHandle stream, string stop_chars, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadUntilAsync<T>(this T stream, string stop_chars, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
 		GDataInputStreamExterns.g_data_input_stream_read_until_async(stream, stop_chars, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -103,7 +103,7 @@ public static class GDataInputStreamHandleExtensions
 		return GDataInputStreamExterns.g_data_input_stream_read_upto(stream, stop_chars, stop_chars_len, out length, cancellable, out error);
 	}
 
-	public static GDataInputStreamHandle ReadUptoAsync(this GDataInputStreamHandle stream, string stop_chars, UIntPtr stop_chars_len, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	public static T ReadUptoAsync<T>(this T stream, string stop_chars, UIntPtr stop_chars_len, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
 		GDataInputStreamExterns.g_data_input_stream_read_upto_async(stream, stop_chars, stop_chars_len, io_priority, cancellable, callback, user_data);
 		return stream;
@@ -114,13 +114,13 @@ public static class GDataInputStreamHandleExtensions
 		return GDataInputStreamExterns.g_data_input_stream_read_upto_finish(stream, result, out length, out error);
 	}
 
-	public static GDataInputStreamHandle SetByteOrder(this GDataInputStreamHandle stream, GDataStreamByteOrder order)
+	public static T SetByteOrder<T>(this T stream, GDataStreamByteOrder order) where T : GDataInputStreamHandle
 	{
 		GDataInputStreamExterns.g_data_input_stream_set_byte_order(stream, order);
 		return stream;
 	}
 
-	public static GDataInputStreamHandle SetNewlineType(this GDataInputStreamHandle stream, GDataStreamNewlineType type)
+	public static T SetNewlineType<T>(this T stream, GDataStreamNewlineType type) where T : GDataInputStreamHandle
 	{
 		GDataInputStreamExterns.g_data_input_stream_set_newline_type(stream, type);
 		return stream;

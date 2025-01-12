@@ -12,7 +12,7 @@ public static class GIOSchedulerJobHandleExtensions
 		return GIOSchedulerJobExterns.g_io_scheduler_job_send_to_mainloop(job, func, user_data, notify);
 	}
 
-	public static GIOSchedulerJobHandle GIoSchedulerJobSendToMainloopAsync(this GIOSchedulerJobHandle job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify)
+	public static T GIoSchedulerJobSendToMainloopAsync<T>(this T job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify) where T : GIOSchedulerJobHandle
 	{
 		GIOSchedulerJobExterns.g_io_scheduler_job_send_to_mainloop_async(job, func, user_data, notify);
 		return job;

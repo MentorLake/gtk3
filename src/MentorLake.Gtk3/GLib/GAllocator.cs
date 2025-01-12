@@ -7,7 +7,7 @@ public class GAllocatorHandle : BaseSafeHandle
 
 public static class GAllocatorHandleExtensions
 {
-	public static GAllocatorHandle Free(this GAllocatorHandle allocator)
+	public static T Free<T>(this T allocator) where T : GAllocatorHandle
 	{
 		GAllocatorExterns.g_allocator_free(allocator);
 		return allocator;

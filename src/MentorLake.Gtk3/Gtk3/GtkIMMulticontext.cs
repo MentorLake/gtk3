@@ -11,7 +11,7 @@ public class GtkIMMulticontextHandle : GtkIMContextHandle
 
 public static class GtkIMMulticontextHandleExtensions
 {
-	public static GtkIMMulticontextHandle GtkImMulticontextAppendMenuitems(this GtkIMMulticontextHandle context, GtkMenuShellHandle menushell)
+	public static T GtkImMulticontextAppendMenuitems<T>(this T context, GtkMenuShellHandle menushell) where T : GtkIMMulticontextHandle
 	{
 		GtkIMMulticontextExterns.gtk_im_multicontext_append_menuitems(context, menushell);
 		return context;
@@ -22,7 +22,7 @@ public static class GtkIMMulticontextHandleExtensions
 		return GtkIMMulticontextExterns.gtk_im_multicontext_get_context_id(context);
 	}
 
-	public static GtkIMMulticontextHandle GtkImMulticontextSetContextId(this GtkIMMulticontextHandle context, string context_id)
+	public static T GtkImMulticontextSetContextId<T>(this T context, string context_id) where T : GtkIMMulticontextHandle
 	{
 		GtkIMMulticontextExterns.gtk_im_multicontext_set_context_id(context, context_id);
 		return context;

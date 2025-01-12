@@ -11,13 +11,13 @@ public class GDBusObjectManagerServerHandle : GObjectHandle, GDBusObjectManagerH
 
 public static class GDBusObjectManagerServerHandleExtensions
 {
-	public static GDBusObjectManagerServerHandle GDbusObjectManagerServerExport(this GDBusObjectManagerServerHandle manager, GDBusObjectSkeletonHandle @object)
+	public static T GDbusObjectManagerServerExport<T>(this T manager, GDBusObjectSkeletonHandle @object) where T : GDBusObjectManagerServerHandle
 	{
 		GDBusObjectManagerServerExterns.g_dbus_object_manager_server_export(manager, @object);
 		return manager;
 	}
 
-	public static GDBusObjectManagerServerHandle GDbusObjectManagerServerExportUniquely(this GDBusObjectManagerServerHandle manager, GDBusObjectSkeletonHandle @object)
+	public static T GDbusObjectManagerServerExportUniquely<T>(this T manager, GDBusObjectSkeletonHandle @object) where T : GDBusObjectManagerServerHandle
 	{
 		GDBusObjectManagerServerExterns.g_dbus_object_manager_server_export_uniquely(manager, @object);
 		return manager;
@@ -33,7 +33,7 @@ public static class GDBusObjectManagerServerHandleExtensions
 		return GDBusObjectManagerServerExterns.g_dbus_object_manager_server_is_exported(manager, @object);
 	}
 
-	public static GDBusObjectManagerServerHandle GDbusObjectManagerServerSetConnection(this GDBusObjectManagerServerHandle manager, GDBusConnectionHandle connection)
+	public static T GDbusObjectManagerServerSetConnection<T>(this T manager, GDBusConnectionHandle connection) where T : GDBusObjectManagerServerHandle
 	{
 		GDBusObjectManagerServerExterns.g_dbus_object_manager_server_set_connection(manager, connection);
 		return manager;

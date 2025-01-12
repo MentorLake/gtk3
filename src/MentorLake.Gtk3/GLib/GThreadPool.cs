@@ -7,7 +7,7 @@ public class GThreadPoolHandle : BaseSafeHandle
 
 public static class GThreadPoolHandleExtensions
 {
-	public static GThreadPoolHandle Free(this GThreadPoolHandle pool, bool immediate, bool wait_)
+	public static T Free<T>(this T pool, bool immediate, bool wait_) where T : GThreadPoolHandle
 	{
 		GThreadPoolExterns.g_thread_pool_free(pool, immediate, wait_);
 		return pool;
@@ -38,7 +38,7 @@ public static class GThreadPoolHandleExtensions
 		return GThreadPoolExterns.g_thread_pool_set_max_threads(pool, max_threads, out error);
 	}
 
-	public static GThreadPoolHandle SetSortFunction(this GThreadPoolHandle pool, GCompareDataFunc func, IntPtr user_data)
+	public static T SetSortFunction<T>(this T pool, GCompareDataFunc func, IntPtr user_data) where T : GThreadPoolHandle
 	{
 		GThreadPoolExterns.g_thread_pool_set_sort_function(pool, func, user_data);
 		return pool;

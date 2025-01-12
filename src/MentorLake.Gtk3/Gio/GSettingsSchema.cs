@@ -42,7 +42,7 @@ public static class GSettingsSchemaHandleExtensions
 		return GSettingsSchemaExterns.g_settings_schema_ref(schema);
 	}
 
-	public static GSettingsSchemaHandle Unref(this GSettingsSchemaHandle schema)
+	public static T Unref<T>(this T schema) where T : GSettingsSchemaHandle
 	{
 		GSettingsSchemaExterns.g_settings_schema_unref(schema);
 		return schema;

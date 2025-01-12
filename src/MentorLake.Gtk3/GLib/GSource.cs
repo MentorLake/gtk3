@@ -12,13 +12,13 @@ public class GSourceHandle : BaseSafeHandle
 
 public static class GSourceHandleExtensions
 {
-	public static GSourceHandle AddChildSource(this GSourceHandle source, GSourceHandle child_source)
+	public static T AddChildSource<T>(this T source, GSourceHandle child_source) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_add_child_source(source, child_source);
 		return source;
 	}
 
-	public static GSourceHandle AddPoll(this GSourceHandle source, GPollFDHandle fd)
+	public static T AddPoll<T>(this T source, GPollFDHandle fd) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_add_poll(source, fd);
 		return source;
@@ -34,7 +34,7 @@ public static class GSourceHandleExtensions
 		return GSourceExterns.g_source_attach(source, context);
 	}
 
-	public static GSourceHandle Destroy(this GSourceHandle source)
+	public static T Destroy<T>(this T source) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_destroy(source);
 		return source;
@@ -50,7 +50,7 @@ public static class GSourceHandleExtensions
 		return GSourceExterns.g_source_get_context(source);
 	}
 
-	public static GSourceHandle GetCurrentTime(this GSourceHandle source, GTimeValHandle timeval)
+	public static T GetCurrentTime<T>(this T source, GTimeValHandle timeval) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_get_current_time(source, timeval);
 		return source;
@@ -86,7 +86,7 @@ public static class GSourceHandleExtensions
 		return GSourceExterns.g_source_is_destroyed(source);
 	}
 
-	public static GSourceHandle ModifyUnixFd(this GSourceHandle source, IntPtr tag, GIOCondition new_events)
+	public static T ModifyUnixFd<T>(this T source, IntPtr tag, GIOCondition new_events) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_modify_unix_fd(source, tag, new_events);
 		return source;
@@ -102,79 +102,79 @@ public static class GSourceHandleExtensions
 		return GSourceExterns.g_source_ref(source);
 	}
 
-	public static GSourceHandle RemoveChildSource(this GSourceHandle source, GSourceHandle child_source)
+	public static T RemoveChildSource<T>(this T source, GSourceHandle child_source) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_remove_child_source(source, child_source);
 		return source;
 	}
 
-	public static GSourceHandle RemovePoll(this GSourceHandle source, GPollFDHandle fd)
+	public static T RemovePoll<T>(this T source, GPollFDHandle fd) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_remove_poll(source, fd);
 		return source;
 	}
 
-	public static GSourceHandle RemoveUnixFd(this GSourceHandle source, IntPtr tag)
+	public static T RemoveUnixFd<T>(this T source, IntPtr tag) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_remove_unix_fd(source, tag);
 		return source;
 	}
 
-	public static GSourceHandle SetCallback(this GSourceHandle source, GSourceFunc func, IntPtr data, GDestroyNotify notify)
+	public static T SetCallback<T>(this T source, GSourceFunc func, IntPtr data, GDestroyNotify notify) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_callback(source, func, data, notify);
 		return source;
 	}
 
-	public static GSourceHandle SetCallbackIndirect(this GSourceHandle source, IntPtr callback_data, GSourceCallbackFuncsHandle callback_funcs)
+	public static T SetCallbackIndirect<T>(this T source, IntPtr callback_data, GSourceCallbackFuncsHandle callback_funcs) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_callback_indirect(source, callback_data, callback_funcs);
 		return source;
 	}
 
-	public static GSourceHandle SetCanRecurse(this GSourceHandle source, bool can_recurse)
+	public static T SetCanRecurse<T>(this T source, bool can_recurse) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_can_recurse(source, can_recurse);
 		return source;
 	}
 
-	public static GSourceHandle SetDisposeFunction(this GSourceHandle source, GSourceDisposeFunc dispose)
+	public static T SetDisposeFunction<T>(this T source, GSourceDisposeFunc dispose) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_dispose_function(source, dispose);
 		return source;
 	}
 
-	public static GSourceHandle SetFuncs(this GSourceHandle source, GSourceFuncsHandle funcs)
+	public static T SetFuncs<T>(this T source, GSourceFuncsHandle funcs) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_funcs(source, funcs);
 		return source;
 	}
 
-	public static GSourceHandle SetName(this GSourceHandle source, string name)
+	public static T SetName<T>(this T source, string name) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_name(source, name);
 		return source;
 	}
 
-	public static GSourceHandle SetPriority(this GSourceHandle source, int priority)
+	public static T SetPriority<T>(this T source, int priority) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_priority(source, priority);
 		return source;
 	}
 
-	public static GSourceHandle SetReadyTime(this GSourceHandle source, long ready_time)
+	public static T SetReadyTime<T>(this T source, long ready_time) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_ready_time(source, ready_time);
 		return source;
 	}
 
-	public static GSourceHandle SetStaticName(this GSourceHandle source, string name)
+	public static T SetStaticName<T>(this T source, string name) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_set_static_name(source, name);
 		return source;
 	}
 
-	public static GSourceHandle Unref(this GSourceHandle source)
+	public static T Unref<T>(this T source) where T : GSourceHandle
 	{
 		GSourceExterns.g_source_unref(source);
 		return source;

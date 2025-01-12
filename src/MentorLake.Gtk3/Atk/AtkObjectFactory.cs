@@ -16,7 +16,7 @@ public static class AtkObjectFactoryHandleExtensions
 		return AtkObjectFactoryExterns.atk_object_factory_get_accessible_type(factory);
 	}
 
-	public static AtkObjectFactoryHandle Invalidate(this AtkObjectFactoryHandle factory)
+	public static T Invalidate<T>(this T factory) where T : AtkObjectFactoryHandle
 	{
 		AtkObjectFactoryExterns.atk_object_factory_invalidate(factory);
 		return factory;

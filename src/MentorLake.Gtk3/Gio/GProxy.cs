@@ -31,6 +31,11 @@ public static class GProxyHandleExtensions
 		return GProxyExterns.g_proxy_supports_hostname(proxy);
 	}
 
+	public static GProxyHandle GetDefaultForProtocol(string protocol)
+	{
+		return GProxyExterns.g_proxy_get_default_for_protocol(protocol);
+	}
+
 }
 
 internal class GProxyExterns
@@ -46,5 +51,8 @@ internal class GProxyExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_proxy_supports_hostname(GProxyHandle proxy);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GProxyHandle g_proxy_get_default_for_protocol(string protocol);
 
 }

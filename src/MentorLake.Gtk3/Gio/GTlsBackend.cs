@@ -61,6 +61,11 @@ public static class GTlsBackendHandleExtensions
 		return GTlsBackendExterns.g_tls_backend_supports_tls(backend);
 	}
 
+	public static GTlsBackendHandle GetDefault()
+	{
+		return GTlsBackendExterns.g_tls_backend_get_default();
+	}
+
 }
 
 internal class GTlsBackendExterns
@@ -94,5 +99,8 @@ internal class GTlsBackendExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_tls_backend_supports_tls(GTlsBackendHandle backend);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GTlsBackendHandle g_tls_backend_get_default();
 
 }

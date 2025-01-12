@@ -54,6 +54,11 @@ public static class GTlsClientConnectionHandleExtensions
 		return conn;
 	}
 
+	public static GIOStreamHandle New(GIOStreamHandle base_io_stream, GSocketConnectableHandle server_identity, out GErrorHandle error)
+	{
+		return GTlsClientConnectionExterns.g_tls_client_connection_new(base_io_stream, server_identity, out error);
+	}
+
 }
 
 internal class GTlsClientConnectionExterns
@@ -81,5 +86,8 @@ internal class GTlsClientConnectionExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_tls_client_connection_set_validation_flags(GTlsClientConnectionHandle conn, GTlsCertificateFlags flags);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIOStreamHandle g_tls_client_connection_new(GIOStreamHandle base_io_stream, GSocketConnectableHandle server_identity, out GErrorHandle error);
 
 }

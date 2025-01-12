@@ -690,6 +690,66 @@ public static class GFileHandleExtensions
 		return GFileExterns.g_file_unmount_mountable_with_operation_finish(file, result, out error);
 	}
 
+	public static GFileHandle NewBuildFilename(string first_element, IntPtr @__arglist)
+	{
+		return GFileExterns.g_file_new_build_filename(first_element, @__arglist);
+	}
+
+	public static GFileHandle NewBuildFilenamev(string args)
+	{
+		return GFileExterns.g_file_new_build_filenamev(args);
+	}
+
+	public static GFileHandle NewForCommandlineArg(string arg)
+	{
+		return GFileExterns.g_file_new_for_commandline_arg(arg);
+	}
+
+	public static GFileHandle NewForCommandlineArgAndCwd(string arg, string cwd)
+	{
+		return GFileExterns.g_file_new_for_commandline_arg_and_cwd(arg, cwd);
+	}
+
+	public static GFileHandle NewForPath(string path)
+	{
+		return GFileExterns.g_file_new_for_path(path);
+	}
+
+	public static GFileHandle NewForUri(string uri)
+	{
+		return GFileExterns.g_file_new_for_uri(uri);
+	}
+
+	public static GFileHandle NewTmp(string tmpl, out GFileIOStreamHandle iostream, out GErrorHandle error)
+	{
+		return GFileExterns.g_file_new_tmp(tmpl, out iostream, out error);
+	}
+
+	public static void NewTmpAsync(string tmpl, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	{
+		GFileExterns.g_file_new_tmp_async(tmpl, io_priority, cancellable, callback, user_data);
+	}
+
+	public static void NewTmpDirAsync(string tmpl, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	{
+		GFileExterns.g_file_new_tmp_dir_async(tmpl, io_priority, cancellable, callback, user_data);
+	}
+
+	public static GFileHandle NewTmpDirFinish(GAsyncResultHandle result, out GErrorHandle error)
+	{
+		return GFileExterns.g_file_new_tmp_dir_finish(result, out error);
+	}
+
+	public static GFileHandle NewTmpFinish(GAsyncResultHandle result, out GFileIOStreamHandle iostream, out GErrorHandle error)
+	{
+		return GFileExterns.g_file_new_tmp_finish(result, out iostream, out error);
+	}
+
+	public static GFileHandle ParseName(string parse_name)
+	{
+		return GFileExterns.g_file_parse_name(parse_name);
+	}
+
 }
 
 internal class GFileExterns
@@ -1080,5 +1140,41 @@ internal class GFileExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_file_unmount_mountable_with_operation_finish(GFileHandle file, GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_build_filename(string first_element, IntPtr @__arglist);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_build_filenamev(string args);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_for_commandline_arg(string arg);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_for_commandline_arg_and_cwd(string arg, string cwd);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_for_path(string path);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_for_uri(string uri);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_tmp(string tmpl, out GFileIOStreamHandle iostream, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_file_new_tmp_async(string tmpl, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_file_new_tmp_dir_async(string tmpl, int io_priority, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_tmp_dir_finish(GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_new_tmp_finish(GAsyncResultHandle result, out GFileIOStreamHandle iostream, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GFileHandle g_file_parse_name(string parse_name);
 
 }

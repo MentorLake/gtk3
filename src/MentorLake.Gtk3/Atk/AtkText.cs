@@ -122,6 +122,11 @@ public static class AtkTextHandleExtensions
 		return AtkTextExterns.atk_text_set_selection(text, selection_num, start_offset, end_offset);
 	}
 
+	public static void FreeRanges(AtkTextRangeHandle[] ranges)
+	{
+		AtkTextExterns.atk_text_free_ranges(ranges);
+	}
+
 }
 
 internal class AtkTextExterns
@@ -191,5 +196,8 @@ internal class AtkTextExterns
 
 	[DllImport(Libraries.Atk)]
 	internal static extern bool atk_text_set_selection(AtkTextHandle text, int selection_num, int start_offset, int end_offset);
+
+	[DllImport(Libraries.Atk)]
+	internal static extern void atk_text_free_ranges(AtkTextRangeHandle[] ranges);
 
 }

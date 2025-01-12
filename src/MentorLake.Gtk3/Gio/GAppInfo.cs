@@ -136,6 +136,81 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoExterns.g_app_info_supports_uris(appinfo);
 	}
 
+	public static GAppInfoHandle CreateFromCommandline(string commandline, string application_name, GAppInfoCreateFlags flags, out GErrorHandle error)
+	{
+		return GAppInfoExterns.g_app_info_create_from_commandline(commandline, application_name, flags, out error);
+	}
+
+	public static GListHandle GetAll()
+	{
+		return GAppInfoExterns.g_app_info_get_all();
+	}
+
+	public static GListHandle GetAllForType(string content_type)
+	{
+		return GAppInfoExterns.g_app_info_get_all_for_type(content_type);
+	}
+
+	public static GAppInfoHandle GetDefaultForType(string content_type, bool must_support_uris)
+	{
+		return GAppInfoExterns.g_app_info_get_default_for_type(content_type, must_support_uris);
+	}
+
+	public static void GetDefaultForTypeAsync(string content_type, bool must_support_uris, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	{
+		GAppInfoExterns.g_app_info_get_default_for_type_async(content_type, must_support_uris, cancellable, callback, user_data);
+	}
+
+	public static GAppInfoHandle GetDefaultForTypeFinish(GAsyncResultHandle result, out GErrorHandle error)
+	{
+		return GAppInfoExterns.g_app_info_get_default_for_type_finish(result, out error);
+	}
+
+	public static GAppInfoHandle GetDefaultForUriScheme(string uri_scheme)
+	{
+		return GAppInfoExterns.g_app_info_get_default_for_uri_scheme(uri_scheme);
+	}
+
+	public static void GetDefaultForUriSchemeAsync(string uri_scheme, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	{
+		GAppInfoExterns.g_app_info_get_default_for_uri_scheme_async(uri_scheme, cancellable, callback, user_data);
+	}
+
+	public static GAppInfoHandle GetDefaultForUriSchemeFinish(GAsyncResultHandle result, out GErrorHandle error)
+	{
+		return GAppInfoExterns.g_app_info_get_default_for_uri_scheme_finish(result, out error);
+	}
+
+	public static GListHandle GetFallbackForType(string content_type)
+	{
+		return GAppInfoExterns.g_app_info_get_fallback_for_type(content_type);
+	}
+
+	public static GListHandle GetRecommendedForType(string content_type)
+	{
+		return GAppInfoExterns.g_app_info_get_recommended_for_type(content_type);
+	}
+
+	public static bool LaunchDefaultForUri(string uri, GAppLaunchContextHandle context, out GErrorHandle error)
+	{
+		return GAppInfoExterns.g_app_info_launch_default_for_uri(uri, context, out error);
+	}
+
+	public static void LaunchDefaultForUriAsync(string uri, GAppLaunchContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data)
+	{
+		GAppInfoExterns.g_app_info_launch_default_for_uri_async(uri, context, cancellable, callback, user_data);
+	}
+
+	public static bool LaunchDefaultForUriFinish(GAsyncResultHandle result, out GErrorHandle error)
+	{
+		return GAppInfoExterns.g_app_info_launch_default_for_uri_finish(result, out error);
+	}
+
+	public static void ResetTypeAssociations(string content_type)
+	{
+		GAppInfoExterns.g_app_info_reset_type_associations(content_type);
+	}
+
 }
 
 internal class GAppInfoExterns
@@ -214,5 +289,50 @@ internal class GAppInfoExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_app_info_supports_uris(GAppInfoHandle appinfo);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GAppInfoHandle g_app_info_create_from_commandline(string commandline, string application_name, GAppInfoCreateFlags flags, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GListHandle g_app_info_get_all();
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GListHandle g_app_info_get_all_for_type(string content_type);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GAppInfoHandle g_app_info_get_default_for_type(string content_type, bool must_support_uris);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_app_info_get_default_for_type_async(string content_type, bool must_support_uris, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GAppInfoHandle g_app_info_get_default_for_type_finish(GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GAppInfoHandle g_app_info_get_default_for_uri_scheme(string uri_scheme);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_app_info_get_default_for_uri_scheme_async(string uri_scheme, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GAppInfoHandle g_app_info_get_default_for_uri_scheme_finish(GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GListHandle g_app_info_get_fallback_for_type(string content_type);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GListHandle g_app_info_get_recommended_for_type(string content_type);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern bool g_app_info_launch_default_for_uri(string uri, GAppLaunchContextHandle context, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_app_info_launch_default_for_uri_async(string uri, GAppLaunchContextHandle context, GCancellableHandle cancellable, GAsyncReadyCallback callback, IntPtr user_data);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern bool g_app_info_launch_default_for_uri_finish(GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern void g_app_info_reset_type_associations(string content_type);
 
 }

@@ -31,6 +31,11 @@ public static class GProxyResolverHandleExtensions
 		return GProxyResolverExterns.g_proxy_resolver_lookup_finish(resolver, result, out error);
 	}
 
+	public static GProxyResolverHandle GetDefault()
+	{
+		return GProxyResolverExterns.g_proxy_resolver_get_default();
+	}
+
 }
 
 internal class GProxyResolverExterns
@@ -46,5 +51,8 @@ internal class GProxyResolverExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern IntPtr g_proxy_resolver_lookup_finish(GProxyResolverHandle resolver, GAsyncResultHandle result, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GProxyResolverHandle g_proxy_resolver_get_default();
 
 }

@@ -30,6 +30,16 @@ public static class GIconHandleExtensions
 		return GIconExterns.g_icon_to_string(icon);
 	}
 
+	public static GIconHandle Deserialize(GVariantHandle value)
+	{
+		return GIconExterns.g_icon_deserialize(value);
+	}
+
+	public static GIconHandle NewForString(string str, out GErrorHandle error)
+	{
+		return GIconExterns.g_icon_new_for_string(str, out error);
+	}
+
 }
 
 internal class GIconExterns
@@ -45,5 +55,11 @@ internal class GIconExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern string g_icon_to_string(GIconHandle icon);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIconHandle g_icon_deserialize(GVariantHandle value);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GIconHandle g_icon_new_for_string(string str, out GErrorHandle error);
 
 }

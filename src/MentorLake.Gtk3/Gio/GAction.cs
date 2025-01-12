@@ -52,6 +52,21 @@ public static class GActionHandleExtensions
 		return GActionExterns.g_action_get_state_type(action);
 	}
 
+	public static bool NameIsValid(string action_name)
+	{
+		return GActionExterns.g_action_name_is_valid(action_name);
+	}
+
+	public static bool ParseDetailedName(string detailed_name, out string action_name, out GVariantHandle target_value, out GErrorHandle error)
+	{
+		return GActionExterns.g_action_parse_detailed_name(detailed_name, out action_name, out target_value, out error);
+	}
+
+	public static string PrintDetailedName(string action_name, GVariantHandle target_value)
+	{
+		return GActionExterns.g_action_print_detailed_name(action_name, target_value);
+	}
+
 }
 
 internal class GActionExterns
@@ -79,5 +94,14 @@ internal class GActionExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern GVariantTypeHandle g_action_get_state_type(GActionHandle action);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern bool g_action_name_is_valid(string action_name);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern bool g_action_parse_detailed_name(string detailed_name, out string action_name, out GVariantHandle target_value, out GErrorHandle error);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern string g_action_print_detailed_name(string action_name, GVariantHandle target_value);
 
 }

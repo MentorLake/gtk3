@@ -41,6 +41,11 @@ public static class GNetworkMonitorHandleExtensions
 		return GNetworkMonitorExterns.g_network_monitor_get_network_metered(monitor);
 	}
 
+	public static GNetworkMonitorHandle GetDefault()
+	{
+		return GNetworkMonitorExterns.g_network_monitor_get_default();
+	}
+
 }
 
 internal class GNetworkMonitorExterns
@@ -62,5 +67,8 @@ internal class GNetworkMonitorExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern bool g_network_monitor_get_network_metered(GNetworkMonitorHandle monitor);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GNetworkMonitorHandle g_network_monitor_get_default();
 
 }

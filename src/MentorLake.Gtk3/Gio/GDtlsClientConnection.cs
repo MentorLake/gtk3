@@ -37,6 +37,11 @@ public static class GDtlsClientConnectionHandleExtensions
 		return conn;
 	}
 
+	public static GDatagramBasedHandle New(GDatagramBasedHandle base_socket, GSocketConnectableHandle server_identity, out GErrorHandle error)
+	{
+		return GDtlsClientConnectionExterns.g_dtls_client_connection_new(base_socket, server_identity, out error);
+	}
+
 }
 
 internal class GDtlsClientConnectionExterns
@@ -55,5 +60,8 @@ internal class GDtlsClientConnectionExterns
 
 	[DllImport(Libraries.Gio)]
 	internal static extern void g_dtls_client_connection_set_validation_flags(GDtlsClientConnectionHandle conn, GTlsCertificateFlags flags);
+
+	[DllImport(Libraries.Gio)]
+	internal static extern GDatagramBasedHandle g_dtls_client_connection_new(GDatagramBasedHandle base_socket, GSocketConnectableHandle server_identity, out GErrorHandle error);
 
 }

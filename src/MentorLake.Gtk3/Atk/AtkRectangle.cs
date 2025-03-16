@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 public class AtkRectangleHandle : BaseSafeHandle
 {
 }
 
 
-public static class AtkRectangleHandleExtensions
+public static class AtkRectangleExtensions
 {
+
+	public static AtkRectangle Dereference(this AtkRectangleHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<AtkRectangle>(x.DangerousGetHandle());
 }
 internal class AtkRectangleExterns
 {

@@ -1,55 +1,57 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoColorHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoColorHandleExtensions
+public static class PangoColorExtensions
 {
-	public static PangoColorHandle Copy(this PangoColorHandle src)
+	public static MentorLake.Pango.PangoColorHandle Copy(this MentorLake.Pango.PangoColorHandle src)
 	{
 		return PangoColorExterns.pango_color_copy(src);
 	}
 
-	public static T Free<T>(this T color) where T : PangoColorHandle
+	public static void Free(this MentorLake.Pango.PangoColorHandle color)
 	{
 		PangoColorExterns.pango_color_free(color);
-		return color;
 	}
 
-	public static bool Parse(this PangoColorHandle color, string spec)
+	public static bool Parse(this MentorLake.Pango.PangoColorHandle color, string spec)
 	{
 		return PangoColorExterns.pango_color_parse(color, spec);
 	}
 
-	public static bool ParseWithAlpha(this PangoColorHandle color, out ushort alpha, string spec)
+	public static bool ParseWithAlpha(this MentorLake.Pango.PangoColorHandle color, out ushort alpha, string spec)
 	{
 		return PangoColorExterns.pango_color_parse_with_alpha(color, out alpha, spec);
 	}
 
-	public static string ToString(this PangoColorHandle color)
+	public static string ToString(this MentorLake.Pango.PangoColorHandle color)
 	{
 		return PangoColorExterns.pango_color_to_string(color);
 	}
 
+
+	public static PangoColor Dereference(this PangoColorHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoColor>(x.DangerousGetHandle());
 }
 internal class PangoColorExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoColorHandle pango_color_copy(PangoColorHandle src);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoColorHandle pango_color_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoColorHandle>))] MentorLake.Pango.PangoColorHandle src);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_color_free(PangoColorHandle color);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_color_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoColorHandle>))] MentorLake.Pango.PangoColorHandle color);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_color_parse(PangoColorHandle color, string spec);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_color_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoColorHandle>))] MentorLake.Pango.PangoColorHandle color, string spec);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_color_parse_with_alpha(PangoColorHandle color, out ushort alpha, string spec);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_color_parse_with_alpha([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoColorHandle>))] MentorLake.Pango.PangoColorHandle color, out ushort alpha, string spec);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern string pango_color_to_string(PangoColorHandle color);
+	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string pango_color_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoColorHandle>))] MentorLake.Pango.PangoColorHandle color);
 
 }
 

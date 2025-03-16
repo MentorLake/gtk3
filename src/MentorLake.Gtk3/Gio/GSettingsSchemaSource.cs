@@ -1,67 +1,67 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GSettingsSchemaSourceHandle : BaseSafeHandle
 {
-	public static GSettingsSchemaSourceHandle NewFromDirectory(string directory, GSettingsSchemaSourceHandle parent, bool trusted, out GErrorHandle error)
+	public static MentorLake.Gio.GSettingsSchemaSourceHandle NewFromDirectory(char directory, MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted)
 	{
-		return GSettingsSchemaSourceExterns.g_settings_schema_source_new_from_directory(directory, parent, trusted, out error);
+		return GSettingsSchemaSourceExterns.g_settings_schema_source_new_from_directory(directory, parent, trusted);
 	}
 
 }
 
 
-public static class GSettingsSchemaSourceHandleExtensions
+public static class GSettingsSchemaSourceExtensions
 {
-	public static T ListSchemas<T>(this T source, bool recursive, out string[] non_relocatable, out string[] relocatable) where T : GSettingsSchemaSourceHandle
+	public static void ListSchemas(this MentorLake.Gio.GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable)
 	{
 		GSettingsSchemaSourceExterns.g_settings_schema_source_list_schemas(source, recursive, out non_relocatable, out relocatable);
-		return source;
 	}
 
-	public static GSettingsSchemaHandle Lookup(this GSettingsSchemaSourceHandle source, string schema_id, bool recursive)
+	public static MentorLake.Gio.GSettingsSchemaHandle Lookup(this MentorLake.Gio.GSettingsSchemaSourceHandle source, string schema_id, bool recursive)
 	{
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_lookup(source, schema_id, recursive);
 	}
 
-	public static GSettingsSchemaSourceHandle Ref(this GSettingsSchemaSourceHandle source)
+	public static MentorLake.Gio.GSettingsSchemaSourceHandle Ref(this MentorLake.Gio.GSettingsSchemaSourceHandle source)
 	{
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_ref(source);
 	}
 
-	public static T Unref<T>(this T source) where T : GSettingsSchemaSourceHandle
+	public static void Unref(this MentorLake.Gio.GSettingsSchemaSourceHandle source)
 	{
 		GSettingsSchemaSourceExterns.g_settings_schema_source_unref(source);
-		return source;
 	}
 
-	public static GSettingsSchemaSourceHandle GetDefault()
-	{
-		return GSettingsSchemaSourceExterns.g_settings_schema_source_get_default();
-	}
 
+	public static GSettingsSchemaSource Dereference(this GSettingsSchemaSourceHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GSettingsSchemaSource>(x.DangerousGetHandle());
 }
 internal class GSettingsSchemaSourceExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(string directory, GSettingsSchemaSourceHandle parent, bool trusted, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(char directory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_settings_schema_source_list_schemas(GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_settings_schema_source_list_schemas([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GSettingsSchemaHandle g_settings_schema_source_lookup(GSettingsSchemaSourceHandle source, string schema_id, bool recursive);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSettingsSchemaHandle g_settings_schema_source_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source, string schema_id, bool recursive);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GSettingsSchemaSourceHandle g_settings_schema_source_ref(GSettingsSchemaSourceHandle source);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_settings_schema_source_unref(GSettingsSchemaSourceHandle source);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_settings_schema_source_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GSettingsSchemaSourceHandle g_settings_schema_source_get_default();
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_get_default();
 
 }
 
 public struct GSettingsSchemaSource
 {
+	public static MentorLake.Gio.GSettingsSchemaSourceHandle GetDefault()
+	{
+		return GSettingsSchemaSourceExterns.g_settings_schema_source_get_default();
+	}
+
 }

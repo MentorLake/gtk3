@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTExtensions
+{
+
+	public static VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT Dereference(this VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTExterns
+{
+}
+
+public struct VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
+{
+}

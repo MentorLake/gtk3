@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNVHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNVExtensions
+{
+
+	public static VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV Dereference(this VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNVHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNVExterns
+{
+}
+
+public struct VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV
+{
+}

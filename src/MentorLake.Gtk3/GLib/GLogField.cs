@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GLogFieldHandle : BaseSafeHandle
 {
 }
 
 
-public static class GLogFieldHandleExtensions
+public static class GLogFieldExtensions
 {
+
+	public static GLogField Dereference(this GLogFieldHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GLogField>(x.DangerousGetHandle());
 }
 internal class GLogFieldExterns
 {

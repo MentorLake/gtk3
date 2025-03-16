@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GUriFlags
+public enum GUriFlags : long
 {
 	G_URI_FLAGS_NONE = 0,
 	G_URI_FLAGS_PARSE_RELAXED = 1,

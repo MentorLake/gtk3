@@ -1,8 +1,9 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
+[Flags]
 public enum GTlsRehandshakeMode
 {
-	G_TLS_REHANDSHAKE_NEVER,
-	G_TLS_REHANDSHAKE_SAFELY,
-	G_TLS_REHANDSHAKE_UNSAFELY
+	G_TLS_REHANDSHAKE_NEVER = 0,
+	G_TLS_REHANDSHAKE_SAFELY = 1,
+	G_TLS_REHANDSHAKE_UNSAFELY = 2
 }

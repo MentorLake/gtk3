@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GChecksumHandle : BaseSafeHandle
 {
-	public static GChecksumHandle New(GChecksumType checksum_type)
+	public static MentorLake.GLib.GChecksumHandle New(MentorLake.GLib.GChecksumType checksum_type)
 	{
 		return GChecksumExterns.g_checksum_new(checksum_type);
 	}
@@ -10,76 +10,75 @@ public class GChecksumHandle : BaseSafeHandle
 }
 
 
-public static class GChecksumHandleExtensions
+public static class GChecksumExtensions
 {
-	public static GChecksumHandle Copy(this GChecksumHandle checksum)
+	public static MentorLake.GLib.GChecksumHandle Copy(this MentorLake.GLib.GChecksumHandle checksum)
 	{
 		return GChecksumExterns.g_checksum_copy(checksum);
 	}
 
-	public static T Free<T>(this T checksum) where T : GChecksumHandle
+	public static void Free(this MentorLake.GLib.GChecksumHandle checksum)
 	{
 		GChecksumExterns.g_checksum_free(checksum);
-		return checksum;
 	}
 
-	public static T GetDigest<T>(this T checksum, byte[] buffer, ref UIntPtr digest_len) where T : GChecksumHandle
+	public static void GetDigest(this MentorLake.GLib.GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len)
 	{
 		GChecksumExterns.g_checksum_get_digest(checksum, buffer, ref digest_len);
-		return checksum;
 	}
 
-	public static string GetString(this GChecksumHandle checksum)
+	public static string GetString(this MentorLake.GLib.GChecksumHandle checksum)
 	{
 		return GChecksumExterns.g_checksum_get_string(checksum);
 	}
 
-	public static T Reset<T>(this T checksum) where T : GChecksumHandle
+	public static void Reset(this MentorLake.GLib.GChecksumHandle checksum)
 	{
 		GChecksumExterns.g_checksum_reset(checksum);
-		return checksum;
 	}
 
-	public static T Update<T>(this T checksum, string data, UIntPtr length) where T : GChecksumHandle
+	public static void Update(this MentorLake.GLib.GChecksumHandle checksum, byte[] data, UIntPtr length)
 	{
 		GChecksumExterns.g_checksum_update(checksum, data, length);
-		return checksum;
 	}
 
-	public static UIntPtr TypeGetLength(GChecksumType checksum_type)
-	{
-		return GChecksumExterns.g_checksum_type_get_length(checksum_type);
-	}
 
+	public static GChecksum Dereference(this GChecksumHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GChecksum>(x.DangerousGetHandle());
 }
 internal class GChecksumExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GChecksumHandle g_checksum_new(GChecksumType checksum_type);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GChecksumHandle g_checksum_new(MentorLake.GLib.GChecksumType checksum_type);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GChecksumHandle g_checksum_copy(GChecksumHandle checksum);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GChecksumHandle g_checksum_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_checksum_free(GChecksumHandle checksum);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_checksum_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_checksum_get_digest(GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_checksum_get_digest([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_checksum_get_string(GChecksumHandle checksum);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_checksum_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_checksum_reset(GChecksumHandle checksum);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_checksum_reset([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_checksum_update(GChecksumHandle checksum, string data, UIntPtr length);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_checksum_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum, byte[] data, UIntPtr length);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern UIntPtr g_checksum_type_get_length(GChecksumType checksum_type);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern UIntPtr g_checksum_type_get_length(MentorLake.GLib.GChecksumType checksum_type);
 
 }
 
 public struct GChecksum
 {
+	public static UIntPtr TypeGetLength(MentorLake.GLib.GChecksumType checksum_type)
+	{
+		return GChecksumExterns.g_checksum_type_get_length(checksum_type);
+	}
+
 }

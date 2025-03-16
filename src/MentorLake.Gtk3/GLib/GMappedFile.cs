@@ -1,80 +1,81 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMappedFileHandle : BaseSafeHandle
 {
-	public static GMappedFileHandle New(string filename, bool writable, out GErrorHandle error)
+	public static MentorLake.GLib.GMappedFileHandle New(char filename, bool writable)
 	{
-		return GMappedFileExterns.g_mapped_file_new(filename, writable, out error);
+		return GMappedFileExterns.g_mapped_file_new(filename, writable);
 	}
 
-	public static GMappedFileHandle NewFromFd(int fd, bool writable, out GErrorHandle error)
+	public static MentorLake.GLib.GMappedFileHandle NewFromFd(int fd, bool writable)
 	{
-		return GMappedFileExterns.g_mapped_file_new_from_fd(fd, writable, out error);
+		return GMappedFileExterns.g_mapped_file_new_from_fd(fd, writable);
 	}
 
 }
 
 
-public static class GMappedFileHandleExtensions
+public static class GMappedFileExtensions
 {
-	public static T Free<T>(this T file) where T : GMappedFileHandle
+	public static void Free(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		GMappedFileExterns.g_mapped_file_free(file);
-		return file;
 	}
 
-	public static GBytesHandle GetBytes(this GMappedFileHandle file)
+	public static MentorLake.GLib.GBytesHandle GetBytes(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		return GMappedFileExterns.g_mapped_file_get_bytes(file);
 	}
 
-	public static string GetContents(this GMappedFileHandle file)
+	public static string GetContents(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		return GMappedFileExterns.g_mapped_file_get_contents(file);
 	}
 
-	public static UIntPtr GetLength(this GMappedFileHandle file)
+	public static UIntPtr GetLength(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		return GMappedFileExterns.g_mapped_file_get_length(file);
 	}
 
-	public static GMappedFileHandle Ref(this GMappedFileHandle file)
+	public static MentorLake.GLib.GMappedFileHandle Ref(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		return GMappedFileExterns.g_mapped_file_ref(file);
 	}
 
-	public static T Unref<T>(this T file) where T : GMappedFileHandle
+	public static void Unref(this MentorLake.GLib.GMappedFileHandle file)
 	{
 		GMappedFileExterns.g_mapped_file_unref(file);
-		return file;
 	}
 
+
+	public static GMappedFile Dereference(this GMappedFileHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMappedFile>(x.DangerousGetHandle());
 }
 internal class GMappedFileExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GMappedFileHandle g_mapped_file_new(string filename, bool writable, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new(char filename, bool writable);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMappedFileHandle g_mapped_file_new_from_fd(int fd, bool writable, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new_from_fd(int fd, bool writable);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_mapped_file_free(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_mapped_file_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GBytesHandle g_mapped_file_get_bytes(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GBytesHandle g_mapped_file_get_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_mapped_file_get_contents(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_mapped_file_get_contents([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern UIntPtr g_mapped_file_get_length(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern UIntPtr g_mapped_file_get_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMappedFileHandle g_mapped_file_ref(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_mapped_file_unref(GMappedFileHandle file);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_mapped_file_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);
 
 }
 

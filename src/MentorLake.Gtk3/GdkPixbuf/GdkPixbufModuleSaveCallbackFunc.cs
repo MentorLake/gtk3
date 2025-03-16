@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate bool GdkPixbufModuleSaveCallbackFunc(GdkPixbufSaveFunc save_func, IntPtr user_data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GdkPixbufHandle>))] GdkPixbufHandle pixbuf, string[] option_keys, string[] option_values, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GErrorHandle>))] out GErrorHandle error);
+public delegate bool GdkPixbufModuleSaveCallbackFunc(MentorLake.GdkPixbuf.GdkPixbufSaveFunc save_func, IntPtr user_data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string[] option_keys, string[] option_values);

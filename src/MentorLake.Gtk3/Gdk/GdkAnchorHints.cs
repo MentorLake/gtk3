@@ -1,0 +1,15 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkAnchorHints : long
+{
+	GDK_ANCHOR_FLIP_X = 1,
+	GDK_ANCHOR_FLIP_Y = 2,
+	GDK_ANCHOR_SLIDE_X = 4,
+	GDK_ANCHOR_SLIDE_Y = 8,
+	GDK_ANCHOR_RESIZE_X = 16,
+	GDK_ANCHOR_RESIZE_Y = 32,
+	GDK_ANCHOR_FLIP = 3,
+	GDK_ANCHOR_SLIDE = 12,
+	GDK_ANCHOR_RESIZE = 48
+}

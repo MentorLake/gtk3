@@ -1,100 +1,107 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GResourceHandle : BaseSafeHandle
 {
-	public static GResourceHandle NewFromData(GBytesHandle data, out GErrorHandle error)
+	public static MentorLake.Gio.GResourceHandle NewFromData(MentorLake.GLib.GBytesHandle data)
 	{
-		return GResourceExterns.g_resource_new_from_data(data, out error);
+		return GResourceExterns.g_resource_new_from_data(data);
 	}
 
 }
 
 
-public static class GResourceHandleExtensions
+public static class GResourceExtensions
 {
-	public static T sRegister<T>(this T resource) where T : GResourceHandle
+	public static void Register(this MentorLake.Gio.GResourceHandle resource)
 	{
 		GResourceExterns.g_resources_register(resource);
-		return resource;
 	}
 
-	public static T sUnregister<T>(this T resource) where T : GResourceHandle
+	public static void Unregister(this MentorLake.Gio.GResourceHandle resource)
 	{
 		GResourceExterns.g_resources_unregister(resource);
-		return resource;
 	}
 
-	public static IntPtr EnumerateChildren(this GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error)
+	public static string[] EnumerateChildren(this MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags)
 	{
-		return GResourceExterns.g_resource_enumerate_children(resource, path, lookup_flags, out error);
+		return GResourceExterns.g_resource_enumerate_children(resource, path, lookup_flags);
 	}
 
-	public static bool GetInfo(this GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out UIntPtr size, out uint flags, out GErrorHandle error)
+	public static bool GetInfo(this MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags, out UIntPtr size, out uint flags)
 	{
-		return GResourceExterns.g_resource_get_info(resource, path, lookup_flags, out size, out flags, out error);
+		return GResourceExterns.g_resource_get_info(resource, path, lookup_flags, out size, out flags);
 	}
 
-	public static GBytesHandle LookupData(this GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error)
+	public static bool HasChildren(this MentorLake.Gio.GResourceHandle resource, string path)
 	{
-		return GResourceExterns.g_resource_lookup_data(resource, path, lookup_flags, out error);
+		return GResourceExterns.g_resource_has_children(resource, path);
 	}
 
-	public static GInputStreamHandle OpenStream(this GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error)
+	public static MentorLake.GLib.GBytesHandle LookupData(this MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags)
 	{
-		return GResourceExterns.g_resource_open_stream(resource, path, lookup_flags, out error);
+		return GResourceExterns.g_resource_lookup_data(resource, path, lookup_flags);
 	}
 
-	public static GResourceHandle Ref(this GResourceHandle resource)
+	public static MentorLake.Gio.GInputStreamHandle OpenStream(this MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags)
+	{
+		return GResourceExterns.g_resource_open_stream(resource, path, lookup_flags);
+	}
+
+	public static MentorLake.Gio.GResourceHandle Ref(this MentorLake.Gio.GResourceHandle resource)
 	{
 		return GResourceExterns.g_resource_ref(resource);
 	}
 
-	public static T Unref<T>(this T resource) where T : GResourceHandle
+	public static void Unref(this MentorLake.Gio.GResourceHandle resource)
 	{
 		GResourceExterns.g_resource_unref(resource);
-		return resource;
 	}
 
-	public static GResourceHandle Load(string filename, out GErrorHandle error)
-	{
-		return GResourceExterns.g_resource_load(filename, out error);
-	}
 
+	public static GResource Dereference(this GResourceHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GResource>(x.DangerousGetHandle());
 }
 internal class GResourceExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GResourceHandle g_resource_new_from_data(GBytesHandle data, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_new_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle data);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_resources_register(GResourceHandle resource);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_resources_register([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_resources_unregister(GResourceHandle resource);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_resources_unregister([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern IntPtr g_resource_enumerate_children(GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern string[] g_resource_enumerate_children([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_resource_get_info(GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out UIntPtr size, out uint flags, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_resource_get_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags, out UIntPtr size, out uint flags);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GBytesHandle g_resource_lookup_data(GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_resource_has_children([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource, string path);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GInputStreamHandle g_resource_open_stream(GResourceHandle resource, string path, GResourceLookupFlags lookup_flags, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.GLib.GBytesHandle g_resource_lookup_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GResourceHandle g_resource_ref(GResourceHandle resource);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GInputStreamHandle g_resource_open_stream([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource, string path, MentorLake.Gio.GResourceLookupFlags lookup_flags);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_resource_unref(GResourceHandle resource);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GResourceHandle g_resource_load(string filename, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_resource_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);
+
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(char filename);
 
 }
 
 public struct GResource
 {
+	public static MentorLake.Gio.GResourceHandle Load(char filename)
+	{
+		return GResourceExterns.g_resource_load(filename);
+	}
+
 }

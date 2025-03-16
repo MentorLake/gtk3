@@ -1,87 +1,91 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GSettingsSchemaKeyHandle : BaseSafeHandle
 {
 }
 
 
-public static class GSettingsSchemaKeyHandleExtensions
+public static class GSettingsSchemaKeyExtensions
 {
-	public static GVariantHandle GetDefaultValue(this GSettingsSchemaKeyHandle key)
+	public static MentorLake.GLib.GVariantHandle GetDefaultValue(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_default_value(key);
 	}
 
-	public static string GetDescription(this GSettingsSchemaKeyHandle key)
+	public static string GetDescription(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_description(key);
 	}
 
-	public static string GetName(this GSettingsSchemaKeyHandle key)
+	public static string GetName(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_name(key);
 	}
 
-	public static GVariantHandle GetRange(this GSettingsSchemaKeyHandle key)
+	public static MentorLake.GLib.GVariantHandle GetRange(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_range(key);
 	}
 
-	public static string GetSummary(this GSettingsSchemaKeyHandle key)
+	public static string GetSummary(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_summary(key);
 	}
 
-	public static GVariantTypeHandle GetValueType(this GSettingsSchemaKeyHandle key)
+	public static MentorLake.GLib.GVariantTypeHandle GetValueType(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_value_type(key);
 	}
 
-	public static bool RangeCheck(this GSettingsSchemaKeyHandle key, GVariantHandle value)
+	public static bool RangeCheck(this MentorLake.Gio.GSettingsSchemaKeyHandle key, MentorLake.GLib.GVariantHandle value)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_range_check(key, value);
 	}
 
-	public static GSettingsSchemaKeyHandle Ref(this GSettingsSchemaKeyHandle key)
+	public static MentorLake.Gio.GSettingsSchemaKeyHandle Ref(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_ref(key);
 	}
 
-	public static T Unref<T>(this T key) where T : GSettingsSchemaKeyHandle
+	public static void Unref(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
 		GSettingsSchemaKeyExterns.g_settings_schema_key_unref(key);
-		return key;
 	}
 
+
+	public static GSettingsSchemaKey Dereference(this GSettingsSchemaKeyHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GSettingsSchemaKey>(x.DangerousGetHandle());
 }
 internal class GSettingsSchemaKeyExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GVariantHandle g_settings_schema_key_get_default_value(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.GLib.GVariantHandle g_settings_schema_key_get_default_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_settings_schema_key_get_description(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_settings_schema_key_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_settings_schema_key_get_name(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_settings_schema_key_get_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GVariantHandle g_settings_schema_key_get_range(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.GLib.GVariantHandle g_settings_schema_key_get_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_settings_schema_key_get_summary(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_settings_schema_key_get_summary([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GVariantTypeHandle g_settings_schema_key_get_value_type(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.GLib.GVariantTypeHandle g_settings_schema_key_get_value_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_settings_schema_key_range_check(GSettingsSchemaKeyHandle key, GVariantHandle value);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_settings_schema_key_range_check([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle value);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GSettingsSchemaKeyHandle g_settings_schema_key_ref(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSettingsSchemaKeyHandle g_settings_schema_key_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_settings_schema_key_unref(GSettingsSchemaKeyHandle key);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_settings_schema_key_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaKeyHandle>))] MentorLake.Gio.GSettingsSchemaKeyHandle key);
 
 }
 

@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkPackDirection
-{
-	GTK_PACK_DIRECTION_LTR,
-	GTK_PACK_DIRECTION_RTL,
-	GTK_PACK_DIRECTION_TTB,
-	GTK_PACK_DIRECTION_BTT
-}

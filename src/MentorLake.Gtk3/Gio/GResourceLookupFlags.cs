@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GResourceLookupFlags
+public enum GResourceLookupFlags : long
 {
 	G_RESOURCE_LOOKUP_FLAGS_NONE = 0
 }

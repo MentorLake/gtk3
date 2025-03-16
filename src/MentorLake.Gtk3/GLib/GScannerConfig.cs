@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GScannerConfigHandle : BaseSafeHandle
 {
 }
 
 
-public static class GScannerConfigHandleExtensions
+public static class GScannerConfigExtensions
 {
+
+	public static GScannerConfig Dereference(this GScannerConfigHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GScannerConfig>(x.DangerousGetHandle());
 }
 internal class GScannerConfigExterns
 {

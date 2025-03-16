@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoGlyphGeometryHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoGlyphGeometryHandleExtensions
+public static class PangoGlyphGeometryExtensions
 {
+
+	public static PangoGlyphGeometry Dereference(this PangoGlyphGeometryHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoGlyphGeometry>(x.DangerousGetHandle());
 }
 internal class PangoGlyphGeometryExterns
 {

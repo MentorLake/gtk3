@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTExtensions
+{
+
+	public static VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT Dereference(this VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTExterns
+{
+}
+
+public struct VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
+{
+}

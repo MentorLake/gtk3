@@ -1,0 +1,9 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkGLError
+{
+	GDK_GL_ERROR_NOT_AVAILABLE = 0,
+	GDK_GL_ERROR_UNSUPPORTED_FORMAT = 1,
+	GDK_GL_ERROR_UNSUPPORTED_PROFILE = 2
+}

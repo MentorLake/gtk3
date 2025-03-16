@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public struct GType
 {

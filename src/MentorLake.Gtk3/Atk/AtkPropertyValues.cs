@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 public class AtkPropertyValuesHandle : BaseSafeHandle
 {
 }
 
 
-public static class AtkPropertyValuesHandleExtensions
+public static class AtkPropertyValuesExtensions
 {
+
+	public static AtkPropertyValues Dereference(this AtkPropertyValuesHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<AtkPropertyValues>(x.DangerousGetHandle());
 }
 internal class AtkPropertyValuesExterns
 {

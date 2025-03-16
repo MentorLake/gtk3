@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GClosureNotifyDataHandle : BaseSafeHandle
 {
 }
 
 
-public static class GClosureNotifyDataHandleExtensions
+public static class GClosureNotifyDataExtensions
 {
+
+	public static GClosureNotifyData Dereference(this GClosureNotifyDataHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GClosureNotifyData>(x.DangerousGetHandle());
 }
 internal class GClosureNotifyDataExterns
 {

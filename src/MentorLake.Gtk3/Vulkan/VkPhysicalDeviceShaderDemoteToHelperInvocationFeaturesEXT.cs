@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXTHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXTExtensions
+{
+
+	public static VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT Dereference(this VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXTHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXTExterns
+{
+}
+
+public struct VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
+{
+}

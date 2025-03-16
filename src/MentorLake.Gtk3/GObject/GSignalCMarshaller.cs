@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public struct GSignalCMarshaller
 {
-	public GClosureMarshal Value;
+	public MentorLake.GObject.GClosureMarshal Value;
 }
 
 public class GSignalCMarshallerHandle : BaseSafeHandle

@@ -1,30 +1,22 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrShapeHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoAttrShapeHandleExtensions
+public static class PangoAttrShapeExtensions
 {
-	public static PangoAttributeHandle New(PangoRectangleHandle ink_rect, PangoRectangleHandle logical_rect)
-	{
-		return PangoAttrShapeExterns.pango_attr_shape_new(ink_rect, logical_rect);
-	}
 
-	public static PangoAttributeHandle NewWithData(PangoRectangleHandle ink_rect, PangoRectangleHandle logical_rect, IntPtr data, PangoAttrDataCopyFunc copy_func, GDestroyNotify destroy_func)
-	{
-		return PangoAttrShapeExterns.pango_attr_shape_new_with_data(ink_rect, logical_rect, data, copy_func, destroy_func);
-	}
-
+	public static PangoAttrShape Dereference(this PangoAttrShapeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrShape>(x.DangerousGetHandle());
 }
 internal class PangoAttrShapeExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_shape_new(PangoRectangleHandle ink_rect, PangoRectangleHandle logical_rect);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_shape_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle ink_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle logical_rect);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_shape_new_with_data(PangoRectangleHandle ink_rect, PangoRectangleHandle logical_rect, IntPtr data, PangoAttrDataCopyFunc copy_func, GDestroyNotify destroy_func);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_shape_new_with_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle ink_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle logical_rect, IntPtr data, MentorLake.Pango.PangoAttrDataCopyFunc copy_func, MentorLake.GLib.GDestroyNotify destroy_func);
 
 }
 
@@ -36,4 +28,14 @@ public struct PangoAttrShape
 	public IntPtr data;
 	public PangoAttrDataCopyFunc copy_func;
 	public GDestroyNotify destroy_func;
+	public static MentorLake.Pango.PangoAttributeHandle New(MentorLake.Pango.PangoRectangleHandle ink_rect, MentorLake.Pango.PangoRectangleHandle logical_rect)
+	{
+		return PangoAttrShapeExterns.pango_attr_shape_new(ink_rect, logical_rect);
+	}
+
+	public static MentorLake.Pango.PangoAttributeHandle NewWithData(MentorLake.Pango.PangoRectangleHandle ink_rect, MentorLake.Pango.PangoRectangleHandle logical_rect, IntPtr data, MentorLake.Pango.PangoAttrDataCopyFunc copy_func, MentorLake.GLib.GDestroyNotify destroy_func)
+	{
+		return PangoAttrShapeExterns.pango_attr_shape_new_with_data(ink_rect, logical_rect, data, copy_func, destroy_func);
+	}
+
 }

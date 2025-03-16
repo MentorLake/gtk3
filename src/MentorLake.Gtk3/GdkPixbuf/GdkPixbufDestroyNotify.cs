@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate void GdkPixbufDestroyNotify(string pixels, IntPtr data);
+public delegate void GdkPixbufDestroyNotify(byte[] pixels, IntPtr data);

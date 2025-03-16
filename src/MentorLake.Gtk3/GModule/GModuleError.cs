@@ -1,7 +1,8 @@
-namespace MentorLake.Gtk3.GModule;
+namespace MentorLake.GModule;
 
+[Flags]
 public enum GModuleError
 {
-	G_MODULE_ERROR_FAILED,
-	G_MODULE_ERROR_CHECK_FAILED
+	G_MODULE_ERROR_FAILED = 0,
+	G_MODULE_ERROR_CHECK_FAILED = 1
 }

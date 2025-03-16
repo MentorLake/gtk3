@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkExpanderStyle
-{
-	GTK_EXPANDER_COLLAPSED,
-	GTK_EXPANDER_SEMI_COLLAPSED,
-	GTK_EXPANDER_SEMI_EXPANDED,
-	GTK_EXPANDER_EXPANDED
-}

@@ -1,0 +1,12 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkButtonBoxStyle
+{
+	GTK_BUTTONBOX_SPREAD = 1,
+	GTK_BUTTONBOX_EDGE = 2,
+	GTK_BUTTONBOX_START = 3,
+	GTK_BUTTONBOX_END = 4,
+	GTK_BUTTONBOX_CENTER = 5,
+	GTK_BUTTONBOX_EXPAND = 6
+}

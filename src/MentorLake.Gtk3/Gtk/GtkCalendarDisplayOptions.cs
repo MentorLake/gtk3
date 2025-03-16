@@ -1,0 +1,11 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkCalendarDisplayOptions : long
+{
+	GTK_CALENDAR_SHOW_HEADING = 1,
+	GTK_CALENDAR_SHOW_DAY_NAMES = 2,
+	GTK_CALENDAR_NO_MONTH_CHANGE = 4,
+	GTK_CALENDAR_SHOW_WEEK_NUMBERS = 8,
+	GTK_CALENDAR_SHOW_DETAILS = 32
+}

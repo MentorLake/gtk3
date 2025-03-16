@@ -1,139 +1,139 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GPathBufHandle : BaseSafeHandle
 {
 }
 
 
-public static class GPathBufHandleExtensions
+public static class GPathBufExtensions
 {
-	public static T Clear<T>(this T buf) where T : GPathBufHandle
+	public static void Clear(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		GPathBufExterns.g_path_buf_clear(buf);
-		return buf;
 	}
 
-	public static string ClearToPath(this GPathBufHandle buf)
+	public static char ClearToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_clear_to_path(buf);
 	}
 
-	public static GPathBufHandle Copy(this GPathBufHandle buf)
+	public static MentorLake.GLib.GPathBufHandle Copy(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_copy(buf);
 	}
 
-	public static T Free<T>(this T buf) where T : GPathBufHandle
+	public static void Free(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		GPathBufExterns.g_path_buf_free(buf);
-		return buf;
 	}
 
-	public static string FreeToPath(this GPathBufHandle buf)
+	public static char FreeToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_free_to_path(buf);
 	}
 
-	public static GPathBufHandle Init(this GPathBufHandle buf)
+	public static MentorLake.GLib.GPathBufHandle Init(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_init(buf);
 	}
 
-	public static GPathBufHandle InitFromPath(this GPathBufHandle buf, string path)
+	public static MentorLake.GLib.GPathBufHandle InitFromPath(this MentorLake.GLib.GPathBufHandle buf, char path)
 	{
 		return GPathBufExterns.g_path_buf_init_from_path(buf, path);
 	}
 
-	public static bool Pop(this GPathBufHandle buf)
+	public static bool Pop(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_pop(buf);
 	}
 
-	public static GPathBufHandle Push(this GPathBufHandle buf, string path)
+	public static MentorLake.GLib.GPathBufHandle Push(this MentorLake.GLib.GPathBufHandle buf, char path)
 	{
 		return GPathBufExterns.g_path_buf_push(buf, path);
 	}
 
-	public static bool SetExtension(this GPathBufHandle buf, string extension)
+	public static bool SetExtension(this MentorLake.GLib.GPathBufHandle buf, char extension)
 	{
 		return GPathBufExterns.g_path_buf_set_extension(buf, extension);
 	}
 
-	public static bool SetFilename(this GPathBufHandle buf, string file_name)
+	public static bool SetFilename(this MentorLake.GLib.GPathBufHandle buf, char file_name)
 	{
 		return GPathBufExterns.g_path_buf_set_filename(buf, file_name);
 	}
 
-	public static string ToPath(this GPathBufHandle buf)
+	public static char ToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		return GPathBufExterns.g_path_buf_to_path(buf);
 	}
 
-	public static bool Equal(IntPtr v1, IntPtr v2)
-	{
-		return GPathBufExterns.g_path_buf_equal(v1, v2);
-	}
 
-	public static GPathBufHandle New()
-	{
-		return GPathBufExterns.g_path_buf_new();
-	}
-
-	public static GPathBufHandle NewFromPath(string path)
-	{
-		return GPathBufExterns.g_path_buf_new_from_path(path);
-	}
-
+	public static GPathBuf Dereference(this GPathBufHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GPathBuf>(x.DangerousGetHandle());
 }
 internal class GPathBufExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_path_buf_clear(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_path_buf_clear([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_path_buf_clear_to_path(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern char g_path_buf_clear_to_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_copy(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_path_buf_free(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_path_buf_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_path_buf_free_to_path(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern char g_path_buf_free_to_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_init(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_init_from_path(GPathBufHandle buf, string path);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_init_from_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf, char path);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_path_buf_pop(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_path_buf_pop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_push(GPathBufHandle buf, string path);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_push([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf, char path);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_path_buf_set_extension(GPathBufHandle buf, string extension);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_path_buf_set_extension([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf, char extension);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_path_buf_set_filename(GPathBufHandle buf, string file_name);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_path_buf_set_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf, char file_name);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_path_buf_to_path(GPathBufHandle buf);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern char g_path_buf_to_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPathBufHandle>))] MentorLake.GLib.GPathBufHandle buf);
 
-	[DllImport(Libraries.GLib)]
+	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_path_buf_equal(IntPtr v1, IntPtr v2);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_new();
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GPathBufHandle g_path_buf_new_from_path(string path);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GPathBufHandle g_path_buf_new_from_path(char path);
 
 }
 
 public struct GPathBuf
 {
+	public static bool Equal(IntPtr v1, IntPtr v2)
+	{
+		return GPathBufExterns.g_path_buf_equal(v1, v2);
+	}
+
+	public static MentorLake.GLib.GPathBufHandle New()
+	{
+		return GPathBufExterns.g_path_buf_new();
+	}
+
+	public static MentorLake.GLib.GPathBufHandle NewFromPath(char path)
+	{
+		return GPathBufExterns.g_path_buf_new_from_path(path);
+	}
+
 }

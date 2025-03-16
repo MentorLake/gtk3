@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkPrintQuality
-{
-	GTK_PRINT_QUALITY_LOW,
-	GTK_PRINT_QUALITY_NORMAL,
-	GTK_PRINT_QUALITY_HIGH,
-	GTK_PRINT_QUALITY_DRAFT
-}

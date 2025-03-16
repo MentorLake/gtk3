@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GPollFDHandle : BaseSafeHandle
 {
 }
 
 
-public static class GPollFDHandleExtensions
+public static class GPollFDExtensions
 {
+
+	public static GPollFD Dereference(this GPollFDHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GPollFD>(x.DangerousGetHandle());
 }
 internal class GPollFDExterns
 {

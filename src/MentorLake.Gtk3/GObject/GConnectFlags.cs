@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 [Flags]
-public enum GConnectFlags
+public enum GConnectFlags : long
 {
 	G_CONNECT_DEFAULT = 0,
 	G_CONNECT_AFTER = 1,

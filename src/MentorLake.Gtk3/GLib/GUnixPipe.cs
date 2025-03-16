@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GUnixPipeHandle : BaseSafeHandle
 {
 }
 
 
-public static class GUnixPipeHandleExtensions
+public static class GUnixPipeExtensions
 {
+
+	public static GUnixPipe Dereference(this GUnixPipeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GUnixPipe>(x.DangerousGetHandle());
 }
 internal class GUnixPipeExterns
 {
@@ -14,5 +16,5 @@ internal class GUnixPipeExterns
 
 public struct GUnixPipe
 {
-	public None fds;
+	public int[] fds;
 }

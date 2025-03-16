@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GDebugKeyHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDebugKeyHandleExtensions
+public static class GDebugKeyExtensions
 {
+
+	public static GDebugKey Dereference(this GDebugKeyHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDebugKey>(x.DangerousGetHandle());
 }
 internal class GDebugKeyExterns
 {

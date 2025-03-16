@@ -1,8 +1,9 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
+[Flags]
 public enum GShellError
 {
-	G_SHELL_ERROR_BAD_QUOTING,
-	G_SHELL_ERROR_EMPTY_STRING,
-	G_SHELL_ERROR_FAILED
+	G_SHELL_ERROR_BAD_QUOTING = 0,
+	G_SHELL_ERROR_EMPTY_STRING = 1,
+	G_SHELL_ERROR_FAILED = 2
 }

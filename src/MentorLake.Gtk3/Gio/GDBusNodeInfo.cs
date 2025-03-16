@@ -1,56 +1,56 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GDBusNodeInfoHandle : BaseSafeHandle
 {
-	public static GDBusNodeInfoHandle GDbusNodeInfoNewForXml(string xml_data, out GErrorHandle error)
+	public static MentorLake.Gio.GDBusNodeInfoHandle NewForXml(string xml_data)
 	{
-		return GDBusNodeInfoExterns.g_dbus_node_info_new_for_xml(xml_data, out error);
+		return GDBusNodeInfoExterns.g_dbus_node_info_new_for_xml(xml_data);
 	}
 
 }
 
 
-public static class GDBusNodeInfoHandleExtensions
+public static class GDBusNodeInfoExtensions
 {
-	public static T GDbusNodeInfoGenerateXml<T>(this T info, uint indent, GStringHandle string_builder) where T : GDBusNodeInfoHandle
+	public static void GenerateXml(this MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, MentorLake.GLib.GStringHandle string_builder)
 	{
 		GDBusNodeInfoExterns.g_dbus_node_info_generate_xml(info, indent, string_builder);
-		return info;
 	}
 
-	public static GDBusInterfaceInfoHandle GDbusNodeInfoLookupInterface(this GDBusNodeInfoHandle info, string name)
+	public static MentorLake.Gio.GDBusInterfaceInfoHandle LookupInterface(this MentorLake.Gio.GDBusNodeInfoHandle info, string name)
 	{
 		return GDBusNodeInfoExterns.g_dbus_node_info_lookup_interface(info, name);
 	}
 
-	public static GDBusNodeInfoHandle GDbusNodeInfoRef(this GDBusNodeInfoHandle info)
+	public static MentorLake.Gio.GDBusNodeInfoHandle Ref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
 		return GDBusNodeInfoExterns.g_dbus_node_info_ref(info);
 	}
 
-	public static T GDbusNodeInfoUnref<T>(this T info) where T : GDBusNodeInfoHandle
+	public static void Unref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
 		GDBusNodeInfoExterns.g_dbus_node_info_unref(info);
-		return info;
 	}
 
+
+	public static GDBusNodeInfo Dereference(this GDBusNodeInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDBusNodeInfo>(x.DangerousGetHandle());
 }
 internal class GDBusNodeInfoExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GDBusNodeInfoHandle g_dbus_node_info_new_for_xml(string xml_data, out GErrorHandle error);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_new_for_xml(string xml_data);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_dbus_node_info_generate_xml(GDBusNodeInfoHandle info, uint indent, GStringHandle string_builder);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_dbus_node_info_generate_xml([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringHandle>))] MentorLake.GLib.GStringHandle string_builder);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GDBusInterfaceInfoHandle g_dbus_node_info_lookup_interface(GDBusNodeInfoHandle info, string name);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GDBusInterfaceInfoHandle g_dbus_node_info_lookup_interface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info, string name);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GDBusNodeInfoHandle g_dbus_node_info_ref(GDBusNodeInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_dbus_node_info_unref(GDBusNodeInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_dbus_node_info_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info);
 
 }
 
@@ -58,7 +58,7 @@ public struct GDBusNodeInfo
 {
 	public int ref_count;
 	public string path;
-	public GDBusInterfaceInfoHandle[] interfaces;
-	public GDBusNodeInfoHandle[] nodes;
-	public GDBusAnnotationInfoHandle[] annotations;
+	public IntPtr interfaces;
+	public IntPtr nodes;
+	public IntPtr annotations;
 }

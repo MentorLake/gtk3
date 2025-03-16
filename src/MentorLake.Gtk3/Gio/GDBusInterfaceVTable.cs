@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GDBusInterfaceVTableHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDBusInterfaceVTableHandleExtensions
+public static class GDBusInterfaceVTableExtensions
 {
+
+	public static GDBusInterfaceVTable Dereference(this GDBusInterfaceVTableHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDBusInterfaceVTable>(x.DangerousGetHandle());
 }
 internal class GDBusInterfaceVTableExterns
 {

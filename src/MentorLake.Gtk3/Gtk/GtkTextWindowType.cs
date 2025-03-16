@@ -1,0 +1,13 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkTextWindowType
+{
+	GTK_TEXT_WINDOW_PRIVATE = 0,
+	GTK_TEXT_WINDOW_WIDGET = 1,
+	GTK_TEXT_WINDOW_TEXT = 2,
+	GTK_TEXT_WINDOW_LEFT = 3,
+	GTK_TEXT_WINDOW_RIGHT = 4,
+	GTK_TEXT_WINDOW_TOP = 5,
+	GTK_TEXT_WINDOW_BOTTOM = 6
+}

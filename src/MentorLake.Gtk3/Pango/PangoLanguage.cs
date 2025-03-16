@@ -1,83 +1,85 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoLanguageHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoLanguageHandleExtensions
+public static class PangoLanguageExtensions
 {
-	public static string GetSampleString(this PangoLanguageHandle language)
+	public static string GetSampleString(this MentorLake.Pango.PangoLanguageHandle language)
 	{
 		return PangoLanguageExterns.pango_language_get_sample_string(language);
 	}
 
-	public static IntPtr GetScripts(this PangoLanguageHandle language, out int num_scripts)
+	public static MentorLake.Pango.PangoScript[] GetScripts(this MentorLake.Pango.PangoLanguageHandle language, out int num_scripts)
 	{
 		return PangoLanguageExterns.pango_language_get_scripts(language, out num_scripts);
 	}
 
-	public static bool IncludesScript(this PangoLanguageHandle language, PangoScript script)
+	public static bool IncludesScript(this MentorLake.Pango.PangoLanguageHandle language, MentorLake.Pango.PangoScript script)
 	{
 		return PangoLanguageExterns.pango_language_includes_script(language, script);
 	}
 
-	public static bool Matches(this PangoLanguageHandle language, string range_list)
+	public static bool Matches(this MentorLake.Pango.PangoLanguageHandle language, string range_list)
 	{
 		return PangoLanguageExterns.pango_language_matches(language, range_list);
 	}
 
-	public static string ToString(this PangoLanguageHandle language)
+	public static string ToString(this MentorLake.Pango.PangoLanguageHandle language)
 	{
 		return PangoLanguageExterns.pango_language_to_string(language);
 	}
 
-	public static PangoLanguageHandle FromString(string language)
-	{
-		return PangoLanguageExterns.pango_language_from_string(language);
-	}
 
-	public static PangoLanguageHandle GetDefault()
-	{
-		return PangoLanguageExterns.pango_language_get_default();
-	}
-
-	public static IntPtr GetPreferred()
-	{
-		return PangoLanguageExterns.pango_language_get_preferred();
-	}
-
+	public static PangoLanguage Dereference(this PangoLanguageHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoLanguage>(x.DangerousGetHandle());
 }
 internal class PangoLanguageExterns
 {
-	[DllImport(Libraries.Pango)]
+	[DllImport(PangoLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string pango_language_get_sample_string(PangoLanguageHandle language);
+	internal static extern string pango_language_get_sample_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern IntPtr pango_language_get_scripts(PangoLanguageHandle language, out int num_scripts);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoScript[] pango_language_get_scripts([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language, out int num_scripts);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_language_includes_script(PangoLanguageHandle language, PangoScript script);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_language_includes_script([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language, MentorLake.Pango.PangoScript script);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_language_matches(PangoLanguageHandle language, string range_list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_language_matches([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language, string range_list);
 
-	[DllImport(Libraries.Pango)]
+	[DllImport(PangoLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string pango_language_to_string(PangoLanguageHandle language);
+	internal static extern string pango_language_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoLanguageHandle pango_language_from_string(string language);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_from_string(string language);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoLanguageHandle pango_language_get_default();
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_get_default();
 
-	[DllImport(Libraries.Pango)]
-	internal static extern IntPtr pango_language_get_preferred();
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoLanguageHandle[] pango_language_get_preferred();
 
 }
 
 public struct PangoLanguage
 {
+	public static MentorLake.Pango.PangoLanguageHandle FromString(string language)
+	{
+		return PangoLanguageExterns.pango_language_from_string(language);
+	}
+
+	public static MentorLake.Pango.PangoLanguageHandle GetDefault()
+	{
+		return PangoLanguageExterns.pango_language_get_default();
+	}
+
+	public static MentorLake.Pango.PangoLanguageHandle[] GetPreferred()
+	{
+		return PangoLanguageExterns.pango_language_get_preferred();
+	}
+
 }

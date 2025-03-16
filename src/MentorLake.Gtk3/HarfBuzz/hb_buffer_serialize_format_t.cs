@@ -1,0 +1,9 @@
+namespace MentorLake.HarfBuzz;
+
+[Flags]
+public enum hb_buffer_serialize_format_t
+{
+	HB_BUFFER_SERIALIZE_FORMAT_TEXT = 1413830740,
+	HB_BUFFER_SERIALIZE_FORMAT_JSON = 1246973774,
+	HB_BUFFER_SERIALIZE_FORMAT_INVALID = 0
+}

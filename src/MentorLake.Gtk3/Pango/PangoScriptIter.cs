@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoScriptIterHandle : BaseSafeHandle
 {
-	public static PangoScriptIterHandle New(string text, int length)
+	public static MentorLake.Pango.PangoScriptIterHandle New(string text, int length)
 	{
 		return PangoScriptIterExterns.pango_script_iter_new(text, length);
 	}
@@ -10,39 +10,39 @@ public class PangoScriptIterHandle : BaseSafeHandle
 }
 
 
-public static class PangoScriptIterHandleExtensions
+public static class PangoScriptIterExtensions
 {
-	public static T Free<T>(this T iter) where T : PangoScriptIterHandle
+	public static void Free(this MentorLake.Pango.PangoScriptIterHandle iter)
 	{
 		PangoScriptIterExterns.pango_script_iter_free(iter);
-		return iter;
 	}
 
-	public static T GetRange<T>(this T iter, out string start, out string end, out PangoScript script) where T : PangoScriptIterHandle
+	public static void GetRange(this MentorLake.Pango.PangoScriptIterHandle iter, out string start, out string end, out MentorLake.Pango.PangoScript script)
 	{
 		PangoScriptIterExterns.pango_script_iter_get_range(iter, out start, out end, out script);
-		return iter;
 	}
 
-	public static bool Next(this PangoScriptIterHandle iter)
+	public static bool Next(this MentorLake.Pango.PangoScriptIterHandle iter)
 	{
 		return PangoScriptIterExterns.pango_script_iter_next(iter);
 	}
 
+
+	public static PangoScriptIter Dereference(this PangoScriptIterHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoScriptIter>(x.DangerousGetHandle());
 }
 internal class PangoScriptIterExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoScriptIterHandle pango_script_iter_new(string text, int length);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoScriptIterHandle pango_script_iter_new(string text, int length);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_script_iter_free(PangoScriptIterHandle iter);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_script_iter_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoScriptIterHandle>))] MentorLake.Pango.PangoScriptIterHandle iter);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_script_iter_get_range(PangoScriptIterHandle iter, out string start, out string end, out PangoScript script);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_script_iter_get_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoScriptIterHandle>))] MentorLake.Pango.PangoScriptIterHandle iter, out string start, out string end, out MentorLake.Pango.PangoScript script);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_script_iter_next(PangoScriptIterHandle iter);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_script_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoScriptIterHandle>))] MentorLake.Pango.PangoScriptIterHandle iter);
 
 }
 

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufModuleHandle : BaseSafeHandle
 {
 }
 
 
-public static class GdkPixbufModuleHandleExtensions
+public static class GdkPixbufModuleExtensions
 {
+
+	public static GdkPixbufModule Dereference(this GdkPixbufModuleHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GdkPixbufModule>(x.DangerousGetHandle());
 }
 internal class GdkPixbufModuleExterns
 {
@@ -16,8 +18,8 @@ public struct GdkPixbufModule
 {
 	public string module_name;
 	public string module_path;
-	public GModuleHandle module;
-	public GdkPixbufFormatHandle info;
+	public IntPtr module;
+	public IntPtr info;
 	public GdkPixbufModuleLoadFunc load;
 	public GdkPixbufModuleLoadXpmDataFunc load_xpm_data;
 	public GdkPixbufModuleBeginLoadFunc begin_load;

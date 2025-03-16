@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GInterfaceInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GInterfaceInfoHandleExtensions
+public static class GInterfaceInfoExtensions
 {
+
+	public static GInterfaceInfo Dereference(this GInterfaceInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GInterfaceInfo>(x.DangerousGetHandle());
 }
 internal class GInterfaceInfoExterns
 {

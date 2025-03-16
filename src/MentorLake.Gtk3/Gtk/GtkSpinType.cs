@@ -1,0 +1,13 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkSpinType
+{
+	GTK_SPIN_STEP_FORWARD = 0,
+	GTK_SPIN_STEP_BACKWARD = 1,
+	GTK_SPIN_PAGE_FORWARD = 2,
+	GTK_SPIN_PAGE_BACKWARD = 3,
+	GTK_SPIN_HOME = 4,
+	GTK_SPIN_END = 5,
+	GTK_SPIN_USER_DEFINED = 6
+}

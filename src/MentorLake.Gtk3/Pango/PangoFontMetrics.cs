@@ -1,103 +1,104 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoFontMetricsHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoFontMetricsHandleExtensions
+public static class PangoFontMetricsExtensions
 {
-	public static int GetApproximateCharWidth(this PangoFontMetricsHandle metrics)
+	public static int GetApproximateCharWidth(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_approximate_char_width(metrics);
 	}
 
-	public static int GetApproximateDigitWidth(this PangoFontMetricsHandle metrics)
+	public static int GetApproximateDigitWidth(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_approximate_digit_width(metrics);
 	}
 
-	public static int GetAscent(this PangoFontMetricsHandle metrics)
+	public static int GetAscent(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_ascent(metrics);
 	}
 
-	public static int GetDescent(this PangoFontMetricsHandle metrics)
+	public static int GetDescent(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_descent(metrics);
 	}
 
-	public static int GetHeight(this PangoFontMetricsHandle metrics)
+	public static int GetHeight(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_height(metrics);
 	}
 
-	public static int GetStrikethroughPosition(this PangoFontMetricsHandle metrics)
+	public static int GetStrikethroughPosition(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_strikethrough_position(metrics);
 	}
 
-	public static int GetStrikethroughThickness(this PangoFontMetricsHandle metrics)
+	public static int GetStrikethroughThickness(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_strikethrough_thickness(metrics);
 	}
 
-	public static int GetUnderlinePosition(this PangoFontMetricsHandle metrics)
+	public static int GetUnderlinePosition(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_underline_position(metrics);
 	}
 
-	public static int GetUnderlineThickness(this PangoFontMetricsHandle metrics)
+	public static int GetUnderlineThickness(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_get_underline_thickness(metrics);
 	}
 
-	public static PangoFontMetricsHandle Ref(this PangoFontMetricsHandle metrics)
+	public static MentorLake.Pango.PangoFontMetricsHandle Ref(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		return PangoFontMetricsExterns.pango_font_metrics_ref(metrics);
 	}
 
-	public static T Unref<T>(this T metrics) where T : PangoFontMetricsHandle
+	public static void Unref(this MentorLake.Pango.PangoFontMetricsHandle metrics)
 	{
 		PangoFontMetricsExterns.pango_font_metrics_unref(metrics);
-		return metrics;
 	}
 
+
+	public static PangoFontMetrics Dereference(this PangoFontMetricsHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoFontMetrics>(x.DangerousGetHandle());
 }
 internal class PangoFontMetricsExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_approximate_char_width(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_approximate_char_width([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_approximate_digit_width(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_approximate_digit_width([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_ascent(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_ascent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_descent(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_descent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_height(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_height([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_strikethrough_position(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_strikethrough_position([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_strikethrough_thickness(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_strikethrough_thickness([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_underline_position(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_underline_position([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern int pango_font_metrics_get_underline_thickness(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern int pango_font_metrics_get_underline_thickness([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoFontMetricsHandle pango_font_metrics_ref(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoFontMetricsHandle pango_font_metrics_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_font_metrics_unref(PangoFontMetricsHandle metrics);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_font_metrics_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMetricsHandle>))] MentorLake.Pango.PangoFontMetricsHandle metrics);
 
 }
 

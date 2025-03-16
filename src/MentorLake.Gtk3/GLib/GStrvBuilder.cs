@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GStrvBuilderHandle : BaseSafeHandle
 {
-	public static GStrvBuilderHandle New()
+	public static MentorLake.GLib.GStrvBuilderHandle New()
 	{
 		return GStrvBuilderExterns.g_strv_builder_new();
 	}
@@ -10,74 +10,79 @@ public class GStrvBuilderHandle : BaseSafeHandle
 }
 
 
-public static class GStrvBuilderHandleExtensions
+public static class GStrvBuilderExtensions
 {
-	public static T Add<T>(this T builder, string value) where T : GStrvBuilderHandle
+	public static void Add(this MentorLake.GLib.GStrvBuilderHandle builder, string value)
 	{
 		GStrvBuilderExterns.g_strv_builder_add(builder, value);
-		return builder;
 	}
 
-	public static T AddMany<T>(this T builder, IntPtr @__arglist) where T : GStrvBuilderHandle
+	public static void AddMany(this MentorLake.GLib.GStrvBuilderHandle builder, IntPtr @__arglist)
 	{
 		GStrvBuilderExterns.g_strv_builder_add_many(builder, @__arglist);
-		return builder;
 	}
 
-	public static T Addv<T>(this T builder, string[] value) where T : GStrvBuilderHandle
+	public static void Addv(this MentorLake.GLib.GStrvBuilderHandle builder, string[] value)
 	{
 		GStrvBuilderExterns.g_strv_builder_addv(builder, value);
-		return builder;
 	}
 
-	public static IntPtr End(this GStrvBuilderHandle builder)
+	public static string[] End(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
 		return GStrvBuilderExterns.g_strv_builder_end(builder);
 	}
 
-	public static GStrvBuilderHandle Ref(this GStrvBuilderHandle builder)
+	public static MentorLake.GLib.GStrvBuilderHandle Ref(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
 		return GStrvBuilderExterns.g_strv_builder_ref(builder);
 	}
 
-	public static T Take<T>(this T builder, string value) where T : GStrvBuilderHandle
+	public static void Take(this MentorLake.GLib.GStrvBuilderHandle builder, string value)
 	{
 		GStrvBuilderExterns.g_strv_builder_take(builder, value);
-		return builder;
 	}
 
-	public static T Unref<T>(this T builder) where T : GStrvBuilderHandle
+	public static void Unref(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
 		GStrvBuilderExterns.g_strv_builder_unref(builder);
-		return builder;
 	}
 
+	public static string[] UnrefToStrv(this MentorLake.GLib.GStrvBuilderHandle builder)
+	{
+		return GStrvBuilderExterns.g_strv_builder_unref_to_strv(builder);
+	}
+
+
+	public static GStrvBuilder Dereference(this GStrvBuilderHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GStrvBuilder>(x.DangerousGetHandle());
 }
 internal class GStrvBuilderExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GStrvBuilderHandle g_strv_builder_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GStrvBuilderHandle g_strv_builder_new();
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_strv_builder_add(GStrvBuilderHandle builder, string value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_strv_builder_add([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder, string value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_strv_builder_add_many(GStrvBuilderHandle builder, IntPtr @__arglist);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_strv_builder_add_many([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder, IntPtr @__arglist);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_strv_builder_addv(GStrvBuilderHandle builder, string[] value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_strv_builder_addv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder, string[] value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_strv_builder_end(GStrvBuilderHandle builder);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern string[] g_strv_builder_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GStrvBuilderHandle g_strv_builder_ref(GStrvBuilderHandle builder);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GStrvBuilderHandle g_strv_builder_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_strv_builder_take(GStrvBuilderHandle builder, string value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_strv_builder_take([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder, string value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_strv_builder_unref(GStrvBuilderHandle builder);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_strv_builder_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern string[] g_strv_builder_unref_to_strv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
 }
 

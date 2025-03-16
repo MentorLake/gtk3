@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GFileAttributeMatcherHandle : BaseSafeHandle
 {
-	public static GFileAttributeMatcherHandle New(string attributes)
+	public static MentorLake.Gio.GFileAttributeMatcherHandle New(string attributes)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_new(attributes);
 	}
@@ -10,78 +10,81 @@ public class GFileAttributeMatcherHandle : BaseSafeHandle
 }
 
 
-public static class GFileAttributeMatcherHandleExtensions
+public static class GFileAttributeMatcherExtensions
 {
-	public static bool EnumerateNamespace(this GFileAttributeMatcherHandle matcher, string ns)
+	public static bool EnumerateNamespace(this MentorLake.Gio.GFileAttributeMatcherHandle matcher, string ns)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_enumerate_namespace(matcher, ns);
 	}
 
-	public static string EnumerateNext(this GFileAttributeMatcherHandle matcher)
+	public static string EnumerateNext(this MentorLake.Gio.GFileAttributeMatcherHandle matcher)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_enumerate_next(matcher);
 	}
 
-	public static bool Matches(this GFileAttributeMatcherHandle matcher, string attribute)
+	public static bool Matches(this MentorLake.Gio.GFileAttributeMatcherHandle matcher, string attribute)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_matches(matcher, attribute);
 	}
 
-	public static bool MatchesOnly(this GFileAttributeMatcherHandle matcher, string attribute)
+	public static bool MatchesOnly(this MentorLake.Gio.GFileAttributeMatcherHandle matcher, string attribute)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_matches_only(matcher, attribute);
 	}
 
-	public static GFileAttributeMatcherHandle Ref(this GFileAttributeMatcherHandle matcher)
+	public static MentorLake.Gio.GFileAttributeMatcherHandle Ref(this MentorLake.Gio.GFileAttributeMatcherHandle matcher)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_ref(matcher);
 	}
 
-	public static GFileAttributeMatcherHandle Subtract(this GFileAttributeMatcherHandle matcher, GFileAttributeMatcherHandle subtract)
+	public static MentorLake.Gio.GFileAttributeMatcherHandle Subtract(this MentorLake.Gio.GFileAttributeMatcherHandle matcher, MentorLake.Gio.GFileAttributeMatcherHandle subtract)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_subtract(matcher, subtract);
 	}
 
-	public static string ToString(this GFileAttributeMatcherHandle matcher)
+	public static string ToString(this MentorLake.Gio.GFileAttributeMatcherHandle matcher)
 	{
 		return GFileAttributeMatcherExterns.g_file_attribute_matcher_to_string(matcher);
 	}
 
-	public static T Unref<T>(this T matcher) where T : GFileAttributeMatcherHandle
+	public static void Unref(this MentorLake.Gio.GFileAttributeMatcherHandle matcher)
 	{
 		GFileAttributeMatcherExterns.g_file_attribute_matcher_unref(matcher);
-		return matcher;
 	}
 
+
+	public static GFileAttributeMatcher Dereference(this GFileAttributeMatcherHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GFileAttributeMatcher>(x.DangerousGetHandle());
 }
 internal class GFileAttributeMatcherExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeMatcherHandle g_file_attribute_matcher_new(string attributes);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeMatcherHandle g_file_attribute_matcher_new(string attributes);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_file_attribute_matcher_enumerate_namespace(GFileAttributeMatcherHandle matcher, string ns);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_file_attribute_matcher_enumerate_namespace([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher, string ns);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_file_attribute_matcher_enumerate_next(GFileAttributeMatcherHandle matcher);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_attribute_matcher_enumerate_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_file_attribute_matcher_matches(GFileAttributeMatcherHandle matcher, string attribute);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_file_attribute_matcher_matches([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher, string attribute);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_file_attribute_matcher_matches_only(GFileAttributeMatcherHandle matcher, string attribute);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_file_attribute_matcher_matches_only([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher, string attribute);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeMatcherHandle g_file_attribute_matcher_ref(GFileAttributeMatcherHandle matcher);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeMatcherHandle g_file_attribute_matcher_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeMatcherHandle g_file_attribute_matcher_subtract(GFileAttributeMatcherHandle matcher, GFileAttributeMatcherHandle subtract);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeMatcherHandle g_file_attribute_matcher_subtract([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle subtract);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_file_attribute_matcher_to_string(GFileAttributeMatcherHandle matcher);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_attribute_matcher_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_file_attribute_matcher_unref(GFileAttributeMatcherHandle matcher);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_file_attribute_matcher_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeMatcherHandle>))] MentorLake.Gio.GFileAttributeMatcherHandle matcher);
 
 }
 

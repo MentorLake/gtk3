@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate bool GIOSchedulerJobFunc([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GIOSchedulerJobHandle>))] GIOSchedulerJobHandle job, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GCancellableHandle>))] GCancellableHandle cancellable, IntPtr data);
+public delegate bool GIOSchedulerJobFunc([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOSchedulerJobHandle>))] MentorLake.Gio.GIOSchedulerJobHandle job, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr data);

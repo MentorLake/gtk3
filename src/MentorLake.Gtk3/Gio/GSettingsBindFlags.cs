@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GSettingsBindFlags
+public enum GSettingsBindFlags : long
 {
 	G_SETTINGS_BIND_DEFAULT = 0,
 	G_SETTINGS_BIND_GET = 1,

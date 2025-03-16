@@ -1,385 +1,366 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GQueueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GQueueHandleExtensions
+public static class GQueueExtensions
 {
-	public static T Clear<T>(this T queue) where T : GQueueHandle
+	public static void Clear(this MentorLake.GLib.GQueueHandle queue)
 	{
 		GQueueExterns.g_queue_clear(queue);
-		return queue;
 	}
 
-	public static T ClearFull<T>(this T queue, GDestroyNotify free_func) where T : GQueueHandle
+	public static void ClearFull(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GDestroyNotify free_func)
 	{
 		GQueueExterns.g_queue_clear_full(queue, free_func);
-		return queue;
 	}
 
-	public static GQueueHandle Copy(this GQueueHandle queue)
+	public static MentorLake.GLib.GQueueHandle Copy(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_copy(queue);
 	}
 
-	public static T DeleteLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
+	public static void DeleteLink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_delete_link(queue, link_);
-		return queue;
 	}
 
-	public static GListHandle Find(this GQueueHandle queue, IntPtr data)
+	public static MentorLake.GLib.GListHandle Find(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		return GQueueExterns.g_queue_find(queue, data);
 	}
 
-	public static GListHandle FindCustom(this GQueueHandle queue, IntPtr data, GCompareFunc func)
+	public static MentorLake.GLib.GListHandle FindCustom(this MentorLake.GLib.GQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareFunc func)
 	{
 		return GQueueExterns.g_queue_find_custom(queue, data, func);
 	}
 
-	public static T Foreach<T>(this T queue, GFunc func, IntPtr user_data) where T : GQueueHandle
+	public static void Foreach(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GFunc func, IntPtr user_data)
 	{
 		GQueueExterns.g_queue_foreach(queue, func, user_data);
-		return queue;
 	}
 
-	public static T Free<T>(this T queue) where T : GQueueHandle
+	public static void Free(this MentorLake.GLib.GQueueHandle queue)
 	{
 		GQueueExterns.g_queue_free(queue);
-		return queue;
 	}
 
-	public static T FreeFull<T>(this T queue, GDestroyNotify free_func) where T : GQueueHandle
+	public static void FreeFull(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GDestroyNotify free_func)
 	{
 		GQueueExterns.g_queue_free_full(queue, free_func);
-		return queue;
 	}
 
-	public static uint GetLength(this GQueueHandle queue)
+	public static uint GetLength(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_get_length(queue);
 	}
 
-	public static int Index(this GQueueHandle queue, IntPtr data)
+	public static int Index(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		return GQueueExterns.g_queue_index(queue, data);
 	}
 
-	public static T Init<T>(this T queue) where T : GQueueHandle
+	public static void Init(this MentorLake.GLib.GQueueHandle queue)
 	{
 		GQueueExterns.g_queue_init(queue);
-		return queue;
 	}
 
-	public static T InsertAfter<T>(this T queue, GListHandle sibling, IntPtr data) where T : GQueueHandle
+	public static void InsertAfter(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle sibling, IntPtr data)
 	{
 		GQueueExterns.g_queue_insert_after(queue, sibling, data);
-		return queue;
 	}
 
-	public static T InsertAfterLink<T>(this T queue, GListHandle sibling, GListHandle link_) where T : GQueueHandle
+	public static void InsertAfterLink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle sibling, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_insert_after_link(queue, sibling, link_);
-		return queue;
 	}
 
-	public static T InsertBefore<T>(this T queue, GListHandle sibling, IntPtr data) where T : GQueueHandle
+	public static void InsertBefore(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle sibling, IntPtr data)
 	{
 		GQueueExterns.g_queue_insert_before(queue, sibling, data);
-		return queue;
 	}
 
-	public static T InsertBeforeLink<T>(this T queue, GListHandle sibling, GListHandle link_) where T : GQueueHandle
+	public static void InsertBeforeLink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle sibling, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_insert_before_link(queue, sibling, link_);
-		return queue;
 	}
 
-	public static T InsertSorted<T>(this T queue, IntPtr data, GCompareDataFunc func, IntPtr user_data) where T : GQueueHandle
+	public static void InsertSorted(this MentorLake.GLib.GQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
 		GQueueExterns.g_queue_insert_sorted(queue, data, func, user_data);
-		return queue;
 	}
 
-	public static bool IsEmpty(this GQueueHandle queue)
+	public static bool IsEmpty(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_is_empty(queue);
 	}
 
-	public static int LinkIndex(this GQueueHandle queue, GListHandle link_)
+	public static int LinkIndex(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle link_)
 	{
 		return GQueueExterns.g_queue_link_index(queue, link_);
 	}
 
-	public static IntPtr PeekHead(this GQueueHandle queue)
+	public static IntPtr PeekHead(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_peek_head(queue);
 	}
 
-	public static GListHandle PeekHeadLink(this GQueueHandle queue)
+	public static MentorLake.GLib.GListHandle PeekHeadLink(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_peek_head_link(queue);
 	}
 
-	public static IntPtr PeekNth(this GQueueHandle queue, uint n)
+	public static IntPtr PeekNth(this MentorLake.GLib.GQueueHandle queue, uint n)
 	{
 		return GQueueExterns.g_queue_peek_nth(queue, n);
 	}
 
-	public static GListHandle PeekNthLink(this GQueueHandle queue, uint n)
+	public static MentorLake.GLib.GListHandle PeekNthLink(this MentorLake.GLib.GQueueHandle queue, uint n)
 	{
 		return GQueueExterns.g_queue_peek_nth_link(queue, n);
 	}
 
-	public static IntPtr PeekTail(this GQueueHandle queue)
+	public static IntPtr PeekTail(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_peek_tail(queue);
 	}
 
-	public static GListHandle PeekTailLink(this GQueueHandle queue)
+	public static MentorLake.GLib.GListHandle PeekTailLink(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_peek_tail_link(queue);
 	}
 
-	public static IntPtr PopHead(this GQueueHandle queue)
+	public static IntPtr PopHead(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_pop_head(queue);
 	}
 
-	public static GListHandle PopHeadLink(this GQueueHandle queue)
+	public static MentorLake.GLib.GListHandle PopHeadLink(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_pop_head_link(queue);
 	}
 
-	public static IntPtr PopNth(this GQueueHandle queue, uint n)
+	public static IntPtr PopNth(this MentorLake.GLib.GQueueHandle queue, uint n)
 	{
 		return GQueueExterns.g_queue_pop_nth(queue, n);
 	}
 
-	public static GListHandle PopNthLink(this GQueueHandle queue, uint n)
+	public static MentorLake.GLib.GListHandle PopNthLink(this MentorLake.GLib.GQueueHandle queue, uint n)
 	{
 		return GQueueExterns.g_queue_pop_nth_link(queue, n);
 	}
 
-	public static IntPtr PopTail(this GQueueHandle queue)
+	public static IntPtr PopTail(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_pop_tail(queue);
 	}
 
-	public static GListHandle PopTailLink(this GQueueHandle queue)
+	public static MentorLake.GLib.GListHandle PopTailLink(this MentorLake.GLib.GQueueHandle queue)
 	{
 		return GQueueExterns.g_queue_pop_tail_link(queue);
 	}
 
-	public static T PushHead<T>(this T queue, IntPtr data) where T : GQueueHandle
+	public static void PushHead(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		GQueueExterns.g_queue_push_head(queue, data);
-		return queue;
 	}
 
-	public static T PushHeadLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
+	public static void PushHeadLink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_push_head_link(queue, link_);
-		return queue;
 	}
 
-	public static T PushNth<T>(this T queue, IntPtr data, int n) where T : GQueueHandle
+	public static void PushNth(this MentorLake.GLib.GQueueHandle queue, IntPtr data, int n)
 	{
 		GQueueExterns.g_queue_push_nth(queue, data, n);
-		return queue;
 	}
 
-	public static T PushNthLink<T>(this T queue, int n, GListHandle link_) where T : GQueueHandle
+	public static void PushNthLink(this MentorLake.GLib.GQueueHandle queue, int n, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_push_nth_link(queue, n, link_);
-		return queue;
 	}
 
-	public static T PushTail<T>(this T queue, IntPtr data) where T : GQueueHandle
+	public static void PushTail(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		GQueueExterns.g_queue_push_tail(queue, data);
-		return queue;
 	}
 
-	public static T PushTailLink<T>(this T queue, GListHandle link_) where T : GQueueHandle
+	public static void PushTailLink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_push_tail_link(queue, link_);
-		return queue;
 	}
 
-	public static bool Remove(this GQueueHandle queue, IntPtr data)
+	public static bool Remove(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		return GQueueExterns.g_queue_remove(queue, data);
 	}
 
-	public static uint RemoveAll(this GQueueHandle queue, IntPtr data)
+	public static uint RemoveAll(this MentorLake.GLib.GQueueHandle queue, IntPtr data)
 	{
 		return GQueueExterns.g_queue_remove_all(queue, data);
 	}
 
-	public static T Reverse<T>(this T queue) where T : GQueueHandle
+	public static void Reverse(this MentorLake.GLib.GQueueHandle queue)
 	{
 		GQueueExterns.g_queue_reverse(queue);
-		return queue;
 	}
 
-	public static T Sort<T>(this T queue, GCompareDataFunc compare_func, IntPtr user_data) where T : GQueueHandle
+	public static void Sort(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GCompareDataFunc compare_func, IntPtr user_data)
 	{
 		GQueueExterns.g_queue_sort(queue, compare_func, user_data);
-		return queue;
 	}
 
-	public static T Unlink<T>(this T queue, GListHandle link_) where T : GQueueHandle
+	public static void Unlink(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GListHandle link_)
 	{
 		GQueueExterns.g_queue_unlink(queue, link_);
-		return queue;
 	}
 
-	public static GQueueHandle New()
-	{
-		return GQueueExterns.g_queue_new();
-	}
 
+	public static GQueue Dereference(this GQueueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GQueue>(x.DangerousGetHandle());
 }
 internal class GQueueExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_clear(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_clear([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_clear_full(GQueueHandle queue, GDestroyNotify free_func);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_clear_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GDestroyNotify free_func);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GQueueHandle g_queue_copy(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GQueueHandle g_queue_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_delete_link(GQueueHandle queue, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_delete_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_find(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_find([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_find_custom(GQueueHandle queue, IntPtr data, GCompareFunc func);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_find_custom([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareFunc func);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_foreach(GQueueHandle queue, GFunc func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_foreach([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GFunc func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_free(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_free_full(GQueueHandle queue, GDestroyNotify free_func);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_free_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GDestroyNotify free_func);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_queue_get_length(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_queue_get_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_queue_index(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_queue_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_init(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_insert_after(GQueueHandle queue, GListHandle sibling, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_insert_after([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle sibling, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_insert_after_link(GQueueHandle queue, GListHandle sibling, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_insert_after_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle sibling, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_insert_before(GQueueHandle queue, GListHandle sibling, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_insert_before([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle sibling, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_insert_before_link(GQueueHandle queue, GListHandle sibling, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_insert_before_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle sibling, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_insert_sorted(GQueueHandle queue, IntPtr data, GCompareDataFunc func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_insert_sorted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_queue_is_empty(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_queue_is_empty([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_queue_link_index(GQueueHandle queue, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_queue_link_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_peek_head(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_peek_head([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_peek_head_link(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_peek_head_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_peek_nth(GQueueHandle queue, uint n);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_peek_nth([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, uint n);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_peek_nth_link(GQueueHandle queue, uint n);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_peek_nth_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, uint n);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_peek_tail(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_peek_tail([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_peek_tail_link(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_peek_tail_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_pop_head(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_pop_head([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_pop_head_link(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_pop_head_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_pop_nth(GQueueHandle queue, uint n);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_pop_nth([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, uint n);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_pop_nth_link(GQueueHandle queue, uint n);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_pop_nth_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, uint n);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_queue_pop_tail(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_queue_pop_tail([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GListHandle g_queue_pop_tail_link(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_queue_pop_tail_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_head(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_head([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_head_link(GQueueHandle queue, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_head_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_nth(GQueueHandle queue, IntPtr data, int n);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_nth([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data, int n);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_nth_link(GQueueHandle queue, int n, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_nth_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, int n, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_tail(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_tail([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_push_tail_link(GQueueHandle queue, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_push_tail_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_queue_remove(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_queue_remove([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_queue_remove_all(GQueueHandle queue, IntPtr data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_queue_remove_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, IntPtr data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_reverse(GQueueHandle queue);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_reverse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_sort(GQueueHandle queue, GCompareDataFunc compare_func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_sort([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GCompareDataFunc compare_func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_queue_unlink(GQueueHandle queue, GListHandle link_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_queue_unlink([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GQueueHandle>))] MentorLake.GLib.GQueueHandle queue, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle link_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GQueueHandle g_queue_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GQueueHandle g_queue_new();
 
 }
 
 public struct GQueue
 {
-	public GListHandle head;
-	public GListHandle tail;
+	public IntPtr head;
+	public IntPtr tail;
 	public uint length;
+	public static MentorLake.GLib.GQueueHandle New()
+	{
+		return GQueueExterns.g_queue_new();
+	}
+
 }

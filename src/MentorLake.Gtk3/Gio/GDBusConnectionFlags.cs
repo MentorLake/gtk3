@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusConnectionFlags
+public enum GDBusConnectionFlags : long
 {
 	G_DBUS_CONNECTION_FLAGS_NONE = 0,
 	G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT = 1,

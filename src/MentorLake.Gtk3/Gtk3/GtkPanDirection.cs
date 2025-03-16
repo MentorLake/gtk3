@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkPanDirection
-{
-	GTK_PAN_DIRECTION_LEFT,
-	GTK_PAN_DIRECTION_RIGHT,
-	GTK_PAN_DIRECTION_UP,
-	GTK_PAN_DIRECTION_DOWN
-}

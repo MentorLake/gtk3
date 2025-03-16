@@ -1,78 +1,80 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GSequenceIterHandle : BaseSafeHandle
 {
 }
 
 
-public static class GSequenceIterHandleExtensions
+public static class GSequenceIterExtensions
 {
-	public static int Compare(this GSequenceIterHandle a, GSequenceIterHandle b)
+	public static int Compare(this MentorLake.GLib.GSequenceIterHandle a, MentorLake.GLib.GSequenceIterHandle b)
 	{
 		return GSequenceIterExterns.g_sequence_iter_compare(a, b);
 	}
 
-	public static int GetPosition(this GSequenceIterHandle iter)
+	public static int GetPosition(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_get_position(iter);
 	}
 
-	public static GSequenceHandle GetSequence(this GSequenceIterHandle iter)
+	public static MentorLake.GLib.GSequenceHandle GetSequence(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_get_sequence(iter);
 	}
 
-	public static bool IsBegin(this GSequenceIterHandle iter)
+	public static bool IsBegin(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_is_begin(iter);
 	}
 
-	public static bool IsEnd(this GSequenceIterHandle iter)
+	public static bool IsEnd(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_is_end(iter);
 	}
 
-	public static GSequenceIterHandle Move(this GSequenceIterHandle iter, int delta)
+	public static MentorLake.GLib.GSequenceIterHandle Move(this MentorLake.GLib.GSequenceIterHandle iter, int delta)
 	{
 		return GSequenceIterExterns.g_sequence_iter_move(iter, delta);
 	}
 
-	public static GSequenceIterHandle Next(this GSequenceIterHandle iter)
+	public static MentorLake.GLib.GSequenceIterHandle Next(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_next(iter);
 	}
 
-	public static GSequenceIterHandle Prev(this GSequenceIterHandle iter)
+	public static MentorLake.GLib.GSequenceIterHandle Prev(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
 		return GSequenceIterExterns.g_sequence_iter_prev(iter);
 	}
 
+
+	public static GSequenceIter Dereference(this GSequenceIterHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GSequenceIter>(x.DangerousGetHandle());
 }
 internal class GSequenceIterExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_sequence_iter_compare(GSequenceIterHandle a, GSequenceIterHandle b);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_sequence_iter_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle a, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle b);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_sequence_iter_get_position(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_sequence_iter_get_position([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GSequenceHandle g_sequence_iter_get_sequence(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GSequenceHandle g_sequence_iter_get_sequence([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_sequence_iter_is_begin(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_sequence_iter_is_begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_sequence_iter_is_end(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_sequence_iter_is_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GSequenceIterHandle g_sequence_iter_move(GSequenceIterHandle iter, int delta);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GSequenceIterHandle g_sequence_iter_move([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter, int delta);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GSequenceIterHandle g_sequence_iter_next(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GSequenceIterHandle g_sequence_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GSequenceIterHandle g_sequence_iter_prev(GSequenceIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GSequenceIterHandle g_sequence_iter_prev([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle iter);
 
 }
 

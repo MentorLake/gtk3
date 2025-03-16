@@ -1,6 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
+[Flags]
 public enum GThreadError
 {
-	G_THREAD_ERROR_AGAIN
+	G_THREAD_ERROR_AGAIN = 0
 }

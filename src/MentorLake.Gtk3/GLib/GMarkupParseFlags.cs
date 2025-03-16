@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GMarkupParseFlags
+public enum GMarkupParseFlags : long
 {
 	G_MARKUP_DEFAULT_FLAGS = 0,
 	G_MARKUP_DO_NOT_USE_THIS_UNSUPPORTED_FLAG = 1,

@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GSubprocessFlags
+public enum GSubprocessFlags : long
 {
 	G_SUBPROCESS_FLAGS_NONE = 0,
 	G_SUBPROCESS_FLAGS_STDIN_PIPE = 1,

@@ -1,30 +1,22 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrSizeHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoAttrSizeHandleExtensions
+public static class PangoAttrSizeExtensions
 {
-	public static PangoAttributeHandle New(int size)
-	{
-		return PangoAttrSizeExterns.pango_attr_size_new(size);
-	}
 
-	public static PangoAttributeHandle NewAbsolute(int size)
-	{
-		return PangoAttrSizeExterns.pango_attr_size_new_absolute(size);
-	}
-
+	public static PangoAttrSize Dereference(this PangoAttrSizeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrSize>(x.DangerousGetHandle());
 }
 internal class PangoAttrSizeExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_size_new(int size);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_size_new(int size);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_size_new_absolute(int size);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_size_new_absolute(int size);
 
 }
 
@@ -33,4 +25,14 @@ public struct PangoAttrSize
 	public PangoAttribute attr;
 	public int size;
 	public uint absolute;
+	public static MentorLake.Pango.PangoAttributeHandle New(int size)
+	{
+		return PangoAttrSizeExterns.pango_attr_size_new(size);
+	}
+
+	public static MentorLake.Pango.PangoAttributeHandle NewAbsolute(int size)
+	{
+		return PangoAttrSizeExterns.pango_attr_size_new_absolute(size);
+	}
+
 }

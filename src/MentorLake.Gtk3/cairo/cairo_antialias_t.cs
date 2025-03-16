@@ -1,0 +1,13 @@
+namespace MentorLake.cairo;
+
+[Flags]
+public enum cairo_antialias_t
+{
+	CAIRO_ANTIALIAS_DEFAULT = 0,
+	CAIRO_ANTIALIAS_NONE = 1,
+	CAIRO_ANTIALIAS_GRAY = 2,
+	CAIRO_ANTIALIAS_SUBPIXEL = 3,
+	CAIRO_ANTIALIAS_FAST = 4,
+	CAIRO_ANTIALIAS_GOOD = 5,
+	CAIRO_ANTIALIAS_BEST = 6
+}

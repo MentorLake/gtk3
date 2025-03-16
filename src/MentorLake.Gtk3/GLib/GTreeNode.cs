@@ -1,46 +1,48 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTreeNodeHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTreeNodeHandleExtensions
+public static class GTreeNodeExtensions
 {
-	public static IntPtr Key(this GTreeNodeHandle node)
+	public static IntPtr Key(this MentorLake.GLib.GTreeNodeHandle node)
 	{
 		return GTreeNodeExterns.g_tree_node_key(node);
 	}
 
-	public static GTreeNodeHandle Next(this GTreeNodeHandle node)
+	public static MentorLake.GLib.GTreeNodeHandle Next(this MentorLake.GLib.GTreeNodeHandle node)
 	{
 		return GTreeNodeExterns.g_tree_node_next(node);
 	}
 
-	public static GTreeNodeHandle Previous(this GTreeNodeHandle node)
+	public static MentorLake.GLib.GTreeNodeHandle Previous(this MentorLake.GLib.GTreeNodeHandle node)
 	{
 		return GTreeNodeExterns.g_tree_node_previous(node);
 	}
 
-	public static IntPtr Value(this GTreeNodeHandle node)
+	public static IntPtr Value(this MentorLake.GLib.GTreeNodeHandle node)
 	{
 		return GTreeNodeExterns.g_tree_node_value(node);
 	}
 
+
+	public static GTreeNode Dereference(this GTreeNodeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTreeNode>(x.DangerousGetHandle());
 }
 internal class GTreeNodeExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_tree_node_key(GTreeNodeHandle node);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_tree_node_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeNodeHandle>))] MentorLake.GLib.GTreeNodeHandle node);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_node_next(GTreeNodeHandle node);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_node_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeNodeHandle>))] MentorLake.GLib.GTreeNodeHandle node);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_node_previous(GTreeNodeHandle node);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_node_previous([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeNodeHandle>))] MentorLake.GLib.GTreeNodeHandle node);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_tree_node_value(GTreeNodeHandle node);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_tree_node_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeNodeHandle>))] MentorLake.GLib.GTreeNodeHandle node);
 
 }
 

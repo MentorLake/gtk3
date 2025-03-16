@@ -1,41 +1,43 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GIConvHandle : BaseSafeHandle
 {
 }
 
 
-public static class GIConvHandleExtensions
+public static class GIConvExtensions
 {
-	public static UIntPtr GIconv(GIConv converter, ref string inbuf, ref UIntPtr inbytes_left, ref string outbuf, ref UIntPtr outbytes_left)
+	public static UIntPtr GIconv(this MentorLake.GLib.GIConv converter, string inbuf, ref UIntPtr inbytes_left, string outbuf, ref UIntPtr outbytes_left)
 	{
-		return GIConvExterns.g_iconv(converter, ref inbuf, ref inbytes_left, ref outbuf, ref outbytes_left);
+		return GIConvExterns.g_iconv(converter, inbuf, ref inbytes_left, outbuf, ref outbytes_left);
 	}
 
-	public static int GIconvClose(GIConv converter)
+	public static int Close(this MentorLake.GLib.GIConv converter)
 	{
 		return GIConvExterns.g_iconv_close(converter);
 	}
 
-	public static GIConv GIconvOpen(string to_codeset, string from_codeset)
-	{
-		return GIConvExterns.g_iconv_open(to_codeset, from_codeset);
-	}
 
+	public static GIConv Dereference(this GIConvHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GIConv>(x.DangerousGetHandle());
 }
 internal class GIConvExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern UIntPtr g_iconv(GIConv converter, ref string inbuf, ref UIntPtr inbytes_left, ref string outbuf, ref UIntPtr outbytes_left);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern UIntPtr g_iconv(MentorLake.GLib.GIConv converter, string inbuf, ref UIntPtr inbytes_left, string outbuf, ref UIntPtr outbytes_left);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_iconv_close(GIConv converter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_iconv_close(MentorLake.GLib.GIConv converter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GIConv g_iconv_open(string to_codeset, string from_codeset);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GIConv g_iconv_open(string to_codeset, string from_codeset);
 
 }
 
 public struct GIConv
 {
+	public static MentorLake.GLib.GIConv Open(string to_codeset, string from_codeset)
+	{
+		return GIConvExterns.g_iconv_open(to_codeset, from_codeset);
+	}
+
 }

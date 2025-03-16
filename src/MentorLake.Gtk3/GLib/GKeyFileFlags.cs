@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GKeyFileFlags
+public enum GKeyFileFlags : long
 {
 	G_KEY_FILE_NONE = 0,
 	G_KEY_FILE_KEEP_COMMENTS = 1,

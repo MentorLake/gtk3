@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GOutputStreamSpliceFlags
+public enum GOutputStreamSpliceFlags : long
 {
 	G_OUTPUT_STREAM_SPLICE_NONE = 0,
 	G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE = 1,

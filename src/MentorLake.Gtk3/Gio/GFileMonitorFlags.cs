@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileMonitorFlags
+public enum GFileMonitorFlags : long
 {
 	G_FILE_MONITOR_NONE = 0,
 	G_FILE_MONITOR_WATCH_MOUNTS = 1,

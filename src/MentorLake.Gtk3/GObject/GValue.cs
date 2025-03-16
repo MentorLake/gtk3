@@ -1,631 +1,599 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GValueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GValueHandleExtensions
+public static class GValueExtensions
 {
-	public static T Copy<T>(this T src_value, GValueHandle dest_value) where T : GValueHandle
+	public static void Copy(this MentorLake.GObject.GValueHandle src_value, MentorLake.GObject.GValueHandle dest_value)
 	{
 		GValueExterns.g_value_copy(src_value, dest_value);
-		return src_value;
 	}
 
-	public static IntPtr DupBoxed(this GValueHandle value)
+	public static IntPtr DupBoxed(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_dup_boxed(value);
 	}
 
-	public static GObjectHandle DupObject(this GValueHandle value)
+	public static MentorLake.GObject.GObjectHandle DupObject(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_dup_object(value);
 	}
 
-	public static GParamSpecHandle DupParam(this GValueHandle value)
+	public static MentorLake.GObject.GParamSpecHandle DupParam(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_dup_param(value);
 	}
 
-	public static string DupString(this GValueHandle value)
+	public static string DupString(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_dup_string(value);
 	}
 
-	public static GVariantHandle DupVariant(this GValueHandle value)
+	public static MentorLake.GLib.GVariantHandle DupVariant(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_dup_variant(value);
 	}
 
-	public static bool FitsPointer(this GValueHandle value)
+	public static bool FitsPointer(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_fits_pointer(value);
 	}
 
-	public static bool GetBoolean(this GValueHandle value)
+	public static bool GetBoolean(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_boolean(value);
 	}
 
-	public static IntPtr GetBoxed(this GValueHandle value)
+	public static IntPtr GetBoxed(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_boxed(value);
 	}
 
-	public static char GetChar(this GValueHandle value)
+	public static char GetChar(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_char(value);
 	}
 
-	public static double GetDouble(this GValueHandle value)
+	public static double GetDouble(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_double(value);
 	}
 
-	public static int GetEnum(this GValueHandle value)
+	public static int GetEnum(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_enum(value);
 	}
 
-	public static uint GetFlags(this GValueHandle value)
+	public static uint GetFlags(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_flags(value);
 	}
 
-	public static float GetFloat(this GValueHandle value)
+	public static float GetFloat(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_float(value);
 	}
 
-	public static GType GetGtype(this GValueHandle value)
+	public static MentorLake.GObject.GType GetGtype(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_gtype(value);
 	}
 
-	public static int GetInt(this GValueHandle value)
+	public static int GetInt(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_int(value);
 	}
 
-	public static long GetInt64(this GValueHandle value)
+	public static long GetInt64(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_int64(value);
 	}
 
-	public static long GetLong(this GValueHandle value)
+	public static long GetLong(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_long(value);
 	}
 
-	public static GObjectHandle GetObject(this GValueHandle value)
+	public static MentorLake.GObject.GObjectHandle GetObject(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_object(value);
 	}
 
-	public static GParamSpecHandle GetParam(this GValueHandle value)
+	public static MentorLake.GObject.GParamSpecHandle GetParam(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_param(value);
 	}
 
-	public static IntPtr GetPointer(this GValueHandle value)
+	public static IntPtr GetPointer(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_pointer(value);
 	}
 
-	public static byte GetSchar(this GValueHandle value)
+	public static byte GetSchar(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_schar(value);
 	}
 
-	public static string GetString(this GValueHandle value)
+	public static string GetString(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_string(value);
 	}
 
-	public static char GetUchar(this GValueHandle value)
+	public static char GetUchar(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_uchar(value);
 	}
 
-	public static uint GetUint(this GValueHandle value)
+	public static uint GetUint(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_uint(value);
 	}
 
-	public static ulong GetUint64(this GValueHandle value)
+	public static ulong GetUint64(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_uint64(value);
 	}
 
-	public static ulong GetUlong(this GValueHandle value)
+	public static ulong GetUlong(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_ulong(value);
 	}
 
-	public static GVariantHandle GetVariant(this GValueHandle value)
+	public static MentorLake.GLib.GVariantHandle GetVariant(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_get_variant(value);
 	}
 
-	public static GValueHandle Init(this GValueHandle value, GType g_type)
+	public static MentorLake.GObject.GValueHandle Init(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType g_type)
 	{
 		return GValueExterns.g_value_init(value, g_type);
 	}
 
-	public static T InitFromInstance<T>(this T value, GTypeInstanceHandle instance) where T : GValueHandle
+	public static void InitFromInstance(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GTypeInstanceHandle instance)
 	{
 		GValueExterns.g_value_init_from_instance(value, instance);
-		return value;
 	}
 
-	public static IntPtr PeekPointer(this GValueHandle value)
+	public static IntPtr PeekPointer(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_peek_pointer(value);
 	}
 
-	public static GValueHandle Reset(this GValueHandle value)
+	public static MentorLake.GObject.GValueHandle Reset(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_reset(value);
 	}
 
-	public static T SetBoolean<T>(this T value, bool v_boolean) where T : GValueHandle
+	public static void SetBoolean(this MentorLake.GObject.GValueHandle value, bool v_boolean)
 	{
 		GValueExterns.g_value_set_boolean(value, v_boolean);
-		return value;
 	}
 
-	public static T SetBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
+	public static void SetBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
 		GValueExterns.g_value_set_boxed(value, v_boxed);
-		return value;
 	}
 
-	public static T SetBoxedTakeOwnership<T>(this T value, IntPtr v_boxed) where T : GValueHandle
+	public static void SetBoxedTakeOwnership(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
 		GValueExterns.g_value_set_boxed_take_ownership(value, v_boxed);
-		return value;
 	}
 
-	public static T SetChar<T>(this T value, char v_char) where T : GValueHandle
+	public static void SetChar(this MentorLake.GObject.GValueHandle value, char v_char)
 	{
 		GValueExterns.g_value_set_char(value, v_char);
-		return value;
 	}
 
-	public static T SetDouble<T>(this T value, double v_double) where T : GValueHandle
+	public static void SetDouble(this MentorLake.GObject.GValueHandle value, double v_double)
 	{
 		GValueExterns.g_value_set_double(value, v_double);
-		return value;
 	}
 
-	public static T SetEnum<T>(this T value, int v_enum) where T : GValueHandle
+	public static void SetEnum(this MentorLake.GObject.GValueHandle value, int v_enum)
 	{
 		GValueExterns.g_value_set_enum(value, v_enum);
-		return value;
 	}
 
-	public static T SetFlags<T>(this T value, uint v_flags) where T : GValueHandle
+	public static void SetFlags(this MentorLake.GObject.GValueHandle value, uint v_flags)
 	{
 		GValueExterns.g_value_set_flags(value, v_flags);
-		return value;
 	}
 
-	public static T SetFloat<T>(this T value, float v_float) where T : GValueHandle
+	public static void SetFloat(this MentorLake.GObject.GValueHandle value, float v_float)
 	{
 		GValueExterns.g_value_set_float(value, v_float);
-		return value;
 	}
 
-	public static T SetGtype<T>(this T value, GType v_gtype) where T : GValueHandle
+	public static void SetGtype(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType v_gtype)
 	{
 		GValueExterns.g_value_set_gtype(value, v_gtype);
-		return value;
 	}
 
-	public static T SetInstance<T>(this T value, IntPtr instance) where T : GValueHandle
+	public static void SetInstance(this MentorLake.GObject.GValueHandle value, IntPtr instance)
 	{
 		GValueExterns.g_value_set_instance(value, instance);
-		return value;
 	}
 
-	public static T SetInt<T>(this T value, int v_int) where T : GValueHandle
+	public static void SetInt(this MentorLake.GObject.GValueHandle value, int v_int)
 	{
 		GValueExterns.g_value_set_int(value, v_int);
-		return value;
 	}
 
-	public static T SetInt64<T>(this T value, long v_int64) where T : GValueHandle
+	public static void SetInt64(this MentorLake.GObject.GValueHandle value, long v_int64)
 	{
 		GValueExterns.g_value_set_int64(value, v_int64);
-		return value;
 	}
 
-	public static T SetInternedString<T>(this T value, string v_string) where T : GValueHandle
+	public static void SetInternedString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
 		GValueExterns.g_value_set_interned_string(value, v_string);
-		return value;
 	}
 
-	public static T SetLong<T>(this T value, long v_long) where T : GValueHandle
+	public static void SetLong(this MentorLake.GObject.GValueHandle value, long v_long)
 	{
 		GValueExterns.g_value_set_long(value, v_long);
-		return value;
 	}
 
-	public static T SetObject<T>(this T value, GObjectHandle v_object) where T : GValueHandle
+	public static void SetObject(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GObjectHandle v_object)
 	{
 		GValueExterns.g_value_set_object(value, v_object);
-		return value;
 	}
 
-	public static T SetObjectTakeOwnership<T>(this T value, IntPtr v_object) where T : GValueHandle
+	public static void SetObjectTakeOwnership(this MentorLake.GObject.GValueHandle value, IntPtr v_object)
 	{
 		GValueExterns.g_value_set_object_take_ownership(value, v_object);
-		return value;
 	}
 
-	public static T SetParam<T>(this T value, GParamSpecHandle param) where T : GValueHandle
+	public static void SetParam(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
 		GValueExterns.g_value_set_param(value, param);
-		return value;
 	}
 
-	public static T SetParamTakeOwnership<T>(this T value, GParamSpecHandle param) where T : GValueHandle
+	public static void SetParamTakeOwnership(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
 		GValueExterns.g_value_set_param_take_ownership(value, param);
-		return value;
 	}
 
-	public static T SetPointer<T>(this T value, IntPtr v_pointer) where T : GValueHandle
+	public static void SetPointer(this MentorLake.GObject.GValueHandle value, IntPtr v_pointer)
 	{
 		GValueExterns.g_value_set_pointer(value, v_pointer);
-		return value;
 	}
 
-	public static T SetSchar<T>(this T value, byte v_char) where T : GValueHandle
+	public static void SetSchar(this MentorLake.GObject.GValueHandle value, byte v_char)
 	{
 		GValueExterns.g_value_set_schar(value, v_char);
-		return value;
 	}
 
-	public static T SetStaticBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
+	public static void SetStaticBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
 		GValueExterns.g_value_set_static_boxed(value, v_boxed);
-		return value;
 	}
 
-	public static T SetStaticString<T>(this T value, string v_string) where T : GValueHandle
+	public static void SetStaticString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
 		GValueExterns.g_value_set_static_string(value, v_string);
-		return value;
 	}
 
-	public static T SetString<T>(this T value, string v_string) where T : GValueHandle
+	public static void SetString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
 		GValueExterns.g_value_set_string(value, v_string);
-		return value;
 	}
 
-	public static T SetStringTakeOwnership<T>(this T value, string v_string) where T : GValueHandle
+	public static void SetStringTakeOwnership(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
 		GValueExterns.g_value_set_string_take_ownership(value, v_string);
-		return value;
 	}
 
-	public static T SetUchar<T>(this T value, char v_uchar) where T : GValueHandle
+	public static void SetUchar(this MentorLake.GObject.GValueHandle value, char v_uchar)
 	{
 		GValueExterns.g_value_set_uchar(value, v_uchar);
-		return value;
 	}
 
-	public static T SetUint<T>(this T value, uint v_uint) where T : GValueHandle
+	public static void SetUint(this MentorLake.GObject.GValueHandle value, uint v_uint)
 	{
 		GValueExterns.g_value_set_uint(value, v_uint);
-		return value;
 	}
 
-	public static T SetUint64<T>(this T value, ulong v_uint64) where T : GValueHandle
+	public static void SetUint64(this MentorLake.GObject.GValueHandle value, ulong v_uint64)
 	{
 		GValueExterns.g_value_set_uint64(value, v_uint64);
-		return value;
 	}
 
-	public static T SetUlong<T>(this T value, ulong v_ulong) where T : GValueHandle
+	public static void SetUlong(this MentorLake.GObject.GValueHandle value, ulong v_ulong)
 	{
 		GValueExterns.g_value_set_ulong(value, v_ulong);
-		return value;
 	}
 
-	public static T SetVariant<T>(this T value, GVariantHandle variant) where T : GValueHandle
+	public static void SetVariant(this MentorLake.GObject.GValueHandle value, MentorLake.GLib.GVariantHandle variant)
 	{
 		GValueExterns.g_value_set_variant(value, variant);
-		return value;
 	}
 
-	public static string StealString(this GValueHandle value)
+	public static string StealString(this MentorLake.GObject.GValueHandle value)
 	{
 		return GValueExterns.g_value_steal_string(value);
 	}
 
-	public static T TakeBoxed<T>(this T value, IntPtr v_boxed) where T : GValueHandle
+	public static void TakeBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
 		GValueExterns.g_value_take_boxed(value, v_boxed);
-		return value;
 	}
 
-	public static T TakeObject<T>(this T value, IntPtr v_object) where T : GValueHandle
+	public static void TakeObject(this MentorLake.GObject.GValueHandle value, IntPtr v_object)
 	{
 		GValueExterns.g_value_take_object(value, v_object);
-		return value;
 	}
 
-	public static T TakeParam<T>(this T value, GParamSpecHandle param) where T : GValueHandle
+	public static void TakeParam(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
 		GValueExterns.g_value_take_param(value, param);
-		return value;
 	}
 
-	public static T TakeString<T>(this T value, string v_string) where T : GValueHandle
+	public static void TakeString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
 		GValueExterns.g_value_take_string(value, v_string);
-		return value;
 	}
 
-	public static T TakeVariant<T>(this T value, GVariantHandle variant) where T : GValueHandle
+	public static void TakeVariant(this MentorLake.GObject.GValueHandle value, MentorLake.GLib.GVariantHandle variant)
 	{
 		GValueExterns.g_value_take_variant(value, variant);
-		return value;
 	}
 
-	public static bool Transform(this GValueHandle src_value, GValueHandle dest_value)
+	public static bool Transform(this MentorLake.GObject.GValueHandle src_value, MentorLake.GObject.GValueHandle dest_value)
 	{
 		return GValueExterns.g_value_transform(src_value, dest_value);
 	}
 
-	public static T Unset<T>(this T value) where T : GValueHandle
+	public static void Unset(this MentorLake.GObject.GValueHandle value)
 	{
 		GValueExterns.g_value_unset(value);
-		return value;
 	}
 
-	public static void RegisterTransformFunc(GType src_type, GType dest_type, GValueTransform transform_func)
-	{
-		GValueExterns.g_value_register_transform_func(src_type, dest_type, transform_func);
-	}
 
-	public static bool TypeCompatible(GType src_type, GType dest_type)
-	{
-		return GValueExterns.g_value_type_compatible(src_type, dest_type);
-	}
-
-	public static bool TypeTransformable(GType src_type, GType dest_type)
-	{
-		return GValueExterns.g_value_type_transformable(src_type, dest_type);
-	}
-
+	public static GValue Dereference(this GValueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GValue>(x.DangerousGetHandle());
 }
 internal class GValueExterns
 {
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_copy(GValueHandle src_value, GValueHandle dest_value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle src_value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle dest_value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern IntPtr g_value_dup_boxed(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern IntPtr g_value_dup_boxed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GObjectHandle g_value_dup_object(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GObjectHandle g_value_dup_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GParamSpecHandle g_value_dup_param(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GParamSpecHandle g_value_dup_param([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern string g_value_dup_string(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_value_dup_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GVariantHandle g_value_dup_variant(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GLib.GVariantHandle g_value_dup_variant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern bool g_value_fits_pointer(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern bool g_value_fits_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern bool g_value_get_boolean(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern bool g_value_get_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern IntPtr g_value_get_boxed(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern IntPtr g_value_get_boxed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern char g_value_get_char(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern char g_value_get_char([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern double g_value_get_double(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern double g_value_get_double([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern int g_value_get_enum(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern int g_value_get_enum([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern uint g_value_get_flags(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern uint g_value_get_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern float g_value_get_float(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern float g_value_get_float([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GType g_value_get_gtype(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GType g_value_get_gtype([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern int g_value_get_int(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern int g_value_get_int([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern long g_value_get_int64(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern long g_value_get_int64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern long g_value_get_long(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern long g_value_get_long([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GObjectHandle g_value_get_object(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GObjectHandle g_value_get_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GParamSpecHandle g_value_get_param(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GParamSpecHandle g_value_get_param([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern IntPtr g_value_get_pointer(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern IntPtr g_value_get_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern byte g_value_get_schar(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern byte g_value_get_schar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern string g_value_get_string(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_value_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern char g_value_get_uchar(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern char g_value_get_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern uint g_value_get_uint(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern uint g_value_get_uint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern ulong g_value_get_uint64(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern ulong g_value_get_uint64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern ulong g_value_get_ulong(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern ulong g_value_get_ulong([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GVariantHandle g_value_get_variant(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GLib.GVariantHandle g_value_get_variant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueHandle g_value_init(GValueHandle value, GType g_type);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueHandle g_value_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType g_type);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_init_from_instance(GValueHandle value, GTypeInstanceHandle instance);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_init_from_instance([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInstanceHandle>))] MentorLake.GObject.GTypeInstanceHandle instance);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern IntPtr g_value_peek_pointer(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern IntPtr g_value_peek_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueHandle g_value_reset(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueHandle g_value_reset([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_boolean(GValueHandle value, bool v_boolean);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, bool v_boolean);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_boxed(GValueHandle value, IntPtr v_boxed);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_boxed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_boxed);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_boxed_take_ownership(GValueHandle value, IntPtr v_boxed);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_boxed_take_ownership([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_boxed);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_char(GValueHandle value, char v_char);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_char([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, char v_char);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_double(GValueHandle value, double v_double);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_double([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, double v_double);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_enum(GValueHandle value, int v_enum);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_enum([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, int v_enum);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_flags(GValueHandle value, uint v_flags);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, uint v_flags);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_float(GValueHandle value, float v_float);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_float([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, float v_float);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_gtype(GValueHandle value, GType v_gtype);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_gtype([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType v_gtype);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_instance(GValueHandle value, IntPtr instance);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_instance([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr instance);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_int(GValueHandle value, int v_int);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_int([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, int v_int);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_int64(GValueHandle value, long v_int64);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_int64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, long v_int64);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_interned_string(GValueHandle value, string v_string);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_interned_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_long(GValueHandle value, long v_long);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_long([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, long v_long);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_object(GValueHandle value, GObjectHandle v_object);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle v_object);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_object_take_ownership(GValueHandle value, IntPtr v_object);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_object_take_ownership([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_object);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_param(GValueHandle value, GParamSpecHandle param);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_param([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle param);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_param_take_ownership(GValueHandle value, GParamSpecHandle param);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_param_take_ownership([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle param);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_pointer(GValueHandle value, IntPtr v_pointer);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_pointer);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_schar(GValueHandle value, byte v_char);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_schar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, byte v_char);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_static_boxed(GValueHandle value, IntPtr v_boxed);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_static_boxed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_boxed);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_static_string(GValueHandle value, string v_string);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_static_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_string(GValueHandle value, string v_string);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_string_take_ownership(GValueHandle value, string v_string);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_string_take_ownership([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_uchar(GValueHandle value, char v_uchar);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, char v_uchar);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_uint(GValueHandle value, uint v_uint);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_uint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, uint v_uint);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_uint64(GValueHandle value, ulong v_uint64);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_uint64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, ulong v_uint64);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_ulong(GValueHandle value, ulong v_ulong);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_ulong([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, ulong v_ulong);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_set_variant(GValueHandle value, GVariantHandle variant);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_set_variant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle variant);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern string g_value_steal_string(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_value_steal_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_take_boxed(GValueHandle value, IntPtr v_boxed);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_take_boxed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_boxed);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_take_object(GValueHandle value, IntPtr v_object);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_take_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, IntPtr v_object);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_take_param(GValueHandle value, GParamSpecHandle param);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_take_param([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle param);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_take_string(GValueHandle value, string v_string);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_take_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_take_variant(GValueHandle value, GVariantHandle variant);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_take_variant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle variant);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern bool g_value_transform(GValueHandle src_value, GValueHandle dest_value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern bool g_value_transform([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle src_value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle dest_value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_unset(GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_unset([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_register_transform_func(GType src_type, GType dest_type, GValueTransform transform_func);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_register_transform_func(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type, MentorLake.GObject.GValueTransform transform_func);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern bool g_value_type_compatible(GType src_type, GType dest_type);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern bool g_value_type_compatible(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern bool g_value_type_transformable(GType src_type, GType dest_type);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern bool g_value_type_transformable(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type);
 
 }
 
 public struct GValue
 {
-	public None data;
+	public _Value__data__union[] data;
+	public static void RegisterTransformFunc(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type, MentorLake.GObject.GValueTransform transform_func)
+	{
+		GValueExterns.g_value_register_transform_func(src_type, dest_type, transform_func);
+	}
+
+	public static bool TypeCompatible(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type)
+	{
+		return GValueExterns.g_value_type_compatible(src_type, dest_type);
+	}
+
+	public static bool TypeTransformable(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type)
+	{
+		return GValueExterns.g_value_type_transformable(src_type, dest_type);
+	}
+
 }

@@ -1,6 +1,7 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
+[Flags]
 public enum GdkColorspace
 {
-	GDK_COLORSPACE_RGB
+	GDK_COLORSPACE_RGB = 0
 }

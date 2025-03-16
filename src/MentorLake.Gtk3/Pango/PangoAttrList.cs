@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrListHandle : BaseSafeHandle
 {
-	public static PangoAttrListHandle New()
+	public static MentorLake.Pango.PangoAttrListHandle New()
 	{
 		return PangoAttrListExterns.pango_attr_list_new();
 	}
@@ -10,134 +10,131 @@ public class PangoAttrListHandle : BaseSafeHandle
 }
 
 
-public static class PangoAttrListHandleExtensions
+public static class PangoAttrListExtensions
 {
-	public static T Change<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
+	public static void Change(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
 		PangoAttrListExterns.pango_attr_list_change(list, attr);
-		return list;
 	}
 
-	public static PangoAttrListHandle Copy(this PangoAttrListHandle list)
+	public static MentorLake.Pango.PangoAttrListHandle Copy(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		return PangoAttrListExterns.pango_attr_list_copy(list);
 	}
 
-	public static bool Equal(this PangoAttrListHandle list, PangoAttrListHandle other_list)
+	public static bool Equal(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrListHandle other_list)
 	{
 		return PangoAttrListExterns.pango_attr_list_equal(list, other_list);
 	}
 
-	public static PangoAttrListHandle Filter(this PangoAttrListHandle list, PangoAttrFilterFunc func, IntPtr data)
+	public static MentorLake.Pango.PangoAttrListHandle Filter(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrFilterFunc func, IntPtr data)
 	{
 		return PangoAttrListExterns.pango_attr_list_filter(list, func, data);
 	}
 
-	public static GSListHandle GetAttributes(this PangoAttrListHandle list)
+	public static MentorLake.GLib.GSListHandle GetAttributes(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		return PangoAttrListExterns.pango_attr_list_get_attributes(list);
 	}
 
-	public static PangoAttrIteratorHandle GetIterator(this PangoAttrListHandle list)
+	public static MentorLake.Pango.PangoAttrIteratorHandle GetIterator(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		return PangoAttrListExterns.pango_attr_list_get_iterator(list);
 	}
 
-	public static T Insert<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
+	public static void Insert(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
 		PangoAttrListExterns.pango_attr_list_insert(list, attr);
-		return list;
 	}
 
-	public static T InsertBefore<T>(this T list, PangoAttributeHandle attr) where T : PangoAttrListHandle
+	public static void InsertBefore(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
 		PangoAttrListExterns.pango_attr_list_insert_before(list, attr);
-		return list;
 	}
 
-	public static PangoAttrListHandle Ref(this PangoAttrListHandle list)
+	public static MentorLake.Pango.PangoAttrListHandle Ref(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		return PangoAttrListExterns.pango_attr_list_ref(list);
 	}
 
-	public static T Splice<T>(this T list, PangoAttrListHandle other, int pos, int len) where T : PangoAttrListHandle
+	public static void Splice(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrListHandle other, int pos, int len)
 	{
 		PangoAttrListExterns.pango_attr_list_splice(list, other, pos, len);
-		return list;
 	}
 
-	public static string ToString(this PangoAttrListHandle list)
+	public static string ToString(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		return PangoAttrListExterns.pango_attr_list_to_string(list);
 	}
 
-	public static T Unref<T>(this T list) where T : PangoAttrListHandle
+	public static void Unref(this MentorLake.Pango.PangoAttrListHandle list)
 	{
 		PangoAttrListExterns.pango_attr_list_unref(list);
-		return list;
 	}
 
-	public static T Update<T>(this T list, int pos, int remove, int add) where T : PangoAttrListHandle
+	public static void Update(this MentorLake.Pango.PangoAttrListHandle list, int pos, int remove, int add)
 	{
 		PangoAttrListExterns.pango_attr_list_update(list, pos, remove, add);
-		return list;
 	}
 
-	public static PangoAttrListHandle FromString(string text)
-	{
-		return PangoAttrListExterns.pango_attr_list_from_string(text);
-	}
 
+	public static PangoAttrList Dereference(this PangoAttrListHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrList>(x.DangerousGetHandle());
 }
 internal class PangoAttrListExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrListHandle pango_attr_list_new();
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_new();
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_change(PangoAttrListHandle list, PangoAttributeHandle attr);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_change([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))] MentorLake.Pango.PangoAttributeHandle attr);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrListHandle pango_attr_list_copy(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern bool pango_attr_list_equal(PangoAttrListHandle list, PangoAttrListHandle other_list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern bool pango_attr_list_equal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle other_list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrListHandle pango_attr_list_filter(PangoAttrListHandle list, PangoAttrFilterFunc func, IntPtr data);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_filter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrFilterFunc func, IntPtr data);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern GSListHandle pango_attr_list_get_attributes(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.GLib.GSListHandle pango_attr_list_get_attributes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrIteratorHandle pango_attr_list_get_iterator(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrIteratorHandle pango_attr_list_get_iterator([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_insert(PangoAttrListHandle list, PangoAttributeHandle attr);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_insert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))] MentorLake.Pango.PangoAttributeHandle attr);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_insert_before(PangoAttrListHandle list, PangoAttributeHandle attr);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_insert_before([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))] MentorLake.Pango.PangoAttributeHandle attr);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrListHandle pango_attr_list_ref(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_splice(PangoAttrListHandle list, PangoAttrListHandle other, int pos, int len);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_splice([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle other, int pos, int len);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern string pango_attr_list_to_string(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string pango_attr_list_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_unref(PangoAttrListHandle list);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_attr_list_update(PangoAttrListHandle list, int pos, int remove, int add);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_attr_list_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle list, int pos, int remove, int add);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttrListHandle pango_attr_list_from_string(string text);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_from_string(string text);
 
 }
 
 public struct PangoAttrList
 {
+	public static MentorLake.Pango.PangoAttrListHandle FromString(string text)
+	{
+		return PangoAttrListExterns.pango_attr_list_from_string(text);
+	}
+
 }

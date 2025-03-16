@@ -1,86 +1,83 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTimerHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTimerHandleExtensions
+public static class GTimerExtensions
 {
-	public static T Continue<T>(this T timer) where T : GTimerHandle
+	public static void Continue(this MentorLake.GLib.GTimerHandle timer)
 	{
 		GTimerExterns.g_timer_continue(timer);
-		return timer;
 	}
 
-	public static T Destroy<T>(this T timer) where T : GTimerHandle
+	public static void Destroy(this MentorLake.GLib.GTimerHandle timer)
 	{
 		GTimerExterns.g_timer_destroy(timer);
-		return timer;
 	}
 
-	public static double Elapsed(this GTimerHandle timer, out ulong microseconds)
+	public static double Elapsed(this MentorLake.GLib.GTimerHandle timer, ulong microseconds)
 	{
-		return GTimerExterns.g_timer_elapsed(timer, out microseconds);
+		return GTimerExterns.g_timer_elapsed(timer, microseconds);
 	}
 
-	public static bool IsActive(this GTimerHandle timer)
+	public static bool IsActive(this MentorLake.GLib.GTimerHandle timer)
 	{
 		return GTimerExterns.g_timer_is_active(timer);
 	}
 
-	public static T Reset<T>(this T timer) where T : GTimerHandle
+	public static void Reset(this MentorLake.GLib.GTimerHandle timer)
 	{
 		GTimerExterns.g_timer_reset(timer);
-		return timer;
 	}
 
-	public static T Start<T>(this T timer) where T : GTimerHandle
+	public static void Start(this MentorLake.GLib.GTimerHandle timer)
 	{
 		GTimerExterns.g_timer_start(timer);
-		return timer;
 	}
 
-	public static T Stop<T>(this T timer) where T : GTimerHandle
+	public static void Stop(this MentorLake.GLib.GTimerHandle timer)
 	{
 		GTimerExterns.g_timer_stop(timer);
-		return timer;
 	}
 
-	public static GTimerHandle New()
-	{
-		return GTimerExterns.g_timer_new();
-	}
 
+	public static GTimer Dereference(this GTimerHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTimer>(x.DangerousGetHandle());
 }
 internal class GTimerExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_timer_continue(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_timer_continue([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_timer_destroy(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_timer_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern double g_timer_elapsed(GTimerHandle timer, out ulong microseconds);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern double g_timer_elapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer, ulong microseconds);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_timer_is_active(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_timer_is_active([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_timer_reset(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_timer_reset([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_timer_start(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_timer_start([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_timer_stop(GTimerHandle timer);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_timer_stop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimerHandle>))] MentorLake.GLib.GTimerHandle timer);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTimerHandle g_timer_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTimerHandle g_timer_new();
 
 }
 
 public struct GTimer
 {
+	public static MentorLake.GLib.GTimerHandle New()
+	{
+		return GTimerExterns.g_timer_new();
+	}
+
 }

@@ -1,0 +1,12 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkPathPriorityType
+{
+	GTK_PATH_PRIO_LOWEST = 0,
+	GTK_PATH_PRIO_GTK = 4,
+	GTK_PATH_PRIO_APPLICATION = 8,
+	GTK_PATH_PRIO_THEME = 10,
+	GTK_PATH_PRIO_RC = 12,
+	GTK_PATH_PRIO_HIGHEST = 15
+}

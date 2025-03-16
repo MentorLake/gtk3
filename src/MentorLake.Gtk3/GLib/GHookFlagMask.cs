@@ -1,9 +1,9 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GHookFlagMask
+public enum GHookFlagMask : long
 {
-	G_HOOK_FLAG_ACTIVE = 0,
-	G_HOOK_FLAG_IN_CALL = 1,
-	G_HOOK_FLAG_MASK = 2
+	G_HOOK_FLAG_ACTIVE = 1,
+	G_HOOK_FLAG_IN_CALL = 2,
+	G_HOOK_FLAG_MASK = 15
 }

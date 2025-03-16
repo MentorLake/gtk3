@@ -1,49 +1,48 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GWeakRefHandle : BaseSafeHandle
 {
 }
 
 
-public static class GWeakRefHandleExtensions
+public static class GWeakRefExtensions
 {
-	public static T Clear<T>(this T weak_ref) where T : GWeakRefHandle
+	public static void Clear(this MentorLake.GObject.GWeakRefHandle weak_ref)
 	{
 		GWeakRefExterns.g_weak_ref_clear(weak_ref);
-		return weak_ref;
 	}
 
-	public static GObjectHandle Get(this GWeakRefHandle weak_ref)
+	public static MentorLake.GObject.GObjectHandle Get(this MentorLake.GObject.GWeakRefHandle weak_ref)
 	{
 		return GWeakRefExterns.g_weak_ref_get(weak_ref);
 	}
 
-	public static T Init<T>(this T weak_ref, GObjectHandle @object) where T : GWeakRefHandle
+	public static void Init(this MentorLake.GObject.GWeakRefHandle weak_ref, MentorLake.GObject.GObjectHandle @object)
 	{
 		GWeakRefExterns.g_weak_ref_init(weak_ref, @object);
-		return weak_ref;
 	}
 
-	public static T Set<T>(this T weak_ref, GObjectHandle @object) where T : GWeakRefHandle
+	public static void Set(this MentorLake.GObject.GWeakRefHandle weak_ref, MentorLake.GObject.GObjectHandle @object)
 	{
 		GWeakRefExterns.g_weak_ref_set(weak_ref, @object);
-		return weak_ref;
 	}
 
+
+	public static GWeakRef Dereference(this GWeakRefHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GWeakRef>(x.DangerousGetHandle());
 }
 internal class GWeakRefExterns
 {
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_weak_ref_clear(GWeakRefHandle weak_ref);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_weak_ref_clear([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GWeakRefHandle>))] MentorLake.GObject.GWeakRefHandle weak_ref);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GObjectHandle g_weak_ref_get(GWeakRefHandle weak_ref);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GObjectHandle g_weak_ref_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GWeakRefHandle>))] MentorLake.GObject.GWeakRefHandle weak_ref);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_weak_ref_init(GWeakRefHandle weak_ref, GObjectHandle @object);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_weak_ref_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GWeakRefHandle>))] MentorLake.GObject.GWeakRefHandle weak_ref, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_weak_ref_set(GWeakRefHandle weak_ref, GObjectHandle @object);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_weak_ref_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GWeakRefHandle>))] MentorLake.GObject.GWeakRefHandle weak_ref, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
 }
 

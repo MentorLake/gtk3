@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GIOFuncsHandle : BaseSafeHandle
 {
 }
 
 
-public static class GIOFuncsHandleExtensions
+public static class GIOFuncsExtensions
 {
+
+	public static GIOFuncs Dereference(this GIOFuncsHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GIOFuncs>(x.DangerousGetHandle());
 }
 internal class GIOFuncsExterns
 {

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GActionEntryHandle : BaseSafeHandle
 {
 }
 
 
-public static class GActionEntryHandleExtensions
+public static class GActionEntryExtensions
 {
+
+	public static GActionEntry Dereference(this GActionEntryHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GActionEntry>(x.DangerousGetHandle());
 }
 internal class GActionEntryExterns
 {

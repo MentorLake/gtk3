@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GSocketMsgFlags
+public enum GSocketMsgFlags : long
 {
 	G_SOCKET_MSG_NONE = 0,
 	G_SOCKET_MSG_OOB = 1,

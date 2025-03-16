@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GFileSetContentsFlags
+public enum GFileSetContentsFlags : long
 {
 	G_FILE_SET_CONTENTS_NONE = 0,
 	G_FILE_SET_CONTENTS_CONSISTENT = 1,

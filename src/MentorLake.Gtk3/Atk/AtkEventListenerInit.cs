@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void AtkEventListenerInit();

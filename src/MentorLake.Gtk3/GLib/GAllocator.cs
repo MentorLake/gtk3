@@ -1,34 +1,35 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GAllocatorHandle : BaseSafeHandle
 {
 }
 
 
-public static class GAllocatorHandleExtensions
+public static class GAllocatorExtensions
 {
-	public static T Free<T>(this T allocator) where T : GAllocatorHandle
+	public static void Free(this MentorLake.GLib.GAllocatorHandle allocator)
 	{
 		GAllocatorExterns.g_allocator_free(allocator);
-		return allocator;
 	}
 
-	public static GAllocatorHandle New(string name, uint n_preallocs)
-	{
-		return GAllocatorExterns.g_allocator_new(name, n_preallocs);
-	}
 
+	public static GAllocator Dereference(this GAllocatorHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GAllocator>(x.DangerousGetHandle());
 }
 internal class GAllocatorExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_allocator_free(GAllocatorHandle allocator);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_allocator_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GAllocatorHandle>))] MentorLake.GLib.GAllocatorHandle allocator);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GAllocatorHandle g_allocator_new(string name, uint n_preallocs);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GAllocatorHandle g_allocator_new(string name, uint n_preallocs);
 
 }
 
 public struct GAllocator
 {
+	public static MentorLake.GLib.GAllocatorHandle New(string name, uint n_preallocs)
+	{
+		return GAllocatorExterns.g_allocator_new(name, n_preallocs);
+	}
+
 }

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GInputVectorHandle : BaseSafeHandle
 {
 }
 
 
-public static class GInputVectorHandleExtensions
+public static class GInputVectorExtensions
 {
+
+	public static GInputVector Dereference(this GInputVectorHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GInputVector>(x.DangerousGetHandle());
 }
 internal class GInputVectorExterns
 {

@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate void GDesktopAppLaunchCallback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GDesktopAppInfoHandle>))] GDesktopAppInfoHandle appinfo, GPid pid, IntPtr user_data);
+public delegate void GDesktopAppLaunchCallback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDesktopAppInfoHandle>))] MentorLake.Gio.GDesktopAppInfoHandle appinfo, MentorLake.GLib.GPid pid, IntPtr user_data);

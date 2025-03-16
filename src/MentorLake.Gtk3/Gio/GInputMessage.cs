@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GInputMessageHandle : BaseSafeHandle
 {
 }
 
 
-public static class GInputMessageHandleExtensions
+public static class GInputMessageExtensions
 {
+
+	public static GInputMessage Dereference(this GInputMessageHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GInputMessage>(x.DangerousGetHandle());
 }
 internal class GInputMessageExterns
 {
@@ -15,10 +17,10 @@ internal class GInputMessageExterns
 public struct GInputMessage
 {
 	public IntPtr address;
-	public GInputVectorHandle vectors;
+	public GInputVector[] vectors;
 	public uint num_vectors;
 	public UIntPtr bytes_received;
 	public int flags;
 	public IntPtr control_messages;
-	public uint[] num_control_messages;
+	public IntPtr num_control_messages;
 }

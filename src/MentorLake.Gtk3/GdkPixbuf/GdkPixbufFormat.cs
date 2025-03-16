@@ -1,119 +1,122 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufFormatHandle : BaseSafeHandle
 {
 }
 
 
-public static class GdkPixbufFormatHandleExtensions
+public static class GdkPixbufFormatExtensions
 {
-	public static GdkPixbufFormatHandle Copy(this GdkPixbufFormatHandle format)
+	public static MentorLake.GdkPixbuf.GdkPixbufFormatHandle Copy(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_copy(format);
 	}
 
-	public static T Free<T>(this T format) where T : GdkPixbufFormatHandle
+	public static void Free(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		GdkPixbufFormatExterns.gdk_pixbuf_format_free(format);
-		return format;
 	}
 
-	public static string GetDescription(this GdkPixbufFormatHandle format)
+	public static string GetDescription(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_description(format);
 	}
 
-	public static IntPtr GetExtensions(this GdkPixbufFormatHandle format)
+	public static string[] GetExtensions(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_extensions(format);
 	}
 
-	public static string GetLicense(this GdkPixbufFormatHandle format)
+	public static string GetLicense(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_license(format);
 	}
 
-	public static IntPtr GetMimeTypes(this GdkPixbufFormatHandle format)
+	public static string[] GetMimeTypes(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_mime_types(format);
 	}
 
-	public static string GetName(this GdkPixbufFormatHandle format)
+	public static string GetName(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_name(format);
 	}
 
-	public static bool IsDisabled(this GdkPixbufFormatHandle format)
+	public static bool IsDisabled(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_disabled(format);
 	}
 
-	public static bool IsSaveOptionSupported(this GdkPixbufFormatHandle format, string option_key)
+	public static bool IsSaveOptionSupported(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, string option_key)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_save_option_supported(format, option_key);
 	}
 
-	public static bool IsScalable(this GdkPixbufFormatHandle format)
+	public static bool IsScalable(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_scalable(format);
 	}
 
-	public static bool IsWritable(this GdkPixbufFormatHandle format)
+	public static bool IsWritable(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_writable(format);
 	}
 
-	public static T SetDisabled<T>(this T format, bool disabled) where T : GdkPixbufFormatHandle
+	public static void SetDisabled(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, bool disabled)
 	{
 		GdkPixbufFormatExterns.gdk_pixbuf_format_set_disabled(format, disabled);
-		return format;
 	}
 
+
+	public static GdkPixbufFormat Dereference(this GdkPixbufFormatHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GdkPixbufFormat>(x.DangerousGetHandle());
 }
 internal class GdkPixbufFormatExterns
 {
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern GdkPixbufFormatHandle gdk_pixbuf_format_copy(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufFormatHandle gdk_pixbuf_format_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern void gdk_pixbuf_format_free(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern void gdk_pixbuf_format_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern string gdk_pixbuf_format_get_description(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gdk_pixbuf_format_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern IntPtr gdk_pixbuf_format_get_extensions(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern string[] gdk_pixbuf_format_get_extensions([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern string gdk_pixbuf_format_get_license(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gdk_pixbuf_format_get_license([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern IntPtr gdk_pixbuf_format_get_mime_types(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern string[] gdk_pixbuf_format_get_mime_types([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern string gdk_pixbuf_format_get_name(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gdk_pixbuf_format_get_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern bool gdk_pixbuf_format_is_disabled(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern bool gdk_pixbuf_format_is_disabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern bool gdk_pixbuf_format_is_save_option_supported(GdkPixbufFormatHandle format, string option_key);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern bool gdk_pixbuf_format_is_save_option_supported([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, string option_key);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern bool gdk_pixbuf_format_is_scalable(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern bool gdk_pixbuf_format_is_scalable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern bool gdk_pixbuf_format_is_writable(GdkPixbufFormatHandle format);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern bool gdk_pixbuf_format_is_writable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
-	[DllImport(Libraries.GdkPixbuf)]
-	internal static extern void gdk_pixbuf_format_set_disabled(GdkPixbufFormatHandle format, bool disabled);
+	[DllImport(GdkPixbufLibrary.Name)]
+	internal static extern void gdk_pixbuf_format_set_disabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, bool disabled);
 
 }
 
 public struct GdkPixbufFormat
 {
 	public string name;
-	public GdkPixbufModulePatternHandle signature;
+	public IntPtr signature;
 	public string domain;
 	public string description;
 	public string[] mime_types;

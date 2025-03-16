@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GUriHideFlags
+public enum GUriHideFlags : long
 {
 	G_URI_HIDE_NONE = 0,
 	G_URI_HIDE_USERINFO = 1,

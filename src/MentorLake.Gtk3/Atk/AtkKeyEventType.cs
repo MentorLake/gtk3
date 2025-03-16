@@ -1,8 +1,9 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
+[Flags]
 public enum AtkKeyEventType
 {
-	ATK_KEY_EVENT_PRESS,
-	ATK_KEY_EVENT_RELEASE,
-	ATK_KEY_EVENT_LAST_DEFINED
+	ATK_KEY_EVENT_PRESS = 0,
+	ATK_KEY_EVENT_RELEASE = 1,
+	ATK_KEY_EVENT_LAST_DEFINED = 2
 }

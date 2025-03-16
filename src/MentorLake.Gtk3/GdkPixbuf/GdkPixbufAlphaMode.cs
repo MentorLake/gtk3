@@ -1,7 +1,8 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
+[Flags]
 public enum GdkPixbufAlphaMode
 {
-	GDK_PIXBUF_ALPHA_BILEVEL,
-	GDK_PIXBUF_ALPHA_FULL
+	GDK_PIXBUF_ALPHA_BILEVEL = 0,
+	GDK_PIXBUF_ALPHA_FULL = 1
 }

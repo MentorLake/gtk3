@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHRHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHRExtensions
+{
+
+	public static VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR Dereference(this VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHRHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHRExterns
+{
+}
+
+public struct VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR
+{
+}

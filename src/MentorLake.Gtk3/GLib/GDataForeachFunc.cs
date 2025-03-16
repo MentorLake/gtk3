@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate void GDataForeachFunc(GQuark key_id, IntPtr data, IntPtr user_data);
+public delegate void GDataForeachFunc(MentorLake.GLib.GQuark key_id, IntPtr data, IntPtr user_data);

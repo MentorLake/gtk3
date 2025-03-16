@@ -1,75 +1,72 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GStaticRecMutexHandle : BaseSafeHandle
 {
 }
 
 
-public static class GStaticRecMutexHandleExtensions
+public static class GStaticRecMutexExtensions
 {
-	public static T Free<T>(this T mutex) where T : GStaticRecMutexHandle
+	public static void Free(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_free(mutex);
-		return mutex;
 	}
 
-	public static T Init<T>(this T mutex) where T : GStaticRecMutexHandle
+	public static void Init(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_init(mutex);
-		return mutex;
 	}
 
-	public static T Lock<T>(this T mutex) where T : GStaticRecMutexHandle
+	public static void Lock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_lock(mutex);
-		return mutex;
 	}
 
-	public static T LockFull<T>(this T mutex, uint depth) where T : GStaticRecMutexHandle
+	public static void LockFull(this MentorLake.GLib.GStaticRecMutexHandle mutex, uint depth)
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_lock_full(mutex, depth);
-		return mutex;
 	}
 
-	public static bool Trylock(this GStaticRecMutexHandle mutex)
+	public static bool Trylock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		return GStaticRecMutexExterns.g_static_rec_mutex_trylock(mutex);
 	}
 
-	public static T Unlock<T>(this T mutex) where T : GStaticRecMutexHandle
+	public static void Unlock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		GStaticRecMutexExterns.g_static_rec_mutex_unlock(mutex);
-		return mutex;
 	}
 
-	public static uint UnlockFull(this GStaticRecMutexHandle mutex)
+	public static uint UnlockFull(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
 		return GStaticRecMutexExterns.g_static_rec_mutex_unlock_full(mutex);
 	}
 
+
+	public static GStaticRecMutex Dereference(this GStaticRecMutexHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GStaticRecMutex>(x.DangerousGetHandle());
 }
 internal class GStaticRecMutexExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rec_mutex_free(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rec_mutex_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rec_mutex_init(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rec_mutex_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rec_mutex_lock(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rec_mutex_lock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rec_mutex_lock_full(GStaticRecMutexHandle mutex, uint depth);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rec_mutex_lock_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex, uint depth);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_static_rec_mutex_trylock(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_static_rec_mutex_trylock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rec_mutex_unlock(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rec_mutex_unlock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_static_rec_mutex_unlock_full(GStaticRecMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_static_rec_mutex_unlock_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRecMutexHandle>))] MentorLake.GLib.GStaticRecMutexHandle mutex);
 
 }
 

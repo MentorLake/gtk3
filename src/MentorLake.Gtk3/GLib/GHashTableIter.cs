@@ -1,66 +1,64 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GHashTableIterHandle : BaseSafeHandle
 {
 }
 
 
-public static class GHashTableIterHandleExtensions
+public static class GHashTableIterExtensions
 {
-	public static GHashTableHandle GetHashTable(this GHashTableIterHandle iter)
+	public static MentorLake.GLib.GHashTableHandle GetHashTable(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
 		return GHashTableIterExterns.g_hash_table_iter_get_hash_table(iter);
 	}
 
-	public static T Init<T>(this T iter, GHashTableHandle hash_table) where T : GHashTableIterHandle
+	public static void Init(this MentorLake.GLib.GHashTableIterHandle iter, MentorLake.GLib.GHashTableHandle hash_table)
 	{
 		GHashTableIterExterns.g_hash_table_iter_init(iter, hash_table);
-		return iter;
 	}
 
-	public static bool Next(this GHashTableIterHandle iter, out IntPtr key, out IntPtr value)
+	public static bool Next(this MentorLake.GLib.GHashTableIterHandle iter, out IntPtr key, out IntPtr value)
 	{
 		return GHashTableIterExterns.g_hash_table_iter_next(iter, out key, out value);
 	}
 
-	public static T Remove<T>(this T iter) where T : GHashTableIterHandle
+	public static void Remove(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
 		GHashTableIterExterns.g_hash_table_iter_remove(iter);
-		return iter;
 	}
 
-	public static T Replace<T>(this T iter, IntPtr value) where T : GHashTableIterHandle
+	public static void Replace(this MentorLake.GLib.GHashTableIterHandle iter, IntPtr value)
 	{
 		GHashTableIterExterns.g_hash_table_iter_replace(iter, value);
-		return iter;
 	}
 
-	public static T Steal<T>(this T iter) where T : GHashTableIterHandle
+	public static void Steal(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
 		GHashTableIterExterns.g_hash_table_iter_steal(iter);
-		return iter;
 	}
 
+
+	public static GHashTableIter Dereference(this GHashTableIterHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GHashTableIter>(x.DangerousGetHandle());
 }
 internal class GHashTableIterExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GHashTableHandle g_hash_table_iter_get_hash_table(GHashTableIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GHashTableHandle g_hash_table_iter_get_hash_table([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hash_table_iter_init(GHashTableIterHandle iter, GHashTableHandle hash_table);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hash_table_iter_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableHandle>))] MentorLake.GLib.GHashTableHandle hash_table);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_hash_table_iter_next(GHashTableIterHandle iter, out IntPtr key, out IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_hash_table_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter, out IntPtr key, out IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hash_table_iter_remove(GHashTableIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hash_table_iter_remove([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hash_table_iter_replace(GHashTableIterHandle iter, IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hash_table_iter_replace([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter, IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hash_table_iter_steal(GHashTableIterHandle iter);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hash_table_iter_steal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableIterHandle>))] MentorLake.GLib.GHashTableIterHandle iter);
 
 }
 

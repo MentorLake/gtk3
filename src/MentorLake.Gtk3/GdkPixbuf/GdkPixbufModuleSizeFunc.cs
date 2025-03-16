@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate void GdkPixbufModuleSizeFunc(ref int width, ref int height, IntPtr user_data);
+public delegate void GdkPixbufModuleSizeFunc(int width, int height, IntPtr user_data);

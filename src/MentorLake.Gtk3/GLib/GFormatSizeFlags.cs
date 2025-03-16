@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GFormatSizeFlags
+public enum GFormatSizeFlags : long
 {
 	G_FORMAT_SIZE_DEFAULT = 0,
 	G_FORMAT_SIZE_LONG_FORMAT = 1,

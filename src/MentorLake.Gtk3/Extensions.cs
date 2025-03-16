@@ -1,3 +1,5 @@
+using GCHandle = System.Runtime.InteropServices.GCHandle;
+
 namespace MentorLake.Gtk3;
 
 public static class Extensions
@@ -38,12 +40,11 @@ public static class Extensions
 
 	public static List<string> GetSignals(this GObjectHandle o)
 	{
-		var typeName = GObjectGlobalFunctions.g_type_name_from_instance(o);
-		var gtype = GObjectGlobalFunctions.g_type_from_name(typeName);
-		var idArrayPointer = GObjectGlobalFunctions.g_signal_list_ids(gtype, out var size);
-		var ids = idArrayPointer.MarshalIntArray((int)size);
-		Marshal.FreeHGlobal(idArrayPointer);
-		return ids.Select(id => GObjectGlobalFunctions.g_signal_name((uint)id)).ToList();
+		var typeName = GObjectGlobalFunctions.TypeNameFromInstance(o);
+		var gtype = GObjectGlobalFunctions.TypeFromName(typeName);
+		var ids = GObjectGlobalFunctions.SignalListIds(gtype, out _);
+		//Marshal.FreeHGlobal(idArrayPointer);
+		return ids.Select(id => GObjectGlobalFunctions.SignalName((uint)id)).ToList();
 	}
 
 	private static readonly Dictionary<object, object> s_managedData = new();
@@ -54,7 +55,14 @@ public static class Extensions
 		{
 			var fullKey = $"{obj.GetHashCode()}_{key.GetHashCode()}";
 			s_managedData[fullKey] = val;
-			obj.WeakRef((_, _) => { lock (s_managedData) s_managedData.Remove(fullKey); }, IntPtr.Zero);
+			GCHandle gcHandle = default;
+			GWeakNotify handler = (_, _) =>
+			{
+				lock (s_managedData) s_managedData.Remove(fullKey);
+				gcHandle.Free();
+			};
+			gcHandle = GCHandle.Alloc(handler);
+			obj.WeakRef(handler, IntPtr.Zero);
 		}
 
 		return obj;

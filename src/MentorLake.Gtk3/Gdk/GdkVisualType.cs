@@ -1,0 +1,12 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkVisualType
+{
+	GDK_VISUAL_STATIC_GRAY = 0,
+	GDK_VISUAL_GRAYSCALE = 1,
+	GDK_VISUAL_STATIC_COLOR = 2,
+	GDK_VISUAL_PSEUDO_COLOR = 3,
+	GDK_VISUAL_TRUE_COLOR = 4,
+	GDK_VISUAL_DIRECT_COLOR = 5
+}

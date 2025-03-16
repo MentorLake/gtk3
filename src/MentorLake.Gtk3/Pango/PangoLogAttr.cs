@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoLogAttrHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoLogAttrHandleExtensions
+public static class PangoLogAttrExtensions
 {
+
+	public static PangoLogAttr Dereference(this PangoLogAttrHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoLogAttr>(x.DangerousGetHandle());
 }
 internal class PangoLogAttrExterns
 {

@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void GFileMeasureProgressCallback(bool reporting, ulong current_size, ulong num_dirs, ulong num_files, IntPtr data);

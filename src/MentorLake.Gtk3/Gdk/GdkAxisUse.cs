@@ -1,0 +1,17 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkAxisUse
+{
+	GDK_AXIS_IGNORE = 0,
+	GDK_AXIS_X = 1,
+	GDK_AXIS_Y = 2,
+	GDK_AXIS_PRESSURE = 3,
+	GDK_AXIS_XTILT = 4,
+	GDK_AXIS_YTILT = 5,
+	GDK_AXIS_WHEEL = 6,
+	GDK_AXIS_DISTANCE = 7,
+	GDK_AXIS_ROTATION = 8,
+	GDK_AXIS_SLIDER = 9,
+	GDK_AXIS_LAST = 10
+}

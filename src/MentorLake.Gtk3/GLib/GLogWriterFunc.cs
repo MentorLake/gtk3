@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate GLogWriterOutput GLogWriterFunc(GLogLevelFlags log_level, GLogField[] fields, UIntPtr n_fields, IntPtr user_data);
+public delegate MentorLake.GLib.GLogWriterOutput GLogWriterFunc(MentorLake.GLib.GLogLevelFlags log_level, MentorLake.GLib.GLogField[] fields, UIntPtr n_fields, IntPtr user_data);

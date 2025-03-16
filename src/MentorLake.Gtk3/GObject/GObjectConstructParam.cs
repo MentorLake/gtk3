@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GObjectConstructParamHandle : BaseSafeHandle
 {
 }
 
 
-public static class GObjectConstructParamHandleExtensions
+public static class GObjectConstructParamExtensions
 {
+
+	public static GObjectConstructParam Dereference(this GObjectConstructParamHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GObjectConstructParam>(x.DangerousGetHandle());
 }
 internal class GObjectConstructParamExterns
 {
@@ -14,6 +16,6 @@ internal class GObjectConstructParamExterns
 
 public struct GObjectConstructParam
 {
-	public GParamSpecHandle pspec;
-	public GValueHandle value;
+	public IntPtr pspec;
+	public IntPtr value;
 }

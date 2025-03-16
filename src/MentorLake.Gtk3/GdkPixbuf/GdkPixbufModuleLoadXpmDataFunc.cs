@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate GdkPixbufHandle GdkPixbufModuleLoadXpmDataFunc(string[] data);
+public delegate MentorLake.GdkPixbuf.GdkPixbufHandle GdkPixbufModuleLoadXpmDataFunc(string[] data);

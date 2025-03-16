@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMemVTableHandle : BaseSafeHandle
 {
 }
 
 
-public static class GMemVTableHandleExtensions
+public static class GMemVTableExtensions
 {
+
+	public static GMemVTable Dereference(this GMemVTableHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMemVTable>(x.DangerousGetHandle());
 }
 internal class GMemVTableExterns
 {

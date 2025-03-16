@@ -1,0 +1,14 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkImageType
+{
+	GTK_IMAGE_EMPTY = 0,
+	GTK_IMAGE_PIXBUF = 1,
+	GTK_IMAGE_STOCK = 2,
+	GTK_IMAGE_ICON_SET = 3,
+	GTK_IMAGE_ANIMATION = 4,
+	GTK_IMAGE_ICON_NAME = 5,
+	GTK_IMAGE_GICON = 6,
+	GTK_IMAGE_SURFACE = 7
+}

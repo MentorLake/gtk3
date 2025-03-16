@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVXHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVXExtensions
+{
+
+	public static VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX Dereference(this VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVXHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVXExterns
+{
+}
+
+public struct VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+{
+}

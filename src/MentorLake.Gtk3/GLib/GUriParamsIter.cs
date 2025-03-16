@@ -1,31 +1,32 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GUriParamsIterHandle : BaseSafeHandle
 {
 }
 
 
-public static class GUriParamsIterHandleExtensions
+public static class GUriParamsIterExtensions
 {
-	public static T Init<T>(this T iter, string @params, UIntPtr length, string separators, GUriParamsFlags flags) where T : GUriParamsIterHandle
+	public static void Init(this MentorLake.GLib.GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags)
 	{
 		GUriParamsIterExterns.g_uri_params_iter_init(iter, @params, length, separators, flags);
-		return iter;
 	}
 
-	public static bool Next(this GUriParamsIterHandle iter, out string attribute, out string value, out GErrorHandle error)
+	public static bool Next(this MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value)
 	{
-		return GUriParamsIterExterns.g_uri_params_iter_next(iter, out attribute, out value, out error);
+		return GUriParamsIterExterns.g_uri_params_iter_next(iter, out attribute, out value);
 	}
 
+
+	public static GUriParamsIter Dereference(this GUriParamsIterHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GUriParamsIter>(x.DangerousGetHandle());
 }
 internal class GUriParamsIterExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_uri_params_iter_init(GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, GUriParamsFlags flags);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_uri_params_iter_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriParamsIterHandle>))] MentorLake.GLib.GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_uri_params_iter_next(GUriParamsIterHandle iter, out string attribute, out string value, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_uri_params_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriParamsIterHandle>))] MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value);
 
 }
 

@@ -1,14 +1,14 @@
 ﻿using System.Reactive.Linq;
-using MentorLake.Gtk3.Cairo;
-using MentorLake.Gtk3.Gio;
-using MentorLake.Gtk3.GObject;
-using MentorLake.Gtk3.Gtk3;
+using MentorLake.Gdk;
+using MentorLake.Gio;
+using MentorLake.GObject;
+using MentorLake.Gtk;
 
 namespace MentorLake.Gtk3.Demo;
 
 public static class Program
 {
-	public static void Main(string[] args)
+	public static async Task Main(string[] args)
 	{
 		SynchronizationContext.SetSynchronizationContext(new GLibSynchronizationContext());
 
@@ -17,24 +17,32 @@ public static class Program
 		appHandle.Signal_Activate().Subscribe(async e =>
 		{
 			var window = GtkWindowHandle.New(GtkWindowType.GTK_WINDOW_TOPLEVEL)
+				.SetEvents((int) GdkEventMask.GDK_ALL_EVENTS_MASK)
+				.With(b => b.Signal_KeyPressEvent(GConnectFlags.G_CONNECT_DEFAULT).Select(x => x.Event.Dereference()).Subscribe(e =>
+				{
+					Console.WriteLine(e.@string);
+					GC.Collect();
+				}))
 				.Add(GtkBoxHandle.New(GtkOrientation.GTK_ORIENTATION_HORIZONTAL, 0)
 					.Add(GtkDrawingAreaHandle.New()
 						.SetManagedData("DrawingAreaKeyVal", "TestValue")
 						.With(d => d.Signal_Draw().Subscribe(arg =>
 						{
-							arg.Cr.CairoArc(0, 0, 10, 0, 180);
-							arg.Cr.CairoStroke();
+							cairo.cairoGlobalFunctions.Arc(arg.Cr, 0, 0, 10, 0, 180);
+							cairo.cairoGlobalFunctions.Stroke(arg.Cr);
 						}))
 						.SetSizeRequest(200, 200))
 					.Add(GtkButtonHandle.New()
 						.SetLabel("TEST")
+						.SetEvents((int) GdkEventMask.GDK_ALL_EVENTS_MASK)
 						.SetManagedData("SomeKey", "TestValue")
 						.With(b =>
 						{
 							var motionController = GtkEventControllerMotionHandle.New(b);
-							motionController.Signal_Enter().TakeUntil(b.Signal_Destroy().Take(1)).Subscribe(_ =>
+							b.SetEvents((int)GdkEventMask.GDK_ALL_EVENTS_MASK);
+							motionController.Signal_Motion().TakeUntil(b.Signal_Destroy().Take(1)).Subscribe(z =>
 							{
-								Console.WriteLine(b.GetManagedData<string>("SomeKey"));
+								Console.WriteLine(b.GetManagedData<string>("SomeKey") + " " + z.X + " " + z.Y);
 							});
 						})
 						.With(b => b.Signal_Clicked().TakeUntil(b.Signal_Destroy().Take(1)).Subscribe(_ =>
@@ -51,7 +59,8 @@ public static class Program
 
 			window.ShowAll();
 			appHandle.AddWindow(window);
-			await Task.Delay(5000);
+			await Task.Delay(3000);
+			GC.Collect();
 			window.Destroy();
 		});
 

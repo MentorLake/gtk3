@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkCornerType
-{
-	GTK_CORNER_TOP_LEFT,
-	GTK_CORNER_BOTTOM_LEFT,
-	GTK_CORNER_TOP_RIGHT,
-	GTK_CORNER_BOTTOM_RIGHT
-}

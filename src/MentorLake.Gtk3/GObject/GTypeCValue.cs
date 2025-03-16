@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GTypeCValueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTypeCValueHandleExtensions
+public static class GTypeCValueExtensions
 {
+
+	public static GTypeCValue Dereference(this GTypeCValueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTypeCValue>(x.DangerousGetHandle());
 }
 internal class GTypeCValueExterns
 {

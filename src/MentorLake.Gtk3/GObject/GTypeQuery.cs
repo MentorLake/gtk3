@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GTypeQueryHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTypeQueryHandleExtensions
+public static class GTypeQueryExtensions
 {
+
+	public static GTypeQuery Dereference(this GTypeQueryHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTypeQuery>(x.DangerousGetHandle());
 }
 internal class GTypeQueryExterns
 {

@@ -1,138 +1,142 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GUnixMountPointHandle : BaseSafeHandle
 {
 }
 
 
-public static class GUnixMountPointHandleExtensions
+public static class GUnixMountPointExtensions
 {
-	public static int Compare(this GUnixMountPointHandle mount1, GUnixMountPointHandle mount2)
+	public static int Compare(this MentorLake.Gio.GUnixMountPointHandle mount1, MentorLake.Gio.GUnixMountPointHandle mount2)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_compare(mount1, mount2);
 	}
 
-	public static GUnixMountPointHandle Copy(this GUnixMountPointHandle mount_point)
+	public static MentorLake.Gio.GUnixMountPointHandle Copy(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_copy(mount_point);
 	}
 
-	public static T Free<T>(this T mount_point) where T : GUnixMountPointHandle
+	public static void Free(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		GUnixMountPointExterns.g_unix_mount_point_free(mount_point);
-		return mount_point;
 	}
 
-	public static string GetDevicePath(this GUnixMountPointHandle mount_point)
+	public static char GetDevicePath(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_device_path(mount_point);
 	}
 
-	public static string GetFsType(this GUnixMountPointHandle mount_point)
+	public static string GetFsType(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_fs_type(mount_point);
 	}
 
-	public static string GetMountPath(this GUnixMountPointHandle mount_point)
+	public static char GetMountPath(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_mount_path(mount_point);
 	}
 
-	public static string GetOptions(this GUnixMountPointHandle mount_point)
+	public static string GetOptions(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_options(mount_point);
 	}
 
-	public static bool GuessCanEject(this GUnixMountPointHandle mount_point)
+	public static bool GuessCanEject(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_guess_can_eject(mount_point);
 	}
 
-	public static GIconHandle GuessIcon(this GUnixMountPointHandle mount_point)
+	public static MentorLake.Gio.GIconHandle GuessIcon(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_guess_icon(mount_point);
 	}
 
-	public static string GuessName(this GUnixMountPointHandle mount_point)
+	public static string GuessName(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_guess_name(mount_point);
 	}
 
-	public static GIconHandle GuessSymbolicIcon(this GUnixMountPointHandle mount_point)
+	public static MentorLake.Gio.GIconHandle GuessSymbolicIcon(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_guess_symbolic_icon(mount_point);
 	}
 
-	public static bool IsLoopback(this GUnixMountPointHandle mount_point)
+	public static bool IsLoopback(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_is_loopback(mount_point);
 	}
 
-	public static bool IsReadonly(this GUnixMountPointHandle mount_point)
+	public static bool IsReadonly(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_is_readonly(mount_point);
 	}
 
-	public static bool IsUserMountable(this GUnixMountPointHandle mount_point)
+	public static bool IsUserMountable(this MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_is_user_mountable(mount_point);
 	}
 
-	public static GUnixMountPointHandle At(string mount_path, out ulong time_read)
-	{
-		return GUnixMountPointExterns.g_unix_mount_point_at(mount_path, out time_read);
-	}
 
+	public static GUnixMountPoint Dereference(this GUnixMountPointHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GUnixMountPoint>(x.DangerousGetHandle());
 }
 internal class GUnixMountPointExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern int g_unix_mount_point_compare(GUnixMountPointHandle mount1, GUnixMountPointHandle mount2);
+	[DllImport(GioLibrary.Name)]
+	internal static extern int g_unix_mount_point_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount2);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GUnixMountPointHandle g_unix_mount_point_copy(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_unix_mount_point_free(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_unix_mount_point_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_unix_mount_point_get_device_path(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern char g_unix_mount_point_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_unix_mount_point_get_fs_type(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_unix_mount_point_get_mount_path(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern char g_unix_mount_point_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_unix_mount_point_get_options(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_options([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_unix_mount_point_guess_can_eject(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_unix_mount_point_guess_can_eject([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GIconHandle g_unix_mount_point_guess_icon(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GIconHandle g_unix_mount_point_guess_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_unix_mount_point_guess_name(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_guess_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GIconHandle g_unix_mount_point_guess_symbolic_icon(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GIconHandle g_unix_mount_point_guess_symbolic_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_unix_mount_point_is_loopback(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_unix_mount_point_is_loopback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_unix_mount_point_is_readonly(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_unix_mount_point_is_readonly([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_unix_mount_point_is_user_mountable(GUnixMountPointHandle mount_point);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_unix_mount_point_is_user_mountable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GUnixMountPointHandle g_unix_mount_point_at(string mount_path, out ulong time_read);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(char mount_path, out ulong time_read);
 
 }
 
 public struct GUnixMountPoint
 {
+	public static MentorLake.Gio.GUnixMountPointHandle At(char mount_path, out ulong time_read)
+	{
+		return GUnixMountPointExterns.g_unix_mount_point_at(mount_path, out time_read);
+	}
+
 }

@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOMHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOMExtensions
+{
+
+	public static VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM Dereference(this VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOMHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOMExterns
+{
+}
+
+public struct VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
+{
+}

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GParamSpecTypeInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GParamSpecTypeInfoHandleExtensions
+public static class GParamSpecTypeInfoExtensions
 {
+
+	public static GParamSpecTypeInfo Dereference(this GParamSpecTypeInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GParamSpecTypeInfo>(x.DangerousGetHandle());
 }
 internal class GParamSpecTypeInfoExterns
 {

@@ -1,18 +1,18 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTreeHandle : BaseSafeHandle
 {
-	public static GTreeHandle New(GCompareFunc key_compare_func)
+	public static MentorLake.GLib.GTreeHandle New(MentorLake.GLib.GCompareFunc key_compare_func)
 	{
 		return GTreeExterns.g_tree_new(key_compare_func);
 	}
 
-	public static GTreeHandle NewFull(GCompareDataFunc key_compare_func, IntPtr key_compare_data, GDestroyNotify key_destroy_func, GDestroyNotify value_destroy_func)
+	public static MentorLake.GLib.GTreeHandle NewFull(MentorLake.GLib.GCompareDataFunc key_compare_func, IntPtr key_compare_data, MentorLake.GLib.GDestroyNotify key_destroy_func, MentorLake.GLib.GDestroyNotify value_destroy_func)
 	{
 		return GTreeExterns.g_tree_new_full(key_compare_func, key_compare_data, key_destroy_func, value_destroy_func);
 	}
 
-	public static GTreeHandle NewWithData(GCompareDataFunc key_compare_func, IntPtr key_compare_data)
+	public static MentorLake.GLib.GTreeHandle NewWithData(MentorLake.GLib.GCompareDataFunc key_compare_func, IntPtr key_compare_data)
 	{
 		return GTreeExterns.g_tree_new_with_data(key_compare_func, key_compare_data);
 	}
@@ -20,219 +20,213 @@ public class GTreeHandle : BaseSafeHandle
 }
 
 
-public static class GTreeHandleExtensions
+public static class GTreeExtensions
 {
-	public static T Destroy<T>(this T tree) where T : GTreeHandle
+	public static void Destroy(this MentorLake.GLib.GTreeHandle tree)
 	{
 		GTreeExterns.g_tree_destroy(tree);
-		return tree;
 	}
 
-	public static T Foreach<T>(this T tree, GTraverseFunc func, IntPtr user_data) where T : GTreeHandle
+	public static void Foreach(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc func, IntPtr user_data)
 	{
 		GTreeExterns.g_tree_foreach(tree, func, user_data);
-		return tree;
 	}
 
-	public static T ForeachNode<T>(this T tree, GTraverseNodeFunc func, IntPtr user_data) where T : GTreeHandle
+	public static void ForeachNode(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseNodeFunc func, IntPtr user_data)
 	{
 		GTreeExterns.g_tree_foreach_node(tree, func, user_data);
-		return tree;
 	}
 
-	public static int Height(this GTreeHandle tree)
+	public static int Height(this MentorLake.GLib.GTreeHandle tree)
 	{
 		return GTreeExterns.g_tree_height(tree);
 	}
 
-	public static T Insert<T>(this T tree, IntPtr key, IntPtr value) where T : GTreeHandle
+	public static void Insert(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
 		GTreeExterns.g_tree_insert(tree, key, value);
-		return tree;
 	}
 
-	public static GTreeNodeHandle InsertNode(this GTreeHandle tree, IntPtr key, IntPtr value)
+	public static MentorLake.GLib.GTreeNodeHandle InsertNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
 		return GTreeExterns.g_tree_insert_node(tree, key, value);
 	}
 
-	public static IntPtr Lookup(this GTreeHandle tree, IntPtr key)
+	public static IntPtr Lookup(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_lookup(tree, key);
 	}
 
-	public static bool LookupExtended(this GTreeHandle tree, IntPtr lookup_key, out IntPtr orig_key, out IntPtr value)
+	public static bool LookupExtended(this MentorLake.GLib.GTreeHandle tree, IntPtr lookup_key, out IntPtr orig_key, out IntPtr value)
 	{
 		return GTreeExterns.g_tree_lookup_extended(tree, lookup_key, out orig_key, out value);
 	}
 
-	public static GTreeNodeHandle LookupNode(this GTreeHandle tree, IntPtr key)
+	public static MentorLake.GLib.GTreeNodeHandle LookupNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_lookup_node(tree, key);
 	}
 
-	public static GTreeNodeHandle LowerBound(this GTreeHandle tree, IntPtr key)
+	public static MentorLake.GLib.GTreeNodeHandle LowerBound(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_lower_bound(tree, key);
 	}
 
-	public static int Nnodes(this GTreeHandle tree)
+	public static int Nnodes(this MentorLake.GLib.GTreeHandle tree)
 	{
 		return GTreeExterns.g_tree_nnodes(tree);
 	}
 
-	public static GTreeNodeHandle NodeFirst(this GTreeHandle tree)
+	public static MentorLake.GLib.GTreeNodeHandle NodeFirst(this MentorLake.GLib.GTreeHandle tree)
 	{
 		return GTreeExterns.g_tree_node_first(tree);
 	}
 
-	public static GTreeNodeHandle NodeLast(this GTreeHandle tree)
+	public static MentorLake.GLib.GTreeNodeHandle NodeLast(this MentorLake.GLib.GTreeHandle tree)
 	{
 		return GTreeExterns.g_tree_node_last(tree);
 	}
 
-	public static GTreeHandle Ref(this GTreeHandle tree)
+	public static MentorLake.GLib.GTreeHandle Ref(this MentorLake.GLib.GTreeHandle tree)
 	{
 		return GTreeExterns.g_tree_ref(tree);
 	}
 
-	public static bool Remove(this GTreeHandle tree, IntPtr key)
+	public static bool Remove(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_remove(tree, key);
 	}
 
-	public static T RemoveAll<T>(this T tree) where T : GTreeHandle
+	public static void RemoveAll(this MentorLake.GLib.GTreeHandle tree)
 	{
 		GTreeExterns.g_tree_remove_all(tree);
-		return tree;
 	}
 
-	public static T Replace<T>(this T tree, IntPtr key, IntPtr value) where T : GTreeHandle
+	public static void Replace(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
 		GTreeExterns.g_tree_replace(tree, key, value);
-		return tree;
 	}
 
-	public static GTreeNodeHandle ReplaceNode(this GTreeHandle tree, IntPtr key, IntPtr value)
+	public static MentorLake.GLib.GTreeNodeHandle ReplaceNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
 		return GTreeExterns.g_tree_replace_node(tree, key, value);
 	}
 
-	public static IntPtr Search(this GTreeHandle tree, GCompareFunc search_func, IntPtr user_data)
+	public static IntPtr Search(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data)
 	{
 		return GTreeExterns.g_tree_search(tree, search_func, user_data);
 	}
 
-	public static GTreeNodeHandle SearchNode(this GTreeHandle tree, GCompareFunc search_func, IntPtr user_data)
+	public static MentorLake.GLib.GTreeNodeHandle SearchNode(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data)
 	{
 		return GTreeExterns.g_tree_search_node(tree, search_func, user_data);
 	}
 
-	public static bool Steal(this GTreeHandle tree, IntPtr key)
+	public static bool Steal(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_steal(tree, key);
 	}
 
-	public static T Traverse<T>(this T tree, GTraverseFunc traverse_func, GTraverseType traverse_type, IntPtr user_data) where T : GTreeHandle
+	public static void Traverse(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc traverse_func, MentorLake.GLib.GTraverseType traverse_type, IntPtr user_data)
 	{
 		GTreeExterns.g_tree_traverse(tree, traverse_func, traverse_type, user_data);
-		return tree;
 	}
 
-	public static T Unref<T>(this T tree) where T : GTreeHandle
+	public static void Unref(this MentorLake.GLib.GTreeHandle tree)
 	{
 		GTreeExterns.g_tree_unref(tree);
-		return tree;
 	}
 
-	public static GTreeNodeHandle UpperBound(this GTreeHandle tree, IntPtr key)
+	public static MentorLake.GLib.GTreeNodeHandle UpperBound(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
 		return GTreeExterns.g_tree_upper_bound(tree, key);
 	}
 
+
+	public static GTree Dereference(this GTreeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTree>(x.DangerousGetHandle());
 }
 internal class GTreeExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeHandle g_tree_new(GCompareFunc key_compare_func);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeHandle g_tree_new(MentorLake.GLib.GCompareFunc key_compare_func);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeHandle g_tree_new_full(GCompareDataFunc key_compare_func, IntPtr key_compare_data, GDestroyNotify key_destroy_func, GDestroyNotify value_destroy_func);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeHandle g_tree_new_full(MentorLake.GLib.GCompareDataFunc key_compare_func, IntPtr key_compare_data, MentorLake.GLib.GDestroyNotify key_destroy_func, MentorLake.GLib.GDestroyNotify value_destroy_func);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeHandle g_tree_new_with_data(GCompareDataFunc key_compare_func, IntPtr key_compare_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeHandle g_tree_new_with_data(MentorLake.GLib.GCompareDataFunc key_compare_func, IntPtr key_compare_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_destroy(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_foreach(GTreeHandle tree, GTraverseFunc func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_foreach([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_foreach_node(GTreeHandle tree, GTraverseNodeFunc func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_foreach_node([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseNodeFunc func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_tree_height(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_tree_height([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_insert(GTreeHandle tree, IntPtr key, IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_insert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_insert_node(GTreeHandle tree, IntPtr key, IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_insert_node([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_tree_lookup(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_tree_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_tree_lookup_extended(GTreeHandle tree, IntPtr lookup_key, out IntPtr orig_key, out IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_tree_lookup_extended([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr lookup_key, out IntPtr orig_key, out IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_lookup_node(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_lookup_node([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_lower_bound(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_lower_bound([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_tree_nnodes(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_tree_nnodes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_node_first(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_node_first([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_node_last(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_node_last([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeHandle g_tree_ref(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeHandle g_tree_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_tree_remove(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_tree_remove([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_remove_all(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_remove_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_replace(GTreeHandle tree, IntPtr key, IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_replace([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_replace_node(GTreeHandle tree, IntPtr key, IntPtr value);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_replace_node([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_tree_search(GTreeHandle tree, GCompareFunc search_func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_tree_search([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_search_node(GTreeHandle tree, GCompareFunc search_func, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_search_node([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_tree_steal(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_tree_steal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_traverse(GTreeHandle tree, GTraverseFunc traverse_func, GTraverseType traverse_type, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_traverse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc traverse_func, MentorLake.GLib.GTraverseType traverse_type, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_tree_unref(GTreeHandle tree);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_tree_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GTreeNodeHandle g_tree_upper_bound(GTreeHandle tree, IntPtr key);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GTreeNodeHandle g_tree_upper_bound([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, IntPtr key);
 
 }
 

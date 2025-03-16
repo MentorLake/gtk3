@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GOptionEntryHandle : BaseSafeHandle
 {
 }
 
 
-public static class GOptionEntryHandleExtensions
+public static class GOptionEntryExtensions
 {
+
+	public static GOptionEntry Dereference(this GOptionEntryHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GOptionEntry>(x.DangerousGetHandle());
 }
 internal class GOptionEntryExterns
 {

@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GValueArrayHandle : BaseSafeHandle
 {
-	public static GValueArrayHandle New(uint n_prealloced)
+	public static MentorLake.GObject.GValueArrayHandle New(uint n_prealloced)
 	{
 		return GValueArrayExterns.g_value_array_new(n_prealloced);
 	}
@@ -10,91 +10,92 @@ public class GValueArrayHandle : BaseSafeHandle
 }
 
 
-public static class GValueArrayHandleExtensions
+public static class GValueArrayExtensions
 {
-	public static GValueArrayHandle Append(this GValueArrayHandle value_array, GValueHandle value)
+	public static MentorLake.GObject.GValueArrayHandle Append(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GObject.GValueHandle value)
 	{
 		return GValueArrayExterns.g_value_array_append(value_array, value);
 	}
 
-	public static GValueArrayHandle Copy(this GValueArrayHandle value_array)
+	public static MentorLake.GObject.GValueArrayHandle Copy(this MentorLake.GObject.GValueArrayHandle value_array)
 	{
 		return GValueArrayExterns.g_value_array_copy(value_array);
 	}
 
-	public static T Free<T>(this T value_array) where T : GValueArrayHandle
+	public static void Free(this MentorLake.GObject.GValueArrayHandle value_array)
 	{
 		GValueArrayExterns.g_value_array_free(value_array);
-		return value_array;
 	}
 
-	public static GValueHandle GetNth(this GValueArrayHandle value_array, uint index_)
+	public static MentorLake.GObject.GValueHandle GetNth(this MentorLake.GObject.GValueArrayHandle value_array, uint index_)
 	{
 		return GValueArrayExterns.g_value_array_get_nth(value_array, index_);
 	}
 
-	public static GValueArrayHandle Insert(this GValueArrayHandle value_array, uint index_, GValueHandle value)
+	public static MentorLake.GObject.GValueArrayHandle Insert(this MentorLake.GObject.GValueArrayHandle value_array, uint index_, MentorLake.GObject.GValueHandle value)
 	{
 		return GValueArrayExterns.g_value_array_insert(value_array, index_, value);
 	}
 
-	public static GValueArrayHandle Prepend(this GValueArrayHandle value_array, GValueHandle value)
+	public static MentorLake.GObject.GValueArrayHandle Prepend(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GObject.GValueHandle value)
 	{
 		return GValueArrayExterns.g_value_array_prepend(value_array, value);
 	}
 
-	public static GValueArrayHandle Remove(this GValueArrayHandle value_array, uint index_)
+	public static MentorLake.GObject.GValueArrayHandle Remove(this MentorLake.GObject.GValueArrayHandle value_array, uint index_)
 	{
 		return GValueArrayExterns.g_value_array_remove(value_array, index_);
 	}
 
-	public static GValueArrayHandle Sort(this GValueArrayHandle value_array, GCompareFunc compare_func)
+	public static MentorLake.GObject.GValueArrayHandle Sort(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareFunc compare_func)
 	{
 		return GValueArrayExterns.g_value_array_sort(value_array, compare_func);
 	}
 
-	public static GValueArrayHandle SortWithData(this GValueArrayHandle value_array, GCompareDataFunc compare_func, IntPtr user_data)
+	public static MentorLake.GObject.GValueArrayHandle SortWithData(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareDataFunc compare_func, IntPtr user_data)
 	{
 		return GValueArrayExterns.g_value_array_sort_with_data(value_array, compare_func, user_data);
 	}
 
+
+	public static GValueArray Dereference(this GValueArrayHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GValueArray>(x.DangerousGetHandle());
 }
 internal class GValueArrayExterns
 {
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_new(uint n_prealloced);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_new(uint n_prealloced);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_append(GValueArrayHandle value_array, GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_append([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_copy(GValueArrayHandle value_array);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern void g_value_array_free(GValueArrayHandle value_array);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern void g_value_array_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueHandle g_value_array_get_nth(GValueArrayHandle value_array, uint index_);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueHandle g_value_array_get_nth([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, uint index_);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_insert(GValueArrayHandle value_array, uint index_, GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_insert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, uint index_, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_prepend(GValueArrayHandle value_array, GValueHandle value);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_prepend([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_remove(GValueArrayHandle value_array, uint index_);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_remove([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, uint index_);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_sort(GValueArrayHandle value_array, GCompareFunc compare_func);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_sort([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareFunc compare_func);
 
-	[DllImport(Libraries.GObject)]
-	internal static extern GValueArrayHandle g_value_array_sort_with_data(GValueArrayHandle value_array, GCompareDataFunc compare_func, IntPtr user_data);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GValueArrayHandle g_value_array_sort_with_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueArrayHandle>))] MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareDataFunc compare_func, IntPtr user_data);
 
 }
 
 public struct GValueArray
 {
 	public uint n_values;
-	public GValueHandle values;
+	public IntPtr values;
 }

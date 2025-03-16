@@ -1,9 +1,10 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
+[Flags]
 public enum PangoTabAlign
 {
-	PANGO_TAB_LEFT,
-	PANGO_TAB_RIGHT,
-	PANGO_TAB_CENTER,
-	PANGO_TAB_DECIMAL
+	PANGO_TAB_LEFT = 0,
+	PANGO_TAB_RIGHT = 1,
+	PANGO_TAB_CENTER = 2,
+	PANGO_TAB_DECIMAL = 3
 }

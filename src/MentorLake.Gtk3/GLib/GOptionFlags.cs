@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GOptionFlags
+public enum GOptionFlags : long
 {
 	G_OPTION_FLAG_NONE = 0,
 	G_OPTION_FLAG_HIDDEN = 1,

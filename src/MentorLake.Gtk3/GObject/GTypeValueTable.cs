@@ -1,22 +1,19 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GTypeValueTableHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTypeValueTableHandleExtensions
+public static class GTypeValueTableExtensions
 {
-	public static GTypeValueTableHandle Peek(GType type)
-	{
-		return GTypeValueTableExterns.g_type_value_table_peek(type);
-	}
 
+	public static GTypeValueTable Dereference(this GTypeValueTableHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTypeValueTable>(x.DangerousGetHandle());
 }
 internal class GTypeValueTableExterns
 {
-	[DllImport(Libraries.GObject)]
-	internal static extern GTypeValueTableHandle g_type_value_table_peek(GType type);
+	[DllImport(GObjectLibrary.Name)]
+	internal static extern MentorLake.GObject.GTypeValueTableHandle g_type_value_table_peek(MentorLake.GObject.GType type);
 
 }
 
@@ -30,4 +27,9 @@ public struct GTypeValueTable
 	public GTypeValueCollectFunc collect_value;
 	public string lcopy_format;
 	public GTypeValueLCopyFunc lcopy_value;
+	public static MentorLake.GObject.GTypeValueTableHandle Peek(MentorLake.GObject.GType type)
+	{
+		return GTypeValueTableExterns.g_type_value_table_peek(type);
+	}
+
 }

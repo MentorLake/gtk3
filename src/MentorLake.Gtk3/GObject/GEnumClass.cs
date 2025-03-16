@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GEnumClassHandle : BaseSafeHandle
 {
 }
 
 
-public static class GEnumClassHandleExtensions
+public static class GEnumClassExtensions
 {
+
+	public static GEnumClass Dereference(this GEnumClassHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GEnumClass>(x.DangerousGetHandle());
 }
 internal class GEnumClassExterns
 {
@@ -18,5 +20,5 @@ public struct GEnumClass
 	public int minimum;
 	public int maximum;
 	public uint n_values;
-	public GEnumValueHandle values;
+	public IntPtr values;
 }

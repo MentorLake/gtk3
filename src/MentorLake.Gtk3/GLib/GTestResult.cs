@@ -1,9 +1,10 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
+[Flags]
 public enum GTestResult
 {
-	G_TEST_RUN_SUCCESS,
-	G_TEST_RUN_SKIPPED,
-	G_TEST_RUN_FAILURE,
-	G_TEST_RUN_INCOMPLETE
+	G_TEST_RUN_SUCCESS = 0,
+	G_TEST_RUN_SKIPPED = 1,
+	G_TEST_RUN_FAILURE = 2,
+	G_TEST_RUN_INCOMPLETE = 3
 }

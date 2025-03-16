@@ -1,31 +1,32 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GDBusPropertyInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDBusPropertyInfoHandleExtensions
+public static class GDBusPropertyInfoExtensions
 {
-	public static GDBusPropertyInfoHandle GDbusPropertyInfoRef(this GDBusPropertyInfoHandle info)
+	public static MentorLake.Gio.GDBusPropertyInfoHandle Ref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
 		return GDBusPropertyInfoExterns.g_dbus_property_info_ref(info);
 	}
 
-	public static T GDbusPropertyInfoUnref<T>(this T info) where T : GDBusPropertyInfoHandle
+	public static void Unref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
 		GDBusPropertyInfoExterns.g_dbus_property_info_unref(info);
-		return info;
 	}
 
+
+	public static GDBusPropertyInfo Dereference(this GDBusPropertyInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDBusPropertyInfo>(x.DangerousGetHandle());
 }
 internal class GDBusPropertyInfoExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GDBusPropertyInfoHandle g_dbus_property_info_ref(GDBusPropertyInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GDBusPropertyInfoHandle g_dbus_property_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusPropertyInfoHandle>))] MentorLake.Gio.GDBusPropertyInfoHandle info);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_dbus_property_info_unref(GDBusPropertyInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_dbus_property_info_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusPropertyInfoHandle>))] MentorLake.Gio.GDBusPropertyInfoHandle info);
 
 }
 
@@ -35,5 +36,5 @@ public struct GDBusPropertyInfo
 	public string name;
 	public string signature;
 	public GDBusPropertyInfoFlags flags;
-	public GDBusAnnotationInfoHandle[] annotations;
+	public IntPtr annotations;
 }

@@ -1,22 +1,19 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrFontFeaturesHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoAttrFontFeaturesHandleExtensions
+public static class PangoAttrFontFeaturesExtensions
 {
-	public static PangoAttributeHandle New(string features)
-	{
-		return PangoAttrFontFeaturesExterns.pango_attr_font_features_new(features);
-	}
 
+	public static PangoAttrFontFeatures Dereference(this PangoAttrFontFeaturesHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrFontFeatures>(x.DangerousGetHandle());
 }
 internal class PangoAttrFontFeaturesExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_font_features_new(string features);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_features_new(string features);
 
 }
 
@@ -24,4 +21,9 @@ public struct PangoAttrFontFeatures
 {
 	public PangoAttribute attr;
 	public string features;
+	public static MentorLake.Pango.PangoAttributeHandle New(string features)
+	{
+		return PangoAttrFontFeaturesExterns.pango_attr_font_features_new(features);
+	}
+
 }

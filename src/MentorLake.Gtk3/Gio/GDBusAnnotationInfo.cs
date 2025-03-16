@@ -1,40 +1,36 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GDBusAnnotationInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDBusAnnotationInfoHandleExtensions
+public static class GDBusAnnotationInfoExtensions
 {
-	public static GDBusAnnotationInfoHandle GDbusAnnotationInfoRef(this GDBusAnnotationInfoHandle info)
+	public static MentorLake.Gio.GDBusAnnotationInfoHandle Ref(this MentorLake.Gio.GDBusAnnotationInfoHandle info)
 	{
 		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_ref(info);
 	}
 
-	public static T GDbusAnnotationInfoUnref<T>(this T info) where T : GDBusAnnotationInfoHandle
+	public static void Unref(this MentorLake.Gio.GDBusAnnotationInfoHandle info)
 	{
 		GDBusAnnotationInfoExterns.g_dbus_annotation_info_unref(info);
-		return info;
 	}
 
-	public static string GDbusAnnotationInfoLookup(GDBusAnnotationInfoHandle[] annotations, string name)
-	{
-		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_lookup(annotations, name);
-	}
 
+	public static GDBusAnnotationInfo Dereference(this GDBusAnnotationInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDBusAnnotationInfo>(x.DangerousGetHandle());
 }
 internal class GDBusAnnotationInfoExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GDBusAnnotationInfoHandle g_dbus_annotation_info_ref(GDBusAnnotationInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GDBusAnnotationInfoHandle g_dbus_annotation_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAnnotationInfoHandle>))] MentorLake.Gio.GDBusAnnotationInfoHandle info);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_dbus_annotation_info_unref(GDBusAnnotationInfoHandle info);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_dbus_annotation_info_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAnnotationInfoHandle>))] MentorLake.Gio.GDBusAnnotationInfoHandle info);
 
-	[DllImport(Libraries.Gio)]
+	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_dbus_annotation_info_lookup(GDBusAnnotationInfoHandle[] annotations, string name);
+	internal static extern string g_dbus_annotation_info_lookup([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAnnotationInfoHandle>))] MentorLake.Gio.GDBusAnnotationInfoHandle[] annotations, string name);
 
 }
 
@@ -43,5 +39,10 @@ public struct GDBusAnnotationInfo
 	public int ref_count;
 	public string key;
 	public string value;
-	public GDBusAnnotationInfoHandle[] annotations;
+	public IntPtr annotations;
+	public static string Lookup(MentorLake.Gio.GDBusAnnotationInfoHandle[] annotations, string name)
+	{
+		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_lookup(annotations, name);
+	}
+
 }

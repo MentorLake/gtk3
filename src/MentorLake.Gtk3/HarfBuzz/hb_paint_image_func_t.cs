@@ -1,0 +1,4 @@
+namespace MentorLake.HarfBuzz;
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate MentorLake.HarfBuzz.hb_bool_t hb_paint_image_func_t([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_paint_funcs_tHandle>))] MentorLake.HarfBuzz.hb_paint_funcs_tHandle funcs, IntPtr paint_data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_blob_tHandle>))] MentorLake.HarfBuzz.hb_blob_tHandle image, uint width, uint height, MentorLake.HarfBuzz.hb_tag_t format, float slant, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_glyph_extents_tHandle>))] MentorLake.HarfBuzz.hb_glyph_extents_tHandle extents, IntPtr user_data);

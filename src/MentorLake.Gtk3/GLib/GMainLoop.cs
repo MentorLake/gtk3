@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMainLoopHandle : BaseSafeHandle
 {
-	public static GMainLoopHandle New(GMainContextHandle context, bool is_running)
+	public static MentorLake.GLib.GMainLoopHandle New(MentorLake.GLib.GMainContextHandle context, bool is_running)
 	{
 		return GMainLoopExterns.g_main_loop_new(context, is_running);
 	}
@@ -10,64 +10,63 @@ public class GMainLoopHandle : BaseSafeHandle
 }
 
 
-public static class GMainLoopHandleExtensions
+public static class GMainLoopExtensions
 {
-	public static GMainContextHandle GetContext(this GMainLoopHandle loop)
+	public static MentorLake.GLib.GMainContextHandle GetContext(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		return GMainLoopExterns.g_main_loop_get_context(loop);
 	}
 
-	public static bool IsRunning(this GMainLoopHandle loop)
+	public static bool IsRunning(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		return GMainLoopExterns.g_main_loop_is_running(loop);
 	}
 
-	public static T Quit<T>(this T loop) where T : GMainLoopHandle
+	public static void Quit(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		GMainLoopExterns.g_main_loop_quit(loop);
-		return loop;
 	}
 
-	public static GMainLoopHandle Ref(this GMainLoopHandle loop)
+	public static MentorLake.GLib.GMainLoopHandle Ref(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		return GMainLoopExterns.g_main_loop_ref(loop);
 	}
 
-	public static T Run<T>(this T loop) where T : GMainLoopHandle
+	public static void Run(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		GMainLoopExterns.g_main_loop_run(loop);
-		return loop;
 	}
 
-	public static T Unref<T>(this T loop) where T : GMainLoopHandle
+	public static void Unref(this MentorLake.GLib.GMainLoopHandle loop)
 	{
 		GMainLoopExterns.g_main_loop_unref(loop);
-		return loop;
 	}
 
+
+	public static GMainLoop Dereference(this GMainLoopHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMainLoop>(x.DangerousGetHandle());
 }
 internal class GMainLoopExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GMainLoopHandle g_main_loop_new(GMainContextHandle context, bool is_running);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMainLoopHandle g_main_loop_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))] MentorLake.GLib.GMainContextHandle context, bool is_running);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMainContextHandle g_main_loop_get_context(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMainContextHandle g_main_loop_get_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_main_loop_is_running(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_main_loop_is_running([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_main_loop_quit(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_main_loop_quit([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMainLoopHandle g_main_loop_ref(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMainLoopHandle g_main_loop_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_main_loop_run(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_main_loop_run([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_main_loop_unref(GMainLoopHandle loop);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_main_loop_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainLoopHandle>))] MentorLake.GLib.GMainLoopHandle loop);
 
 }
 

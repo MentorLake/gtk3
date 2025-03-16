@@ -1,10 +1,10 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [Flags]
-public enum GTestTrapFlags
+public enum GTestTrapFlags : long
 {
 	G_TEST_TRAP_DEFAULT = 0,
-	G_TEST_TRAP_SILENCE_STDOUT = 1,
-	G_TEST_TRAP_SILENCE_STDERR = 2,
-	G_TEST_TRAP_INHERIT_STDIN = 4
+	G_TEST_TRAP_SILENCE_STDOUT = 128,
+	G_TEST_TRAP_SILENCE_STDERR = 256,
+	G_TEST_TRAP_INHERIT_STDIN = 512
 }

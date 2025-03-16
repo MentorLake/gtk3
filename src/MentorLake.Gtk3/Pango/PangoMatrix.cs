@@ -1,128 +1,120 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoMatrixHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoMatrixHandleExtensions
+public static class PangoMatrixExtensions
 {
-	public static T Concat<T>(this T matrix, PangoMatrixHandle new_matrix) where T : PangoMatrixHandle
+	public static void Concat(this MentorLake.Pango.PangoMatrixHandle matrix, MentorLake.Pango.PangoMatrixHandle new_matrix)
 	{
 		PangoMatrixExterns.pango_matrix_concat(matrix, new_matrix);
-		return matrix;
 	}
 
-	public static PangoMatrixHandle Copy(this PangoMatrixHandle matrix)
+	public static MentorLake.Pango.PangoMatrixHandle Copy(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
 		return PangoMatrixExterns.pango_matrix_copy(matrix);
 	}
 
-	public static T Free<T>(this T matrix) where T : PangoMatrixHandle
+	public static void Free(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
 		PangoMatrixExterns.pango_matrix_free(matrix);
-		return matrix;
 	}
 
-	public static double GetFontScaleFactor(this PangoMatrixHandle matrix)
+	public static double GetFontScaleFactor(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
 		return PangoMatrixExterns.pango_matrix_get_font_scale_factor(matrix);
 	}
 
-	public static T GetFontScaleFactors<T>(this T matrix, out double xscale, out double yscale) where T : PangoMatrixHandle
+	public static void GetFontScaleFactors(this MentorLake.Pango.PangoMatrixHandle matrix, out double xscale, out double yscale)
 	{
 		PangoMatrixExterns.pango_matrix_get_font_scale_factors(matrix, out xscale, out yscale);
-		return matrix;
 	}
 
-	public static double GetSlantRatio(this PangoMatrixHandle matrix)
+	public static double GetSlantRatio(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
 		return PangoMatrixExterns.pango_matrix_get_slant_ratio(matrix);
 	}
 
-	public static T Rotate<T>(this T matrix, double degrees) where T : PangoMatrixHandle
+	public static void Rotate(this MentorLake.Pango.PangoMatrixHandle matrix, double degrees)
 	{
 		PangoMatrixExterns.pango_matrix_rotate(matrix, degrees);
-		return matrix;
 	}
 
-	public static T Scale<T>(this T matrix, double scale_x, double scale_y) where T : PangoMatrixHandle
+	public static void Scale(this MentorLake.Pango.PangoMatrixHandle matrix, double scale_x, double scale_y)
 	{
 		PangoMatrixExterns.pango_matrix_scale(matrix, scale_x, scale_y);
-		return matrix;
 	}
 
-	public static T TransformDistance<T>(this T matrix, ref double dx, ref double dy) where T : PangoMatrixHandle
+	public static void TransformDistance(this MentorLake.Pango.PangoMatrixHandle matrix, ref double dx, ref double dy)
 	{
 		PangoMatrixExterns.pango_matrix_transform_distance(matrix, ref dx, ref dy);
-		return matrix;
 	}
 
-	public static T TransformPixelRectangle<T>(this T matrix, PangoRectangleHandle rect) where T : PangoMatrixHandle
+	public static void TransformPixelRectangle(this MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect)
 	{
-		PangoMatrixExterns.pango_matrix_transform_pixel_rectangle(matrix, rect);
-		return matrix;
+		PangoMatrixExterns.pango_matrix_transform_pixel_rectangle(matrix, ref rect);
 	}
 
-	public static T TransformPoint<T>(this T matrix, ref double x, ref double y) where T : PangoMatrixHandle
+	public static void TransformPoint(this MentorLake.Pango.PangoMatrixHandle matrix, ref double x, ref double y)
 	{
 		PangoMatrixExterns.pango_matrix_transform_point(matrix, ref x, ref y);
-		return matrix;
 	}
 
-	public static T TransformRectangle<T>(this T matrix, PangoRectangleHandle rect) where T : PangoMatrixHandle
+	public static void TransformRectangle(this MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect)
 	{
-		PangoMatrixExterns.pango_matrix_transform_rectangle(matrix, rect);
-		return matrix;
+		PangoMatrixExterns.pango_matrix_transform_rectangle(matrix, ref rect);
 	}
 
-	public static T Translate<T>(this T matrix, double tx, double ty) where T : PangoMatrixHandle
+	public static void Translate(this MentorLake.Pango.PangoMatrixHandle matrix, double tx, double ty)
 	{
 		PangoMatrixExterns.pango_matrix_translate(matrix, tx, ty);
-		return matrix;
 	}
 
+
+	public static PangoMatrix Dereference(this PangoMatrixHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoMatrix>(x.DangerousGetHandle());
 }
 internal class PangoMatrixExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_concat(PangoMatrixHandle matrix, PangoMatrixHandle new_matrix);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_concat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle new_matrix);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoMatrixHandle pango_matrix_copy(PangoMatrixHandle matrix);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoMatrixHandle pango_matrix_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_free(PangoMatrixHandle matrix);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern double pango_matrix_get_font_scale_factor(PangoMatrixHandle matrix);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern double pango_matrix_get_font_scale_factor([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_get_font_scale_factors(PangoMatrixHandle matrix, out double xscale, out double yscale);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_get_font_scale_factors([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, out double xscale, out double yscale);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern double pango_matrix_get_slant_ratio(PangoMatrixHandle matrix);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern double pango_matrix_get_slant_ratio([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_rotate(PangoMatrixHandle matrix, double degrees);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_rotate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, double degrees);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_scale(PangoMatrixHandle matrix, double scale_x, double scale_y);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, double scale_x, double scale_y);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_transform_distance(PangoMatrixHandle matrix, ref double dx, ref double dy);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_transform_distance([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, ref double dx, ref double dy);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_transform_pixel_rectangle(PangoMatrixHandle matrix, PangoRectangleHandle rect);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_transform_pixel_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_transform_point(PangoMatrixHandle matrix, ref double x, ref double y);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_transform_point([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, ref double x, ref double y);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_transform_rectangle(PangoMatrixHandle matrix, PangoRectangleHandle rect);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_transform_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect);
 
-	[DllImport(Libraries.Pango)]
-	internal static extern void pango_matrix_translate(PangoMatrixHandle matrix, double tx, double ty);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern void pango_matrix_translate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoMatrixHandle>))] MentorLake.Pango.PangoMatrixHandle matrix, double tx, double ty);
 
 }
 

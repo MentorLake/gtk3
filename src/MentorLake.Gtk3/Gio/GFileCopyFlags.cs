@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileCopyFlags
+public enum GFileCopyFlags : long
 {
 	G_FILE_COPY_NONE = 0,
 	G_FILE_COPY_OVERWRITE = 1,

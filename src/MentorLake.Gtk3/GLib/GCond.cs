@@ -1,95 +1,91 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GCondHandle : BaseSafeHandle
 {
 }
 
 
-public static class GCondHandleExtensions
+public static class GCondExtensions
 {
-	public static T Broadcast<T>(this T cond) where T : GCondHandle
+	public static void Broadcast(this MentorLake.GLib.GCondHandle cond)
 	{
 		GCondExterns.g_cond_broadcast(cond);
-		return cond;
 	}
 
-	public static T Clear<T>(this T cond) where T : GCondHandle
+	public static void Clear(this MentorLake.GLib.GCondHandle cond)
 	{
 		GCondExterns.g_cond_clear(cond);
-		return cond;
 	}
 
-	public static T Free<T>(this T cond) where T : GCondHandle
+	public static void Free(this MentorLake.GLib.GCondHandle cond)
 	{
 		GCondExterns.g_cond_free(cond);
-		return cond;
 	}
 
-	public static T Init<T>(this T cond) where T : GCondHandle
+	public static void Init(this MentorLake.GLib.GCondHandle cond)
 	{
 		GCondExterns.g_cond_init(cond);
-		return cond;
 	}
 
-	public static T Signal<T>(this T cond) where T : GCondHandle
+	public static void Signal(this MentorLake.GLib.GCondHandle cond)
 	{
 		GCondExterns.g_cond_signal(cond);
-		return cond;
 	}
 
-	public static bool TimedWait(this GCondHandle cond, GMutexHandle mutex, GTimeValHandle abs_time)
+	public static bool TimedWait(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex, MentorLake.GLib.GTimeValHandle abs_time)
 	{
 		return GCondExterns.g_cond_timed_wait(cond, mutex, abs_time);
 	}
 
-	public static T Wait<T>(this T cond, GMutexHandle mutex) where T : GCondHandle
+	public static void Wait(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex)
 	{
 		GCondExterns.g_cond_wait(cond, mutex);
-		return cond;
 	}
 
-	public static bool WaitUntil(this GCondHandle cond, GMutexHandle mutex, long end_time)
+	public static bool WaitUntil(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex, long end_time)
 	{
 		return GCondExterns.g_cond_wait_until(cond, mutex, end_time);
 	}
 
-	public static GCondHandle New()
-	{
-		return GCondExterns.g_cond_new();
-	}
 
+	public static GCond Dereference(this GCondHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GCond>(x.DangerousGetHandle());
 }
 internal class GCondExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_broadcast(GCondHandle cond);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_broadcast([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_clear(GCondHandle cond);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_clear([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_free(GCondHandle cond);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_init(GCondHandle cond);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_signal(GCondHandle cond);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_signal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_cond_timed_wait(GCondHandle cond, GMutexHandle mutex, GTimeValHandle abs_time);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_cond_timed_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMutexHandle>))] MentorLake.GLib.GMutexHandle mutex, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimeValHandle>))] MentorLake.GLib.GTimeValHandle abs_time);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_cond_wait(GCondHandle cond, GMutexHandle mutex);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_cond_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMutexHandle>))] MentorLake.GLib.GMutexHandle mutex);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_cond_wait_until(GCondHandle cond, GMutexHandle mutex, long end_time);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_cond_wait_until([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMutexHandle>))] MentorLake.GLib.GMutexHandle mutex, long end_time);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GCondHandle g_cond_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GCondHandle g_cond_new();
 
 }
 
 public struct GCond
 {
+	public static MentorLake.GLib.GCondHandle New()
+	{
+		return GCondExterns.g_cond_new();
+	}
+
 }

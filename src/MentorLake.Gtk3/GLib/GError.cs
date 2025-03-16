@@ -1,18 +1,18 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GErrorHandle : BaseSafeHandle
 {
-	public static GErrorHandle New(GQuark domain, int code, string format, IntPtr @__arglist)
+	public static MentorLake.GLib.GErrorHandle New(MentorLake.GLib.GQuark domain, int code, string format, IntPtr @__arglist)
 	{
 		return GErrorExterns.g_error_new(domain, code, format, @__arglist);
 	}
 
-	public static GErrorHandle NewLiteral(GQuark domain, int code, string message)
+	public static MentorLake.GLib.GErrorHandle NewLiteral(MentorLake.GLib.GQuark domain, int code, string message)
 	{
 		return GErrorExterns.g_error_new_literal(domain, code, message);
 	}
 
-	public static GErrorHandle NewValist(GQuark domain, int code, string format, IntPtr args)
+	public static MentorLake.GLib.GErrorHandle NewValist(MentorLake.GLib.GQuark domain, int code, string format, IntPtr args)
 	{
 		return GErrorExterns.g_error_new_valist(domain, code, format, args);
 	}
@@ -20,60 +20,51 @@ public class GErrorHandle : BaseSafeHandle
 }
 
 
-public static class GErrorHandleExtensions
+public static class GErrorExtensions
 {
-	public static GErrorHandle Copy(this GErrorHandle error)
+	public static MentorLake.GLib.GErrorHandle Copy(this MentorLake.GLib.GErrorHandle error)
 	{
 		return GErrorExterns.g_error_copy(error);
 	}
 
-	public static T Free<T>(this T error) where T : GErrorHandle
+	public static void Free(this MentorLake.GLib.GErrorHandle error)
 	{
 		GErrorExterns.g_error_free(error);
-		return error;
 	}
 
-	public static bool Matches(this GErrorHandle error, GQuark domain, int code)
+	public static bool Matches(this MentorLake.GLib.GErrorHandle error, MentorLake.GLib.GQuark domain, int code)
 	{
 		return GErrorExterns.g_error_matches(error, domain, code);
 	}
 
-	public static GQuark DomainRegister(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear)
-	{
-		return GErrorExterns.g_error_domain_register(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
-	}
 
-	public static GQuark DomainRegisterStatic(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear)
-	{
-		return GErrorExterns.g_error_domain_register_static(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
-	}
-
+	public static GError Dereference(this GErrorHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GError>(x.DangerousGetHandle());
 }
 internal class GErrorExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GErrorHandle g_error_new(GQuark domain, int code, string format, IntPtr @__arglist);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GErrorHandle g_error_new(MentorLake.GLib.GQuark domain, int code, string format, IntPtr @__arglist);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GErrorHandle g_error_new_literal(GQuark domain, int code, string message);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GErrorHandle g_error_new_literal(MentorLake.GLib.GQuark domain, int code, string message);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GErrorHandle g_error_new_valist(GQuark domain, int code, string format, IntPtr args);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GErrorHandle g_error_new_valist(MentorLake.GLib.GQuark domain, int code, string format, IntPtr args);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GErrorHandle g_error_copy(GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GErrorHandle g_error_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GErrorHandle>))] MentorLake.GLib.GErrorHandle error);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_error_free(GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_error_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GErrorHandle>))] MentorLake.GLib.GErrorHandle error);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_error_matches(GErrorHandle error, GQuark domain, int code);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_error_matches([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GErrorHandle>))] MentorLake.GLib.GErrorHandle error, MentorLake.GLib.GQuark domain, int code);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GQuark g_error_domain_register(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GQuark g_error_domain_register(string error_type_name, UIntPtr error_type_private_size, MentorLake.GLib.GErrorInitFunc error_type_init, MentorLake.GLib.GErrorCopyFunc error_type_copy, MentorLake.GLib.GErrorClearFunc error_type_clear);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GQuark g_error_domain_register_static(string error_type_name, UIntPtr error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GQuark g_error_domain_register_static(string error_type_name, UIntPtr error_type_private_size, MentorLake.GLib.GErrorInitFunc error_type_init, MentorLake.GLib.GErrorCopyFunc error_type_copy, MentorLake.GLib.GErrorClearFunc error_type_clear);
 
 }
 
@@ -82,4 +73,14 @@ public struct GError
 	public GQuark domain;
 	public int code;
 	public string message;
+	public static MentorLake.GLib.GQuark DomainRegister(string error_type_name, UIntPtr error_type_private_size, MentorLake.GLib.GErrorInitFunc error_type_init, MentorLake.GLib.GErrorCopyFunc error_type_copy, MentorLake.GLib.GErrorClearFunc error_type_clear)
+	{
+		return GErrorExterns.g_error_domain_register(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
+	}
+
+	public static MentorLake.GLib.GQuark DomainRegisterStatic(string error_type_name, UIntPtr error_type_private_size, MentorLake.GLib.GErrorInitFunc error_type_init, MentorLake.GLib.GErrorCopyFunc error_type_copy, MentorLake.GLib.GErrorClearFunc error_type_clear)
+	{
+		return GErrorExterns.g_error_domain_register_static(error_type_name, error_type_private_size, error_type_init, error_type_copy, error_type_clear);
+	}
+
 }

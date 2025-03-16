@@ -1,33 +1,74 @@
-namespace MentorLake.Gtk3.GModule;
+namespace MentorLake.GModule;
 
 public class GModuleHandle : BaseSafeHandle
 {
 }
 
 
-public static class GModuleHandleExtensions
+public static class GModuleExtensions
 {
-	public static bool Close(this GModuleHandle module)
+	public static bool Close(this MentorLake.GModule.GModuleHandle module)
 	{
 		return GModuleExterns.g_module_close(module);
 	}
 
-	public static T MakeResident<T>(this T module) where T : GModuleHandle
+	public static void MakeResident(this MentorLake.GModule.GModuleHandle module)
 	{
 		GModuleExterns.g_module_make_resident(module);
-		return module;
 	}
 
-	public static string Name(this GModuleHandle module)
+	public static string Name(this MentorLake.GModule.GModuleHandle module)
 	{
 		return GModuleExterns.g_module_name(module);
 	}
 
-	public static bool Symbol(this GModuleHandle module, string symbol_name, out IntPtr symbol)
+	public static bool Symbol(this MentorLake.GModule.GModuleHandle module, string symbol_name, out IntPtr symbol)
 	{
 		return GModuleExterns.g_module_symbol(module, symbol_name, out symbol);
 	}
 
+
+	public static GModule Dereference(this GModuleHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GModule>(x.DangerousGetHandle());
+}
+internal class GModuleExterns
+{
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern bool g_module_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))] MentorLake.GModule.GModuleHandle module);
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern void g_module_make_resident([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))] MentorLake.GModule.GModuleHandle module);
+
+	[DllImport(GModuleLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_module_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))] MentorLake.GModule.GModuleHandle module);
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern bool g_module_symbol([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))] MentorLake.GModule.GModuleHandle module, string symbol_name, out IntPtr symbol);
+
+	[DllImport(GModuleLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_module_build_path(string directory, string module_name);
+
+	[DllImport(GModuleLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_module_error();
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern MentorLake.GLib.GQuark g_module_error_quark();
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern MentorLake.GModule.GModuleHandle g_module_open(string file_name, MentorLake.GModule.GModuleFlags flags);
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern MentorLake.GModule.GModuleHandle g_module_open_full(string file_name, MentorLake.GModule.GModuleFlags flags);
+
+	[DllImport(GModuleLibrary.Name)]
+	internal static extern bool g_module_supported();
+
+}
+
+public struct GModule
+{
 	public static string BuildPath(string directory, string module_name)
 	{
 		return GModuleExterns.g_module_build_path(directory, module_name);
@@ -38,19 +79,19 @@ public static class GModuleHandleExtensions
 		return GModuleExterns.g_module_error();
 	}
 
-	public static GQuark ErrorQuark()
+	public static MentorLake.GLib.GQuark ErrorQuark()
 	{
 		return GModuleExterns.g_module_error_quark();
 	}
 
-	public static GModuleHandle Open(string file_name, GModuleFlags flags)
+	public static MentorLake.GModule.GModuleHandle Open(string file_name, MentorLake.GModule.GModuleFlags flags)
 	{
 		return GModuleExterns.g_module_open(file_name, flags);
 	}
 
-	public static GModuleHandle OpenFull(string file_name, GModuleFlags flags, out GErrorHandle error)
+	public static MentorLake.GModule.GModuleHandle OpenFull(string file_name, MentorLake.GModule.GModuleFlags flags)
 	{
-		return GModuleExterns.g_module_open_full(file_name, flags, out error);
+		return GModuleExterns.g_module_open_full(file_name, flags);
 	}
 
 	public static bool Supported()
@@ -58,42 +99,4 @@ public static class GModuleHandleExtensions
 		return GModuleExterns.g_module_supported();
 	}
 
-}
-internal class GModuleExterns
-{
-	[DllImport(Libraries.GModule)]
-	internal static extern bool g_module_close(GModuleHandle module);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern void g_module_make_resident(GModuleHandle module);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern string g_module_name(GModuleHandle module);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern bool g_module_symbol(GModuleHandle module, string symbol_name, out IntPtr symbol);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern string g_module_build_path(string directory, string module_name);
-
-	[DllImport(Libraries.GModule)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_module_error();
-
-	[DllImport(Libraries.GModule)]
-	internal static extern GQuark g_module_error_quark();
-
-	[DllImport(Libraries.GModule)]
-	internal static extern GModuleHandle g_module_open(string file_name, GModuleFlags flags);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern GModuleHandle g_module_open_full(string file_name, GModuleFlags flags, out GErrorHandle error);
-
-	[DllImport(Libraries.GModule)]
-	internal static extern bool g_module_supported();
-
-}
-
-public struct GModule
-{
 }

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GDataHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDataHandleExtensions
+public static class GDataExtensions
 {
+
+	public static GData Dereference(this GDataHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GData>(x.DangerousGetHandle());
 }
 internal class GDataExterns
 {

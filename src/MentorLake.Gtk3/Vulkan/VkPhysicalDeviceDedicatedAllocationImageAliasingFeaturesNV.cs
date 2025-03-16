@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVExtensions
+{
+
+	public static VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV Dereference(this VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVExterns
+{
+}
+
+public struct VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
+{
+}

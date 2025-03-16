@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkApplicationInhibitFlags : long
+{
+	GTK_APPLICATION_INHIBIT_LOGOUT = 1,
+	GTK_APPLICATION_INHIBIT_SWITCH = 2,
+	GTK_APPLICATION_INHIBIT_SUSPEND = 4,
+	GTK_APPLICATION_INHIBIT_IDLE = 8
+}

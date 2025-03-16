@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GTlsCertificateFlags
+public enum GTlsCertificateFlags : long
 {
 	G_TLS_CERTIFICATE_NO_FLAGS = 0,
 	G_TLS_CERTIFICATE_UNKNOWN_CA = 1,
@@ -11,5 +11,5 @@ public enum GTlsCertificateFlags
 	G_TLS_CERTIFICATE_REVOKED = 16,
 	G_TLS_CERTIFICATE_INSECURE = 32,
 	G_TLS_CERTIFICATE_GENERIC_ERROR = 64,
-	G_TLS_CERTIFICATE_VALIDATE_ALL = 128
+	G_TLS_CERTIFICATE_VALIDATE_ALL = 127
 }

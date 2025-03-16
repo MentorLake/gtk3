@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRExtensions
+{
+
+	public static VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR Dereference(this VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRExterns
+{
+}
+
+public struct VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
+{
+}

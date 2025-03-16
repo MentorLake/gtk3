@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXTHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXTExtensions
+{
+
+	public static VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT Dereference(this VkPhysicalDevicePipelineCreationCacheControlFeaturesEXTHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDevicePipelineCreationCacheControlFeaturesEXTExterns
+{
+}
+
+public struct VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT
+{
+}

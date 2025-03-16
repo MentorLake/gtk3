@@ -1,8 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkSizeRequestMode
-{
-	GTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH,
-	GTK_SIZE_REQUEST_WIDTH_FOR_HEIGHT,
-	GTK_SIZE_REQUEST_CONSTANT_SIZE
-}

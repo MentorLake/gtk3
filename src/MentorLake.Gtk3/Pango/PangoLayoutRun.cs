@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public struct PangoLayoutRun
 {
-	public PangoGlyphItem Value;
+	public MentorLake.Pango.PangoGlyphItem Value;
 }
 
 public class PangoLayoutRunHandle : BaseSafeHandle

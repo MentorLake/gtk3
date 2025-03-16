@@ -1,22 +1,24 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 public class AtkImplementorHandle : BaseSafeHandle
 {
 }
 
 
-public static class AtkImplementorHandleExtensions
+public static class AtkImplementorExtensions
 {
-	public static AtkObjectHandle RefAccessible(this AtkImplementorHandle implementor)
+	public static MentorLake.Atk.AtkObjectHandle RefAccessible(this MentorLake.Atk.AtkImplementorHandle implementor)
 	{
 		return AtkImplementorExterns.atk_implementor_ref_accessible(implementor);
 	}
 
+
+	public static AtkImplementor Dereference(this AtkImplementorHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<AtkImplementor>(x.DangerousGetHandle());
 }
 internal class AtkImplementorExterns
 {
-	[DllImport(Libraries.Atk)]
-	internal static extern AtkObjectHandle atk_implementor_ref_accessible(AtkImplementorHandle implementor);
+	[DllImport(AtkLibrary.Name)]
+	internal static extern MentorLake.Atk.AtkObjectHandle atk_implementor_ref_accessible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkImplementorHandle>))] MentorLake.Atk.AtkImplementorHandle implementor);
 
 }
 

@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate IntPtr GdkPixbufModuleBeginLoadFunc(GdkPixbufModuleSizeFunc size_func, GdkPixbufModulePreparedFunc prepared_func, GdkPixbufModuleUpdatedFunc updated_func, IntPtr user_data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GErrorHandle>))] out GErrorHandle error);
+public delegate IntPtr GdkPixbufModuleBeginLoadFunc(MentorLake.GdkPixbuf.GdkPixbufModuleSizeFunc size_func, MentorLake.GdkPixbuf.GdkPixbufModulePreparedFunc prepared_func, MentorLake.GdkPixbuf.GdkPixbufModuleUpdatedFunc updated_func, IntPtr user_data);

@@ -1,43 +1,43 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GIOModuleScopeHandle : BaseSafeHandle
 {
 }
 
 
-public static class GIOModuleScopeHandleExtensions
+public static class GIOModuleScopeExtensions
 {
-	public static T GIoModuleScopeBlock<T>(this T scope, string basename) where T : GIOModuleScopeHandle
+	public static void Block(this MentorLake.Gio.GIOModuleScopeHandle scope, string basename)
 	{
 		GIOModuleScopeExterns.g_io_module_scope_block(scope, basename);
-		return scope;
 	}
 
-	public static T GIoModuleScopeFree<T>(this T scope) where T : GIOModuleScopeHandle
+	public static void Free(this MentorLake.Gio.GIOModuleScopeHandle scope)
 	{
 		GIOModuleScopeExterns.g_io_module_scope_free(scope);
-		return scope;
 	}
 
-	public static GIOModuleScopeHandle GIoModuleScopeNew(GIOModuleScopeFlags flags)
-	{
-		return GIOModuleScopeExterns.g_io_module_scope_new(flags);
-	}
 
+	public static GIOModuleScope Dereference(this GIOModuleScopeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GIOModuleScope>(x.DangerousGetHandle());
 }
 internal class GIOModuleScopeExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_io_module_scope_block(GIOModuleScopeHandle scope, string basename);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_io_module_scope_block([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope, string basename);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_io_module_scope_free(GIOModuleScopeHandle scope);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_io_module_scope_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GIOModuleScopeHandle g_io_module_scope_new(GIOModuleScopeFlags flags);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GIOModuleScopeHandle g_io_module_scope_new(MentorLake.Gio.GIOModuleScopeFlags flags);
 
 }
 
 public struct GIOModuleScope
 {
+	public static MentorLake.Gio.GIOModuleScopeHandle New(MentorLake.Gio.GIOModuleScopeFlags flags)
+	{
+		return GIOModuleScopeExterns.g_io_module_scope_new(flags);
+	}
+
 }

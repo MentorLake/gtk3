@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate bool GNodeTraverseFunc([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<GNodeHandle>))] GNodeHandle node, IntPtr data);
+public delegate bool GNodeTraverseFunc([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GNodeHandle>))] MentorLake.GLib.GNodeHandle node, IntPtr data);

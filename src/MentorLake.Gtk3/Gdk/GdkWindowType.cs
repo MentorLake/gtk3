@@ -1,0 +1,13 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkWindowType
+{
+	GDK_WINDOW_ROOT = 0,
+	GDK_WINDOW_TOPLEVEL = 1,
+	GDK_WINDOW_CHILD = 2,
+	GDK_WINDOW_TEMP = 3,
+	GDK_WINDOW_FOREIGN = 4,
+	GDK_WINDOW_OFFSCREEN = 5,
+	GDK_WINDOW_SUBSURFACE = 6
+}

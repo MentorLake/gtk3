@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 public struct AtkState
 {

@@ -1,8 +1,9 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
+[Flags]
 public enum GSeekType
 {
-	G_SEEK_CUR,
-	G_SEEK_SET,
-	G_SEEK_END
+	G_SEEK_CUR = 0,
+	G_SEEK_SET = 1,
+	G_SEEK_END = 2
 }

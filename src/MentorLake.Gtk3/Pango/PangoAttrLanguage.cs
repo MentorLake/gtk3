@@ -1,27 +1,29 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrLanguageHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoAttrLanguageHandleExtensions
+public static class PangoAttrLanguageExtensions
 {
-	public static PangoAttributeHandle New(PangoLanguageHandle language)
-	{
-		return PangoAttrLanguageExterns.pango_attr_language_new(language);
-	}
 
+	public static PangoAttrLanguage Dereference(this PangoAttrLanguageHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrLanguage>(x.DangerousGetHandle());
 }
 internal class PangoAttrLanguageExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_language_new(PangoLanguageHandle language);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_language_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
 }
 
 public struct PangoAttrLanguage
 {
 	public PangoAttribute attr;
-	public PangoLanguageHandle value;
+	public IntPtr value;
+	public static MentorLake.Pango.PangoAttributeHandle New(MentorLake.Pango.PangoLanguageHandle language)
+	{
+		return PangoAttrLanguageExterns.pango_attr_language_new(language);
+	}
+
 }

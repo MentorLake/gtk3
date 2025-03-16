@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileCreateFlags
+public enum GFileCreateFlags : long
 {
 	G_FILE_CREATE_NONE = 0,
 	G_FILE_CREATE_PRIVATE = 1,

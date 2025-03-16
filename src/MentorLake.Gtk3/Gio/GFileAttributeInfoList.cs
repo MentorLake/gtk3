@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GFileAttributeInfoListHandle : BaseSafeHandle
 {
-	public static GFileAttributeInfoListHandle New()
+	public static MentorLake.Gio.GFileAttributeInfoListHandle New()
 	{
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_new();
 	}
@@ -10,60 +10,60 @@ public class GFileAttributeInfoListHandle : BaseSafeHandle
 }
 
 
-public static class GFileAttributeInfoListHandleExtensions
+public static class GFileAttributeInfoListExtensions
 {
-	public static T Add<T>(this T list, string name, GFileAttributeType type, GFileAttributeInfoFlags flags) where T : GFileAttributeInfoListHandle
+	public static void Add(this MentorLake.Gio.GFileAttributeInfoListHandle list, string name, MentorLake.Gio.GFileAttributeType type, MentorLake.Gio.GFileAttributeInfoFlags flags)
 	{
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_add(list, name, type, flags);
-		return list;
 	}
 
-	public static GFileAttributeInfoListHandle Dup(this GFileAttributeInfoListHandle list)
+	public static MentorLake.Gio.GFileAttributeInfoListHandle Dup(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_dup(list);
 	}
 
-	public static GFileAttributeInfoHandle Lookup(this GFileAttributeInfoListHandle list, string name)
+	public static MentorLake.Gio.GFileAttributeInfoHandle Lookup(this MentorLake.Gio.GFileAttributeInfoListHandle list, string name)
 	{
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_lookup(list, name);
 	}
 
-	public static GFileAttributeInfoListHandle Ref(this GFileAttributeInfoListHandle list)
+	public static MentorLake.Gio.GFileAttributeInfoListHandle Ref(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_ref(list);
 	}
 
-	public static T Unref<T>(this T list) where T : GFileAttributeInfoListHandle
+	public static void Unref(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_unref(list);
-		return list;
 	}
 
+
+	public static GFileAttributeInfoList Dereference(this GFileAttributeInfoListHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GFileAttributeInfoList>(x.DangerousGetHandle());
 }
 internal class GFileAttributeInfoListExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeInfoListHandle g_file_attribute_info_list_new();
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeInfoListHandle g_file_attribute_info_list_new();
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_file_attribute_info_list_add(GFileAttributeInfoListHandle list, string name, GFileAttributeType type, GFileAttributeInfoFlags flags);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_file_attribute_info_list_add([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeInfoListHandle>))] MentorLake.Gio.GFileAttributeInfoListHandle list, string name, MentorLake.Gio.GFileAttributeType type, MentorLake.Gio.GFileAttributeInfoFlags flags);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeInfoListHandle g_file_attribute_info_list_dup(GFileAttributeInfoListHandle list);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeInfoListHandle g_file_attribute_info_list_dup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeInfoListHandle>))] MentorLake.Gio.GFileAttributeInfoListHandle list);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeInfoHandle g_file_attribute_info_list_lookup(GFileAttributeInfoListHandle list, string name);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeInfoHandle g_file_attribute_info_list_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeInfoListHandle>))] MentorLake.Gio.GFileAttributeInfoListHandle list, string name);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GFileAttributeInfoListHandle g_file_attribute_info_list_ref(GFileAttributeInfoListHandle list);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GFileAttributeInfoListHandle g_file_attribute_info_list_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeInfoListHandle>))] MentorLake.Gio.GFileAttributeInfoListHandle list);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_file_attribute_info_list_unref(GFileAttributeInfoListHandle list);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_file_attribute_info_list_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileAttributeInfoListHandle>))] MentorLake.Gio.GFileAttributeInfoListHandle list);
 
 }
 
 public struct GFileAttributeInfoList
 {
-	public GFileAttributeInfoHandle infos;
+	public IntPtr infos;
 	public int n_infos;
 }

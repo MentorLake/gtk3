@@ -1,41 +1,40 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTestSuiteHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTestSuiteHandleExtensions
+public static class GTestSuiteExtensions
 {
-	public static T Add<T>(this T suite, GTestCaseHandle test_case) where T : GTestSuiteHandle
+	public static void Add(this MentorLake.GLib.GTestSuiteHandle suite, MentorLake.GLib.GTestCaseHandle test_case)
 	{
 		GTestSuiteExterns.g_test_suite_add(suite, test_case);
-		return suite;
 	}
 
-	public static T AddSuite<T>(this T suite, GTestSuiteHandle nestedsuite) where T : GTestSuiteHandle
+	public static void AddSuite(this MentorLake.GLib.GTestSuiteHandle suite, MentorLake.GLib.GTestSuiteHandle nestedsuite)
 	{
 		GTestSuiteExterns.g_test_suite_add_suite(suite, nestedsuite);
-		return suite;
 	}
 
-	public static T Free<T>(this T suite) where T : GTestSuiteHandle
+	public static void Free(this MentorLake.GLib.GTestSuiteHandle suite)
 	{
 		GTestSuiteExterns.g_test_suite_free(suite);
-		return suite;
 	}
 
+
+	public static GTestSuite Dereference(this GTestSuiteHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTestSuite>(x.DangerousGetHandle());
 }
 internal class GTestSuiteExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_test_suite_add(GTestSuiteHandle suite, GTestCaseHandle test_case);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_test_suite_add([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTestSuiteHandle>))] MentorLake.GLib.GTestSuiteHandle suite, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTestCaseHandle>))] MentorLake.GLib.GTestCaseHandle test_case);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_test_suite_add_suite(GTestSuiteHandle suite, GTestSuiteHandle nestedsuite);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_test_suite_add_suite([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTestSuiteHandle>))] MentorLake.GLib.GTestSuiteHandle suite, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTestSuiteHandle>))] MentorLake.GLib.GTestSuiteHandle nestedsuite);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_test_suite_free(GTestSuiteHandle suite);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_test_suite_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTestSuiteHandle>))] MentorLake.GLib.GTestSuiteHandle suite);
 
 }
 

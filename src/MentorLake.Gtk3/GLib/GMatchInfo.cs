@@ -1,136 +1,140 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMatchInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GMatchInfoHandleExtensions
+public static class GMatchInfoExtensions
 {
-	public static string ExpandReferences(this GMatchInfoHandle match_info, string string_to_expand, out GErrorHandle error)
+	public static string ExpandReferences(this MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand)
 	{
-		return GMatchInfoExterns.g_match_info_expand_references(match_info, string_to_expand, out error);
+		return GMatchInfoExterns.g_match_info_expand_references(match_info, string_to_expand);
 	}
 
-	public static string Fetch(this GMatchInfoHandle match_info, int match_num)
+	public static string Fetch(this MentorLake.GLib.GMatchInfoHandle match_info, int match_num)
 	{
 		return GMatchInfoExterns.g_match_info_fetch(match_info, match_num);
 	}
 
-	public static IntPtr FetchAll(this GMatchInfoHandle match_info)
+	public static string[] FetchAll(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_fetch_all(match_info);
 	}
 
-	public static string FetchNamed(this GMatchInfoHandle match_info, string name)
+	public static string FetchNamed(this MentorLake.GLib.GMatchInfoHandle match_info, string name)
 	{
 		return GMatchInfoExterns.g_match_info_fetch_named(match_info, name);
 	}
 
-	public static bool FetchNamedPos(this GMatchInfoHandle match_info, string name, out int start_pos, out int end_pos)
+	public static bool FetchNamedPos(this MentorLake.GLib.GMatchInfoHandle match_info, string name, out int start_pos, out int end_pos)
 	{
 		return GMatchInfoExterns.g_match_info_fetch_named_pos(match_info, name, out start_pos, out end_pos);
 	}
 
-	public static bool FetchPos(this GMatchInfoHandle match_info, int match_num, out int start_pos, out int end_pos)
+	public static bool FetchPos(this MentorLake.GLib.GMatchInfoHandle match_info, int match_num, out int start_pos, out int end_pos)
 	{
 		return GMatchInfoExterns.g_match_info_fetch_pos(match_info, match_num, out start_pos, out end_pos);
 	}
 
-	public static T Free<T>(this T match_info) where T : GMatchInfoHandle
+	public static void Free(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		GMatchInfoExterns.g_match_info_free(match_info);
-		return match_info;
 	}
 
-	public static int GetMatchCount(this GMatchInfoHandle match_info)
+	public static int GetMatchCount(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_get_match_count(match_info);
 	}
 
-	public static GRegexHandle GetRegex(this GMatchInfoHandle match_info)
+	public static MentorLake.GLib.GRegexHandle GetRegex(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_get_regex(match_info);
 	}
 
-	public static string GetString(this GMatchInfoHandle match_info)
+	public static string GetString(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_get_string(match_info);
 	}
 
-	public static bool IsPartialMatch(this GMatchInfoHandle match_info)
+	public static bool IsPartialMatch(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_is_partial_match(match_info);
 	}
 
-	public static bool Matches(this GMatchInfoHandle match_info)
+	public static bool Matches(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_matches(match_info);
 	}
 
-	public static bool Next(this GMatchInfoHandle match_info, out GErrorHandle error)
+	public static bool Next(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		return GMatchInfoExterns.g_match_info_next(match_info, out error);
+		return GMatchInfoExterns.g_match_info_next(match_info);
 	}
 
-	public static GMatchInfoHandle Ref(this GMatchInfoHandle match_info)
+	public static MentorLake.GLib.GMatchInfoHandle Ref(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		return GMatchInfoExterns.g_match_info_ref(match_info);
 	}
 
-	public static T Unref<T>(this T match_info) where T : GMatchInfoHandle
+	public static void Unref(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
 		GMatchInfoExterns.g_match_info_unref(match_info);
-		return match_info;
 	}
 
+
+	public static GMatchInfo Dereference(this GMatchInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMatchInfo>(x.DangerousGetHandle());
 }
 internal class GMatchInfoExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_match_info_expand_references(GMatchInfoHandle match_info, string string_to_expand, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_match_info_expand_references([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_match_info_fetch(GMatchInfoHandle match_info, int match_num);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_match_info_fetch([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, int match_num);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_match_info_fetch_all(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern string[] g_match_info_fetch_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_match_info_fetch_named(GMatchInfoHandle match_info, string name);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_match_info_fetch_named([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, string name);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_match_info_fetch_named_pos(GMatchInfoHandle match_info, string name, out int start_pos, out int end_pos);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_match_info_fetch_named_pos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, string name, out int start_pos, out int end_pos);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_match_info_fetch_pos(GMatchInfoHandle match_info, int match_num, out int start_pos, out int end_pos);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_match_info_fetch_pos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, int match_num, out int start_pos, out int end_pos);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_match_info_free(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_match_info_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_match_info_get_match_count(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_match_info_get_match_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GRegexHandle g_match_info_get_regex(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GRegexHandle g_match_info_get_regex([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_match_info_get_string(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_match_info_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_match_info_is_partial_match(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_match_info_is_partial_match([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_match_info_matches(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_match_info_matches([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_match_info_next(GMatchInfoHandle match_info, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_match_info_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMatchInfoHandle g_match_info_ref(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMatchInfoHandle g_match_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_match_info_unref(GMatchInfoHandle match_info);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_match_info_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 }
 

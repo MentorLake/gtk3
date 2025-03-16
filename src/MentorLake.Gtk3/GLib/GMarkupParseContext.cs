@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMarkupParseContextHandle : BaseSafeHandle
 {
-	public static GMarkupParseContextHandle New(GMarkupParserHandle parser, GMarkupParseFlags flags, IntPtr user_data, GDestroyNotify user_data_dnotify)
+	public static MentorLake.GLib.GMarkupParseContextHandle New(MentorLake.GLib.GMarkupParserHandle parser, MentorLake.GLib.GMarkupParseFlags flags, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_dnotify)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_new(parser, flags, user_data, user_data_dnotify);
 	}
@@ -10,105 +10,104 @@ public class GMarkupParseContextHandle : BaseSafeHandle
 }
 
 
-public static class GMarkupParseContextHandleExtensions
+public static class GMarkupParseContextExtensions
 {
-	public static bool EndParse(this GMarkupParseContextHandle context, out GErrorHandle error)
+	public static bool EndParse(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		return GMarkupParseContextExterns.g_markup_parse_context_end_parse(context, out error);
+		return GMarkupParseContextExterns.g_markup_parse_context_end_parse(context);
 	}
 
-	public static T Free<T>(this T context) where T : GMarkupParseContextHandle
+	public static void Free(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_free(context);
-		return context;
 	}
 
-	public static string GetElement(this GMarkupParseContextHandle context)
+	public static string GetElement(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_get_element(context);
 	}
 
-	public static GSListHandle GetElementStack(this GMarkupParseContextHandle context)
+	public static MentorLake.GLib.GSListHandle GetElementStack(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_get_element_stack(context);
 	}
 
-	public static T GetPosition<T>(this T context, out int line_number, out int char_number) where T : GMarkupParseContextHandle
+	public static void GetPosition(this MentorLake.GLib.GMarkupParseContextHandle context, out int line_number, out int char_number)
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_get_position(context, out line_number, out char_number);
-		return context;
 	}
 
-	public static IntPtr GetUserData(this GMarkupParseContextHandle context)
+	public static IntPtr GetUserData(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_get_user_data(context);
 	}
 
-	public static bool Parse(this GMarkupParseContextHandle context, string text, UIntPtr text_len, out GErrorHandle error)
+	public static bool Parse(this MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len)
 	{
-		return GMarkupParseContextExterns.g_markup_parse_context_parse(context, text, text_len, out error);
+		return GMarkupParseContextExterns.g_markup_parse_context_parse(context, text, text_len);
 	}
 
-	public static IntPtr Pop(this GMarkupParseContextHandle context)
+	public static IntPtr Pop(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_pop(context);
 	}
 
-	public static T Push<T>(this T context, GMarkupParserHandle parser, IntPtr user_data) where T : GMarkupParseContextHandle
+	public static void Push(this MentorLake.GLib.GMarkupParseContextHandle context, MentorLake.GLib.GMarkupParserHandle parser, IntPtr user_data)
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_push(context, parser, user_data);
-		return context;
 	}
 
-	public static GMarkupParseContextHandle Ref(this GMarkupParseContextHandle context)
+	public static MentorLake.GLib.GMarkupParseContextHandle Ref(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		return GMarkupParseContextExterns.g_markup_parse_context_ref(context);
 	}
 
-	public static T Unref<T>(this T context) where T : GMarkupParseContextHandle
+	public static void Unref(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
 		GMarkupParseContextExterns.g_markup_parse_context_unref(context);
-		return context;
 	}
 
+
+	public static GMarkupParseContext Dereference(this GMarkupParseContextHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMarkupParseContext>(x.DangerousGetHandle());
 }
 internal class GMarkupParseContextExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GMarkupParseContextHandle g_markup_parse_context_new(GMarkupParserHandle parser, GMarkupParseFlags flags, IntPtr user_data, GDestroyNotify user_data_dnotify);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMarkupParseContextHandle g_markup_parse_context_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParserHandle>))] MentorLake.GLib.GMarkupParserHandle parser, MentorLake.GLib.GMarkupParseFlags flags, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_dnotify);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_markup_parse_context_end_parse(GMarkupParseContextHandle context, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_markup_parse_context_end_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_markup_parse_context_free(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_markup_parse_context_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_markup_parse_context_get_element(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_markup_parse_context_get_element([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GSListHandle g_markup_parse_context_get_element_stack(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GSListHandle g_markup_parse_context_get_element_stack([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_markup_parse_context_get_position(GMarkupParseContextHandle context, out int line_number, out int char_number);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_markup_parse_context_get_position([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, out int line_number, out int char_number);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_markup_parse_context_get_user_data(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_markup_parse_context_get_user_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_markup_parse_context_parse(GMarkupParseContextHandle context, string text, UIntPtr text_len, out GErrorHandle error);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_markup_parse_context_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern IntPtr g_markup_parse_context_pop(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_markup_parse_context_pop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_markup_parse_context_push(GMarkupParseContextHandle context, GMarkupParserHandle parser, IntPtr user_data);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_markup_parse_context_push([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParserHandle>))] MentorLake.GLib.GMarkupParserHandle parser, IntPtr user_data);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GMarkupParseContextHandle g_markup_parse_context_ref(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GMarkupParseContextHandle g_markup_parse_context_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_markup_parse_context_unref(GMarkupParseContextHandle context);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_markup_parse_context_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
 }
 

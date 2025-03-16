@@ -1,9 +1,10 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
+[Flags]
 public enum GIOStatus
 {
-	G_IO_STATUS_ERROR,
-	G_IO_STATUS_NORMAL,
-	G_IO_STATUS_EOF,
-	G_IO_STATUS_AGAIN
+	G_IO_STATUS_ERROR = 0,
+	G_IO_STATUS_NORMAL = 1,
+	G_IO_STATUS_EOF = 2,
+	G_IO_STATUS_AGAIN = 3
 }

@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GDBusSubtreeVTableHandle : BaseSafeHandle
 {
 }
 
 
-public static class GDBusSubtreeVTableHandleExtensions
+public static class GDBusSubtreeVTableExtensions
 {
+
+	public static GDBusSubtreeVTable Dereference(this GDBusSubtreeVTableHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDBusSubtreeVTable>(x.DangerousGetHandle());
 }
 internal class GDBusSubtreeVTableExterns
 {

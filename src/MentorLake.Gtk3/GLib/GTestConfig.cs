@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTestConfigHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTestConfigHandleExtensions
+public static class GTestConfigExtensions
 {
+
+	public static GTestConfig Dereference(this GTestConfigHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTestConfig>(x.DangerousGetHandle());
 }
 internal class GTestConfigExterns
 {

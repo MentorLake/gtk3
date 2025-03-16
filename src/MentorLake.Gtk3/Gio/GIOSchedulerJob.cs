@@ -1,31 +1,32 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GIOSchedulerJobHandle : BaseSafeHandle
 {
 }
 
 
-public static class GIOSchedulerJobHandleExtensions
+public static class GIOSchedulerJobExtensions
 {
-	public static bool GIoSchedulerJobSendToMainloop(this GIOSchedulerJobHandle job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify)
+	public static bool SendToMainloop(this MentorLake.Gio.GIOSchedulerJobHandle job, MentorLake.GLib.GSourceFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify)
 	{
 		return GIOSchedulerJobExterns.g_io_scheduler_job_send_to_mainloop(job, func, user_data, notify);
 	}
 
-	public static T GIoSchedulerJobSendToMainloopAsync<T>(this T job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify) where T : GIOSchedulerJobHandle
+	public static void SendToMainloopAsync(this MentorLake.Gio.GIOSchedulerJobHandle job, MentorLake.GLib.GSourceFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify)
 	{
 		GIOSchedulerJobExterns.g_io_scheduler_job_send_to_mainloop_async(job, func, user_data, notify);
-		return job;
 	}
 
+
+	public static GIOSchedulerJob Dereference(this GIOSchedulerJobHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GIOSchedulerJob>(x.DangerousGetHandle());
 }
 internal class GIOSchedulerJobExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern bool g_io_scheduler_job_send_to_mainloop(GIOSchedulerJobHandle job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify);
+	[DllImport(GioLibrary.Name)]
+	internal static extern bool g_io_scheduler_job_send_to_mainloop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOSchedulerJobHandle>))] MentorLake.Gio.GIOSchedulerJobHandle job, MentorLake.GLib.GSourceFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_io_scheduler_job_send_to_mainloop_async(GIOSchedulerJobHandle job, GSourceFunc func, IntPtr user_data, GDestroyNotify notify);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_io_scheduler_job_send_to_mainloop_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOSchedulerJobHandle>))] MentorLake.Gio.GIOSchedulerJobHandle job, MentorLake.GLib.GSourceFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify);
 
 }
 

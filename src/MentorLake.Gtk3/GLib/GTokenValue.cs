@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GTokenValueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTokenValueHandleExtensions
+public static class GTokenValueExtensions
 {
+
+	public static GTokenValue Dereference(this GTokenValueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTokenValue>(x.DangerousGetHandle());
 }
 internal class GTokenValueExterns
 {

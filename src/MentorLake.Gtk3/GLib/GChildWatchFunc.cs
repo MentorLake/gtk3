@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate void GChildWatchFunc(GPid pid, int wait_status, IntPtr user_data);
+public delegate void GChildWatchFunc(MentorLake.GLib.GPid pid, int wait_status, IntPtr user_data);

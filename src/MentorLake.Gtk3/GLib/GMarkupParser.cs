@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GMarkupParserHandle : BaseSafeHandle
 {
 }
 
 
-public static class GMarkupParserHandleExtensions
+public static class GMarkupParserExtensions
 {
+
+	public static GMarkupParser Dereference(this GMarkupParserHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GMarkupParser>(x.DangerousGetHandle());
 }
 internal class GMarkupParserExterns
 {

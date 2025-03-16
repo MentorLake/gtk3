@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 public class AtkTextRangeHandle : BaseSafeHandle
 {
 }
 
 
-public static class AtkTextRangeHandleExtensions
+public static class AtkTextRangeExtensions
 {
+
+	public static AtkTextRange Dereference(this AtkTextRangeHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<AtkTextRange>(x.DangerousGetHandle());
 }
 internal class AtkTextRangeExterns
 {

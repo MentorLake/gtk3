@@ -1,4 +1,4 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public struct PangoGlyphUnit
 {

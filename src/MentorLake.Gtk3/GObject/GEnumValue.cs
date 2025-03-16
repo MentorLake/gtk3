@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GEnumValueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GEnumValueHandleExtensions
+public static class GEnumValueExtensions
 {
+
+	public static GEnumValue Dereference(this GEnumValueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GEnumValue>(x.DangerousGetHandle());
 }
 internal class GEnumValueExterns
 {

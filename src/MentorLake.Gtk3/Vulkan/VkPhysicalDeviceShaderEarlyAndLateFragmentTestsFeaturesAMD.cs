@@ -1,0 +1,19 @@
+namespace MentorLake.Vulkan;
+
+public class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDHandle : BaseSafeHandle
+{
+}
+
+
+public static class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDExtensions
+{
+
+	public static VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD Dereference(this VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD>(x.DangerousGetHandle());
+}
+internal class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDExterns
+{
+}
+
+public struct VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
+{
+}

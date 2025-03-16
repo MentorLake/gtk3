@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GHmacHandle : BaseSafeHandle
 {
-	public static GHmacHandle New(GChecksumType digest_type, string key, UIntPtr key_len)
+	public static MentorLake.GLib.GHmacHandle New(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len)
 	{
 		return GHmacExterns.g_hmac_new(digest_type, key, key_len);
 	}
@@ -10,64 +10,64 @@ public class GHmacHandle : BaseSafeHandle
 }
 
 
-public static class GHmacHandleExtensions
+public static class GHmacExtensions
 {
-	public static GHmacHandle Copy(this GHmacHandle hmac)
+	public static MentorLake.GLib.GHmacHandle Copy(this MentorLake.GLib.GHmacHandle hmac)
 	{
 		return GHmacExterns.g_hmac_copy(hmac);
 	}
 
-	public static T GetDigest<T>(this T hmac, byte[] buffer, ref UIntPtr digest_len) where T : GHmacHandle
+	public static void GetDigest(this MentorLake.GLib.GHmacHandle hmac, byte[] buffer, ref UIntPtr digest_len)
 	{
 		GHmacExterns.g_hmac_get_digest(hmac, buffer, ref digest_len);
-		return hmac;
 	}
 
-	public static string GetString(this GHmacHandle hmac)
+	public static string GetString(this MentorLake.GLib.GHmacHandle hmac)
 	{
 		return GHmacExterns.g_hmac_get_string(hmac);
 	}
 
-	public static GHmacHandle Ref(this GHmacHandle hmac)
+	public static MentorLake.GLib.GHmacHandle Ref(this MentorLake.GLib.GHmacHandle hmac)
 	{
 		return GHmacExterns.g_hmac_ref(hmac);
 	}
 
-	public static T Unref<T>(this T hmac) where T : GHmacHandle
+	public static void Unref(this MentorLake.GLib.GHmacHandle hmac)
 	{
 		GHmacExterns.g_hmac_unref(hmac);
-		return hmac;
 	}
 
-	public static T Update<T>(this T hmac, string data, UIntPtr length) where T : GHmacHandle
+	public static void Update(this MentorLake.GLib.GHmacHandle hmac, char[] data, UIntPtr length)
 	{
 		GHmacExterns.g_hmac_update(hmac, data, length);
-		return hmac;
 	}
 
+
+	public static GHmac Dereference(this GHmacHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GHmac>(x.DangerousGetHandle());
 }
 internal class GHmacExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GHmacHandle g_hmac_new(GChecksumType digest_type, string key, UIntPtr key_len);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GHmacHandle g_hmac_new(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GHmacHandle g_hmac_copy(GHmacHandle hmac);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GHmacHandle g_hmac_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hmac_get_digest(GHmacHandle hmac, byte[] buffer, ref UIntPtr digest_len);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hmac_get_digest([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac, byte[] buffer, ref UIntPtr digest_len);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern string g_hmac_get_string(GHmacHandle hmac);
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_hmac_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GHmacHandle g_hmac_ref(GHmacHandle hmac);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GHmacHandle g_hmac_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hmac_unref(GHmacHandle hmac);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hmac_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_hmac_update(GHmacHandle hmac, string data, UIntPtr length);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_hmac_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac, char[] data, UIntPtr length);
 
 }
 

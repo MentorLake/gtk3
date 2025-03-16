@@ -1,0 +1,12 @@
+namespace MentorLake.Gdk;
+
+[Flags]
+public enum GdkGrabStatus
+{
+	GDK_GRAB_SUCCESS = 0,
+	GDK_GRAB_ALREADY_GRABBED = 1,
+	GDK_GRAB_INVALID_TIME = 2,
+	GDK_GRAB_NOT_VIEWABLE = 3,
+	GDK_GRAB_FROZEN = 4,
+	GDK_GRAB_FAILED = 5
+}

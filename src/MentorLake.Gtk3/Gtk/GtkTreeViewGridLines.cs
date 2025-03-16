@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkTreeViewGridLines
+{
+	GTK_TREE_VIEW_GRID_LINES_NONE = 0,
+	GTK_TREE_VIEW_GRID_LINES_HORIZONTAL = 1,
+	GTK_TREE_VIEW_GRID_LINES_VERTICAL = 2,
+	GTK_TREE_VIEW_GRID_LINES_BOTH = 3
+}

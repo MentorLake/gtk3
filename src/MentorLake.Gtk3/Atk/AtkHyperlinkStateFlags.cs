@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Atk;
+namespace MentorLake.Atk;
 
 [Flags]
-public enum AtkHyperlinkStateFlags
+public enum AtkHyperlinkStateFlags : long
 {
-	ATK_HYPERLINK_IS_INLINE = 0
+	ATK_HYPERLINK_IS_INLINE = 1
 }

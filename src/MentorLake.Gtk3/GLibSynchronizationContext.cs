@@ -1,4 +1,4 @@
-using MentorLake.Gtk3.GLib;
+using MentorLake.GLib;
 
 namespace MentorLake.Gtk3;
 
@@ -6,7 +6,7 @@ public class GLibSynchronizationContext : SynchronizationContext
 {
 	public override void Post(SendOrPostCallback d, object state)
 	{
-		GLibGlobalFunctions.g_idle_add_full(0, _ =>
+		GLibGlobalFunctions.IdleAddFull(0, _ =>
 		{
 			d(state);
 			return false;

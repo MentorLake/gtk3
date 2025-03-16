@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 [Flags]
-public enum PangoShowFlags
+public enum PangoShowFlags : long
 {
 	PANGO_SHOW_NONE = 0,
 	PANGO_SHOW_SPACES = 1,

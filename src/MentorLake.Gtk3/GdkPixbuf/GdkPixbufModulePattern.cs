@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GdkPixbuf;
+namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufModulePatternHandle : BaseSafeHandle
 {
 }
 
 
-public static class GdkPixbufModulePatternHandleExtensions
+public static class GdkPixbufModulePatternExtensions
 {
+
+	public static GdkPixbufModulePattern Dereference(this GdkPixbufModulePatternHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GdkPixbufModulePattern>(x.DangerousGetHandle());
 }
 internal class GdkPixbufModulePatternExterns
 {

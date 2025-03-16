@@ -1,18 +1,18 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GDateHandle : BaseSafeHandle
 {
-	public static GDateHandle New()
+	public static MentorLake.GLib.GDateHandle New()
 	{
 		return GDateExterns.g_date_new();
 	}
 
-	public static GDateHandle NewDmy(GDateDay day, GDateMonth month, GDateYear year)
+	public static MentorLake.GLib.GDateHandle NewDmy(MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year)
 	{
 		return GDateExterns.g_date_new_dmy(day, month, year);
 	}
 
-	public static GDateHandle NewJulian(uint julian_day)
+	public static MentorLake.GLib.GDateHandle NewJulian(uint julian_day)
 	{
 		return GDateExterns.g_date_new_julian(julian_day);
 	}
@@ -20,407 +20,334 @@ public class GDateHandle : BaseSafeHandle
 }
 
 
-public static class GDateHandleExtensions
+public static class GDateExtensions
 {
-	public static T AddDays<T>(this T date, uint n_days) where T : GDateHandle
+	public static void AddDays(this MentorLake.GLib.GDateHandle date, uint n_days)
 	{
 		GDateExterns.g_date_add_days(date, n_days);
-		return date;
 	}
 
-	public static T AddMonths<T>(this T date, uint n_months) where T : GDateHandle
+	public static void AddMonths(this MentorLake.GLib.GDateHandle date, uint n_months)
 	{
 		GDateExterns.g_date_add_months(date, n_months);
-		return date;
 	}
 
-	public static T AddYears<T>(this T date, uint n_years) where T : GDateHandle
+	public static void AddYears(this MentorLake.GLib.GDateHandle date, uint n_years)
 	{
 		GDateExterns.g_date_add_years(date, n_years);
-		return date;
 	}
 
-	public static T Clamp<T>(this T date, GDateHandle min_date, GDateHandle max_date) where T : GDateHandle
+	public static void Clamp(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateHandle min_date, MentorLake.GLib.GDateHandle max_date)
 	{
 		GDateExterns.g_date_clamp(date, min_date, max_date);
-		return date;
 	}
 
-	public static T Clear<T>(this T date, uint n_dates) where T : GDateHandle
+	public static void Clear(this MentorLake.GLib.GDateHandle date, uint n_dates)
 	{
 		GDateExterns.g_date_clear(date, n_dates);
-		return date;
 	}
 
-	public static int Compare(this GDateHandle lhs, GDateHandle rhs)
+	public static int Compare(this MentorLake.GLib.GDateHandle lhs, MentorLake.GLib.GDateHandle rhs)
 	{
 		return GDateExterns.g_date_compare(lhs, rhs);
 	}
 
-	public static GDateHandle Copy(this GDateHandle date)
+	public static MentorLake.GLib.GDateHandle Copy(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_copy(date);
 	}
 
-	public static int DaysBetween(this GDateHandle date1, GDateHandle date2)
+	public static int DaysBetween(this MentorLake.GLib.GDateHandle date1, MentorLake.GLib.GDateHandle date2)
 	{
 		return GDateExterns.g_date_days_between(date1, date2);
 	}
 
-	public static T Free<T>(this T date) where T : GDateHandle
+	public static void Free(this MentorLake.GLib.GDateHandle date)
 	{
 		GDateExterns.g_date_free(date);
-		return date;
 	}
 
-	public static GDateDay GetDay(this GDateHandle date)
+	public static MentorLake.GLib.GDateDay GetDay(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_day(date);
 	}
 
-	public static uint GetDayOfYear(this GDateHandle date)
+	public static uint GetDayOfYear(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_day_of_year(date);
 	}
 
-	public static uint GetIso8601WeekOfYear(this GDateHandle date)
+	public static uint GetIso8601WeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_iso8601_week_of_year(date);
 	}
 
-	public static uint GetJulian(this GDateHandle date)
+	public static uint GetJulian(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_julian(date);
 	}
 
-	public static uint GetMondayWeekOfYear(this GDateHandle date)
+	public static uint GetMondayWeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_monday_week_of_year(date);
 	}
 
-	public static GDateMonth GetMonth(this GDateHandle date)
+	public static MentorLake.GLib.GDateMonth GetMonth(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_month(date);
 	}
 
-	public static uint GetSundayWeekOfYear(this GDateHandle date)
+	public static uint GetSundayWeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_sunday_week_of_year(date);
 	}
 
-	public static GDateWeekday GetWeekday(this GDateHandle date)
+	public static MentorLake.GLib.GDateWeekday GetWeekday(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_weekday(date);
 	}
 
-	public static GDateYear GetYear(this GDateHandle date)
+	public static MentorLake.GLib.GDateYear GetYear(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_get_year(date);
 	}
 
-	public static bool IsFirstOfMonth(this GDateHandle date)
+	public static bool IsFirstOfMonth(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_is_first_of_month(date);
 	}
 
-	public static bool IsLastOfMonth(this GDateHandle date)
+	public static bool IsLastOfMonth(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_is_last_of_month(date);
 	}
 
-	public static T Order<T>(this T date1, GDateHandle date2) where T : GDateHandle
+	public static void Order(this MentorLake.GLib.GDateHandle date1, MentorLake.GLib.GDateHandle date2)
 	{
 		GDateExterns.g_date_order(date1, date2);
-		return date1;
 	}
 
-	public static T SetDay<T>(this T date, GDateDay day) where T : GDateHandle
+	public static void SetDay(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day)
 	{
 		GDateExterns.g_date_set_day(date, day);
-		return date;
 	}
 
-	public static T SetDmy<T>(this T date, GDateDay day, GDateMonth month, GDateYear y) where T : GDateHandle
+	public static void SetDmy(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear y)
 	{
 		GDateExterns.g_date_set_dmy(date, day, month, y);
-		return date;
 	}
 
-	public static T SetJulian<T>(this T date, uint julian_date) where T : GDateHandle
+	public static void SetJulian(this MentorLake.GLib.GDateHandle date, uint julian_date)
 	{
 		GDateExterns.g_date_set_julian(date, julian_date);
-		return date;
 	}
 
-	public static T SetMonth<T>(this T date, GDateMonth month) where T : GDateHandle
+	public static void SetMonth(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateMonth month)
 	{
 		GDateExterns.g_date_set_month(date, month);
-		return date;
 	}
 
-	public static T SetParse<T>(this T date, string str) where T : GDateHandle
+	public static void SetParse(this MentorLake.GLib.GDateHandle date, string str)
 	{
 		GDateExterns.g_date_set_parse(date, str);
-		return date;
 	}
 
-	public static T SetTime<T>(this T date, GTime time_) where T : GDateHandle
+	public static void SetTime(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GTime time_)
 	{
 		GDateExterns.g_date_set_time(date, time_);
-		return date;
 	}
 
-	public static T SetTimeT<T>(this T date, long timet) where T : GDateHandle
+	public static void SetTimeT(this MentorLake.GLib.GDateHandle date, long timet)
 	{
 		GDateExterns.g_date_set_time_t(date, timet);
-		return date;
 	}
 
-	public static T SetTimeVal<T>(this T date, GTimeValHandle timeval) where T : GDateHandle
+	public static void SetTimeVal(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GTimeValHandle timeval)
 	{
 		GDateExterns.g_date_set_time_val(date, timeval);
-		return date;
 	}
 
-	public static T SetYear<T>(this T date, GDateYear year) where T : GDateHandle
+	public static void SetYear(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateYear year)
 	{
 		GDateExterns.g_date_set_year(date, year);
-		return date;
 	}
 
-	public static T SubtractDays<T>(this T date, uint n_days) where T : GDateHandle
+	public static void SubtractDays(this MentorLake.GLib.GDateHandle date, uint n_days)
 	{
 		GDateExterns.g_date_subtract_days(date, n_days);
-		return date;
 	}
 
-	public static T SubtractMonths<T>(this T date, uint n_months) where T : GDateHandle
+	public static void SubtractMonths(this MentorLake.GLib.GDateHandle date, uint n_months)
 	{
 		GDateExterns.g_date_subtract_months(date, n_months);
-		return date;
 	}
 
-	public static T SubtractYears<T>(this T date, uint n_years) where T : GDateHandle
+	public static void SubtractYears(this MentorLake.GLib.GDateHandle date, uint n_years)
 	{
 		GDateExterns.g_date_subtract_years(date, n_years);
-		return date;
 	}
 
-	public static T ToStructTm<T>(this T date, IntPtr tm) where T : GDateHandle
+	public static void ToStructTm(this MentorLake.GLib.GDateHandle date, IntPtr tm)
 	{
 		GDateExterns.g_date_to_struct_tm(date, tm);
-		return date;
 	}
 
-	public static bool Valid(this GDateHandle date)
+	public static bool Valid(this MentorLake.GLib.GDateHandle date)
 	{
 		return GDateExterns.g_date_valid(date);
 	}
 
-	public static byte GetDaysInMonth(GDateMonth month, GDateYear year)
-	{
-		return GDateExterns.g_date_get_days_in_month(month, year);
-	}
 
-	public static byte GetMondayWeeksInYear(GDateYear year)
-	{
-		return GDateExterns.g_date_get_monday_weeks_in_year(year);
-	}
-
-	public static byte GetSundayWeeksInYear(GDateYear year)
-	{
-		return GDateExterns.g_date_get_sunday_weeks_in_year(year);
-	}
-
-	public static bool IsLeapYear(GDateYear year)
-	{
-		return GDateExterns.g_date_is_leap_year(year);
-	}
-
-	public static UIntPtr Strftime(string s, UIntPtr slen, string format, GDateHandle date)
-	{
-		return GDateExterns.g_date_strftime(s, slen, format, date);
-	}
-
-	public static bool ValidDay(GDateDay day)
-	{
-		return GDateExterns.g_date_valid_day(day);
-	}
-
-	public static bool ValidDmy(GDateDay day, GDateMonth month, GDateYear year)
-	{
-		return GDateExterns.g_date_valid_dmy(day, month, year);
-	}
-
-	public static bool ValidJulian(uint julian_date)
-	{
-		return GDateExterns.g_date_valid_julian(julian_date);
-	}
-
-	public static bool ValidMonth(GDateMonth month)
-	{
-		return GDateExterns.g_date_valid_month(month);
-	}
-
-	public static bool ValidWeekday(GDateWeekday weekday)
-	{
-		return GDateExterns.g_date_valid_weekday(weekday);
-	}
-
-	public static bool ValidYear(GDateYear year)
-	{
-		return GDateExterns.g_date_valid_year(year);
-	}
-
+	public static GDate Dereference(this GDateHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GDate>(x.DangerousGetHandle());
 }
 internal class GDateExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateHandle g_date_new();
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateHandle g_date_new();
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateHandle g_date_new_dmy(GDateDay day, GDateMonth month, GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateHandle g_date_new_dmy(MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateHandle g_date_new_julian(uint julian_day);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateHandle g_date_new_julian(uint julian_day);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_add_days(GDateHandle date, uint n_days);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_add_days([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_days);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_add_months(GDateHandle date, uint n_months);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_add_months([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_months);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_add_years(GDateHandle date, uint n_years);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_add_years([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_years);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_clamp(GDateHandle date, GDateHandle min_date, GDateHandle max_date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_clamp([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle min_date, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle max_date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_clear(GDateHandle date, uint n_dates);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_clear([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_dates);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_date_compare(GDateHandle lhs, GDateHandle rhs);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_date_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle lhs, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle rhs);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateHandle g_date_copy(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateHandle g_date_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern int g_date_days_between(GDateHandle date1, GDateHandle date2);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern int g_date_days_between([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date2);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_free(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateDay g_date_get_day(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateDay g_date_get_day([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_date_get_day_of_year(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_date_get_day_of_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_date_get_iso8601_week_of_year(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_date_get_iso8601_week_of_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_date_get_julian(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_date_get_julian([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_date_get_monday_week_of_year(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_date_get_monday_week_of_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateMonth g_date_get_month(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateMonth g_date_get_month([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern uint g_date_get_sunday_week_of_year(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern uint g_date_get_sunday_week_of_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateWeekday g_date_get_weekday(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateWeekday g_date_get_weekday([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern GDateYear g_date_get_year(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateYear g_date_get_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_is_first_of_month(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_is_first_of_month([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_is_last_of_month(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_is_last_of_month([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_order(GDateHandle date1, GDateHandle date2);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_order([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date2);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_day(GDateHandle date, GDateDay day);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_day([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_dmy(GDateHandle date, GDateDay day, GDateMonth month, GDateYear y);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_dmy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear y);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_julian(GDateHandle date, uint julian_date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_julian([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint julian_date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_month(GDateHandle date, GDateMonth month);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_month([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateMonth month);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_parse(GDateHandle date, string str);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, string str);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_time(GDateHandle date, GTime time_);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, MentorLake.GLib.GTime time_);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_time_t(GDateHandle date, long timet);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_time_t([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, long timet);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_time_val(GDateHandle date, GTimeValHandle timeval);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_time_val([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimeValHandle>))] MentorLake.GLib.GTimeValHandle timeval);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_set_year(GDateHandle date, GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_set_year([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_subtract_days(GDateHandle date, uint n_days);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_subtract_days([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_days);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_subtract_months(GDateHandle date, uint n_months);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_subtract_months([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_months);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_subtract_years(GDateHandle date, uint n_years);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_subtract_years([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, uint n_years);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_date_to_struct_tm(GDateHandle date, IntPtr tm);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_date_to_struct_tm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date, IntPtr tm);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid(GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern byte g_date_get_days_in_month(GDateMonth month, GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern byte g_date_get_days_in_month(MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern byte g_date_get_monday_weeks_in_year(GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern byte g_date_get_monday_weeks_in_year(MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern byte g_date_get_sunday_weeks_in_year(GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern byte g_date_get_sunday_weeks_in_year(MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_is_leap_year(GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_is_leap_year(MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern UIntPtr g_date_strftime(string s, UIntPtr slen, string format, GDateHandle date);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern UIntPtr g_date_strftime(string s, UIntPtr slen, string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid_day(GDateDay day);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid_day(MentorLake.GLib.GDateDay day);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid_dmy(GDateDay day, GDateMonth month, GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid_dmy(MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year);
 
-	[DllImport(Libraries.GLib)]
+	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_date_valid_julian(uint julian_date);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid_month(GDateMonth month);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid_month(MentorLake.GLib.GDateMonth month);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid_weekday(GDateWeekday weekday);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid_weekday(MentorLake.GLib.GDateWeekday weekday);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_date_valid_year(GDateYear year);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_date_valid_year(MentorLake.GLib.GDateYear year);
 
 }
 
@@ -432,4 +359,59 @@ public struct GDate
 	public uint day;
 	public uint month;
 	public uint year;
+	public static byte GetDaysInMonth(MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_get_days_in_month(month, year);
+	}
+
+	public static byte GetMondayWeeksInYear(MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_get_monday_weeks_in_year(year);
+	}
+
+	public static byte GetSundayWeeksInYear(MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_get_sunday_weeks_in_year(year);
+	}
+
+	public static bool IsLeapYear(MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_is_leap_year(year);
+	}
+
+	public static UIntPtr Strftime(string s, UIntPtr slen, string format, MentorLake.GLib.GDateHandle date)
+	{
+		return GDateExterns.g_date_strftime(s, slen, format, date);
+	}
+
+	public static bool ValidDay(MentorLake.GLib.GDateDay day)
+	{
+		return GDateExterns.g_date_valid_day(day);
+	}
+
+	public static bool ValidDmy(MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_valid_dmy(day, month, year);
+	}
+
+	public static bool ValidJulian(uint julian_date)
+	{
+		return GDateExterns.g_date_valid_julian(julian_date);
+	}
+
+	public static bool ValidMonth(MentorLake.GLib.GDateMonth month)
+	{
+		return GDateExterns.g_date_valid_month(month);
+	}
+
+	public static bool ValidWeekday(MentorLake.GLib.GDateWeekday weekday)
+	{
+		return GDateExterns.g_date_valid_weekday(weekday);
+	}
+
+	public static bool ValidYear(MentorLake.GLib.GDateYear year)
+	{
+		return GDateExterns.g_date_valid_year(year);
+	}
+
 }

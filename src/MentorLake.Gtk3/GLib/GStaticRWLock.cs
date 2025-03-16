@@ -1,84 +1,80 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GStaticRWLockHandle : BaseSafeHandle
 {
 }
 
 
-public static class GStaticRWLockHandleExtensions
+public static class GStaticRWLockExtensions
 {
-	public static T GStaticRwLockFree<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void Free(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_free(@lock);
-		return @lock;
 	}
 
-	public static T GStaticRwLockInit<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void Init(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_init(@lock);
-		return @lock;
 	}
 
-	public static T GStaticRwLockReaderLock<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void ReaderLock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_reader_lock(@lock);
-		return @lock;
 	}
 
-	public static bool GStaticRwLockReaderTrylock(this GStaticRWLockHandle @lock)
+	public static bool ReaderTrylock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		return GStaticRWLockExterns.g_static_rw_lock_reader_trylock(@lock);
 	}
 
-	public static T GStaticRwLockReaderUnlock<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void ReaderUnlock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_reader_unlock(@lock);
-		return @lock;
 	}
 
-	public static T GStaticRwLockWriterLock<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void WriterLock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_writer_lock(@lock);
-		return @lock;
 	}
 
-	public static bool GStaticRwLockWriterTrylock(this GStaticRWLockHandle @lock)
+	public static bool WriterTrylock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		return GStaticRWLockExterns.g_static_rw_lock_writer_trylock(@lock);
 	}
 
-	public static T GStaticRwLockWriterUnlock<T>(this T @lock) where T : GStaticRWLockHandle
+	public static void WriterUnlock(this MentorLake.GLib.GStaticRWLockHandle @lock)
 	{
 		GStaticRWLockExterns.g_static_rw_lock_writer_unlock(@lock);
-		return @lock;
 	}
 
+
+	public static GStaticRWLock Dereference(this GStaticRWLockHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GStaticRWLock>(x.DangerousGetHandle());
 }
 internal class GStaticRWLockExterns
 {
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_free(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_init(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_reader_lock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_reader_lock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_static_rw_lock_reader_trylock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_static_rw_lock_reader_trylock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_reader_unlock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_reader_unlock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_writer_lock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_writer_lock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern bool g_static_rw_lock_writer_trylock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_static_rw_lock_writer_trylock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
-	[DllImport(Libraries.GLib)]
-	internal static extern void g_static_rw_lock_writer_unlock(GStaticRWLockHandle @lock);
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_static_rw_lock_writer_unlock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticRWLockHandle>))] MentorLake.GLib.GStaticRWLockHandle @lock);
 
 }
 

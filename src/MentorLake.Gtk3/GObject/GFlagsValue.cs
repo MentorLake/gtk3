@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GFlagsValueHandle : BaseSafeHandle
 {
 }
 
 
-public static class GFlagsValueHandleExtensions
+public static class GFlagsValueExtensions
 {
+
+	public static GFlagsValue Dereference(this GFlagsValueHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GFlagsValue>(x.DangerousGetHandle());
 }
 internal class GFlagsValueExterns
 {

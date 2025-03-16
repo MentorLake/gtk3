@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GTypeInfoHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTypeInfoHandleExtensions
+public static class GTypeInfoExtensions
 {
+
+	public static GTypeInfo Dereference(this GTypeInfoHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTypeInfo>(x.DangerousGetHandle());
 }
 internal class GTypeInfoExterns
 {
@@ -23,5 +25,5 @@ public struct GTypeInfo
 	public ushort instance_size;
 	public ushort n_preallocs;
 	public GInstanceInitFunc instance_init;
-	public GTypeValueTable[] value_table;
+	public IntPtr value_table;
 }

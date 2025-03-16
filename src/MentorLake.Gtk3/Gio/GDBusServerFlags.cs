@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusServerFlags
+public enum GDBusServerFlags : long
 {
 	G_DBUS_SERVER_FLAGS_NONE = 0,
 	G_DBUS_SERVER_FLAGS_RUN_IN_THREAD = 1,

@@ -1,7 +1,8 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
+[Flags]
 public enum GResourceError
 {
-	G_RESOURCE_ERROR_NOT_FOUND,
-	G_RESOURCE_ERROR_INTERNAL
+	G_RESOURCE_ERROR_NOT_FOUND = 0,
+	G_RESOURCE_ERROR_INTERNAL = 1
 }

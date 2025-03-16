@@ -1,9 +1,0 @@
-namespace MentorLake.Gtk3.Gtk3;
-
-public enum GtkSelectionMode
-{
-	GTK_SELECTION_NONE,
-	GTK_SELECTION_SINGLE,
-	GTK_SELECTION_BROWSE,
-	GTK_SELECTION_MULTIPLE
-}

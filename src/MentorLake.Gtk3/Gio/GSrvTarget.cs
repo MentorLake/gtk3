@@ -1,8 +1,8 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 public class GSrvTargetHandle : BaseSafeHandle
 {
-	public static GSrvTargetHandle New(string hostname, ushort port, ushort priority, ushort weight)
+	public static MentorLake.Gio.GSrvTargetHandle New(string hostname, ushort port, ushort priority, ushort weight)
 	{
 		return GSrvTargetExterns.g_srv_target_new(hostname, port, priority, weight);
 	}
@@ -10,73 +10,75 @@ public class GSrvTargetHandle : BaseSafeHandle
 }
 
 
-public static class GSrvTargetHandleExtensions
+public static class GSrvTargetExtensions
 {
-	public static GSrvTargetHandle Copy(this GSrvTargetHandle target)
+	public static MentorLake.Gio.GSrvTargetHandle Copy(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		return GSrvTargetExterns.g_srv_target_copy(target);
 	}
 
-	public static T Free<T>(this T target) where T : GSrvTargetHandle
+	public static void Free(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		GSrvTargetExterns.g_srv_target_free(target);
-		return target;
 	}
 
-	public static string GetHostname(this GSrvTargetHandle target)
+	public static string GetHostname(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		return GSrvTargetExterns.g_srv_target_get_hostname(target);
 	}
 
-	public static ushort GetPort(this GSrvTargetHandle target)
+	public static ushort GetPort(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		return GSrvTargetExterns.g_srv_target_get_port(target);
 	}
 
-	public static ushort GetPriority(this GSrvTargetHandle target)
+	public static ushort GetPriority(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		return GSrvTargetExterns.g_srv_target_get_priority(target);
 	}
 
-	public static ushort GetWeight(this GSrvTargetHandle target)
+	public static ushort GetWeight(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		return GSrvTargetExterns.g_srv_target_get_weight(target);
 	}
 
-	public static GListHandle ListSort(GListHandle targets)
-	{
-		return GSrvTargetExterns.g_srv_target_list_sort(targets);
-	}
 
+	public static GSrvTarget Dereference(this GSrvTargetHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GSrvTarget>(x.DangerousGetHandle());
 }
 internal class GSrvTargetExterns
 {
-	[DllImport(Libraries.Gio)]
-	internal static extern GSrvTargetHandle g_srv_target_new(string hostname, ushort port, ushort priority, ushort weight);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSrvTargetHandle g_srv_target_new(string hostname, ushort port, ushort priority, ushort weight);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GSrvTargetHandle g_srv_target_copy(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.Gio.GSrvTargetHandle g_srv_target_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern void g_srv_target_free(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	internal static extern void g_srv_target_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern string g_srv_target_get_hostname(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_srv_target_get_hostname([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern ushort g_srv_target_get_port(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	internal static extern ushort g_srv_target_get_port([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern ushort g_srv_target_get_priority(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	internal static extern ushort g_srv_target_get_priority([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern ushort g_srv_target_get_weight(GSrvTargetHandle target);
+	[DllImport(GioLibrary.Name)]
+	internal static extern ushort g_srv_target_get_weight([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSrvTargetHandle>))] MentorLake.Gio.GSrvTargetHandle target);
 
-	[DllImport(Libraries.Gio)]
-	internal static extern GListHandle g_srv_target_list_sort(GListHandle targets);
+	[DllImport(GioLibrary.Name)]
+	internal static extern MentorLake.GLib.GListHandle g_srv_target_list_sort([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle targets);
 
 }
 
 public struct GSrvTarget
 {
+	public static MentorLake.GLib.GListHandle ListSort(MentorLake.GLib.GListHandle targets)
+	{
+		return GSrvTargetExterns.g_srv_target_list_sort(targets);
+	}
+
 }

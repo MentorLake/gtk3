@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.Gio;
+namespace MentorLake.Gio;
 
 [Flags]
-public enum GDriveStartFlags
+public enum GDriveStartFlags : long
 {
 	G_DRIVE_START_NONE = 0
 }

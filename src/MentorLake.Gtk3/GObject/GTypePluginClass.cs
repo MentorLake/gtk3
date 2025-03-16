@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 public class GTypePluginClassHandle : BaseSafeHandle
 {
 }
 
 
-public static class GTypePluginClassHandleExtensions
+public static class GTypePluginClassExtensions
 {
+
+	public static GTypePluginClass Dereference(this GTypePluginClassHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GTypePluginClass>(x.DangerousGetHandle());
 }
 internal class GTypePluginClassExterns
 {

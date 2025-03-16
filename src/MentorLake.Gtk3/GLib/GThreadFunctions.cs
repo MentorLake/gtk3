@@ -1,12 +1,14 @@
-namespace MentorLake.Gtk3.GLib;
+namespace MentorLake.GLib;
 
 public class GThreadFunctionsHandle : BaseSafeHandle
 {
 }
 
 
-public static class GThreadFunctionsHandleExtensions
+public static class GThreadFunctionsExtensions
 {
+
+	public static GThreadFunctions Dereference(this GThreadFunctionsHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GThreadFunctions>(x.DangerousGetHandle());
 }
 internal class GThreadFunctionsExterns
 {

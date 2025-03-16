@@ -1,27 +1,29 @@
-namespace MentorLake.Gtk3.Pango;
+namespace MentorLake.Pango;
 
 public class PangoAttrFontDescHandle : BaseSafeHandle
 {
 }
 
 
-public static class PangoAttrFontDescHandleExtensions
+public static class PangoAttrFontDescExtensions
 {
-	public static PangoAttributeHandle New(PangoFontDescriptionHandle desc)
-	{
-		return PangoAttrFontDescExterns.pango_attr_font_desc_new(desc);
-	}
 
+	public static PangoAttrFontDesc Dereference(this PangoAttrFontDescHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<PangoAttrFontDesc>(x.DangerousGetHandle());
 }
 internal class PangoAttrFontDescExterns
 {
-	[DllImport(Libraries.Pango)]
-	internal static extern PangoAttributeHandle pango_attr_font_desc_new(PangoFontDescriptionHandle desc);
+	[DllImport(PangoLibrary.Name)]
+	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_desc_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))] MentorLake.Pango.PangoFontDescriptionHandle desc);
 
 }
 
 public struct PangoAttrFontDesc
 {
 	public PangoAttribute attr;
-	public PangoFontDescriptionHandle desc;
+	public IntPtr desc;
+	public static MentorLake.Pango.PangoAttributeHandle New(MentorLake.Pango.PangoFontDescriptionHandle desc)
+	{
+		return PangoAttrFontDescExterns.pango_attr_font_desc_new(desc);
+	}
+
 }

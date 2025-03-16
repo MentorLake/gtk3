@@ -1,7 +1,7 @@
-namespace MentorLake.Gtk3.GObject;
+namespace MentorLake.GObject;
 
 [Flags]
-public enum GBindingFlags
+public enum GBindingFlags : long
 {
 	G_BINDING_DEFAULT = 0,
 	G_BINDING_BIDIRECTIONAL = 1,

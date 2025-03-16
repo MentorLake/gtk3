@@ -1,0 +1,10 @@
+namespace MentorLake.Gtk;
+
+[Flags]
+public enum GtkExpanderStyle
+{
+	GTK_EXPANDER_COLLAPSED = 0,
+	GTK_EXPANDER_SEMI_COLLAPSED = 1,
+	GTK_EXPANDER_SEMI_EXPANDED = 2,
+	GTK_EXPANDER_EXPANDED = 3
+}

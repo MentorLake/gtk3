@@ -32,7 +32,7 @@ public static class GtkIconSourceExtensions
 		return GtkIconSourceExterns.gtk_icon_source_get_direction_wildcarded(source);
 	}
 
-	public static char GetFilename(this MentorLake.Gtk.GtkIconSourceHandle source)
+	public static string GetFilename(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
 		return GtkIconSourceExterns.gtk_icon_source_get_filename(source);
 	}
@@ -77,7 +77,7 @@ public static class GtkIconSourceExtensions
 		GtkIconSourceExterns.gtk_icon_source_set_direction_wildcarded(source, setting);
 	}
 
-	public static void SetFilename(this MentorLake.Gtk.GtkIconSourceHandle source, char filename)
+	public static void SetFilename(this MentorLake.Gtk.GtkIconSourceHandle source, string filename)
 	{
 		GtkIconSourceExterns.gtk_icon_source_set_filename(source, filename);
 	}
@@ -133,7 +133,8 @@ internal class GtkIconSourceExterns
 	internal static extern bool gtk_icon_source_get_direction_wildcarded([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_icon_source_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_icon_source_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
 
 	[DllImport(GtkLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -161,7 +162,7 @@ internal class GtkIconSourceExterns
 	internal static extern void gtk_icon_source_set_direction_wildcarded([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source, bool setting);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_icon_source_set_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source, char filename);
+	internal static extern void gtk_icon_source_set_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source, string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_icon_source_set_icon_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source, string icon_name);

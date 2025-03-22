@@ -6,7 +6,7 @@ public class GApplicationCommandLineHandle : GObjectHandle
 
 public static class GApplicationCommandLineHandleExtensions
 {
-	public static MentorLake.Gio.GFileHandle CreateFileForArg(this MentorLake.Gio.GApplicationCommandLineHandle cmdline, char arg)
+	public static MentorLake.Gio.GFileHandle CreateFileForArg(this MentorLake.Gio.GApplicationCommandLineHandle cmdline, string arg)
 	{
 		return GApplicationCommandLineHandleExterns.g_application_command_line_create_file_for_arg(cmdline, arg);
 	}
@@ -22,7 +22,7 @@ public static class GApplicationCommandLineHandleExtensions
 		return GApplicationCommandLineHandleExterns.g_application_command_line_get_arguments(cmdline, out argc);
 	}
 
-	public static char GetCwd(this MentorLake.Gio.GApplicationCommandLineHandle cmdline)
+	public static string GetCwd(this MentorLake.Gio.GApplicationCommandLineHandle cmdline)
 	{
 		return GApplicationCommandLineHandleExterns.g_application_command_line_get_cwd(cmdline);
 	}
@@ -57,7 +57,7 @@ public static class GApplicationCommandLineHandleExtensions
 		return GApplicationCommandLineHandleExterns.g_application_command_line_get_stdin(cmdline);
 	}
 
-	public static string Getenv(this MentorLake.Gio.GApplicationCommandLineHandle cmdline, char name)
+	public static string Getenv(this MentorLake.Gio.GApplicationCommandLineHandle cmdline, string name)
 	{
 		return GApplicationCommandLineHandleExterns.g_application_command_line_getenv(cmdline, name);
 	}
@@ -97,7 +97,7 @@ public static class GApplicationCommandLineHandleExtensions
 internal class GApplicationCommandLineHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_application_command_line_create_file_for_arg([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, char arg);
+	internal static extern MentorLake.Gio.GFileHandle g_application_command_line_create_file_for_arg([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, string arg);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_application_command_line_done([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline);
@@ -106,7 +106,8 @@ internal class GApplicationCommandLineHandleExterns
 	internal static extern string[] g_application_command_line_get_arguments([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, out int argc);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_application_command_line_get_cwd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_application_command_line_get_cwd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern string[] g_application_command_line_get_environ([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline);
@@ -128,7 +129,7 @@ internal class GApplicationCommandLineHandleExterns
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_application_command_line_getenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, char name);
+	internal static extern string g_application_command_line_getenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, string name);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_application_command_line_print([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationCommandLineHandle>))] MentorLake.Gio.GApplicationCommandLineHandle cmdline, string format, IntPtr @__arglist);

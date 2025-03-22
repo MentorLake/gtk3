@@ -2,7 +2,7 @@ namespace MentorLake.Gio;
 
 public class GSettingsSchemaSourceHandle : BaseSafeHandle
 {
-	public static MentorLake.Gio.GSettingsSchemaSourceHandle NewFromDirectory(char directory, MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted)
+	public static MentorLake.Gio.GSettingsSchemaSourceHandle NewFromDirectory(string directory, MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted)
 	{
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_new_from_directory(directory, parent, trusted);
 	}
@@ -38,7 +38,7 @@ public static class GSettingsSchemaSourceExtensions
 internal class GSettingsSchemaSourceExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(char directory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted);
+	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(string directory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_settings_schema_source_list_schemas([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable);

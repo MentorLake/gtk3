@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 public class GMappedFileHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GMappedFileHandle New(char filename, bool writable)
+	public static MentorLake.GLib.GMappedFileHandle New(string filename, bool writable)
 	{
 		return GMappedFileExterns.g_mapped_file_new(filename, writable);
 	}
@@ -53,7 +53,7 @@ public static class GMappedFileExtensions
 internal class GMappedFileExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new(char filename, bool writable);
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new(string filename, bool writable);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new_from_fd(int fd, bool writable);

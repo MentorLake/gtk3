@@ -270,7 +270,7 @@ public static class GtkUIManagerHandleExtensions
 		return manager;
 	}
 
-	public static uint AddUiFromFile(this MentorLake.Gtk.GtkUIManagerHandle manager, char filename)
+	public static uint AddUiFromFile(this MentorLake.Gtk.GtkUIManagerHandle manager, string filename)
 	{
 		return GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_file(manager, filename);
 	}
@@ -366,7 +366,7 @@ internal class GtkUIManagerHandleExterns
 	internal static extern void gtk_ui_manager_add_ui([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, uint merge_id, string path, string name, string action, MentorLake.Gtk.GtkUIManagerItemType type, bool top);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_ui_manager_add_ui_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, char filename);
+	internal static extern uint gtk_ui_manager_add_ui_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern uint gtk_ui_manager_add_ui_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path);

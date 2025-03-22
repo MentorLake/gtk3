@@ -53,7 +53,7 @@ public static class GFileInfoHandleExtensions
 		return GFileInfoHandleExterns.g_file_info_get_attribute_data(info, attribute, out type, out value_pp, out status);
 	}
 
-	public static char GetAttributeFilePath(this MentorLake.Gio.GFileInfoHandle info, string attribute)
+	public static string GetAttributeFilePath(this MentorLake.Gio.GFileInfoHandle info, string attribute)
 	{
 		return GFileInfoHandleExterns.g_file_info_get_attribute_file_path(info, attribute);
 	}
@@ -169,7 +169,7 @@ public static class GFileInfoHandleExtensions
 		return info;
 	}
 
-	public static char GetName(this MentorLake.Gio.GFileInfoHandle info)
+	public static string GetName(this MentorLake.Gio.GFileInfoHandle info)
 	{
 		return GFileInfoHandleExterns.g_file_info_get_name(info);
 	}
@@ -189,7 +189,7 @@ public static class GFileInfoHandleExtensions
 		return GFileInfoHandleExterns.g_file_info_get_symbolic_icon(info);
 	}
 
-	public static char GetSymlinkTarget(this MentorLake.Gio.GFileInfoHandle info)
+	public static string GetSymlinkTarget(this MentorLake.Gio.GFileInfoHandle info)
 	{
 		return GFileInfoHandleExterns.g_file_info_get_symlink_target(info);
 	}
@@ -239,7 +239,7 @@ public static class GFileInfoHandleExtensions
 		return info;
 	}
 
-	public static T SetAttributeFilePath<T>(this T info, string attribute, char attr_value) where T : GFileInfoHandle
+	public static T SetAttributeFilePath<T>(this T info, string attribute, string attr_value) where T : GFileInfoHandle
 	{
 		GFileInfoHandleExterns.g_file_info_set_attribute_file_path(info, attribute, attr_value);
 		return info;
@@ -358,7 +358,7 @@ public static class GFileInfoHandleExtensions
 		return info;
 	}
 
-	public static T SetName<T>(this T info, char name) where T : GFileInfoHandle
+	public static T SetName<T>(this T info, string name) where T : GFileInfoHandle
 	{
 		GFileInfoHandleExterns.g_file_info_set_name(info, name);
 		return info;
@@ -382,7 +382,7 @@ public static class GFileInfoHandleExtensions
 		return info;
 	}
 
-	public static T SetSymlinkTarget<T>(this T info, char symlink_target) where T : GFileInfoHandle
+	public static T SetSymlinkTarget<T>(this T info, string symlink_target) where T : GFileInfoHandle
 	{
 		GFileInfoHandleExterns.g_file_info_set_symlink_target(info, symlink_target);
 		return info;
@@ -428,7 +428,8 @@ internal class GFileInfoHandleExterns
 	internal static extern bool g_file_info_get_attribute_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute, out MentorLake.Gio.GFileAttributeType type, out IntPtr value_pp, out MentorLake.Gio.GFileAttributeStatus status);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_info_get_attribute_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_info_get_attribute_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern int g_file_info_get_attribute_int32([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute);
@@ -502,7 +503,8 @@ internal class GFileInfoHandleExterns
 	internal static extern void g_file_info_get_modification_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, out MentorLake.GLib.GTimeVal result);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_info_get_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_info_get_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern int g_file_info_get_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
@@ -514,7 +516,8 @@ internal class GFileInfoHandleExterns
 	internal static extern MentorLake.Gio.GIconHandle g_file_info_get_symbolic_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_info_get_symlink_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_info_get_symlink_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_file_info_has_attribute([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute);
@@ -541,7 +544,7 @@ internal class GFileInfoHandleExterns
 	internal static extern void g_file_info_set_attribute_byte_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute, string attr_value);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_info_set_attribute_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute, char attr_value);
+	internal static extern void g_file_info_set_attribute_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute, string attr_value);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_file_info_set_attribute_int32([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string attribute, int attr_value);
@@ -601,7 +604,7 @@ internal class GFileInfoHandleExterns
 	internal static extern void g_file_info_set_modification_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimeValHandle>))] MentorLake.GLib.GTimeValHandle mtime);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_info_set_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, char name);
+	internal static extern void g_file_info_set_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string name);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_file_info_set_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, int size);
@@ -613,7 +616,7 @@ internal class GFileInfoHandleExterns
 	internal static extern void g_file_info_set_symbolic_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_info_set_symlink_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, char symlink_target);
+	internal static extern void g_file_info_set_symlink_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info, string symlink_target);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_file_info_unset_attribute_mask([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileInfoHandle>))] MentorLake.Gio.GFileInfoHandle info);

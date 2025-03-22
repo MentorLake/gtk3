@@ -2,7 +2,7 @@ namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufAnimationHandle : GObjectHandle
 {
-	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromFile(char filename)
+	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromFile(string filename)
 	{
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_file(filename);
 	}
@@ -72,7 +72,7 @@ public static class GdkPixbufAnimationHandleExtensions
 internal class GdkPixbufAnimationHandleExterns
 {
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_file(char filename);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_file(string filename);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_resource(string resource_path);

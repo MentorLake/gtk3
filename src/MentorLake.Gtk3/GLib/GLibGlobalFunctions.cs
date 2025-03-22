@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 public class GLibGlobalFunctions
 {
-	public static int Access(char filename, int mode)
+	public static int Access(string filename, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_access(filename, mode);
 	}
@@ -357,7 +357,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_base64_encode_step(@in, len, break_lines, out @out, ref state, ref save);
 	}
 
-	public static char Basename(char file_name)
+	public static string Basename(string file_name)
 	{
 		return GLibGlobalFunctionsExterns.g_basename(file_name);
 	}
@@ -402,27 +402,27 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_bookmark_file_error_quark();
 	}
 
-	public static char BuildFilename(char first_element, IntPtr @__arglist)
+	public static string BuildFilename(string first_element, IntPtr @__arglist)
 	{
 		return GLibGlobalFunctionsExterns.g_build_filename(first_element, @__arglist);
 	}
 
-	public static char BuildFilenameValist(char first_element, IntPtr args)
+	public static string BuildFilenameValist(string first_element, IntPtr args)
 	{
 		return GLibGlobalFunctionsExterns.g_build_filename_valist(first_element, args);
 	}
 
-	public static char BuildFilenamev(string[] args)
+	public static string BuildFilenamev(string[] args)
 	{
 		return GLibGlobalFunctionsExterns.g_build_filenamev(args);
 	}
 
-	public static char BuildPath(char separator, char first_element, IntPtr @__arglist)
+	public static string BuildPath(string separator, string first_element, IntPtr @__arglist)
 	{
 		return GLibGlobalFunctionsExterns.g_build_path(separator, first_element, @__arglist);
 	}
 
-	public static char BuildPathv(string separator, string[] args)
+	public static string BuildPathv(string separator, string[] args)
 	{
 		return GLibGlobalFunctionsExterns.g_build_pathv(separator, args);
 	}
@@ -507,12 +507,12 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_byte_array_unref(array);
 	}
 
-	public static char CanonicalizeFilename(char filename, char relative_to)
+	public static string CanonicalizeFilename(string filename, string relative_to)
 	{
 		return GLibGlobalFunctionsExterns.g_canonicalize_filename(filename, relative_to);
 	}
 
-	public static int Chdir(char path)
+	public static int Chdir(string path)
 	{
 		return GLibGlobalFunctionsExterns.g_chdir(path);
 	}
@@ -542,7 +542,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_child_watch_source_new(pid);
 	}
 
-	public static int Chmod(char filename, int mode)
+	public static int Chmod(string filename, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_chmod(filename, mode);
 	}
@@ -637,7 +637,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_convert_with_iconv(str, len, converter, out bytes_read, out bytes_written);
 	}
 
-	public static int Creat(char filename, int mode)
+	public static int Creat(string filename, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_creat(filename, mode);
 	}
@@ -797,7 +797,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_dgettext(domain, msgid);
 	}
 
-	public static char DirMakeTmp(char tmpl)
+	public static string DirMakeTmp(string tmpl)
 	{
 		return GLibGlobalFunctionsExterns.g_dir_make_tmp(tmpl);
 	}
@@ -837,17 +837,17 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_dpgettext2(domain, context, msgid);
 	}
 
-	public static char EnvironGetenv(string[] envp, char variable)
+	public static string EnvironGetenv(string[] envp, string variable)
 	{
 		return GLibGlobalFunctionsExterns.g_environ_getenv(envp, variable);
 	}
 
-	public static string[] EnvironSetenv(string[] envp, char variable, char value, bool overwrite)
+	public static string[] EnvironSetenv(string[] envp, string variable, string value, bool overwrite)
 	{
 		return GLibGlobalFunctionsExterns.g_environ_setenv(envp, variable, value, overwrite);
 	}
 
-	public static string[] EnvironUnsetenv(string[] envp, char variable)
+	public static string[] EnvironUnsetenv(string[] envp, string variable)
 	{
 		return GLibGlobalFunctionsExterns.g_environ_unsetenv(envp, variable);
 	}
@@ -877,72 +877,72 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_file_error_quark();
 	}
 
-	public static bool FileGetContents(char filename, out byte[] contents, out UIntPtr length)
+	public static bool FileGetContents(string filename, out byte[] contents, out UIntPtr length)
 	{
 		return GLibGlobalFunctionsExterns.g_file_get_contents(filename, out contents, out length);
 	}
 
-	public static int FileOpenTmp(char tmpl, out char name_used)
+	public static int FileOpenTmp(string tmpl, out string name_used)
 	{
 		return GLibGlobalFunctionsExterns.g_file_open_tmp(tmpl, out name_used);
 	}
 
-	public static char FileReadLink(char filename)
+	public static string FileReadLink(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_file_read_link(filename);
 	}
 
-	public static bool FileSetContents(char filename, byte[] contents, UIntPtr length)
+	public static bool FileSetContents(string filename, byte[] contents, UIntPtr length)
 	{
 		return GLibGlobalFunctionsExterns.g_file_set_contents(filename, contents, length);
 	}
 
-	public static bool FileSetContentsFull(char filename, byte[] contents, UIntPtr length, MentorLake.GLib.GFileSetContentsFlags flags, int mode)
+	public static bool FileSetContentsFull(string filename, byte[] contents, UIntPtr length, MentorLake.GLib.GFileSetContentsFlags flags, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_file_set_contents_full(filename, contents, length, flags, mode);
 	}
 
-	public static bool FileTest(char filename, MentorLake.GLib.GFileTest test)
+	public static bool FileTest(string filename, MentorLake.GLib.GFileTest test)
 	{
 		return GLibGlobalFunctionsExterns.g_file_test(filename, test);
 	}
 
-	public static string FilenameDisplayBasename(char filename)
+	public static string FilenameDisplayBasename(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_display_basename(filename);
 	}
 
-	public static string FilenameDisplayName(char filename)
+	public static string FilenameDisplayName(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_display_name(filename);
 	}
 
-	public static char FilenameFromUri(string uri, out string hostname)
+	public static string FilenameFromUri(string uri, out string hostname)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_from_uri(uri, out hostname);
 	}
 
-	public static char FilenameFromUtf8(string utf8string, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written)
+	public static string FilenameFromUtf8(string utf8string, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_from_utf8(utf8string, len, out bytes_read, out bytes_written);
 	}
 
-	public static string FilenameToUri(char filename, string hostname)
+	public static string FilenameToUri(string filename, string hostname)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_to_uri(filename, hostname);
 	}
 
-	public static string FilenameToUtf8(char opsysstring, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written)
+	public static string FilenameToUtf8(string opsysstring, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written)
 	{
 		return GLibGlobalFunctionsExterns.g_filename_to_utf8(opsysstring, len, out bytes_read, out bytes_written);
 	}
 
-	public static char FindProgramInPath(char program)
+	public static string FindProgramInPath(string program)
 	{
 		return GLibGlobalFunctionsExterns.g_find_program_in_path(program);
 	}
 
-	public static IntPtr Fopen(char filename, string mode)
+	public static IntPtr Fopen(string filename, string mode)
 	{
 		return GLibGlobalFunctionsExterns.g_fopen(filename, mode);
 	}
@@ -977,7 +977,7 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_free_sized(mem, size);
 	}
 
-	public static IntPtr Freopen(char filename, string mode, IntPtr stream)
+	public static IntPtr Freopen(string filename, string mode, IntPtr stream)
 	{
 		return GLibGlobalFunctionsExterns.g_freopen(filename, mode, stream);
 	}
@@ -1007,7 +1007,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_get_console_charset(out charset);
 	}
 
-	public static char GetCurrentDir()
+	public static string GetCurrentDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_current_dir();
 	}
@@ -1027,7 +1027,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_get_filename_charsets(out filename_charsets);
 	}
 
-	public static char GetHomeDir()
+	public static string GetHomeDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_home_dir();
 	}
@@ -1072,7 +1072,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_get_prgname();
 	}
 
-	public static char GetRealName()
+	public static string GetRealName()
 	{
 		return GLibGlobalFunctionsExterns.g_get_real_name();
 	}
@@ -1092,47 +1092,47 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_get_system_data_dirs();
 	}
 
-	public static char GetTmpDir()
+	public static string GetTmpDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_tmp_dir();
 	}
 
-	public static char GetUserCacheDir()
+	public static string GetUserCacheDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_cache_dir();
 	}
 
-	public static char GetUserConfigDir()
+	public static string GetUserConfigDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_config_dir();
 	}
 
-	public static char GetUserDataDir()
+	public static string GetUserDataDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_data_dir();
 	}
 
-	public static char GetUserName()
+	public static string GetUserName()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_name();
 	}
 
-	public static char GetUserRuntimeDir()
+	public static string GetUserRuntimeDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_runtime_dir();
 	}
 
-	public static char GetUserSpecialDir(MentorLake.GLib.GUserDirectory directory)
+	public static string GetUserSpecialDir(MentorLake.GLib.GUserDirectory directory)
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_special_dir(directory);
 	}
 
-	public static char GetUserStateDir()
+	public static string GetUserStateDir()
 	{
 		return GLibGlobalFunctionsExterns.g_get_user_state_dir();
 	}
 
-	public static char Getenv(char variable)
+	public static string Getenv(string variable)
 	{
 		return GLibGlobalFunctionsExterns.g_getenv(variable);
 	}
@@ -1567,7 +1567,7 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_logv(log_domain, log_level, format, args);
 	}
 
-	public static int Lstat(char filename, MentorLake.GLib.GStatBufHandle buf)
+	public static int Lstat(string filename, MentorLake.GLib.GStatBufHandle buf)
 	{
 		return GLibGlobalFunctionsExterns.g_lstat(filename, buf);
 	}
@@ -1672,32 +1672,32 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_memdup2(mem, byte_size);
 	}
 
-	public static int Mkdir(char filename, int mode)
+	public static int Mkdir(string filename, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_mkdir(filename, mode);
 	}
 
-	public static int MkdirWithParents(char pathname, int mode)
+	public static int MkdirWithParents(string pathname, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_mkdir_with_parents(pathname, mode);
 	}
 
-	public static char Mkdtemp(char tmpl)
+	public static string Mkdtemp(string tmpl)
 	{
 		return GLibGlobalFunctionsExterns.g_mkdtemp(tmpl);
 	}
 
-	public static char MkdtempFull(char tmpl, int mode)
+	public static string MkdtempFull(string tmpl, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_mkdtemp_full(tmpl, mode);
 	}
 
-	public static int Mkstemp(char tmpl)
+	public static int Mkstemp(string tmpl)
 	{
 		return GLibGlobalFunctionsExterns.g_mkstemp(tmpl);
 	}
 
-	public static int MkstempFull(char tmpl, int flags, int mode)
+	public static int MkstempFull(string tmpl, int flags, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_mkstemp_full(tmpl, flags, mode);
 	}
@@ -1762,7 +1762,7 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_once_init_leave_pointer(location, result);
 	}
 
-	public static int Open(char filename, int flags, int mode)
+	public static int Open(string filename, int flags, int mode)
 	{
 		return GLibGlobalFunctionsExterns.g_open(filename, flags, mode);
 	}
@@ -1782,22 +1782,22 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_path_buf_equal(v1, v2);
 	}
 
-	public static char PathGetBasename(char file_name)
+	public static string PathGetBasename(string file_name)
 	{
 		return GLibGlobalFunctionsExterns.g_path_get_basename(file_name);
 	}
 
-	public static char PathGetDirname(char file_name)
+	public static string PathGetDirname(string file_name)
 	{
 		return GLibGlobalFunctionsExterns.g_path_get_dirname(file_name);
 	}
 
-	public static bool PathIsAbsolute(char file_name)
+	public static bool PathIsAbsolute(string file_name)
 	{
 		return GLibGlobalFunctionsExterns.g_path_is_absolute(file_name);
 	}
 
-	public static char PathSkipRoot(char file_name)
+	public static string PathSkipRoot(string file_name)
 	{
 		return GLibGlobalFunctionsExterns.g_path_skip_root(file_name);
 	}
@@ -2112,12 +2112,12 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_reload_user_special_dirs_cache();
 	}
 
-	public static int Remove(char filename)
+	public static int Remove(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_remove(filename);
 	}
 
-	public static int Rename(char oldfilename, char newfilename)
+	public static int Rename(string oldfilename, string newfilename)
 	{
 		return GLibGlobalFunctionsExterns.g_rename(oldfilename, newfilename);
 	}
@@ -2127,7 +2127,7 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_return_if_fail_warning(log_domain, pretty_function, expression);
 	}
 
-	public static int Rmdir(char filename)
+	public static int Rmdir(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_rmdir(filename);
 	}
@@ -2222,7 +2222,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_set_printerr_handler(func);
 	}
 
-	public static bool Setenv(char variable, char value, bool overwrite)
+	public static bool Setenv(string variable, string value, bool overwrite)
 	{
 		return GLibGlobalFunctionsExterns.g_setenv(variable, value, overwrite);
 	}
@@ -2232,17 +2232,17 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_shell_error_quark();
 	}
 
-	public static bool ShellParseArgv(char command_line, out int argcp, out string[] argvp)
+	public static bool ShellParseArgv(string command_line, out int argcp, out string[] argvp)
 	{
 		return GLibGlobalFunctionsExterns.g_shell_parse_argv(command_line, out argcp, out argvp);
 	}
 
-	public static char ShellQuote(char unquoted_string)
+	public static string ShellQuote(string unquoted_string)
 	{
 		return GLibGlobalFunctionsExterns.g_shell_quote(unquoted_string);
 	}
 
-	public static char ShellUnquote(char quoted_string)
+	public static string ShellUnquote(string quoted_string)
 	{
 		return GLibGlobalFunctionsExterns.g_shell_unquote(quoted_string);
 	}
@@ -2332,22 +2332,22 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_spaced_primes_closest(num);
 	}
 
-	public static bool SpawnAsync(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid)
+	public static bool SpawnAsync(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_async(working_directory, argv, envp, flags, child_setup, user_data, out child_pid);
 	}
 
-	public static bool SpawnAsyncWithFds(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, int stdin_fd, int stdout_fd, int stderr_fd)
+	public static bool SpawnAsyncWithFds(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, int stdin_fd, int stdout_fd, int stderr_fd)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_async_with_fds(working_directory, argv, envp, flags, child_setup, user_data, out child_pid, stdin_fd, stdout_fd, stderr_fd);
 	}
 
-	public static bool SpawnAsyncWithPipes(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, out int standard_input, out int standard_output, out int standard_error)
+	public static bool SpawnAsyncWithPipes(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, out int standard_input, out int standard_output, out int standard_error)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_async_with_pipes(working_directory, argv, envp, flags, child_setup, user_data, out child_pid, out standard_input, out standard_output, out standard_error);
 	}
 
-	public static bool SpawnAsyncWithPipesAndFds(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, int stdin_fd, int stdout_fd, int stderr_fd, int[] source_fds, int[] target_fds, UIntPtr n_fds, out MentorLake.GLib.GPid child_pid_out, out int stdin_pipe_out, out int stdout_pipe_out, out int stderr_pipe_out)
+	public static bool SpawnAsyncWithPipesAndFds(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, int stdin_fd, int stdout_fd, int stderr_fd, int[] source_fds, int[] target_fds, UIntPtr n_fds, out MentorLake.GLib.GPid child_pid_out, out int stdin_pipe_out, out int stdout_pipe_out, out int stderr_pipe_out)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_async_with_pipes_and_fds(working_directory, argv, envp, flags, child_setup, user_data, stdin_fd, stdout_fd, stderr_fd, source_fds, target_fds, n_fds, out child_pid_out, out stdin_pipe_out, out stdout_pipe_out, out stderr_pipe_out);
 	}
@@ -2367,12 +2367,12 @@ public class GLibGlobalFunctions
 		GLibGlobalFunctionsExterns.g_spawn_close_pid(pid);
 	}
 
-	public static bool SpawnCommandLineAsync(char command_line)
+	public static bool SpawnCommandLineAsync(string command_line)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_command_line_async(command_line);
 	}
 
-	public static bool SpawnCommandLineSync(char command_line, out byte[] standard_output, out byte[] standard_error, out int wait_status)
+	public static bool SpawnCommandLineSync(string command_line, out byte[] standard_output, out byte[] standard_error, out int wait_status)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_command_line_sync(command_line, out standard_output, out standard_error, out wait_status);
 	}
@@ -2387,7 +2387,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_spawn_exit_error_quark();
 	}
 
-	public static bool SpawnSync(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out byte[] standard_output, out byte[] standard_error, out int wait_status)
+	public static bool SpawnSync(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out byte[] standard_output, out byte[] standard_error, out int wait_status)
 	{
 		return GLibGlobalFunctionsExterns.g_spawn_sync(working_directory, argv, envp, flags, child_setup, user_data, out standard_output, out standard_error, out wait_status);
 	}
@@ -2397,7 +2397,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_sprintf(@string, format, @__arglist);
 	}
 
-	public static int Stat(char filename, MentorLake.GLib.GStatBufHandle buf)
+	public static int Stat(string filename, MentorLake.GLib.GStatBufHandle buf)
 	{
 		return GLibGlobalFunctionsExterns.g_stat(filename, buf);
 	}
@@ -2707,7 +2707,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_test_failed();
 	}
 
-	public static char TestGetDir(MentorLake.GLib.GTestFileType file_type)
+	public static string TestGetDir(MentorLake.GLib.GTestFileType file_type)
 	{
 		return GLibGlobalFunctionsExterns.g_test_get_dir(file_type);
 	}
@@ -3292,12 +3292,12 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_unix_signal_source_new(signum);
 	}
 
-	public static int Unlink(char filename)
+	public static int Unlink(string filename)
 	{
 		return GLibGlobalFunctionsExterns.g_unlink(filename);
 	}
 
-	public static void Unsetenv(char variable)
+	public static void Unsetenv(string variable)
 	{
 		GLibGlobalFunctionsExterns.g_unsetenv(variable);
 	}
@@ -3427,12 +3427,12 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_utf8_collate(str1, str2);
 	}
 
-	public static char Utf8CollateKey(string str, UIntPtr len)
+	public static string Utf8CollateKey(string str, UIntPtr len)
 	{
 		return GLibGlobalFunctionsExterns.g_utf8_collate_key(str, len);
 	}
 
-	public static char Utf8CollateKeyForFilename(string str, UIntPtr len)
+	public static string Utf8CollateKeyForFilename(string str, UIntPtr len)
 	{
 		return GLibGlobalFunctionsExterns.g_utf8_collate_key_for_filename(str, len);
 	}
@@ -3552,7 +3552,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_utf8_validate_len(str, max_len, out end);
 	}
 
-	public static int Utime(char filename, IntPtr utb)
+	public static int Utime(string filename, IntPtr utb)
 	{
 		return GLibGlobalFunctionsExterns.g_utime(filename, utb);
 	}
@@ -3657,7 +3657,7 @@ public class GLibGlobalFunctions
 internal class GLibGlobalFunctionsExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_access(char filename, int mode);
+	internal static extern int g_access(string filename, int mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern IntPtr g_aligned_alloc(UIntPtr n_blocks, UIntPtr n_block_bytes, UIntPtr alignment);
@@ -3875,7 +3875,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern UIntPtr g_base64_encode_step(byte[] @in, UIntPtr len, bool break_lines, out byte[] @out, ref int state, ref int save);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_basename(char file_name);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_basename(string file_name);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_bit_lock(int address, int lock_bit);
@@ -3902,19 +3903,24 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_bookmark_file_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_build_filename(char first_element, IntPtr @__arglist);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_build_filename(string first_element, IntPtr @__arglist);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_build_filename_valist(char first_element, IntPtr args);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_build_filename_valist(string first_element, IntPtr args);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_build_filenamev(string[] args);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_build_filenamev(string[] args);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_build_path(char separator, char first_element, IntPtr @__arglist);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_build_path(string separator, string first_element, IntPtr @__arglist);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_build_pathv(string separator, string[] args);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_build_pathv(string separator, string[] args);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GByteArrayHandle g_byte_array_append([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GByteArrayHandle>))] MentorLake.GLib.GByteArrayHandle array, byte data, uint len);
@@ -3965,10 +3971,11 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_byte_array_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GByteArrayHandle>))] MentorLake.GLib.GByteArrayHandle array);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_canonicalize_filename(char filename, char relative_to);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_canonicalize_filename(string filename, string relative_to);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_chdir(char path);
+	internal static extern int g_chdir(string path);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -3987,7 +3994,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GSourceHandle g_child_watch_source_new(MentorLake.GLib.GPid pid);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_chmod(char filename, int mode);
+	internal static extern int g_chmod(string filename, int mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_clear_error();
@@ -4050,7 +4057,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern byte[] g_convert_with_iconv(byte[] str, UIntPtr len, MentorLake.GLib.GIConv converter, out UIntPtr bytes_read, out UIntPtr bytes_written);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_creat(char filename, int mode);
+	internal static extern int g_creat(string filename, int mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_datalist_clear(IntPtr datalist);
@@ -4148,7 +4155,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_dgettext(string domain, string msgid);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_dir_make_tmp(char tmpl);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_dir_make_tmp(string tmpl);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_direct_equal(IntPtr v1, IntPtr v2);
@@ -4175,13 +4183,14 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_dpgettext2(string domain, string context, string msgid);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_environ_getenv(string[] envp, char variable);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_environ_getenv(string[] envp, string variable);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern string[] g_environ_setenv(string[] envp, char variable, char value, bool overwrite);
+	internal static extern string[] g_environ_setenv(string[] envp, string variable, string value, bool overwrite);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern string[] g_environ_unsetenv(string[] envp, char variable);
+	internal static extern string[] g_environ_unsetenv(string[] envp, string variable);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_error_domain_register(string error_type_name, UIntPtr error_type_private_size, MentorLake.GLib.GErrorInitFunc error_type_init, MentorLake.GLib.GErrorCopyFunc error_type_copy, MentorLake.GLib.GErrorClearFunc error_type_clear);
@@ -4199,50 +4208,54 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_file_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_file_get_contents(char filename, out byte[] contents, out UIntPtr length);
+	internal static extern bool g_file_get_contents(string filename, out byte[] contents, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_file_open_tmp(char tmpl, out char name_used);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_file_read_link(char filename);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_file_set_contents(char filename, byte[] contents, UIntPtr length);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_file_set_contents_full(char filename, byte[] contents, UIntPtr length, MentorLake.GLib.GFileSetContentsFlags flags, int mode);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_file_test(char filename, MentorLake.GLib.GFileTest test);
+	internal static extern int g_file_open_tmp(string tmpl, out string name_used);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_filename_display_basename(char filename);
+	internal static extern string g_file_read_link(string filename);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_file_set_contents(string filename, byte[] contents, UIntPtr length);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_file_set_contents_full(string filename, byte[] contents, UIntPtr length, MentorLake.GLib.GFileSetContentsFlags flags, int mode);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_file_test(string filename, MentorLake.GLib.GFileTest test);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_filename_display_name(char filename);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_filename_from_uri(string uri, out string hostname);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_filename_from_utf8(string utf8string, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written);
+	internal static extern string g_filename_display_basename(string filename);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_filename_to_uri(char filename, string hostname);
+	internal static extern string g_filename_display_name(string filename);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_filename_to_utf8(char opsysstring, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written);
+	internal static extern string g_filename_from_uri(string uri, out string hostname);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_find_program_in_path(char program);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_filename_from_utf8(string utf8string, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern IntPtr g_fopen(char filename, string mode);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_filename_to_uri(string filename, string hostname);
+
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_filename_to_utf8(string opsysstring, UIntPtr len, out UIntPtr bytes_read, out UIntPtr bytes_written);
+
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_find_program_in_path(string program);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_fopen(string filename, string mode);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -4266,7 +4279,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_free_sized(IntPtr mem, UIntPtr size);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern IntPtr g_freopen(char filename, string mode, IntPtr stream);
+	internal static extern IntPtr g_freopen(string filename, string mode, IntPtr stream);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_fsync(int fd);
@@ -4286,7 +4299,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_get_console_charset(out string charset);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_current_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_current_dir();
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_get_current_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimeValHandle>))] MentorLake.GLib.GTimeValHandle result);
@@ -4298,7 +4312,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_get_filename_charsets(out string[] filename_charsets);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_home_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_home_dir();
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -4328,7 +4343,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_get_prgname();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_real_name();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_real_name();
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern long g_get_real_time();
@@ -4340,31 +4356,40 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string[] g_get_system_data_dirs();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_tmp_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_tmp_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_cache_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_cache_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_config_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_config_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_data_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_data_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_name();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_name();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_runtime_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_runtime_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_special_dir(MentorLake.GLib.GUserDirectory directory);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_special_dir(MentorLake.GLib.GUserDirectory directory);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_get_user_state_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_get_user_state_dir();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_getenv(char variable);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_getenv(string variable);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_hash_table_add([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableHandle>))] MentorLake.GLib.GHashTableHandle hash_table, IntPtr key);
@@ -4631,7 +4656,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_logv(string log_domain, MentorLake.GLib.GLogLevelFlags log_level, string format, IntPtr args);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_lstat(char filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStatBufHandle>))] MentorLake.GLib.GStatBufHandle buf);
+	internal static extern int g_lstat(string filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStatBufHandle>))] MentorLake.GLib.GStatBufHandle buf);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GMainContextHandle g_main_context_default();
@@ -4697,22 +4722,24 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern IntPtr g_memdup2(IntPtr mem, UIntPtr byte_size);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_mkdir(char filename, int mode);
+	internal static extern int g_mkdir(string filename, int mode);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_mkdir_with_parents(char pathname, int mode);
+	internal static extern int g_mkdir_with_parents(string pathname, int mode);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_mkdtemp(char tmpl);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_mkdtemp(string tmpl);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_mkdtemp_full(char tmpl, int mode);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_mkdtemp_full(string tmpl, int mode);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_mkstemp(char tmpl);
+	internal static extern int g_mkstemp(string tmpl);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_mkstemp_full(char tmpl, int flags, int mode);
+	internal static extern int g_mkstemp_full(string tmpl, int flags, int mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GMutexHandle g_mutex_new();
@@ -4751,7 +4778,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_once_init_leave_pointer(IntPtr location, IntPtr result);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_open(char filename, int flags, int mode);
+	internal static extern int g_open(string filename, int flags, int mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_option_error_quark();
@@ -4763,16 +4790,19 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_path_buf_equal(IntPtr v1, IntPtr v2);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_path_get_basename(char file_name);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_path_get_basename(string file_name);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_path_get_dirname(char file_name);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_path_get_dirname(string file_name);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_path_is_absolute(char file_name);
+	internal static extern bool g_path_is_absolute(string file_name);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_path_skip_root(char file_name);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_path_skip_root(string file_name);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_pattern_match([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPatternSpecHandle>))] MentorLake.GLib.GPatternSpecHandle pspec, uint string_length, string @string, string string_reversed);
@@ -4968,16 +4998,16 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_reload_user_special_dirs_cache();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_remove(char filename);
+	internal static extern int g_remove(string filename);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_rename(char oldfilename, char newfilename);
+	internal static extern int g_rename(string oldfilename, string newfilename);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_return_if_fail_warning(string log_domain, string pretty_function, string expression);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_rmdir(char filename);
+	internal static extern int g_rmdir(string filename);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_sequence_foreach_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSequenceIterHandle>))] MentorLake.GLib.GSequenceIterHandle end, MentorLake.GLib.GFunc func, IntPtr user_data);
@@ -5034,19 +5064,21 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GPrintFunc g_set_printerr_handler(MentorLake.GLib.GPrintFunc func);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_setenv(char variable, char value, bool overwrite);
+	internal static extern bool g_setenv(string variable, string value, bool overwrite);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_shell_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_shell_parse_argv(char command_line, out int argcp, out string[] argvp);
+	internal static extern bool g_shell_parse_argv(string command_line, out int argcp, out string[] argvp);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_shell_quote(char unquoted_string);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_shell_quote(string unquoted_string);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_shell_unquote(char quoted_string);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_shell_unquote(string quoted_string);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern IntPtr g_slice_alloc(UIntPtr block_size);
@@ -5100,16 +5132,16 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern uint g_spaced_primes_closest(uint num);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_async(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid);
+	internal static extern bool g_spawn_async(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_async_with_fds(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, int stdin_fd, int stdout_fd, int stderr_fd);
+	internal static extern bool g_spawn_async_with_fds(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, int stdin_fd, int stdout_fd, int stderr_fd);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_async_with_pipes(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, out int standard_input, out int standard_output, out int standard_error);
+	internal static extern bool g_spawn_async_with_pipes(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out MentorLake.GLib.GPid child_pid, out int standard_input, out int standard_output, out int standard_error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_async_with_pipes_and_fds(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, int stdin_fd, int stdout_fd, int stderr_fd, int[] source_fds, int[] target_fds, UIntPtr n_fds, out MentorLake.GLib.GPid child_pid_out, out int stdin_pipe_out, out int stdout_pipe_out, out int stderr_pipe_out);
+	internal static extern bool g_spawn_async_with_pipes_and_fds(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, int stdin_fd, int stdout_fd, int stderr_fd, int[] source_fds, int[] target_fds, UIntPtr n_fds, out MentorLake.GLib.GPid child_pid_out, out int stdin_pipe_out, out int stdout_pipe_out, out int stderr_pipe_out);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_spawn_check_exit_status(int wait_status);
@@ -5121,10 +5153,10 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_spawn_close_pid(MentorLake.GLib.GPid pid);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_command_line_async(char command_line);
+	internal static extern bool g_spawn_command_line_async(string command_line);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_command_line_sync(char command_line, out byte[] standard_output, out byte[] standard_error, out int wait_status);
+	internal static extern bool g_spawn_command_line_sync(string command_line, out byte[] standard_output, out byte[] standard_error, out int wait_status);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_spawn_error_quark();
@@ -5133,13 +5165,13 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_spawn_exit_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_sync(char working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out byte[] standard_output, out byte[] standard_error, out int wait_status);
+	internal static extern bool g_spawn_sync(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out byte[] standard_output, out byte[] standard_error, out int wait_status);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_sprintf(string @string, string format, IntPtr @__arglist);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_stat(char filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStatBufHandle>))] MentorLake.GLib.GStatBufHandle buf);
+	internal static extern int g_stat(string filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStatBufHandle>))] MentorLake.GLib.GStatBufHandle buf);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -5351,7 +5383,8 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_test_failed();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_test_get_dir(MentorLake.GLib.GTestFileType file_type);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_test_get_dir(MentorLake.GLib.GTestFileType file_type);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -5706,10 +5739,10 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GSourceHandle g_unix_signal_source_new(int signum);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_unlink(char filename);
+	internal static extern int g_unlink(string filename);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern void g_unsetenv(char variable);
+	internal static extern void g_unsetenv(string variable);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_build(MentorLake.GLib.GUriFlags flags, string scheme, string userinfo, string host, int port, string path, string query, string fragment);
@@ -5798,10 +5831,12 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern int g_utf8_collate(string str1, string str2);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_utf8_collate_key(string str, UIntPtr len);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_utf8_collate_key(string str, UIntPtr len);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_utf8_collate_key_for_filename(string str, UIntPtr len);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_utf8_collate_key_for_filename(string str, UIntPtr len);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -5887,7 +5922,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_utf8_validate_len(byte[] str, UIntPtr max_len, out string end);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_utime(char filename, IntPtr utb);
+	internal static extern int g_utime(string filename, IntPtr utb);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_uuid_string_is_valid(string str);

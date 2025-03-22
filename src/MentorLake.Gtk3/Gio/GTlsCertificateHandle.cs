@@ -2,17 +2,17 @@ namespace MentorLake.Gio;
 
 public class GTlsCertificateHandle : GObjectHandle
 {
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFile(char file)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFile(string file)
 	{
 		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_file(file);
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFileWithPassword(char file, string password)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFileWithPassword(string file, string password)
 	{
 		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_file_with_password(file, password);
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFiles(char cert_file, char key_file)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFiles(string cert_file, string key_file)
 	{
 		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_files(cert_file, key_file);
 	}
@@ -32,7 +32,7 @@ public class GTlsCertificateHandle : GObjectHandle
 		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_pkcs12(data, length, password);
 	}
 
-	public static MentorLake.GLib.GListHandle ListNewFromFile(char file)
+	public static MentorLake.GLib.GListHandle ListNewFromFile(string file)
 	{
 		return GTlsCertificateHandleExterns.g_tls_certificate_list_new_from_file(file);
 	}
@@ -91,13 +91,13 @@ public static class GTlsCertificateHandleExtensions
 internal class GTlsCertificateHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file(char file);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file(string file);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file_with_password(char file, string password);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file_with_password(string file, string password);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_files(char cert_file, char key_file);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_files(string cert_file, string key_file);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pem(string data, UIntPtr length);
@@ -138,6 +138,6 @@ internal class GTlsCertificateHandleExterns
 	internal static extern MentorLake.Gio.GTlsCertificateFlags g_tls_certificate_verify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle identity, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle trusted_ca);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_tls_certificate_list_new_from_file(char file);
+	internal static extern MentorLake.GLib.GListHandle g_tls_certificate_list_new_from_file(string file);
 
 }

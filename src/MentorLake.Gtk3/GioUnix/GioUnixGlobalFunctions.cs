@@ -12,7 +12,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_file_descriptor_based_get_fd(fd_based);
 	}
 
-	public static bool IsMountPathSystemInternal(char mount_path)
+	public static bool IsMountPathSystemInternal(string mount_path)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_is_mount_path_system_internal(mount_path);
 	}
@@ -27,7 +27,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_is_system_fs_type(fs_type);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle MountAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle MountAt(string mount_path, out ulong time_read)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_at(mount_path, out time_read);
 	}
@@ -57,7 +57,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entries_get_from_file(table_path, out time_read_out, out n_entries_out);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle MountEntryAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle MountEntryAt(string mount_path, out ulong time_read)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_at(mount_path, out time_read);
 	}
@@ -72,7 +72,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_copy(mount_entry);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle MountEntryFor(char file_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle MountEntryFor(string file_path, out ulong time_read)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_for(file_path, out time_read);
 	}
@@ -82,7 +82,7 @@ public class GioUnixGlobalFunctions
 		GioUnixGlobalFunctionsExterns.g_unix_mount_entry_free(mount_entry);
 	}
 
-	public static char MountEntryGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string MountEntryGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_get_device_path(mount_entry);
 	}
@@ -92,7 +92,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_get_fs_type(mount_entry);
 	}
 
-	public static char MountEntryGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string MountEntryGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_get_mount_path(mount_entry);
 	}
@@ -142,7 +142,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_entry_is_system_internal(mount_entry);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle MountFor(char file_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle MountFor(string file_path, out ulong time_read)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_for(file_path, out time_read);
 	}
@@ -152,7 +152,7 @@ public class GioUnixGlobalFunctions
 		GioUnixGlobalFunctionsExterns.g_unix_mount_free(mount_entry);
 	}
 
-	public static char MountGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string MountGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_get_device_path(mount_entry);
 	}
@@ -162,7 +162,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_get_fs_type(mount_entry);
 	}
 
-	public static char MountGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string MountGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_get_mount_path(mount_entry);
 	}
@@ -212,7 +212,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_is_system_internal(mount_entry);
 	}
 
-	public static MentorLake.Gio.GUnixMountPointHandle MountPointAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountPointHandle MountPointAt(string mount_path, out ulong time_read)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_point_at(mount_path, out time_read);
 	}
@@ -232,7 +232,7 @@ public class GioUnixGlobalFunctions
 		GioUnixGlobalFunctionsExterns.g_unix_mount_point_free(mount_point);
 	}
 
-	public static char MountPointGetDevicePath(MentorLake.Gio.GUnixMountPointHandle mount_point)
+	public static string MountPointGetDevicePath(MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_point_get_device_path(mount_point);
 	}
@@ -242,7 +242,7 @@ public class GioUnixGlobalFunctions
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_point_get_fs_type(mount_point);
 	}
 
-	public static char MountPointGetMountPath(MentorLake.Gio.GUnixMountPointHandle mount_point)
+	public static string MountPointGetMountPath(MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GioUnixGlobalFunctionsExterns.g_unix_mount_point_get_mount_path(mount_point);
 	}
@@ -328,7 +328,7 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern int g_file_descriptor_based_get_fd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileDescriptorBasedHandleImpl>))] MentorLake.Gio.GFileDescriptorBasedHandle fd_based);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern bool g_unix_is_mount_path_system_internal(char mount_path);
+	internal static extern bool g_unix_is_mount_path_system_internal(string mount_path);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern bool g_unix_is_system_device_path(string device_path);
@@ -337,7 +337,7 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern bool g_unix_is_system_fs_type(string fs_type);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern int g_unix_mount_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount2);
@@ -355,7 +355,7 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GUnixMountEntryHandle[] g_unix_mount_entries_get_from_file(string table_path, out ulong time_read_out, out UIntPtr n_entries_out);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern int g_unix_mount_entry_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount2);
@@ -364,20 +364,22 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_for(char file_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_for(string file_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern void g_unix_mount_entry_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_entry_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_entry_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_unix_mount_entry_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_entry_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_entry_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -410,20 +412,22 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern bool g_unix_mount_entry_is_system_internal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_for(char file_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_for(string file_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern void g_unix_mount_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_unix_mount_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -456,7 +460,7 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern bool g_unix_mount_is_system_internal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern int g_unix_mount_point_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount2);
@@ -468,14 +472,16 @@ internal class GioUnixGlobalFunctionsExterns
 	internal static extern void g_unix_mount_point_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_point_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_unix_mount_point_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_point_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

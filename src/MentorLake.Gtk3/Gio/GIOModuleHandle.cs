@@ -2,7 +2,7 @@ namespace MentorLake.Gio;
 
 public class GIOModuleHandle : GTypeModuleHandle, GTypePluginHandle
 {
-	public static MentorLake.Gio.GIOModuleHandle New(char filename)
+	public static MentorLake.Gio.GIOModuleHandle New(string filename)
 	{
 		return GIOModuleHandleExterns.g_io_module_new(filename);
 	}
@@ -33,7 +33,7 @@ public static class GIOModuleHandleExtensions
 internal class GIOModuleHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GIOModuleHandle g_io_module_new(char filename);
+	internal static extern MentorLake.Gio.GIOModuleHandle g_io_module_new(string filename);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_io_module_load([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleHandle>))] MentorLake.Gio.GIOModuleHandle module);

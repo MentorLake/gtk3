@@ -93,13 +93,13 @@ internal class GResourceExterns
 	internal static extern void g_resource_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(char filename);
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(string filename);
 
 }
 
 public struct GResource
 {
-	public static MentorLake.Gio.GResourceHandle Load(char filename)
+	public static MentorLake.Gio.GResourceHandle Load(string filename)
 	{
 		return GResourceExterns.g_resource_load(filename);
 	}

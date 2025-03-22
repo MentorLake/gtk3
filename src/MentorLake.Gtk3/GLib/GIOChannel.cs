@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 public class GIOChannelHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GIOChannelHandle NewFile(char filename, string mode)
+	public static MentorLake.GLib.GIOChannelHandle NewFile(string filename, string mode)
 	{
 		return GIOChannelExterns.g_io_channel_new_file(filename, mode);
 	}
@@ -178,7 +178,7 @@ public static class GIOChannelExtensions
 internal class GIOChannelExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GIOChannelHandle g_io_channel_new_file(char filename, string mode);
+	internal static extern MentorLake.GLib.GIOChannelHandle g_io_channel_new_file(string filename, string mode);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GIOChannelHandle g_io_channel_unix_new(int fd);

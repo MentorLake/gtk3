@@ -17,7 +17,7 @@ public static class GSubprocessLauncherHandleExtensions
 		return self;
 	}
 
-	public static char Getenv(this MentorLake.Gio.GSubprocessLauncherHandle self, char variable)
+	public static string Getenv(this MentorLake.Gio.GSubprocessLauncherHandle self, string variable)
 	{
 		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_getenv(self, variable);
 	}
@@ -28,7 +28,7 @@ public static class GSubprocessLauncherHandleExtensions
 		return self;
 	}
 
-	public static T SetCwd<T>(this T self, char cwd) where T : GSubprocessLauncherHandle
+	public static T SetCwd<T>(this T self, string cwd) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_cwd(self, cwd);
 		return self;
@@ -46,25 +46,25 @@ public static class GSubprocessLauncherHandleExtensions
 		return self;
 	}
 
-	public static T SetStderrFilePath<T>(this T self, char path) where T : GSubprocessLauncherHandle
+	public static T SetStderrFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stderr_file_path(self, path);
 		return self;
 	}
 
-	public static T SetStdinFilePath<T>(this T self, char path) where T : GSubprocessLauncherHandle
+	public static T SetStdinFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stdin_file_path(self, path);
 		return self;
 	}
 
-	public static T SetStdoutFilePath<T>(this T self, char path) where T : GSubprocessLauncherHandle
+	public static T SetStdoutFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stdout_file_path(self, path);
 		return self;
 	}
 
-	public static T Setenv<T>(this T self, char variable, char value, bool overwrite) where T : GSubprocessLauncherHandle
+	public static T Setenv<T>(this T self, string variable, string value, bool overwrite) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_setenv(self, variable, value, overwrite);
 		return self;
@@ -104,7 +104,7 @@ public static class GSubprocessLauncherHandleExtensions
 		return self;
 	}
 
-	public static T Unsetenv<T>(this T self, char variable) where T : GSubprocessLauncherHandle
+	public static T Unsetenv<T>(this T self, string variable) where T : GSubprocessLauncherHandle
 	{
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_unsetenv(self, variable);
 		return self;
@@ -121,13 +121,14 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern void g_subprocess_launcher_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_subprocess_launcher_getenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char variable);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_subprocess_launcher_getenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string variable);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_subprocess_launcher_set_child_setup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy_notify);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_set_cwd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char cwd);
+	internal static extern void g_subprocess_launcher_set_cwd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string cwd);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_subprocess_launcher_set_environ([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] env);
@@ -136,16 +137,16 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern void g_subprocess_launcher_set_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, MentorLake.Gio.GSubprocessFlags flags);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_set_stderr_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char path);
+	internal static extern void g_subprocess_launcher_set_stderr_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string path);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_set_stdin_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char path);
+	internal static extern void g_subprocess_launcher_set_stdin_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string path);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_set_stdout_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char path);
+	internal static extern void g_subprocess_launcher_set_stdout_file_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string path);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_setenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char variable, char value, bool overwrite);
+	internal static extern void g_subprocess_launcher_setenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string variable, string value, bool overwrite);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, IntPtr error, string argv0, IntPtr @__arglist);
@@ -166,6 +167,6 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern void g_subprocess_launcher_take_stdout_fd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, int fd);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_subprocess_launcher_unsetenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, char variable);
+	internal static extern void g_subprocess_launcher_unsetenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string variable);
 
 }

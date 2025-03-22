@@ -12,7 +12,7 @@ public class GtkImageHandle : GtkMiscHandle, AtkImplementorIfaceHandle, GtkBuild
 		return GtkImageHandleExterns.gtk_image_new_from_animation(animation);
 	}
 
-	public static MentorLake.Gtk.GtkImageHandle NewFromFile(char filename)
+	public static MentorLake.Gtk.GtkImageHandle NewFromFile(string filename)
 	{
 		return GtkImageHandleExterns.gtk_image_new_from_file(filename);
 	}
@@ -112,7 +112,7 @@ public static class GtkImageHandleExtensions
 		return image;
 	}
 
-	public static T SetFromFile<T>(this T image, char filename) where T : GtkImageHandle
+	public static T SetFromFile<T>(this T image, string filename) where T : GtkImageHandle
 	{
 		GtkImageHandleExterns.gtk_image_set_from_file(image, filename);
 		return image;
@@ -177,7 +177,7 @@ internal class GtkImageHandleExterns
 	internal static extern MentorLake.Gtk.GtkImageHandle gtk_image_new_from_animation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufAnimationHandle>))] MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkImageHandle gtk_image_new_from_file(char filename);
+	internal static extern MentorLake.Gtk.GtkImageHandle gtk_image_new_from_file(string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkImageHandle gtk_image_new_from_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon, MentorLake.Gtk.GtkIconSize size);
@@ -231,7 +231,7 @@ internal class GtkImageHandleExterns
 	internal static extern void gtk_image_set_from_animation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkImageHandle>))] MentorLake.Gtk.GtkImageHandle image, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufAnimationHandle>))] MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_image_set_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkImageHandle>))] MentorLake.Gtk.GtkImageHandle image, char filename);
+	internal static extern void gtk_image_set_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkImageHandle>))] MentorLake.Gtk.GtkImageHandle image, string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_image_set_from_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkImageHandle>))] MentorLake.Gtk.GtkImageHandle image, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon, MentorLake.Gtk.GtkIconSize size);

@@ -170,12 +170,12 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_find_enclosing_mount_finish(file, res);
 	}
 
-	public static char GetBasename(this MentorLake.Gio.GFileHandle file)
+	public static string GetBasename(this MentorLake.Gio.GFileHandle file)
 	{
 		return GFileHandleExterns.g_file_get_basename(file);
 	}
 
-	public static MentorLake.Gio.GFileHandle GetChild(this MentorLake.Gio.GFileHandle file, char name)
+	public static MentorLake.Gio.GFileHandle GetChild(this MentorLake.Gio.GFileHandle file, string name)
 	{
 		return GFileHandleExterns.g_file_get_child(file, name);
 	}
@@ -195,12 +195,12 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_get_parse_name(file);
 	}
 
-	public static char GetPath(this MentorLake.Gio.GFileHandle file)
+	public static string GetPath(this MentorLake.Gio.GFileHandle file)
 	{
 		return GFileHandleExterns.g_file_get_path(file);
 	}
 
-	public static char GetRelativePath(this MentorLake.Gio.GFileHandle parent, MentorLake.Gio.GFileHandle descendant)
+	public static string GetRelativePath(this MentorLake.Gio.GFileHandle parent, MentorLake.Gio.GFileHandle descendant)
 	{
 		return GFileHandleExterns.g_file_get_relative_path(parent, descendant);
 	}
@@ -304,12 +304,12 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_make_directory_with_parents(file, cancellable);
 	}
 
-	public static bool MakeSymbolicLink(this MentorLake.Gio.GFileHandle file, char symlink_value, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool MakeSymbolicLink(this MentorLake.Gio.GFileHandle file, string symlink_value, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		return GFileHandleExterns.g_file_make_symbolic_link(file, symlink_value, cancellable);
 	}
 
-	public static T MakeSymbolicLinkAsync<T>(this T file, char symlink_value, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
+	public static T MakeSymbolicLinkAsync<T>(this T file, string symlink_value, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GFileHandle
 	{
 		GFileHandleExterns.g_file_make_symbolic_link_async(file, symlink_value, io_priority, cancellable, callback, user_data);
 		return file;
@@ -411,7 +411,7 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_open_readwrite_finish(file, res);
 	}
 
-	public static char PeekPath(this MentorLake.Gio.GFileHandle file)
+	public static string PeekPath(this MentorLake.Gio.GFileHandle file)
 	{
 		return GFileHandleExterns.g_file_peek_path(file);
 	}
@@ -565,7 +565,7 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_replace_readwrite_finish(file, res);
 	}
 
-	public static MentorLake.Gio.GFileHandle ResolveRelativePath(this MentorLake.Gio.GFileHandle file, char relative_path)
+	public static MentorLake.Gio.GFileHandle ResolveRelativePath(this MentorLake.Gio.GFileHandle file, string relative_path)
 	{
 		return GFileHandleExterns.g_file_resolve_relative_path(file, relative_path);
 	}
@@ -702,7 +702,7 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_unmount_mountable_with_operation_finish(file, result);
 	}
 
-	public static MentorLake.Gio.GFileHandle NewBuildFilename(char first_element, IntPtr @__arglist)
+	public static MentorLake.Gio.GFileHandle NewBuildFilename(string first_element, IntPtr @__arglist)
 	{
 		return GFileHandleExterns.g_file_new_build_filename(first_element, @__arglist);
 	}
@@ -712,17 +712,17 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_new_build_filenamev(args);
 	}
 
-	public static MentorLake.Gio.GFileHandle NewForCommandlineArg(char arg)
+	public static MentorLake.Gio.GFileHandle NewForCommandlineArg(string arg)
 	{
 		return GFileHandleExterns.g_file_new_for_commandline_arg(arg);
 	}
 
-	public static MentorLake.Gio.GFileHandle NewForCommandlineArgAndCwd(char arg, char cwd)
+	public static MentorLake.Gio.GFileHandle NewForCommandlineArgAndCwd(string arg, string cwd)
 	{
 		return GFileHandleExterns.g_file_new_for_commandline_arg_and_cwd(arg, cwd);
 	}
 
-	public static MentorLake.Gio.GFileHandle NewForPath(char path)
+	public static MentorLake.Gio.GFileHandle NewForPath(string path)
 	{
 		return GFileHandleExterns.g_file_new_for_path(path);
 	}
@@ -732,17 +732,17 @@ public static class GFileHandleExtensions
 		return GFileHandleExterns.g_file_new_for_uri(uri);
 	}
 
-	public static MentorLake.Gio.GFileHandle NewTmp(char tmpl, out MentorLake.Gio.GFileIOStreamHandle iostream)
+	public static MentorLake.Gio.GFileHandle NewTmp(string tmpl, out MentorLake.Gio.GFileIOStreamHandle iostream)
 	{
 		return GFileHandleExterns.g_file_new_tmp(tmpl, out iostream);
 	}
 
-	public static void NewTmpAsync(char tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
+	public static void NewTmpAsync(string tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
 	{
 		GFileHandleExterns.g_file_new_tmp_async(tmpl, io_priority, cancellable, callback, user_data);
 	}
 
-	public static void NewTmpDirAsync(char tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
+	public static void NewTmpDirAsync(string tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
 	{
 		GFileHandleExterns.g_file_new_tmp_dir_async(tmpl, io_priority, cancellable, callback, user_data);
 	}
@@ -858,10 +858,11 @@ internal class GFileHandleExterns
 	internal static extern MentorLake.Gio.GMountHandle g_file_find_enclosing_mount_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_get_basename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_get_basename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_get_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, char name);
+	internal static extern MentorLake.Gio.GFileHandle g_file_get_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string name);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_get_child_for_display_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string display_name);
@@ -874,10 +875,12 @@ internal class GFileHandleExterns
 	internal static extern string g_file_get_parse_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_get_relative_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle parent, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle descendant);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_get_relative_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle parent, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle descendant);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -939,10 +942,10 @@ internal class GFileHandleExterns
 	internal static extern bool g_file_make_directory_with_parents([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_file_make_symbolic_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, char symlink_value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_file_make_symbolic_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string symlink_value, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_make_symbolic_link_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, char symlink_value, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void g_file_make_symbolic_link_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string symlink_value, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_file_make_symbolic_link_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
@@ -999,7 +1002,8 @@ internal class GFileHandleExterns
 	internal static extern MentorLake.Gio.GFileIOStreamHandle g_file_open_readwrite_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_file_peek_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_file_peek_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_file_poll_mountable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
@@ -1086,7 +1090,7 @@ internal class GFileHandleExterns
 	internal static extern MentorLake.Gio.GFileIOStreamHandle g_file_replace_readwrite_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_resolve_relative_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, char relative_path);
+	internal static extern MentorLake.Gio.GFileHandle g_file_resolve_relative_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string relative_path);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_file_set_attribute([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, string attribute, MentorLake.Gio.GFileAttributeType type, IntPtr value_p, MentorLake.Gio.GFileQueryInfoFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
@@ -1164,31 +1168,31 @@ internal class GFileHandleExterns
 	internal static extern bool g_file_unmount_mountable_with_operation_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_build_filename(char first_element, IntPtr @__arglist);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_build_filename(string first_element, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_build_filenamev(string[] args);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg(char arg);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg(string arg);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg_and_cwd(char arg, char cwd);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg_and_cwd(string arg, string cwd);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_path(char path);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_path(string path);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_uri(string uri);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp(char tmpl, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileIOStreamHandle>))] out MentorLake.Gio.GFileIOStreamHandle iostream);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp(string tmpl, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileIOStreamHandle>))] out MentorLake.Gio.GFileIOStreamHandle iostream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_new_tmp_async(char tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void g_file_new_tmp_async(string tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_new_tmp_dir_async(char tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void g_file_new_tmp_dir_async(string tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp_dir_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);

@@ -166,13 +166,13 @@ public static class GAppLaunchContextHandleExtensions
 		return context;
 	}
 
-	public static T Setenv<T>(this T context, char variable, char value) where T : GAppLaunchContextHandle
+	public static T Setenv<T>(this T context, string variable, string value) where T : GAppLaunchContextHandle
 	{
 		GAppLaunchContextHandleExterns.g_app_launch_context_setenv(context, variable, value);
 		return context;
 	}
 
-	public static T Unsetenv<T>(this T context, char variable) where T : GAppLaunchContextHandle
+	public static T Unsetenv<T>(this T context, string variable) where T : GAppLaunchContextHandle
 	{
 		GAppLaunchContextHandleExterns.g_app_launch_context_unsetenv(context, variable);
 		return context;
@@ -200,9 +200,9 @@ internal class GAppLaunchContextHandleExterns
 	internal static extern void g_app_launch_context_launch_failed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, string startup_notify_id);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_app_launch_context_setenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, char variable, char value);
+	internal static extern void g_app_launch_context_setenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, string variable, string value);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_app_launch_context_unsetenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, char variable);
+	internal static extern void g_app_launch_context_unsetenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, string variable);
 
 }

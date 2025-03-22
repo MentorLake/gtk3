@@ -7,7 +7,7 @@ public class GtkStatusIconHandle : GObjectHandle
 		return GtkStatusIconHandleExterns.gtk_status_icon_new();
 	}
 
-	public static MentorLake.Gtk.GtkStatusIconHandle NewFromFile(char filename)
+	public static MentorLake.Gtk.GtkStatusIconHandle NewFromFile(string filename)
 	{
 		return GtkStatusIconHandleExterns.gtk_status_icon_new_from_file(filename);
 	}
@@ -416,7 +416,7 @@ public static class GtkStatusIconHandleExtensions
 		return GtkStatusIconHandleExterns.gtk_status_icon_is_embedded(status_icon);
 	}
 
-	public static T SetFromFile<T>(this T status_icon, char filename) where T : GtkStatusIconHandle
+	public static T SetFromFile<T>(this T status_icon, string filename) where T : GtkStatusIconHandle
 	{
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_file(status_icon, filename);
 		return status_icon;
@@ -496,7 +496,7 @@ internal class GtkStatusIconHandleExterns
 	internal static extern MentorLake.Gtk.GtkStatusIconHandle gtk_status_icon_new();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkStatusIconHandle gtk_status_icon_new_from_file(char filename);
+	internal static extern MentorLake.Gtk.GtkStatusIconHandle gtk_status_icon_new_from_file(string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkStatusIconHandle gtk_status_icon_new_from_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon);
@@ -561,7 +561,7 @@ internal class GtkStatusIconHandleExterns
 	internal static extern bool gtk_status_icon_is_embedded([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusIconHandle>))] MentorLake.Gtk.GtkStatusIconHandle status_icon);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_status_icon_set_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusIconHandle>))] MentorLake.Gtk.GtkStatusIconHandle status_icon, char filename);
+	internal static extern void gtk_status_icon_set_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusIconHandle>))] MentorLake.Gtk.GtkStatusIconHandle status_icon, string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_status_icon_set_from_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusIconHandle>))] MentorLake.Gtk.GtkStatusIconHandle status_icon, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon);

@@ -83,7 +83,7 @@ public static class GtkIconThemeHandleExtensions
 		return icon_theme;
 	}
 
-	public static T AppendSearchPath<T>(this T icon_theme, char path) where T : GtkIconThemeHandle
+	public static T AppendSearchPath<T>(this T icon_theme, string path) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeHandleExterns.gtk_icon_theme_append_search_path(icon_theme, path);
 		return icon_theme;
@@ -165,7 +165,7 @@ public static class GtkIconThemeHandleExtensions
 		return GtkIconThemeHandleExterns.gtk_icon_theme_lookup_icon_for_scale(icon_theme, icon_name, size, scale, flags);
 	}
 
-	public static T PrependSearchPath<T>(this T icon_theme, char path) where T : GtkIconThemeHandle
+	public static T PrependSearchPath<T>(this T icon_theme, string path) where T : GtkIconThemeHandle
 	{
 		GtkIconThemeHandleExterns.gtk_icon_theme_prepend_search_path(icon_theme, path);
 		return icon_theme;
@@ -205,7 +205,7 @@ internal class GtkIconThemeHandleExterns
 	internal static extern void gtk_icon_theme_add_resource_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string path);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_icon_theme_append_search_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, char path);
+	internal static extern void gtk_icon_theme_append_search_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string path);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkIconInfoHandle gtk_icon_theme_choose_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string[] icon_names, int size, MentorLake.Gtk.GtkIconLookupFlags flags);
@@ -254,7 +254,7 @@ internal class GtkIconThemeHandleExterns
 	internal static extern MentorLake.Gtk.GtkIconInfoHandle gtk_icon_theme_lookup_icon_for_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gtk.GtkIconLookupFlags flags);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_icon_theme_prepend_search_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, char path);
+	internal static extern void gtk_icon_theme_prepend_search_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string path);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_icon_theme_rescan_if_needed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme);

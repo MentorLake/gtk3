@@ -17,7 +17,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_action_print_detailed_name(action_name, target_value);
 	}
 
-	public static MentorLake.Gio.GAppInfoHandle AppInfoCreateFromCommandline(char commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags)
+	public static MentorLake.Gio.GAppInfoHandle AppInfoCreateFromCommandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags)
 	{
 		return GioGlobalFunctionsExterns.g_app_info_create_from_commandline(commandline, application_name, flags);
 	}
@@ -207,7 +207,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_content_type_get_symbolic_icon(type);
 	}
 
-	public static string ContentTypeGuess(char filename, char[] data, UIntPtr data_size, out bool result_uncertain)
+	public static string ContentTypeGuess(string filename, char[] data, UIntPtr data_size, out bool result_uncertain)
 	{
 		return GioGlobalFunctionsExterns.g_content_type_guess(filename, data, data_size, out result_uncertain);
 	}
@@ -402,17 +402,17 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_file_new_build_filenamev(args);
 	}
 
-	public static MentorLake.Gio.GFileHandle FileNewForCommandlineArg(char arg)
+	public static MentorLake.Gio.GFileHandle FileNewForCommandlineArg(string arg)
 	{
 		return GioGlobalFunctionsExterns.g_file_new_for_commandline_arg(arg);
 	}
 
-	public static MentorLake.Gio.GFileHandle FileNewForCommandlineArgAndCwd(char arg, char cwd)
+	public static MentorLake.Gio.GFileHandle FileNewForCommandlineArgAndCwd(string arg, string cwd)
 	{
 		return GioGlobalFunctionsExterns.g_file_new_for_commandline_arg_and_cwd(arg, cwd);
 	}
 
-	public static MentorLake.Gio.GFileHandle FileNewForPath(char path)
+	public static MentorLake.Gio.GFileHandle FileNewForPath(string path)
 	{
 		return GioGlobalFunctionsExterns.g_file_new_for_path(path);
 	}
@@ -422,17 +422,17 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_file_new_for_uri(uri);
 	}
 
-	public static MentorLake.Gio.GFileHandle FileNewTmp(char tmpl, out MentorLake.Gio.GFileIOStreamHandle iostream)
+	public static MentorLake.Gio.GFileHandle FileNewTmp(string tmpl, out MentorLake.Gio.GFileIOStreamHandle iostream)
 	{
 		return GioGlobalFunctionsExterns.g_file_new_tmp(tmpl, out iostream);
 	}
 
-	public static void FileNewTmpAsync(char tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
+	public static void FileNewTmpAsync(string tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
 	{
 		GioGlobalFunctionsExterns.g_file_new_tmp_async(tmpl, io_priority, cancellable, callback, user_data);
 	}
 
-	public static void FileNewTmpDirAsync(char tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
+	public static void FileNewTmpDirAsync(string tmpl, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
 	{
 		GioGlobalFunctionsExterns.g_file_new_tmp_dir_async(tmpl, io_priority, cancellable, callback, user_data);
 	}
@@ -497,22 +497,22 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_io_extension_point_register(name);
 	}
 
-	public static MentorLake.GLib.GListHandle IoModulesLoadAllInDirectory(char dirname)
+	public static MentorLake.GLib.GListHandle IoModulesLoadAllInDirectory(string dirname)
 	{
 		return GioGlobalFunctionsExterns.g_io_modules_load_all_in_directory(dirname);
 	}
 
-	public static MentorLake.GLib.GListHandle IoModulesLoadAllInDirectoryWithScope(char dirname, MentorLake.Gio.GIOModuleScopeHandle scope)
+	public static MentorLake.GLib.GListHandle IoModulesLoadAllInDirectoryWithScope(string dirname, MentorLake.Gio.GIOModuleScopeHandle scope)
 	{
 		return GioGlobalFunctionsExterns.g_io_modules_load_all_in_directory_with_scope(dirname, scope);
 	}
 
-	public static void IoModulesScanAllInDirectory(char dirname)
+	public static void IoModulesScanAllInDirectory(string dirname)
 	{
 		GioGlobalFunctionsExterns.g_io_modules_scan_all_in_directory(dirname);
 	}
 
-	public static void IoModulesScanAllInDirectoryWithScope(char dirname, MentorLake.Gio.GIOModuleScopeHandle scope)
+	public static void IoModulesScanAllInDirectoryWithScope(string dirname, MentorLake.Gio.GIOModuleScopeHandle scope)
 	{
 		GioGlobalFunctionsExterns.g_io_modules_scan_all_in_directory_with_scope(dirname, scope);
 	}
@@ -607,7 +607,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_resource_error_quark();
 	}
 
-	public static MentorLake.Gio.GResourceHandle ResourceLoad(char filename)
+	public static MentorLake.Gio.GResourceHandle ResourceLoad(string filename)
 	{
 		return GioGlobalFunctionsExterns.g_resource_load(filename);
 	}
@@ -692,7 +692,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_tls_error_quark();
 	}
 
-	public static MentorLake.Gio.GTlsDatabaseHandle TlsFileDatabaseNew(char anchors)
+	public static MentorLake.Gio.GTlsDatabaseHandle TlsFileDatabaseNew(string anchors)
 	{
 		return GioGlobalFunctionsExterns.g_tls_file_database_new(anchors);
 	}
@@ -702,7 +702,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_tls_server_connection_new(base_io_stream, certificate);
 	}
 
-	public static bool UnixIsMountPathSystemInternal(char mount_path)
+	public static bool UnixIsMountPathSystemInternal(string mount_path)
 	{
 		return GioGlobalFunctionsExterns.g_unix_is_mount_path_system_internal(mount_path);
 	}
@@ -717,7 +717,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_unix_is_system_fs_type(fs_type);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountAt(string mount_path, out ulong time_read)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_at(mount_path, out time_read);
 	}
@@ -747,17 +747,17 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_unix_mount_entries_get_from_file(table_path, out time_read_out, out n_entries_out);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountEntryAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountEntryAt(string mount_path, out ulong time_read)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_entry_at(mount_path, out time_read);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountEntryFor(char file_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountEntryFor(string file_path, out ulong time_read)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_entry_for(file_path, out time_read);
 	}
 
-	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountFor(char file_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountEntryHandle UnixMountFor(string file_path, out ulong time_read)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_for(file_path, out time_read);
 	}
@@ -767,7 +767,7 @@ public class GioGlobalFunctions
 		GioGlobalFunctionsExterns.g_unix_mount_free(mount_entry);
 	}
 
-	public static char UnixMountGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string UnixMountGetDevicePath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_get_device_path(mount_entry);
 	}
@@ -777,7 +777,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_unix_mount_get_fs_type(mount_entry);
 	}
 
-	public static char UnixMountGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
+	public static string UnixMountGetMountPath(MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_get_mount_path(mount_entry);
 	}
@@ -827,7 +827,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_unix_mount_is_system_internal(mount_entry);
 	}
 
-	public static MentorLake.Gio.GUnixMountPointHandle UnixMountPointAt(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountPointHandle UnixMountPointAt(string mount_path, out ulong time_read)
 	{
 		return GioGlobalFunctionsExterns.g_unix_mount_point_at(mount_path, out time_read);
 	}
@@ -877,7 +877,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern string g_action_print_detailed_name(string action_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle target_value);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(char commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags);
+	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GListHandle g_app_info_get_all();
@@ -996,7 +996,7 @@ internal class GioGlobalFunctionsExterns
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_content_type_guess(char filename, char[] data, UIntPtr data_size, out bool result_uncertain);
+	internal static extern string g_content_type_guess(string filename, char[] data, UIntPtr data_size, out bool result_uncertain);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern string[] g_content_type_guess_for_tree([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle root);
@@ -1121,25 +1121,25 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_build_filenamev(string[] args);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg(char arg);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg(string arg);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg_and_cwd(char arg, char cwd);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_commandline_arg_and_cwd(string arg, string cwd);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_path(char path);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_path(string path);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_for_uri(string uri);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp(char tmpl, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileIOStreamHandle>))] out MentorLake.Gio.GFileIOStreamHandle iostream);
+	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp(string tmpl, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileIOStreamHandle>))] out MentorLake.Gio.GFileIOStreamHandle iostream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_new_tmp_async(char tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void g_file_new_tmp_async(string tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_file_new_tmp_dir_async(char tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void g_file_new_tmp_dir_async(string tmpl, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GFileHandle g_file_new_tmp_dir_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
@@ -1178,16 +1178,16 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GIOExtensionPointHandle g_io_extension_point_register(string name);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_io_modules_load_all_in_directory(char dirname);
+	internal static extern MentorLake.GLib.GListHandle g_io_modules_load_all_in_directory(string dirname);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_io_modules_load_all_in_directory_with_scope(char dirname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
+	internal static extern MentorLake.GLib.GListHandle g_io_modules_load_all_in_directory_with_scope(string dirname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_io_modules_scan_all_in_directory(char dirname);
+	internal static extern void g_io_modules_scan_all_in_directory(string dirname);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_io_modules_scan_all_in_directory_with_scope(char dirname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
+	internal static extern void g_io_modules_scan_all_in_directory_with_scope(string dirname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_io_scheduler_cancel_all_jobs();
@@ -1244,7 +1244,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_resource_error_quark();
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(char filename);
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(string filename);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern string[] g_resources_enumerate_children(string path, MentorLake.Gio.GResourceLookupFlags lookup_flags);
@@ -1295,13 +1295,13 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_tls_error_quark();
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_file_database_new(char anchors);
+	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_file_database_new(string anchors);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GIOStreamHandle g_tls_server_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle base_io_stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle certificate);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_unix_is_mount_path_system_internal(char mount_path);
+	internal static extern bool g_unix_is_mount_path_system_internal(string mount_path);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_unix_is_system_device_path(string device_path);
@@ -1310,7 +1310,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern bool g_unix_is_system_fs_type(string fs_type);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern int g_unix_mount_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount2);
@@ -1328,26 +1328,28 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GUnixMountEntryHandle[] g_unix_mount_entries_get_from_file(string table_path, out ulong time_read_out, out UIntPtr n_entries_out);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_for(char file_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_entry_for(string file_path, out ulong time_read);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_for(char file_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountEntryHandle g_unix_mount_for(string file_path, out ulong time_read);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_unix_mount_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_unix_mount_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_unix_mount_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_unix_mount_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -1380,7 +1382,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern bool g_unix_mount_is_system_internal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountEntryHandle>))] MentorLake.Gio.GUnixMountEntryHandle mount_entry);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_unix_mount_points_changed_since(ulong time);

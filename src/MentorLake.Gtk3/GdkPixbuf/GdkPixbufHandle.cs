@@ -17,17 +17,17 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_data(data, colorspace, has_alpha, bits_per_sample, width, height, rowstride, destroy_fn, destroy_fn_data);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFile(char filename)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFile(string filename)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_file(filename);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFileAtScale(char filename, int width, int height, bool preserve_aspect_ratio)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFileAtScale(string filename, int width, int height, bool preserve_aspect_ratio)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_file_at_scale(filename, width, height, preserve_aspect_ratio);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFileAtSize(char filename, int width, int height)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromFileAtSize(string filename, int width, int height)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_file_at_size(filename, width, height);
 	}
@@ -72,12 +72,12 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 		return GdkPixbufHandleExterns.gdk_pixbuf_calculate_rowstride(colorspace, has_alpha, bits_per_sample, width, height);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufFormatHandle GetFileInfo(char filename, out int width, out int height)
+	public static MentorLake.GdkPixbuf.GdkPixbufFormatHandle GetFileInfo(string filename, out int width, out int height)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_get_file_info(filename, out width, out height);
 	}
 
-	public static void GetFileInfoAsync(char filename, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
+	public static void GetFileInfoAsync(string filename, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
 	{
 		GdkPixbufHandleExterns.gdk_pixbuf_get_file_info_async(filename, cancellable, callback, user_data);
 	}
@@ -266,7 +266,7 @@ public static class GdkPixbufHandleExtensions
 		return src;
 	}
 
-	public static bool Save(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, char filename, string type, IntPtr error, IntPtr @__arglist)
+	public static bool Save(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string filename, string type, IntPtr error, IntPtr @__arglist)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_save(pixbuf, filename, type, error, @__arglist);
 	}
@@ -313,7 +313,7 @@ public static class GdkPixbufHandleExtensions
 		return pixbuf;
 	}
 
-	public static bool Savev(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, char filename, string type, string[] option_keys, string[] option_values)
+	public static bool Savev(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string filename, string type, string[] option_keys, string[] option_values)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_savev(pixbuf, filename, type, option_keys, option_values);
 	}
@@ -354,13 +354,13 @@ internal class GdkPixbufHandleExterns
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_data(char[] data, MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height, int rowstride, MentorLake.GdkPixbuf.GdkPixbufDestroyNotify destroy_fn, IntPtr destroy_fn_data);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file(char filename);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file(string filename);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file_at_scale(char filename, int width, int height, bool preserve_aspect_ratio);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file_at_scale(string filename, int width, int height, bool preserve_aspect_ratio);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file_at_size(char filename, int width, int height);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_file_at_size(string filename, int width, int height);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_inline(int data_length, byte[] data, bool copy_pixels);
@@ -472,7 +472,7 @@ internal class GdkPixbufHandleExterns
 	internal static extern void gdk_pixbuf_saturate_and_pixelate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle src, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle dest, float saturation, bool pixelate);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_save([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, char filename, string type, IntPtr error, IntPtr @__arglist);
+	internal static extern bool gdk_pixbuf_save([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string filename, string type, IntPtr error, IntPtr @__arglist);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern bool gdk_pixbuf_save_to_buffer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out byte[] buffer, out UIntPtr buffer_size, string type, IntPtr error, IntPtr @__arglist);
@@ -499,7 +499,7 @@ internal class GdkPixbufHandleExterns
 	internal static extern void gdk_pixbuf_save_to_streamv_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GOutputStreamHandle>))] MentorLake.Gio.GOutputStreamHandle stream, string type, string[] option_keys, string[] option_values, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_savev([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, char filename, string type, string[] option_keys, string[] option_values);
+	internal static extern bool gdk_pixbuf_savev([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string filename, string type, string[] option_keys, string[] option_values);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern void gdk_pixbuf_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle src, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle dest, int dest_x, int dest_y, int dest_width, int dest_height, double offset_x, double offset_y, double scale_x, double scale_y, MentorLake.GdkPixbuf.GdkInterpType interp_type);
@@ -517,10 +517,10 @@ internal class GdkPixbufHandleExterns
 	internal static extern int gdk_pixbuf_calculate_rowstride(MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufFormatHandle gdk_pixbuf_get_file_info(char filename, out int width, out int height);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufFormatHandle gdk_pixbuf_get_file_info(string filename, out int width, out int height);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern void gdk_pixbuf_get_file_info_async(char filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
+	internal static extern void gdk_pixbuf_get_file_info_async(string filename, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufFormatHandle gdk_pixbuf_get_file_info_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle async_result, out int width, out int height);

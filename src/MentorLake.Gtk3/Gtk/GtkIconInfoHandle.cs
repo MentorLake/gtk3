@@ -52,7 +52,7 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoHandleExterns.gtk_icon_info_get_embedded_rect(icon_info, out rectangle);
 	}
 
-	public static char GetFilename(this MentorLake.Gtk.GtkIconInfoHandle icon_info)
+	public static string GetFilename(this MentorLake.Gtk.GtkIconInfoHandle icon_info)
 	{
 		return GtkIconInfoHandleExterns.gtk_icon_info_get_filename(icon_info);
 	}
@@ -159,7 +159,8 @@ internal class GtkIconInfoHandleExterns
 	internal static extern bool gtk_icon_info_get_embedded_rect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, out MentorLake.Gdk.GdkRectangle rectangle);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_icon_info_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_icon_info_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_icon_info_is_symbolic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info);

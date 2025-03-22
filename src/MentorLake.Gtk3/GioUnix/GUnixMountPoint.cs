@@ -13,7 +13,7 @@ public static class GUnixMountPointExtensions
 internal class GUnixMountPointExterns
 {
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(char mount_path, out ulong time_read);
+	internal static extern MentorLake.Gio.GUnixMountPointHandle g_unix_mount_point_at(string mount_path, out ulong time_read);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern int g_unix_mount_point_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount2);
@@ -25,14 +25,16 @@ internal class GUnixMountPointExterns
 	internal static extern void g_unix_mount_point_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_point_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_device_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_unix_mount_point_get_fs_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_unix_mount_point_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_unix_mount_point_get_mount_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountPointHandle>))] MentorLake.Gio.GUnixMountPointHandle mount_point);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -64,7 +66,7 @@ internal class GUnixMountPointExterns
 
 public struct GUnixMountPoint
 {
-	public static MentorLake.Gio.GUnixMountPointHandle At(char mount_path, out ulong time_read)
+	public static MentorLake.Gio.GUnixMountPointHandle At(string mount_path, out ulong time_read)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_at(mount_path, out time_read);
 	}
@@ -84,7 +86,7 @@ public struct GUnixMountPoint
 		GUnixMountPointExterns.g_unix_mount_point_free(mount_point);
 	}
 
-	public static char GetDevicePath(MentorLake.Gio.GUnixMountPointHandle mount_point)
+	public static string GetDevicePath(MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_device_path(mount_point);
 	}
@@ -94,7 +96,7 @@ public struct GUnixMountPoint
 		return GUnixMountPointExterns.g_unix_mount_point_get_fs_type(mount_point);
 	}
 
-	public static char GetMountPath(MentorLake.Gio.GUnixMountPointHandle mount_point)
+	public static string GetMountPath(MentorLake.Gio.GUnixMountPointHandle mount_point)
 	{
 		return GUnixMountPointExterns.g_unix_mount_point_get_mount_path(mount_point);
 	}

@@ -7,7 +7,7 @@ public class GDesktopAppInfoHandle : GObjectHandle, GAppInfoHandle
 		return GDesktopAppInfoHandleExterns.g_desktop_app_info_new(desktop_id);
 	}
 
-	public static MentorLake.GioUnix.GDesktopAppInfoHandle NewFromFilename(char filename)
+	public static MentorLake.GioUnix.GDesktopAppInfoHandle NewFromFilename(string filename)
 	{
 		return GDesktopAppInfoHandleExterns.g_desktop_app_info_new_from_filename(filename);
 	}
@@ -32,7 +32,7 @@ public class GDesktopAppInfoHandle : GObjectHandle, GAppInfoHandle
 		return GDesktopAppInfoHandleExterns.g_desktop_app_info_get_categories(info);
 	}
 
-	public static char GetFilename(MentorLake.Gio.GDesktopAppInfoHandle info)
+	public static string GetFilename(MentorLake.Gio.GDesktopAppInfoHandle info)
 	{
 		return GDesktopAppInfoHandleExterns.g_desktop_app_info_get_filename(info);
 	}
@@ -134,7 +134,7 @@ internal class GDesktopAppInfoHandleExterns
 	internal static extern MentorLake.GioUnix.GDesktopAppInfoHandle g_desktop_app_info_new(string desktop_id);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern MentorLake.GioUnix.GDesktopAppInfoHandle g_desktop_app_info_new_from_filename(char filename);
+	internal static extern MentorLake.GioUnix.GDesktopAppInfoHandle g_desktop_app_info_new_from_filename(string filename);
 
 	[DllImport(GioUnixLibrary.Name)]
 	internal static extern MentorLake.GioUnix.GDesktopAppInfoHandle g_desktop_app_info_new_from_keyfile([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file);
@@ -151,7 +151,8 @@ internal class GDesktopAppInfoHandleExterns
 	internal static extern string g_desktop_app_info_get_categories([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDesktopAppInfoHandle>))] MentorLake.Gio.GDesktopAppInfoHandle info);
 
 	[DllImport(GioUnixLibrary.Name)]
-	internal static extern char g_desktop_app_info_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDesktopAppInfoHandle>))] MentorLake.Gio.GDesktopAppInfoHandle info);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_desktop_app_info_get_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDesktopAppInfoHandle>))] MentorLake.Gio.GDesktopAppInfoHandle info);
 
 	[DllImport(GioUnixLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

@@ -522,17 +522,17 @@ public class GtkGlobalFunctions
 		GtkGlobalFunctionsExterns.gtk_propagate_event(widget, @event);
 	}
 
-	public static void RcAddDefaultFile(char filename)
+	public static void RcAddDefaultFile(string filename)
 	{
 		GtkGlobalFunctionsExterns.gtk_rc_add_default_file(filename);
 	}
 
-	public static char RcFindModuleInPath(string module_file)
+	public static string RcFindModuleInPath(string module_file)
 	{
 		return GtkGlobalFunctionsExterns.gtk_rc_find_module_in_path(module_file);
 	}
 
-	public static char RcFindPixmapInPath(MentorLake.Gtk.GtkSettingsHandle settings, MentorLake.GLib.GScannerHandle scanner, string pixmap_file)
+	public static string RcFindPixmapInPath(MentorLake.Gtk.GtkSettingsHandle settings, MentorLake.GLib.GScannerHandle scanner, string pixmap_file)
 	{
 		return GtkGlobalFunctionsExterns.gtk_rc_find_pixmap_in_path(settings, scanner, pixmap_file);
 	}
@@ -542,17 +542,17 @@ public class GtkGlobalFunctions
 		return GtkGlobalFunctionsExterns.gtk_rc_get_default_files();
 	}
 
-	public static char RcGetImModuleFile()
+	public static string RcGetImModuleFile()
 	{
 		return GtkGlobalFunctionsExterns.gtk_rc_get_im_module_file();
 	}
 
-	public static char RcGetImModulePath()
+	public static string RcGetImModulePath()
 	{
 		return GtkGlobalFunctionsExterns.gtk_rc_get_im_module_path();
 	}
 
-	public static char RcGetModuleDir()
+	public static string RcGetModuleDir()
 	{
 		return GtkGlobalFunctionsExterns.gtk_rc_get_module_dir();
 	}
@@ -1311,25 +1311,30 @@ internal class GtkGlobalFunctionsExterns
 	internal static extern void gtk_propagate_event([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))] MentorLake.Gdk.GdkEventHandle @event);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_rc_add_default_file(char filename);
+	internal static extern void gtk_rc_add_default_file(string filename);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_rc_find_module_in_path(string module_file);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_rc_find_module_in_path(string module_file);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_rc_find_pixmap_in_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSettingsHandle>))] MentorLake.Gtk.GtkSettingsHandle settings, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GScannerHandle>))] MentorLake.GLib.GScannerHandle scanner, string pixmap_file);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_rc_find_pixmap_in_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSettingsHandle>))] MentorLake.Gtk.GtkSettingsHandle settings, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GScannerHandle>))] MentorLake.GLib.GScannerHandle scanner, string pixmap_file);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern string[] gtk_rc_get_default_files();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_rc_get_im_module_file();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_rc_get_im_module_file();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_rc_get_im_module_path();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_rc_get_im_module_path();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char gtk_rc_get_module_dir();
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string gtk_rc_get_module_dir();
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkStyleHandle gtk_rc_get_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);

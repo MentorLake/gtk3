@@ -355,7 +355,7 @@ public static class PangoLayoutHandleExtensions
 		return layout;
 	}
 
-	public static bool WriteToFile(this MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, char filename)
+	public static bool WriteToFile(this MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename)
 	{
 		return PangoLayoutHandleExterns.pango_layout_write_to_file(layout, flags, filename);
 	}
@@ -560,7 +560,7 @@ internal class PangoLayoutHandleExterns
 	internal static extern void pango_layout_set_wrap([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoWrapMode wrap);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern bool pango_layout_write_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, char filename);
+	internal static extern bool pango_layout_write_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern bool pango_layout_xy_to_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, int x, int y, out int index_, out int trailing);

@@ -17,7 +17,7 @@ public static class GDirExtensions
 		GDirExterns.g_dir_close(dir);
 	}
 
-	public static char ReadName(this MentorLake.GLib.GDirHandle dir)
+	public static string ReadName(this MentorLake.GLib.GDirHandle dir)
 	{
 		return GDirExterns.g_dir_read_name(dir);
 	}
@@ -49,7 +49,8 @@ internal class GDirExterns
 	internal static extern void g_dir_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_dir_read_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_dir_read_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GDirHandle g_dir_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
@@ -61,13 +62,14 @@ internal class GDirExterns
 	internal static extern void g_dir_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_dir_make_tmp(char tmpl);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_dir_make_tmp(string tmpl);
 
 }
 
 public struct GDir
 {
-	public static char MakeTmp(char tmpl)
+	public static string MakeTmp(string tmpl)
 	{
 		return GDirExterns.g_dir_make_tmp(tmpl);
 	}

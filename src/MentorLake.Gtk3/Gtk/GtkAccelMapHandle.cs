@@ -32,7 +32,7 @@ public class GtkAccelMapHandle : GObjectHandle
 		return GtkAccelMapHandleExterns.gtk_accel_map_get();
 	}
 
-	public static void Load(char file_name)
+	public static void Load(string file_name)
 	{
 		GtkAccelMapHandleExterns.gtk_accel_map_load(file_name);
 	}
@@ -57,7 +57,7 @@ public class GtkAccelMapHandle : GObjectHandle
 		return GtkAccelMapHandleExterns.gtk_accel_map_lookup_entry(accel_path, out key);
 	}
 
-	public static void Save(char file_name)
+	public static void Save(string file_name)
 	{
 		GtkAccelMapHandleExterns.gtk_accel_map_save(file_name);
 	}
@@ -153,7 +153,7 @@ internal class GtkAccelMapHandleExterns
 	internal static extern MentorLake.Gtk.GtkAccelMapHandle gtk_accel_map_get();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_accel_map_load(char file_name);
+	internal static extern void gtk_accel_map_load(string file_name);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_accel_map_load_fd(int fd);
@@ -168,7 +168,7 @@ internal class GtkAccelMapHandleExterns
 	internal static extern bool gtk_accel_map_lookup_entry(string accel_path, out MentorLake.Gtk.GtkAccelKey key);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_accel_map_save(char file_name);
+	internal static extern void gtk_accel_map_save(string file_name);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_accel_map_save_fd(int fd);

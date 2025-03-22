@@ -6,7 +6,7 @@ public class PangoFontMapHandle : GObjectHandle, GListModelHandle
 
 public static class PangoFontMapHandleExtensions
 {
-	public static bool AddFontFile(this MentorLake.Pango.PangoFontMapHandle fontmap, char filename)
+	public static bool AddFontFile(this MentorLake.Pango.PangoFontMapHandle fontmap, string filename)
 	{
 		return PangoFontMapHandleExterns.pango_font_map_add_font_file(fontmap, filename);
 	}
@@ -58,7 +58,7 @@ public static class PangoFontMapHandleExtensions
 internal class PangoFontMapHandleExterns
 {
 	[DllImport(PangoLibrary.Name)]
-	internal static extern bool pango_font_map_add_font_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))] MentorLake.Pango.PangoFontMapHandle fontmap, char filename);
+	internal static extern bool pango_font_map_add_font_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))] MentorLake.Pango.PangoFontMapHandle fontmap, string filename);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_font_map_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))] MentorLake.Pango.PangoFontMapHandle fontmap);

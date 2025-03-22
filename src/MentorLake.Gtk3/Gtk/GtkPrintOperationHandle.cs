@@ -575,7 +575,7 @@ public static class GtkPrintOperationHandleExtensions
 		return op;
 	}
 
-	public static T SetExportFilename<T>(this T op, char filename) where T : GtkPrintOperationHandle
+	public static T SetExportFilename<T>(this T op, string filename) where T : GtkPrintOperationHandle
 	{
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_export_filename(op, filename);
 		return op;
@@ -701,7 +701,7 @@ internal class GtkPrintOperationHandleExterns
 	internal static extern void gtk_print_operation_set_embed_page_setup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, bool embed);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_print_operation_set_export_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, char filename);
+	internal static extern void gtk_print_operation_set_export_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, string filename);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_print_operation_set_has_selection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, bool has_selection);

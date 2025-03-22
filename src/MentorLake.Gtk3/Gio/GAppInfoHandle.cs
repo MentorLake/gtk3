@@ -40,7 +40,7 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_equal(appinfo1, appinfo2);
 	}
 
-	public static char GetCommandline(this MentorLake.Gio.GAppInfoHandle appinfo)
+	public static string GetCommandline(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
 		return GAppInfoHandleExterns.g_app_info_get_commandline(appinfo);
 	}
@@ -55,7 +55,7 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_get_display_name(appinfo);
 	}
 
-	public static char GetExecutable(this MentorLake.Gio.GAppInfoHandle appinfo)
+	public static string GetExecutable(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
 		return GAppInfoHandleExterns.g_app_info_get_executable(appinfo);
 	}
@@ -106,7 +106,7 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_remove_supports_type(appinfo, content_type);
 	}
 
-	public static bool SetAsDefaultForExtension(this MentorLake.Gio.GAppInfoHandle appinfo, char extension)
+	public static bool SetAsDefaultForExtension(this MentorLake.Gio.GAppInfoHandle appinfo, string extension)
 	{
 		return GAppInfoHandleExterns.g_app_info_set_as_default_for_extension(appinfo, extension);
 	}
@@ -136,7 +136,7 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_supports_uris(appinfo);
 	}
 
-	public static MentorLake.Gio.GAppInfoHandle CreateFromCommandline(char commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags)
+	public static MentorLake.Gio.GAppInfoHandle CreateFromCommandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags)
 	{
 		return GAppInfoHandleExterns.g_app_info_create_from_commandline(commandline, application_name, flags);
 	}
@@ -234,7 +234,8 @@ internal class GAppInfoHandleExterns
 	internal static extern bool g_app_info_equal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo2);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_app_info_get_commandline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_app_info_get_commandline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -245,7 +246,8 @@ internal class GAppInfoHandleExterns
 	internal static extern string g_app_info_get_display_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_app_info_get_executable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_app_info_get_executable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GIconHandle g_app_info_get_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
@@ -277,7 +279,7 @@ internal class GAppInfoHandleExterns
 	internal static extern bool g_app_info_remove_supports_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_set_as_default_for_extension([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, char extension);
+	internal static extern bool g_app_info_set_as_default_for_extension([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string extension);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_app_info_set_as_default_for_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
@@ -295,7 +297,7 @@ internal class GAppInfoHandleExterns
 	internal static extern bool g_app_info_supports_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(char commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags);
+	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GListHandle g_app_info_get_all();

@@ -127,17 +127,17 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_load_from_data(key_file, data, length, flags);
 	}
 
-	public static bool LoadFromDataDirs(this MentorLake.GLib.GKeyFileHandle key_file, char file, out char full_path, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromDataDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags)
 	{
 		return GKeyFileExterns.g_key_file_load_from_data_dirs(key_file, file, out full_path, flags);
 	}
 
-	public static bool LoadFromDirs(this MentorLake.GLib.GKeyFileHandle key_file, char file, string[] search_dirs, out char full_path, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags)
 	{
 		return GKeyFileExterns.g_key_file_load_from_dirs(key_file, file, search_dirs, out full_path, flags);
 	}
 
-	public static bool LoadFromFile(this MentorLake.GLib.GKeyFileHandle key_file, char file, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromFile(this MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags)
 	{
 		return GKeyFileExterns.g_key_file_load_from_file(key_file, file, flags);
 	}
@@ -336,13 +336,13 @@ internal class GKeyFileExterns
 	internal static extern bool g_key_file_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string data, UIntPtr length, MentorLake.GLib.GKeyFileFlags flags);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, char file, out char full_path, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, char file, string[] search_dirs, out char full_path, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, char file, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GKeyFileHandle g_key_file_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file);

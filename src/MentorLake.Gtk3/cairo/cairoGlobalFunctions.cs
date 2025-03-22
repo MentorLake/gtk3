@@ -462,7 +462,7 @@ public class cairoGlobalFunctions
 		return cairoGlobalFunctionsExterns.cairo_image_surface_create(format, width, height);
 	}
 
-	public static MentorLake.cairo.cairo_surface_tHandle ImageSurfaceCreateForData(string data, MentorLake.cairo.cairo_format_t format, int width, int height, int stride)
+	public static MentorLake.cairo.cairo_surface_tHandle ImageSurfaceCreateForData(byte[] data, MentorLake.cairo.cairo_format_t format, int width, int height, int stride)
 	{
 		return cairoGlobalFunctionsExterns.cairo_image_surface_create_for_data(data, format, width, height, stride);
 	}
@@ -1939,7 +1939,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create(MentorLake.cairo.cairo_format_t format, int width, int height);
 
 	[DllImport(cairoLibrary.Name)]
-	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_for_data(string data, MentorLake.cairo.cairo_format_t format, int width, int height, int stride);
+	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_for_data(byte[] data, MentorLake.cairo.cairo_format_t format, int width, int height, int stride);
 
 	[DllImport(cairoLibrary.Name)]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_from_png(string filename);

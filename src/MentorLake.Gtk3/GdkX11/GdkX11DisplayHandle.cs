@@ -44,7 +44,7 @@ public static class GdkX11DisplayHandleExtensions
 		return GdkX11DisplayHandleExterns.gdk_x11_display_get_user_time(display);
 	}
 
-	public static MentorLake.xlib.DisplayHandle GetXdisplay(this MentorLake.GdkX11.GdkX11DisplayHandle display)
+	public static MentorLake.xlib.DisplayHandle GetXdisplay(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
 		return GdkX11DisplayHandleExterns.gdk_x11_display_get_xdisplay(display);
 	}
@@ -118,7 +118,7 @@ internal class GdkX11DisplayHandleExterns
 	internal static extern uint gdk_x11_display_get_user_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display);
 
 	[DllImport(GdkX11Library.Name)]
-	internal static extern MentorLake.xlib.DisplayHandle gdk_x11_display_get_xdisplay([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display);
+	internal static extern MentorLake.xlib.DisplayHandle gdk_x11_display_get_xdisplay([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display);
 
 	[DllImport(GdkX11Library.Name)]
 	internal static extern void gdk_x11_display_grab([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display);

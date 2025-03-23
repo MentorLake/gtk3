@@ -21,7 +21,7 @@ public static class GdkX11WindowHandleExtensions
 		return GdkX11WindowHandleExterns.gdk_x11_window_get_desktop(window);
 	}
 
-	public static MentorLake.xlib.Window GetXid(this MentorLake.GdkX11.GdkX11WindowHandle window)
+	public static MentorLake.xlib.Window GetXid(this MentorLake.Gdk.GdkWindowHandle window)
 	{
 		return GdkX11WindowHandleExterns.gdk_x11_window_get_xid(window);
 	}
@@ -85,7 +85,7 @@ internal class GdkX11WindowHandleExterns
 	internal static extern uint gdk_x11_window_get_desktop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))] MentorLake.GdkX11.GdkX11WindowHandle window);
 
 	[DllImport(GdkX11Library.Name)]
-	internal static extern MentorLake.xlib.Window gdk_x11_window_get_xid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))] MentorLake.GdkX11.GdkX11WindowHandle window);
+	internal static extern MentorLake.xlib.Window gdk_x11_window_get_xid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window);
 
 	[DllImport(GdkX11Library.Name)]
 	internal static extern void gdk_x11_window_move_to_current_desktop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))] MentorLake.GdkX11.GdkX11WindowHandle window);

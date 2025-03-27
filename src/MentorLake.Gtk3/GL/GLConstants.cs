@@ -1,5 +1,5 @@
 namespace MentorLake.GL;
 
-public class GLConstants
+public static class GLConstants
 {
 }

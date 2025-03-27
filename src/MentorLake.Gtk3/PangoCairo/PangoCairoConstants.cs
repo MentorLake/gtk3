@@ -1,5 +1,5 @@
 namespace MentorLake.PangoCairo;
 
-public class PangoCairoConstants
+public static class PangoCairoConstants
 {
 }

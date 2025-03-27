@@ -1,10 +1,10 @@
 namespace MentorLake.PangoFc;
 
-public class PangoFcConstants
+public static class PangoFcConstants
 {
-	public string FONT_FEATURES = "fontfeatures";
-	public string FONT_VARIATIONS = "fontvariations";
-	public string GRAVITY = "pangogravity";
-	public string PRGNAME = "prgname";
-	public string VERSION = "pangoversion";
+	public static string FONT_FEATURES = "fontfeatures";
+	public static string FONT_VARIATIONS = "fontvariations";
+	public static string GRAVITY = "pangogravity";
+	public static string PRGNAME = "prgname";
+	public static string VERSION = "pangoversion";
 }

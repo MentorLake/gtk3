@@ -1,5 +1,5 @@
 namespace MentorLake.freetype2;
 
-public class freetype2Constants
+public static class freetype2Constants
 {
 }

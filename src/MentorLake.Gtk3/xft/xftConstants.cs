@@ -1,5 +1,5 @@
 namespace MentorLake.xft;
 
-public class xftConstants
+public static class xftConstants
 {
 }

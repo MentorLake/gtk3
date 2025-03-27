@@ -1,10 +1,10 @@
 namespace MentorLake.Graphene;
 
-public class GrapheneConstants
+public static class GrapheneConstants
 {
-	public double PI = 3.141593;
-	public double PI_2 = 1.570796;
-	public int VEC2_LEN = 2;
-	public int VEC3_LEN = 3;
-	public int VEC4_LEN = 4;
+	public static double PI = 3.141593;
+	public static double PI_2 = 1.570796;
+	public static int VEC2_LEN = 2;
+	public static int VEC3_LEN = 3;
+	public static int VEC4_LEN = 4;
 }

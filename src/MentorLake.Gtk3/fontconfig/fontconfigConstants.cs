@@ -1,5 +1,5 @@
 namespace MentorLake.fontconfig;
 
-public class fontconfigConstants
+public static class fontconfigConstants
 {
 }

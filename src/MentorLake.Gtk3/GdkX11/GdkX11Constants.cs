@@ -1,5 +1,5 @@
 namespace MentorLake.GdkX11;
 
-public class GdkX11Constants
+public static class GdkX11Constants
 {
 }

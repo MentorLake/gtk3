@@ -1,5 +1,5 @@
 namespace MentorLake.PangoXft;
 
-public class PangoXftConstants
+public static class PangoXftConstants
 {
 }

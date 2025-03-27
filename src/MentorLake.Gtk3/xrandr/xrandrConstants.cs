@@ -1,5 +1,5 @@
 namespace MentorLake.xrandr;
 
-public class xrandrConstants
+public static class xrandrConstants
 {
 }

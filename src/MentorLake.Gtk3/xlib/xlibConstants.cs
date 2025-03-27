@@ -1,5 +1,5 @@
 namespace MentorLake.xlib;
 
-public class xlibConstants
+public static class xlibConstants
 {
 }

@@ -1,5 +1,5 @@
 namespace MentorLake.Vulkan;
 
-public class VulkanConstants
+public static class VulkanConstants
 {
 }

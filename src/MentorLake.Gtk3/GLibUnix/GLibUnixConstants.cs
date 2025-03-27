@@ -1,5 +1,5 @@
 namespace MentorLake.GLibUnix;
 
-public class GLibUnixConstants
+public static class GLibUnixConstants
 {
 }

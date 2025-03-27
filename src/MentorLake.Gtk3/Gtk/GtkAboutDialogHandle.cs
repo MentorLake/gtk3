@@ -246,9 +246,11 @@ internal class GtkAboutDialogHandleExterns
 	internal static extern void gtk_about_dialog_add_credit_section([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAboutDialogHandle>))] MentorLake.Gtk.GtkAboutDialogHandle about, string section_name, string[] people);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_about_dialog_get_artists([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAboutDialogHandle>))] MentorLake.Gtk.GtkAboutDialogHandle about);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_about_dialog_get_authors([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAboutDialogHandle>))] MentorLake.Gtk.GtkAboutDialogHandle about);
 
 	[DllImport(GtkLibrary.Name)]
@@ -260,6 +262,7 @@ internal class GtkAboutDialogHandleExterns
 	internal static extern string gtk_about_dialog_get_copyright([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAboutDialogHandle>))] MentorLake.Gtk.GtkAboutDialogHandle about);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_about_dialog_get_documenters([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAboutDialogHandle>))] MentorLake.Gtk.GtkAboutDialogHandle about);
 
 	[DllImport(GtkLibrary.Name)]

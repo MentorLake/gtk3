@@ -1322,6 +1322,7 @@ internal class GtkGlobalFunctionsExterns
 	internal static extern string gtk_rc_find_pixmap_in_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSettingsHandle>))] MentorLake.Gtk.GtkSettingsHandle settings, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GScannerHandle>))] MentorLake.GLib.GScannerHandle scanner, string pixmap_file);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_rc_get_default_files();
 
 	[DllImport(GtkLibrary.Name)]

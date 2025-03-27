@@ -83,6 +83,7 @@ internal class GdkPixbufFormatExterns
 	internal static extern string gdk_pixbuf_format_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gdk_pixbuf_format_get_extensions([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
 	[DllImport(GdkPixbufLibrary.Name)]
@@ -90,6 +91,7 @@ internal class GdkPixbufFormatExterns
 	internal static extern string gdk_pixbuf_format_get_license([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gdk_pixbuf_format_get_mime_types([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))] MentorLake.GdkPixbuf.GdkPixbufFormatHandle format);
 
 	[DllImport(GdkPixbufLibrary.Name)]

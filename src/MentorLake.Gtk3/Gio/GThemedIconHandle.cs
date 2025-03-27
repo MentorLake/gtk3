@@ -55,6 +55,7 @@ internal class GThemedIconHandleExterns
 	internal static extern void g_themed_icon_append_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GThemedIconHandle>))] MentorLake.Gio.GThemedIconHandle icon, string iconname);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_themed_icon_get_names([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GThemedIconHandle>))] MentorLake.Gio.GThemedIconHandle icon);
 
 	[DllImport(GioLibrary.Name)]

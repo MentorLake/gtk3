@@ -985,6 +985,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GIconHandle g_content_type_get_icon(string type);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_content_type_get_mime_dirs();
 
 	[DllImport(GioLibrary.Name)]
@@ -999,6 +1000,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern string g_content_type_guess(string filename, char[] data, UIntPtr data_size, out bool result_uncertain);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_content_type_guess_for_tree([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle root);
 
 	[DllImport(GioLibrary.Name)]
@@ -1247,6 +1249,7 @@ internal class GioGlobalFunctionsExterns
 	internal static extern MentorLake.Gio.GResourceHandle g_resource_load(string filename);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_resources_enumerate_children(string path, MentorLake.Gio.GResourceLookupFlags lookup_flags);
 
 	[DllImport(GioLibrary.Name)]

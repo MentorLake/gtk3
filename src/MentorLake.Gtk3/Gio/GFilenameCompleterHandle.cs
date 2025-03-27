@@ -90,6 +90,7 @@ internal class GFilenameCompleterHandleExterns
 	internal static extern string g_filename_completer_get_completion_suffix([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFilenameCompleterHandle>))] MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_filename_completer_get_completions([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFilenameCompleterHandle>))] MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text);
 
 	[DllImport(GioLibrary.Name)]

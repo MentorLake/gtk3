@@ -62,6 +62,7 @@ internal class GVfsHandleExterns
 	internal static extern MentorLake.Gio.GFileHandle g_vfs_get_file_for_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVfsHandle>))] MentorLake.Gio.GVfsHandle vfs, string uri);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_vfs_get_supported_uri_schemes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVfsHandle>))] MentorLake.Gio.GVfsHandle vfs);
 
 	[DllImport(GioLibrary.Name)]

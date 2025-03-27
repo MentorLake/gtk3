@@ -225,6 +225,7 @@ internal class GtkRecentChooserHandleExterns
 	internal static extern MentorLake.Gtk.GtkRecentSortType gtk_recent_chooser_get_sort_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_recent_chooser_get_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, out UIntPtr length);
 
 	[DllImport(GtkLibrary.Name)]

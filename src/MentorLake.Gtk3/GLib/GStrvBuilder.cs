@@ -70,6 +70,7 @@ internal class GStrvBuilderExterns
 	internal static extern void g_strv_builder_addv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder, string[] value);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_strv_builder_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
 	[DllImport(GLibLibrary.Name)]
@@ -82,6 +83,7 @@ internal class GStrvBuilderExterns
 	internal static extern void g_strv_builder_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_strv_builder_unref_to_strv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStrvBuilderHandle>))] MentorLake.GLib.GStrvBuilderHandle builder);
 
 }

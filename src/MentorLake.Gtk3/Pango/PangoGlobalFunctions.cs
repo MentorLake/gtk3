@@ -730,6 +730,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern bool pango_skip_space(ref string pos);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] pango_split_file_list(string str);
 
 	[DllImport(PangoLibrary.Name)]

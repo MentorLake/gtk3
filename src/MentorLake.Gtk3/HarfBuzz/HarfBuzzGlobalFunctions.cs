@@ -2511,9 +2511,11 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_blob_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_blob_tHandle>))] MentorLake.HarfBuzz.hb_blob_tHandle blob);
 
 	[DllImport(HarfBuzzLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] hb_blob_get_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_blob_tHandle>))] MentorLake.HarfBuzz.hb_blob_tHandle blob, out uint length);
 
 	[DllImport(HarfBuzzLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] hb_blob_get_data_writable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_blob_tHandle>))] MentorLake.HarfBuzz.hb_blob_tHandle blob, out uint length);
 
 	[DllImport(HarfBuzzLibrary.Name)]
@@ -2674,6 +2676,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern uint hb_buffer_serialize_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, out byte[] buf, out uint buf_size, out uint buf_consumed, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] hb_buffer_serialize_list_formats();
 
 	[DllImport(HarfBuzzLibrary.Name)]
@@ -3825,6 +3828,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_shape_justify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, MentorLake.HarfBuzz.hb_feature_t[] features, uint num_features, string[] shaper_list, float min_target_advance, float max_target_advance, ref float advance, out MentorLake.HarfBuzz.hb_tag_t var_tag, out float var_value);
 
 	[DllImport(HarfBuzzLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] hb_shape_list_shapers();
 
 	[DllImport(HarfBuzzLibrary.Name)]

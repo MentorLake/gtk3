@@ -153,6 +153,7 @@ internal class GtkRecentInfoExterns
 	internal static extern bool gtk_recent_info_get_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info, string app_name, out string app_exec, out uint count, out long time_);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_recent_info_get_applications([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info, out UIntPtr length);
 
 	[DllImport(GtkLibrary.Name)]
@@ -167,6 +168,7 @@ internal class GtkRecentInfoExterns
 	internal static extern MentorLake.Gio.GIconHandle gtk_recent_info_get_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] gtk_recent_info_get_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info, out UIntPtr length);
 
 	[DllImport(GtkLibrary.Name)]

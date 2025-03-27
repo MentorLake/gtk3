@@ -96,6 +96,7 @@ internal class GMatchInfoExterns
 	internal static extern string g_match_info_fetch([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, int match_num);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_match_info_fetch_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 	[DllImport(GLibLibrary.Name)]

@@ -168,9 +168,11 @@ internal class GRegexExterns
 	internal static extern string g_regex_replace_literal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRegexHandle>))] MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, string replacement, MentorLake.GLib.GRegexMatchFlags match_options);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_regex_split([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRegexHandle>))] MentorLake.GLib.GRegexHandle regex, string @string, MentorLake.GLib.GRegexMatchFlags match_options);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_regex_split_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRegexHandle>))] MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, MentorLake.GLib.GRegexMatchFlags match_options, int max_tokens);
 
 	[DllImport(GLibLibrary.Name)]
@@ -194,6 +196,7 @@ internal class GRegexExterns
 	internal static extern bool g_regex_match_simple(string pattern, string @string, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_regex_split_simple(string pattern, string @string, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options);
 
 }

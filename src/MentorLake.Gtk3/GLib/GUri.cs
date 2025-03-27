@@ -180,6 +180,7 @@ internal class GUriExterns
 	internal static extern string g_uri_join_with_user(MentorLake.GLib.GUriFlags flags, string scheme, string user, string password, string auth_params, string host, int port, string path, string query, string fragment);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_uri_list_extract_uris(string uri_list);
 
 	[DllImport(GLibLibrary.Name)]

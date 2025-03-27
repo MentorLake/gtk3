@@ -4187,9 +4187,11 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_environ_getenv(string[] envp, string variable);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_environ_setenv(string[] envp, string variable, string value, bool overwrite);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_environ_unsetenv(string[] envp, string variable);
 
 	[DllImport(GLibLibrary.Name)]
@@ -4306,6 +4308,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_get_current_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTimeValHandle>))] MentorLake.GLib.GTimeValHandle result);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_environ();
 
 	[DllImport(GLibLibrary.Name)]
@@ -4320,12 +4323,15 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_get_host_name();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_language_names();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_language_names_with_category(string category_name);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_locale_variants(string locale);
 
 	[DllImport(GLibLibrary.Name)]
@@ -4350,9 +4356,11 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern long g_get_real_time();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_system_config_dirs();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_get_system_data_dirs();
 
 	[DllImport(GLibLibrary.Name)]
@@ -4567,6 +4575,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern void g_list_push_allocator([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GAllocatorHandle>))] MentorLake.GLib.GAllocatorHandle allocator);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_listenv();
 
 	[DllImport(GLibLibrary.Name)]
@@ -4992,6 +5001,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_regex_match_simple(string pattern, string @string, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_regex_split_simple(string pattern, string @string, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options);
 
 	[DllImport(GLibLibrary.Name)]
@@ -5200,6 +5210,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_str_to_ascii(string str, string from_locale);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_str_tokenize_and_fold(string @string, string translit_locale, out string[] ascii_alternates);
 
 	[DllImport(GLibLibrary.Name)]
@@ -5249,6 +5260,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_strdup_vprintf(string format, IntPtr args);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_strdupv(string[] str_array);
 
 	[DllImport(GLibLibrary.Name)]
@@ -5308,9 +5320,11 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_strsignal(int signum);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_strsplit(string @string, string delimiter, int max_tokens);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_strsplit_set(string @string, string delimiters, int max_tokens);
 
 	[DllImport(GLibLibrary.Name)]
@@ -5773,6 +5787,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string g_uri_join_with_user(MentorLake.GLib.GUriFlags flags, string scheme, string user, string password, string auth_params, string host, int port, string path, string query, string fragment);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_uri_list_extract_uris(string uri_list);
 
 	[DllImport(GLibLibrary.Name)]

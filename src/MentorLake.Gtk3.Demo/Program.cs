@@ -1,6 +1,8 @@
 ﻿using System.Reactive.Linq;
+using System.Runtime.InteropServices;
 using MentorLake.Gdk;
 using MentorLake.Gio;
+using MentorLake.GLib;
 using MentorLake.GObject;
 using MentorLake.Gtk;
 
@@ -8,6 +10,21 @@ namespace MentorLake.Gtk3.Demo;
 
 public static class Program
 {
+	public static List<T> ToList<T>(this GListHandle gListHandle) where T : SafeHandle, new()
+	{
+		var length = GList.Length(gListHandle);
+		var result = new List<T>((int) length);
+
+		for (uint i = 0; i < length; i++)
+		{
+			var safeHandle = new T();
+			Marshal.InitHandle(safeHandle, GList.NthData(gListHandle, i));
+			result.Add(safeHandle);
+		}
+
+		return result;
+	}
+
 	public static async Task Main(string[] args)
 	{
 		SynchronizationContext.SetSynchronizationContext(new GLibSynchronizationContext());
@@ -16,6 +33,13 @@ public static class Program
 
 		appHandle.Signal_Activate().Subscribe(async e =>
 		{
+			var desktopFiles = GAppInfoHandleExtensions.GetAll();
+			desktopFiles
+				.ToList<GDesktopAppInfoHandle>()
+				.Where(a => a.ShouldShow())
+				.ToList()
+				.ForEach(a => Console.WriteLine($"{a.GetName()} {string.Join(", ", a.ListActions())}"));
+
 			var window = GtkWindowHandle.New(GtkWindowType.GTK_WINDOW_TOPLEVEL)
 				.SetEvents((int) GdkEventMask.GDK_ALL_EVENTS_MASK)
 				.With(b => b.Signal_KeyPressEvent(GConnectFlags.G_CONNECT_DEFAULT).Select(x => x.Event.Dereference()).Subscribe(e =>

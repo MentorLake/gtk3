@@ -280,6 +280,7 @@ internal class GBookmarkFileExterns
 	internal static extern bool g_bookmark_file_get_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] out MentorLake.GLib.GDateTimeHandle stamp);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_bookmark_file_get_applications([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
@@ -287,6 +288,7 @@ internal class GBookmarkFileExterns
 	internal static extern string g_bookmark_file_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_bookmark_file_get_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
@@ -313,6 +315,7 @@ internal class GBookmarkFileExterns
 	internal static extern string g_bookmark_file_get_title([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_bookmark_file_get_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]

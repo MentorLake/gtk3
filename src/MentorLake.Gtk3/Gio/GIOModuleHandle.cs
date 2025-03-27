@@ -42,6 +42,7 @@ internal class GIOModuleHandleExterns
 	internal static extern void g_io_module_unload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleHandle>))] MentorLake.Gio.GIOModuleHandle module);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_io_module_query();
 
 }

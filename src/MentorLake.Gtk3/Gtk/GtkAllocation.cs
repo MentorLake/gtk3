@@ -8,3 +8,9 @@ public struct GtkAllocation
 public class GtkAllocationHandle : BaseSafeHandle
 {
 }
+
+public static class GtkAllocationHandleExtensions
+{
+	public static GtkAllocation Dereference(this GtkAllocationHandle x) => System.Runtime.InteropServices.Marshal.PtrToStructure<GtkAllocation>(x.DangerousGetHandle());
+	public static MentorLake.Gdk.GdkRectangle DereferenceValue(this GtkAllocationHandle x) => x.Dereference().Value;
+}

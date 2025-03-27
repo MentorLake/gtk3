@@ -23,7 +23,7 @@ public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T :
 
 	public IntPtr MarshalManagedToNative(object o)
 	{
-		var p = (T)o;
+		var p = (SafeHandle)o;
 		return p.DangerousGetHandle();
 	}
 

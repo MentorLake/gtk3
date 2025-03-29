@@ -18,11 +18,13 @@ public static class GtkRecentChooserMenuHandleExtensions
 {
 	public static bool GetShowNumbers(this MentorLake.Gtk.GtkRecentChooserMenuHandle menu)
 	{
+		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentChooserMenuHandle)");
 		return GtkRecentChooserMenuHandleExterns.gtk_recent_chooser_menu_get_show_numbers(menu);
 	}
 
 	public static T SetShowNumbers<T>(this T menu, bool show_numbers) where T : GtkRecentChooserMenuHandle
 	{
+		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentChooserMenuHandle)");
 		GtkRecentChooserMenuHandleExterns.gtk_recent_chooser_menu_set_show_numbers(menu, show_numbers);
 		return menu;
 	}

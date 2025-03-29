@@ -2,6 +2,8 @@ namespace MentorLake.Atk;
 
 public interface AtkActionHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class AtkActionHandleImpl : BaseSafeHandle, AtkActionHandle
@@ -12,36 +14,43 @@ public static class AtkActionHandleExtensions
 {
 	public static bool DoAction(this MentorLake.Atk.AtkActionHandle action, int i)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_do_action(action, i);
 	}
 
 	public static string GetDescription(this MentorLake.Atk.AtkActionHandle action, int i)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_get_description(action, i);
 	}
 
 	public static string GetKeybinding(this MentorLake.Atk.AtkActionHandle action, int i)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_get_keybinding(action, i);
 	}
 
 	public static string GetLocalizedName(this MentorLake.Atk.AtkActionHandle action, int i)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_get_localized_name(action, i);
 	}
 
 	public static int GetNActions(this MentorLake.Atk.AtkActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_get_n_actions(action);
 	}
 
 	public static string GetName(this MentorLake.Atk.AtkActionHandle action, int i)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_get_name(action, i);
 	}
 
 	public static bool SetDescription(this MentorLake.Atk.AtkActionHandle action, int i, string desc)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (AtkActionHandle)");
 		return AtkActionHandleExterns.atk_action_set_description(action, i, desc);
 	}
 

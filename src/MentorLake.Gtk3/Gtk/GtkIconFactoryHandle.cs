@@ -18,23 +18,27 @@ public static class GtkIconFactoryHandleExtensions
 {
 	public static T Add<T>(this T factory, string stock_id, MentorLake.Gtk.GtkIconSetHandle icon_set) where T : GtkIconFactoryHandle
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (GtkIconFactoryHandle)");
 		GtkIconFactoryHandleExterns.gtk_icon_factory_add(factory, stock_id, icon_set);
 		return factory;
 	}
 
 	public static T AddDefault<T>(this T factory) where T : GtkIconFactoryHandle
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (GtkIconFactoryHandle)");
 		GtkIconFactoryHandleExterns.gtk_icon_factory_add_default(factory);
 		return factory;
 	}
 
 	public static MentorLake.Gtk.GtkIconSetHandle Lookup(this MentorLake.Gtk.GtkIconFactoryHandle factory, string stock_id)
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (GtkIconFactoryHandle)");
 		return GtkIconFactoryHandleExterns.gtk_icon_factory_lookup(factory, stock_id);
 	}
 
 	public static T RemoveDefault<T>(this T factory) where T : GtkIconFactoryHandle
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (GtkIconFactoryHandle)");
 		GtkIconFactoryHandleExterns.gtk_icon_factory_remove_default(factory);
 		return factory;
 	}

@@ -13,11 +13,13 @@ public static class GCredentialsHandleExtensions
 {
 	public static IntPtr GetNative(this MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsType native_type)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		return GCredentialsHandleExterns.g_credentials_get_native(credentials, native_type);
 	}
 
 	public static int GetUnixPid(this MentorLake.Gio.GCredentialsHandle credentials)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		var externCallResult = GCredentialsHandleExterns.g_credentials_get_unix_pid(credentials, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -25,6 +27,7 @@ public static class GCredentialsHandleExtensions
 
 	public static int GetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		var externCallResult = GCredentialsHandleExterns.g_credentials_get_unix_user(credentials, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -32,6 +35,7 @@ public static class GCredentialsHandleExtensions
 
 	public static bool IsSameUser(this MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsHandle other_credentials)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		var externCallResult = GCredentialsHandleExterns.g_credentials_is_same_user(credentials, other_credentials, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -39,12 +43,14 @@ public static class GCredentialsHandleExtensions
 
 	public static T SetNative<T>(this T credentials, MentorLake.Gio.GCredentialsType native_type, IntPtr native) where T : GCredentialsHandle
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		GCredentialsHandleExterns.g_credentials_set_native(credentials, native_type, native);
 		return credentials;
 	}
 
 	public static bool SetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials, int uid)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		var externCallResult = GCredentialsHandleExterns.g_credentials_set_unix_user(credentials, uid, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -52,6 +58,7 @@ public static class GCredentialsHandleExtensions
 
 	public static string ToString(this MentorLake.Gio.GCredentialsHandle credentials)
 	{
+		if (credentials.IsInvalid || credentials.IsClosed) throw new Exception("Invalid or closed handle (GCredentialsHandle)");
 		return GCredentialsHandleExterns.g_credentials_to_string(credentials);
 	}
 

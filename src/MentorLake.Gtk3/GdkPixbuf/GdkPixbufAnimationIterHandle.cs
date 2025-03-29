@@ -8,21 +8,25 @@ public static class GdkPixbufAnimationIterHandleExtensions
 {
 	public static bool Advance(this MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle iter, MentorLake.GLib.GTimeValHandle current_time)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationIterHandle)");
 		return GdkPixbufAnimationIterHandleExterns.gdk_pixbuf_animation_iter_advance(iter, current_time);
 	}
 
 	public static int GetDelayTime(this MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationIterHandle)");
 		return GdkPixbufAnimationIterHandleExterns.gdk_pixbuf_animation_iter_get_delay_time(iter);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationIterHandle)");
 		return GdkPixbufAnimationIterHandleExterns.gdk_pixbuf_animation_iter_get_pixbuf(iter);
 	}
 
 	public static bool OnCurrentlyLoadingFrame(this MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationIterHandle)");
 		return GdkPixbufAnimationIterHandleExterns.gdk_pixbuf_animation_iter_on_currently_loading_frame(iter);
 	}
 

@@ -9,31 +9,37 @@ public static class GHookListExtensions
 {
 	public static void Clear(this MentorLake.GLib.GHookListHandle hook_list)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_clear(hook_list);
 	}
 
 	public static void Init(this MentorLake.GLib.GHookListHandle hook_list, uint hook_size)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_init(hook_list, hook_size);
 	}
 
 	public static void Invoke(this MentorLake.GLib.GHookListHandle hook_list, bool may_recurse)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_invoke(hook_list, may_recurse);
 	}
 
 	public static void InvokeCheck(this MentorLake.GLib.GHookListHandle hook_list, bool may_recurse)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_invoke_check(hook_list, may_recurse);
 	}
 
 	public static void Marshal(this MentorLake.GLib.GHookListHandle hook_list, bool may_recurse, MentorLake.GLib.GHookMarshaller marshaller, IntPtr marshal_data)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_marshal(hook_list, may_recurse, marshaller, marshal_data);
 	}
 
 	public static void MarshalCheck(this MentorLake.GLib.GHookListHandle hook_list, bool may_recurse, MentorLake.GLib.GHookCheckMarshaller marshaller, IntPtr marshal_data)
 	{
+		if (hook_list.IsInvalid || hook_list.IsClosed) throw new Exception("Invalid or closed handle (GHookList)");
 		GHookListExterns.g_hook_list_marshal_check(hook_list, may_recurse, marshaller, marshal_data);
 	}
 

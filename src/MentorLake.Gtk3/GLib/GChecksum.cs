@@ -14,31 +14,37 @@ public static class GChecksumExtensions
 {
 	public static MentorLake.GLib.GChecksumHandle Copy(this MentorLake.GLib.GChecksumHandle checksum)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		return GChecksumExterns.g_checksum_copy(checksum);
 	}
 
 	public static void Free(this MentorLake.GLib.GChecksumHandle checksum)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		GChecksumExterns.g_checksum_free(checksum);
 	}
 
 	public static void GetDigest(this MentorLake.GLib.GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		GChecksumExterns.g_checksum_get_digest(checksum, buffer, ref digest_len);
 	}
 
 	public static string GetString(this MentorLake.GLib.GChecksumHandle checksum)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		return GChecksumExterns.g_checksum_get_string(checksum);
 	}
 
 	public static void Reset(this MentorLake.GLib.GChecksumHandle checksum)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		GChecksumExterns.g_checksum_reset(checksum);
 	}
 
 	public static void Update(this MentorLake.GLib.GChecksumHandle checksum, byte[] data, UIntPtr length)
 	{
+		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
 		GChecksumExterns.g_checksum_update(checksum, data, length);
 	}
 

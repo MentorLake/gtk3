@@ -28,11 +28,13 @@ public static class GtkRadioToolButtonHandleExtensions
 {
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioToolButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioToolButtonHandle)");
 		return GtkRadioToolButtonHandleExterns.gtk_radio_tool_button_get_group(button);
 	}
 
 	public static T SetGroup<T>(this T button, MentorLake.GLib.GSListHandle group) where T : GtkRadioToolButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioToolButtonHandle)");
 		GtkRadioToolButtonHandleExterns.gtk_radio_tool_button_set_group(button, group);
 		return button;
 	}

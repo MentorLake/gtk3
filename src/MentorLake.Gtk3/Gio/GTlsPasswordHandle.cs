@@ -13,50 +13,59 @@ public static class GTlsPasswordHandleExtensions
 {
 	public static string GetDescription(this MentorLake.Gio.GTlsPasswordHandle password)
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		return GTlsPasswordHandleExterns.g_tls_password_get_description(password);
 	}
 
 	public static MentorLake.Gio.GTlsPasswordFlags GetFlags(this MentorLake.Gio.GTlsPasswordHandle password)
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		return GTlsPasswordHandleExterns.g_tls_password_get_flags(password);
 	}
 
 	public static char[] GetValue(this MentorLake.Gio.GTlsPasswordHandle password, out UIntPtr length)
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		return GTlsPasswordHandleExterns.g_tls_password_get_value(password, out length);
 	}
 
 	public static string GetWarning(this MentorLake.Gio.GTlsPasswordHandle password)
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		return GTlsPasswordHandleExterns.g_tls_password_get_warning(password);
 	}
 
 	public static T SetDescription<T>(this T password, string description) where T : GTlsPasswordHandle
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_description(password, description);
 		return password;
 	}
 
 	public static T SetFlags<T>(this T password, MentorLake.Gio.GTlsPasswordFlags flags) where T : GTlsPasswordHandle
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_flags(password, flags);
 		return password;
 	}
 
 	public static T SetValue<T>(this T password, char[] value, UIntPtr length) where T : GTlsPasswordHandle
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_value(password, value, length);
 		return password;
 	}
 
 	public static T SetValueFull<T>(this T password, char[] value, UIntPtr length, MentorLake.GLib.GDestroyNotify destroy) where T : GTlsPasswordHandle
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_value_full(password, value, length, destroy);
 		return password;
 	}
 
 	public static T SetWarning<T>(this T password, string warning) where T : GTlsPasswordHandle
 	{
+		if (password.IsInvalid || password.IsClosed) throw new Exception("Invalid or closed handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_warning(password, warning);
 		return password;
 	}

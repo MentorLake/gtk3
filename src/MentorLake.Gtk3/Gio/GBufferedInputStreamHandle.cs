@@ -18,6 +18,7 @@ public static class GBufferedInputStreamHandleExtensions
 {
 	public static UIntPtr Fill(this MentorLake.Gio.GBufferedInputStreamHandle stream, UIntPtr count, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		var externCallResult = GBufferedInputStreamHandleExterns.g_buffered_input_stream_fill(stream, count, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -25,12 +26,14 @@ public static class GBufferedInputStreamHandleExtensions
 
 	public static T FillAsync<T>(this T stream, UIntPtr count, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GBufferedInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		GBufferedInputStreamHandleExterns.g_buffered_input_stream_fill_async(stream, count, io_priority, cancellable, callback, user_data);
 		return stream;
 	}
 
 	public static UIntPtr FillFinish(this MentorLake.Gio.GBufferedInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		var externCallResult = GBufferedInputStreamHandleExterns.g_buffered_input_stream_fill_finish(stream, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -38,26 +41,31 @@ public static class GBufferedInputStreamHandleExtensions
 
 	public static UIntPtr GetAvailable(this MentorLake.Gio.GBufferedInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		return GBufferedInputStreamHandleExterns.g_buffered_input_stream_get_available(stream);
 	}
 
 	public static UIntPtr GetBufferSize(this MentorLake.Gio.GBufferedInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		return GBufferedInputStreamHandleExterns.g_buffered_input_stream_get_buffer_size(stream);
 	}
 
 	public static UIntPtr Peek(this MentorLake.Gio.GBufferedInputStreamHandle stream, byte[] buffer, UIntPtr offset, UIntPtr count)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		return GBufferedInputStreamHandleExterns.g_buffered_input_stream_peek(stream, buffer, offset, count);
 	}
 
 	public static byte[] PeekBuffer(this MentorLake.Gio.GBufferedInputStreamHandle stream, out UIntPtr count)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		return GBufferedInputStreamHandleExterns.g_buffered_input_stream_peek_buffer(stream, out count);
 	}
 
 	public static int ReadByte(this MentorLake.Gio.GBufferedInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		var externCallResult = GBufferedInputStreamHandleExterns.g_buffered_input_stream_read_byte(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -65,6 +73,7 @@ public static class GBufferedInputStreamHandleExtensions
 
 	public static T SetBufferSize<T>(this T stream, UIntPtr size) where T : GBufferedInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedInputStreamHandle)");
 		GBufferedInputStreamHandleExterns.g_buffered_input_stream_set_buffer_size(stream, size);
 		return stream;
 	}

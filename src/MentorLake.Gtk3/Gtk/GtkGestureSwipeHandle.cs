@@ -66,6 +66,7 @@ public static class GtkGestureSwipeHandleExtensions
 {
 	public static bool GetVelocity(this MentorLake.Gtk.GtkGestureSwipeHandle gesture, out double velocity_x, out double velocity_y)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureSwipeHandle)");
 		return GtkGestureSwipeHandleExterns.gtk_gesture_swipe_get_velocity(gesture, out velocity_x, out velocity_y);
 	}
 

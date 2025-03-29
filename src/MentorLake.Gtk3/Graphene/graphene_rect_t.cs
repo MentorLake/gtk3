@@ -9,156 +9,187 @@ public static class graphene_rect_tExtensions
 {
 	public static bool ContainsPoint(this MentorLake.Graphene.graphene_rect_tHandle r, MentorLake.Graphene.graphene_point_tHandle p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_contains_point(r, p);
 	}
 
 	public static bool ContainsRect(this MentorLake.Graphene.graphene_rect_tHandle a, MentorLake.Graphene.graphene_rect_tHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_contains_rect(a, b);
 	}
 
 	public static bool Equal(this MentorLake.Graphene.graphene_rect_tHandle a, MentorLake.Graphene.graphene_rect_tHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_equal(a, b);
 	}
 
 	public static void Expand(this MentorLake.Graphene.graphene_rect_tHandle r, MentorLake.Graphene.graphene_point_tHandle p, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_expand(r, p, out res);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_free(r);
 	}
 
 	public static float GetArea(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_get_area(r);
 	}
 
 	public static void GetBottomLeft(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_point_t p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_bottom_left(r, out p);
 	}
 
 	public static void GetBottomRight(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_point_t p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_bottom_right(r, out p);
 	}
 
 	public static void GetCenter(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_point_t p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_center(r, out p);
 	}
 
 	public static float GetHeight(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_get_height(r);
 	}
 
 	public static void GetTopLeft(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_point_t p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_top_left(r, out p);
 	}
 
 	public static void GetTopRight(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_point_t p)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_top_right(r, out p);
 	}
 
 	public static void GetVertices(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_vec2_t[] vertices)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_get_vertices(r, out vertices);
 	}
 
 	public static float GetWidth(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_get_width(r);
 	}
 
 	public static float GetX(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_get_x(r);
 	}
 
 	public static float GetY(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_get_y(r);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle Init(this MentorLake.Graphene.graphene_rect_tHandle r, float x, float y, float width, float height)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_init(r, x, y, width, height);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle InitFromRect(this MentorLake.Graphene.graphene_rect_tHandle r, MentorLake.Graphene.graphene_rect_tHandle src)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_init_from_rect(r, src);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle Inset(this MentorLake.Graphene.graphene_rect_tHandle r, float d_x, float d_y)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_inset(r, d_x, d_y);
 	}
 
 	public static void InsetR(this MentorLake.Graphene.graphene_rect_tHandle r, float d_x, float d_y, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_inset_r(r, d_x, d_y, out res);
 	}
 
 	public static void Interpolate(this MentorLake.Graphene.graphene_rect_tHandle a, MentorLake.Graphene.graphene_rect_tHandle b, double factor, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_interpolate(a, b, factor, out res);
 	}
 
 	public static bool Intersection(this MentorLake.Graphene.graphene_rect_tHandle a, MentorLake.Graphene.graphene_rect_tHandle b, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_intersection(a, b, out res);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle Normalize(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_normalize(r);
 	}
 
 	public static void NormalizeR(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_normalize_r(r, out res);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle Offset(this MentorLake.Graphene.graphene_rect_tHandle r, float d_x, float d_y)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_offset(r, d_x, d_y);
 	}
 
 	public static void OffsetR(this MentorLake.Graphene.graphene_rect_tHandle r, float d_x, float d_y, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_offset_r(r, d_x, d_y, out res);
 	}
 
 	public static void Round(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_round(r, out res);
 	}
 
 	public static void RoundExtents(this MentorLake.Graphene.graphene_rect_tHandle r, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_round_extents(r, out res);
 	}
 
 	public static MentorLake.Graphene.graphene_rect_tHandle RoundToPixel(this MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		return graphene_rect_tExterns.graphene_rect_round_to_pixel(r);
 	}
 
 	public static void Scale(this MentorLake.Graphene.graphene_rect_tHandle r, float s_h, float s_v, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (r.IsInvalid || r.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_scale(r, s_h, s_v, out res);
 	}
 
 	public static void Union(this MentorLake.Graphene.graphene_rect_tHandle a, MentorLake.Graphene.graphene_rect_tHandle b, out MentorLake.Graphene.graphene_rect_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_rect_t)");
 		graphene_rect_tExterns.graphene_rect_union(a, b, out res);
 	}
 

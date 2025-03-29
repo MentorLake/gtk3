@@ -8,11 +8,13 @@ public static class PangoFcDecoderHandleExtensions
 {
 	public static MentorLake.fontconfig.FcCharSetHandle GetCharset(this MentorLake.PangoFc.PangoFcDecoderHandle decoder, MentorLake.PangoFc.PangoFcFontHandle fcfont)
 	{
+		if (decoder.IsInvalid || decoder.IsClosed) throw new Exception("Invalid or closed handle (PangoFcDecoderHandle)");
 		return PangoFcDecoderHandleExterns.pango_fc_decoder_get_charset(decoder, fcfont);
 	}
 
 	public static MentorLake.Pango.PangoGlyph GetGlyph(this MentorLake.PangoFc.PangoFcDecoderHandle decoder, MentorLake.PangoFc.PangoFcFontHandle fcfont, uint wc)
 	{
+		if (decoder.IsInvalid || decoder.IsClosed) throw new Exception("Invalid or closed handle (PangoFcDecoderHandle)");
 		return PangoFcDecoderHandleExterns.pango_fc_decoder_get_glyph(decoder, fcfont, wc);
 	}
 

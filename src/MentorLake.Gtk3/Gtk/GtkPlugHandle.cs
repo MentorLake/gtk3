@@ -69,28 +69,33 @@ public static class GtkPlugHandleExtensions
 {
 	public static T Construct<T>(this T plug, MentorLake.xlib.Window socket_id) where T : GtkPlugHandle
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
 		GtkPlugHandleExterns.gtk_plug_construct(plug, socket_id);
 		return plug;
 	}
 
 	public static T ConstructForDisplay<T>(this T plug, MentorLake.Gdk.GdkDisplayHandle display, MentorLake.xlib.Window socket_id) where T : GtkPlugHandle
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
 		GtkPlugHandleExterns.gtk_plug_construct_for_display(plug, display, socket_id);
 		return plug;
 	}
 
 	public static bool GetEmbedded(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_embedded(plug);
 	}
 
 	public static MentorLake.xlib.Window GetId(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_id(plug);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetSocketWindow(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_socket_window(plug);
 	}
 

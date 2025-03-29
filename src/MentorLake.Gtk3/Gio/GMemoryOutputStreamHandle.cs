@@ -18,26 +18,31 @@ public static class GMemoryOutputStreamHandleExtensions
 {
 	public static IntPtr GetData(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
 	{
+		if (ostream.IsInvalid || ostream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryOutputStreamHandle)");
 		return GMemoryOutputStreamHandleExterns.g_memory_output_stream_get_data(ostream);
 	}
 
 	public static UIntPtr GetDataSize(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
 	{
+		if (ostream.IsInvalid || ostream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryOutputStreamHandle)");
 		return GMemoryOutputStreamHandleExterns.g_memory_output_stream_get_data_size(ostream);
 	}
 
 	public static UIntPtr GetSize(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
 	{
+		if (ostream.IsInvalid || ostream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryOutputStreamHandle)");
 		return GMemoryOutputStreamHandleExterns.g_memory_output_stream_get_size(ostream);
 	}
 
 	public static MentorLake.GLib.GBytesHandle StealAsBytes(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
 	{
+		if (ostream.IsInvalid || ostream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryOutputStreamHandle)");
 		return GMemoryOutputStreamHandleExterns.g_memory_output_stream_steal_as_bytes(ostream);
 	}
 
 	public static IntPtr StealData(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
 	{
+		if (ostream.IsInvalid || ostream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryOutputStreamHandle)");
 		return GMemoryOutputStreamHandleExterns.g_memory_output_stream_steal_data(ostream);
 	}
 

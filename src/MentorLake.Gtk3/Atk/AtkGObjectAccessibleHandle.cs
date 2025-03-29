@@ -13,6 +13,7 @@ public static class AtkGObjectAccessibleHandleExtensions
 {
 	public static MentorLake.GObject.GObjectHandle GetObject(this MentorLake.Atk.AtkGObjectAccessibleHandle obj)
 	{
+		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkGObjectAccessibleHandle)");
 		return AtkGObjectAccessibleHandleExterns.atk_gobject_accessible_get_object(obj);
 	}
 

@@ -510,26 +510,31 @@ public static class GVolumeMonitorHandleExtensions
 {
 	public static MentorLake.GLib.GListHandle GetConnectedDrives(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
+		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_connected_drives(volume_monitor);
 	}
 
 	public static MentorLake.Gio.GMountHandle GetMountForUuid(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid)
 	{
+		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_mount_for_uuid(volume_monitor, uuid);
 	}
 
 	public static MentorLake.GLib.GListHandle GetMounts(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
+		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_mounts(volume_monitor);
 	}
 
 	public static MentorLake.Gio.GVolumeHandle GetVolumeForUuid(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid)
 	{
+		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_volume_for_uuid(volume_monitor, uuid);
 	}
 
 	public static MentorLake.GLib.GListHandle GetVolumes(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
+		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_volumes(volume_monitor);
 	}
 

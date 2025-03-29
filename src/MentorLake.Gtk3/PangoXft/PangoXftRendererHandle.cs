@@ -13,12 +13,14 @@ public static class PangoXftRendererHandleExtensions
 {
 	public static T SetDefaultColor<T>(this T xftrenderer, MentorLake.Pango.PangoColorHandle default_color) where T : PangoXftRendererHandle
 	{
+		if (xftrenderer.IsInvalid || xftrenderer.IsClosed) throw new Exception("Invalid or closed handle (PangoXftRendererHandle)");
 		PangoXftRendererHandleExterns.pango_xft_renderer_set_default_color(xftrenderer, default_color);
 		return xftrenderer;
 	}
 
 	public static T SetDraw<T>(this T xftrenderer, MentorLake.xft.XftDrawHandle draw) where T : PangoXftRendererHandle
 	{
+		if (xftrenderer.IsInvalid || xftrenderer.IsClosed) throw new Exception("Invalid or closed handle (PangoXftRendererHandle)");
 		PangoXftRendererHandleExterns.pango_xft_renderer_set_draw(xftrenderer, draw);
 		return xftrenderer;
 	}

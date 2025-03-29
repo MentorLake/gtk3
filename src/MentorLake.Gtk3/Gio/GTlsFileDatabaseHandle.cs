@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GTlsFileDatabaseHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GTlsFileDatabaseHandleImpl : BaseSafeHandle, GTlsFileDatabaseHandle

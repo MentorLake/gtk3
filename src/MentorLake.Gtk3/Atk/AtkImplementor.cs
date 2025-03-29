@@ -9,6 +9,7 @@ public static class AtkImplementorExtensions
 {
 	public static MentorLake.Atk.AtkObjectHandle RefAccessible(this MentorLake.Atk.AtkImplementorHandle implementor)
 	{
+		if (implementor.IsInvalid || implementor.IsClosed) throw new Exception("Invalid or closed handle (AtkImplementor)");
 		return AtkImplementorExterns.atk_implementor_ref_accessible(implementor);
 	}
 

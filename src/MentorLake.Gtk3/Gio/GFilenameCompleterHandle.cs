@@ -64,16 +64,19 @@ public static class GFilenameCompleterHandleExtensions
 {
 	public static string GetCompletionSuffix(this MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text)
 	{
+		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
 		return GFilenameCompleterHandleExterns.g_filename_completer_get_completion_suffix(completer, initial_text);
 	}
 
 	public static string[] GetCompletions(this MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text)
 	{
+		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
 		return GFilenameCompleterHandleExterns.g_filename_completer_get_completions(completer, initial_text);
 	}
 
 	public static T SetDirsOnly<T>(this T completer, bool dirs_only) where T : GFilenameCompleterHandle
 	{
+		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
 		GFilenameCompleterHandleExterns.g_filename_completer_set_dirs_only(completer, dirs_only);
 		return completer;
 	}

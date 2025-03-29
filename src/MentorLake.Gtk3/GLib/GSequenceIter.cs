@@ -9,41 +9,49 @@ public static class GSequenceIterExtensions
 {
 	public static int Compare(this MentorLake.GLib.GSequenceIterHandle a, MentorLake.GLib.GSequenceIterHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_compare(a, b);
 	}
 
 	public static int GetPosition(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_get_position(iter);
 	}
 
 	public static MentorLake.GLib.GSequenceHandle GetSequence(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_get_sequence(iter);
 	}
 
 	public static bool IsBegin(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_is_begin(iter);
 	}
 
 	public static bool IsEnd(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_is_end(iter);
 	}
 
 	public static MentorLake.GLib.GSequenceIterHandle Move(this MentorLake.GLib.GSequenceIterHandle iter, int delta)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_move(iter, delta);
 	}
 
 	public static MentorLake.GLib.GSequenceIterHandle Next(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_next(iter);
 	}
 
 	public static MentorLake.GLib.GSequenceIterHandle Prev(this MentorLake.GLib.GSequenceIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GSequenceIter)");
 		return GSequenceIterExterns.g_sequence_iter_prev(iter);
 	}
 

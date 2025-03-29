@@ -41,36 +41,43 @@ public static class GdkPixbufAnimationHandleExtensions
 {
 	public static int GetHeight(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_get_height(animation);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle GetIter(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation, MentorLake.GLib.GTimeValHandle start_time)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_get_iter(animation, start_time);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetStaticImage(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_get_static_image(animation);
 	}
 
 	public static int GetWidth(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_get_width(animation);
 	}
 
 	public static bool IsStaticImage(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_is_static_image(animation);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle Ref(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_ref(animation);
 	}
 
 	public static T Unref<T>(this T animation) where T : GdkPixbufAnimationHandle
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufAnimationHandle)");
 		GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_unref(animation);
 		return animation;
 	}

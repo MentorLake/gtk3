@@ -2,6 +2,8 @@ namespace MentorLake.GioUnix;
 
 public interface GDesktopAppInfoLookupHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GDesktopAppInfoLookupHandleImpl : BaseSafeHandle, GDesktopAppInfoLookupHandle

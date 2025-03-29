@@ -7,7 +7,7 @@ public class hb_language_tHandle : BaseSafeHandle
 
 public static class hb_language_tExtensions
 {
-	public static string String(this MentorLake.HarfBuzz.hb_language_t language)
+	public static string String(MentorLake.HarfBuzz.hb_language_t language)
 	{
 		return hb_language_tExterns.hb_language_to_string(language);
 	}

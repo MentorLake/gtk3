@@ -13,12 +13,14 @@ public static class PangoFontsetSimpleHandleExtensions
 {
 	public static T Append<T>(this T fontset, MentorLake.Pango.PangoFontHandle font) where T : PangoFontsetSimpleHandle
 	{
+		if (fontset.IsInvalid || fontset.IsClosed) throw new Exception("Invalid or closed handle (PangoFontsetSimpleHandle)");
 		PangoFontsetSimpleHandleExterns.pango_fontset_simple_append(fontset, font);
 		return fontset;
 	}
 
 	public static int Size(this MentorLake.Pango.PangoFontsetSimpleHandle fontset)
 	{
+		if (fontset.IsInvalid || fontset.IsClosed) throw new Exception("Invalid or closed handle (PangoFontsetSimpleHandle)");
 		return PangoFontsetSimpleHandleExterns.pango_fontset_simple_size(fontset);
 	}
 

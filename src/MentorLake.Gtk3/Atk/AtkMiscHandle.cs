@@ -13,12 +13,14 @@ public static class AtkMiscHandleExtensions
 {
 	public static T ThreadsEnter<T>(this T misc) where T : AtkMiscHandle
 	{
+		if (misc.IsInvalid || misc.IsClosed) throw new Exception("Invalid or closed handle (AtkMiscHandle)");
 		AtkMiscHandleExterns.atk_misc_threads_enter(misc);
 		return misc;
 	}
 
 	public static T ThreadsLeave<T>(this T misc) where T : AtkMiscHandle
 	{
+		if (misc.IsInvalid || misc.IsClosed) throw new Exception("Invalid or closed handle (AtkMiscHandle)");
 		AtkMiscHandleExterns.atk_misc_threads_leave(misc);
 		return misc;
 	}

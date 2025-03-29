@@ -7,7 +7,7 @@ public class GdkAtomHandle : BaseSafeHandle
 
 public static class GdkAtomExtensions
 {
-	public static string Name(this MentorLake.Gdk.GdkAtom atom)
+	public static string Name(MentorLake.Gdk.GdkAtom atom)
 	{
 		return GdkAtomExterns.gdk_atom_name(atom);
 	}

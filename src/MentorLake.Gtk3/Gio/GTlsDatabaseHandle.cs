@@ -8,11 +8,13 @@ public static class GTlsDatabaseHandleExtensions
 {
 	public static string CreateCertificateHandle(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GTlsCertificateHandle certificate)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		return GTlsDatabaseHandleExterns.g_tls_database_create_certificate_handle(self, certificate);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle LookupCertificateForHandle(this MentorLake.Gio.GTlsDatabaseHandle self, string handle, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_for_handle(self, handle, interaction, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -20,12 +22,14 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static T LookupCertificateForHandleAsync<T>(this T self, string handle, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_for_handle_async(self, handle, interaction, flags, cancellable, callback, user_data);
 		return self;
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle LookupCertificateForHandleFinish(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_for_handle_finish(self, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -33,6 +37,7 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static MentorLake.Gio.GTlsCertificateHandle LookupCertificateIssuer(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GTlsCertificateHandle certificate, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_issuer(self, certificate, interaction, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -40,12 +45,14 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static T LookupCertificateIssuerAsync<T>(this T self, MentorLake.Gio.GTlsCertificateHandle certificate, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_issuer_async(self, certificate, interaction, flags, cancellable, callback, user_data);
 		return self;
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle LookupCertificateIssuerFinish(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificate_issuer_finish(self, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -53,6 +60,7 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static MentorLake.GLib.GListHandle LookupCertificatesIssuedBy(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.GLib.GByteArrayHandle issuer_raw_dn, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificates_issued_by(self, issuer_raw_dn, interaction, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -60,12 +68,14 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static T LookupCertificatesIssuedByAsync<T>(this T self, MentorLake.GLib.GByteArrayHandle issuer_raw_dn, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		GTlsDatabaseHandleExterns.g_tls_database_lookup_certificates_issued_by_async(self, issuer_raw_dn, interaction, flags, cancellable, callback, user_data);
 		return self;
 	}
 
 	public static MentorLake.GLib.GListHandle LookupCertificatesIssuedByFinish(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_lookup_certificates_issued_by_finish(self, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -73,6 +83,7 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static MentorLake.Gio.GTlsCertificateFlags VerifyChain(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GTlsCertificateHandle chain, string purpose, MentorLake.Gio.GSocketConnectableHandle identity, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseVerifyFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_verify_chain(self, chain, purpose, identity, interaction, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -80,12 +91,14 @@ public static class GTlsDatabaseHandleExtensions
 
 	public static T VerifyChainAsync<T>(this T self, MentorLake.Gio.GTlsCertificateHandle chain, string purpose, MentorLake.Gio.GSocketConnectableHandle identity, MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsDatabaseVerifyFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsDatabaseHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		GTlsDatabaseHandleExterns.g_tls_database_verify_chain_async(self, chain, purpose, identity, interaction, flags, cancellable, callback, user_data);
 		return self;
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags VerifyChainFinish(this MentorLake.Gio.GTlsDatabaseHandle self, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTlsDatabaseHandle)");
 		var externCallResult = GTlsDatabaseHandleExterns.g_tls_database_verify_chain_finish(self, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

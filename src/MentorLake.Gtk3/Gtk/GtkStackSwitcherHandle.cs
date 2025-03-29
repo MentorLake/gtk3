@@ -13,11 +13,13 @@ public static class GtkStackSwitcherHandleExtensions
 {
 	public static MentorLake.Gtk.GtkStackHandle GetStack(this MentorLake.Gtk.GtkStackSwitcherHandle switcher)
 	{
+		if (switcher.IsInvalid || switcher.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSwitcherHandle)");
 		return GtkStackSwitcherHandleExterns.gtk_stack_switcher_get_stack(switcher);
 	}
 
 	public static T SetStack<T>(this T switcher, MentorLake.Gtk.GtkStackHandle stack) where T : GtkStackSwitcherHandle
 	{
+		if (switcher.IsInvalid || switcher.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSwitcherHandle)");
 		GtkStackSwitcherHandleExterns.gtk_stack_switcher_set_stack(switcher, stack);
 		return switcher;
 	}

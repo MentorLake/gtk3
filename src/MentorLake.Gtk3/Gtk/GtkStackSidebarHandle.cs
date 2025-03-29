@@ -13,11 +13,13 @@ public static class GtkStackSidebarHandleExtensions
 {
 	public static MentorLake.Gtk.GtkStackHandle GetStack(this MentorLake.Gtk.GtkStackSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSidebarHandle)");
 		return GtkStackSidebarHandleExterns.gtk_stack_sidebar_get_stack(sidebar);
 	}
 
 	public static T SetStack<T>(this T sidebar, MentorLake.Gtk.GtkStackHandle stack) where T : GtkStackSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSidebarHandle)");
 		GtkStackSidebarHandleExterns.gtk_stack_sidebar_set_stack(sidebar, stack);
 		return sidebar;
 	}

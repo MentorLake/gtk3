@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GDtlsClientConnectionHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GDtlsClientConnectionHandleImpl : BaseSafeHandle, GDtlsClientConnectionHandle
@@ -12,27 +14,32 @@ public static class GDtlsClientConnectionHandleExtensions
 {
 	public static MentorLake.GLib.GListHandle GetAcceptedCas(this MentorLake.Gio.GDtlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GDtlsClientConnectionHandle)");
 		return GDtlsClientConnectionHandleExterns.g_dtls_client_connection_get_accepted_cas(conn);
 	}
 
 	public static MentorLake.Gio.GSocketConnectableHandle GetServerIdentity(this MentorLake.Gio.GDtlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GDtlsClientConnectionHandle)");
 		return GDtlsClientConnectionHandleExterns.g_dtls_client_connection_get_server_identity(conn);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetValidationFlags(this MentorLake.Gio.GDtlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GDtlsClientConnectionHandle)");
 		return GDtlsClientConnectionHandleExterns.g_dtls_client_connection_get_validation_flags(conn);
 	}
 
 	public static T SetServerIdentity<T>(this T conn, MentorLake.Gio.GSocketConnectableHandle identity) where T : GDtlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GDtlsClientConnectionHandle)");
 		GDtlsClientConnectionHandleExterns.g_dtls_client_connection_set_server_identity(conn, identity);
 		return conn;
 	}
 
 	public static T SetValidationFlags<T>(this T conn, MentorLake.Gio.GTlsCertificateFlags flags) where T : GDtlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GDtlsClientConnectionHandle)");
 		GDtlsClientConnectionHandleExterns.g_dtls_client_connection_set_validation_flags(conn, flags);
 		return conn;
 	}

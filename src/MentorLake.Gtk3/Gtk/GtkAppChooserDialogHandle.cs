@@ -18,16 +18,19 @@ public static class GtkAppChooserDialogHandleExtensions
 {
 	public static string GetHeading(this MentorLake.Gtk.GtkAppChooserDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
 		return GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_get_heading(self);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetWidget(this MentorLake.Gtk.GtkAppChooserDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
 		return GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_get_widget(self);
 	}
 
 	public static T SetHeading<T>(this T self, string heading) where T : GtkAppChooserDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
 		GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_set_heading(self, heading);
 		return self;
 	}

@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GIconHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GIconHandleImpl : BaseSafeHandle, GIconHandle
@@ -12,21 +14,25 @@ public static class GIconHandleExtensions
 {
 	public static bool Equal(this MentorLake.Gio.GIconHandle icon1, MentorLake.Gio.GIconHandle icon2)
 	{
+		if (icon1.IsInvalid || icon1.IsClosed) throw new Exception("Invalid or closed handle (GIconHandle)");
 		return GIconHandleExterns.g_icon_equal(icon1, icon2);
 	}
 
 	public static uint Hash(this MentorLake.Gio.GIconHandle icon)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GIconHandle)");
 		return GIconHandleExterns.g_icon_hash(icon);
 	}
 
 	public static MentorLake.GLib.GVariantHandle Serialize(this MentorLake.Gio.GIconHandle icon)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GIconHandle)");
 		return GIconHandleExterns.g_icon_serialize(icon);
 	}
 
 	public static string ToString(this MentorLake.Gio.GIconHandle icon)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GIconHandle)");
 		return GIconHandleExterns.g_icon_to_string(icon);
 	}
 

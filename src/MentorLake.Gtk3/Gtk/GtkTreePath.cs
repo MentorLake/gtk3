@@ -34,76 +34,91 @@ public static class GtkTreePathExtensions
 {
 	public static void AppendIndex(this MentorLake.Gtk.GtkTreePathHandle path, int index_)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		GtkTreePathExterns.gtk_tree_path_append_index(path, index_);
 	}
 
 	public static int Compare(this MentorLake.Gtk.GtkTreePathHandle a, MentorLake.Gtk.GtkTreePathHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_compare(a, b);
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle Copy(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_copy(path);
 	}
 
 	public static void Down(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		GtkTreePathExterns.gtk_tree_path_down(path);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		GtkTreePathExterns.gtk_tree_path_free(path);
 	}
 
 	public static int GetDepth(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_get_depth(path);
 	}
 
 	public static int GetIndices(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_get_indices(path);
 	}
 
 	public static int[] GetIndicesWithDepth(this MentorLake.Gtk.GtkTreePathHandle path, out int depth)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_get_indices_with_depth(path, out depth);
 	}
 
 	public static bool IsAncestor(this MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreePathHandle descendant)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_is_ancestor(path, descendant);
 	}
 
 	public static bool IsDescendant(this MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreePathHandle ancestor)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_is_descendant(path, ancestor);
 	}
 
 	public static void Next(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		GtkTreePathExterns.gtk_tree_path_next(path);
 	}
 
 	public static void PrependIndex(this MentorLake.Gtk.GtkTreePathHandle path, int index_)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		GtkTreePathExterns.gtk_tree_path_prepend_index(path, index_);
 	}
 
 	public static bool Prev(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_prev(path);
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_to_string(path);
 	}
 
 	public static bool Up(this MentorLake.Gtk.GtkTreePathHandle path)
 	{
+		if (path.IsInvalid || path.IsClosed) throw new Exception("Invalid or closed handle (GtkTreePath)");
 		return GtkTreePathExterns.gtk_tree_path_up(path);
 	}
 

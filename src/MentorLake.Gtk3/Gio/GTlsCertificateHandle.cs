@@ -57,46 +57,55 @@ public static class GTlsCertificateHandleExtensions
 {
 	public static MentorLake.GLib.GPtrArrayHandle GetDnsNames(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_dns_names(cert);
 	}
 
 	public static MentorLake.GLib.GPtrArrayHandle GetIpAddresses(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_ip_addresses(cert);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetIssuer(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_issuer(cert);
 	}
 
 	public static string GetIssuerName(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_issuer_name(cert);
 	}
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidAfter(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_not_valid_after(cert);
 	}
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidBefore(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_not_valid_before(cert);
 	}
 
 	public static string GetSubjectName(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_subject_name(cert);
 	}
 
 	public static bool IsSame(this MentorLake.Gio.GTlsCertificateHandle cert_one, MentorLake.Gio.GTlsCertificateHandle cert_two)
 	{
+		if (cert_one.IsInvalid || cert_one.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_is_same(cert_one, cert_two);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags Verify(this MentorLake.Gio.GTlsCertificateHandle cert, MentorLake.Gio.GSocketConnectableHandle identity, MentorLake.Gio.GTlsCertificateHandle trusted_ca)
 	{
+		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_verify(cert, identity, trusted_ca);
 	}
 

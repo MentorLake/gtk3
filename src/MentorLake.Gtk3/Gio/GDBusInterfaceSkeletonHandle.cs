@@ -61,6 +61,7 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 {
 	public static bool Export(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, MentorLake.Gio.GDBusConnectionHandle connection, string object_path)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		var externCallResult = GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_export(interface_, connection, object_path, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -68,64 +69,76 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 
 	public static T Flush<T>(this T interface_) where T : GDBusInterfaceSkeletonHandle
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_flush(interface_);
 		return interface_;
 	}
 
 	public static MentorLake.Gio.GDBusConnectionHandle GetConnection(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_connection(interface_);
 	}
 
 	public static MentorLake.GLib.GListHandle GetConnections(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_connections(interface_);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceSkeletonFlags GetFlags(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_flags(interface_);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceInfoHandle GetInfo(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_info(interface_);
 	}
 
 	public static string GetObjectPath(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_object_path(interface_);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetProperties(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_properties(interface_);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceVTableHandle GetVtable(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_get_vtable(interface_);
 	}
 
 	public static bool HasConnection(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, MentorLake.Gio.GDBusConnectionHandle connection)
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_has_connection(interface_, connection);
 	}
 
 	public static T SetFlags<T>(this T interface_, MentorLake.Gio.GDBusInterfaceSkeletonFlags flags) where T : GDBusInterfaceSkeletonHandle
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_set_flags(interface_, flags);
 		return interface_;
 	}
 
 	public static T Unexport<T>(this T interface_) where T : GDBusInterfaceSkeletonHandle
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_unexport(interface_);
 		return interface_;
 	}
 
 	public static T UnexportFromConnection<T>(this T interface_, MentorLake.Gio.GDBusConnectionHandle connection) where T : GDBusInterfaceSkeletonHandle
 	{
+		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceSkeletonHandle)");
 		GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_unexport_from_connection(interface_, connection);
 		return interface_;
 	}

@@ -64,49 +64,58 @@ public static class GtkListBoxRowHandleExtensions
 {
 	public static T Changed<T>(this T row) where T : GtkListBoxRowHandle
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		GtkListBoxRowHandleExterns.gtk_list_box_row_changed(row);
 		return row;
 	}
 
 	public static bool GetActivatable(this MentorLake.Gtk.GtkListBoxRowHandle row)
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		return GtkListBoxRowHandleExterns.gtk_list_box_row_get_activatable(row);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetHeader(this MentorLake.Gtk.GtkListBoxRowHandle row)
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		return GtkListBoxRowHandleExterns.gtk_list_box_row_get_header(row);
 	}
 
 	public static int GetIndex(this MentorLake.Gtk.GtkListBoxRowHandle row)
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		return GtkListBoxRowHandleExterns.gtk_list_box_row_get_index(row);
 	}
 
 	public static bool GetSelectable(this MentorLake.Gtk.GtkListBoxRowHandle row)
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		return GtkListBoxRowHandleExterns.gtk_list_box_row_get_selectable(row);
 	}
 
 	public static bool IsSelected(this MentorLake.Gtk.GtkListBoxRowHandle row)
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		return GtkListBoxRowHandleExterns.gtk_list_box_row_is_selected(row);
 	}
 
 	public static T SetActivatable<T>(this T row, bool activatable) where T : GtkListBoxRowHandle
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		GtkListBoxRowHandleExterns.gtk_list_box_row_set_activatable(row, activatable);
 		return row;
 	}
 
 	public static T SetHeader<T>(this T row, MentorLake.Gtk.GtkWidgetHandle header) where T : GtkListBoxRowHandle
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		GtkListBoxRowHandleExterns.gtk_list_box_row_set_header(row, header);
 		return row;
 	}
 
 	public static T SetSelectable<T>(this T row, bool selectable) where T : GtkListBoxRowHandle
 	{
+		if (row.IsInvalid || row.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxRowHandle)");
 		GtkListBoxRowHandleExterns.gtk_list_box_row_set_selectable(row, selectable);
 		return row;
 	}

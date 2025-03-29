@@ -9,11 +9,13 @@ public static class GDBusAnnotationInfoExtensions
 {
 	public static MentorLake.Gio.GDBusAnnotationInfoHandle Ref(this MentorLake.Gio.GDBusAnnotationInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusAnnotationInfo)");
 		return GDBusAnnotationInfoExterns.g_dbus_annotation_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusAnnotationInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusAnnotationInfo)");
 		GDBusAnnotationInfoExterns.g_dbus_annotation_info_unref(info);
 	}
 

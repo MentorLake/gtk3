@@ -41,86 +41,103 @@ public static class GtkPaperSizeExtensions
 {
 	public static MentorLake.Gtk.GtkPaperSizeHandle Copy(this MentorLake.Gtk.GtkPaperSizeHandle other)
 	{
+		if (other.IsInvalid || other.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_copy(other);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		GtkPaperSizeExterns.gtk_paper_size_free(size);
 	}
 
 	public static double GetDefaultBottomMargin(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_default_bottom_margin(size, unit);
 	}
 
 	public static double GetDefaultLeftMargin(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_default_left_margin(size, unit);
 	}
 
 	public static double GetDefaultRightMargin(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_default_right_margin(size, unit);
 	}
 
 	public static double GetDefaultTopMargin(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_default_top_margin(size, unit);
 	}
 
 	public static string GetDisplayName(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_display_name(size);
 	}
 
 	public static double GetHeight(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_height(size, unit);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_name(size);
 	}
 
 	public static string GetPpdName(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_ppd_name(size);
 	}
 
 	public static double GetWidth(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_get_width(size, unit);
 	}
 
 	public static bool IsCustom(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_is_custom(size);
 	}
 
 	public static bool IsEqual(this MentorLake.Gtk.GtkPaperSizeHandle size1, MentorLake.Gtk.GtkPaperSizeHandle size2)
 	{
+		if (size1.IsInvalid || size1.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_is_equal(size1, size2);
 	}
 
 	public static bool IsIpp(this MentorLake.Gtk.GtkPaperSizeHandle size)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_is_ipp(size);
 	}
 
 	public static void SetSize(this MentorLake.Gtk.GtkPaperSizeHandle size, double width, double height, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		GtkPaperSizeExterns.gtk_paper_size_set_size(size, width, height, unit);
 	}
 
 	public static MentorLake.GLib.GVariantHandle ToGvariant(this MentorLake.Gtk.GtkPaperSizeHandle paper_size)
 	{
+		if (paper_size.IsInvalid || paper_size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		return GtkPaperSizeExterns.gtk_paper_size_to_gvariant(paper_size);
 	}
 
 	public static void ToKeyFile(this MentorLake.Gtk.GtkPaperSizeHandle size, MentorLake.GLib.GKeyFileHandle key_file, string group_name)
 	{
+		if (size.IsInvalid || size.IsClosed) throw new Exception("Invalid or closed handle (GtkPaperSize)");
 		GtkPaperSizeExterns.gtk_paper_size_to_key_file(size, key_file, group_name);
 	}
 

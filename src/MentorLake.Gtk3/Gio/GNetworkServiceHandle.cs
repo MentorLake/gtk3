@@ -13,26 +13,31 @@ public static class GNetworkServiceHandleExtensions
 {
 	public static string GetDomain(this MentorLake.Gio.GNetworkServiceHandle srv)
 	{
+		if (srv.IsInvalid || srv.IsClosed) throw new Exception("Invalid or closed handle (GNetworkServiceHandle)");
 		return GNetworkServiceHandleExterns.g_network_service_get_domain(srv);
 	}
 
 	public static string GetProtocol(this MentorLake.Gio.GNetworkServiceHandle srv)
 	{
+		if (srv.IsInvalid || srv.IsClosed) throw new Exception("Invalid or closed handle (GNetworkServiceHandle)");
 		return GNetworkServiceHandleExterns.g_network_service_get_protocol(srv);
 	}
 
 	public static string GetScheme(this MentorLake.Gio.GNetworkServiceHandle srv)
 	{
+		if (srv.IsInvalid || srv.IsClosed) throw new Exception("Invalid or closed handle (GNetworkServiceHandle)");
 		return GNetworkServiceHandleExterns.g_network_service_get_scheme(srv);
 	}
 
 	public static string GetService(this MentorLake.Gio.GNetworkServiceHandle srv)
 	{
+		if (srv.IsInvalid || srv.IsClosed) throw new Exception("Invalid or closed handle (GNetworkServiceHandle)");
 		return GNetworkServiceHandleExterns.g_network_service_get_service(srv);
 	}
 
 	public static T SetScheme<T>(this T srv, string scheme) where T : GNetworkServiceHandle
 	{
+		if (srv.IsInvalid || srv.IsClosed) throw new Exception("Invalid or closed handle (GNetworkServiceHandle)");
 		GNetworkServiceHandleExterns.g_network_service_set_scheme(srv, scheme);
 		return srv;
 	}

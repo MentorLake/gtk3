@@ -18,12 +18,14 @@ public static class GIOModuleHandleExtensions
 {
 	public static T Load<T>(this T module) where T : GIOModuleHandle
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleHandle)");
 		GIOModuleHandleExterns.g_io_module_load(module);
 		return module;
 	}
 
 	public static T Unload<T>(this T module) where T : GIOModuleHandle
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleHandle)");
 		GIOModuleHandleExterns.g_io_module_unload(module);
 		return module;
 	}

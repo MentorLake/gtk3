@@ -18,59 +18,70 @@ public static class GdkGLContextHandleExtensions
 {
 	public static bool GetDebugEnabled(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_debug_enabled(context);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_display(context);
 	}
 
 	public static bool GetForwardCompatible(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_forward_compatible(context);
 	}
 
 	public static T GetRequiredVersion<T>(this T context, out int major, out int minor) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_get_required_version(context, out major, out minor);
 		return context;
 	}
 
 	public static MentorLake.Gdk.GdkGLContextHandle GetSharedContext(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_shared_context(context);
 	}
 
 	public static bool GetUseEs(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_use_es(context);
 	}
 
 	public static T GetVersion<T>(this T context, out int major, out int minor) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_get_version(context, out major, out minor);
 		return context;
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindow(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_get_window(context);
 	}
 
 	public static bool IsLegacy(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		return GdkGLContextHandleExterns.gdk_gl_context_is_legacy(context);
 	}
 
 	public static T MakeCurrent<T>(this T context) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_make_current(context);
 		return context;
 	}
 
 	public static bool Realize(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		var externCallResult = GdkGLContextHandleExterns.gdk_gl_context_realize(context, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -78,24 +89,28 @@ public static class GdkGLContextHandleExtensions
 
 	public static T SetDebugEnabled<T>(this T context, bool enabled) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_set_debug_enabled(context, enabled);
 		return context;
 	}
 
 	public static T SetForwardCompatible<T>(this T context, bool compatible) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_set_forward_compatible(context, compatible);
 		return context;
 	}
 
 	public static T SetRequiredVersion<T>(this T context, int major, int minor) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_set_required_version(context, major, minor);
 		return context;
 	}
 
 	public static T SetUseEs<T>(this T context, int use_es) where T : GdkGLContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkGLContextHandle)");
 		GdkGLContextHandleExterns.gdk_gl_context_set_use_es(context, use_es);
 		return context;
 	}

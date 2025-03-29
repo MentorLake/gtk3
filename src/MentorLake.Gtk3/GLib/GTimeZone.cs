@@ -34,41 +34,49 @@ public static class GTimeZoneExtensions
 {
 	public static int AdjustTime(this MentorLake.GLib.GTimeZoneHandle tz, MentorLake.GLib.GTimeType type, ref long time_)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_adjust_time(tz, type, ref time_);
 	}
 
 	public static int FindInterval(this MentorLake.GLib.GTimeZoneHandle tz, MentorLake.GLib.GTimeType type, long time_)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_find_interval(tz, type, time_);
 	}
 
 	public static string GetAbbreviation(this MentorLake.GLib.GTimeZoneHandle tz, int interval)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_get_abbreviation(tz, interval);
 	}
 
 	public static string GetIdentifier(this MentorLake.GLib.GTimeZoneHandle tz)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_get_identifier(tz);
 	}
 
 	public static int GetOffset(this MentorLake.GLib.GTimeZoneHandle tz, int interval)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_get_offset(tz, interval);
 	}
 
 	public static bool IsDst(this MentorLake.GLib.GTimeZoneHandle tz, int interval)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_is_dst(tz, interval);
 	}
 
 	public static MentorLake.GLib.GTimeZoneHandle Ref(this MentorLake.GLib.GTimeZoneHandle tz)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		return GTimeZoneExterns.g_time_zone_ref(tz);
 	}
 
 	public static void Unref(this MentorLake.GLib.GTimeZoneHandle tz)
 	{
+		if (tz.IsInvalid || tz.IsClosed) throw new Exception("Invalid or closed handle (GTimeZone)");
 		GTimeZoneExterns.g_time_zone_unref(tz);
 	}
 

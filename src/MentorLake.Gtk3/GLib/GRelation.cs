@@ -9,41 +9,49 @@ public static class GRelationExtensions
 {
 	public static int Count(this MentorLake.GLib.GRelationHandle relation, IntPtr key, int field)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		return GRelationExterns.g_relation_count(relation, key, field);
 	}
 
 	public static int Delete(this MentorLake.GLib.GRelationHandle relation, IntPtr key, int field)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		return GRelationExterns.g_relation_delete(relation, key, field);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GRelationHandle relation)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		GRelationExterns.g_relation_destroy(relation);
 	}
 
 	public static bool Exists(this MentorLake.GLib.GRelationHandle relation, IntPtr @__arglist)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		return GRelationExterns.g_relation_exists(relation, @__arglist);
 	}
 
 	public static void Index(this MentorLake.GLib.GRelationHandle relation, int field, MentorLake.GLib.GHashFunc hash_func, MentorLake.GLib.GEqualFunc key_equal_func)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		GRelationExterns.g_relation_index(relation, field, hash_func, key_equal_func);
 	}
 
 	public static void Insert(this MentorLake.GLib.GRelationHandle relation, IntPtr @__arglist)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		GRelationExterns.g_relation_insert(relation, @__arglist);
 	}
 
 	public static void Print(this MentorLake.GLib.GRelationHandle relation)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		GRelationExterns.g_relation_print(relation);
 	}
 
 	public static MentorLake.GLib.GTuplesHandle Select(this MentorLake.GLib.GRelationHandle relation, IntPtr key, int field)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (GRelation)");
 		return GRelationExterns.g_relation_select(relation, key, field);
 	}
 

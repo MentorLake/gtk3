@@ -18,21 +18,25 @@ public static class GInetSocketAddressHandleExtensions
 {
 	public static MentorLake.Gio.GInetAddressHandle GetAddress(this MentorLake.Gio.GInetSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetSocketAddressHandle)");
 		return GInetSocketAddressHandleExterns.g_inet_socket_address_get_address(address);
 	}
 
 	public static uint GetFlowinfo(this MentorLake.Gio.GInetSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetSocketAddressHandle)");
 		return GInetSocketAddressHandleExterns.g_inet_socket_address_get_flowinfo(address);
 	}
 
 	public static ushort GetPort(this MentorLake.Gio.GInetSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetSocketAddressHandle)");
 		return GInetSocketAddressHandleExterns.g_inet_socket_address_get_port(address);
 	}
 
 	public static uint GetScopeId(this MentorLake.Gio.GInetSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetSocketAddressHandle)");
 		return GInetSocketAddressHandleExterns.g_inet_socket_address_get_scope_id(address);
 	}
 

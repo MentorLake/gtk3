@@ -59,58 +59,69 @@ public static class GdkMonitorHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_display(monitor);
 	}
 
 	public static T GetGeometry<T>(this T monitor, out MentorLake.Gdk.GdkRectangle geometry) where T : GdkMonitorHandle
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		GdkMonitorHandleExterns.gdk_monitor_get_geometry(monitor, out geometry);
 		return monitor;
 	}
 
 	public static int GetHeightMm(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_height_mm(monitor);
 	}
 
 	public static string GetManufacturer(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_manufacturer(monitor);
 	}
 
 	public static string GetModel(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_model(monitor);
 	}
 
 	public static int GetRefreshRate(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_refresh_rate(monitor);
 	}
 
 	public static int GetScaleFactor(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_scale_factor(monitor);
 	}
 
 	public static MentorLake.Gdk.GdkSubpixelLayout GetSubpixelLayout(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_subpixel_layout(monitor);
 	}
 
 	public static int GetWidthMm(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_get_width_mm(monitor);
 	}
 
 	public static T GetWorkarea<T>(this T monitor, out MentorLake.Gdk.GdkRectangle workarea) where T : GdkMonitorHandle
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		GdkMonitorHandleExterns.gdk_monitor_get_workarea(monitor, out workarea);
 		return monitor;
 	}
 
 	public static bool IsPrimary(this MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GdkMonitorHandle)");
 		return GdkMonitorHandleExterns.gdk_monitor_is_primary(monitor);
 	}
 

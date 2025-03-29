@@ -43,49 +43,58 @@ public static class GdkVisualHandleExtensions
 {
 	public static int GetBitsPerRgb(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_bits_per_rgb(visual);
 	}
 
 	public static T GetBluePixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		GdkVisualHandleExterns.gdk_visual_get_blue_pixel_details(visual, out mask, out shift, out precision);
 		return visual;
 	}
 
 	public static MentorLake.Gdk.GdkByteOrder GetByteOrder(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_byte_order(visual);
 	}
 
 	public static int GetColormapSize(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_colormap_size(visual);
 	}
 
 	public static int GetDepth(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_depth(visual);
 	}
 
 	public static T GetGreenPixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		GdkVisualHandleExterns.gdk_visual_get_green_pixel_details(visual, out mask, out shift, out precision);
 		return visual;
 	}
 
 	public static T GetRedPixelDetails<T>(this T visual, out uint mask, out int shift, out int precision) where T : GdkVisualHandle
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		GdkVisualHandleExterns.gdk_visual_get_red_pixel_details(visual, out mask, out shift, out precision);
 		return visual;
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_screen(visual);
 	}
 
 	public static MentorLake.Gdk.GdkVisualType GetVisualType(this MentorLake.Gdk.GdkVisualHandle visual)
 	{
+		if (visual.IsInvalid || visual.IsClosed) throw new Exception("Invalid or closed handle (GdkVisualHandle)");
 		return GdkVisualHandleExterns.gdk_visual_get_visual_type(visual);
 	}
 

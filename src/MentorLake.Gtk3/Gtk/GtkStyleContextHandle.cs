@@ -79,301 +79,354 @@ public static class GtkStyleContextHandleExtensions
 {
 	public static T AddClass<T>(this T context, string class_name) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_add_class(context, class_name);
 		return context;
 	}
 
 	public static T AddProvider<T>(this T context, MentorLake.Gtk.GtkStyleProviderHandle provider, uint priority) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_add_provider(context, provider, priority);
 		return context;
 	}
 
 	public static T AddRegion<T>(this T context, string region_name, MentorLake.Gtk.GtkRegionFlags flags) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_add_region(context, region_name, flags);
 		return context;
 	}
 
 	public static T CancelAnimations<T>(this T context, IntPtr region_id) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_cancel_animations(context, region_id);
 		return context;
 	}
 
 	public static T Get<T>(this T context, MentorLake.Gtk.GtkStateFlags state, IntPtr @__arglist) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get(context, state, @__arglist);
 		return context;
 	}
 
 	public static T GetBackgroundColor<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_background_color(context, state, out color);
 		return context;
 	}
 
 	public static T GetBorder<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder border) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_border(context, state, out border);
 		return context;
 	}
 
 	public static T GetBorderColor<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_border_color(context, state, out color);
 		return context;
 	}
 
 	public static T GetColor<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_color(context, state, out color);
 		return context;
 	}
 
 	public static MentorLake.Gtk.GtkTextDirection GetDirection(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_direction(context);
 	}
 
 	public static MentorLake.Pango.PangoFontDescriptionHandle GetFont(this MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gtk.GtkStateFlags state)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_font(context, state);
 	}
 
 	public static MentorLake.Gdk.GdkFrameClockHandle GetFrameClock(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_frame_clock(context);
 	}
 
 	public static MentorLake.Gtk.GtkJunctionSides GetJunctionSides(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_junction_sides(context);
 	}
 
 	public static T GetMargin<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder margin) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_margin(context, state, out margin);
 		return context;
 	}
 
 	public static T GetPadding<T>(this T context, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder padding) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_padding(context, state, out padding);
 		return context;
 	}
 
 	public static MentorLake.Gtk.GtkStyleContextHandle GetParent(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_parent(context);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetPathHandle GetPath(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_path(context);
 	}
 
 	public static T GetProperty<T>(this T context, string property, MentorLake.Gtk.GtkStateFlags state, out MentorLake.GObject.GValue value) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_property(context, property, state, out value);
 		return context;
 	}
 
 	public static int GetScale(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_scale(context);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_screen(context);
 	}
 
 	public static MentorLake.Gtk.GtkCssSectionHandle GetSection(this MentorLake.Gtk.GtkStyleContextHandle context, string property)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_section(context, property);
 	}
 
 	public static MentorLake.Gtk.GtkStateFlags GetState(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_get_state(context);
 	}
 
 	public static T GetStyle<T>(this T context, IntPtr @__arglist) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_style(context, @__arglist);
 		return context;
 	}
 
 	public static T GetStyleProperty<T>(this T context, string property_name, out MentorLake.GObject.GValue value) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_style_property(context, property_name, out value);
 		return context;
 	}
 
 	public static T GetStyleValist<T>(this T context, IntPtr args) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_style_valist(context, args);
 		return context;
 	}
 
 	public static T GetValist<T>(this T context, MentorLake.Gtk.GtkStateFlags state, IntPtr args) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_get_valist(context, state, args);
 		return context;
 	}
 
 	public static bool HasClass(this MentorLake.Gtk.GtkStyleContextHandle context, string class_name)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_has_class(context, class_name);
 	}
 
 	public static bool HasRegion(this MentorLake.Gtk.GtkStyleContextHandle context, string region_name, out MentorLake.Gtk.GtkRegionFlags flags_return)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_has_region(context, region_name, out flags_return);
 	}
 
 	public static T Invalidate<T>(this T context) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_invalidate(context);
 		return context;
 	}
 
 	public static MentorLake.GLib.GListHandle ListClasses(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_list_classes(context);
 	}
 
 	public static MentorLake.GLib.GListHandle ListRegions(this MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_list_regions(context);
 	}
 
 	public static bool LookupColor(this MentorLake.Gtk.GtkStyleContextHandle context, string color_name, out MentorLake.Gdk.GdkRGBA color)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_lookup_color(context, color_name, out color);
 	}
 
 	public static MentorLake.Gtk.GtkIconSetHandle LookupIconSet(this MentorLake.Gtk.GtkStyleContextHandle context, string stock_id)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_lookup_icon_set(context, stock_id);
 	}
 
 	public static T NotifyStateChange<T>(this T context, MentorLake.Gdk.GdkWindowHandle window, IntPtr region_id, MentorLake.Gtk.GtkStateType state, bool state_value) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_notify_state_change(context, window, region_id, state, state_value);
 		return context;
 	}
 
 	public static T PopAnimatableRegion<T>(this T context) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_pop_animatable_region(context);
 		return context;
 	}
 
 	public static T PushAnimatableRegion<T>(this T context, IntPtr region_id) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_push_animatable_region(context, region_id);
 		return context;
 	}
 
 	public static T RemoveClass<T>(this T context, string class_name) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_remove_class(context, class_name);
 		return context;
 	}
 
 	public static T RemoveProvider<T>(this T context, MentorLake.Gtk.GtkStyleProviderHandle provider) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_remove_provider(context, provider);
 		return context;
 	}
 
 	public static T RemoveRegion<T>(this T context, string region_name) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_remove_region(context, region_name);
 		return context;
 	}
 
 	public static T Restore<T>(this T context) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_restore(context);
 		return context;
 	}
 
 	public static T Save<T>(this T context) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_save(context);
 		return context;
 	}
 
 	public static T ScrollAnimations<T>(this T context, MentorLake.Gdk.GdkWindowHandle window, int dx, int dy) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_scroll_animations(context, window, dx, dy);
 		return context;
 	}
 
 	public static T SetBackground<T>(this T context, MentorLake.Gdk.GdkWindowHandle window) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_background(context, window);
 		return context;
 	}
 
 	public static T SetDirection<T>(this T context, MentorLake.Gtk.GtkTextDirection direction) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_direction(context, direction);
 		return context;
 	}
 
 	public static T SetFrameClock<T>(this T context, MentorLake.Gdk.GdkFrameClockHandle frame_clock) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_frame_clock(context, frame_clock);
 		return context;
 	}
 
 	public static T SetJunctionSides<T>(this T context, MentorLake.Gtk.GtkJunctionSides sides) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_junction_sides(context, sides);
 		return context;
 	}
 
 	public static T SetParent<T>(this T context, MentorLake.Gtk.GtkStyleContextHandle parent) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_parent(context, parent);
 		return context;
 	}
 
 	public static T SetPath<T>(this T context, MentorLake.Gtk.GtkWidgetPathHandle path) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_path(context, path);
 		return context;
 	}
 
 	public static T SetScale<T>(this T context, int scale) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_scale(context, scale);
 		return context;
 	}
 
 	public static T SetScreen<T>(this T context, MentorLake.Gdk.GdkScreenHandle screen) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_screen(context, screen);
 		return context;
 	}
 
 	public static T SetState<T>(this T context, MentorLake.Gtk.GtkStateFlags flags) where T : GtkStyleContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		GtkStyleContextHandleExterns.gtk_style_context_set_state(context, flags);
 		return context;
 	}
 
 	public static bool StateIsRunning(this MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gtk.GtkStateType state, out double progress)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_state_is_running(context, state, out progress);
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gtk.GtkStyleContextPrintFlags flags)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleContextHandle)");
 		return GtkStyleContextHandleExterns.gtk_style_context_to_string(context, flags);
 	}
 

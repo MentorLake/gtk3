@@ -9,36 +9,43 @@ public static class GCompletionExtensions
 {
 	public static void AddItems(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GListHandle items)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		GCompletionExterns.g_completion_add_items(cmp, items);
 	}
 
 	public static void ClearItems(this MentorLake.GLib.GCompletionHandle cmp)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		GCompletionExterns.g_completion_clear_items(cmp);
 	}
 
 	public static MentorLake.GLib.GListHandle Complete(this MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		return GCompletionExterns.g_completion_complete(cmp, prefix, new_prefix);
 	}
 
 	public static MentorLake.GLib.GListHandle CompleteUtf8(this MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		return GCompletionExterns.g_completion_complete_utf8(cmp, prefix, new_prefix);
 	}
 
 	public static void Free(this MentorLake.GLib.GCompletionHandle cmp)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		GCompletionExterns.g_completion_free(cmp);
 	}
 
 	public static void RemoveItems(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GListHandle items)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		GCompletionExterns.g_completion_remove_items(cmp, items);
 	}
 
 	public static void SetCompare(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GCompletionStrncmpFunc strncmp_func)
 	{
+		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
 		GCompletionExterns.g_completion_set_compare(cmp, strncmp_func);
 	}
 

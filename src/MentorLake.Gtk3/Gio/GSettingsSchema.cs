@@ -9,41 +9,49 @@ public static class GSettingsSchemaExtensions
 {
 	public static string GetId(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_get_id(schema);
 	}
 
 	public static MentorLake.Gio.GSettingsSchemaKeyHandle GetKey(this MentorLake.Gio.GSettingsSchemaHandle schema, string name)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_get_key(schema, name);
 	}
 
 	public static string GetPath(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_get_path(schema);
 	}
 
 	public static bool HasKey(this MentorLake.Gio.GSettingsSchemaHandle schema, string name)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_has_key(schema, name);
 	}
 
 	public static string[] ListChildren(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_list_children(schema);
 	}
 
 	public static string[] ListKeys(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_list_keys(schema);
 	}
 
 	public static MentorLake.Gio.GSettingsSchemaHandle Ref(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		return GSettingsSchemaExterns.g_settings_schema_ref(schema);
 	}
 
 	public static void Unref(this MentorLake.Gio.GSettingsSchemaHandle schema)
 	{
+		if (schema.IsInvalid || schema.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchema)");
 		GSettingsSchemaExterns.g_settings_schema_unref(schema);
 	}
 

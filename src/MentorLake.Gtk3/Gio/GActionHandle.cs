@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GActionHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GActionHandleImpl : BaseSafeHandle, GActionHandle
@@ -12,43 +14,51 @@ public static class GActionHandleExtensions
 {
 	public static T Activate<T>(this T action, MentorLake.GLib.GVariantHandle parameter) where T : GActionHandle
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		GActionHandleExterns.g_action_activate(action, parameter);
 		return action;
 	}
 
 	public static T ChangeState<T>(this T action, MentorLake.GLib.GVariantHandle value) where T : GActionHandle
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		GActionHandleExterns.g_action_change_state(action, value);
 		return action;
 	}
 
 	public static bool GetEnabled(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_enabled(action);
 	}
 
 	public static string GetName(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_name(action);
 	}
 
 	public static MentorLake.GLib.GVariantTypeHandle GetParameterType(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_parameter_type(action);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetState(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_state(action);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetStateHint(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_state_hint(action);
 	}
 
 	public static MentorLake.GLib.GVariantTypeHandle GetStateType(this MentorLake.Gio.GActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GActionHandle)");
 		return GActionHandleExterns.g_action_get_state_type(action);
 	}
 

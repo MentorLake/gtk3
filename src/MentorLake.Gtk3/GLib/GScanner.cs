@@ -9,101 +9,121 @@ public static class GScannerExtensions
 {
 	public static uint CurLine(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_cur_line(scanner);
 	}
 
 	public static uint CurPosition(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_cur_position(scanner);
 	}
 
 	public static MentorLake.GLib.GTokenType CurToken(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_cur_token(scanner);
 	}
 
 	public static MentorLake.GLib.GTokenValue CurValue(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_cur_value(scanner);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_destroy(scanner);
 	}
 
 	public static bool Eof(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_eof(scanner);
 	}
 
 	public static void Error(this MentorLake.GLib.GScannerHandle scanner, string format, IntPtr @__arglist)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_error(scanner, format, @__arglist);
 	}
 
 	public static MentorLake.GLib.GTokenType GetNextToken(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_get_next_token(scanner);
 	}
 
 	public static void InputFile(this MentorLake.GLib.GScannerHandle scanner, int input_fd)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_input_file(scanner, input_fd);
 	}
 
 	public static void InputText(this MentorLake.GLib.GScannerHandle scanner, string text, uint text_len)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_input_text(scanner, text, text_len);
 	}
 
 	public static IntPtr LookupSymbol(this MentorLake.GLib.GScannerHandle scanner, string symbol)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_lookup_symbol(scanner, symbol);
 	}
 
 	public static MentorLake.GLib.GTokenType PeekNextToken(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_peek_next_token(scanner);
 	}
 
 	public static void ScopeAddSymbol(this MentorLake.GLib.GScannerHandle scanner, uint scope_id, string symbol, IntPtr value)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_scope_add_symbol(scanner, scope_id, symbol, value);
 	}
 
 	public static void ScopeForeachSymbol(this MentorLake.GLib.GScannerHandle scanner, uint scope_id, MentorLake.GLib.GHFunc func, IntPtr user_data)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_scope_foreach_symbol(scanner, scope_id, func, user_data);
 	}
 
 	public static IntPtr ScopeLookupSymbol(this MentorLake.GLib.GScannerHandle scanner, uint scope_id, string symbol)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_scope_lookup_symbol(scanner, scope_id, symbol);
 	}
 
 	public static void ScopeRemoveSymbol(this MentorLake.GLib.GScannerHandle scanner, uint scope_id, string symbol)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_scope_remove_symbol(scanner, scope_id, symbol);
 	}
 
 	public static uint SetScope(this MentorLake.GLib.GScannerHandle scanner, uint scope_id)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		return GScannerExterns.g_scanner_set_scope(scanner, scope_id);
 	}
 
 	public static void SyncFileOffset(this MentorLake.GLib.GScannerHandle scanner)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_sync_file_offset(scanner);
 	}
 
 	public static void UnexpToken(this MentorLake.GLib.GScannerHandle scanner, MentorLake.GLib.GTokenType expected_token, string identifier_spec, string symbol_spec, string symbol_name, string message, int is_error)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_unexp_token(scanner, expected_token, identifier_spec, symbol_spec, symbol_name, message, is_error);
 	}
 
 	public static void Warn(this MentorLake.GLib.GScannerHandle scanner, string format, IntPtr @__arglist)
 	{
+		if (scanner.IsInvalid || scanner.IsClosed) throw new Exception("Invalid or closed handle (GScanner)");
 		GScannerExterns.g_scanner_warn(scanner, format, @__arglist);
 	}
 

@@ -60,61 +60,72 @@ public static class GtkNativeDialogHandleExtensions
 {
 	public static T Destroy<T>(this T self) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_destroy(self);
 		return self;
 	}
 
 	public static bool GetModal(this MentorLake.Gtk.GtkNativeDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		return GtkNativeDialogHandleExterns.gtk_native_dialog_get_modal(self);
 	}
 
 	public static string GetTitle(this MentorLake.Gtk.GtkNativeDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		return GtkNativeDialogHandleExterns.gtk_native_dialog_get_title(self);
 	}
 
 	public static MentorLake.Gtk.GtkWindowHandle GetTransientFor(this MentorLake.Gtk.GtkNativeDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		return GtkNativeDialogHandleExterns.gtk_native_dialog_get_transient_for(self);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkNativeDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		return GtkNativeDialogHandleExterns.gtk_native_dialog_get_visible(self);
 	}
 
 	public static T Hide<T>(this T self) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_hide(self);
 		return self;
 	}
 
 	public static int Run(this MentorLake.Gtk.GtkNativeDialogHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		return GtkNativeDialogHandleExterns.gtk_native_dialog_run(self);
 	}
 
 	public static T SetModal<T>(this T self, bool modal) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_set_modal(self, modal);
 		return self;
 	}
 
 	public static T SetTitle<T>(this T self, string title) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_set_title(self, title);
 		return self;
 	}
 
 	public static T SetTransientFor<T>(this T self, MentorLake.Gtk.GtkWindowHandle parent) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_set_transient_for(self, parent);
 		return self;
 	}
 
 	public static T Show<T>(this T self) where T : GtkNativeDialogHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNativeDialogHandle)");
 		GtkNativeDialogHandleExterns.gtk_native_dialog_show(self);
 		return self;
 	}

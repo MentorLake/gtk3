@@ -22,31 +22,37 @@ public static class GInetAddressMaskHandleExtensions
 {
 	public static bool Equal(this MentorLake.Gio.GInetAddressMaskHandle mask, MentorLake.Gio.GInetAddressMaskHandle mask2)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_equal(mask, mask2);
 	}
 
 	public static MentorLake.Gio.GInetAddressHandle GetAddress(this MentorLake.Gio.GInetAddressMaskHandle mask)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_get_address(mask);
 	}
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GInetAddressMaskHandle mask)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_get_family(mask);
 	}
 
 	public static uint GetLength(this MentorLake.Gio.GInetAddressMaskHandle mask)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_get_length(mask);
 	}
 
 	public static bool Matches(this MentorLake.Gio.GInetAddressMaskHandle mask, MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_matches(mask, address);
 	}
 
 	public static string ToString(this MentorLake.Gio.GInetAddressMaskHandle mask)
 	{
+		if (mask.IsInvalid || mask.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressMaskHandle)");
 		return GInetAddressMaskHandleExterns.g_inet_address_mask_to_string(mask);
 	}
 

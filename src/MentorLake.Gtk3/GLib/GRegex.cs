@@ -16,56 +16,67 @@ public static class GRegexExtensions
 {
 	public static int GetCaptureCount(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_capture_count(regex);
 	}
 
 	public static MentorLake.GLib.GRegexCompileFlags GetCompileFlags(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_compile_flags(regex);
 	}
 
 	public static bool GetHasCrOrLf(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_has_cr_or_lf(regex);
 	}
 
 	public static MentorLake.GLib.GRegexMatchFlags GetMatchFlags(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_match_flags(regex);
 	}
 
 	public static int GetMaxBackref(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_max_backref(regex);
 	}
 
 	public static int GetMaxLookbehind(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_max_lookbehind(regex);
 	}
 
 	public static string GetPattern(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_pattern(regex);
 	}
 
 	public static int GetStringNumber(this MentorLake.GLib.GRegexHandle regex, string name)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_get_string_number(regex, name);
 	}
 
 	public static bool Match(this MentorLake.GLib.GRegexHandle regex, string @string, MentorLake.GLib.GRegexMatchFlags match_options, out MentorLake.GLib.GMatchInfoHandle match_info)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_match(regex, @string, match_options, out match_info);
 	}
 
 	public static bool MatchAll(this MentorLake.GLib.GRegexHandle regex, string @string, MentorLake.GLib.GRegexMatchFlags match_options, out MentorLake.GLib.GMatchInfoHandle match_info)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_match_all(regex, @string, match_options, out match_info);
 	}
 
 	public static bool MatchAllFull(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, MentorLake.GLib.GRegexMatchFlags match_options, out MentorLake.GLib.GMatchInfoHandle match_info)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_match_all_full(regex, @string, string_len, start_position, match_options, out match_info, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -73,6 +84,7 @@ public static class GRegexExtensions
 
 	public static bool MatchFull(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, MentorLake.GLib.GRegexMatchFlags match_options, out MentorLake.GLib.GMatchInfoHandle match_info)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_match_full(regex, @string, string_len, start_position, match_options, out match_info, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -80,11 +92,13 @@ public static class GRegexExtensions
 
 	public static MentorLake.GLib.GRegexHandle Ref(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_ref(regex);
 	}
 
 	public static string Replace(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, string replacement, MentorLake.GLib.GRegexMatchFlags match_options)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_replace(regex, @string, string_len, start_position, replacement, match_options, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -92,6 +106,7 @@ public static class GRegexExtensions
 
 	public static string ReplaceEval(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, MentorLake.GLib.GRegexMatchFlags match_options, MentorLake.GLib.GRegexEvalCallback eval, IntPtr user_data)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_replace_eval(regex, @string, string_len, start_position, match_options, eval, user_data, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -99,6 +114,7 @@ public static class GRegexExtensions
 
 	public static string ReplaceLiteral(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, string replacement, MentorLake.GLib.GRegexMatchFlags match_options)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_replace_literal(regex, @string, string_len, start_position, replacement, match_options, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -106,11 +122,13 @@ public static class GRegexExtensions
 
 	public static string[] Split(this MentorLake.GLib.GRegexHandle regex, string @string, MentorLake.GLib.GRegexMatchFlags match_options)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		return GRegexExterns.g_regex_split(regex, @string, match_options);
 	}
 
 	public static string[] SplitFull(this MentorLake.GLib.GRegexHandle regex, string[] @string, UIntPtr string_len, int start_position, MentorLake.GLib.GRegexMatchFlags match_options, int max_tokens)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		var externCallResult = GRegexExterns.g_regex_split_full(regex, @string, string_len, start_position, match_options, max_tokens, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -118,6 +136,7 @@ public static class GRegexExtensions
 
 	public static void Unref(this MentorLake.GLib.GRegexHandle regex)
 	{
+		if (regex.IsInvalid || regex.IsClosed) throw new Exception("Invalid or closed handle (GRegex)");
 		GRegexExterns.g_regex_unref(regex);
 	}
 

@@ -188,246 +188,290 @@ public static class GtkCellAreaHandleExtensions
 {
 	public static bool Activate(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkRectangleHandle cell_area, MentorLake.Gtk.GtkCellRendererState flags, bool edit_only)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_activate(area, context, widget, cell_area, flags, edit_only);
 	}
 
 	public static bool ActivateCell(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gdk.GdkEventHandle @event, MentorLake.Gdk.GdkRectangleHandle cell_area, MentorLake.Gtk.GtkCellRendererState flags)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_activate_cell(area, widget, renderer, @event, cell_area, flags);
 	}
 
 	public static T Add<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_add(area, renderer);
 		return area;
 	}
 
 	public static T AddFocusSibling<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gtk.GtkCellRendererHandle sibling) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_add_focus_sibling(area, renderer, sibling);
 		return area;
 	}
 
 	public static T AddWithProperties<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_add_with_properties(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
 	public static T ApplyAttributes<T>(this T area, MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter, bool is_expander, bool is_expanded) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_apply_attributes(area, tree_model, iter, is_expander, is_expanded);
 		return area;
 	}
 
 	public static T AttributeConnect<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string attribute, int column) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_attribute_connect(area, renderer, attribute, column);
 		return area;
 	}
 
 	public static T AttributeDisconnect<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string attribute) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_attribute_disconnect(area, renderer, attribute);
 		return area;
 	}
 
 	public static int AttributeGetColumn(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellRendererHandle renderer, string attribute)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_attribute_get_column(area, renderer, attribute);
 	}
 
 	public static T CellGet<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_get(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
 	public static T CellGetProperty<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string property_name, out MentorLake.GObject.GValue value) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_get_property(area, renderer, property_name, out value);
 		return area;
 	}
 
 	public static T CellGetValist<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string first_property_name, IntPtr var_args) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_get_valist(area, renderer, first_property_name, var_args);
 		return area;
 	}
 
 	public static T CellSet<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string first_prop_name, IntPtr @__arglist) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_set(area, renderer, first_prop_name, @__arglist);
 		return area;
 	}
 
 	public static T CellSetProperty<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string property_name, MentorLake.GObject.GValueHandle value) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_set_property(area, renderer, property_name, value);
 		return area;
 	}
 
 	public static T CellSetValist<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, string first_property_name, IntPtr var_args) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_cell_set_valist(area, renderer, first_property_name, var_args);
 		return area;
 	}
 
 	public static MentorLake.Gtk.GtkCellAreaContextHandle CopyContext(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellAreaContextHandle context)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_copy_context(area, context);
 	}
 
 	public static MentorLake.Gtk.GtkCellAreaContextHandle CreateContext(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_create_context(area);
 	}
 
 	public static int Event(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkEventHandle @event, MentorLake.Gdk.GdkRectangleHandle cell_area, MentorLake.Gtk.GtkCellRendererState flags)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_event(area, context, widget, @event, cell_area, flags);
 	}
 
 	public static bool Focus(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkDirectionType direction)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_focus(area, direction);
 	}
 
 	public static T Foreach<T>(this T area, MentorLake.Gtk.GtkCellCallback callback, IntPtr callback_data) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_foreach(area, callback, callback_data);
 		return area;
 	}
 
 	public static T ForeachAlloc<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkRectangleHandle cell_area, MentorLake.Gdk.GdkRectangleHandle background_area, MentorLake.Gtk.GtkCellAllocCallback callback, IntPtr callback_data) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_foreach_alloc(area, context, widget, cell_area, background_area, callback, callback_data);
 		return area;
 	}
 
 	public static T GetCellAllocation<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gdk.GdkRectangleHandle cell_area, out MentorLake.Gdk.GdkRectangle allocation) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_get_cell_allocation(area, context, widget, renderer, cell_area, out allocation);
 		return area;
 	}
 
 	public static MentorLake.Gtk.GtkCellRendererHandle GetCellAtPosition(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkRectangleHandle cell_area, int x, int y, out MentorLake.Gdk.GdkRectangle alloc_area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_cell_at_position(area, context, widget, cell_area, x, y, out alloc_area);
 	}
 
 	public static string GetCurrentPathString(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_current_path_string(area);
 	}
 
 	public static MentorLake.Gtk.GtkCellEditableHandle GetEditWidget(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_edit_widget(area);
 	}
 
 	public static MentorLake.Gtk.GtkCellRendererHandle GetEditedCell(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_edited_cell(area);
 	}
 
 	public static MentorLake.Gtk.GtkCellRendererHandle GetFocusCell(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_focus_cell(area);
 	}
 
 	public static MentorLake.Gtk.GtkCellRendererHandle GetFocusFromSibling(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellRendererHandle renderer)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_focus_from_sibling(area, renderer);
 	}
 
 	public static MentorLake.GLib.GListHandle GetFocusSiblings(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellRendererHandle renderer)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_focus_siblings(area, renderer);
 	}
 
 	public static T GetPreferredHeight<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, out int minimum_height, out int natural_height) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_get_preferred_height(area, context, widget, out minimum_height, out natural_height);
 		return area;
 	}
 
 	public static T GetPreferredHeightForWidth<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, int width, out int minimum_height, out int natural_height) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_get_preferred_height_for_width(area, context, widget, width, out minimum_height, out natural_height);
 		return area;
 	}
 
 	public static T GetPreferredWidth<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, out int minimum_width, out int natural_width) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_get_preferred_width(area, context, widget, out minimum_width, out natural_width);
 		return area;
 	}
 
 	public static T GetPreferredWidthForHeight<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, int height, out int minimum_width, out int natural_width) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_get_preferred_width_for_height(area, context, widget, height, out minimum_width, out natural_width);
 		return area;
 	}
 
 	public static MentorLake.Gtk.GtkSizeRequestMode GetRequestMode(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_get_request_mode(area);
 	}
 
 	public static bool HasRenderer(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellRendererHandle renderer)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_has_renderer(area, renderer);
 	}
 
 	public static T InnerCellArea<T>(this T area, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkRectangleHandle cell_area, out MentorLake.Gdk.GdkRectangle inner_area) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_inner_cell_area(area, widget, cell_area, out inner_area);
 		return area;
 	}
 
 	public static bool IsActivatable(this MentorLake.Gtk.GtkCellAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_is_activatable(area);
 	}
 
 	public static bool IsFocusSibling(this MentorLake.Gtk.GtkCellAreaHandle area, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gtk.GtkCellRendererHandle sibling)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		return GtkCellAreaHandleExterns.gtk_cell_area_is_focus_sibling(area, renderer, sibling);
 	}
 
 	public static T Remove<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_remove(area, renderer);
 		return area;
 	}
 
 	public static T RemoveFocusSibling<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gtk.GtkCellRendererHandle sibling) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_remove_focus_sibling(area, renderer, sibling);
 		return area;
 	}
 
 	public static T Render<T>(this T area, MentorLake.Gtk.GtkCellAreaContextHandle context, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.cairo.cairo_tHandle cr, MentorLake.Gdk.GdkRectangleHandle background_area, MentorLake.Gdk.GdkRectangleHandle cell_area, MentorLake.Gtk.GtkCellRendererState flags, bool paint_focus) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_render(area, context, widget, cr, background_area, cell_area, flags, paint_focus);
 		return area;
 	}
 
 	public static T RequestRenderer<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer, MentorLake.Gtk.GtkOrientation orientation, MentorLake.Gtk.GtkWidgetHandle widget, int for_size, out int minimum_size, out int natural_size) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_request_renderer(area, renderer, orientation, widget, for_size, out minimum_size, out natural_size);
 		return area;
 	}
 
 	public static T SetFocusCell<T>(this T area, MentorLake.Gtk.GtkCellRendererHandle renderer) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_set_focus_cell(area, renderer);
 		return area;
 	}
 
 	public static T StopEditing<T>(this T area, bool canceled) where T : GtkCellAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaHandle)");
 		GtkCellAreaHandleExterns.gtk_cell_area_stop_editing(area, canceled);
 		return area;
 	}

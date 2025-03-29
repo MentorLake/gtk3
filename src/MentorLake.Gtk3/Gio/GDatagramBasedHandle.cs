@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GDatagramBasedHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GDatagramBasedHandleImpl : BaseSafeHandle, GDatagramBasedHandle
@@ -12,11 +14,13 @@ public static class GDatagramBasedHandleExtensions
 {
 	public static MentorLake.GLib.GIOCondition ConditionCheck(this MentorLake.Gio.GDatagramBasedHandle datagram_based, MentorLake.GLib.GIOCondition condition)
 	{
+		if (datagram_based.IsInvalid || datagram_based.IsClosed) throw new Exception("Invalid or closed handle (GDatagramBasedHandle)");
 		return GDatagramBasedHandleExterns.g_datagram_based_condition_check(datagram_based, condition);
 	}
 
 	public static bool ConditionWait(this MentorLake.Gio.GDatagramBasedHandle datagram_based, MentorLake.GLib.GIOCondition condition, long timeout, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (datagram_based.IsInvalid || datagram_based.IsClosed) throw new Exception("Invalid or closed handle (GDatagramBasedHandle)");
 		var externCallResult = GDatagramBasedHandleExterns.g_datagram_based_condition_wait(datagram_based, condition, timeout, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -24,11 +28,13 @@ public static class GDatagramBasedHandleExtensions
 
 	public static MentorLake.GLib.GSourceHandle CreateSource(this MentorLake.Gio.GDatagramBasedHandle datagram_based, MentorLake.GLib.GIOCondition condition, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (datagram_based.IsInvalid || datagram_based.IsClosed) throw new Exception("Invalid or closed handle (GDatagramBasedHandle)");
 		return GDatagramBasedHandleExterns.g_datagram_based_create_source(datagram_based, condition, cancellable);
 	}
 
 	public static int ReceiveMessages(this MentorLake.Gio.GDatagramBasedHandle datagram_based, MentorLake.Gio.GInputMessage[] messages, uint num_messages, int flags, long timeout, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (datagram_based.IsInvalid || datagram_based.IsClosed) throw new Exception("Invalid or closed handle (GDatagramBasedHandle)");
 		var externCallResult = GDatagramBasedHandleExterns.g_datagram_based_receive_messages(datagram_based, messages, num_messages, flags, timeout, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -36,6 +42,7 @@ public static class GDatagramBasedHandleExtensions
 
 	public static int SendMessages(this MentorLake.Gio.GDatagramBasedHandle datagram_based, MentorLake.Gio.GOutputMessage[] messages, uint num_messages, int flags, long timeout, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (datagram_based.IsInvalid || datagram_based.IsClosed) throw new Exception("Invalid or closed handle (GDatagramBasedHandle)");
 		var externCallResult = GDatagramBasedHandleExterns.g_datagram_based_send_messages(datagram_based, messages, num_messages, flags, timeout, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

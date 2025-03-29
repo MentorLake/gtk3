@@ -19,126 +19,151 @@ public static class GMainContextExtensions
 {
 	public static bool Acquire(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_acquire(context);
 	}
 
 	public static void AddPoll(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GPollFDHandle fd, int priority)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_add_poll(context, fd, priority);
 	}
 
 	public static bool Check(this MentorLake.GLib.GMainContextHandle context, int max_priority, MentorLake.GLib.GPollFD[] fds, int n_fds)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_check(context, max_priority, fds, n_fds);
 	}
 
 	public static void Dispatch(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_dispatch(context);
 	}
 
 	public static MentorLake.GLib.GSourceHandle FindSourceByFuncsUserData(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GSourceFuncsHandle funcs, IntPtr user_data)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_find_source_by_funcs_user_data(context, funcs, user_data);
 	}
 
 	public static MentorLake.GLib.GSourceHandle FindSourceById(this MentorLake.GLib.GMainContextHandle context, uint source_id)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_find_source_by_id(context, source_id);
 	}
 
 	public static MentorLake.GLib.GSourceHandle FindSourceByUserData(this MentorLake.GLib.GMainContextHandle context, IntPtr user_data)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_find_source_by_user_data(context, user_data);
 	}
 
 	public static MentorLake.GLib.GPollFunc GetPollFunc(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_get_poll_func(context);
 	}
 
 	public static void Invoke(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GSourceFunc function, IntPtr data)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_invoke(context, function, data);
 	}
 
 	public static void InvokeFull(this MentorLake.GLib.GMainContextHandle context, int priority, MentorLake.GLib.GSourceFunc function, IntPtr data, MentorLake.GLib.GDestroyNotify notify)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_invoke_full(context, priority, function, data, notify);
 	}
 
 	public static bool IsOwner(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_is_owner(context);
 	}
 
 	public static bool Iteration(this MentorLake.GLib.GMainContextHandle context, bool may_block)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_iteration(context, may_block);
 	}
 
 	public static bool Pending(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_pending(context);
 	}
 
 	public static void PopThreadDefault(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_pop_thread_default(context);
 	}
 
 	public static bool Prepare(this MentorLake.GLib.GMainContextHandle context, out int priority)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_prepare(context, out priority);
 	}
 
 	public static void PushThreadDefault(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_push_thread_default(context);
 	}
 
 	public static MentorLake.GLib.GMainContextPusherHandle PusherNew(this MentorLake.GLib.GMainContextHandle main_context)
 	{
+		if (main_context.IsInvalid || main_context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_pusher_new(main_context);
 	}
 
 	public static int Query(this MentorLake.GLib.GMainContextHandle context, int max_priority, out int timeout_, out MentorLake.GLib.GPollFD[] fds, int n_fds)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_query(context, max_priority, out timeout_, out fds, n_fds);
 	}
 
 	public static MentorLake.GLib.GMainContextHandle Ref(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_ref(context);
 	}
 
 	public static void Release(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_release(context);
 	}
 
 	public static void RemovePoll(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GPollFDHandle fd)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_remove_poll(context, fd);
 	}
 
 	public static void SetPollFunc(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GPollFunc func)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_set_poll_func(context, func);
 	}
 
 	public static void Unref(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_unref(context);
 	}
 
 	public static bool Wait(this MentorLake.GLib.GMainContextHandle context, MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		return GMainContextExterns.g_main_context_wait(context, cond, mutex);
 	}
 
 	public static void Wakeup(this MentorLake.GLib.GMainContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMainContext)");
 		GMainContextExterns.g_main_context_wakeup(context);
 	}
 

@@ -13,6 +13,7 @@ public static class GZlibDecompressorHandleExtensions
 {
 	public static MentorLake.Gio.GFileInfoHandle GetFileInfo(this MentorLake.Gio.GZlibDecompressorHandle decompressor)
 	{
+		if (decompressor.IsInvalid || decompressor.IsClosed) throw new Exception("Invalid or closed handle (GZlibDecompressorHandle)");
 		return GZlibDecompressorHandleExterns.g_zlib_decompressor_get_file_info(decompressor);
 	}
 

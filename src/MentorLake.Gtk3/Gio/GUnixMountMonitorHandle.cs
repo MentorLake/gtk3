@@ -108,6 +108,7 @@ public static class GUnixMountMonitorHandleExtensions
 {
 	public static T SetRateLimit<T>(this T mount_monitor, int limit_msec) where T : GUnixMountMonitorHandle
 	{
+		if (mount_monitor.IsInvalid || mount_monitor.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountMonitorHandle)");
 		GUnixMountMonitorHandleExterns.g_unix_mount_monitor_set_rate_limit(mount_monitor, limit_msec);
 		return mount_monitor;
 	}

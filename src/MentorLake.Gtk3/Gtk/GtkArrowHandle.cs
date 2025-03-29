@@ -13,6 +13,7 @@ public static class GtkArrowHandleExtensions
 {
 	public static T Set<T>(this T arrow, MentorLake.Gtk.GtkArrowType arrow_type, MentorLake.Gtk.GtkShadowType shadow_type) where T : GtkArrowHandle
 	{
+		if (arrow.IsInvalid || arrow.IsClosed) throw new Exception("Invalid or closed handle (GtkArrowHandle)");
 		GtkArrowHandleExterns.gtk_arrow_set(arrow, arrow_type, shadow_type);
 		return arrow;
 	}

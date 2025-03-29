@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GRemoteActionGroupHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GRemoteActionGroupHandleImpl : BaseSafeHandle, GRemoteActionGroupHandle
@@ -12,12 +14,14 @@ public static class GRemoteActionGroupHandleExtensions
 {
 	public static T ActivateActionFull<T>(this T remote, string action_name, MentorLake.GLib.GVariantHandle parameter, MentorLake.GLib.GVariantHandle platform_data) where T : GRemoteActionGroupHandle
 	{
+		if (remote.IsInvalid || remote.IsClosed) throw new Exception("Invalid or closed handle (GRemoteActionGroupHandle)");
 		GRemoteActionGroupHandleExterns.g_remote_action_group_activate_action_full(remote, action_name, parameter, platform_data);
 		return remote;
 	}
 
 	public static T ChangeActionStateFull<T>(this T remote, string action_name, MentorLake.GLib.GVariantHandle value, MentorLake.GLib.GVariantHandle platform_data) where T : GRemoteActionGroupHandle
 	{
+		if (remote.IsInvalid || remote.IsClosed) throw new Exception("Invalid or closed handle (GRemoteActionGroupHandle)");
 		GRemoteActionGroupHandleExterns.g_remote_action_group_change_action_state_full(remote, action_name, value, platform_data);
 		return remote;
 	}

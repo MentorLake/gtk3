@@ -14,11 +14,13 @@ public static class GtkRequisitionExtensions
 {
 	public static MentorLake.Gtk.GtkRequisitionHandle Copy(this MentorLake.Gtk.GtkRequisitionHandle requisition)
 	{
+		if (requisition.IsInvalid || requisition.IsClosed) throw new Exception("Invalid or closed handle (GtkRequisition)");
 		return GtkRequisitionExterns.gtk_requisition_copy(requisition);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkRequisitionHandle requisition)
 	{
+		if (requisition.IsInvalid || requisition.IsClosed) throw new Exception("Invalid or closed handle (GtkRequisition)");
 		GtkRequisitionExterns.gtk_requisition_free(requisition);
 	}
 

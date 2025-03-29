@@ -107,33 +107,39 @@ public static class GtkStatusbarHandleExtensions
 {
 	public static uint GetContextId(this MentorLake.Gtk.GtkStatusbarHandle statusbar, string context_description)
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_get_context_id(statusbar, context_description);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMessageArea(this MentorLake.Gtk.GtkStatusbarHandle statusbar)
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_get_message_area(statusbar);
 	}
 
 	public static T Pop<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_pop(statusbar, context_id);
 		return statusbar;
 	}
 
 	public static uint Push(this MentorLake.Gtk.GtkStatusbarHandle statusbar, uint context_id, string text)
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_push(statusbar, context_id, text);
 	}
 
 	public static T Remove<T>(this T statusbar, uint context_id, uint message_id) where T : GtkStatusbarHandle
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_remove(statusbar, context_id, message_id);
 		return statusbar;
 	}
 
 	public static T RemoveAll<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
+		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_remove_all(statusbar, context_id);
 		return statusbar;
 	}

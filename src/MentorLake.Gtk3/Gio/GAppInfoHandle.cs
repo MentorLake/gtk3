@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GAppInfoHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GAppInfoHandleImpl : BaseSafeHandle, GAppInfoHandle
@@ -12,6 +14,7 @@ public static class GAppInfoHandleExtensions
 {
 	public static bool AddSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_add_supports_type(appinfo, content_type, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -19,71 +22,85 @@ public static class GAppInfoHandleExtensions
 
 	public static bool CanDelete(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_can_delete(appinfo);
 	}
 
 	public static bool CanRemoveSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_can_remove_supports_type(appinfo);
 	}
 
 	public static bool Delete(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_delete(appinfo);
 	}
 
 	public static MentorLake.Gio.GAppInfoHandle Dup(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_dup(appinfo);
 	}
 
 	public static bool Equal(this MentorLake.Gio.GAppInfoHandle appinfo1, MentorLake.Gio.GAppInfoHandle appinfo2)
 	{
+		if (appinfo1.IsInvalid || appinfo1.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_equal(appinfo1, appinfo2);
 	}
 
 	public static string GetCommandline(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_commandline(appinfo);
 	}
 
 	public static string GetDescription(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_description(appinfo);
 	}
 
 	public static string GetDisplayName(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_display_name(appinfo);
 	}
 
 	public static string GetExecutable(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_executable(appinfo);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_icon(appinfo);
 	}
 
 	public static string GetId(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_id(appinfo);
 	}
 
 	public static string GetName(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_name(appinfo);
 	}
 
 	public static string[] GetSupportedTypes(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_get_supported_types(appinfo);
 	}
 
 	public static bool Launch(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle files, MentorLake.Gio.GAppLaunchContextHandle context)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_launch(appinfo, files, context, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -91,6 +108,7 @@ public static class GAppInfoHandleExtensions
 
 	public static bool LaunchUris(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle uris, MentorLake.Gio.GAppLaunchContextHandle context)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_launch_uris(appinfo, uris, context, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -98,12 +116,14 @@ public static class GAppInfoHandleExtensions
 
 	public static T LaunchUrisAsync<T>(this T appinfo, MentorLake.GLib.GListHandle uris, MentorLake.Gio.GAppLaunchContextHandle context, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GAppInfoHandle
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		GAppInfoHandleExterns.g_app_info_launch_uris_async(appinfo, uris, context, cancellable, callback, user_data);
 		return appinfo;
 	}
 
 	public static bool LaunchUrisFinish(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_launch_uris_finish(appinfo, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -111,6 +131,7 @@ public static class GAppInfoHandleExtensions
 
 	public static bool RemoveSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_remove_supports_type(appinfo, content_type, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -118,6 +139,7 @@ public static class GAppInfoHandleExtensions
 
 	public static bool SetAsDefaultForExtension(this MentorLake.Gio.GAppInfoHandle appinfo, string extension)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_set_as_default_for_extension(appinfo, extension, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -125,6 +147,7 @@ public static class GAppInfoHandleExtensions
 
 	public static bool SetAsDefaultForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_set_as_default_for_type(appinfo, content_type, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -132,6 +155,7 @@ public static class GAppInfoHandleExtensions
 
 	public static bool SetAsLastUsedForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		var externCallResult = GAppInfoHandleExterns.g_app_info_set_as_last_used_for_type(appinfo, content_type, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -139,16 +163,19 @@ public static class GAppInfoHandleExtensions
 
 	public static bool ShouldShow(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_should_show(appinfo);
 	}
 
 	public static bool SupportsFiles(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_supports_files(appinfo);
 	}
 
 	public static bool SupportsUris(this MentorLake.Gio.GAppInfoHandle appinfo)
 	{
+		if (appinfo.IsInvalid || appinfo.IsClosed) throw new Exception("Invalid or closed handle (GAppInfoHandle)");
 		return GAppInfoHandleExterns.g_app_info_supports_uris(appinfo);
 	}
 

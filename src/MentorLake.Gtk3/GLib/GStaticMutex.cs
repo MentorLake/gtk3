@@ -9,16 +9,19 @@ public static class GStaticMutexExtensions
 {
 	public static void Free(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
 		GStaticMutexExterns.g_static_mutex_free(mutex);
 	}
 
 	public static MentorLake.GLib.GMutexHandle GetMutexImpl(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
 		return GStaticMutexExterns.g_static_mutex_get_mutex_impl(mutex);
 	}
 
 	public static void Init(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
 		GStaticMutexExterns.g_static_mutex_init(mutex);
 	}
 

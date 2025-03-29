@@ -13,6 +13,7 @@ public static class GFileIconHandleExtensions
 {
 	public static MentorLake.Gio.GFileHandle GetFile(this MentorLake.Gio.GFileIconHandle icon)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GFileIconHandle)");
 		return GFileIconHandleExterns.g_file_icon_get_file(icon);
 	}
 

@@ -18,36 +18,43 @@ public static class GVfsHandleExtensions
 {
 	public static MentorLake.Gio.GFileHandle GetFileForPath(this MentorLake.Gio.GVfsHandle vfs, string path)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_get_file_for_path(vfs, path);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetFileForUri(this MentorLake.Gio.GVfsHandle vfs, string uri)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_get_file_for_uri(vfs, uri);
 	}
 
 	public static string[] GetSupportedUriSchemes(this MentorLake.Gio.GVfsHandle vfs)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_get_supported_uri_schemes(vfs);
 	}
 
 	public static bool IsActive(this MentorLake.Gio.GVfsHandle vfs)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_is_active(vfs);
 	}
 
 	public static MentorLake.Gio.GFileHandle ParseName(this MentorLake.Gio.GVfsHandle vfs, string parse_name)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_parse_name(vfs, parse_name);
 	}
 
 	public static bool RegisterUriScheme(this MentorLake.Gio.GVfsHandle vfs, string scheme, MentorLake.Gio.GVfsFileLookupFunc uri_func, IntPtr uri_data, MentorLake.GLib.GDestroyNotify uri_destroy, MentorLake.Gio.GVfsFileLookupFunc parse_name_func, IntPtr parse_name_data, MentorLake.GLib.GDestroyNotify parse_name_destroy)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_register_uri_scheme(vfs, scheme, uri_func, uri_data, uri_destroy, parse_name_func, parse_name_data, parse_name_destroy);
 	}
 
 	public static bool UnregisterUriScheme(this MentorLake.Gio.GVfsHandle vfs, string scheme)
 	{
+		if (vfs.IsInvalid || vfs.IsClosed) throw new Exception("Invalid or closed handle (GVfsHandle)");
 		return GVfsHandleExterns.g_vfs_unregister_uri_scheme(vfs, scheme);
 	}
 

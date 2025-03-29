@@ -13,43 +13,51 @@ public static class AtkRelationSetHandleExtensions
 {
 	public static T Add<T>(this T set, MentorLake.Atk.AtkRelationHandle relation) where T : AtkRelationSetHandle
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		AtkRelationSetHandleExterns.atk_relation_set_add(set, relation);
 		return set;
 	}
 
 	public static T AddRelationByType<T>(this T set, MentorLake.Atk.AtkRelationType relationship, MentorLake.Atk.AtkObjectHandle target) where T : AtkRelationSetHandle
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		AtkRelationSetHandleExterns.atk_relation_set_add_relation_by_type(set, relationship, target);
 		return set;
 	}
 
 	public static bool Contains(this MentorLake.Atk.AtkRelationSetHandle set, MentorLake.Atk.AtkRelationType relationship)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		return AtkRelationSetHandleExterns.atk_relation_set_contains(set, relationship);
 	}
 
 	public static bool ContainsTarget(this MentorLake.Atk.AtkRelationSetHandle set, MentorLake.Atk.AtkRelationType relationship, MentorLake.Atk.AtkObjectHandle target)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		return AtkRelationSetHandleExterns.atk_relation_set_contains_target(set, relationship, target);
 	}
 
 	public static int GetNRelations(this MentorLake.Atk.AtkRelationSetHandle set)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		return AtkRelationSetHandleExterns.atk_relation_set_get_n_relations(set);
 	}
 
 	public static MentorLake.Atk.AtkRelationHandle GetRelation(this MentorLake.Atk.AtkRelationSetHandle set, int i)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		return AtkRelationSetHandleExterns.atk_relation_set_get_relation(set, i);
 	}
 
 	public static MentorLake.Atk.AtkRelationHandle GetRelationByType(this MentorLake.Atk.AtkRelationSetHandle set, MentorLake.Atk.AtkRelationType relationship)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		return AtkRelationSetHandleExterns.atk_relation_set_get_relation_by_type(set, relationship);
 	}
 
 	public static T Remove<T>(this T set, MentorLake.Atk.AtkRelationHandle relation) where T : AtkRelationSetHandle
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationSetHandle)");
 		AtkRelationSetHandleExterns.atk_relation_set_remove(set, relation);
 		return set;
 	}

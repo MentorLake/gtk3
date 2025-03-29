@@ -2,6 +2,8 @@ namespace MentorLake.Gdk;
 
 public interface GdkDevicePadHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GdkDevicePadHandleImpl : BaseSafeHandle, GdkDevicePadHandle
@@ -12,21 +14,25 @@ public static class GdkDevicePadHandleExtensions
 {
 	public static int GetFeatureGroup(this MentorLake.Gdk.GdkDevicePadHandle pad, MentorLake.Gdk.GdkDevicePadFeature feature, int feature_idx)
 	{
+		if (pad.IsInvalid || pad.IsClosed) throw new Exception("Invalid or closed handle (GdkDevicePadHandle)");
 		return GdkDevicePadHandleExterns.gdk_device_pad_get_feature_group(pad, feature, feature_idx);
 	}
 
 	public static int GetGroupNModes(this MentorLake.Gdk.GdkDevicePadHandle pad, int group_idx)
 	{
+		if (pad.IsInvalid || pad.IsClosed) throw new Exception("Invalid or closed handle (GdkDevicePadHandle)");
 		return GdkDevicePadHandleExterns.gdk_device_pad_get_group_n_modes(pad, group_idx);
 	}
 
 	public static int GetNFeatures(this MentorLake.Gdk.GdkDevicePadHandle pad, MentorLake.Gdk.GdkDevicePadFeature feature)
 	{
+		if (pad.IsInvalid || pad.IsClosed) throw new Exception("Invalid or closed handle (GdkDevicePadHandle)");
 		return GdkDevicePadHandleExterns.gdk_device_pad_get_n_features(pad, feature);
 	}
 
 	public static int GetNGroups(this MentorLake.Gdk.GdkDevicePadHandle pad)
 	{
+		if (pad.IsInvalid || pad.IsClosed) throw new Exception("Invalid or closed handle (GdkDevicePadHandle)");
 		return GdkDevicePadHandleExterns.gdk_device_pad_get_n_groups(pad);
 	}
 

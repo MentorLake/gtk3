@@ -89,17 +89,20 @@ public static class GtkRadioButtonHandleExtensions
 {
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioButtonHandle radio_button)
 	{
+		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
 		return GtkRadioButtonHandleExterns.gtk_radio_button_get_group(radio_button);
 	}
 
 	public static T JoinGroup<T>(this T radio_button, MentorLake.Gtk.GtkRadioButtonHandle group_source) where T : GtkRadioButtonHandle
 	{
+		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
 		GtkRadioButtonHandleExterns.gtk_radio_button_join_group(radio_button, group_source);
 		return radio_button;
 	}
 
 	public static T SetGroup<T>(this T radio_button, MentorLake.GLib.GSListHandle group) where T : GtkRadioButtonHandle
 	{
+		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
 		GtkRadioButtonHandleExterns.gtk_radio_button_set_group(radio_button, group);
 		return radio_button;
 	}

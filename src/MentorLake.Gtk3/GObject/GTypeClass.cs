@@ -9,31 +9,37 @@ public static class GTypeClassExtensions
 {
 	public static void AddPrivate(this MentorLake.GObject.GTypeClassHandle g_class, UIntPtr private_size)
 	{
+		if (g_class.IsInvalid || g_class.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		GTypeClassExterns.g_type_class_add_private(g_class, private_size);
 	}
 
 	public static int GetInstancePrivateOffset(this MentorLake.GObject.GTypeClassHandle g_class)
 	{
+		if (g_class.IsInvalid || g_class.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		return GTypeClassExterns.g_type_class_get_instance_private_offset(g_class);
 	}
 
 	public static IntPtr GetPrivate(this MentorLake.GObject.GTypeClassHandle klass, MentorLake.GObject.GType private_type)
 	{
+		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		return GTypeClassExterns.g_type_class_get_private(klass, private_type);
 	}
 
 	public static MentorLake.GObject.GTypeClassHandle PeekParent(this MentorLake.GObject.GTypeClassHandle g_class)
 	{
+		if (g_class.IsInvalid || g_class.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		return GTypeClassExterns.g_type_class_peek_parent(g_class);
 	}
 
 	public static void Unref(this MentorLake.GObject.GTypeClassHandle g_class)
 	{
+		if (g_class.IsInvalid || g_class.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		GTypeClassExterns.g_type_class_unref(g_class);
 	}
 
 	public static void UnrefUncached(this MentorLake.GObject.GTypeClassHandle g_class)
 	{
+		if (g_class.IsInvalid || g_class.IsClosed) throw new Exception("Invalid or closed handle (GTypeClass)");
 		GTypeClassExterns.g_type_class_unref_uncached(g_class);
 	}
 

@@ -18,11 +18,13 @@ public static class GEmblemHandleExtensions
 {
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GEmblemHandle emblem)
 	{
+		if (emblem.IsInvalid || emblem.IsClosed) throw new Exception("Invalid or closed handle (GEmblemHandle)");
 		return GEmblemHandleExterns.g_emblem_get_icon(emblem);
 	}
 
 	public static MentorLake.Gio.GEmblemOrigin GetOrigin(this MentorLake.Gio.GEmblemHandle emblem)
 	{
+		if (emblem.IsInvalid || emblem.IsClosed) throw new Exception("Invalid or closed handle (GEmblemHandle)");
 		return GEmblemHandleExterns.g_emblem_get_origin(emblem);
 	}
 

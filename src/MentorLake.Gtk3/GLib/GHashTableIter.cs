@@ -9,31 +9,37 @@ public static class GHashTableIterExtensions
 {
 	public static MentorLake.GLib.GHashTableHandle GetHashTable(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		return GHashTableIterExterns.g_hash_table_iter_get_hash_table(iter);
 	}
 
 	public static void Init(this MentorLake.GLib.GHashTableIterHandle iter, MentorLake.GLib.GHashTableHandle hash_table)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		GHashTableIterExterns.g_hash_table_iter_init(iter, hash_table);
 	}
 
 	public static bool Next(this MentorLake.GLib.GHashTableIterHandle iter, out IntPtr key, out IntPtr value)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		return GHashTableIterExterns.g_hash_table_iter_next(iter, out key, out value);
 	}
 
 	public static void Remove(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		GHashTableIterExterns.g_hash_table_iter_remove(iter);
 	}
 
 	public static void Replace(this MentorLake.GLib.GHashTableIterHandle iter, IntPtr value)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		GHashTableIterExterns.g_hash_table_iter_replace(iter, value);
 	}
 
 	public static void Steal(this MentorLake.GLib.GHashTableIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GHashTableIter)");
 		GHashTableIterExterns.g_hash_table_iter_steal(iter);
 	}
 

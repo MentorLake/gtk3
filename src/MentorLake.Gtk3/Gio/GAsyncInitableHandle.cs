@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GAsyncInitableHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GAsyncInitableHandleImpl : BaseSafeHandle, GAsyncInitableHandle
@@ -12,12 +14,14 @@ public static class GAsyncInitableHandleExtensions
 {
 	public static T InitAsync<T>(this T initable, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GAsyncInitableHandle
 	{
+		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
 		GAsyncInitableHandleExterns.g_async_initable_init_async(initable, io_priority, cancellable, callback, user_data);
 		return initable;
 	}
 
 	public static bool InitFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
 	{
+		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
 		var externCallResult = GAsyncInitableHandleExterns.g_async_initable_init_finish(initable, res, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -25,6 +29,7 @@ public static class GAsyncInitableHandleExtensions
 
 	public static MentorLake.GObject.GObjectHandle NewFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
 	{
+		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
 		var externCallResult = GAsyncInitableHandleExterns.g_async_initable_new_finish(initable, res, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

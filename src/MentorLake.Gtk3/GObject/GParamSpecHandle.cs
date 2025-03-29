@@ -18,74 +18,88 @@ public static class GParamSpecHandleExtensions
 {
 	public static string GetBlurb(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_blurb(pspec);
 	}
 
 	public static MentorLake.GObject.GValueHandle GetDefaultValue(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_default_value(pspec);
 	}
 
 	public static string GetName(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_name(pspec);
 	}
 
 	public static MentorLake.GLib.GQuark GetNameQuark(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_name_quark(pspec);
 	}
 
 	public static string GetNick(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_nick(pspec);
 	}
 
 	public static IntPtr GetQdata(this MentorLake.GObject.GParamSpecHandle pspec, MentorLake.GLib.GQuark quark)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_qdata(pspec, quark);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle GetRedirectTarget(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_get_redirect_target(pspec);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle Ref(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_ref(pspec);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle RefSink(this MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_ref_sink(pspec);
 	}
 
 	public static T SetQdata<T>(this T pspec, MentorLake.GLib.GQuark quark, IntPtr data) where T : GParamSpecHandle
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		GParamSpecHandleExterns.g_param_spec_set_qdata(pspec, quark, data);
 		return pspec;
 	}
 
 	public static T SetQdataFull<T>(this T pspec, MentorLake.GLib.GQuark quark, IntPtr data, MentorLake.GLib.GDestroyNotify destroy) where T : GParamSpecHandle
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		GParamSpecHandleExterns.g_param_spec_set_qdata_full(pspec, quark, data, destroy);
 		return pspec;
 	}
 
 	public static T Sink<T>(this T pspec) where T : GParamSpecHandle
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		GParamSpecHandleExterns.g_param_spec_sink(pspec);
 		return pspec;
 	}
 
 	public static IntPtr StealQdata(this MentorLake.GObject.GParamSpecHandle pspec, MentorLake.GLib.GQuark quark)
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		return GParamSpecHandleExterns.g_param_spec_steal_qdata(pspec, quark);
 	}
 
 	public static T Unref<T>(this T pspec) where T : GParamSpecHandle
 	{
+		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GParamSpecHandle)");
 		GParamSpecHandleExterns.g_param_spec_unref(pspec);
 		return pspec;
 	}

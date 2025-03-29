@@ -16,21 +16,25 @@ public static class GDBusNodeInfoExtensions
 {
 	public static void GenerateXml(this MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, MentorLake.GLib.GStringHandle string_builder)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
 		GDBusNodeInfoExterns.g_dbus_node_info_generate_xml(info, indent, string_builder);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceInfoHandle LookupInterface(this MentorLake.Gio.GDBusNodeInfoHandle info, string name)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
 		return GDBusNodeInfoExterns.g_dbus_node_info_lookup_interface(info, name);
 	}
 
 	public static MentorLake.Gio.GDBusNodeInfoHandle Ref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
 		return GDBusNodeInfoExterns.g_dbus_node_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
 		GDBusNodeInfoExterns.g_dbus_node_info_unref(info);
 	}
 

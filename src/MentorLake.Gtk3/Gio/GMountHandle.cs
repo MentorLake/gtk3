@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GMountHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GMountHandleImpl : BaseSafeHandle, GMountHandle
@@ -12,22 +14,26 @@ public static class GMountHandleExtensions
 {
 	public static bool CanEject(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_can_eject(mount);
 	}
 
 	public static bool CanUnmount(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_can_unmount(mount);
 	}
 
 	public static T Eject<T>(this T mount, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_eject(mount, flags, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static bool EjectFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_eject_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -35,12 +41,14 @@ public static class GMountHandleExtensions
 
 	public static T EjectWithOperation<T>(this T mount, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GMountOperationHandle mount_operation, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_eject_with_operation(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static bool EjectWithOperationFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_eject_with_operation_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -48,57 +56,68 @@ public static class GMountHandleExtensions
 
 	public static MentorLake.Gio.GFileHandle GetDefaultLocation(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_default_location(mount);
 	}
 
 	public static MentorLake.Gio.GDriveHandle GetDrive(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_drive(mount);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_icon(mount);
 	}
 
 	public static string GetName(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_name(mount);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetRoot(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_root(mount);
 	}
 
 	public static string GetSortKey(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_sort_key(mount);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetSymbolicIcon(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_symbolic_icon(mount);
 	}
 
 	public static string GetUuid(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_uuid(mount);
 	}
 
 	public static MentorLake.Gio.GVolumeHandle GetVolume(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_get_volume(mount);
 	}
 
 	public static T GuessContentType<T>(this T mount, bool force_rescan, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_guess_content_type(mount, force_rescan, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static string[] GuessContentTypeFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_guess_content_type_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -106,6 +125,7 @@ public static class GMountHandleExtensions
 
 	public static string[] GuessContentTypeSync(this MentorLake.Gio.GMountHandle mount, bool force_rescan, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_guess_content_type_sync(mount, force_rescan, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -113,17 +133,20 @@ public static class GMountHandleExtensions
 
 	public static bool IsShadowed(this MentorLake.Gio.GMountHandle mount)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		return GMountHandleExterns.g_mount_is_shadowed(mount);
 	}
 
 	public static T Remount<T>(this T mount, MentorLake.Gio.GMountMountFlags flags, MentorLake.Gio.GMountOperationHandle mount_operation, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_remount(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static bool RemountFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_remount_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -131,18 +154,21 @@ public static class GMountHandleExtensions
 
 	public static T Shadow<T>(this T mount) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_shadow(mount);
 		return mount;
 	}
 
 	public static T Unmount<T>(this T mount, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_unmount(mount, flags, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static bool UnmountFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_unmount_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -150,12 +176,14 @@ public static class GMountHandleExtensions
 
 	public static T UnmountWithOperation<T>(this T mount, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GMountOperationHandle mount_operation, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_unmount_with_operation(mount, flags, mount_operation, cancellable, callback, user_data);
 		return mount;
 	}
 
 	public static bool UnmountWithOperationFinish(this MentorLake.Gio.GMountHandle mount, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		var externCallResult = GMountHandleExterns.g_mount_unmount_with_operation_finish(mount, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -163,6 +191,7 @@ public static class GMountHandleExtensions
 
 	public static T Unshadow<T>(this T mount) where T : GMountHandle
 	{
+		if (mount.IsInvalid || mount.IsClosed) throw new Exception("Invalid or closed handle (GMountHandle)");
 		GMountHandleExterns.g_mount_unshadow(mount);
 		return mount;
 	}

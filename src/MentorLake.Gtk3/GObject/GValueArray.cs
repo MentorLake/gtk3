@@ -14,46 +14,55 @@ public static class GValueArrayExtensions
 {
 	public static MentorLake.GObject.GValueArrayHandle Append(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GObject.GValueHandle value)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_append(value_array, value);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle Copy(this MentorLake.GObject.GValueArrayHandle value_array)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_copy(value_array);
 	}
 
 	public static void Free(this MentorLake.GObject.GValueArrayHandle value_array)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		GValueArrayExterns.g_value_array_free(value_array);
 	}
 
 	public static MentorLake.GObject.GValueHandle GetNth(this MentorLake.GObject.GValueArrayHandle value_array, uint index_)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_get_nth(value_array, index_);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle Insert(this MentorLake.GObject.GValueArrayHandle value_array, uint index_, MentorLake.GObject.GValueHandle value)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_insert(value_array, index_, value);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle Prepend(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GObject.GValueHandle value)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_prepend(value_array, value);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle Remove(this MentorLake.GObject.GValueArrayHandle value_array, uint index_)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_remove(value_array, index_);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle Sort(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareFunc compare_func)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_sort(value_array, compare_func);
 	}
 
 	public static MentorLake.GObject.GValueArrayHandle SortWithData(this MentorLake.GObject.GValueArrayHandle value_array, MentorLake.GLib.GCompareDataFunc compare_func, IntPtr user_data)
 	{
+		if (value_array.IsInvalid || value_array.IsClosed) throw new Exception("Invalid or closed handle (GValueArray)");
 		return GValueArrayExterns.g_value_array_sort_with_data(value_array, compare_func, user_data);
 	}
 

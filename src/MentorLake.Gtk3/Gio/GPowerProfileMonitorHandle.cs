@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GPowerProfileMonitorHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GPowerProfileMonitorHandleImpl : BaseSafeHandle, GPowerProfileMonitorHandle
@@ -12,6 +14,7 @@ public static class GPowerProfileMonitorHandleExtensions
 {
 	public static bool GetPowerSaverEnabled(this MentorLake.Gio.GPowerProfileMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GPowerProfileMonitorHandle)");
 		return GPowerProfileMonitorHandleExterns.g_power_profile_monitor_get_power_saver_enabled(monitor);
 	}
 

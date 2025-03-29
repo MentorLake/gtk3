@@ -14,41 +14,49 @@ public static class GOptionGroupExtensions
 {
 	public static void AddEntries(this MentorLake.GLib.GOptionGroupHandle group, MentorLake.GLib.GOptionEntry[] entries)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_add_entries(group, entries);
 	}
 
 	public static void Free(this MentorLake.GLib.GOptionGroupHandle group)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_free(group);
 	}
 
 	public static MentorLake.GLib.GOptionGroupHandle Ref(this MentorLake.GLib.GOptionGroupHandle group)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		return GOptionGroupExterns.g_option_group_ref(group);
 	}
 
 	public static void SetErrorHook(this MentorLake.GLib.GOptionGroupHandle group, MentorLake.GLib.GOptionErrorFunc error_func)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_set_error_hook(group, error_func);
 	}
 
 	public static void SetParseHooks(this MentorLake.GLib.GOptionGroupHandle group, MentorLake.GLib.GOptionParseFunc pre_parse_func, MentorLake.GLib.GOptionParseFunc post_parse_func)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_set_parse_hooks(group, pre_parse_func, post_parse_func);
 	}
 
 	public static void SetTranslateFunc(this MentorLake.GLib.GOptionGroupHandle group, MentorLake.GLib.GTranslateFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify destroy_notify)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_set_translate_func(group, func, data, destroy_notify);
 	}
 
 	public static void SetTranslationDomain(this MentorLake.GLib.GOptionGroupHandle group, string domain)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_set_translation_domain(group, domain);
 	}
 
 	public static void Unref(this MentorLake.GLib.GOptionGroupHandle group)
 	{
+		if (group.IsInvalid || group.IsClosed) throw new Exception("Invalid or closed handle (GOptionGroup)");
 		GOptionGroupExterns.g_option_group_unref(group);
 	}
 

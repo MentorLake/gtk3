@@ -189,16 +189,19 @@ public static class GtkGestureStylusHandleExtensions
 {
 	public static bool GetAxes(this MentorLake.Gtk.GtkGestureStylusHandle gesture, MentorLake.Gdk.GdkAxisUse[] axes, out double[] values)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_axes(gesture, axes, out values);
 	}
 
 	public static bool GetAxis(this MentorLake.Gtk.GtkGestureStylusHandle gesture, MentorLake.Gdk.GdkAxisUse axis, out double value)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_axis(gesture, axis, out value);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceToolHandle GetDeviceTool(this MentorLake.Gtk.GtkGestureStylusHandle gesture)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_device_tool(gesture);
 	}
 

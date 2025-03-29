@@ -9,346 +9,415 @@ public static class GValueExtensions
 {
 	public static void Copy(this MentorLake.GObject.GValueHandle src_value, MentorLake.GObject.GValueHandle dest_value)
 	{
+		if (src_value.IsInvalid || src_value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_copy(src_value, dest_value);
 	}
 
 	public static IntPtr DupBoxed(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_dup_boxed(value);
 	}
 
 	public static MentorLake.GObject.GObjectHandle DupObject(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_dup_object(value);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle DupParam(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_dup_param(value);
 	}
 
 	public static string DupString(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_dup_string(value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle DupVariant(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_dup_variant(value);
 	}
 
 	public static bool FitsPointer(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_fits_pointer(value);
 	}
 
 	public static bool GetBoolean(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_boolean(value);
 	}
 
 	public static IntPtr GetBoxed(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_boxed(value);
 	}
 
 	public static char GetChar(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_char(value);
 	}
 
 	public static double GetDouble(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_double(value);
 	}
 
 	public static int GetEnum(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_enum(value);
 	}
 
 	public static uint GetFlags(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_flags(value);
 	}
 
 	public static float GetFloat(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_float(value);
 	}
 
 	public static MentorLake.GObject.GType GetGtype(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_gtype(value);
 	}
 
 	public static int GetInt(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_int(value);
 	}
 
 	public static long GetInt64(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_int64(value);
 	}
 
 	public static long GetLong(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_long(value);
 	}
 
 	public static MentorLake.GObject.GObjectHandle GetObject(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_object(value);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle GetParam(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_param(value);
 	}
 
 	public static IntPtr GetPointer(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_pointer(value);
 	}
 
 	public static byte GetSchar(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_schar(value);
 	}
 
 	public static string GetString(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_string(value);
 	}
 
 	public static char GetUchar(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_uchar(value);
 	}
 
 	public static uint GetUint(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_uint(value);
 	}
 
 	public static ulong GetUint64(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_uint64(value);
 	}
 
 	public static ulong GetUlong(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_ulong(value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetVariant(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_get_variant(value);
 	}
 
 	public static MentorLake.GObject.GValueHandle Init(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType g_type)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_init(value, g_type);
 	}
 
 	public static void InitFromInstance(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GTypeInstanceHandle instance)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_init_from_instance(value, instance);
 	}
 
 	public static IntPtr PeekPointer(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_peek_pointer(value);
 	}
 
 	public static MentorLake.GObject.GValueHandle Reset(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_reset(value);
 	}
 
 	public static void SetBoolean(this MentorLake.GObject.GValueHandle value, bool v_boolean)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_boolean(value, v_boolean);
 	}
 
 	public static void SetBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_boxed(value, v_boxed);
 	}
 
 	public static void SetBoxedTakeOwnership(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_boxed_take_ownership(value, v_boxed);
 	}
 
 	public static void SetChar(this MentorLake.GObject.GValueHandle value, char v_char)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_char(value, v_char);
 	}
 
 	public static void SetDouble(this MentorLake.GObject.GValueHandle value, double v_double)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_double(value, v_double);
 	}
 
 	public static void SetEnum(this MentorLake.GObject.GValueHandle value, int v_enum)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_enum(value, v_enum);
 	}
 
 	public static void SetFlags(this MentorLake.GObject.GValueHandle value, uint v_flags)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_flags(value, v_flags);
 	}
 
 	public static void SetFloat(this MentorLake.GObject.GValueHandle value, float v_float)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_float(value, v_float);
 	}
 
 	public static void SetGtype(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GType v_gtype)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_gtype(value, v_gtype);
 	}
 
 	public static void SetInstance(this MentorLake.GObject.GValueHandle value, IntPtr instance)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_instance(value, instance);
 	}
 
 	public static void SetInt(this MentorLake.GObject.GValueHandle value, int v_int)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_int(value, v_int);
 	}
 
 	public static void SetInt64(this MentorLake.GObject.GValueHandle value, long v_int64)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_int64(value, v_int64);
 	}
 
 	public static void SetInternedString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_interned_string(value, v_string);
 	}
 
 	public static void SetLong(this MentorLake.GObject.GValueHandle value, long v_long)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_long(value, v_long);
 	}
 
 	public static void SetObject(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GObjectHandle v_object)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_object(value, v_object);
 	}
 
 	public static void SetObjectTakeOwnership(this MentorLake.GObject.GValueHandle value, IntPtr v_object)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_object_take_ownership(value, v_object);
 	}
 
 	public static void SetParam(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_param(value, param);
 	}
 
 	public static void SetParamTakeOwnership(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_param_take_ownership(value, param);
 	}
 
 	public static void SetPointer(this MentorLake.GObject.GValueHandle value, IntPtr v_pointer)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_pointer(value, v_pointer);
 	}
 
 	public static void SetSchar(this MentorLake.GObject.GValueHandle value, byte v_char)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_schar(value, v_char);
 	}
 
 	public static void SetStaticBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_static_boxed(value, v_boxed);
 	}
 
 	public static void SetStaticString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_static_string(value, v_string);
 	}
 
 	public static void SetString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_string(value, v_string);
 	}
 
 	public static void SetStringTakeOwnership(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_string_take_ownership(value, v_string);
 	}
 
 	public static void SetUchar(this MentorLake.GObject.GValueHandle value, char v_uchar)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_uchar(value, v_uchar);
 	}
 
 	public static void SetUint(this MentorLake.GObject.GValueHandle value, uint v_uint)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_uint(value, v_uint);
 	}
 
 	public static void SetUint64(this MentorLake.GObject.GValueHandle value, ulong v_uint64)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_uint64(value, v_uint64);
 	}
 
 	public static void SetUlong(this MentorLake.GObject.GValueHandle value, ulong v_ulong)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_ulong(value, v_ulong);
 	}
 
 	public static void SetVariant(this MentorLake.GObject.GValueHandle value, MentorLake.GLib.GVariantHandle variant)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_set_variant(value, variant);
 	}
 
 	public static string StealString(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_steal_string(value);
 	}
 
 	public static void TakeBoxed(this MentorLake.GObject.GValueHandle value, IntPtr v_boxed)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_take_boxed(value, v_boxed);
 	}
 
 	public static void TakeObject(this MentorLake.GObject.GValueHandle value, IntPtr v_object)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_take_object(value, v_object);
 	}
 
 	public static void TakeParam(this MentorLake.GObject.GValueHandle value, MentorLake.GObject.GParamSpecHandle param)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_take_param(value, param);
 	}
 
 	public static void TakeString(this MentorLake.GObject.GValueHandle value, string v_string)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_take_string(value, v_string);
 	}
 
 	public static void TakeVariant(this MentorLake.GObject.GValueHandle value, MentorLake.GLib.GVariantHandle variant)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_take_variant(value, variant);
 	}
 
 	public static bool Transform(this MentorLake.GObject.GValueHandle src_value, MentorLake.GObject.GValueHandle dest_value)
 	{
+		if (src_value.IsInvalid || src_value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		return GValueExterns.g_value_transform(src_value, dest_value);
 	}
 
 	public static void Unset(this MentorLake.GObject.GValueHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GValue)");
 		GValueExterns.g_value_unset(value);
 	}
 

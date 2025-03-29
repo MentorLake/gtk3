@@ -19,31 +19,37 @@ public static class GtkGradientExtensions
 {
 	public static void AddColorStop(this MentorLake.Gtk.GtkGradientHandle gradient, double offset, MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		GtkGradientExterns.gtk_gradient_add_color_stop(gradient, offset, color);
 	}
 
 	public static MentorLake.Gtk.GtkGradientHandle Ref(this MentorLake.Gtk.GtkGradientHandle gradient)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		return GtkGradientExterns.gtk_gradient_ref(gradient);
 	}
 
 	public static bool Resolve(this MentorLake.Gtk.GtkGradientHandle gradient, MentorLake.Gtk.GtkStylePropertiesHandle props, out MentorLake.cairo.cairo_pattern_tHandle resolved_gradient)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		return GtkGradientExterns.gtk_gradient_resolve(gradient, props, out resolved_gradient);
 	}
 
 	public static MentorLake.cairo.cairo_pattern_tHandle ResolveForContext(this MentorLake.Gtk.GtkGradientHandle gradient, MentorLake.Gtk.GtkStyleContextHandle context)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		return GtkGradientExterns.gtk_gradient_resolve_for_context(gradient, context);
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkGradientHandle gradient)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		return GtkGradientExterns.gtk_gradient_to_string(gradient);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkGradientHandle gradient)
 	{
+		if (gradient.IsInvalid || gradient.IsClosed) throw new Exception("Invalid or closed handle (GtkGradient)");
 		GtkGradientExterns.gtk_gradient_unref(gradient);
 	}
 

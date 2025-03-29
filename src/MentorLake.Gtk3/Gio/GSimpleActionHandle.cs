@@ -110,18 +110,21 @@ public static class GSimpleActionHandleExtensions
 {
 	public static T SetEnabled<T>(this T simple, bool enabled) where T : GSimpleActionHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_enabled(simple, enabled);
 		return simple;
 	}
 
 	public static T SetState<T>(this T simple, MentorLake.GLib.GVariantHandle value) where T : GSimpleActionHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_state(simple, value);
 		return simple;
 	}
 
 	public static T SetStateHint<T>(this T simple, MentorLake.GLib.GVariantHandle state_hint) where T : GSimpleActionHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_state_hint(simple, state_hint);
 		return simple;
 	}

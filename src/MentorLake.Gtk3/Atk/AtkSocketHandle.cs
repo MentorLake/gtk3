@@ -13,12 +13,14 @@ public static class AtkSocketHandleExtensions
 {
 	public static T Embed<T>(this T obj, string plug_id) where T : AtkSocketHandle
 	{
+		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkSocketHandle)");
 		AtkSocketHandleExterns.atk_socket_embed(obj, plug_id);
 		return obj;
 	}
 
 	public static bool IsOccupied(this MentorLake.Atk.AtkSocketHandle obj)
 	{
+		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkSocketHandle)");
 		return AtkSocketHandleExterns.atk_socket_is_occupied(obj);
 	}
 

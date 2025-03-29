@@ -14,31 +14,37 @@ public static class GHmacExtensions
 {
 	public static MentorLake.GLib.GHmacHandle Copy(this MentorLake.GLib.GHmacHandle hmac)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		return GHmacExterns.g_hmac_copy(hmac);
 	}
 
 	public static void GetDigest(this MentorLake.GLib.GHmacHandle hmac, byte[] buffer, ref UIntPtr digest_len)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		GHmacExterns.g_hmac_get_digest(hmac, buffer, ref digest_len);
 	}
 
 	public static string GetString(this MentorLake.GLib.GHmacHandle hmac)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		return GHmacExterns.g_hmac_get_string(hmac);
 	}
 
 	public static MentorLake.GLib.GHmacHandle Ref(this MentorLake.GLib.GHmacHandle hmac)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		return GHmacExterns.g_hmac_ref(hmac);
 	}
 
 	public static void Unref(this MentorLake.GLib.GHmacHandle hmac)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		GHmacExterns.g_hmac_unref(hmac);
 	}
 
 	public static void Update(this MentorLake.GLib.GHmacHandle hmac, char[] data, UIntPtr length)
 	{
+		if (hmac.IsInvalid || hmac.IsClosed) throw new Exception("Invalid or closed handle (GHmac)");
 		GHmacExterns.g_hmac_update(hmac, data, length);
 	}
 

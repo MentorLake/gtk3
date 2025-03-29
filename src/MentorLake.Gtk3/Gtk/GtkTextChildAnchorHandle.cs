@@ -13,11 +13,13 @@ public static class GtkTextChildAnchorHandleExtensions
 {
 	public static bool GetDeleted(this MentorLake.Gtk.GtkTextChildAnchorHandle anchor)
 	{
+		if (anchor.IsInvalid || anchor.IsClosed) throw new Exception("Invalid or closed handle (GtkTextChildAnchorHandle)");
 		return GtkTextChildAnchorHandleExterns.gtk_text_child_anchor_get_deleted(anchor);
 	}
 
 	public static MentorLake.GLib.GListHandle GetWidgets(this MentorLake.Gtk.GtkTextChildAnchorHandle anchor)
 	{
+		if (anchor.IsInvalid || anchor.IsClosed) throw new Exception("Invalid or closed handle (GtkTextChildAnchorHandle)");
 		return GtkTextChildAnchorHandleExterns.gtk_text_child_anchor_get_widgets(anchor);
 	}
 

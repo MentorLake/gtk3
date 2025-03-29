@@ -66,6 +66,7 @@ public static class GtkGestureRotateHandleExtensions
 {
 	public static double GetAngleDelta(this MentorLake.Gtk.GtkGestureRotateHandle gesture)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureRotateHandle)");
 		return GtkGestureRotateHandleExterns.gtk_gesture_rotate_get_angle_delta(gesture);
 	}
 

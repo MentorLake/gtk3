@@ -18,6 +18,7 @@ public static class GSocketConnectionHandleExtensions
 {
 	public static bool Connect(this MentorLake.Gio.GSocketConnectionHandle connection, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		var externCallResult = GSocketConnectionHandleExterns.g_socket_connection_connect(connection, address, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -25,12 +26,14 @@ public static class GSocketConnectionHandleExtensions
 
 	public static T ConnectAsync<T>(this T connection, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketConnectionHandle
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		GSocketConnectionHandleExterns.g_socket_connection_connect_async(connection, address, cancellable, callback, user_data);
 		return connection;
 	}
 
 	public static bool ConnectFinish(this MentorLake.Gio.GSocketConnectionHandle connection, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		var externCallResult = GSocketConnectionHandleExterns.g_socket_connection_connect_finish(connection, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -38,6 +41,7 @@ public static class GSocketConnectionHandleExtensions
 
 	public static MentorLake.Gio.GSocketAddressHandle GetLocalAddress(this MentorLake.Gio.GSocketConnectionHandle connection)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		var externCallResult = GSocketConnectionHandleExterns.g_socket_connection_get_local_address(connection, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -45,6 +49,7 @@ public static class GSocketConnectionHandleExtensions
 
 	public static MentorLake.Gio.GSocketAddressHandle GetRemoteAddress(this MentorLake.Gio.GSocketConnectionHandle connection)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		var externCallResult = GSocketConnectionHandleExterns.g_socket_connection_get_remote_address(connection, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -52,11 +57,13 @@ public static class GSocketConnectionHandleExtensions
 
 	public static MentorLake.Gio.GSocketHandle GetSocket(this MentorLake.Gio.GSocketConnectionHandle connection)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		return GSocketConnectionHandleExterns.g_socket_connection_get_socket(connection);
 	}
 
 	public static bool IsConnected(this MentorLake.Gio.GSocketConnectionHandle connection)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectionHandle)");
 		return GSocketConnectionHandleExterns.g_socket_connection_is_connected(connection);
 	}
 

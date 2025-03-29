@@ -13,16 +13,19 @@ public static class GUnixInputStreamHandleExtensions
 {
 	public static bool GetCloseFd(this MentorLake.Gio.GUnixInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixInputStreamHandle)");
 		return GUnixInputStreamHandleExterns.g_unix_input_stream_get_close_fd(stream);
 	}
 
 	public static int GetFd(this MentorLake.Gio.GUnixInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixInputStreamHandle)");
 		return GUnixInputStreamHandleExterns.g_unix_input_stream_get_fd(stream);
 	}
 
 	public static T SetCloseFd<T>(this T stream, bool close_fd) where T : GUnixInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixInputStreamHandle)");
 		GUnixInputStreamHandleExterns.g_unix_input_stream_set_close_fd(stream, close_fd);
 		return stream;
 	}

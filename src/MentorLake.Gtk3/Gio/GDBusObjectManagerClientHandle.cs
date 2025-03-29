@@ -145,21 +145,25 @@ public static class GDBusObjectManagerClientHandleExtensions
 {
 	public static MentorLake.Gio.GDBusConnectionHandle GetConnection(this MentorLake.Gio.GDBusObjectManagerClientHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerClientHandle)");
 		return GDBusObjectManagerClientHandleExterns.g_dbus_object_manager_client_get_connection(manager);
 	}
 
 	public static MentorLake.Gio.GDBusObjectManagerClientFlags GetFlags(this MentorLake.Gio.GDBusObjectManagerClientHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerClientHandle)");
 		return GDBusObjectManagerClientHandleExterns.g_dbus_object_manager_client_get_flags(manager);
 	}
 
 	public static string GetName(this MentorLake.Gio.GDBusObjectManagerClientHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerClientHandle)");
 		return GDBusObjectManagerClientHandleExterns.g_dbus_object_manager_client_get_name(manager);
 	}
 
 	public static string GetNameOwner(this MentorLake.Gio.GDBusObjectManagerClientHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerClientHandle)");
 		return GDBusObjectManagerClientHandleExterns.g_dbus_object_manager_client_get_name_owner(manager);
 	}
 

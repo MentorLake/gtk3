@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GTlsClientConnectionHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GTlsClientConnectionHandleImpl : BaseSafeHandle, GTlsClientConnectionHandle
@@ -12,44 +14,52 @@ public static class GTlsClientConnectionHandleExtensions
 {
 	public static T CopySessionState<T>(this T conn, MentorLake.Gio.GTlsClientConnectionHandle source) where T : GTlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		GTlsClientConnectionHandleExterns.g_tls_client_connection_copy_session_state(conn, source);
 		return conn;
 	}
 
 	public static MentorLake.GLib.GListHandle GetAcceptedCas(this MentorLake.Gio.GTlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		return GTlsClientConnectionHandleExterns.g_tls_client_connection_get_accepted_cas(conn);
 	}
 
 	public static MentorLake.Gio.GSocketConnectableHandle GetServerIdentity(this MentorLake.Gio.GTlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		return GTlsClientConnectionHandleExterns.g_tls_client_connection_get_server_identity(conn);
 	}
 
 	public static bool GetUseSsl3(this MentorLake.Gio.GTlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		return GTlsClientConnectionHandleExterns.g_tls_client_connection_get_use_ssl3(conn);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetValidationFlags(this MentorLake.Gio.GTlsClientConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		return GTlsClientConnectionHandleExterns.g_tls_client_connection_get_validation_flags(conn);
 	}
 
 	public static T SetServerIdentity<T>(this T conn, MentorLake.Gio.GSocketConnectableHandle identity) where T : GTlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		GTlsClientConnectionHandleExterns.g_tls_client_connection_set_server_identity(conn, identity);
 		return conn;
 	}
 
 	public static T SetUseSsl3<T>(this T conn, bool use_ssl3) where T : GTlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		GTlsClientConnectionHandleExterns.g_tls_client_connection_set_use_ssl3(conn, use_ssl3);
 		return conn;
 	}
 
 	public static T SetValidationFlags<T>(this T conn, MentorLake.Gio.GTlsCertificateFlags flags) where T : GTlsClientConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsClientConnectionHandle)");
 		GTlsClientConnectionHandleExterns.g_tls_client_connection_set_validation_flags(conn, flags);
 		return conn;
 	}

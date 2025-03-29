@@ -13,84 +13,99 @@ public static class GdkX11DisplayHandleExtensions
 {
 	public static T BroadcastStartupMessage<T>(this T display, string message_type, IntPtr @__arglist) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_broadcast_startup_message(display, message_type, @__arglist);
 		return display;
 	}
 
 	public static int ErrorTrapPop(this MentorLake.GdkX11.GdkX11DisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_error_trap_pop(display);
 	}
 
 	public static T ErrorTrapPopIgnored<T>(this T display) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_error_trap_pop_ignored(display);
 		return display;
 	}
 
 	public static T ErrorTrapPush<T>(this T display) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_error_trap_push(display);
 		return display;
 	}
 
 	public static string GetStartupNotificationId(this MentorLake.GdkX11.GdkX11DisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_get_startup_notification_id(display);
 	}
 
 	public static uint GetUserTime(this MentorLake.GdkX11.GdkX11DisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_get_user_time(display);
 	}
 
 	public static MentorLake.xlib.DisplayHandle GetXdisplay(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_get_xdisplay(display);
 	}
 
 	public static T Grab<T>(this T display) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_grab(display);
 		return display;
 	}
 
 	public static T SetCursorTheme<T>(this T display, string theme, int size) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_set_cursor_theme(display, theme, size);
 		return display;
 	}
 
 	public static T SetStartupNotificationId<T>(this T display, string startup_id) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_set_startup_notification_id(display, startup_id);
 		return display;
 	}
 
 	public static T SetWindowScale<T>(this T display, int scale) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_set_window_scale(display, scale);
 		return display;
 	}
 
 	public static int StringToCompoundText(this MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, out char[] ctext, out int length)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_string_to_compound_text(display, str, out encoding, out format, out ctext, out length);
 	}
 
 	public static int TextPropertyToTextList(this MentorLake.GdkX11.GdkX11DisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char text, int length, string list)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_text_property_to_text_list(display, encoding, format, text, length, list);
 	}
 
 	public static T Ungrab<T>(this T display) where T : GdkX11DisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		GdkX11DisplayHandleExterns.gdk_x11_display_ungrab(display);
 		return display;
 	}
 
 	public static bool Utf8ToCompoundText(this MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, out char[] ctext, out int length)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkX11DisplayHandle)");
 		return GdkX11DisplayHandleExterns.gdk_x11_display_utf8_to_compound_text(display, str, out encoding, out format, out ctext, out length);
 	}
 

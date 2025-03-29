@@ -9,131 +9,157 @@ public static class GAsyncQueueExtensions
 {
 	public static int Length(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_length(queue);
 	}
 
 	public static int LengthUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_length_unlocked(queue);
 	}
 
 	public static void Lock(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_lock(queue);
 	}
 
 	public static IntPtr Pop(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_pop(queue);
 	}
 
 	public static IntPtr PopUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_pop_unlocked(queue);
 	}
 
 	public static void Push(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push(queue, data);
 	}
 
 	public static void PushFront(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr item)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push_front(queue, item);
 	}
 
 	public static void PushFrontUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr item)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push_front_unlocked(queue, item);
 	}
 
 	public static void PushSorted(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push_sorted(queue, data, func, user_data);
 	}
 
 	public static void PushSortedUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push_sorted_unlocked(queue, data, func, user_data);
 	}
 
 	public static void PushUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_push_unlocked(queue, data);
 	}
 
 	public static MentorLake.GLib.GAsyncQueueHandle Ref(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_ref(queue);
 	}
 
 	public static void RefUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_ref_unlocked(queue);
 	}
 
 	public static bool Remove(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr item)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_remove(queue, item);
 	}
 
 	public static bool RemoveUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, IntPtr item)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_remove_unlocked(queue, item);
 	}
 
 	public static void Sort(this MentorLake.GLib.GAsyncQueueHandle queue, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_sort(queue, func, user_data);
 	}
 
 	public static void SortUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_sort_unlocked(queue, func, user_data);
 	}
 
 	public static IntPtr TimedPop(this MentorLake.GLib.GAsyncQueueHandle queue, MentorLake.GLib.GTimeValHandle end_time)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_timed_pop(queue, end_time);
 	}
 
 	public static IntPtr TimedPopUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, MentorLake.GLib.GTimeValHandle end_time)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_timed_pop_unlocked(queue, end_time);
 	}
 
 	public static IntPtr TimeoutPop(this MentorLake.GLib.GAsyncQueueHandle queue, ulong timeout)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_timeout_pop(queue, timeout);
 	}
 
 	public static IntPtr TimeoutPopUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue, ulong timeout)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_timeout_pop_unlocked(queue, timeout);
 	}
 
 	public static IntPtr TryPop(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_try_pop(queue);
 	}
 
 	public static IntPtr TryPopUnlocked(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		return GAsyncQueueExterns.g_async_queue_try_pop_unlocked(queue);
 	}
 
 	public static void Unlock(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_unlock(queue);
 	}
 
 	public static void Unref(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_unref(queue);
 	}
 
 	public static void UnrefAndUnlock(this MentorLake.GLib.GAsyncQueueHandle queue)
 	{
+		if (queue.IsInvalid || queue.IsClosed) throw new Exception("Invalid or closed handle (GAsyncQueue)");
 		GAsyncQueueExterns.g_async_queue_unref_and_unlock(queue);
 	}
 

@@ -339,81 +339,95 @@ public static class GtkMenuShellHandleExtensions
 {
 	public static T ActivateItem<T>(this T menu_shell, MentorLake.Gtk.GtkWidgetHandle menu_item, bool force_deactivate) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_activate_item(menu_shell, menu_item, force_deactivate);
 		return menu_shell;
 	}
 
 	public static T Append<T>(this T menu_shell, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_append(menu_shell, child);
 		return menu_shell;
 	}
 
 	public static T BindModel<T>(this T menu_shell, MentorLake.Gio.GMenuModelHandle model, string action_namespace, bool with_separators) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_bind_model(menu_shell, model, action_namespace, with_separators);
 		return menu_shell;
 	}
 
 	public static T Cancel<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_cancel(menu_shell);
 		return menu_shell;
 	}
 
 	public static T Deactivate<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_deactivate(menu_shell);
 		return menu_shell;
 	}
 
 	public static T Deselect<T>(this T menu_shell) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_deselect(menu_shell);
 		return menu_shell;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetParentShell(this MentorLake.Gtk.GtkMenuShellHandle menu_shell)
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		return GtkMenuShellHandleExterns.gtk_menu_shell_get_parent_shell(menu_shell);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetSelectedItem(this MentorLake.Gtk.GtkMenuShellHandle menu_shell)
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		return GtkMenuShellHandleExterns.gtk_menu_shell_get_selected_item(menu_shell);
 	}
 
 	public static bool GetTakeFocus(this MentorLake.Gtk.GtkMenuShellHandle menu_shell)
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		return GtkMenuShellHandleExterns.gtk_menu_shell_get_take_focus(menu_shell);
 	}
 
 	public static T Insert<T>(this T menu_shell, MentorLake.Gtk.GtkWidgetHandle child, int position) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_insert(menu_shell, child, position);
 		return menu_shell;
 	}
 
 	public static T Prepend<T>(this T menu_shell, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_prepend(menu_shell, child);
 		return menu_shell;
 	}
 
 	public static T SelectFirst<T>(this T menu_shell, bool search_sensitive) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_select_first(menu_shell, search_sensitive);
 		return menu_shell;
 	}
 
 	public static T SelectItem<T>(this T menu_shell, MentorLake.Gtk.GtkWidgetHandle menu_item) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_select_item(menu_shell, menu_item);
 		return menu_shell;
 	}
 
 	public static T SetTakeFocus<T>(this T menu_shell, bool take_focus) where T : GtkMenuShellHandle
 	{
+		if (menu_shell.IsInvalid || menu_shell.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuShellHandle)");
 		GtkMenuShellHandleExterns.gtk_menu_shell_set_take_focus(menu_shell, take_focus);
 		return menu_shell;
 	}

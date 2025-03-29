@@ -13,39 +13,46 @@ public static class GtkSizeGroupHandleExtensions
 {
 	public static T AddWidget<T>(this T size_group, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkSizeGroupHandle
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		GtkSizeGroupHandleExterns.gtk_size_group_add_widget(size_group, widget);
 		return size_group;
 	}
 
 	public static bool GetIgnoreHidden(this MentorLake.Gtk.GtkSizeGroupHandle size_group)
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		return GtkSizeGroupHandleExterns.gtk_size_group_get_ignore_hidden(size_group);
 	}
 
 	public static MentorLake.Gtk.GtkSizeGroupMode GetMode(this MentorLake.Gtk.GtkSizeGroupHandle size_group)
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		return GtkSizeGroupHandleExterns.gtk_size_group_get_mode(size_group);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetWidgets(this MentorLake.Gtk.GtkSizeGroupHandle size_group)
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		return GtkSizeGroupHandleExterns.gtk_size_group_get_widgets(size_group);
 	}
 
 	public static T RemoveWidget<T>(this T size_group, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkSizeGroupHandle
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		GtkSizeGroupHandleExterns.gtk_size_group_remove_widget(size_group, widget);
 		return size_group;
 	}
 
 	public static T SetIgnoreHidden<T>(this T size_group, bool ignore_hidden) where T : GtkSizeGroupHandle
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		GtkSizeGroupHandleExterns.gtk_size_group_set_ignore_hidden(size_group, ignore_hidden);
 		return size_group;
 	}
 
 	public static T SetMode<T>(this T size_group, MentorLake.Gtk.GtkSizeGroupMode mode) where T : GtkSizeGroupHandle
 	{
+		if (size_group.IsInvalid || size_group.IsClosed) throw new Exception("Invalid or closed handle (GtkSizeGroupHandle)");
 		GtkSizeGroupHandleExterns.gtk_size_group_set_mode(size_group, mode);
 		return size_group;
 	}

@@ -2,6 +2,8 @@ namespace MentorLake.Atk;
 
 public interface AtkStreamableContentHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class AtkStreamableContentHandleImpl : BaseSafeHandle, AtkStreamableContentHandle
@@ -12,21 +14,25 @@ public static class AtkStreamableContentHandleExtensions
 {
 	public static string GetMimeType(this MentorLake.Atk.AtkStreamableContentHandle streamable, int i)
 	{
+		if (streamable.IsInvalid || streamable.IsClosed) throw new Exception("Invalid or closed handle (AtkStreamableContentHandle)");
 		return AtkStreamableContentHandleExterns.atk_streamable_content_get_mime_type(streamable, i);
 	}
 
 	public static int GetNMimeTypes(this MentorLake.Atk.AtkStreamableContentHandle streamable)
 	{
+		if (streamable.IsInvalid || streamable.IsClosed) throw new Exception("Invalid or closed handle (AtkStreamableContentHandle)");
 		return AtkStreamableContentHandleExterns.atk_streamable_content_get_n_mime_types(streamable);
 	}
 
 	public static MentorLake.GLib.GIOChannelHandle GetStream(this MentorLake.Atk.AtkStreamableContentHandle streamable, string mime_type)
 	{
+		if (streamable.IsInvalid || streamable.IsClosed) throw new Exception("Invalid or closed handle (AtkStreamableContentHandle)");
 		return AtkStreamableContentHandleExterns.atk_streamable_content_get_stream(streamable, mime_type);
 	}
 
 	public static string GetUri(this MentorLake.Atk.AtkStreamableContentHandle streamable, string mime_type)
 	{
+		if (streamable.IsInvalid || streamable.IsClosed) throw new Exception("Invalid or closed handle (AtkStreamableContentHandle)");
 		return AtkStreamableContentHandleExterns.atk_streamable_content_get_uri(streamable, mime_type);
 	}
 

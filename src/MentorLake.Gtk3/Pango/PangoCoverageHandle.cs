@@ -18,39 +18,46 @@ public static class PangoCoverageHandleExtensions
 {
 	public static MentorLake.Pango.PangoCoverageHandle Copy(this MentorLake.Pango.PangoCoverageHandle coverage)
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		return PangoCoverageHandleExterns.pango_coverage_copy(coverage);
 	}
 
 	public static MentorLake.Pango.PangoCoverageLevel Get(this MentorLake.Pango.PangoCoverageHandle coverage, int index_)
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		return PangoCoverageHandleExterns.pango_coverage_get(coverage, index_);
 	}
 
 	public static T Max<T>(this T coverage, MentorLake.Pango.PangoCoverageHandle other) where T : PangoCoverageHandle
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		PangoCoverageHandleExterns.pango_coverage_max(coverage, other);
 		return coverage;
 	}
 
 	public static MentorLake.Pango.PangoCoverageHandle Ref(this MentorLake.Pango.PangoCoverageHandle coverage)
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		return PangoCoverageHandleExterns.pango_coverage_ref(coverage);
 	}
 
 	public static T Set<T>(this T coverage, int index_, MentorLake.Pango.PangoCoverageLevel level) where T : PangoCoverageHandle
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		PangoCoverageHandleExterns.pango_coverage_set(coverage, index_, level);
 		return coverage;
 	}
 
 	public static T ToBytes<T>(this T coverage, out byte[] bytes, out int n_bytes) where T : PangoCoverageHandle
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		PangoCoverageHandleExterns.pango_coverage_to_bytes(coverage, out bytes, out n_bytes);
 		return coverage;
 	}
 
 	public static T Unref<T>(this T coverage) where T : PangoCoverageHandle
 	{
+		if (coverage.IsInvalid || coverage.IsClosed) throw new Exception("Invalid or closed handle (PangoCoverageHandle)");
 		PangoCoverageHandleExterns.pango_coverage_unref(coverage);
 		return coverage;
 	}

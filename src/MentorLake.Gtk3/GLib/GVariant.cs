@@ -164,271 +164,325 @@ public static class GVariantExtensions
 {
 	public static MentorLake.GLib.GVariantHandle Byteswap(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_byteswap(value);
 	}
 
 	public static bool CheckFormatString(this MentorLake.GLib.GVariantHandle value, string format_string, bool copy_only)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_check_format_string(value, format_string, copy_only);
 	}
 
 	public static MentorLake.GLib.GVariantClass Classify(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_classify(value);
 	}
 
 	public static int Compare(this MentorLake.GLib.GVariantHandle one, MentorLake.GLib.GVariantHandle two)
 	{
+		if (one.IsInvalid || one.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_compare(one, two);
 	}
 
 	public static byte[] DupBytestring(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_dup_bytestring(value, out length);
 	}
 
 	public static string[] DupBytestringArray(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_dup_bytestring_array(value, out length);
 	}
 
 	public static string[] DupObjv(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_dup_objv(value, out length);
 	}
 
 	public static string DupString(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_dup_string(value, out length);
 	}
 
 	public static string[] DupStrv(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_dup_strv(value, out length);
 	}
 
 	public static bool Equal(this MentorLake.GLib.GVariantHandle one, MentorLake.GLib.GVariantHandle two)
 	{
+		if (one.IsInvalid || one.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_equal(one, two);
 	}
 
 	public static void Get(this MentorLake.GLib.GVariantHandle value, string format_string, IntPtr @__arglist)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		GVariantExterns.g_variant_get(value, format_string, @__arglist);
 	}
 
 	public static bool GetBoolean(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_boolean(value);
 	}
 
 	public static byte GetByte(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_byte(value);
 	}
 
 	public static byte[] GetBytestring(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_bytestring(value);
 	}
 
 	public static string[] GetBytestringArray(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_bytestring_array(value, out length);
 	}
 
 	public static void GetChild(this MentorLake.GLib.GVariantHandle value, UIntPtr index_, string format_string, IntPtr @__arglist)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		GVariantExterns.g_variant_get_child(value, index_, format_string, @__arglist);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetChildValue(this MentorLake.GLib.GVariantHandle value, UIntPtr index_)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_child_value(value, index_);
 	}
 
 	public static IntPtr GetData(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_data(value);
 	}
 
 	public static MentorLake.GLib.GBytesHandle GetDataAsBytes(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_data_as_bytes(value);
 	}
 
 	public static double GetDouble(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_double(value);
 	}
 
 	public static IntPtr[] GetFixedArray(this MentorLake.GLib.GVariantHandle value, out UIntPtr n_elements, UIntPtr element_size)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_fixed_array(value, out n_elements, element_size);
 	}
 
 	public static int GetHandle(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_handle(value);
 	}
 
 	public static short GetInt16(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_int16(value);
 	}
 
 	public static int GetInt32(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_int32(value);
 	}
 
 	public static long GetInt64(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_int64(value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetMaybe(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_maybe(value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetNormalForm(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_normal_form(value);
 	}
 
 	public static string[] GetObjv(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_objv(value, out length);
 	}
 
 	public static UIntPtr GetSize(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_size(value);
 	}
 
 	public static string GetString(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_string(value, out length);
 	}
 
 	public static string[] GetStrv(this MentorLake.GLib.GVariantHandle value, out UIntPtr length)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_strv(value, out length);
 	}
 
 	public static MentorLake.GLib.GVariantTypeHandle GetType(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_type(value);
 	}
 
 	public static string GetTypeString(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_type_string(value);
 	}
 
 	public static ushort GetUint16(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_uint16(value);
 	}
 
 	public static uint GetUint32(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_uint32(value);
 	}
 
 	public static ulong GetUint64(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_uint64(value);
 	}
 
 	public static void GetVa(this MentorLake.GLib.GVariantHandle value, string format_string, string endptr, IntPtr app)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		GVariantExterns.g_variant_get_va(value, format_string, endptr, app);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetVariant(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_get_variant(value);
 	}
 
 	public static uint Hash(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_hash(value);
 	}
 
 	public static bool IsContainer(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_is_container(value);
 	}
 
 	public static bool IsFloating(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_is_floating(value);
 	}
 
 	public static bool IsNormalForm(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_is_normal_form(value);
 	}
 
 	public static bool IsOfType(this MentorLake.GLib.GVariantHandle value, MentorLake.GLib.GVariantTypeHandle type)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_is_of_type(value, type);
 	}
 
 	public static MentorLake.GLib.GVariantIterHandle IterNew(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_iter_new(value);
 	}
 
 	public static bool Lookup(this MentorLake.GLib.GVariantHandle dictionary, string key, string format_string, IntPtr @__arglist)
 	{
+		if (dictionary.IsInvalid || dictionary.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_lookup(dictionary, key, format_string, @__arglist);
 	}
 
 	public static MentorLake.GLib.GVariantHandle LookupValue(this MentorLake.GLib.GVariantHandle dictionary, string key, MentorLake.GLib.GVariantTypeHandle expected_type)
 	{
+		if (dictionary.IsInvalid || dictionary.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_lookup_value(dictionary, key, expected_type);
 	}
 
 	public static UIntPtr NChildren(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_n_children(value);
 	}
 
 	public static string Print(this MentorLake.GLib.GVariantHandle value, bool type_annotate)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_print(value, type_annotate);
 	}
 
 	public static MentorLake.GLib.GStringHandle PrintString(this MentorLake.GLib.GVariantHandle value, MentorLake.GLib.GStringHandle @string, bool type_annotate)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_print_string(value, @string, type_annotate);
 	}
 
 	public static MentorLake.GLib.GVariantHandle Ref(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_ref(value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle RefSink(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_ref_sink(value);
 	}
 
 	public static void Store(this MentorLake.GLib.GVariantHandle value, IntPtr data)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		GVariantExterns.g_variant_store(value, data);
 	}
 
 	public static MentorLake.GLib.GVariantHandle TakeRef(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		return GVariantExterns.g_variant_take_ref(value);
 	}
 
 	public static void Unref(this MentorLake.GLib.GVariantHandle value)
 	{
+		if (value.IsInvalid || value.IsClosed) throw new Exception("Invalid or closed handle (GVariant)");
 		GVariantExterns.g_variant_unref(value);
 	}
 

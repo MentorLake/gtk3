@@ -14,61 +14,73 @@ public static class graphene_sphere_tExtensions
 {
 	public static bool ContainsPoint(this MentorLake.Graphene.graphene_sphere_tHandle s, MentorLake.Graphene.graphene_point3d_tHandle point)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_contains_point(s, point);
 	}
 
 	public static float Distance(this MentorLake.Graphene.graphene_sphere_tHandle s, MentorLake.Graphene.graphene_point3d_tHandle point)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_distance(s, point);
 	}
 
 	public static bool Equal(this MentorLake.Graphene.graphene_sphere_tHandle a, MentorLake.Graphene.graphene_sphere_tHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_equal(a, b);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_sphere_tHandle s)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		graphene_sphere_tExterns.graphene_sphere_free(s);
 	}
 
 	public static void GetBoundingBox(this MentorLake.Graphene.graphene_sphere_tHandle s, out MentorLake.Graphene.graphene_box_t box)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		graphene_sphere_tExterns.graphene_sphere_get_bounding_box(s, out box);
 	}
 
 	public static void GetCenter(this MentorLake.Graphene.graphene_sphere_tHandle s, out MentorLake.Graphene.graphene_point3d_t center)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		graphene_sphere_tExterns.graphene_sphere_get_center(s, out center);
 	}
 
 	public static float GetRadius(this MentorLake.Graphene.graphene_sphere_tHandle s)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_get_radius(s);
 	}
 
 	public static MentorLake.Graphene.graphene_sphere_tHandle Init(this MentorLake.Graphene.graphene_sphere_tHandle s, MentorLake.Graphene.graphene_point3d_tHandle center, float radius)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_init(s, center, radius);
 	}
 
 	public static MentorLake.Graphene.graphene_sphere_tHandle InitFromPoints(this MentorLake.Graphene.graphene_sphere_tHandle s, uint n_points, MentorLake.Graphene.graphene_point3d_t[] points, MentorLake.Graphene.graphene_point3d_tHandle center)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_init_from_points(s, n_points, points, center);
 	}
 
 	public static MentorLake.Graphene.graphene_sphere_tHandle InitFromVectors(this MentorLake.Graphene.graphene_sphere_tHandle s, uint n_vectors, MentorLake.Graphene.graphene_vec3_t[] vectors, MentorLake.Graphene.graphene_point3d_tHandle center)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_init_from_vectors(s, n_vectors, vectors, center);
 	}
 
 	public static bool IsEmpty(this MentorLake.Graphene.graphene_sphere_tHandle s)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		return graphene_sphere_tExterns.graphene_sphere_is_empty(s);
 	}
 
 	public static void Translate(this MentorLake.Graphene.graphene_sphere_tHandle s, MentorLake.Graphene.graphene_point3d_tHandle point, out MentorLake.Graphene.graphene_sphere_t res)
 	{
+		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_sphere_t)");
 		graphene_sphere_tExterns.graphene_sphere_translate(s, point, out res);
 	}
 

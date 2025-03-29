@@ -115,59 +115,70 @@ public static class GtkAccelGroupHandleExtensions
 {
 	public static bool Activate(this MentorLake.Gtk.GtkAccelGroupHandle accel_group, MentorLake.GLib.GQuark accel_quark, MentorLake.GObject.GObjectHandle acceleratable, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_activate(accel_group, accel_quark, acceleratable, accel_key, accel_mods);
 	}
 
 	public static T Connect<T>(this T accel_group, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods, MentorLake.Gtk.GtkAccelFlags accel_flags, MentorLake.GObject.GClosureHandle closure) where T : GtkAccelGroupHandle
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		GtkAccelGroupHandleExterns.gtk_accel_group_connect(accel_group, accel_key, accel_mods, accel_flags, closure);
 		return accel_group;
 	}
 
 	public static T ConnectByPath<T>(this T accel_group, string accel_path, MentorLake.GObject.GClosureHandle closure) where T : GtkAccelGroupHandle
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		GtkAccelGroupHandleExterns.gtk_accel_group_connect_by_path(accel_group, accel_path, closure);
 		return accel_group;
 	}
 
 	public static bool Disconnect(this MentorLake.Gtk.GtkAccelGroupHandle accel_group, MentorLake.GObject.GClosureHandle closure)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_disconnect(accel_group, closure);
 	}
 
 	public static bool DisconnectKey(this MentorLake.Gtk.GtkAccelGroupHandle accel_group, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_disconnect_key(accel_group, accel_key, accel_mods);
 	}
 
 	public static MentorLake.Gtk.GtkAccelKeyHandle Find(this MentorLake.Gtk.GtkAccelGroupHandle accel_group, MentorLake.Gtk.GtkAccelGroupFindFunc find_func, IntPtr data)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_find(accel_group, find_func, data);
 	}
 
 	public static bool GetIsLocked(this MentorLake.Gtk.GtkAccelGroupHandle accel_group)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_get_is_locked(accel_group);
 	}
 
 	public static MentorLake.Gdk.GdkModifierType GetModifierMask(this MentorLake.Gtk.GtkAccelGroupHandle accel_group)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_get_modifier_mask(accel_group);
 	}
 
 	public static T Lock<T>(this T accel_group) where T : GtkAccelGroupHandle
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		GtkAccelGroupHandleExterns.gtk_accel_group_lock(accel_group);
 		return accel_group;
 	}
 
 	public static MentorLake.Gtk.GtkAccelGroupEntry[] Query(this MentorLake.Gtk.GtkAccelGroupHandle accel_group, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods, out uint n_entries)
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		return GtkAccelGroupHandleExterns.gtk_accel_group_query(accel_group, accel_key, accel_mods, out n_entries);
 	}
 
 	public static T Unlock<T>(this T accel_group) where T : GtkAccelGroupHandle
 	{
+		if (accel_group.IsInvalid || accel_group.IsClosed) throw new Exception("Invalid or closed handle (GtkAccelGroupHandle)");
 		GtkAccelGroupHandleExterns.gtk_accel_group_unlock(accel_group);
 		return accel_group;
 	}

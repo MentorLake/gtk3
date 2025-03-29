@@ -23,6 +23,7 @@ public static class GUnixCredentialsMessageHandleExtensions
 {
 	public static MentorLake.Gio.GCredentialsHandle GetCredentials(this MentorLake.Gio.GUnixCredentialsMessageHandle message)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GUnixCredentialsMessageHandle)");
 		return GUnixCredentialsMessageHandleExterns.g_unix_credentials_message_get_credentials(message);
 	}
 

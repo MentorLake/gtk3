@@ -74,39 +74,46 @@ public static class GtkCheckMenuItemHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkCheckMenuItemHandle check_menu_item)
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		return GtkCheckMenuItemHandleExterns.gtk_check_menu_item_get_active(check_menu_item);
 	}
 
 	public static bool GetDrawAsRadio(this MentorLake.Gtk.GtkCheckMenuItemHandle check_menu_item)
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		return GtkCheckMenuItemHandleExterns.gtk_check_menu_item_get_draw_as_radio(check_menu_item);
 	}
 
 	public static bool GetInconsistent(this MentorLake.Gtk.GtkCheckMenuItemHandle check_menu_item)
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		return GtkCheckMenuItemHandleExterns.gtk_check_menu_item_get_inconsistent(check_menu_item);
 	}
 
 	public static T SetActive<T>(this T check_menu_item, bool is_active) where T : GtkCheckMenuItemHandle
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		GtkCheckMenuItemHandleExterns.gtk_check_menu_item_set_active(check_menu_item, is_active);
 		return check_menu_item;
 	}
 
 	public static T SetDrawAsRadio<T>(this T check_menu_item, bool draw_as_radio) where T : GtkCheckMenuItemHandle
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		GtkCheckMenuItemHandleExterns.gtk_check_menu_item_set_draw_as_radio(check_menu_item, draw_as_radio);
 		return check_menu_item;
 	}
 
 	public static T SetInconsistent<T>(this T check_menu_item, bool setting) where T : GtkCheckMenuItemHandle
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		GtkCheckMenuItemHandleExterns.gtk_check_menu_item_set_inconsistent(check_menu_item, setting);
 		return check_menu_item;
 	}
 
 	public static T Toggled<T>(this T check_menu_item) where T : GtkCheckMenuItemHandle
 	{
+		if (check_menu_item.IsInvalid || check_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkCheckMenuItemHandle)");
 		GtkCheckMenuItemHandleExterns.gtk_check_menu_item_toggled(check_menu_item);
 		return check_menu_item;
 	}

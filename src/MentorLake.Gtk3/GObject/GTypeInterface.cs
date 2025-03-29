@@ -9,6 +9,7 @@ public static class GTypeInterfaceExtensions
 {
 	public static MentorLake.GObject.GTypeInterfaceHandle PeekParent(this MentorLake.GObject.GTypeInterfaceHandle g_iface)
 	{
+		if (g_iface.IsInvalid || g_iface.IsClosed) throw new Exception("Invalid or closed handle (GTypeInterface)");
 		return GTypeInterfaceExterns.g_type_interface_peek_parent(g_iface);
 	}
 

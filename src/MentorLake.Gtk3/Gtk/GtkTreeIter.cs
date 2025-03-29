@@ -9,11 +9,13 @@ public static class GtkTreeIterExtensions
 {
 	public static MentorLake.Gtk.GtkTreeIterHandle Copy(this MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeIter)");
 		return GtkTreeIterExterns.gtk_tree_iter_copy(iter);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeIter)");
 		GtkTreeIterExterns.gtk_tree_iter_free(iter);
 	}
 

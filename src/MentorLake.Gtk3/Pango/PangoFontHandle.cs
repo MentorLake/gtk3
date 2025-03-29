@@ -20,63 +20,75 @@ public static class PangoFontHandleExtensions
 {
 	public static MentorLake.Pango.PangoFontDescriptionHandle Describe(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_describe(font);
 	}
 
 	public static MentorLake.Pango.PangoFontDescriptionHandle DescribeWithAbsoluteSize(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_describe_with_absolute_size(font);
 	}
 
 	public static MentorLake.Pango.PangoCoverageHandle GetCoverage(this MentorLake.Pango.PangoFontHandle font, MentorLake.Pango.PangoLanguageHandle language)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_coverage(font, language);
 	}
 
 	public static MentorLake.Pango.PangoFontFaceHandle GetFace(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_face(font);
 	}
 
 	public static T GetFeatures<T>(this T font, out IntPtr features, uint len, ref uint num_features) where T : PangoFontHandle
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		PangoFontHandleExterns.pango_font_get_features(font, out features, len, ref num_features);
 		return font;
 	}
 
 	public static MentorLake.Pango.PangoFontMapHandle GetFontMap(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_font_map(font);
 	}
 
 	public static T GetGlyphExtents<T>(this T font, MentorLake.Pango.PangoGlyph glyph, out MentorLake.Pango.PangoRectangle ink_rect, out MentorLake.Pango.PangoRectangle logical_rect) where T : PangoFontHandle
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		PangoFontHandleExterns.pango_font_get_glyph_extents(font, glyph, out ink_rect, out logical_rect);
 		return font;
 	}
 
 	public static MentorLake.HarfBuzz.hb_font_tHandle GetHbFont(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_hb_font(font);
 	}
 
 	public static MentorLake.Pango.PangoLanguageHandle[] GetLanguages(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_languages(font);
 	}
 
 	public static MentorLake.Pango.PangoFontMetricsHandle GetMetrics(this MentorLake.Pango.PangoFontHandle font, MentorLake.Pango.PangoLanguageHandle language)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_get_metrics(font, language);
 	}
 
 	public static bool HasChar(this MentorLake.Pango.PangoFontHandle font, char wc)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_has_char(font, wc);
 	}
 
 	public static MentorLake.GLib.GBytesHandle Serialize(this MentorLake.Pango.PangoFontHandle font)
 	{
+		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFontHandle)");
 		return PangoFontHandleExterns.pango_font_serialize(font);
 	}
 

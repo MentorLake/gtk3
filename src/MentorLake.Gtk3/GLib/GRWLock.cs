@@ -9,41 +9,49 @@ public static class GRWLockExtensions
 {
 	public static void Clear(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_clear(rw_lock);
 	}
 
 	public static void Init(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_init(rw_lock);
 	}
 
 	public static void ReaderLock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_reader_lock(rw_lock);
 	}
 
 	public static bool ReaderTrylock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		return GRWLockExterns.g_rw_lock_reader_trylock(rw_lock);
 	}
 
 	public static void ReaderUnlock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_reader_unlock(rw_lock);
 	}
 
 	public static void WriterLock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_writer_lock(rw_lock);
 	}
 
 	public static bool WriterTrylock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		return GRWLockExterns.g_rw_lock_writer_trylock(rw_lock);
 	}
 
 	public static void WriterUnlock(this MentorLake.GLib.GRWLockHandle rw_lock)
 	{
+		if (rw_lock.IsInvalid || rw_lock.IsClosed) throw new Exception("Invalid or closed handle (GRWLock)");
 		GRWLockExterns.g_rw_lock_writer_unlock(rw_lock);
 	}
 

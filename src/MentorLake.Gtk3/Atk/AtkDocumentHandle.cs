@@ -2,6 +2,8 @@ namespace MentorLake.Atk;
 
 public interface AtkDocumentHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class AtkDocumentHandleImpl : BaseSafeHandle, AtkDocumentHandle
@@ -12,51 +14,61 @@ public static class AtkDocumentHandleExtensions
 {
 	public static string GetAttributeValue(this MentorLake.Atk.AtkDocumentHandle document, string attribute_name)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_attribute_value(document, attribute_name);
 	}
 
 	public static MentorLake.Atk.AtkAttributeSetHandle GetAttributes(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_attributes(document);
 	}
 
 	public static int GetCurrentPageNumber(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_current_page_number(document);
 	}
 
 	public static IntPtr GetDocument(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_document(document);
 	}
 
 	public static string GetDocumentType(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_document_type(document);
 	}
 
 	public static string GetLocale(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_locale(document);
 	}
 
 	public static int GetPageCount(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_page_count(document);
 	}
 
 	public static MentorLake.GLib.GArrayHandle GetTextSelections(this MentorLake.Atk.AtkDocumentHandle document)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_get_text_selections(document);
 	}
 
 	public static bool SetAttributeValue(this MentorLake.Atk.AtkDocumentHandle document, string attribute_name, string attribute_value)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_set_attribute_value(document, attribute_name, attribute_value);
 	}
 
 	public static bool SetTextSelections(this MentorLake.Atk.AtkDocumentHandle document, MentorLake.GLib.GArrayHandle selections)
 	{
+		if (document.IsInvalid || document.IsClosed) throw new Exception("Invalid or closed handle (AtkDocumentHandle)");
 		return AtkDocumentHandleExterns.atk_document_set_text_selections(document, selections);
 	}
 

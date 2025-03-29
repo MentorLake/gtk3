@@ -18,122 +18,143 @@ public static class GtkTreeStoreHandleExtensions
 {
 	public static T Append<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_append(tree_store, out iter, parent);
 		return tree_store;
 	}
 
 	public static T Clear<T>(this T tree_store) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_clear(tree_store);
 		return tree_store;
 	}
 
 	public static T Insert<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, int position) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_insert(tree_store, out iter, parent, position);
 		return tree_store;
 	}
 
 	public static T InsertAfter<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, MentorLake.Gtk.GtkTreeIterHandle sibling) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_insert_after(tree_store, out iter, parent, sibling);
 		return tree_store;
 	}
 
 	public static T InsertBefore<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, MentorLake.Gtk.GtkTreeIterHandle sibling) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_insert_before(tree_store, out iter, parent, sibling);
 		return tree_store;
 	}
 
 	public static T InsertWithValues<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, int position, IntPtr @__arglist) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_insert_with_values(tree_store, out iter, parent, position, @__arglist);
 		return tree_store;
 	}
 
 	public static T InsertWithValuesv<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, int position, int[] columns, MentorLake.GObject.GValue[] values, int n_values) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_insert_with_valuesv(tree_store, out iter, parent, position, columns, values, n_values);
 		return tree_store;
 	}
 
 	public static bool IsAncestor(this MentorLake.Gtk.GtkTreeStoreHandle tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, MentorLake.Gtk.GtkTreeIterHandle descendant)
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		return GtkTreeStoreHandleExterns.gtk_tree_store_is_ancestor(tree_store, iter, descendant);
 	}
 
 	public static int IterDepth(this MentorLake.Gtk.GtkTreeStoreHandle tree_store, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		return GtkTreeStoreHandleExterns.gtk_tree_store_iter_depth(tree_store, iter);
 	}
 
 	public static bool IterIsValid(this MentorLake.Gtk.GtkTreeStoreHandle tree_store, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		return GtkTreeStoreHandleExterns.gtk_tree_store_iter_is_valid(tree_store, iter);
 	}
 
 	public static T MoveAfter<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, MentorLake.Gtk.GtkTreeIterHandle position) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_move_after(tree_store, iter, position);
 		return tree_store;
 	}
 
 	public static T MoveBefore<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, MentorLake.Gtk.GtkTreeIterHandle position) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_move_before(tree_store, iter, position);
 		return tree_store;
 	}
 
 	public static T Prepend<T>(this T tree_store, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_prepend(tree_store, out iter, parent);
 		return tree_store;
 	}
 
 	public static bool Remove(this MentorLake.Gtk.GtkTreeStoreHandle tree_store, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		return GtkTreeStoreHandleExterns.gtk_tree_store_remove(tree_store, iter);
 	}
 
 	public static T Reorder<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle parent, int[] new_order) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_reorder(tree_store, parent, new_order);
 		return tree_store;
 	}
 
 	public static T Set<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, IntPtr @__arglist) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_set(tree_store, iter, @__arglist);
 		return tree_store;
 	}
 
 	public static T SetColumnTypes<T>(this T tree_store, int n_columns, MentorLake.GObject.GType[] types) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_set_column_types(tree_store, n_columns, types);
 		return tree_store;
 	}
 
 	public static T SetValist<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, IntPtr var_args) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_set_valist(tree_store, iter, var_args);
 		return tree_store;
 	}
 
 	public static T SetValue<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, int column, MentorLake.GObject.GValueHandle value) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_set_value(tree_store, iter, column, value);
 		return tree_store;
 	}
 
 	public static T SetValuesv<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle iter, int[] columns, MentorLake.GObject.GValue[] values, int n_values) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_set_valuesv(tree_store, iter, columns, values, n_values);
 		return tree_store;
 	}
 
 	public static T Swap<T>(this T tree_store, MentorLake.Gtk.GtkTreeIterHandle a, MentorLake.Gtk.GtkTreeIterHandle b) where T : GtkTreeStoreHandle
 	{
+		if (tree_store.IsInvalid || tree_store.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeStoreHandle)");
 		GtkTreeStoreHandleExterns.gtk_tree_store_swap(tree_store, a, b);
 		return tree_store;
 	}

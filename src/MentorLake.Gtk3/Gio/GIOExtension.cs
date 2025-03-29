@@ -9,21 +9,25 @@ public static class GIOExtensionExtensions
 {
 	public static string GetName(this MentorLake.Gio.GIOExtensionHandle extension)
 	{
+		if (extension.IsInvalid || extension.IsClosed) throw new Exception("Invalid or closed handle (GIOExtension)");
 		return GIOExtensionExterns.g_io_extension_get_name(extension);
 	}
 
 	public static int GetPriority(this MentorLake.Gio.GIOExtensionHandle extension)
 	{
+		if (extension.IsInvalid || extension.IsClosed) throw new Exception("Invalid or closed handle (GIOExtension)");
 		return GIOExtensionExterns.g_io_extension_get_priority(extension);
 	}
 
 	public static MentorLake.GObject.GType GetType(this MentorLake.Gio.GIOExtensionHandle extension)
 	{
+		if (extension.IsInvalid || extension.IsClosed) throw new Exception("Invalid or closed handle (GIOExtension)");
 		return GIOExtensionExterns.g_io_extension_get_type(extension);
 	}
 
 	public static MentorLake.GObject.GTypeClassHandle RefClass(this MentorLake.Gio.GIOExtensionHandle extension)
 	{
+		if (extension.IsInvalid || extension.IsClosed) throw new Exception("Invalid or closed handle (GIOExtension)");
 		return GIOExtensionExterns.g_io_extension_ref_class(extension);
 	}
 

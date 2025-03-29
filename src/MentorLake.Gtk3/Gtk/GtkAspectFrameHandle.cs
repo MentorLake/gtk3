@@ -13,6 +13,7 @@ public static class GtkAspectFrameHandleExtensions
 {
 	public static T Set<T>(this T aspect_frame, float xalign, float yalign, float ratio, bool obey_child) where T : GtkAspectFrameHandle
 	{
+		if (aspect_frame.IsInvalid || aspect_frame.IsClosed) throw new Exception("Invalid or closed handle (GtkAspectFrameHandle)");
 		GtkAspectFrameHandleExterns.gtk_aspect_frame_set(aspect_frame, xalign, yalign, ratio, obey_child);
 		return aspect_frame;
 	}

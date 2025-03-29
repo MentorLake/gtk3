@@ -9,66 +9,79 @@ public static class GtkWidgetClassExtensions
 {
 	public static void BindTemplateCallbackFull(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, string callback_name, MentorLake.GObject.GCallback callback_symbol)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_bind_template_callback_full(widget_class, callback_name, callback_symbol);
 	}
 
 	public static void BindTemplateChildFull(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, string name, bool internal_child, UIntPtr struct_offset)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_bind_template_child_full(widget_class, name, internal_child, struct_offset);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle FindStyleProperty(this MentorLake.Gtk.GtkWidgetClassHandle klass, string property_name)
 	{
+		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		return GtkWidgetClassExterns.gtk_widget_class_find_style_property(klass, property_name);
 	}
 
 	public static string GetCssName(this MentorLake.Gtk.GtkWidgetClassHandle widget_class)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		return GtkWidgetClassExterns.gtk_widget_class_get_css_name(widget_class);
 	}
 
 	public static void InstallStyleProperty(this MentorLake.Gtk.GtkWidgetClassHandle klass, MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_install_style_property(klass, pspec);
 	}
 
 	public static void InstallStylePropertyParser(this MentorLake.Gtk.GtkWidgetClassHandle klass, MentorLake.GObject.GParamSpecHandle pspec, MentorLake.Gtk.GtkRcPropertyParser parser)
 	{
+		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_install_style_property_parser(klass, pspec, parser);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle[] ListStyleProperties(this MentorLake.Gtk.GtkWidgetClassHandle klass, out uint n_properties)
 	{
+		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		return GtkWidgetClassExterns.gtk_widget_class_list_style_properties(klass, out n_properties);
 	}
 
 	public static void SetAccessibleRole(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, MentorLake.Atk.AtkRole role)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_accessible_role(widget_class, role);
 	}
 
 	public static void SetAccessibleType(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, MentorLake.GObject.GType type)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_accessible_type(widget_class, type);
 	}
 
 	public static void SetConnectFunc(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, MentorLake.Gtk.GtkBuilderConnectFunc connect_func, IntPtr connect_data, MentorLake.GLib.GDestroyNotify connect_data_destroy)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_connect_func(widget_class, connect_func, connect_data, connect_data_destroy);
 	}
 
 	public static void SetCssName(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, string name)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_css_name(widget_class, name);
 	}
 
 	public static void SetTemplate(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, MentorLake.GLib.GBytesHandle template_bytes)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_template(widget_class, template_bytes);
 	}
 
 	public static void SetTemplateFromResource(this MentorLake.Gtk.GtkWidgetClassHandle widget_class, string resource_name)
 	{
+		if (widget_class.IsInvalid || widget_class.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetClass)");
 		GtkWidgetClassExterns.gtk_widget_class_set_template_from_resource(widget_class, resource_name);
 	}
 

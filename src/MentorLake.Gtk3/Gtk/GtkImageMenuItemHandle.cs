@@ -28,39 +28,46 @@ public static class GtkImageMenuItemHandleExtensions
 {
 	public static bool GetAlwaysShowImage(this MentorLake.Gtk.GtkImageMenuItemHandle image_menu_item)
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		return GtkImageMenuItemHandleExterns.gtk_image_menu_item_get_always_show_image(image_menu_item);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetImage(this MentorLake.Gtk.GtkImageMenuItemHandle image_menu_item)
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		return GtkImageMenuItemHandleExterns.gtk_image_menu_item_get_image(image_menu_item);
 	}
 
 	public static bool GetUseStock(this MentorLake.Gtk.GtkImageMenuItemHandle image_menu_item)
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		return GtkImageMenuItemHandleExterns.gtk_image_menu_item_get_use_stock(image_menu_item);
 	}
 
 	public static T SetAccelGroup<T>(this T image_menu_item, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkImageMenuItemHandle
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		GtkImageMenuItemHandleExterns.gtk_image_menu_item_set_accel_group(image_menu_item, accel_group);
 		return image_menu_item;
 	}
 
 	public static T SetAlwaysShowImage<T>(this T image_menu_item, bool always_show) where T : GtkImageMenuItemHandle
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		GtkImageMenuItemHandleExterns.gtk_image_menu_item_set_always_show_image(image_menu_item, always_show);
 		return image_menu_item;
 	}
 
 	public static T SetImage<T>(this T image_menu_item, MentorLake.Gtk.GtkWidgetHandle image) where T : GtkImageMenuItemHandle
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		GtkImageMenuItemHandleExterns.gtk_image_menu_item_set_image(image_menu_item, image);
 		return image_menu_item;
 	}
 
 	public static T SetUseStock<T>(this T image_menu_item, bool use_stock) where T : GtkImageMenuItemHandle
 	{
+		if (image_menu_item.IsInvalid || image_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkImageMenuItemHandle)");
 		GtkImageMenuItemHandleExterns.gtk_image_menu_item_set_use_stock(image_menu_item, use_stock);
 		return image_menu_item;
 	}

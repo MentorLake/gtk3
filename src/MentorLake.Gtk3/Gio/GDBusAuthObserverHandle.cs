@@ -108,11 +108,13 @@ public static class GDBusAuthObserverHandleExtensions
 {
 	public static bool AllowMechanism(this MentorLake.Gio.GDBusAuthObserverHandle observer, string mechanism)
 	{
+		if (observer.IsInvalid || observer.IsClosed) throw new Exception("Invalid or closed handle (GDBusAuthObserverHandle)");
 		return GDBusAuthObserverHandleExterns.g_dbus_auth_observer_allow_mechanism(observer, mechanism);
 	}
 
 	public static bool AuthorizeAuthenticatedPeer(this MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GIOStreamHandle stream, MentorLake.Gio.GCredentialsHandle credentials)
 	{
+		if (observer.IsInvalid || observer.IsClosed) throw new Exception("Invalid or closed handle (GDBusAuthObserverHandle)");
 		return GDBusAuthObserverHandleExterns.g_dbus_auth_observer_authorize_authenticated_peer(observer, stream, credentials);
 	}
 

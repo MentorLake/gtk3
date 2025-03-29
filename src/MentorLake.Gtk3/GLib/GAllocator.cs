@@ -9,6 +9,7 @@ public static class GAllocatorExtensions
 {
 	public static void Free(this MentorLake.GLib.GAllocatorHandle allocator)
 	{
+		if (allocator.IsInvalid || allocator.IsClosed) throw new Exception("Invalid or closed handle (GAllocator)");
 		GAllocatorExterns.g_allocator_free(allocator);
 	}
 

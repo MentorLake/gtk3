@@ -14,26 +14,31 @@ public static class PangoItemExtensions
 {
 	public static void ApplyAttrs(this MentorLake.Pango.PangoItemHandle item, MentorLake.Pango.PangoAttrIteratorHandle iter)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (PangoItem)");
 		PangoItemExterns.pango_item_apply_attrs(item, iter);
 	}
 
 	public static MentorLake.Pango.PangoItemHandle Copy(this MentorLake.Pango.PangoItemHandle item)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (PangoItem)");
 		return PangoItemExterns.pango_item_copy(item);
 	}
 
 	public static void Free(this MentorLake.Pango.PangoItemHandle item)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (PangoItem)");
 		PangoItemExterns.pango_item_free(item);
 	}
 
 	public static int GetCharOffset(this MentorLake.Pango.PangoItemHandle item)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (PangoItem)");
 		return PangoItemExterns.pango_item_get_char_offset(item);
 	}
 
 	public static MentorLake.Pango.PangoItemHandle Split(this MentorLake.Pango.PangoItemHandle orig, int split_index, int split_offset)
 	{
+		if (orig.IsInvalid || orig.IsClosed) throw new Exception("Invalid or closed handle (PangoItem)");
 		return PangoItemExterns.pango_item_split(orig, split_index, split_offset);
 	}
 

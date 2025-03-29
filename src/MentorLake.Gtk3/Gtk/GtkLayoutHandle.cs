@@ -13,51 +13,60 @@ public static class GtkLayoutHandleExtensions
 {
 	public static MentorLake.Gdk.GdkWindowHandle GetBinWindow(this MentorLake.Gtk.GtkLayoutHandle layout)
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		return GtkLayoutHandleExterns.gtk_layout_get_bin_window(layout);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetHadjustment(this MentorLake.Gtk.GtkLayoutHandle layout)
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		return GtkLayoutHandleExterns.gtk_layout_get_hadjustment(layout);
 	}
 
 	public static T GetSize<T>(this T layout, out uint width, out uint height) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_get_size(layout, out width, out height);
 		return layout;
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetVadjustment(this MentorLake.Gtk.GtkLayoutHandle layout)
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		return GtkLayoutHandleExterns.gtk_layout_get_vadjustment(layout);
 	}
 
 	public static T Move<T>(this T layout, MentorLake.Gtk.GtkWidgetHandle child_widget, int x, int y) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_move(layout, child_widget, x, y);
 		return layout;
 	}
 
 	public static T Put<T>(this T layout, MentorLake.Gtk.GtkWidgetHandle child_widget, int x, int y) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_put(layout, child_widget, x, y);
 		return layout;
 	}
 
 	public static T SetHadjustment<T>(this T layout, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_set_hadjustment(layout, adjustment);
 		return layout;
 	}
 
 	public static T SetSize<T>(this T layout, uint width, uint height) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_set_size(layout, width, height);
 		return layout;
 	}
 
 	public static T SetVadjustment<T>(this T layout, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkLayoutHandle
 	{
+		if (layout.IsInvalid || layout.IsClosed) throw new Exception("Invalid or closed handle (GtkLayoutHandle)");
 		GtkLayoutHandleExterns.gtk_layout_set_vadjustment(layout, adjustment);
 		return layout;
 	}

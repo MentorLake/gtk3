@@ -68,32 +68,38 @@ public static class GDBusServerHandleExtensions
 {
 	public static string GetClientAddress(this MentorLake.Gio.GDBusServerHandle server)
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_client_address(server);
 	}
 
 	public static MentorLake.Gio.GDBusServerFlags GetFlags(this MentorLake.Gio.GDBusServerHandle server)
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_flags(server);
 	}
 
 	public static string GetGuid(this MentorLake.Gio.GDBusServerHandle server)
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_guid(server);
 	}
 
 	public static bool IsActive(this MentorLake.Gio.GDBusServerHandle server)
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_is_active(server);
 	}
 
 	public static T Start<T>(this T server) where T : GDBusServerHandle
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		GDBusServerHandleExterns.g_dbus_server_start(server);
 		return server;
 	}
 
 	public static T Stop<T>(this T server) where T : GDBusServerHandle
 	{
+		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
 		GDBusServerHandleExterns.g_dbus_server_stop(server);
 		return server;
 	}

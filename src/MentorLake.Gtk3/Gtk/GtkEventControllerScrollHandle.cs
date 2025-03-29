@@ -185,11 +185,13 @@ public static class GtkEventControllerScrollHandleExtensions
 {
 	public static MentorLake.Gtk.GtkEventControllerScrollFlags GetFlags(this MentorLake.Gtk.GtkEventControllerScrollHandle scroll)
 	{
+		if (scroll.IsInvalid || scroll.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerScrollHandle)");
 		return GtkEventControllerScrollHandleExterns.gtk_event_controller_scroll_get_flags(scroll);
 	}
 
 	public static T SetFlags<T>(this T scroll, MentorLake.Gtk.GtkEventControllerScrollFlags flags) where T : GtkEventControllerScrollHandle
 	{
+		if (scroll.IsInvalid || scroll.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerScrollHandle)");
 		GtkEventControllerScrollHandleExterns.gtk_event_controller_scroll_set_flags(scroll, flags);
 		return scroll;
 	}

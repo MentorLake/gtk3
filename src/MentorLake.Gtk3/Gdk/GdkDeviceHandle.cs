@@ -109,167 +109,199 @@ public static class GdkDeviceHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDeviceHandle GetAssociatedDevice(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_associated_device(device);
 	}
 
 	public static MentorLake.Gdk.GdkAxisFlags GetAxes(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_axes(device);
 	}
 
 	public static bool GetAxis(this MentorLake.Gdk.GdkDeviceHandle device, double[] axes, MentorLake.Gdk.GdkAxisUse use, out double value)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_axis(device, axes, use, out value);
 	}
 
 	public static MentorLake.Gdk.GdkAxisUse GetAxisUse(this MentorLake.Gdk.GdkDeviceHandle device, uint index_)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_axis_use(device, index_);
 	}
 
 	public static bool GetAxisValue(this MentorLake.Gdk.GdkDeviceHandle device, double[] axes, MentorLake.Gdk.GdkAtom axis_label, out double value)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_axis_value(device, axes, axis_label, out value);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceType GetDeviceType(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_device_type(device);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_display(device);
 	}
 
 	public static bool GetHasCursor(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_has_cursor(device);
 	}
 
 	public static bool GetHistory(this MentorLake.Gdk.GdkDeviceHandle device, MentorLake.Gdk.GdkWindowHandle window, uint start, uint stop, out MentorLake.Gdk.GdkTimeCoordHandle[] events, out int n_events)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_history(device, window, start, stop, out events, out n_events);
 	}
 
 	public static bool GetKey(this MentorLake.Gdk.GdkDeviceHandle device, uint index_, out uint keyval, out MentorLake.Gdk.GdkModifierType modifiers)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_key(device, index_, out keyval, out modifiers);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetLastEventWindow(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_last_event_window(device);
 	}
 
 	public static MentorLake.Gdk.GdkInputMode GetMode(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_mode(device);
 	}
 
 	public static int GetNAxes(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_n_axes(device);
 	}
 
 	public static int GetNKeys(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_n_keys(device);
 	}
 
 	public static string GetName(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_name(device);
 	}
 
 	public static T GetPosition<T>(this T device, out MentorLake.Gdk.GdkScreenHandle screen, out int x, out int y) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_get_position(device, out screen, out x, out y);
 		return device;
 	}
 
 	public static T GetPositionDouble<T>(this T device, out MentorLake.Gdk.GdkScreenHandle screen, out double x, out double y) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_get_position_double(device, out screen, out x, out y);
 		return device;
 	}
 
 	public static string GetProductId(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_product_id(device);
 	}
 
 	public static MentorLake.Gdk.GdkSeatHandle GetSeat(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_seat(device);
 	}
 
 	public static MentorLake.Gdk.GdkInputSource GetSource(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_source(device);
 	}
 
 	public static T GetState<T>(this T device, MentorLake.Gdk.GdkWindowHandle window, double[] axes, out MentorLake.Gdk.GdkModifierType mask) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_get_state(device, window, axes, out mask);
 		return device;
 	}
 
 	public static string GetVendorId(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_vendor_id(device);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindowAtPosition(this MentorLake.Gdk.GdkDeviceHandle device, out int win_x, out int win_y)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_window_at_position(device, out win_x, out win_y);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindowAtPositionDouble(this MentorLake.Gdk.GdkDeviceHandle device, out double win_x, out double win_y)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_get_window_at_position_double(device, out win_x, out win_y);
 	}
 
 	public static MentorLake.Gdk.GdkGrabStatus Grab(this MentorLake.Gdk.GdkDeviceHandle device, MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkGrabOwnership grab_ownership, bool owner_events, MentorLake.Gdk.GdkEventMask event_mask, MentorLake.Gdk.GdkCursorHandle cursor, uint time_)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_grab(device, window, grab_ownership, owner_events, event_mask, cursor, time_);
 	}
 
 	public static MentorLake.GLib.GListHandle ListAxes(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_list_axes(device);
 	}
 
 	public static MentorLake.GLib.GListHandle ListSlaveDevices(this MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_list_slave_devices(device);
 	}
 
 	public static T SetAxisUse<T>(this T device, uint index_, MentorLake.Gdk.GdkAxisUse use) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_set_axis_use(device, index_, use);
 		return device;
 	}
 
 	public static T SetKey<T>(this T device, uint index_, uint keyval, MentorLake.Gdk.GdkModifierType modifiers) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_set_key(device, index_, keyval, modifiers);
 		return device;
 	}
 
 	public static bool SetMode(this MentorLake.Gdk.GdkDeviceHandle device, MentorLake.Gdk.GdkInputMode mode)
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		return GdkDeviceHandleExterns.gdk_device_set_mode(device, mode);
 	}
 
 	public static T Ungrab<T>(this T device, uint time_) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_ungrab(device, time_);
 		return device;
 	}
 
 	public static T Warp<T>(this T device, MentorLake.Gdk.GdkScreenHandle screen, int x, int y) where T : GdkDeviceHandle
 	{
+		if (device.IsInvalid || device.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceHandle)");
 		GdkDeviceHandleExterns.gdk_device_warp(device, screen, x, y);
 		return device;
 	}

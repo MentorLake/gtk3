@@ -13,22 +13,26 @@ public static class GtkEventBoxHandleExtensions
 {
 	public static bool GetAboveChild(this MentorLake.Gtk.GtkEventBoxHandle event_box)
 	{
+		if (event_box.IsInvalid || event_box.IsClosed) throw new Exception("Invalid or closed handle (GtkEventBoxHandle)");
 		return GtkEventBoxHandleExterns.gtk_event_box_get_above_child(event_box);
 	}
 
 	public static bool GetVisibleWindow(this MentorLake.Gtk.GtkEventBoxHandle event_box)
 	{
+		if (event_box.IsInvalid || event_box.IsClosed) throw new Exception("Invalid or closed handle (GtkEventBoxHandle)");
 		return GtkEventBoxHandleExterns.gtk_event_box_get_visible_window(event_box);
 	}
 
 	public static T SetAboveChild<T>(this T event_box, bool above_child) where T : GtkEventBoxHandle
 	{
+		if (event_box.IsInvalid || event_box.IsClosed) throw new Exception("Invalid or closed handle (GtkEventBoxHandle)");
 		GtkEventBoxHandleExterns.gtk_event_box_set_above_child(event_box, above_child);
 		return event_box;
 	}
 
 	public static T SetVisibleWindow<T>(this T event_box, bool visible_window) where T : GtkEventBoxHandle
 	{
+		if (event_box.IsInvalid || event_box.IsClosed) throw new Exception("Invalid or closed handle (GtkEventBoxHandle)");
 		GtkEventBoxHandleExterns.gtk_event_box_set_visible_window(event_box, visible_window);
 		return event_box;
 	}

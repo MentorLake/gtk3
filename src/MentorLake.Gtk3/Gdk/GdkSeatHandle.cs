@@ -180,36 +180,43 @@ public static class GdkSeatHandleExtensions
 {
 	public static MentorLake.Gdk.GdkSeatCapabilities GetCapabilities(this MentorLake.Gdk.GdkSeatHandle seat)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_get_capabilities(seat);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkSeatHandle seat)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_get_display(seat);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceHandle GetKeyboard(this MentorLake.Gdk.GdkSeatHandle seat)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_get_keyboard(seat);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceHandle GetPointer(this MentorLake.Gdk.GdkSeatHandle seat)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_get_pointer(seat);
 	}
 
 	public static MentorLake.GLib.GListHandle GetSlaves(this MentorLake.Gdk.GdkSeatHandle seat, MentorLake.Gdk.GdkSeatCapabilities capabilities)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_get_slaves(seat, capabilities);
 	}
 
 	public static MentorLake.Gdk.GdkGrabStatus Grab(this MentorLake.Gdk.GdkSeatHandle seat, MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkSeatCapabilities capabilities, bool owner_events, MentorLake.Gdk.GdkCursorHandle cursor, MentorLake.Gdk.GdkEventHandle @event, MentorLake.Gdk.GdkSeatGrabPrepareFunc prepare_func, IntPtr prepare_func_data)
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		return GdkSeatHandleExterns.gdk_seat_grab(seat, window, capabilities, owner_events, cursor, @event, prepare_func, prepare_func_data);
 	}
 
 	public static T Ungrab<T>(this T seat) where T : GdkSeatHandle
 	{
+		if (seat.IsInvalid || seat.IsClosed) throw new Exception("Invalid or closed handle (GdkSeatHandle)");
 		GdkSeatHandleExterns.gdk_seat_ungrab(seat);
 		return seat;
 	}

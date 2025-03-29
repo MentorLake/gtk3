@@ -8,6 +8,7 @@ public static class GFileEnumeratorHandleExtensions
 {
 	public static bool Close(this MentorLake.Gio.GFileEnumeratorHandle enumerator, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		var externCallResult = GFileEnumeratorHandleExterns.g_file_enumerator_close(enumerator, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -15,12 +16,14 @@ public static class GFileEnumeratorHandleExtensions
 
 	public static T CloseAsync<T>(this T enumerator, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GFileEnumeratorHandle
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		GFileEnumeratorHandleExterns.g_file_enumerator_close_async(enumerator, io_priority, cancellable, callback, user_data);
 		return enumerator;
 	}
 
 	public static bool CloseFinish(this MentorLake.Gio.GFileEnumeratorHandle enumerator, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		var externCallResult = GFileEnumeratorHandleExterns.g_file_enumerator_close_finish(enumerator, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -28,26 +31,31 @@ public static class GFileEnumeratorHandleExtensions
 
 	public static MentorLake.Gio.GFileHandle GetChild(this MentorLake.Gio.GFileEnumeratorHandle enumerator, MentorLake.Gio.GFileInfoHandle info)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		return GFileEnumeratorHandleExterns.g_file_enumerator_get_child(enumerator, info);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetContainer(this MentorLake.Gio.GFileEnumeratorHandle enumerator)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		return GFileEnumeratorHandleExterns.g_file_enumerator_get_container(enumerator);
 	}
 
 	public static bool HasPending(this MentorLake.Gio.GFileEnumeratorHandle enumerator)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		return GFileEnumeratorHandleExterns.g_file_enumerator_has_pending(enumerator);
 	}
 
 	public static bool IsClosed(this MentorLake.Gio.GFileEnumeratorHandle enumerator)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		return GFileEnumeratorHandleExterns.g_file_enumerator_is_closed(enumerator);
 	}
 
 	public static bool Iterate(this MentorLake.Gio.GFileEnumeratorHandle direnum, out MentorLake.Gio.GFileInfoHandle out_info, out MentorLake.Gio.GFileHandle out_child, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (direnum.IsInvalid || direnum.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		var externCallResult = GFileEnumeratorHandleExterns.g_file_enumerator_iterate(direnum, out out_info, out out_child, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -55,6 +63,7 @@ public static class GFileEnumeratorHandleExtensions
 
 	public static MentorLake.Gio.GFileInfoHandle NextFile(this MentorLake.Gio.GFileEnumeratorHandle enumerator, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		var externCallResult = GFileEnumeratorHandleExterns.g_file_enumerator_next_file(enumerator, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -62,12 +71,14 @@ public static class GFileEnumeratorHandleExtensions
 
 	public static T NextFilesAsync<T>(this T enumerator, int num_files, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GFileEnumeratorHandle
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		GFileEnumeratorHandleExterns.g_file_enumerator_next_files_async(enumerator, num_files, io_priority, cancellable, callback, user_data);
 		return enumerator;
 	}
 
 	public static MentorLake.GLib.GListHandle NextFilesFinish(this MentorLake.Gio.GFileEnumeratorHandle enumerator, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		var externCallResult = GFileEnumeratorHandleExterns.g_file_enumerator_next_files_finish(enumerator, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -75,6 +86,7 @@ public static class GFileEnumeratorHandleExtensions
 
 	public static T SetPending<T>(this T enumerator, bool pending) where T : GFileEnumeratorHandle
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GFileEnumeratorHandle)");
 		GFileEnumeratorHandleExterns.g_file_enumerator_set_pending(enumerator, pending);
 		return enumerator;
 	}

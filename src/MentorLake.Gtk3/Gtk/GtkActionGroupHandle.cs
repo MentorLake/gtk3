@@ -187,120 +187,141 @@ public static class GtkActionGroupHandleExtensions
 {
 	public static T AddAction<T>(this T action_group, MentorLake.Gtk.GtkActionHandle action) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_action(action_group, action);
 		return action_group;
 	}
 
 	public static T AddActionWithAccel<T>(this T action_group, MentorLake.Gtk.GtkActionHandle action, string accelerator) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_action_with_accel(action_group, action, accelerator);
 		return action_group;
 	}
 
 	public static T AddActions<T>(this T action_group, MentorLake.Gtk.GtkActionEntry[] entries, uint n_entries, IntPtr user_data) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_actions(action_group, entries, n_entries, user_data);
 		return action_group;
 	}
 
 	public static T AddActionsFull<T>(this T action_group, MentorLake.Gtk.GtkActionEntry[] entries, uint n_entries, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_actions_full(action_group, entries, n_entries, user_data, destroy);
 		return action_group;
 	}
 
 	public static T AddRadioActions<T>(this T action_group, MentorLake.Gtk.GtkRadioActionEntry[] entries, uint n_entries, int value, MentorLake.GObject.GCallback on_change, IntPtr user_data) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_radio_actions(action_group, entries, n_entries, value, on_change, user_data);
 		return action_group;
 	}
 
 	public static T AddRadioActionsFull<T>(this T action_group, MentorLake.Gtk.GtkRadioActionEntry[] entries, uint n_entries, int value, MentorLake.GObject.GCallback on_change, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_radio_actions_full(action_group, entries, n_entries, value, on_change, user_data, destroy);
 		return action_group;
 	}
 
 	public static T AddToggleActions<T>(this T action_group, MentorLake.Gtk.GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_toggle_actions(action_group, entries, n_entries, user_data);
 		return action_group;
 	}
 
 	public static T AddToggleActionsFull<T>(this T action_group, MentorLake.Gtk.GtkToggleActionEntry[] entries, uint n_entries, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_add_toggle_actions_full(action_group, entries, n_entries, user_data, destroy);
 		return action_group;
 	}
 
 	public static MentorLake.Gtk.GtkAccelGroupHandle GetAccelGroup(this MentorLake.Gtk.GtkActionGroupHandle action_group)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_get_accel_group(action_group);
 	}
 
 	public static MentorLake.Gtk.GtkActionHandle GetAction(this MentorLake.Gtk.GtkActionGroupHandle action_group, string action_name)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_get_action(action_group, action_name);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkActionGroupHandle action_group)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_get_name(action_group);
 	}
 
 	public static bool GetSensitive(this MentorLake.Gtk.GtkActionGroupHandle action_group)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_get_sensitive(action_group);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkActionGroupHandle action_group)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_get_visible(action_group);
 	}
 
 	public static MentorLake.GLib.GListHandle ListActions(this MentorLake.Gtk.GtkActionGroupHandle action_group)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_list_actions(action_group);
 	}
 
 	public static T RemoveAction<T>(this T action_group, MentorLake.Gtk.GtkActionHandle action) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_remove_action(action_group, action);
 		return action_group;
 	}
 
 	public static T SetAccelGroup<T>(this T action_group, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_set_accel_group(action_group, accel_group);
 		return action_group;
 	}
 
 	public static T SetSensitive<T>(this T action_group, bool sensitive) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_set_sensitive(action_group, sensitive);
 		return action_group;
 	}
 
 	public static T SetTranslateFunc<T>(this T action_group, MentorLake.Gtk.GtkTranslateFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify notify) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_set_translate_func(action_group, func, data, notify);
 		return action_group;
 	}
 
 	public static T SetTranslationDomain<T>(this T action_group, string domain) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_set_translation_domain(action_group, domain);
 		return action_group;
 	}
 
 	public static T SetVisible<T>(this T action_group, bool visible) where T : GtkActionGroupHandle
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		GtkActionGroupHandleExterns.gtk_action_group_set_visible(action_group, visible);
 		return action_group;
 	}
 
 	public static string TranslateString(this MentorLake.Gtk.GtkActionGroupHandle action_group, string @string)
 	{
+		if (action_group.IsInvalid || action_group.IsClosed) throw new Exception("Invalid or closed handle (GtkActionGroupHandle)");
 		return GtkActionGroupHandleExterns.gtk_action_group_translate_string(action_group, @string);
 	}
 

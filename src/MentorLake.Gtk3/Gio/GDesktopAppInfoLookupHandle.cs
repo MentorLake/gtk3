@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GDesktopAppInfoLookupHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GDesktopAppInfoLookupHandleImpl : BaseSafeHandle, GDesktopAppInfoLookupHandle
@@ -12,6 +14,7 @@ public static class GDesktopAppInfoLookupHandleExtensions
 {
 	public static MentorLake.Gio.GAppInfoHandle GetDefaultForUriScheme(this MentorLake.Gio.GDesktopAppInfoLookupHandle lookup, string uri_scheme)
 	{
+		if (lookup.IsInvalid || lookup.IsClosed) throw new Exception("Invalid or closed handle (GDesktopAppInfoLookupHandle)");
 		return GDesktopAppInfoLookupHandleExterns.g_desktop_app_info_lookup_get_default_for_uri_scheme(lookup, uri_scheme);
 	}
 

@@ -69,65 +69,77 @@ public static class GtkFontButtonHandleExtensions
 {
 	public static string GetFontName(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_font_name(font_button);
 	}
 
 	public static bool GetShowSize(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_show_size(font_button);
 	}
 
 	public static bool GetShowStyle(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_show_style(font_button);
 	}
 
 	public static string GetTitle(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_title(font_button);
 	}
 
 	public static bool GetUseFont(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_use_font(font_button);
 	}
 
 	public static bool GetUseSize(this MentorLake.Gtk.GtkFontButtonHandle font_button)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_get_use_size(font_button);
 	}
 
 	public static bool SetFontName(this MentorLake.Gtk.GtkFontButtonHandle font_button, string fontname)
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		return GtkFontButtonHandleExterns.gtk_font_button_set_font_name(font_button, fontname);
 	}
 
 	public static T SetShowSize<T>(this T font_button, bool show_size) where T : GtkFontButtonHandle
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		GtkFontButtonHandleExterns.gtk_font_button_set_show_size(font_button, show_size);
 		return font_button;
 	}
 
 	public static T SetShowStyle<T>(this T font_button, bool show_style) where T : GtkFontButtonHandle
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		GtkFontButtonHandleExterns.gtk_font_button_set_show_style(font_button, show_style);
 		return font_button;
 	}
 
 	public static T SetTitle<T>(this T font_button, string title) where T : GtkFontButtonHandle
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		GtkFontButtonHandleExterns.gtk_font_button_set_title(font_button, title);
 		return font_button;
 	}
 
 	public static T SetUseFont<T>(this T font_button, bool use_font) where T : GtkFontButtonHandle
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		GtkFontButtonHandleExterns.gtk_font_button_set_use_font(font_button, use_font);
 		return font_button;
 	}
 
 	public static T SetUseSize<T>(this T font_button, bool use_size) where T : GtkFontButtonHandle
 	{
+		if (font_button.IsInvalid || font_button.IsClosed) throw new Exception("Invalid or closed handle (GtkFontButtonHandle)");
 		GtkFontButtonHandleExterns.gtk_font_button_set_use_size(font_button, use_size);
 		return font_button;
 	}

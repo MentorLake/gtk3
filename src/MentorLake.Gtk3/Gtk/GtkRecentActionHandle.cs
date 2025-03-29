@@ -18,11 +18,13 @@ public static class GtkRecentActionHandleExtensions
 {
 	public static bool GetShowNumbers(this MentorLake.Gtk.GtkRecentActionHandle action)
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentActionHandle)");
 		return GtkRecentActionHandleExterns.gtk_recent_action_get_show_numbers(action);
 	}
 
 	public static T SetShowNumbers<T>(this T action, bool show_numbers) where T : GtkRecentActionHandle
 	{
+		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentActionHandle)");
 		GtkRecentActionHandleExterns.gtk_recent_action_set_show_numbers(action, show_numbers);
 		return action;
 	}

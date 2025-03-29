@@ -13,23 +13,27 @@ public static class GSimpleActionGroupHandleExtensions
 {
 	public static T AddEntries<T>(this T simple, MentorLake.Gio.GActionEntry[] entries, int n_entries, IntPtr user_data) where T : GSimpleActionGroupHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionGroupHandle)");
 		GSimpleActionGroupHandleExterns.g_simple_action_group_add_entries(simple, entries, n_entries, user_data);
 		return simple;
 	}
 
 	public static T Insert<T>(this T simple, MentorLake.Gio.GActionHandle action) where T : GSimpleActionGroupHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionGroupHandle)");
 		GSimpleActionGroupHandleExterns.g_simple_action_group_insert(simple, action);
 		return simple;
 	}
 
 	public static MentorLake.Gio.GActionHandle Lookup(this MentorLake.Gio.GSimpleActionGroupHandle simple, string action_name)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionGroupHandle)");
 		return GSimpleActionGroupHandleExterns.g_simple_action_group_lookup(simple, action_name);
 	}
 
 	public static T Remove<T>(this T simple, string action_name) where T : GSimpleActionGroupHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionGroupHandle)");
 		GSimpleActionGroupHandleExterns.g_simple_action_group_remove(simple, action_name);
 		return simple;
 	}

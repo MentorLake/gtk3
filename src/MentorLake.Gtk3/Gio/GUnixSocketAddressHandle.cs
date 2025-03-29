@@ -28,21 +28,25 @@ public static class GUnixSocketAddressHandleExtensions
 {
 	public static MentorLake.Gio.GUnixSocketAddressType GetAddressType(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_address_type(address);
 	}
 
 	public static bool GetIsAbstract(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_is_abstract(address);
 	}
 
 	public static string GetPath(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_path(address);
 	}
 
 	public static UIntPtr GetPathLen(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_path_len(address);
 	}
 

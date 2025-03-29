@@ -13,38 +13,45 @@ public static class GtkRevealerHandleExtensions
 {
 	public static bool GetChildRevealed(this MentorLake.Gtk.GtkRevealerHandle revealer)
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		return GtkRevealerHandleExterns.gtk_revealer_get_child_revealed(revealer);
 	}
 
 	public static bool GetRevealChild(this MentorLake.Gtk.GtkRevealerHandle revealer)
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		return GtkRevealerHandleExterns.gtk_revealer_get_reveal_child(revealer);
 	}
 
 	public static uint GetTransitionDuration(this MentorLake.Gtk.GtkRevealerHandle revealer)
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		return GtkRevealerHandleExterns.gtk_revealer_get_transition_duration(revealer);
 	}
 
 	public static MentorLake.Gtk.GtkRevealerTransitionType GetTransitionType(this MentorLake.Gtk.GtkRevealerHandle revealer)
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		return GtkRevealerHandleExterns.gtk_revealer_get_transition_type(revealer);
 	}
 
 	public static T SetRevealChild<T>(this T revealer, bool reveal_child) where T : GtkRevealerHandle
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		GtkRevealerHandleExterns.gtk_revealer_set_reveal_child(revealer, reveal_child);
 		return revealer;
 	}
 
 	public static T SetTransitionDuration<T>(this T revealer, uint duration) where T : GtkRevealerHandle
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		GtkRevealerHandleExterns.gtk_revealer_set_transition_duration(revealer, duration);
 		return revealer;
 	}
 
 	public static T SetTransitionType<T>(this T revealer, MentorLake.Gtk.GtkRevealerTransitionType transition) where T : GtkRevealerHandle
 	{
+		if (revealer.IsInvalid || revealer.IsClosed) throw new Exception("Invalid or closed handle (GtkRevealerHandle)");
 		GtkRevealerHandleExterns.gtk_revealer_set_transition_type(revealer, transition);
 		return revealer;
 	}

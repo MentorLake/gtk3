@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GMemoryMonitorHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GMemoryMonitorHandleImpl : BaseSafeHandle, GMemoryMonitorHandle

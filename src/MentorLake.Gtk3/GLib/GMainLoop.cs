@@ -14,31 +14,37 @@ public static class GMainLoopExtensions
 {
 	public static MentorLake.GLib.GMainContextHandle GetContext(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		return GMainLoopExterns.g_main_loop_get_context(loop);
 	}
 
 	public static bool IsRunning(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		return GMainLoopExterns.g_main_loop_is_running(loop);
 	}
 
 	public static void Quit(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		GMainLoopExterns.g_main_loop_quit(loop);
 	}
 
 	public static MentorLake.GLib.GMainLoopHandle Ref(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		return GMainLoopExterns.g_main_loop_ref(loop);
 	}
 
 	public static void Run(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		GMainLoopExterns.g_main_loop_run(loop);
 	}
 
 	public static void Unref(this MentorLake.GLib.GMainLoopHandle loop)
 	{
+		if (loop.IsInvalid || loop.IsClosed) throw new Exception("Invalid or closed handle (GMainLoop)");
 		GMainLoopExterns.g_main_loop_unref(loop);
 	}
 

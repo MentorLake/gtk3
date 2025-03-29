@@ -9,76 +9,91 @@ public static class GUnixMountEntryExtensions
 {
 	public static int Compare(this MentorLake.Gio.GUnixMountEntryHandle mount1, MentorLake.Gio.GUnixMountEntryHandle mount2)
 	{
+		if (mount1.IsInvalid || mount1.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_compare(mount1, mount2);
 	}
 
 	public static MentorLake.Gio.GUnixMountEntryHandle Copy(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_copy(mount_entry);
 	}
 
 	public static void Free(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		GUnixMountEntryExterns.g_unix_mount_entry_free(mount_entry);
 	}
 
 	public static string GetDevicePath(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_get_device_path(mount_entry);
 	}
 
 	public static string GetFsType(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_get_fs_type(mount_entry);
 	}
 
 	public static string GetMountPath(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_get_mount_path(mount_entry);
 	}
 
 	public static string GetOptions(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_get_options(mount_entry);
 	}
 
 	public static string GetRootPath(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_get_root_path(mount_entry);
 	}
 
 	public static bool GuessCanEject(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_guess_can_eject(mount_entry);
 	}
 
 	public static MentorLake.Gio.GIconHandle GuessIcon(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_guess_icon(mount_entry);
 	}
 
 	public static string GuessName(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_guess_name(mount_entry);
 	}
 
 	public static bool GuessShouldDisplay(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_guess_should_display(mount_entry);
 	}
 
 	public static MentorLake.Gio.GIconHandle GuessSymbolicIcon(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_guess_symbolic_icon(mount_entry);
 	}
 
 	public static bool IsReadonly(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_is_readonly(mount_entry);
 	}
 
 	public static bool IsSystemInternal(this MentorLake.Gio.GUnixMountEntryHandle mount_entry)
 	{
+		if (mount_entry.IsInvalid || mount_entry.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountEntry)");
 		return GUnixMountEntryExterns.g_unix_mount_entry_is_system_internal(mount_entry);
 	}
 

@@ -18,6 +18,7 @@ public static class GUnixFDMessageHandleExtensions
 {
 	public static bool AppendFd(this MentorLake.Gio.GUnixFDMessageHandle message, int fd)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDMessageHandle)");
 		var externCallResult = GUnixFDMessageHandleExterns.g_unix_fd_message_append_fd(message, fd, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -25,11 +26,13 @@ public static class GUnixFDMessageHandleExtensions
 
 	public static MentorLake.Gio.GUnixFDListHandle GetFdList(this MentorLake.Gio.GUnixFDMessageHandle message)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDMessageHandle)");
 		return GUnixFDMessageHandleExterns.g_unix_fd_message_get_fd_list(message);
 	}
 
 	public static int[] StealFds(this MentorLake.Gio.GUnixFDMessageHandle message, out int length)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDMessageHandle)");
 		return GUnixFDMessageHandleExterns.g_unix_fd_message_steal_fds(message, out length);
 	}
 

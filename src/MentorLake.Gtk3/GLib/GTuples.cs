@@ -9,11 +9,13 @@ public static class GTuplesExtensions
 {
 	public static void Destroy(this MentorLake.GLib.GTuplesHandle tuples)
 	{
+		if (tuples.IsInvalid || tuples.IsClosed) throw new Exception("Invalid or closed handle (GTuples)");
 		GTuplesExterns.g_tuples_destroy(tuples);
 	}
 
 	public static IntPtr Index(this MentorLake.GLib.GTuplesHandle tuples, int index_, int field)
 	{
+		if (tuples.IsInvalid || tuples.IsClosed) throw new Exception("Invalid or closed handle (GTuples)");
 		return GTuplesExterns.g_tuples_index(tuples, index_, field);
 	}
 

@@ -14,56 +14,67 @@ public static class GVariantDictExtensions
 {
 	public static void Clear(this MentorLake.GLib.GVariantDictHandle dict)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		GVariantDictExterns.g_variant_dict_clear(dict);
 	}
 
 	public static bool Contains(this MentorLake.GLib.GVariantDictHandle dict, string key)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_contains(dict, key);
 	}
 
 	public static MentorLake.GLib.GVariantHandle End(this MentorLake.GLib.GVariantDictHandle dict)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_end(dict);
 	}
 
 	public static void Init(this MentorLake.GLib.GVariantDictHandle dict, MentorLake.GLib.GVariantHandle from_asv)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		GVariantDictExterns.g_variant_dict_init(dict, from_asv);
 	}
 
 	public static void Insert(this MentorLake.GLib.GVariantDictHandle dict, string key, string format_string, IntPtr @__arglist)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		GVariantDictExterns.g_variant_dict_insert(dict, key, format_string, @__arglist);
 	}
 
 	public static void InsertValue(this MentorLake.GLib.GVariantDictHandle dict, string key, MentorLake.GLib.GVariantHandle value)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		GVariantDictExterns.g_variant_dict_insert_value(dict, key, value);
 	}
 
 	public static bool Lookup(this MentorLake.GLib.GVariantDictHandle dict, string key, string format_string, IntPtr @__arglist)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_lookup(dict, key, format_string, @__arglist);
 	}
 
 	public static MentorLake.GLib.GVariantHandle LookupValue(this MentorLake.GLib.GVariantDictHandle dict, string key, MentorLake.GLib.GVariantTypeHandle expected_type)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_lookup_value(dict, key, expected_type);
 	}
 
 	public static MentorLake.GLib.GVariantDictHandle Ref(this MentorLake.GLib.GVariantDictHandle dict)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_ref(dict);
 	}
 
 	public static bool Remove(this MentorLake.GLib.GVariantDictHandle dict, string key)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		return GVariantDictExterns.g_variant_dict_remove(dict, key);
 	}
 
 	public static void Unref(this MentorLake.GLib.GVariantDictHandle dict)
 	{
+		if (dict.IsInvalid || dict.IsClosed) throw new Exception("Invalid or closed handle (GVariantDict)");
 		GVariantDictExterns.g_variant_dict_unref(dict);
 	}
 

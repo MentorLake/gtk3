@@ -21,26 +21,31 @@ public static class GThreadExtensions
 {
 	public static string GetName(this MentorLake.GLib.GThreadHandle thread)
 	{
+		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
 		return GThreadExterns.g_thread_get_name(thread);
 	}
 
 	public static IntPtr Join(this MentorLake.GLib.GThreadHandle thread)
 	{
+		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
 		return GThreadExterns.g_thread_join(thread);
 	}
 
 	public static MentorLake.GLib.GThreadHandle Ref(this MentorLake.GLib.GThreadHandle thread)
 	{
+		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
 		return GThreadExterns.g_thread_ref(thread);
 	}
 
 	public static void SetPriority(this MentorLake.GLib.GThreadHandle thread, MentorLake.GLib.GThreadPriority priority)
 	{
+		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
 		GThreadExterns.g_thread_set_priority(thread, priority);
 	}
 
 	public static void Unref(this MentorLake.GLib.GThreadHandle thread)
 	{
+		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
 		GThreadExterns.g_thread_unref(thread);
 	}
 

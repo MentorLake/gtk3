@@ -14,151 +14,181 @@ public static class GSourceExtensions
 {
 	public static void AddChildSource(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceHandle child_source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_add_child_source(source, child_source);
 	}
 
 	public static void AddPoll(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GPollFDHandle fd)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_add_poll(source, fd);
 	}
 
 	public static IntPtr AddUnixFd(this MentorLake.GLib.GSourceHandle source, int fd, MentorLake.GLib.GIOCondition events)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_add_unix_fd(source, fd, events);
 	}
 
 	public static uint Attach(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GMainContextHandle context)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_attach(source, context);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_destroy(source);
 	}
 
 	public static bool GetCanRecurse(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_can_recurse(source);
 	}
 
 	public static MentorLake.GLib.GMainContextHandle GetContext(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_context(source);
 	}
 
 	public static void GetCurrentTime(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GTimeValHandle timeval)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_get_current_time(source, timeval);
 	}
 
 	public static uint GetId(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_id(source);
 	}
 
 	public static string GetName(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_name(source);
 	}
 
 	public static int GetPriority(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_priority(source);
 	}
 
 	public static long GetReadyTime(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_ready_time(source);
 	}
 
 	public static long GetTime(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_get_time(source);
 	}
 
 	public static bool IsDestroyed(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_is_destroyed(source);
 	}
 
 	public static void ModifyUnixFd(this MentorLake.GLib.GSourceHandle source, IntPtr tag, MentorLake.GLib.GIOCondition new_events)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_modify_unix_fd(source, tag, new_events);
 	}
 
 	public static MentorLake.GLib.GIOCondition QueryUnixFd(this MentorLake.GLib.GSourceHandle source, IntPtr tag)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_query_unix_fd(source, tag);
 	}
 
 	public static MentorLake.GLib.GSourceHandle Ref(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		return GSourceExterns.g_source_ref(source);
 	}
 
 	public static void RemoveChildSource(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceHandle child_source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_remove_child_source(source, child_source);
 	}
 
 	public static void RemovePoll(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GPollFDHandle fd)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_remove_poll(source, fd);
 	}
 
 	public static void RemoveUnixFd(this MentorLake.GLib.GSourceHandle source, IntPtr tag)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_remove_unix_fd(source, tag);
 	}
 
 	public static void SetCallback(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify notify)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_callback(source, func, data, notify);
 	}
 
 	public static void SetCallbackIndirect(this MentorLake.GLib.GSourceHandle source, IntPtr callback_data, MentorLake.GLib.GSourceCallbackFuncsHandle callback_funcs)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_callback_indirect(source, callback_data, callback_funcs);
 	}
 
 	public static void SetCanRecurse(this MentorLake.GLib.GSourceHandle source, bool can_recurse)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_can_recurse(source, can_recurse);
 	}
 
 	public static void SetDisposeFunction(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceDisposeFunc dispose)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_dispose_function(source, dispose);
 	}
 
 	public static void SetFuncs(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceFuncsHandle funcs)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_funcs(source, funcs);
 	}
 
 	public static void SetName(this MentorLake.GLib.GSourceHandle source, string name)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_name(source, name);
 	}
 
 	public static void SetPriority(this MentorLake.GLib.GSourceHandle source, int priority)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_priority(source, priority);
 	}
 
 	public static void SetReadyTime(this MentorLake.GLib.GSourceHandle source, long ready_time)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_ready_time(source, ready_time);
 	}
 
 	public static void SetStaticName(this MentorLake.GLib.GSourceHandle source, string name)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_set_static_name(source, name);
 	}
 
 	public static void Unref(this MentorLake.GLib.GSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSource)");
 		GSourceExterns.g_source_unref(source);
 	}
 

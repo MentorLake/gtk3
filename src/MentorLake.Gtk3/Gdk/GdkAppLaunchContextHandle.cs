@@ -13,36 +13,42 @@ public static class GdkAppLaunchContextHandleExtensions
 {
 	public static T SetDesktop<T>(this T context, int desktop) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_desktop(context, desktop);
 		return context;
 	}
 
 	public static T SetDisplay<T>(this T context, MentorLake.Gdk.GdkDisplayHandle display) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_display(context, display);
 		return context;
 	}
 
 	public static T SetIcon<T>(this T context, MentorLake.Gio.GIconHandle icon) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_icon(context, icon);
 		return context;
 	}
 
 	public static T SetIconName<T>(this T context, string icon_name) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_icon_name(context, icon_name);
 		return context;
 	}
 
 	public static T SetScreen<T>(this T context, MentorLake.Gdk.GdkScreenHandle screen) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_screen(context, screen);
 		return context;
 	}
 
 	public static T SetTimestamp<T>(this T context, uint timestamp) where T : GdkAppLaunchContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkAppLaunchContextHandle)");
 		GdkAppLaunchContextHandleExterns.gdk_app_launch_context_set_timestamp(context, timestamp);
 		return context;
 	}

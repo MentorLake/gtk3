@@ -67,12 +67,14 @@ public static class GSocketClientHandleExtensions
 {
 	public static T AddApplicationProxy<T>(this T client, string protocol) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_add_application_proxy(client, protocol);
 		return client;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle Connect(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect(client, connectable, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -80,12 +82,14 @@ public static class GSocketClientHandleExtensions
 
 	public static T ConnectAsync<T>(this T client, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_connect_async(client, connectable, cancellable, callback, user_data);
 		return client;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_finish(client, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -93,6 +97,7 @@ public static class GSocketClientHandleExtensions
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHost(this MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_host(client, host_and_port, default_port, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -100,12 +105,14 @@ public static class GSocketClientHandleExtensions
 
 	public static T ConnectToHostAsync<T>(this T client, string host_and_port, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_connect_to_host_async(client, host_and_port, default_port, cancellable, callback, user_data);
 		return client;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHostFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_host_finish(client, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -113,6 +120,7 @@ public static class GSocketClientHandleExtensions
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToService(this MentorLake.Gio.GSocketClientHandle client, string domain, string service, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_service(client, domain, service, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -120,12 +128,14 @@ public static class GSocketClientHandleExtensions
 
 	public static T ConnectToServiceAsync<T>(this T client, string domain, string service, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_connect_to_service_async(client, domain, service, cancellable, callback, user_data);
 		return client;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToServiceFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_service_finish(client, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -133,6 +143,7 @@ public static class GSocketClientHandleExtensions
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUri(this MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_uri(client, uri, default_port, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -140,12 +151,14 @@ public static class GSocketClientHandleExtensions
 
 	public static T ConnectToUriAsync<T>(this T client, string uri, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_connect_to_uri_async(client, uri, default_port, cancellable, callback, user_data);
 		return client;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUriFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_uri_finish(client, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -153,99 +166,117 @@ public static class GSocketClientHandleExtensions
 
 	public static bool GetEnableProxy(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_enable_proxy(client);
 	}
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_family(client);
 	}
 
 	public static MentorLake.Gio.GSocketAddressHandle GetLocalAddress(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_local_address(client);
 	}
 
 	public static MentorLake.Gio.GSocketProtocol GetProtocol(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_protocol(client);
 	}
 
 	public static MentorLake.Gio.GProxyResolverHandle GetProxyResolver(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_proxy_resolver(client);
 	}
 
 	public static MentorLake.Gio.GSocketType GetSocketType(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_socket_type(client);
 	}
 
 	public static uint GetTimeout(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_timeout(client);
 	}
 
 	public static bool GetTls(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_tls(client);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetTlsValidationFlags(this MentorLake.Gio.GSocketClientHandle client)
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		return GSocketClientHandleExterns.g_socket_client_get_tls_validation_flags(client);
 	}
 
 	public static T SetEnableProxy<T>(this T client, bool enable) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_enable_proxy(client, enable);
 		return client;
 	}
 
 	public static T SetFamily<T>(this T client, MentorLake.Gio.GSocketFamily family) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_family(client, family);
 		return client;
 	}
 
 	public static T SetLocalAddress<T>(this T client, MentorLake.Gio.GSocketAddressHandle address) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_local_address(client, address);
 		return client;
 	}
 
 	public static T SetProtocol<T>(this T client, MentorLake.Gio.GSocketProtocol protocol) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_protocol(client, protocol);
 		return client;
 	}
 
 	public static T SetProxyResolver<T>(this T client, MentorLake.Gio.GProxyResolverHandle proxy_resolver) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_proxy_resolver(client, proxy_resolver);
 		return client;
 	}
 
 	public static T SetSocketType<T>(this T client, MentorLake.Gio.GSocketType type) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_socket_type(client, type);
 		return client;
 	}
 
 	public static T SetTimeout<T>(this T client, uint timeout) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_timeout(client, timeout);
 		return client;
 	}
 
 	public static T SetTls<T>(this T client, bool tls) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_tls(client, tls);
 		return client;
 	}
 
 	public static T SetTlsValidationFlags<T>(this T client, MentorLake.Gio.GTlsCertificateFlags flags) where T : GSocketClientHandle
 	{
+		if (client.IsInvalid || client.IsClosed) throw new Exception("Invalid or closed handle (GSocketClientHandle)");
 		GSocketClientHandleExterns.g_socket_client_set_tls_validation_flags(client, flags);
 		return client;
 	}

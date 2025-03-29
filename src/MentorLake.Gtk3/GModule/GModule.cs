@@ -9,21 +9,25 @@ public static class GModuleExtensions
 {
 	public static bool Close(this MentorLake.GModule.GModuleHandle module)
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
 		return GModuleExterns.g_module_close(module);
 	}
 
 	public static void MakeResident(this MentorLake.GModule.GModuleHandle module)
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
 		GModuleExterns.g_module_make_resident(module);
 	}
 
 	public static string Name(this MentorLake.GModule.GModuleHandle module)
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
 		return GModuleExterns.g_module_name(module);
 	}
 
 	public static bool Symbol(this MentorLake.GModule.GModuleHandle module, string symbol_name, out IntPtr symbol)
 	{
+		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
 		return GModuleExterns.g_module_symbol(module, symbol_name, out symbol);
 	}
 

@@ -13,43 +13,51 @@ public static class GtkTreeModelSortHandleExtensions
 {
 	public static T ClearCache<T>(this T tree_model_sort) where T : GtkTreeModelSortHandle
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		GtkTreeModelSortHandleExterns.gtk_tree_model_sort_clear_cache(tree_model_sort);
 		return tree_model_sort;
 	}
 
 	public static bool ConvertChildIterToIter(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model_sort, out MentorLake.Gtk.GtkTreeIter sort_iter, MentorLake.Gtk.GtkTreeIterHandle child_iter)
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		return GtkTreeModelSortHandleExterns.gtk_tree_model_sort_convert_child_iter_to_iter(tree_model_sort, out sort_iter, child_iter);
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle ConvertChildPathToPath(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model_sort, MentorLake.Gtk.GtkTreePathHandle child_path)
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		return GtkTreeModelSortHandleExterns.gtk_tree_model_sort_convert_child_path_to_path(tree_model_sort, child_path);
 	}
 
 	public static T ConvertIterToChildIter<T>(this T tree_model_sort, out MentorLake.Gtk.GtkTreeIter child_iter, MentorLake.Gtk.GtkTreeIterHandle sorted_iter) where T : GtkTreeModelSortHandle
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		GtkTreeModelSortHandleExterns.gtk_tree_model_sort_convert_iter_to_child_iter(tree_model_sort, out child_iter, sorted_iter);
 		return tree_model_sort;
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle ConvertPathToChildPath(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model_sort, MentorLake.Gtk.GtkTreePathHandle sorted_path)
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		return GtkTreeModelSortHandleExterns.gtk_tree_model_sort_convert_path_to_child_path(tree_model_sort, sorted_path);
 	}
 
 	public static MentorLake.Gtk.GtkTreeModelHandle GetModel(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model)
 	{
+		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		return GtkTreeModelSortHandleExterns.gtk_tree_model_sort_get_model(tree_model);
 	}
 
 	public static bool IterIsValid(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model_sort, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		return GtkTreeModelSortHandleExterns.gtk_tree_model_sort_iter_is_valid(tree_model_sort, iter);
 	}
 
 	public static T ResetDefaultSortFunc<T>(this T tree_model_sort) where T : GtkTreeModelSortHandle
 	{
+		if (tree_model_sort.IsInvalid || tree_model_sort.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelSortHandle)");
 		GtkTreeModelSortHandleExterns.gtk_tree_model_sort_reset_default_sort_func(tree_model_sort);
 		return tree_model_sort;
 	}

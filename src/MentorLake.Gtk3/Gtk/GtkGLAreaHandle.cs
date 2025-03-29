@@ -147,101 +147,119 @@ public static class GtkGLAreaHandleExtensions
 {
 	public static T AttachBuffers<T>(this T area) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_attach_buffers(area);
 		return area;
 	}
 
 	public static bool GetAutoRender(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_auto_render(area);
 	}
 
 	public static MentorLake.Gdk.GdkGLContextHandle GetContext(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_context(area);
 	}
 
 	public static MentorLake.GLib.GErrorHandle GetError(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_error(area);
 	}
 
 	public static bool GetHasAlpha(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_has_alpha(area);
 	}
 
 	public static bool GetHasDepthBuffer(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_has_depth_buffer(area);
 	}
 
 	public static bool GetHasStencilBuffer(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_has_stencil_buffer(area);
 	}
 
 	public static T GetRequiredVersion<T>(this T area, out int major, out int minor) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_get_required_version(area, out major, out minor);
 		return area;
 	}
 
 	public static bool GetUseEs(this MentorLake.Gtk.GtkGLAreaHandle area)
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		return GtkGLAreaHandleExterns.gtk_gl_area_get_use_es(area);
 	}
 
 	public static T MakeCurrent<T>(this T area) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_make_current(area);
 		return area;
 	}
 
 	public static T QueueRender<T>(this T area) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_queue_render(area);
 		return area;
 	}
 
 	public static T SetAutoRender<T>(this T area, bool auto_render) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_auto_render(area, auto_render);
 		return area;
 	}
 
 	public static T SetError<T>(this T area, MentorLake.GLib.GErrorHandle error) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_error(area, error);
 		return area;
 	}
 
 	public static T SetHasAlpha<T>(this T area, bool has_alpha) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_has_alpha(area, has_alpha);
 		return area;
 	}
 
 	public static T SetHasDepthBuffer<T>(this T area, bool has_depth_buffer) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_has_depth_buffer(area, has_depth_buffer);
 		return area;
 	}
 
 	public static T SetHasStencilBuffer<T>(this T area, bool has_stencil_buffer) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_has_stencil_buffer(area, has_stencil_buffer);
 		return area;
 	}
 
 	public static T SetRequiredVersion<T>(this T area, int major, int minor) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_required_version(area, major, minor);
 		return area;
 	}
 
 	public static T SetUseEs<T>(this T area, bool use_es) where T : GtkGLAreaHandle
 	{
+		if (area.IsInvalid || area.IsClosed) throw new Exception("Invalid or closed handle (GtkGLAreaHandle)");
 		GtkGLAreaHandleExterns.gtk_gl_area_set_use_es(area, use_es);
 		return area;
 	}

@@ -8,6 +8,7 @@ public static class GtkBinHandleExtensions
 {
 	public static MentorLake.Gtk.GtkWidgetHandle GetChild(this MentorLake.Gtk.GtkBinHandle bin)
 	{
+		if (bin.IsInvalid || bin.IsClosed) throw new Exception("Invalid or closed handle (GtkBinHandle)");
 		return GtkBinHandleExterns.gtk_bin_get_child(bin);
 	}
 

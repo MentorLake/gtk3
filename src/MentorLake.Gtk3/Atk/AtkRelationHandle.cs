@@ -13,22 +13,26 @@ public static class AtkRelationHandleExtensions
 {
 	public static T AddTarget<T>(this T relation, MentorLake.Atk.AtkObjectHandle target) where T : AtkRelationHandle
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationHandle)");
 		AtkRelationHandleExterns.atk_relation_add_target(relation, target);
 		return relation;
 	}
 
 	public static MentorLake.Atk.AtkRelationType GetRelationType(this MentorLake.Atk.AtkRelationHandle relation)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationHandle)");
 		return AtkRelationHandleExterns.atk_relation_get_relation_type(relation);
 	}
 
 	public static MentorLake.GLib.GPtrArrayHandle GetTarget(this MentorLake.Atk.AtkRelationHandle relation)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationHandle)");
 		return AtkRelationHandleExterns.atk_relation_get_target(relation);
 	}
 
 	public static bool RemoveTarget(this MentorLake.Atk.AtkRelationHandle relation, MentorLake.Atk.AtkObjectHandle target)
 	{
+		if (relation.IsInvalid || relation.IsClosed) throw new Exception("Invalid or closed handle (AtkRelationHandle)");
 		return AtkRelationHandleExterns.atk_relation_remove_target(relation, target);
 	}
 

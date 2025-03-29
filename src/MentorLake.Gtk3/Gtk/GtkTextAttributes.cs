@@ -14,21 +14,25 @@ public static class GtkTextAttributesExtensions
 {
 	public static MentorLake.Gtk.GtkTextAttributesHandle Copy(this MentorLake.Gtk.GtkTextAttributesHandle src)
 	{
+		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
 		return GtkTextAttributesExterns.gtk_text_attributes_copy(src);
 	}
 
 	public static void CopyValues(this MentorLake.Gtk.GtkTextAttributesHandle src, MentorLake.Gtk.GtkTextAttributesHandle dest)
 	{
+		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
 		GtkTextAttributesExterns.gtk_text_attributes_copy_values(src, dest);
 	}
 
 	public static MentorLake.Gtk.GtkTextAttributesHandle Ref(this MentorLake.Gtk.GtkTextAttributesHandle values)
 	{
+		if (values.IsInvalid || values.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
 		return GtkTextAttributesExterns.gtk_text_attributes_ref(values);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkTextAttributesHandle values)
 	{
+		if (values.IsInvalid || values.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
 		GtkTextAttributesExterns.gtk_text_attributes_unref(values);
 	}
 

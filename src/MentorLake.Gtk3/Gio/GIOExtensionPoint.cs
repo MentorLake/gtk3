@@ -9,21 +9,25 @@ public static class GIOExtensionPointExtensions
 {
 	public static MentorLake.Gio.GIOExtensionHandle GetExtensionByName(this MentorLake.Gio.GIOExtensionPointHandle extension_point, string name)
 	{
+		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_extension_by_name(extension_point, name);
 	}
 
 	public static MentorLake.GLib.GListHandle GetExtensions(this MentorLake.Gio.GIOExtensionPointHandle extension_point)
 	{
+		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_extensions(extension_point);
 	}
 
 	public static MentorLake.GObject.GType GetRequiredType(this MentorLake.Gio.GIOExtensionPointHandle extension_point)
 	{
+		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_required_type(extension_point);
 	}
 
 	public static void SetRequiredType(this MentorLake.Gio.GIOExtensionPointHandle extension_point, MentorLake.GObject.GType type)
 	{
+		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
 		GIOExtensionPointExterns.g_io_extension_point_set_required_type(extension_point, type);
 	}
 

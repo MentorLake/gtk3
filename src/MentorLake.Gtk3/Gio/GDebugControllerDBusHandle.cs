@@ -68,6 +68,7 @@ public static class GDebugControllerDBusHandleExtensions
 {
 	public static T Stop<T>(this T self) where T : GDebugControllerDBusHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GDebugControllerDBusHandle)");
 		GDebugControllerDBusHandleExterns.g_debug_controller_dbus_stop(self);
 		return self;
 	}

@@ -9,46 +9,55 @@ public static class GSettingsSchemaKeyExtensions
 {
 	public static MentorLake.GLib.GVariantHandle GetDefaultValue(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_default_value(key);
 	}
 
 	public static string GetDescription(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_description(key);
 	}
 
 	public static string GetName(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_name(key);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetRange(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_range(key);
 	}
 
 	public static string GetSummary(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_summary(key);
 	}
 
 	public static MentorLake.GLib.GVariantTypeHandle GetValueType(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_get_value_type(key);
 	}
 
 	public static bool RangeCheck(this MentorLake.Gio.GSettingsSchemaKeyHandle key, MentorLake.GLib.GVariantHandle value)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_range_check(key, value);
 	}
 
 	public static MentorLake.Gio.GSettingsSchemaKeyHandle Ref(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		return GSettingsSchemaKeyExterns.g_settings_schema_key_ref(key);
 	}
 
 	public static void Unref(this MentorLake.Gio.GSettingsSchemaKeyHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaKey)");
 		GSettingsSchemaKeyExterns.g_settings_schema_key_unref(key);
 	}
 

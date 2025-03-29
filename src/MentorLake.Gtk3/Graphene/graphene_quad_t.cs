@@ -14,36 +14,43 @@ public static class graphene_quad_tExtensions
 {
 	public static void Bounds(this MentorLake.Graphene.graphene_quad_tHandle q, out MentorLake.Graphene.graphene_rect_t r)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		graphene_quad_tExterns.graphene_quad_bounds(q, out r);
 	}
 
 	public static bool Contains(this MentorLake.Graphene.graphene_quad_tHandle q, MentorLake.Graphene.graphene_point_tHandle p)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		return graphene_quad_tExterns.graphene_quad_contains(q, p);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_quad_tHandle q)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		graphene_quad_tExterns.graphene_quad_free(q);
 	}
 
 	public static MentorLake.Graphene.graphene_point_tHandle GetPoint(this MentorLake.Graphene.graphene_quad_tHandle q, uint index_)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		return graphene_quad_tExterns.graphene_quad_get_point(q, index_);
 	}
 
 	public static MentorLake.Graphene.graphene_quad_tHandle Init(this MentorLake.Graphene.graphene_quad_tHandle q, MentorLake.Graphene.graphene_point_tHandle p1, MentorLake.Graphene.graphene_point_tHandle p2, MentorLake.Graphene.graphene_point_tHandle p3, MentorLake.Graphene.graphene_point_tHandle p4)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		return graphene_quad_tExterns.graphene_quad_init(q, p1, p2, p3, p4);
 	}
 
 	public static MentorLake.Graphene.graphene_quad_tHandle InitFromPoints(this MentorLake.Graphene.graphene_quad_tHandle q, MentorLake.Graphene.graphene_point_t[] points)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		return graphene_quad_tExterns.graphene_quad_init_from_points(q, points);
 	}
 
 	public static MentorLake.Graphene.graphene_quad_tHandle InitFromRect(this MentorLake.Graphene.graphene_quad_tHandle q, MentorLake.Graphene.graphene_rect_tHandle r)
 	{
+		if (q.IsInvalid || q.IsClosed) throw new Exception("Invalid or closed handle (graphene_quad_t)");
 		return graphene_quad_tExterns.graphene_quad_init_from_rect(q, r);
 	}
 

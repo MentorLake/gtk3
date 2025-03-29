@@ -14,26 +14,31 @@ public static class GFileAttributeInfoListExtensions
 {
 	public static void Add(this MentorLake.Gio.GFileAttributeInfoListHandle list, string name, MentorLake.Gio.GFileAttributeType type, MentorLake.Gio.GFileAttributeInfoFlags flags)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GFileAttributeInfoList)");
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_add(list, name, type, flags);
 	}
 
 	public static MentorLake.Gio.GFileAttributeInfoListHandle Dup(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GFileAttributeInfoList)");
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_dup(list);
 	}
 
 	public static MentorLake.Gio.GFileAttributeInfoHandle Lookup(this MentorLake.Gio.GFileAttributeInfoListHandle list, string name)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GFileAttributeInfoList)");
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_lookup(list, name);
 	}
 
 	public static MentorLake.Gio.GFileAttributeInfoListHandle Ref(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GFileAttributeInfoList)");
 		return GFileAttributeInfoListExterns.g_file_attribute_info_list_ref(list);
 	}
 
 	public static void Unref(this MentorLake.Gio.GFileAttributeInfoListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GFileAttributeInfoList)");
 		GFileAttributeInfoListExterns.g_file_attribute_info_list_unref(list);
 	}
 

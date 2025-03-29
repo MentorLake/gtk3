@@ -9,6 +9,7 @@ public static class GtkRecentInfoExtensions
 {
 	public static MentorLake.Gio.GAppInfoHandle CreateAppInfo(this MentorLake.Gtk.GtkRecentInfoHandle info, string app_name)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		var externCallResult = GtkRecentInfoExterns.gtk_recent_info_create_app_info(info, app_name, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -16,121 +17,145 @@ public static class GtkRecentInfoExtensions
 
 	public static bool Exists(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_exists(info);
 	}
 
 	public static long GetAdded(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_added(info);
 	}
 
 	public static int GetAge(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_age(info);
 	}
 
 	public static bool GetApplicationInfo(this MentorLake.Gtk.GtkRecentInfoHandle info, string app_name, out string app_exec, out uint count, out long time_)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_application_info(info, app_name, out app_exec, out count, out time_);
 	}
 
 	public static string[] GetApplications(this MentorLake.Gtk.GtkRecentInfoHandle info, out UIntPtr length)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_applications(info, out length);
 	}
 
 	public static string GetDescription(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_description(info);
 	}
 
 	public static string GetDisplayName(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_display_name(info);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetGicon(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_gicon(info);
 	}
 
 	public static string[] GetGroups(this MentorLake.Gtk.GtkRecentInfoHandle info, out UIntPtr length)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_groups(info, out length);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetIcon(this MentorLake.Gtk.GtkRecentInfoHandle info, int size)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_icon(info, size);
 	}
 
 	public static string GetMimeType(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_mime_type(info);
 	}
 
 	public static long GetModified(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_modified(info);
 	}
 
 	public static bool GetPrivateHint(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_private_hint(info);
 	}
 
 	public static string GetShortName(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_short_name(info);
 	}
 
 	public static string GetUri(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_uri(info);
 	}
 
 	public static string GetUriDisplay(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_uri_display(info);
 	}
 
 	public static long GetVisited(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_get_visited(info);
 	}
 
 	public static bool HasApplication(this MentorLake.Gtk.GtkRecentInfoHandle info, string app_name)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_has_application(info, app_name);
 	}
 
 	public static bool HasGroup(this MentorLake.Gtk.GtkRecentInfoHandle info, string group_name)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_has_group(info, group_name);
 	}
 
 	public static bool IsLocal(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_is_local(info);
 	}
 
 	public static string LastApplication(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_last_application(info);
 	}
 
 	public static bool Match(this MentorLake.Gtk.GtkRecentInfoHandle info_a, MentorLake.Gtk.GtkRecentInfoHandle info_b)
 	{
+		if (info_a.IsInvalid || info_a.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_match(info_a, info_b);
 	}
 
 	public static MentorLake.Gtk.GtkRecentInfoHandle Ref(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		return GtkRecentInfoExterns.gtk_recent_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkRecentInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentInfo)");
 		GtkRecentInfoExterns.gtk_recent_info_unref(info);
 	}
 

@@ -19,26 +19,31 @@ public static class GtkTreeRowReferenceExtensions
 {
 	public static MentorLake.Gtk.GtkTreeRowReferenceHandle Copy(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
+		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_copy(reference);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
+		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
 		GtkTreeRowReferenceExterns.gtk_tree_row_reference_free(reference);
 	}
 
 	public static MentorLake.Gtk.GtkTreeModelHandle GetModel(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
+		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_get_model(reference);
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle GetPath(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
+		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_get_path(reference);
 	}
 
 	public static bool Valid(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
+		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_valid(reference);
 	}
 

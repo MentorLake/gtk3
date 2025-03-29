@@ -13,6 +13,7 @@ public static class GtkPopoverMenuHandleExtensions
 {
 	public static T OpenSubmenu<T>(this T popover, string name) where T : GtkPopoverMenuHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverMenuHandle)");
 		GtkPopoverMenuHandleExterns.gtk_popover_menu_open_submenu(popover, name);
 		return popover;
 	}

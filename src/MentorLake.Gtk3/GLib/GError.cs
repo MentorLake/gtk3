@@ -24,16 +24,19 @@ public static class GErrorExtensions
 {
 	public static MentorLake.GLib.GErrorHandle Copy(this MentorLake.GLib.GErrorHandle error)
 	{
+		if (error.IsInvalid || error.IsClosed) throw new Exception("Invalid or closed handle (GError)");
 		return GErrorExterns.g_error_copy(error);
 	}
 
 	public static void Free(this MentorLake.GLib.GErrorHandle error)
 	{
+		if (error.IsInvalid || error.IsClosed) throw new Exception("Invalid or closed handle (GError)");
 		GErrorExterns.g_error_free(error);
 	}
 
 	public static bool Matches(this MentorLake.GLib.GErrorHandle error, MentorLake.GLib.GQuark domain, int code)
 	{
+		if (error.IsInvalid || error.IsClosed) throw new Exception("Invalid or closed handle (GError)");
 		return GErrorExterns.g_error_matches(error, domain, code);
 	}
 

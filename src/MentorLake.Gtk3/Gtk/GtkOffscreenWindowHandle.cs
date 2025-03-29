@@ -13,11 +13,13 @@ public static class GtkOffscreenWindowHandleExtensions
 {
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.Gtk.GtkOffscreenWindowHandle offscreen)
 	{
+		if (offscreen.IsInvalid || offscreen.IsClosed) throw new Exception("Invalid or closed handle (GtkOffscreenWindowHandle)");
 		return GtkOffscreenWindowHandleExterns.gtk_offscreen_window_get_pixbuf(offscreen);
 	}
 
 	public static MentorLake.cairo.cairo_surface_tHandle GetSurface(this MentorLake.Gtk.GtkOffscreenWindowHandle offscreen)
 	{
+		if (offscreen.IsInvalid || offscreen.IsClosed) throw new Exception("Invalid or closed handle (GtkOffscreenWindowHandle)");
 		return GtkOffscreenWindowHandleExterns.gtk_offscreen_window_get_surface(offscreen);
 	}
 

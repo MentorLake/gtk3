@@ -13,27 +13,32 @@ public static class GtkApplicationWindowHandleExtensions
 {
 	public static MentorLake.Gtk.GtkShortcutsWindowHandle GetHelpOverlay(this MentorLake.Gtk.GtkApplicationWindowHandle window)
 	{
+		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationWindowHandle)");
 		return GtkApplicationWindowHandleExterns.gtk_application_window_get_help_overlay(window);
 	}
 
 	public static uint GetId(this MentorLake.Gtk.GtkApplicationWindowHandle window)
 	{
+		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationWindowHandle)");
 		return GtkApplicationWindowHandleExterns.gtk_application_window_get_id(window);
 	}
 
 	public static bool GetShowMenubar(this MentorLake.Gtk.GtkApplicationWindowHandle window)
 	{
+		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationWindowHandle)");
 		return GtkApplicationWindowHandleExterns.gtk_application_window_get_show_menubar(window);
 	}
 
 	public static T SetHelpOverlay<T>(this T window, MentorLake.Gtk.GtkShortcutsWindowHandle help_overlay) where T : GtkApplicationWindowHandle
 	{
+		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationWindowHandle)");
 		GtkApplicationWindowHandleExterns.gtk_application_window_set_help_overlay(window, help_overlay);
 		return window;
 	}
 
 	public static T SetShowMenubar<T>(this T window, bool show_menubar) where T : GtkApplicationWindowHandle
 	{
+		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationWindowHandle)");
 		GtkApplicationWindowHandleExterns.gtk_application_window_set_show_menubar(window, show_menubar);
 		return window;
 	}

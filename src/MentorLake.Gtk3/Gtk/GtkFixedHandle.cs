@@ -13,12 +13,14 @@ public static class GtkFixedHandleExtensions
 {
 	public static T Move<T>(this T @fixed, MentorLake.Gtk.GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
+		if (@fixed.IsInvalid || @fixed.IsClosed) throw new Exception("Invalid or closed handle (GtkFixedHandle)");
 		GtkFixedHandleExterns.gtk_fixed_move(@fixed, widget, x, y);
 		return @fixed;
 	}
 
 	public static T Put<T>(this T @fixed, MentorLake.Gtk.GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
+		if (@fixed.IsInvalid || @fixed.IsClosed) throw new Exception("Invalid or closed handle (GtkFixedHandle)");
 		GtkFixedHandleExterns.gtk_fixed_put(@fixed, widget, x, y);
 		return @fixed;
 	}

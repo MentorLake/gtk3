@@ -2,6 +2,8 @@ namespace MentorLake.Gtk;
 
 public interface GtkCellAccessibleParentHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GtkCellAccessibleParentHandleImpl : BaseSafeHandle, GtkCellAccessibleParentHandle
@@ -12,67 +14,79 @@ public static class GtkCellAccessibleParentHandleExtensions
 {
 	public static T Activate<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_activate(parent, cell);
 		return parent;
 	}
 
 	public static T Edit<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_edit(parent, cell);
 		return parent;
 	}
 
 	public static T ExpandCollapse<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_expand_collapse(parent, cell);
 		return parent;
 	}
 
 	public static T GetCellArea<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell, out MentorLake.Gdk.GdkRectangle cell_rect) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_cell_area(parent, cell, out cell_rect);
 		return parent;
 	}
 
 	public static T GetCellExtents<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell, out int x, out int y, out int width, out int height, MentorLake.Atk.AtkCoordType coord_type) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_cell_extents(parent, cell, out x, out y, out width, out height, coord_type);
 		return parent;
 	}
 
 	public static T GetCellPosition<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell, out int row, out int column) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_cell_position(parent, cell, out row, out column);
 		return parent;
 	}
 
 	public static int GetChildIndex(this MentorLake.Gtk.GtkCellAccessibleParentHandle parent, MentorLake.Gtk.GtkCellAccessibleHandle cell)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		return GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_child_index(parent, cell);
 	}
 
 	public static MentorLake.GLib.GPtrArrayHandle GetColumnHeaderCells(this MentorLake.Gtk.GtkCellAccessibleParentHandle parent, MentorLake.Gtk.GtkCellAccessibleHandle cell)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		return GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_column_header_cells(parent, cell);
 	}
 
 	public static MentorLake.Gtk.GtkCellRendererState GetRendererState(this MentorLake.Gtk.GtkCellAccessibleParentHandle parent, MentorLake.Gtk.GtkCellAccessibleHandle cell)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		return GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_renderer_state(parent, cell);
 	}
 
 	public static MentorLake.GLib.GPtrArrayHandle GetRowHeaderCells(this MentorLake.Gtk.GtkCellAccessibleParentHandle parent, MentorLake.Gtk.GtkCellAccessibleHandle cell)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		return GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_get_row_header_cells(parent, cell);
 	}
 
 	public static bool GrabFocus(this MentorLake.Gtk.GtkCellAccessibleParentHandle parent, MentorLake.Gtk.GtkCellAccessibleHandle cell)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		return GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_grab_focus(parent, cell);
 	}
 
 	public static T UpdateRelationset<T>(this T parent, MentorLake.Gtk.GtkCellAccessibleHandle cell, MentorLake.Atk.AtkRelationSetHandle relationset) where T : GtkCellAccessibleParentHandle
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAccessibleParentHandle)");
 		GtkCellAccessibleParentHandleExterns.gtk_cell_accessible_parent_update_relationset(parent, cell, relationset);
 		return parent;
 	}

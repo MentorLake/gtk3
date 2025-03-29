@@ -268,21 +268,25 @@ public static class GtkEventControllerKeyHandleExtensions
 {
 	public static bool Forward(this MentorLake.Gtk.GtkEventControllerKeyHandle controller, MentorLake.Gtk.GtkWidgetHandle widget)
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_forward(controller, widget);
 	}
 
 	public static uint GetGroup(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_group(controller);
 	}
 
 	public static MentorLake.Gtk.GtkIMContextHandle GetImContext(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_im_context(controller);
 	}
 
 	public static T SetImContext<T>(this T controller, MentorLake.Gtk.GtkIMContextHandle im_context) where T : GtkEventControllerKeyHandle
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
 		GtkEventControllerKeyHandleExterns.gtk_event_controller_key_set_im_context(controller, im_context);
 		return controller;
 	}

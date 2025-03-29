@@ -13,27 +13,32 @@ public static class GtkWindowGroupHandleExtensions
 {
 	public static T AddWindow<T>(this T window_group, MentorLake.Gtk.GtkWindowHandle window) where T : GtkWindowGroupHandle
 	{
+		if (window_group.IsInvalid || window_group.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowGroupHandle)");
 		GtkWindowGroupHandleExterns.gtk_window_group_add_window(window_group, window);
 		return window_group;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetCurrentDeviceGrab(this MentorLake.Gtk.GtkWindowGroupHandle window_group, MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (window_group.IsInvalid || window_group.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowGroupHandle)");
 		return GtkWindowGroupHandleExterns.gtk_window_group_get_current_device_grab(window_group, device);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetCurrentGrab(this MentorLake.Gtk.GtkWindowGroupHandle window_group)
 	{
+		if (window_group.IsInvalid || window_group.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowGroupHandle)");
 		return GtkWindowGroupHandleExterns.gtk_window_group_get_current_grab(window_group);
 	}
 
 	public static MentorLake.GLib.GListHandle ListWindows(this MentorLake.Gtk.GtkWindowGroupHandle window_group)
 	{
+		if (window_group.IsInvalid || window_group.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowGroupHandle)");
 		return GtkWindowGroupHandleExterns.gtk_window_group_list_windows(window_group);
 	}
 
 	public static T RemoveWindow<T>(this T window_group, MentorLake.Gtk.GtkWindowHandle window) where T : GtkWindowGroupHandle
 	{
+		if (window_group.IsInvalid || window_group.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowGroupHandle)");
 		GtkWindowGroupHandleExterns.gtk_window_group_remove_window(window_group, window);
 		return window_group;
 	}

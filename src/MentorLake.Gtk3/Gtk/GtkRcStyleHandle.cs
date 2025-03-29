@@ -13,6 +13,7 @@ public static class GtkRcStyleHandleExtensions
 {
 	public static MentorLake.Gtk.GtkRcStyleHandle Copy(this MentorLake.Gtk.GtkRcStyleHandle orig)
 	{
+		if (orig.IsInvalid || orig.IsClosed) throw new Exception("Invalid or closed handle (GtkRcStyleHandle)");
 		return GtkRcStyleHandleExterns.gtk_rc_style_copy(orig);
 	}
 

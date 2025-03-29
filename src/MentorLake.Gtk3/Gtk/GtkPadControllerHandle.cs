@@ -13,12 +13,14 @@ public static class GtkPadControllerHandleExtensions
 {
 	public static T SetAction<T>(this T controller, MentorLake.Gtk.GtkPadActionType type, int index, int mode, string label, string action_name) where T : GtkPadControllerHandle
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkPadControllerHandle)");
 		GtkPadControllerHandleExterns.gtk_pad_controller_set_action(controller, type, index, mode, label, action_name);
 		return controller;
 	}
 
 	public static T SetActionEntries<T>(this T controller, MentorLake.Gtk.GtkPadActionEntry[] entries, int n_entries) where T : GtkPadControllerHandle
 	{
+		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkPadControllerHandle)");
 		GtkPadControllerHandleExterns.gtk_pad_controller_set_action_entries(controller, entries, n_entries);
 		return controller;
 	}

@@ -9,126 +9,151 @@ public static class GNodeExtensions
 {
 	public static int ChildIndex(this MentorLake.GLib.GNodeHandle node, IntPtr data)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_child_index(node, data);
 	}
 
 	public static int ChildPosition(this MentorLake.GLib.GNodeHandle node, MentorLake.GLib.GNodeHandle child)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_child_position(node, child);
 	}
 
 	public static void ChildrenForeach(this MentorLake.GLib.GNodeHandle node, MentorLake.GLib.GTraverseFlags flags, MentorLake.GLib.GNodeForeachFunc func, IntPtr data)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		GNodeExterns.g_node_children_foreach(node, flags, func, data);
 	}
 
 	public static MentorLake.GLib.GNodeHandle Copy(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_copy(node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle CopyDeep(this MentorLake.GLib.GNodeHandle node, MentorLake.GLib.GCopyFunc copy_func, IntPtr data)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_copy_deep(node, copy_func, data);
 	}
 
 	public static uint Depth(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_depth(node);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GNodeHandle root)
 	{
+		if (root.IsInvalid || root.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		GNodeExterns.g_node_destroy(root);
 	}
 
 	public static MentorLake.GLib.GNodeHandle Find(this MentorLake.GLib.GNodeHandle root, MentorLake.GLib.GTraverseType order, MentorLake.GLib.GTraverseFlags flags, IntPtr data)
 	{
+		if (root.IsInvalid || root.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_find(root, order, flags, data);
 	}
 
 	public static MentorLake.GLib.GNodeHandle FindChild(this MentorLake.GLib.GNodeHandle node, MentorLake.GLib.GTraverseFlags flags, IntPtr data)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_find_child(node, flags, data);
 	}
 
 	public static MentorLake.GLib.GNodeHandle FirstSibling(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_first_sibling(node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle GetRoot(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_get_root(node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle Insert(this MentorLake.GLib.GNodeHandle parent, int position, MentorLake.GLib.GNodeHandle node)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_insert(parent, position, node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle InsertAfter(this MentorLake.GLib.GNodeHandle parent, MentorLake.GLib.GNodeHandle sibling, MentorLake.GLib.GNodeHandle node)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_insert_after(parent, sibling, node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle InsertBefore(this MentorLake.GLib.GNodeHandle parent, MentorLake.GLib.GNodeHandle sibling, MentorLake.GLib.GNodeHandle node)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_insert_before(parent, sibling, node);
 	}
 
 	public static bool IsAncestor(this MentorLake.GLib.GNodeHandle node, MentorLake.GLib.GNodeHandle descendant)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_is_ancestor(node, descendant);
 	}
 
 	public static MentorLake.GLib.GNodeHandle LastChild(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_last_child(node);
 	}
 
 	public static MentorLake.GLib.GNodeHandle LastSibling(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_last_sibling(node);
 	}
 
 	public static uint MaxHeight(this MentorLake.GLib.GNodeHandle root)
 	{
+		if (root.IsInvalid || root.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_max_height(root);
 	}
 
 	public static uint NChildren(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_n_children(node);
 	}
 
 	public static uint NNodes(this MentorLake.GLib.GNodeHandle root, MentorLake.GLib.GTraverseFlags flags)
 	{
+		if (root.IsInvalid || root.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_n_nodes(root, flags);
 	}
 
 	public static MentorLake.GLib.GNodeHandle NthChild(this MentorLake.GLib.GNodeHandle node, uint n)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_nth_child(node, n);
 	}
 
 	public static MentorLake.GLib.GNodeHandle Prepend(this MentorLake.GLib.GNodeHandle parent, MentorLake.GLib.GNodeHandle node)
 	{
+		if (parent.IsInvalid || parent.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		return GNodeExterns.g_node_prepend(parent, node);
 	}
 
 	public static void ReverseChildren(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		GNodeExterns.g_node_reverse_children(node);
 	}
 
 	public static void Traverse(this MentorLake.GLib.GNodeHandle root, MentorLake.GLib.GTraverseType order, MentorLake.GLib.GTraverseFlags flags, int max_depth, MentorLake.GLib.GNodeTraverseFunc func, IntPtr data)
 	{
+		if (root.IsInvalid || root.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		GNodeExterns.g_node_traverse(root, order, flags, max_depth, func, data);
 	}
 
 	public static void Unlink(this MentorLake.GLib.GNodeHandle node)
 	{
+		if (node.IsInvalid || node.IsClosed) throw new Exception("Invalid or closed handle (GNode)");
 		GNodeExterns.g_node_unlink(node);
 	}
 

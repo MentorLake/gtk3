@@ -9,61 +9,73 @@ public static class GdkPixbufFormatExtensions
 {
 	public static MentorLake.GdkPixbuf.GdkPixbufFormatHandle Copy(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_copy(format);
 	}
 
 	public static void Free(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		GdkPixbufFormatExterns.gdk_pixbuf_format_free(format);
 	}
 
 	public static string GetDescription(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_description(format);
 	}
 
 	public static string[] GetExtensions(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_extensions(format);
 	}
 
 	public static string GetLicense(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_license(format);
 	}
 
 	public static string[] GetMimeTypes(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_mime_types(format);
 	}
 
 	public static string GetName(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_get_name(format);
 	}
 
 	public static bool IsDisabled(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_disabled(format);
 	}
 
 	public static bool IsSaveOptionSupported(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, string option_key)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_save_option_supported(format, option_key);
 	}
 
 	public static bool IsScalable(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_scalable(format);
 	}
 
 	public static bool IsWritable(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		return GdkPixbufFormatExterns.gdk_pixbuf_format_is_writable(format);
 	}
 
 	public static void SetDisabled(this MentorLake.GdkPixbuf.GdkPixbufFormatHandle format, bool disabled)
 	{
+		if (format.IsInvalid || format.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufFormat)");
 		GdkPixbufFormatExterns.gdk_pixbuf_format_set_disabled(format, disabled);
 	}
 

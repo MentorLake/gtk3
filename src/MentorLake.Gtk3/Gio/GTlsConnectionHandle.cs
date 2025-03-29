@@ -62,16 +62,19 @@ public static class GTlsConnectionHandleExtensions
 {
 	public static bool EmitAcceptCertificate(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsCertificateHandle peer_cert, MentorLake.Gio.GTlsCertificateFlags errors)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_emit_accept_certificate(conn, peer_cert, errors);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetCertificate(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_certificate(conn);
 	}
 
 	public static bool GetChannelBindingData(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsChannelBindingType type, out MentorLake.GLib.GByteArray data)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_get_channel_binding_data(conn, type, out data, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -79,56 +82,67 @@ public static class GTlsConnectionHandleExtensions
 
 	public static string GetCiphersuiteName(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_ciphersuite_name(conn);
 	}
 
 	public static MentorLake.Gio.GTlsDatabaseHandle GetDatabase(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_database(conn);
 	}
 
 	public static MentorLake.Gio.GTlsInteractionHandle GetInteraction(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_interaction(conn);
 	}
 
 	public static string GetNegotiatedProtocol(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_negotiated_protocol(conn);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetPeerCertificate(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_peer_certificate(conn);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetPeerCertificateErrors(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_peer_certificate_errors(conn);
 	}
 
 	public static MentorLake.Gio.GTlsProtocolVersion GetProtocolVersion(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_protocol_version(conn);
 	}
 
 	public static MentorLake.Gio.GTlsRehandshakeMode GetRehandshakeMode(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_rehandshake_mode(conn);
 	}
 
 	public static bool GetRequireCloseNotify(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_require_close_notify(conn);
 	}
 
 	public static bool GetUseSystemCertdb(this MentorLake.Gio.GTlsConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		return GTlsConnectionHandleExterns.g_tls_connection_get_use_system_certdb(conn);
 	}
 
 	public static bool Handshake(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_handshake(conn, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -136,12 +150,14 @@ public static class GTlsConnectionHandleExtensions
 
 	public static T HandshakeAsync<T>(this T conn, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_handshake_async(conn, io_priority, cancellable, callback, user_data);
 		return conn;
 	}
 
 	public static bool HandshakeFinish(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_handshake_finish(conn, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -149,42 +165,49 @@ public static class GTlsConnectionHandleExtensions
 
 	public static T SetAdvertisedProtocols<T>(this T conn, string[] protocols) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_advertised_protocols(conn, protocols);
 		return conn;
 	}
 
 	public static T SetCertificate<T>(this T conn, MentorLake.Gio.GTlsCertificateHandle certificate) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_certificate(conn, certificate);
 		return conn;
 	}
 
 	public static T SetDatabase<T>(this T conn, MentorLake.Gio.GTlsDatabaseHandle database) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_database(conn, database);
 		return conn;
 	}
 
 	public static T SetInteraction<T>(this T conn, MentorLake.Gio.GTlsInteractionHandle interaction) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_interaction(conn, interaction);
 		return conn;
 	}
 
 	public static T SetRehandshakeMode<T>(this T conn, MentorLake.Gio.GTlsRehandshakeMode mode) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_rehandshake_mode(conn, mode);
 		return conn;
 	}
 
 	public static T SetRequireCloseNotify<T>(this T conn, bool require_close_notify) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_require_close_notify(conn, require_close_notify);
 		return conn;
 	}
 
 	public static T SetUseSystemCertdb<T>(this T conn, bool use_system_certdb) where T : GTlsConnectionHandle
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTlsConnectionHandle)");
 		GTlsConnectionHandleExterns.g_tls_connection_set_use_system_certdb(conn, use_system_certdb);
 		return conn;
 	}

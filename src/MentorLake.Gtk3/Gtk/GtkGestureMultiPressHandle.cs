@@ -148,11 +148,13 @@ public static class GtkGestureMultiPressHandleExtensions
 {
 	public static bool GetArea(this MentorLake.Gtk.GtkGestureMultiPressHandle gesture, out MentorLake.Gdk.GdkRectangle rect)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureMultiPressHandle)");
 		return GtkGestureMultiPressHandleExterns.gtk_gesture_multi_press_get_area(gesture, out rect);
 	}
 
 	public static T SetArea<T>(this T gesture, MentorLake.Gdk.GdkRectangleHandle rect) where T : GtkGestureMultiPressHandle
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureMultiPressHandle)");
 		GtkGestureMultiPressHandleExterns.gtk_gesture_multi_press_set_area(gesture, rect);
 		return gesture;
 	}

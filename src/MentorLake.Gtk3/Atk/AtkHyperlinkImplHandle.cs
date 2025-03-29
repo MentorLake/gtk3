@@ -2,6 +2,8 @@ namespace MentorLake.Atk;
 
 public interface AtkHyperlinkImplHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class AtkHyperlinkImplHandleImpl : BaseSafeHandle, AtkHyperlinkImplHandle
@@ -12,6 +14,7 @@ public static class AtkHyperlinkImplHandleExtensions
 {
 	public static MentorLake.Atk.AtkHyperlinkHandle GetHyperlink(this MentorLake.Atk.AtkHyperlinkImplHandle impl)
 	{
+		if (impl.IsInvalid || impl.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkImplHandle)");
 		return AtkHyperlinkImplHandleExterns.atk_hyperlink_impl_get_hyperlink(impl);
 	}
 

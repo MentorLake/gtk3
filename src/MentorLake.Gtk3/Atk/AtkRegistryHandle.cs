@@ -8,16 +8,19 @@ public static class AtkRegistryHandleExtensions
 {
 	public static MentorLake.Atk.AtkObjectFactoryHandle GetFactory(this MentorLake.Atk.AtkRegistryHandle registry, MentorLake.GObject.GType type)
 	{
+		if (registry.IsInvalid || registry.IsClosed) throw new Exception("Invalid or closed handle (AtkRegistryHandle)");
 		return AtkRegistryHandleExterns.atk_registry_get_factory(registry, type);
 	}
 
 	public static MentorLake.GObject.GType GetFactoryType(this MentorLake.Atk.AtkRegistryHandle registry, MentorLake.GObject.GType type)
 	{
+		if (registry.IsInvalid || registry.IsClosed) throw new Exception("Invalid or closed handle (AtkRegistryHandle)");
 		return AtkRegistryHandleExterns.atk_registry_get_factory_type(registry, type);
 	}
 
 	public static T SetFactoryType<T>(this T registry, MentorLake.GObject.GType type, MentorLake.GObject.GType factory_type) where T : AtkRegistryHandle
 	{
+		if (registry.IsInvalid || registry.IsClosed) throw new Exception("Invalid or closed handle (AtkRegistryHandle)");
 		AtkRegistryHandleExterns.atk_registry_set_factory_type(registry, type, factory_type);
 		return registry;
 	}

@@ -66,11 +66,13 @@ public static class GtkGesturePanHandleExtensions
 {
 	public static MentorLake.Gtk.GtkOrientation GetOrientation(this MentorLake.Gtk.GtkGesturePanHandle gesture)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGesturePanHandle)");
 		return GtkGesturePanHandleExterns.gtk_gesture_pan_get_orientation(gesture);
 	}
 
 	public static T SetOrientation<T>(this T gesture, MentorLake.Gtk.GtkOrientation orientation) where T : GtkGesturePanHandle
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGesturePanHandle)");
 		GtkGesturePanHandleExterns.gtk_gesture_pan_set_orientation(gesture, orientation);
 		return gesture;
 	}

@@ -16,26 +16,31 @@ public static class GDirExtensions
 {
 	public static void Close(this MentorLake.GLib.GDirHandle dir)
 	{
+		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
 		GDirExterns.g_dir_close(dir);
 	}
 
 	public static string ReadName(this MentorLake.GLib.GDirHandle dir)
 	{
+		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
 		return GDirExterns.g_dir_read_name(dir);
 	}
 
 	public static MentorLake.GLib.GDirHandle Ref(this MentorLake.GLib.GDirHandle dir)
 	{
+		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
 		return GDirExterns.g_dir_ref(dir);
 	}
 
 	public static void Rewind(this MentorLake.GLib.GDirHandle dir)
 	{
+		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
 		GDirExterns.g_dir_rewind(dir);
 	}
 
 	public static void Unref(this MentorLake.GLib.GDirHandle dir)
 	{
+		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
 		GDirExterns.g_dir_unref(dir);
 	}
 

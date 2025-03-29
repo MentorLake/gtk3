@@ -9,6 +9,7 @@ public static class hb_feature_tExtensions
 {
 	public static void String(this MentorLake.HarfBuzz.hb_feature_tHandle feature, out string[] buf, out uint size)
 	{
+		if (feature.IsInvalid || feature.IsClosed) throw new Exception("Invalid or closed handle (hb_feature_t)");
 		hb_feature_tExterns.hb_feature_to_string(feature, out buf, out size);
 	}
 

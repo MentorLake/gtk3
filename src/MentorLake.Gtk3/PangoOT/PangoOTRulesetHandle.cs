@@ -28,33 +28,39 @@ public static class PangoOTRulesetHandleExtensions
 {
 	public static T AddFeature<T>(this T ruleset, MentorLake.PangoOT.PangoOTTableType table_type, uint feature_index, ulong property_bit) where T : PangoOTRulesetHandle
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		PangoOTRulesetHandleExterns.pango_ot_ruleset_add_feature(ruleset, table_type, feature_index, property_bit);
 		return ruleset;
 	}
 
 	public static uint GetFeatureCount(this MentorLake.PangoOT.PangoOTRulesetHandle ruleset, out uint n_gsub_features, out uint n_gpos_features)
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		return PangoOTRulesetHandleExterns.pango_ot_ruleset_get_feature_count(ruleset, out n_gsub_features, out n_gpos_features);
 	}
 
 	public static bool MaybeAddFeature(this MentorLake.PangoOT.PangoOTRulesetHandle ruleset, MentorLake.PangoOT.PangoOTTableType table_type, MentorLake.PangoOT.PangoOTTag feature_tag, ulong property_bit)
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		return PangoOTRulesetHandleExterns.pango_ot_ruleset_maybe_add_feature(ruleset, table_type, feature_tag, property_bit);
 	}
 
 	public static uint MaybeAddFeatures(this MentorLake.PangoOT.PangoOTRulesetHandle ruleset, MentorLake.PangoOT.PangoOTTableType table_type, MentorLake.PangoOT.PangoOTFeatureMapHandle features, uint n_features)
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		return PangoOTRulesetHandleExterns.pango_ot_ruleset_maybe_add_features(ruleset, table_type, features, n_features);
 	}
 
 	public static T Position<T>(this T ruleset, MentorLake.PangoOT.PangoOTBufferHandle buffer) where T : PangoOTRulesetHandle
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		PangoOTRulesetHandleExterns.pango_ot_ruleset_position(ruleset, buffer);
 		return ruleset;
 	}
 
 	public static T Substitute<T>(this T ruleset, MentorLake.PangoOT.PangoOTBufferHandle buffer) where T : PangoOTRulesetHandle
 	{
+		if (ruleset.IsInvalid || ruleset.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetHandle)");
 		PangoOTRulesetHandleExterns.pango_ot_ruleset_substitute(ruleset, buffer);
 		return ruleset;
 	}

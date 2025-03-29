@@ -143,43 +143,51 @@ public static class GtkScaleButtonHandleExtensions
 {
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetAdjustment(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_adjustment(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMinusButton(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_minus_button(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetPlusButton(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_plus_button(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetPopup(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_popup(button);
 	}
 
 	public static double GetValue(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_value(button);
 	}
 
 	public static T SetAdjustment<T>(this T button, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkScaleButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_adjustment(button, adjustment);
 		return button;
 	}
 
 	public static T SetIcons<T>(this T button, string[] icons) where T : GtkScaleButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_icons(button, icons);
 		return button;
 	}
 
 	public static T SetValue<T>(this T button, double value) where T : GtkScaleButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_value(button, value);
 		return button;
 	}

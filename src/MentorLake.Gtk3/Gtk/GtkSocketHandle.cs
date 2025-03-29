@@ -104,17 +104,20 @@ public static class GtkSocketHandleExtensions
 {
 	public static T AddId<T>(this T socket_, MentorLake.xlib.Window window) where T : GtkSocketHandle
 	{
+		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
 		GtkSocketHandleExterns.gtk_socket_add_id(socket_, window);
 		return socket_;
 	}
 
 	public static MentorLake.xlib.Window GetId(this MentorLake.Gtk.GtkSocketHandle socket_)
 	{
+		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
 		return GtkSocketHandleExterns.gtk_socket_get_id(socket_);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetPlugWindow(this MentorLake.Gtk.GtkSocketHandle socket_)
 	{
+		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
 		return GtkSocketHandleExterns.gtk_socket_get_plug_window(socket_);
 	}
 

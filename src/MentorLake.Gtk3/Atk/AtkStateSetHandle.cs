@@ -13,53 +13,63 @@ public static class AtkStateSetHandleExtensions
 {
 	public static bool AddState(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType type)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_add_state(set, type);
 	}
 
 	public static T AddStates<T>(this T set, MentorLake.Atk.AtkStateType[] types, int n_types) where T : AtkStateSetHandle
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		AtkStateSetHandleExterns.atk_state_set_add_states(set, types, n_types);
 		return set;
 	}
 
 	public static MentorLake.Atk.AtkStateSetHandle AndSets(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateSetHandle compare_set)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_and_sets(set, compare_set);
 	}
 
 	public static T ClearStates<T>(this T set) where T : AtkStateSetHandle
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		AtkStateSetHandleExterns.atk_state_set_clear_states(set);
 		return set;
 	}
 
 	public static bool ContainsState(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType type)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_contains_state(set, type);
 	}
 
 	public static bool ContainsStates(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType[] types, int n_types)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_contains_states(set, types, n_types);
 	}
 
 	public static bool IsEmpty(this MentorLake.Atk.AtkStateSetHandle set)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_is_empty(set);
 	}
 
 	public static MentorLake.Atk.AtkStateSetHandle OrSets(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateSetHandle compare_set)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_or_sets(set, compare_set);
 	}
 
 	public static bool RemoveState(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType type)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_remove_state(set, type);
 	}
 
 	public static MentorLake.Atk.AtkStateSetHandle XorSets(this MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateSetHandle compare_set)
 	{
+		if (set.IsInvalid || set.IsClosed) throw new Exception("Invalid or closed handle (AtkStateSetHandle)");
 		return AtkStateSetHandleExterns.atk_state_set_xor_sets(set, compare_set);
 	}
 

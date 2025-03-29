@@ -13,6 +13,7 @@ public static class GBytesIconHandleExtensions
 {
 	public static MentorLake.GLib.GBytesHandle GetBytes(this MentorLake.Gio.GBytesIconHandle icon)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GBytesIconHandle)");
 		return GBytesIconHandleExterns.g_bytes_icon_get_bytes(icon);
 	}
 

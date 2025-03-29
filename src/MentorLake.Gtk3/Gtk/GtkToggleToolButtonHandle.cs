@@ -69,11 +69,13 @@ public static class GtkToggleToolButtonHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkToggleToolButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleToolButtonHandle)");
 		return GtkToggleToolButtonHandleExterns.gtk_toggle_tool_button_get_active(button);
 	}
 
 	public static T SetActive<T>(this T button, bool is_active) where T : GtkToggleToolButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleToolButtonHandle)");
 		GtkToggleToolButtonHandleExterns.gtk_toggle_tool_button_set_active(button, is_active);
 		return button;
 	}

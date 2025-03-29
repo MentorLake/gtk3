@@ -13,43 +13,51 @@ public static class GtkViewportHandleExtensions
 {
 	public static MentorLake.Gdk.GdkWindowHandle GetBinWindow(this MentorLake.Gtk.GtkViewportHandle viewport)
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		return GtkViewportHandleExterns.gtk_viewport_get_bin_window(viewport);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetHadjustment(this MentorLake.Gtk.GtkViewportHandle viewport)
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		return GtkViewportHandleExterns.gtk_viewport_get_hadjustment(viewport);
 	}
 
 	public static MentorLake.Gtk.GtkShadowType GetShadowType(this MentorLake.Gtk.GtkViewportHandle viewport)
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		return GtkViewportHandleExterns.gtk_viewport_get_shadow_type(viewport);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetVadjustment(this MentorLake.Gtk.GtkViewportHandle viewport)
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		return GtkViewportHandleExterns.gtk_viewport_get_vadjustment(viewport);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetViewWindow(this MentorLake.Gtk.GtkViewportHandle viewport)
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		return GtkViewportHandleExterns.gtk_viewport_get_view_window(viewport);
 	}
 
 	public static T SetHadjustment<T>(this T viewport, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkViewportHandle
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		GtkViewportHandleExterns.gtk_viewport_set_hadjustment(viewport, adjustment);
 		return viewport;
 	}
 
 	public static T SetShadowType<T>(this T viewport, MentorLake.Gtk.GtkShadowType type) where T : GtkViewportHandle
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		GtkViewportHandleExterns.gtk_viewport_set_shadow_type(viewport, type);
 		return viewport;
 	}
 
 	public static T SetVadjustment<T>(this T viewport, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkViewportHandle
 	{
+		if (viewport.IsInvalid || viewport.IsClosed) throw new Exception("Invalid or closed handle (GtkViewportHandle)");
 		GtkViewportHandleExterns.gtk_viewport_set_vadjustment(viewport, adjustment);
 		return viewport;
 	}

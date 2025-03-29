@@ -8,21 +8,25 @@ public static class GdkDrawingContextHandleExtensions
 {
 	public static MentorLake.cairo.cairo_tHandle GetCairoContext(this MentorLake.Gdk.GdkDrawingContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDrawingContextHandle)");
 		return GdkDrawingContextHandleExterns.gdk_drawing_context_get_cairo_context(context);
 	}
 
 	public static MentorLake.cairo.cairo_region_tHandle GetClip(this MentorLake.Gdk.GdkDrawingContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDrawingContextHandle)");
 		return GdkDrawingContextHandleExterns.gdk_drawing_context_get_clip(context);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindow(this MentorLake.Gdk.GdkDrawingContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDrawingContextHandle)");
 		return GdkDrawingContextHandleExterns.gdk_drawing_context_get_window(context);
 	}
 
 	public static bool IsValid(this MentorLake.Gdk.GdkDrawingContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDrawingContextHandle)");
 		return GdkDrawingContextHandleExterns.gdk_drawing_context_is_valid(context);
 	}
 

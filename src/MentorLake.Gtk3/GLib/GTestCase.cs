@@ -9,6 +9,7 @@ public static class GTestCaseExtensions
 {
 	public static void Free(this MentorLake.GLib.GTestCaseHandle test_case)
 	{
+		if (test_case.IsInvalid || test_case.IsClosed) throw new Exception("Invalid or closed handle (GTestCase)");
 		GTestCaseExterns.g_test_case_free(test_case);
 	}
 

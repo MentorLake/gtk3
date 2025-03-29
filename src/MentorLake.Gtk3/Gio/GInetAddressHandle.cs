@@ -28,76 +28,91 @@ public static class GInetAddressHandleExtensions
 {
 	public static bool Equal(this MentorLake.Gio.GInetAddressHandle address, MentorLake.Gio.GInetAddressHandle other_address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_equal(address, other_address);
 	}
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_family(address);
 	}
 
 	public static bool GetIsAny(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_any(address);
 	}
 
 	public static bool GetIsLinkLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_link_local(address);
 	}
 
 	public static bool GetIsLoopback(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_loopback(address);
 	}
 
 	public static bool GetIsMcGlobal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_mc_global(address);
 	}
 
 	public static bool GetIsMcLinkLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_mc_link_local(address);
 	}
 
 	public static bool GetIsMcNodeLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_mc_node_local(address);
 	}
 
 	public static bool GetIsMcOrgLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_mc_org_local(address);
 	}
 
 	public static bool GetIsMcSiteLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_mc_site_local(address);
 	}
 
 	public static bool GetIsMulticast(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_multicast(address);
 	}
 
 	public static bool GetIsSiteLocal(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_is_site_local(address);
 	}
 
 	public static UIntPtr GetNativeSize(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_get_native_size(address);
 	}
 
 	public static byte ToBytes(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_to_bytes(address);
 	}
 
 	public static string ToString(this MentorLake.Gio.GInetAddressHandle address)
 	{
+		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GInetAddressHandle)");
 		return GInetAddressHandleExterns.g_inet_address_to_string(address);
 	}
 

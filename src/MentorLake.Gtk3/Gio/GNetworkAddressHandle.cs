@@ -32,16 +32,19 @@ public static class GNetworkAddressHandleExtensions
 {
 	public static string GetHostname(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
+		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_hostname(addr);
 	}
 
 	public static ushort GetPort(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
+		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_port(addr);
 	}
 
 	public static string GetScheme(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
+		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_scheme(addr);
 	}
 

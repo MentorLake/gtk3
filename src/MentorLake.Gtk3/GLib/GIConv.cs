@@ -7,12 +7,12 @@ public class GIConvHandle : BaseSafeHandle
 
 public static class GIConvExtensions
 {
-	public static UIntPtr GIconv(this MentorLake.GLib.GIConv converter, string inbuf, ref UIntPtr inbytes_left, string outbuf, ref UIntPtr outbytes_left)
+	public static UIntPtr GIconv(MentorLake.GLib.GIConv converter, string inbuf, ref UIntPtr inbytes_left, string outbuf, ref UIntPtr outbytes_left)
 	{
 		return GIConvExterns.g_iconv(converter, inbuf, ref inbytes_left, outbuf, ref outbytes_left);
 	}
 
-	public static int Close(this MentorLake.GLib.GIConv converter)
+	public static int Close(MentorLake.GLib.GIConv converter)
 	{
 		return GIConvExterns.g_iconv_close(converter);
 	}

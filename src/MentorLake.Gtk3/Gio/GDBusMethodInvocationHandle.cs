@@ -8,98 +8,116 @@ public static class GDBusMethodInvocationHandleExtensions
 {
 	public static MentorLake.Gio.GDBusConnectionHandle GetConnection(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_connection(invocation);
 	}
 
 	public static string GetInterfaceName(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_interface_name(invocation);
 	}
 
 	public static MentorLake.Gio.GDBusMessageHandle GetMessage(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_message(invocation);
 	}
 
 	public static MentorLake.Gio.GDBusMethodInfoHandle GetMethodInfo(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_method_info(invocation);
 	}
 
 	public static string GetMethodName(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_method_name(invocation);
 	}
 
 	public static string GetObjectPath(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_object_path(invocation);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetParameters(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_parameters(invocation);
 	}
 
 	public static MentorLake.Gio.GDBusPropertyInfoHandle GetPropertyInfo(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_property_info(invocation);
 	}
 
 	public static string GetSender(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_sender(invocation);
 	}
 
 	public static IntPtr GetUserData(this MentorLake.Gio.GDBusMethodInvocationHandle invocation)
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		return GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_get_user_data(invocation);
 	}
 
 	public static T ReturnDbusError<T>(this T invocation, string error_name, string error_message) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_dbus_error(invocation, error_name, error_message);
 		return invocation;
 	}
 
 	public static T ReturnError<T>(this T invocation, MentorLake.GLib.GQuark domain, int code, string format, IntPtr @__arglist) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_error(invocation, domain, code, format, @__arglist);
 		return invocation;
 	}
 
 	public static T ReturnErrorLiteral<T>(this T invocation, MentorLake.GLib.GQuark domain, int code, string message) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_error_literal(invocation, domain, code, message);
 		return invocation;
 	}
 
 	public static T ReturnErrorValist<T>(this T invocation, MentorLake.GLib.GQuark domain, int code, string format, IntPtr var_args) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_error_valist(invocation, domain, code, format, var_args);
 		return invocation;
 	}
 
 	public static T ReturnGerror<T>(this T invocation, MentorLake.GLib.GErrorHandle error) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_gerror(invocation, error);
 		return invocation;
 	}
 
 	public static T ReturnValue<T>(this T invocation, MentorLake.GLib.GVariantHandle parameters) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_value(invocation, parameters);
 		return invocation;
 	}
 
 	public static T ReturnValueWithUnixFdList<T>(this T invocation, MentorLake.GLib.GVariantHandle parameters, MentorLake.Gio.GUnixFDListHandle fd_list) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_return_value_with_unix_fd_list(invocation, parameters, fd_list);
 		return invocation;
 	}
 
 	public static T TakeError<T>(this T invocation, MentorLake.GLib.GErrorHandle error) where T : GDBusMethodInvocationHandle
 	{
+		if (invocation.IsInvalid || invocation.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInvocationHandle)");
 		GDBusMethodInvocationHandleExterns.g_dbus_method_invocation_take_error(invocation, error);
 		return invocation;
 	}

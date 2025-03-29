@@ -13,6 +13,7 @@ public static class AtkPlugHandleExtensions
 {
 	public static string GetId(this MentorLake.Atk.AtkPlugHandle plug)
 	{
+		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (AtkPlugHandle)");
 		return AtkPlugHandleExterns.atk_plug_get_id(plug);
 	}
 

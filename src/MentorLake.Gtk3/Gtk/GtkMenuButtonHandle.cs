@@ -13,66 +13,78 @@ public static class GtkMenuButtonHandleExtensions
 {
 	public static MentorLake.Gtk.GtkWidgetHandle GetAlignWidget(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_align_widget(menu_button);
 	}
 
 	public static MentorLake.Gtk.GtkArrowType GetDirection(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_direction(menu_button);
 	}
 
 	public static MentorLake.Gio.GMenuModelHandle GetMenuModel(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_menu_model(menu_button);
 	}
 
 	public static MentorLake.Gtk.GtkPopoverHandle GetPopover(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_popover(menu_button);
 	}
 
 	public static MentorLake.Gtk.GtkMenuHandle GetPopup(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_popup(menu_button);
 	}
 
 	public static bool GetUsePopover(this MentorLake.Gtk.GtkMenuButtonHandle menu_button)
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		return GtkMenuButtonHandleExterns.gtk_menu_button_get_use_popover(menu_button);
 	}
 
 	public static T SetAlignWidget<T>(this T menu_button, MentorLake.Gtk.GtkWidgetHandle align_widget) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_align_widget(menu_button, align_widget);
 		return menu_button;
 	}
 
 	public static T SetDirection<T>(this T menu_button, MentorLake.Gtk.GtkArrowType direction) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_direction(menu_button, direction);
 		return menu_button;
 	}
 
 	public static T SetMenuModel<T>(this T menu_button, MentorLake.Gio.GMenuModelHandle menu_model) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_menu_model(menu_button, menu_model);
 		return menu_button;
 	}
 
 	public static T SetPopover<T>(this T menu_button, MentorLake.Gtk.GtkWidgetHandle popover) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_popover(menu_button, popover);
 		return menu_button;
 	}
 
 	public static T SetPopup<T>(this T menu_button, MentorLake.Gtk.GtkWidgetHandle menu) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_popup(menu_button, menu);
 		return menu_button;
 	}
 
 	public static T SetUsePopover<T>(this T menu_button, bool use_popover) where T : GtkMenuButtonHandle
 	{
+		if (menu_button.IsInvalid || menu_button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuButtonHandle)");
 		GtkMenuButtonHandleExterns.gtk_menu_button_set_use_popover(menu_button, use_popover);
 		return menu_button;
 	}

@@ -13,11 +13,13 @@ public static class GZlibCompressorHandleExtensions
 {
 	public static MentorLake.Gio.GFileInfoHandle GetFileInfo(this MentorLake.Gio.GZlibCompressorHandle compressor)
 	{
+		if (compressor.IsInvalid || compressor.IsClosed) throw new Exception("Invalid or closed handle (GZlibCompressorHandle)");
 		return GZlibCompressorHandleExterns.g_zlib_compressor_get_file_info(compressor);
 	}
 
 	public static T SetFileInfo<T>(this T compressor, MentorLake.Gio.GFileInfoHandle file_info) where T : GZlibCompressorHandle
 	{
+		if (compressor.IsInvalid || compressor.IsClosed) throw new Exception("Invalid or closed handle (GZlibCompressorHandle)");
 		GZlibCompressorHandleExterns.g_zlib_compressor_set_file_info(compressor, file_info);
 		return compressor;
 	}

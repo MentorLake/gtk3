@@ -13,16 +13,19 @@ public static class GDataInputStreamHandleExtensions
 {
 	public static MentorLake.Gio.GDataStreamByteOrder GetByteOrder(this MentorLake.Gio.GDataInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		return GDataInputStreamHandleExterns.g_data_input_stream_get_byte_order(stream);
 	}
 
 	public static MentorLake.Gio.GDataStreamNewlineType GetNewlineType(this MentorLake.Gio.GDataInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		return GDataInputStreamHandleExterns.g_data_input_stream_get_newline_type(stream);
 	}
 
 	public static char ReadByte(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_byte(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -30,6 +33,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static short ReadInt16(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_int16(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -37,6 +41,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static int ReadInt32(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_int32(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -44,6 +49,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static long ReadInt64(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_int64(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -51,6 +57,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static byte[] ReadLine(this MentorLake.Gio.GDataInputStreamHandle stream, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_line(stream, out length, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -58,12 +65,14 @@ public static class GDataInputStreamHandleExtensions
 
 	public static T ReadLineAsync<T>(this T stream, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		GDataInputStreamHandleExterns.g_data_input_stream_read_line_async(stream, io_priority, cancellable, callback, user_data);
 		return stream;
 	}
 
 	public static byte[] ReadLineFinish(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_line_finish(stream, result, out length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -71,6 +80,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static string ReadLineFinishUtf8(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_line_finish_utf8(stream, result, out length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -78,6 +88,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static string ReadLineUtf8(this MentorLake.Gio.GDataInputStreamHandle stream, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_line_utf8(stream, out length, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -85,6 +96,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static ushort ReadUint16(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_uint16(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -92,6 +104,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static uint ReadUint32(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_uint32(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -99,6 +112,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static ulong ReadUint64(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_uint64(stream, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -106,6 +120,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static string ReadUntil(this MentorLake.Gio.GDataInputStreamHandle stream, string stop_chars, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_until(stream, stop_chars, out length, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -113,12 +128,14 @@ public static class GDataInputStreamHandleExtensions
 
 	public static T ReadUntilAsync<T>(this T stream, string stop_chars, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		GDataInputStreamHandleExterns.g_data_input_stream_read_until_async(stream, stop_chars, io_priority, cancellable, callback, user_data);
 		return stream;
 	}
 
 	public static string ReadUntilFinish(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_until_finish(stream, result, out length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -126,6 +143,7 @@ public static class GDataInputStreamHandleExtensions
 
 	public static string ReadUpto(this MentorLake.Gio.GDataInputStreamHandle stream, string stop_chars, UIntPtr stop_chars_len, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_upto(stream, stop_chars, stop_chars_len, out length, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -133,12 +151,14 @@ public static class GDataInputStreamHandleExtensions
 
 	public static T ReadUptoAsync<T>(this T stream, string stop_chars, UIntPtr stop_chars_len, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GDataInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		GDataInputStreamHandleExterns.g_data_input_stream_read_upto_async(stream, stop_chars, stop_chars_len, io_priority, cancellable, callback, user_data);
 		return stream;
 	}
 
 	public static string ReadUptoFinish(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_upto_finish(stream, result, out length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -146,12 +166,14 @@ public static class GDataInputStreamHandleExtensions
 
 	public static T SetByteOrder<T>(this T stream, MentorLake.Gio.GDataStreamByteOrder order) where T : GDataInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		GDataInputStreamHandleExterns.g_data_input_stream_set_byte_order(stream, order);
 		return stream;
 	}
 
 	public static T SetNewlineType<T>(this T stream, MentorLake.Gio.GDataStreamNewlineType type) where T : GDataInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GDataInputStreamHandle)");
 		GDataInputStreamHandleExterns.g_data_input_stream_set_newline_type(stream, type);
 		return stream;
 	}

@@ -13,6 +13,7 @@ public static class GtkNotebookPageAccessibleHandleExtensions
 {
 	public static T Invalidate<T>(this T page) where T : GtkNotebookPageAccessibleHandle
 	{
+		if (page.IsInvalid || page.IsClosed) throw new Exception("Invalid or closed handle (GtkNotebookPageAccessibleHandle)");
 		GtkNotebookPageAccessibleHandleExterns.gtk_notebook_page_accessible_invalidate(page);
 		return page;
 	}

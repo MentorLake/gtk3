@@ -9,11 +9,13 @@ public static class GIOModuleScopeExtensions
 {
 	public static void Block(this MentorLake.Gio.GIOModuleScopeHandle scope, string basename)
 	{
+		if (scope.IsInvalid || scope.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleScope)");
 		GIOModuleScopeExterns.g_io_module_scope_block(scope, basename);
 	}
 
 	public static void Free(this MentorLake.Gio.GIOModuleScopeHandle scope)
 	{
+		if (scope.IsInvalid || scope.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleScope)");
 		GIOModuleScopeExterns.g_io_module_scope_free(scope);
 	}
 

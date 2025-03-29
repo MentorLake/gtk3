@@ -8,21 +8,25 @@ public static class GMenuAttributeIterHandleExtensions
 {
 	public static string GetName(this MentorLake.Gio.GMenuAttributeIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuAttributeIterHandle)");
 		return GMenuAttributeIterHandleExterns.g_menu_attribute_iter_get_name(iter);
 	}
 
 	public static bool GetNext(this MentorLake.Gio.GMenuAttributeIterHandle iter, out string out_name, out MentorLake.GLib.GVariantHandle value)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuAttributeIterHandle)");
 		return GMenuAttributeIterHandleExterns.g_menu_attribute_iter_get_next(iter, out out_name, out value);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetValue(this MentorLake.Gio.GMenuAttributeIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuAttributeIterHandle)");
 		return GMenuAttributeIterHandleExterns.g_menu_attribute_iter_get_value(iter);
 	}
 
 	public static bool Next(this MentorLake.Gio.GMenuAttributeIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuAttributeIterHandle)");
 		return GMenuAttributeIterHandleExterns.g_menu_attribute_iter_next(iter);
 	}
 

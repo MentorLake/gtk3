@@ -13,6 +13,7 @@ public static class GDBusObjectProxyHandleExtensions
 {
 	public static MentorLake.Gio.GDBusConnectionHandle GetConnection(this MentorLake.Gio.GDBusObjectProxyHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectProxyHandle)");
 		return GDBusObjectProxyHandleExterns.g_dbus_object_proxy_get_connection(proxy);
 	}
 

@@ -2,6 +2,8 @@ namespace MentorLake.GioUnix;
 
 public interface GFileDescriptorBasedHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GFileDescriptorBasedHandleImpl : BaseSafeHandle, GFileDescriptorBasedHandle

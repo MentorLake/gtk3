@@ -13,6 +13,7 @@ public static class GConverterOutputStreamHandleExtensions
 {
 	public static MentorLake.Gio.GConverterHandle GetConverter(this MentorLake.Gio.GConverterOutputStreamHandle converter_stream)
 	{
+		if (converter_stream.IsInvalid || converter_stream.IsClosed) throw new Exception("Invalid or closed handle (GConverterOutputStreamHandle)");
 		return GConverterOutputStreamHandleExterns.g_converter_output_stream_get_converter(converter_stream);
 	}
 

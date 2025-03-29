@@ -8,6 +8,7 @@ public static class GtkSocketAccessibleHandleExtensions
 {
 	public static T Embed<T>(this T socket, string path) where T : GtkSocketAccessibleHandle
 	{
+		if (socket.IsInvalid || socket.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketAccessibleHandle)");
 		GtkSocketAccessibleHandleExterns.gtk_socket_accessible_embed(socket, path);
 		return socket;
 	}

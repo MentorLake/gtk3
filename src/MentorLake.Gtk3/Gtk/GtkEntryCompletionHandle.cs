@@ -234,139 +234,164 @@ public static class GtkEntryCompletionHandleExtensions
 {
 	public static T Complete<T>(this T completion) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_complete(completion);
 		return completion;
 	}
 
 	public static string ComputePrefix(this MentorLake.Gtk.GtkEntryCompletionHandle completion, string key)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_compute_prefix(completion, key);
 	}
 
 	public static T DeleteAction<T>(this T completion, int index_) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_delete_action(completion, index_);
 		return completion;
 	}
 
 	public static string GetCompletionPrefix(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_completion_prefix(completion);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetEntry(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_entry(completion);
 	}
 
 	public static bool GetInlineCompletion(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_inline_completion(completion);
 	}
 
 	public static bool GetInlineSelection(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_inline_selection(completion);
 	}
 
 	public static int GetMinimumKeyLength(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_minimum_key_length(completion);
 	}
 
 	public static MentorLake.Gtk.GtkTreeModelHandle GetModel(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_model(completion);
 	}
 
 	public static bool GetPopupCompletion(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_popup_completion(completion);
 	}
 
 	public static bool GetPopupSetWidth(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_popup_set_width(completion);
 	}
 
 	public static bool GetPopupSingleMatch(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_popup_single_match(completion);
 	}
 
 	public static int GetTextColumn(this MentorLake.Gtk.GtkEntryCompletionHandle completion)
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		return GtkEntryCompletionHandleExterns.gtk_entry_completion_get_text_column(completion);
 	}
 
 	public static T InsertActionMarkup<T>(this T completion, int index_, string markup) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_insert_action_markup(completion, index_, markup);
 		return completion;
 	}
 
 	public static T InsertActionText<T>(this T completion, int index_, string text) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_insert_action_text(completion, index_, text);
 		return completion;
 	}
 
 	public static T InsertPrefix<T>(this T completion) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_insert_prefix(completion);
 		return completion;
 	}
 
 	public static T SetInlineCompletion<T>(this T completion, bool inline_completion) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_inline_completion(completion, inline_completion);
 		return completion;
 	}
 
 	public static T SetInlineSelection<T>(this T completion, bool inline_selection) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_inline_selection(completion, inline_selection);
 		return completion;
 	}
 
 	public static T SetMatchFunc<T>(this T completion, MentorLake.Gtk.GtkEntryCompletionMatchFunc func, IntPtr func_data, MentorLake.GLib.GDestroyNotify func_notify) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_match_func(completion, func, func_data, func_notify);
 		return completion;
 	}
 
 	public static T SetMinimumKeyLength<T>(this T completion, int length) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_minimum_key_length(completion, length);
 		return completion;
 	}
 
 	public static T SetModel<T>(this T completion, MentorLake.Gtk.GtkTreeModelHandle model) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_model(completion, model);
 		return completion;
 	}
 
 	public static T SetPopupCompletion<T>(this T completion, bool popup_completion) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_popup_completion(completion, popup_completion);
 		return completion;
 	}
 
 	public static T SetPopupSetWidth<T>(this T completion, bool popup_set_width) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_popup_set_width(completion, popup_set_width);
 		return completion;
 	}
 
 	public static T SetPopupSingleMatch<T>(this T completion, bool popup_single_match) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_popup_single_match(completion, popup_single_match);
 		return completion;
 	}
 
 	public static T SetTextColumn<T>(this T completion, int column) where T : GtkEntryCompletionHandle
 	{
+		if (completion.IsInvalid || completion.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryCompletionHandle)");
 		GtkEntryCompletionHandleExterns.gtk_entry_completion_set_text_column(completion, column);
 		return completion;
 	}

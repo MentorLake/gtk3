@@ -18,11 +18,13 @@ public static class GtkInvisibleHandleExtensions
 {
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkInvisibleHandle invisible)
 	{
+		if (invisible.IsInvalid || invisible.IsClosed) throw new Exception("Invalid or closed handle (GtkInvisibleHandle)");
 		return GtkInvisibleHandleExterns.gtk_invisible_get_screen(invisible);
 	}
 
 	public static T SetScreen<T>(this T invisible, MentorLake.Gdk.GdkScreenHandle screen) where T : GtkInvisibleHandle
 	{
+		if (invisible.IsInvalid || invisible.IsClosed) throw new Exception("Invalid or closed handle (GtkInvisibleHandle)");
 		GtkInvisibleHandleExterns.gtk_invisible_set_screen(invisible, screen);
 		return invisible;
 	}

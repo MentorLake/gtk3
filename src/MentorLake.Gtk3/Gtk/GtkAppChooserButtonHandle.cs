@@ -65,51 +65,60 @@ public static class GtkAppChooserButtonHandleExtensions
 {
 	public static T AppendCustomItem<T>(this T self, string name, string label, MentorLake.Gio.GIconHandle icon) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_append_custom_item(self, name, label, icon);
 		return self;
 	}
 
 	public static T AppendSeparator<T>(this T self) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_append_separator(self);
 		return self;
 	}
 
 	public static string GetHeading(this MentorLake.Gtk.GtkAppChooserButtonHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		return GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_get_heading(self);
 	}
 
 	public static bool GetShowDefaultItem(this MentorLake.Gtk.GtkAppChooserButtonHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		return GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_get_show_default_item(self);
 	}
 
 	public static bool GetShowDialogItem(this MentorLake.Gtk.GtkAppChooserButtonHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		return GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_get_show_dialog_item(self);
 	}
 
 	public static T SetActiveCustomItem<T>(this T self, string name) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_set_active_custom_item(self, name);
 		return self;
 	}
 
 	public static T SetHeading<T>(this T self, string heading) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_set_heading(self, heading);
 		return self;
 	}
 
 	public static T SetShowDefaultItem<T>(this T self, bool setting) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_set_show_default_item(self, setting);
 		return self;
 	}
 
 	public static T SetShowDialogItem<T>(this T self, bool setting) where T : GtkAppChooserButtonHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserButtonHandle)");
 		GtkAppChooserButtonHandleExterns.gtk_app_chooser_button_set_show_dialog_item(self, setting);
 		return self;
 	}

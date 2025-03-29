@@ -24,121 +24,145 @@ public static class GTreeExtensions
 {
 	public static void Destroy(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_destroy(tree);
 	}
 
 	public static void Foreach(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc func, IntPtr user_data)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_foreach(tree, func, user_data);
 	}
 
 	public static void ForeachNode(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseNodeFunc func, IntPtr user_data)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_foreach_node(tree, func, user_data);
 	}
 
 	public static int Height(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_height(tree);
 	}
 
 	public static void Insert(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_insert(tree, key, value);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle InsertNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_insert_node(tree, key, value);
 	}
 
 	public static IntPtr Lookup(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_lookup(tree, key);
 	}
 
 	public static bool LookupExtended(this MentorLake.GLib.GTreeHandle tree, IntPtr lookup_key, out IntPtr orig_key, out IntPtr value)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_lookup_extended(tree, lookup_key, out orig_key, out value);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle LookupNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_lookup_node(tree, key);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle LowerBound(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_lower_bound(tree, key);
 	}
 
 	public static int Nnodes(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_nnodes(tree);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle NodeFirst(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_node_first(tree);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle NodeLast(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_node_last(tree);
 	}
 
 	public static MentorLake.GLib.GTreeHandle Ref(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_ref(tree);
 	}
 
 	public static bool Remove(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_remove(tree, key);
 	}
 
 	public static void RemoveAll(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_remove_all(tree);
 	}
 
 	public static void Replace(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_replace(tree, key, value);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle ReplaceNode(this MentorLake.GLib.GTreeHandle tree, IntPtr key, IntPtr value)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_replace_node(tree, key, value);
 	}
 
 	public static IntPtr Search(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_search(tree, search_func, user_data);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle SearchNode(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GCompareFunc search_func, IntPtr user_data)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_search_node(tree, search_func, user_data);
 	}
 
 	public static bool Steal(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_steal(tree, key);
 	}
 
 	public static void Traverse(this MentorLake.GLib.GTreeHandle tree, MentorLake.GLib.GTraverseFunc traverse_func, MentorLake.GLib.GTraverseType traverse_type, IntPtr user_data)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_traverse(tree, traverse_func, traverse_type, user_data);
 	}
 
 	public static void Unref(this MentorLake.GLib.GTreeHandle tree)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		GTreeExterns.g_tree_unref(tree);
 	}
 
 	public static MentorLake.GLib.GTreeNodeHandle UpperBound(this MentorLake.GLib.GTreeHandle tree, IntPtr key)
 	{
+		if (tree.IsInvalid || tree.IsClosed) throw new Exception("Invalid or closed handle (GTree)");
 		return GTreeExterns.g_tree_upper_bound(tree, key);
 	}
 

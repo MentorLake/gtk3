@@ -66,6 +66,7 @@ public static class GSocketListenerHandleExtensions
 {
 	public static MentorLake.Gio.GSocketConnectionHandle Accept(this MentorLake.Gio.GSocketListenerHandle listener, out MentorLake.GObject.GObjectHandle source_object, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_accept(listener, out source_object, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -73,12 +74,14 @@ public static class GSocketListenerHandleExtensions
 
 	public static T AcceptAsync<T>(this T listener, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketListenerHandle
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		GSocketListenerHandleExterns.g_socket_listener_accept_async(listener, cancellable, callback, user_data);
 		return listener;
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle AcceptFinish(this MentorLake.Gio.GSocketListenerHandle listener, MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GObject.GObjectHandle source_object)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_accept_finish(listener, result, out source_object, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -86,6 +89,7 @@ public static class GSocketListenerHandleExtensions
 
 	public static MentorLake.Gio.GSocketHandle AcceptSocket(this MentorLake.Gio.GSocketListenerHandle listener, out MentorLake.GObject.GObjectHandle source_object, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_accept_socket(listener, out source_object, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -93,12 +97,14 @@ public static class GSocketListenerHandleExtensions
 
 	public static T AcceptSocketAsync<T>(this T listener, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketListenerHandle
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		GSocketListenerHandleExterns.g_socket_listener_accept_socket_async(listener, cancellable, callback, user_data);
 		return listener;
 	}
 
 	public static MentorLake.Gio.GSocketHandle AcceptSocketFinish(this MentorLake.Gio.GSocketListenerHandle listener, MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GObject.GObjectHandle source_object)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_accept_socket_finish(listener, result, out source_object, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -106,6 +112,7 @@ public static class GSocketListenerHandleExtensions
 
 	public static bool AddAddress(this MentorLake.Gio.GSocketListenerHandle listener, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GSocketType type, MentorLake.Gio.GSocketProtocol protocol, MentorLake.GObject.GObjectHandle source_object, out MentorLake.Gio.GSocketAddressHandle effective_address)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_add_address(listener, address, type, protocol, source_object, out effective_address, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -113,6 +120,7 @@ public static class GSocketListenerHandleExtensions
 
 	public static ushort AddAnyInetPort(this MentorLake.Gio.GSocketListenerHandle listener, MentorLake.GObject.GObjectHandle source_object)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_add_any_inet_port(listener, source_object, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -120,6 +128,7 @@ public static class GSocketListenerHandleExtensions
 
 	public static bool AddInetPort(this MentorLake.Gio.GSocketListenerHandle listener, ushort port, MentorLake.GObject.GObjectHandle source_object)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_add_inet_port(listener, port, source_object, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -127,6 +136,7 @@ public static class GSocketListenerHandleExtensions
 
 	public static bool AddSocket(this MentorLake.Gio.GSocketListenerHandle listener, MentorLake.Gio.GSocketHandle socket, MentorLake.GObject.GObjectHandle source_object)
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		var externCallResult = GSocketListenerHandleExterns.g_socket_listener_add_socket(listener, socket, source_object, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -134,12 +144,14 @@ public static class GSocketListenerHandleExtensions
 
 	public static T Close<T>(this T listener) where T : GSocketListenerHandle
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		GSocketListenerHandleExterns.g_socket_listener_close(listener);
 		return listener;
 	}
 
 	public static T SetBacklog<T>(this T listener, int listen_backlog) where T : GSocketListenerHandle
 	{
+		if (listener.IsInvalid || listener.IsClosed) throw new Exception("Invalid or closed handle (GSocketListenerHandle)");
 		GSocketListenerHandleExterns.g_socket_listener_set_backlog(listener, listen_backlog);
 		return listener;
 	}

@@ -13,12 +13,14 @@ public static class GtkSpinnerHandleExtensions
 {
 	public static T Start<T>(this T spinner) where T : GtkSpinnerHandle
 	{
+		if (spinner.IsInvalid || spinner.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinnerHandle)");
 		GtkSpinnerHandleExterns.gtk_spinner_start(spinner);
 		return spinner;
 	}
 
 	public static T Stop<T>(this T spinner) where T : GtkSpinnerHandle
 	{
+		if (spinner.IsInvalid || spinner.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinnerHandle)");
 		GtkSpinnerHandleExterns.gtk_spinner_stop(spinner);
 		return spinner;
 	}

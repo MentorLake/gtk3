@@ -13,22 +13,26 @@ public static class GtkFileChooserNativeHandleExtensions
 {
 	public static string GetAcceptLabel(this MentorLake.Gtk.GtkFileChooserNativeHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserNativeHandle)");
 		return GtkFileChooserNativeHandleExterns.gtk_file_chooser_native_get_accept_label(self);
 	}
 
 	public static string GetCancelLabel(this MentorLake.Gtk.GtkFileChooserNativeHandle self)
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserNativeHandle)");
 		return GtkFileChooserNativeHandleExterns.gtk_file_chooser_native_get_cancel_label(self);
 	}
 
 	public static T SetAcceptLabel<T>(this T self, string accept_label) where T : GtkFileChooserNativeHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserNativeHandle)");
 		GtkFileChooserNativeHandleExterns.gtk_file_chooser_native_set_accept_label(self, accept_label);
 		return self;
 	}
 
 	public static T SetCancelLabel<T>(this T self, string cancel_label) where T : GtkFileChooserNativeHandle
 	{
+		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserNativeHandle)");
 		GtkFileChooserNativeHandleExterns.gtk_file_chooser_native_set_cancel_label(self, cancel_label);
 		return self;
 	}

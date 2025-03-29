@@ -9,11 +9,13 @@ public static class GtkBindingSetExtensions
 {
 	public static bool Activate(this MentorLake.Gtk.GtkBindingSetHandle binding_set, uint keyval, MentorLake.Gdk.GdkModifierType modifiers, MentorLake.GObject.GObjectHandle @object)
 	{
+		if (binding_set.IsInvalid || binding_set.IsClosed) throw new Exception("Invalid or closed handle (GtkBindingSet)");
 		return GtkBindingSetExterns.gtk_binding_set_activate(binding_set, keyval, modifiers, @object);
 	}
 
 	public static void AddPath(this MentorLake.Gtk.GtkBindingSetHandle binding_set, MentorLake.Gtk.GtkPathType path_type, string path_pattern, MentorLake.Gtk.GtkPathPriorityType priority)
 	{
+		if (binding_set.IsInvalid || binding_set.IsClosed) throw new Exception("Invalid or closed handle (GtkBindingSet)");
 		GtkBindingSetExterns.gtk_binding_set_add_path(binding_set, path_type, path_pattern, priority);
 	}
 

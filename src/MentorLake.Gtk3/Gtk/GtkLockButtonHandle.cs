@@ -13,11 +13,13 @@ public static class GtkLockButtonHandleExtensions
 {
 	public static MentorLake.Gio.GPermissionHandle GetPermission(this MentorLake.Gtk.GtkLockButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkLockButtonHandle)");
 		return GtkLockButtonHandleExterns.gtk_lock_button_get_permission(button);
 	}
 
 	public static T SetPermission<T>(this T button, MentorLake.Gio.GPermissionHandle permission) where T : GtkLockButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkLockButtonHandle)");
 		GtkLockButtonHandleExterns.gtk_lock_button_set_permission(button, permission);
 		return button;
 	}

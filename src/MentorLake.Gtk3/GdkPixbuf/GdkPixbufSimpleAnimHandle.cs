@@ -13,17 +13,20 @@ public static class GdkPixbufSimpleAnimHandleExtensions
 {
 	public static T AddFrame<T>(this T animation, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GdkPixbufSimpleAnimHandle
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufSimpleAnimHandle)");
 		GdkPixbufSimpleAnimHandleExterns.gdk_pixbuf_simple_anim_add_frame(animation, pixbuf);
 		return animation;
 	}
 
 	public static bool GetLoop(this MentorLake.GdkPixbuf.GdkPixbufSimpleAnimHandle animation)
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufSimpleAnimHandle)");
 		return GdkPixbufSimpleAnimHandleExterns.gdk_pixbuf_simple_anim_get_loop(animation);
 	}
 
 	public static T SetLoop<T>(this T animation, bool loop) where T : GdkPixbufSimpleAnimHandle
 	{
+		if (animation.IsInvalid || animation.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufSimpleAnimHandle)");
 		GdkPixbufSimpleAnimHandleExterns.gdk_pixbuf_simple_anim_set_loop(animation, loop);
 		return animation;
 	}

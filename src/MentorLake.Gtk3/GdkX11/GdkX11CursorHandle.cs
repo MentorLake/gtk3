@@ -8,11 +8,13 @@ public static class GdkX11CursorHandleExtensions
 {
 	public static MentorLake.xlib.Cursor GetXcursor(this MentorLake.GdkX11.GdkX11CursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkX11CursorHandle)");
 		return GdkX11CursorHandleExterns.gdk_x11_cursor_get_xcursor(cursor);
 	}
 
 	public static MentorLake.xlib.DisplayHandle GetXdisplay(this MentorLake.GdkX11.GdkX11CursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkX11CursorHandle)");
 		return GdkX11CursorHandleExterns.gdk_x11_cursor_get_xdisplay(cursor);
 	}
 

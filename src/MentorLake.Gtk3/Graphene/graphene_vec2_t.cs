@@ -14,106 +14,127 @@ public static class graphene_vec2_tExtensions
 {
 	public static void Add(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_add(a, b, out res);
 	}
 
 	public static void Divide(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_divide(a, b, out res);
 	}
 
 	public static float Dot(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_dot(a, b);
 	}
 
 	public static bool Equal(this MentorLake.Graphene.graphene_vec2_tHandle v1, MentorLake.Graphene.graphene_vec2_tHandle v2)
 	{
+		if (v1.IsInvalid || v1.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_equal(v1, v2);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_vec2_tHandle v)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_free(v);
 	}
 
 	public static float GetX(this MentorLake.Graphene.graphene_vec2_tHandle v)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_get_x(v);
 	}
 
 	public static float GetY(this MentorLake.Graphene.graphene_vec2_tHandle v)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_get_y(v);
 	}
 
 	public static MentorLake.Graphene.graphene_vec2_tHandle Init(this MentorLake.Graphene.graphene_vec2_tHandle v, float x, float y)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_init(v, x, y);
 	}
 
 	public static MentorLake.Graphene.graphene_vec2_tHandle InitFromFloat(this MentorLake.Graphene.graphene_vec2_tHandle v, float[] src)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_init_from_float(v, src);
 	}
 
 	public static MentorLake.Graphene.graphene_vec2_tHandle InitFromVec2(this MentorLake.Graphene.graphene_vec2_tHandle v, MentorLake.Graphene.graphene_vec2_tHandle src)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_init_from_vec2(v, src);
 	}
 
 	public static void Interpolate(this MentorLake.Graphene.graphene_vec2_tHandle v1, MentorLake.Graphene.graphene_vec2_tHandle v2, double factor, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (v1.IsInvalid || v1.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_interpolate(v1, v2, factor, out res);
 	}
 
 	public static float Length(this MentorLake.Graphene.graphene_vec2_tHandle v)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_length(v);
 	}
 
 	public static void Max(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_max(a, b, out res);
 	}
 
 	public static void Min(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_min(a, b, out res);
 	}
 
 	public static void Multiply(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_multiply(a, b, out res);
 	}
 
 	public static bool Near(this MentorLake.Graphene.graphene_vec2_tHandle v1, MentorLake.Graphene.graphene_vec2_tHandle v2, float epsilon)
 	{
+		if (v1.IsInvalid || v1.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		return graphene_vec2_tExterns.graphene_vec2_near(v1, v2, epsilon);
 	}
 
 	public static void Negate(this MentorLake.Graphene.graphene_vec2_tHandle v, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_negate(v, out res);
 	}
 
 	public static void Normalize(this MentorLake.Graphene.graphene_vec2_tHandle v, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_normalize(v, out res);
 	}
 
 	public static void Scale(this MentorLake.Graphene.graphene_vec2_tHandle v, float factor, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_scale(v, factor, out res);
 	}
 
 	public static void Subtract(this MentorLake.Graphene.graphene_vec2_tHandle a, MentorLake.Graphene.graphene_vec2_tHandle b, out MentorLake.Graphene.graphene_vec2_t res)
 	{
+		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_subtract(a, b, out res);
 	}
 
 	public static void ToFloat(this MentorLake.Graphene.graphene_vec2_tHandle v, out float[] dest)
 	{
+		if (v.IsInvalid || v.IsClosed) throw new Exception("Invalid or closed handle (graphene_vec2_t)");
 		graphene_vec2_tExterns.graphene_vec2_to_float(v, out dest);
 	}
 

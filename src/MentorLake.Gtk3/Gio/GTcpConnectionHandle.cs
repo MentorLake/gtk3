@@ -8,11 +8,13 @@ public static class GTcpConnectionHandleExtensions
 {
 	public static bool GetGracefulDisconnect(this MentorLake.Gio.GTcpConnectionHandle connection)
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GTcpConnectionHandle)");
 		return GTcpConnectionHandleExterns.g_tcp_connection_get_graceful_disconnect(connection);
 	}
 
 	public static T SetGracefulDisconnect<T>(this T connection, bool graceful_disconnect) where T : GTcpConnectionHandle
 	{
+		if (connection.IsInvalid || connection.IsClosed) throw new Exception("Invalid or closed handle (GTcpConnectionHandle)");
 		GTcpConnectionHandleExterns.g_tcp_connection_set_graceful_disconnect(connection, graceful_disconnect);
 		return connection;
 	}

@@ -13,6 +13,7 @@ public static class GTcpWrapperConnectionHandleExtensions
 {
 	public static MentorLake.Gio.GIOStreamHandle GetBaseIoStream(this MentorLake.Gio.GTcpWrapperConnectionHandle conn)
 	{
+		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTcpWrapperConnectionHandle)");
 		return GTcpWrapperConnectionHandleExterns.g_tcp_wrapper_connection_get_base_io_stream(conn);
 	}
 

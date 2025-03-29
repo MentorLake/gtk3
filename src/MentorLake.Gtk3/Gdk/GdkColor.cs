@@ -9,26 +9,31 @@ public static class GdkColorExtensions
 {
 	public static MentorLake.Gdk.GdkColorHandle Copy(this MentorLake.Gdk.GdkColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GdkColor)");
 		return GdkColorExterns.gdk_color_copy(color);
 	}
 
 	public static bool Equal(this MentorLake.Gdk.GdkColorHandle colora, MentorLake.Gdk.GdkColorHandle colorb)
 	{
+		if (colora.IsInvalid || colora.IsClosed) throw new Exception("Invalid or closed handle (GdkColor)");
 		return GdkColorExterns.gdk_color_equal(colora, colorb);
 	}
 
 	public static void Free(this MentorLake.Gdk.GdkColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GdkColor)");
 		GdkColorExterns.gdk_color_free(color);
 	}
 
 	public static uint Hash(this MentorLake.Gdk.GdkColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GdkColor)");
 		return GdkColorExterns.gdk_color_hash(color);
 	}
 
 	public static string ToString(this MentorLake.Gdk.GdkColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GdkColor)");
 		return GdkColorExterns.gdk_color_to_string(color);
 	}
 

@@ -65,21 +65,25 @@ public static class GdkDisplayManagerHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDisplayHandle GetDefaultDisplay(this MentorLake.Gdk.GdkDisplayManagerHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_get_default_display(manager);
 	}
 
 	public static MentorLake.GLib.GSListHandle ListDisplays(this MentorLake.Gdk.GdkDisplayManagerHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_list_displays(manager);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle OpenDisplay(this MentorLake.Gdk.GdkDisplayManagerHandle manager, string name)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_open_display(manager, name);
 	}
 
 	public static T SetDefaultDisplay<T>(this T manager, MentorLake.Gdk.GdkDisplayHandle display) where T : GdkDisplayManagerHandle
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
 		GdkDisplayManagerHandleExterns.gdk_display_manager_set_default_display(manager, display);
 		return manager;
 	}

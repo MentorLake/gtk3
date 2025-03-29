@@ -74,39 +74,46 @@ public static class GtkToggleButtonHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkToggleButtonHandle toggle_button)
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		return GtkToggleButtonHandleExterns.gtk_toggle_button_get_active(toggle_button);
 	}
 
 	public static bool GetInconsistent(this MentorLake.Gtk.GtkToggleButtonHandle toggle_button)
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		return GtkToggleButtonHandleExterns.gtk_toggle_button_get_inconsistent(toggle_button);
 	}
 
 	public static bool GetMode(this MentorLake.Gtk.GtkToggleButtonHandle toggle_button)
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		return GtkToggleButtonHandleExterns.gtk_toggle_button_get_mode(toggle_button);
 	}
 
 	public static T SetActive<T>(this T toggle_button, bool is_active) where T : GtkToggleButtonHandle
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		GtkToggleButtonHandleExterns.gtk_toggle_button_set_active(toggle_button, is_active);
 		return toggle_button;
 	}
 
 	public static T SetInconsistent<T>(this T toggle_button, bool setting) where T : GtkToggleButtonHandle
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		GtkToggleButtonHandleExterns.gtk_toggle_button_set_inconsistent(toggle_button, setting);
 		return toggle_button;
 	}
 
 	public static T SetMode<T>(this T toggle_button, bool draw_indicator) where T : GtkToggleButtonHandle
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		GtkToggleButtonHandleExterns.gtk_toggle_button_set_mode(toggle_button, draw_indicator);
 		return toggle_button;
 	}
 
 	public static T Toggled<T>(this T toggle_button) where T : GtkToggleButtonHandle
 	{
+		if (toggle_button.IsInvalid || toggle_button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleButtonHandle)");
 		GtkToggleButtonHandleExterns.gtk_toggle_button_toggled(toggle_button);
 		return toggle_button;
 	}

@@ -13,33 +13,39 @@ public static class GtkSearchBarHandleExtensions
 {
 	public static T ConnectEntry<T>(this T bar, MentorLake.Gtk.GtkEntryHandle entry) where T : GtkSearchBarHandle
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		GtkSearchBarHandleExterns.gtk_search_bar_connect_entry(bar, entry);
 		return bar;
 	}
 
 	public static bool GetSearchMode(this MentorLake.Gtk.GtkSearchBarHandle bar)
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		return GtkSearchBarHandleExterns.gtk_search_bar_get_search_mode(bar);
 	}
 
 	public static bool GetShowCloseButton(this MentorLake.Gtk.GtkSearchBarHandle bar)
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		return GtkSearchBarHandleExterns.gtk_search_bar_get_show_close_button(bar);
 	}
 
 	public static bool HandleEvent(this MentorLake.Gtk.GtkSearchBarHandle bar, MentorLake.Gdk.GdkEventHandle @event)
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		return GtkSearchBarHandleExterns.gtk_search_bar_handle_event(bar, @event);
 	}
 
 	public static T SetSearchMode<T>(this T bar, bool search_mode) where T : GtkSearchBarHandle
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		GtkSearchBarHandleExterns.gtk_search_bar_set_search_mode(bar, search_mode);
 		return bar;
 	}
 
 	public static T SetShowCloseButton<T>(this T bar, bool visible) where T : GtkSearchBarHandle
 	{
+		if (bar.IsInvalid || bar.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchBarHandle)");
 		GtkSearchBarHandleExterns.gtk_search_bar_set_show_close_button(bar, visible);
 		return bar;
 	}

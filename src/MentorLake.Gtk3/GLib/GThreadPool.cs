@@ -9,26 +9,31 @@ public static class GThreadPoolExtensions
 {
 	public static void Free(this MentorLake.GLib.GThreadPoolHandle pool, bool immediate, bool wait_)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		GThreadPoolExterns.g_thread_pool_free(pool, immediate, wait_);
 	}
 
 	public static int GetMaxThreads(this MentorLake.GLib.GThreadPoolHandle pool)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		return GThreadPoolExterns.g_thread_pool_get_max_threads(pool);
 	}
 
 	public static uint GetNumThreads(this MentorLake.GLib.GThreadPoolHandle pool)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		return GThreadPoolExterns.g_thread_pool_get_num_threads(pool);
 	}
 
 	public static bool MoveToFront(this MentorLake.GLib.GThreadPoolHandle pool, IntPtr data)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		return GThreadPoolExterns.g_thread_pool_move_to_front(pool, data);
 	}
 
 	public static bool Push(this MentorLake.GLib.GThreadPoolHandle pool, IntPtr data)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		var externCallResult = GThreadPoolExterns.g_thread_pool_push(pool, data, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -36,6 +41,7 @@ public static class GThreadPoolExtensions
 
 	public static bool SetMaxThreads(this MentorLake.GLib.GThreadPoolHandle pool, int max_threads)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		var externCallResult = GThreadPoolExterns.g_thread_pool_set_max_threads(pool, max_threads, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -43,11 +49,13 @@ public static class GThreadPoolExtensions
 
 	public static void SetSortFunction(this MentorLake.GLib.GThreadPoolHandle pool, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		GThreadPoolExterns.g_thread_pool_set_sort_function(pool, func, user_data);
 	}
 
 	public static uint Unprocessed(this MentorLake.GLib.GThreadPoolHandle pool)
 	{
+		if (pool.IsInvalid || pool.IsClosed) throw new Exception("Invalid or closed handle (GThreadPool)");
 		return GThreadPoolExterns.g_thread_pool_unprocessed(pool);
 	}
 

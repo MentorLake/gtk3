@@ -70,22 +70,26 @@ public static class GtkLinkButtonHandleExtensions
 {
 	public static string GetUri(this MentorLake.Gtk.GtkLinkButtonHandle link_button)
 	{
+		if (link_button.IsInvalid || link_button.IsClosed) throw new Exception("Invalid or closed handle (GtkLinkButtonHandle)");
 		return GtkLinkButtonHandleExterns.gtk_link_button_get_uri(link_button);
 	}
 
 	public static bool GetVisited(this MentorLake.Gtk.GtkLinkButtonHandle link_button)
 	{
+		if (link_button.IsInvalid || link_button.IsClosed) throw new Exception("Invalid or closed handle (GtkLinkButtonHandle)");
 		return GtkLinkButtonHandleExterns.gtk_link_button_get_visited(link_button);
 	}
 
 	public static T SetUri<T>(this T link_button, string uri) where T : GtkLinkButtonHandle
 	{
+		if (link_button.IsInvalid || link_button.IsClosed) throw new Exception("Invalid or closed handle (GtkLinkButtonHandle)");
 		GtkLinkButtonHandleExterns.gtk_link_button_set_uri(link_button, uri);
 		return link_button;
 	}
 
 	public static T SetVisited<T>(this T link_button, bool visited) where T : GtkLinkButtonHandle
 	{
+		if (link_button.IsInvalid || link_button.IsClosed) throw new Exception("Invalid or closed handle (GtkLinkButtonHandle)");
 		GtkLinkButtonHandleExterns.gtk_link_button_set_visited(link_button, visited);
 		return link_button;
 	}

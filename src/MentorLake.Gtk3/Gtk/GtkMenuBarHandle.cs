@@ -18,22 +18,26 @@ public static class GtkMenuBarHandleExtensions
 {
 	public static MentorLake.Gtk.GtkPackDirection GetChildPackDirection(this MentorLake.Gtk.GtkMenuBarHandle menubar)
 	{
+		if (menubar.IsInvalid || menubar.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuBarHandle)");
 		return GtkMenuBarHandleExterns.gtk_menu_bar_get_child_pack_direction(menubar);
 	}
 
 	public static MentorLake.Gtk.GtkPackDirection GetPackDirection(this MentorLake.Gtk.GtkMenuBarHandle menubar)
 	{
+		if (menubar.IsInvalid || menubar.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuBarHandle)");
 		return GtkMenuBarHandleExterns.gtk_menu_bar_get_pack_direction(menubar);
 	}
 
 	public static T SetChildPackDirection<T>(this T menubar, MentorLake.Gtk.GtkPackDirection child_pack_dir) where T : GtkMenuBarHandle
 	{
+		if (menubar.IsInvalid || menubar.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuBarHandle)");
 		GtkMenuBarHandleExterns.gtk_menu_bar_set_child_pack_direction(menubar, child_pack_dir);
 		return menubar;
 	}
 
 	public static T SetPackDirection<T>(this T menubar, MentorLake.Gtk.GtkPackDirection pack_dir) where T : GtkMenuBarHandle
 	{
+		if (menubar.IsInvalid || menubar.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuBarHandle)");
 		GtkMenuBarHandleExterns.gtk_menu_bar_set_pack_direction(menubar, pack_dir);
 		return menubar;
 	}

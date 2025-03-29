@@ -23,64 +23,75 @@ public static class GtkStylePropertiesHandleExtensions
 {
 	public static T Clear<T>(this T props) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_clear(props);
 		return props;
 	}
 
 	public static T Get<T>(this T props, MentorLake.Gtk.GtkStateFlags state, IntPtr @__arglist) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_get(props, state, @__arglist);
 		return props;
 	}
 
 	public static bool GetProperty(this MentorLake.Gtk.GtkStylePropertiesHandle props, string property, MentorLake.Gtk.GtkStateFlags state, out MentorLake.GObject.GValue value)
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		return GtkStylePropertiesHandleExterns.gtk_style_properties_get_property(props, property, state, out value);
 	}
 
 	public static T GetValist<T>(this T props, MentorLake.Gtk.GtkStateFlags state, IntPtr args) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_get_valist(props, state, args);
 		return props;
 	}
 
 	public static MentorLake.Gtk.GtkSymbolicColorHandle LookupColor(this MentorLake.Gtk.GtkStylePropertiesHandle props, string name)
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		return GtkStylePropertiesHandleExterns.gtk_style_properties_lookup_color(props, name);
 	}
 
 	public static T MapColor<T>(this T props, string name, MentorLake.Gtk.GtkSymbolicColorHandle color) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_map_color(props, name, color);
 		return props;
 	}
 
 	public static T Merge<T>(this T props, MentorLake.Gtk.GtkStylePropertiesHandle props_to_merge, bool replace) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_merge(props, props_to_merge, replace);
 		return props;
 	}
 
 	public static T Set<T>(this T props, MentorLake.Gtk.GtkStateFlags state, IntPtr @__arglist) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_set(props, state, @__arglist);
 		return props;
 	}
 
 	public static T SetProperty<T>(this T props, string property, MentorLake.Gtk.GtkStateFlags state, MentorLake.GObject.GValueHandle value) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_set_property(props, property, state, value);
 		return props;
 	}
 
 	public static T SetValist<T>(this T props, MentorLake.Gtk.GtkStateFlags state, IntPtr args) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_set_valist(props, state, args);
 		return props;
 	}
 
 	public static T UnsetProperty<T>(this T props, string property, MentorLake.Gtk.GtkStateFlags state) where T : GtkStylePropertiesHandle
 	{
+		if (props.IsInvalid || props.IsClosed) throw new Exception("Invalid or closed handle (GtkStylePropertiesHandle)");
 		GtkStylePropertiesHandleExterns.gtk_style_properties_unset_property(props, property, state);
 		return props;
 	}

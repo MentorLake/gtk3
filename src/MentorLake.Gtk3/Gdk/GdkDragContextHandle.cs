@@ -179,62 +179,74 @@ public static class GdkDragContextHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDragAction GetActions(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_actions(context);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetDestWindow(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_dest_window(context);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceHandle GetDevice(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_device(context);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetDragWindow(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_drag_window(context);
 	}
 
 	public static MentorLake.Gdk.GdkDragProtocol GetProtocol(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_protocol(context);
 	}
 
 	public static MentorLake.Gdk.GdkDragAction GetSelectedAction(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_selected_action(context);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetSourceWindow(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_source_window(context);
 	}
 
 	public static MentorLake.Gdk.GdkDragAction GetSuggestedAction(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_get_suggested_action(context);
 	}
 
 	public static MentorLake.GLib.GListHandle ListTargets(this MentorLake.Gdk.GdkDragContextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_list_targets(context);
 	}
 
 	public static bool ManageDnd(this MentorLake.Gdk.GdkDragContextHandle context, MentorLake.Gdk.GdkWindowHandle ipc_window, MentorLake.Gdk.GdkDragAction actions)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		return GdkDragContextHandleExterns.gdk_drag_context_manage_dnd(context, ipc_window, actions);
 	}
 
 	public static T SetDevice<T>(this T context, MentorLake.Gdk.GdkDeviceHandle device) where T : GdkDragContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		GdkDragContextHandleExterns.gdk_drag_context_set_device(context, device);
 		return context;
 	}
 
 	public static T SetHotspot<T>(this T context, int hot_x, int hot_y) where T : GdkDragContextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GdkDragContextHandle)");
 		GdkDragContextHandleExterns.gdk_drag_context_set_hotspot(context, hot_x, hot_y);
 		return context;
 	}

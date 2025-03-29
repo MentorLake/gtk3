@@ -32,61 +32,73 @@ public static class GtkPageSetupHandleExtensions
 {
 	public static MentorLake.Gtk.GtkPageSetupHandle Copy(this MentorLake.Gtk.GtkPageSetupHandle other)
 	{
+		if (other.IsInvalid || other.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_copy(other);
 	}
 
 	public static double GetBottomMargin(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_bottom_margin(setup, unit);
 	}
 
 	public static double GetLeftMargin(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_left_margin(setup, unit);
 	}
 
 	public static MentorLake.Gtk.GtkPageOrientation GetOrientation(this MentorLake.Gtk.GtkPageSetupHandle setup)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_orientation(setup);
 	}
 
 	public static double GetPageHeight(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_page_height(setup, unit);
 	}
 
 	public static double GetPageWidth(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_page_width(setup, unit);
 	}
 
 	public static double GetPaperHeight(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_paper_height(setup, unit);
 	}
 
 	public static MentorLake.Gtk.GtkPaperSizeHandle GetPaperSize(this MentorLake.Gtk.GtkPageSetupHandle setup)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_paper_size(setup);
 	}
 
 	public static double GetPaperWidth(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_paper_width(setup, unit);
 	}
 
 	public static double GetRightMargin(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_right_margin(setup, unit);
 	}
 
 	public static double GetTopMargin(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_top_margin(setup, unit);
 	}
 
 	public static bool LoadFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		var externCallResult = GtkPageSetupHandleExterns.gtk_page_setup_load_file(setup, file_name, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -94,6 +106,7 @@ public static class GtkPageSetupHandleExtensions
 
 	public static bool LoadKeyFile(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.GLib.GKeyFileHandle key_file, string group_name)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		var externCallResult = GtkPageSetupHandleExterns.gtk_page_setup_load_key_file(setup, key_file, group_name, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -101,48 +114,56 @@ public static class GtkPageSetupHandleExtensions
 
 	public static T SetBottomMargin<T>(this T setup, double margin, MentorLake.Gtk.GtkUnit unit) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_bottom_margin(setup, margin, unit);
 		return setup;
 	}
 
 	public static T SetLeftMargin<T>(this T setup, double margin, MentorLake.Gtk.GtkUnit unit) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_left_margin(setup, margin, unit);
 		return setup;
 	}
 
 	public static T SetOrientation<T>(this T setup, MentorLake.Gtk.GtkPageOrientation orientation) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_orientation(setup, orientation);
 		return setup;
 	}
 
 	public static T SetPaperSize<T>(this T setup, MentorLake.Gtk.GtkPaperSizeHandle size) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_paper_size(setup, size);
 		return setup;
 	}
 
 	public static T SetPaperSizeAndDefaultMargins<T>(this T setup, MentorLake.Gtk.GtkPaperSizeHandle size) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_paper_size_and_default_margins(setup, size);
 		return setup;
 	}
 
 	public static T SetRightMargin<T>(this T setup, double margin, MentorLake.Gtk.GtkUnit unit) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_right_margin(setup, margin, unit);
 		return setup;
 	}
 
 	public static T SetTopMargin<T>(this T setup, double margin, MentorLake.Gtk.GtkUnit unit) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_set_top_margin(setup, margin, unit);
 		return setup;
 	}
 
 	public static bool ToFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		var externCallResult = GtkPageSetupHandleExterns.gtk_page_setup_to_file(setup, file_name, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -150,11 +171,13 @@ public static class GtkPageSetupHandleExtensions
 
 	public static MentorLake.GLib.GVariantHandle ToGvariant(this MentorLake.Gtk.GtkPageSetupHandle setup)
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		return GtkPageSetupHandleExterns.gtk_page_setup_to_gvariant(setup);
 	}
 
 	public static T ToKeyFile<T>(this T setup, MentorLake.GLib.GKeyFileHandle key_file, string group_name) where T : GtkPageSetupHandle
 	{
+		if (setup.IsInvalid || setup.IsClosed) throw new Exception("Invalid or closed handle (GtkPageSetupHandle)");
 		GtkPageSetupHandleExterns.gtk_page_setup_to_key_file(setup, key_file, group_name);
 		return setup;
 	}

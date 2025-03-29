@@ -23,31 +23,37 @@ public static class GMappedFileExtensions
 {
 	public static void Free(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		GMappedFileExterns.g_mapped_file_free(file);
 	}
 
 	public static MentorLake.GLib.GBytesHandle GetBytes(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		return GMappedFileExterns.g_mapped_file_get_bytes(file);
 	}
 
 	public static string GetContents(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		return GMappedFileExterns.g_mapped_file_get_contents(file);
 	}
 
 	public static UIntPtr GetLength(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		return GMappedFileExterns.g_mapped_file_get_length(file);
 	}
 
 	public static MentorLake.GLib.GMappedFileHandle Ref(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		return GMappedFileExterns.g_mapped_file_ref(file);
 	}
 
 	public static void Unref(this MentorLake.GLib.GMappedFileHandle file)
 	{
+		if (file.IsInvalid || file.IsClosed) throw new Exception("Invalid or closed handle (GMappedFile)");
 		GMappedFileExterns.g_mapped_file_unref(file);
 	}
 

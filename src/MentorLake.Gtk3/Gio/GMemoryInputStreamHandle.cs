@@ -23,12 +23,14 @@ public static class GMemoryInputStreamHandleExtensions
 {
 	public static T AddBytes<T>(this T stream, MentorLake.GLib.GBytesHandle bytes) where T : GMemoryInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryInputStreamHandle)");
 		GMemoryInputStreamHandleExterns.g_memory_input_stream_add_bytes(stream, bytes);
 		return stream;
 	}
 
 	public static T AddData<T>(this T stream, byte[] data, UIntPtr len, MentorLake.GLib.GDestroyNotify destroy) where T : GMemoryInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryInputStreamHandle)");
 		GMemoryInputStreamHandleExterns.g_memory_input_stream_add_data(stream, data, len, destroy);
 		return stream;
 	}

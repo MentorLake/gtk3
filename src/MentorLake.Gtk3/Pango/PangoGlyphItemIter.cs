@@ -9,31 +9,37 @@ public static class PangoGlyphItemIterExtensions
 {
 	public static MentorLake.Pango.PangoGlyphItemIterHandle Copy(this MentorLake.Pango.PangoGlyphItemIterHandle orig)
 	{
+		if (orig.IsInvalid || orig.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_copy(orig);
 	}
 
 	public static void Free(this MentorLake.Pango.PangoGlyphItemIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		PangoGlyphItemIterExterns.pango_glyph_item_iter_free(iter);
 	}
 
 	public static bool InitEnd(this MentorLake.Pango.PangoGlyphItemIterHandle iter, MentorLake.Pango.PangoGlyphItemHandle glyph_item, string text)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_init_end(iter, glyph_item, text);
 	}
 
 	public static bool InitStart(this MentorLake.Pango.PangoGlyphItemIterHandle iter, MentorLake.Pango.PangoGlyphItemHandle glyph_item, string text)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_init_start(iter, glyph_item, text);
 	}
 
 	public static bool NextCluster(this MentorLake.Pango.PangoGlyphItemIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_next_cluster(iter);
 	}
 
 	public static bool PrevCluster(this MentorLake.Pango.PangoGlyphItemIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoGlyphItemIter)");
 		return PangoGlyphItemIterExterns.pango_glyph_item_iter_prev_cluster(iter);
 	}
 

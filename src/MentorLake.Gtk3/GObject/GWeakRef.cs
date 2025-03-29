@@ -9,21 +9,25 @@ public static class GWeakRefExtensions
 {
 	public static void Clear(this MentorLake.GObject.GWeakRefHandle weak_ref)
 	{
+		if (weak_ref.IsInvalid || weak_ref.IsClosed) throw new Exception("Invalid or closed handle (GWeakRef)");
 		GWeakRefExterns.g_weak_ref_clear(weak_ref);
 	}
 
 	public static MentorLake.GObject.GObjectHandle Get(this MentorLake.GObject.GWeakRefHandle weak_ref)
 	{
+		if (weak_ref.IsInvalid || weak_ref.IsClosed) throw new Exception("Invalid or closed handle (GWeakRef)");
 		return GWeakRefExterns.g_weak_ref_get(weak_ref);
 	}
 
 	public static void Init(this MentorLake.GObject.GWeakRefHandle weak_ref, MentorLake.GObject.GObjectHandle @object)
 	{
+		if (weak_ref.IsInvalid || weak_ref.IsClosed) throw new Exception("Invalid or closed handle (GWeakRef)");
 		GWeakRefExterns.g_weak_ref_init(weak_ref, @object);
 	}
 
 	public static void Set(this MentorLake.GObject.GWeakRefHandle weak_ref, MentorLake.GObject.GObjectHandle @object)
 	{
+		if (weak_ref.IsInvalid || weak_ref.IsClosed) throw new Exception("Invalid or closed handle (GWeakRef)");
 		GWeakRefExterns.g_weak_ref_set(weak_ref, @object);
 	}
 

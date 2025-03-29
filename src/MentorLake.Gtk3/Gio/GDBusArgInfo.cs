@@ -9,11 +9,13 @@ public static class GDBusArgInfoExtensions
 {
 	public static MentorLake.Gio.GDBusArgInfoHandle Ref(this MentorLake.Gio.GDBusArgInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusArgInfo)");
 		return GDBusArgInfoExterns.g_dbus_arg_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusArgInfoHandle info)
 	{
+		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusArgInfo)");
 		GDBusArgInfoExterns.g_dbus_arg_info_unref(info);
 	}
 

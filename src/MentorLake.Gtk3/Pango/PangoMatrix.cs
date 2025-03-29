@@ -9,66 +9,79 @@ public static class PangoMatrixExtensions
 {
 	public static void Concat(this MentorLake.Pango.PangoMatrixHandle matrix, MentorLake.Pango.PangoMatrixHandle new_matrix)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_concat(matrix, new_matrix);
 	}
 
 	public static MentorLake.Pango.PangoMatrixHandle Copy(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		return PangoMatrixExterns.pango_matrix_copy(matrix);
 	}
 
 	public static void Free(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_free(matrix);
 	}
 
 	public static double GetFontScaleFactor(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		return PangoMatrixExterns.pango_matrix_get_font_scale_factor(matrix);
 	}
 
 	public static void GetFontScaleFactors(this MentorLake.Pango.PangoMatrixHandle matrix, out double xscale, out double yscale)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_get_font_scale_factors(matrix, out xscale, out yscale);
 	}
 
 	public static double GetSlantRatio(this MentorLake.Pango.PangoMatrixHandle matrix)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		return PangoMatrixExterns.pango_matrix_get_slant_ratio(matrix);
 	}
 
 	public static void Rotate(this MentorLake.Pango.PangoMatrixHandle matrix, double degrees)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_rotate(matrix, degrees);
 	}
 
 	public static void Scale(this MentorLake.Pango.PangoMatrixHandle matrix, double scale_x, double scale_y)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_scale(matrix, scale_x, scale_y);
 	}
 
 	public static void TransformDistance(this MentorLake.Pango.PangoMatrixHandle matrix, ref double dx, ref double dy)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_transform_distance(matrix, ref dx, ref dy);
 	}
 
 	public static void TransformPixelRectangle(this MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_transform_pixel_rectangle(matrix, ref rect);
 	}
 
 	public static void TransformPoint(this MentorLake.Pango.PangoMatrixHandle matrix, ref double x, ref double y)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_transform_point(matrix, ref x, ref y);
 	}
 
 	public static void TransformRectangle(this MentorLake.Pango.PangoMatrixHandle matrix, ref MentorLake.Pango.PangoRectangle rect)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_transform_rectangle(matrix, ref rect);
 	}
 
 	public static void Translate(this MentorLake.Pango.PangoMatrixHandle matrix, double tx, double ty)
 	{
+		if (matrix.IsInvalid || matrix.IsClosed) throw new Exception("Invalid or closed handle (PangoMatrix)");
 		PangoMatrixExterns.pango_matrix_translate(matrix, tx, ty);
 	}
 

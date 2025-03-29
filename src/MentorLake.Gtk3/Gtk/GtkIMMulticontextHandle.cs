@@ -13,17 +13,20 @@ public static class GtkIMMulticontextHandleExtensions
 {
 	public static T AppendMenuitems<T>(this T context, MentorLake.Gtk.GtkMenuShellHandle menushell) where T : GtkIMMulticontextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
 		GtkIMMulticontextHandleExterns.gtk_im_multicontext_append_menuitems(context, menushell);
 		return context;
 	}
 
 	public static string GetContextId(this MentorLake.Gtk.GtkIMMulticontextHandle context)
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
 		return GtkIMMulticontextHandleExterns.gtk_im_multicontext_get_context_id(context);
 	}
 
 	public static T SetContextId<T>(this T context, string context_id) where T : GtkIMMulticontextHandle
 	{
+		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
 		GtkIMMulticontextHandleExterns.gtk_im_multicontext_set_context_id(context, context_id);
 		return context;
 	}

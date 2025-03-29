@@ -13,6 +13,7 @@ public static class GtkColorSelectionDialogHandleExtensions
 {
 	public static MentorLake.Gtk.GtkWidgetHandle GetColorSelection(this MentorLake.Gtk.GtkColorSelectionDialogHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionDialogHandle)");
 		return GtkColorSelectionDialogHandleExterns.gtk_color_selection_dialog_get_color_selection(colorsel);
 	}
 

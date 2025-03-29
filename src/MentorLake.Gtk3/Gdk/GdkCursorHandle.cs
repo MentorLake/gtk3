@@ -33,31 +33,37 @@ public static class GdkCursorHandleExtensions
 {
 	public static MentorLake.Gdk.GdkCursorType GetCursorType(this MentorLake.Gdk.GdkCursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		return GdkCursorHandleExterns.gdk_cursor_get_cursor_type(cursor);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkCursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		return GdkCursorHandleExterns.gdk_cursor_get_display(cursor);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetImage(this MentorLake.Gdk.GdkCursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		return GdkCursorHandleExterns.gdk_cursor_get_image(cursor);
 	}
 
 	public static MentorLake.cairo.cairo_surface_tHandle GetSurface(this MentorLake.Gdk.GdkCursorHandle cursor, out double x_hot, out double y_hot)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		return GdkCursorHandleExterns.gdk_cursor_get_surface(cursor, out x_hot, out y_hot);
 	}
 
 	public static MentorLake.Gdk.GdkCursorHandle Ref(this MentorLake.Gdk.GdkCursorHandle cursor)
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		return GdkCursorHandleExterns.gdk_cursor_ref(cursor);
 	}
 
 	public static T Unref<T>(this T cursor) where T : GdkCursorHandle
 	{
+		if (cursor.IsInvalid || cursor.IsClosed) throw new Exception("Invalid or closed handle (GdkCursorHandle)");
 		GdkCursorHandleExterns.gdk_cursor_unref(cursor);
 		return cursor;
 	}

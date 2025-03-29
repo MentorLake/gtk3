@@ -8,16 +8,19 @@ public static class AtkObjectFactoryHandleExtensions
 {
 	public static MentorLake.Atk.AtkObjectHandle CreateAccessible(this MentorLake.Atk.AtkObjectFactoryHandle factory, MentorLake.GObject.GObjectHandle obj)
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
 		return AtkObjectFactoryHandleExterns.atk_object_factory_create_accessible(factory, obj);
 	}
 
 	public static MentorLake.GObject.GType GetAccessibleType(this MentorLake.Atk.AtkObjectFactoryHandle factory)
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
 		return AtkObjectFactoryHandleExterns.atk_object_factory_get_accessible_type(factory);
 	}
 
 	public static T Invalidate<T>(this T factory) where T : AtkObjectFactoryHandle
 	{
+		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
 		AtkObjectFactoryHandleExterns.atk_object_factory_invalidate(factory);
 		return factory;
 	}

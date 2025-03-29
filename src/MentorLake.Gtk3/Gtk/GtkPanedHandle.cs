@@ -268,61 +268,72 @@ public static class GtkPanedHandleExtensions
 {
 	public static T Add1<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_add1(paned, child);
 		return paned;
 	}
 
 	public static T Add2<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_add2(paned, child);
 		return paned;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetChild1(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_child1(paned);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetChild2(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_child2(paned);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetHandleWindow(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_handle_window(paned);
 	}
 
 	public static int GetPosition(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_position(paned);
 	}
 
 	public static bool GetWideHandle(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_wide_handle(paned);
 	}
 
 	public static T Pack1<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_pack1(paned, child, resize, shrink);
 		return paned;
 	}
 
 	public static T Pack2<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_pack2(paned, child, resize, shrink);
 		return paned;
 	}
 
 	public static T SetPosition<T>(this T paned, int position) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_set_position(paned, position);
 		return paned;
 	}
 
 	public static T SetWideHandle<T>(this T paned, bool wide) where T : GtkPanedHandle
 	{
+		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_set_wide_handle(paned, wide);
 		return paned;
 	}

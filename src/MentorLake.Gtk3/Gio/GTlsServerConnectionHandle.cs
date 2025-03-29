@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GTlsServerConnectionHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GTlsServerConnectionHandleImpl : BaseSafeHandle, GTlsServerConnectionHandle

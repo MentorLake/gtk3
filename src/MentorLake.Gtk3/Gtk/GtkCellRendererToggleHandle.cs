@@ -65,33 +65,39 @@ public static class GtkCellRendererToggleHandleExtensions
 {
 	public static bool GetActivatable(this MentorLake.Gtk.GtkCellRendererToggleHandle toggle)
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		return GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_get_activatable(toggle);
 	}
 
 	public static bool GetActive(this MentorLake.Gtk.GtkCellRendererToggleHandle toggle)
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		return GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_get_active(toggle);
 	}
 
 	public static bool GetRadio(this MentorLake.Gtk.GtkCellRendererToggleHandle toggle)
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		return GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_get_radio(toggle);
 	}
 
 	public static T SetActivatable<T>(this T toggle, bool setting) where T : GtkCellRendererToggleHandle
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_set_activatable(toggle, setting);
 		return toggle;
 	}
 
 	public static T SetActive<T>(this T toggle, bool setting) where T : GtkCellRendererToggleHandle
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_set_active(toggle, setting);
 		return toggle;
 	}
 
 	public static T SetRadio<T>(this T toggle, bool radio) where T : GtkCellRendererToggleHandle
 	{
+		if (toggle.IsInvalid || toggle.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererToggleHandle)");
 		GtkCellRendererToggleHandleExterns.gtk_cell_renderer_toggle_set_radio(toggle, radio);
 		return toggle;
 	}

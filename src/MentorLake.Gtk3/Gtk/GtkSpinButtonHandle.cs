@@ -229,124 +229,146 @@ public static class GtkSpinButtonHandleExtensions
 {
 	public static T Configure<T>(this T spin_button, MentorLake.Gtk.GtkAdjustmentHandle adjustment, double climb_rate, uint digits) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_configure(spin_button, adjustment, climb_rate, digits);
 		return spin_button;
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetAdjustment(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_adjustment(spin_button);
 	}
 
 	public static uint GetDigits(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_digits(spin_button);
 	}
 
 	public static T GetIncrements<T>(this T spin_button, out double step, out double page) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_get_increments(spin_button, out step, out page);
 		return spin_button;
 	}
 
 	public static bool GetNumeric(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_numeric(spin_button);
 	}
 
 	public static T GetRange<T>(this T spin_button, out double min, out double max) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_get_range(spin_button, out min, out max);
 		return spin_button;
 	}
 
 	public static bool GetSnapToTicks(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_snap_to_ticks(spin_button);
 	}
 
 	public static MentorLake.Gtk.GtkSpinButtonUpdatePolicy GetUpdatePolicy(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_update_policy(spin_button);
 	}
 
 	public static double GetValue(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_value(spin_button);
 	}
 
 	public static int GetValueAsInt(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_value_as_int(spin_button);
 	}
 
 	public static bool GetWrap(this MentorLake.Gtk.GtkSpinButtonHandle spin_button)
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		return GtkSpinButtonHandleExterns.gtk_spin_button_get_wrap(spin_button);
 	}
 
 	public static T SetAdjustment<T>(this T spin_button, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_adjustment(spin_button, adjustment);
 		return spin_button;
 	}
 
 	public static T SetDigits<T>(this T spin_button, uint digits) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_digits(spin_button, digits);
 		return spin_button;
 	}
 
 	public static T SetIncrements<T>(this T spin_button, double step, double page) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_increments(spin_button, step, page);
 		return spin_button;
 	}
 
 	public static T SetNumeric<T>(this T spin_button, bool numeric) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_numeric(spin_button, numeric);
 		return spin_button;
 	}
 
 	public static T SetRange<T>(this T spin_button, double min, double max) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_range(spin_button, min, max);
 		return spin_button;
 	}
 
 	public static T SetSnapToTicks<T>(this T spin_button, bool snap_to_ticks) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_snap_to_ticks(spin_button, snap_to_ticks);
 		return spin_button;
 	}
 
 	public static T SetUpdatePolicy<T>(this T spin_button, MentorLake.Gtk.GtkSpinButtonUpdatePolicy policy) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_update_policy(spin_button, policy);
 		return spin_button;
 	}
 
 	public static T SetValue<T>(this T spin_button, double value) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_value(spin_button, value);
 		return spin_button;
 	}
 
 	public static T SetWrap<T>(this T spin_button, bool wrap) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_set_wrap(spin_button, wrap);
 		return spin_button;
 	}
 
 	public static T Spin<T>(this T spin_button, MentorLake.Gtk.GtkSpinType direction, double increment) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_spin(spin_button, direction, increment);
 		return spin_button;
 	}
 
 	public static T Update<T>(this T spin_button) where T : GtkSpinButtonHandle
 	{
+		if (spin_button.IsInvalid || spin_button.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinButtonHandle)");
 		GtkSpinButtonHandleExterns.gtk_spin_button_update(spin_button);
 		return spin_button;
 	}

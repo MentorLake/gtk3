@@ -89,17 +89,20 @@ public static class GtkRadioMenuItemHandleExtensions
 {
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioMenuItemHandle radio_menu_item)
 	{
+		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
 		return GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_get_group(radio_menu_item);
 	}
 
 	public static T JoinGroup<T>(this T radio_menu_item, MentorLake.Gtk.GtkRadioMenuItemHandle group_source) where T : GtkRadioMenuItemHandle
 	{
+		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
 		GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_join_group(radio_menu_item, group_source);
 		return radio_menu_item;
 	}
 
 	public static T SetGroup<T>(this T radio_menu_item, MentorLake.GLib.GSListHandle group) where T : GtkRadioMenuItemHandle
 	{
+		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
 		GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_set_group(radio_menu_item, group);
 		return radio_menu_item;
 	}

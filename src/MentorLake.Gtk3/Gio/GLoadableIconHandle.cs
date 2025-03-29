@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GLoadableIconHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GLoadableIconHandleImpl : BaseSafeHandle, GLoadableIconHandle
@@ -12,6 +14,7 @@ public static class GLoadableIconHandleExtensions
 {
 	public static MentorLake.Gio.GInputStreamHandle Load(this MentorLake.Gio.GLoadableIconHandle icon, int size, out string type, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GLoadableIconHandle)");
 		var externCallResult = GLoadableIconHandleExterns.g_loadable_icon_load(icon, size, out type, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -19,12 +22,14 @@ public static class GLoadableIconHandleExtensions
 
 	public static T LoadAsync<T>(this T icon, int size, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GLoadableIconHandle
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GLoadableIconHandle)");
 		GLoadableIconHandleExterns.g_loadable_icon_load_async(icon, size, cancellable, callback, user_data);
 		return icon;
 	}
 
 	public static MentorLake.Gio.GInputStreamHandle LoadFinish(this MentorLake.Gio.GLoadableIconHandle icon, MentorLake.Gio.GAsyncResultHandle res, out string type)
 	{
+		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GLoadableIconHandle)");
 		var externCallResult = GLoadableIconHandleExterns.g_loadable_icon_load_finish(icon, res, out type, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

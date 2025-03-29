@@ -9,26 +9,31 @@ public static class GRecMutexExtensions
 {
 	public static void Clear(this MentorLake.GLib.GRecMutexHandle rec_mutex)
 	{
+		if (rec_mutex.IsInvalid || rec_mutex.IsClosed) throw new Exception("Invalid or closed handle (GRecMutex)");
 		GRecMutexExterns.g_rec_mutex_clear(rec_mutex);
 	}
 
 	public static void Init(this MentorLake.GLib.GRecMutexHandle rec_mutex)
 	{
+		if (rec_mutex.IsInvalid || rec_mutex.IsClosed) throw new Exception("Invalid or closed handle (GRecMutex)");
 		GRecMutexExterns.g_rec_mutex_init(rec_mutex);
 	}
 
 	public static void Lock(this MentorLake.GLib.GRecMutexHandle rec_mutex)
 	{
+		if (rec_mutex.IsInvalid || rec_mutex.IsClosed) throw new Exception("Invalid or closed handle (GRecMutex)");
 		GRecMutexExterns.g_rec_mutex_lock(rec_mutex);
 	}
 
 	public static bool Trylock(this MentorLake.GLib.GRecMutexHandle rec_mutex)
 	{
+		if (rec_mutex.IsInvalid || rec_mutex.IsClosed) throw new Exception("Invalid or closed handle (GRecMutex)");
 		return GRecMutexExterns.g_rec_mutex_trylock(rec_mutex);
 	}
 
 	public static void Unlock(this MentorLake.GLib.GRecMutexHandle rec_mutex)
 	{
+		if (rec_mutex.IsInvalid || rec_mutex.IsClosed) throw new Exception("Invalid or closed handle (GRecMutex)");
 		GRecMutexExterns.g_rec_mutex_unlock(rec_mutex);
 	}
 

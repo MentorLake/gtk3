@@ -109,78 +109,92 @@ public static class GtkInfoBarHandleExtensions
 {
 	public static T AddActionWidget<T>(this T info_bar, MentorLake.Gtk.GtkWidgetHandle child, MentorLake.Gtk.GtkResponseType response_id) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_add_action_widget(info_bar, child, response_id);
 		return info_bar;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle AddButton(this MentorLake.Gtk.GtkInfoBarHandle info_bar, string button_text, MentorLake.Gtk.GtkResponseType response_id)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_add_button(info_bar, button_text, response_id);
 	}
 
 	public static T AddButtons<T>(this T info_bar, string first_button_text, IntPtr @__arglist) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_add_buttons(info_bar, first_button_text, @__arglist);
 		return info_bar;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetActionArea(this MentorLake.Gtk.GtkInfoBarHandle info_bar)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_get_action_area(info_bar);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetContentArea(this MentorLake.Gtk.GtkInfoBarHandle info_bar)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_get_content_area(info_bar);
 	}
 
 	public static MentorLake.Gtk.GtkMessageType GetMessageType(this MentorLake.Gtk.GtkInfoBarHandle info_bar)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_get_message_type(info_bar);
 	}
 
 	public static bool GetRevealed(this MentorLake.Gtk.GtkInfoBarHandle info_bar)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_get_revealed(info_bar);
 	}
 
 	public static bool GetShowCloseButton(this MentorLake.Gtk.GtkInfoBarHandle info_bar)
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		return GtkInfoBarHandleExterns.gtk_info_bar_get_show_close_button(info_bar);
 	}
 
 	public static T Response<T>(this T info_bar, MentorLake.Gtk.GtkResponseType response_id) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_response(info_bar, response_id);
 		return info_bar;
 	}
 
 	public static T SetDefaultResponse<T>(this T info_bar, MentorLake.Gtk.GtkResponseType response_id) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_set_default_response(info_bar, response_id);
 		return info_bar;
 	}
 
 	public static T SetMessageType<T>(this T info_bar, MentorLake.Gtk.GtkMessageType message_type) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_set_message_type(info_bar, message_type);
 		return info_bar;
 	}
 
 	public static T SetResponseSensitive<T>(this T info_bar, MentorLake.Gtk.GtkResponseType response_id, bool setting) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_set_response_sensitive(info_bar, response_id, setting);
 		return info_bar;
 	}
 
 	public static T SetRevealed<T>(this T info_bar, bool revealed) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_set_revealed(info_bar, revealed);
 		return info_bar;
 	}
 
 	public static T SetShowCloseButton<T>(this T info_bar, bool setting) where T : GtkInfoBarHandle
 	{
+		if (info_bar.IsInvalid || info_bar.IsClosed) throw new Exception("Invalid or closed handle (GtkInfoBarHandle)");
 		GtkInfoBarHandleExterns.gtk_info_bar_set_show_close_button(info_bar, setting);
 		return info_bar;
 	}

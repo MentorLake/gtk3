@@ -8,6 +8,7 @@ public static class GSocketAddressEnumeratorHandleExtensions
 {
 	public static MentorLake.Gio.GSocketAddressHandle Next(this MentorLake.Gio.GSocketAddressEnumeratorHandle enumerator, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressEnumeratorHandle)");
 		var externCallResult = GSocketAddressEnumeratorHandleExterns.g_socket_address_enumerator_next(enumerator, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -15,12 +16,14 @@ public static class GSocketAddressEnumeratorHandleExtensions
 
 	public static T NextAsync<T>(this T enumerator, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketAddressEnumeratorHandle
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressEnumeratorHandle)");
 		GSocketAddressEnumeratorHandleExterns.g_socket_address_enumerator_next_async(enumerator, cancellable, callback, user_data);
 		return enumerator;
 	}
 
 	public static MentorLake.Gio.GSocketAddressHandle NextFinish(this MentorLake.Gio.GSocketAddressEnumeratorHandle enumerator, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (enumerator.IsInvalid || enumerator.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressEnumeratorHandle)");
 		var externCallResult = GSocketAddressEnumeratorHandleExterns.g_socket_address_enumerator_next_finish(enumerator, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

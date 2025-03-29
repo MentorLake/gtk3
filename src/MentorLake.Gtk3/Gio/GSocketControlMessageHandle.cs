@@ -13,21 +13,25 @@ public static class GSocketControlMessageHandleExtensions
 {
 	public static int GetLevel(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_level(message);
 	}
 
 	public static int GetMsgType(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_msg_type(message);
 	}
 
 	public static UIntPtr GetSize(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_size(message);
 	}
 
 	public static T Serialize<T>(this T message, IntPtr data) where T : GSocketControlMessageHandle
 	{
+		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
 		GSocketControlMessageHandleExterns.g_socket_control_message_serialize(message, data);
 		return message;
 	}

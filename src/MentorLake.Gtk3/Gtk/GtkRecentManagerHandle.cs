@@ -69,26 +69,31 @@ public static class GtkRecentManagerHandleExtensions
 {
 	public static bool AddFull(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, MentorLake.Gtk.GtkRecentDataHandle recent_data)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		return GtkRecentManagerHandleExterns.gtk_recent_manager_add_full(manager, uri, recent_data);
 	}
 
 	public static bool AddItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		return GtkRecentManagerHandleExterns.gtk_recent_manager_add_item(manager, uri);
 	}
 
 	public static MentorLake.GLib.GListHandle GetItems(this MentorLake.Gtk.GtkRecentManagerHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		return GtkRecentManagerHandleExterns.gtk_recent_manager_get_items(manager);
 	}
 
 	public static bool HasItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		return GtkRecentManagerHandleExterns.gtk_recent_manager_has_item(manager, uri);
 	}
 
 	public static MentorLake.Gtk.GtkRecentInfoHandle LookupItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_lookup_item(manager, uri, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -96,6 +101,7 @@ public static class GtkRecentManagerHandleExtensions
 
 	public static bool MoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, string new_uri)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_move_item(manager, uri, new_uri, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -103,6 +109,7 @@ public static class GtkRecentManagerHandleExtensions
 
 	public static int PurgeItems(this MentorLake.Gtk.GtkRecentManagerHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_purge_items(manager, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -110,6 +117,7 @@ public static class GtkRecentManagerHandleExtensions
 
 	public static bool RemoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentManagerHandle)");
 		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_remove_item(manager, uri, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

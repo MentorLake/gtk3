@@ -14,41 +14,49 @@ public static class GStrvBuilderExtensions
 {
 	public static void Add(this MentorLake.GLib.GStrvBuilderHandle builder, string value)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		GStrvBuilderExterns.g_strv_builder_add(builder, value);
 	}
 
 	public static void AddMany(this MentorLake.GLib.GStrvBuilderHandle builder, IntPtr @__arglist)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		GStrvBuilderExterns.g_strv_builder_add_many(builder, @__arglist);
 	}
 
 	public static void Addv(this MentorLake.GLib.GStrvBuilderHandle builder, string[] value)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		GStrvBuilderExterns.g_strv_builder_addv(builder, value);
 	}
 
 	public static string[] End(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		return GStrvBuilderExterns.g_strv_builder_end(builder);
 	}
 
 	public static MentorLake.GLib.GStrvBuilderHandle Ref(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		return GStrvBuilderExterns.g_strv_builder_ref(builder);
 	}
 
 	public static void Take(this MentorLake.GLib.GStrvBuilderHandle builder, string value)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		GStrvBuilderExterns.g_strv_builder_take(builder, value);
 	}
 
 	public static void Unref(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		GStrvBuilderExterns.g_strv_builder_unref(builder);
 	}
 
 	public static string[] UnrefToStrv(this MentorLake.GLib.GStrvBuilderHandle builder)
 	{
+		if (builder.IsInvalid || builder.IsClosed) throw new Exception("Invalid or closed handle (GStrvBuilder)");
 		return GStrvBuilderExterns.g_strv_builder_unref_to_strv(builder);
 	}
 

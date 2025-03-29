@@ -302,170 +302,200 @@ public static class GtkFlowBoxHandleExtensions
 {
 	public static T BindModel<T>(this T box, MentorLake.Gio.GListModelHandle model, MentorLake.Gtk.GtkFlowBoxCreateWidgetFunc create_widget_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_free_func) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_bind_model(box, model, create_widget_func, user_data, user_data_free_func);
 		return box;
 	}
 
 	public static bool GetActivateOnSingleClick(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_activate_on_single_click(box);
 	}
 
 	public static MentorLake.Gtk.GtkFlowBoxChildHandle GetChildAtIndex(this MentorLake.Gtk.GtkFlowBoxHandle box, int idx)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_child_at_index(box, idx);
 	}
 
 	public static MentorLake.Gtk.GtkFlowBoxChildHandle GetChildAtPos(this MentorLake.Gtk.GtkFlowBoxHandle box, int x, int y)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_child_at_pos(box, x, y);
 	}
 
 	public static uint GetColumnSpacing(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_column_spacing(box);
 	}
 
 	public static bool GetHomogeneous(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_homogeneous(box);
 	}
 
 	public static uint GetMaxChildrenPerLine(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_max_children_per_line(box);
 	}
 
 	public static uint GetMinChildrenPerLine(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_min_children_per_line(box);
 	}
 
 	public static uint GetRowSpacing(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_row_spacing(box);
 	}
 
 	public static MentorLake.GLib.GListHandle GetSelectedChildren(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_selected_children(box);
 	}
 
 	public static MentorLake.Gtk.GtkSelectionMode GetSelectionMode(this MentorLake.Gtk.GtkFlowBoxHandle box)
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		return GtkFlowBoxHandleExterns.gtk_flow_box_get_selection_mode(box);
 	}
 
 	public static T Insert<T>(this T box, MentorLake.Gtk.GtkWidgetHandle widget, int position) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_insert(box, widget, position);
 		return box;
 	}
 
 	public static T InvalidateFilter<T>(this T box) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_invalidate_filter(box);
 		return box;
 	}
 
 	public static T InvalidateSort<T>(this T box) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_invalidate_sort(box);
 		return box;
 	}
 
 	public static T SelectAll<T>(this T box) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_select_all(box);
 		return box;
 	}
 
 	public static T SelectChild<T>(this T box, MentorLake.Gtk.GtkFlowBoxChildHandle child) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_select_child(box, child);
 		return box;
 	}
 
 	public static T SelectedForeach<T>(this T box, MentorLake.Gtk.GtkFlowBoxForeachFunc func, IntPtr data) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_selected_foreach(box, func, data);
 		return box;
 	}
 
 	public static T SetActivateOnSingleClick<T>(this T box, bool single) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_activate_on_single_click(box, single);
 		return box;
 	}
 
 	public static T SetColumnSpacing<T>(this T box, uint spacing) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_column_spacing(box, spacing);
 		return box;
 	}
 
 	public static T SetFilterFunc<T>(this T box, MentorLake.Gtk.GtkFlowBoxFilterFunc filter_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_filter_func(box, filter_func, user_data, destroy);
 		return box;
 	}
 
 	public static T SetHadjustment<T>(this T box, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_hadjustment(box, adjustment);
 		return box;
 	}
 
 	public static T SetHomogeneous<T>(this T box, bool homogeneous) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_homogeneous(box, homogeneous);
 		return box;
 	}
 
 	public static T SetMaxChildrenPerLine<T>(this T box, uint n_children) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_max_children_per_line(box, n_children);
 		return box;
 	}
 
 	public static T SetMinChildrenPerLine<T>(this T box, uint n_children) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_min_children_per_line(box, n_children);
 		return box;
 	}
 
 	public static T SetRowSpacing<T>(this T box, uint spacing) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_row_spacing(box, spacing);
 		return box;
 	}
 
 	public static T SetSelectionMode<T>(this T box, MentorLake.Gtk.GtkSelectionMode mode) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_selection_mode(box, mode);
 		return box;
 	}
 
 	public static T SetSortFunc<T>(this T box, MentorLake.Gtk.GtkFlowBoxSortFunc sort_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_sort_func(box, sort_func, user_data, destroy);
 		return box;
 	}
 
 	public static T SetVadjustment<T>(this T box, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_set_vadjustment(box, adjustment);
 		return box;
 	}
 
 	public static T UnselectAll<T>(this T box) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_unselect_all(box);
 		return box;
 	}
 
 	public static T UnselectChild<T>(this T box, MentorLake.Gtk.GtkFlowBoxChildHandle child) where T : GtkFlowBoxHandle
 	{
+		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxHandle)");
 		GtkFlowBoxHandleExterns.gtk_flow_box_unselect_child(box, child);
 		return box;
 	}

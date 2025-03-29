@@ -9,16 +9,19 @@ public static class GPrivateExtensions
 {
 	public static IntPtr Get(this MentorLake.GLib.GPrivateHandle key)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
 		return GPrivateExterns.g_private_get(key);
 	}
 
 	public static void Replace(this MentorLake.GLib.GPrivateHandle key, IntPtr value)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
 		GPrivateExterns.g_private_replace(key, value);
 	}
 
 	public static void Set(this MentorLake.GLib.GPrivateHandle key, IntPtr value)
 	{
+		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
 		GPrivateExterns.g_private_set(key, value);
 	}
 

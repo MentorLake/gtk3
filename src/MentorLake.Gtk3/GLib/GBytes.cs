@@ -29,56 +29,67 @@ public static class GBytesExtensions
 {
 	public static int Compare(this MentorLake.GLib.GBytesHandle bytes1, MentorLake.GLib.GBytesHandle bytes2)
 	{
+		if (bytes1.IsInvalid || bytes1.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_compare(bytes1, bytes2);
 	}
 
 	public static bool Equal(this MentorLake.GLib.GBytesHandle bytes1, MentorLake.GLib.GBytesHandle bytes2)
 	{
+		if (bytes1.IsInvalid || bytes1.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_equal(bytes1, bytes2);
 	}
 
 	public static byte[] GetData(this MentorLake.GLib.GBytesHandle bytes, out UIntPtr size)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_get_data(bytes, out size);
 	}
 
 	public static IntPtr GetRegion(this MentorLake.GLib.GBytesHandle bytes, UIntPtr element_size, UIntPtr offset, UIntPtr n_elements)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_get_region(bytes, element_size, offset, n_elements);
 	}
 
 	public static UIntPtr GetSize(this MentorLake.GLib.GBytesHandle bytes)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_get_size(bytes);
 	}
 
 	public static uint Hash(this MentorLake.GLib.GBytesHandle bytes)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_hash(bytes);
 	}
 
 	public static MentorLake.GLib.GBytesHandle NewFromBytes(this MentorLake.GLib.GBytesHandle bytes, UIntPtr offset, UIntPtr length)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_new_from_bytes(bytes, offset, length);
 	}
 
 	public static MentorLake.GLib.GBytesHandle Ref(this MentorLake.GLib.GBytesHandle bytes)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_ref(bytes);
 	}
 
 	public static void Unref(this MentorLake.GLib.GBytesHandle bytes)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		GBytesExterns.g_bytes_unref(bytes);
 	}
 
 	public static MentorLake.GLib.GByteArrayHandle UnrefToArray(this MentorLake.GLib.GBytesHandle bytes)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_unref_to_array(bytes);
 	}
 
 	public static byte[] UnrefToData(this MentorLake.GLib.GBytesHandle bytes, out UIntPtr size)
 	{
+		if (bytes.IsInvalid || bytes.IsClosed) throw new Exception("Invalid or closed handle (GBytes)");
 		return GBytesExterns.g_bytes_unref_to_data(bytes, out size);
 	}
 

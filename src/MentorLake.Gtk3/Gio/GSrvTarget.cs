@@ -14,31 +14,37 @@ public static class GSrvTargetExtensions
 {
 	public static MentorLake.Gio.GSrvTargetHandle Copy(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_copy(target);
 	}
 
 	public static void Free(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		GSrvTargetExterns.g_srv_target_free(target);
 	}
 
 	public static string GetHostname(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_hostname(target);
 	}
 
 	public static ushort GetPort(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_port(target);
 	}
 
 	public static ushort GetPriority(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_priority(target);
 	}
 
 	public static ushort GetWeight(this MentorLake.Gio.GSrvTargetHandle target)
 	{
+		if (target.IsInvalid || target.IsClosed) throw new Exception("Invalid or closed handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_weight(target);
 	}
 

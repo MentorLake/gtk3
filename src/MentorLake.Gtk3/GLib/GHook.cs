@@ -9,6 +9,7 @@ public static class GHookExtensions
 {
 	public static int CompareIds(this MentorLake.GLib.GHookHandle new_hook, MentorLake.GLib.GHookHandle sibling)
 	{
+		if (new_hook.IsInvalid || new_hook.IsClosed) throw new Exception("Invalid or closed handle (GHook)");
 		return GHookExterns.g_hook_compare_ids(new_hook, sibling);
 	}
 

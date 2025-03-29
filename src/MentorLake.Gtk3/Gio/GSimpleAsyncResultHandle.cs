@@ -33,38 +33,45 @@ public static class GSimpleAsyncResultHandleExtensions
 {
 	public static T Complete<T>(this T simple) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_complete(simple);
 		return simple;
 	}
 
 	public static T CompleteInIdle<T>(this T simple) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_complete_in_idle(simple);
 		return simple;
 	}
 
 	public static bool GetOpResGboolean(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_op_res_gboolean(simple);
 	}
 
 	public static IntPtr GetOpResGpointer(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_op_res_gpointer(simple);
 	}
 
 	public static UIntPtr GetOpResGssize(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_op_res_gssize(simple);
 	}
 
 	public static IntPtr GetSourceTag(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_source_tag(simple);
 	}
 
 	public static bool PropagateError(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		var externCallResult = GSimpleAsyncResultHandleExterns.g_simple_async_result_propagate_error(simple, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -72,60 +79,70 @@ public static class GSimpleAsyncResultHandleExtensions
 
 	public static T RunInThread<T>(this T simple, MentorLake.Gio.GSimpleAsyncThreadFunc func, int io_priority, MentorLake.Gio.GCancellableHandle cancellable) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_run_in_thread(simple, func, io_priority, cancellable);
 		return simple;
 	}
 
 	public static T SetCheckCancellable<T>(this T simple, MentorLake.Gio.GCancellableHandle check_cancellable) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_check_cancellable(simple, check_cancellable);
 		return simple;
 	}
 
 	public static T SetError<T>(this T simple, MentorLake.GLib.GQuark domain, int code, string format, IntPtr @__arglist) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_error(simple, domain, code, format, @__arglist);
 		return simple;
 	}
 
 	public static T SetErrorVa<T>(this T simple, MentorLake.GLib.GQuark domain, int code, string format, IntPtr args) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_error_va(simple, domain, code, format, args);
 		return simple;
 	}
 
 	public static T SetFromError<T>(this T simple, MentorLake.GLib.GErrorHandle error) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_from_error(simple, error);
 		return simple;
 	}
 
 	public static T SetHandleCancellation<T>(this T simple, bool handle_cancellation) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_handle_cancellation(simple, handle_cancellation);
 		return simple;
 	}
 
 	public static T SetOpResGboolean<T>(this T simple, bool op_res) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_op_res_gboolean(simple, op_res);
 		return simple;
 	}
 
 	public static T SetOpResGpointer<T>(this T simple, IntPtr op_res, MentorLake.GLib.GDestroyNotify destroy_op_res) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_op_res_gpointer(simple, op_res, destroy_op_res);
 		return simple;
 	}
 
 	public static T SetOpResGssize<T>(this T simple, UIntPtr op_res) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_set_op_res_gssize(simple, op_res);
 		return simple;
 	}
 
 	public static T TakeError<T>(this T simple, MentorLake.GLib.GErrorHandle error) where T : GSimpleAsyncResultHandle
 	{
+		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleAsyncResultHandle)");
 		GSimpleAsyncResultHandleExterns.g_simple_async_result_take_error(simple, error);
 		return simple;
 	}

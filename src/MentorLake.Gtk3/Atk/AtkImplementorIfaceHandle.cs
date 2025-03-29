@@ -2,6 +2,8 @@ namespace MentorLake.Atk;
 
 public interface AtkImplementorIfaceHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class AtkImplementorIfaceHandleImpl : BaseSafeHandle, AtkImplementorIfaceHandle

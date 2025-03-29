@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GInitableHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GInitableHandleImpl : BaseSafeHandle, GInitableHandle
@@ -12,6 +14,7 @@ public static class GInitableHandleExtensions
 {
 	public static bool Init(this MentorLake.Gio.GInitableHandle initable, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GInitableHandle)");
 		var externCallResult = GInitableHandleExterns.g_initable_init(initable, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

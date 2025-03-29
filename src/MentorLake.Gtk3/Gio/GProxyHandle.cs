@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GProxyHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GProxyHandleImpl : BaseSafeHandle, GProxyHandle
@@ -12,6 +14,7 @@ public static class GProxyHandleExtensions
 {
 	public static MentorLake.Gio.GIOStreamHandle Connect(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GIOStreamHandle connection, MentorLake.Gio.GProxyAddressHandle proxy_address, MentorLake.Gio.GCancellableHandle cancellable)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyHandle)");
 		var externCallResult = GProxyHandleExterns.g_proxy_connect(proxy, connection, proxy_address, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -19,12 +22,14 @@ public static class GProxyHandleExtensions
 
 	public static T ConnectAsync<T>(this T proxy, MentorLake.Gio.GIOStreamHandle connection, MentorLake.Gio.GProxyAddressHandle proxy_address, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GProxyHandle
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyHandle)");
 		GProxyHandleExterns.g_proxy_connect_async(proxy, connection, proxy_address, cancellable, callback, user_data);
 		return proxy;
 	}
 
 	public static MentorLake.Gio.GIOStreamHandle ConnectFinish(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyHandle)");
 		var externCallResult = GProxyHandleExterns.g_proxy_connect_finish(proxy, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -32,6 +37,7 @@ public static class GProxyHandleExtensions
 
 	public static bool SupportsHostname(this MentorLake.Gio.GProxyHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyHandle)");
 		return GProxyHandleExterns.g_proxy_supports_hostname(proxy);
 	}
 

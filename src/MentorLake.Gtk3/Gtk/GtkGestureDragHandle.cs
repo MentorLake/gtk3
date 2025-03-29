@@ -148,11 +148,13 @@ public static class GtkGestureDragHandleExtensions
 {
 	public static bool GetOffset(this MentorLake.Gtk.GtkGestureDragHandle gesture, out double x, out double y)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureDragHandle)");
 		return GtkGestureDragHandleExterns.gtk_gesture_drag_get_offset(gesture, out x, out y);
 	}
 
 	public static bool GetStartPoint(this MentorLake.Gtk.GtkGestureDragHandle gesture, out double x, out double y)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureDragHandle)");
 		return GtkGestureDragHandleExterns.gtk_gesture_drag_get_start_point(gesture, out x, out y);
 	}
 

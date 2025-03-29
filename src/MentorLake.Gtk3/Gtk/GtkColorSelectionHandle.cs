@@ -79,97 +79,114 @@ public static class GtkColorSelectionHandleExtensions
 {
 	public static ushort GetCurrentAlpha(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		return GtkColorSelectionHandleExterns.gtk_color_selection_get_current_alpha(colorsel);
 	}
 
 	public static T GetCurrentColor<T>(this T colorsel, out MentorLake.Gdk.GdkColor color) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_get_current_color(colorsel, out color);
 		return colorsel;
 	}
 
 	public static T GetCurrentRgba<T>(this T colorsel, out MentorLake.Gdk.GdkRGBA rgba) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_get_current_rgba(colorsel, out rgba);
 		return colorsel;
 	}
 
 	public static bool GetHasOpacityControl(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		return GtkColorSelectionHandleExterns.gtk_color_selection_get_has_opacity_control(colorsel);
 	}
 
 	public static bool GetHasPalette(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		return GtkColorSelectionHandleExterns.gtk_color_selection_get_has_palette(colorsel);
 	}
 
 	public static ushort GetPreviousAlpha(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		return GtkColorSelectionHandleExterns.gtk_color_selection_get_previous_alpha(colorsel);
 	}
 
 	public static T GetPreviousColor<T>(this T colorsel, out MentorLake.Gdk.GdkColor color) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_get_previous_color(colorsel, out color);
 		return colorsel;
 	}
 
 	public static T GetPreviousRgba<T>(this T colorsel, out MentorLake.Gdk.GdkRGBA rgba) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_get_previous_rgba(colorsel, out rgba);
 		return colorsel;
 	}
 
 	public static bool IsAdjusting(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		return GtkColorSelectionHandleExterns.gtk_color_selection_is_adjusting(colorsel);
 	}
 
 	public static T SetCurrentAlpha<T>(this T colorsel, ushort alpha) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_current_alpha(colorsel, alpha);
 		return colorsel;
 	}
 
 	public static T SetCurrentColor<T>(this T colorsel, MentorLake.Gdk.GdkColorHandle color) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_current_color(colorsel, color);
 		return colorsel;
 	}
 
 	public static T SetCurrentRgba<T>(this T colorsel, MentorLake.Gdk.GdkRGBAHandle rgba) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_current_rgba(colorsel, rgba);
 		return colorsel;
 	}
 
 	public static T SetHasOpacityControl<T>(this T colorsel, bool has_opacity) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_has_opacity_control(colorsel, has_opacity);
 		return colorsel;
 	}
 
 	public static T SetHasPalette<T>(this T colorsel, bool has_palette) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_has_palette(colorsel, has_palette);
 		return colorsel;
 	}
 
 	public static T SetPreviousAlpha<T>(this T colorsel, ushort alpha) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_previous_alpha(colorsel, alpha);
 		return colorsel;
 	}
 
 	public static T SetPreviousColor<T>(this T colorsel, MentorLake.Gdk.GdkColorHandle color) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_previous_color(colorsel, color);
 		return colorsel;
 	}
 
 	public static T SetPreviousRgba<T>(this T colorsel, MentorLake.Gdk.GdkRGBAHandle rgba) where T : GtkColorSelectionHandle
 	{
+		if (colorsel.IsInvalid || colorsel.IsClosed) throw new Exception("Invalid or closed handle (GtkColorSelectionHandle)");
 		GtkColorSelectionHandleExterns.gtk_color_selection_set_previous_rgba(colorsel, rgba);
 		return colorsel;
 	}

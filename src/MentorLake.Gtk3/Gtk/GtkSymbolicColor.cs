@@ -39,21 +39,25 @@ public static class GtkSymbolicColorExtensions
 {
 	public static MentorLake.Gtk.GtkSymbolicColorHandle Ref(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_ref(color);
 	}
 
 	public static bool Resolve(this MentorLake.Gtk.GtkSymbolicColorHandle color, MentorLake.Gtk.GtkStylePropertiesHandle props, out MentorLake.Gdk.GdkRGBA resolved_color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_resolve(color, props, out resolved_color);
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_to_string(color);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
+		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
 		GtkSymbolicColorExterns.gtk_symbolic_color_unref(color);
 	}
 

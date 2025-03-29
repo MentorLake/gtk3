@@ -65,6 +65,7 @@ public static class GtkGestureZoomHandleExtensions
 {
 	public static double GetScaleDelta(this MentorLake.Gtk.GtkGestureZoomHandle gesture)
 	{
+		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureZoomHandle)");
 		return GtkGestureZoomHandleExterns.gtk_gesture_zoom_get_scale_delta(gesture);
 	}
 

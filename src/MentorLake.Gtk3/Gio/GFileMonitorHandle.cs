@@ -62,22 +62,26 @@ public static class GFileMonitorHandleExtensions
 {
 	public static bool Cancel(this MentorLake.Gio.GFileMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GFileMonitorHandle)");
 		return GFileMonitorHandleExterns.g_file_monitor_cancel(monitor);
 	}
 
 	public static T EmitEvent<T>(this T monitor, MentorLake.Gio.GFileHandle child, MentorLake.Gio.GFileHandle other_file, MentorLake.Gio.GFileMonitorEvent event_type) where T : GFileMonitorHandle
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GFileMonitorHandle)");
 		GFileMonitorHandleExterns.g_file_monitor_emit_event(monitor, child, other_file, event_type);
 		return monitor;
 	}
 
 	public static bool IsCancelled(this MentorLake.Gio.GFileMonitorHandle monitor)
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GFileMonitorHandle)");
 		return GFileMonitorHandleExterns.g_file_monitor_is_cancelled(monitor);
 	}
 
 	public static T SetRateLimit<T>(this T monitor, int limit_msecs) where T : GFileMonitorHandle
 	{
+		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GFileMonitorHandle)");
 		GFileMonitorHandleExterns.g_file_monitor_set_rate_limit(monitor, limit_msecs);
 		return monitor;
 	}

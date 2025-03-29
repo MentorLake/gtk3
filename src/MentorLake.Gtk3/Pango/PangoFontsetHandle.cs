@@ -8,17 +8,20 @@ public static class PangoFontsetHandleExtensions
 {
 	public static T Foreach<T>(this T fontset, MentorLake.Pango.PangoFontsetForeachFunc func, IntPtr data) where T : PangoFontsetHandle
 	{
+		if (fontset.IsInvalid || fontset.IsClosed) throw new Exception("Invalid or closed handle (PangoFontsetHandle)");
 		PangoFontsetHandleExterns.pango_fontset_foreach(fontset, func, data);
 		return fontset;
 	}
 
 	public static MentorLake.Pango.PangoFontHandle GetFont(this MentorLake.Pango.PangoFontsetHandle fontset, uint wc)
 	{
+		if (fontset.IsInvalid || fontset.IsClosed) throw new Exception("Invalid or closed handle (PangoFontsetHandle)");
 		return PangoFontsetHandleExterns.pango_fontset_get_font(fontset, wc);
 	}
 
 	public static MentorLake.Pango.PangoFontMetricsHandle GetMetrics(this MentorLake.Pango.PangoFontsetHandle fontset)
 	{
+		if (fontset.IsInvalid || fontset.IsClosed) throw new Exception("Invalid or closed handle (PangoFontsetHandle)");
 		return PangoFontsetHandleExterns.pango_fontset_get_metrics(fontset);
 	}
 

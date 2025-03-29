@@ -9,36 +9,43 @@ public static class GTimerExtensions
 {
 	public static void Continue(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		GTimerExterns.g_timer_continue(timer);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		GTimerExterns.g_timer_destroy(timer);
 	}
 
 	public static double Elapsed(this MentorLake.GLib.GTimerHandle timer, ulong microseconds)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		return GTimerExterns.g_timer_elapsed(timer, microseconds);
 	}
 
 	public static bool IsActive(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		return GTimerExterns.g_timer_is_active(timer);
 	}
 
 	public static void Reset(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		GTimerExterns.g_timer_reset(timer);
 	}
 
 	public static void Start(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		GTimerExterns.g_timer_start(timer);
 	}
 
 	public static void Stop(this MentorLake.GLib.GTimerHandle timer)
 	{
+		if (timer.IsInvalid || timer.IsClosed) throw new Exception("Invalid or closed handle (GTimer)");
 		GTimerExterns.g_timer_stop(timer);
 	}
 

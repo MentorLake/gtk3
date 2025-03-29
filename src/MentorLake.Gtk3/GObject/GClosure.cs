@@ -19,61 +19,73 @@ public static class GClosureExtensions
 {
 	public static void AddFinalizeNotifier(this MentorLake.GObject.GClosureHandle closure, IntPtr notify_data, MentorLake.GObject.GClosureNotify notify_func)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_add_finalize_notifier(closure, notify_data, notify_func);
 	}
 
 	public static void AddInvalidateNotifier(this MentorLake.GObject.GClosureHandle closure, IntPtr notify_data, MentorLake.GObject.GClosureNotify notify_func)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_add_invalidate_notifier(closure, notify_data, notify_func);
 	}
 
 	public static void AddMarshalGuards(this MentorLake.GObject.GClosureHandle closure, IntPtr pre_marshal_data, MentorLake.GObject.GClosureNotify pre_marshal_notify, IntPtr post_marshal_data, MentorLake.GObject.GClosureNotify post_marshal_notify)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_add_marshal_guards(closure, pre_marshal_data, pre_marshal_notify, post_marshal_data, post_marshal_notify);
 	}
 
 	public static void Invalidate(this MentorLake.GObject.GClosureHandle closure)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_invalidate(closure);
 	}
 
 	public static void Invoke(this MentorLake.GObject.GClosureHandle closure, out MentorLake.GObject.GValue return_value, uint n_param_values, MentorLake.GObject.GValue[] param_values, IntPtr invocation_hint)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_invoke(closure, out return_value, n_param_values, param_values, invocation_hint);
 	}
 
 	public static MentorLake.GObject.GClosureHandle Ref(this MentorLake.GObject.GClosureHandle closure)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		return GClosureExterns.g_closure_ref(closure);
 	}
 
 	public static void RemoveFinalizeNotifier(this MentorLake.GObject.GClosureHandle closure, IntPtr notify_data, MentorLake.GObject.GClosureNotify notify_func)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_remove_finalize_notifier(closure, notify_data, notify_func);
 	}
 
 	public static void RemoveInvalidateNotifier(this MentorLake.GObject.GClosureHandle closure, IntPtr notify_data, MentorLake.GObject.GClosureNotify notify_func)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_remove_invalidate_notifier(closure, notify_data, notify_func);
 	}
 
 	public static void SetMarshal(this MentorLake.GObject.GClosureHandle closure, MentorLake.GObject.GClosureMarshal marshal)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_set_marshal(closure, marshal);
 	}
 
 	public static void SetMetaMarshal(this MentorLake.GObject.GClosureHandle closure, IntPtr marshal_data, MentorLake.GObject.GClosureMarshal meta_marshal)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_set_meta_marshal(closure, marshal_data, meta_marshal);
 	}
 
 	public static void Sink(this MentorLake.GObject.GClosureHandle closure)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_sink(closure);
 	}
 
 	public static void Unref(this MentorLake.GObject.GClosureHandle closure)
 	{
+		if (closure.IsInvalid || closure.IsClosed) throw new Exception("Invalid or closed handle (GClosure)");
 		GClosureExterns.g_closure_unref(closure);
 	}
 

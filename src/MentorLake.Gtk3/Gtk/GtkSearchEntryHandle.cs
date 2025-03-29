@@ -181,6 +181,7 @@ public static class GtkSearchEntryHandleExtensions
 {
 	public static bool HandleEvent(this MentorLake.Gtk.GtkSearchEntryHandle entry, MentorLake.Gdk.GdkEventHandle @event)
 	{
+		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchEntryHandle)");
 		return GtkSearchEntryHandleExterns.gtk_search_entry_handle_event(entry, @event);
 	}
 

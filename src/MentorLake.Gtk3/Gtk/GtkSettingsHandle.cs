@@ -28,30 +28,35 @@ public static class GtkSettingsHandleExtensions
 {
 	public static T ResetProperty<T>(this T settings, string name) where T : GtkSettingsHandle
 	{
+		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GtkSettingsHandle)");
 		GtkSettingsHandleExterns.gtk_settings_reset_property(settings, name);
 		return settings;
 	}
 
 	public static T SetDoubleProperty<T>(this T settings, string name, double v_double, string origin) where T : GtkSettingsHandle
 	{
+		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GtkSettingsHandle)");
 		GtkSettingsHandleExterns.gtk_settings_set_double_property(settings, name, v_double, origin);
 		return settings;
 	}
 
 	public static T SetLongProperty<T>(this T settings, string name, long v_long, string origin) where T : GtkSettingsHandle
 	{
+		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GtkSettingsHandle)");
 		GtkSettingsHandleExterns.gtk_settings_set_long_property(settings, name, v_long, origin);
 		return settings;
 	}
 
 	public static T SetPropertyValue<T>(this T settings, string name, MentorLake.Gtk.GtkSettingsValueHandle svalue) where T : GtkSettingsHandle
 	{
+		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GtkSettingsHandle)");
 		GtkSettingsHandleExterns.gtk_settings_set_property_value(settings, name, svalue);
 		return settings;
 	}
 
 	public static T SetStringProperty<T>(this T settings, string name, string v_string, string origin) where T : GtkSettingsHandle
 	{
+		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GtkSettingsHandle)");
 		GtkSettingsHandleExterns.gtk_settings_set_string_property(settings, name, v_string, origin);
 		return settings;
 	}

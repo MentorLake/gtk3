@@ -187,177 +187,209 @@ public static class GtkScrolledWindowHandleExtensions
 {
 	public static T AddWithViewport<T>(this T scrolled_window, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_add_with_viewport(scrolled_window, child);
 		return scrolled_window;
 	}
 
 	public static bool GetCaptureButtonPress(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_capture_button_press(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetHadjustment(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_hadjustment(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetHscrollbar(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_hscrollbar(scrolled_window);
 	}
 
 	public static bool GetKineticScrolling(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_kinetic_scrolling(scrolled_window);
 	}
 
 	public static int GetMaxContentHeight(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_max_content_height(scrolled_window);
 	}
 
 	public static int GetMaxContentWidth(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_max_content_width(scrolled_window);
 	}
 
 	public static int GetMinContentHeight(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_min_content_height(scrolled_window);
 	}
 
 	public static int GetMinContentWidth(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_min_content_width(scrolled_window);
 	}
 
 	public static bool GetOverlayScrolling(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_overlay_scrolling(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkCornerType GetPlacement(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_placement(scrolled_window);
 	}
 
 	public static T GetPolicy<T>(this T scrolled_window, out MentorLake.Gtk.GtkPolicyType hscrollbar_policy, out MentorLake.Gtk.GtkPolicyType vscrollbar_policy) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_policy(scrolled_window, out hscrollbar_policy, out vscrollbar_policy);
 		return scrolled_window;
 	}
 
 	public static bool GetPropagateNaturalHeight(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_propagate_natural_height(scrolled_window);
 	}
 
 	public static bool GetPropagateNaturalWidth(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_propagate_natural_width(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkShadowType GetShadowType(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_shadow_type(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetVadjustment(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_vadjustment(scrolled_window);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetVscrollbar(this MentorLake.Gtk.GtkScrolledWindowHandle scrolled_window)
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		return GtkScrolledWindowHandleExterns.gtk_scrolled_window_get_vscrollbar(scrolled_window);
 	}
 
 	public static T SetCaptureButtonPress<T>(this T scrolled_window, bool capture_button_press) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_capture_button_press(scrolled_window, capture_button_press);
 		return scrolled_window;
 	}
 
 	public static T SetHadjustment<T>(this T scrolled_window, MentorLake.Gtk.GtkAdjustmentHandle hadjustment) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_hadjustment(scrolled_window, hadjustment);
 		return scrolled_window;
 	}
 
 	public static T SetKineticScrolling<T>(this T scrolled_window, bool kinetic_scrolling) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_kinetic_scrolling(scrolled_window, kinetic_scrolling);
 		return scrolled_window;
 	}
 
 	public static T SetMaxContentHeight<T>(this T scrolled_window, int height) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_max_content_height(scrolled_window, height);
 		return scrolled_window;
 	}
 
 	public static T SetMaxContentWidth<T>(this T scrolled_window, int width) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_max_content_width(scrolled_window, width);
 		return scrolled_window;
 	}
 
 	public static T SetMinContentHeight<T>(this T scrolled_window, int height) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_min_content_height(scrolled_window, height);
 		return scrolled_window;
 	}
 
 	public static T SetMinContentWidth<T>(this T scrolled_window, int width) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_min_content_width(scrolled_window, width);
 		return scrolled_window;
 	}
 
 	public static T SetOverlayScrolling<T>(this T scrolled_window, bool overlay_scrolling) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_overlay_scrolling(scrolled_window, overlay_scrolling);
 		return scrolled_window;
 	}
 
 	public static T SetPlacement<T>(this T scrolled_window, MentorLake.Gtk.GtkCornerType window_placement) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_placement(scrolled_window, window_placement);
 		return scrolled_window;
 	}
 
 	public static T SetPolicy<T>(this T scrolled_window, MentorLake.Gtk.GtkPolicyType hscrollbar_policy, MentorLake.Gtk.GtkPolicyType vscrollbar_policy) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_policy(scrolled_window, hscrollbar_policy, vscrollbar_policy);
 		return scrolled_window;
 	}
 
 	public static T SetPropagateNaturalHeight<T>(this T scrolled_window, bool propagate) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_propagate_natural_height(scrolled_window, propagate);
 		return scrolled_window;
 	}
 
 	public static T SetPropagateNaturalWidth<T>(this T scrolled_window, bool propagate) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_propagate_natural_width(scrolled_window, propagate);
 		return scrolled_window;
 	}
 
 	public static T SetShadowType<T>(this T scrolled_window, MentorLake.Gtk.GtkShadowType type) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_shadow_type(scrolled_window, type);
 		return scrolled_window;
 	}
 
 	public static T SetVadjustment<T>(this T scrolled_window, MentorLake.Gtk.GtkAdjustmentHandle vadjustment) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_set_vadjustment(scrolled_window, vadjustment);
 		return scrolled_window;
 	}
 
 	public static T UnsetPlacement<T>(this T scrolled_window) where T : GtkScrolledWindowHandle
 	{
+		if (scrolled_window.IsInvalid || scrolled_window.IsClosed) throw new Exception("Invalid or closed handle (GtkScrolledWindowHandle)");
 		GtkScrolledWindowHandleExterns.gtk_scrolled_window_unset_placement(scrolled_window);
 		return scrolled_window;
 	}

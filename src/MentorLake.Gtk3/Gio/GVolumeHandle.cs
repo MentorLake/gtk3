@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GVolumeHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GVolumeHandleImpl : BaseSafeHandle, GVolumeHandle
@@ -12,22 +14,26 @@ public static class GVolumeHandleExtensions
 {
 	public static bool CanEject(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_can_eject(volume);
 	}
 
 	public static bool CanMount(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_can_mount(volume);
 	}
 
 	public static T Eject<T>(this T volume, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		GVolumeHandleExterns.g_volume_eject(volume, flags, cancellable, callback, user_data);
 		return volume;
 	}
 
 	public static bool EjectFinish(this MentorLake.Gio.GVolumeHandle volume, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		var externCallResult = GVolumeHandleExterns.g_volume_eject_finish(volume, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -35,12 +41,14 @@ public static class GVolumeHandleExtensions
 
 	public static T EjectWithOperation<T>(this T volume, MentorLake.Gio.GMountUnmountFlags flags, MentorLake.Gio.GMountOperationHandle mount_operation, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		GVolumeHandleExterns.g_volume_eject_with_operation(volume, flags, mount_operation, cancellable, callback, user_data);
 		return volume;
 	}
 
 	public static bool EjectWithOperationFinish(this MentorLake.Gio.GVolumeHandle volume, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		var externCallResult = GVolumeHandleExterns.g_volume_eject_with_operation_finish(volume, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -48,62 +56,74 @@ public static class GVolumeHandleExtensions
 
 	public static string[] EnumerateIdentifiers(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_enumerate_identifiers(volume);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetActivationRoot(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_activation_root(volume);
 	}
 
 	public static MentorLake.Gio.GDriveHandle GetDrive(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_drive(volume);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_icon(volume);
 	}
 
 	public static string GetIdentifier(this MentorLake.Gio.GVolumeHandle volume, string kind)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_identifier(volume, kind);
 	}
 
 	public static MentorLake.Gio.GMountHandle GetMount(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_mount(volume);
 	}
 
 	public static string GetName(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_name(volume);
 	}
 
 	public static string GetSortKey(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_sort_key(volume);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetSymbolicIcon(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_symbolic_icon(volume);
 	}
 
 	public static string GetUuid(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_get_uuid(volume);
 	}
 
 	public static T Mount<T>(this T volume, MentorLake.Gio.GMountMountFlags flags, MentorLake.Gio.GMountOperationHandle mount_operation, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GVolumeHandle
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		GVolumeHandleExterns.g_volume_mount(volume, flags, mount_operation, cancellable, callback, user_data);
 		return volume;
 	}
 
 	public static bool MountFinish(this MentorLake.Gio.GVolumeHandle volume, MentorLake.Gio.GAsyncResultHandle result)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		var externCallResult = GVolumeHandleExterns.g_volume_mount_finish(volume, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -111,6 +131,7 @@ public static class GVolumeHandleExtensions
 
 	public static bool ShouldAutomount(this MentorLake.Gio.GVolumeHandle volume)
 	{
+		if (volume.IsInvalid || volume.IsClosed) throw new Exception("Invalid or closed handle (GVolumeHandle)");
 		return GVolumeHandleExterns.g_volume_should_automount(volume);
 	}
 

@@ -18,34 +18,40 @@ public static class GtkMessageDialogHandleExtensions
 {
 	public static T FormatSecondaryMarkup<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
+		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_format_secondary_markup(message_dialog, message_format, @__arglist);
 		return message_dialog;
 	}
 
 	public static T FormatSecondaryText<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
+		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_format_secondary_text(message_dialog, message_format, @__arglist);
 		return message_dialog;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetImage(this MentorLake.Gtk.GtkMessageDialogHandle dialog)
 	{
+		if (dialog.IsInvalid || dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		return GtkMessageDialogHandleExterns.gtk_message_dialog_get_image(dialog);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMessageArea(this MentorLake.Gtk.GtkMessageDialogHandle message_dialog)
 	{
+		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		return GtkMessageDialogHandleExterns.gtk_message_dialog_get_message_area(message_dialog);
 	}
 
 	public static T SetImage<T>(this T dialog, MentorLake.Gtk.GtkWidgetHandle image) where T : GtkMessageDialogHandle
 	{
+		if (dialog.IsInvalid || dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_set_image(dialog, image);
 		return dialog;
 	}
 
 	public static T SetMarkup<T>(this T message_dialog, string str) where T : GtkMessageDialogHandle
 	{
+		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_set_markup(message_dialog, str);
 		return message_dialog;
 	}

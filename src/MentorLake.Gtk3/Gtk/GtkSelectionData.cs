@@ -9,111 +9,133 @@ public static class GtkSelectionDataExtensions
 {
 	public static MentorLake.Gtk.GtkSelectionDataHandle Copy(this MentorLake.Gtk.GtkSelectionDataHandle data)
 	{
+		if (data.IsInvalid || data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_copy(data);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkSelectionDataHandle data)
 	{
+		if (data.IsInvalid || data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		GtkSelectionDataExterns.gtk_selection_data_free(data);
 	}
 
 	public static byte[] GetData(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_data(selection_data);
 	}
 
 	public static MentorLake.Gdk.GdkAtom GetDataType(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_data_type(selection_data);
 	}
 
 	public static char[] GetDataWithLength(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, out int length)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_data_with_length(selection_data, out length);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_display(selection_data);
 	}
 
 	public static int GetFormat(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_format(selection_data);
 	}
 
 	public static int GetLength(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_length(selection_data);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_pixbuf(selection_data);
 	}
 
 	public static MentorLake.Gdk.GdkAtom GetSelection(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_selection(selection_data);
 	}
 
 	public static MentorLake.Gdk.GdkAtom GetTarget(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_target(selection_data);
 	}
 
 	public static bool GetTargets(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, out MentorLake.Gdk.GdkAtom[] targets, out int n_atoms)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_targets(selection_data, out targets, out n_atoms);
 	}
 
 	public static string GetText(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_text(selection_data);
 	}
 
 	public static string[] GetUris(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_uris(selection_data);
 	}
 
 	public static void Set(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gdk.GdkAtom type, int format, char[] data, int length)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		GtkSelectionDataExterns.gtk_selection_data_set(selection_data, type, format, data, length);
 	}
 
 	public static bool SetPixbuf(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_set_pixbuf(selection_data, pixbuf);
 	}
 
 	public static bool SetText(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, string str, int len)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_set_text(selection_data, str, len);
 	}
 
 	public static bool SetUris(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, string[] uris)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_set_uris(selection_data, uris);
 	}
 
 	public static bool TargetsIncludeImage(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, bool writable)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_targets_include_image(selection_data, writable);
 	}
 
 	public static bool TargetsIncludeRichText(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_targets_include_rich_text(selection_data, buffer);
 	}
 
 	public static bool TargetsIncludeText(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_targets_include_text(selection_data);
 	}
 
 	public static bool TargetsIncludeUri(this MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
+		if (selection_data.IsInvalid || selection_data.IsClosed) throw new Exception("Invalid or closed handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_targets_include_uri(selection_data);
 	}
 

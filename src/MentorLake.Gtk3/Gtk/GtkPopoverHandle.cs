@@ -69,95 +69,112 @@ public static class GtkPopoverHandleExtensions
 {
 	public static T BindModel<T>(this T popover, MentorLake.Gio.GMenuModelHandle model, string action_namespace) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_bind_model(popover, model, action_namespace);
 		return popover;
 	}
 
 	public static MentorLake.Gtk.GtkPopoverConstraint GetConstrainTo(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_constrain_to(popover);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetDefaultWidget(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_default_widget(popover);
 	}
 
 	public static bool GetModal(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_modal(popover);
 	}
 
 	public static bool GetPointingTo(this MentorLake.Gtk.GtkPopoverHandle popover, out MentorLake.Gdk.GdkRectangle rect)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_pointing_to(popover, out rect);
 	}
 
 	public static MentorLake.Gtk.GtkPositionType GetPosition(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_position(popover);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetRelativeTo(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_relative_to(popover);
 	}
 
 	public static bool GetTransitionsEnabled(this MentorLake.Gtk.GtkPopoverHandle popover)
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		return GtkPopoverHandleExterns.gtk_popover_get_transitions_enabled(popover);
 	}
 
 	public static T Popdown<T>(this T popover) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_popdown(popover);
 		return popover;
 	}
 
 	public static T Popup<T>(this T popover) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_popup(popover);
 		return popover;
 	}
 
 	public static T SetConstrainTo<T>(this T popover, MentorLake.Gtk.GtkPopoverConstraint constraint) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_constrain_to(popover, constraint);
 		return popover;
 	}
 
 	public static T SetDefaultWidget<T>(this T popover, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_default_widget(popover, widget);
 		return popover;
 	}
 
 	public static T SetModal<T>(this T popover, bool modal) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_modal(popover, modal);
 		return popover;
 	}
 
 	public static T SetPointingTo<T>(this T popover, MentorLake.Gdk.GdkRectangleHandle rect) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_pointing_to(popover, rect);
 		return popover;
 	}
 
 	public static T SetPosition<T>(this T popover, MentorLake.Gtk.GtkPositionType position) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_position(popover, position);
 		return popover;
 	}
 
 	public static T SetRelativeTo<T>(this T popover, MentorLake.Gtk.GtkWidgetHandle relative_to) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_relative_to(popover, relative_to);
 		return popover;
 	}
 
 	public static T SetTransitionsEnabled<T>(this T popover, bool transitions_enabled) where T : GtkPopoverHandle
 	{
+		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverHandle)");
 		GtkPopoverHandleExterns.gtk_popover_set_transitions_enabled(popover, transitions_enabled);
 		return popover;
 	}

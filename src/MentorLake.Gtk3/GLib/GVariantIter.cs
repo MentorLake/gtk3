@@ -9,36 +9,43 @@ public static class GVariantIterExtensions
 {
 	public static MentorLake.GLib.GVariantIterHandle Copy(this MentorLake.GLib.GVariantIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_copy(iter);
 	}
 
 	public static void Free(this MentorLake.GLib.GVariantIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		GVariantIterExterns.g_variant_iter_free(iter);
 	}
 
 	public static UIntPtr Init(this MentorLake.GLib.GVariantIterHandle iter, MentorLake.GLib.GVariantHandle value)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_init(iter, value);
 	}
 
 	public static bool Loop(this MentorLake.GLib.GVariantIterHandle iter, string format_string, IntPtr @__arglist)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_loop(iter, format_string, @__arglist);
 	}
 
 	public static UIntPtr NChildren(this MentorLake.GLib.GVariantIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_n_children(iter);
 	}
 
 	public static bool Next(this MentorLake.GLib.GVariantIterHandle iter, string format_string, IntPtr @__arglist)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_next(iter, format_string, @__arglist);
 	}
 
 	public static MentorLake.GLib.GVariantHandle NextValue(this MentorLake.GLib.GVariantIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GVariantIter)");
 		return GVariantIterExterns.g_variant_iter_next_value(iter);
 	}
 

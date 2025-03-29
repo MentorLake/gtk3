@@ -343,147 +343,174 @@ public static class GtkStatusIconHandleExtensions
 {
 	public static bool GetGeometry(this MentorLake.Gtk.GtkStatusIconHandle status_icon, out MentorLake.Gdk.GdkScreenHandle screen, out MentorLake.Gdk.GdkRectangle area, out MentorLake.Gtk.GtkOrientation orientation)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_geometry(status_icon, out screen, out area, out orientation);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetGicon(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_gicon(status_icon);
 	}
 
 	public static bool GetHasTooltip(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_has_tooltip(status_icon);
 	}
 
 	public static string GetIconName(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_icon_name(status_icon);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_pixbuf(status_icon);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_screen(status_icon);
 	}
 
 	public static int GetSize(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_size(status_icon);
 	}
 
 	public static string GetStock(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_stock(status_icon);
 	}
 
 	public static MentorLake.Gtk.GtkImageType GetStorageType(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_storage_type(status_icon);
 	}
 
 	public static string GetTitle(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_title(status_icon);
 	}
 
 	public static string GetTooltipMarkup(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_tooltip_markup(status_icon);
 	}
 
 	public static string GetTooltipText(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_tooltip_text(status_icon);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_visible(status_icon);
 	}
 
 	public static uint GetX11WindowId(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_get_x11_window_id(status_icon);
 	}
 
 	public static bool IsEmbedded(this MentorLake.Gtk.GtkStatusIconHandle status_icon)
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		return GtkStatusIconHandleExterns.gtk_status_icon_is_embedded(status_icon);
 	}
 
 	public static T SetFromFile<T>(this T status_icon, string filename) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_file(status_icon, filename);
 		return status_icon;
 	}
 
 	public static T SetFromGicon<T>(this T status_icon, MentorLake.Gio.GIconHandle icon) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_gicon(status_icon, icon);
 		return status_icon;
 	}
 
 	public static T SetFromIconName<T>(this T status_icon, string icon_name) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_icon_name(status_icon, icon_name);
 		return status_icon;
 	}
 
 	public static T SetFromPixbuf<T>(this T status_icon, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_pixbuf(status_icon, pixbuf);
 		return status_icon;
 	}
 
 	public static T SetFromStock<T>(this T status_icon, string stock_id) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_from_stock(status_icon, stock_id);
 		return status_icon;
 	}
 
 	public static T SetHasTooltip<T>(this T status_icon, bool has_tooltip) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_has_tooltip(status_icon, has_tooltip);
 		return status_icon;
 	}
 
 	public static T SetName<T>(this T status_icon, string name) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_name(status_icon, name);
 		return status_icon;
 	}
 
 	public static T SetScreen<T>(this T status_icon, MentorLake.Gdk.GdkScreenHandle screen) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_screen(status_icon, screen);
 		return status_icon;
 	}
 
 	public static T SetTitle<T>(this T status_icon, string title) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_title(status_icon, title);
 		return status_icon;
 	}
 
 	public static T SetTooltipMarkup<T>(this T status_icon, string markup) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_tooltip_markup(status_icon, markup);
 		return status_icon;
 	}
 
 	public static T SetTooltipText<T>(this T status_icon, string text) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_tooltip_text(status_icon, text);
 		return status_icon;
 	}
 
 	public static T SetVisible<T>(this T status_icon, bool visible) where T : GtkStatusIconHandle
 	{
+		if (status_icon.IsInvalid || status_icon.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusIconHandle)");
 		GtkStatusIconHandleExterns.gtk_status_icon_set_visible(status_icon, visible);
 		return status_icon;
 	}

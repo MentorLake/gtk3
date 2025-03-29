@@ -9,26 +9,31 @@ public static class GCacheExtensions
 {
 	public static void Destroy(this MentorLake.GLib.GCacheHandle cache)
 	{
+		if (cache.IsInvalid || cache.IsClosed) throw new Exception("Invalid or closed handle (GCache)");
 		GCacheExterns.g_cache_destroy(cache);
 	}
 
 	public static IntPtr Insert(this MentorLake.GLib.GCacheHandle cache, IntPtr key)
 	{
+		if (cache.IsInvalid || cache.IsClosed) throw new Exception("Invalid or closed handle (GCache)");
 		return GCacheExterns.g_cache_insert(cache, key);
 	}
 
 	public static void KeyForeach(this MentorLake.GLib.GCacheHandle cache, MentorLake.GLib.GHFunc func, IntPtr user_data)
 	{
+		if (cache.IsInvalid || cache.IsClosed) throw new Exception("Invalid or closed handle (GCache)");
 		GCacheExterns.g_cache_key_foreach(cache, func, user_data);
 	}
 
 	public static void Remove(this MentorLake.GLib.GCacheHandle cache, IntPtr value)
 	{
+		if (cache.IsInvalid || cache.IsClosed) throw new Exception("Invalid or closed handle (GCache)");
 		GCacheExterns.g_cache_remove(cache, value);
 	}
 
 	public static void ValueForeach(this MentorLake.GLib.GCacheHandle cache, MentorLake.GLib.GHFunc func, IntPtr user_data)
 	{
+		if (cache.IsInvalid || cache.IsClosed) throw new Exception("Invalid or closed handle (GCache)");
 		GCacheExterns.g_cache_value_foreach(cache, func, user_data);
 	}
 

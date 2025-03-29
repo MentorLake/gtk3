@@ -18,22 +18,26 @@ public static class GBufferedOutputStreamHandleExtensions
 {
 	public static bool GetAutoGrow(this MentorLake.Gio.GBufferedOutputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
 		return GBufferedOutputStreamHandleExterns.g_buffered_output_stream_get_auto_grow(stream);
 	}
 
 	public static UIntPtr GetBufferSize(this MentorLake.Gio.GBufferedOutputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
 		return GBufferedOutputStreamHandleExterns.g_buffered_output_stream_get_buffer_size(stream);
 	}
 
 	public static T SetAutoGrow<T>(this T stream, bool auto_grow) where T : GBufferedOutputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
 		GBufferedOutputStreamHandleExterns.g_buffered_output_stream_set_auto_grow(stream, auto_grow);
 		return stream;
 	}
 
 	public static T SetBufferSize<T>(this T stream, UIntPtr size) where T : GBufferedOutputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
 		GBufferedOutputStreamHandleExterns.g_buffered_output_stream_set_buffer_size(stream, size);
 		return stream;
 	}

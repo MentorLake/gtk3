@@ -8,21 +8,25 @@ public static class GMenuLinkIterHandleExtensions
 {
 	public static string GetName(this MentorLake.Gio.GMenuLinkIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuLinkIterHandle)");
 		return GMenuLinkIterHandleExterns.g_menu_link_iter_get_name(iter);
 	}
 
 	public static bool GetNext(this MentorLake.Gio.GMenuLinkIterHandle iter, out string out_link, out MentorLake.Gio.GMenuModelHandle value)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuLinkIterHandle)");
 		return GMenuLinkIterHandleExterns.g_menu_link_iter_get_next(iter, out out_link, out value);
 	}
 
 	public static MentorLake.Gio.GMenuModelHandle GetValue(this MentorLake.Gio.GMenuLinkIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuLinkIterHandle)");
 		return GMenuLinkIterHandleExterns.g_menu_link_iter_get_value(iter);
 	}
 
 	public static bool Next(this MentorLake.Gio.GMenuLinkIterHandle iter)
 	{
+		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GMenuLinkIterHandle)");
 		return GMenuLinkIterHandleExterns.g_menu_link_iter_next(iter);
 	}
 

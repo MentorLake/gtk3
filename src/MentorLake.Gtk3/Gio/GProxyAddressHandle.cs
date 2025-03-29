@@ -13,36 +13,43 @@ public static class GProxyAddressHandleExtensions
 {
 	public static string GetDestinationHostname(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_hostname(proxy);
 	}
 
 	public static ushort GetDestinationPort(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_port(proxy);
 	}
 
 	public static string GetDestinationProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_protocol(proxy);
 	}
 
 	public static string GetPassword(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_password(proxy);
 	}
 
 	public static string GetProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_protocol(proxy);
 	}
 
 	public static string GetUri(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_uri(proxy);
 	}
 
 	public static string GetUsername(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
+		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_username(proxy);
 	}
 

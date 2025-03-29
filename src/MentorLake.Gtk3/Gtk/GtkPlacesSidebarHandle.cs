@@ -552,138 +552,163 @@ public static class GtkPlacesSidebarHandleExtensions
 {
 	public static T AddShortcut<T>(this T sidebar, MentorLake.Gio.GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_add_shortcut(sidebar, location);
 		return sidebar;
 	}
 
 	public static bool GetLocalOnly(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_local_only(sidebar);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetLocation(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_location(sidebar);
 	}
 
 	public static MentorLake.Gio.GFileHandle GetNthBookmark(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar, int n)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_nth_bookmark(sidebar, n);
 	}
 
 	public static MentorLake.Gtk.GtkPlacesOpenFlags GetOpenFlags(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_open_flags(sidebar);
 	}
 
 	public static bool GetShowConnectToServer(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_connect_to_server(sidebar);
 	}
 
 	public static bool GetShowDesktop(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_desktop(sidebar);
 	}
 
 	public static bool GetShowEnterLocation(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_enter_location(sidebar);
 	}
 
 	public static bool GetShowOtherLocations(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_other_locations(sidebar);
 	}
 
 	public static bool GetShowRecent(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_recent(sidebar);
 	}
 
 	public static bool GetShowStarredLocation(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_starred_location(sidebar);
 	}
 
 	public static bool GetShowTrash(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_get_show_trash(sidebar);
 	}
 
 	public static MentorLake.GLib.GSListHandle ListShortcuts(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar)
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		return GtkPlacesSidebarHandleExterns.gtk_places_sidebar_list_shortcuts(sidebar);
 	}
 
 	public static T RemoveShortcut<T>(this T sidebar, MentorLake.Gio.GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_remove_shortcut(sidebar, location);
 		return sidebar;
 	}
 
 	public static T SetDropTargetsVisible<T>(this T sidebar, bool visible, MentorLake.Gdk.GdkDragContextHandle context) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_drop_targets_visible(sidebar, visible, context);
 		return sidebar;
 	}
 
 	public static T SetLocalOnly<T>(this T sidebar, bool local_only) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_local_only(sidebar, local_only);
 		return sidebar;
 	}
 
 	public static T SetLocation<T>(this T sidebar, MentorLake.Gio.GFileHandle location) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_location(sidebar, location);
 		return sidebar;
 	}
 
 	public static T SetOpenFlags<T>(this T sidebar, MentorLake.Gtk.GtkPlacesOpenFlags flags) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_open_flags(sidebar, flags);
 		return sidebar;
 	}
 
 	public static T SetShowConnectToServer<T>(this T sidebar, bool show_connect_to_server) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_connect_to_server(sidebar, show_connect_to_server);
 		return sidebar;
 	}
 
 	public static T SetShowDesktop<T>(this T sidebar, bool show_desktop) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_desktop(sidebar, show_desktop);
 		return sidebar;
 	}
 
 	public static T SetShowEnterLocation<T>(this T sidebar, bool show_enter_location) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_enter_location(sidebar, show_enter_location);
 		return sidebar;
 	}
 
 	public static T SetShowOtherLocations<T>(this T sidebar, bool show_other_locations) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_other_locations(sidebar, show_other_locations);
 		return sidebar;
 	}
 
 	public static T SetShowRecent<T>(this T sidebar, bool show_recent) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_recent(sidebar, show_recent);
 		return sidebar;
 	}
 
 	public static T SetShowStarredLocation<T>(this T sidebar, bool show_starred_location) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_starred_location(sidebar, show_starred_location);
 		return sidebar;
 	}
 
 	public static T SetShowTrash<T>(this T sidebar, bool show_trash) where T : GtkPlacesSidebarHandle
 	{
+		if (sidebar.IsInvalid || sidebar.IsClosed) throw new Exception("Invalid or closed handle (GtkPlacesSidebarHandle)");
 		GtkPlacesSidebarHandleExterns.gtk_places_sidebar_set_show_trash(sidebar, show_trash);
 		return sidebar;
 	}

@@ -9,61 +9,73 @@ public static class GPathBufExtensions
 {
 	public static void Clear(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		GPathBufExterns.g_path_buf_clear(buf);
 	}
 
 	public static string ClearToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_clear_to_path(buf);
 	}
 
 	public static MentorLake.GLib.GPathBufHandle Copy(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_copy(buf);
 	}
 
 	public static void Free(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		GPathBufExterns.g_path_buf_free(buf);
 	}
 
 	public static string FreeToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_free_to_path(buf);
 	}
 
 	public static MentorLake.GLib.GPathBufHandle Init(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_init(buf);
 	}
 
 	public static MentorLake.GLib.GPathBufHandle InitFromPath(this MentorLake.GLib.GPathBufHandle buf, string path)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_init_from_path(buf, path);
 	}
 
 	public static bool Pop(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_pop(buf);
 	}
 
 	public static MentorLake.GLib.GPathBufHandle Push(this MentorLake.GLib.GPathBufHandle buf, string path)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_push(buf, path);
 	}
 
 	public static bool SetExtension(this MentorLake.GLib.GPathBufHandle buf, string extension)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_set_extension(buf, extension);
 	}
 
 	public static bool SetFilename(this MentorLake.GLib.GPathBufHandle buf, string file_name)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_set_filename(buf, file_name);
 	}
 
 	public static string ToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
+		if (buf.IsInvalid || buf.IsClosed) throw new Exception("Invalid or closed handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_to_path(buf);
 	}
 

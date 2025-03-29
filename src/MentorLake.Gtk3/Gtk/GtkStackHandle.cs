@@ -13,116 +13,137 @@ public static class GtkStackHandleExtensions
 {
 	public static T AddNamed<T>(this T stack, MentorLake.Gtk.GtkWidgetHandle child, string name) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_add_named(stack, child, name);
 		return stack;
 	}
 
 	public static T AddTitled<T>(this T stack, MentorLake.Gtk.GtkWidgetHandle child, string name, string title) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_add_titled(stack, child, name, title);
 		return stack;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetChildByName(this MentorLake.Gtk.GtkStackHandle stack, string name)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_child_by_name(stack, name);
 	}
 
 	public static bool GetHhomogeneous(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_hhomogeneous(stack);
 	}
 
 	public static bool GetHomogeneous(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_homogeneous(stack);
 	}
 
 	public static bool GetInterpolateSize(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_interpolate_size(stack);
 	}
 
 	public static uint GetTransitionDuration(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_transition_duration(stack);
 	}
 
 	public static bool GetTransitionRunning(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_transition_running(stack);
 	}
 
 	public static MentorLake.Gtk.GtkStackTransitionType GetTransitionType(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_transition_type(stack);
 	}
 
 	public static bool GetVhomogeneous(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_vhomogeneous(stack);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetVisibleChild(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_visible_child(stack);
 	}
 
 	public static string GetVisibleChildName(this MentorLake.Gtk.GtkStackHandle stack)
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		return GtkStackHandleExterns.gtk_stack_get_visible_child_name(stack);
 	}
 
 	public static T SetHhomogeneous<T>(this T stack, bool hhomogeneous) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_hhomogeneous(stack, hhomogeneous);
 		return stack;
 	}
 
 	public static T SetHomogeneous<T>(this T stack, bool homogeneous) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_homogeneous(stack, homogeneous);
 		return stack;
 	}
 
 	public static T SetInterpolateSize<T>(this T stack, bool interpolate_size) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_interpolate_size(stack, interpolate_size);
 		return stack;
 	}
 
 	public static T SetTransitionDuration<T>(this T stack, uint duration) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_transition_duration(stack, duration);
 		return stack;
 	}
 
 	public static T SetTransitionType<T>(this T stack, MentorLake.Gtk.GtkStackTransitionType transition) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_transition_type(stack, transition);
 		return stack;
 	}
 
 	public static T SetVhomogeneous<T>(this T stack, bool vhomogeneous) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_vhomogeneous(stack, vhomogeneous);
 		return stack;
 	}
 
 	public static T SetVisibleChild<T>(this T stack, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_visible_child(stack, child);
 		return stack;
 	}
 
 	public static T SetVisibleChildFull<T>(this T stack, string name, MentorLake.Gtk.GtkStackTransitionType transition) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_visible_child_full(stack, name, transition);
 		return stack;
 	}
 
 	public static T SetVisibleChildName<T>(this T stack, string name) where T : GtkStackHandle
 	{
+		if (stack.IsInvalid || stack.IsClosed) throw new Exception("Invalid or closed handle (GtkStackHandle)");
 		GtkStackHandleExterns.gtk_stack_set_visible_child_name(stack, name);
 		return stack;
 	}

@@ -69,33 +69,39 @@ public static class GtkFileChooserButtonHandleExtensions
 {
 	public static bool GetFocusOnClick(this MentorLake.Gtk.GtkFileChooserButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		return GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_get_focus_on_click(button);
 	}
 
 	public static string GetTitle(this MentorLake.Gtk.GtkFileChooserButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		return GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_get_title(button);
 	}
 
 	public static int GetWidthChars(this MentorLake.Gtk.GtkFileChooserButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		return GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_get_width_chars(button);
 	}
 
 	public static T SetFocusOnClick<T>(this T button, bool focus_on_click) where T : GtkFileChooserButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_set_focus_on_click(button, focus_on_click);
 		return button;
 	}
 
 	public static T SetTitle<T>(this T button, string title) where T : GtkFileChooserButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_set_title(button, title);
 		return button;
 	}
 
 	public static T SetWidthChars<T>(this T button, int n_chars) where T : GtkFileChooserButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkFileChooserButtonHandle)");
 		GtkFileChooserButtonHandleExterns.gtk_file_chooser_button_set_width_chars(button, n_chars);
 		return button;
 	}

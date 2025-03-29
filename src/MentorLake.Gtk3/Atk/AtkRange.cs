@@ -14,26 +14,31 @@ public static class AtkRangeExtensions
 {
 	public static MentorLake.Atk.AtkRangeHandle Copy(this MentorLake.Atk.AtkRangeHandle src)
 	{
+		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
 		return AtkRangeExterns.atk_range_copy(src);
 	}
 
 	public static void Free(this MentorLake.Atk.AtkRangeHandle range)
 	{
+		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
 		AtkRangeExterns.atk_range_free(range);
 	}
 
 	public static string GetDescription(this MentorLake.Atk.AtkRangeHandle range)
 	{
+		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_description(range);
 	}
 
 	public static double GetLowerLimit(this MentorLake.Atk.AtkRangeHandle range)
 	{
+		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_lower_limit(range);
 	}
 
 	public static double GetUpperLimit(this MentorLake.Atk.AtkRangeHandle range)
 	{
+		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_upper_limit(range);
 	}
 

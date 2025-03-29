@@ -9,11 +9,13 @@ public static class GtkStockItemExtensions
 {
 	public static MentorLake.Gtk.GtkStockItemHandle Copy(this MentorLake.Gtk.GtkStockItemHandle item)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkStockItem)");
 		return GtkStockItemExterns.gtk_stock_item_copy(item);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkStockItemHandle item)
 	{
+		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkStockItem)");
 		GtkStockItemExterns.gtk_stock_item_free(item);
 	}
 

@@ -9,16 +9,19 @@ public static class GtkCellAreaClassExtensions
 {
 	public static MentorLake.GObject.GParamSpecHandle FindCellProperty(this MentorLake.Gtk.GtkCellAreaClassHandle aclass, string property_name)
 	{
+		if (aclass.IsInvalid || aclass.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaClass)");
 		return GtkCellAreaClassExterns.gtk_cell_area_class_find_cell_property(aclass, property_name);
 	}
 
 	public static void InstallCellProperty(this MentorLake.Gtk.GtkCellAreaClassHandle aclass, uint property_id, MentorLake.GObject.GParamSpecHandle pspec)
 	{
+		if (aclass.IsInvalid || aclass.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaClass)");
 		GtkCellAreaClassExterns.gtk_cell_area_class_install_cell_property(aclass, property_id, pspec);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle[] ListCellProperties(this MentorLake.Gtk.GtkCellAreaClassHandle aclass, out uint n_properties)
 	{
+		if (aclass.IsInvalid || aclass.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaClass)");
 		return GtkCellAreaClassExterns.gtk_cell_area_class_list_cell_properties(aclass, out n_properties);
 	}
 

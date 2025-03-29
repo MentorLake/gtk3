@@ -69,23 +69,27 @@ public static class GtkMenuToolButtonHandleExtensions
 {
 	public static MentorLake.Gtk.GtkWidgetHandle GetMenu(this MentorLake.Gtk.GtkMenuToolButtonHandle button)
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuToolButtonHandle)");
 		return GtkMenuToolButtonHandleExterns.gtk_menu_tool_button_get_menu(button);
 	}
 
 	public static T SetArrowTooltipMarkup<T>(this T button, string markup) where T : GtkMenuToolButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuToolButtonHandle)");
 		GtkMenuToolButtonHandleExterns.gtk_menu_tool_button_set_arrow_tooltip_markup(button, markup);
 		return button;
 	}
 
 	public static T SetArrowTooltipText<T>(this T button, string text) where T : GtkMenuToolButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuToolButtonHandle)");
 		GtkMenuToolButtonHandleExterns.gtk_menu_tool_button_set_arrow_tooltip_text(button, text);
 		return button;
 	}
 
 	public static T SetMenu<T>(this T button, MentorLake.Gtk.GtkWidgetHandle menu) where T : GtkMenuToolButtonHandle
 	{
+		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuToolButtonHandle)");
 		GtkMenuToolButtonHandleExterns.gtk_menu_tool_button_set_menu(button, menu);
 		return button;
 	}

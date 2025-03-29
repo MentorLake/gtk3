@@ -58,110 +58,129 @@ public static class GtkImageHandleExtensions
 {
 	public static T Clear<T>(this T image) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_clear(image);
 		return image;
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle GetAnimation(this MentorLake.Gtk.GtkImageHandle image)
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		return GtkImageHandleExterns.gtk_image_get_animation(image);
 	}
 
 	public static T GetGicon<T>(this T image, out MentorLake.Gio.GIconHandle gicon, out MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_get_gicon(image, out gicon, out size);
 		return image;
 	}
 
 	public static T GetIconName<T>(this T image, out string icon_name, out MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_get_icon_name(image, out icon_name, out size);
 		return image;
 	}
 
 	public static T GetIconSet<T>(this T image, out MentorLake.Gtk.GtkIconSetHandle icon_set, out MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_get_icon_set(image, out icon_set, out size);
 		return image;
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.Gtk.GtkImageHandle image)
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		return GtkImageHandleExterns.gtk_image_get_pixbuf(image);
 	}
 
 	public static int GetPixelSize(this MentorLake.Gtk.GtkImageHandle image)
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		return GtkImageHandleExterns.gtk_image_get_pixel_size(image);
 	}
 
 	public static T GetStock<T>(this T image, out string stock_id, out MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_get_stock(image, out stock_id, out size);
 		return image;
 	}
 
 	public static MentorLake.Gtk.GtkImageType GetStorageType(this MentorLake.Gtk.GtkImageHandle image)
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		return GtkImageHandleExterns.gtk_image_get_storage_type(image);
 	}
 
 	public static T SetFromAnimation<T>(this T image, MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_animation(image, animation);
 		return image;
 	}
 
 	public static T SetFromFile<T>(this T image, string filename) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_file(image, filename);
 		return image;
 	}
 
 	public static T SetFromGicon<T>(this T image, MentorLake.Gio.GIconHandle icon, MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_gicon(image, icon, size);
 		return image;
 	}
 
 	public static T SetFromIconName<T>(this T image, string icon_name, MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_icon_name(image, icon_name, size);
 		return image;
 	}
 
 	public static T SetFromIconSet<T>(this T image, MentorLake.Gtk.GtkIconSetHandle icon_set, MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_icon_set(image, icon_set, size);
 		return image;
 	}
 
 	public static T SetFromPixbuf<T>(this T image, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_pixbuf(image, pixbuf);
 		return image;
 	}
 
 	public static T SetFromResource<T>(this T image, string resource_path) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_resource(image, resource_path);
 		return image;
 	}
 
 	public static T SetFromStock<T>(this T image, string stock_id, MentorLake.Gtk.GtkIconSize size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_stock(image, stock_id, size);
 		return image;
 	}
 
 	public static T SetFromSurface<T>(this T image, MentorLake.cairo.cairo_surface_tHandle surface) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_from_surface(image, surface);
 		return image;
 	}
 
 	public static T SetPixelSize<T>(this T image, int pixel_size) where T : GtkImageHandle
 	{
+		if (image.IsInvalid || image.IsClosed) throw new Exception("Invalid or closed handle (GtkImageHandle)");
 		GtkImageHandleExterns.gtk_image_set_pixel_size(image, pixel_size);
 		return image;
 	}

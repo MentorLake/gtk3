@@ -13,31 +13,37 @@ public static class GtkTextMarkHandleExtensions
 {
 	public static MentorLake.Gtk.GtkTextBufferHandle GetBuffer(this MentorLake.Gtk.GtkTextMarkHandle mark)
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		return GtkTextMarkHandleExterns.gtk_text_mark_get_buffer(mark);
 	}
 
 	public static bool GetDeleted(this MentorLake.Gtk.GtkTextMarkHandle mark)
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		return GtkTextMarkHandleExterns.gtk_text_mark_get_deleted(mark);
 	}
 
 	public static bool GetLeftGravity(this MentorLake.Gtk.GtkTextMarkHandle mark)
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		return GtkTextMarkHandleExterns.gtk_text_mark_get_left_gravity(mark);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkTextMarkHandle mark)
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		return GtkTextMarkHandleExterns.gtk_text_mark_get_name(mark);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkTextMarkHandle mark)
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		return GtkTextMarkHandleExterns.gtk_text_mark_get_visible(mark);
 	}
 
 	public static T SetVisible<T>(this T mark, bool setting) where T : GtkTextMarkHandle
 	{
+		if (mark.IsInvalid || mark.IsClosed) throw new Exception("Invalid or closed handle (GtkTextMarkHandle)");
 		GtkTextMarkHandleExterns.gtk_text_mark_set_visible(mark, setting);
 		return mark;
 	}

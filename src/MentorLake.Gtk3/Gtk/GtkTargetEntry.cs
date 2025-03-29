@@ -14,11 +14,13 @@ public static class GtkTargetEntryExtensions
 {
 	public static MentorLake.Gtk.GtkTargetEntryHandle Copy(this MentorLake.Gtk.GtkTargetEntryHandle data)
 	{
+		if (data.IsInvalid || data.IsClosed) throw new Exception("Invalid or closed handle (GtkTargetEntry)");
 		return GtkTargetEntryExterns.gtk_target_entry_copy(data);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkTargetEntryHandle data)
 	{
+		if (data.IsInvalid || data.IsClosed) throw new Exception("Invalid or closed handle (GtkTargetEntry)");
 		GtkTargetEntryExterns.gtk_target_entry_free(data);
 	}
 

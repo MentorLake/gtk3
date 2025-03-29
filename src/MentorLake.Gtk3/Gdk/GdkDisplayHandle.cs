@@ -274,239 +274,284 @@ public static class GdkDisplayHandleExtensions
 {
 	public static T Beep<T>(this T display) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_beep(display);
 		return display;
 	}
 
 	public static T Close<T>(this T display) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_close(display);
 		return display;
 	}
 
 	public static bool DeviceIsGrabbed(this MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkDeviceHandle device)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_device_is_grabbed(display, device);
 	}
 
 	public static T Flush<T>(this T display) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_flush(display);
 		return display;
 	}
 
 	public static MentorLake.Gdk.GdkAppLaunchContextHandle GetAppLaunchContext(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_app_launch_context(display);
 	}
 
 	public static uint GetDefaultCursorSize(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_default_cursor_size(display);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetDefaultGroup(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_default_group(display);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetDefaultScreen(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_default_screen(display);
 	}
 
 	public static MentorLake.Gdk.GdkSeatHandle GetDefaultSeat(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_default_seat(display);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceManagerHandle GetDeviceManager(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_device_manager(display);
 	}
 
 	public static MentorLake.Gdk.GdkEventHandle GetEvent(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_event(display);
 	}
 
 	public static T GetMaximalCursorSize<T>(this T display, out uint width, out uint height) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_get_maximal_cursor_size(display, out width, out height);
 		return display;
 	}
 
 	public static MentorLake.Gdk.GdkMonitorHandle GetMonitor(this MentorLake.Gdk.GdkDisplayHandle display, int monitor_num)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_monitor(display, monitor_num);
 	}
 
 	public static MentorLake.Gdk.GdkMonitorHandle GetMonitorAtPoint(this MentorLake.Gdk.GdkDisplayHandle display, int x, int y)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_monitor_at_point(display, x, y);
 	}
 
 	public static MentorLake.Gdk.GdkMonitorHandle GetMonitorAtWindow(this MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkWindowHandle window)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_monitor_at_window(display, window);
 	}
 
 	public static int GetNMonitors(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_n_monitors(display);
 	}
 
 	public static int GetNScreens(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_n_screens(display);
 	}
 
 	public static string GetName(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_name(display);
 	}
 
 	public static T GetPointer<T>(this T display, out MentorLake.Gdk.GdkScreenHandle screen, out int x, out int y, out MentorLake.Gdk.GdkModifierType mask) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_get_pointer(display, out screen, out x, out y, out mask);
 		return display;
 	}
 
 	public static MentorLake.Gdk.GdkMonitorHandle GetPrimaryMonitor(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_primary_monitor(display);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gdk.GdkDisplayHandle display, int screen_num)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_screen(display, screen_num);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindowAtPointer(this MentorLake.Gdk.GdkDisplayHandle display, out int win_x, out int win_y)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_get_window_at_pointer(display, out win_x, out win_y);
 	}
 
 	public static bool HasPending(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_has_pending(display);
 	}
 
 	public static bool IsClosed(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_is_closed(display);
 	}
 
 	public static T KeyboardUngrab<T>(this T display, uint time_) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_keyboard_ungrab(display, time_);
 		return display;
 	}
 
 	public static MentorLake.GLib.GListHandle ListDevices(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_list_devices(display);
 	}
 
 	public static MentorLake.GLib.GListHandle ListSeats(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_list_seats(display);
 	}
 
 	public static T NotifyStartupComplete<T>(this T display, string startup_id) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_notify_startup_complete(display, startup_id);
 		return display;
 	}
 
 	public static MentorLake.Gdk.GdkEventHandle PeekEvent(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_peek_event(display);
 	}
 
 	public static bool PointerIsGrabbed(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_pointer_is_grabbed(display);
 	}
 
 	public static T PointerUngrab<T>(this T display, uint time_) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_pointer_ungrab(display, time_);
 		return display;
 	}
 
 	public static T PutEvent<T>(this T display, MentorLake.Gdk.GdkEventHandle @event) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_put_event(display, @event);
 		return display;
 	}
 
 	public static bool RequestSelectionNotification(this MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom selection)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_request_selection_notification(display, selection);
 	}
 
 	public static T SetDoubleClickDistance<T>(this T display, uint distance) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_set_double_click_distance(display, distance);
 		return display;
 	}
 
 	public static T SetDoubleClickTime<T>(this T display, uint msec) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_set_double_click_time(display, msec);
 		return display;
 	}
 
 	public static T StoreClipboard<T>(this T display, MentorLake.Gdk.GdkWindowHandle clipboard_window, uint time_, MentorLake.Gdk.GdkAtom[] targets, int n_targets) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_store_clipboard(display, clipboard_window, time_, targets, n_targets);
 		return display;
 	}
 
 	public static bool SupportsClipboardPersistence(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_clipboard_persistence(display);
 	}
 
 	public static bool SupportsComposite(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_composite(display);
 	}
 
 	public static bool SupportsCursorAlpha(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_cursor_alpha(display);
 	}
 
 	public static bool SupportsCursorColor(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_cursor_color(display);
 	}
 
 	public static bool SupportsInputShapes(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_input_shapes(display);
 	}
 
 	public static bool SupportsSelectionNotification(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_selection_notification(display);
 	}
 
 	public static bool SupportsShapes(this MentorLake.Gdk.GdkDisplayHandle display)
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		return GdkDisplayHandleExterns.gdk_display_supports_shapes(display);
 	}
 
 	public static T Sync<T>(this T display) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_sync(display);
 		return display;
 	}
 
 	public static T WarpPointer<T>(this T display, MentorLake.Gdk.GdkScreenHandle screen, int x, int y) where T : GdkDisplayHandle
 	{
+		if (display.IsInvalid || display.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayHandle)");
 		GdkDisplayHandleExterns.gdk_display_warp_pointer(display, screen, x, y);
 		return display;
 	}

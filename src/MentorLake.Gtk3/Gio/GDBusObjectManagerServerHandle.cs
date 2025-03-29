@@ -13,34 +13,40 @@ public static class GDBusObjectManagerServerHandleExtensions
 {
 	public static T Export<T>(this T manager, MentorLake.Gio.GDBusObjectSkeletonHandle @object) where T : GDBusObjectManagerServerHandle
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_export(manager, @object);
 		return manager;
 	}
 
 	public static T ExportUniquely<T>(this T manager, MentorLake.Gio.GDBusObjectSkeletonHandle @object) where T : GDBusObjectManagerServerHandle
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_export_uniquely(manager, @object);
 		return manager;
 	}
 
 	public static MentorLake.Gio.GDBusConnectionHandle GetConnection(this MentorLake.Gio.GDBusObjectManagerServerHandle manager)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		return GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_get_connection(manager);
 	}
 
 	public static bool IsExported(this MentorLake.Gio.GDBusObjectManagerServerHandle manager, MentorLake.Gio.GDBusObjectSkeletonHandle @object)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		return GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_is_exported(manager, @object);
 	}
 
 	public static T SetConnection<T>(this T manager, MentorLake.Gio.GDBusConnectionHandle connection) where T : GDBusObjectManagerServerHandle
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_set_connection(manager, connection);
 		return manager;
 	}
 
 	public static bool Unexport(this MentorLake.Gio.GDBusObjectManagerServerHandle manager, string object_path)
 	{
+		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectManagerServerHandle)");
 		return GDBusObjectManagerServerHandleExterns.g_dbus_object_manager_server_unexport(manager, object_path);
 	}
 

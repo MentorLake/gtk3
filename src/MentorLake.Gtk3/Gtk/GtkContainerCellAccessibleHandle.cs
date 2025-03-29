@@ -13,17 +13,20 @@ public static class GtkContainerCellAccessibleHandleExtensions
 {
 	public static T AddChild<T>(this T container, MentorLake.Gtk.GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{
+		if (container.IsInvalid || container.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerCellAccessibleHandle)");
 		GtkContainerCellAccessibleHandleExterns.gtk_container_cell_accessible_add_child(container, child);
 		return container;
 	}
 
 	public static MentorLake.GLib.GListHandle GetChildren(this MentorLake.Gtk.GtkContainerCellAccessibleHandle container)
 	{
+		if (container.IsInvalid || container.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerCellAccessibleHandle)");
 		return GtkContainerCellAccessibleHandleExterns.gtk_container_cell_accessible_get_children(container);
 	}
 
 	public static T RemoveChild<T>(this T container, MentorLake.Gtk.GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{
+		if (container.IsInvalid || container.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerCellAccessibleHandle)");
 		GtkContainerCellAccessibleHandleExterns.gtk_container_cell_accessible_remove_child(container, child);
 		return container;
 	}

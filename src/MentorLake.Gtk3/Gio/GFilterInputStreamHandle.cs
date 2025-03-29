@@ -8,16 +8,19 @@ public static class GFilterInputStreamHandleExtensions
 {
 	public static MentorLake.Gio.GInputStreamHandle GetBaseStream(this MentorLake.Gio.GFilterInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GFilterInputStreamHandle)");
 		return GFilterInputStreamHandleExterns.g_filter_input_stream_get_base_stream(stream);
 	}
 
 	public static bool GetCloseBaseStream(this MentorLake.Gio.GFilterInputStreamHandle stream)
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GFilterInputStreamHandle)");
 		return GFilterInputStreamHandleExterns.g_filter_input_stream_get_close_base_stream(stream);
 	}
 
 	public static T SetCloseBaseStream<T>(this T stream, bool close_base) where T : GFilterInputStreamHandle
 	{
+		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GFilterInputStreamHandle)");
 		GFilterInputStreamHandleExterns.g_filter_input_stream_set_close_base_stream(stream, close_base);
 		return stream;
 	}

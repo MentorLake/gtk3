@@ -67,23 +67,27 @@ public static class GtkOverlayHandleExtensions
 {
 	public static T AddOverlay<T>(this T overlay, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkOverlayHandle
 	{
+		if (overlay.IsInvalid || overlay.IsClosed) throw new Exception("Invalid or closed handle (GtkOverlayHandle)");
 		GtkOverlayHandleExterns.gtk_overlay_add_overlay(overlay, widget);
 		return overlay;
 	}
 
 	public static bool GetOverlayPassThrough(this MentorLake.Gtk.GtkOverlayHandle overlay, MentorLake.Gtk.GtkWidgetHandle widget)
 	{
+		if (overlay.IsInvalid || overlay.IsClosed) throw new Exception("Invalid or closed handle (GtkOverlayHandle)");
 		return GtkOverlayHandleExterns.gtk_overlay_get_overlay_pass_through(overlay, widget);
 	}
 
 	public static T ReorderOverlay<T>(this T overlay, MentorLake.Gtk.GtkWidgetHandle child, int index_) where T : GtkOverlayHandle
 	{
+		if (overlay.IsInvalid || overlay.IsClosed) throw new Exception("Invalid or closed handle (GtkOverlayHandle)");
 		GtkOverlayHandleExterns.gtk_overlay_reorder_overlay(overlay, child, index_);
 		return overlay;
 	}
 
 	public static T SetOverlayPassThrough<T>(this T overlay, MentorLake.Gtk.GtkWidgetHandle widget, bool pass_through) where T : GtkOverlayHandle
 	{
+		if (overlay.IsInvalid || overlay.IsClosed) throw new Exception("Invalid or closed handle (GtkOverlayHandle)");
 		GtkOverlayHandleExterns.gtk_overlay_set_overlay_pass_through(overlay, widget, pass_through);
 		return overlay;
 	}

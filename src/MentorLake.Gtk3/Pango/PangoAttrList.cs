@@ -14,66 +14,79 @@ public static class PangoAttrListExtensions
 {
 	public static void Change(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_change(list, attr);
 	}
 
 	public static MentorLake.Pango.PangoAttrListHandle Copy(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_copy(list);
 	}
 
 	public static bool Equal(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrListHandle other_list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_equal(list, other_list);
 	}
 
 	public static MentorLake.Pango.PangoAttrListHandle Filter(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrFilterFunc func, IntPtr data)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_filter(list, func, data);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetAttributes(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_get_attributes(list);
 	}
 
 	public static MentorLake.Pango.PangoAttrIteratorHandle GetIterator(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_get_iterator(list);
 	}
 
 	public static void Insert(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_insert(list, attr);
 	}
 
 	public static void InsertBefore(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttributeHandle attr)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_insert_before(list, attr);
 	}
 
 	public static MentorLake.Pango.PangoAttrListHandle Ref(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_ref(list);
 	}
 
 	public static void Splice(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrListHandle other, int pos, int len)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_splice(list, other, pos, len);
 	}
 
 	public static string ToString(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		return PangoAttrListExterns.pango_attr_list_to_string(list);
 	}
 
 	public static void Unref(this MentorLake.Pango.PangoAttrListHandle list)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_unref(list);
 	}
 
 	public static void Update(this MentorLake.Pango.PangoAttrListHandle list, int pos, int remove, int add)
 	{
+		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrList)");
 		PangoAttrListExterns.pango_attr_list_update(list, pos, remove, add);
 	}
 

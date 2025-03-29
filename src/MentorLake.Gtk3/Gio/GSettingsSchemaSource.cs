@@ -16,21 +16,25 @@ public static class GSettingsSchemaSourceExtensions
 {
 	public static void ListSchemas(this MentorLake.Gio.GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaSource)");
 		GSettingsSchemaSourceExterns.g_settings_schema_source_list_schemas(source, recursive, out non_relocatable, out relocatable);
 	}
 
 	public static MentorLake.Gio.GSettingsSchemaHandle Lookup(this MentorLake.Gio.GSettingsSchemaSourceHandle source, string schema_id, bool recursive)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaSource)");
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_lookup(source, schema_id, recursive);
 	}
 
 	public static MentorLake.Gio.GSettingsSchemaSourceHandle Ref(this MentorLake.Gio.GSettingsSchemaSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaSource)");
 		return GSettingsSchemaSourceExterns.g_settings_schema_source_ref(source);
 	}
 
 	public static void Unref(this MentorLake.Gio.GSettingsSchemaSourceHandle source)
 	{
+		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GSettingsSchemaSource)");
 		GSettingsSchemaSourceExterns.g_settings_schema_source_unref(source);
 	}
 

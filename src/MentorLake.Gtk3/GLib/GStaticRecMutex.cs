@@ -9,36 +9,43 @@ public static class GStaticRecMutexExtensions
 {
 	public static void Free(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		GStaticRecMutexExterns.g_static_rec_mutex_free(mutex);
 	}
 
 	public static void Init(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		GStaticRecMutexExterns.g_static_rec_mutex_init(mutex);
 	}
 
 	public static void Lock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		GStaticRecMutexExterns.g_static_rec_mutex_lock(mutex);
 	}
 
 	public static void LockFull(this MentorLake.GLib.GStaticRecMutexHandle mutex, uint depth)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		GStaticRecMutexExterns.g_static_rec_mutex_lock_full(mutex, depth);
 	}
 
 	public static bool Trylock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		return GStaticRecMutexExterns.g_static_rec_mutex_trylock(mutex);
 	}
 
 	public static void Unlock(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		GStaticRecMutexExterns.g_static_rec_mutex_unlock(mutex);
 	}
 
 	public static uint UnlockFull(this MentorLake.GLib.GStaticRecMutexHandle mutex)
 	{
+		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticRecMutex)");
 		return GStaticRecMutexExterns.g_static_rec_mutex_unlock_full(mutex);
 	}
 

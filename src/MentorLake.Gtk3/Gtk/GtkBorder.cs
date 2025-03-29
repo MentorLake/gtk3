@@ -14,11 +14,13 @@ public static class GtkBorderExtensions
 {
 	public static MentorLake.Gtk.GtkBorderHandle Copy(this MentorLake.Gtk.GtkBorderHandle border_)
 	{
+		if (border_.IsInvalid || border_.IsClosed) throw new Exception("Invalid or closed handle (GtkBorder)");
 		return GtkBorderExterns.gtk_border_copy(border_);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkBorderHandle border_)
 	{
+		if (border_.IsInvalid || border_.IsClosed) throw new Exception("Invalid or closed handle (GtkBorder)");
 		GtkBorderExterns.gtk_border_free(border_);
 	}
 

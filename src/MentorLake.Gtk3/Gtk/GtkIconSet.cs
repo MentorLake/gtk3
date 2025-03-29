@@ -19,41 +19,49 @@ public static class GtkIconSetExtensions
 {
 	public static void AddSource(this MentorLake.Gtk.GtkIconSetHandle icon_set, MentorLake.Gtk.GtkIconSourceHandle source)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		GtkIconSetExterns.gtk_icon_set_add_source(icon_set, source);
 	}
 
 	public static MentorLake.Gtk.GtkIconSetHandle Copy(this MentorLake.Gtk.GtkIconSetHandle icon_set)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		return GtkIconSetExterns.gtk_icon_set_copy(icon_set);
 	}
 
 	public static void GetSizes(this MentorLake.Gtk.GtkIconSetHandle icon_set, out MentorLake.Gtk.GtkIconSize[] sizes, out int n_sizes)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		GtkIconSetExterns.gtk_icon_set_get_sizes(icon_set, out sizes, out n_sizes);
 	}
 
 	public static MentorLake.Gtk.GtkIconSetHandle Ref(this MentorLake.Gtk.GtkIconSetHandle icon_set)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		return GtkIconSetExterns.gtk_icon_set_ref(icon_set);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle RenderIcon(this MentorLake.Gtk.GtkIconSetHandle icon_set, MentorLake.Gtk.GtkStyleHandle style, MentorLake.Gtk.GtkTextDirection direction, MentorLake.Gtk.GtkStateType state, MentorLake.Gtk.GtkIconSize size, MentorLake.Gtk.GtkWidgetHandle widget, string detail)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		return GtkIconSetExterns.gtk_icon_set_render_icon(icon_set, style, direction, state, size, widget, detail);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle RenderIconPixbuf(this MentorLake.Gtk.GtkIconSetHandle icon_set, MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gtk.GtkIconSize size)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		return GtkIconSetExterns.gtk_icon_set_render_icon_pixbuf(icon_set, context, size);
 	}
 
 	public static MentorLake.cairo.cairo_surface_tHandle RenderIconSurface(this MentorLake.Gtk.GtkIconSetHandle icon_set, MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gtk.GtkIconSize size, int scale, MentorLake.Gdk.GdkWindowHandle for_window)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		return GtkIconSetExterns.gtk_icon_set_render_icon_surface(icon_set, context, size, scale, for_window);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkIconSetHandle icon_set)
 	{
+		if (icon_set.IsInvalid || icon_set.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSet)");
 		GtkIconSetExterns.gtk_icon_set_unref(icon_set);
 	}
 

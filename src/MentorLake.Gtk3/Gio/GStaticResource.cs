@@ -9,16 +9,19 @@ public static class GStaticResourceExtensions
 {
 	public static void Fini(this MentorLake.Gio.GStaticResourceHandle static_resource)
 	{
+		if (static_resource.IsInvalid || static_resource.IsClosed) throw new Exception("Invalid or closed handle (GStaticResource)");
 		GStaticResourceExterns.g_static_resource_fini(static_resource);
 	}
 
 	public static MentorLake.Gio.GResourceHandle GetResource(this MentorLake.Gio.GStaticResourceHandle static_resource)
 	{
+		if (static_resource.IsInvalid || static_resource.IsClosed) throw new Exception("Invalid or closed handle (GStaticResource)");
 		return GStaticResourceExterns.g_static_resource_get_resource(static_resource);
 	}
 
 	public static void Init(this MentorLake.Gio.GStaticResourceHandle static_resource)
 	{
+		if (static_resource.IsInvalid || static_resource.IsClosed) throw new Exception("Invalid or closed handle (GStaticResource)");
 		GStaticResourceExterns.g_static_resource_init(static_resource);
 	}
 

@@ -298,80 +298,94 @@ public static class GtkCalendarHandleExtensions
 {
 	public static T ClearMarks<T>(this T calendar) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_clear_marks(calendar);
 		return calendar;
 	}
 
 	public static T GetDate<T>(this T calendar, out uint year, out uint month, out uint day) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_get_date(calendar, out year, out month, out day);
 		return calendar;
 	}
 
 	public static bool GetDayIsMarked(this MentorLake.Gtk.GtkCalendarHandle calendar, uint day)
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		return GtkCalendarHandleExterns.gtk_calendar_get_day_is_marked(calendar, day);
 	}
 
 	public static int GetDetailHeightRows(this MentorLake.Gtk.GtkCalendarHandle calendar)
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		return GtkCalendarHandleExterns.gtk_calendar_get_detail_height_rows(calendar);
 	}
 
 	public static int GetDetailWidthChars(this MentorLake.Gtk.GtkCalendarHandle calendar)
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		return GtkCalendarHandleExterns.gtk_calendar_get_detail_width_chars(calendar);
 	}
 
 	public static MentorLake.Gtk.GtkCalendarDisplayOptions GetDisplayOptions(this MentorLake.Gtk.GtkCalendarHandle calendar)
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		return GtkCalendarHandleExterns.gtk_calendar_get_display_options(calendar);
 	}
 
 	public static T MarkDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_mark_day(calendar, day);
 		return calendar;
 	}
 
 	public static T SelectDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_select_day(calendar, day);
 		return calendar;
 	}
 
 	public static T SelectMonth<T>(this T calendar, uint month, uint year) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_select_month(calendar, month, year);
 		return calendar;
 	}
 
 	public static T SetDetailFunc<T>(this T calendar, MentorLake.Gtk.GtkCalendarDetailFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_set_detail_func(calendar, func, data, destroy);
 		return calendar;
 	}
 
 	public static T SetDetailHeightRows<T>(this T calendar, int rows) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_set_detail_height_rows(calendar, rows);
 		return calendar;
 	}
 
 	public static T SetDetailWidthChars<T>(this T calendar, int chars) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_set_detail_width_chars(calendar, chars);
 		return calendar;
 	}
 
 	public static T SetDisplayOptions<T>(this T calendar, MentorLake.Gtk.GtkCalendarDisplayOptions flags) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_set_display_options(calendar, flags);
 		return calendar;
 	}
 
 	public static T UnmarkDay<T>(this T calendar, uint day) where T : GtkCalendarHandle
 	{
+		if (calendar.IsInvalid || calendar.IsClosed) throw new Exception("Invalid or closed handle (GtkCalendarHandle)");
 		GtkCalendarHandleExterns.gtk_calendar_unmark_day(calendar, day);
 		return calendar;
 	}

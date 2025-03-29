@@ -2,6 +2,8 @@ namespace MentorLake.Gio;
 
 public interface GActionMapHandle
 {
+	public bool IsInvalid { get; }
+	public bool IsClosed { get; }
 }
 
 internal class GActionMapHandleImpl : BaseSafeHandle, GActionMapHandle
@@ -12,29 +14,34 @@ public static class GActionMapHandleExtensions
 {
 	public static T AddAction<T>(this T action_map, MentorLake.Gio.GActionHandle action) where T : GActionMapHandle
 	{
+		if (action_map.IsInvalid || action_map.IsClosed) throw new Exception("Invalid or closed handle (GActionMapHandle)");
 		GActionMapHandleExterns.g_action_map_add_action(action_map, action);
 		return action_map;
 	}
 
 	public static T AddActionEntries<T>(this T action_map, MentorLake.Gio.GActionEntryHandle[] entries, int n_entries, IntPtr user_data) where T : GActionMapHandle
 	{
+		if (action_map.IsInvalid || action_map.IsClosed) throw new Exception("Invalid or closed handle (GActionMapHandle)");
 		GActionMapHandleExterns.g_action_map_add_action_entries(action_map, entries, n_entries, user_data);
 		return action_map;
 	}
 
 	public static MentorLake.Gio.GActionHandle LookupAction(this MentorLake.Gio.GActionMapHandle action_map, string action_name)
 	{
+		if (action_map.IsInvalid || action_map.IsClosed) throw new Exception("Invalid or closed handle (GActionMapHandle)");
 		return GActionMapHandleExterns.g_action_map_lookup_action(action_map, action_name);
 	}
 
 	public static T RemoveAction<T>(this T action_map, string action_name) where T : GActionMapHandle
 	{
+		if (action_map.IsInvalid || action_map.IsClosed) throw new Exception("Invalid or closed handle (GActionMapHandle)");
 		GActionMapHandleExterns.g_action_map_remove_action(action_map, action_name);
 		return action_map;
 	}
 
 	public static T RemoveActionEntries<T>(this T action_map, MentorLake.Gio.GActionEntryHandle[] entries, int n_entries) where T : GActionMapHandle
 	{
+		if (action_map.IsInvalid || action_map.IsClosed) throw new Exception("Invalid or closed handle (GActionMapHandle)");
 		GActionMapHandleExterns.g_action_map_remove_action_entries(action_map, entries, n_entries);
 		return action_map;
 	}

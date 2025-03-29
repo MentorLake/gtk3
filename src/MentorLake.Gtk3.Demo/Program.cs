@@ -1,6 +1,7 @@
 ﻿using System.Reactive.Linq;
 using System.Runtime.InteropServices;
 using MentorLake.Gdk;
+using MentorLake.GdkPixbuf;
 using MentorLake.Gio;
 using MentorLake.GLib;
 using MentorLake.GObject;
@@ -25,11 +26,26 @@ public static class Program
 		return result;
 	}
 
+	private static void TryToOpenInvalidFile()
+	{
+		try
+		{
+			GdkPixbufHandle.NewFromFile("TestFile");
+			throw new Exception("Exception should have been thrown.");
+		}
+		catch (Exception)
+		{
+			Console.WriteLine("Exception successfully handled.");
+		}
+	}
+
 	public static async Task Main(string[] args)
 	{
 		SynchronizationContext.SetSynchronizationContext(new GLibSynchronizationContext());
 
 		var appHandle = GtkApplicationHandle.New("my.app", GApplicationFlags.G_APPLICATION_FLAGS_NONE);
+
+		TryToOpenInvalidFile();
 
 		appHandle.Signal_Activate().Subscribe(async e =>
 		{
@@ -88,7 +104,7 @@ public static class Program
 			window.Destroy();
 		});
 
-		appHandle.Register(null, IntPtr.Zero);
+		appHandle.Register(null);
 		appHandle.Run(0, null);
 	}
 }

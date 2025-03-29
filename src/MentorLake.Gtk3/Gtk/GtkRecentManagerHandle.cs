@@ -87,24 +87,32 @@ public static class GtkRecentManagerHandleExtensions
 		return GtkRecentManagerHandleExterns.gtk_recent_manager_has_item(manager, uri);
 	}
 
-	public static MentorLake.Gtk.GtkRecentInfoHandle LookupItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, IntPtr error)
+	public static MentorLake.Gtk.GtkRecentInfoHandle LookupItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
-		return GtkRecentManagerHandleExterns.gtk_recent_manager_lookup_item(manager, uri, error);
+		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_lookup_item(manager, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool MoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, string new_uri, IntPtr error)
+	public static bool MoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, string new_uri)
 	{
-		return GtkRecentManagerHandleExterns.gtk_recent_manager_move_item(manager, uri, new_uri, error);
+		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_move_item(manager, uri, new_uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static int PurgeItems(this MentorLake.Gtk.GtkRecentManagerHandle manager, IntPtr error)
+	public static int PurgeItems(this MentorLake.Gtk.GtkRecentManagerHandle manager)
 	{
-		return GtkRecentManagerHandleExterns.gtk_recent_manager_purge_items(manager, error);
+		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_purge_items(manager, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool RemoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, IntPtr error)
+	public static bool RemoveItem(this MentorLake.Gtk.GtkRecentManagerHandle manager, string uri)
 	{
-		return GtkRecentManagerHandleExterns.gtk_recent_manager_remove_item(manager, uri, error);
+		var externCallResult = GtkRecentManagerHandleExterns.gtk_recent_manager_remove_item(manager, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -127,16 +135,16 @@ internal class GtkRecentManagerHandleExterns
 	internal static extern bool gtk_recent_manager_has_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkRecentInfoHandle gtk_recent_manager_lookup_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, IntPtr error);
+	internal static extern MentorLake.Gtk.GtkRecentInfoHandle gtk_recent_manager_lookup_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_recent_manager_move_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, string new_uri, IntPtr error);
+	internal static extern bool gtk_recent_manager_move_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, string new_uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern int gtk_recent_manager_purge_items([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, IntPtr error);
+	internal static extern int gtk_recent_manager_purge_items([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_recent_manager_remove_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, IntPtr error);
+	internal static extern bool gtk_recent_manager_remove_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkRecentManagerHandle gtk_recent_manager_get_default();

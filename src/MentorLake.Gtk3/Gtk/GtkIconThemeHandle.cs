@@ -130,19 +130,25 @@ public static class GtkIconThemeHandleExtensions
 		return GtkIconThemeHandleExterns.gtk_icon_theme_list_icons(icon_theme, context);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIcon(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIcon(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, MentorLake.Gtk.GtkIconLookupFlags flags)
 	{
-		return GtkIconThemeHandleExterns.gtk_icon_theme_load_icon(icon_theme, icon_name, size, flags, error);
+		var externCallResult = GtkIconThemeHandleExterns.gtk_icon_theme_load_icon(icon_theme, icon_name, size, flags, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIconForScale(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIconForScale(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gtk.GtkIconLookupFlags flags)
 	{
-		return GtkIconThemeHandleExterns.gtk_icon_theme_load_icon_for_scale(icon_theme, icon_name, size, scale, flags, error);
+		var externCallResult = GtkIconThemeHandleExterns.gtk_icon_theme_load_icon_for_scale(icon_theme, icon_name, size, scale, flags, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.cairo.cairo_surface_tHandle LoadSurface(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gdk.GdkWindowHandle for_window, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error)
+	public static MentorLake.cairo.cairo_surface_tHandle LoadSurface(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gdk.GdkWindowHandle for_window, MentorLake.Gtk.GtkIconLookupFlags flags)
 	{
-		return GtkIconThemeHandleExterns.gtk_icon_theme_load_surface(icon_theme, icon_name, size, scale, for_window, flags, error);
+		var externCallResult = GtkIconThemeHandleExterns.gtk_icon_theme_load_surface(icon_theme, icon_name, size, scale, for_window, flags, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static MentorLake.Gtk.GtkIconInfoHandle LookupByGicon(this MentorLake.Gtk.GtkIconThemeHandle icon_theme, MentorLake.Gio.GIconHandle icon, int size, MentorLake.Gtk.GtkIconLookupFlags flags)
@@ -233,13 +239,13 @@ internal class GtkIconThemeHandleExterns
 	internal static extern MentorLake.GLib.GListHandle gtk_icon_theme_list_icons([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string context);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_theme_load_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_theme_load_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, MentorLake.Gtk.GtkIconLookupFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_theme_load_icon_for_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_theme_load_icon_for_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, MentorLake.Gtk.GtkIconLookupFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.cairo.cairo_surface_tHandle gtk_icon_theme_load_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle for_window, MentorLake.Gtk.GtkIconLookupFlags flags, IntPtr error);
+	internal static extern MentorLake.cairo.cairo_surface_tHandle gtk_icon_theme_load_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, string icon_name, int size, int scale, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle for_window, MentorLake.Gtk.GtkIconLookupFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkIconInfoHandle gtk_icon_theme_lookup_by_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconThemeHandle>))] MentorLake.Gtk.GtkIconThemeHandle icon_theme, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon, int size, MentorLake.Gtk.GtkIconLookupFlags flags);

@@ -2,9 +2,11 @@ namespace MentorLake.Gio;
 
 public class GDebugControllerDBusHandle : GObjectHandle, GDebugControllerHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GDebugControllerDBusHandle New(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GDebugControllerDBusHandle New(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GDebugControllerDBusHandleExterns.g_debug_controller_dbus_new(connection, cancellable, error);
+		var externCallResult = GDebugControllerDBusHandleExterns.g_debug_controller_dbus_new(connection, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -75,7 +77,7 @@ public static class GDebugControllerDBusHandleExtensions
 internal class GDebugControllerDBusHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDebugControllerDBusHandle g_debug_controller_dbus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GDebugControllerDBusHandle g_debug_controller_dbus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_debug_controller_dbus_stop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDebugControllerDBusHandle>))] MentorLake.Gio.GDebugControllerDBusHandle self);

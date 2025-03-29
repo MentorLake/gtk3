@@ -25,9 +25,11 @@ public static class GPollableInputStreamHandleExtensions
 		return GPollableInputStreamHandleExterns.g_pollable_input_stream_is_readable(stream);
 	}
 
-	public static UIntPtr ReadNonblocking(this MentorLake.Gio.GPollableInputStreamHandle stream, out byte[] buffer, UIntPtr count, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static UIntPtr ReadNonblocking(this MentorLake.Gio.GPollableInputStreamHandle stream, out byte[] buffer, UIntPtr count, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GPollableInputStreamHandleExterns.g_pollable_input_stream_read_nonblocking(stream, out buffer, count, cancellable, error);
+		var externCallResult = GPollableInputStreamHandleExterns.g_pollable_input_stream_read_nonblocking(stream, out buffer, count, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -44,6 +46,6 @@ internal class GPollableInputStreamHandleExterns
 	internal static extern bool g_pollable_input_stream_is_readable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableInputStreamHandleImpl>))] MentorLake.Gio.GPollableInputStreamHandle stream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_pollable_input_stream_read_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableInputStreamHandleImpl>))] MentorLake.Gio.GPollableInputStreamHandle stream, out byte[] buffer, UIntPtr count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern UIntPtr g_pollable_input_stream_read_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableInputStreamHandleImpl>))] MentorLake.Gio.GPollableInputStreamHandle stream, out byte[] buffer, UIntPtr count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 }

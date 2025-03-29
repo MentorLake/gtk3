@@ -2,9 +2,11 @@ namespace MentorLake.Gio;
 
 public class GSettingsSchemaSourceHandle : BaseSafeHandle
 {
-	public static MentorLake.Gio.GSettingsSchemaSourceHandle NewFromDirectory(string directory, MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted, IntPtr error)
+	public static MentorLake.Gio.GSettingsSchemaSourceHandle NewFromDirectory(string directory, MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted)
 	{
-		return GSettingsSchemaSourceExterns.g_settings_schema_source_new_from_directory(directory, parent, trusted, error);
+		var externCallResult = GSettingsSchemaSourceExterns.g_settings_schema_source_new_from_directory(directory, parent, trusted, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -38,7 +40,7 @@ public static class GSettingsSchemaSourceExtensions
 internal class GSettingsSchemaSourceExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(string directory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted, IntPtr error);
+	internal static extern MentorLake.Gio.GSettingsSchemaSourceHandle g_settings_schema_source_new_from_directory(string directory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle parent, bool trusted, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_settings_schema_source_list_schemas([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaSourceHandle>))] MentorLake.Gio.GSettingsSchemaSourceHandle source, bool recursive, out string[] non_relocatable, out string[] relocatable);

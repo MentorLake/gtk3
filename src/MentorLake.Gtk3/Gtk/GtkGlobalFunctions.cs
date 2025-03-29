@@ -342,9 +342,11 @@ public class GtkGlobalFunctions
 		return GtkGlobalFunctionsExterns.gtk_init_check(ref argc, ref argv);
 	}
 
-	public static bool InitWithArgs(ref int argc, ref string[] argv, string parameter_string, MentorLake.GLib.GOptionEntry[] entries, string translation_domain, IntPtr error)
+	public static bool InitWithArgs(ref int argc, ref string[] argv, string parameter_string, MentorLake.GLib.GOptionEntry[] entries, string translation_domain)
 	{
-		return GtkGlobalFunctionsExterns.gtk_init_with_args(ref argc, ref argv, parameter_string, entries, translation_domain, error);
+		var externCallResult = GtkGlobalFunctionsExterns.gtk_init_with_args(ref argc, ref argv, parameter_string, entries, translation_domain, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static uint KeySnooperInstall(MentorLake.Gtk.GtkKeySnoopFunc snooper, IntPtr func_data)
@@ -807,14 +809,18 @@ public class GtkGlobalFunctions
 		GtkGlobalFunctionsExterns.gtk_show_about_dialog(parent, first_property_name, @__arglist);
 	}
 
-	public static bool ShowUri(MentorLake.Gdk.GdkScreenHandle screen, string uri, uint timestamp, IntPtr error)
+	public static bool ShowUri(MentorLake.Gdk.GdkScreenHandle screen, string uri, uint timestamp)
 	{
-		return GtkGlobalFunctionsExterns.gtk_show_uri(screen, uri, timestamp, error);
+		var externCallResult = GtkGlobalFunctionsExterns.gtk_show_uri(screen, uri, timestamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool ShowUriOnWindow(MentorLake.Gtk.GtkWindowHandle parent, string uri, uint timestamp, IntPtr error)
+	public static bool ShowUriOnWindow(MentorLake.Gtk.GtkWindowHandle parent, string uri, uint timestamp)
 	{
-		return GtkGlobalFunctionsExterns.gtk_show_uri_on_window(parent, uri, timestamp, error);
+		var externCallResult = GtkGlobalFunctionsExterns.gtk_show_uri_on_window(parent, uri, timestamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static void StockAdd(MentorLake.Gtk.GtkStockItem[] items, uint n_items)
@@ -1202,7 +1208,7 @@ internal class GtkGlobalFunctionsExterns
 	internal static extern bool gtk_init_check(ref int argc, ref string[] argv);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_init_with_args(ref int argc, ref string[] argv, string parameter_string, MentorLake.GLib.GOptionEntry[] entries, string translation_domain, IntPtr error);
+	internal static extern bool gtk_init_with_args(ref int argc, ref string[] argv, string parameter_string, MentorLake.GLib.GOptionEntry[] entries, string translation_domain, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern uint gtk_key_snooper_install(MentorLake.Gtk.GtkKeySnoopFunc snooper, IntPtr func_data);
@@ -1489,10 +1495,10 @@ internal class GtkGlobalFunctionsExterns
 	internal static extern void gtk_show_about_dialog([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, string first_property_name, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_show_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))] MentorLake.Gdk.GdkScreenHandle screen, string uri, uint timestamp, IntPtr error);
+	internal static extern bool gtk_show_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))] MentorLake.Gdk.GdkScreenHandle screen, string uri, uint timestamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_show_uri_on_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, string uri, uint timestamp, IntPtr error);
+	internal static extern bool gtk_show_uri_on_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, string uri, uint timestamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_stock_add(MentorLake.Gtk.GtkStockItem[] items, uint n_items);

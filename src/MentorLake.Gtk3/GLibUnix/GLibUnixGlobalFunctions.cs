@@ -32,19 +32,25 @@ public class GLibUnixGlobalFunctions
 		return GLibUnixGlobalFunctionsExterns.g_fdwalk_set_cloexec(lowfd);
 	}
 
-	public static IntPtr GetPasswdEntry(string user_name, IntPtr error)
+	public static IntPtr GetPasswdEntry(string user_name)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_get_passwd_entry(user_name, error);
+		var externCallResult = GLibUnixGlobalFunctionsExterns.g_unix_get_passwd_entry(user_name, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool OpenPipe(int fds, int flags, IntPtr error)
+	public static bool OpenPipe(int fds, int flags)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_open_pipe(fds, flags, error);
+		var externCallResult = GLibUnixGlobalFunctionsExterns.g_unix_open_pipe(fds, flags, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool SetFdNonblocking(int fd, bool nonblock, IntPtr error)
+	public static bool SetFdNonblocking(int fd, bool nonblock)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_set_fd_nonblocking(fd, nonblock, error);
+		var externCallResult = GLibUnixGlobalFunctionsExterns.g_unix_set_fd_nonblocking(fd, nonblock, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static uint SignalAdd(int signum, MentorLake.GLib.GSourceFunc handler, IntPtr user_data)
@@ -85,13 +91,13 @@ internal class GLibUnixGlobalFunctionsExterns
 	internal static extern int g_fdwalk_set_cloexec(int lowfd);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern IntPtr g_unix_get_passwd_entry(string user_name, IntPtr error);
+	internal static extern IntPtr g_unix_get_passwd_entry(string user_name, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern bool g_unix_open_pipe(int fds, int flags, IntPtr error);
+	internal static extern bool g_unix_open_pipe(int fds, int flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern bool g_unix_set_fd_nonblocking(int fd, bool nonblock, IntPtr error);
+	internal static extern bool g_unix_set_fd_nonblocking(int fd, bool nonblock, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibUnixLibrary.Name)]
 	internal static extern uint g_unix_signal_add(int signum, MentorLake.GLib.GSourceFunc handler, IntPtr user_data);

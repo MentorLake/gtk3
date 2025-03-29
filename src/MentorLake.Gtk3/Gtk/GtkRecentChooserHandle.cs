@@ -98,14 +98,18 @@ public static class GtkRecentChooserHandleExtensions
 		return chooser;
 	}
 
-	public static bool SelectUri(this MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, IntPtr error)
+	public static bool SelectUri(this MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri)
 	{
-		return GtkRecentChooserHandleExterns.gtk_recent_chooser_select_uri(chooser, uri, error);
+		var externCallResult = GtkRecentChooserHandleExterns.gtk_recent_chooser_select_uri(chooser, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool SetCurrentUri(this MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, IntPtr error)
+	public static bool SetCurrentUri(this MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri)
 	{
-		return GtkRecentChooserHandleExterns.gtk_recent_chooser_set_current_uri(chooser, uri, error);
+		var externCallResult = GtkRecentChooserHandleExterns.gtk_recent_chooser_set_current_uri(chooser, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetFilter<T>(this T chooser, MentorLake.Gtk.GtkRecentFilterHandle filter) where T : GtkRecentChooserHandle
@@ -238,10 +242,10 @@ internal class GtkRecentChooserHandleExterns
 	internal static extern void gtk_recent_chooser_select_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_recent_chooser_select_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, IntPtr error);
+	internal static extern bool gtk_recent_chooser_select_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_recent_chooser_set_current_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, IntPtr error);
+	internal static extern bool gtk_recent_chooser_set_current_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_recent_chooser_set_filter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentFilterHandle>))] MentorLake.Gtk.GtkRecentFilterHandle filter);

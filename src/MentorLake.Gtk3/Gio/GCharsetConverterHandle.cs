@@ -2,9 +2,11 @@ namespace MentorLake.Gio;
 
 public class GCharsetConverterHandle : GObjectHandle, GConverterHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GCharsetConverterHandle New(string to_charset, string from_charset, IntPtr error)
+	public static MentorLake.Gio.GCharsetConverterHandle New(string to_charset, string from_charset)
 	{
-		return GCharsetConverterHandleExterns.g_charset_converter_new(to_charset, from_charset, error);
+		var externCallResult = GCharsetConverterHandleExterns.g_charset_converter_new(to_charset, from_charset, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -32,7 +34,7 @@ public static class GCharsetConverterHandleExtensions
 internal class GCharsetConverterHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GCharsetConverterHandle g_charset_converter_new(string to_charset, string from_charset, IntPtr error);
+	internal static extern MentorLake.Gio.GCharsetConverterHandle g_charset_converter_new(string to_charset, string from_charset, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern uint g_charset_converter_get_num_fallbacks([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCharsetConverterHandle>))] MentorLake.Gio.GCharsetConverterHandle converter);

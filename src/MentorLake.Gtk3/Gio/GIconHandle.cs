@@ -35,9 +35,11 @@ public static class GIconHandleExtensions
 		return GIconHandleExterns.g_icon_deserialize(value);
 	}
 
-	public static MentorLake.Gio.GIconHandle NewForString(string str, IntPtr error)
+	public static MentorLake.Gio.GIconHandle NewForString(string str)
 	{
-		return GIconHandleExterns.g_icon_new_for_string(str, error);
+		var externCallResult = GIconHandleExterns.g_icon_new_for_string(str, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -61,6 +63,6 @@ internal class GIconHandleExterns
 	internal static extern MentorLake.Gio.GIconHandle g_icon_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle value);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GIconHandle g_icon_new_for_string(string str, IntPtr error);
+	internal static extern MentorLake.Gio.GIconHandle g_icon_new_for_string(string str, out MentorLake.GLib.GErrorHandle error);
 
 }

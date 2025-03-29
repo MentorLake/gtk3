@@ -12,14 +12,18 @@ public class GNetworkAddressHandle : GObjectHandle, GSocketConnectableHandle
 		return GNetworkAddressHandleExterns.g_network_address_new_loopback(port);
 	}
 
-	public static MentorLake.Gio.GSocketConnectableHandle Parse(string host_and_port, ushort default_port, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectableHandle Parse(string host_and_port, ushort default_port)
 	{
-		return GNetworkAddressHandleExterns.g_network_address_parse(host_and_port, default_port, error);
+		var externCallResult = GNetworkAddressHandleExterns.g_network_address_parse(host_and_port, default_port, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GSocketConnectableHandle ParseUri(string uri, ushort default_port, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectableHandle ParseUri(string uri, ushort default_port)
 	{
-		return GNetworkAddressHandleExterns.g_network_address_parse_uri(uri, default_port, error);
+		var externCallResult = GNetworkAddressHandleExterns.g_network_address_parse_uri(uri, default_port, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -63,9 +67,9 @@ internal class GNetworkAddressHandleExterns
 	internal static extern string g_network_address_get_scheme([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkAddressHandle>))] MentorLake.Gio.GNetworkAddressHandle addr);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse(string host_and_port, ushort default_port, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse(string host_and_port, ushort default_port, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse_uri(string uri, ushort default_port, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse_uri(string uri, ushort default_port, out MentorLake.GLib.GErrorHandle error);
 
 }

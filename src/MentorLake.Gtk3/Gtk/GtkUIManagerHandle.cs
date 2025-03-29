@@ -270,19 +270,25 @@ public static class GtkUIManagerHandleExtensions
 		return manager;
 	}
 
-	public static uint AddUiFromFile(this MentorLake.Gtk.GtkUIManagerHandle manager, string filename, IntPtr error)
+	public static uint AddUiFromFile(this MentorLake.Gtk.GtkUIManagerHandle manager, string filename)
 	{
-		return GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_file(manager, filename, error);
+		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_file(manager, filename, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static uint AddUiFromResource(this MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path, IntPtr error)
+	public static uint AddUiFromResource(this MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path)
 	{
-		return GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_resource(manager, resource_path, error);
+		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_resource(manager, resource_path, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static uint AddUiFromString(this MentorLake.Gtk.GtkUIManagerHandle manager, string buffer, UIntPtr length, IntPtr error)
+	public static uint AddUiFromString(this MentorLake.Gtk.GtkUIManagerHandle manager, string buffer, UIntPtr length)
 	{
-		return GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_string(manager, buffer, length, error);
+		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_string(manager, buffer, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T EnsureUpdate<T>(this T manager) where T : GtkUIManagerHandle
@@ -366,13 +372,13 @@ internal class GtkUIManagerHandleExterns
 	internal static extern void gtk_ui_manager_add_ui([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, uint merge_id, string path, string name, string action, MentorLake.Gtk.GtkUIManagerItemType type, bool top);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_ui_manager_add_ui_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string filename, IntPtr error);
+	internal static extern uint gtk_ui_manager_add_ui_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string filename, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_ui_manager_add_ui_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path, IntPtr error);
+	internal static extern uint gtk_ui_manager_add_ui_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_ui_manager_add_ui_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string buffer, UIntPtr length, IntPtr error);
+	internal static extern uint gtk_ui_manager_add_ui_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string buffer, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_ui_manager_ensure_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);

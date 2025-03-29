@@ -25,9 +25,11 @@ public static class GAsyncResultHandleExtensions
 		return GAsyncResultHandleExterns.g_async_result_is_tagged(res, source_tag);
 	}
 
-	public static bool LegacyPropagateError(this MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
+	public static bool LegacyPropagateError(this MentorLake.Gio.GAsyncResultHandle res)
 	{
-		return GAsyncResultHandleExterns.g_async_result_legacy_propagate_error(res, error);
+		var externCallResult = GAsyncResultHandleExterns.g_async_result_legacy_propagate_error(res, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -44,6 +46,6 @@ internal class GAsyncResultHandleExterns
 	internal static extern bool g_async_result_is_tagged([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr source_tag);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_async_result_legacy_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
+	internal static extern bool g_async_result_legacy_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out MentorLake.GLib.GErrorHandle error);
 
 }

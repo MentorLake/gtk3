@@ -418,9 +418,11 @@ public static class GApplicationHandleExtensions
 		return application;
 	}
 
-	public static bool Register(this MentorLake.Gio.GApplicationHandle application, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static bool Register(this MentorLake.Gio.GApplicationHandle application, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GApplicationHandleExterns.g_application_register(application, cancellable, error);
+		var externCallResult = GApplicationHandleExterns.g_application_register(application, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T Release<T>(this T application) where T : GApplicationHandle
@@ -587,7 +589,7 @@ internal class GApplicationHandleExterns
 	internal static extern void g_application_quit([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationHandle>))] MentorLake.Gio.GApplicationHandle application);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_application_register([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationHandle>))] MentorLake.Gio.GApplicationHandle application, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern bool g_application_register([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationHandle>))] MentorLake.Gio.GApplicationHandle application, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_application_release([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GApplicationHandle>))] MentorLake.Gio.GApplicationHandle application);

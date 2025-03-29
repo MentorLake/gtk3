@@ -2,9 +2,11 @@ namespace MentorLake.GLib;
 
 public class GDirHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GDirHandle Open(string path, uint flags, IntPtr error)
+	public static MentorLake.GLib.GDirHandle Open(string path, uint flags)
 	{
-		return GDirExterns.g_dir_open(path, flags, error);
+		var externCallResult = GDirExterns.g_dir_open(path, flags, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -43,7 +45,7 @@ public static class GDirExtensions
 internal class GDirExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GDirHandle g_dir_open(string path, uint flags, IntPtr error);
+	internal static extern MentorLake.GLib.GDirHandle g_dir_open(string path, uint flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_dir_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
@@ -63,15 +65,17 @@ internal class GDirExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_dir_make_tmp(string tmpl, IntPtr error);
+	internal static extern string g_dir_make_tmp(string tmpl, out MentorLake.GLib.GErrorHandle error);
 
 }
 
 public struct GDir
 {
-	public static string MakeTmp(string tmpl, IntPtr error)
+	public static string MakeTmp(string tmpl)
 	{
-		return GDirExterns.g_dir_make_tmp(tmpl, error);
+		var externCallResult = GDirExterns.g_dir_make_tmp(tmpl, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }

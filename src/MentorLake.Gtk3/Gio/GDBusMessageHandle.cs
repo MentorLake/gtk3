@@ -7,9 +7,11 @@ public class GDBusMessageHandle : GObjectHandle
 		return GDBusMessageHandleExterns.g_dbus_message_new();
 	}
 
-	public static MentorLake.Gio.GDBusMessageHandle NewFromBlob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error)
+	public static MentorLake.Gio.GDBusMessageHandle NewFromBlob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_new_from_blob(blob, blob_len, capabilities, error);
+		var externCallResult = GDBusMessageHandleExterns.g_dbus_message_new_from_blob(blob, blob_len, capabilities, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static MentorLake.Gio.GDBusMessageHandle NewMethodCall(string name, string path, string interface_, string method)
@@ -22,18 +24,22 @@ public class GDBusMessageHandle : GObjectHandle
 		return GDBusMessageHandleExterns.g_dbus_message_new_signal(path, interface_, signal);
 	}
 
-	public static UIntPtr BytesNeeded(byte[] blob, UIntPtr blob_len, IntPtr error)
+	public static UIntPtr BytesNeeded(byte[] blob, UIntPtr blob_len)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_bytes_needed(blob, blob_len, error);
+		var externCallResult = GDBusMessageHandleExterns.g_dbus_message_bytes_needed(blob, blob_len, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
 
 public static class GDBusMessageHandleExtensions
 {
-	public static MentorLake.Gio.GDBusMessageHandle Copy(this MentorLake.Gio.GDBusMessageHandle message, IntPtr error)
+	public static MentorLake.Gio.GDBusMessageHandle Copy(this MentorLake.Gio.GDBusMessageHandle message)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_copy(message, error);
+		var externCallResult = GDBusMessageHandleExterns.g_dbus_message_copy(message, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static string GetArg0(this MentorLake.Gio.GDBusMessageHandle message)
@@ -263,14 +269,18 @@ public static class GDBusMessageHandleExtensions
 		return message;
 	}
 
-	public static char[] ToBlob(this MentorLake.Gio.GDBusMessageHandle message, out UIntPtr out_size, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error)
+	public static char[] ToBlob(this MentorLake.Gio.GDBusMessageHandle message, out UIntPtr out_size, MentorLake.Gio.GDBusCapabilityFlags capabilities)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_to_blob(message, out out_size, capabilities, error);
+		var externCallResult = GDBusMessageHandleExterns.g_dbus_message_to_blob(message, out out_size, capabilities, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool ToGerror(this MentorLake.Gio.GDBusMessageHandle message, IntPtr error)
+	public static bool ToGerror(this MentorLake.Gio.GDBusMessageHandle message)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_to_gerror(message, error);
+		var externCallResult = GDBusMessageHandleExterns.g_dbus_message_to_gerror(message, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -281,7 +291,7 @@ internal class GDBusMessageHandleExterns
 	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new();
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_from_blob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error);
+	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_from_blob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_method_call(string name, string path, string interface_, string method);
@@ -290,7 +300,7 @@ internal class GDBusMessageHandleExterns
 	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_signal(string path, string interface_, string signal);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, IntPtr error);
+	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -429,12 +439,12 @@ internal class GDBusMessageHandleExterns
 	internal static extern void g_dbus_message_set_unix_fd_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle fd_list);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char[] g_dbus_message_to_blob([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, out UIntPtr out_size, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error);
+	internal static extern char[] g_dbus_message_to_blob([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, out UIntPtr out_size, MentorLake.Gio.GDBusCapabilityFlags capabilities, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_dbus_message_to_gerror([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, IntPtr error);
+	internal static extern bool g_dbus_message_to_gerror([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMessageHandle>))] MentorLake.Gio.GDBusMessageHandle message, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_dbus_message_bytes_needed(byte[] blob, UIntPtr blob_len, IntPtr error);
+	internal static extern UIntPtr g_dbus_message_bytes_needed(byte[] blob, UIntPtr blob_len, out MentorLake.GLib.GErrorHandle error);
 
 }

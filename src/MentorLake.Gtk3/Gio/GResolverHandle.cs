@@ -77,9 +77,11 @@ public static class GResolverHandleExtensions
 		return GResolverHandleExterns.g_resolver_get_timeout(resolver);
 	}
 
-	public static string LookupByAddress(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GInetAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static string LookupByAddress(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GInetAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_address(resolver, address, cancellable, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_address(resolver, address, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LookupByAddressAsync<T>(this T resolver, MentorLake.Gio.GInetAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
@@ -88,14 +90,18 @@ public static class GResolverHandleExtensions
 		return resolver;
 	}
 
-	public static string LookupByAddressFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static string LookupByAddressFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_address_finish(resolver, result, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_address_finish(resolver, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupByName(this MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupByName(this MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_name(resolver, hostname, cancellable, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_name(resolver, hostname, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LookupByNameAsync<T>(this T resolver, string hostname, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
@@ -104,14 +110,18 @@ public static class GResolverHandleExtensions
 		return resolver;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupByNameFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupByNameFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_name_finish(resolver, result, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_name_finish(resolver, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupByNameWithFlags(this MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupByNameWithFlags(this MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_name_with_flags(resolver, hostname, flags, cancellable, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_name_with_flags(resolver, hostname, flags, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LookupByNameWithFlagsAsync<T>(this T resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
@@ -120,14 +130,18 @@ public static class GResolverHandleExtensions
 		return resolver;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupByNameWithFlagsFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupByNameWithFlagsFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_by_name_with_flags_finish(resolver, result, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_by_name_with_flags_finish(resolver, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupRecords(this MentorLake.Gio.GResolverHandle resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupRecords(this MentorLake.Gio.GResolverHandle resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_records(resolver, rrname, record_type, cancellable, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_records(resolver, rrname, record_type, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LookupRecordsAsync<T>(this T resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
@@ -136,14 +150,18 @@ public static class GResolverHandleExtensions
 		return resolver;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupRecordsFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupRecordsFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_records_finish(resolver, result, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_records_finish(resolver, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupService(this MentorLake.Gio.GResolverHandle resolver, string service, string protocol, string domain, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupService(this MentorLake.Gio.GResolverHandle resolver, string service, string protocol, string domain, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_service(resolver, service, protocol, domain, cancellable, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_service(resolver, service, protocol, domain, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LookupServiceAsync<T>(this T resolver, string service, string protocol, string domain, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GResolverHandle
@@ -152,9 +170,11 @@ public static class GResolverHandleExtensions
 		return resolver;
 	}
 
-	public static MentorLake.GLib.GListHandle LookupServiceFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.GLib.GListHandle LookupServiceFinish(this MentorLake.Gio.GResolverHandle resolver, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GResolverHandleExterns.g_resolver_lookup_service_finish(resolver, result, error);
+		var externCallResult = GResolverHandleExterns.g_resolver_lookup_service_finish(resolver, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetDefault<T>(this T resolver) where T : GResolverHandle
@@ -178,50 +198,50 @@ internal class GResolverHandleExterns
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_resolver_lookup_by_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern string g_resolver_lookup_by_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_lookup_by_address_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_resolver_lookup_by_address_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern string g_resolver_lookup_by_address_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_lookup_by_name_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_with_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_with_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_lookup_by_name_with_flags_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string hostname, MentorLake.Gio.GResolverNameLookupFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_with_flags_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_by_name_with_flags_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_records([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_records([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_lookup_records_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string rrname, MentorLake.Gio.GResolverRecordType record_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_records_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_records_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_service([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string service, string protocol, string domain, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_service([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string service, string protocol, string domain, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_lookup_service_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, string service, string protocol, string domain, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_service_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_resolver_lookup_service_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resolver_set_default([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResolverHandle>))] MentorLake.Gio.GResolverHandle resolver);

@@ -2,9 +2,11 @@ namespace MentorLake.Gio;
 
 public class GDBusNodeInfoHandle : BaseSafeHandle
 {
-	public static MentorLake.Gio.GDBusNodeInfoHandle NewForXml(string xml_data, IntPtr error)
+	public static MentorLake.Gio.GDBusNodeInfoHandle NewForXml(string xml_data)
 	{
-		return GDBusNodeInfoExterns.g_dbus_node_info_new_for_xml(xml_data, error);
+		var externCallResult = GDBusNodeInfoExterns.g_dbus_node_info_new_for_xml(xml_data, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -38,7 +40,7 @@ public static class GDBusNodeInfoExtensions
 internal class GDBusNodeInfoExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_new_for_xml(string xml_data, IntPtr error);
+	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_new_for_xml(string xml_data, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_dbus_node_info_generate_xml([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringHandle>))] MentorLake.GLib.GStringHandle string_builder);

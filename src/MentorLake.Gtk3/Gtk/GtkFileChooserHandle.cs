@@ -22,14 +22,18 @@ public static class GtkFileChooserHandleExtensions
 		return chooser;
 	}
 
-	public static bool AddShortcutFolder(this MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, IntPtr error)
+	public static bool AddShortcutFolder(this MentorLake.Gtk.GtkFileChooserHandle chooser, string folder)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_add_shortcut_folder(chooser, folder, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_add_shortcut_folder(chooser, folder, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool AddShortcutFolderUri(this MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, IntPtr error)
+	public static bool AddShortcutFolderUri(this MentorLake.Gtk.GtkFileChooserHandle chooser, string uri)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_add_shortcut_folder_uri(chooser, uri, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_add_shortcut_folder_uri(chooser, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static MentorLake.Gtk.GtkFileChooserAction GetAction(this MentorLake.Gtk.GtkFileChooserHandle chooser)
@@ -184,14 +188,18 @@ public static class GtkFileChooserHandleExtensions
 		return chooser;
 	}
 
-	public static bool RemoveShortcutFolder(this MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, IntPtr error)
+	public static bool RemoveShortcutFolder(this MentorLake.Gtk.GtkFileChooserHandle chooser, string folder)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_remove_shortcut_folder(chooser, folder, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_remove_shortcut_folder(chooser, folder, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool RemoveShortcutFolderUri(this MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, IntPtr error)
+	public static bool RemoveShortcutFolderUri(this MentorLake.Gtk.GtkFileChooserHandle chooser, string uri)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_remove_shortcut_folder_uri(chooser, uri, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_remove_shortcut_folder_uri(chooser, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SelectAll<T>(this T chooser) where T : GtkFileChooserHandle
@@ -200,9 +208,11 @@ public static class GtkFileChooserHandleExtensions
 		return chooser;
 	}
 
-	public static bool SelectFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file, IntPtr error)
+	public static bool SelectFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_select_file(chooser, file, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_select_file(chooser, file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool SelectFilename(this MentorLake.Gtk.GtkFileChooserHandle chooser, string filename)
@@ -238,9 +248,11 @@ public static class GtkFileChooserHandleExtensions
 		return GtkFileChooserHandleExterns.gtk_file_chooser_set_current_folder(chooser, filename);
 	}
 
-	public static bool SetCurrentFolderFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file, IntPtr error)
+	public static bool SetCurrentFolderFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_set_current_folder_file(chooser, file, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_set_current_folder_file(chooser, file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool SetCurrentFolderUri(this MentorLake.Gtk.GtkFileChooserHandle chooser, string uri)
@@ -266,9 +278,11 @@ public static class GtkFileChooserHandleExtensions
 		return chooser;
 	}
 
-	public static bool SetFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file, IntPtr error)
+	public static bool SetFile(this MentorLake.Gtk.GtkFileChooserHandle chooser, MentorLake.Gio.GFileHandle file)
 	{
-		return GtkFileChooserHandleExterns.gtk_file_chooser_set_file(chooser, file, error);
+		var externCallResult = GtkFileChooserHandleExterns.gtk_file_chooser_set_file(chooser, file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool SetFilename(this MentorLake.Gtk.GtkFileChooserHandle chooser, string filename)
@@ -358,10 +372,10 @@ internal class GtkFileChooserHandleExterns
 	internal static extern void gtk_file_chooser_add_filter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileFilterHandle>))] MentorLake.Gtk.GtkFileFilterHandle filter);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_add_shortcut_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, IntPtr error);
+	internal static extern bool gtk_file_chooser_add_shortcut_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_add_shortcut_folder_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, IntPtr error);
+	internal static extern bool gtk_file_chooser_add_shortcut_folder_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkFileChooserAction gtk_file_chooser_get_action([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser);
@@ -462,16 +476,16 @@ internal class GtkFileChooserHandleExterns
 	internal static extern void gtk_file_chooser_remove_filter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileFilterHandle>))] MentorLake.Gtk.GtkFileFilterHandle filter);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_remove_shortcut_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, IntPtr error);
+	internal static extern bool gtk_file_chooser_remove_shortcut_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string folder, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_remove_shortcut_folder_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, IntPtr error);
+	internal static extern bool gtk_file_chooser_remove_shortcut_folder_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_file_chooser_select_all([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_select_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, IntPtr error);
+	internal static extern bool gtk_file_chooser_select_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_file_chooser_select_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string filename);
@@ -492,7 +506,7 @@ internal class GtkFileChooserHandleExterns
 	internal static extern bool gtk_file_chooser_set_current_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string filename);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_set_current_folder_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, IntPtr error);
+	internal static extern bool gtk_file_chooser_set_current_folder_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_file_chooser_set_current_folder_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string uri);
@@ -507,7 +521,7 @@ internal class GtkFileChooserHandleExterns
 	internal static extern void gtk_file_chooser_set_extra_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle extra_widget);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_file_chooser_set_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, IntPtr error);
+	internal static extern bool gtk_file_chooser_set_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_file_chooser_set_filename([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle chooser, string filename);

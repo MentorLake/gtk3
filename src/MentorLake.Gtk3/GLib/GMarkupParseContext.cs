@@ -12,9 +12,11 @@ public class GMarkupParseContextHandle : BaseSafeHandle
 
 public static class GMarkupParseContextExtensions
 {
-	public static bool EndParse(this MentorLake.GLib.GMarkupParseContextHandle context, IntPtr error)
+	public static bool EndParse(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		return GMarkupParseContextExterns.g_markup_parse_context_end_parse(context, error);
+		var externCallResult = GMarkupParseContextExterns.g_markup_parse_context_end_parse(context, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static void Free(this MentorLake.GLib.GMarkupParseContextHandle context)
@@ -42,9 +44,11 @@ public static class GMarkupParseContextExtensions
 		return GMarkupParseContextExterns.g_markup_parse_context_get_user_data(context);
 	}
 
-	public static bool Parse(this MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len, IntPtr error)
+	public static bool Parse(this MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len)
 	{
-		return GMarkupParseContextExterns.g_markup_parse_context_parse(context, text, text_len, error);
+		var externCallResult = GMarkupParseContextExterns.g_markup_parse_context_parse(context, text, text_len, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static IntPtr Pop(this MentorLake.GLib.GMarkupParseContextHandle context)
@@ -76,7 +80,7 @@ internal class GMarkupParseContextExterns
 	internal static extern MentorLake.GLib.GMarkupParseContextHandle g_markup_parse_context_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParserHandle>))] MentorLake.GLib.GMarkupParserHandle parser, MentorLake.GLib.GMarkupParseFlags flags, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_dnotify);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_markup_parse_context_end_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, IntPtr error);
+	internal static extern bool g_markup_parse_context_end_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_markup_parse_context_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
@@ -95,7 +99,7 @@ internal class GMarkupParseContextExterns
 	internal static extern IntPtr g_markup_parse_context_get_user_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_markup_parse_context_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len, IntPtr error);
+	internal static extern bool g_markup_parse_context_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern IntPtr g_markup_parse_context_pop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);

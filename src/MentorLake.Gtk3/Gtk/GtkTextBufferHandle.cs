@@ -639,9 +639,11 @@ public static class GtkTextBufferHandleExtensions
 		return GtkTextBufferHandleExterns.gtk_text_buffer_delete_selection(buffer, interactive, default_editable);
 	}
 
-	public static bool Deserialize(this MentorLake.Gtk.GtkTextBufferHandle register_buffer, MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, MentorLake.Gtk.GtkTextIterHandle iter, byte[] data, UIntPtr length, IntPtr error)
+	public static bool Deserialize(this MentorLake.Gtk.GtkTextBufferHandle register_buffer, MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, MentorLake.Gtk.GtkTextIterHandle iter, byte[] data, UIntPtr length)
 	{
-		return GtkTextBufferHandleExterns.gtk_text_buffer_deserialize(register_buffer, content_buffer, format, iter, data, length, error);
+		var externCallResult = GtkTextBufferHandleExterns.gtk_text_buffer_deserialize(register_buffer, content_buffer, format, iter, data, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool DeserializeGetCanCreateTags(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gdk.GdkAtom format)
@@ -1012,7 +1014,7 @@ internal class GtkTextBufferHandleExterns
 	internal static extern bool gtk_text_buffer_delete_selection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, bool interactive, bool default_editable);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_text_buffer_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle register_buffer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextIterHandle>))] MentorLake.Gtk.GtkTextIterHandle iter, byte[] data, UIntPtr length, IntPtr error);
+	internal static extern bool gtk_text_buffer_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle register_buffer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextIterHandle>))] MentorLake.Gtk.GtkTextIterHandle iter, byte[] data, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_text_buffer_deserialize_get_can_create_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gdk.GdkAtom format);

@@ -62,9 +62,11 @@ public static class GtkIconInfoHandleExtensions
 		return GtkIconInfoHandleExterns.gtk_icon_info_is_symbolic(icon_info);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIcon(this MentorLake.Gtk.GtkIconInfoHandle icon_info, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIcon(this MentorLake.Gtk.GtkIconInfoHandle icon_info)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_icon(icon_info, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_icon(icon_info, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LoadIconAsync<T>(this T icon_info, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
@@ -73,19 +75,25 @@ public static class GtkIconInfoHandleExtensions
 		return icon_info;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIconFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadIconFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_icon_finish(icon_info, res, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_icon_finish(icon_info, res, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.cairo.cairo_surface_tHandle LoadSurface(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gdk.GdkWindowHandle for_window, IntPtr error)
+	public static MentorLake.cairo.cairo_surface_tHandle LoadSurface(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gdk.GdkWindowHandle for_window)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_surface(icon_info, for_window, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_surface(icon_info, for_window, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolic(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gdk.GdkRGBAHandle fg, MentorLake.Gdk.GdkRGBAHandle success_color, MentorLake.Gdk.GdkRGBAHandle warning_color, MentorLake.Gdk.GdkRGBAHandle error_color, out bool was_symbolic, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolic(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gdk.GdkRGBAHandle fg, MentorLake.Gdk.GdkRGBAHandle success_color, MentorLake.Gdk.GdkRGBAHandle warning_color, MentorLake.Gdk.GdkRGBAHandle error_color, out bool was_symbolic)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic(icon_info, fg, success_color, warning_color, error_color, out was_symbolic, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic(icon_info, fg, success_color, warning_color, error_color, out was_symbolic, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LoadSymbolicAsync<T>(this T icon_info, MentorLake.Gdk.GdkRGBAHandle fg, MentorLake.Gdk.GdkRGBAHandle success_color, MentorLake.Gdk.GdkRGBAHandle warning_color, MentorLake.Gdk.GdkRGBAHandle error_color, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
@@ -94,14 +102,18 @@ public static class GtkIconInfoHandleExtensions
 		return icon_info;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_finish(icon_info, res, out was_symbolic, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_finish(icon_info, res, out was_symbolic, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForContext(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gtk.GtkStyleContextHandle context, out bool was_symbolic, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForContext(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gtk.GtkStyleContextHandle context, out bool was_symbolic)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_context(icon_info, context, out was_symbolic, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_context(icon_info, context, out was_symbolic, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LoadSymbolicForContextAsync<T>(this T icon_info, MentorLake.Gtk.GtkStyleContextHandle context, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GtkIconInfoHandle
@@ -110,14 +122,18 @@ public static class GtkIconInfoHandleExtensions
 		return icon_info;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForContextFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForContextFinish(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_context_finish(icon_info, res, out was_symbolic, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_context_finish(icon_info, res, out was_symbolic, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForStyle(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gtk.GtkStyleHandle style, MentorLake.Gtk.GtkStateType state, out bool was_symbolic, IntPtr error)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle LoadSymbolicForStyle(this MentorLake.Gtk.GtkIconInfoHandle icon_info, MentorLake.Gtk.GtkStyleHandle style, MentorLake.Gtk.GtkStateType state, out bool was_symbolic)
 	{
-		return GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_style(icon_info, style, state, out was_symbolic, error);
+		var externCallResult = GtkIconInfoHandleExterns.gtk_icon_info_load_symbolic_for_style(icon_info, style, state, out was_symbolic, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetRawCoordinates<T>(this T icon_info, bool raw_coordinates) where T : GtkIconInfoHandle
@@ -166,37 +182,37 @@ internal class GtkIconInfoHandleExterns
 	internal static extern bool gtk_icon_info_is_symbolic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_icon_info_load_icon_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_icon_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_icon_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.cairo.cairo_surface_tHandle gtk_icon_info_load_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle for_window, IntPtr error);
+	internal static extern MentorLake.cairo.cairo_surface_tHandle gtk_icon_info_load_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle for_window, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle fg, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle success_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle warning_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle error_color, out bool was_symbolic, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle fg, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle success_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle warning_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle error_color, out bool was_symbolic, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_icon_info_load_symbolic_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle fg, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle success_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle warning_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle error_color, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))] MentorLake.Gtk.GtkStyleContextHandle context, out bool was_symbolic, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))] MentorLake.Gtk.GtkStyleContextHandle context, out bool was_symbolic, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_icon_info_load_symbolic_for_context_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))] MentorLake.Gtk.GtkStyleContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_context_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_context_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out bool was_symbolic, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleHandle>))] MentorLake.Gtk.GtkStyleHandle style, MentorLake.Gtk.GtkStateType state, out bool was_symbolic, IntPtr error);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_info_load_symbolic_for_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleHandle>))] MentorLake.Gtk.GtkStyleHandle style, MentorLake.Gtk.GtkStateType state, out bool was_symbolic, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_icon_info_set_raw_coordinates([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconInfoHandle>))] MentorLake.Gtk.GtkIconInfoHandle icon_info, bool raw_coordinates);

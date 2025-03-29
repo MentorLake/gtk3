@@ -75,9 +75,11 @@ public static class GSubprocessLauncherHandleExtensions
 		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawn(self, error, argv0, @__arglist);
 	}
 
-	public static MentorLake.Gio.GSubprocessHandle Spawnv(this MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, IntPtr error)
+	public static MentorLake.Gio.GSubprocessHandle Spawnv(this MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv)
 	{
-		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawnv(self, argv, error);
+		var externCallResult = GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawnv(self, argv, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T TakeFd<T>(this T self, int source_fd, int target_fd) where T : GSubprocessLauncherHandle
@@ -152,7 +154,7 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, IntPtr error, string argv0, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawnv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, IntPtr error);
+	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawnv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_subprocess_launcher_take_fd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, int source_fd, int target_fd);

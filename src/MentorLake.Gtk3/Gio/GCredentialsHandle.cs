@@ -16,19 +16,25 @@ public static class GCredentialsHandleExtensions
 		return GCredentialsHandleExterns.g_credentials_get_native(credentials, native_type);
 	}
 
-	public static int GetUnixPid(this MentorLake.Gio.GCredentialsHandle credentials, IntPtr error)
+	public static int GetUnixPid(this MentorLake.Gio.GCredentialsHandle credentials)
 	{
-		return GCredentialsHandleExterns.g_credentials_get_unix_pid(credentials, error);
+		var externCallResult = GCredentialsHandleExterns.g_credentials_get_unix_pid(credentials, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static int GetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials, IntPtr error)
+	public static int GetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials)
 	{
-		return GCredentialsHandleExterns.g_credentials_get_unix_user(credentials, error);
+		var externCallResult = GCredentialsHandleExterns.g_credentials_get_unix_user(credentials, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool IsSameUser(this MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsHandle other_credentials, IntPtr error)
+	public static bool IsSameUser(this MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsHandle other_credentials)
 	{
-		return GCredentialsHandleExterns.g_credentials_is_same_user(credentials, other_credentials, error);
+		var externCallResult = GCredentialsHandleExterns.g_credentials_is_same_user(credentials, other_credentials, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetNative<T>(this T credentials, MentorLake.Gio.GCredentialsType native_type, IntPtr native) where T : GCredentialsHandle
@@ -37,9 +43,11 @@ public static class GCredentialsHandleExtensions
 		return credentials;
 	}
 
-	public static bool SetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials, int uid, IntPtr error)
+	public static bool SetUnixUser(this MentorLake.Gio.GCredentialsHandle credentials, int uid)
 	{
-		return GCredentialsHandleExterns.g_credentials_set_unix_user(credentials, uid, error);
+		var externCallResult = GCredentialsHandleExterns.g_credentials_set_unix_user(credentials, uid, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static string ToString(this MentorLake.Gio.GCredentialsHandle credentials)
@@ -58,19 +66,19 @@ internal class GCredentialsHandleExterns
 	internal static extern IntPtr g_credentials_get_native([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsType native_type);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_credentials_get_unix_pid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, IntPtr error);
+	internal static extern int g_credentials_get_unix_pid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_credentials_get_unix_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, IntPtr error);
+	internal static extern int g_credentials_get_unix_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_credentials_is_same_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle other_credentials, IntPtr error);
+	internal static extern bool g_credentials_is_same_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle other_credentials, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_credentials_set_native([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, MentorLake.Gio.GCredentialsType native_type, IntPtr native);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_credentials_set_unix_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, int uid, IntPtr error);
+	internal static extern bool g_credentials_set_unix_user([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials, int uid, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

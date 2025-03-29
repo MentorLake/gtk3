@@ -7,9 +7,11 @@ public class PangoFontHandle : GObjectHandle
 		PangoFontHandleExterns.pango_font_descriptions_free(descs, n_descs);
 	}
 
-	public static MentorLake.Pango.PangoFontHandle Deserialize(MentorLake.Pango.PangoContextHandle context, MentorLake.GLib.GBytesHandle bytes, IntPtr error)
+	public static MentorLake.Pango.PangoFontHandle Deserialize(MentorLake.Pango.PangoContextHandle context, MentorLake.GLib.GBytesHandle bytes)
 	{
-		return PangoFontHandleExterns.pango_font_deserialize(context, bytes, error);
+		var externCallResult = PangoFontHandleExterns.pango_font_deserialize(context, bytes, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -122,6 +124,6 @@ internal class PangoFontHandleExterns
 	internal static extern void pango_font_descriptions_free([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 1, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))] MentorLake.Pango.PangoFontDescriptionHandle[] descs, int n_descs);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern MentorLake.Pango.PangoFontHandle pango_font_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, IntPtr error);
+	internal static extern MentorLake.Pango.PangoFontHandle pango_font_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, out MentorLake.GLib.GErrorHandle error);
 
 }

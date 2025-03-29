@@ -2,9 +2,11 @@ namespace MentorLake.Gio;
 
 public class GDBusServerHandle : GObjectHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GDBusServerHandle NewSync(string address, MentorLake.Gio.GDBusServerFlags flags, string guid, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GDBusServerHandle NewSync(string address, MentorLake.Gio.GDBusServerFlags flags, string guid, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GDBusServerHandleExterns.g_dbus_server_new_sync(address, flags, guid, observer, cancellable, error);
+		var externCallResult = GDBusServerHandleExterns.g_dbus_server_new_sync(address, flags, guid, observer, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -101,7 +103,7 @@ public static class GDBusServerHandleExtensions
 internal class GDBusServerHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusServerHandle g_dbus_server_new_sync(string address, MentorLake.Gio.GDBusServerFlags flags, string guid, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GDBusServerHandle g_dbus_server_new_sync(string address, MentorLake.Gio.GDBusServerFlags flags, string guid, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

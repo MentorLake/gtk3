@@ -21,9 +21,11 @@ public static class GSocketAddressHandleExtensions
 		return GSocketAddressHandleExterns.g_socket_address_get_native_size(address);
 	}
 
-	public static bool ToNative(this MentorLake.Gio.GSocketAddressHandle address, IntPtr dest, UIntPtr destlen, IntPtr error)
+	public static bool ToNative(this MentorLake.Gio.GSocketAddressHandle address, IntPtr dest, UIntPtr destlen)
 	{
-		return GSocketAddressHandleExterns.g_socket_address_to_native(address, dest, destlen, error);
+		var externCallResult = GSocketAddressHandleExterns.g_socket_address_to_native(address, dest, destlen, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -40,6 +42,6 @@ internal class GSocketAddressHandleExterns
 	internal static extern UIntPtr g_socket_address_get_native_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_address_to_native([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, IntPtr dest, UIntPtr destlen, IntPtr error);
+	internal static extern bool g_socket_address_to_native([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, IntPtr dest, UIntPtr destlen, out MentorLake.GLib.GErrorHandle error);
 
 }

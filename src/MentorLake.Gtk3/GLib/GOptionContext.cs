@@ -57,14 +57,18 @@ public static class GOptionContextExtensions
 		return GOptionContextExterns.g_option_context_get_summary(context);
 	}
 
-	public static bool Parse(this MentorLake.GLib.GOptionContextHandle context, ref int argc, ref string[] argv, IntPtr error)
+	public static bool Parse(this MentorLake.GLib.GOptionContextHandle context, ref int argc, ref string[] argv)
 	{
-		return GOptionContextExterns.g_option_context_parse(context, ref argc, ref argv, error);
+		var externCallResult = GOptionContextExterns.g_option_context_parse(context, ref argc, ref argv, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool ParseStrv(this MentorLake.GLib.GOptionContextHandle context, ref string[] arguments, IntPtr error)
+	public static bool ParseStrv(this MentorLake.GLib.GOptionContextHandle context, ref string[] arguments)
 	{
-		return GOptionContextExterns.g_option_context_parse_strv(context, ref arguments, error);
+		var externCallResult = GOptionContextExterns.g_option_context_parse_strv(context, ref arguments, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static void SetDescription(this MentorLake.GLib.GOptionContextHandle context, string description)
@@ -146,10 +150,10 @@ internal class GOptionContextExterns
 	internal static extern string g_option_context_get_summary([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_option_context_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context, ref int argc, ref string[] argv, IntPtr error);
+	internal static extern bool g_option_context_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context, ref int argc, ref string[] argv, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_option_context_parse_strv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context, ref string[] arguments, IntPtr error);
+	internal static extern bool g_option_context_parse_strv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context, ref string[] arguments, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_option_context_set_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GOptionContextHandle>))] MentorLake.GLib.GOptionContextHandle context, string description);

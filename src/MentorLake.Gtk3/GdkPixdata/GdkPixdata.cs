@@ -7,9 +7,11 @@ public class GdkPixdataHandle : BaseSafeHandle
 
 public static class GdkPixdataExtensions
 {
-	public static bool Deserialize(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream, IntPtr error)
+	public static bool Deserialize(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream)
 	{
-		return GdkPixdataExterns.gdk_pixdata_deserialize(pixdata, stream_length, stream, error);
+		var externCallResult = GdkPixdataExterns.gdk_pixdata_deserialize(pixdata, stream_length, stream, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static byte[] FromPixbuf(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool use_rle)
@@ -33,7 +35,7 @@ public static class GdkPixdataExtensions
 internal class GdkPixdataExterns
 {
 	[DllImport(GdkPixdataLibrary.Name)]
-	internal static extern bool gdk_pixdata_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream, IntPtr error);
+	internal static extern bool gdk_pixdata_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkPixdataLibrary.Name)]
 	internal static extern byte[] gdk_pixdata_from_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool use_rle);

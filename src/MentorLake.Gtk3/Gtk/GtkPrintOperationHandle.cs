@@ -493,9 +493,10 @@ public static class GtkPrintOperationHandleExtensions
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_embed_page_setup(op);
 	}
 
-	public static T GetError<T>(this T op, IntPtr error) where T : GtkPrintOperationHandle
+	public static T GetError<T>(this T op) where T : GtkPrintOperationHandle
 	{
-		GtkPrintOperationHandleExterns.gtk_print_operation_get_error(op, error);
+		GtkPrintOperationHandleExterns.gtk_print_operation_get_error(op, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return op;
 	}
 
@@ -534,9 +535,11 @@ public static class GtkPrintOperationHandleExtensions
 		return GtkPrintOperationHandleExterns.gtk_print_operation_is_finished(op);
 	}
 
-	public static MentorLake.Gtk.GtkPrintOperationResult Run(this MentorLake.Gtk.GtkPrintOperationHandle op, MentorLake.Gtk.GtkPrintOperationAction action, MentorLake.Gtk.GtkWindowHandle parent, IntPtr error)
+	public static MentorLake.Gtk.GtkPrintOperationResult Run(this MentorLake.Gtk.GtkPrintOperationHandle op, MentorLake.Gtk.GtkPrintOperationAction action, MentorLake.Gtk.GtkWindowHandle parent)
 	{
-		return GtkPrintOperationHandleExterns.gtk_print_operation_run(op, action, parent, error);
+		var externCallResult = GtkPrintOperationHandleExterns.gtk_print_operation_run(op, action, parent, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetAllowAsync<T>(this T op, bool allow_async) where T : GtkPrintOperationHandle
@@ -655,7 +658,7 @@ internal class GtkPrintOperationHandleExterns
 	internal static extern bool gtk_print_operation_get_embed_page_setup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_print_operation_get_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, IntPtr error);
+	internal static extern void gtk_print_operation_get_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_print_operation_get_has_selection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
@@ -680,7 +683,7 @@ internal class GtkPrintOperationHandleExterns
 	internal static extern bool gtk_print_operation_is_finished([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkPrintOperationResult gtk_print_operation_run([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, MentorLake.Gtk.GtkPrintOperationAction action, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, IntPtr error);
+	internal static extern MentorLake.Gtk.GtkPrintOperationResult gtk_print_operation_run([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, MentorLake.Gtk.GtkPrintOperationAction action, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_print_operation_set_allow_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op, bool allow_async);

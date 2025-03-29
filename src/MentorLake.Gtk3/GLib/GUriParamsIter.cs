@@ -12,9 +12,11 @@ public static class GUriParamsIterExtensions
 		GUriParamsIterExterns.g_uri_params_iter_init(iter, @params, length, separators, flags);
 	}
 
-	public static bool Next(this MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value, IntPtr error)
+	public static bool Next(this MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value)
 	{
-		return GUriParamsIterExterns.g_uri_params_iter_next(iter, out attribute, out value, error);
+		var externCallResult = GUriParamsIterExterns.g_uri_params_iter_next(iter, out attribute, out value, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 
@@ -26,7 +28,7 @@ internal class GUriParamsIterExterns
 	internal static extern void g_uri_params_iter_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriParamsIterHandle>))] MentorLake.GLib.GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_uri_params_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriParamsIterHandle>))] MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value, IntPtr error);
+	internal static extern bool g_uri_params_iter_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriParamsIterHandle>))] MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value, out MentorLake.GLib.GErrorHandle error);
 
 }
 

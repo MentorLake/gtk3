@@ -69,9 +69,11 @@ public static class GdkGLContextHandleExtensions
 		return context;
 	}
 
-	public static bool Realize(this MentorLake.Gdk.GdkGLContextHandle context, IntPtr error)
+	public static bool Realize(this MentorLake.Gdk.GdkGLContextHandle context)
 	{
-		return GdkGLContextHandleExterns.gdk_gl_context_realize(context, error);
+		var externCallResult = GdkGLContextHandleExterns.gdk_gl_context_realize(context, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetDebugEnabled<T>(this T context, bool enabled) where T : GdkGLContextHandle
@@ -133,7 +135,7 @@ internal class GdkGLContextHandleExterns
 	internal static extern void gdk_gl_context_make_current([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))] MentorLake.Gdk.GdkGLContextHandle context);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern bool gdk_gl_context_realize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))] MentorLake.Gdk.GdkGLContextHandle context, IntPtr error);
+	internal static extern bool gdk_gl_context_realize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))] MentorLake.Gdk.GdkGLContextHandle context, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_gl_context_set_debug_enabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))] MentorLake.Gdk.GdkGLContextHandle context, bool enabled);

@@ -7,9 +7,11 @@ public class GThreadHandle : BaseSafeHandle
 		return GThreadExterns.g_thread_new(name, func, data);
 	}
 
-	public static MentorLake.GLib.GThreadHandle TryNew(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, IntPtr error)
+	public static MentorLake.GLib.GThreadHandle TryNew(string name, MentorLake.GLib.GThreadFunc func, IntPtr data)
 	{
-		return GThreadExterns.g_thread_try_new(name, func, data, error);
+		var externCallResult = GThreadExterns.g_thread_try_new(name, func, data, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -51,7 +53,7 @@ internal class GThreadExterns
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_try_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, IntPtr error);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_try_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -70,10 +72,10 @@ internal class GThreadExterns
 	internal static extern void g_thread_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))] MentorLake.GLib.GThreadHandle thread);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, IntPtr error);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_create_full(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, IntPtr error);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_create_full(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_thread_error_quark();
@@ -103,14 +105,18 @@ internal class GThreadExterns
 
 public struct GThread
 {
-	public static MentorLake.GLib.GThreadHandle Create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, IntPtr error)
+	public static MentorLake.GLib.GThreadHandle Create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable)
 	{
-		return GThreadExterns.g_thread_create(func, data, joinable, error);
+		var externCallResult = GThreadExterns.g_thread_create(func, data, joinable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GThreadHandle CreateFull(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, IntPtr error)
+	public static MentorLake.GLib.GThreadHandle CreateFull(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority)
 	{
-		return GThreadExterns.g_thread_create_full(func, data, stack_size, joinable, bound, priority, error);
+		var externCallResult = GThreadExterns.g_thread_create_full(func, data, stack_size, joinable, bound, priority, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static MentorLake.GLib.GQuark ErrorQuark()

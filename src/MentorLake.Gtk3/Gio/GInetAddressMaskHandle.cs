@@ -2,14 +2,18 @@ namespace MentorLake.Gio;
 
 public class GInetAddressMaskHandle : GObjectHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GInetAddressMaskHandle New(MentorLake.Gio.GInetAddressHandle addr, uint length, IntPtr error)
+	public static MentorLake.Gio.GInetAddressMaskHandle New(MentorLake.Gio.GInetAddressHandle addr, uint length)
 	{
-		return GInetAddressMaskHandleExterns.g_inet_address_mask_new(addr, length, error);
+		var externCallResult = GInetAddressMaskHandleExterns.g_inet_address_mask_new(addr, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GInetAddressMaskHandle NewFromString(string mask_string, IntPtr error)
+	public static MentorLake.Gio.GInetAddressMaskHandle NewFromString(string mask_string)
 	{
-		return GInetAddressMaskHandleExterns.g_inet_address_mask_new_from_string(mask_string, error);
+		var externCallResult = GInetAddressMaskHandleExterns.g_inet_address_mask_new_from_string(mask_string, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -51,10 +55,10 @@ public static class GInetAddressMaskHandleExtensions
 internal class GInetAddressMaskHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle addr, uint length, IntPtr error);
+	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle addr, uint length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new_from_string(string mask_string, IntPtr error);
+	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new_from_string(string mask_string, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_inet_address_mask_equal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressMaskHandle>))] MentorLake.Gio.GInetAddressMaskHandle mask, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressMaskHandle>))] MentorLake.Gio.GInetAddressMaskHandle mask2);

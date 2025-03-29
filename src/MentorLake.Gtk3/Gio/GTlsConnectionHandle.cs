@@ -70,9 +70,11 @@ public static class GTlsConnectionHandleExtensions
 		return GTlsConnectionHandleExterns.g_tls_connection_get_certificate(conn);
 	}
 
-	public static bool GetChannelBindingData(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsChannelBindingType type, out MentorLake.GLib.GByteArray data, IntPtr error)
+	public static bool GetChannelBindingData(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsChannelBindingType type, out MentorLake.GLib.GByteArray data)
 	{
-		return GTlsConnectionHandleExterns.g_tls_connection_get_channel_binding_data(conn, type, out data, error);
+		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_get_channel_binding_data(conn, type, out data, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static string GetCiphersuiteName(this MentorLake.Gio.GTlsConnectionHandle conn)
@@ -125,9 +127,11 @@ public static class GTlsConnectionHandleExtensions
 		return GTlsConnectionHandleExterns.g_tls_connection_get_use_system_certdb(conn);
 	}
 
-	public static bool Handshake(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static bool Handshake(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GTlsConnectionHandleExterns.g_tls_connection_handshake(conn, cancellable, error);
+		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_handshake(conn, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T HandshakeAsync<T>(this T conn, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsConnectionHandle
@@ -136,9 +140,11 @@ public static class GTlsConnectionHandleExtensions
 		return conn;
 	}
 
-	public static bool HandshakeFinish(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static bool HandshakeFinish(this MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GTlsConnectionHandleExterns.g_tls_connection_handshake_finish(conn, result, error);
+		var externCallResult = GTlsConnectionHandleExterns.g_tls_connection_handshake_finish(conn, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T SetAdvertisedProtocols<T>(this T conn, string[] protocols) where T : GTlsConnectionHandle
@@ -194,7 +200,7 @@ internal class GTlsConnectionHandleExterns
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_connection_get_certificate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_tls_connection_get_channel_binding_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsChannelBindingType type, out MentorLake.GLib.GByteArray data, IntPtr error);
+	internal static extern bool g_tls_connection_get_channel_binding_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, MentorLake.Gio.GTlsChannelBindingType type, out MentorLake.GLib.GByteArray data, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -229,13 +235,13 @@ internal class GTlsConnectionHandleExterns
 	internal static extern bool g_tls_connection_get_use_system_certdb([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_tls_connection_handshake([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern bool g_tls_connection_handshake([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_tls_connection_handshake_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_tls_connection_handshake_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern bool g_tls_connection_handshake_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_tls_connection_set_advertised_protocols([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsConnectionHandle>))] MentorLake.Gio.GTlsConnectionHandle conn, string[] protocols);

@@ -2,39 +2,53 @@ namespace MentorLake.Gio;
 
 public class GTlsCertificateHandle : GObjectHandle
 {
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFile(string file, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFile(string file)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_file(file, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_file(file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFileWithPassword(string file, string password, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFileWithPassword(string file, string password)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_file_with_password(file, password, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_file_with_password(file, password, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromFiles(string cert_file, string key_file, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromFiles(string cert_file, string key_file)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_files(cert_file, key_file, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_files(cert_file, key_file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromPem(string data, UIntPtr length, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromPem(string data, UIntPtr length)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_pem(data, length, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_pem(data, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromPkcs11Uris(string pkcs11_uri, string private_key_pkcs11_uri, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromPkcs11Uris(string pkcs11_uri, string private_key_pkcs11_uri)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_pkcs11_uris(pkcs11_uri, private_key_pkcs11_uri, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_pkcs11_uris(pkcs11_uri, private_key_pkcs11_uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GTlsCertificateHandle NewFromPkcs12(byte[] data, UIntPtr length, string password, IntPtr error)
+	public static MentorLake.Gio.GTlsCertificateHandle NewFromPkcs12(byte[] data, UIntPtr length, string password)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_new_from_pkcs12(data, length, password, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_new_from_pkcs12(data, length, password, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GListHandle ListNewFromFile(string file, IntPtr error)
+	public static MentorLake.GLib.GListHandle ListNewFromFile(string file)
 	{
-		return GTlsCertificateHandleExterns.g_tls_certificate_list_new_from_file(file, error);
+		var externCallResult = GTlsCertificateHandleExterns.g_tls_certificate_list_new_from_file(file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 }
@@ -91,22 +105,22 @@ public static class GTlsCertificateHandleExtensions
 internal class GTlsCertificateHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file(string file, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file(string file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file_with_password(string file, string password, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file_with_password(string file, string password, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_files(string cert_file, string key_file, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_files(string cert_file, string key_file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pem(string data, UIntPtr length, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pem(string data, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs11_uris(string pkcs11_uri, string private_key_pkcs11_uri, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs11_uris(string pkcs11_uri, string private_key_pkcs11_uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs12(byte[] data, UIntPtr length, string password, IntPtr error);
+	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs12(byte[] data, UIntPtr length, string password, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_tls_certificate_get_dns_names([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
@@ -138,6 +152,6 @@ internal class GTlsCertificateHandleExterns
 	internal static extern MentorLake.Gio.GTlsCertificateFlags g_tls_certificate_verify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle identity, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle trusted_ca);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GListHandle g_tls_certificate_list_new_from_file(string file, IntPtr error);
+	internal static extern MentorLake.GLib.GListHandle g_tls_certificate_list_new_from_file(string file, out MentorLake.GLib.GErrorHandle error);
 
 }

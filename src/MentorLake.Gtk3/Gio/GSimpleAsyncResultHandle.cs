@@ -63,9 +63,11 @@ public static class GSimpleAsyncResultHandleExtensions
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_source_tag(simple);
 	}
 
-	public static bool PropagateError(this MentorLake.Gio.GSimpleAsyncResultHandle simple, IntPtr error)
+	public static bool PropagateError(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
 	{
-		return GSimpleAsyncResultHandleExterns.g_simple_async_result_propagate_error(simple, error);
+		var externCallResult = GSimpleAsyncResultHandleExterns.g_simple_async_result_propagate_error(simple, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T RunInThread<T>(this T simple, MentorLake.Gio.GSimpleAsyncThreadFunc func, int io_priority, MentorLake.Gio.GCancellableHandle cancellable) where T : GSimpleAsyncResultHandle
@@ -163,7 +165,7 @@ internal class GSimpleAsyncResultHandleExterns
 	internal static extern IntPtr g_simple_async_result_get_source_tag([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_simple_async_result_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple, IntPtr error);
+	internal static extern bool g_simple_async_result_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_simple_async_result_run_in_thread([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple, MentorLake.Gio.GSimpleAsyncThreadFunc func, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);

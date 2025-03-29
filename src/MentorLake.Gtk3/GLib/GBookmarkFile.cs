@@ -32,64 +32,88 @@ public static class GBookmarkFileExtensions
 		GBookmarkFileExterns.g_bookmark_file_free(bookmark);
 	}
 
-	public static long GetAdded(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static long GetAdded(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_added(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_added(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GDateTimeHandle GetAddedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static MentorLake.GLib.GDateTimeHandle GetAddedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_added_date_time(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_added_date_time(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool GetAppInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out long stamp, IntPtr error)
+	public static bool GetAppInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out long stamp)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_app_info(bookmark, uri, name, out exec, out count, out stamp, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_app_info(bookmark, uri, name, out exec, out count, out stamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool GetApplicationInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out MentorLake.GLib.GDateTimeHandle stamp, IntPtr error)
+	public static bool GetApplicationInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out MentorLake.GLib.GDateTimeHandle stamp)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_application_info(bookmark, uri, name, out exec, out count, out stamp, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_application_info(bookmark, uri, name, out exec, out count, out stamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static string[] GetApplications(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, IntPtr error)
+	public static string[] GetApplications(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_applications(bookmark, uri, out length, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_applications(bookmark, uri, out length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static string GetDescription(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static string GetDescription(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_description(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_description(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static string[] GetGroups(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, IntPtr error)
+	public static string[] GetGroups(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_groups(bookmark, uri, out length, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_groups(bookmark, uri, out length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool GetIcon(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out string href, out string mime_type, IntPtr error)
+	public static bool GetIcon(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out string href, out string mime_type)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_icon(bookmark, uri, out href, out mime_type, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_icon(bookmark, uri, out href, out mime_type, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool GetIsPrivate(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static bool GetIsPrivate(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_is_private(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_is_private(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static string GetMimeType(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static string GetMimeType(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_mime_type(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_mime_type(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static long GetModified(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static long GetModified(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_modified(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_modified(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GDateTimeHandle GetModifiedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static MentorLake.GLib.GDateTimeHandle GetModifiedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_modified_date_time(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_modified_date_time(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static int GetSize(this MentorLake.GLib.GBookmarkFileHandle bookmark)
@@ -97,9 +121,11 @@ public static class GBookmarkFileExtensions
 		return GBookmarkFileExterns.g_bookmark_file_get_size(bookmark);
 	}
 
-	public static string GetTitle(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static string GetTitle(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_title(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_title(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static string[] GetUris(this MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length)
@@ -107,24 +133,32 @@ public static class GBookmarkFileExtensions
 		return GBookmarkFileExterns.g_bookmark_file_get_uris(bookmark, out length);
 	}
 
-	public static long GetVisited(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static long GetVisited(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_visited(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_visited(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.GLib.GDateTimeHandle GetVisitedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static MentorLake.GLib.GDateTimeHandle GetVisitedDateTime(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_get_visited_date_time(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_get_visited_date_time(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool HasApplication(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, IntPtr error)
+	public static bool HasApplication(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_has_application(bookmark, uri, name, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_has_application(bookmark, uri, name, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool HasGroup(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, IntPtr error)
+	public static bool HasGroup(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_has_group(bookmark, uri, group, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_has_group(bookmark, uri, group, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool HasItem(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
@@ -132,39 +166,53 @@ public static class GBookmarkFileExtensions
 		return GBookmarkFileExterns.g_bookmark_file_has_item(bookmark, uri);
 	}
 
-	public static bool LoadFromData(this MentorLake.GLib.GBookmarkFileHandle bookmark, byte[] data, UIntPtr length, IntPtr error)
+	public static bool LoadFromData(this MentorLake.GLib.GBookmarkFileHandle bookmark, byte[] data, UIntPtr length)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_load_from_data(bookmark, data, length, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_load_from_data(bookmark, data, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool LoadFromDataDirs(this MentorLake.GLib.GBookmarkFileHandle bookmark, string file, out string full_path, IntPtr error)
+	public static bool LoadFromDataDirs(this MentorLake.GLib.GBookmarkFileHandle bookmark, string file, out string full_path)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_load_from_data_dirs(bookmark, file, out full_path, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_load_from_data_dirs(bookmark, file, out full_path, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool LoadFromFile(this MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, IntPtr error)
+	public static bool LoadFromFile(this MentorLake.GLib.GBookmarkFileHandle bookmark, string filename)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_load_from_file(bookmark, filename, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_load_from_file(bookmark, filename, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool MoveItem(this MentorLake.GLib.GBookmarkFileHandle bookmark, string old_uri, string new_uri, IntPtr error)
+	public static bool MoveItem(this MentorLake.GLib.GBookmarkFileHandle bookmark, string old_uri, string new_uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_move_item(bookmark, old_uri, new_uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_move_item(bookmark, old_uri, new_uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool RemoveApplication(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, IntPtr error)
+	public static bool RemoveApplication(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_remove_application(bookmark, uri, name, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_remove_application(bookmark, uri, name, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool RemoveGroup(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, IntPtr error)
+	public static bool RemoveGroup(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_remove_group(bookmark, uri, group, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_remove_group(bookmark, uri, group, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool RemoveItem(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error)
+	public static bool RemoveItem(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_remove_item(bookmark, uri, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_remove_item(bookmark, uri, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static void SetAdded(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, long added)
@@ -177,14 +225,18 @@ public static class GBookmarkFileExtensions
 		GBookmarkFileExterns.g_bookmark_file_set_added_date_time(bookmark, uri, added);
 	}
 
-	public static bool SetAppInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, long stamp, IntPtr error)
+	public static bool SetAppInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, long stamp)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_set_app_info(bookmark, uri, name, exec, count, stamp, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_set_app_info(bookmark, uri, name, exec, count, stamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool SetApplicationInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, MentorLake.GLib.GDateTimeHandle stamp, IntPtr error)
+	public static bool SetApplicationInfo(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, MentorLake.GLib.GDateTimeHandle stamp)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_set_application_info(bookmark, uri, name, exec, count, stamp, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_set_application_info(bookmark, uri, name, exec, count, stamp, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static void SetDescription(this MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string description)
@@ -237,14 +289,18 @@ public static class GBookmarkFileExtensions
 		GBookmarkFileExterns.g_bookmark_file_set_visited_date_time(bookmark, uri, visited);
 	}
 
-	public static byte[] ToData(this MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length, IntPtr error)
+	public static byte[] ToData(this MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_to_data(bookmark, out length, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_to_data(bookmark, out length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool ToFile(this MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, IntPtr error)
+	public static bool ToFile(this MentorLake.GLib.GBookmarkFileHandle bookmark, string filename)
 	{
-		return GBookmarkFileExterns.g_bookmark_file_to_file(bookmark, filename, error);
+		var externCallResult = GBookmarkFileExterns.g_bookmark_file_to_file(bookmark, filename, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 
@@ -268,91 +324,91 @@ internal class GBookmarkFileExterns
 	internal static extern void g_bookmark_file_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern long g_bookmark_file_get_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern long g_bookmark_file_get_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_added_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_added_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_get_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out long stamp, IntPtr error);
+	internal static extern bool g_bookmark_file_get_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, out long stamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_get_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] out MentorLake.GLib.GDateTimeHandle stamp, IntPtr error);
-
-	[DllImport(GLibLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_bookmark_file_get_applications([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, IntPtr error);
-
-	[DllImport(GLibLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_bookmark_file_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern bool g_bookmark_file_get_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out string exec, out uint count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] out MentorLake.GLib.GDateTimeHandle stamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_bookmark_file_get_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, IntPtr error);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_get_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out string href, out string mime_type, IntPtr error);
-
-	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_get_is_private([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern string[] g_bookmark_file_get_applications([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_bookmark_file_get_mime_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern string g_bookmark_file_get_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern long g_bookmark_file_get_modified([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
+	internal static extern string[] g_bookmark_file_get_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_modified_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern bool g_bookmark_file_get_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out string href, out string mime_type, out MentorLake.GLib.GErrorHandle error);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern bool g_bookmark_file_get_is_private([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
+
+	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
+	internal static extern string g_bookmark_file_get_mime_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern long g_bookmark_file_get_modified([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_modified_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_bookmark_file_get_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_bookmark_file_get_title([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern string g_bookmark_file_get_title([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_bookmark_file_get_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern long g_bookmark_file_get_visited([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern long g_bookmark_file_get_visited([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_visited_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern MentorLake.GLib.GDateTimeHandle g_bookmark_file_get_visited_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_has_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, IntPtr error);
+	internal static extern bool g_bookmark_file_has_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_has_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, IntPtr error);
+	internal static extern bool g_bookmark_file_has_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_bookmark_file_has_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, byte[] data, UIntPtr length, IntPtr error);
+	internal static extern bool g_bookmark_file_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, byte[] data, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string file, out string full_path, IntPtr error);
+	internal static extern bool g_bookmark_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string file, out string full_path, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, IntPtr error);
+	internal static extern bool g_bookmark_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_move_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string old_uri, string new_uri, IntPtr error);
+	internal static extern bool g_bookmark_file_move_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string old_uri, string new_uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_remove_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, IntPtr error);
+	internal static extern bool g_bookmark_file_remove_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_remove_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, IntPtr error);
+	internal static extern bool g_bookmark_file_remove_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string group, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_remove_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, IntPtr error);
+	internal static extern bool g_bookmark_file_remove_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_bookmark_file_set_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, long added);
@@ -361,10 +417,10 @@ internal class GBookmarkFileExterns
 	internal static extern void g_bookmark_file_set_added_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] MentorLake.GLib.GDateTimeHandle added);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_set_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, long stamp, IntPtr error);
+	internal static extern bool g_bookmark_file_set_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, long stamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_set_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] MentorLake.GLib.GDateTimeHandle stamp, IntPtr error);
+	internal static extern bool g_bookmark_file_set_application_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string name, string exec, int count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] MentorLake.GLib.GDateTimeHandle stamp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_bookmark_file_set_description([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, string description);
@@ -397,10 +453,10 @@ internal class GBookmarkFileExterns
 	internal static extern void g_bookmark_file_set_visited_date_time([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string uri, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))] MentorLake.GLib.GDateTimeHandle visited);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern byte[] g_bookmark_file_to_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length, IntPtr error);
+	internal static extern byte[] g_bookmark_file_to_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_bookmark_file_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, IntPtr error);
+	internal static extern bool g_bookmark_file_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBookmarkFileHandle>))] MentorLake.GLib.GBookmarkFileHandle bookmark, string filename, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_bookmark_file_error_quark();

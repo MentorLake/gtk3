@@ -71,9 +71,11 @@ public static class GSocketClientHandleExtensions
 		return client;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle Connect(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle Connect(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect(client, connectable, cancellable, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect(client, connectable, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T ConnectAsync<T>(this T client, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
@@ -82,14 +84,18 @@ public static class GSocketClientHandleExtensions
 		return client;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_finish(client, result, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_finish(client, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHost(this MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHost(this MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_host(client, host_and_port, default_port, cancellable, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_host(client, host_and_port, default_port, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T ConnectToHostAsync<T>(this T client, string host_and_port, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
@@ -98,14 +104,18 @@ public static class GSocketClientHandleExtensions
 		return client;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHostFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToHostFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_host_finish(client, result, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_host_finish(client, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToService(this MentorLake.Gio.GSocketClientHandle client, string domain, string service, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToService(this MentorLake.Gio.GSocketClientHandle client, string domain, string service, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_service(client, domain, service, cancellable, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_service(client, domain, service, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T ConnectToServiceAsync<T>(this T client, string domain, string service, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
@@ -114,14 +124,18 @@ public static class GSocketClientHandleExtensions
 		return client;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToServiceFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToServiceFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_service_finish(client, result, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_service_finish(client, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUri(this MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUri(this MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_uri(client, uri, default_port, cancellable, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_uri(client, uri, default_port, cancellable, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T ConnectToUriAsync<T>(this T client, string uri, ushort default_port, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GSocketClientHandle
@@ -130,9 +144,11 @@ public static class GSocketClientHandleExtensions
 		return client;
 	}
 
-	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUriFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
+	public static MentorLake.Gio.GSocketConnectionHandle ConnectToUriFinish(this MentorLake.Gio.GSocketClientHandle client, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		return GSocketClientHandleExterns.g_socket_client_connect_to_uri_finish(client, result, error);
+		var externCallResult = GSocketClientHandleExterns.g_socket_client_connect_to_uri_finish(client, result, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static bool GetEnableProxy(this MentorLake.Gio.GSocketClientHandle client)
@@ -245,40 +261,40 @@ internal class GSocketClientHandleExterns
 	internal static extern void g_socket_client_add_application_proxy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string protocol);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_client_connect_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_host([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_host([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_client_connect_to_host_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string host_and_port, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_host_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_host_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_service([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string domain, string service, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_service([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string domain, string service, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_client_connect_to_service_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string domain, string service, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_service_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_service_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_uri([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_client_connect_to_uri_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, string uri, ushort default_port, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_uri_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
+	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_client_connect_to_uri_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_socket_client_get_enable_proxy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketClientHandle>))] MentorLake.Gio.GSocketClientHandle client);

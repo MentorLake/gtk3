@@ -74,19 +74,25 @@ public delegate void parsing_error([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkCssProviderHandleExtensions
 {
-	public static bool LoadFromData(this MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length, IntPtr error)
+	public static bool LoadFromData(this MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_data(css_provider, data, length, error);
+		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_data(css_provider, data, length, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool LoadFromFile(this MentorLake.Gtk.GtkCssProviderHandle css_provider, MentorLake.Gio.GFileHandle file, IntPtr error)
+	public static bool LoadFromFile(this MentorLake.Gtk.GtkCssProviderHandle css_provider, MentorLake.Gio.GFileHandle file)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_file(css_provider, file, error);
+		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_file(css_provider, file, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
-	public static bool LoadFromPath(this MentorLake.Gtk.GtkCssProviderHandle css_provider, string path, IntPtr error)
+	public static bool LoadFromPath(this MentorLake.Gtk.GtkCssProviderHandle css_provider, string path)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_path(css_provider, path, error);
+		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_path(css_provider, path, out var error);
+		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
+		return externCallResult;
 	}
 
 	public static T LoadFromResource<T>(this T css_provider, string resource_path) where T : GtkCssProviderHandle
@@ -108,13 +114,13 @@ internal class GtkCssProviderHandleExterns
 	internal static extern MentorLake.Gtk.GtkCssProviderHandle gtk_css_provider_new();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length, IntPtr error);
+	internal static extern bool gtk_css_provider_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, IntPtr error);
+	internal static extern bool gtk_css_provider_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string path, IntPtr error);
+	internal static extern bool gtk_css_provider_load_from_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string path, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_css_provider_load_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string resource_path);

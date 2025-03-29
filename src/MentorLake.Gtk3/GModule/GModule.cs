@@ -60,7 +60,7 @@ internal class GModuleExterns
 	internal static extern MentorLake.GModule.GModuleHandle g_module_open(string file_name, MentorLake.GModule.GModuleFlags flags);
 
 	[DllImport(GModuleLibrary.Name)]
-	internal static extern MentorLake.GModule.GModuleHandle g_module_open_full(string file_name, MentorLake.GModule.GModuleFlags flags);
+	internal static extern MentorLake.GModule.GModuleHandle g_module_open_full(string file_name, MentorLake.GModule.GModuleFlags flags, IntPtr error);
 
 	[DllImport(GModuleLibrary.Name)]
 	internal static extern bool g_module_supported();
@@ -89,9 +89,9 @@ public struct GModule
 		return GModuleExterns.g_module_open(file_name, flags);
 	}
 
-	public static MentorLake.GModule.GModuleHandle OpenFull(string file_name, MentorLake.GModule.GModuleFlags flags)
+	public static MentorLake.GModule.GModuleHandle OpenFull(string file_name, MentorLake.GModule.GModuleFlags flags, IntPtr error)
 	{
-		return GModuleExterns.g_module_open_full(file_name, flags);
+		return GModuleExterns.g_module_open_full(file_name, flags, error);
 	}
 
 	public static bool Supported()

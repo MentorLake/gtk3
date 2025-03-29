@@ -75,9 +75,9 @@ public static class GSubprocessLauncherHandleExtensions
 		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawn(self, error, argv0, @__arglist);
 	}
 
-	public static MentorLake.Gio.GSubprocessHandle Spawnv(this MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv)
+	public static MentorLake.Gio.GSubprocessHandle Spawnv(this MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, IntPtr error)
 	{
-		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawnv(self, argv);
+		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawnv(self, argv, error);
 	}
 
 	public static T TakeFd<T>(this T self, int source_fd, int target_fd) where T : GSubprocessLauncherHandle
@@ -152,7 +152,7 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, IntPtr error, string argv0, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawnv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv);
+	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawnv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_subprocess_launcher_take_fd([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, int source_fd, int target_fd);

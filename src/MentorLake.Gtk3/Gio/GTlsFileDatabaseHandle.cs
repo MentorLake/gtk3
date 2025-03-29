@@ -10,9 +10,9 @@ internal class GTlsFileDatabaseHandleImpl : BaseSafeHandle, GTlsFileDatabaseHand
 
 public static class GTlsFileDatabaseHandleExtensions
 {
-	public static MentorLake.Gio.GTlsDatabaseHandle New(string anchors)
+	public static MentorLake.Gio.GTlsDatabaseHandle New(string anchors, IntPtr error)
 	{
-		return GTlsFileDatabaseHandleExterns.g_tls_file_database_new(anchors);
+		return GTlsFileDatabaseHandleExterns.g_tls_file_database_new(anchors, error);
 	}
 
 }
@@ -20,6 +20,6 @@ public static class GTlsFileDatabaseHandleExtensions
 internal class GTlsFileDatabaseHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_file_database_new(string anchors);
+	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_file_database_new(string anchors, IntPtr error);
 
 }

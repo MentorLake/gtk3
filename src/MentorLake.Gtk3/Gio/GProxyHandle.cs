@@ -10,9 +10,9 @@ internal class GProxyHandleImpl : BaseSafeHandle, GProxyHandle
 
 public static class GProxyHandleExtensions
 {
-	public static MentorLake.Gio.GIOStreamHandle Connect(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GIOStreamHandle connection, MentorLake.Gio.GProxyAddressHandle proxy_address, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GIOStreamHandle Connect(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GIOStreamHandle connection, MentorLake.Gio.GProxyAddressHandle proxy_address, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GProxyHandleExterns.g_proxy_connect(proxy, connection, proxy_address, cancellable);
+		return GProxyHandleExterns.g_proxy_connect(proxy, connection, proxy_address, cancellable, error);
 	}
 
 	public static T ConnectAsync<T>(this T proxy, MentorLake.Gio.GIOStreamHandle connection, MentorLake.Gio.GProxyAddressHandle proxy_address, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GProxyHandle
@@ -21,9 +21,9 @@ public static class GProxyHandleExtensions
 		return proxy;
 	}
 
-	public static MentorLake.Gio.GIOStreamHandle ConnectFinish(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GAsyncResultHandle result)
+	public static MentorLake.Gio.GIOStreamHandle ConnectFinish(this MentorLake.Gio.GProxyHandle proxy, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GProxyHandleExterns.g_proxy_connect_finish(proxy, result);
+		return GProxyHandleExterns.g_proxy_connect_finish(proxy, result, error);
 	}
 
 	public static bool SupportsHostname(this MentorLake.Gio.GProxyHandle proxy)
@@ -41,13 +41,13 @@ public static class GProxyHandleExtensions
 internal class GProxyHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GIOStreamHandle g_proxy_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyAddressHandle>))] MentorLake.Gio.GProxyAddressHandle proxy_address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GIOStreamHandle g_proxy_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyAddressHandle>))] MentorLake.Gio.GProxyAddressHandle proxy_address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_proxy_connect_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyAddressHandle>))] MentorLake.Gio.GProxyAddressHandle proxy_address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GIOStreamHandle g_proxy_connect_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern MentorLake.Gio.GIOStreamHandle g_proxy_connect_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_proxy_supports_hostname([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GProxyHandleImpl>))] MentorLake.Gio.GProxyHandle proxy);

@@ -123,9 +123,9 @@ public static class GCancellableHandleExtensions
 		return cancellable;
 	}
 
-	public static bool SetErrorIfCancelled(this MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool SetErrorIfCancelled(this MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GCancellableHandleExterns.g_cancellable_set_error_if_cancelled(cancellable);
+		return GCancellableHandleExterns.g_cancellable_set_error_if_cancelled(cancellable, error);
 	}
 
 	public static MentorLake.GLib.GSourceHandle SourceNew(this MentorLake.Gio.GCancellableHandle cancellable)
@@ -171,7 +171,7 @@ internal class GCancellableHandleExterns
 	internal static extern void g_cancellable_reset([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_cancellable_set_error_if_cancelled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_cancellable_set_error_if_cancelled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GSourceHandle g_cancellable_source_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);

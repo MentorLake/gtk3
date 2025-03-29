@@ -70,10 +70,10 @@ internal class GThreadExterns
 	internal static extern void g_thread_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))] MentorLake.GLib.GThreadHandle thread);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_create_full(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_create_full(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_thread_error_quark();
@@ -103,14 +103,14 @@ internal class GThreadExterns
 
 public struct GThread
 {
-	public static MentorLake.GLib.GThreadHandle Create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable)
+	public static MentorLake.GLib.GThreadHandle Create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, IntPtr error)
 	{
-		return GThreadExterns.g_thread_create(func, data, joinable);
+		return GThreadExterns.g_thread_create(func, data, joinable, error);
 	}
 
-	public static MentorLake.GLib.GThreadHandle CreateFull(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority)
+	public static MentorLake.GLib.GThreadHandle CreateFull(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, IntPtr error)
 	{
-		return GThreadExterns.g_thread_create_full(func, data, stack_size, joinable, bound, priority);
+		return GThreadExterns.g_thread_create_full(func, data, stack_size, joinable, bound, priority, error);
 	}
 
 	public static MentorLake.GLib.GQuark ErrorQuark()

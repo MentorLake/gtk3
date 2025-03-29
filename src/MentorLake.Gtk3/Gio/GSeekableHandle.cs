@@ -20,9 +20,9 @@ public static class GSeekableHandleExtensions
 		return GSeekableHandleExterns.g_seekable_can_truncate(seekable);
 	}
 
-	public static bool Seek(this MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.GLib.GSeekType type, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool Seek(this MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.GLib.GSeekType type, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSeekableHandleExterns.g_seekable_seek(seekable, offset, type, cancellable);
+		return GSeekableHandleExterns.g_seekable_seek(seekable, offset, type, cancellable, error);
 	}
 
 	public static int Tell(this MentorLake.Gio.GSeekableHandle seekable)
@@ -30,9 +30,9 @@ public static class GSeekableHandleExtensions
 		return GSeekableHandleExterns.g_seekable_tell(seekable);
 	}
 
-	public static bool Truncate(this MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool Truncate(this MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSeekableHandleExterns.g_seekable_truncate(seekable, offset, cancellable);
+		return GSeekableHandleExterns.g_seekable_truncate(seekable, offset, cancellable, error);
 	}
 
 }
@@ -46,12 +46,12 @@ internal class GSeekableHandleExterns
 	internal static extern bool g_seekable_can_truncate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_seekable_seek([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.GLib.GSeekType type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_seekable_seek([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable, int offset, MentorLake.GLib.GSeekType type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern int g_seekable_tell([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_seekable_truncate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable, int offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_seekable_truncate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSeekableHandleImpl>))] MentorLake.Gio.GSeekableHandle seekable, int offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 }

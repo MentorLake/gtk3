@@ -87,24 +87,24 @@ public static class GTaskHandleExtensions
 		return GTaskHandleExterns.g_task_had_error(task);
 	}
 
-	public static bool PropagateBoolean(this MentorLake.Gio.GTaskHandle task)
+	public static bool PropagateBoolean(this MentorLake.Gio.GTaskHandle task, IntPtr error)
 	{
-		return GTaskHandleExterns.g_task_propagate_boolean(task);
+		return GTaskHandleExterns.g_task_propagate_boolean(task, error);
 	}
 
-	public static UIntPtr PropagateInt(this MentorLake.Gio.GTaskHandle task)
+	public static UIntPtr PropagateInt(this MentorLake.Gio.GTaskHandle task, IntPtr error)
 	{
-		return GTaskHandleExterns.g_task_propagate_int(task);
+		return GTaskHandleExterns.g_task_propagate_int(task, error);
 	}
 
-	public static IntPtr PropagatePointer(this MentorLake.Gio.GTaskHandle task)
+	public static IntPtr PropagatePointer(this MentorLake.Gio.GTaskHandle task, IntPtr error)
 	{
-		return GTaskHandleExterns.g_task_propagate_pointer(task);
+		return GTaskHandleExterns.g_task_propagate_pointer(task, error);
 	}
 
-	public static bool PropagateValue(this MentorLake.Gio.GTaskHandle task, out MentorLake.GObject.GValue value)
+	public static bool PropagateValue(this MentorLake.Gio.GTaskHandle task, out MentorLake.GObject.GValue value, IntPtr error)
 	{
-		return GTaskHandleExterns.g_task_propagate_value(task, out value);
+		return GTaskHandleExterns.g_task_propagate_value(task, out value, error);
 	}
 
 	public static T ReturnBoolean<T>(this T task, bool result) where T : GTaskHandle
@@ -258,16 +258,16 @@ internal class GTaskHandleExterns
 	internal static extern bool g_task_had_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_task_propagate_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
+	internal static extern bool g_task_propagate_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_task_propagate_int([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
+	internal static extern UIntPtr g_task_propagate_int([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern IntPtr g_task_propagate_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
+	internal static extern IntPtr g_task_propagate_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_task_propagate_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, out MentorLake.GObject.GValue value);
+	internal static extern bool g_task_propagate_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, out MentorLake.GObject.GValue value, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_task_return_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, bool result);

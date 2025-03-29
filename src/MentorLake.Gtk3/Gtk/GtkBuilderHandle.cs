@@ -38,34 +38,34 @@ public static class GtkBuilderHandleExtensions
 		return builder;
 	}
 
-	public static uint AddFromFile(this MentorLake.Gtk.GtkBuilderHandle builder, string filename)
+	public static uint AddFromFile(this MentorLake.Gtk.GtkBuilderHandle builder, string filename, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_from_file(builder, filename);
+		return GtkBuilderHandleExterns.gtk_builder_add_from_file(builder, filename, error);
 	}
 
-	public static uint AddFromResource(this MentorLake.Gtk.GtkBuilderHandle builder, string resource_path)
+	public static uint AddFromResource(this MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_from_resource(builder, resource_path);
+		return GtkBuilderHandleExterns.gtk_builder_add_from_resource(builder, resource_path, error);
 	}
 
-	public static uint AddFromString(this MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length)
+	public static uint AddFromString(this MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_from_string(builder, buffer, length);
+		return GtkBuilderHandleExterns.gtk_builder_add_from_string(builder, buffer, length, error);
 	}
 
-	public static uint AddObjectsFromFile(this MentorLake.Gtk.GtkBuilderHandle builder, string filename, string[] object_ids)
+	public static uint AddObjectsFromFile(this MentorLake.Gtk.GtkBuilderHandle builder, string filename, string[] object_ids, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_file(builder, filename, object_ids);
+		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_file(builder, filename, object_ids, error);
 	}
 
-	public static uint AddObjectsFromResource(this MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, string[] object_ids)
+	public static uint AddObjectsFromResource(this MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, string[] object_ids, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_resource(builder, resource_path, object_ids);
+		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_resource(builder, resource_path, object_ids, error);
 	}
 
-	public static uint AddObjectsFromString(this MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, string[] object_ids)
+	public static uint AddObjectsFromString(this MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, string[] object_ids, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_string(builder, buffer, length, object_ids);
+		return GtkBuilderHandleExterns.gtk_builder_add_objects_from_string(builder, buffer, length, object_ids, error);
 	}
 
 	public static T ConnectSignals<T>(this T builder, IntPtr user_data) where T : GtkBuilderHandle
@@ -86,9 +86,9 @@ public static class GtkBuilderHandleExtensions
 		return builder;
 	}
 
-	public static uint ExtendWithTemplate(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType template_type, string buffer, UIntPtr length)
+	public static uint ExtendWithTemplate(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType template_type, string buffer, UIntPtr length, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_extend_with_template(builder, widget, template_type, buffer, length);
+		return GtkBuilderHandleExterns.gtk_builder_extend_with_template(builder, widget, template_type, buffer, length, error);
 	}
 
 	public static MentorLake.Gtk.GtkApplicationHandle GetApplication(this MentorLake.Gtk.GtkBuilderHandle builder)
@@ -133,14 +133,14 @@ public static class GtkBuilderHandleExtensions
 		return builder;
 	}
 
-	public static bool ValueFromString(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GParamSpecHandle pspec, string @string, out MentorLake.GObject.GValue value)
+	public static bool ValueFromString(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GParamSpecHandle pspec, string @string, out MentorLake.GObject.GValue value, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_value_from_string(builder, pspec, @string, out value);
+		return GtkBuilderHandleExterns.gtk_builder_value_from_string(builder, pspec, @string, out value, error);
 	}
 
-	public static bool ValueFromStringType(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GType type, string @string, out MentorLake.GObject.GValue value)
+	public static bool ValueFromStringType(this MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GType type, string @string, out MentorLake.GObject.GValue value, IntPtr error)
 	{
-		return GtkBuilderHandleExterns.gtk_builder_value_from_string_type(builder, type, @string, out value);
+		return GtkBuilderHandleExterns.gtk_builder_value_from_string_type(builder, type, @string, out value, error);
 	}
 
 }
@@ -166,22 +166,22 @@ internal class GtkBuilderHandleExterns
 	internal static extern void gtk_builder_add_callback_symbols([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string first_callback_name, MentorLake.GObject.GCallback first_callback_symbol, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string filename);
+	internal static extern uint gtk_builder_add_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string filename, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string resource_path);
+	internal static extern uint gtk_builder_add_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length);
+	internal static extern uint gtk_builder_add_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_objects_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string filename, string[] object_ids);
+	internal static extern uint gtk_builder_add_objects_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string filename, string[] object_ids, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_objects_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, string[] object_ids);
+	internal static extern uint gtk_builder_add_objects_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string resource_path, string[] object_ids, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_add_objects_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, string[] object_ids);
+	internal static extern uint gtk_builder_add_objects_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string buffer, UIntPtr length, string[] object_ids, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_builder_connect_signals([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, IntPtr user_data);
@@ -193,7 +193,7 @@ internal class GtkBuilderHandleExterns
 	internal static extern void gtk_builder_expose_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern uint gtk_builder_extend_with_template([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType template_type, string buffer, UIntPtr length);
+	internal static extern uint gtk_builder_extend_with_template([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType template_type, string buffer, UIntPtr length, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkApplicationHandle gtk_builder_get_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder);
@@ -221,9 +221,9 @@ internal class GtkBuilderHandleExterns
 	internal static extern void gtk_builder_set_translation_domain([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, string domain);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_builder_value_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle pspec, string @string, out MentorLake.GObject.GValue value);
+	internal static extern bool gtk_builder_value_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle pspec, string @string, out MentorLake.GObject.GValue value, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_builder_value_from_string_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GType type, string @string, out MentorLake.GObject.GValue value);
+	internal static extern bool gtk_builder_value_from_string_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBuilderHandle>))] MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GType type, string @string, out MentorLake.GObject.GValue value, IntPtr error);
 
 }

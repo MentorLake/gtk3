@@ -63,9 +63,9 @@ public static class GSimpleAsyncResultHandleExtensions
 		return GSimpleAsyncResultHandleExterns.g_simple_async_result_get_source_tag(simple);
 	}
 
-	public static bool PropagateError(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
+	public static bool PropagateError(this MentorLake.Gio.GSimpleAsyncResultHandle simple, IntPtr error)
 	{
-		return GSimpleAsyncResultHandleExterns.g_simple_async_result_propagate_error(simple);
+		return GSimpleAsyncResultHandleExterns.g_simple_async_result_propagate_error(simple, error);
 	}
 
 	public static T RunInThread<T>(this T simple, MentorLake.Gio.GSimpleAsyncThreadFunc func, int io_priority, MentorLake.Gio.GCancellableHandle cancellable) where T : GSimpleAsyncResultHandle
@@ -163,7 +163,7 @@ internal class GSimpleAsyncResultHandleExterns
 	internal static extern IntPtr g_simple_async_result_get_source_tag([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_simple_async_result_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple);
+	internal static extern bool g_simple_async_result_propagate_error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_simple_async_result_run_in_thread([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSimpleAsyncResultHandle>))] MentorLake.Gio.GSimpleAsyncResultHandle simple, MentorLake.Gio.GSimpleAsyncThreadFunc func, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);

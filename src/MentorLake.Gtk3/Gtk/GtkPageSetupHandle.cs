@@ -81,14 +81,14 @@ public static class GtkPageSetupHandleExtensions
 		return GtkPageSetupHandleExterns.gtk_page_setup_get_top_margin(setup, unit);
 	}
 
-	public static bool LoadFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name)
+	public static bool LoadFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name, IntPtr error)
 	{
-		return GtkPageSetupHandleExterns.gtk_page_setup_load_file(setup, file_name);
+		return GtkPageSetupHandleExterns.gtk_page_setup_load_file(setup, file_name, error);
 	}
 
-	public static bool LoadKeyFile(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.GLib.GKeyFileHandle key_file, string group_name)
+	public static bool LoadKeyFile(this MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error)
 	{
-		return GtkPageSetupHandleExterns.gtk_page_setup_load_key_file(setup, key_file, group_name);
+		return GtkPageSetupHandleExterns.gtk_page_setup_load_key_file(setup, key_file, group_name, error);
 	}
 
 	public static T SetBottomMargin<T>(this T setup, double margin, MentorLake.Gtk.GtkUnit unit) where T : GtkPageSetupHandle
@@ -133,9 +133,9 @@ public static class GtkPageSetupHandleExtensions
 		return setup;
 	}
 
-	public static bool ToFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name)
+	public static bool ToFile(this MentorLake.Gtk.GtkPageSetupHandle setup, string file_name, IntPtr error)
 	{
-		return GtkPageSetupHandleExterns.gtk_page_setup_to_file(setup, file_name);
+		return GtkPageSetupHandleExterns.gtk_page_setup_to_file(setup, file_name, error);
 	}
 
 	public static MentorLake.GLib.GVariantHandle ToGvariant(this MentorLake.Gtk.GtkPageSetupHandle setup)
@@ -199,10 +199,10 @@ internal class GtkPageSetupHandleExterns
 	internal static extern double gtk_page_setup_get_top_margin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, MentorLake.Gtk.GtkUnit unit);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_page_setup_load_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, string file_name);
+	internal static extern bool gtk_page_setup_load_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, string file_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_page_setup_load_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name);
+	internal static extern bool gtk_page_setup_load_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_page_setup_set_bottom_margin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, double margin, MentorLake.Gtk.GtkUnit unit);
@@ -226,7 +226,7 @@ internal class GtkPageSetupHandleExterns
 	internal static extern void gtk_page_setup_set_top_margin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, double margin, MentorLake.Gtk.GtkUnit unit);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_page_setup_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, string file_name);
+	internal static extern bool gtk_page_setup_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, string file_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.GLib.GVariantHandle gtk_page_setup_to_gvariant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup);

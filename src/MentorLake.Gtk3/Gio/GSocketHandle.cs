@@ -16,24 +16,24 @@ public class GSocketHandle : GObjectHandle, GDatagramBasedHandle, GInitableHandl
 
 public static class GSocketHandleExtensions
 {
-	public static MentorLake.Gio.GSocketHandle Accept(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GSocketHandle Accept(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_accept(socket, cancellable);
+		return GSocketHandleExterns.g_socket_accept(socket, cancellable, error);
 	}
 
-	public static bool Bind(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, bool allow_reuse)
+	public static bool Bind(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, bool allow_reuse, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_bind(socket, address, allow_reuse);
+		return GSocketHandleExterns.g_socket_bind(socket, address, allow_reuse, error);
 	}
 
-	public static bool CheckConnectResult(this MentorLake.Gio.GSocketHandle socket)
+	public static bool CheckConnectResult(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_check_connect_result(socket);
+		return GSocketHandleExterns.g_socket_check_connect_result(socket, error);
 	}
 
-	public static bool Close(this MentorLake.Gio.GSocketHandle socket)
+	public static bool Close(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_close(socket);
+		return GSocketHandleExterns.g_socket_close(socket, error);
 	}
 
 	public static MentorLake.GLib.GIOCondition ConditionCheck(this MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition)
@@ -41,19 +41,19 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_condition_check(socket, condition);
 	}
 
-	public static bool ConditionTimedWait(this MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool ConditionTimedWait(this MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_condition_timed_wait(socket, condition, timeout_us, cancellable);
+		return GSocketHandleExterns.g_socket_condition_timed_wait(socket, condition, timeout_us, cancellable, error);
 	}
 
-	public static bool ConditionWait(this MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool ConditionWait(this MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_condition_wait(socket, condition, cancellable);
+		return GSocketHandleExterns.g_socket_condition_wait(socket, condition, cancellable, error);
 	}
 
-	public static bool Connect(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool Connect(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_connect(socket, address, cancellable);
+		return GSocketHandleExterns.g_socket_connect(socket, address, cancellable, error);
 	}
 
 	public static MentorLake.Gio.GSocketConnectionHandle ConnectionFactoryCreateConnection(this MentorLake.Gio.GSocketHandle socket)
@@ -81,9 +81,9 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_get_broadcast(socket);
 	}
 
-	public static MentorLake.Gio.GCredentialsHandle GetCredentials(this MentorLake.Gio.GSocketHandle socket)
+	public static MentorLake.Gio.GCredentialsHandle GetCredentials(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_get_credentials(socket);
+		return GSocketHandleExterns.g_socket_get_credentials(socket, error);
 	}
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GSocketHandle socket)
@@ -106,9 +106,9 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_get_listen_backlog(socket);
 	}
 
-	public static MentorLake.Gio.GSocketAddressHandle GetLocalAddress(this MentorLake.Gio.GSocketHandle socket)
+	public static MentorLake.Gio.GSocketAddressHandle GetLocalAddress(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_get_local_address(socket);
+		return GSocketHandleExterns.g_socket_get_local_address(socket, error);
 	}
 
 	public static bool GetMulticastLoopback(this MentorLake.Gio.GSocketHandle socket)
@@ -121,9 +121,9 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_get_multicast_ttl(socket);
 	}
 
-	public static bool GetOption(this MentorLake.Gio.GSocketHandle socket, int level, int optname, out int value)
+	public static bool GetOption(this MentorLake.Gio.GSocketHandle socket, int level, int optname, out int value, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_get_option(socket, level, optname, out value);
+		return GSocketHandleExterns.g_socket_get_option(socket, level, optname, out value, error);
 	}
 
 	public static MentorLake.Gio.GSocketProtocol GetProtocol(this MentorLake.Gio.GSocketHandle socket)
@@ -131,9 +131,9 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_get_protocol(socket);
 	}
 
-	public static MentorLake.Gio.GSocketAddressHandle GetRemoteAddress(this MentorLake.Gio.GSocketHandle socket)
+	public static MentorLake.Gio.GSocketAddressHandle GetRemoteAddress(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_get_remote_address(socket);
+		return GSocketHandleExterns.g_socket_get_remote_address(socket, error);
 	}
 
 	public static MentorLake.Gio.GSocketType GetSocketType(this MentorLake.Gio.GSocketHandle socket)
@@ -161,94 +161,94 @@ public static class GSocketHandleExtensions
 		return GSocketHandleExterns.g_socket_is_connected(socket);
 	}
 
-	public static bool JoinMulticastGroup(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface)
+	public static bool JoinMulticastGroup(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_join_multicast_group(socket, group, source_specific, iface);
+		return GSocketHandleExterns.g_socket_join_multicast_group(socket, group, source_specific, iface, error);
 	}
 
-	public static bool JoinMulticastGroupSsm(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, MentorLake.Gio.GInetAddressHandle source_specific, string iface)
+	public static bool JoinMulticastGroupSsm(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, MentorLake.Gio.GInetAddressHandle source_specific, string iface, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_join_multicast_group_ssm(socket, group, source_specific, iface);
+		return GSocketHandleExterns.g_socket_join_multicast_group_ssm(socket, group, source_specific, iface, error);
 	}
 
-	public static bool LeaveMulticastGroup(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface)
+	public static bool LeaveMulticastGroup(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_leave_multicast_group(socket, group, source_specific, iface);
+		return GSocketHandleExterns.g_socket_leave_multicast_group(socket, group, source_specific, iface, error);
 	}
 
-	public static bool LeaveMulticastGroupSsm(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, MentorLake.Gio.GInetAddressHandle source_specific, string iface)
+	public static bool LeaveMulticastGroupSsm(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInetAddressHandle group, MentorLake.Gio.GInetAddressHandle source_specific, string iface, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_leave_multicast_group_ssm(socket, group, source_specific, iface);
+		return GSocketHandleExterns.g_socket_leave_multicast_group_ssm(socket, group, source_specific, iface, error);
 	}
 
-	public static bool Listen(this MentorLake.Gio.GSocketHandle socket)
+	public static bool Listen(this MentorLake.Gio.GSocketHandle socket, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_listen(socket);
+		return GSocketHandleExterns.g_socket_listen(socket, error);
 	}
 
-	public static UIntPtr Receive(this MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr Receive(this MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive(socket, out buffer, size, cancellable);
+		return GSocketHandleExterns.g_socket_receive(socket, out buffer, size, cancellable, error);
 	}
 
-	public static MentorLake.GLib.GBytesHandle ReceiveBytes(this MentorLake.Gio.GSocketHandle socket, UIntPtr size, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.GLib.GBytesHandle ReceiveBytes(this MentorLake.Gio.GSocketHandle socket, UIntPtr size, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_bytes(socket, size, timeout_us, cancellable);
+		return GSocketHandleExterns.g_socket_receive_bytes(socket, size, timeout_us, cancellable, error);
 	}
 
-	public static MentorLake.GLib.GBytesHandle ReceiveBytesFrom(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, UIntPtr size, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.GLib.GBytesHandle ReceiveBytesFrom(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, UIntPtr size, long timeout_us, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_bytes_from(socket, out address, size, timeout_us, cancellable);
+		return GSocketHandleExterns.g_socket_receive_bytes_from(socket, out address, size, timeout_us, cancellable, error);
 	}
 
-	public static UIntPtr ReceiveFrom(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, out byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr ReceiveFrom(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, out byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_from(socket, out address, out buffer, size, cancellable);
+		return GSocketHandleExterns.g_socket_receive_from(socket, out address, out buffer, size, cancellable, error);
 	}
 
-	public static UIntPtr ReceiveMessage(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GInputVector[] vectors, int num_vectors, out MentorLake.Gio.GSocketControlMessageHandle[] messages, out int num_messages, ref int flags, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr ReceiveMessage(this MentorLake.Gio.GSocketHandle socket, out MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GInputVector[] vectors, int num_vectors, out MentorLake.Gio.GSocketControlMessageHandle[] messages, out int num_messages, ref int flags, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_message(socket, out address, vectors, num_vectors, out messages, out num_messages, ref flags, cancellable);
+		return GSocketHandleExterns.g_socket_receive_message(socket, out address, vectors, num_vectors, out messages, out num_messages, ref flags, cancellable, error);
 	}
 
-	public static int ReceiveMessages(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInputMessage[] messages, uint num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable)
+	public static int ReceiveMessages(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInputMessage[] messages, uint num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_messages(socket, messages, num_messages, flags, cancellable);
+		return GSocketHandleExterns.g_socket_receive_messages(socket, messages, num_messages, flags, cancellable, error);
 	}
 
-	public static UIntPtr ReceiveWithBlocking(this MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, bool blocking, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr ReceiveWithBlocking(this MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, bool blocking, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_receive_with_blocking(socket, out buffer, size, blocking, cancellable);
+		return GSocketHandleExterns.g_socket_receive_with_blocking(socket, out buffer, size, blocking, cancellable, error);
 	}
 
-	public static UIntPtr Send(this MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr Send(this MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send(socket, buffer, size, cancellable);
+		return GSocketHandleExterns.g_socket_send(socket, buffer, size, cancellable, error);
 	}
 
-	public static UIntPtr SendMessage(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr SendMessage(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send_message(socket, address, vectors, num_vectors, messages, num_messages, flags, cancellable);
+		return GSocketHandleExterns.g_socket_send_message(socket, address, vectors, num_vectors, messages, num_messages, flags, cancellable, error);
 	}
 
-	public static MentorLake.Gio.GPollableReturn SendMessageWithTimeout(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, long timeout_us, out UIntPtr bytes_written, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GPollableReturn SendMessageWithTimeout(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, long timeout_us, out UIntPtr bytes_written, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send_message_with_timeout(socket, address, vectors, num_vectors, messages, num_messages, flags, timeout_us, out bytes_written, cancellable);
+		return GSocketHandleExterns.g_socket_send_message_with_timeout(socket, address, vectors, num_vectors, messages, num_messages, flags, timeout_us, out bytes_written, cancellable, error);
 	}
 
-	public static int SendMessages(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GOutputMessage[] messages, uint num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable)
+	public static int SendMessages(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GOutputMessage[] messages, uint num_messages, int flags, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send_messages(socket, messages, num_messages, flags, cancellable);
+		return GSocketHandleExterns.g_socket_send_messages(socket, messages, num_messages, flags, cancellable, error);
 	}
 
-	public static UIntPtr SendTo(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr SendTo(this MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GSocketAddressHandle address, byte[] buffer, UIntPtr size, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send_to(socket, address, buffer, size, cancellable);
+		return GSocketHandleExterns.g_socket_send_to(socket, address, buffer, size, cancellable, error);
 	}
 
-	public static UIntPtr SendWithBlocking(this MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, bool blocking, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr SendWithBlocking(this MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, bool blocking, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_send_with_blocking(socket, buffer, size, blocking, cancellable);
+		return GSocketHandleExterns.g_socket_send_with_blocking(socket, buffer, size, blocking, cancellable, error);
 	}
 
 	public static T SetBlocking<T>(this T socket, bool blocking) where T : GSocketHandle
@@ -287,9 +287,9 @@ public static class GSocketHandleExtensions
 		return socket;
 	}
 
-	public static bool SetOption(this MentorLake.Gio.GSocketHandle socket, int level, int optname, int value)
+	public static bool SetOption(this MentorLake.Gio.GSocketHandle socket, int level, int optname, int value, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_set_option(socket, level, optname, value);
+		return GSocketHandleExterns.g_socket_set_option(socket, level, optname, value, error);
 	}
 
 	public static T SetTimeout<T>(this T socket, uint timeout) where T : GSocketHandle
@@ -304,9 +304,9 @@ public static class GSocketHandleExtensions
 		return socket;
 	}
 
-	public static bool Shutdown(this MentorLake.Gio.GSocketHandle socket, bool shutdown_read, bool shutdown_write)
+	public static bool Shutdown(this MentorLake.Gio.GSocketHandle socket, bool shutdown_read, bool shutdown_write, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_shutdown(socket, shutdown_read, shutdown_write);
+		return GSocketHandleExterns.g_socket_shutdown(socket, shutdown_read, shutdown_write, error);
 	}
 
 	public static bool SpeaksIpv4(this MentorLake.Gio.GSocketHandle socket)
@@ -325,28 +325,28 @@ internal class GSocketHandleExterns
 	internal static extern MentorLake.Gio.GSocketHandle g_socket_new_from_fd(int fd);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketHandle g_socket_accept([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GSocketHandle g_socket_accept([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_bind([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, bool allow_reuse);
+	internal static extern bool g_socket_bind([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, bool allow_reuse, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_check_connect_result([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern bool g_socket_check_connect_result([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern bool g_socket_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GIOCondition g_socket_condition_check([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_condition_timed_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_socket_condition_timed_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_condition_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_socket_condition_wait([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.GLib.GIOCondition condition, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_socket_connect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSocketConnectionHandle g_socket_connection_factory_create_connection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
@@ -364,7 +364,7 @@ internal class GSocketHandleExterns
 	internal static extern bool g_socket_get_broadcast([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GCredentialsHandle g_socket_get_credentials([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern MentorLake.Gio.GCredentialsHandle g_socket_get_credentials([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSocketFamily g_socket_get_family([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
@@ -379,7 +379,7 @@ internal class GSocketHandleExterns
 	internal static extern int g_socket_get_listen_backlog([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketAddressHandle g_socket_get_local_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern MentorLake.Gio.GSocketAddressHandle g_socket_get_local_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_socket_get_multicast_loopback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
@@ -388,13 +388,13 @@ internal class GSocketHandleExterns
 	internal static extern uint g_socket_get_multicast_ttl([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_get_option([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, int level, int optname, out int value);
+	internal static extern bool g_socket_get_option([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, int level, int optname, out int value, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSocketProtocol g_socket_get_protocol([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketAddressHandle g_socket_get_remote_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern MentorLake.Gio.GSocketAddressHandle g_socket_get_remote_address([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSocketType g_socket_get_socket_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
@@ -412,58 +412,58 @@ internal class GSocketHandleExterns
 	internal static extern bool g_socket_is_connected([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_join_multicast_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface);
+	internal static extern bool g_socket_join_multicast_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_join_multicast_group_ssm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle source_specific, string iface);
+	internal static extern bool g_socket_join_multicast_group_ssm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle source_specific, string iface, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_leave_multicast_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface);
+	internal static extern bool g_socket_leave_multicast_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, bool source_specific, string iface, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_leave_multicast_group_ssm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle source_specific, string iface);
+	internal static extern bool g_socket_leave_multicast_group_ssm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle group, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle source_specific, string iface, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_listen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
+	internal static extern bool g_socket_listen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_receive([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_receive([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GBytesHandle g_socket_receive_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, UIntPtr size, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.GLib.GBytesHandle g_socket_receive_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, UIntPtr size, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GLib.GBytesHandle g_socket_receive_bytes_from([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, UIntPtr size, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.GLib.GBytesHandle g_socket_receive_bytes_from([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, UIntPtr size, long timeout_us, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_receive_from([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, out byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_receive_from([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, out byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_receive_message([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GInputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] out MentorLake.Gio.GSocketControlMessageHandle[] messages, out int num_messages, ref int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_receive_message([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] out MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GInputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] out MentorLake.Gio.GSocketControlMessageHandle[] messages, out int num_messages, ref int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_socket_receive_messages([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInputMessage[] messages, uint num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern int g_socket_receive_messages([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GInputMessage[] messages, uint num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_receive_with_blocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, bool blocking, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_receive_with_blocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, out byte[] buffer, UIntPtr size, bool blocking, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_send([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_send([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_send_message([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_send_message([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GPollableReturn g_socket_send_message_with_timeout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, long timeout_us, out UIntPtr bytes_written, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GPollableReturn g_socket_send_message_with_timeout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, MentorLake.Gio.GOutputVector[] vectors, int num_vectors, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 5, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle[] messages, int num_messages, int flags, long timeout_us, out UIntPtr bytes_written, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_socket_send_messages([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GOutputMessage[] messages, uint num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern int g_socket_send_messages([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, MentorLake.Gio.GOutputMessage[] messages, uint num_messages, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_send_to([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_send_to([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))] MentorLake.Gio.GSocketAddressHandle address, byte[] buffer, UIntPtr size, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_socket_send_with_blocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, bool blocking, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_socket_send_with_blocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, byte[] buffer, UIntPtr size, bool blocking, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_set_blocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, bool blocking);
@@ -484,7 +484,7 @@ internal class GSocketHandleExterns
 	internal static extern void g_socket_set_multicast_ttl([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, uint ttl);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_set_option([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, int level, int optname, int value);
+	internal static extern bool g_socket_set_option([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, int level, int optname, int value, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_socket_set_timeout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, uint timeout);
@@ -493,7 +493,7 @@ internal class GSocketHandleExterns
 	internal static extern void g_socket_set_ttl([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, uint ttl);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_socket_shutdown([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, bool shutdown_read, bool shutdown_write);
+	internal static extern bool g_socket_shutdown([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, bool shutdown_read, bool shutdown_write, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_socket_speaks_ipv4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);

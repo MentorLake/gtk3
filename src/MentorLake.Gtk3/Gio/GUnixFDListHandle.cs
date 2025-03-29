@@ -16,14 +16,14 @@ public class GUnixFDListHandle : GObjectHandle
 
 public static class GUnixFDListHandleExtensions
 {
-	public static int Append(this MentorLake.Gio.GUnixFDListHandle list, int fd)
+	public static int Append(this MentorLake.Gio.GUnixFDListHandle list, int fd, IntPtr error)
 	{
-		return GUnixFDListHandleExterns.g_unix_fd_list_append(list, fd);
+		return GUnixFDListHandleExterns.g_unix_fd_list_append(list, fd, error);
 	}
 
-	public static int Get(this MentorLake.Gio.GUnixFDListHandle list, int index_)
+	public static int Get(this MentorLake.Gio.GUnixFDListHandle list, int index_, IntPtr error)
 	{
-		return GUnixFDListHandleExterns.g_unix_fd_list_get(list, index_);
+		return GUnixFDListHandleExterns.g_unix_fd_list_get(list, index_, error);
 	}
 
 	public static int GetLength(this MentorLake.Gio.GUnixFDListHandle list)
@@ -52,10 +52,10 @@ internal class GUnixFDListHandleExterns
 	internal static extern MentorLake.Gio.GUnixFDListHandle g_unix_fd_list_new_from_array(int[] fds, int n_fds);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_unix_fd_list_append([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle list, int fd);
+	internal static extern int g_unix_fd_list_append([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle list, int fd, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern int g_unix_fd_list_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle list, int index_);
+	internal static extern int g_unix_fd_list_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle list, int index_, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern int g_unix_fd_list_get_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))] MentorLake.Gio.GUnixFDListHandle list);

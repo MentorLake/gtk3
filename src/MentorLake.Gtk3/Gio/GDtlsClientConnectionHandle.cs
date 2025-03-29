@@ -37,9 +37,9 @@ public static class GDtlsClientConnectionHandleExtensions
 		return conn;
 	}
 
-	public static MentorLake.Gio.GDatagramBasedHandle New(MentorLake.Gio.GDatagramBasedHandle base_socket, MentorLake.Gio.GSocketConnectableHandle server_identity)
+	public static MentorLake.Gio.GDatagramBasedHandle New(MentorLake.Gio.GDatagramBasedHandle base_socket, MentorLake.Gio.GSocketConnectableHandle server_identity, IntPtr error)
 	{
-		return GDtlsClientConnectionHandleExterns.g_dtls_client_connection_new(base_socket, server_identity);
+		return GDtlsClientConnectionHandleExterns.g_dtls_client_connection_new(base_socket, server_identity, error);
 	}
 
 }
@@ -62,6 +62,6 @@ internal class GDtlsClientConnectionHandleExterns
 	internal static extern void g_dtls_client_connection_set_validation_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDtlsClientConnectionHandleImpl>))] MentorLake.Gio.GDtlsClientConnectionHandle conn, MentorLake.Gio.GTlsCertificateFlags flags);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDatagramBasedHandle g_dtls_client_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDatagramBasedHandleImpl>))] MentorLake.Gio.GDatagramBasedHandle base_socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle server_identity);
+	internal static extern MentorLake.Gio.GDatagramBasedHandle g_dtls_client_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDatagramBasedHandleImpl>))] MentorLake.Gio.GDatagramBasedHandle base_socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle server_identity, IntPtr error);
 
 }

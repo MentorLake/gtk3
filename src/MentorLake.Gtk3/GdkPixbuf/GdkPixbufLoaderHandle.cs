@@ -195,9 +195,9 @@ public delegate void size_prepared([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GdkPixbufLoaderHandleExtensions
 {
-	public static bool Close(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
+	public static bool Close(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, IntPtr error)
 	{
-		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_close(loader);
+		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_close(loader, error);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle GetAnimation(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
@@ -221,14 +221,14 @@ public static class GdkPixbufLoaderHandleExtensions
 		return loader;
 	}
 
-	public static bool Write(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, char[] buf, UIntPtr count)
+	public static bool Write(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, char[] buf, UIntPtr count, IntPtr error)
 	{
-		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write(loader, buf, count);
+		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write(loader, buf, count, error);
 	}
 
-	public static bool WriteBytes(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, MentorLake.GLib.GBytesHandle buffer)
+	public static bool WriteBytes(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, MentorLake.GLib.GBytesHandle buffer, IntPtr error)
 	{
-		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write_bytes(loader, buffer);
+		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write_bytes(loader, buffer, error);
 	}
 
 }
@@ -245,7 +245,7 @@ internal class GdkPixbufLoaderHandleExterns
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_type(string image_type);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_loader_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader);
+	internal static extern bool gdk_pixbuf_loader_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_loader_get_animation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader);
@@ -260,9 +260,9 @@ internal class GdkPixbufLoaderHandleExterns
 	internal static extern void gdk_pixbuf_loader_set_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, int width, int height);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_loader_write([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, char[] buf, UIntPtr count);
+	internal static extern bool gdk_pixbuf_loader_write([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, char[] buf, UIntPtr count, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_loader_write_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle buffer);
+	internal static extern bool gdk_pixbuf_loader_write_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle buffer, IntPtr error);
 
 }

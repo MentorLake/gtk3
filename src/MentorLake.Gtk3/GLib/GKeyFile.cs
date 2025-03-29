@@ -17,29 +17,29 @@ public static class GKeyFileExtensions
 		GKeyFileExterns.g_key_file_free(key_file);
 	}
 
-	public static bool GetBoolean(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static bool GetBoolean(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_boolean(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_boolean(key_file, group_name, key, error);
 	}
 
-	public static bool[] GetBooleanList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length)
+	public static bool[] GetBooleanList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_boolean_list(key_file, group_name, key, out length);
+		return GKeyFileExterns.g_key_file_get_boolean_list(key_file, group_name, key, out length, error);
 	}
 
-	public static string GetComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static string GetComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_comment(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_comment(key_file, group_name, key, error);
 	}
 
-	public static double GetDouble(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static double GetDouble(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_double(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_double(key_file, group_name, key, error);
 	}
 
-	public static double[] GetDoubleList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length)
+	public static double[] GetDoubleList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_double_list(key_file, group_name, key, out length);
+		return GKeyFileExterns.g_key_file_get_double_list(key_file, group_name, key, out length, error);
 	}
 
 	public static string[] GetGroups(this MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length)
@@ -47,24 +47,24 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_get_groups(key_file, out length);
 	}
 
-	public static long GetInt64(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static long GetInt64(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_int64(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_int64(key_file, group_name, key, error);
 	}
 
-	public static int GetInteger(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static int GetInteger(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_integer(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_integer(key_file, group_name, key, error);
 	}
 
-	public static int[] GetIntegerList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length)
+	public static int[] GetIntegerList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_integer_list(key_file, group_name, key, out length);
+		return GKeyFileExterns.g_key_file_get_integer_list(key_file, group_name, key, out length, error);
 	}
 
-	public static string[] GetKeys(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, out UIntPtr length)
+	public static string[] GetKeys(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_keys(key_file, group_name, out length);
+		return GKeyFileExterns.g_key_file_get_keys(key_file, group_name, out length, error);
 	}
 
 	public static string GetLocaleForKey(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale)
@@ -72,14 +72,14 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_get_locale_for_key(key_file, group_name, key, locale);
 	}
 
-	public static string GetLocaleString(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale)
+	public static string GetLocaleString(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_locale_string(key_file, group_name, key, locale);
+		return GKeyFileExterns.g_key_file_get_locale_string(key_file, group_name, key, locale, error);
 	}
 
-	public static string[] GetLocaleStringList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, out UIntPtr length)
+	public static string[] GetLocaleStringList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_locale_string_list(key_file, group_name, key, locale, out length);
+		return GKeyFileExterns.g_key_file_get_locale_string_list(key_file, group_name, key, locale, out length, error);
 	}
 
 	public static string GetStartGroup(this MentorLake.GLib.GKeyFileHandle key_file)
@@ -87,24 +87,24 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_get_start_group(key_file);
 	}
 
-	public static string GetString(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static string GetString(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_string(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_string(key_file, group_name, key, error);
 	}
 
-	public static string[] GetStringList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length)
+	public static string[] GetStringList(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_string_list(key_file, group_name, key, out length);
+		return GKeyFileExterns.g_key_file_get_string_list(key_file, group_name, key, out length, error);
 	}
 
-	public static ulong GetUint64(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static ulong GetUint64(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_uint64(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_uint64(key_file, group_name, key, error);
 	}
 
-	public static string GetValue(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static string GetValue(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_get_value(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_get_value(key_file, group_name, key, error);
 	}
 
 	public static bool HasGroup(this MentorLake.GLib.GKeyFileHandle key_file, string group_name)
@@ -112,34 +112,34 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_has_group(key_file, group_name);
 	}
 
-	public static bool HasKey(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static bool HasKey(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_has_key(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_has_key(key_file, group_name, key, error);
 	}
 
-	public static bool LoadFromBytes(this MentorLake.GLib.GKeyFileHandle key_file, MentorLake.GLib.GBytesHandle bytes, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromBytes(this MentorLake.GLib.GKeyFileHandle key_file, MentorLake.GLib.GBytesHandle bytes, MentorLake.GLib.GKeyFileFlags flags, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_load_from_bytes(key_file, bytes, flags);
+		return GKeyFileExterns.g_key_file_load_from_bytes(key_file, bytes, flags, error);
 	}
 
-	public static bool LoadFromData(this MentorLake.GLib.GKeyFileHandle key_file, string data, UIntPtr length, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromData(this MentorLake.GLib.GKeyFileHandle key_file, string data, UIntPtr length, MentorLake.GLib.GKeyFileFlags flags, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_load_from_data(key_file, data, length, flags);
+		return GKeyFileExterns.g_key_file_load_from_data(key_file, data, length, flags, error);
 	}
 
-	public static bool LoadFromDataDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromDataDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_load_from_data_dirs(key_file, file, out full_path, flags);
+		return GKeyFileExterns.g_key_file_load_from_data_dirs(key_file, file, out full_path, flags, error);
 	}
 
-	public static bool LoadFromDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromDirs(this MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_load_from_dirs(key_file, file, search_dirs, out full_path, flags);
+		return GKeyFileExterns.g_key_file_load_from_dirs(key_file, file, search_dirs, out full_path, flags, error);
 	}
 
-	public static bool LoadFromFile(this MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags)
+	public static bool LoadFromFile(this MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_load_from_file(key_file, file, flags);
+		return GKeyFileExterns.g_key_file_load_from_file(key_file, file, flags, error);
 	}
 
 	public static MentorLake.GLib.GKeyFileHandle Ref(this MentorLake.GLib.GKeyFileHandle key_file)
@@ -147,24 +147,24 @@ public static class GKeyFileExtensions
 		return GKeyFileExterns.g_key_file_ref(key_file);
 	}
 
-	public static bool RemoveComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static bool RemoveComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_remove_comment(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_remove_comment(key_file, group_name, key, error);
 	}
 
-	public static bool RemoveGroup(this MentorLake.GLib.GKeyFileHandle key_file, string group_name)
+	public static bool RemoveGroup(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_remove_group(key_file, group_name);
+		return GKeyFileExterns.g_key_file_remove_group(key_file, group_name, error);
 	}
 
-	public static bool RemoveKey(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key)
+	public static bool RemoveKey(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_remove_key(key_file, group_name, key);
+		return GKeyFileExterns.g_key_file_remove_key(key_file, group_name, key, error);
 	}
 
-	public static bool SaveToFile(this MentorLake.GLib.GKeyFileHandle key_file, string filename)
+	public static bool SaveToFile(this MentorLake.GLib.GKeyFileHandle key_file, string filename, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_save_to_file(key_file, filename);
+		return GKeyFileExterns.g_key_file_save_to_file(key_file, filename, error);
 	}
 
 	public static void SetBoolean(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, bool value)
@@ -177,9 +177,9 @@ public static class GKeyFileExtensions
 		GKeyFileExterns.g_key_file_set_boolean_list(key_file, group_name, key, list, length);
 	}
 
-	public static bool SetComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string comment)
+	public static bool SetComment(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string comment, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_set_comment(key_file, group_name, key, comment);
+		return GKeyFileExterns.g_key_file_set_comment(key_file, group_name, key, comment, error);
 	}
 
 	public static void SetDouble(this MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, double value)
@@ -242,9 +242,9 @@ public static class GKeyFileExtensions
 		GKeyFileExterns.g_key_file_set_value(key_file, group_name, key, value);
 	}
 
-	public static string ToData(this MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length)
+	public static string ToData(this MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length, IntPtr error)
 	{
-		return GKeyFileExterns.g_key_file_to_data(key_file, out length);
+		return GKeyFileExterns.g_key_file_to_data(key_file, out length, error);
 	}
 
 	public static void Unref(this MentorLake.GLib.GKeyFileHandle key_file)
@@ -264,37 +264,37 @@ internal class GKeyFileExterns
 	internal static extern void g_key_file_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_get_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern bool g_key_file_get_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool[] g_key_file_get_boolean_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length);
+	internal static extern bool[] g_key_file_get_boolean_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_key_file_get_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern string g_key_file_get_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern double g_key_file_get_double([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern double g_key_file_get_double([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern double[] g_key_file_get_double_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length);
+	internal static extern double[] g_key_file_get_double_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] g_key_file_get_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern long g_key_file_get_int64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern long g_key_file_get_int64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_key_file_get_integer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern int g_key_file_get_integer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int[] g_key_file_get_integer_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length);
+	internal static extern int[] g_key_file_get_integer_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_key_file_get_keys([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, out UIntPtr length);
+	internal static extern string[] g_key_file_get_keys([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -302,11 +302,11 @@ internal class GKeyFileExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_key_file_get_locale_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale);
+	internal static extern string g_key_file_get_locale_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_key_file_get_locale_string_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, out UIntPtr length);
+	internal static extern string[] g_key_file_get_locale_string_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string locale, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -314,54 +314,54 @@ internal class GKeyFileExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_key_file_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern string g_key_file_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_key_file_get_string_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length);
+	internal static extern string[] g_key_file_get_string_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern ulong g_key_file_get_uint64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern ulong g_key_file_get_uint64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_key_file_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern string g_key_file_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern bool g_key_file_has_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_has_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern bool g_key_file_has_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, MentorLake.GLib.GKeyFileFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string data, UIntPtr length, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string data, UIntPtr length, MentorLake.GLib.GKeyFileFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_data_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, out string full_path, MentorLake.GLib.GKeyFileFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_dirs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, string[] search_dirs, out string full_path, MentorLake.GLib.GKeyFileFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags);
+	internal static extern bool g_key_file_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string file, MentorLake.GLib.GKeyFileFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GKeyFileHandle g_key_file_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_remove_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern bool g_key_file_remove_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_remove_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name);
+	internal static extern bool g_key_file_remove_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_remove_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key);
+	internal static extern bool g_key_file_remove_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_save_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string filename);
+	internal static extern bool g_key_file_save_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string filename, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_key_file_set_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, bool value);
@@ -370,7 +370,7 @@ internal class GKeyFileExterns
 	internal static extern void g_key_file_set_boolean_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, bool[] list, UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_key_file_set_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string comment);
+	internal static extern bool g_key_file_set_comment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, string comment, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_key_file_set_double([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, string key, double value);
@@ -410,7 +410,7 @@ internal class GKeyFileExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_key_file_to_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length);
+	internal static extern string g_key_file_to_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, out UIntPtr length, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_key_file_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file);

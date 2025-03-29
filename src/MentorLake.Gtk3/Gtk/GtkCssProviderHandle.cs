@@ -74,19 +74,19 @@ public delegate void parsing_error([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkCssProviderHandleExtensions
 {
-	public static bool LoadFromData(this MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length)
+	public static bool LoadFromData(this MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length, IntPtr error)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_data(css_provider, data, length);
+		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_data(css_provider, data, length, error);
 	}
 
-	public static bool LoadFromFile(this MentorLake.Gtk.GtkCssProviderHandle css_provider, MentorLake.Gio.GFileHandle file)
+	public static bool LoadFromFile(this MentorLake.Gtk.GtkCssProviderHandle css_provider, MentorLake.Gio.GFileHandle file, IntPtr error)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_file(css_provider, file);
+		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_file(css_provider, file, error);
 	}
 
-	public static bool LoadFromPath(this MentorLake.Gtk.GtkCssProviderHandle css_provider, string path)
+	public static bool LoadFromPath(this MentorLake.Gtk.GtkCssProviderHandle css_provider, string path, IntPtr error)
 	{
-		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_path(css_provider, path);
+		return GtkCssProviderHandleExterns.gtk_css_provider_load_from_path(css_provider, path, error);
 	}
 
 	public static T LoadFromResource<T>(this T css_provider, string resource_path) where T : GtkCssProviderHandle
@@ -108,13 +108,13 @@ internal class GtkCssProviderHandleExterns
 	internal static extern MentorLake.Gtk.GtkCssProviderHandle gtk_css_provider_new();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length);
+	internal static extern bool gtk_css_provider_load_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
+	internal static extern bool gtk_css_provider_load_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_css_provider_load_from_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string path);
+	internal static extern bool gtk_css_provider_load_from_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string path, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_css_provider_load_from_resource([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle css_provider, string resource_path);

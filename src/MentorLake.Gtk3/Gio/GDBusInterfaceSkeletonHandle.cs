@@ -59,9 +59,9 @@ public delegate bool g_authorize_method([MarshalAs(UnmanagedType.CustomMarshaler
 
 public static class GDBusInterfaceSkeletonHandleExtensions
 {
-	public static bool Export(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, MentorLake.Gio.GDBusConnectionHandle connection, string object_path)
+	public static bool Export(this MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, MentorLake.Gio.GDBusConnectionHandle connection, string object_path, IntPtr error)
 	{
-		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_export(interface_, connection, object_path);
+		return GDBusInterfaceSkeletonHandleExterns.g_dbus_interface_skeleton_export(interface_, connection, object_path, error);
 	}
 
 	public static T Flush<T>(this T interface_) where T : GDBusInterfaceSkeletonHandle
@@ -133,7 +133,7 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 internal class GDBusInterfaceSkeletonHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_dbus_interface_skeleton_export([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceSkeletonHandle>))] MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, string object_path);
+	internal static extern bool g_dbus_interface_skeleton_export([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceSkeletonHandle>))] MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, string object_path, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_dbus_interface_skeleton_flush([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceSkeletonHandle>))] MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_);

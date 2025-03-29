@@ -32,9 +32,9 @@ public class GtkWindowHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuild
 		GtkWindowHandleExterns.gtk_window_set_default_icon(icon);
 	}
 
-	public static bool SetDefaultIconFromFile(string filename)
+	public static bool SetDefaultIconFromFile(string filename, IntPtr error)
 	{
-		return GtkWindowHandleExterns.gtk_window_set_default_icon_from_file(filename);
+		return GtkWindowHandleExterns.gtk_window_set_default_icon_from_file(filename, error);
 	}
 
 	public static void SetDefaultIconList(MentorLake.GLib.GListHandle list)
@@ -720,9 +720,9 @@ public static class GtkWindowHandleExtensions
 		return window;
 	}
 
-	public static bool SetIconFromFile(this MentorLake.Gtk.GtkWindowHandle window, string filename)
+	public static bool SetIconFromFile(this MentorLake.Gtk.GtkWindowHandle window, string filename, IntPtr error)
 	{
-		return GtkWindowHandleExterns.gtk_window_set_icon_from_file(window, filename);
+		return GtkWindowHandleExterns.gtk_window_set_icon_from_file(window, filename, error);
 	}
 
 	public static T SetIconList<T>(this T window, MentorLake.GLib.GListHandle list) where T : GtkWindowHandle
@@ -1135,7 +1135,7 @@ internal class GtkWindowHandleExterns
 	internal static extern void gtk_window_set_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle icon);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_window_set_icon_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, string filename);
+	internal static extern bool gtk_window_set_icon_from_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, string filename, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_window_set_icon_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle list);
@@ -1229,7 +1229,7 @@ internal class GtkWindowHandleExterns
 	internal static extern void gtk_window_set_default_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle icon);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_window_set_default_icon_from_file(string filename);
+	internal static extern bool gtk_window_set_default_icon_from_file(string filename, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_window_set_default_icon_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle list);

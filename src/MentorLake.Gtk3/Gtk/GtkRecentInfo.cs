@@ -7,9 +7,9 @@ public class GtkRecentInfoHandle : BaseSafeHandle
 
 public static class GtkRecentInfoExtensions
 {
-	public static MentorLake.Gio.GAppInfoHandle CreateAppInfo(this MentorLake.Gtk.GtkRecentInfoHandle info, string app_name)
+	public static MentorLake.Gio.GAppInfoHandle CreateAppInfo(this MentorLake.Gtk.GtkRecentInfoHandle info, string app_name, IntPtr error)
 	{
-		return GtkRecentInfoExterns.gtk_recent_info_create_app_info(info, app_name);
+		return GtkRecentInfoExterns.gtk_recent_info_create_app_info(info, app_name, error);
 	}
 
 	public static bool Exists(this MentorLake.Gtk.GtkRecentInfoHandle info)
@@ -138,7 +138,7 @@ public static class GtkRecentInfoExtensions
 internal class GtkRecentInfoExterns
 {
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle gtk_recent_info_create_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info, string app_name);
+	internal static extern MentorLake.Gio.GAppInfoHandle gtk_recent_info_create_app_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info, string app_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_recent_info_exists([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentInfoHandle>))] MentorLake.Gtk.GtkRecentInfoHandle info);

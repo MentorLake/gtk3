@@ -16,14 +16,14 @@ public static class GAsyncInitableHandleExtensions
 		return initable;
 	}
 
-	public static bool InitFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
+	public static bool InitFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GAsyncInitableHandleExterns.g_async_initable_init_finish(initable, res);
+		return GAsyncInitableHandleExterns.g_async_initable_init_finish(initable, res, error);
 	}
 
-	public static MentorLake.GObject.GObjectHandle NewFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
+	public static MentorLake.GObject.GObjectHandle NewFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GAsyncInitableHandleExterns.g_async_initable_new_finish(initable, res);
+		return GAsyncInitableHandleExterns.g_async_initable_new_finish(initable, res, error);
 	}
 
 	public static void NewAsync(MentorLake.GObject.GType object_type, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data, string first_property_name, IntPtr @__arglist)
@@ -49,10 +49,10 @@ internal class GAsyncInitableHandleExterns
 	internal static extern void g_async_initable_init_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_async_initable_init_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern bool g_async_initable_init_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.GObject.GObjectHandle g_async_initable_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern MentorLake.GObject.GObjectHandle g_async_initable_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_async_initable_new_async(MentorLake.GObject.GType object_type, int io_priority, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data, string first_property_name, IntPtr @__arglist);

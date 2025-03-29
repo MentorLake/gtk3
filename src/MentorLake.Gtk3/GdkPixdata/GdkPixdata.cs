@@ -7,9 +7,9 @@ public class GdkPixdataHandle : BaseSafeHandle
 
 public static class GdkPixdataExtensions
 {
-	public static bool Deserialize(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream)
+	public static bool Deserialize(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream, IntPtr error)
 	{
-		return GdkPixdataExterns.gdk_pixdata_deserialize(pixdata, stream_length, stream);
+		return GdkPixdataExterns.gdk_pixdata_deserialize(pixdata, stream_length, stream, error);
 	}
 
 	public static byte[] FromPixbuf(this MentorLake.GdkPixdata.GdkPixdataHandle pixdata, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool use_rle)
@@ -33,7 +33,7 @@ public static class GdkPixdataExtensions
 internal class GdkPixdataExterns
 {
 	[DllImport(GdkPixdataLibrary.Name)]
-	internal static extern bool gdk_pixdata_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream);
+	internal static extern bool gdk_pixdata_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, uint stream_length, byte[] stream, IntPtr error);
 
 	[DllImport(GdkPixdataLibrary.Name)]
 	internal static extern byte[] gdk_pixdata_from_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool use_rle);

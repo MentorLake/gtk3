@@ -709,7 +709,7 @@ internal class GVariantExterns
 	internal static extern bool g_variant_is_signature(string @string);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GVariantHandle g_variant_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle type, string text, string limit, string endptr);
+	internal static extern MentorLake.GLib.GVariantHandle g_variant_parse([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle type, string text, string limit, string endptr, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -735,9 +735,9 @@ public struct GVariant
 		return GVariantExterns.g_variant_is_signature(@string);
 	}
 
-	public static MentorLake.GLib.GVariantHandle Parse(MentorLake.GLib.GVariantTypeHandle type, string text, string limit, string endptr)
+	public static MentorLake.GLib.GVariantHandle Parse(MentorLake.GLib.GVariantTypeHandle type, string text, string limit, string endptr, IntPtr error)
 	{
-		return GVariantExterns.g_variant_parse(type, text, limit, endptr);
+		return GVariantExterns.g_variant_parse(type, text, limit, endptr, error);
 	}
 
 	public static string ParseErrorPrintContext(MentorLake.GLib.GErrorHandle error, string source_str)

@@ -7,9 +7,9 @@ public class GMatchInfoHandle : BaseSafeHandle
 
 public static class GMatchInfoExtensions
 {
-	public static string ExpandReferences(this MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand)
+	public static string ExpandReferences(this MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand, IntPtr error)
 	{
-		return GMatchInfoExterns.g_match_info_expand_references(match_info, string_to_expand);
+		return GMatchInfoExterns.g_match_info_expand_references(match_info, string_to_expand, error);
 	}
 
 	public static string Fetch(this MentorLake.GLib.GMatchInfoHandle match_info, int match_num)
@@ -67,9 +67,9 @@ public static class GMatchInfoExtensions
 		return GMatchInfoExterns.g_match_info_matches(match_info);
 	}
 
-	public static bool Next(this MentorLake.GLib.GMatchInfoHandle match_info)
+	public static bool Next(this MentorLake.GLib.GMatchInfoHandle match_info, IntPtr error)
 	{
-		return GMatchInfoExterns.g_match_info_next(match_info);
+		return GMatchInfoExterns.g_match_info_next(match_info, error);
 	}
 
 	public static MentorLake.GLib.GMatchInfoHandle Ref(this MentorLake.GLib.GMatchInfoHandle match_info)
@@ -89,7 +89,7 @@ internal class GMatchInfoExterns
 {
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_match_info_expand_references([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand);
+	internal static extern string g_match_info_expand_references([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -129,7 +129,7 @@ internal class GMatchInfoExterns
 	internal static extern bool g_match_info_matches([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_match_info_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
+	internal static extern bool g_match_info_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GMatchInfoHandle g_match_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);

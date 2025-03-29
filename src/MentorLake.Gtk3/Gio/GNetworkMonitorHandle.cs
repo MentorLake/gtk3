@@ -10,9 +10,9 @@ internal class GNetworkMonitorHandleImpl : BaseSafeHandle, GNetworkMonitorHandle
 
 public static class GNetworkMonitorHandleExtensions
 {
-	public static bool CanReach(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool CanReach(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GNetworkMonitorHandleExterns.g_network_monitor_can_reach(monitor, connectable, cancellable);
+		return GNetworkMonitorHandleExterns.g_network_monitor_can_reach(monitor, connectable, cancellable, error);
 	}
 
 	public static T CanReachAsync<T>(this T monitor, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GNetworkMonitorHandle
@@ -21,9 +21,9 @@ public static class GNetworkMonitorHandleExtensions
 		return monitor;
 	}
 
-	public static bool CanReachFinish(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GAsyncResultHandle result)
+	public static bool CanReachFinish(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GNetworkMonitorHandleExterns.g_network_monitor_can_reach_finish(monitor, result);
+		return GNetworkMonitorHandleExterns.g_network_monitor_can_reach_finish(monitor, result, error);
 	}
 
 	public static MentorLake.Gio.GNetworkConnectivity GetConnectivity(this MentorLake.Gio.GNetworkMonitorHandle monitor)
@@ -51,13 +51,13 @@ public static class GNetworkMonitorHandleExtensions
 internal class GNetworkMonitorHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_network_monitor_can_reach([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_network_monitor_can_reach([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_network_monitor_can_reach_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_network_monitor_can_reach_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern bool g_network_monitor_can_reach_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GNetworkConnectivity g_network_monitor_get_connectivity([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor);

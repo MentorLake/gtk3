@@ -63,15 +63,15 @@ internal class GDirExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_dir_make_tmp(string tmpl);
+	internal static extern string g_dir_make_tmp(string tmpl, IntPtr error);
 
 }
 
 public struct GDir
 {
-	public static string MakeTmp(string tmpl)
+	public static string MakeTmp(string tmpl, IntPtr error)
 	{
-		return GDirExterns.g_dir_make_tmp(tmpl);
+		return GDirExterns.g_dir_make_tmp(tmpl, error);
 	}
 
 }

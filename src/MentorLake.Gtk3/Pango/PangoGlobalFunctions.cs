@@ -317,9 +317,9 @@ public class PangoGlobalFunctions
 		return PangoGlobalFunctionsExterns.pango_log2vis_get_embedding_levels(text, length, ref pbase_dir);
 	}
 
-	public static bool MarkupParserFinish(MentorLake.GLib.GMarkupParseContextHandle context, out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char)
+	public static bool MarkupParserFinish(MentorLake.GLib.GMarkupParseContextHandle context, out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char, IntPtr error)
 	{
-		return PangoGlobalFunctionsExterns.pango_markup_parser_finish(context, out attr_list, out text, out accel_char);
+		return PangoGlobalFunctionsExterns.pango_markup_parser_finish(context, out attr_list, out text, out accel_char, error);
 	}
 
 	public static MentorLake.GLib.GMarkupParseContextHandle MarkupParserNew(char accel_marker)
@@ -332,9 +332,9 @@ public class PangoGlobalFunctions
 		return PangoGlobalFunctionsExterns.pango_parse_enum(type, str, out value, warn, out possible_values);
 	}
 
-	public static bool ParseMarkup(string markup_text, int length, char accel_marker, out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char)
+	public static bool ParseMarkup(string markup_text, int length, char accel_marker, out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char, IntPtr error)
 	{
-		return PangoGlobalFunctionsExterns.pango_parse_markup(markup_text, length, accel_marker, out attr_list, out text, out accel_char);
+		return PangoGlobalFunctionsExterns.pango_parse_markup(markup_text, length, accel_marker, out attr_list, out text, out accel_char, error);
 	}
 
 	public static bool ParseStretch(string str, out MentorLake.Pango.PangoStretch stretch, bool warn)
@@ -667,7 +667,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern byte pango_log2vis_get_embedding_levels(string text, int length, ref MentorLake.Pango.PangoDirection pbase_dir);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern bool pango_markup_parser_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char);
+	internal static extern bool pango_markup_parser_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char, IntPtr error);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern MentorLake.GLib.GMarkupParseContextHandle pango_markup_parser_new(char accel_marker);
@@ -676,7 +676,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern bool pango_parse_enum(MentorLake.GObject.GType type, string str, out int value, bool warn, out string possible_values);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern bool pango_parse_markup(string markup_text, int length, char accel_marker, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char);
+	internal static extern bool pango_parse_markup(string markup_text, int length, char accel_marker, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char, IntPtr error);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern bool pango_parse_stretch(string str, out MentorLake.Pango.PangoStretch stretch, bool warn);

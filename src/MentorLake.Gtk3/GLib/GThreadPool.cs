@@ -27,14 +27,14 @@ public static class GThreadPoolExtensions
 		return GThreadPoolExterns.g_thread_pool_move_to_front(pool, data);
 	}
 
-	public static bool Push(this MentorLake.GLib.GThreadPoolHandle pool, IntPtr data)
+	public static bool Push(this MentorLake.GLib.GThreadPoolHandle pool, IntPtr data, IntPtr error)
 	{
-		return GThreadPoolExterns.g_thread_pool_push(pool, data);
+		return GThreadPoolExterns.g_thread_pool_push(pool, data, error);
 	}
 
-	public static bool SetMaxThreads(this MentorLake.GLib.GThreadPoolHandle pool, int max_threads)
+	public static bool SetMaxThreads(this MentorLake.GLib.GThreadPoolHandle pool, int max_threads, IntPtr error)
 	{
-		return GThreadPoolExterns.g_thread_pool_set_max_threads(pool, max_threads);
+		return GThreadPoolExterns.g_thread_pool_set_max_threads(pool, max_threads, error);
 	}
 
 	public static void SetSortFunction(this MentorLake.GLib.GThreadPoolHandle pool, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data)
@@ -65,10 +65,10 @@ internal class GThreadPoolExterns
 	internal static extern bool g_thread_pool_move_to_front([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, IntPtr data);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_thread_pool_push([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, IntPtr data);
+	internal static extern bool g_thread_pool_push([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, IntPtr data, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_thread_pool_set_max_threads([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, int max_threads);
+	internal static extern bool g_thread_pool_set_max_threads([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, int max_threads, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_thread_pool_set_sort_function([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadPoolHandle>))] MentorLake.GLib.GThreadPoolHandle pool, MentorLake.GLib.GCompareDataFunc func, IntPtr user_data);
@@ -86,10 +86,10 @@ internal class GThreadPoolExterns
 	internal static extern uint g_thread_pool_get_num_unused_threads();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadPoolHandle g_thread_pool_new(MentorLake.GLib.GFunc func, IntPtr user_data, int max_threads, bool exclusive);
+	internal static extern MentorLake.GLib.GThreadPoolHandle g_thread_pool_new(MentorLake.GLib.GFunc func, IntPtr user_data, int max_threads, bool exclusive, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadPoolHandle g_thread_pool_new_full(MentorLake.GLib.GFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify item_free_func, int max_threads, bool exclusive);
+	internal static extern MentorLake.GLib.GThreadPoolHandle g_thread_pool_new_full(MentorLake.GLib.GFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify item_free_func, int max_threads, bool exclusive, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_thread_pool_set_max_idle_time(uint interval);
@@ -122,14 +122,14 @@ public struct GThreadPool
 		return GThreadPoolExterns.g_thread_pool_get_num_unused_threads();
 	}
 
-	public static MentorLake.GLib.GThreadPoolHandle New(MentorLake.GLib.GFunc func, IntPtr user_data, int max_threads, bool exclusive)
+	public static MentorLake.GLib.GThreadPoolHandle New(MentorLake.GLib.GFunc func, IntPtr user_data, int max_threads, bool exclusive, IntPtr error)
 	{
-		return GThreadPoolExterns.g_thread_pool_new(func, user_data, max_threads, exclusive);
+		return GThreadPoolExterns.g_thread_pool_new(func, user_data, max_threads, exclusive, error);
 	}
 
-	public static MentorLake.GLib.GThreadPoolHandle NewFull(MentorLake.GLib.GFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify item_free_func, int max_threads, bool exclusive)
+	public static MentorLake.GLib.GThreadPoolHandle NewFull(MentorLake.GLib.GFunc func, IntPtr user_data, MentorLake.GLib.GDestroyNotify item_free_func, int max_threads, bool exclusive, IntPtr error)
 	{
-		return GThreadPoolExterns.g_thread_pool_new_full(func, user_data, item_free_func, max_threads, exclusive);
+		return GThreadPoolExterns.g_thread_pool_new_full(func, user_data, item_free_func, max_threads, exclusive, error);
 	}
 
 	public static void SetMaxIdleTime(uint interval)

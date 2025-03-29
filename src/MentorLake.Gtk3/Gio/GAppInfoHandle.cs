@@ -10,9 +10,9 @@ internal class GAppInfoHandleImpl : BaseSafeHandle, GAppInfoHandle
 
 public static class GAppInfoHandleExtensions
 {
-	public static bool AddSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
+	public static bool AddSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_add_supports_type(appinfo, content_type);
+		return GAppInfoHandleExterns.g_app_info_add_supports_type(appinfo, content_type, error);
 	}
 
 	public static bool CanDelete(this MentorLake.Gio.GAppInfoHandle appinfo)
@@ -80,14 +80,14 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_get_supported_types(appinfo);
 	}
 
-	public static bool Launch(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle files, MentorLake.Gio.GAppLaunchContextHandle context)
+	public static bool Launch(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle files, MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_launch(appinfo, files, context);
+		return GAppInfoHandleExterns.g_app_info_launch(appinfo, files, context, error);
 	}
 
-	public static bool LaunchUris(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle uris, MentorLake.Gio.GAppLaunchContextHandle context)
+	public static bool LaunchUris(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.GLib.GListHandle uris, MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_launch_uris(appinfo, uris, context);
+		return GAppInfoHandleExterns.g_app_info_launch_uris(appinfo, uris, context, error);
 	}
 
 	public static T LaunchUrisAsync<T>(this T appinfo, MentorLake.GLib.GListHandle uris, MentorLake.Gio.GAppLaunchContextHandle context, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GAppInfoHandle
@@ -96,29 +96,29 @@ public static class GAppInfoHandleExtensions
 		return appinfo;
 	}
 
-	public static bool LaunchUrisFinish(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.Gio.GAsyncResultHandle result)
+	public static bool LaunchUrisFinish(this MentorLake.Gio.GAppInfoHandle appinfo, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_launch_uris_finish(appinfo, result);
+		return GAppInfoHandleExterns.g_app_info_launch_uris_finish(appinfo, result, error);
 	}
 
-	public static bool RemoveSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
+	public static bool RemoveSupportsType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_remove_supports_type(appinfo, content_type);
+		return GAppInfoHandleExterns.g_app_info_remove_supports_type(appinfo, content_type, error);
 	}
 
-	public static bool SetAsDefaultForExtension(this MentorLake.Gio.GAppInfoHandle appinfo, string extension)
+	public static bool SetAsDefaultForExtension(this MentorLake.Gio.GAppInfoHandle appinfo, string extension, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_set_as_default_for_extension(appinfo, extension);
+		return GAppInfoHandleExterns.g_app_info_set_as_default_for_extension(appinfo, extension, error);
 	}
 
-	public static bool SetAsDefaultForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
+	public static bool SetAsDefaultForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_set_as_default_for_type(appinfo, content_type);
+		return GAppInfoHandleExterns.g_app_info_set_as_default_for_type(appinfo, content_type, error);
 	}
 
-	public static bool SetAsLastUsedForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type)
+	public static bool SetAsLastUsedForType(this MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_set_as_last_used_for_type(appinfo, content_type);
+		return GAppInfoHandleExterns.g_app_info_set_as_last_used_for_type(appinfo, content_type, error);
 	}
 
 	public static bool ShouldShow(this MentorLake.Gio.GAppInfoHandle appinfo)
@@ -136,9 +136,9 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_supports_uris(appinfo);
 	}
 
-	public static MentorLake.Gio.GAppInfoHandle CreateFromCommandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags)
+	public static MentorLake.Gio.GAppInfoHandle CreateFromCommandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_create_from_commandline(commandline, application_name, flags);
+		return GAppInfoHandleExterns.g_app_info_create_from_commandline(commandline, application_name, flags, error);
 	}
 
 	public static MentorLake.GLib.GListHandle GetAll()
@@ -161,9 +161,9 @@ public static class GAppInfoHandleExtensions
 		GAppInfoHandleExterns.g_app_info_get_default_for_type_async(content_type, must_support_uris, cancellable, callback, user_data);
 	}
 
-	public static MentorLake.Gio.GAppInfoHandle GetDefaultForTypeFinish(MentorLake.Gio.GAsyncResultHandle result)
+	public static MentorLake.Gio.GAppInfoHandle GetDefaultForTypeFinish(MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_get_default_for_type_finish(result);
+		return GAppInfoHandleExterns.g_app_info_get_default_for_type_finish(result, error);
 	}
 
 	public static MentorLake.Gio.GAppInfoHandle GetDefaultForUriScheme(string uri_scheme)
@@ -176,9 +176,9 @@ public static class GAppInfoHandleExtensions
 		GAppInfoHandleExterns.g_app_info_get_default_for_uri_scheme_async(uri_scheme, cancellable, callback, user_data);
 	}
 
-	public static MentorLake.Gio.GAppInfoHandle GetDefaultForUriSchemeFinish(MentorLake.Gio.GAsyncResultHandle result)
+	public static MentorLake.Gio.GAppInfoHandle GetDefaultForUriSchemeFinish(MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_get_default_for_uri_scheme_finish(result);
+		return GAppInfoHandleExterns.g_app_info_get_default_for_uri_scheme_finish(result, error);
 	}
 
 	public static MentorLake.GLib.GListHandle GetFallbackForType(string content_type)
@@ -191,9 +191,9 @@ public static class GAppInfoHandleExtensions
 		return GAppInfoHandleExterns.g_app_info_get_recommended_for_type(content_type);
 	}
 
-	public static bool LaunchDefaultForUri(string uri, MentorLake.Gio.GAppLaunchContextHandle context)
+	public static bool LaunchDefaultForUri(string uri, MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_launch_default_for_uri(uri, context);
+		return GAppInfoHandleExterns.g_app_info_launch_default_for_uri(uri, context, error);
 	}
 
 	public static void LaunchDefaultForUriAsync(string uri, MentorLake.Gio.GAppLaunchContextHandle context, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
@@ -201,9 +201,9 @@ public static class GAppInfoHandleExtensions
 		GAppInfoHandleExterns.g_app_info_launch_default_for_uri_async(uri, context, cancellable, callback, user_data);
 	}
 
-	public static bool LaunchDefaultForUriFinish(MentorLake.Gio.GAsyncResultHandle result)
+	public static bool LaunchDefaultForUriFinish(MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GAppInfoHandleExterns.g_app_info_launch_default_for_uri_finish(result);
+		return GAppInfoHandleExterns.g_app_info_launch_default_for_uri_finish(result, error);
 	}
 
 	public static void ResetTypeAssociations(string content_type)
@@ -216,7 +216,7 @@ public static class GAppInfoHandleExtensions
 internal class GAppInfoHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_add_supports_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
+	internal static extern bool g_app_info_add_supports_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_app_info_can_delete([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
@@ -265,28 +265,28 @@ internal class GAppInfoHandleExterns
 	internal static extern string[] g_app_info_get_supported_types([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_launch([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle files, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context);
+	internal static extern bool g_app_info_launch([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle files, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_launch_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle uris, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context);
+	internal static extern bool g_app_info_launch_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle uris, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_app_info_launch_uris_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle uris, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_launch_uris_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern bool g_app_info_launch_uris_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_remove_supports_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
+	internal static extern bool g_app_info_remove_supports_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_set_as_default_for_extension([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string extension);
+	internal static extern bool g_app_info_set_as_default_for_extension([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string extension, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_set_as_default_for_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
+	internal static extern bool g_app_info_set_as_default_for_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_set_as_last_used_for_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type);
+	internal static extern bool g_app_info_set_as_last_used_for_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo, string content_type, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_app_info_should_show([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
@@ -298,7 +298,7 @@ internal class GAppInfoHandleExterns
 	internal static extern bool g_app_info_supports_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoHandleImpl>))] MentorLake.Gio.GAppInfoHandle appinfo);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags);
+	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_create_from_commandline(string commandline, string application_name, MentorLake.Gio.GAppInfoCreateFlags flags, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GListHandle g_app_info_get_all();
@@ -313,7 +313,7 @@ internal class GAppInfoHandleExterns
 	internal static extern void g_app_info_get_default_for_type_async(string content_type, bool must_support_uris, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_get_default_for_type_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_get_default_for_type_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_get_default_for_uri_scheme(string uri_scheme);
@@ -322,7 +322,7 @@ internal class GAppInfoHandleExterns
 	internal static extern void g_app_info_get_default_for_uri_scheme_async(string uri_scheme, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_get_default_for_uri_scheme_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern MentorLake.Gio.GAppInfoHandle g_app_info_get_default_for_uri_scheme_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.GLib.GListHandle g_app_info_get_fallback_for_type(string content_type);
@@ -331,13 +331,13 @@ internal class GAppInfoHandleExterns
 	internal static extern MentorLake.GLib.GListHandle g_app_info_get_recommended_for_type(string content_type);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_launch_default_for_uri(string uri, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context);
+	internal static extern bool g_app_info_launch_default_for_uri(string uri, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_app_info_launch_default_for_uri_async(string uri, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))] MentorLake.Gio.GAppLaunchContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_app_info_launch_default_for_uri_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern bool g_app_info_launch_default_for_uri_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_app_info_reset_type_associations(string content_type);

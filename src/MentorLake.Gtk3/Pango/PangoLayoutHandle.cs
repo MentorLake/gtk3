@@ -7,9 +7,9 @@ public class PangoLayoutHandle : GObjectHandle
 		return PangoLayoutHandleExterns.pango_layout_new(context);
 	}
 
-	public static MentorLake.Pango.PangoLayoutHandle Deserialize(MentorLake.Pango.PangoContextHandle context, MentorLake.GLib.GBytesHandle bytes, MentorLake.Pango.PangoLayoutDeserializeFlags flags)
+	public static MentorLake.Pango.PangoLayoutHandle Deserialize(MentorLake.Pango.PangoContextHandle context, MentorLake.GLib.GBytesHandle bytes, MentorLake.Pango.PangoLayoutDeserializeFlags flags, IntPtr error)
 	{
-		return PangoLayoutHandleExterns.pango_layout_deserialize(context, bytes, flags);
+		return PangoLayoutHandleExterns.pango_layout_deserialize(context, bytes, flags, error);
 	}
 
 }
@@ -355,9 +355,9 @@ public static class PangoLayoutHandleExtensions
 		return layout;
 	}
 
-	public static bool WriteToFile(this MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename)
+	public static bool WriteToFile(this MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename, IntPtr error)
 	{
-		return PangoLayoutHandleExterns.pango_layout_write_to_file(layout, flags, filename);
+		return PangoLayoutHandleExterns.pango_layout_write_to_file(layout, flags, filename, error);
 	}
 
 	public static bool XyToIndex(this MentorLake.Pango.PangoLayoutHandle layout, int x, int y, out int index_, out int trailing)
@@ -560,12 +560,12 @@ internal class PangoLayoutHandleExterns
 	internal static extern void pango_layout_set_wrap([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoWrapMode wrap);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern bool pango_layout_write_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename);
+	internal static extern bool pango_layout_write_to_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, MentorLake.Pango.PangoLayoutSerializeFlags flags, string filename, IntPtr error);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern bool pango_layout_xy_to_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, int x, int y, out int index_, out int trailing);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern MentorLake.Pango.PangoLayoutHandle pango_layout_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, MentorLake.Pango.PangoLayoutDeserializeFlags flags);
+	internal static extern MentorLake.Pango.PangoLayoutHandle pango_layout_deserialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes, MentorLake.Pango.PangoLayoutDeserializeFlags flags, IntPtr error);
 
 }

@@ -329,9 +329,9 @@ public static class GdkWindowHandleExtensions
 		return window;
 	}
 
-	public static MentorLake.Gdk.GdkGLContextHandle CreateGlContext(this MentorLake.Gdk.GdkWindowHandle window)
+	public static MentorLake.Gdk.GdkGLContextHandle CreateGlContext(this MentorLake.Gdk.GdkWindowHandle window, IntPtr error)
 	{
-		return GdkWindowHandleExterns.gdk_window_create_gl_context(window);
+		return GdkWindowHandleExterns.gdk_window_create_gl_context(window, error);
 	}
 
 	public static MentorLake.cairo.cairo_surface_tHandle CreateSimilarImageSurface(this MentorLake.Gdk.GdkWindowHandle window, MentorLake.cairo.cairo_format_t format, int width, int height, int scale)
@@ -1190,7 +1190,7 @@ internal class GdkWindowHandleExterns
 	internal static extern void gdk_window_coords_to_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, double x, double y, out double parent_x, out double parent_y);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern MentorLake.Gdk.GdkGLContextHandle gdk_window_create_gl_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window);
+	internal static extern MentorLake.Gdk.GdkGLContextHandle gdk_window_create_gl_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, IntPtr error);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle gdk_window_create_similar_image_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.cairo.cairo_format_t format, int width, int height, int scale);

@@ -54,9 +54,9 @@ public static class GTlsClientConnectionHandleExtensions
 		return conn;
 	}
 
-	public static MentorLake.Gio.GIOStreamHandle New(MentorLake.Gio.GIOStreamHandle base_io_stream, MentorLake.Gio.GSocketConnectableHandle server_identity)
+	public static MentorLake.Gio.GIOStreamHandle New(MentorLake.Gio.GIOStreamHandle base_io_stream, MentorLake.Gio.GSocketConnectableHandle server_identity, IntPtr error)
 	{
-		return GTlsClientConnectionHandleExterns.g_tls_client_connection_new(base_io_stream, server_identity);
+		return GTlsClientConnectionHandleExterns.g_tls_client_connection_new(base_io_stream, server_identity, error);
 	}
 
 }
@@ -88,6 +88,6 @@ internal class GTlsClientConnectionHandleExterns
 	internal static extern void g_tls_client_connection_set_validation_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsClientConnectionHandleImpl>))] MentorLake.Gio.GTlsClientConnectionHandle conn, MentorLake.Gio.GTlsCertificateFlags flags);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GIOStreamHandle g_tls_client_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle base_io_stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle server_identity);
+	internal static extern MentorLake.Gio.GIOStreamHandle g_tls_client_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle base_io_stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle server_identity, IntPtr error);
 
 }

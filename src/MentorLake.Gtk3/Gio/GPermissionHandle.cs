@@ -6,9 +6,9 @@ public class GPermissionHandle : GObjectHandle
 
 public static class GPermissionHandleExtensions
 {
-	public static bool Acquire(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool Acquire(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GPermissionHandleExterns.g_permission_acquire(permission, cancellable);
+		return GPermissionHandleExterns.g_permission_acquire(permission, cancellable, error);
 	}
 
 	public static T AcquireAsync<T>(this T permission, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
@@ -17,9 +17,9 @@ public static class GPermissionHandleExtensions
 		return permission;
 	}
 
-	public static bool AcquireFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result)
+	public static bool AcquireFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GPermissionHandleExterns.g_permission_acquire_finish(permission, result);
+		return GPermissionHandleExterns.g_permission_acquire_finish(permission, result, error);
 	}
 
 	public static bool GetAllowed(this MentorLake.Gio.GPermissionHandle permission)
@@ -43,9 +43,9 @@ public static class GPermissionHandleExtensions
 		return permission;
 	}
 
-	public static bool Release(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool Release(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GPermissionHandleExterns.g_permission_release(permission, cancellable);
+		return GPermissionHandleExterns.g_permission_release(permission, cancellable, error);
 	}
 
 	public static T ReleaseAsync<T>(this T permission, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
@@ -54,9 +54,9 @@ public static class GPermissionHandleExtensions
 		return permission;
 	}
 
-	public static bool ReleaseFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result)
+	public static bool ReleaseFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result, IntPtr error)
 	{
-		return GPermissionHandleExterns.g_permission_release_finish(permission, result);
+		return GPermissionHandleExterns.g_permission_release_finish(permission, result, error);
 	}
 
 }
@@ -64,13 +64,13 @@ public static class GPermissionHandleExtensions
 internal class GPermissionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_permission_acquire([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_permission_acquire([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_permission_acquire_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_permission_acquire_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern bool g_permission_acquire_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_permission_get_allowed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission);
@@ -85,12 +85,12 @@ internal class GPermissionHandleExterns
 	internal static extern void g_permission_impl_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, bool allowed, bool can_acquire, bool can_release);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_permission_release([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern bool g_permission_release([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_permission_release_async([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_permission_release_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result);
+	internal static extern bool g_permission_release_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle result, IntPtr error);
 
 }

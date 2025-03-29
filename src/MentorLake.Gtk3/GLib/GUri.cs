@@ -62,9 +62,9 @@ public static class GUriExtensions
 		return GUriExterns.g_uri_get_userinfo(uri);
 	}
 
-	public static MentorLake.GLib.GUriHandle ParseRelative(this MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags)
+	public static MentorLake.GLib.GUriHandle ParseRelative(this MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags, IntPtr error)
 	{
-		return GUriExterns.g_uri_parse_relative(base_uri, uri_ref, flags);
+		return GUriExterns.g_uri_parse_relative(base_uri, uri_ref, flags, error);
 	}
 
 	public static MentorLake.GLib.GUriHandle Ref(this MentorLake.GLib.GUriHandle uri)
@@ -135,7 +135,7 @@ internal class GUriExterns
 	internal static extern string g_uri_get_userinfo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle uri);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GUriHandle g_uri_parse_relative([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags);
+	internal static extern MentorLake.GLib.GUriHandle g_uri_parse_relative([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle uri);
@@ -169,7 +169,7 @@ internal class GUriExterns
 	internal static extern string g_uri_escape_string(string unescaped, string reserved_chars_allowed, bool allow_utf8);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_uri_is_valid(string uri_string, MentorLake.GLib.GUriFlags flags);
+	internal static extern bool g_uri_is_valid(string uri_string, MentorLake.GLib.GUriFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -184,10 +184,10 @@ internal class GUriExterns
 	internal static extern string[] g_uri_list_extract_uris(string uri_list);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GUriHandle g_uri_parse(string uri_string, MentorLake.GLib.GUriFlags flags);
+	internal static extern MentorLake.GLib.GUriHandle g_uri_parse(string uri_string, MentorLake.GLib.GUriFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GHashTableHandle g_uri_parse_params(string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags);
+	internal static extern MentorLake.GLib.GHashTableHandle g_uri_parse_params(string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -199,19 +199,19 @@ internal class GUriExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_uri_resolve_relative(string base_uri_string, string uri_ref, MentorLake.GLib.GUriFlags flags);
+	internal static extern string g_uri_resolve_relative(string base_uri_string, string uri_ref, MentorLake.GLib.GUriFlags flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_uri_split(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string userinfo, out string host, out int port, out string path, out string query, out string fragment);
+	internal static extern bool g_uri_split(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string userinfo, out string host, out int port, out string path, out string query, out string fragment, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_uri_split_network(string uri_string, MentorLake.GLib.GUriFlags flags, out string scheme, out string host, out int port);
+	internal static extern bool g_uri_split_network(string uri_string, MentorLake.GLib.GUriFlags flags, out string scheme, out string host, out int port, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_uri_split_with_user(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string user, out string password, out string auth_params, out string host, out int port, out string path, out string query, out string fragment);
+	internal static extern bool g_uri_split_with_user(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string user, out string password, out string auth_params, out string host, out int port, out string path, out string query, out string fragment, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GBytesHandle g_uri_unescape_bytes(string escaped_string, UIntPtr length, string illegal_characters);
+	internal static extern MentorLake.GLib.GBytesHandle g_uri_unescape_bytes(string escaped_string, UIntPtr length, string illegal_characters, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -250,9 +250,9 @@ public struct GUri
 		return GUriExterns.g_uri_escape_string(unescaped, reserved_chars_allowed, allow_utf8);
 	}
 
-	public static bool IsValid(string uri_string, MentorLake.GLib.GUriFlags flags)
+	public static bool IsValid(string uri_string, MentorLake.GLib.GUriFlags flags, IntPtr error)
 	{
-		return GUriExterns.g_uri_is_valid(uri_string, flags);
+		return GUriExterns.g_uri_is_valid(uri_string, flags, error);
 	}
 
 	public static string Join(MentorLake.GLib.GUriFlags flags, string scheme, string userinfo, string host, int port, string path, string query, string fragment)
@@ -270,14 +270,14 @@ public struct GUri
 		return GUriExterns.g_uri_list_extract_uris(uri_list);
 	}
 
-	public static MentorLake.GLib.GUriHandle Parse(string uri_string, MentorLake.GLib.GUriFlags flags)
+	public static MentorLake.GLib.GUriHandle Parse(string uri_string, MentorLake.GLib.GUriFlags flags, IntPtr error)
 	{
-		return GUriExterns.g_uri_parse(uri_string, flags);
+		return GUriExterns.g_uri_parse(uri_string, flags, error);
 	}
 
-	public static MentorLake.GLib.GHashTableHandle ParseParams(string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags)
+	public static MentorLake.GLib.GHashTableHandle ParseParams(string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags, IntPtr error)
 	{
-		return GUriExterns.g_uri_parse_params(@params, length, separators, flags);
+		return GUriExterns.g_uri_parse_params(@params, length, separators, flags, error);
 	}
 
 	public static string ParseScheme(string uri)
@@ -290,29 +290,29 @@ public struct GUri
 		return GUriExterns.g_uri_peek_scheme(uri);
 	}
 
-	public static string ResolveRelative(string base_uri_string, string uri_ref, MentorLake.GLib.GUriFlags flags)
+	public static string ResolveRelative(string base_uri_string, string uri_ref, MentorLake.GLib.GUriFlags flags, IntPtr error)
 	{
-		return GUriExterns.g_uri_resolve_relative(base_uri_string, uri_ref, flags);
+		return GUriExterns.g_uri_resolve_relative(base_uri_string, uri_ref, flags, error);
 	}
 
-	public static bool Split(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string userinfo, out string host, out int port, out string path, out string query, out string fragment)
+	public static bool Split(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string userinfo, out string host, out int port, out string path, out string query, out string fragment, IntPtr error)
 	{
-		return GUriExterns.g_uri_split(uri_ref, flags, out scheme, out userinfo, out host, out port, out path, out query, out fragment);
+		return GUriExterns.g_uri_split(uri_ref, flags, out scheme, out userinfo, out host, out port, out path, out query, out fragment, error);
 	}
 
-	public static bool SplitNetwork(string uri_string, MentorLake.GLib.GUriFlags flags, out string scheme, out string host, out int port)
+	public static bool SplitNetwork(string uri_string, MentorLake.GLib.GUriFlags flags, out string scheme, out string host, out int port, IntPtr error)
 	{
-		return GUriExterns.g_uri_split_network(uri_string, flags, out scheme, out host, out port);
+		return GUriExterns.g_uri_split_network(uri_string, flags, out scheme, out host, out port, error);
 	}
 
-	public static bool SplitWithUser(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string user, out string password, out string auth_params, out string host, out int port, out string path, out string query, out string fragment)
+	public static bool SplitWithUser(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string user, out string password, out string auth_params, out string host, out int port, out string path, out string query, out string fragment, IntPtr error)
 	{
-		return GUriExterns.g_uri_split_with_user(uri_ref, flags, out scheme, out user, out password, out auth_params, out host, out port, out path, out query, out fragment);
+		return GUriExterns.g_uri_split_with_user(uri_ref, flags, out scheme, out user, out password, out auth_params, out host, out port, out path, out query, out fragment, error);
 	}
 
-	public static MentorLake.GLib.GBytesHandle UnescapeBytes(string escaped_string, UIntPtr length, string illegal_characters)
+	public static MentorLake.GLib.GBytesHandle UnescapeBytes(string escaped_string, UIntPtr length, string illegal_characters, IntPtr error)
 	{
-		return GUriExterns.g_uri_unescape_bytes(escaped_string, length, illegal_characters);
+		return GUriExterns.g_uri_unescape_bytes(escaped_string, length, illegal_characters, error);
 	}
 
 	public static string UnescapeSegment(string escaped_string, string escaped_string_end, string illegal_characters)

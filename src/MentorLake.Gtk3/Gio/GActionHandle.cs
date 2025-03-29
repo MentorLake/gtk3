@@ -57,9 +57,9 @@ public static class GActionHandleExtensions
 		return GActionHandleExterns.g_action_name_is_valid(action_name);
 	}
 
-	public static bool ParseDetailedName(string detailed_name, out string action_name, out MentorLake.GLib.GVariantHandle target_value)
+	public static bool ParseDetailedName(string detailed_name, out string action_name, out MentorLake.GLib.GVariantHandle target_value, IntPtr error)
 	{
-		return GActionHandleExterns.g_action_parse_detailed_name(detailed_name, out action_name, out target_value);
+		return GActionHandleExterns.g_action_parse_detailed_name(detailed_name, out action_name, out target_value, error);
 	}
 
 	public static string PrintDetailedName(string action_name, MentorLake.GLib.GVariantHandle target_value)
@@ -100,7 +100,7 @@ internal class GActionHandleExterns
 	internal static extern bool g_action_name_is_valid(string action_name);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_action_parse_detailed_name(string detailed_name, out string action_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] out MentorLake.GLib.GVariantHandle target_value);
+	internal static extern bool g_action_parse_detailed_name(string detailed_name, out string action_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] out MentorLake.GLib.GVariantHandle target_value, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

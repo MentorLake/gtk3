@@ -88,6 +88,7 @@ public static class Program
 			window.Destroy();
 		});
 
+		appHandle.Register(null, IntPtr.Zero);
 		appHandle.Run(0, null);
 	}
 }

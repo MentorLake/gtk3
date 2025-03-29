@@ -25,14 +25,14 @@ public static class GPollableOutputStreamHandleExtensions
 		return GPollableOutputStreamHandleExterns.g_pollable_output_stream_is_writable(stream);
 	}
 
-	public static UIntPtr WriteNonblocking(this MentorLake.Gio.GPollableOutputStreamHandle stream, byte[] buffer, UIntPtr count, MentorLake.Gio.GCancellableHandle cancellable)
+	public static UIntPtr WriteNonblocking(this MentorLake.Gio.GPollableOutputStreamHandle stream, byte[] buffer, UIntPtr count, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GPollableOutputStreamHandleExterns.g_pollable_output_stream_write_nonblocking(stream, buffer, count, cancellable);
+		return GPollableOutputStreamHandleExterns.g_pollable_output_stream_write_nonblocking(stream, buffer, count, cancellable, error);
 	}
 
-	public static MentorLake.Gio.GPollableReturn WritevNonblocking(this MentorLake.Gio.GPollableOutputStreamHandle stream, MentorLake.Gio.GOutputVector[] vectors, UIntPtr n_vectors, out UIntPtr bytes_written, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GPollableReturn WritevNonblocking(this MentorLake.Gio.GPollableOutputStreamHandle stream, MentorLake.Gio.GOutputVector[] vectors, UIntPtr n_vectors, out UIntPtr bytes_written, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GPollableOutputStreamHandleExterns.g_pollable_output_stream_writev_nonblocking(stream, vectors, n_vectors, out bytes_written, cancellable);
+		return GPollableOutputStreamHandleExterns.g_pollable_output_stream_writev_nonblocking(stream, vectors, n_vectors, out bytes_written, cancellable, error);
 	}
 
 }
@@ -49,9 +49,9 @@ internal class GPollableOutputStreamHandleExterns
 	internal static extern bool g_pollable_output_stream_is_writable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableOutputStreamHandleImpl>))] MentorLake.Gio.GPollableOutputStreamHandle stream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern UIntPtr g_pollable_output_stream_write_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableOutputStreamHandleImpl>))] MentorLake.Gio.GPollableOutputStreamHandle stream, byte[] buffer, UIntPtr count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern UIntPtr g_pollable_output_stream_write_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableOutputStreamHandleImpl>))] MentorLake.Gio.GPollableOutputStreamHandle stream, byte[] buffer, UIntPtr count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GPollableReturn g_pollable_output_stream_writev_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableOutputStreamHandleImpl>))] MentorLake.Gio.GPollableOutputStreamHandle stream, MentorLake.Gio.GOutputVector[] vectors, UIntPtr n_vectors, out UIntPtr bytes_written, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GPollableReturn g_pollable_output_stream_writev_nonblocking([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPollableOutputStreamHandleImpl>))] MentorLake.Gio.GPollableOutputStreamHandle stream, MentorLake.Gio.GOutputVector[] vectors, UIntPtr n_vectors, out UIntPtr bytes_written, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 }

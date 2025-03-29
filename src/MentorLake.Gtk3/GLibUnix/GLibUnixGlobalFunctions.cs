@@ -32,19 +32,19 @@ public class GLibUnixGlobalFunctions
 		return GLibUnixGlobalFunctionsExterns.g_fdwalk_set_cloexec(lowfd);
 	}
 
-	public static IntPtr GetPasswdEntry(string user_name)
+	public static IntPtr GetPasswdEntry(string user_name, IntPtr error)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_get_passwd_entry(user_name);
+		return GLibUnixGlobalFunctionsExterns.g_unix_get_passwd_entry(user_name, error);
 	}
 
-	public static bool OpenPipe(int fds, int flags)
+	public static bool OpenPipe(int fds, int flags, IntPtr error)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_open_pipe(fds, flags);
+		return GLibUnixGlobalFunctionsExterns.g_unix_open_pipe(fds, flags, error);
 	}
 
-	public static bool SetFdNonblocking(int fd, bool nonblock)
+	public static bool SetFdNonblocking(int fd, bool nonblock, IntPtr error)
 	{
-		return GLibUnixGlobalFunctionsExterns.g_unix_set_fd_nonblocking(fd, nonblock);
+		return GLibUnixGlobalFunctionsExterns.g_unix_set_fd_nonblocking(fd, nonblock, error);
 	}
 
 	public static uint SignalAdd(int signum, MentorLake.GLib.GSourceFunc handler, IntPtr user_data)
@@ -85,13 +85,13 @@ internal class GLibUnixGlobalFunctionsExterns
 	internal static extern int g_fdwalk_set_cloexec(int lowfd);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern IntPtr g_unix_get_passwd_entry(string user_name);
+	internal static extern IntPtr g_unix_get_passwd_entry(string user_name, IntPtr error);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern bool g_unix_open_pipe(int fds, int flags);
+	internal static extern bool g_unix_open_pipe(int fds, int flags, IntPtr error);
 
 	[DllImport(GLibUnixLibrary.Name)]
-	internal static extern bool g_unix_set_fd_nonblocking(int fd, bool nonblock);
+	internal static extern bool g_unix_set_fd_nonblocking(int fd, bool nonblock, IntPtr error);
 
 	[DllImport(GLibUnixLibrary.Name)]
 	internal static extern uint g_unix_signal_add(int signum, MentorLake.GLib.GSourceFunc handler, IntPtr user_data);

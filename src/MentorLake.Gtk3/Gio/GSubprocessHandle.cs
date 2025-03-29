@@ -7,9 +7,9 @@ public class GSubprocessHandle : GObjectHandle, GInitableHandle
 		return GSubprocessHandleExterns.g_subprocess_new(flags, error, argv0, @__arglist);
 	}
 
-	public static MentorLake.Gio.GSubprocessHandle Newv(string[] argv, MentorLake.Gio.GSubprocessFlags flags)
+	public static MentorLake.Gio.GSubprocessHandle Newv(string[] argv, MentorLake.Gio.GSubprocessFlags flags, IntPtr error)
 	{
-		return GSubprocessHandleExterns.g_subprocess_newv(argv, flags);
+		return GSubprocessHandleExterns.g_subprocess_newv(argv, flags, error);
 	}
 
 }
@@ -150,7 +150,7 @@ internal class GSubprocessHandleExterns
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_new(MentorLake.Gio.GSubprocessFlags flags, IntPtr error, string argv0, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_newv(string[] argv, MentorLake.Gio.GSubprocessFlags flags);
+	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_newv(string[] argv, MentorLake.Gio.GSubprocessFlags flags, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_subprocess_communicate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessHandle>))] MentorLake.Gio.GSubprocessHandle subprocess, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle stdin_buf, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] out MentorLake.GLib.GBytesHandle stdout_buf, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] out MentorLake.GLib.GBytesHandle stderr_buf, IntPtr error);

@@ -2,24 +2,24 @@ namespace MentorLake.Gio;
 
 public class GDBusConnectionHandle : GObjectHandle, GAsyncInitableHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GDBusConnectionHandle NewFinish(MentorLake.Gio.GAsyncResultHandle res)
+	public static MentorLake.Gio.GDBusConnectionHandle NewFinish(MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GDBusConnectionHandleExterns.g_dbus_connection_new_finish(res);
+		return GDBusConnectionHandleExterns.g_dbus_connection_new_finish(res, error);
 	}
 
-	public static MentorLake.Gio.GDBusConnectionHandle NewForAddressFinish(MentorLake.Gio.GAsyncResultHandle res)
+	public static MentorLake.Gio.GDBusConnectionHandle NewForAddressFinish(MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GDBusConnectionHandleExterns.g_dbus_connection_new_for_address_finish(res);
+		return GDBusConnectionHandleExterns.g_dbus_connection_new_for_address_finish(res, error);
 	}
 
-	public static MentorLake.Gio.GDBusConnectionHandle NewForAddressSync(string address, MentorLake.Gio.GDBusConnectionFlags flags, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GDBusConnectionHandle NewForAddressSync(string address, MentorLake.Gio.GDBusConnectionFlags flags, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GDBusConnectionHandleExterns.g_dbus_connection_new_for_address_sync(address, flags, observer, cancellable);
+		return GDBusConnectionHandleExterns.g_dbus_connection_new_for_address_sync(address, flags, observer, cancellable, error);
 	}
 
-	public static MentorLake.Gio.GDBusConnectionHandle NewSync(MentorLake.Gio.GIOStreamHandle stream, string guid, MentorLake.Gio.GDBusConnectionFlags flags, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GDBusConnectionHandle NewSync(MentorLake.Gio.GIOStreamHandle stream, string guid, MentorLake.Gio.GDBusConnectionFlags flags, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GDBusConnectionHandleExterns.g_dbus_connection_new_sync(stream, guid, flags, observer, cancellable);
+		return GDBusConnectionHandleExterns.g_dbus_connection_new_sync(stream, guid, flags, observer, cancellable, error);
 	}
 
 	public static void New(MentorLake.Gio.GIOStreamHandle stream, string guid, MentorLake.Gio.GDBusConnectionFlags flags, MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
@@ -310,16 +310,16 @@ public static class GDBusConnectionHandleExtensions
 internal class GDBusConnectionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_for_address_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_for_address_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_for_address_sync(string address, MentorLake.Gio.GDBusConnectionFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_for_address_sync(string address, MentorLake.Gio.GDBusConnectionFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_sync([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle stream, string guid, MentorLake.Gio.GDBusConnectionFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_connection_new_sync([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle stream, string guid, MentorLake.Gio.GDBusConnectionFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern uint g_dbus_connection_add_filter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusMessageFilterFunction filter_function, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_free_func);

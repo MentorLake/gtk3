@@ -2,9 +2,9 @@ namespace MentorLake.Gio;
 
 public class GDebugControllerDBusHandle : GObjectHandle, GDebugControllerHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GDebugControllerDBusHandle New(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GDebugControllerDBusHandle New(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GDebugControllerDBusHandleExterns.g_debug_controller_dbus_new(connection, cancellable);
+		return GDebugControllerDBusHandleExterns.g_debug_controller_dbus_new(connection, cancellable, error);
 	}
 
 }
@@ -75,7 +75,7 @@ public static class GDebugControllerDBusHandleExtensions
 internal class GDebugControllerDBusHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDebugControllerDBusHandle g_debug_controller_dbus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GDebugControllerDBusHandle g_debug_controller_dbus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_debug_controller_dbus_stop([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDebugControllerDBusHandle>))] MentorLake.Gio.GDebugControllerDBusHandle self);

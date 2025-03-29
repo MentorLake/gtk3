@@ -2,14 +2,14 @@ namespace MentorLake.GLib;
 
 public class GMappedFileHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GMappedFileHandle New(string filename, bool writable)
+	public static MentorLake.GLib.GMappedFileHandle New(string filename, bool writable, IntPtr error)
 	{
-		return GMappedFileExterns.g_mapped_file_new(filename, writable);
+		return GMappedFileExterns.g_mapped_file_new(filename, writable, error);
 	}
 
-	public static MentorLake.GLib.GMappedFileHandle NewFromFd(int fd, bool writable)
+	public static MentorLake.GLib.GMappedFileHandle NewFromFd(int fd, bool writable, IntPtr error)
 	{
-		return GMappedFileExterns.g_mapped_file_new_from_fd(fd, writable);
+		return GMappedFileExterns.g_mapped_file_new_from_fd(fd, writable, error);
 	}
 
 }
@@ -53,10 +53,10 @@ public static class GMappedFileExtensions
 internal class GMappedFileExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new(string filename, bool writable);
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new(string filename, bool writable, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new_from_fd(int fd, bool writable);
+	internal static extern MentorLake.GLib.GMappedFileHandle g_mapped_file_new_from_fd(int fd, bool writable, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_mapped_file_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMappedFileHandle>))] MentorLake.GLib.GMappedFileHandle file);

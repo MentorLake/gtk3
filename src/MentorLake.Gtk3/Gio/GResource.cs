@@ -2,9 +2,9 @@ namespace MentorLake.Gio;
 
 public class GResourceHandle : BaseSafeHandle
 {
-	public static MentorLake.Gio.GResourceHandle NewFromData(MentorLake.GLib.GBytesHandle data)
+	public static MentorLake.Gio.GResourceHandle NewFromData(MentorLake.GLib.GBytesHandle data, IntPtr error)
 	{
-		return GResourceExterns.g_resource_new_from_data(data);
+		return GResourceExterns.g_resource_new_from_data(data, error);
 	}
 
 }
@@ -63,7 +63,7 @@ public static class GResourceExtensions
 internal class GResourceExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GResourceHandle g_resource_new_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle data);
+	internal static extern MentorLake.Gio.GResourceHandle g_resource_new_from_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle data, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_resources_register([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GResourceHandle>))] MentorLake.Gio.GResourceHandle resource);

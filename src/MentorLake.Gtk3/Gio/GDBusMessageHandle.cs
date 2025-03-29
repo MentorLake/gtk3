@@ -7,9 +7,9 @@ public class GDBusMessageHandle : GObjectHandle
 		return GDBusMessageHandleExterns.g_dbus_message_new();
 	}
 
-	public static MentorLake.Gio.GDBusMessageHandle NewFromBlob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities)
+	public static MentorLake.Gio.GDBusMessageHandle NewFromBlob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error)
 	{
-		return GDBusMessageHandleExterns.g_dbus_message_new_from_blob(blob, blob_len, capabilities);
+		return GDBusMessageHandleExterns.g_dbus_message_new_from_blob(blob, blob_len, capabilities, error);
 	}
 
 	public static MentorLake.Gio.GDBusMessageHandle NewMethodCall(string name, string path, string interface_, string method)
@@ -281,7 +281,7 @@ internal class GDBusMessageHandleExterns
 	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new();
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_from_blob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities);
+	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_from_blob(byte[] blob, UIntPtr blob_len, MentorLake.Gio.GDBusCapabilityFlags capabilities, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GDBusMessageHandle g_dbus_message_new_method_call(string name, string path, string interface_, string method);

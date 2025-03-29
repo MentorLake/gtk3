@@ -2,9 +2,9 @@ namespace MentorLake.GLib;
 
 public class GDirHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GDirHandle Open(string path, uint flags)
+	public static MentorLake.GLib.GDirHandle Open(string path, uint flags, IntPtr error)
 	{
-		return GDirExterns.g_dir_open(path, flags);
+		return GDirExterns.g_dir_open(path, flags, error);
 	}
 
 }
@@ -43,7 +43,7 @@ public static class GDirExtensions
 internal class GDirExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GDirHandle g_dir_open(string path, uint flags);
+	internal static extern MentorLake.GLib.GDirHandle g_dir_open(string path, uint flags, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern void g_dir_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);

@@ -7,9 +7,9 @@ public class GThreadHandle : BaseSafeHandle
 		return GThreadExterns.g_thread_new(name, func, data);
 	}
 
-	public static MentorLake.GLib.GThreadHandle TryNew(string name, MentorLake.GLib.GThreadFunc func, IntPtr data)
+	public static MentorLake.GLib.GThreadHandle TryNew(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, IntPtr error)
 	{
-		return GThreadExterns.g_thread_try_new(name, func, data);
+		return GThreadExterns.g_thread_try_new(name, func, data, error);
 	}
 
 }
@@ -51,7 +51,7 @@ internal class GThreadExterns
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GThreadHandle g_thread_try_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data);
+	internal static extern MentorLake.GLib.GThreadHandle g_thread_try_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

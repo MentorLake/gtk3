@@ -7,14 +7,14 @@ public class GdkPixbufLoaderHandle : GObjectHandle
 		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_new();
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufLoaderHandle NewWithMimeType(string mime_type)
+	public static MentorLake.GdkPixbuf.GdkPixbufLoaderHandle NewWithMimeType(string mime_type, IntPtr error)
 	{
-		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_new_with_mime_type(mime_type);
+		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_new_with_mime_type(mime_type, error);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufLoaderHandle NewWithType(string image_type)
+	public static MentorLake.GdkPixbuf.GdkPixbufLoaderHandle NewWithType(string image_type, IntPtr error)
 	{
-		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_new_with_type(image_type);
+		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_new_with_type(image_type, error);
 	}
 
 }
@@ -239,10 +239,10 @@ internal class GdkPixbufLoaderHandleExterns
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new();
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_mime_type(string mime_type);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_mime_type(string mime_type, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_type(string image_type);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_type(string image_type, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern bool gdk_pixbuf_loader_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, IntPtr error);

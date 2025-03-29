@@ -2,24 +2,24 @@ namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufAnimationHandle : GObjectHandle
 {
-	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromFile(string filename)
+	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromFile(string filename, IntPtr error)
 	{
-		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_file(filename);
+		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_file(filename, error);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromResource(string resource_path)
+	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromResource(string resource_path, IntPtr error)
 	{
-		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_resource(resource_path);
+		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_resource(resource_path, error);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromStream(MentorLake.Gio.GInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromStream(MentorLake.Gio.GInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_stream(stream, cancellable);
+		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_stream(stream, cancellable, error);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromStreamFinish(MentorLake.Gio.GAsyncResultHandle async_result)
+	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle NewFromStreamFinish(MentorLake.Gio.GAsyncResultHandle async_result, IntPtr error)
 	{
-		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_stream_finish(async_result);
+		return GdkPixbufAnimationHandleExterns.gdk_pixbuf_animation_new_from_stream_finish(async_result, error);
 	}
 
 	public static void NewFromStreamAsync(MentorLake.Gio.GInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
@@ -72,16 +72,16 @@ public static class GdkPixbufAnimationHandleExtensions
 internal class GdkPixbufAnimationHandleExterns
 {
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_file(string filename);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_file(string filename, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_resource(string resource_path);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_resource(string resource_path, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_stream([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInputStreamHandle>))] MentorLake.Gio.GInputStreamHandle stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_stream([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInputStreamHandle>))] MentorLake.Gio.GInputStreamHandle stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_stream_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle async_result);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_animation_new_from_stream_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle async_result, IntPtr error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern int gdk_pixbuf_animation_get_height([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufAnimationHandle>))] MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation);

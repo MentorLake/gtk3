@@ -2,9 +2,9 @@ namespace MentorLake.GLib;
 
 public class GRegexHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GRegexHandle New(string pattern, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options)
+	public static MentorLake.GLib.GRegexHandle New(string pattern, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options, IntPtr error)
 	{
-		return GRegexExterns.g_regex_new(pattern, compile_options, match_options);
+		return GRegexExterns.g_regex_new(pattern, compile_options, match_options, error);
 	}
 
 }
@@ -113,7 +113,7 @@ public static class GRegexExtensions
 internal class GRegexExterns
 {
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GRegexHandle g_regex_new(string pattern, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options);
+	internal static extern MentorLake.GLib.GRegexHandle g_regex_new(string pattern, MentorLake.GLib.GRegexCompileFlags compile_options, MentorLake.GLib.GRegexMatchFlags match_options, IntPtr error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_regex_get_capture_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRegexHandle>))] MentorLake.GLib.GRegexHandle regex);

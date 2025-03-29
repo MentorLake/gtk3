@@ -2,14 +2,14 @@ namespace MentorLake.Gio;
 
 public class GSocketHandle : GObjectHandle, GDatagramBasedHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GSocketHandle New(MentorLake.Gio.GSocketFamily family, MentorLake.Gio.GSocketType type, MentorLake.Gio.GSocketProtocol protocol)
+	public static MentorLake.Gio.GSocketHandle New(MentorLake.Gio.GSocketFamily family, MentorLake.Gio.GSocketType type, MentorLake.Gio.GSocketProtocol protocol, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_new(family, type, protocol);
+		return GSocketHandleExterns.g_socket_new(family, type, protocol, error);
 	}
 
-	public static MentorLake.Gio.GSocketHandle NewFromFd(int fd)
+	public static MentorLake.Gio.GSocketHandle NewFromFd(int fd, IntPtr error)
 	{
-		return GSocketHandleExterns.g_socket_new_from_fd(fd);
+		return GSocketHandleExterns.g_socket_new_from_fd(fd, error);
 	}
 
 }
@@ -319,10 +319,10 @@ public static class GSocketHandleExtensions
 internal class GSocketHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketHandle g_socket_new(MentorLake.Gio.GSocketFamily family, MentorLake.Gio.GSocketType type, MentorLake.Gio.GSocketProtocol protocol);
+	internal static extern MentorLake.Gio.GSocketHandle g_socket_new(MentorLake.Gio.GSocketFamily family, MentorLake.Gio.GSocketType type, MentorLake.Gio.GSocketProtocol protocol, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GSocketHandle g_socket_new_from_fd(int fd);
+	internal static extern MentorLake.Gio.GSocketHandle g_socket_new_from_fd(int fd, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern MentorLake.Gio.GSocketHandle g_socket_accept([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);

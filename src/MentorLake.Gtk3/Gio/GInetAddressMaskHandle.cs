@@ -2,14 +2,14 @@ namespace MentorLake.Gio;
 
 public class GInetAddressMaskHandle : GObjectHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GInetAddressMaskHandle New(MentorLake.Gio.GInetAddressHandle addr, uint length)
+	public static MentorLake.Gio.GInetAddressMaskHandle New(MentorLake.Gio.GInetAddressHandle addr, uint length, IntPtr error)
 	{
-		return GInetAddressMaskHandleExterns.g_inet_address_mask_new(addr, length);
+		return GInetAddressMaskHandleExterns.g_inet_address_mask_new(addr, length, error);
 	}
 
-	public static MentorLake.Gio.GInetAddressMaskHandle NewFromString(string mask_string)
+	public static MentorLake.Gio.GInetAddressMaskHandle NewFromString(string mask_string, IntPtr error)
 	{
-		return GInetAddressMaskHandleExterns.g_inet_address_mask_new_from_string(mask_string);
+		return GInetAddressMaskHandleExterns.g_inet_address_mask_new_from_string(mask_string, error);
 	}
 
 }
@@ -51,10 +51,10 @@ public static class GInetAddressMaskHandleExtensions
 internal class GInetAddressMaskHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle addr, uint length);
+	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle addr, uint length, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new_from_string(string mask_string);
+	internal static extern MentorLake.Gio.GInetAddressMaskHandle g_inet_address_mask_new_from_string(string mask_string, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_inet_address_mask_equal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressMaskHandle>))] MentorLake.Gio.GInetAddressMaskHandle mask, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressMaskHandle>))] MentorLake.Gio.GInetAddressMaskHandle mask2);

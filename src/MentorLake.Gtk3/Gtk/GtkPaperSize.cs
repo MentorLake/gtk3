@@ -22,9 +22,9 @@ public class GtkPaperSizeHandle : BaseSafeHandle
 		return GtkPaperSizeExterns.gtk_paper_size_new_from_ipp(ipp_name, width, height);
 	}
 
-	public static MentorLake.Gtk.GtkPaperSizeHandle NewFromKeyFile(MentorLake.GLib.GKeyFileHandle key_file, string group_name)
+	public static MentorLake.Gtk.GtkPaperSizeHandle NewFromKeyFile(MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error)
 	{
-		return GtkPaperSizeExterns.gtk_paper_size_new_from_key_file(key_file, group_name);
+		return GtkPaperSizeExterns.gtk_paper_size_new_from_key_file(key_file, group_name, error);
 	}
 
 	public static MentorLake.Gtk.GtkPaperSizeHandle NewFromPpd(string ppd_name, string ppd_display_name, double width, double height)
@@ -140,7 +140,7 @@ internal class GtkPaperSizeExterns
 	internal static extern MentorLake.Gtk.GtkPaperSizeHandle gtk_paper_size_new_from_ipp(string ipp_name, double width, double height);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkPaperSizeHandle gtk_paper_size_new_from_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name);
+	internal static extern MentorLake.Gtk.GtkPaperSizeHandle gtk_paper_size_new_from_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkPaperSizeHandle gtk_paper_size_new_from_ppd(string ppd_name, string ppd_display_name, double width, double height);

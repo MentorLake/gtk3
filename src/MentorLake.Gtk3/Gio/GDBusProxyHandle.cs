@@ -2,24 +2,24 @@ namespace MentorLake.Gio;
 
 public class GDBusProxyHandle : GObjectHandle, GAsyncInitableHandle, GDBusInterfaceHandle, GInitableHandle
 {
-	public static MentorLake.Gio.GDBusProxyHandle NewFinish(MentorLake.Gio.GAsyncResultHandle res)
+	public static MentorLake.Gio.GDBusProxyHandle NewFinish(MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GDBusProxyHandleExterns.g_dbus_proxy_new_finish(res);
+		return GDBusProxyHandleExterns.g_dbus_proxy_new_finish(res, error);
 	}
 
-	public static MentorLake.Gio.GDBusProxyHandle NewForBusFinish(MentorLake.Gio.GAsyncResultHandle res)
+	public static MentorLake.Gio.GDBusProxyHandle NewForBusFinish(MentorLake.Gio.GAsyncResultHandle res, IntPtr error)
 	{
-		return GDBusProxyHandleExterns.g_dbus_proxy_new_for_bus_finish(res);
+		return GDBusProxyHandleExterns.g_dbus_proxy_new_for_bus_finish(res, error);
 	}
 
-	public static MentorLake.Gio.GDBusProxyHandle NewForBusSync(MentorLake.Gio.GBusType bus_type, MentorLake.Gio.GDBusProxyFlags flags, MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GDBusProxyHandle NewForBusSync(MentorLake.Gio.GBusType bus_type, MentorLake.Gio.GDBusProxyFlags flags, MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GDBusProxyHandleExterns.g_dbus_proxy_new_for_bus_sync(bus_type, flags, info, name, object_path, interface_name, cancellable);
+		return GDBusProxyHandleExterns.g_dbus_proxy_new_for_bus_sync(bus_type, flags, info, name, object_path, interface_name, cancellable, error);
 	}
 
-	public static MentorLake.Gio.GDBusProxyHandle NewSync(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusProxyFlags flags, MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, MentorLake.Gio.GCancellableHandle cancellable)
+	public static MentorLake.Gio.GDBusProxyHandle NewSync(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusProxyFlags flags, MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, MentorLake.Gio.GCancellableHandle cancellable, IntPtr error)
 	{
-		return GDBusProxyHandleExterns.g_dbus_proxy_new_sync(connection, flags, info, name, object_path, interface_name, cancellable);
+		return GDBusProxyHandleExterns.g_dbus_proxy_new_sync(connection, flags, info, name, object_path, interface_name, cancellable, error);
 	}
 
 	public static void New(MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusProxyFlags flags, MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data)
@@ -236,16 +236,16 @@ public static class GDBusProxyHandleExtensions
 internal class GDBusProxyHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_for_bus_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res);
+	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_for_bus_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_for_bus_sync(MentorLake.Gio.GBusType bus_type, MentorLake.Gio.GDBusProxyFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))] MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_for_bus_sync(MentorLake.Gio.GBusType bus_type, MentorLake.Gio.GDBusProxyFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))] MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_sync([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusProxyFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))] MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
+	internal static extern MentorLake.Gio.GDBusProxyHandle g_dbus_proxy_new_sync([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, MentorLake.Gio.GDBusProxyFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))] MentorLake.Gio.GDBusInterfaceInfoHandle info, string name, string object_path, string interface_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_dbus_proxy_call([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusProxyHandle>))] MentorLake.Gio.GDBusProxyHandle proxy, string method_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle parameters, MentorLake.Gio.GDBusCallFlags flags, int timeout_msec, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data);

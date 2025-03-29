@@ -7,9 +7,9 @@ public class GtkPrintSettingsHandle : GObjectHandle
 		return GtkPrintSettingsHandleExterns.gtk_print_settings_new();
 	}
 
-	public static MentorLake.Gtk.GtkPrintSettingsHandle NewFromFile(string file_name)
+	public static MentorLake.Gtk.GtkPrintSettingsHandle NewFromFile(string file_name, IntPtr error)
 	{
-		return GtkPrintSettingsHandleExterns.gtk_print_settings_new_from_file(file_name);
+		return GtkPrintSettingsHandleExterns.gtk_print_settings_new_from_file(file_name, error);
 	}
 
 	public static MentorLake.Gtk.GtkPrintSettingsHandle NewFromGvariant(MentorLake.GLib.GVariantHandle variant)
@@ -17,9 +17,9 @@ public class GtkPrintSettingsHandle : GObjectHandle
 		return GtkPrintSettingsHandleExterns.gtk_print_settings_new_from_gvariant(variant);
 	}
 
-	public static MentorLake.Gtk.GtkPrintSettingsHandle NewFromKeyFile(MentorLake.GLib.GKeyFileHandle key_file, string group_name)
+	public static MentorLake.Gtk.GtkPrintSettingsHandle NewFromKeyFile(MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error)
 	{
-		return GtkPrintSettingsHandleExterns.gtk_print_settings_new_from_key_file(key_file, group_name);
+		return GtkPrintSettingsHandleExterns.gtk_print_settings_new_from_key_file(key_file, group_name, error);
 	}
 
 }
@@ -427,13 +427,13 @@ internal class GtkPrintSettingsHandleExterns
 	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new();
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new_from_file(string file_name);
+	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new_from_file(string file_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new_from_gvariant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle variant);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new_from_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name);
+	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_new_from_key_file([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GKeyFileHandle>))] MentorLake.GLib.GKeyFileHandle key_file, string group_name, IntPtr error);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_settings_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintSettingsHandle>))] MentorLake.Gtk.GtkPrintSettingsHandle other);

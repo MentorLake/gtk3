@@ -47,18 +47,17 @@ public static class Extensions
 		return ids.Select(id => GObjectGlobalFunctions.SignalName((uint)id)).ToList();
 	}
 
-	private static readonly Dictionary<object, object> s_managedData = new();
+	private static readonly Dictionary<IntPtr, object> s_managedData = new();
 
 	public static T SetManagedData<T>(this T obj, object key, object val) where T : GObjectHandle
 	{
 		lock (s_managedData)
 		{
-			var fullKey = $"{obj.GetHashCode()}_{key.GetHashCode()}";
-			s_managedData[fullKey] = val;
+			s_managedData[obj.DangerousGetHandle()] = val;
 			GCHandle gcHandle = default;
 			GWeakNotify handler = (_, _) =>
 			{
-				lock (s_managedData) s_managedData.Remove(fullKey);
+				lock (s_managedData) s_managedData.Remove(obj.DangerousGetHandle());
 				gcHandle.Free();
 			};
 			gcHandle = GCHandle.Alloc(handler);
@@ -72,7 +71,7 @@ public static class Extensions
 	{
 		lock (s_managedData)
 		{
-			return (T) s_managedData[$"{obj.GetHashCode()}_{key.GetHashCode()}"];
+			return (T) s_managedData[obj.DangerousGetHandle()];
 		}
 	}
 

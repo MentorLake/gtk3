@@ -97,6 +97,9 @@ public static class Program
 					.Add(GtkImageHandle.NewFromIconName("face-smile", GtkIconSize.GTK_ICON_SIZE_LARGE_TOOLBAR)
 						.SetSizeRequest(64, 64)));
 
+			window.GetStyleContext().GetProperty("min-width", GtkStateFlags.GTK_STATE_FLAG_NORMAL, out var minWidth);
+			Console.WriteLine(minWidth.data[0].v_int);
+
 			window.ShowAll();
 			appHandle.AddWindow(window);
 			await Task.Delay(3000);

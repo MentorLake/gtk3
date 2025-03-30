@@ -649,6 +649,7 @@ internal class GValueExterns
 
 public struct GValue
 {
+	[MarshalAs(UnmanagedType.ByValArray)]
 	public _Value__data__union[] data;
 	public static void RegisterTransformFunc(MentorLake.GObject.GType src_type, MentorLake.GObject.GType dest_type, MentorLake.GObject.GValueTransform transform_func)
 	{

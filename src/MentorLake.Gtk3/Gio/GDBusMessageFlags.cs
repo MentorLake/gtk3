@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusMessageFlags : long
+public enum GDBusMessageFlags : uint
 {
 	G_DBUS_MESSAGE_FLAGS_NONE = 0,
 	G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED = 1,

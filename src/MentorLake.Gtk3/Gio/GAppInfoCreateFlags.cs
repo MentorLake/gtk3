@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GAppInfoCreateFlags : long
+public enum GAppInfoCreateFlags : uint
 {
 	G_APP_INFO_CREATE_NONE = 0,
 	G_APP_INFO_CREATE_NEEDS_TERMINAL = 1,

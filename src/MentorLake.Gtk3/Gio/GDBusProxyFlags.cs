@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusProxyFlags : long
+public enum GDBusProxyFlags : uint
 {
 	G_DBUS_PROXY_FLAGS_NONE = 0,
 	G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GLogLevelFlags : long
+public enum GLogLevelFlags : int
 {
 	G_LOG_FLAG_RECURSION = 1,
 	G_LOG_FLAG_FATAL = 2,

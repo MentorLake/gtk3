@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GIOCondition : long
+public enum GIOCondition : uint
 {
 	G_IO_IN = 1,
 	G_IO_OUT = 4,

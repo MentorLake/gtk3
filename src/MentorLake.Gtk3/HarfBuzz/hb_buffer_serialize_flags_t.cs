@@ -1,7 +1,7 @@
 namespace MentorLake.HarfBuzz;
 
 [Flags]
-public enum hb_buffer_serialize_flags_t : long
+public enum hb_buffer_serialize_flags_t : uint
 {
 	HB_BUFFER_SERIALIZE_FLAG_DEFAULT = 0,
 	HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = 1,

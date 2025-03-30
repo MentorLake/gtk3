@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkRecentFilterFlags : long
+public enum GtkRecentFilterFlags : uint
 {
 	GTK_RECENT_FILTER_URI = 1,
 	GTK_RECENT_FILTER_DISPLAY_NAME = 2,

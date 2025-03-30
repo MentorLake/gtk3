@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GTraverseFlags : long
+public enum GTraverseFlags : uint
 {
 	G_TRAVERSE_LEAVES = 1,
 	G_TRAVERSE_NON_LEAVES = 2,

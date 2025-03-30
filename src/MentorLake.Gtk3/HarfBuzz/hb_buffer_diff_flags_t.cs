@@ -1,7 +1,7 @@
 namespace MentorLake.HarfBuzz;
 
 [Flags]
-public enum hb_buffer_diff_flags_t : long
+public enum hb_buffer_diff_flags_t : uint
 {
 	HB_BUFFER_DIFF_FLAG_EQUAL = 0,
 	HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = 1,

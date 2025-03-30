@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GTestTrapFlags : long
+public enum GTestTrapFlags : uint
 {
 	G_TEST_TRAP_DEFAULT = 0,
 	G_TEST_TRAP_SILENCE_STDOUT = 128,

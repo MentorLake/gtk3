@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GTypeDebugFlags : long
+public enum GTypeDebugFlags : uint
 {
 	G_TYPE_DEBUG_NONE = 0,
 	G_TYPE_DEBUG_OBJECTS = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusConnectionFlags : long
+public enum GDBusConnectionFlags : uint
 {
 	G_DBUS_CONNECTION_FLAGS_NONE = 0,
 	G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT = 1,

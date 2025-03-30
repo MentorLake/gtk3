@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkWMDecoration : long
+public enum GdkWMDecoration : uint
 {
 	GDK_DECOR_ALL = 1,
 	GDK_DECOR_BORDER = 2,

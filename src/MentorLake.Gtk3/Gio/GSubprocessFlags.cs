@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GSubprocessFlags : long
+public enum GSubprocessFlags : uint
 {
 	G_SUBPROCESS_FLAGS_NONE = 0,
 	G_SUBPROCESS_FLAGS_STDIN_PIPE = 1,

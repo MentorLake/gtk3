@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GParamFlags : long
+public enum GParamFlags : uint
 {
 	G_PARAM_READABLE = 1,
 	G_PARAM_WRITABLE = 2,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GSettingsBindFlags : long
+public enum GSettingsBindFlags : uint
 {
 	G_SETTINGS_BIND_DEFAULT = 0,
 	G_SETTINGS_BIND_GET = 1,

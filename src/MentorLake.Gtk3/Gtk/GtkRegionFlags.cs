@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkRegionFlags : long
+public enum GtkRegionFlags : uint
 {
 	GTK_REGION_EVEN = 1,
 	GTK_REGION_ODD = 2,

@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GUriHideFlags : long
+public enum GUriHideFlags : uint
 {
 	G_URI_HIDE_NONE = 0,
 	G_URI_HIDE_USERINFO = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusSignalFlags : long
+public enum GDBusSignalFlags : uint
 {
 	G_DBUS_SIGNAL_FLAGS_NONE = 0,
 	G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE = 1,

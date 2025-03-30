@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkAxisFlags : long
+public enum GdkAxisFlags : uint
 {
 	GDK_AXIS_FLAG_X = 2,
 	GDK_AXIS_FLAG_Y = 4,

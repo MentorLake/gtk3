@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GMarkupCollectType : long
+public enum GMarkupCollectType : uint
 {
 	G_MARKUP_COLLECT_INVALID = 0,
 	G_MARKUP_COLLECT_STRING = 1,

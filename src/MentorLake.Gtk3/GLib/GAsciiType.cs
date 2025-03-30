@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GAsciiType : long
+public enum GAsciiType : uint
 {
 	G_ASCII_ALNUM = 1,
 	G_ASCII_ALPHA = 2,

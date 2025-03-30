@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkWMFunction : long
+public enum GdkWMFunction : uint
 {
 	GDK_FUNC_ALL = 1,
 	GDK_FUNC_RESIZE = 2,

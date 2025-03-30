@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkTargetFlags : long
+public enum GtkTargetFlags : uint
 {
 	GTK_TARGET_SAME_APP = 1,
 	GTK_TARGET_SAME_WIDGET = 2,

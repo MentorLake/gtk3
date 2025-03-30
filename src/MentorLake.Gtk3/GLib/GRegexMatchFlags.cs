@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GRegexMatchFlags : long
+public enum GRegexMatchFlags : uint
 {
 	G_REGEX_MATCH_DEFAULT = 0,
 	G_REGEX_MATCH_ANCHORED = 16,

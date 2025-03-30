@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GFileTest : long
+public enum GFileTest : uint
 {
 	G_FILE_TEST_IS_REGULAR = 1,
 	G_FILE_TEST_IS_SYMLINK = 2,

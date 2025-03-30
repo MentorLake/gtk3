@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GUriParamsFlags : long
+public enum GUriParamsFlags : uint
 {
 	G_URI_PARAMS_NONE = 0,
 	G_URI_PARAMS_CASE_INSENSITIVE = 1,

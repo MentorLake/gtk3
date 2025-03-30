@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkIconLookupFlags : long
+public enum GtkIconLookupFlags : uint
 {
 	GTK_ICON_LOOKUP_NO_SVG = 1,
 	GTK_ICON_LOOKUP_FORCE_SVG = 2,

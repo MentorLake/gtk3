@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GFileSetContentsFlags : long
+public enum GFileSetContentsFlags : uint
 {
 	G_FILE_SET_CONTENTS_NONE = 0,
 	G_FILE_SET_CONTENTS_CONSISTENT = 1,

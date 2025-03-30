@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkCellRendererState : long
+public enum GtkCellRendererState : uint
 {
 	GTK_CELL_RENDERER_SELECTED = 1,
 	GTK_CELL_RENDERER_PRELIT = 2,

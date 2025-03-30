@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileMeasureFlags : long
+public enum GFileMeasureFlags : uint
 {
 	G_FILE_MEASURE_NONE = 0,
 	G_FILE_MEASURE_REPORT_ANY_ERROR = 2,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkAccelFlags : long
+public enum GtkAccelFlags : uint
 {
 	GTK_ACCEL_VISIBLE = 1,
 	GTK_ACCEL_LOCKED = 2,

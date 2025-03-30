@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkStyleContextPrintFlags : long
+public enum GtkStyleContextPrintFlags : uint
 {
 	GTK_STYLE_CONTEXT_PRINT_NONE = 0,
 	GTK_STYLE_CONTEXT_PRINT_RECURSE = 1,

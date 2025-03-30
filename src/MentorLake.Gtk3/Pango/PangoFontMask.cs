@@ -1,7 +1,7 @@
 namespace MentorLake.Pango;
 
 [Flags]
-public enum PangoFontMask : long
+public enum PangoFontMask : uint
 {
 	PANGO_FONT_MASK_FAMILY = 1,
 	PANGO_FONT_MASK_STYLE = 2,

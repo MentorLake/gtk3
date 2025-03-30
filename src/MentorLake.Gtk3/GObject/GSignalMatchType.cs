@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GSignalMatchType : long
+public enum GSignalMatchType : uint
 {
 	G_SIGNAL_MATCH_ID = 1,
 	G_SIGNAL_MATCH_DETAIL = 2,

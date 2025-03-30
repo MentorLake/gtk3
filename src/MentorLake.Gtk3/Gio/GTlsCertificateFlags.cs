@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GTlsCertificateFlags : long
+public enum GTlsCertificateFlags : uint
 {
 	G_TLS_CERTIFICATE_NO_FLAGS = 0,
 	G_TLS_CERTIFICATE_UNKNOWN_CA = 1,

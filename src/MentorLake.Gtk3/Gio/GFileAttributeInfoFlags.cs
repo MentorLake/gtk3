@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileAttributeInfoFlags : long
+public enum GFileAttributeInfoFlags : uint
 {
 	G_FILE_ATTRIBUTE_INFO_NONE = 0,
 	G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE = 1,

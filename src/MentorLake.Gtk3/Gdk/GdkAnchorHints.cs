@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkAnchorHints : long
+public enum GdkAnchorHints : uint
 {
 	GDK_ANCHOR_FLIP_X = 1,
 	GDK_ANCHOR_FLIP_Y = 2,

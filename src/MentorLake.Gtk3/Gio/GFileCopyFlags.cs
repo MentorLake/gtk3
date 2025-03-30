@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GFileCopyFlags : long
+public enum GFileCopyFlags : uint
 {
 	G_FILE_COPY_NONE = 0,
 	G_FILE_COPY_OVERWRITE = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusServerFlags : long
+public enum GDBusServerFlags : uint
 {
 	G_DBUS_SERVER_FLAGS_NONE = 0,
 	G_DBUS_SERVER_FLAGS_RUN_IN_THREAD = 1,

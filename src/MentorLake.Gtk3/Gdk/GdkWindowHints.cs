@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkWindowHints : long
+public enum GdkWindowHints : uint
 {
 	GDK_HINT_POS = 1,
 	GDK_HINT_MIN_SIZE = 2,

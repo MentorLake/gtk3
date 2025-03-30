@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GFormatSizeFlags : long
+public enum GFormatSizeFlags : uint
 {
 	G_FORMAT_SIZE_DEFAULT = 0,
 	G_FORMAT_SIZE_LONG_FORMAT = 1,

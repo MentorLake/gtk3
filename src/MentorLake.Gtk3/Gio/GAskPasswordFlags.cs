@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GAskPasswordFlags : long
+public enum GAskPasswordFlags : uint
 {
 	G_ASK_PASSWORD_NEED_PASSWORD = 1,
 	G_ASK_PASSWORD_NEED_USERNAME = 2,

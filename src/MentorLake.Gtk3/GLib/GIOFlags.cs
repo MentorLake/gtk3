@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GIOFlags : long
+public enum GIOFlags : uint
 {
 	G_IO_FLAG_NONE = 0,
 	G_IO_FLAG_APPEND = 1,

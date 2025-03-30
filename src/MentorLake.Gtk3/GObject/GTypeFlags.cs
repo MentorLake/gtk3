@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GTypeFlags : long
+public enum GTypeFlags : uint
 {
 	G_TYPE_FLAG_NONE = 0,
 	G_TYPE_FLAG_ABSTRACT = 16,

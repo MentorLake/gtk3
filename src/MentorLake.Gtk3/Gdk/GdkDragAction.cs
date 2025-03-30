@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkDragAction : long
+public enum GdkDragAction : uint
 {
 	GDK_ACTION_DEFAULT = 1,
 	GDK_ACTION_COPY = 2,

@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GUriFlags : long
+public enum GUriFlags : uint
 {
 	G_URI_FLAGS_NONE = 0,
 	G_URI_FLAGS_PARSE_RELAXED = 1,

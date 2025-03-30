@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkSeatCapabilities : long
+public enum GdkSeatCapabilities : uint
 {
 	GDK_SEAT_CAPABILITY_NONE = 0,
 	GDK_SEAT_CAPABILITY_POINTER = 1,

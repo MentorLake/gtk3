@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkJunctionSides : long
+public enum GtkJunctionSides : uint
 {
 	GTK_JUNCTION_NONE = 0,
 	GTK_JUNCTION_CORNER_TOPLEFT = 1,

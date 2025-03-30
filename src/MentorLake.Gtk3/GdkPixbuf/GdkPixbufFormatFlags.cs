@@ -1,7 +1,7 @@
 namespace MentorLake.GdkPixbuf;
 
 [Flags]
-public enum GdkPixbufFormatFlags : long
+public enum GdkPixbufFormatFlags : uint
 {
 	GDK_PIXBUF_FORMAT_WRITABLE = 1,
 	GDK_PIXBUF_FORMAT_SCALABLE = 2,

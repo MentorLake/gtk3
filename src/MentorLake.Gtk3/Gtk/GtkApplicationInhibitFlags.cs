@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkApplicationInhibitFlags : long
+public enum GtkApplicationInhibitFlags : uint
 {
 	GTK_APPLICATION_INHIBIT_LOGOUT = 1,
 	GTK_APPLICATION_INHIBIT_SWITCH = 2,

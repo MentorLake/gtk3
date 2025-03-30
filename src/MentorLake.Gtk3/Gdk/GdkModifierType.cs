@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkModifierType : long
+public enum GdkModifierType : uint
 {
 	GDK_SHIFT_MASK = 1,
 	GDK_LOCK_MASK = 2,

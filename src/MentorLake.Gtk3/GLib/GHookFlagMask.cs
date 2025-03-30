@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GHookFlagMask : long
+public enum GHookFlagMask : uint
 {
 	G_HOOK_FLAG_ACTIVE = 1,
 	G_HOOK_FLAG_IN_CALL = 2,

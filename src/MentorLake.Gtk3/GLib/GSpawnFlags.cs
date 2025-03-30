@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GSpawnFlags : long
+public enum GSpawnFlags : uint
 {
 	G_SPAWN_DEFAULT = 0,
 	G_SPAWN_LEAVE_DESCRIPTORS_OPEN = 1,

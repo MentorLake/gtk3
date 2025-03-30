@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GRegexCompileFlags : long
+public enum GRegexCompileFlags : uint
 {
 	G_REGEX_DEFAULT = 0,
 	G_REGEX_CASELESS = 1,

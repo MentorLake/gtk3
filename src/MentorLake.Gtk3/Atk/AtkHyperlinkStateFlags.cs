@@ -1,7 +1,7 @@
 namespace MentorLake.Atk;
 
 [Flags]
-public enum AtkHyperlinkStateFlags : long
+public enum AtkHyperlinkStateFlags : uint
 {
 	ATK_HYPERLINK_IS_INLINE = 1
 }

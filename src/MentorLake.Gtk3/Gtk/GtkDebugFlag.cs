@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkDebugFlag : long
+public enum GtkDebugFlag : uint
 {
 	GTK_DEBUG_MISC = 1,
 	GTK_DEBUG_PLUGSOCKET = 2,

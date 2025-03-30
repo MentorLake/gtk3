@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkEventMask : long
+public enum GdkEventMask : uint
 {
 	GDK_EXPOSURE_MASK = 2,
 	GDK_POINTER_MOTION_MASK = 4,

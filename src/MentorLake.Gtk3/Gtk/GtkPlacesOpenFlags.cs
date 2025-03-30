@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkPlacesOpenFlags : long
+public enum GtkPlacesOpenFlags : uint
 {
 	GTK_PLACES_OPEN_NORMAL = 1,
 	GTK_PLACES_OPEN_NEW_TAB = 2,

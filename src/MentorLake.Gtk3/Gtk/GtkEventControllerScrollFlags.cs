@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkEventControllerScrollFlags : long
+public enum GtkEventControllerScrollFlags : uint
 {
 	GTK_EVENT_CONTROLLER_SCROLL_NONE = 0,
 	GTK_EVENT_CONTROLLER_SCROLL_VERTICAL = 1,

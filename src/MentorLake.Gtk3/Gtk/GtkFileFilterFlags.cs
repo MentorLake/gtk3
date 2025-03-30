@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkFileFilterFlags : long
+public enum GtkFileFilterFlags : uint
 {
 	GTK_FILE_FILTER_FILENAME = 1,
 	GTK_FILE_FILTER_URI = 2,

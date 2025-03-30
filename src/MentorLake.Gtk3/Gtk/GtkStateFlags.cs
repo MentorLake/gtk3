@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkStateFlags : long
+public enum GtkStateFlags : uint
 {
 	GTK_STATE_FLAG_NORMAL = 0,
 	GTK_STATE_FLAG_ACTIVE = 1,

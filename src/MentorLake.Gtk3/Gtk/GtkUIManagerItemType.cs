@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkUIManagerItemType : long
+public enum GtkUIManagerItemType : uint
 {
 	GTK_UI_MANAGER_AUTO = 0,
 	GTK_UI_MANAGER_MENUBAR = 1,

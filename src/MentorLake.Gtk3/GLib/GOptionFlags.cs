@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GOptionFlags : long
+public enum GOptionFlags : uint
 {
 	G_OPTION_FLAG_NONE = 0,
 	G_OPTION_FLAG_HIDDEN = 1,

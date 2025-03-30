@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GApplicationFlags : long
+public enum GApplicationFlags : uint
 {
 	G_APPLICATION_FLAGS_NONE = 0,
 	G_APPLICATION_DEFAULT_FLAGS = 0,

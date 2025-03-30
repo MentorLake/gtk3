@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkWindowAttributesType : long
+public enum GdkWindowAttributesType : uint
 {
 	GDK_WA_TITLE = 2,
 	GDK_WA_X = 4,

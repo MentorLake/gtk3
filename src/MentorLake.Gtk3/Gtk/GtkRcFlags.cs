@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkRcFlags : long
+public enum GtkRcFlags : uint
 {
 	GTK_RC_FG = 1,
 	GTK_RC_BG = 2,

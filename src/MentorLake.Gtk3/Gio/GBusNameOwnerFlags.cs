@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GBusNameOwnerFlags : long
+public enum GBusNameOwnerFlags : uint
 {
 	G_BUS_NAME_OWNER_FLAGS_NONE = 0,
 	G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT = 1,

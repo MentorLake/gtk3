@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GDBusCallFlags : long
+public enum GDBusCallFlags : uint
 {
 	G_DBUS_CALL_FLAGS_NONE = 0,
 	G_DBUS_CALL_FLAGS_NO_AUTO_START = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gio;
 
 [Flags]
-public enum GTlsPasswordFlags : long
+public enum GTlsPasswordFlags : uint
 {
 	G_TLS_PASSWORD_NONE = 0,
 	G_TLS_PASSWORD_RETRY = 2,

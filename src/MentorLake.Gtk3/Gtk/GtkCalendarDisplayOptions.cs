@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkCalendarDisplayOptions : long
+public enum GtkCalendarDisplayOptions : uint
 {
 	GTK_CALENDAR_SHOW_HEADING = 1,
 	GTK_CALENDAR_SHOW_DAY_NAMES = 2,

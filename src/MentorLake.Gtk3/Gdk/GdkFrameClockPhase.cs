@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkFrameClockPhase : long
+public enum GdkFrameClockPhase : uint
 {
 	GDK_FRAME_CLOCK_PHASE_NONE = 0,
 	GDK_FRAME_CLOCK_PHASE_FLUSH_EVENTS = 1,

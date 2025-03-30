@@ -85,6 +85,7 @@ public static class Program
 								Console.WriteLine(b.GetManagedData<string>("SomeKey") + " " + z.X + " " + z.Y);
 							});
 						})
+						.With(b => b.Signal_ButtonReleaseEvent().Subscribe(e => Console.WriteLine(e.Event.Dereference().button)))
 						.With(b => b.Signal_Clicked().TakeUntil(b.Signal_Destroy().Take(1)).Subscribe(_ =>
 						{
 							Console.WriteLine();

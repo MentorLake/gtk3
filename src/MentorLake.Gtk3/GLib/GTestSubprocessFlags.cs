@@ -1,7 +1,7 @@
 namespace MentorLake.GLib;
 
 [Flags]
-public enum GTestSubprocessFlags : long
+public enum GTestSubprocessFlags : uint
 {
 	G_TEST_SUBPROCESS_DEFAULT = 0,
 	G_TEST_SUBPROCESS_INHERIT_STDIN = 1,

@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkDialogFlags : long
+public enum GtkDialogFlags : uint
 {
 	GTK_DIALOG_MODAL = 1,
 	GTK_DIALOG_DESTROY_WITH_PARENT = 2,

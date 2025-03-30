@@ -1,7 +1,7 @@
 namespace MentorLake.GdkPixdata;
 
 [Flags]
-public enum GdkPixdataType : long
+public enum GdkPixdataType : uint
 {
 	GDK_PIXDATA_COLOR_TYPE_RGB = 1,
 	GDK_PIXDATA_COLOR_TYPE_RGBA = 2,

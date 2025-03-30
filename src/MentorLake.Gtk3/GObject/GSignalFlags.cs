@@ -1,7 +1,7 @@
 namespace MentorLake.GObject;
 
 [Flags]
-public enum GSignalFlags : long
+public enum GSignalFlags : uint
 {
 	G_SIGNAL_RUN_FIRST = 1,
 	G_SIGNAL_RUN_LAST = 2,

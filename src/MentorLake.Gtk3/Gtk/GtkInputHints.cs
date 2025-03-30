@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkInputHints : long
+public enum GtkInputHints : uint
 {
 	GTK_INPUT_HINT_NONE = 0,
 	GTK_INPUT_HINT_SPELLCHECK = 1,

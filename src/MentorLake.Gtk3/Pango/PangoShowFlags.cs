@@ -1,7 +1,7 @@
 namespace MentorLake.Pango;
 
 [Flags]
-public enum PangoShowFlags : long
+public enum PangoShowFlags : uint
 {
 	PANGO_SHOW_NONE = 0,
 	PANGO_SHOW_SPACES = 1,

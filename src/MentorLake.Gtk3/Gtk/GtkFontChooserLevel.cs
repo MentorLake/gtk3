@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkFontChooserLevel : long
+public enum GtkFontChooserLevel : uint
 {
 	GTK_FONT_CHOOSER_LEVEL_FAMILY = 0,
 	GTK_FONT_CHOOSER_LEVEL_STYLE = 1,

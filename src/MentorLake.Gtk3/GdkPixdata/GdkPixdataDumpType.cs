@@ -1,7 +1,7 @@
 namespace MentorLake.GdkPixdata;
 
 [Flags]
-public enum GdkPixdataDumpType : long
+public enum GdkPixdataDumpType : uint
 {
 	GDK_PIXDATA_DUMP_PIXDATA_STREAM = 0,
 	GDK_PIXDATA_DUMP_PIXDATA_STRUCT = 1,

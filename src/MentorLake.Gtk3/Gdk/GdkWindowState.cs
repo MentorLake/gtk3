@@ -1,7 +1,7 @@
 namespace MentorLake.Gdk;
 
 [Flags]
-public enum GdkWindowState : long
+public enum GdkWindowState : uint
 {
 	GDK_WINDOW_STATE_WITHDRAWN = 1,
 	GDK_WINDOW_STATE_ICONIFIED = 2,

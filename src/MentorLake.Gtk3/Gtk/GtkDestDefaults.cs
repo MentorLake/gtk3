@@ -1,7 +1,7 @@
 namespace MentorLake.Gtk;
 
 [Flags]
-public enum GtkDestDefaults : long
+public enum GtkDestDefaults : uint
 {
 	GTK_DEST_DEFAULT_MOTION = 1,
 	GTK_DEST_DEFAULT_HIGHLIGHT = 2,

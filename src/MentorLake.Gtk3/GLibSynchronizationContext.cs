@@ -1,4 +1,4 @@
-using MentorLake.GLib;
+using GCHandle = System.Runtime.InteropServices.GCHandle;
 
 namespace MentorLake.Gtk3;
 
@@ -6,10 +6,16 @@ public class GLibSynchronizationContext : SynchronizationContext
 {
 	public override void Post(SendOrPostCallback d, object state)
 	{
-		GLibGlobalFunctions.IdleAddFull(0, _ =>
+		GCHandle gcHandle = new();
+
+		GSourceFunc f = _ =>
 		{
 			d(state);
+			gcHandle.Free();
 			return false;
-		}, IntPtr.Zero, null);
+		};
+
+		gcHandle = GCHandle.Alloc(f);
+		GLibGlobalFunctions.IdleAddFull(0, f, IntPtr.Zero, null);
 	}
 }

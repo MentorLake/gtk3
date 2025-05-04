@@ -74,7 +74,7 @@ internal class GMutexExterns
 public struct GMutex
 {
 	public IntPtr p;
-	public uint[] i;
+	[MarshalAs(UnmanagedType.ByValArray)] public uint[] i;
 	public static MentorLake.GLib.GMutexHandle New()
 	{
 		return GMutexExterns.g_mutex_new();

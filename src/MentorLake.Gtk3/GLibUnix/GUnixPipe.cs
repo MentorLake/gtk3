@@ -31,7 +31,7 @@ internal class GUnixPipeExterns
 
 public struct GUnixPipe
 {
-	public int[] fds;
+	[MarshalAs(UnmanagedType.ByValArray)] public int[] fds;
 	public static void Clear(MentorLake.GLib.GUnixPipeHandle self)
 	{
 		GUnixPipeExterns.g_unix_pipe_clear(self);

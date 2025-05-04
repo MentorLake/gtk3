@@ -329,6 +329,64 @@ public static class GtkPrintOperationHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkPrintOperationHandleSignalStructs.GotPageSizeSignal> Signal_GotPageSize(this GtkPrintOperationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkPrintOperationHandleSignalStructs.GotPageSizeSignal> obs) =>
+		{
+			GtkPrintOperationHandleSignalDelegates.got_page_size handler = ( MentorLake.Gtk.GtkPrintOperationPreviewHandle self,  MentorLake.Gtk.GtkPrintContextHandle context,  MentorLake.Gtk.GtkPageSetupHandle page_setup,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkPrintOperationHandleSignalStructs.GotPageSizeSignal()
+				{
+					Self = self, Context = context, PageSetup = page_setup, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "got-page-size", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkPrintOperationHandleSignalStructs.ReadySignal> Signal_Ready(this GtkPrintOperationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkPrintOperationHandleSignalStructs.ReadySignal> obs) =>
+		{
+			GtkPrintOperationHandleSignalDelegates.ready handler = ( MentorLake.Gtk.GtkPrintOperationPreviewHandle self,  MentorLake.Gtk.GtkPrintContextHandle context,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkPrintOperationHandleSignalStructs.ReadySignal()
+				{
+					Self = self, Context = context, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "ready", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkPrintOperationHandleSignalStructs
@@ -418,6 +476,21 @@ public class UpdateCustomWidgetSignal
 	public MentorLake.Gtk.GtkPrintSettingsHandle Settings;
 	public IntPtr UserData;
 }
+
+public class GotPageSizeSignal
+{
+	public MentorLake.Gtk.GtkPrintOperationPreviewHandle Self;
+	public MentorLake.Gtk.GtkPrintContextHandle Context;
+	public MentorLake.Gtk.GtkPageSetupHandle PageSetup;
+	public IntPtr UserData;
+}
+
+public class ReadySignal
+{
+	public MentorLake.Gtk.GtkPrintOperationPreviewHandle Self;
+	public MentorLake.Gtk.GtkPrintContextHandle Context;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkPrintOperationHandleSignalDelegates
@@ -465,6 +538,14 @@ public delegate void status_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void update_custom_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle setup, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintSettingsHandle>))] MentorLake.Gtk.GtkPrintSettingsHandle settings, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void got_page_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationPreviewHandleImpl>))] MentorLake.Gtk.GtkPrintOperationPreviewHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintContextHandle>))] MentorLake.Gtk.GtkPrintContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))] MentorLake.Gtk.GtkPageSetupHandle page_setup, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void ready([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationPreviewHandleImpl>))] MentorLake.Gtk.GtkPrintOperationPreviewHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintContextHandle>))] MentorLake.Gtk.GtkPrintContextHandle context, IntPtr user_data);
 
 }
 

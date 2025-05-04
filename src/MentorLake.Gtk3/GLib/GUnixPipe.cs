@@ -16,5 +16,5 @@ internal class GUnixPipeExterns
 
 public struct GUnixPipe
 {
-	public int[] fds;
+	[MarshalAs(UnmanagedType.ByValArray)] public int[] fds;
 }

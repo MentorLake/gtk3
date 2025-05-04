@@ -358,6 +358,151 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.ConfirmOverwriteSignal> Signal_ConfirmOverwrite(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFileChooserWidgetHandleSignalStructs.ConfirmOverwriteSignal> obs) =>
+		{
+			GtkFileChooserWidgetHandleSignalDelegates.confirm_overwrite handler = ( MentorLake.Gtk.GtkFileChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFileChooserWidgetHandleSignalStructs.ConfirmOverwriteSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return signalStruct.ReturnValue;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "confirm-overwrite", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.CurrentFolderChangedSignal> Signal_CurrentFolderChanged(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFileChooserWidgetHandleSignalStructs.CurrentFolderChangedSignal> obs) =>
+		{
+			GtkFileChooserWidgetHandleSignalDelegates.current_folder_changed handler = ( MentorLake.Gtk.GtkFileChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFileChooserWidgetHandleSignalStructs.CurrentFolderChangedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "current-folder-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.FileActivatedSignal> Signal_FileActivated(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFileChooserWidgetHandleSignalStructs.FileActivatedSignal> obs) =>
+		{
+			GtkFileChooserWidgetHandleSignalDelegates.file_activated handler = ( MentorLake.Gtk.GtkFileChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFileChooserWidgetHandleSignalStructs.FileActivatedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "file-activated", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.SelectionChangedSignal> Signal_SelectionChanged(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFileChooserWidgetHandleSignalStructs.SelectionChangedSignal> obs) =>
+		{
+			GtkFileChooserWidgetHandleSignalDelegates.selection_changed handler = ( MentorLake.Gtk.GtkFileChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFileChooserWidgetHandleSignalStructs.SelectionChangedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "selection-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.UpdatePreviewSignal> Signal_UpdatePreview(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFileChooserWidgetHandleSignalStructs.UpdatePreviewSignal> obs) =>
+		{
+			GtkFileChooserWidgetHandleSignalDelegates.update_preview handler = ( MentorLake.Gtk.GtkFileChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFileChooserWidgetHandleSignalStructs.UpdatePreviewSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "update-preview", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkFileChooserWidgetHandleSignalStructs
@@ -436,6 +581,37 @@ public class UpFolderSignal
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
+
+public class ConfirmOverwriteSignal
+{
+	public MentorLake.Gtk.GtkFileChooserHandle Self;
+	public IntPtr UserData;
+	public MentorLake.Gtk.GtkFileChooserConfirmation ReturnValue;
+}
+
+public class CurrentFolderChangedSignal
+{
+	public MentorLake.Gtk.GtkFileChooserHandle Self;
+	public IntPtr UserData;
+}
+
+public class FileActivatedSignal
+{
+	public MentorLake.Gtk.GtkFileChooserHandle Self;
+	public IntPtr UserData;
+}
+
+public class SelectionChangedSignal
+{
+	public MentorLake.Gtk.GtkFileChooserHandle Self;
+	public IntPtr UserData;
+}
+
+public class UpdatePreviewSignal
+{
+	public MentorLake.Gtk.GtkFileChooserHandle Self;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkFileChooserWidgetHandleSignalDelegates
@@ -487,6 +663,26 @@ public delegate void show_hidden([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void up_folder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserWidgetHandle>))] MentorLake.Gtk.GtkFileChooserWidgetHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate MentorLake.Gtk.GtkFileChooserConfirmation confirm_overwrite([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void current_folder_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void file_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void selection_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void update_preview([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserHandleImpl>))] MentorLake.Gtk.GtkFileChooserHandle self, IntPtr user_data);
 
 }
 

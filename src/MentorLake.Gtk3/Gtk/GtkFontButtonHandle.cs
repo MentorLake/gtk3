@@ -44,6 +44,35 @@ public static class GtkFontButtonHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkFontButtonHandleSignalStructs.FontActivatedSignal> Signal_FontActivated(this GtkFontButtonHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkFontButtonHandleSignalStructs.FontActivatedSignal> obs) =>
+		{
+			GtkFontButtonHandleSignalDelegates.font_activated handler = ( MentorLake.Gtk.GtkFontChooserHandle self,  string fontname,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkFontButtonHandleSignalStructs.FontActivatedSignal()
+				{
+					Self = self, Fontname = fontname, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "font-activated", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkFontButtonHandleSignalStructs
@@ -54,6 +83,13 @@ public class FontSetSignal
 	public MentorLake.Gtk.GtkFontButtonHandle Self;
 	public IntPtr UserData;
 }
+
+public class FontActivatedSignal
+{
+	public MentorLake.Gtk.GtkFontChooserHandle Self;
+	public string Fontname;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkFontButtonHandleSignalDelegates
@@ -61,6 +97,10 @@ public static class GtkFontButtonHandleSignalDelegates
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void font_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFontButtonHandle>))] MentorLake.Gtk.GtkFontButtonHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void font_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFontChooserHandleImpl>))] MentorLake.Gtk.GtkFontChooserHandle self, string fontname, IntPtr user_data);
 
 }
 

@@ -21,6 +21,6 @@ public struct GtkRecentData
 	public string mime_type;
 	public string app_name;
 	public string app_exec;
-	public string[] groups;
+	[MarshalAs(UnmanagedType.ByValArray)] public string[] groups;
 	public bool is_private;
 }

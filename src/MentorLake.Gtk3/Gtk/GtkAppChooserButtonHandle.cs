@@ -39,6 +39,64 @@ public static class GtkAppChooserButtonHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkAppChooserButtonHandleSignalStructs.EditingDoneSignal> Signal_EditingDone(this GtkAppChooserButtonHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkAppChooserButtonHandleSignalStructs.EditingDoneSignal> obs) =>
+		{
+			GtkAppChooserButtonHandleSignalDelegates.editing_done handler = ( MentorLake.Gtk.GtkCellEditableHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkAppChooserButtonHandleSignalStructs.EditingDoneSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "editing-done", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkAppChooserButtonHandleSignalStructs.RemoveWidgetSignal> Signal_RemoveWidget(this GtkAppChooserButtonHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkAppChooserButtonHandleSignalStructs.RemoveWidgetSignal> obs) =>
+		{
+			GtkAppChooserButtonHandleSignalDelegates.remove_widget handler = ( MentorLake.Gtk.GtkCellEditableHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkAppChooserButtonHandleSignalStructs.RemoveWidgetSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "remove-widget", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkAppChooserButtonHandleSignalStructs
@@ -50,6 +108,18 @@ public class CustomItemActivatedSignal
 	public string ItemName;
 	public IntPtr UserData;
 }
+
+public class EditingDoneSignal
+{
+	public MentorLake.Gtk.GtkCellEditableHandle Self;
+	public IntPtr UserData;
+}
+
+public class RemoveWidgetSignal
+{
+	public MentorLake.Gtk.GtkCellEditableHandle Self;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkAppChooserButtonHandleSignalDelegates
@@ -57,6 +127,14 @@ public static class GtkAppChooserButtonHandleSignalDelegates
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void custom_item_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserButtonHandle>))] MentorLake.Gtk.GtkAppChooserButtonHandle self, string item_name, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCellEditableHandleImpl>))] MentorLake.Gtk.GtkCellEditableHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void remove_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCellEditableHandleImpl>))] MentorLake.Gtk.GtkCellEditableHandle self, IntPtr user_data);
 
 }
 

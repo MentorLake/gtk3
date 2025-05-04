@@ -20,7 +20,7 @@ public struct GtkRecentFilterInfo
 	public string uri;
 	public string display_name;
 	public string mime_type;
-	public string[] applications;
-	public string[] groups;
+	[MarshalAs(UnmanagedType.ByValArray)] public string[] applications;
+	[MarshalAs(UnmanagedType.ByValArray)] public string[] groups;
 	public int age;
 }

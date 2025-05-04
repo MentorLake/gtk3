@@ -17,7 +17,7 @@ internal class GInputMessageExterns
 public struct GInputMessage
 {
 	public IntPtr address;
-	public GInputVector[] vectors;
+	[MarshalAs(UnmanagedType.ByValArray)] public GInputVector[] vectors;
 	public uint num_vectors;
 	public UIntPtr bytes_received;
 	public int flags;

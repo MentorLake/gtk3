@@ -421,6 +421,151 @@ public static class GtkEntryHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkEntryHandleSignalStructs.EditingDoneSignal> Signal_EditingDone(this GtkEntryHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkEntryHandleSignalStructs.EditingDoneSignal> obs) =>
+		{
+			GtkEntryHandleSignalDelegates.editing_done handler = ( MentorLake.Gtk.GtkCellEditableHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkEntryHandleSignalStructs.EditingDoneSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "editing-done", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkEntryHandleSignalStructs.RemoveWidgetSignal> Signal_RemoveWidget(this GtkEntryHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkEntryHandleSignalStructs.RemoveWidgetSignal> obs) =>
+		{
+			GtkEntryHandleSignalDelegates.remove_widget handler = ( MentorLake.Gtk.GtkCellEditableHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkEntryHandleSignalStructs.RemoveWidgetSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "remove-widget", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkEntryHandleSignalStructs.ChangedSignal> Signal_Changed(this GtkEntryHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkEntryHandleSignalStructs.ChangedSignal> obs) =>
+		{
+			GtkEntryHandleSignalDelegates.changed handler = ( MentorLake.Gtk.GtkEditableHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkEntryHandleSignalStructs.ChangedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkEntryHandleSignalStructs.DeleteTextSignal> Signal_DeleteText(this GtkEntryHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkEntryHandleSignalStructs.DeleteTextSignal> obs) =>
+		{
+			GtkEntryHandleSignalDelegates.delete_text handler = ( MentorLake.Gtk.GtkEditableHandle self,  int start_pos,  int end_pos,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkEntryHandleSignalStructs.DeleteTextSignal()
+				{
+					Self = self, StartPos = start_pos, EndPos = end_pos, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "delete-text", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkEntryHandleSignalStructs.InsertTextSignal> Signal_InsertText(this GtkEntryHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkEntryHandleSignalStructs.InsertTextSignal> obs) =>
+		{
+			GtkEntryHandleSignalDelegates.insert_text handler = ( MentorLake.Gtk.GtkEditableHandle self,  string new_text,  int new_text_length, ref int position,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkEntryHandleSignalStructs.InsertTextSignal()
+				{
+					Self = self, NewText = new_text, NewTextLength = new_text_length, Position = position, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "insert-text", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkEntryHandleSignalStructs
@@ -521,6 +666,41 @@ public class ToggleOverwriteSignal
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
+
+public class EditingDoneSignal
+{
+	public MentorLake.Gtk.GtkCellEditableHandle Self;
+	public IntPtr UserData;
+}
+
+public class RemoveWidgetSignal
+{
+	public MentorLake.Gtk.GtkCellEditableHandle Self;
+	public IntPtr UserData;
+}
+
+public class ChangedSignal
+{
+	public MentorLake.Gtk.GtkEditableHandle Self;
+	public IntPtr UserData;
+}
+
+public class DeleteTextSignal
+{
+	public MentorLake.Gtk.GtkEditableHandle Self;
+	public int StartPos;
+	public int EndPos;
+	public IntPtr UserData;
+}
+
+public class InsertTextSignal
+{
+	public MentorLake.Gtk.GtkEditableHandle Self;
+	public string NewText;
+	public int NewTextLength;
+	public int Position;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkEntryHandleSignalDelegates
@@ -580,6 +760,26 @@ public delegate void preedit_changed([MarshalAs(UnmanagedType.CustomMarshaler, M
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void toggle_overwrite([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCellEditableHandleImpl>))] MentorLake.Gtk.GtkCellEditableHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void remove_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCellEditableHandleImpl>))] MentorLake.Gtk.GtkCellEditableHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEditableHandleImpl>))] MentorLake.Gtk.GtkEditableHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void delete_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEditableHandleImpl>))] MentorLake.Gtk.GtkEditableHandle self, int start_pos, int end_pos, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void insert_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEditableHandleImpl>))] MentorLake.Gtk.GtkEditableHandle self, string new_text, int new_text_length, ref int position, IntPtr user_data);
 
 }
 

@@ -22,5 +22,5 @@ public struct GSignalQuery
 	public GSignalFlags signal_flags;
 	public GType return_type;
 	public uint n_params;
-	public GType[] param_types;
+	[MarshalAs(UnmanagedType.ByValArray)] public GType[] param_types;
 }

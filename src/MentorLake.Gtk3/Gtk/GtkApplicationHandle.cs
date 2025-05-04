@@ -97,6 +97,122 @@ public static class GtkApplicationHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkApplicationHandleSignalStructs.ActionAddedSignal> Signal_ActionAdded(this GtkApplicationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkApplicationHandleSignalStructs.ActionAddedSignal> obs) =>
+		{
+			GtkApplicationHandleSignalDelegates.action_added handler = ( MentorLake.Gio.GActionGroupHandle self,  string action_name,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkApplicationHandleSignalStructs.ActionAddedSignal()
+				{
+					Self = self, ActionName = action_name, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "action-added", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkApplicationHandleSignalStructs.ActionEnabledChangedSignal> Signal_ActionEnabledChanged(this GtkApplicationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkApplicationHandleSignalStructs.ActionEnabledChangedSignal> obs) =>
+		{
+			GtkApplicationHandleSignalDelegates.action_enabled_changed handler = ( MentorLake.Gio.GActionGroupHandle self,  string action_name,  bool enabled,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkApplicationHandleSignalStructs.ActionEnabledChangedSignal()
+				{
+					Self = self, ActionName = action_name, Enabled = enabled, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "action-enabled-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkApplicationHandleSignalStructs.ActionRemovedSignal> Signal_ActionRemoved(this GtkApplicationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkApplicationHandleSignalStructs.ActionRemovedSignal> obs) =>
+		{
+			GtkApplicationHandleSignalDelegates.action_removed handler = ( MentorLake.Gio.GActionGroupHandle self,  string action_name,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkApplicationHandleSignalStructs.ActionRemovedSignal()
+				{
+					Self = self, ActionName = action_name, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "action-removed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkApplicationHandleSignalStructs.ActionStateChangedSignal> Signal_ActionStateChanged(this GtkApplicationHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkApplicationHandleSignalStructs.ActionStateChangedSignal> obs) =>
+		{
+			GtkApplicationHandleSignalDelegates.action_state_changed handler = ( MentorLake.Gio.GActionGroupHandle self,  string action_name,  MentorLake.GLib.GVariantHandle value,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkApplicationHandleSignalStructs.ActionStateChangedSignal()
+				{
+					Self = self, ActionName = action_name, Value = value, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "action-state-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkApplicationHandleSignalStructs
@@ -121,6 +237,36 @@ public class WindowRemovedSignal
 	public MentorLake.Gtk.GtkWindowHandle Window;
 	public IntPtr UserData;
 }
+
+public class ActionAddedSignal
+{
+	public MentorLake.Gio.GActionGroupHandle Self;
+	public string ActionName;
+	public IntPtr UserData;
+}
+
+public class ActionEnabledChangedSignal
+{
+	public MentorLake.Gio.GActionGroupHandle Self;
+	public string ActionName;
+	public bool Enabled;
+	public IntPtr UserData;
+}
+
+public class ActionRemovedSignal
+{
+	public MentorLake.Gio.GActionGroupHandle Self;
+	public string ActionName;
+	public IntPtr UserData;
+}
+
+public class ActionStateChangedSignal
+{
+	public MentorLake.Gio.GActionGroupHandle Self;
+	public string ActionName;
+	public MentorLake.GLib.GVariantHandle Value;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkApplicationHandleSignalDelegates
@@ -136,6 +282,22 @@ public delegate void window_added([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void window_removed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void action_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionGroupHandleImpl>))] MentorLake.Gio.GActionGroupHandle self, string action_name, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void action_enabled_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionGroupHandleImpl>))] MentorLake.Gio.GActionGroupHandle self, string action_name, bool enabled, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void action_removed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionGroupHandleImpl>))] MentorLake.Gio.GActionGroupHandle self, string action_name, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void action_state_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionGroupHandleImpl>))] MentorLake.Gio.GActionGroupHandle self, string action_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle value, IntPtr user_data);
 
 }
 

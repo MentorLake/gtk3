@@ -19,8 +19,8 @@ public struct hb_var_num_t
 	public float f;
 	public uint u32;
 	public int i32;
-	public ushort[] u16;
-	public short[] i16;
-	public byte[] u8;
-	public byte[] i8;
+	[MarshalAs(UnmanagedType.ByValArray)] public ushort[] u16;
+	[MarshalAs(UnmanagedType.ByValArray)] public short[] i16;
+	[MarshalAs(UnmanagedType.ByValArray)] public byte[] u8;
+	[MarshalAs(UnmanagedType.ByValArray)] public byte[] i8;
 }

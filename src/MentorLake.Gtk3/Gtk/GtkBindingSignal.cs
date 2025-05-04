@@ -19,5 +19,5 @@ public struct GtkBindingSignal
 	public IntPtr next;
 	public string signal_name;
 	public uint n_args;
-	public GtkBindingArg[] args;
+	[MarshalAs(UnmanagedType.ByValArray)] public GtkBindingArg[] args;
 }

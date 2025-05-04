@@ -8,6 +8,180 @@ public class GDBusObjectManagerServerHandle : GObjectHandle, GDBusObjectManagerH
 	}
 
 }
+public static class GDBusObjectManagerServerHandleSignalExtensions
+{
+
+	public static IObservable<GDBusObjectManagerServerHandleSignalStructs.InterfaceAddedSignal> Signal_InterfaceAdded(this GDBusObjectManagerServerHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GDBusObjectManagerServerHandleSignalStructs.InterfaceAddedSignal> obs) =>
+		{
+			GDBusObjectManagerServerHandleSignalDelegates.interface_added handler = ( MentorLake.Gio.GDBusObjectManagerHandle self,  MentorLake.Gio.GDBusObjectHandle @object,  MentorLake.Gio.GDBusInterfaceHandle @interface,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GDBusObjectManagerServerHandleSignalStructs.InterfaceAddedSignal()
+				{
+					Self = self, Object = @object, Interface = @interface, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "interface-added", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GDBusObjectManagerServerHandleSignalStructs.InterfaceRemovedSignal> Signal_InterfaceRemoved(this GDBusObjectManagerServerHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GDBusObjectManagerServerHandleSignalStructs.InterfaceRemovedSignal> obs) =>
+		{
+			GDBusObjectManagerServerHandleSignalDelegates.interface_removed handler = ( MentorLake.Gio.GDBusObjectManagerHandle self,  MentorLake.Gio.GDBusObjectHandle @object,  MentorLake.Gio.GDBusInterfaceHandle @interface,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GDBusObjectManagerServerHandleSignalStructs.InterfaceRemovedSignal()
+				{
+					Self = self, Object = @object, Interface = @interface, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "interface-removed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GDBusObjectManagerServerHandleSignalStructs.ObjectAddedSignal> Signal_ObjectAdded(this GDBusObjectManagerServerHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GDBusObjectManagerServerHandleSignalStructs.ObjectAddedSignal> obs) =>
+		{
+			GDBusObjectManagerServerHandleSignalDelegates.object_added handler = ( MentorLake.Gio.GDBusObjectManagerHandle self,  MentorLake.Gio.GDBusObjectHandle @object,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GDBusObjectManagerServerHandleSignalStructs.ObjectAddedSignal()
+				{
+					Self = self, Object = @object, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "object-added", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GDBusObjectManagerServerHandleSignalStructs.ObjectRemovedSignal> Signal_ObjectRemoved(this GDBusObjectManagerServerHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GDBusObjectManagerServerHandleSignalStructs.ObjectRemovedSignal> obs) =>
+		{
+			GDBusObjectManagerServerHandleSignalDelegates.object_removed handler = ( MentorLake.Gio.GDBusObjectManagerHandle self,  MentorLake.Gio.GDBusObjectHandle @object,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GDBusObjectManagerServerHandleSignalStructs.ObjectRemovedSignal()
+				{
+					Self = self, Object = @object, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "object-removed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+}
+
+public static class GDBusObjectManagerServerHandleSignalStructs
+{
+
+public class InterfaceAddedSignal
+{
+	public MentorLake.Gio.GDBusObjectManagerHandle Self;
+	public MentorLake.Gio.GDBusObjectHandle Object;
+	public MentorLake.Gio.GDBusInterfaceHandle Interface;
+	public IntPtr UserData;
+}
+
+public class InterfaceRemovedSignal
+{
+	public MentorLake.Gio.GDBusObjectManagerHandle Self;
+	public MentorLake.Gio.GDBusObjectHandle Object;
+	public MentorLake.Gio.GDBusInterfaceHandle Interface;
+	public IntPtr UserData;
+}
+
+public class ObjectAddedSignal
+{
+	public MentorLake.Gio.GDBusObjectManagerHandle Self;
+	public MentorLake.Gio.GDBusObjectHandle Object;
+	public IntPtr UserData;
+}
+
+public class ObjectRemovedSignal
+{
+	public MentorLake.Gio.GDBusObjectManagerHandle Self;
+	public MentorLake.Gio.GDBusObjectHandle Object;
+	public IntPtr UserData;
+}
+}
+
+public static class GDBusObjectManagerServerHandleSignalDelegates
+{
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void interface_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerHandleImpl>))] MentorLake.Gio.GDBusObjectManagerHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))] MentorLake.Gio.GDBusObjectHandle @object, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceHandleImpl>))] MentorLake.Gio.GDBusInterfaceHandle @interface, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void interface_removed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerHandleImpl>))] MentorLake.Gio.GDBusObjectManagerHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))] MentorLake.Gio.GDBusObjectHandle @object, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceHandleImpl>))] MentorLake.Gio.GDBusInterfaceHandle @interface, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void object_added([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerHandleImpl>))] MentorLake.Gio.GDBusObjectManagerHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))] MentorLake.Gio.GDBusObjectHandle @object, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void object_removed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerHandleImpl>))] MentorLake.Gio.GDBusObjectManagerHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))] MentorLake.Gio.GDBusObjectHandle @object, IntPtr user_data);
+
+}
+
 
 public static class GDBusObjectManagerServerHandleExtensions
 {

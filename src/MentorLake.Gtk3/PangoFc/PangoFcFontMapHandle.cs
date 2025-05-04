@@ -3,6 +3,60 @@ namespace MentorLake.PangoFc;
 public class PangoFcFontMapHandle : PangoFontMapHandle, GListModelHandle
 {
 }
+public static class PangoFcFontMapHandleSignalExtensions
+{
+
+	public static IObservable<PangoFcFontMapHandleSignalStructs.ItemsChangedSignal> Signal_ItemsChanged(this PangoFcFontMapHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<PangoFcFontMapHandleSignalStructs.ItemsChangedSignal> obs) =>
+		{
+			PangoFcFontMapHandleSignalDelegates.items_changed handler = ( MentorLake.Gio.GListModelHandle self,  uint position,  uint removed,  uint added,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new PangoFcFontMapHandleSignalStructs.ItemsChangedSignal()
+				{
+					Self = self, Position = position, Removed = removed, Added = added, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "items-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+}
+
+public static class PangoFcFontMapHandleSignalStructs
+{
+
+public class ItemsChangedSignal
+{
+	public MentorLake.Gio.GListModelHandle Self;
+	public uint Position;
+	public uint Removed;
+	public uint Added;
+	public IntPtr UserData;
+}
+}
+
+public static class PangoFcFontMapHandleSignalDelegates
+{
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void items_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GListModelHandleImpl>))] MentorLake.Gio.GListModelHandle self, uint position, uint removed, uint added, IntPtr user_data);
+
+}
+
 
 public static class PangoFcFontMapHandleExtensions
 {

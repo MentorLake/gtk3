@@ -49,6 +49,35 @@ public static class GtkColorButtonHandleSignalExtensions
 			});
 		});
 	}
+
+	public static IObservable<GtkColorButtonHandleSignalStructs.ColorActivatedSignal> Signal_ColorActivated(this GtkColorButtonHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkColorButtonHandleSignalStructs.ColorActivatedSignal> obs) =>
+		{
+			GtkColorButtonHandleSignalDelegates.color_activated handler = ( MentorLake.Gtk.GtkColorChooserHandle self,  MentorLake.Gdk.GdkRGBAHandle color,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkColorButtonHandleSignalStructs.ColorActivatedSignal()
+				{
+					Self = self, Color = color, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "color-activated", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
 }
 
 public static class GtkColorButtonHandleSignalStructs
@@ -59,6 +88,13 @@ public class ColorSetSignal
 	public MentorLake.Gtk.GtkColorButtonHandle Self;
 	public IntPtr UserData;
 }
+
+public class ColorActivatedSignal
+{
+	public MentorLake.Gtk.GtkColorChooserHandle Self;
+	public MentorLake.Gdk.GdkRGBAHandle Color;
+	public IntPtr UserData;
+}
 }
 
 public static class GtkColorButtonHandleSignalDelegates
@@ -66,6 +102,10 @@ public static class GtkColorButtonHandleSignalDelegates
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void color_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkColorButtonHandle>))] MentorLake.Gtk.GtkColorButtonHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void color_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkColorChooserHandleImpl>))] MentorLake.Gtk.GtkColorChooserHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle color, IntPtr user_data);
 
 }
 

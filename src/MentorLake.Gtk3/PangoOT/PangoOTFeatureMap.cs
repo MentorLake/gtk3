@@ -16,6 +16,6 @@ internal class PangoOTFeatureMapExterns
 
 public struct PangoOTFeatureMap
 {
-	public char[] feature_name;
+	[MarshalAs(UnmanagedType.ByValArray)] public char[] feature_name;
 	public ulong property_bit;
 }

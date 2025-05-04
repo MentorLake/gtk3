@@ -17,5 +17,5 @@ internal class GdkTimeCoordExterns
 public struct GdkTimeCoord
 {
 	public uint time;
-	public double[] axes;
+	[MarshalAs(UnmanagedType.ByValArray)] public double[] axes;
 }

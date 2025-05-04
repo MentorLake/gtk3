@@ -133,8 +133,8 @@ public struct GdkPixbufFormat
 	public IntPtr signature;
 	public string domain;
 	public string description;
-	public string[] mime_types;
-	public string[] extensions;
+	[MarshalAs(UnmanagedType.ByValArray)] public string[] mime_types;
+	[MarshalAs(UnmanagedType.ByValArray)] public string[] extensions;
 	public uint flags;
 	public bool disabled;
 	public string license;

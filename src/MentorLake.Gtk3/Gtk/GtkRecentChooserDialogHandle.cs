@@ -13,6 +13,96 @@ public class GtkRecentChooserDialogHandle : GtkDialogHandle, AtkImplementorIface
 	}
 
 }
+public static class GtkRecentChooserDialogHandleSignalExtensions
+{
+
+	public static IObservable<GtkRecentChooserDialogHandleSignalStructs.ItemActivatedSignal> Signal_ItemActivated(this GtkRecentChooserDialogHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkRecentChooserDialogHandleSignalStructs.ItemActivatedSignal> obs) =>
+		{
+			GtkRecentChooserDialogHandleSignalDelegates.item_activated handler = ( MentorLake.Gtk.GtkRecentChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkRecentChooserDialogHandleSignalStructs.ItemActivatedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "item-activated", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+
+	public static IObservable<GtkRecentChooserDialogHandleSignalStructs.SelectionChangedSignal> Signal_SelectionChanged(this GtkRecentChooserDialogHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GtkRecentChooserDialogHandleSignalStructs.SelectionChangedSignal> obs) =>
+		{
+			GtkRecentChooserDialogHandleSignalDelegates.selection_changed handler = ( MentorLake.Gtk.GtkRecentChooserHandle self,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GtkRecentChooserDialogHandleSignalStructs.SelectionChangedSignal()
+				{
+					Self = self, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "selection-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+}
+
+public static class GtkRecentChooserDialogHandleSignalStructs
+{
+
+public class ItemActivatedSignal
+{
+	public MentorLake.Gtk.GtkRecentChooserHandle Self;
+	public IntPtr UserData;
+}
+
+public class SelectionChangedSignal
+{
+	public MentorLake.Gtk.GtkRecentChooserHandle Self;
+	public IntPtr UserData;
+}
+}
+
+public static class GtkRecentChooserDialogHandleSignalDelegates
+{
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void item_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle self, IntPtr user_data);
+
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void selection_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserHandleImpl>))] MentorLake.Gtk.GtkRecentChooserHandle self, IntPtr user_data);
+
+}
+
 
 public static class GtkRecentChooserDialogHandleExtensions
 {

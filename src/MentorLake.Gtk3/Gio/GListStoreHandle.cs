@@ -8,6 +8,60 @@ public class GListStoreHandle : GObjectHandle, GListModelHandle
 	}
 
 }
+public static class GListStoreHandleSignalExtensions
+{
+
+	public static IObservable<GListStoreHandleSignalStructs.ItemsChangedSignal> Signal_ItemsChanged(this GListStoreHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
+	{
+		return Observable.Create((IObserver<GListStoreHandleSignalStructs.ItemsChangedSignal> obs) =>
+		{
+			GListStoreHandleSignalDelegates.items_changed handler = ( MentorLake.Gio.GListModelHandle self,  uint position,  uint removed,  uint added,  IntPtr user_data) =>
+			{
+				
+
+				var signalStruct = new GListStoreHandleSignalStructs.ItemsChangedSignal()
+				{
+					Self = self, Position = position, Removed = removed, Added = added, UserData = user_data
+				};
+
+				obs.OnNext(signalStruct);
+				return ;
+			};
+
+			var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(handler);
+			var handlerId = GObjectGlobalFunctions.SignalConnectData(instance, "items-changed", Marshal.GetFunctionPointerForDelegate(handler), IntPtr.Zero, null, connectFlags);
+
+			return Disposable.Create(() =>
+			{
+				GObjectGlobalFunctions.SignalHandlerDisconnect(instance, handlerId);
+				obs.OnCompleted();
+				gcHandle.Free();
+			});
+		});
+	}
+}
+
+public static class GListStoreHandleSignalStructs
+{
+
+public class ItemsChangedSignal
+{
+	public MentorLake.Gio.GListModelHandle Self;
+	public uint Position;
+	public uint Removed;
+	public uint Added;
+	public IntPtr UserData;
+}
+}
+
+public static class GListStoreHandleSignalDelegates
+{
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate void items_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GListModelHandleImpl>))] MentorLake.Gio.GListModelHandle self, uint position, uint removed, uint added, IntPtr user_data);
+
+}
+
 
 public static class GListStoreHandleExtensions
 {

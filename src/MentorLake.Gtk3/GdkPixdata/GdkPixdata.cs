@@ -60,5 +60,5 @@ public struct GdkPixdata
 	public uint rowstride;
 	public uint width;
 	public uint height;
-	public byte[] pixel_data;
+	[MarshalAs(UnmanagedType.ByValArray)] public byte[] pixel_data;
 }

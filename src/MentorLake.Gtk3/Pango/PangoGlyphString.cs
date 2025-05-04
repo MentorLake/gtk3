@@ -115,6 +115,6 @@ internal class PangoGlyphStringExterns
 public struct PangoGlyphString
 {
 	public int num_glyphs;
-	public PangoGlyphInfo[] glyphs;
+	[MarshalAs(UnmanagedType.ByValArray)] public PangoGlyphInfo[] glyphs;
 	public IntPtr log_clusters;
 }

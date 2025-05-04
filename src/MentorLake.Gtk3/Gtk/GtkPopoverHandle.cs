@@ -49,7 +49,7 @@ public static class GtkPopoverHandleSignalExtensions
 public static class GtkPopoverHandleSignalStructs
 {
 
-public struct ClosedSignal
+public class ClosedSignal
 {
 	public MentorLake.Gtk.GtkPopoverHandle Self;
 	public IntPtr UserData;

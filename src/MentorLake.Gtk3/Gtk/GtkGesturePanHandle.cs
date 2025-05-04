@@ -44,7 +44,7 @@ public static class GtkGesturePanHandleSignalExtensions
 public static class GtkGesturePanHandleSignalStructs
 {
 
-public struct PanSignal
+public class PanSignal
 {
 	public MentorLake.Gtk.GtkGesturePanHandle Self;
 	public MentorLake.Gtk.GtkPanDirection Direction;

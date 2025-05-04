@@ -2041,21 +2041,13 @@ public static class GtkWidgetHandleSignalExtensions
 public static class GtkWidgetHandleSignalStructs
 {
 
-public struct AccelClosuresChangedSignal
+public class AccelClosuresChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ButtonPressEventSignal
-{
-	public MentorLake.Gtk.GtkWidgetHandle Self;
-	public MentorLake.Gdk.GdkEventButtonHandle Event;
-	public IntPtr UserData;
-	public bool ReturnValue;
-}
-
-public struct ButtonReleaseEventSignal
+public class ButtonPressEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventButtonHandle Event;
@@ -2063,7 +2055,15 @@ public struct ButtonReleaseEventSignal
 	public bool ReturnValue;
 }
 
-public struct CanActivateAccelSignal
+public class ButtonReleaseEventSignal
+{
+	public MentorLake.Gtk.GtkWidgetHandle Self;
+	public MentorLake.Gdk.GdkEventButtonHandle Event;
+	public IntPtr UserData;
+	public bool ReturnValue;
+}
+
+public class CanActivateAccelSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public uint SignalId;
@@ -2071,20 +2071,20 @@ public struct CanActivateAccelSignal
 	public bool ReturnValue;
 }
 
-public struct ChildNotifySignal
+public class ChildNotifySignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.GObject.GParamSpecHandle ChildProperty;
 	public IntPtr UserData;
 }
 
-public struct CompositedChangedSignal
+public class CompositedChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ConfigureEventSignal
+public class ConfigureEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventConfigureHandle Event;
@@ -2092,7 +2092,7 @@ public struct ConfigureEventSignal
 	public bool ReturnValue;
 }
 
-public struct DamageEventSignal
+public class DamageEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventExposeHandle Event;
@@ -2100,7 +2100,7 @@ public struct DamageEventSignal
 	public bool ReturnValue;
 }
 
-public struct DeleteEventSignal
+public class DeleteEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventHandle Event;
@@ -2108,13 +2108,13 @@ public struct DeleteEventSignal
 	public bool ReturnValue;
 }
 
-public struct DestroySignal
+public class DestroySignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DestroyEventSignal
+public class DestroyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventHandle Event;
@@ -2122,28 +2122,28 @@ public struct DestroyEventSignal
 	public bool ReturnValue;
 }
 
-public struct DirectionChangedSignal
+public class DirectionChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkTextDirection PreviousDirection;
 	public IntPtr UserData;
 }
 
-public struct DragBeginSignal
+public class DragBeginSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
 	public IntPtr UserData;
 }
 
-public struct DragDataDeleteSignal
+public class DragDataDeleteSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
 	public IntPtr UserData;
 }
 
-public struct DragDataGetSignal
+public class DragDataGetSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2153,7 +2153,7 @@ public struct DragDataGetSignal
 	public IntPtr UserData;
 }
 
-public struct DragDataReceivedSignal
+public class DragDataReceivedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2165,7 +2165,7 @@ public struct DragDataReceivedSignal
 	public IntPtr UserData;
 }
 
-public struct DragDropSignal
+public class DragDropSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2176,14 +2176,14 @@ public struct DragDropSignal
 	public bool ReturnValue;
 }
 
-public struct DragEndSignal
+public class DragEndSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
 	public IntPtr UserData;
 }
 
-public struct DragFailedSignal
+public class DragFailedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2192,7 +2192,7 @@ public struct DragFailedSignal
 	public bool ReturnValue;
 }
 
-public struct DragLeaveSignal
+public class DragLeaveSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2200,7 +2200,7 @@ public struct DragLeaveSignal
 	public IntPtr UserData;
 }
 
-public struct DragMotionSignal
+public class DragMotionSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -2211,7 +2211,7 @@ public struct DragMotionSignal
 	public bool ReturnValue;
 }
 
-public struct DrawSignal
+public class DrawSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.cairo.cairo_tHandle Cr;
@@ -2219,7 +2219,7 @@ public struct DrawSignal
 	public bool ReturnValue;
 }
 
-public struct EnterNotifyEventSignal
+public class EnterNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventCrossingHandle Event;
@@ -2227,7 +2227,7 @@ public struct EnterNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct EventSignal
+public class EventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventHandle Event;
@@ -2235,14 +2235,14 @@ public struct EventSignal
 	public bool ReturnValue;
 }
 
-public struct EventAfterSignal
+public class EventAfterSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventHandle Event;
 	public IntPtr UserData;
 }
 
-public struct FocusSignal
+public class FocusSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Direction;
@@ -2250,7 +2250,7 @@ public struct FocusSignal
 	public bool ReturnValue;
 }
 
-public struct FocusInEventSignal
+public class FocusInEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventFocusHandle Event;
@@ -2258,7 +2258,7 @@ public struct FocusInEventSignal
 	public bool ReturnValue;
 }
 
-public struct FocusOutEventSignal
+public class FocusOutEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventFocusHandle Event;
@@ -2266,7 +2266,7 @@ public struct FocusOutEventSignal
 	public bool ReturnValue;
 }
 
-public struct GrabBrokenEventSignal
+public class GrabBrokenEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventGrabBrokenHandle Event;
@@ -2274,33 +2274,33 @@ public struct GrabBrokenEventSignal
 	public bool ReturnValue;
 }
 
-public struct GrabFocusSignal
+public class GrabFocusSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct GrabNotifySignal
+public class GrabNotifySignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public bool WasGrabbed;
 	public IntPtr UserData;
 }
 
-public struct HideSignal
+public class HideSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct HierarchyChangedSignal
+public class HierarchyChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle PreviousToplevel;
 	public IntPtr UserData;
 }
 
-public struct KeyPressEventSignal
+public class KeyPressEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventKeyHandle Event;
@@ -2308,7 +2308,7 @@ public struct KeyPressEventSignal
 	public bool ReturnValue;
 }
 
-public struct KeyReleaseEventSignal
+public class KeyReleaseEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventKeyHandle Event;
@@ -2316,7 +2316,7 @@ public struct KeyReleaseEventSignal
 	public bool ReturnValue;
 }
 
-public struct KeynavFailedSignal
+public class KeynavFailedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Direction;
@@ -2324,7 +2324,7 @@ public struct KeynavFailedSignal
 	public bool ReturnValue;
 }
 
-public struct LeaveNotifyEventSignal
+public class LeaveNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventCrossingHandle Event;
@@ -2332,13 +2332,13 @@ public struct LeaveNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct MapSignal
+public class MapSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MapEventSignal
+public class MapEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventAnyHandle Event;
@@ -2346,7 +2346,7 @@ public struct MapEventSignal
 	public bool ReturnValue;
 }
 
-public struct MnemonicActivateSignal
+public class MnemonicActivateSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public bool GroupCycling;
@@ -2354,7 +2354,7 @@ public struct MnemonicActivateSignal
 	public bool ReturnValue;
 }
 
-public struct MotionNotifyEventSignal
+public class MotionNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventMotionHandle Event;
@@ -2362,28 +2362,28 @@ public struct MotionNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct MoveFocusSignal
+public class MoveFocusSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Direction;
 	public IntPtr UserData;
 }
 
-public struct ParentSetSignal
+public class ParentSetSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle OldParent;
 	public IntPtr UserData;
 }
 
-public struct PopupMenuSignal
+public class PopupMenuSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct PropertyNotifyEventSignal
+public class PropertyNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventPropertyHandle Event;
@@ -2391,7 +2391,7 @@ public struct PropertyNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct ProximityInEventSignal
+public class ProximityInEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventProximityHandle Event;
@@ -2399,7 +2399,7 @@ public struct ProximityInEventSignal
 	public bool ReturnValue;
 }
 
-public struct ProximityOutEventSignal
+public class ProximityOutEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventProximityHandle Event;
@@ -2407,7 +2407,7 @@ public struct ProximityOutEventSignal
 	public bool ReturnValue;
 }
 
-public struct QueryTooltipSignal
+public class QueryTooltipSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public int X;
@@ -2418,20 +2418,20 @@ public struct QueryTooltipSignal
 	public bool ReturnValue;
 }
 
-public struct RealizeSignal
+public class RealizeSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ScreenChangedSignal
+public class ScreenChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkScreenHandle PreviousScreen;
 	public IntPtr UserData;
 }
 
-public struct ScrollEventSignal
+public class ScrollEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventScrollHandle Event;
@@ -2439,7 +2439,7 @@ public struct ScrollEventSignal
 	public bool ReturnValue;
 }
 
-public struct SelectionClearEventSignal
+public class SelectionClearEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventSelectionHandle Event;
@@ -2447,7 +2447,7 @@ public struct SelectionClearEventSignal
 	public bool ReturnValue;
 }
 
-public struct SelectionGetSignal
+public class SelectionGetSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkSelectionDataHandle Data;
@@ -2456,7 +2456,7 @@ public struct SelectionGetSignal
 	public IntPtr UserData;
 }
 
-public struct SelectionNotifyEventSignal
+public class SelectionNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventSelectionHandle Event;
@@ -2464,7 +2464,7 @@ public struct SelectionNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct SelectionReceivedSignal
+public class SelectionReceivedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkSelectionDataHandle Data;
@@ -2472,7 +2472,7 @@ public struct SelectionReceivedSignal
 	public IntPtr UserData;
 }
 
-public struct SelectionRequestEventSignal
+public class SelectionRequestEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventSelectionHandle Event;
@@ -2480,13 +2480,13 @@ public struct SelectionRequestEventSignal
 	public bool ReturnValue;
 }
 
-public struct ShowSignal
+public class ShowSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ShowHelpSignal
+public class ShowHelpSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkWidgetHelpType HelpType;
@@ -2494,41 +2494,41 @@ public struct ShowHelpSignal
 	public bool ReturnValue;
 }
 
-public struct SizeAllocateSignal
+public class SizeAllocateSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkAllocationHandle Allocation;
 	public IntPtr UserData;
 }
 
-public struct StateChangedSignal
+public class StateChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkStateType State;
 	public IntPtr UserData;
 }
 
-public struct StateFlagsChangedSignal
+public class StateFlagsChangedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkStateFlags Flags;
 	public IntPtr UserData;
 }
 
-public struct StyleSetSignal
+public class StyleSetSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gtk.GtkStyleHandle PreviousStyle;
 	public IntPtr UserData;
 }
 
-public struct StyleUpdatedSignal
+public class StyleUpdatedSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct TouchEventSignal
+public class TouchEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventHandle Object;
@@ -2536,13 +2536,13 @@ public struct TouchEventSignal
 	public bool ReturnValue;
 }
 
-public struct UnmapSignal
+public class UnmapSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UnmapEventSignal
+public class UnmapEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventAnyHandle Event;
@@ -2550,13 +2550,13 @@ public struct UnmapEventSignal
 	public bool ReturnValue;
 }
 
-public struct UnrealizeSignal
+public class UnrealizeSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct VisibilityNotifyEventSignal
+public class VisibilityNotifyEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventVisibilityHandle Event;
@@ -2564,7 +2564,7 @@ public struct VisibilityNotifyEventSignal
 	public bool ReturnValue;
 }
 
-public struct WindowStateEventSignal
+public class WindowStateEventSignal
 {
 	public MentorLake.Gtk.GtkWidgetHandle Self;
 	public MentorLake.Gdk.GdkEventWindowStateHandle Event;

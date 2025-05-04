@@ -171,7 +171,7 @@ public static class GSettingsHandleSignalExtensions
 public static class GSettingsHandleSignalStructs
 {
 
-public struct ChangeEventSignal
+public class ChangeEventSignal
 {
 	public MentorLake.Gio.GSettingsHandle Self;
 	public MentorLake.GLib.GQuarkHandle[] Keys;
@@ -180,14 +180,14 @@ public struct ChangeEventSignal
 	public bool ReturnValue;
 }
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gio.GSettingsHandle Self;
 	public string Key;
 	public IntPtr UserData;
 }
 
-public struct WritableChangeEventSignal
+public class WritableChangeEventSignal
 {
 	public MentorLake.Gio.GSettingsHandle Self;
 	public uint Key;
@@ -195,7 +195,7 @@ public struct WritableChangeEventSignal
 	public bool ReturnValue;
 }
 
-public struct WritableChangedSignal
+public class WritableChangedSignal
 {
 	public MentorLake.Gio.GSettingsHandle Self;
 	public string Key;

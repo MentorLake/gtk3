@@ -184,14 +184,14 @@ public static class GtkIMContextHandleSignalExtensions
 public static class GtkIMContextHandleSignalStructs
 {
 
-public struct CommitSignal
+public class CommitSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public string Str;
 	public IntPtr UserData;
 }
 
-public struct DeleteSurroundingSignal
+public class DeleteSurroundingSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public int Offset;
@@ -200,25 +200,25 @@ public struct DeleteSurroundingSignal
 	public bool ReturnValue;
 }
 
-public struct PreeditChangedSignal
+public class PreeditChangedSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PreeditEndSignal
+public class PreeditEndSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PreeditStartSignal
+public class PreeditStartSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public IntPtr UserData;
 }
 
-public struct RetrieveSurroundingSignal
+public class RetrieveSurroundingSignal
 {
 	public MentorLake.Gtk.GtkIMContextHandle Self;
 	public IntPtr UserData;

@@ -79,7 +79,7 @@ public static class GObjectHandleSignalExtensions
 public static class GObjectHandleSignalStructs
 {
 
-public struct NotifySignal
+public class NotifySignal
 {
 	public MentorLake.GObject.GObjectHandle Self;
 	public MentorLake.GObject.GParamSpecHandle Pspec;

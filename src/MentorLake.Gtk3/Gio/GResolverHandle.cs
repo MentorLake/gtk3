@@ -54,7 +54,7 @@ public static class GResolverHandleSignalExtensions
 public static class GResolverHandleSignalStructs
 {
 
-public struct ReloadSignal
+public class ReloadSignal
 {
 	public MentorLake.Gio.GResolverHandle Self;
 	public IntPtr UserData;

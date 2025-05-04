@@ -83,13 +83,13 @@ public static class GUnixMountMonitorHandleSignalExtensions
 public static class GUnixMountMonitorHandleSignalStructs
 {
 
-public struct MountpointsChangedSignal
+public class MountpointsChangedSignal
 {
 	public MentorLake.GioUnix.GUnixMountMonitorHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MountsChangedSignal
+public class MountsChangedSignal
 {
 	public MentorLake.GioUnix.GUnixMountMonitorHandle Self;
 	public IntPtr UserData;

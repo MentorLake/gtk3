@@ -39,7 +39,7 @@ public static class GtkNativeDialogHandleSignalExtensions
 public static class GtkNativeDialogHandleSignalStructs
 {
 
-public struct ResponseSignal
+public class ResponseSignal
 {
 	public MentorLake.Gtk.GtkNativeDialogHandle Self;
 	public MentorLake.Gtk.GtkResponseType ResponseId;

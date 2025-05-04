@@ -131,7 +131,7 @@ public static class GtkEventControllerScrollHandleSignalExtensions
 public static class GtkEventControllerScrollHandleSignalStructs
 {
 
-public struct DecelerateSignal
+public class DecelerateSignal
 {
 	public MentorLake.Gtk.GtkEventControllerScrollHandle Self;
 	public double VelX;
@@ -139,7 +139,7 @@ public struct DecelerateSignal
 	public IntPtr UserData;
 }
 
-public struct ScrollSignal
+public class ScrollSignal
 {
 	public MentorLake.Gtk.GtkEventControllerScrollHandle Self;
 	public double Dx;
@@ -147,13 +147,13 @@ public struct ScrollSignal
 	public IntPtr UserData;
 }
 
-public struct ScrollBeginSignal
+public class ScrollBeginSignal
 {
 	public MentorLake.Gtk.GtkEventControllerScrollHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ScrollEndSignal
+public class ScrollEndSignal
 {
 	public MentorLake.Gtk.GtkEventControllerScrollHandle Self;
 	public IntPtr UserData;

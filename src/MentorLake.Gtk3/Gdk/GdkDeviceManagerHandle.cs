@@ -97,21 +97,21 @@ public static class GdkDeviceManagerHandleSignalExtensions
 public static class GdkDeviceManagerHandleSignalStructs
 {
 
-public struct DeviceAddedSignal
+public class DeviceAddedSignal
 {
 	public MentorLake.Gdk.GdkDeviceManagerHandle Self;
 	public MentorLake.Gdk.GdkDeviceHandle Device;
 	public IntPtr UserData;
 }
 
-public struct DeviceChangedSignal
+public class DeviceChangedSignal
 {
 	public MentorLake.Gdk.GdkDeviceManagerHandle Self;
 	public MentorLake.Gdk.GdkDeviceHandle Device;
 	public IntPtr UserData;
 }
 
-public struct DeviceRemovedSignal
+public class DeviceRemovedSignal
 {
 	public MentorLake.Gdk.GdkDeviceManagerHandle Self;
 	public MentorLake.Gdk.GdkDeviceHandle Device;

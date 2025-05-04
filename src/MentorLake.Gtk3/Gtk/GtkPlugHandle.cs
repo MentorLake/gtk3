@@ -49,7 +49,7 @@ public static class GtkPlugHandleSignalExtensions
 public static class GtkPlugHandleSignalStructs
 {
 
-public struct EmbeddedSignal
+public class EmbeddedSignal
 {
 	public MentorLake.Gtk.GtkPlugHandle Self;
 	public IntPtr UserData;

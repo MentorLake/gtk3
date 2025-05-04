@@ -484,25 +484,25 @@ public static class GtkTextViewHandleSignalExtensions
 public static class GtkTextViewHandleSignalStructs
 {
 
-public struct BackspaceSignal
+public class BackspaceSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CopyClipboardSignal
+public class CopyClipboardSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CutClipboardSignal
+public class CutClipboardSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DeleteFromCursorSignal
+public class DeleteFromCursorSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public MentorLake.Gtk.GtkDeleteType Type;
@@ -510,7 +510,7 @@ public struct DeleteFromCursorSignal
 	public IntPtr UserData;
 }
 
-public struct ExtendSelectionSignal
+public class ExtendSelectionSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public MentorLake.Gtk.GtkTextExtendSelection Granularity;
@@ -521,20 +521,20 @@ public struct ExtendSelectionSignal
 	public bool ReturnValue;
 }
 
-public struct InsertAtCursorSignal
+public class InsertAtCursorSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public string String;
 	public IntPtr UserData;
 }
 
-public struct InsertEmojiSignal
+public class InsertEmojiSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -543,7 +543,7 @@ public struct MoveCursorSignal
 	public IntPtr UserData;
 }
 
-public struct MoveViewportSignal
+public class MoveViewportSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public MentorLake.Gtk.GtkScrollStep Step;
@@ -551,46 +551,46 @@ public struct MoveViewportSignal
 	public IntPtr UserData;
 }
 
-public struct PasteClipboardSignal
+public class PasteClipboardSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PopulatePopupSignal
+public class PopulatePopupSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Popup;
 	public IntPtr UserData;
 }
 
-public struct PreeditChangedSignal
+public class PreeditChangedSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public string Preedit;
 	public IntPtr UserData;
 }
 
-public struct SelectAllSignal
+public class SelectAllSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public bool Select;
 	public IntPtr UserData;
 }
 
-public struct SetAnchorSignal
+public class SetAnchorSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleCursorVisibleSignal
+public class ToggleCursorVisibleSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleOverwriteSignal
+public class ToggleOverwriteSignal
 {
 	public MentorLake.Gtk.GtkTextViewHandle Self;
 	public IntPtr UserData;

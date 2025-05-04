@@ -106,7 +106,7 @@ public static class GDBusObjectManagerClientHandleSignalExtensions
 public static class GDBusObjectManagerClientHandleSignalStructs
 {
 
-public struct InterfaceProxyPropertiesChangedSignal
+public class InterfaceProxyPropertiesChangedSignal
 {
 	public MentorLake.Gio.GDBusObjectManagerClientHandle Self;
 	public MentorLake.Gio.GDBusObjectProxyHandle ObjectProxy;
@@ -116,7 +116,7 @@ public struct InterfaceProxyPropertiesChangedSignal
 	public IntPtr UserData;
 }
 
-public struct InterfaceProxySignalSignal
+public class InterfaceProxySignalSignal
 {
 	public MentorLake.Gio.GDBusObjectManagerClientHandle Self;
 	public MentorLake.Gio.GDBusObjectProxyHandle ObjectProxy;

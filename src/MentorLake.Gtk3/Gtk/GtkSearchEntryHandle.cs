@@ -131,25 +131,25 @@ public static class GtkSearchEntryHandleSignalExtensions
 public static class GtkSearchEntryHandleSignalStructs
 {
 
-public struct NextMatchSignal
+public class NextMatchSignal
 {
 	public MentorLake.Gtk.GtkSearchEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PreviousMatchSignal
+public class PreviousMatchSignal
 {
 	public MentorLake.Gtk.GtkSearchEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SearchChangedSignal
+public class SearchChangedSignal
 {
 	public MentorLake.Gtk.GtkSearchEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct StopSearchSignal
+public class StopSearchSignal
 {
 	public MentorLake.Gtk.GtkSearchEntryHandle Self;
 	public IntPtr UserData;

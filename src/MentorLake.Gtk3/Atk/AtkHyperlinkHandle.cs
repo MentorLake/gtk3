@@ -39,7 +39,7 @@ public static class AtkHyperlinkHandleSignalExtensions
 public static class AtkHyperlinkHandleSignalStructs
 {
 
-public struct LinkActivatedSignal
+public class LinkActivatedSignal
 {
 	public MentorLake.Atk.AtkHyperlinkHandle Self;
 	public IntPtr UserData;

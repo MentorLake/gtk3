@@ -131,28 +131,28 @@ public static class GtkScrolledWindowHandleSignalExtensions
 public static class GtkScrolledWindowHandleSignalStructs
 {
 
-public struct EdgeOvershotSignal
+public class EdgeOvershotSignal
 {
 	public MentorLake.Gtk.GtkScrolledWindowHandle Self;
 	public MentorLake.Gtk.GtkPositionType Pos;
 	public IntPtr UserData;
 }
 
-public struct EdgeReachedSignal
+public class EdgeReachedSignal
 {
 	public MentorLake.Gtk.GtkScrolledWindowHandle Self;
 	public MentorLake.Gtk.GtkPositionType Pos;
 	public IntPtr UserData;
 }
 
-public struct MoveFocusOutSignal
+public class MoveFocusOutSignal
 {
 	public MentorLake.Gtk.GtkScrolledWindowHandle Self;
 	public MentorLake.Gtk.GtkDirectionType DirectionType;
 	public IntPtr UserData;
 }
 
-public struct ScrollChildSignal
+public class ScrollChildSignal
 {
 	public MentorLake.Gtk.GtkScrolledWindowHandle Self;
 	public MentorLake.Gtk.GtkScrollType Scroll;

@@ -228,13 +228,13 @@ public static class GApplicationHandleSignalExtensions
 public static class GApplicationHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CommandLineSignal
+public class CommandLineSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public MentorLake.Gio.GApplicationCommandLineHandle CommandLine;
@@ -242,7 +242,7 @@ public struct CommandLineSignal
 	public int ReturnValue;
 }
 
-public struct HandleLocalOptionsSignal
+public class HandleLocalOptionsSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public MentorLake.GLib.GVariantDictHandle Options;
@@ -250,14 +250,14 @@ public struct HandleLocalOptionsSignal
 	public int ReturnValue;
 }
 
-public struct NameLostSignal
+public class NameLostSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct OpenSignal
+public class OpenSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public MentorLake.Gio.GFileHandle[] Files;
@@ -266,13 +266,13 @@ public struct OpenSignal
 	public IntPtr UserData;
 }
 
-public struct ShutdownSignal
+public class ShutdownSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public IntPtr UserData;
 }
 
-public struct StartupSignal
+public class StartupSignal
 {
 	public MentorLake.Gio.GApplicationHandle Self;
 	public IntPtr UserData;

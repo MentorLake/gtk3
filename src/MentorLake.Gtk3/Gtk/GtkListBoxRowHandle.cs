@@ -44,7 +44,7 @@ public static class GtkListBoxRowHandleSignalExtensions
 public static class GtkListBoxRowHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkListBoxRowHandle Self;
 	public IntPtr UserData;

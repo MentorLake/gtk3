@@ -49,7 +49,7 @@ public static class GtkFontButtonHandleSignalExtensions
 public static class GtkFontButtonHandleSignalStructs
 {
 
-public struct FontSetSignal
+public class FontSetSignal
 {
 	public MentorLake.Gtk.GtkFontButtonHandle Self;
 	public IntPtr UserData;

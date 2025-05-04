@@ -39,7 +39,7 @@ public static class GTlsConnectionHandleSignalExtensions
 public static class GTlsConnectionHandleSignalStructs
 {
 
-public struct AcceptCertificateSignal
+public class AcceptCertificateSignal
 {
 	public MentorLake.Gio.GTlsConnectionHandle Self;
 	public MentorLake.Gio.GTlsCertificateHandle PeerCert;

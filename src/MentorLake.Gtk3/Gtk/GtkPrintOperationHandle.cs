@@ -334,35 +334,35 @@ public static class GtkPrintOperationHandleSignalExtensions
 public static class GtkPrintOperationHandleSignalStructs
 {
 
-public struct BeginPrintSignal
+public class BeginPrintSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintContextHandle Context;
 	public IntPtr UserData;
 }
 
-public struct CreateCustomWidgetSignal
+public class CreateCustomWidgetSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public IntPtr UserData;
 	public MentorLake.GObject.GObjectHandle ReturnValue;
 }
 
-public struct CustomWidgetApplySignal
+public class CustomWidgetApplySignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;
 	public IntPtr UserData;
 }
 
-public struct DoneSignal
+public class DoneSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintOperationResult Result;
 	public IntPtr UserData;
 }
 
-public struct DrawPageSignal
+public class DrawPageSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintContextHandle Context;
@@ -370,14 +370,14 @@ public struct DrawPageSignal
 	public IntPtr UserData;
 }
 
-public struct EndPrintSignal
+public class EndPrintSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintContextHandle Context;
 	public IntPtr UserData;
 }
 
-public struct PaginateSignal
+public class PaginateSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintContextHandle Context;
@@ -385,7 +385,7 @@ public struct PaginateSignal
 	public bool ReturnValue;
 }
 
-public struct PreviewSignal
+public class PreviewSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintOperationPreviewHandle Preview;
@@ -395,7 +395,7 @@ public struct PreviewSignal
 	public bool ReturnValue;
 }
 
-public struct RequestPageSetupSignal
+public class RequestPageSetupSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkPrintContextHandle Context;
@@ -404,13 +404,13 @@ public struct RequestPageSetupSignal
 	public IntPtr UserData;
 }
 
-public struct StatusChangedSignal
+public class StatusChangedSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UpdateCustomWidgetSignal
+public class UpdateCustomWidgetSignal
 {
 	public MentorLake.Gtk.GtkPrintOperationHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;

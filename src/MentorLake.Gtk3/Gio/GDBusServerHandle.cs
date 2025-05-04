@@ -46,7 +46,7 @@ public static class GDBusServerHandleSignalExtensions
 public static class GDBusServerHandleSignalStructs
 {
 
-public struct NewConnectionSignal
+public class NewConnectionSignal
 {
 	public MentorLake.Gio.GDBusServerHandle Self;
 	public MentorLake.Gio.GDBusConnectionHandle Connection;

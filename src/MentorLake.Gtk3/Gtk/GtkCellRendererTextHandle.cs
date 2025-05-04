@@ -44,7 +44,7 @@ public static class GtkCellRendererTextHandleSignalExtensions
 public static class GtkCellRendererTextHandleSignalStructs
 {
 
-public struct EditedSignal
+public class EditedSignal
 {
 	public MentorLake.Gtk.GtkCellRendererTextHandle Self;
 	public string Path;

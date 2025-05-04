@@ -207,19 +207,19 @@ public static class GtkWindowHandleSignalExtensions
 public static class GtkWindowHandleSignalStructs
 {
 
-public struct ActivateDefaultSignal
+public class ActivateDefaultSignal
 {
 	public MentorLake.Gtk.GtkWindowHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ActivateFocusSignal
+public class ActivateFocusSignal
 {
 	public MentorLake.Gtk.GtkWindowHandle Self;
 	public IntPtr UserData;
 }
 
-public struct EnableDebuggingSignal
+public class EnableDebuggingSignal
 {
 	public MentorLake.Gtk.GtkWindowHandle Self;
 	public bool Toggle;
@@ -227,13 +227,13 @@ public struct EnableDebuggingSignal
 	public bool ReturnValue;
 }
 
-public struct KeysChangedSignal
+public class KeysChangedSignal
 {
 	public MentorLake.Gtk.GtkWindowHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SetFocusSignal
+public class SetFocusSignal
 {
 	public MentorLake.Gtk.GtkWindowHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;

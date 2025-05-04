@@ -165,14 +165,14 @@ public static class GtkEntryCompletionHandleSignalExtensions
 public static class GtkEntryCompletionHandleSignalStructs
 {
 
-public struct ActionActivatedSignal
+public class ActionActivatedSignal
 {
 	public MentorLake.Gtk.GtkEntryCompletionHandle Self;
 	public int Index;
 	public IntPtr UserData;
 }
 
-public struct CursorOnMatchSignal
+public class CursorOnMatchSignal
 {
 	public MentorLake.Gtk.GtkEntryCompletionHandle Self;
 	public MentorLake.Gtk.GtkTreeModelHandle Model;
@@ -181,7 +181,7 @@ public struct CursorOnMatchSignal
 	public bool ReturnValue;
 }
 
-public struct InsertPrefixSignal
+public class InsertPrefixSignal
 {
 	public MentorLake.Gtk.GtkEntryCompletionHandle Self;
 	public string Prefix;
@@ -189,7 +189,7 @@ public struct InsertPrefixSignal
 	public bool ReturnValue;
 }
 
-public struct MatchSelectedSignal
+public class MatchSelectedSignal
 {
 	public MentorLake.Gtk.GtkEntryCompletionHandle Self;
 	public MentorLake.Gtk.GtkTreeModelHandle Model;
@@ -198,7 +198,7 @@ public struct MatchSelectedSignal
 	public bool ReturnValue;
 }
 
-public struct NoMatchesSignal
+public class NoMatchesSignal
 {
 	public MentorLake.Gtk.GtkEntryCompletionHandle Self;
 	public IntPtr UserData;

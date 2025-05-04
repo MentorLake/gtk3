@@ -155,28 +155,28 @@ public static class GtkGestureHandleSignalExtensions
 public static class GtkGestureHandleSignalStructs
 {
 
-public struct BeginSignal
+public class BeginSignal
 {
 	public MentorLake.Gtk.GtkGestureHandle Self;
 	public MentorLake.Gdk.GdkEventSequenceHandle Sequence;
 	public IntPtr UserData;
 }
 
-public struct CancelSignal
+public class CancelSignal
 {
 	public MentorLake.Gtk.GtkGestureHandle Self;
 	public MentorLake.Gdk.GdkEventSequenceHandle Sequence;
 	public IntPtr UserData;
 }
 
-public struct EndSignal
+public class EndSignal
 {
 	public MentorLake.Gtk.GtkGestureHandle Self;
 	public MentorLake.Gdk.GdkEventSequenceHandle Sequence;
 	public IntPtr UserData;
 }
 
-public struct SequenceStateChangedSignal
+public class SequenceStateChangedSignal
 {
 	public MentorLake.Gtk.GtkGestureHandle Self;
 	public MentorLake.Gdk.GdkEventSequenceHandle Sequence;
@@ -184,7 +184,7 @@ public struct SequenceStateChangedSignal
 	public IntPtr UserData;
 }
 
-public struct UpdateSignal
+public class UpdateSignal
 {
 	public MentorLake.Gtk.GtkGestureHandle Self;
 	public MentorLake.Gdk.GdkEventSequenceHandle Sequence;

@@ -392,7 +392,7 @@ public static class GtkPlacesSidebarHandleSignalExtensions
 public static class GtkPlacesSidebarHandleSignalStructs
 {
 
-public struct DragActionAskSignal
+public class DragActionAskSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public int Actions;
@@ -400,7 +400,7 @@ public struct DragActionAskSignal
 	public int ReturnValue;
 }
 
-public struct DragActionRequestedSignal
+public class DragActionRequestedSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gdk.GdkDragContextHandle Context;
@@ -410,7 +410,7 @@ public struct DragActionRequestedSignal
 	public int ReturnValue;
 }
 
-public struct DragPerformDropSignal
+public class DragPerformDropSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gio.GFileHandle DestFile;
@@ -419,14 +419,14 @@ public struct DragPerformDropSignal
 	public IntPtr UserData;
 }
 
-public struct MountSignal
+public class MountSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gio.GMountOperationHandle MountOperation;
 	public IntPtr UserData;
 }
 
-public struct OpenLocationSignal
+public class OpenLocationSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gio.GFileHandle Location;
@@ -434,7 +434,7 @@ public struct OpenLocationSignal
 	public IntPtr UserData;
 }
 
-public struct PopulatePopupSignal
+public class PopulatePopupSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Container;
@@ -443,19 +443,19 @@ public struct PopulatePopupSignal
 	public IntPtr UserData;
 }
 
-public struct ShowConnectToServerSignal
+public class ShowConnectToServerSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ShowEnterLocationSignal
+public class ShowEnterLocationSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ShowErrorMessageSignal
+public class ShowErrorMessageSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public string Primary;
@@ -463,27 +463,27 @@ public struct ShowErrorMessageSignal
 	public IntPtr UserData;
 }
 
-public struct ShowOtherLocationsSignal
+public class ShowOtherLocationsSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ShowOtherLocationsWithFlagsSignal
-{
-	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
-	public MentorLake.Gtk.GtkPlacesOpenFlags OpenFlags;
-	public IntPtr UserData;
-}
-
-public struct ShowStarredLocationSignal
+public class ShowOtherLocationsWithFlagsSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gtk.GtkPlacesOpenFlags OpenFlags;
 	public IntPtr UserData;
 }
 
-public struct UnmountSignal
+public class ShowStarredLocationSignal
+{
+	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
+	public MentorLake.Gtk.GtkPlacesOpenFlags OpenFlags;
+	public IntPtr UserData;
+}
+
+public class UnmountSignal
 {
 	public MentorLake.Gtk.GtkPlacesSidebarHandle Self;
 	public MentorLake.Gio.GMountOperationHandle MountOperation;

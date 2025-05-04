@@ -73,14 +73,14 @@ public static class GtkToolItemHandleSignalExtensions
 public static class GtkToolItemHandleSignalStructs
 {
 
-public struct CreateMenuProxySignal
+public class CreateMenuProxySignal
 {
 	public MentorLake.Gtk.GtkToolItemHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct ToolbarReconfiguredSignal
+public class ToolbarReconfiguredSignal
 {
 	public MentorLake.Gtk.GtkToolItemHandle Self;
 	public IntPtr UserData;

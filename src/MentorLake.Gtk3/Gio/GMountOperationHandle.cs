@@ -189,13 +189,13 @@ public static class GMountOperationHandleSignalExtensions
 public static class GMountOperationHandleSignalStructs
 {
 
-public struct AbortedSignal
+public class AbortedSignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public IntPtr UserData;
 }
 
-public struct AskPasswordSignal
+public class AskPasswordSignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public string Message;
@@ -205,7 +205,7 @@ public struct AskPasswordSignal
 	public IntPtr UserData;
 }
 
-public struct AskQuestionSignal
+public class AskQuestionSignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public string Message;
@@ -213,14 +213,14 @@ public struct AskQuestionSignal
 	public IntPtr UserData;
 }
 
-public struct ReplySignal
+public class ReplySignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public MentorLake.Gio.GMountOperationResult Result;
 	public IntPtr UserData;
 }
 
-public struct ShowProcessesSignal
+public class ShowProcessesSignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public string Message;
@@ -229,7 +229,7 @@ public struct ShowProcessesSignal
 	public IntPtr UserData;
 }
 
-public struct ShowUnmountProgressSignal
+public class ShowUnmountProgressSignal
 {
 	public MentorLake.Gio.GMountOperationHandle Self;
 	public string Message;

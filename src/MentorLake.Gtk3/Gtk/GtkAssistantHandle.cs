@@ -160,31 +160,31 @@ public static class GtkAssistantHandleSignalExtensions
 public static class GtkAssistantHandleSignalStructs
 {
 
-public struct ApplySignal
+public class ApplySignal
 {
 	public MentorLake.Gtk.GtkAssistantHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CancelSignal
+public class CancelSignal
 {
 	public MentorLake.Gtk.GtkAssistantHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CloseSignal
+public class CloseSignal
 {
 	public MentorLake.Gtk.GtkAssistantHandle Self;
 	public IntPtr UserData;
 }
 
-public struct EscapeSignal
+public class EscapeSignal
 {
 	public MentorLake.Gtk.GtkAssistantHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PrepareSignal
+public class PrepareSignal
 {
 	public MentorLake.Gtk.GtkAssistantHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Page;

@@ -165,13 +165,13 @@ public static class GtkLabelHandleSignalExtensions
 public static class GtkLabelHandleSignalStructs
 {
 
-public struct ActivateCurrentLinkSignal
+public class ActivateCurrentLinkSignal
 {
 	public MentorLake.Gtk.GtkLabelHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ActivateLinkSignal
+public class ActivateLinkSignal
 {
 	public MentorLake.Gtk.GtkLabelHandle Self;
 	public string Uri;
@@ -179,13 +179,13 @@ public struct ActivateLinkSignal
 	public bool ReturnValue;
 }
 
-public struct CopyClipboardSignal
+public class CopyClipboardSignal
 {
 	public MentorLake.Gtk.GtkLabelHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkLabelHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -194,7 +194,7 @@ public struct MoveCursorSignal
 	public IntPtr UserData;
 }
 
-public struct PopulatePopupSignal
+public class PopulatePopupSignal
 {
 	public MentorLake.Gtk.GtkLabelHandle Self;
 	public MentorLake.Gtk.GtkMenuHandle Menu;

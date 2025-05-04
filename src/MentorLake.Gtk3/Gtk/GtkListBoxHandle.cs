@@ -247,13 +247,13 @@ public static class GtkListBoxHandleSignalExtensions
 public static class GtkListBoxHandleSignalStructs
 {
 
-public struct ActivateCursorRowSignal
+public class ActivateCursorRowSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Object;
@@ -261,39 +261,39 @@ public struct MoveCursorSignal
 	public IntPtr UserData;
 }
 
-public struct RowActivatedSignal
+public class RowActivatedSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public MentorLake.Gtk.GtkListBoxRowHandle Row;
 	public IntPtr UserData;
 }
 
-public struct RowSelectedSignal
+public class RowSelectedSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public MentorLake.Gtk.GtkListBoxRowHandle Row;
 	public IntPtr UserData;
 }
 
-public struct SelectAllSignal
+public class SelectAllSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SelectedRowsChangedSignal
+public class SelectedRowsChangedSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleCursorRowSignal
+public class ToggleCursorRowSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UnselectAllSignal
+public class UnselectAllSignal
 {
 	public MentorLake.Gtk.GtkListBoxHandle Self;
 	public IntPtr UserData;

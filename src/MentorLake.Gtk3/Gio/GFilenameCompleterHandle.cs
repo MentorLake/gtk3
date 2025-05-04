@@ -44,7 +44,7 @@ public static class GFilenameCompleterHandleSignalExtensions
 public static class GFilenameCompleterHandleSignalStructs
 {
 
-public struct GotCompletionDataSignal
+public class GotCompletionDataSignal
 {
 	public MentorLake.Gio.GFilenameCompleterHandle Self;
 	public IntPtr UserData;

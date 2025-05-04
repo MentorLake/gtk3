@@ -102,21 +102,21 @@ public static class GtkAppChooserWidgetHandleSignalExtensions
 public static class GtkAppChooserWidgetHandleSignalStructs
 {
 
-public struct ApplicationActivatedSignal
+public class ApplicationActivatedSignal
 {
 	public MentorLake.Gtk.GtkAppChooserWidgetHandle Self;
 	public MentorLake.Gio.GAppInfoHandle Application;
 	public IntPtr UserData;
 }
 
-public struct ApplicationSelectedSignal
+public class ApplicationSelectedSignal
 {
 	public MentorLake.Gtk.GtkAppChooserWidgetHandle Self;
 	public MentorLake.Gio.GAppInfoHandle Application;
 	public IntPtr UserData;
 }
 
-public struct PopulatePopupSignal
+public class PopulatePopupSignal
 {
 	public MentorLake.Gtk.GtkAppChooserWidgetHandle Self;
 	public MentorLake.Gtk.GtkMenuHandle Menu;

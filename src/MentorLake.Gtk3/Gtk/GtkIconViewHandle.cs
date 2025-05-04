@@ -257,21 +257,21 @@ public static class GtkIconViewHandleSignalExtensions
 public static class GtkIconViewHandleSignalStructs
 {
 
-public struct ActivateCursorItemSignal
+public class ActivateCursorItemSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct ItemActivatedSignal
+public class ItemActivatedSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public MentorLake.Gtk.GtkTreePathHandle Path;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -280,31 +280,31 @@ public struct MoveCursorSignal
 	public bool ReturnValue;
 }
 
-public struct SelectAllSignal
+public class SelectAllSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SelectCursorItemSignal
+public class SelectCursorItemSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SelectionChangedSignal
+public class SelectionChangedSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleCursorItemSignal
+public class ToggleCursorItemSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UnselectAllSignal
+public class UnselectAllSignal
 {
 	public MentorLake.Gtk.GtkIconViewHandle Self;
 	public IntPtr UserData;

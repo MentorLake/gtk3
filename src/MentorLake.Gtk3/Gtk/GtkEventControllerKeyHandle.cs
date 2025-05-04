@@ -189,25 +189,25 @@ public static class GtkEventControllerKeyHandleSignalExtensions
 public static class GtkEventControllerKeyHandleSignalStructs
 {
 
-public struct FocusInSignal
+public class FocusInSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public IntPtr UserData;
 }
 
-public struct FocusOutSignal
+public class FocusOutSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ImUpdateSignal
+public class ImUpdateSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public IntPtr UserData;
 }
 
-public struct KeyPressedSignal
+public class KeyPressedSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public uint Keyval;
@@ -217,7 +217,7 @@ public struct KeyPressedSignal
 	public bool ReturnValue;
 }
 
-public struct KeyReleasedSignal
+public class KeyReleasedSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public uint Keyval;
@@ -226,7 +226,7 @@ public struct KeyReleasedSignal
 	public IntPtr UserData;
 }
 
-public struct ModifiersSignal
+public class ModifiersSignal
 {
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
 	public MentorLake.Gdk.GdkModifierType Object;

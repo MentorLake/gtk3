@@ -73,7 +73,7 @@ public static class GDBusAuthObserverHandleSignalExtensions
 public static class GDBusAuthObserverHandleSignalStructs
 {
 
-public struct AllowMechanismSignal
+public class AllowMechanismSignal
 {
 	public MentorLake.Gio.GDBusAuthObserverHandle Self;
 	public string Mechanism;
@@ -81,7 +81,7 @@ public struct AllowMechanismSignal
 	public bool ReturnValue;
 }
 
-public struct AuthorizeAuthenticatedPeerSignal
+public class AuthorizeAuthenticatedPeerSignal
 {
 	public MentorLake.Gio.GDBusAuthObserverHandle Self;
 	public MentorLake.Gio.GIOStreamHandle Stream;

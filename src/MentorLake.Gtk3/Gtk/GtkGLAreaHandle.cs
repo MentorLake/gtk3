@@ -102,14 +102,14 @@ public static class GtkGLAreaHandleSignalExtensions
 public static class GtkGLAreaHandleSignalStructs
 {
 
-public struct CreateContextSignal
+public class CreateContextSignal
 {
 	public MentorLake.Gtk.GtkGLAreaHandle Self;
 	public IntPtr UserData;
 	public MentorLake.Gdk.GdkGLContextHandle ReturnValue;
 }
 
-public struct RenderSignal
+public class RenderSignal
 {
 	public MentorLake.Gtk.GtkGLAreaHandle Self;
 	public MentorLake.Gdk.GdkGLContextHandle Context;
@@ -117,7 +117,7 @@ public struct RenderSignal
 	public bool ReturnValue;
 }
 
-public struct ResizeSignal
+public class ResizeSignal
 {
 	public MentorLake.Gtk.GtkGLAreaHandle Self;
 	public int Width;

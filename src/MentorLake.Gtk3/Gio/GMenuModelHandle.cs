@@ -39,7 +39,7 @@ public static class GMenuModelHandleSignalExtensions
 public static class GMenuModelHandleSignalStructs
 {
 
-public struct ItemsChangedSignal
+public class ItemsChangedSignal
 {
 	public MentorLake.Gio.GMenuModelHandle Self;
 	public int Position;

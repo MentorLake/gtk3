@@ -49,7 +49,7 @@ public static class GtkLevelBarHandleSignalExtensions
 public static class GtkLevelBarHandleSignalStructs
 {
 
-public struct OffsetChangedSignal
+public class OffsetChangedSignal
 {
 	public MentorLake.Gtk.GtkLevelBarHandle Self;
 	public string Name;

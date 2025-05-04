@@ -44,7 +44,7 @@ public static class GtkTextTagHandleSignalExtensions
 public static class GtkTextTagHandleSignalStructs
 {
 
-public struct EventSignal
+public class EventSignal
 {
 	public MentorLake.Gtk.GtkTextTagHandle Self;
 	public MentorLake.GObject.GObjectHandle Object;

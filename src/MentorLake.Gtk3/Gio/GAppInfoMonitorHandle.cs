@@ -44,7 +44,7 @@ public static class GAppInfoMonitorHandleSignalExtensions
 public static class GAppInfoMonitorHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gio.GAppInfoMonitorHandle Self;
 	public IntPtr UserData;

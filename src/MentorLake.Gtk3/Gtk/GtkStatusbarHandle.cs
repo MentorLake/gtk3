@@ -73,7 +73,7 @@ public static class GtkStatusbarHandleSignalExtensions
 public static class GtkStatusbarHandleSignalStructs
 {
 
-public struct TextPoppedSignal
+public class TextPoppedSignal
 {
 	public MentorLake.Gtk.GtkStatusbarHandle Self;
 	public uint ContextId;
@@ -81,7 +81,7 @@ public struct TextPoppedSignal
 	public IntPtr UserData;
 }
 
-public struct TextPushedSignal
+public class TextPushedSignal
 {
 	public MentorLake.Gtk.GtkStatusbarHandle Self;
 	public uint ContextId;

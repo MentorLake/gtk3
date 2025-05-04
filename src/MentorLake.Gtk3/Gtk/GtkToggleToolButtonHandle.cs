@@ -49,7 +49,7 @@ public static class GtkToggleToolButtonHandleSignalExtensions
 public static class GtkToggleToolButtonHandleSignalStructs
 {
 
-public struct ToggledSignal
+public class ToggledSignal
 {
 	public MentorLake.Gtk.GtkToggleToolButtonHandle Self;
 	public IntPtr UserData;

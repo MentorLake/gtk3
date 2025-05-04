@@ -44,7 +44,7 @@ public static class GdkDisplayManagerHandleSignalExtensions
 public static class GdkDisplayManagerHandleSignalStructs
 {
 
-public struct DisplayOpenedSignal
+public class DisplayOpenedSignal
 {
 	public MentorLake.Gdk.GdkDisplayManagerHandle Self;
 	public MentorLake.Gdk.GdkDisplayHandle Display;

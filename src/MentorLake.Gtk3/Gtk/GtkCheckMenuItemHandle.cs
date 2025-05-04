@@ -54,7 +54,7 @@ public static class GtkCheckMenuItemHandleSignalExtensions
 public static class GtkCheckMenuItemHandleSignalStructs
 {
 
-public struct ToggledSignal
+public class ToggledSignal
 {
 	public MentorLake.Gtk.GtkCheckMenuItemHandle Self;
 	public IntPtr UserData;

@@ -54,7 +54,7 @@ public static class GtkClipboardHandleSignalExtensions
 public static class GtkClipboardHandleSignalStructs
 {
 
-public struct OwnerChangeSignal
+public class OwnerChangeSignal
 {
 	public MentorLake.Gtk.GtkClipboardHandle Self;
 	public MentorLake.Gdk.GdkEventOwnerChangeHandle Event;

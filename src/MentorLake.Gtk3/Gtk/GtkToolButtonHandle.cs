@@ -49,7 +49,7 @@ public static class GtkToolButtonHandleSignalExtensions
 public static class GtkToolButtonHandleSignalStructs
 {
 
-public struct ClickedSignal
+public class ClickedSignal
 {
 	public MentorLake.Gtk.GtkToolButtonHandle Self;
 	public IntPtr UserData;

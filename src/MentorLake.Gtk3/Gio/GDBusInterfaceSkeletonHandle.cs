@@ -39,7 +39,7 @@ public static class GDBusInterfaceSkeletonHandleSignalExtensions
 public static class GDBusInterfaceSkeletonHandleSignalStructs
 {
 
-public struct GAuthorizeMethodSignal
+public class GAuthorizeMethodSignal
 {
 	public MentorLake.Gio.GDBusInterfaceSkeletonHandle Self;
 	public MentorLake.Gio.GDBusMethodInvocationHandle Invocation;

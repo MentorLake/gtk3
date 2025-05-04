@@ -106,7 +106,7 @@ public static class GDBusProxyHandleSignalExtensions
 public static class GDBusProxyHandleSignalStructs
 {
 
-public struct GPropertiesChangedSignal
+public class GPropertiesChangedSignal
 {
 	public MentorLake.Gio.GDBusProxyHandle Self;
 	public MentorLake.GLib.GVariantHandle ChangedProperties;
@@ -114,7 +114,7 @@ public struct GPropertiesChangedSignal
 	public IntPtr UserData;
 }
 
-public struct GSignalSignal
+public class GSignalSignal
 {
 	public MentorLake.Gio.GDBusProxyHandle Self;
 	public string SenderName;

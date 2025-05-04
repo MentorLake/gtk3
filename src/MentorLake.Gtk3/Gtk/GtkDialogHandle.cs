@@ -78,13 +78,13 @@ public static class GtkDialogHandleSignalExtensions
 public static class GtkDialogHandleSignalStructs
 {
 
-public struct CloseSignal
+public class CloseSignal
 {
 	public MentorLake.Gtk.GtkDialogHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ResponseSignal
+public class ResponseSignal
 {
 	public MentorLake.Gtk.GtkDialogHandle Self;
 	public MentorLake.Gtk.GtkResponseType ResponseId;

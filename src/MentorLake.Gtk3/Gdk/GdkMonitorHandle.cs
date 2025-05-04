@@ -39,7 +39,7 @@ public static class GdkMonitorHandleSignalExtensions
 public static class GdkMonitorHandleSignalStructs
 {
 
-public struct InvalidateSignal
+public class InvalidateSignal
 {
 	public MentorLake.Gdk.GdkMonitorHandle Self;
 	public IntPtr UserData;

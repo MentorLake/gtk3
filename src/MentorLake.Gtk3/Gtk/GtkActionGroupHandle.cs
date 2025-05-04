@@ -131,7 +131,7 @@ public static class GtkActionGroupHandleSignalExtensions
 public static class GtkActionGroupHandleSignalStructs
 {
 
-public struct ConnectProxySignal
+public class ConnectProxySignal
 {
 	public MentorLake.Gtk.GtkActionGroupHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
@@ -139,7 +139,7 @@ public struct ConnectProxySignal
 	public IntPtr UserData;
 }
 
-public struct DisconnectProxySignal
+public class DisconnectProxySignal
 {
 	public MentorLake.Gtk.GtkActionGroupHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
@@ -147,14 +147,14 @@ public struct DisconnectProxySignal
 	public IntPtr UserData;
 }
 
-public struct PostActivateSignal
+public class PostActivateSignal
 {
 	public MentorLake.Gtk.GtkActionGroupHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
 	public IntPtr UserData;
 }
 
-public struct PreActivateSignal
+public class PreActivateSignal
 {
 	public MentorLake.Gtk.GtkActionGroupHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;

@@ -44,7 +44,7 @@ public static class GtkGestureSwipeHandleSignalExtensions
 public static class GtkGestureSwipeHandleSignalStructs
 {
 
-public struct SwipeSignal
+public class SwipeSignal
 {
 	public MentorLake.Gtk.GtkGestureSwipeHandle Self;
 	public double VelocityX;

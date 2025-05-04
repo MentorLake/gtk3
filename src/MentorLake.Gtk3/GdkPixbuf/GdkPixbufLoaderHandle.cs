@@ -145,13 +145,13 @@ public static class GdkPixbufLoaderHandleSignalExtensions
 public static class GdkPixbufLoaderHandleSignalStructs
 {
 
-public struct AreaPreparedSignal
+public class AreaPreparedSignal
 {
 	public MentorLake.GdkPixbuf.GdkPixbufLoaderHandle Self;
 	public IntPtr UserData;
 }
 
-public struct AreaUpdatedSignal
+public class AreaUpdatedSignal
 {
 	public MentorLake.GdkPixbuf.GdkPixbufLoaderHandle Self;
 	public int X;
@@ -161,13 +161,13 @@ public struct AreaUpdatedSignal
 	public IntPtr UserData;
 }
 
-public struct ClosedSignal
+public class ClosedSignal
 {
 	public MentorLake.GdkPixbuf.GdkPixbufLoaderHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SizePreparedSignal
+public class SizePreparedSignal
 {
 	public MentorLake.GdkPixbuf.GdkPixbufLoaderHandle Self;
 	public int Width;

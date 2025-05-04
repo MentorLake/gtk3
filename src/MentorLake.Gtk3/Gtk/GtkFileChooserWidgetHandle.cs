@@ -363,75 +363,75 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 public static class GtkFileChooserWidgetHandleSignalStructs
 {
 
-public struct DesktopFolderSignal
+public class DesktopFolderSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DownFolderSignal
+public class DownFolderSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct HomeFolderSignal
+public class HomeFolderSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct LocationPopupSignal
+public class LocationPopupSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public string Path;
 	public IntPtr UserData;
 }
 
-public struct LocationPopupOnPasteSignal
+public class LocationPopupOnPasteSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct LocationTogglePopupSignal
+public class LocationTogglePopupSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PlacesShortcutSignal
+public class PlacesShortcutSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct QuickBookmarkSignal
+public class QuickBookmarkSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public int BookmarkIndex;
 	public IntPtr UserData;
 }
 
-public struct RecentShortcutSignal
+public class RecentShortcutSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SearchShortcutSignal
+public class SearchShortcutSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ShowHiddenSignal
+public class ShowHiddenSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UpFolderSignal
+public class UpFolderSignal
 {
 	public MentorLake.Gtk.GtkFileChooserWidgetHandle Self;
 	public IntPtr UserData;

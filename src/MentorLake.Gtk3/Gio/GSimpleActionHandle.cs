@@ -78,14 +78,14 @@ public static class GSimpleActionHandleSignalExtensions
 public static class GSimpleActionHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gio.GSimpleActionHandle Self;
 	public MentorLake.GLib.GVariantHandle Parameter;
 	public IntPtr UserData;
 }
 
-public struct ChangeStateSignal
+public class ChangeStateSignal
 {
 	public MentorLake.Gio.GSimpleActionHandle Self;
 	public MentorLake.GLib.GVariantHandle Value;

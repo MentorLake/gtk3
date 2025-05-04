@@ -44,7 +44,7 @@ public static class GtkOverlayHandleSignalExtensions
 public static class GtkOverlayHandleSignalStructs
 {
 
-public struct GetChildPositionSignal
+public class GetChildPositionSignal
 {
 	public MentorLake.Gtk.GtkOverlayHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;

@@ -199,41 +199,41 @@ public static class GdkDisplayHandleSignalExtensions
 public static class GdkDisplayHandleSignalStructs
 {
 
-public struct ClosedSignal
+public class ClosedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public bool IsError;
 	public IntPtr UserData;
 }
 
-public struct MonitorAddedSignal
+public class MonitorAddedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public MentorLake.Gdk.GdkMonitorHandle Monitor;
 	public IntPtr UserData;
 }
 
-public struct MonitorRemovedSignal
+public class MonitorRemovedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public MentorLake.Gdk.GdkMonitorHandle Monitor;
 	public IntPtr UserData;
 }
 
-public struct OpenedSignal
+public class OpenedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SeatAddedSignal
+public class SeatAddedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public MentorLake.Gdk.GdkSeatHandle Seat;
 	public IntPtr UserData;
 }
 
-public struct SeatRemovedSignal
+public class SeatRemovedSignal
 {
 	public MentorLake.Gdk.GdkDisplayHandle Self;
 	public MentorLake.Gdk.GdkSeatHandle Seat;

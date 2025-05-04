@@ -455,19 +455,19 @@ public static class GtkTreeViewHandleSignalExtensions
 public static class GtkTreeViewHandleSignalStructs
 {
 
-public struct ColumnsChangedSignal
+public class ColumnsChangedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CursorChangedSignal
+public class CursorChangedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ExpandCollapseCursorRowSignal
+public class ExpandCollapseCursorRowSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public bool Object;
@@ -477,7 +477,7 @@ public struct ExpandCollapseCursorRowSignal
 	public bool ReturnValue;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -486,7 +486,7 @@ public struct MoveCursorSignal
 	public bool ReturnValue;
 }
 
-public struct RowActivatedSignal
+public class RowActivatedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public MentorLake.Gtk.GtkTreePathHandle Path;
@@ -494,7 +494,7 @@ public struct RowActivatedSignal
 	public IntPtr UserData;
 }
 
-public struct RowCollapsedSignal
+public class RowCollapsedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public MentorLake.Gtk.GtkTreeIterHandle Iter;
@@ -502,7 +502,7 @@ public struct RowCollapsedSignal
 	public IntPtr UserData;
 }
 
-public struct RowExpandedSignal
+public class RowExpandedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public MentorLake.Gtk.GtkTreeIterHandle Iter;
@@ -510,21 +510,21 @@ public struct RowExpandedSignal
 	public IntPtr UserData;
 }
 
-public struct SelectAllSignal
+public class SelectAllSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct SelectCursorParentSignal
+public class SelectCursorParentSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct SelectCursorRowSignal
+public class SelectCursorRowSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public bool Object;
@@ -532,23 +532,14 @@ public struct SelectCursorRowSignal
 	public bool ReturnValue;
 }
 
-public struct StartInteractiveSearchSignal
+public class StartInteractiveSearchSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct TestCollapseRowSignal
-{
-	public MentorLake.Gtk.GtkTreeViewHandle Self;
-	public MentorLake.Gtk.GtkTreeIterHandle Iter;
-	public MentorLake.Gtk.GtkTreePathHandle Path;
-	public IntPtr UserData;
-	public bool ReturnValue;
-}
-
-public struct TestExpandRowSignal
+public class TestCollapseRowSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public MentorLake.Gtk.GtkTreeIterHandle Iter;
@@ -557,14 +548,23 @@ public struct TestExpandRowSignal
 	public bool ReturnValue;
 }
 
-public struct ToggleCursorRowSignal
+public class TestExpandRowSignal
+{
+	public MentorLake.Gtk.GtkTreeViewHandle Self;
+	public MentorLake.Gtk.GtkTreeIterHandle Iter;
+	public MentorLake.Gtk.GtkTreePathHandle Path;
+	public IntPtr UserData;
+	public bool ReturnValue;
+}
+
+public class ToggleCursorRowSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct UnselectAllSignal
+public class UnselectAllSignal
 {
 	public MentorLake.Gtk.GtkTreeViewHandle Self;
 	public IntPtr UserData;

@@ -126,28 +126,28 @@ public static class GdkSeatHandleSignalExtensions
 public static class GdkSeatHandleSignalStructs
 {
 
-public struct DeviceAddedSignal
+public class DeviceAddedSignal
 {
 	public MentorLake.Gdk.GdkSeatHandle Self;
 	public MentorLake.Gdk.GdkDeviceHandle Device;
 	public IntPtr UserData;
 }
 
-public struct DeviceRemovedSignal
+public class DeviceRemovedSignal
 {
 	public MentorLake.Gdk.GdkSeatHandle Self;
 	public MentorLake.Gdk.GdkDeviceHandle Device;
 	public IntPtr UserData;
 }
 
-public struct ToolAddedSignal
+public class ToolAddedSignal
 {
 	public MentorLake.Gdk.GdkSeatHandle Self;
 	public MentorLake.Gdk.GdkDeviceToolHandle Tool;
 	public IntPtr UserData;
 }
 
-public struct ToolRemovedSignal
+public class ToolRemovedSignal
 {
 	public MentorLake.Gdk.GdkSeatHandle Self;
 	public MentorLake.Gdk.GdkDeviceToolHandle Tool;

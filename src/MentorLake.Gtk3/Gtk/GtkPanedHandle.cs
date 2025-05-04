@@ -189,29 +189,21 @@ public static class GtkPanedHandleSignalExtensions
 public static class GtkPanedHandleSignalStructs
 {
 
-public struct AcceptPositionSignal
+public class AcceptPositionSignal
 {
 	public MentorLake.Gtk.GtkPanedHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct CancelPositionSignal
+public class CancelPositionSignal
 {
 	public MentorLake.Gtk.GtkPanedHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct CycleChildFocusSignal
-{
-	public MentorLake.Gtk.GtkPanedHandle Self;
-	public bool Reversed;
-	public IntPtr UserData;
-	public bool ReturnValue;
-}
-
-public struct CycleHandleFocusSignal
+public class CycleChildFocusSignal
 {
 	public MentorLake.Gtk.GtkPanedHandle Self;
 	public bool Reversed;
@@ -219,7 +211,15 @@ public struct CycleHandleFocusSignal
 	public bool ReturnValue;
 }
 
-public struct MoveHandleSignal
+public class CycleHandleFocusSignal
+{
+	public MentorLake.Gtk.GtkPanedHandle Self;
+	public bool Reversed;
+	public IntPtr UserData;
+	public bool ReturnValue;
+}
+
+public class MoveHandleSignal
 {
 	public MentorLake.Gtk.GtkPanedHandle Self;
 	public MentorLake.Gtk.GtkScrollType ScrollType;
@@ -227,7 +227,7 @@ public struct MoveHandleSignal
 	public bool ReturnValue;
 }
 
-public struct ToggleHandleFocusSignal
+public class ToggleHandleFocusSignal
 {
 	public MentorLake.Gtk.GtkPanedHandle Self;
 	public IntPtr UserData;

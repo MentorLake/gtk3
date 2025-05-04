@@ -44,7 +44,7 @@ public static class GSocketServiceHandleSignalExtensions
 public static class GSocketServiceHandleSignalStructs
 {
 
-public struct IncomingSignal
+public class IncomingSignal
 {
 	public MentorLake.Gio.GSocketServiceHandle Self;
 	public MentorLake.Gio.GSocketConnectionHandle Connection;

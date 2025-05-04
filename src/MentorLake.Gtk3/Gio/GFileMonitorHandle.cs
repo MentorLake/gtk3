@@ -39,7 +39,7 @@ public static class GFileMonitorHandleSignalExtensions
 public static class GFileMonitorHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gio.GFileMonitorHandle Self;
 	public MentorLake.Gio.GFileHandle File;

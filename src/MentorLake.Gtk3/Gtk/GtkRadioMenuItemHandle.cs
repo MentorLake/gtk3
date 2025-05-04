@@ -69,7 +69,7 @@ public static class GtkRadioMenuItemHandleSignalExtensions
 public static class GtkRadioMenuItemHandleSignalStructs
 {
 
-public struct GroupChangedSignal
+public class GroupChangedSignal
 {
 	public MentorLake.Gtk.GtkRadioMenuItemHandle Self;
 	public IntPtr UserData;

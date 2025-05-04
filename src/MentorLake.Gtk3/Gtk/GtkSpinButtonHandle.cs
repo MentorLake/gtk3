@@ -165,14 +165,14 @@ public static class GtkSpinButtonHandleSignalExtensions
 public static class GtkSpinButtonHandleSignalStructs
 {
 
-public struct ChangeValueSignal
+public class ChangeValueSignal
 {
 	public MentorLake.Gtk.GtkSpinButtonHandle Self;
 	public MentorLake.Gtk.GtkScrollType Scroll;
 	public IntPtr UserData;
 }
 
-public struct InputSignal
+public class InputSignal
 {
 	public MentorLake.Gtk.GtkSpinButtonHandle Self;
 	public double NewValue;
@@ -180,20 +180,20 @@ public struct InputSignal
 	public int ReturnValue;
 }
 
-public struct OutputSignal
+public class OutputSignal
 {
 	public MentorLake.Gtk.GtkSpinButtonHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct ValueChangedSignal
+public class ValueChangedSignal
 {
 	public MentorLake.Gtk.GtkSpinButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct WrappedSignal
+public class WrappedSignal
 {
 	public MentorLake.Gtk.GtkSpinButtonHandle Self;
 	public IntPtr UserData;

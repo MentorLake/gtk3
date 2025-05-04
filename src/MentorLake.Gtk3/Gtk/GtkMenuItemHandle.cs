@@ -199,38 +199,38 @@ public static class GtkMenuItemHandleSignalExtensions
 public static class GtkMenuItemHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ActivateItemSignal
+public class ActivateItemSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DeselectSignal
+public class DeselectSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SelectSignal
+public class SelectSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleSizeAllocateSignal
+public class ToggleSizeAllocateSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public int Object;
 	public IntPtr UserData;
 }
 
-public struct ToggleSizeRequestSignal
+public class ToggleSizeRequestSignal
 {
 	public MentorLake.Gtk.GtkMenuItemHandle Self;
 	public IntPtr Object;

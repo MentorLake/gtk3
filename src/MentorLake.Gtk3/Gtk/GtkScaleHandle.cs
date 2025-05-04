@@ -49,7 +49,7 @@ public static class GtkScaleHandleSignalExtensions
 public static class GtkScaleHandleSignalStructs
 {
 
-public struct FormatValueSignal
+public class FormatValueSignal
 {
 	public MentorLake.Gtk.GtkScaleHandle Self;
 	public double Value;

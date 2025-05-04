@@ -44,7 +44,7 @@ public static class GtkCellRendererToggleHandleSignalExtensions
 public static class GtkCellRendererToggleHandleSignalStructs
 {
 
-public struct ToggledSignal
+public class ToggledSignal
 {
 	public MentorLake.Gtk.GtkCellRendererToggleHandle Self;
 	public string Path;

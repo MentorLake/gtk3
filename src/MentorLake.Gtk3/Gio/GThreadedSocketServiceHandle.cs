@@ -44,7 +44,7 @@ public static class GThreadedSocketServiceHandleSignalExtensions
 public static class GThreadedSocketServiceHandleSignalStructs
 {
 
-public struct RunSignal
+public class RunSignal
 {
 	public MentorLake.Gio.GThreadedSocketServiceHandle Self;
 	public MentorLake.Gio.GSocketConnectionHandle Connection;

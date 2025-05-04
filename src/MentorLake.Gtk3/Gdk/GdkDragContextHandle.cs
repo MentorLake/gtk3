@@ -126,27 +126,27 @@ public static class GdkDragContextHandleSignalExtensions
 public static class GdkDragContextHandleSignalStructs
 {
 
-public struct ActionChangedSignal
+public class ActionChangedSignal
 {
 	public MentorLake.Gdk.GdkDragContextHandle Self;
 	public MentorLake.Gdk.GdkDragAction Action;
 	public IntPtr UserData;
 }
 
-public struct CancelSignal
+public class CancelSignal
 {
 	public MentorLake.Gdk.GdkDragContextHandle Self;
 	public MentorLake.Gdk.GdkDragCancelReason Reason;
 	public IntPtr UserData;
 }
 
-public struct DndFinishedSignal
+public class DndFinishedSignal
 {
 	public MentorLake.Gdk.GdkDragContextHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DropPerformedSignal
+public class DropPerformedSignal
 {
 	public MentorLake.Gdk.GdkDragContextHandle Self;
 	public int Time;

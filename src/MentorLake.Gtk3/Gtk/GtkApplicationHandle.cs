@@ -102,20 +102,20 @@ public static class GtkApplicationHandleSignalExtensions
 public static class GtkApplicationHandleSignalStructs
 {
 
-public struct QueryEndSignal
+public class QueryEndSignal
 {
 	public MentorLake.Gtk.GtkApplicationHandle Self;
 	public IntPtr UserData;
 }
 
-public struct WindowAddedSignal
+public class WindowAddedSignal
 {
 	public MentorLake.Gtk.GtkApplicationHandle Self;
 	public MentorLake.Gtk.GtkWindowHandle Window;
 	public IntPtr UserData;
 }
 
-public struct WindowRemovedSignal
+public class WindowRemovedSignal
 {
 	public MentorLake.Gtk.GtkApplicationHandle Self;
 	public MentorLake.Gtk.GtkWindowHandle Window;

@@ -107,19 +107,19 @@ public static class GdkKeymapHandleSignalExtensions
 public static class GdkKeymapHandleSignalStructs
 {
 
-public struct DirectionChangedSignal
+public class DirectionChangedSignal
 {
 	public MentorLake.Gdk.GdkKeymapHandle Self;
 	public IntPtr UserData;
 }
 
-public struct KeysChangedSignal
+public class KeysChangedSignal
 {
 	public MentorLake.Gdk.GdkKeymapHandle Self;
 	public IntPtr UserData;
 }
 
-public struct StateChangedSignal
+public class StateChangedSignal
 {
 	public MentorLake.Gdk.GdkKeymapHandle Self;
 	public IntPtr UserData;

@@ -102,14 +102,14 @@ public static class GtkTextTagTableHandleSignalExtensions
 public static class GtkTextTagTableHandleSignalStructs
 {
 
-public struct TagAddedSignal
+public class TagAddedSignal
 {
 	public MentorLake.Gtk.GtkTextTagTableHandle Self;
 	public MentorLake.Gtk.GtkTextTagHandle Tag;
 	public IntPtr UserData;
 }
 
-public struct TagChangedSignal
+public class TagChangedSignal
 {
 	public MentorLake.Gtk.GtkTextTagTableHandle Self;
 	public MentorLake.Gtk.GtkTextTagHandle Tag;
@@ -117,7 +117,7 @@ public struct TagChangedSignal
 	public IntPtr UserData;
 }
 
-public struct TagRemovedSignal
+public class TagRemovedSignal
 {
 	public MentorLake.Gtk.GtkTextTagTableHandle Self;
 	public MentorLake.Gtk.GtkTextTagHandle Tag;

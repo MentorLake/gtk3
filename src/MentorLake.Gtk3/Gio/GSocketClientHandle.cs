@@ -44,7 +44,7 @@ public static class GSocketClientHandleSignalExtensions
 public static class GSocketClientHandleSignalStructs
 {
 
-public struct EventSignal
+public class EventSignal
 {
 	public MentorLake.Gio.GSocketClientHandle Self;
 	public MentorLake.Gio.GSocketClientEvent Event;

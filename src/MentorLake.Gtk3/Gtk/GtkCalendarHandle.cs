@@ -218,43 +218,43 @@ public static class GtkCalendarHandleSignalExtensions
 public static class GtkCalendarHandleSignalStructs
 {
 
-public struct DaySelectedSignal
+public class DaySelectedSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DaySelectedDoubleClickSignal
+public class DaySelectedDoubleClickSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MonthChangedSignal
+public class MonthChangedSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct NextMonthSignal
+public class NextMonthSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct NextYearSignal
+public class NextYearSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PrevMonthSignal
+public class PrevMonthSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PrevYearSignal
+public class PrevYearSignal
 {
 	public MentorLake.Gtk.GtkCalendarHandle Self;
 	public IntPtr UserData;

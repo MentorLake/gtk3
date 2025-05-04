@@ -49,7 +49,7 @@ public static class GtkMenuToolButtonHandleSignalExtensions
 public static class GtkMenuToolButtonHandleSignalStructs
 {
 
-public struct ShowMenuSignal
+public class ShowMenuSignal
 {
 	public MentorLake.Gtk.GtkMenuToolButtonHandle Self;
 	public IntPtr UserData;

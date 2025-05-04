@@ -126,27 +126,27 @@ public static class GtkContainerHandleSignalExtensions
 public static class GtkContainerHandleSignalStructs
 {
 
-public struct AddSignal
+public class AddSignal
 {
 	public MentorLake.Gtk.GtkContainerHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Object;
 	public IntPtr UserData;
 }
 
-public struct CheckResizeSignal
+public class CheckResizeSignal
 {
 	public MentorLake.Gtk.GtkContainerHandle Self;
 	public IntPtr UserData;
 }
 
-public struct RemoveSignal
+public class RemoveSignal
 {
 	public MentorLake.Gtk.GtkContainerHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Object;
 	public IntPtr UserData;
 }
 
-public struct SetFocusChildSignal
+public class SetFocusChildSignal
 {
 	public MentorLake.Gtk.GtkContainerHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Object;

@@ -68,13 +68,13 @@ public static class GtkShortcutsWindowHandleSignalExtensions
 public static class GtkShortcutsWindowHandleSignalStructs
 {
 
-public struct CloseSignal
+public class CloseSignal
 {
 	public MentorLake.Gtk.GtkShortcutsWindowHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SearchSignal
+public class SearchSignal
 {
 	public MentorLake.Gtk.GtkShortcutsWindowHandle Self;
 	public IntPtr UserData;

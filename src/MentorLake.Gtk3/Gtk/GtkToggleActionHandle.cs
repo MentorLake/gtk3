@@ -44,7 +44,7 @@ public static class GtkToggleActionHandleSignalExtensions
 public static class GtkToggleActionHandleSignalStructs
 {
 
-public struct ToggledSignal
+public class ToggledSignal
 {
 	public MentorLake.Gtk.GtkToggleActionHandle Self;
 	public IntPtr UserData;

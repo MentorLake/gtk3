@@ -78,13 +78,13 @@ public static class GtkHSVHandleSignalExtensions
 public static class GtkHSVHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkHSVHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MoveSignal
+public class MoveSignal
 {
 	public MentorLake.Gtk.GtkHSVHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Object;

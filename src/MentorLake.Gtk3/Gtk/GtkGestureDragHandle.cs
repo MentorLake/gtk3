@@ -102,7 +102,7 @@ public static class GtkGestureDragHandleSignalExtensions
 public static class GtkGestureDragHandleSignalStructs
 {
 
-public struct DragBeginSignal
+public class DragBeginSignal
 {
 	public MentorLake.Gtk.GtkGestureDragHandle Self;
 	public double StartX;
@@ -110,7 +110,7 @@ public struct DragBeginSignal
 	public IntPtr UserData;
 }
 
-public struct DragEndSignal
+public class DragEndSignal
 {
 	public MentorLake.Gtk.GtkGestureDragHandle Self;
 	public double OffsetX;
@@ -118,7 +118,7 @@ public struct DragEndSignal
 	public IntPtr UserData;
 }
 
-public struct DragUpdateSignal
+public class DragUpdateSignal
 {
 	public MentorLake.Gtk.GtkGestureDragHandle Self;
 	public double OffsetX;

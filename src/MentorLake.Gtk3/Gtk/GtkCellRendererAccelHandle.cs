@@ -73,14 +73,14 @@ public static class GtkCellRendererAccelHandleSignalExtensions
 public static class GtkCellRendererAccelHandleSignalStructs
 {
 
-public struct AccelClearedSignal
+public class AccelClearedSignal
 {
 	public MentorLake.Gtk.GtkCellRendererAccelHandle Self;
 	public string PathString;
 	public IntPtr UserData;
 }
 
-public struct AccelEditedSignal
+public class AccelEditedSignal
 {
 	public MentorLake.Gtk.GtkCellRendererAccelHandle Self;
 	public string PathString;

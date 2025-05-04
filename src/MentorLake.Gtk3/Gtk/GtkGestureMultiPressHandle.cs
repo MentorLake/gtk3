@@ -102,7 +102,7 @@ public static class GtkGestureMultiPressHandleSignalExtensions
 public static class GtkGestureMultiPressHandleSignalStructs
 {
 
-public struct PressedSignal
+public class PressedSignal
 {
 	public MentorLake.Gtk.GtkGestureMultiPressHandle Self;
 	public int NPress;
@@ -111,7 +111,7 @@ public struct PressedSignal
 	public IntPtr UserData;
 }
 
-public struct ReleasedSignal
+public class ReleasedSignal
 {
 	public MentorLake.Gtk.GtkGestureMultiPressHandle Self;
 	public int NPress;
@@ -120,7 +120,7 @@ public struct ReleasedSignal
 	public IntPtr UserData;
 }
 
-public struct StoppedSignal
+public class StoppedSignal
 {
 	public MentorLake.Gtk.GtkGestureMultiPressHandle Self;
 	public IntPtr UserData;

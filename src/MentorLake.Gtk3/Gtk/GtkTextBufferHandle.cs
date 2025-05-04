@@ -392,7 +392,7 @@ public static class GtkTextBufferHandleSignalExtensions
 public static class GtkTextBufferHandleSignalStructs
 {
 
-public struct ApplyTagSignal
+public class ApplyTagSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextTagHandle Tag;
@@ -401,19 +401,19 @@ public struct ApplyTagSignal
 	public IntPtr UserData;
 }
 
-public struct BeginUserActionSignal
+public class BeginUserActionSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DeleteRangeSignal
+public class DeleteRangeSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextIterHandle Start;
@@ -421,13 +421,13 @@ public struct DeleteRangeSignal
 	public IntPtr UserData;
 }
 
-public struct EndUserActionSignal
+public class EndUserActionSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public IntPtr UserData;
 }
 
-public struct InsertChildAnchorSignal
+public class InsertChildAnchorSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextIterHandle Location;
@@ -435,7 +435,7 @@ public struct InsertChildAnchorSignal
 	public IntPtr UserData;
 }
 
-public struct InsertPixbufSignal
+public class InsertPixbufSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextIterHandle Location;
@@ -443,7 +443,7 @@ public struct InsertPixbufSignal
 	public IntPtr UserData;
 }
 
-public struct InsertTextSignal
+public class InsertTextSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextIterHandle Location;
@@ -452,14 +452,14 @@ public struct InsertTextSignal
 	public IntPtr UserData;
 }
 
-public struct MarkDeletedSignal
+public class MarkDeletedSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextMarkHandle Mark;
 	public IntPtr UserData;
 }
 
-public struct MarkSetSignal
+public class MarkSetSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextIterHandle Location;
@@ -467,20 +467,20 @@ public struct MarkSetSignal
 	public IntPtr UserData;
 }
 
-public struct ModifiedChangedSignal
+public class ModifiedChangedSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PasteDoneSignal
+public class PasteDoneSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkClipboardHandle Clipboard;
 	public IntPtr UserData;
 }
 
-public struct RemoveTagSignal
+public class RemoveTagSignal
 {
 	public MentorLake.Gtk.GtkTextBufferHandle Self;
 	public MentorLake.Gtk.GtkTextTagHandle Tag;

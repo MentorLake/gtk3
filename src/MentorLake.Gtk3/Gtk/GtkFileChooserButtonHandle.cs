@@ -49,7 +49,7 @@ public static class GtkFileChooserButtonHandleSignalExtensions
 public static class GtkFileChooserButtonHandleSignalStructs
 {
 
-public struct FileSetSignal
+public class FileSetSignal
 {
 	public MentorLake.Gtk.GtkFileChooserButtonHandle Self;
 	public IntPtr UserData;

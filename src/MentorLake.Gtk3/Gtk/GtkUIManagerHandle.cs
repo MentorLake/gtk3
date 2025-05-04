@@ -189,20 +189,20 @@ public static class GtkUIManagerHandleSignalExtensions
 public static class GtkUIManagerHandleSignalStructs
 {
 
-public struct ActionsChangedSignal
+public class ActionsChangedSignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public IntPtr UserData;
 }
 
-public struct AddWidgetSignal
+public class AddWidgetSignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;
 	public IntPtr UserData;
 }
 
-public struct ConnectProxySignal
+public class ConnectProxySignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
@@ -210,7 +210,7 @@ public struct ConnectProxySignal
 	public IntPtr UserData;
 }
 
-public struct DisconnectProxySignal
+public class DisconnectProxySignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
@@ -218,14 +218,14 @@ public struct DisconnectProxySignal
 	public IntPtr UserData;
 }
 
-public struct PostActivateSignal
+public class PostActivateSignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;
 	public IntPtr UserData;
 }
 
-public struct PreActivateSignal
+public class PreActivateSignal
 {
 	public MentorLake.Gtk.GtkUIManagerHandle Self;
 	public MentorLake.Gtk.GtkActionHandle Action;

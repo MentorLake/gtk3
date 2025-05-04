@@ -44,7 +44,7 @@ public static class GtkFlowBoxChildHandleSignalExtensions
 public static class GtkFlowBoxChildHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxChildHandle Self;
 	public IntPtr UserData;

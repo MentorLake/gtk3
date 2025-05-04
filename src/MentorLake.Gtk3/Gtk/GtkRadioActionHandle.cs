@@ -44,7 +44,7 @@ public static class GtkRadioActionHandleSignalExtensions
 public static class GtkRadioActionHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkRadioActionHandle Self;
 	public MentorLake.Gtk.GtkRadioActionHandle Current;

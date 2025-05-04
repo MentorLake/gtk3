@@ -44,7 +44,7 @@ public static class GtkAboutDialogHandleSignalExtensions
 public static class GtkAboutDialogHandleSignalStructs
 {
 
-public struct ActivateLinkSignal
+public class ActivateLinkSignal
 {
 	public MentorLake.Gtk.GtkAboutDialogHandle Self;
 	public string Uri;

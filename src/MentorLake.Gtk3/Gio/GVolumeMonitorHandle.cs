@@ -368,84 +368,84 @@ public static class GVolumeMonitorHandleSignalExtensions
 public static class GVolumeMonitorHandleSignalStructs
 {
 
-public struct DriveChangedSignal
+public class DriveChangedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GDriveHandle Drive;
 	public IntPtr UserData;
 }
 
-public struct DriveConnectedSignal
+public class DriveConnectedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GDriveHandle Drive;
 	public IntPtr UserData;
 }
 
-public struct DriveDisconnectedSignal
+public class DriveDisconnectedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GDriveHandle Drive;
 	public IntPtr UserData;
 }
 
-public struct DriveEjectButtonSignal
+public class DriveEjectButtonSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GDriveHandle Drive;
 	public IntPtr UserData;
 }
 
-public struct DriveStopButtonSignal
+public class DriveStopButtonSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GDriveHandle Drive;
 	public IntPtr UserData;
 }
 
-public struct MountAddedSignal
+public class MountAddedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GMountHandle Mount;
 	public IntPtr UserData;
 }
 
-public struct MountChangedSignal
+public class MountChangedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GMountHandle Mount;
 	public IntPtr UserData;
 }
 
-public struct MountPreUnmountSignal
+public class MountPreUnmountSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GMountHandle Mount;
 	public IntPtr UserData;
 }
 
-public struct MountRemovedSignal
+public class MountRemovedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GMountHandle Mount;
 	public IntPtr UserData;
 }
 
-public struct VolumeAddedSignal
+public class VolumeAddedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GVolumeHandle Volume;
 	public IntPtr UserData;
 }
 
-public struct VolumeChangedSignal
+public class VolumeChangedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GVolumeHandle Volume;
 	public IntPtr UserData;
 }
 
-public struct VolumeRemovedSignal
+public class VolumeRemovedSignal
 {
 	public MentorLake.Gio.GVolumeMonitorHandle Self;
 	public MentorLake.Gio.GVolumeHandle Volume;

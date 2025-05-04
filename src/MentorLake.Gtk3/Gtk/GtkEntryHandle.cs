@@ -426,31 +426,31 @@ public static class GtkEntryHandleSignalExtensions
 public static class GtkEntryHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct BackspaceSignal
+public class BackspaceSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CopyClipboardSignal
+public class CopyClipboardSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CutClipboardSignal
+public class CutClipboardSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct DeleteFromCursorSignal
+public class DeleteFromCursorSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public MentorLake.Gtk.GtkDeleteType Type;
@@ -458,7 +458,7 @@ public struct DeleteFromCursorSignal
 	public IntPtr UserData;
 }
 
-public struct IconPressSignal
+public class IconPressSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public MentorLake.Gtk.GtkEntryIconPosition IconPos;
@@ -466,7 +466,7 @@ public struct IconPressSignal
 	public IntPtr UserData;
 }
 
-public struct IconReleaseSignal
+public class IconReleaseSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public MentorLake.Gtk.GtkEntryIconPosition IconPos;
@@ -474,20 +474,20 @@ public struct IconReleaseSignal
 	public IntPtr UserData;
 }
 
-public struct InsertAtCursorSignal
+public class InsertAtCursorSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public string String;
 	public IntPtr UserData;
 }
 
-public struct InsertEmojiSignal
+public class InsertEmojiSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -496,27 +496,27 @@ public struct MoveCursorSignal
 	public IntPtr UserData;
 }
 
-public struct PasteClipboardSignal
+public class PasteClipboardSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PopulatePopupSignal
+public class PopulatePopupSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;
 	public IntPtr UserData;
 }
 
-public struct PreeditChangedSignal
+public class PreeditChangedSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public string Preedit;
 	public IntPtr UserData;
 }
 
-public struct ToggleOverwriteSignal
+public class ToggleOverwriteSignal
 {
 	public MentorLake.Gtk.GtkEntryHandle Self;
 	public IntPtr UserData;

@@ -78,7 +78,7 @@ public static class GtkAccelGroupHandleSignalExtensions
 public static class GtkAccelGroupHandleSignalStructs
 {
 
-public struct AccelActivateSignal
+public class AccelActivateSignal
 {
 	public MentorLake.Gtk.GtkAccelGroupHandle Self;
 	public MentorLake.GObject.GObjectHandle Acceleratable;
@@ -88,7 +88,7 @@ public struct AccelActivateSignal
 	public bool ReturnValue;
 }
 
-public struct AccelChangedSignal
+public class AccelChangedSignal
 {
 	public MentorLake.Gtk.GtkAccelGroupHandle Self;
 	public uint Keyval;

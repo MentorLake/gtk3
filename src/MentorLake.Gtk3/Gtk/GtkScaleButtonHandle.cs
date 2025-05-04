@@ -102,19 +102,19 @@ public static class GtkScaleButtonHandleSignalExtensions
 public static class GtkScaleButtonHandleSignalStructs
 {
 
-public struct PopdownSignal
+public class PopdownSignal
 {
 	public MentorLake.Gtk.GtkScaleButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PopupSignal
+public class PopupSignal
 {
 	public MentorLake.Gtk.GtkScaleButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ValueChangedSignal
+public class ValueChangedSignal
 {
 	public MentorLake.Gtk.GtkScaleButtonHandle Self;
 	public double Value;

@@ -49,7 +49,7 @@ public static class GCancellableHandleSignalExtensions
 public static class GCancellableHandleSignalStructs
 {
 
-public struct CancelledSignal
+public class CancelledSignal
 {
 	public MentorLake.Gio.GCancellableHandle Self;
 	public IntPtr UserData;

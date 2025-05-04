@@ -49,7 +49,7 @@ public static class GtkLinkButtonHandleSignalExtensions
 public static class GtkLinkButtonHandleSignalStructs
 {
 
-public struct ActivateLinkSignal
+public class ActivateLinkSignal
 {
 	public MentorLake.Gtk.GtkLinkButtonHandle Self;
 	public IntPtr UserData;

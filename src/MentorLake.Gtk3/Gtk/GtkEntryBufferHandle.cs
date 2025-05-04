@@ -73,7 +73,7 @@ public static class GtkEntryBufferHandleSignalExtensions
 public static class GtkEntryBufferHandleSignalStructs
 {
 
-public struct DeletedTextSignal
+public class DeletedTextSignal
 {
 	public MentorLake.Gtk.GtkEntryBufferHandle Self;
 	public uint Position;
@@ -81,7 +81,7 @@ public struct DeletedTextSignal
 	public IntPtr UserData;
 }
 
-public struct InsertedTextSignal
+public class InsertedTextSignal
 {
 	public MentorLake.Gtk.GtkEntryBufferHandle Self;
 	public uint Position;

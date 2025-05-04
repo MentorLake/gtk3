@@ -102,7 +102,7 @@ public static class GtkEventControllerMotionHandleSignalExtensions
 public static class GtkEventControllerMotionHandleSignalStructs
 {
 
-public struct EnterSignal
+public class EnterSignal
 {
 	public MentorLake.Gtk.GtkEventControllerMotionHandle Self;
 	public double X;
@@ -110,13 +110,13 @@ public struct EnterSignal
 	public IntPtr UserData;
 }
 
-public struct LeaveSignal
+public class LeaveSignal
 {
 	public MentorLake.Gtk.GtkEventControllerMotionHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MotionSignal
+public class MotionSignal
 {
 	public MentorLake.Gtk.GtkEventControllerMotionHandle Self;
 	public double X;

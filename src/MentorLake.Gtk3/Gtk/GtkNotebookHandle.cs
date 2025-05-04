@@ -305,7 +305,7 @@ public static class GtkNotebookHandleSignalExtensions
 public static class GtkNotebookHandleSignalStructs
 {
 
-public struct ChangeCurrentPageSignal
+public class ChangeCurrentPageSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public int Object;
@@ -313,7 +313,7 @@ public struct ChangeCurrentPageSignal
 	public bool ReturnValue;
 }
 
-public struct CreateWindowSignal
+public class CreateWindowSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Page;
@@ -323,7 +323,7 @@ public struct CreateWindowSignal
 	public MentorLake.Gtk.GtkNotebookHandle ReturnValue;
 }
 
-public struct FocusTabSignal
+public class FocusTabSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkNotebookTab Object;
@@ -331,14 +331,14 @@ public struct FocusTabSignal
 	public bool ReturnValue;
 }
 
-public struct MoveFocusOutSignal
+public class MoveFocusOutSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Object;
 	public IntPtr UserData;
 }
 
-public struct PageAddedSignal
+public class PageAddedSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Child;
@@ -346,7 +346,7 @@ public struct PageAddedSignal
 	public IntPtr UserData;
 }
 
-public struct PageRemovedSignal
+public class PageRemovedSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Child;
@@ -354,7 +354,7 @@ public struct PageRemovedSignal
 	public IntPtr UserData;
 }
 
-public struct PageReorderedSignal
+public class PageReorderedSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Child;
@@ -362,7 +362,7 @@ public struct PageReorderedSignal
 	public IntPtr UserData;
 }
 
-public struct ReorderTabSignal
+public class ReorderTabSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Object;
@@ -371,7 +371,7 @@ public struct ReorderTabSignal
 	public bool ReturnValue;
 }
 
-public struct SelectPageSignal
+public class SelectPageSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public bool Object;
@@ -379,7 +379,7 @@ public struct SelectPageSignal
 	public bool ReturnValue;
 }
 
-public struct SwitchPageSignal
+public class SwitchPageSignal
 {
 	public MentorLake.Gtk.GtkNotebookHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Page;

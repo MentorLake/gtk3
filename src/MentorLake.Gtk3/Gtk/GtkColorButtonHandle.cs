@@ -54,7 +54,7 @@ public static class GtkColorButtonHandleSignalExtensions
 public static class GtkColorButtonHandleSignalStructs
 {
 
-public struct ColorSetSignal
+public class ColorSetSignal
 {
 	public MentorLake.Gtk.GtkColorButtonHandle Self;
 	public IntPtr UserData;

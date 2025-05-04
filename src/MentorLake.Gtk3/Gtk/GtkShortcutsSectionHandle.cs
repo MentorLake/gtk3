@@ -39,7 +39,7 @@ public static class GtkShortcutsSectionHandleSignalExtensions
 public static class GtkShortcutsSectionHandleSignalStructs
 {
 
-public struct ChangeCurrentPageSignal
+public class ChangeCurrentPageSignal
 {
 	public MentorLake.Gtk.GtkShortcutsSectionHandle Self;
 	public int Object;

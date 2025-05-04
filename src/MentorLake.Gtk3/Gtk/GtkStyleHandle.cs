@@ -73,13 +73,13 @@ public static class GtkStyleHandleSignalExtensions
 public static class GtkStyleHandleSignalStructs
 {
 
-public struct RealizeSignal
+public class RealizeSignal
 {
 	public MentorLake.Gtk.GtkStyleHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UnrealizeSignal
+public class UnrealizeSignal
 {
 	public MentorLake.Gtk.GtkStyleHandle Self;
 	public IntPtr UserData;

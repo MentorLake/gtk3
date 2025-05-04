@@ -39,7 +39,7 @@ public static class GdkX11ScreenHandleSignalExtensions
 public static class GdkX11ScreenHandleSignalStructs
 {
 
-public struct WindowManagerChangedSignal
+public class WindowManagerChangedSignal
 {
 	public MentorLake.GdkX11.GdkX11ScreenHandle Self;
 	public IntPtr UserData;

@@ -73,13 +73,13 @@ public static class GtkGestureLongPressHandleSignalExtensions
 public static class GtkGestureLongPressHandleSignalStructs
 {
 
-public struct CancelledSignal
+public class CancelledSignal
 {
 	public MentorLake.Gtk.GtkGestureLongPressHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PressedSignal
+public class PressedSignal
 {
 	public MentorLake.Gtk.GtkGestureLongPressHandle Self;
 	public double X;

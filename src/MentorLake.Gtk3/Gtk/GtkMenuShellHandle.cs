@@ -242,33 +242,33 @@ public static class GtkMenuShellHandleSignalExtensions
 public static class GtkMenuShellHandleSignalStructs
 {
 
-public struct ActivateCurrentSignal
+public class ActivateCurrentSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public bool ForceHide;
 	public IntPtr UserData;
 }
 
-public struct CancelSignal
+public class CancelSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public IntPtr UserData;
 }
 
-public struct CycleFocusSignal
+public class CycleFocusSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public MentorLake.Gtk.GtkDirectionType Direction;
 	public IntPtr UserData;
 }
 
-public struct DeactivateSignal
+public class DeactivateSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public IntPtr UserData;
 }
 
-public struct InsertSignal
+public class InsertSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Child;
@@ -276,14 +276,14 @@ public struct InsertSignal
 	public IntPtr UserData;
 }
 
-public struct MoveCurrentSignal
+public class MoveCurrentSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public MentorLake.Gtk.GtkMenuDirectionType Direction;
 	public IntPtr UserData;
 }
 
-public struct MoveSelectedSignal
+public class MoveSelectedSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public int Distance;
@@ -291,7 +291,7 @@ public struct MoveSelectedSignal
 	public bool ReturnValue;
 }
 
-public struct SelectionDoneSignal
+public class SelectionDoneSignal
 {
 	public MentorLake.Gtk.GtkMenuShellHandle Self;
 	public IntPtr UserData;

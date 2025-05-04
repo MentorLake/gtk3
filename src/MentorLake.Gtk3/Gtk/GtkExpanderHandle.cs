@@ -49,7 +49,7 @@ public static class GtkExpanderHandleSignalExtensions
 public static class GtkExpanderHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkExpanderHandle Self;
 	public IntPtr UserData;

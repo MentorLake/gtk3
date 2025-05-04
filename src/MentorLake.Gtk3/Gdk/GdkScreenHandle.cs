@@ -122,19 +122,19 @@ public static class GdkScreenHandleSignalExtensions
 public static class GdkScreenHandleSignalStructs
 {
 
-public struct CompositedChangedSignal
+public class CompositedChangedSignal
 {
 	public MentorLake.Gdk.GdkScreenHandle Self;
 	public IntPtr UserData;
 }
 
-public struct MonitorsChangedSignal
+public class MonitorsChangedSignal
 {
 	public MentorLake.Gdk.GdkScreenHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SizeChangedSignal
+public class SizeChangedSignal
 {
 	public MentorLake.Gdk.GdkScreenHandle Self;
 	public IntPtr UserData;

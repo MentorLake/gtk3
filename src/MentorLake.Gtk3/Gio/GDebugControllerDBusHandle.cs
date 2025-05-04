@@ -46,7 +46,7 @@ public static class GDebugControllerDBusHandleSignalExtensions
 public static class GDebugControllerDBusHandleSignalStructs
 {
 
-public struct AuthorizeSignal
+public class AuthorizeSignal
 {
 	public MentorLake.Gio.GDebugControllerDBusHandle Self;
 	public MentorLake.Gio.GDBusMethodInvocationHandle Invocation;

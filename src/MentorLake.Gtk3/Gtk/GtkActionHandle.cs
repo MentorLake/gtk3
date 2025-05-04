@@ -44,7 +44,7 @@ public static class GtkActionHandleSignalExtensions
 public static class GtkActionHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkActionHandle Self;
 	public IntPtr UserData;

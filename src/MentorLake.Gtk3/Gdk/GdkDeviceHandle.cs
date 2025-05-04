@@ -78,13 +78,13 @@ public static class GdkDeviceHandleSignalExtensions
 public static class GdkDeviceHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gdk.GdkDeviceHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToolChangedSignal
+public class ToolChangedSignal
 {
 	public MentorLake.Gdk.GdkDeviceHandle Self;
 	public MentorLake.Gdk.GdkDeviceToolHandle Tool;

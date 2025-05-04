@@ -271,21 +271,21 @@ public static class AtkObjectHandleSignalExtensions
 public static class AtkObjectHandleSignalStructs
 {
 
-public struct ActiveDescendantChangedSignal
+public class ActiveDescendantChangedSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public MentorLake.Atk.AtkObjectHandle Arg1;
 	public IntPtr UserData;
 }
 
-public struct AnnouncementSignal
+public class AnnouncementSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public string Arg1;
 	public IntPtr UserData;
 }
 
-public struct AttributeChangedSignal
+public class AttributeChangedSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public string Arg1;
@@ -293,7 +293,7 @@ public struct AttributeChangedSignal
 	public IntPtr UserData;
 }
 
-public struct ChildrenChangedSignal
+public class ChildrenChangedSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public uint Arg1;
@@ -301,14 +301,14 @@ public struct ChildrenChangedSignal
 	public IntPtr UserData;
 }
 
-public struct FocusEventSignal
+public class FocusEventSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public bool Arg1;
 	public IntPtr UserData;
 }
 
-public struct NotificationSignal
+public class NotificationSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public string Arg1;
@@ -316,14 +316,14 @@ public struct NotificationSignal
 	public IntPtr UserData;
 }
 
-public struct PropertyChangeSignal
+public class PropertyChangeSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public MentorLake.Atk.AtkPropertyValuesHandle Arg1;
 	public IntPtr UserData;
 }
 
-public struct StateChangeSignal
+public class StateChangeSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public string Arg1;
@@ -331,7 +331,7 @@ public struct StateChangeSignal
 	public IntPtr UserData;
 }
 
-public struct VisibleDataChangedSignal
+public class VisibleDataChangedSignal
 {
 	public MentorLake.Atk.AtkObjectHandle Self;
 	public IntPtr UserData;

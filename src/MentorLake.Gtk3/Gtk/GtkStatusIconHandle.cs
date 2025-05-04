@@ -248,21 +248,13 @@ public static class GtkStatusIconHandleSignalExtensions
 public static class GtkStatusIconHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ButtonPressEventSignal
-{
-	public MentorLake.Gtk.GtkStatusIconHandle Self;
-	public MentorLake.Gdk.GdkEventButtonHandle Event;
-	public IntPtr UserData;
-	public bool ReturnValue;
-}
-
-public struct ButtonReleaseEventSignal
+public class ButtonPressEventSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public MentorLake.Gdk.GdkEventButtonHandle Event;
@@ -270,7 +262,15 @@ public struct ButtonReleaseEventSignal
 	public bool ReturnValue;
 }
 
-public struct PopupMenuSignal
+public class ButtonReleaseEventSignal
+{
+	public MentorLake.Gtk.GtkStatusIconHandle Self;
+	public MentorLake.Gdk.GdkEventButtonHandle Event;
+	public IntPtr UserData;
+	public bool ReturnValue;
+}
+
+public class PopupMenuSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public uint Button;
@@ -278,7 +278,7 @@ public struct PopupMenuSignal
 	public IntPtr UserData;
 }
 
-public struct QueryTooltipSignal
+public class QueryTooltipSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public int X;
@@ -289,7 +289,7 @@ public struct QueryTooltipSignal
 	public bool ReturnValue;
 }
 
-public struct ScrollEventSignal
+public class ScrollEventSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public MentorLake.Gdk.GdkEventScrollHandle Event;
@@ -297,7 +297,7 @@ public struct ScrollEventSignal
 	public bool ReturnValue;
 }
 
-public struct SizeChangedSignal
+public class SizeChangedSignal
 {
 	public MentorLake.Gtk.GtkStatusIconHandle Self;
 	public int Size;

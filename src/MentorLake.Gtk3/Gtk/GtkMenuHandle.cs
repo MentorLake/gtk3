@@ -83,14 +83,14 @@ public static class GtkMenuHandleSignalExtensions
 public static class GtkMenuHandleSignalStructs
 {
 
-public struct MoveScrollSignal
+public class MoveScrollSignal
 {
 	public MentorLake.Gtk.GtkMenuHandle Self;
 	public MentorLake.Gtk.GtkScrollType ScrollType;
 	public IntPtr UserData;
 }
 
-public struct PoppedUpSignal
+public class PoppedUpSignal
 {
 	public MentorLake.Gtk.GtkMenuHandle Self;
 	public IntPtr FlippedRect;

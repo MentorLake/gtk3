@@ -78,13 +78,13 @@ public static class GtkInfoBarHandleSignalExtensions
 public static class GtkInfoBarHandleSignalStructs
 {
 
-public struct CloseSignal
+public class CloseSignal
 {
 	public MentorLake.Gtk.GtkInfoBarHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ResponseSignal
+public class ResponseSignal
 {
 	public MentorLake.Gtk.GtkInfoBarHandle Self;
 	public MentorLake.Gtk.GtkResponseType ResponseId;

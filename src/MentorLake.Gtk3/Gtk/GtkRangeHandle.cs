@@ -126,14 +126,14 @@ public static class GtkRangeHandleSignalExtensions
 public static class GtkRangeHandleSignalStructs
 {
 
-public struct AdjustBoundsSignal
+public class AdjustBoundsSignal
 {
 	public MentorLake.Gtk.GtkRangeHandle Self;
 	public double Value;
 	public IntPtr UserData;
 }
 
-public struct ChangeValueSignal
+public class ChangeValueSignal
 {
 	public MentorLake.Gtk.GtkRangeHandle Self;
 	public MentorLake.Gtk.GtkScrollType Scroll;
@@ -142,14 +142,14 @@ public struct ChangeValueSignal
 	public bool ReturnValue;
 }
 
-public struct MoveSliderSignal
+public class MoveSliderSignal
 {
 	public MentorLake.Gtk.GtkRangeHandle Self;
 	public MentorLake.Gtk.GtkScrollType Step;
 	public IntPtr UserData;
 }
 
-public struct ValueChangedSignal
+public class ValueChangedSignal
 {
 	public MentorLake.Gtk.GtkRangeHandle Self;
 	public IntPtr UserData;

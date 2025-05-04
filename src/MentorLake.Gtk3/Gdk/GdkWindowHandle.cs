@@ -182,7 +182,7 @@ public static class GdkWindowHandleSignalExtensions
 public static class GdkWindowHandleSignalStructs
 {
 
-public struct CreateSurfaceSignal
+public class CreateSurfaceSignal
 {
 	public MentorLake.Gdk.GdkWindowHandle Self;
 	public int Width;
@@ -191,7 +191,7 @@ public struct CreateSurfaceSignal
 	public MentorLake.cairo.cairo_surface_tHandle ReturnValue;
 }
 
-public struct FromEmbedderSignal
+public class FromEmbedderSignal
 {
 	public MentorLake.Gdk.GdkWindowHandle Self;
 	public double EmbedderX;
@@ -201,7 +201,7 @@ public struct FromEmbedderSignal
 	public IntPtr UserData;
 }
 
-public struct MovedToRectSignal
+public class MovedToRectSignal
 {
 	public MentorLake.Gdk.GdkWindowHandle Self;
 	public IntPtr FlippedRect;
@@ -211,7 +211,7 @@ public struct MovedToRectSignal
 	public IntPtr UserData;
 }
 
-public struct PickEmbeddedChildSignal
+public class PickEmbeddedChildSignal
 {
 	public MentorLake.Gdk.GdkWindowHandle Self;
 	public double X;
@@ -220,7 +220,7 @@ public struct PickEmbeddedChildSignal
 	public MentorLake.Gdk.GdkWindowHandle ReturnValue;
 }
 
-public struct ToEmbedderSignal
+public class ToEmbedderSignal
 {
 	public MentorLake.Gdk.GdkWindowHandle Self;
 	public double OffscreenX;

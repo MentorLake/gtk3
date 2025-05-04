@@ -126,7 +126,7 @@ public static class GtkCellAreaHandleSignalExtensions
 public static class GtkCellAreaHandleSignalStructs
 {
 
-public struct AddEditableSignal
+public class AddEditableSignal
 {
 	public MentorLake.Gtk.GtkCellAreaHandle Self;
 	public MentorLake.Gtk.GtkCellRendererHandle Renderer;
@@ -136,7 +136,7 @@ public struct AddEditableSignal
 	public IntPtr UserData;
 }
 
-public struct ApplyAttributesSignal
+public class ApplyAttributesSignal
 {
 	public MentorLake.Gtk.GtkCellAreaHandle Self;
 	public MentorLake.Gtk.GtkTreeModelHandle Model;
@@ -146,7 +146,7 @@ public struct ApplyAttributesSignal
 	public IntPtr UserData;
 }
 
-public struct FocusChangedSignal
+public class FocusChangedSignal
 {
 	public MentorLake.Gtk.GtkCellAreaHandle Self;
 	public MentorLake.Gtk.GtkCellRendererHandle Renderer;
@@ -154,7 +154,7 @@ public struct FocusChangedSignal
 	public IntPtr UserData;
 }
 
-public struct RemoveEditableSignal
+public class RemoveEditableSignal
 {
 	public MentorLake.Gtk.GtkCellAreaHandle Self;
 	public MentorLake.Gtk.GtkCellRendererHandle Renderer;

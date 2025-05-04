@@ -54,7 +54,7 @@ public static class GtkCssProviderHandleSignalExtensions
 public static class GtkCssProviderHandleSignalStructs
 {
 
-public struct ParsingErrorSignal
+public class ParsingErrorSignal
 {
 	public MentorLake.Gtk.GtkCssProviderHandle Self;
 	public MentorLake.Gtk.GtkCssSectionHandle Section;

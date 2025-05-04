@@ -59,7 +59,7 @@ public static class GtkColorSelectionHandleSignalExtensions
 public static class GtkColorSelectionHandleSignalStructs
 {
 
-public struct ColorChangedSignal
+public class ColorChangedSignal
 {
 	public MentorLake.Gtk.GtkColorSelectionHandle Self;
 	public IntPtr UserData;

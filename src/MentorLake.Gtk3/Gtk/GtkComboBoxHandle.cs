@@ -185,13 +185,13 @@ public static class GtkComboBoxHandleSignalExtensions
 public static class GtkComboBoxHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct FormatEntryTextSignal
+public class FormatEntryTextSignal
 {
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 	public string Path;
@@ -199,21 +199,21 @@ public struct FormatEntryTextSignal
 	public string ReturnValue;
 }
 
-public struct MoveActiveSignal
+public class MoveActiveSignal
 {
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 	public MentorLake.Gtk.GtkScrollType ScrollType;
 	public IntPtr UserData;
 }
 
-public struct PopdownSignal
+public class PopdownSignal
 {
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 	public IntPtr UserData;
 	public bool ReturnValue;
 }
 
-public struct PopupSignal
+public class PopupSignal
 {
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 	public IntPtr UserData;

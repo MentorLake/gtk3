@@ -73,13 +73,13 @@ public static class GtkSocketHandleSignalExtensions
 public static class GtkSocketHandleSignalStructs
 {
 
-public struct PlugAddedSignal
+public class PlugAddedSignal
 {
 	public MentorLake.Gtk.GtkSocketHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PlugRemovedSignal
+public class PlugRemovedSignal
 {
 	public MentorLake.Gtk.GtkSocketHandle Self;
 	public IntPtr UserData;

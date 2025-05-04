@@ -109,7 +109,7 @@ public static class GtkAccelMapHandleSignalExtensions
 public static class GtkAccelMapHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkAccelMapHandle Self;
 	public string AccelPath;

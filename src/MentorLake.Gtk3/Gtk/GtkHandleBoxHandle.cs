@@ -73,14 +73,14 @@ public static class GtkHandleBoxHandleSignalExtensions
 public static class GtkHandleBoxHandleSignalStructs
 {
 
-public struct ChildAttachedSignal
+public class ChildAttachedSignal
 {
 	public MentorLake.Gtk.GtkHandleBoxHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;
 	public IntPtr UserData;
 }
 
-public struct ChildDetachedSignal
+public class ChildDetachedSignal
 {
 	public MentorLake.Gtk.GtkHandleBoxHandle Self;
 	public MentorLake.Gtk.GtkWidgetHandle Widget;

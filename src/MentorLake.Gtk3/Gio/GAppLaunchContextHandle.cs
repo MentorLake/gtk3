@@ -102,14 +102,14 @@ public static class GAppLaunchContextHandleSignalExtensions
 public static class GAppLaunchContextHandleSignalStructs
 {
 
-public struct LaunchFailedSignal
+public class LaunchFailedSignal
 {
 	public MentorLake.Gio.GAppLaunchContextHandle Self;
 	public string StartupNotifyId;
 	public IntPtr UserData;
 }
 
-public struct LaunchStartedSignal
+public class LaunchStartedSignal
 {
 	public MentorLake.Gio.GAppLaunchContextHandle Self;
 	public MentorLake.Gio.GAppInfoHandle Info;
@@ -117,7 +117,7 @@ public struct LaunchStartedSignal
 	public IntPtr UserData;
 }
 
-public struct LaunchedSignal
+public class LaunchedSignal
 {
 	public MentorLake.Gio.GAppLaunchContextHandle Self;
 	public MentorLake.Gio.GAppInfoHandle Info;

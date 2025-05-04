@@ -59,7 +59,7 @@ public static class GtkStyleContextHandleSignalExtensions
 public static class GtkStyleContextHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkStyleContextHandle Self;
 	public IntPtr UserData;

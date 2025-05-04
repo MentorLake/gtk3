@@ -209,37 +209,37 @@ public static class GtkButtonHandleSignalExtensions
 public static class GtkButtonHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ClickedSignal
+public class ClickedSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct EnterSignal
+public class EnterSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct LeaveSignal
+public class LeaveSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PressedSignal
+public class PressedSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ReleasedSignal
+public class ReleasedSignal
 {
 	public MentorLake.Gtk.GtkButtonHandle Self;
 	public IntPtr UserData;

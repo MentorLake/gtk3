@@ -68,13 +68,13 @@ public static class GtkCellRendererHandleSignalExtensions
 public static class GtkCellRendererHandleSignalStructs
 {
 
-public struct EditingCanceledSignal
+public class EditingCanceledSignal
 {
 	public MentorLake.Gtk.GtkCellRendererHandle Self;
 	public IntPtr UserData;
 }
 
-public struct EditingStartedSignal
+public class EditingStartedSignal
 {
 	public MentorLake.Gtk.GtkCellRendererHandle Self;
 	public MentorLake.Gtk.GtkCellEditableHandle Editable;

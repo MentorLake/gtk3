@@ -44,7 +44,7 @@ public static class GtkAppChooserButtonHandleSignalExtensions
 public static class GtkAppChooserButtonHandleSignalStructs
 {
 
-public struct CustomItemActivatedSignal
+public class CustomItemActivatedSignal
 {
 	public MentorLake.Gtk.GtkAppChooserButtonHandle Self;
 	public string ItemName;

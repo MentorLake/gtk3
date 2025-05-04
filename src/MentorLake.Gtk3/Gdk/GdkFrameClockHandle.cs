@@ -213,43 +213,43 @@ public static class GdkFrameClockHandleSignalExtensions
 public static class GdkFrameClockHandleSignalStructs
 {
 
-public struct AfterPaintSignal
+public class AfterPaintSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct BeforePaintSignal
+public class BeforePaintSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct FlushEventsSignal
+public class FlushEventsSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct LayoutSignal
+public class LayoutSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct PaintSignal
+public class PaintSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ResumeEventsSignal
+public class ResumeEventsSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UpdateSignal
+public class UpdateSignal
 {
 	public MentorLake.Gdk.GdkFrameClockHandle Self;
 	public IntPtr UserData;

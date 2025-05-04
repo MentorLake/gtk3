@@ -59,7 +59,7 @@ public static class GtkIconThemeHandleSignalExtensions
 public static class GtkIconThemeHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkIconThemeHandle Self;
 	public IntPtr UserData;

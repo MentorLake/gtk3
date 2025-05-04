@@ -54,7 +54,7 @@ public static class GtkTreeViewColumnHandleSignalExtensions
 public static class GtkTreeViewColumnHandleSignalStructs
 {
 
-public struct ClickedSignal
+public class ClickedSignal
 {
 	public MentorLake.Gtk.GtkTreeViewColumnHandle Self;
 	public IntPtr UserData;

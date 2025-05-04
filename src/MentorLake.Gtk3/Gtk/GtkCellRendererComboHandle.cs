@@ -44,7 +44,7 @@ public static class GtkCellRendererComboHandleSignalExtensions
 public static class GtkCellRendererComboHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkCellRendererComboHandle Self;
 	public string PathString;

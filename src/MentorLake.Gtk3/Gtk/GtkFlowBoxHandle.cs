@@ -218,20 +218,20 @@ public static class GtkFlowBoxHandleSignalExtensions
 public static class GtkFlowBoxHandleSignalStructs
 {
 
-public struct ActivateCursorChildSignal
+public class ActivateCursorChildSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ChildActivatedSignal
+public class ChildActivatedSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public MentorLake.Gtk.GtkFlowBoxChildHandle Child;
 	public IntPtr UserData;
 }
 
-public struct MoveCursorSignal
+public class MoveCursorSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public MentorLake.Gtk.GtkMovementStep Step;
@@ -240,25 +240,25 @@ public struct MoveCursorSignal
 	public bool ReturnValue;
 }
 
-public struct SelectAllSignal
+public class SelectAllSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct SelectedChildrenChangedSignal
+public class SelectedChildrenChangedSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ToggleCursorChildSignal
+public class ToggleCursorChildSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public IntPtr UserData;
 }
 
-public struct UnselectAllSignal
+public class UnselectAllSignal
 {
 	public MentorLake.Gtk.GtkFlowBoxHandle Self;
 	public IntPtr UserData;

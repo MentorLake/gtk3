@@ -77,7 +77,7 @@ public static class GDBusConnectionHandleSignalExtensions
 public static class GDBusConnectionHandleSignalStructs
 {
 
-public struct ClosedSignal
+public class ClosedSignal
 {
 	public MentorLake.Gio.GDBusConnectionHandle Self;
 	public bool RemotePeerVanished;

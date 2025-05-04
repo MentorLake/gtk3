@@ -131,7 +131,7 @@ public static class GtkToolbarHandleSignalExtensions
 public static class GtkToolbarHandleSignalStructs
 {
 
-public struct FocusHomeOrEndSignal
+public class FocusHomeOrEndSignal
 {
 	public MentorLake.Gtk.GtkToolbarHandle Self;
 	public bool FocusHome;
@@ -139,14 +139,14 @@ public struct FocusHomeOrEndSignal
 	public bool ReturnValue;
 }
 
-public struct OrientationChangedSignal
+public class OrientationChangedSignal
 {
 	public MentorLake.Gtk.GtkToolbarHandle Self;
 	public MentorLake.Gtk.GtkOrientation Orientation;
 	public IntPtr UserData;
 }
 
-public struct PopupContextMenuSignal
+public class PopupContextMenuSignal
 {
 	public MentorLake.Gtk.GtkToolbarHandle Self;
 	public int X;
@@ -156,7 +156,7 @@ public struct PopupContextMenuSignal
 	public bool ReturnValue;
 }
 
-public struct StyleChangedSignal
+public class StyleChangedSignal
 {
 	public MentorLake.Gtk.GtkToolbarHandle Self;
 	public MentorLake.Gtk.GtkToolbarStyle Style;

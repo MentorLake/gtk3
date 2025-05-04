@@ -39,7 +39,7 @@ public static class GtkTreeSelectionHandleSignalExtensions
 public static class GtkTreeSelectionHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkTreeSelectionHandle Self;
 	public IntPtr UserData;

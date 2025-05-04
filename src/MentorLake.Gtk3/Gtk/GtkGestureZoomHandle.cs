@@ -44,7 +44,7 @@ public static class GtkGestureZoomHandleSignalExtensions
 public static class GtkGestureZoomHandleSignalStructs
 {
 
-public struct ScaleChangedSignal
+public class ScaleChangedSignal
 {
 	public MentorLake.Gtk.GtkGestureZoomHandle Self;
 	public double Scale;

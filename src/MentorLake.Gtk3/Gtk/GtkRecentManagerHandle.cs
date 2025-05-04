@@ -49,7 +49,7 @@ public static class GtkRecentManagerHandleSignalExtensions
 public static class GtkRecentManagerHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkRecentManagerHandle Self;
 	public IntPtr UserData;

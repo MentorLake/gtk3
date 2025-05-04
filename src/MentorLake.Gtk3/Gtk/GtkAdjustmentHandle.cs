@@ -73,13 +73,13 @@ public static class GtkAdjustmentHandleSignalExtensions
 public static class GtkAdjustmentHandleSignalStructs
 {
 
-public struct ChangedSignal
+public class ChangedSignal
 {
 	public MentorLake.Gtk.GtkAdjustmentHandle Self;
 	public IntPtr UserData;
 }
 
-public struct ValueChangedSignal
+public class ValueChangedSignal
 {
 	public MentorLake.Gtk.GtkAdjustmentHandle Self;
 	public IntPtr UserData;

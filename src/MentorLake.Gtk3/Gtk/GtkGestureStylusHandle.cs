@@ -131,7 +131,7 @@ public static class GtkGestureStylusHandleSignalExtensions
 public static class GtkGestureStylusHandleSignalStructs
 {
 
-public struct DownSignal
+public class DownSignal
 {
 	public MentorLake.Gtk.GtkGestureStylusHandle Self;
 	public double Object;
@@ -139,7 +139,7 @@ public struct DownSignal
 	public IntPtr UserData;
 }
 
-public struct MotionSignal
+public class MotionSignal
 {
 	public MentorLake.Gtk.GtkGestureStylusHandle Self;
 	public double Object;
@@ -147,7 +147,7 @@ public struct MotionSignal
 	public IntPtr UserData;
 }
 
-public struct ProximitySignal
+public class ProximitySignal
 {
 	public MentorLake.Gtk.GtkGestureStylusHandle Self;
 	public double Object;
@@ -155,7 +155,7 @@ public struct ProximitySignal
 	public IntPtr UserData;
 }
 
-public struct UpSignal
+public class UpSignal
 {
 	public MentorLake.Gtk.GtkGestureStylusHandle Self;
 	public double Object;

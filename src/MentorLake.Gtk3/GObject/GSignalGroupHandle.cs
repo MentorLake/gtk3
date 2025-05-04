@@ -73,14 +73,14 @@ public static class GSignalGroupHandleSignalExtensions
 public static class GSignalGroupHandleSignalStructs
 {
 
-public struct BindSignal
+public class BindSignal
 {
 	public MentorLake.GObject.GSignalGroupHandle Self;
 	public MentorLake.GObject.GObjectHandle Instance;
 	public IntPtr UserData;
 }
 
-public struct UnbindSignal
+public class UnbindSignal
 {
 	public MentorLake.GObject.GSignalGroupHandle Self;
 	public IntPtr UserData;

@@ -73,13 +73,13 @@ public static class GtkSwitchHandleSignalExtensions
 public static class GtkSwitchHandleSignalStructs
 {
 
-public struct ActivateSignal
+public class ActivateSignal
 {
 	public MentorLake.Gtk.GtkSwitchHandle Self;
 	public IntPtr UserData;
 }
 
-public struct StateSetSignal
+public class StateSetSignal
 {
 	public MentorLake.Gtk.GtkSwitchHandle Self;
 	public bool State;

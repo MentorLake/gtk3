@@ -44,7 +44,7 @@ public static class GtkGestureRotateHandleSignalExtensions
 public static class GtkGestureRotateHandleSignalStructs
 {
 
-public struct AngleChangedSignal
+public class AngleChangedSignal
 {
 	public MentorLake.Gtk.GtkGestureRotateHandle Self;
 	public double Angle;

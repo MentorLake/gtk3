@@ -2,7 +2,7 @@ using GCHandle = System.Runtime.InteropServices.GCHandle;
 
 namespace MentorLake.Gtk3;
 
-public class GLibSynchronizationContext : SynchronizationContext
+public class GLibSynchronizationContext(int callbackPriority = 0) : SynchronizationContext
 {
 	public override void Post(SendOrPostCallback d, object state)
 	{
@@ -16,6 +16,6 @@ public class GLibSynchronizationContext : SynchronizationContext
 		};
 
 		gcHandle = GCHandle.Alloc(f);
-		GLibGlobalFunctions.IdleAddFull(0, f, IntPtr.Zero, null);
+		GLibGlobalFunctions.IdleAddFull(callbackPriority, f, IntPtr.Zero, null);
 	}
 }

@@ -47,33 +47,41 @@ public static class Extensions
 		return ids.Select(id => GObjectGlobalFunctions.SignalName((uint)id)).ToList();
 	}
 
-	private static readonly Dictionary<string, object> s_managedData = new();
+	private static readonly Dictionary<long, Dictionary<string, object>> s_managedData = new();
 
-	public static T SetManagedData<T>(this T obj, object key, object val) where T : GObjectHandle
+	public static T SetManagedData<T>(this T obj, string key, object val) where T : GObjectHandle
 	{
 		lock (s_managedData)
 		{
-			var fullKey = $"{obj.DangerousGetHandle()}_{key}";
-			s_managedData[fullKey] = val;
-			GCHandle gcHandle = default;
-			GWeakNotify handler = (_, _) =>
-			{
-				lock (s_managedData) s_managedData.Remove(fullKey);
-				gcHandle.Free();
-			};
-			gcHandle = GCHandle.Alloc(handler);
-			obj.WeakRef(handler, IntPtr.Zero);
-		}
+			var objKey = obj.DangerousGetHandle().ToInt64();
 
-		return obj;
+			if (!s_managedData.ContainsKey(objKey))
+			{
+				s_managedData.Add(objKey, new Dictionary<string, object>());
+
+				GCHandle gcHandle = default;
+				GWeakNotify handler = (_, _) =>
+				{
+					lock (s_managedData) s_managedData.Remove(objKey);
+					gcHandle.Free();
+				};
+				gcHandle = GCHandle.Alloc(handler);
+				obj.WeakRef(handler, IntPtr.Zero);
+			}
+
+			var objects = s_managedData[objKey];
+			objects[key] = val;
+			return obj;
+		}
 	}
 
-	public static T GetManagedData<T>(this GObjectHandle obj, object key)
+	public static T GetManagedData<T>(this GObjectHandle obj, string key)
 	{
 		lock (s_managedData)
 		{
-			var fullKey = $"{obj.DangerousGetHandle()}_{key}";
-			return (T) s_managedData[fullKey];
+			var objKey = obj.DangerousGetHandle().ToInt64();
+			var objects = s_managedData[objKey];
+			return (T) objects[key];
 		}
 	}
 

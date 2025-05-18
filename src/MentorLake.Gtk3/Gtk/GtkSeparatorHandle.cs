@@ -16,6 +16,7 @@ public static class GtkSeparatorHandleExtensions
 internal class GtkSeparatorHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSeparatorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSeparatorHandle gtk_separator_new(MentorLake.Gtk.GtkOrientation orientation);
 
 }

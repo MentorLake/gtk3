@@ -28,80 +28,80 @@ public static class GTaskHandleExtensions
 {
 	public static T AttachSource<T>(this T task, MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceFunc callback) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_attach_source(task, source, callback);
 		return task;
 	}
 
 	public static MentorLake.Gio.GCancellableHandle GetCancellable(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_cancellable(task);
 	}
 
 	public static bool GetCheckCancellable(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_check_cancellable(task);
 	}
 
 	public static bool GetCompleted(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_completed(task);
 	}
 
 	public static MentorLake.GLib.GMainContextHandle GetContext(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_context(task);
 	}
 
 	public static string GetName(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_name(task);
 	}
 
 	public static int GetPriority(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_priority(task);
 	}
 
 	public static bool GetReturnOnCancel(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_return_on_cancel(task);
 	}
 
 	public static MentorLake.GObject.GObjectHandle GetSourceObject(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_source_object(task);
 	}
 
 	public static IntPtr GetSourceTag(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_source_tag(task);
 	}
 
 	public static IntPtr GetTaskData(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_get_task_data(task);
 	}
 
 	public static bool HadError(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_had_error(task);
 	}
 
 	public static bool PropagateBoolean(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		var externCallResult = GTaskHandleExterns.g_task_propagate_boolean(task, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -109,7 +109,7 @@ public static class GTaskHandleExtensions
 
 	public static UIntPtr PropagateInt(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		var externCallResult = GTaskHandleExterns.g_task_propagate_int(task, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -117,7 +117,7 @@ public static class GTaskHandleExtensions
 
 	public static IntPtr PropagatePointer(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		var externCallResult = GTaskHandleExterns.g_task_propagate_pointer(task, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -125,7 +125,7 @@ public static class GTaskHandleExtensions
 
 	public static bool PropagateValue(this MentorLake.Gio.GTaskHandle task, out MentorLake.GObject.GValue value)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		var externCallResult = GTaskHandleExterns.g_task_propagate_value(task, out value, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -133,124 +133,124 @@ public static class GTaskHandleExtensions
 
 	public static T ReturnBoolean<T>(this T task, bool result) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_boolean(task, result);
 		return task;
 	}
 
 	public static T ReturnError<T>(this T task, MentorLake.GLib.GErrorHandle error) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_error(task, error);
 		return task;
 	}
 
 	public static bool ReturnErrorIfCancelled(this MentorLake.Gio.GTaskHandle task)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_return_error_if_cancelled(task);
 	}
 
 	public static T ReturnInt<T>(this T task, UIntPtr result) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_int(task, result);
 		return task;
 	}
 
 	public static T ReturnNewError<T>(this T task, MentorLake.GLib.GQuark domain, int code, string format, IntPtr @__arglist) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_new_error(task, domain, code, format, @__arglist);
 		return task;
 	}
 
 	public static T ReturnNewErrorLiteral<T>(this T task, MentorLake.GLib.GQuark domain, int code, string message) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_new_error_literal(task, domain, code, message);
 		return task;
 	}
 
 	public static T ReturnPointer<T>(this T task, IntPtr result, MentorLake.GLib.GDestroyNotify result_destroy) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_pointer(task, result, result_destroy);
 		return task;
 	}
 
 	public static T ReturnPrefixedError<T>(this T task, MentorLake.GLib.GErrorHandle error, string format, IntPtr @__arglist) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_prefixed_error(task, error, format, @__arglist);
 		return task;
 	}
 
 	public static T ReturnValue<T>(this T task, MentorLake.GObject.GValueHandle result) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_return_value(task, result);
 		return task;
 	}
 
 	public static T RunInThread<T>(this T task, MentorLake.Gio.GTaskThreadFunc task_func) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_run_in_thread(task, task_func);
 		return task;
 	}
 
 	public static T RunInThreadSync<T>(this T task, MentorLake.Gio.GTaskThreadFunc task_func) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_run_in_thread_sync(task, task_func);
 		return task;
 	}
 
 	public static T SetCheckCancellable<T>(this T task, bool check_cancellable) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_check_cancellable(task, check_cancellable);
 		return task;
 	}
 
 	public static T SetName<T>(this T task, string name) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_name(task, name);
 		return task;
 	}
 
 	public static T SetPriority<T>(this T task, int priority) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_priority(task, priority);
 		return task;
 	}
 
 	public static bool SetReturnOnCancel(this MentorLake.Gio.GTaskHandle task, bool return_on_cancel)
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		return GTaskHandleExterns.g_task_set_return_on_cancel(task, return_on_cancel);
 	}
 
 	public static T SetSourceTag<T>(this T task, IntPtr source_tag) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_source_tag(task, source_tag);
 		return task;
 	}
 
 	public static T SetStaticName<T>(this T task, string name) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_static_name(task, name);
 		return task;
 	}
 
 	public static T SetTaskData<T>(this T task, IntPtr task_data, MentorLake.GLib.GDestroyNotify task_data_destroy) where T : GTaskHandle
 	{
-		if (task.IsInvalid || task.IsClosed) throw new Exception("Invalid or closed handle (GTaskHandle)");
+		if (task.IsInvalid) throw new Exception("Invalid handle (GTaskHandle)");
 		GTaskHandleExterns.g_task_set_task_data(task, task_data, task_data_destroy);
 		return task;
 	}
@@ -260,12 +260,14 @@ public static class GTaskHandleExtensions
 internal class GTaskHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))]
 	internal static extern MentorLake.Gio.GTaskHandle g_task_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle source_object, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr callback_data);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_task_attach_source([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSourceHandle>))] MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceFunc callback);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))]
 	internal static extern MentorLake.Gio.GCancellableHandle g_task_get_cancellable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]
@@ -275,6 +277,7 @@ internal class GTaskHandleExterns
 	internal static extern bool g_task_get_completed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))]
 	internal static extern MentorLake.GLib.GMainContextHandle g_task_get_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]
@@ -288,6 +291,7 @@ internal class GTaskHandleExterns
 	internal static extern bool g_task_get_return_on_cancel([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_task_get_source_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTaskHandle>))] MentorLake.Gio.GTaskHandle task);
 
 	[DllImport(GioLibrary.Name)]

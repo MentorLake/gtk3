@@ -13,14 +13,14 @@ public static class GtkIMContextSimpleHandleExtensions
 {
 	public static T AddComposeFile<T>(this T context_simple, string compose_file) where T : GtkIMContextSimpleHandle
 	{
-		if (context_simple.IsInvalid || context_simple.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextSimpleHandle)");
+		if (context_simple.IsInvalid) throw new Exception("Invalid handle (GtkIMContextSimpleHandle)");
 		GtkIMContextSimpleHandleExterns.gtk_im_context_simple_add_compose_file(context_simple, compose_file);
 		return context_simple;
 	}
 
 	public static T AddTable<T>(this T context_simple, ushort[] data, int max_seq_len, int n_seqs) where T : GtkIMContextSimpleHandle
 	{
-		if (context_simple.IsInvalid || context_simple.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextSimpleHandle)");
+		if (context_simple.IsInvalid) throw new Exception("Invalid handle (GtkIMContextSimpleHandle)");
 		GtkIMContextSimpleHandleExterns.gtk_im_context_simple_add_table(context_simple, data, max_seq_len, n_seqs);
 		return context_simple;
 	}
@@ -30,6 +30,7 @@ public static class GtkIMContextSimpleHandleExtensions
 internal class GtkIMContextSimpleHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkIMContextSimpleHandle>))]
 	internal static extern MentorLake.Gtk.GtkIMContextSimpleHandle gtk_im_context_simple_new();
 
 	[DllImport(GtkLibrary.Name)]

@@ -33,6 +33,7 @@ internal class PangoOTGlobalFunctionsExterns
 	internal static extern MentorLake.PangoOT.PangoOTTag pango_ot_tag_from_script(MentorLake.Pango.PangoScript script);
 
 	[DllImport(PangoOTLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_ot_tag_to_language(MentorLake.PangoOT.PangoOTTag language_tag);
 
 	[DllImport(PangoOTLibrary.Name)]

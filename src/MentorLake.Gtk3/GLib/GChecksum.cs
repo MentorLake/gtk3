@@ -14,37 +14,37 @@ public static class GChecksumExtensions
 {
 	public static MentorLake.GLib.GChecksumHandle Copy(this MentorLake.GLib.GChecksumHandle checksum)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		return GChecksumExterns.g_checksum_copy(checksum);
 	}
 
 	public static void Free(this MentorLake.GLib.GChecksumHandle checksum)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		GChecksumExterns.g_checksum_free(checksum);
 	}
 
 	public static void GetDigest(this MentorLake.GLib.GChecksumHandle checksum, byte[] buffer, ref UIntPtr digest_len)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		GChecksumExterns.g_checksum_get_digest(checksum, buffer, ref digest_len);
 	}
 
 	public static string GetString(this MentorLake.GLib.GChecksumHandle checksum)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		return GChecksumExterns.g_checksum_get_string(checksum);
 	}
 
 	public static void Reset(this MentorLake.GLib.GChecksumHandle checksum)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		GChecksumExterns.g_checksum_reset(checksum);
 	}
 
 	public static void Update(this MentorLake.GLib.GChecksumHandle checksum, byte[] data, UIntPtr length)
 	{
-		if (checksum.IsInvalid || checksum.IsClosed) throw new Exception("Invalid or closed handle (GChecksum)");
+		if (checksum.IsInvalid) throw new Exception("Invalid handle (GChecksum)");
 		GChecksumExterns.g_checksum_update(checksum, data, length);
 	}
 
@@ -54,9 +54,11 @@ public static class GChecksumExtensions
 internal class GChecksumExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))]
 	internal static extern MentorLake.GLib.GChecksumHandle g_checksum_new(MentorLake.GLib.GChecksumType checksum_type);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))]
 	internal static extern MentorLake.GLib.GChecksumHandle g_checksum_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GChecksumHandle>))] MentorLake.GLib.GChecksumHandle checksum);
 
 	[DllImport(GLibLibrary.Name)]

@@ -189,97 +189,97 @@ public static class GtkToolbarHandleExtensions
 {
 	public static int GetDropIndex(this MentorLake.Gtk.GtkToolbarHandle toolbar, int x, int y)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_drop_index(toolbar, x, y);
 	}
 
 	public static MentorLake.Gtk.GtkIconSize GetIconSize(this MentorLake.Gtk.GtkToolbarHandle toolbar)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_icon_size(toolbar);
 	}
 
 	public static int GetItemIndex(this MentorLake.Gtk.GtkToolbarHandle toolbar, MentorLake.Gtk.GtkToolItemHandle item)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_item_index(toolbar, item);
 	}
 
 	public static int GetNItems(this MentorLake.Gtk.GtkToolbarHandle toolbar)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_n_items(toolbar);
 	}
 
 	public static MentorLake.Gtk.GtkToolItemHandle GetNthItem(this MentorLake.Gtk.GtkToolbarHandle toolbar, int n)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_nth_item(toolbar, n);
 	}
 
 	public static MentorLake.Gtk.GtkReliefStyle GetReliefStyle(this MentorLake.Gtk.GtkToolbarHandle toolbar)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_relief_style(toolbar);
 	}
 
 	public static bool GetShowArrow(this MentorLake.Gtk.GtkToolbarHandle toolbar)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_show_arrow(toolbar);
 	}
 
 	public static MentorLake.Gtk.GtkToolbarStyle GetStyle(this MentorLake.Gtk.GtkToolbarHandle toolbar)
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		return GtkToolbarHandleExterns.gtk_toolbar_get_style(toolbar);
 	}
 
 	public static T Insert<T>(this T toolbar, MentorLake.Gtk.GtkToolItemHandle item, int pos) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_insert(toolbar, item, pos);
 		return toolbar;
 	}
 
 	public static T SetDropHighlightItem<T>(this T toolbar, MentorLake.Gtk.GtkToolItemHandle tool_item, int index_) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_set_drop_highlight_item(toolbar, tool_item, index_);
 		return toolbar;
 	}
 
 	public static T SetIconSize<T>(this T toolbar, MentorLake.Gtk.GtkIconSize icon_size) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_set_icon_size(toolbar, icon_size);
 		return toolbar;
 	}
 
 	public static T SetShowArrow<T>(this T toolbar, bool show_arrow) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_set_show_arrow(toolbar, show_arrow);
 		return toolbar;
 	}
 
 	public static T SetStyle<T>(this T toolbar, MentorLake.Gtk.GtkToolbarStyle style) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_set_style(toolbar, style);
 		return toolbar;
 	}
 
 	public static T UnsetIconSize<T>(this T toolbar) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_unset_icon_size(toolbar);
 		return toolbar;
 	}
 
 	public static T UnsetStyle<T>(this T toolbar) where T : GtkToolbarHandle
 	{
-		if (toolbar.IsInvalid || toolbar.IsClosed) throw new Exception("Invalid or closed handle (GtkToolbarHandle)");
+		if (toolbar.IsInvalid) throw new Exception("Invalid handle (GtkToolbarHandle)");
 		GtkToolbarHandleExterns.gtk_toolbar_unset_style(toolbar);
 		return toolbar;
 	}
@@ -289,6 +289,7 @@ public static class GtkToolbarHandleExtensions
 internal class GtkToolbarHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToolbarHandle>))]
 	internal static extern MentorLake.Gtk.GtkToolbarHandle gtk_toolbar_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -304,6 +305,7 @@ internal class GtkToolbarHandleExterns
 	internal static extern int gtk_toolbar_get_n_items([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolbarHandle>))] MentorLake.Gtk.GtkToolbarHandle toolbar);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkToolItemHandle gtk_toolbar_get_nth_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolbarHandle>))] MentorLake.Gtk.GtkToolbarHandle toolbar, int n);
 
 	[DllImport(GtkLibrary.Name)]

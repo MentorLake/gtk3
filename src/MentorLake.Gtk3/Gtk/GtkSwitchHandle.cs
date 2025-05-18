@@ -105,26 +105,26 @@ public static class GtkSwitchHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkSwitchHandle sw)
 	{
-		if (sw.IsInvalid || sw.IsClosed) throw new Exception("Invalid or closed handle (GtkSwitchHandle)");
+		if (sw.IsInvalid) throw new Exception("Invalid handle (GtkSwitchHandle)");
 		return GtkSwitchHandleExterns.gtk_switch_get_active(sw);
 	}
 
 	public static bool GetState(this MentorLake.Gtk.GtkSwitchHandle sw)
 	{
-		if (sw.IsInvalid || sw.IsClosed) throw new Exception("Invalid or closed handle (GtkSwitchHandle)");
+		if (sw.IsInvalid) throw new Exception("Invalid handle (GtkSwitchHandle)");
 		return GtkSwitchHandleExterns.gtk_switch_get_state(sw);
 	}
 
 	public static T SetActive<T>(this T sw, bool is_active) where T : GtkSwitchHandle
 	{
-		if (sw.IsInvalid || sw.IsClosed) throw new Exception("Invalid or closed handle (GtkSwitchHandle)");
+		if (sw.IsInvalid) throw new Exception("Invalid handle (GtkSwitchHandle)");
 		GtkSwitchHandleExterns.gtk_switch_set_active(sw, is_active);
 		return sw;
 	}
 
 	public static T SetState<T>(this T sw, bool state) where T : GtkSwitchHandle
 	{
-		if (sw.IsInvalid || sw.IsClosed) throw new Exception("Invalid or closed handle (GtkSwitchHandle)");
+		if (sw.IsInvalid) throw new Exception("Invalid handle (GtkSwitchHandle)");
 		GtkSwitchHandleExterns.gtk_switch_set_state(sw, state);
 		return sw;
 	}
@@ -134,6 +134,7 @@ public static class GtkSwitchHandleExtensions
 internal class GtkSwitchHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSwitchHandle>))]
 	internal static extern MentorLake.Gtk.GtkSwitchHandle gtk_switch_new();
 
 	[DllImport(GtkLibrary.Name)]

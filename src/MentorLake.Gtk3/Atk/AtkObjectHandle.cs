@@ -383,177 +383,177 @@ public static class AtkObjectHandleExtensions
 {
 	public static bool AddRelationship(this MentorLake.Atk.AtkObjectHandle @object, MentorLake.Atk.AtkRelationType relationship, MentorLake.Atk.AtkObjectHandle target)
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_add_relationship(@object, relationship, target);
 	}
 
 	public static uint ConnectPropertyChangeHandler(this MentorLake.Atk.AtkObjectHandle accessible, MentorLake.Atk.AtkPropertyChangeHandler handler)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_connect_property_change_handler(accessible, handler);
 	}
 
 	public static string GetAccessibleId(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_accessible_id(accessible);
 	}
 
 	public static MentorLake.Atk.AtkAttributeSetHandle GetAttributes(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_attributes(accessible);
 	}
 
 	public static string GetDescription(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_description(accessible);
 	}
 
 	public static string GetHelpText(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_help_text(accessible);
 	}
 
 	public static int GetIndexInParent(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_index_in_parent(accessible);
 	}
 
 	public static MentorLake.Atk.AtkLayer GetLayer(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_layer(accessible);
 	}
 
 	public static int GetMdiZorder(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_mdi_zorder(accessible);
 	}
 
 	public static int GetNAccessibleChildren(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_n_accessible_children(accessible);
 	}
 
 	public static string GetName(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_name(accessible);
 	}
 
 	public static string GetObjectLocale(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_object_locale(accessible);
 	}
 
 	public static MentorLake.Atk.AtkObjectHandle GetParent(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_parent(accessible);
 	}
 
 	public static MentorLake.Atk.AtkRole GetRole(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_get_role(accessible);
 	}
 
 	public static T Initialize<T>(this T accessible, IntPtr data) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_initialize(accessible, data);
 		return accessible;
 	}
 
 	public static T NotifyStateChange<T>(this T accessible, MentorLake.Atk.AtkState state, bool value) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_notify_state_change(accessible, state, value);
 		return accessible;
 	}
 
 	public static MentorLake.Atk.AtkObjectHandle PeekParent(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_peek_parent(accessible);
 	}
 
 	public static MentorLake.Atk.AtkObjectHandle RefAccessibleChild(this MentorLake.Atk.AtkObjectHandle accessible, int i)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_ref_accessible_child(accessible, i);
 	}
 
 	public static MentorLake.Atk.AtkRelationSetHandle RefRelationSet(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_ref_relation_set(accessible);
 	}
 
 	public static MentorLake.Atk.AtkStateSetHandle RefStateSet(this MentorLake.Atk.AtkObjectHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_ref_state_set(accessible);
 	}
 
 	public static T RemovePropertyChangeHandler<T>(this T accessible, uint handler_id) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_remove_property_change_handler(accessible, handler_id);
 		return accessible;
 	}
 
 	public static bool RemoveRelationship(this MentorLake.Atk.AtkObjectHandle @object, MentorLake.Atk.AtkRelationType relationship, MentorLake.Atk.AtkObjectHandle target)
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		return AtkObjectHandleExterns.atk_object_remove_relationship(@object, relationship, target);
 	}
 
 	public static T SetAccessibleId<T>(this T accessible, string id) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_accessible_id(accessible, id);
 		return accessible;
 	}
 
 	public static T SetDescription<T>(this T accessible, string description) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_description(accessible, description);
 		return accessible;
 	}
 
 	public static T SetHelpText<T>(this T accessible, string help_text) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_help_text(accessible, help_text);
 		return accessible;
 	}
 
 	public static T SetName<T>(this T accessible, string name) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_name(accessible, name);
 		return accessible;
 	}
 
 	public static T SetParent<T>(this T accessible, MentorLake.Atk.AtkObjectHandle parent) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_parent(accessible, parent);
 		return accessible;
 	}
 
 	public static T SetRole<T>(this T accessible, MentorLake.Atk.AtkRole role) where T : AtkObjectHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (AtkObjectHandle)");
 		AtkObjectHandleExterns.atk_object_set_role(accessible, role);
 		return accessible;
 	}
@@ -573,6 +573,7 @@ internal class AtkObjectHandleExterns
 	internal static extern string atk_object_get_accessible_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkAttributeSetHandle>))]
 	internal static extern MentorLake.Atk.AtkAttributeSetHandle atk_object_get_attributes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
@@ -604,6 +605,7 @@ internal class AtkObjectHandleExterns
 	internal static extern string atk_object_get_object_locale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_object_get_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
@@ -616,15 +618,19 @@ internal class AtkObjectHandleExterns
 	internal static extern void atk_object_notify_state_change([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible, MentorLake.Atk.AtkState state, bool value);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_object_peek_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_object_ref_accessible_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible, int i);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRelationSetHandle>))]
 	internal static extern MentorLake.Atk.AtkRelationSetHandle atk_object_ref_relation_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
 	internal static extern MentorLake.Atk.AtkStateSetHandle atk_object_ref_state_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))] MentorLake.Atk.AtkObjectHandle accessible);
 
 	[DllImport(AtkLibrary.Name)]

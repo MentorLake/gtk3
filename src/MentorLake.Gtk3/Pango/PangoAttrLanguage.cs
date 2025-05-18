@@ -13,6 +13,7 @@ public static class PangoAttrLanguageExtensions
 internal class PangoAttrLanguageExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_language_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
 }

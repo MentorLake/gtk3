@@ -14,7 +14,7 @@ public static class GInitableHandleExtensions
 {
 	public static bool Init(this MentorLake.Gio.GInitableHandle initable, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GInitableHandle)");
+		if (initable.IsInvalid) throw new Exception("Invalid handle (GInitableHandle)");
 		var externCallResult = GInitableHandleExterns.g_initable_init(initable, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -47,12 +47,15 @@ internal class GInitableHandleExterns
 	internal static extern bool g_initable_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInitableHandleImpl>))] MentorLake.Gio.GInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_initable_new(MentorLake.GObject.GType object_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, IntPtr error, string first_property_name, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_initable_new_valist(MentorLake.GObject.GType object_type, string first_property_name, IntPtr var_args, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_initable_newv(MentorLake.GObject.GType object_type, uint n_parameters, MentorLake.GObject.GParameter[] parameters, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 }

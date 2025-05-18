@@ -14,55 +14,55 @@ public static class GtkToolShellHandleExtensions
 {
 	public static MentorLake.Pango.PangoEllipsizeMode GetEllipsizeMode(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_ellipsize_mode(shell);
 	}
 
 	public static MentorLake.Gtk.GtkIconSize GetIconSize(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_icon_size(shell);
 	}
 
 	public static MentorLake.Gtk.GtkOrientation GetOrientation(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_orientation(shell);
 	}
 
 	public static MentorLake.Gtk.GtkReliefStyle GetReliefStyle(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_relief_style(shell);
 	}
 
 	public static MentorLake.Gtk.GtkToolbarStyle GetStyle(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_style(shell);
 	}
 
 	public static float GetTextAlignment(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_text_alignment(shell);
 	}
 
 	public static MentorLake.Gtk.GtkOrientation GetTextOrientation(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_text_orientation(shell);
 	}
 
 	public static MentorLake.Gtk.GtkSizeGroupHandle GetTextSizeGroup(this MentorLake.Gtk.GtkToolShellHandle shell)
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		return GtkToolShellHandleExterns.gtk_tool_shell_get_text_size_group(shell);
 	}
 
 	public static T RebuildMenu<T>(this T shell) where T : GtkToolShellHandle
 	{
-		if (shell.IsInvalid || shell.IsClosed) throw new Exception("Invalid or closed handle (GtkToolShellHandle)");
+		if (shell.IsInvalid) throw new Exception("Invalid handle (GtkToolShellHandle)");
 		GtkToolShellHandleExterns.gtk_tool_shell_rebuild_menu(shell);
 		return shell;
 	}
@@ -93,6 +93,7 @@ internal class GtkToolShellHandleExterns
 	internal static extern MentorLake.Gtk.GtkOrientation gtk_tool_shell_get_text_orientation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolShellHandleImpl>))] MentorLake.Gtk.GtkToolShellHandle shell);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSizeGroupHandle>))]
 	internal static extern MentorLake.Gtk.GtkSizeGroupHandle gtk_tool_shell_get_text_size_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolShellHandleImpl>))] MentorLake.Gtk.GtkToolShellHandle shell);
 
 	[DllImport(GtkLibrary.Name)]

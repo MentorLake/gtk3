@@ -341,182 +341,182 @@ public static class GtkListBoxHandleExtensions
 {
 	public static T BindModel<T>(this T box, MentorLake.Gio.GListModelHandle model, MentorLake.Gtk.GtkListBoxCreateWidgetFunc create_widget_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_free_func) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_bind_model(box, model, create_widget_func, user_data, user_data_free_func);
 		return box;
 	}
 
 	public static T DragHighlightRow<T>(this T box, MentorLake.Gtk.GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_drag_highlight_row(box, row);
 		return box;
 	}
 
 	public static T DragUnhighlightRow<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_drag_unhighlight_row(box);
 		return box;
 	}
 
 	public static bool GetActivateOnSingleClick(this MentorLake.Gtk.GtkListBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_activate_on_single_click(box);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetAdjustment(this MentorLake.Gtk.GtkListBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_adjustment(box);
 	}
 
 	public static MentorLake.Gtk.GtkListBoxRowHandle GetRowAtIndex(this MentorLake.Gtk.GtkListBoxHandle box, int index_)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_row_at_index(box, index_);
 	}
 
 	public static MentorLake.Gtk.GtkListBoxRowHandle GetRowAtY(this MentorLake.Gtk.GtkListBoxHandle box, int y)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_row_at_y(box, y);
 	}
 
 	public static MentorLake.Gtk.GtkListBoxRowHandle GetSelectedRow(this MentorLake.Gtk.GtkListBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_selected_row(box);
 	}
 
 	public static MentorLake.GLib.GListHandle GetSelectedRows(this MentorLake.Gtk.GtkListBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_selected_rows(box);
 	}
 
 	public static MentorLake.Gtk.GtkSelectionMode GetSelectionMode(this MentorLake.Gtk.GtkListBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		return GtkListBoxHandleExterns.gtk_list_box_get_selection_mode(box);
 	}
 
 	public static T Insert<T>(this T box, MentorLake.Gtk.GtkWidgetHandle child, int position) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_insert(box, child, position);
 		return box;
 	}
 
 	public static T InvalidateFilter<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_invalidate_filter(box);
 		return box;
 	}
 
 	public static T InvalidateHeaders<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_invalidate_headers(box);
 		return box;
 	}
 
 	public static T InvalidateSort<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_invalidate_sort(box);
 		return box;
 	}
 
 	public static T Prepend<T>(this T box, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_prepend(box, child);
 		return box;
 	}
 
 	public static T SelectAll<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_select_all(box);
 		return box;
 	}
 
 	public static T SelectRow<T>(this T box, MentorLake.Gtk.GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_select_row(box, row);
 		return box;
 	}
 
 	public static T SelectedForeach<T>(this T box, MentorLake.Gtk.GtkListBoxForeachFunc func, IntPtr data) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_selected_foreach(box, func, data);
 		return box;
 	}
 
 	public static T SetActivateOnSingleClick<T>(this T box, bool single) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_activate_on_single_click(box, single);
 		return box;
 	}
 
 	public static T SetAdjustment<T>(this T box, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_adjustment(box, adjustment);
 		return box;
 	}
 
 	public static T SetFilterFunc<T>(this T box, MentorLake.Gtk.GtkListBoxFilterFunc filter_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_filter_func(box, filter_func, user_data, destroy);
 		return box;
 	}
 
 	public static T SetHeaderFunc<T>(this T box, MentorLake.Gtk.GtkListBoxUpdateHeaderFunc update_header, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_header_func(box, update_header, user_data, destroy);
 		return box;
 	}
 
 	public static T SetPlaceholder<T>(this T box, MentorLake.Gtk.GtkWidgetHandle placeholder) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_placeholder(box, placeholder);
 		return box;
 	}
 
 	public static T SetSelectionMode<T>(this T box, MentorLake.Gtk.GtkSelectionMode mode) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_selection_mode(box, mode);
 		return box;
 	}
 
 	public static T SetSortFunc<T>(this T box, MentorLake.Gtk.GtkListBoxSortFunc sort_func, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_set_sort_func(box, sort_func, user_data, destroy);
 		return box;
 	}
 
 	public static T UnselectAll<T>(this T box) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_unselect_all(box);
 		return box;
 	}
 
 	public static T UnselectRow<T>(this T box, MentorLake.Gtk.GtkListBoxRowHandle row) where T : GtkListBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkListBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkListBoxHandle)");
 		GtkListBoxHandleExterns.gtk_list_box_unselect_row(box, row);
 		return box;
 	}
@@ -526,6 +526,7 @@ public static class GtkListBoxHandleExtensions
 internal class GtkListBoxHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))]
 	internal static extern MentorLake.Gtk.GtkListBoxHandle gtk_list_box_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -541,18 +542,23 @@ internal class GtkListBoxHandleExterns
 	internal static extern bool gtk_list_box_get_activate_on_single_click([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))]
 	internal static extern MentorLake.Gtk.GtkAdjustmentHandle gtk_list_box_get_adjustment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxRowHandle>))]
 	internal static extern MentorLake.Gtk.GtkListBoxRowHandle gtk_list_box_get_row_at_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box, int index_);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxRowHandle>))]
 	internal static extern MentorLake.Gtk.GtkListBoxRowHandle gtk_list_box_get_row_at_y([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box, int y);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxRowHandle>))]
 	internal static extern MentorLake.Gtk.GtkListBoxRowHandle gtk_list_box_get_selected_row([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_list_box_get_selected_rows([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkListBoxHandle>))] MentorLake.Gtk.GtkListBoxHandle box);
 
 	[DllImport(GtkLibrary.Name)]

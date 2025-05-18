@@ -57,55 +57,55 @@ public static class GTlsCertificateHandleExtensions
 {
 	public static MentorLake.GLib.GPtrArrayHandle GetDnsNames(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_dns_names(cert);
 	}
 
 	public static MentorLake.GLib.GPtrArrayHandle GetIpAddresses(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_ip_addresses(cert);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetIssuer(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_issuer(cert);
 	}
 
 	public static string GetIssuerName(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_issuer_name(cert);
 	}
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidAfter(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_not_valid_after(cert);
 	}
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidBefore(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_not_valid_before(cert);
 	}
 
 	public static string GetSubjectName(this MentorLake.Gio.GTlsCertificateHandle cert)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_get_subject_name(cert);
 	}
 
 	public static bool IsSame(this MentorLake.Gio.GTlsCertificateHandle cert_one, MentorLake.Gio.GTlsCertificateHandle cert_two)
 	{
-		if (cert_one.IsInvalid || cert_one.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert_one.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_is_same(cert_one, cert_two);
 	}
 
 	public static MentorLake.Gio.GTlsCertificateFlags Verify(this MentorLake.Gio.GTlsCertificateHandle cert, MentorLake.Gio.GSocketConnectableHandle identity, MentorLake.Gio.GTlsCertificateHandle trusted_ca)
 	{
-		if (cert.IsInvalid || cert.IsClosed) throw new Exception("Invalid or closed handle (GTlsCertificateHandle)");
+		if (cert.IsInvalid) throw new Exception("Invalid handle (GTlsCertificateHandle)");
 		return GTlsCertificateHandleExterns.g_tls_certificate_verify(cert, identity, trusted_ca);
 	}
 
@@ -114,30 +114,39 @@ public static class GTlsCertificateHandleExtensions
 internal class GTlsCertificateHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file(string file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_file_with_password(string file, string password, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_files(string cert_file, string key_file, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pem(string data, UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs11_uris(string pkcs11_uri, string private_key_pkcs11_uri, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_new_from_pkcs12(byte[] data, UIntPtr length, string password, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_tls_certificate_get_dns_names([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_tls_certificate_get_ip_addresses([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))]
 	internal static extern MentorLake.Gio.GTlsCertificateHandle g_tls_certificate_get_issuer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
@@ -145,9 +154,11 @@ internal class GTlsCertificateHandleExterns
 	internal static extern string g_tls_certificate_get_issuer_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))]
 	internal static extern MentorLake.GLib.GDateTimeHandle g_tls_certificate_get_not_valid_after([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateTimeHandle>))]
 	internal static extern MentorLake.GLib.GDateTimeHandle g_tls_certificate_get_not_valid_before([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert);
 
 	[DllImport(GioLibrary.Name)]
@@ -161,6 +172,7 @@ internal class GTlsCertificateHandleExterns
 	internal static extern MentorLake.Gio.GTlsCertificateFlags g_tls_certificate_verify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle cert, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle identity, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsCertificateHandle>))] MentorLake.Gio.GTlsCertificateHandle trusted_ca);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_tls_certificate_list_new_from_file(string file, out MentorLake.GLib.GErrorHandle error);
 
 }

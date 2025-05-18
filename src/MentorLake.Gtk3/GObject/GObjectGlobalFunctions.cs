@@ -1000,15 +1000,19 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_cclosure_marshal_generic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))] MentorLake.GObject.GClosureHandle closure, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle return_gvalue, uint n_param_values, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle param_values, IntPtr invocation_hint, IntPtr marshal_data);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle g_cclosure_new(MentorLake.GObject.GCallback callback_func, IntPtr user_data, MentorLake.GObject.GClosureNotify destroy_data);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle g_cclosure_new_object(MentorLake.GObject.GCallback callback_func, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle g_cclosure_new_object_swap(MentorLake.GObject.GCallback callback_func, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle g_cclosure_new_swap(MentorLake.GObject.GCallback callback_func, IntPtr user_data, MentorLake.GObject.GClosureNotify destroy_data);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1021,12 +1025,15 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_enum_complete_type_info(MentorLake.GObject.GType g_enum_type, out MentorLake.GObject.GTypeInfo info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumValueHandle>))] MentorLake.GObject.GEnumValueHandle const_values);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumValueHandle>))]
 	internal static extern MentorLake.GObject.GEnumValueHandle g_enum_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumClassHandle>))] MentorLake.GObject.GEnumClassHandle enum_class, int value);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumValueHandle>))]
 	internal static extern MentorLake.GObject.GEnumValueHandle g_enum_get_value_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumClassHandle>))] MentorLake.GObject.GEnumClassHandle enum_class, string name);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumValueHandle>))]
 	internal static extern MentorLake.GObject.GEnumValueHandle g_enum_get_value_by_nick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GEnumClassHandle>))] MentorLake.GObject.GEnumClassHandle enum_class, string nick);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1040,12 +1047,15 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_flags_complete_type_info(MentorLake.GObject.GType g_flags_type, out MentorLake.GObject.GTypeInfo info, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsValueHandle>))] MentorLake.GObject.GFlagsValueHandle const_values);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsValueHandle>))]
 	internal static extern MentorLake.GObject.GFlagsValueHandle g_flags_get_first_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsClassHandle>))] MentorLake.GObject.GFlagsClassHandle flags_class, uint value);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsValueHandle>))]
 	internal static extern MentorLake.GObject.GFlagsValueHandle g_flags_get_value_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsClassHandle>))] MentorLake.GObject.GFlagsClassHandle flags_class, string name);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsValueHandle>))]
 	internal static extern MentorLake.GObject.GFlagsValueHandle g_flags_get_value_by_nick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GFlagsClassHandle>))] MentorLake.GObject.GFlagsClassHandle flags_class, string nick);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1059,72 +1069,95 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern MentorLake.GObject.GType g_gtype_get_type();
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_boolean(string name, string nick, string blurb, bool default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_boxed(string name, string nick, string blurb, MentorLake.GObject.GType boxed_type, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_char(string name, string nick, string blurb, byte minimum, byte maximum, byte default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_double(string name, string nick, string blurb, double minimum, double maximum, double default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_enum(string name, string nick, string blurb, MentorLake.GObject.GType enum_type, int default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_flags(string name, string nick, string blurb, MentorLake.GObject.GType flags_type, uint default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_float(string name, string nick, string blurb, float minimum, float maximum, float default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_gtype(string name, string nick, string blurb, MentorLake.GObject.GType is_a_type, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_int(string name, string nick, string blurb, int minimum, int maximum, int default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_int64(string name, string nick, string blurb, long minimum, long maximum, long default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_long(string name, string nick, string blurb, long minimum, long maximum, long default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_object(string name, string nick, string blurb, MentorLake.GObject.GType object_type, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_override(string name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle overridden);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_param(string name, string nick, string blurb, MentorLake.GObject.GType param_type, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_pointer(string name, string nick, string blurb, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_string(string name, string nick, string blurb, string default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_uchar(string name, string nick, string blurb, byte minimum, byte maximum, byte default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_uint(string name, string nick, string blurb, uint minimum, uint maximum, uint default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_uint64(string name, string nick, string blurb, ulong minimum, ulong maximum, ulong default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_ulong(string name, string nick, string blurb, ulong minimum, ulong maximum, ulong default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_unichar(string name, string nick, string blurb, char default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_value_array(string name, string nick, string blurb, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))] MentorLake.GObject.GParamSpecHandle element_spec, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_param_spec_variant(string name, string nick, string blurb, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle default_value, MentorLake.GObject.GParamFlags flags);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1191,6 +1224,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_signal_emitv(MentorLake.GObject.GValue[] instance_and_params, uint signal_id, MentorLake.GLib.GQuark detail, ref MentorLake.GObject.GValue return_value);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GSignalInvocationHintHandle>))]
 	internal static extern MentorLake.GObject.GSignalInvocationHintHandle g_signal_get_invocation_hint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle instance);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1273,6 +1307,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_signal_stop_emission_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle instance, string detailed_signal);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle g_signal_type_cclosure_new(MentorLake.GObject.GType itype, uint struct_offset);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1304,6 +1339,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_type_add_interface_static(MentorLake.GObject.GType instance_type, MentorLake.GObject.GType interface_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GInterfaceInfoHandle>))] MentorLake.GObject.GInterfaceInfoHandle info);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))]
 	internal static extern MentorLake.GObject.GTypeClassHandle g_type_check_class_cast([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))] MentorLake.GObject.GTypeClassHandle g_class, MentorLake.GObject.GType is_a_type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1313,6 +1349,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern bool g_type_check_instance([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInstanceHandle>))] MentorLake.GObject.GTypeInstanceHandle instance);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInstanceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInstanceHandle g_type_check_instance_cast([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInstanceHandle>))] MentorLake.GObject.GTypeInstanceHandle instance, MentorLake.GObject.GType iface_type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1337,21 +1374,27 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_type_class_adjust_private_offset(IntPtr g_class, int private_size_or_offset);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))]
 	internal static extern MentorLake.GObject.GTypeClassHandle g_type_class_peek(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))]
 	internal static extern MentorLake.GObject.GTypeClassHandle g_type_class_peek_static(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))]
 	internal static extern MentorLake.GObject.GTypeClassHandle g_type_class_ref(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInstanceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInstanceHandle g_type_create_instance(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInterfaceHandle g_type_default_interface_peek(MentorLake.GObject.GType g_type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInterfaceHandle g_type_default_interface_ref(MentorLake.GObject.GType g_type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1379,6 +1422,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern int g_type_get_instance_count(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypePluginHandleImpl>))]
 	internal static extern MentorLake.GObject.GTypePluginHandle g_type_get_plugin(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1397,12 +1441,14 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern void g_type_interface_add_prerequisite(MentorLake.GObject.GType interface_type, MentorLake.GObject.GType prerequisite_type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypePluginHandleImpl>))]
 	internal static extern MentorLake.GObject.GTypePluginHandle g_type_interface_get_plugin(MentorLake.GObject.GType instance_type, MentorLake.GObject.GType interface_type);
 
 	[DllImport(GObjectLibrary.Name)]
 	internal static extern MentorLake.GObject.GType g_type_interface_instantiatable_prerequisite(MentorLake.GObject.GType interface_type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInterfaceHandle g_type_interface_peek([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))] MentorLake.GObject.GTypeClassHandle instance_class, MentorLake.GObject.GType iface_type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -1463,6 +1509,7 @@ internal class GObjectGlobalFunctionsExterns
 	internal static extern bool g_type_test_flags(MentorLake.GObject.GType type, uint flags);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeValueTableHandle>))]
 	internal static extern MentorLake.GObject.GTypeValueTableHandle g_type_value_table_peek(MentorLake.GObject.GType type);
 
 	[DllImport(GObjectLibrary.Name)]

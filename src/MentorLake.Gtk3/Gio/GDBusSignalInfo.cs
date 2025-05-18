@@ -9,13 +9,13 @@ public static class GDBusSignalInfoExtensions
 {
 	public static MentorLake.Gio.GDBusSignalInfoHandle Ref(this MentorLake.Gio.GDBusSignalInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusSignalInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusSignalInfo)");
 		return GDBusSignalInfoExterns.g_dbus_signal_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusSignalInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusSignalInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusSignalInfo)");
 		GDBusSignalInfoExterns.g_dbus_signal_info_unref(info);
 	}
 
@@ -25,6 +25,7 @@ public static class GDBusSignalInfoExtensions
 internal class GDBusSignalInfoExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusSignalInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusSignalInfoHandle g_dbus_signal_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusSignalInfoHandle>))] MentorLake.Gio.GDBusSignalInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]

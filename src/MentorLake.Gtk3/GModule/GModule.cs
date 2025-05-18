@@ -9,25 +9,25 @@ public static class GModuleExtensions
 {
 	public static bool Close(this MentorLake.GModule.GModuleHandle module)
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GModule)");
 		return GModuleExterns.g_module_close(module);
 	}
 
 	public static void MakeResident(this MentorLake.GModule.GModuleHandle module)
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GModule)");
 		GModuleExterns.g_module_make_resident(module);
 	}
 
 	public static string Name(this MentorLake.GModule.GModuleHandle module)
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GModule)");
 		return GModuleExterns.g_module_name(module);
 	}
 
 	public static bool Symbol(this MentorLake.GModule.GModuleHandle module, string symbol_name, out IntPtr symbol)
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GModule)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GModule)");
 		return GModuleExterns.g_module_symbol(module, symbol_name, out symbol);
 	}
 
@@ -61,9 +61,11 @@ internal class GModuleExterns
 	internal static extern MentorLake.GLib.GQuark g_module_error_quark();
 
 	[DllImport(GModuleLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))]
 	internal static extern MentorLake.GModule.GModuleHandle g_module_open(string file_name, MentorLake.GModule.GModuleFlags flags);
 
 	[DllImport(GModuleLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GModule.GModuleHandle>))]
 	internal static extern MentorLake.GModule.GModuleHandle g_module_open_full(string file_name, MentorLake.GModule.GModuleFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GModuleLibrary.Name)]

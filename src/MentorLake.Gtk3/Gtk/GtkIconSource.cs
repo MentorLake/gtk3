@@ -14,121 +14,121 @@ public static class GtkIconSourceExtensions
 {
 	public static MentorLake.Gtk.GtkIconSourceHandle Copy(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_copy(source);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_free(source);
 	}
 
 	public static MentorLake.Gtk.GtkTextDirection GetDirection(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_direction(source);
 	}
 
 	public static bool GetDirectionWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_direction_wildcarded(source);
 	}
 
 	public static string GetFilename(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_filename(source);
 	}
 
 	public static string GetIconName(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_icon_name(source);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_pixbuf(source);
 	}
 
 	public static MentorLake.Gtk.GtkIconSize GetSize(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_size(source);
 	}
 
 	public static bool GetSizeWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_size_wildcarded(source);
 	}
 
 	public static MentorLake.Gtk.GtkStateType GetState(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_state(source);
 	}
 
 	public static bool GetStateWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		return GtkIconSourceExterns.gtk_icon_source_get_state_wildcarded(source);
 	}
 
 	public static void SetDirection(this MentorLake.Gtk.GtkIconSourceHandle source, MentorLake.Gtk.GtkTextDirection direction)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_direction(source, direction);
 	}
 
 	public static void SetDirectionWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source, bool setting)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_direction_wildcarded(source, setting);
 	}
 
 	public static void SetFilename(this MentorLake.Gtk.GtkIconSourceHandle source, string filename)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_filename(source, filename);
 	}
 
 	public static void SetIconName(this MentorLake.Gtk.GtkIconSourceHandle source, string icon_name)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_icon_name(source, icon_name);
 	}
 
 	public static void SetPixbuf(this MentorLake.Gtk.GtkIconSourceHandle source, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_pixbuf(source, pixbuf);
 	}
 
 	public static void SetSize(this MentorLake.Gtk.GtkIconSourceHandle source, MentorLake.Gtk.GtkIconSize size)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_size(source, size);
 	}
 
 	public static void SetSizeWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source, bool setting)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_size_wildcarded(source, setting);
 	}
 
 	public static void SetState(this MentorLake.Gtk.GtkIconSourceHandle source, MentorLake.Gtk.GtkStateType state)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_state(source, state);
 	}
 
 	public static void SetStateWildcarded(this MentorLake.Gtk.GtkIconSourceHandle source, bool setting)
 	{
-		if (source.IsInvalid || source.IsClosed) throw new Exception("Invalid or closed handle (GtkIconSource)");
+		if (source.IsInvalid) throw new Exception("Invalid handle (GtkIconSource)");
 		GtkIconSourceExterns.gtk_icon_source_set_state_wildcarded(source, setting);
 	}
 
@@ -138,9 +138,11 @@ public static class GtkIconSourceExtensions
 internal class GtkIconSourceExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))]
 	internal static extern MentorLake.Gtk.GtkIconSourceHandle gtk_icon_source_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))]
 	internal static extern MentorLake.Gtk.GtkIconSourceHandle gtk_icon_source_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
 
 	[DllImport(GtkLibrary.Name)]
@@ -161,6 +163,7 @@ internal class GtkIconSourceExterns
 	internal static extern string gtk_icon_source_get_icon_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_icon_source_get_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSourceHandle>))] MentorLake.Gtk.GtkIconSourceHandle source);
 
 	[DllImport(GtkLibrary.Name)]

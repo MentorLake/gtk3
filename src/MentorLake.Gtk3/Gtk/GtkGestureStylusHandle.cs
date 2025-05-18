@@ -189,19 +189,19 @@ public static class GtkGestureStylusHandleExtensions
 {
 	public static bool GetAxes(this MentorLake.Gtk.GtkGestureStylusHandle gesture, MentorLake.Gdk.GdkAxisUse[] axes, out double[] values)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_axes(gesture, axes, out values);
 	}
 
 	public static bool GetAxis(this MentorLake.Gtk.GtkGestureStylusHandle gesture, MentorLake.Gdk.GdkAxisUse axis, out double value)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_axis(gesture, axis, out value);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceToolHandle GetDeviceTool(this MentorLake.Gtk.GtkGestureStylusHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureStylusHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureStylusHandle)");
 		return GtkGestureStylusHandleExterns.gtk_gesture_stylus_get_device_tool(gesture);
 	}
 
@@ -210,6 +210,7 @@ public static class GtkGestureStylusHandleExtensions
 internal class GtkGestureStylusHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureStylusHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureStylusHandle gtk_gesture_stylus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -219,6 +220,7 @@ internal class GtkGestureStylusHandleExterns
 	internal static extern bool gtk_gesture_stylus_get_axis([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureStylusHandle>))] MentorLake.Gtk.GtkGestureStylusHandle gesture, MentorLake.Gdk.GdkAxisUse axis, out double value);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceToolHandle>))]
 	internal static extern MentorLake.Gdk.GdkDeviceToolHandle gtk_gesture_stylus_get_device_tool([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureStylusHandle>))] MentorLake.Gtk.GtkGestureStylusHandle gesture);
 
 }

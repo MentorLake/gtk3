@@ -510,31 +510,31 @@ public static class GVolumeMonitorHandleExtensions
 {
 	public static MentorLake.GLib.GListHandle GetConnectedDrives(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
-		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
+		if (volume_monitor.IsInvalid) throw new Exception("Invalid handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_connected_drives(volume_monitor);
 	}
 
 	public static MentorLake.Gio.GMountHandle GetMountForUuid(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid)
 	{
-		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
+		if (volume_monitor.IsInvalid) throw new Exception("Invalid handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_mount_for_uuid(volume_monitor, uuid);
 	}
 
 	public static MentorLake.GLib.GListHandle GetMounts(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
-		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
+		if (volume_monitor.IsInvalid) throw new Exception("Invalid handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_mounts(volume_monitor);
 	}
 
 	public static MentorLake.Gio.GVolumeHandle GetVolumeForUuid(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid)
 	{
-		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
+		if (volume_monitor.IsInvalid) throw new Exception("Invalid handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_volume_for_uuid(volume_monitor, uuid);
 	}
 
 	public static MentorLake.GLib.GListHandle GetVolumes(this MentorLake.Gio.GVolumeMonitorHandle volume_monitor)
 	{
-		if (volume_monitor.IsInvalid || volume_monitor.IsClosed) throw new Exception("Invalid or closed handle (GVolumeMonitorHandle)");
+		if (volume_monitor.IsInvalid) throw new Exception("Invalid handle (GVolumeMonitorHandle)");
 		return GVolumeMonitorHandleExterns.g_volume_monitor_get_volumes(volume_monitor);
 	}
 
@@ -543,24 +543,31 @@ public static class GVolumeMonitorHandleExtensions
 internal class GVolumeMonitorHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_volume_monitor_get_connected_drives([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))] MentorLake.Gio.GVolumeMonitorHandle volume_monitor);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMountHandleImpl>))]
 	internal static extern MentorLake.Gio.GMountHandle g_volume_monitor_get_mount_for_uuid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))] MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_volume_monitor_get_mounts([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))] MentorLake.Gio.GVolumeMonitorHandle volume_monitor);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeHandleImpl>))]
 	internal static extern MentorLake.Gio.GVolumeHandle g_volume_monitor_get_volume_for_uuid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))] MentorLake.Gio.GVolumeMonitorHandle volume_monitor, string uuid);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_volume_monitor_get_volumes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))] MentorLake.Gio.GVolumeMonitorHandle volume_monitor);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeHandleImpl>))]
 	internal static extern MentorLake.Gio.GVolumeHandle g_volume_monitor_adopt_orphan_mount([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMountHandleImpl>))] MentorLake.Gio.GMountHandle mount);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))]
 	internal static extern MentorLake.Gio.GVolumeMonitorHandle g_volume_monitor_get();
 
 }

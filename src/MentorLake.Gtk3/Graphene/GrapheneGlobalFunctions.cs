@@ -137,81 +137,107 @@ public class GrapheneGlobalFunctions
 internal class GrapheneGlobalFunctionsExterns
 {
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_empty();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_infinite();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_minus_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_one_minus_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_box_tHandle graphene_box_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_point3d_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_point3d_tHandle graphene_point3d_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_point_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_point_tHandle graphene_point_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_rect_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_rect_tHandle graphene_rect_alloc();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_rect_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_rect_tHandle graphene_rect_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_size_tHandle graphene_size_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec2_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec2_tHandle graphene_vec2_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec2_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec2_tHandle graphene_vec2_x_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec2_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec2_tHandle graphene_vec2_y_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec2_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec2_tHandle graphene_vec2_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec3_tHandle graphene_vec3_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec3_tHandle graphene_vec3_x_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec3_tHandle graphene_vec3_y_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec3_tHandle graphene_vec3_z_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec3_tHandle graphene_vec3_zero();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_one();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_w_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_x_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_y_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_z_axis();
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec4_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_vec4_tHandle graphene_vec4_zero();
 
 }

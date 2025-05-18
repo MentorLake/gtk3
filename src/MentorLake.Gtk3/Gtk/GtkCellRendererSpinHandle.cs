@@ -16,6 +16,7 @@ public static class GtkCellRendererSpinHandleExtensions
 internal class GtkCellRendererSpinHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererSpinHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellRendererSpinHandle gtk_cell_renderer_spin_new();
 
 }

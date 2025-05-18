@@ -13,14 +13,14 @@ public static class PangoXftRendererHandleExtensions
 {
 	public static T SetDefaultColor<T>(this T xftrenderer, MentorLake.Pango.PangoColorHandle default_color) where T : PangoXftRendererHandle
 	{
-		if (xftrenderer.IsInvalid || xftrenderer.IsClosed) throw new Exception("Invalid or closed handle (PangoXftRendererHandle)");
+		if (xftrenderer.IsInvalid) throw new Exception("Invalid handle (PangoXftRendererHandle)");
 		PangoXftRendererHandleExterns.pango_xft_renderer_set_default_color(xftrenderer, default_color);
 		return xftrenderer;
 	}
 
 	public static T SetDraw<T>(this T xftrenderer, MentorLake.xft.XftDrawHandle draw) where T : PangoXftRendererHandle
 	{
-		if (xftrenderer.IsInvalid || xftrenderer.IsClosed) throw new Exception("Invalid or closed handle (PangoXftRendererHandle)");
+		if (xftrenderer.IsInvalid) throw new Exception("Invalid handle (PangoXftRendererHandle)");
 		PangoXftRendererHandleExterns.pango_xft_renderer_set_draw(xftrenderer, draw);
 		return xftrenderer;
 	}
@@ -30,6 +30,7 @@ public static class PangoXftRendererHandleExtensions
 internal class PangoXftRendererHandleExterns
 {
 	[DllImport(PangoXftLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.PangoXft.PangoXftRendererHandle>))]
 	internal static extern MentorLake.PangoXft.PangoXftRendererHandle pango_xft_renderer_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.xlib.DisplayHandle>))] MentorLake.xlib.DisplayHandle display, int screen);
 
 	[DllImport(PangoXftLibrary.Name)]

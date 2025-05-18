@@ -110,21 +110,21 @@ public static class GSimpleActionHandleExtensions
 {
 	public static T SetEnabled<T>(this T simple, bool enabled) where T : GSimpleActionHandle
 	{
-		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
+		if (simple.IsInvalid) throw new Exception("Invalid handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_enabled(simple, enabled);
 		return simple;
 	}
 
 	public static T SetState<T>(this T simple, MentorLake.GLib.GVariantHandle value) where T : GSimpleActionHandle
 	{
-		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
+		if (simple.IsInvalid) throw new Exception("Invalid handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_state(simple, value);
 		return simple;
 	}
 
 	public static T SetStateHint<T>(this T simple, MentorLake.GLib.GVariantHandle state_hint) where T : GSimpleActionHandle
 	{
-		if (simple.IsInvalid || simple.IsClosed) throw new Exception("Invalid or closed handle (GSimpleActionHandle)");
+		if (simple.IsInvalid) throw new Exception("Invalid handle (GSimpleActionHandle)");
 		GSimpleActionHandleExterns.g_simple_action_set_state_hint(simple, state_hint);
 		return simple;
 	}
@@ -134,9 +134,11 @@ public static class GSimpleActionHandleExtensions
 internal class GSimpleActionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSimpleActionHandle>))]
 	internal static extern MentorLake.Gio.GSimpleActionHandle g_simple_action_new(string name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle parameter_type);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSimpleActionHandle>))]
 	internal static extern MentorLake.Gio.GSimpleActionHandle g_simple_action_new_stateful(string name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle parameter_type, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] MentorLake.GLib.GVariantHandle state);
 
 	[DllImport(GioLibrary.Name)]

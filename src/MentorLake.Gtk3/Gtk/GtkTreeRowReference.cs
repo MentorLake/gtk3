@@ -19,31 +19,31 @@ public static class GtkTreeRowReferenceExtensions
 {
 	public static MentorLake.Gtk.GtkTreeRowReferenceHandle Copy(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
-		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
+		if (reference.IsInvalid) throw new Exception("Invalid handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_copy(reference);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
-		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
+		if (reference.IsInvalid) throw new Exception("Invalid handle (GtkTreeRowReference)");
 		GtkTreeRowReferenceExterns.gtk_tree_row_reference_free(reference);
 	}
 
 	public static MentorLake.Gtk.GtkTreeModelHandle GetModel(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
-		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
+		if (reference.IsInvalid) throw new Exception("Invalid handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_get_model(reference);
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle GetPath(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
-		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
+		if (reference.IsInvalid) throw new Exception("Invalid handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_get_path(reference);
 	}
 
 	public static bool Valid(this MentorLake.Gtk.GtkTreeRowReferenceHandle reference)
 	{
-		if (reference.IsInvalid || reference.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeRowReference)");
+		if (reference.IsInvalid) throw new Exception("Invalid handle (GtkTreeRowReference)");
 		return GtkTreeRowReferenceExterns.gtk_tree_row_reference_valid(reference);
 	}
 
@@ -53,21 +53,26 @@ public static class GtkTreeRowReferenceExtensions
 internal class GtkTreeRowReferenceExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreeRowReferenceHandle gtk_tree_row_reference_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] MentorLake.Gtk.GtkTreeModelHandle model, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreePathHandle>))] MentorLake.Gtk.GtkTreePathHandle path);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreeRowReferenceHandle gtk_tree_row_reference_new_proxy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle proxy, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] MentorLake.Gtk.GtkTreeModelHandle model, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreePathHandle>))] MentorLake.Gtk.GtkTreePathHandle path);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreeRowReferenceHandle gtk_tree_row_reference_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))] MentorLake.Gtk.GtkTreeRowReferenceHandle reference);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_tree_row_reference_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))] MentorLake.Gtk.GtkTreeRowReferenceHandle reference);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))]
 	internal static extern MentorLake.Gtk.GtkTreeModelHandle gtk_tree_row_reference_get_model([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))] MentorLake.Gtk.GtkTreeRowReferenceHandle reference);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreePathHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreePathHandle gtk_tree_row_reference_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeRowReferenceHandle>))] MentorLake.Gtk.GtkTreeRowReferenceHandle reference);
 
 	[DllImport(GtkLibrary.Name)]

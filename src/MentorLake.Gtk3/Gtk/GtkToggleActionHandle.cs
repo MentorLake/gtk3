@@ -64,33 +64,33 @@ public static class GtkToggleActionHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkToggleActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkToggleActionHandle)");
 		return GtkToggleActionHandleExterns.gtk_toggle_action_get_active(action);
 	}
 
 	public static bool GetDrawAsRadio(this MentorLake.Gtk.GtkToggleActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkToggleActionHandle)");
 		return GtkToggleActionHandleExterns.gtk_toggle_action_get_draw_as_radio(action);
 	}
 
 	public static T SetActive<T>(this T action, bool is_active) where T : GtkToggleActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkToggleActionHandle)");
 		GtkToggleActionHandleExterns.gtk_toggle_action_set_active(action, is_active);
 		return action;
 	}
 
 	public static T SetDrawAsRadio<T>(this T action, bool draw_as_radio) where T : GtkToggleActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkToggleActionHandle)");
 		GtkToggleActionHandleExterns.gtk_toggle_action_set_draw_as_radio(action, draw_as_radio);
 		return action;
 	}
 
 	public static T Toggled<T>(this T action) where T : GtkToggleActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkToggleActionHandle)");
 		GtkToggleActionHandleExterns.gtk_toggle_action_toggled(action);
 		return action;
 	}
@@ -100,6 +100,7 @@ public static class GtkToggleActionHandleExtensions
 internal class GtkToggleActionHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToggleActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkToggleActionHandle gtk_toggle_action_new(string name, string label, string tooltip, string stock_id);
 
 	[DllImport(GtkLibrary.Name)]

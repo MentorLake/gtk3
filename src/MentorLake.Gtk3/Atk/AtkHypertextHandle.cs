@@ -14,19 +14,19 @@ public static class AtkHypertextHandleExtensions
 {
 	public static MentorLake.Atk.AtkHyperlinkHandle GetLink(this MentorLake.Atk.AtkHypertextHandle hypertext, int link_index)
 	{
-		if (hypertext.IsInvalid || hypertext.IsClosed) throw new Exception("Invalid or closed handle (AtkHypertextHandle)");
+		if (hypertext.IsInvalid) throw new Exception("Invalid handle (AtkHypertextHandle)");
 		return AtkHypertextHandleExterns.atk_hypertext_get_link(hypertext, link_index);
 	}
 
 	public static int GetLinkIndex(this MentorLake.Atk.AtkHypertextHandle hypertext, int char_index)
 	{
-		if (hypertext.IsInvalid || hypertext.IsClosed) throw new Exception("Invalid or closed handle (AtkHypertextHandle)");
+		if (hypertext.IsInvalid) throw new Exception("Invalid handle (AtkHypertextHandle)");
 		return AtkHypertextHandleExterns.atk_hypertext_get_link_index(hypertext, char_index);
 	}
 
 	public static int GetNLinks(this MentorLake.Atk.AtkHypertextHandle hypertext)
 	{
-		if (hypertext.IsInvalid || hypertext.IsClosed) throw new Exception("Invalid or closed handle (AtkHypertextHandle)");
+		if (hypertext.IsInvalid) throw new Exception("Invalid handle (AtkHypertextHandle)");
 		return AtkHypertextHandleExterns.atk_hypertext_get_n_links(hypertext);
 	}
 
@@ -35,6 +35,7 @@ public static class AtkHypertextHandleExtensions
 internal class AtkHypertextHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHyperlinkHandle>))]
 	internal static extern MentorLake.Atk.AtkHyperlinkHandle atk_hypertext_get_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHypertextHandleImpl>))] MentorLake.Atk.AtkHypertextHandle hypertext, int link_index);
 
 	[DllImport(AtkLibrary.Name)]

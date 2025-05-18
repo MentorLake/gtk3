@@ -57,9 +57,11 @@ public class PangoXftGlobalFunctions
 internal class PangoXftGlobalFunctionsExterns
 {
 	[DllImport(PangoXftLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle pango_xft_get_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.xlib.DisplayHandle>))] MentorLake.xlib.DisplayHandle display, int screen);
 
 	[DllImport(PangoXftLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_xft_get_font_map([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.xlib.DisplayHandle>))] MentorLake.xlib.DisplayHandle display, int screen);
 
 	[DllImport(PangoXftLibrary.Name)]

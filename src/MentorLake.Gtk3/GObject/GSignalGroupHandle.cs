@@ -104,69 +104,69 @@ public static class GSignalGroupHandleExtensions
 {
 	public static T Block<T>(this T self) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_block(self);
 		return self;
 	}
 
 	public static T Connect<T>(this T self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect(self, detailed_signal, c_handler, data);
 		return self;
 	}
 
 	public static T ConnectAfter<T>(this T self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect_after(self, detailed_signal, c_handler, data);
 		return self;
 	}
 
 	public static T ConnectClosure<T>(this T self, string detailed_signal, MentorLake.GObject.GClosureHandle closure, bool after) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect_closure(self, detailed_signal, closure, after);
 		return self;
 	}
 
 	public static T ConnectData<T>(this T self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data, MentorLake.GObject.GClosureNotify notify, MentorLake.GObject.GConnectFlags flags) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect_data(self, detailed_signal, c_handler, data, notify, flags);
 		return self;
 	}
 
 	public static T ConnectObject<T>(this T self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr @object, MentorLake.GObject.GConnectFlags flags) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect_object(self, detailed_signal, c_handler, @object, flags);
 		return self;
 	}
 
 	public static T ConnectSwapped<T>(this T self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_connect_swapped(self, detailed_signal, c_handler, data);
 		return self;
 	}
 
 	public static MentorLake.GObject.GObjectHandle DupTarget(this MentorLake.GObject.GSignalGroupHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		return GSignalGroupHandleExterns.g_signal_group_dup_target(self);
 	}
 
 	public static T SetTarget<T>(this T self, MentorLake.GObject.GObjectHandle target) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_set_target(self, target);
 		return self;
 	}
 
 	public static T Unblock<T>(this T self) where T : GSignalGroupHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSignalGroupHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSignalGroupHandle)");
 		GSignalGroupHandleExterns.g_signal_group_unblock(self);
 		return self;
 	}
@@ -176,6 +176,7 @@ public static class GSignalGroupHandleExtensions
 internal class GSignalGroupHandleExterns
 {
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GObject.GSignalGroupHandle>))]
 	internal static extern MentorLake.GObject.GSignalGroupHandle g_signal_group_new(MentorLake.GObject.GType target_type);
 
 	[DllImport(GObjectLibrary.Name)]
@@ -200,6 +201,7 @@ internal class GSignalGroupHandleExterns
 	internal static extern void g_signal_group_connect_swapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GSignalGroupHandle>))] MentorLake.GObject.GSignalGroupHandle self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_signal_group_dup_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GSignalGroupHandle>))] MentorLake.GObject.GSignalGroupHandle self);
 
 	[DllImport(GObjectLibrary.Name)]

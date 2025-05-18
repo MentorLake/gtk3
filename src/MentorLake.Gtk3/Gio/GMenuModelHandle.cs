@@ -62,50 +62,50 @@ public static class GMenuModelHandleExtensions
 {
 	public static bool GetItemAttribute(this MentorLake.Gio.GMenuModelHandle model, int item_index, string attribute, string format_string, IntPtr @__arglist)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_get_item_attribute(model, item_index, attribute, format_string, @__arglist);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetItemAttributeValue(this MentorLake.Gio.GMenuModelHandle model, int item_index, string attribute, MentorLake.GLib.GVariantTypeHandle expected_type)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_get_item_attribute_value(model, item_index, attribute, expected_type);
 	}
 
 	public static MentorLake.Gio.GMenuModelHandle GetItemLink(this MentorLake.Gio.GMenuModelHandle model, int item_index, string link)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_get_item_link(model, item_index, link);
 	}
 
 	public static int GetNItems(this MentorLake.Gio.GMenuModelHandle model)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_get_n_items(model);
 	}
 
 	public static bool IsMutable(this MentorLake.Gio.GMenuModelHandle model)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_is_mutable(model);
 	}
 
 	public static T ItemsChanged<T>(this T model, int position, int removed, int added) where T : GMenuModelHandle
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		GMenuModelHandleExterns.g_menu_model_items_changed(model, position, removed, added);
 		return model;
 	}
 
 	public static MentorLake.Gio.GMenuAttributeIterHandle IterateItemAttributes(this MentorLake.Gio.GMenuModelHandle model, int item_index)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_iterate_item_attributes(model, item_index);
 	}
 
 	public static MentorLake.Gio.GMenuLinkIterHandle IterateItemLinks(this MentorLake.Gio.GMenuModelHandle model, int item_index)
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GMenuModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GMenuModelHandle)");
 		return GMenuModelHandleExterns.g_menu_model_iterate_item_links(model, item_index);
 	}
 
@@ -117,9 +117,11 @@ internal class GMenuModelHandleExterns
 	internal static extern bool g_menu_model_get_item_attribute([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int item_index, string attribute, string format_string, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))]
 	internal static extern MentorLake.GLib.GVariantHandle g_menu_model_get_item_attribute_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int item_index, string attribute, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle expected_type);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GMenuModelHandle g_menu_model_get_item_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int item_index, string link);
 
 	[DllImport(GioLibrary.Name)]
@@ -132,9 +134,11 @@ internal class GMenuModelHandleExterns
 	internal static extern void g_menu_model_items_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int position, int removed, int added);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuAttributeIterHandle>))]
 	internal static extern MentorLake.Gio.GMenuAttributeIterHandle g_menu_model_iterate_item_attributes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int item_index);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuLinkIterHandle>))]
 	internal static extern MentorLake.Gio.GMenuLinkIterHandle g_menu_model_iterate_item_links([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] MentorLake.Gio.GMenuModelHandle model, int item_index);
 
 }

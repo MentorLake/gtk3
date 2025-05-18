@@ -18,40 +18,40 @@ public static class GTestDBusHandleExtensions
 {
 	public static T AddServiceDir<T>(this T self, string path) where T : GTestDBusHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		GTestDBusHandleExterns.g_test_dbus_add_service_dir(self, path);
 		return self;
 	}
 
 	public static T Down<T>(this T self) where T : GTestDBusHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		GTestDBusHandleExterns.g_test_dbus_down(self);
 		return self;
 	}
 
 	public static string GetBusAddress(this MentorLake.Gio.GTestDBusHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		return GTestDBusHandleExterns.g_test_dbus_get_bus_address(self);
 	}
 
 	public static MentorLake.Gio.GTestDBusFlags GetFlags(this MentorLake.Gio.GTestDBusHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		return GTestDBusHandleExterns.g_test_dbus_get_flags(self);
 	}
 
 	public static T Stop<T>(this T self) where T : GTestDBusHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		GTestDBusHandleExterns.g_test_dbus_stop(self);
 		return self;
 	}
 
 	public static T Up<T>(this T self) where T : GTestDBusHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GTestDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GTestDBusHandle)");
 		GTestDBusHandleExterns.g_test_dbus_up(self);
 		return self;
 	}
@@ -61,6 +61,7 @@ public static class GTestDBusHandleExtensions
 internal class GTestDBusHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTestDBusHandle>))]
 	internal static extern MentorLake.Gio.GTestDBusHandle g_test_dbus_new(MentorLake.Gio.GTestDBusFlags flags);
 
 	[DllImport(GioLibrary.Name)]

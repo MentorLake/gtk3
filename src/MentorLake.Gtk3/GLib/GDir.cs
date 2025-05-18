@@ -16,31 +16,31 @@ public static class GDirExtensions
 {
 	public static void Close(this MentorLake.GLib.GDirHandle dir)
 	{
-		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
+		if (dir.IsInvalid) throw new Exception("Invalid handle (GDir)");
 		GDirExterns.g_dir_close(dir);
 	}
 
 	public static string ReadName(this MentorLake.GLib.GDirHandle dir)
 	{
-		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
+		if (dir.IsInvalid) throw new Exception("Invalid handle (GDir)");
 		return GDirExterns.g_dir_read_name(dir);
 	}
 
 	public static MentorLake.GLib.GDirHandle Ref(this MentorLake.GLib.GDirHandle dir)
 	{
-		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
+		if (dir.IsInvalid) throw new Exception("Invalid handle (GDir)");
 		return GDirExterns.g_dir_ref(dir);
 	}
 
 	public static void Rewind(this MentorLake.GLib.GDirHandle dir)
 	{
-		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
+		if (dir.IsInvalid) throw new Exception("Invalid handle (GDir)");
 		GDirExterns.g_dir_rewind(dir);
 	}
 
 	public static void Unref(this MentorLake.GLib.GDirHandle dir)
 	{
-		if (dir.IsInvalid || dir.IsClosed) throw new Exception("Invalid or closed handle (GDir)");
+		if (dir.IsInvalid) throw new Exception("Invalid handle (GDir)");
 		GDirExterns.g_dir_unref(dir);
 	}
 
@@ -50,6 +50,7 @@ public static class GDirExtensions
 internal class GDirExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))]
 	internal static extern MentorLake.GLib.GDirHandle g_dir_open(string path, uint flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
@@ -60,6 +61,7 @@ internal class GDirExterns
 	internal static extern string g_dir_read_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))]
 	internal static extern MentorLake.GLib.GDirHandle g_dir_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDirHandle>))] MentorLake.GLib.GDirHandle dir);
 
 	[DllImport(GLibLibrary.Name)]

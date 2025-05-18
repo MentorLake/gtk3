@@ -13,6 +13,7 @@ public static class PangoAttrFontDescExtensions
 internal class PangoAttrFontDescExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_desc_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))] MentorLake.Pango.PangoFontDescriptionHandle desc);
 
 }

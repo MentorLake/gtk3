@@ -13,43 +13,43 @@ public static class GProxyAddressHandleExtensions
 {
 	public static string GetDestinationHostname(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_hostname(proxy);
 	}
 
 	public static ushort GetDestinationPort(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_port(proxy);
 	}
 
 	public static string GetDestinationProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_destination_protocol(proxy);
 	}
 
 	public static string GetPassword(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_password(proxy);
 	}
 
 	public static string GetProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_protocol(proxy);
 	}
 
 	public static string GetUri(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_uri(proxy);
 	}
 
 	public static string GetUsername(this MentorLake.Gio.GProxyAddressHandle proxy)
 	{
-		if (proxy.IsInvalid || proxy.IsClosed) throw new Exception("Invalid or closed handle (GProxyAddressHandle)");
+		if (proxy.IsInvalid) throw new Exception("Invalid handle (GProxyAddressHandle)");
 		return GProxyAddressHandleExterns.g_proxy_address_get_username(proxy);
 	}
 
@@ -58,6 +58,7 @@ public static class GProxyAddressHandleExtensions
 internal class GProxyAddressHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GProxyAddressHandle>))]
 	internal static extern MentorLake.Gio.GProxyAddressHandle g_proxy_address_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GInetAddressHandle>))] MentorLake.Gio.GInetAddressHandle inetaddr, ushort port, string protocol, string dest_hostname, ushort dest_port, string username, string password);
 
 	[DllImport(GioLibrary.Name)]

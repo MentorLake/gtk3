@@ -13,6 +13,7 @@ public static class GTypeValueTableExtensions
 internal class GTypeValueTableExterns
 {
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeValueTableHandle>))]
 	internal static extern MentorLake.GObject.GTypeValueTableHandle g_type_value_table_peek(MentorLake.GObject.GType type);
 
 }

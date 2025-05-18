@@ -18,65 +18,65 @@ public static class GtkNumerableIconHandleExtensions
 {
 	public static MentorLake.Gio.GIconHandle GetBackgroundGicon(this MentorLake.Gtk.GtkNumerableIconHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		return GtkNumerableIconHandleExterns.gtk_numerable_icon_get_background_gicon(self);
 	}
 
 	public static string GetBackgroundIconName(this MentorLake.Gtk.GtkNumerableIconHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		return GtkNumerableIconHandleExterns.gtk_numerable_icon_get_background_icon_name(self);
 	}
 
 	public static int GetCount(this MentorLake.Gtk.GtkNumerableIconHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		return GtkNumerableIconHandleExterns.gtk_numerable_icon_get_count(self);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkNumerableIconHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		return GtkNumerableIconHandleExterns.gtk_numerable_icon_get_label(self);
 	}
 
 	public static MentorLake.Gtk.GtkStyleContextHandle GetStyleContext(this MentorLake.Gtk.GtkNumerableIconHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		return GtkNumerableIconHandleExterns.gtk_numerable_icon_get_style_context(self);
 	}
 
 	public static T SetBackgroundGicon<T>(this T self, MentorLake.Gio.GIconHandle icon) where T : GtkNumerableIconHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		GtkNumerableIconHandleExterns.gtk_numerable_icon_set_background_gicon(self, icon);
 		return self;
 	}
 
 	public static T SetBackgroundIconName<T>(this T self, string icon_name) where T : GtkNumerableIconHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		GtkNumerableIconHandleExterns.gtk_numerable_icon_set_background_icon_name(self, icon_name);
 		return self;
 	}
 
 	public static T SetCount<T>(this T self, int count) where T : GtkNumerableIconHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		GtkNumerableIconHandleExterns.gtk_numerable_icon_set_count(self, count);
 		return self;
 	}
 
 	public static T SetLabel<T>(this T self, string label) where T : GtkNumerableIconHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		GtkNumerableIconHandleExterns.gtk_numerable_icon_set_label(self, label);
 		return self;
 	}
 
 	public static T SetStyleContext<T>(this T self, MentorLake.Gtk.GtkStyleContextHandle style) where T : GtkNumerableIconHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkNumerableIconHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkNumerableIconHandle)");
 		GtkNumerableIconHandleExterns.gtk_numerable_icon_set_style_context(self, style);
 		return self;
 	}
@@ -86,6 +86,7 @@ public static class GtkNumerableIconHandleExtensions
 internal class GtkNumerableIconHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle gtk_numerable_icon_get_background_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkNumerableIconHandle>))] MentorLake.Gtk.GtkNumerableIconHandle self);
 
 	[DllImport(GtkLibrary.Name)]
@@ -100,6 +101,7 @@ internal class GtkNumerableIconHandleExterns
 	internal static extern string gtk_numerable_icon_get_label([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkNumerableIconHandle>))] MentorLake.Gtk.GtkNumerableIconHandle self);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))]
 	internal static extern MentorLake.Gtk.GtkStyleContextHandle gtk_numerable_icon_get_style_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkNumerableIconHandle>))] MentorLake.Gtk.GtkNumerableIconHandle self);
 
 	[DllImport(GtkLibrary.Name)]
@@ -118,9 +120,11 @@ internal class GtkNumerableIconHandleExterns
 	internal static extern void gtk_numerable_icon_set_style_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkNumerableIconHandle>))] MentorLake.Gtk.GtkNumerableIconHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))] MentorLake.Gtk.GtkStyleContextHandle style);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle gtk_numerable_icon_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle base_icon);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle gtk_numerable_icon_new_with_style_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle base_icon, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))] MentorLake.Gtk.GtkStyleContextHandle context);
 
 }

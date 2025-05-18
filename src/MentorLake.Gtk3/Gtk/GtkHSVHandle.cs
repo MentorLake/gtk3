@@ -109,34 +109,34 @@ public static class GtkHSVHandleExtensions
 {
 	public static T GetColor<T>(this T hsv, out double h, out double s, out double v) where T : GtkHSVHandle
 	{
-		if (hsv.IsInvalid || hsv.IsClosed) throw new Exception("Invalid or closed handle (GtkHSVHandle)");
+		if (hsv.IsInvalid) throw new Exception("Invalid handle (GtkHSVHandle)");
 		GtkHSVHandleExterns.gtk_hsv_get_color(hsv, out h, out s, out v);
 		return hsv;
 	}
 
 	public static T GetMetrics<T>(this T hsv, out int size, out int ring_width) where T : GtkHSVHandle
 	{
-		if (hsv.IsInvalid || hsv.IsClosed) throw new Exception("Invalid or closed handle (GtkHSVHandle)");
+		if (hsv.IsInvalid) throw new Exception("Invalid handle (GtkHSVHandle)");
 		GtkHSVHandleExterns.gtk_hsv_get_metrics(hsv, out size, out ring_width);
 		return hsv;
 	}
 
 	public static bool IsAdjusting(this MentorLake.Gtk.GtkHSVHandle hsv)
 	{
-		if (hsv.IsInvalid || hsv.IsClosed) throw new Exception("Invalid or closed handle (GtkHSVHandle)");
+		if (hsv.IsInvalid) throw new Exception("Invalid handle (GtkHSVHandle)");
 		return GtkHSVHandleExterns.gtk_hsv_is_adjusting(hsv);
 	}
 
 	public static T SetColor<T>(this T hsv, double h, double s, double v) where T : GtkHSVHandle
 	{
-		if (hsv.IsInvalid || hsv.IsClosed) throw new Exception("Invalid or closed handle (GtkHSVHandle)");
+		if (hsv.IsInvalid) throw new Exception("Invalid handle (GtkHSVHandle)");
 		GtkHSVHandleExterns.gtk_hsv_set_color(hsv, h, s, v);
 		return hsv;
 	}
 
 	public static T SetMetrics<T>(this T hsv, int size, int ring_width) where T : GtkHSVHandle
 	{
-		if (hsv.IsInvalid || hsv.IsClosed) throw new Exception("Invalid or closed handle (GtkHSVHandle)");
+		if (hsv.IsInvalid) throw new Exception("Invalid handle (GtkHSVHandle)");
 		GtkHSVHandleExterns.gtk_hsv_set_metrics(hsv, size, ring_width);
 		return hsv;
 	}
@@ -146,6 +146,7 @@ public static class GtkHSVHandleExtensions
 internal class GtkHSVHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHSVHandle>))]
 	internal static extern MentorLake.Gtk.GtkHSVHandle gtk_hsv_new();
 
 	[DllImport(GtkLibrary.Name)]

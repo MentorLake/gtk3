@@ -108,7 +108,7 @@ public static class GUnixMountMonitorHandleExtensions
 {
 	public static T SetRateLimit<T>(this T mount_monitor, int limit_msec) where T : GUnixMountMonitorHandle
 	{
-		if (mount_monitor.IsInvalid || mount_monitor.IsClosed) throw new Exception("Invalid or closed handle (GUnixMountMonitorHandle)");
+		if (mount_monitor.IsInvalid) throw new Exception("Invalid handle (GUnixMountMonitorHandle)");
 		GUnixMountMonitorHandleExterns.g_unix_mount_monitor_set_rate_limit(mount_monitor, limit_msec);
 		return mount_monitor;
 	}
@@ -118,12 +118,14 @@ public static class GUnixMountMonitorHandleExtensions
 internal class GUnixMountMonitorHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.Gio.GUnixMountMonitorHandle g_unix_mount_monitor_new();
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_unix_mount_monitor_set_rate_limit([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))] MentorLake.Gio.GUnixMountMonitorHandle mount_monitor, int limit_msec);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.Gio.GUnixMountMonitorHandle g_unix_mount_monitor_get();
 
 }

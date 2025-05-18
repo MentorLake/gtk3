@@ -68,38 +68,38 @@ public static class GDBusServerHandleExtensions
 {
 	public static string GetClientAddress(this MentorLake.Gio.GDBusServerHandle server)
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_client_address(server);
 	}
 
 	public static MentorLake.Gio.GDBusServerFlags GetFlags(this MentorLake.Gio.GDBusServerHandle server)
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_flags(server);
 	}
 
 	public static string GetGuid(this MentorLake.Gio.GDBusServerHandle server)
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_get_guid(server);
 	}
 
 	public static bool IsActive(this MentorLake.Gio.GDBusServerHandle server)
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		return GDBusServerHandleExterns.g_dbus_server_is_active(server);
 	}
 
 	public static T Start<T>(this T server) where T : GDBusServerHandle
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		GDBusServerHandleExterns.g_dbus_server_start(server);
 		return server;
 	}
 
 	public static T Stop<T>(this T server) where T : GDBusServerHandle
 	{
-		if (server.IsInvalid || server.IsClosed) throw new Exception("Invalid or closed handle (GDBusServerHandle)");
+		if (server.IsInvalid) throw new Exception("Invalid handle (GDBusServerHandle)");
 		GDBusServerHandleExterns.g_dbus_server_stop(server);
 		return server;
 	}
@@ -109,6 +109,7 @@ public static class GDBusServerHandleExtensions
 internal class GDBusServerHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GDBusServerHandle>))]
 	internal static extern MentorLake.Gio.GDBusServerHandle g_dbus_server_new_sync(string address, MentorLake.Gio.GDBusServerFlags flags, string guid, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))] MentorLake.Gio.GDBusAuthObserverHandle observer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]

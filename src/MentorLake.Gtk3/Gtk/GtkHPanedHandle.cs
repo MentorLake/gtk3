@@ -16,6 +16,7 @@ public static class GtkHPanedHandleExtensions
 internal class GtkHPanedHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHPanedHandle>))]
 	internal static extern MentorLake.Gtk.GtkHPanedHandle gtk_hpaned_new();
 
 }

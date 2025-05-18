@@ -9,19 +9,19 @@ public static class GStaticMutexExtensions
 {
 	public static void Free(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
-		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
+		if (mutex.IsInvalid) throw new Exception("Invalid handle (GStaticMutex)");
 		GStaticMutexExterns.g_static_mutex_free(mutex);
 	}
 
 	public static MentorLake.GLib.GMutexHandle GetMutexImpl(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
-		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
+		if (mutex.IsInvalid) throw new Exception("Invalid handle (GStaticMutex)");
 		return GStaticMutexExterns.g_static_mutex_get_mutex_impl(mutex);
 	}
 
 	public static void Init(this MentorLake.GLib.GStaticMutexHandle mutex)
 	{
-		if (mutex.IsInvalid || mutex.IsClosed) throw new Exception("Invalid or closed handle (GStaticMutex)");
+		if (mutex.IsInvalid) throw new Exception("Invalid handle (GStaticMutex)");
 		GStaticMutexExterns.g_static_mutex_init(mutex);
 	}
 
@@ -34,6 +34,7 @@ internal class GStaticMutexExterns
 	internal static extern void g_static_mutex_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticMutexHandle>))] MentorLake.GLib.GStaticMutexHandle mutex);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMutexHandle>))]
 	internal static extern MentorLake.GLib.GMutexHandle g_static_mutex_get_mutex_impl([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStaticMutexHandle>))] MentorLake.GLib.GStaticMutexHandle mutex);
 
 	[DllImport(GLibLibrary.Name)]

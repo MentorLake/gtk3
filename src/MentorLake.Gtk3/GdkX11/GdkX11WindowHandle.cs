@@ -18,68 +18,68 @@ public static class GdkX11WindowHandleExtensions
 {
 	public static uint GetDesktop(this MentorLake.GdkX11.GdkX11WindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		return GdkX11WindowHandleExterns.gdk_x11_window_get_desktop(window);
 	}
 
 	public static MentorLake.xlib.Window GetXid(this MentorLake.Gdk.GdkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		return GdkX11WindowHandleExterns.gdk_x11_window_get_xid(window);
 	}
 
 	public static T MoveToCurrentDesktop<T>(this T window) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_move_to_current_desktop(window);
 		return window;
 	}
 
 	public static T MoveToDesktop<T>(this T window, uint desktop) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_move_to_desktop(window, desktop);
 		return window;
 	}
 
 	public static T SetFrameExtents<T>(this T window, int left, int right, int top, int bottom) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_frame_extents(window, left, right, top, bottom);
 		return window;
 	}
 
 	public static T SetFrameSyncEnabled<T>(this T window, bool frame_sync_enabled) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_frame_sync_enabled(window, frame_sync_enabled);
 		return window;
 	}
 
 	public static T SetHideTitlebarWhenMaximized<T>(this T window, bool hide_titlebar_when_maximized) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_hide_titlebar_when_maximized(window, hide_titlebar_when_maximized);
 		return window;
 	}
 
 	public static T SetThemeVariant<T>(this T window, string variant) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_theme_variant(window, variant);
 		return window;
 	}
 
 	public static T SetUserTime<T>(this T window, uint timestamp) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_user_time(window, timestamp);
 		return window;
 	}
 
 	public static T SetUtf8Property<T>(this T window, string name, string value) where T : GdkX11WindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GdkX11WindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GdkX11WindowHandle)");
 		GdkX11WindowHandleExterns.gdk_x11_window_set_utf8_property(window, name, value);
 		return window;
 	}
@@ -89,6 +89,7 @@ public static class GdkX11WindowHandleExtensions
 internal class GdkX11WindowHandleExterns
 {
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))]
 	internal static extern MentorLake.GdkX11.GdkX11WindowHandle gdk_x11_window_foreign_new_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, MentorLake.xlib.Window window);
 
 	[DllImport(GdkX11Library.Name)]
@@ -122,6 +123,7 @@ internal class GdkX11WindowHandleExterns
 	internal static extern void gdk_x11_window_set_utf8_property([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))] MentorLake.GdkX11.GdkX11WindowHandle window, string name, string value);
 
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11WindowHandle>))]
 	internal static extern MentorLake.GdkX11.GdkX11WindowHandle gdk_x11_window_lookup_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, MentorLake.xlib.Window window);
 
 }

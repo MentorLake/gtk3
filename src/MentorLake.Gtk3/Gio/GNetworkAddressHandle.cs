@@ -32,19 +32,19 @@ public static class GNetworkAddressHandleExtensions
 {
 	public static string GetHostname(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
-		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
+		if (addr.IsInvalid) throw new Exception("Invalid handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_hostname(addr);
 	}
 
 	public static ushort GetPort(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
-		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
+		if (addr.IsInvalid) throw new Exception("Invalid handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_port(addr);
 	}
 
 	public static string GetScheme(this MentorLake.Gio.GNetworkAddressHandle addr)
 	{
-		if (addr.IsInvalid || addr.IsClosed) throw new Exception("Invalid or closed handle (GNetworkAddressHandle)");
+		if (addr.IsInvalid) throw new Exception("Invalid handle (GNetworkAddressHandle)");
 		return GNetworkAddressHandleExterns.g_network_address_get_scheme(addr);
 	}
 
@@ -53,9 +53,11 @@ public static class GNetworkAddressHandleExtensions
 internal class GNetworkAddressHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GNetworkAddressHandle>))]
 	internal static extern MentorLake.Gio.GNetworkAddressHandle g_network_address_new(string hostname, ushort port);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GNetworkAddressHandle>))]
 	internal static extern MentorLake.Gio.GNetworkAddressHandle g_network_address_new_loopback(ushort port);
 
 	[DllImport(GioLibrary.Name)]
@@ -70,9 +72,11 @@ internal class GNetworkAddressHandleExterns
 	internal static extern string g_network_address_get_scheme([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkAddressHandle>))] MentorLake.Gio.GNetworkAddressHandle addr);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))]
 	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse(string host_and_port, ushort default_port, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))]
 	internal static extern MentorLake.Gio.GSocketConnectableHandle g_network_address_parse_uri(string uri, ushort default_port, out MentorLake.GLib.GErrorHandle error);
 
 }

@@ -89,20 +89,20 @@ public static class GtkRadioButtonHandleExtensions
 {
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioButtonHandle radio_button)
 	{
-		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
+		if (radio_button.IsInvalid) throw new Exception("Invalid handle (GtkRadioButtonHandle)");
 		return GtkRadioButtonHandleExterns.gtk_radio_button_get_group(radio_button);
 	}
 
 	public static T JoinGroup<T>(this T radio_button, MentorLake.Gtk.GtkRadioButtonHandle group_source) where T : GtkRadioButtonHandle
 	{
-		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
+		if (radio_button.IsInvalid) throw new Exception("Invalid handle (GtkRadioButtonHandle)");
 		GtkRadioButtonHandleExterns.gtk_radio_button_join_group(radio_button, group_source);
 		return radio_button;
 	}
 
 	public static T SetGroup<T>(this T radio_button, MentorLake.GLib.GSListHandle group) where T : GtkRadioButtonHandle
 	{
-		if (radio_button.IsInvalid || radio_button.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioButtonHandle)");
+		if (radio_button.IsInvalid) throw new Exception("Invalid handle (GtkRadioButtonHandle)");
 		GtkRadioButtonHandleExterns.gtk_radio_button_set_group(radio_button, group);
 		return radio_button;
 	}
@@ -112,24 +112,31 @@ public static class GtkRadioButtonHandleExtensions
 internal class GtkRadioButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))] MentorLake.Gtk.GtkRadioButtonHandle radio_group_member);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new_with_label([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new_with_label_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))] MentorLake.Gtk.GtkRadioButtonHandle radio_group_member, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new_with_mnemonic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioButtonHandle gtk_radio_button_new_with_mnemonic_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))] MentorLake.Gtk.GtkRadioButtonHandle radio_group_member, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gtk_radio_button_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioButtonHandle>))] MentorLake.Gtk.GtkRadioButtonHandle radio_button);
 
 	[DllImport(GtkLibrary.Name)]

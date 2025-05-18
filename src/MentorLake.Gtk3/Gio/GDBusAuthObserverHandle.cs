@@ -108,13 +108,13 @@ public static class GDBusAuthObserverHandleExtensions
 {
 	public static bool AllowMechanism(this MentorLake.Gio.GDBusAuthObserverHandle observer, string mechanism)
 	{
-		if (observer.IsInvalid || observer.IsClosed) throw new Exception("Invalid or closed handle (GDBusAuthObserverHandle)");
+		if (observer.IsInvalid) throw new Exception("Invalid handle (GDBusAuthObserverHandle)");
 		return GDBusAuthObserverHandleExterns.g_dbus_auth_observer_allow_mechanism(observer, mechanism);
 	}
 
 	public static bool AuthorizeAuthenticatedPeer(this MentorLake.Gio.GDBusAuthObserverHandle observer, MentorLake.Gio.GIOStreamHandle stream, MentorLake.Gio.GCredentialsHandle credentials)
 	{
-		if (observer.IsInvalid || observer.IsClosed) throw new Exception("Invalid or closed handle (GDBusAuthObserverHandle)");
+		if (observer.IsInvalid) throw new Exception("Invalid handle (GDBusAuthObserverHandle)");
 		return GDBusAuthObserverHandleExterns.g_dbus_auth_observer_authorize_authenticated_peer(observer, stream, credentials);
 	}
 
@@ -123,6 +123,7 @@ public static class GDBusAuthObserverHandleExtensions
 internal class GDBusAuthObserverHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GDBusAuthObserverHandle>))]
 	internal static extern MentorLake.Gio.GDBusAuthObserverHandle g_dbus_auth_observer_new();
 
 	[DllImport(GioLibrary.Name)]

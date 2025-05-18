@@ -9,43 +9,43 @@ public static class PangoAttrIteratorExtensions
 {
 	public static MentorLake.Pango.PangoAttrIteratorHandle Copy(this MentorLake.Pango.PangoAttrIteratorHandle iterator)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		return PangoAttrIteratorExterns.pango_attr_iterator_copy(iterator);
 	}
 
 	public static void Destroy(this MentorLake.Pango.PangoAttrIteratorHandle iterator)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		PangoAttrIteratorExterns.pango_attr_iterator_destroy(iterator);
 	}
 
 	public static MentorLake.Pango.PangoAttributeHandle Get(this MentorLake.Pango.PangoAttrIteratorHandle iterator, MentorLake.Pango.PangoAttrType type)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		return PangoAttrIteratorExterns.pango_attr_iterator_get(iterator, type);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetAttrs(this MentorLake.Pango.PangoAttrIteratorHandle iterator)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		return PangoAttrIteratorExterns.pango_attr_iterator_get_attrs(iterator);
 	}
 
 	public static void GetFont(this MentorLake.Pango.PangoAttrIteratorHandle iterator, MentorLake.Pango.PangoFontDescriptionHandle desc, out MentorLake.Pango.PangoLanguageHandle language, out MentorLake.GLib.GSListHandle extra_attrs)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		PangoAttrIteratorExterns.pango_attr_iterator_get_font(iterator, desc, out language, out extra_attrs);
 	}
 
 	public static bool Next(this MentorLake.Pango.PangoAttrIteratorHandle iterator)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		return PangoAttrIteratorExterns.pango_attr_iterator_next(iterator);
 	}
 
 	public static void Range(this MentorLake.Pango.PangoAttrIteratorHandle iterator, out int start, out int end)
 	{
-		if (iterator.IsInvalid || iterator.IsClosed) throw new Exception("Invalid or closed handle (PangoAttrIterator)");
+		if (iterator.IsInvalid) throw new Exception("Invalid handle (PangoAttrIterator)");
 		PangoAttrIteratorExterns.pango_attr_iterator_range(iterator, out start, out end);
 	}
 
@@ -55,15 +55,18 @@ public static class PangoAttrIteratorExtensions
 internal class PangoAttrIteratorExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))]
 	internal static extern MentorLake.Pango.PangoAttrIteratorHandle pango_attr_iterator_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle iterator);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_attr_iterator_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle iterator);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_iterator_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle iterator, MentorLake.Pango.PangoAttrType type);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle pango_attr_iterator_get_attrs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle iterator);
 
 	[DllImport(PangoLibrary.Name)]

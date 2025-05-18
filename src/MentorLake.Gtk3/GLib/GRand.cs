@@ -24,49 +24,49 @@ public static class GRandExtensions
 {
 	public static MentorLake.GLib.GRandHandle Copy(this MentorLake.GLib.GRandHandle rand_)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		return GRandExterns.g_rand_copy(rand_);
 	}
 
 	public static double Double(this MentorLake.GLib.GRandHandle rand_)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		return GRandExterns.g_rand_double(rand_);
 	}
 
 	public static double DoubleRange(this MentorLake.GLib.GRandHandle rand_, double begin, double end)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		return GRandExterns.g_rand_double_range(rand_, begin, end);
 	}
 
 	public static void Free(this MentorLake.GLib.GRandHandle rand_)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		GRandExterns.g_rand_free(rand_);
 	}
 
 	public static uint Int(this MentorLake.GLib.GRandHandle rand_)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		return GRandExterns.g_rand_int(rand_);
 	}
 
 	public static int IntRange(this MentorLake.GLib.GRandHandle rand_, int begin, int end)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		return GRandExterns.g_rand_int_range(rand_, begin, end);
 	}
 
 	public static void SetSeed(this MentorLake.GLib.GRandHandle rand_, uint seed)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		GRandExterns.g_rand_set_seed(rand_, seed);
 	}
 
 	public static void SetSeedArray(this MentorLake.GLib.GRandHandle rand_, uint seed, uint seed_length)
 	{
-		if (rand_.IsInvalid || rand_.IsClosed) throw new Exception("Invalid or closed handle (GRand)");
+		if (rand_.IsInvalid) throw new Exception("Invalid handle (GRand)");
 		GRandExterns.g_rand_set_seed_array(rand_, seed, seed_length);
 	}
 
@@ -76,15 +76,19 @@ public static class GRandExtensions
 internal class GRandExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRandHandle>))]
 	internal static extern MentorLake.GLib.GRandHandle g_rand_new();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRandHandle>))]
 	internal static extern MentorLake.GLib.GRandHandle g_rand_new_with_seed(uint seed);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRandHandle>))]
 	internal static extern MentorLake.GLib.GRandHandle g_rand_new_with_seed_array(uint seed, uint seed_length);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRandHandle>))]
 	internal static extern MentorLake.GLib.GRandHandle g_rand_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRandHandle>))] MentorLake.GLib.GRandHandle rand_);
 
 	[DllImport(GLibLibrary.Name)]

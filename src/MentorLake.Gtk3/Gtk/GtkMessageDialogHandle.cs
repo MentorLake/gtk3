@@ -18,40 +18,40 @@ public static class GtkMessageDialogHandleExtensions
 {
 	public static T FormatSecondaryMarkup<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
-		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (message_dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_format_secondary_markup(message_dialog, message_format, @__arglist);
 		return message_dialog;
 	}
 
 	public static T FormatSecondaryText<T>(this T message_dialog, string message_format, IntPtr @__arglist) where T : GtkMessageDialogHandle
 	{
-		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (message_dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_format_secondary_text(message_dialog, message_format, @__arglist);
 		return message_dialog;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetImage(this MentorLake.Gtk.GtkMessageDialogHandle dialog)
 	{
-		if (dialog.IsInvalid || dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		return GtkMessageDialogHandleExterns.gtk_message_dialog_get_image(dialog);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMessageArea(this MentorLake.Gtk.GtkMessageDialogHandle message_dialog)
 	{
-		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (message_dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		return GtkMessageDialogHandleExterns.gtk_message_dialog_get_message_area(message_dialog);
 	}
 
 	public static T SetImage<T>(this T dialog, MentorLake.Gtk.GtkWidgetHandle image) where T : GtkMessageDialogHandle
 	{
-		if (dialog.IsInvalid || dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_set_image(dialog, image);
 		return dialog;
 	}
 
 	public static T SetMarkup<T>(this T message_dialog, string str) where T : GtkMessageDialogHandle
 	{
-		if (message_dialog.IsInvalid || message_dialog.IsClosed) throw new Exception("Invalid or closed handle (GtkMessageDialogHandle)");
+		if (message_dialog.IsInvalid) throw new Exception("Invalid handle (GtkMessageDialogHandle)");
 		GtkMessageDialogHandleExterns.gtk_message_dialog_set_markup(message_dialog, str);
 		return message_dialog;
 	}
@@ -61,9 +61,11 @@ public static class GtkMessageDialogHandleExtensions
 internal class GtkMessageDialogHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkMessageDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkMessageDialogHandle gtk_message_dialog_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, MentorLake.Gtk.GtkDialogFlags flags, MentorLake.Gtk.GtkMessageType type, MentorLake.Gtk.GtkButtonsType buttons, string message_format, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkMessageDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkMessageDialogHandle gtk_message_dialog_new_with_markup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, MentorLake.Gtk.GtkDialogFlags flags, MentorLake.Gtk.GtkMessageType type, MentorLake.Gtk.GtkButtonsType buttons, string message_format, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
@@ -73,9 +75,11 @@ internal class GtkMessageDialogHandleExterns
 	internal static extern void gtk_message_dialog_format_secondary_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkMessageDialogHandle>))] MentorLake.Gtk.GtkMessageDialogHandle message_dialog, string message_format, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_message_dialog_get_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkMessageDialogHandle>))] MentorLake.Gtk.GtkMessageDialogHandle dialog);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_message_dialog_get_message_area([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkMessageDialogHandle>))] MentorLake.Gtk.GtkMessageDialogHandle message_dialog);
 
 	[DllImport(GtkLibrary.Name)]

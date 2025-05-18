@@ -589,6 +589,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_beep();
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_tHandle gdk_cairo_create([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window);
 
 	[DllImport(GdkLibrary.Name)]
@@ -598,6 +599,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern bool gdk_cairo_get_clip_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, out MentorLake.Gdk.GdkRectangle rect);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDrawingContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDrawingContextHandle gdk_cairo_get_drawing_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(GdkLibrary.Name)]
@@ -607,6 +609,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_cairo_region([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle region);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle gdk_cairo_region_create_from_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(GdkLibrary.Name)]
@@ -622,6 +625,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_cairo_set_source_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, double x, double y);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle gdk_cairo_surface_create_from_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, int scale, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle for_window);
 
 	[DllImport(GdkLibrary.Name)]
@@ -634,12 +638,15 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_drag_abort([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))] MentorLake.Gdk.GdkDragContextHandle context, uint time_);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDragContextHandle gdk_drag_begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle targets);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDragContextHandle gdk_drag_begin_for_device([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceHandle>))] MentorLake.Gdk.GdkDeviceHandle device, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle targets);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDragContextHandle gdk_drag_begin_from_point([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceHandle>))] MentorLake.Gdk.GdkDeviceHandle device, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle targets, int x_root, int y_root);
 
 	[DllImport(GdkLibrary.Name)]
@@ -679,12 +686,14 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_error_trap_push();
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))]
 	internal static extern MentorLake.Gdk.GdkEventHandle gdk_event_get();
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_event_handler_set(MentorLake.Gdk.GdkEventFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify notify);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))]
 	internal static extern MentorLake.Gdk.GdkEventHandle gdk_event_peek();
 
 	[DllImport(GdkLibrary.Name)]
@@ -706,6 +715,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_flush();
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gdk_get_default_root_window();
 
 	[DllImport(GdkLibrary.Name)]
@@ -764,6 +774,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern uint gdk_keyval_to_upper(uint keyval);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gdk_list_visuals();
 
 	[DllImport(GdkLibrary.Name)]
@@ -773,36 +784,45 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_notify_startup_complete_with_id(string startup_id);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gdk_offscreen_window_get_embedder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle gdk_offscreen_window_get_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_offscreen_window_set_embedder([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle embedder);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle gdk_pango_context_get();
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle gdk_pango_context_get_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle gdk_pango_context_get_for_screen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))] MentorLake.Gdk.GdkScreenHandle screen);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle gdk_pango_layout_get_clip_region([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, int x_origin, int y_origin, int index_ranges, int n_ranges);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle gdk_pango_layout_line_get_clip_region([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutLineHandle>))] MentorLake.Pango.PangoLayoutLineHandle line, int x_origin, int y_origin, int[] index_ranges, int n_ranges);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_parse_args(ref int argc, ref string[] argv);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_get_from_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface, int src_x, int src_y, int width, int height);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_get_from_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, int src_x, int src_y, int width, int height);
 
 	[DllImport(GdkLibrary.Name)]
@@ -836,9 +856,11 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_selection_convert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle requestor, MentorLake.Gdk.GdkAtom selection, MentorLake.Gdk.GdkAtom target, uint time_);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gdk_selection_owner_get(MentorLake.Gdk.GdkAtom selection);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gdk_selection_owner_get_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom selection);
 
 	[DllImport(GdkLibrary.Name)]

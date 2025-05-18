@@ -13,19 +13,19 @@ public static class GSocketAddressHandleExtensions
 {
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GSocketAddressHandle)");
 		return GSocketAddressHandleExterns.g_socket_address_get_family(address);
 	}
 
 	public static UIntPtr GetNativeSize(this MentorLake.Gio.GSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GSocketAddressHandle)");
 		return GSocketAddressHandleExterns.g_socket_address_get_native_size(address);
 	}
 
 	public static bool ToNative(this MentorLake.Gio.GSocketAddressHandle address, IntPtr dest, UIntPtr destlen)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GSocketAddressHandle)");
 		var externCallResult = GSocketAddressHandleExterns.g_socket_address_to_native(address, dest, destlen, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -36,6 +36,7 @@ public static class GSocketAddressHandleExtensions
 internal class GSocketAddressHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSocketAddressHandle>))]
 	internal static extern MentorLake.Gio.GSocketAddressHandle g_socket_address_new_from_native(IntPtr native, UIntPtr len);
 
 	[DllImport(GioLibrary.Name)]

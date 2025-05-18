@@ -16,6 +16,7 @@ public static class GPropertyActionHandleExtensions
 internal class GPropertyActionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GPropertyActionHandle>))]
 	internal static extern MentorLake.Gio.GPropertyActionHandle g_property_action_new(string name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object, string property_name);
 
 }

@@ -105,45 +105,45 @@ public static class GtkHandleBoxHandleExtensions
 {
 	public static bool GetChildDetached(this MentorLake.Gtk.GtkHandleBoxHandle handle_box)
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		return GtkHandleBoxHandleExterns.gtk_handle_box_get_child_detached(handle_box);
 	}
 
 	public static MentorLake.Gtk.GtkPositionType GetHandlePosition(this MentorLake.Gtk.GtkHandleBoxHandle handle_box)
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		return GtkHandleBoxHandleExterns.gtk_handle_box_get_handle_position(handle_box);
 	}
 
 	public static MentorLake.Gtk.GtkShadowType GetShadowType(this MentorLake.Gtk.GtkHandleBoxHandle handle_box)
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		return GtkHandleBoxHandleExterns.gtk_handle_box_get_shadow_type(handle_box);
 	}
 
 	public static MentorLake.Gtk.GtkPositionType GetSnapEdge(this MentorLake.Gtk.GtkHandleBoxHandle handle_box)
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		return GtkHandleBoxHandleExterns.gtk_handle_box_get_snap_edge(handle_box);
 	}
 
 	public static T SetHandlePosition<T>(this T handle_box, MentorLake.Gtk.GtkPositionType position) where T : GtkHandleBoxHandle
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		GtkHandleBoxHandleExterns.gtk_handle_box_set_handle_position(handle_box, position);
 		return handle_box;
 	}
 
 	public static T SetShadowType<T>(this T handle_box, MentorLake.Gtk.GtkShadowType type) where T : GtkHandleBoxHandle
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		GtkHandleBoxHandleExterns.gtk_handle_box_set_shadow_type(handle_box, type);
 		return handle_box;
 	}
 
 	public static T SetSnapEdge<T>(this T handle_box, MentorLake.Gtk.GtkPositionType edge) where T : GtkHandleBoxHandle
 	{
-		if (handle_box.IsInvalid || handle_box.IsClosed) throw new Exception("Invalid or closed handle (GtkHandleBoxHandle)");
+		if (handle_box.IsInvalid) throw new Exception("Invalid handle (GtkHandleBoxHandle)");
 		GtkHandleBoxHandleExterns.gtk_handle_box_set_snap_edge(handle_box, edge);
 		return handle_box;
 	}
@@ -153,6 +153,7 @@ public static class GtkHandleBoxHandleExtensions
 internal class GtkHandleBoxHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHandleBoxHandle>))]
 	internal static extern MentorLake.Gtk.GtkHandleBoxHandle gtk_handle_box_new();
 
 	[DllImport(GtkLibrary.Name)]

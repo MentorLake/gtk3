@@ -149,6 +149,7 @@ public static class GtkEventControllerMotionHandleExtensions
 internal class GtkEventControllerMotionHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerMotionHandle>))]
 	internal static extern MentorLake.Gtk.GtkEventControllerMotionHandle gtk_event_controller_motion_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 }

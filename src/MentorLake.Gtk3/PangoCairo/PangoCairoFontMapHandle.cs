@@ -14,32 +14,32 @@ public static class PangoCairoFontMapHandleExtensions
 {
 	public static MentorLake.Pango.PangoContextHandle CreateContext(this MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap)
 	{
-		if (fontmap.IsInvalid || fontmap.IsClosed) throw new Exception("Invalid or closed handle (PangoCairoFontMapHandle)");
+		if (fontmap.IsInvalid) throw new Exception("Invalid handle (PangoCairoFontMapHandle)");
 		return PangoCairoFontMapHandleExterns.pango_cairo_font_map_create_context(fontmap);
 	}
 
 	public static MentorLake.cairo.cairo_font_type_t GetFontType(this MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap)
 	{
-		if (fontmap.IsInvalid || fontmap.IsClosed) throw new Exception("Invalid or closed handle (PangoCairoFontMapHandle)");
+		if (fontmap.IsInvalid) throw new Exception("Invalid handle (PangoCairoFontMapHandle)");
 		return PangoCairoFontMapHandleExterns.pango_cairo_font_map_get_font_type(fontmap);
 	}
 
 	public static double GetResolution(this MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap)
 	{
-		if (fontmap.IsInvalid || fontmap.IsClosed) throw new Exception("Invalid or closed handle (PangoCairoFontMapHandle)");
+		if (fontmap.IsInvalid) throw new Exception("Invalid handle (PangoCairoFontMapHandle)");
 		return PangoCairoFontMapHandleExterns.pango_cairo_font_map_get_resolution(fontmap);
 	}
 
 	public static T SetDefault<T>(this T fontmap) where T : PangoCairoFontMapHandle
 	{
-		if (fontmap.IsInvalid || fontmap.IsClosed) throw new Exception("Invalid or closed handle (PangoCairoFontMapHandle)");
+		if (fontmap.IsInvalid) throw new Exception("Invalid handle (PangoCairoFontMapHandle)");
 		PangoCairoFontMapHandleExterns.pango_cairo_font_map_set_default(fontmap);
 		return fontmap;
 	}
 
 	public static T SetResolution<T>(this T fontmap, double dpi) where T : PangoCairoFontMapHandle
 	{
-		if (fontmap.IsInvalid || fontmap.IsClosed) throw new Exception("Invalid or closed handle (PangoCairoFontMapHandle)");
+		if (fontmap.IsInvalid) throw new Exception("Invalid handle (PangoCairoFontMapHandle)");
 		PangoCairoFontMapHandleExterns.pango_cairo_font_map_set_resolution(fontmap, dpi);
 		return fontmap;
 	}
@@ -64,6 +64,7 @@ public static class PangoCairoFontMapHandleExtensions
 internal class PangoCairoFontMapHandleExterns
 {
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle pango_cairo_font_map_create_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoCairo.PangoCairoFontMapHandleImpl>))] MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap);
 
 	[DllImport(PangoCairoLibrary.Name)]
@@ -79,12 +80,15 @@ internal class PangoCairoFontMapHandleExterns
 	internal static extern void pango_cairo_font_map_set_resolution([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoCairo.PangoCairoFontMapHandleImpl>))] MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap, double dpi);
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_get_default();
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_new();
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_new_for_font_type(MentorLake.cairo.cairo_font_type_t fonttype);
 
 }

@@ -9,13 +9,13 @@ public static class GDBusPropertyInfoExtensions
 {
 	public static MentorLake.Gio.GDBusPropertyInfoHandle Ref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusPropertyInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusPropertyInfo)");
 		return GDBusPropertyInfoExterns.g_dbus_property_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusPropertyInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusPropertyInfo)");
 		GDBusPropertyInfoExterns.g_dbus_property_info_unref(info);
 	}
 
@@ -25,6 +25,7 @@ public static class GDBusPropertyInfoExtensions
 internal class GDBusPropertyInfoExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusPropertyInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusPropertyInfoHandle g_dbus_property_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusPropertyInfoHandle>))] MentorLake.Gio.GDBusPropertyInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]

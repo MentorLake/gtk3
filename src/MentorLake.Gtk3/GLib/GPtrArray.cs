@@ -16,6 +16,7 @@ internal class GPtrArrayExterns
 	internal static extern void g_ptr_array_add([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array, IntPtr data);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array, MentorLake.GLib.GCopyFunc func, IntPtr user_data);
 
 	[DllImport(GLibLibrary.Name)]
@@ -43,30 +44,39 @@ internal class GPtrArrayExterns
 	internal static extern bool g_ptr_array_is_null_terminated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_from_array(IntPtr[] data, UIntPtr len, MentorLake.GLib.GCopyFunc copy_func, IntPtr copy_func_user_data, MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_from_null_terminated_array(IntPtr[] data, MentorLake.GLib.GCopyFunc copy_func, IntPtr copy_func_user_data, MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_full(uint reserved_size, MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_null_terminated(uint reserved_size, MentorLake.GLib.GDestroyNotify element_free_func, bool null_terminated);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_take(IntPtr[] data, UIntPtr len, MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_take_null_terminated(IntPtr[] data, MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_new_with_free_func(MentorLake.GLib.GDestroyNotify element_free_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array);
 
 	[DllImport(GLibLibrary.Name)]
@@ -82,6 +92,7 @@ internal class GPtrArrayExterns
 	internal static extern IntPtr g_ptr_array_remove_index_fast([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array, uint index_);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_remove_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array, uint index_, uint length);
 
 	[DllImport(GLibLibrary.Name)]
@@ -91,6 +102,7 @@ internal class GPtrArrayExterns
 	internal static extern void g_ptr_array_set_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))] MentorLake.GLib.GPtrArrayHandle array, int length);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPtrArrayHandle>))]
 	internal static extern MentorLake.GLib.GPtrArrayHandle g_ptr_array_sized_new(uint reserved_size);
 
 	[DllImport(GLibLibrary.Name)]

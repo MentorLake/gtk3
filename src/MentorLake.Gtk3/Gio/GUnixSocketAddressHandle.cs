@@ -28,25 +28,25 @@ public static class GUnixSocketAddressHandleExtensions
 {
 	public static MentorLake.Gio.GUnixSocketAddressType GetAddressType(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_address_type(address);
 	}
 
 	public static bool GetIsAbstract(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_is_abstract(address);
 	}
 
 	public static string GetPath(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_path(address);
 	}
 
 	public static UIntPtr GetPathLen(this MentorLake.Gio.GUnixSocketAddressHandle address)
 	{
-		if (address.IsInvalid || address.IsClosed) throw new Exception("Invalid or closed handle (GUnixSocketAddressHandle)");
+		if (address.IsInvalid) throw new Exception("Invalid handle (GUnixSocketAddressHandle)");
 		return GUnixSocketAddressHandleExterns.g_unix_socket_address_get_path_len(address);
 	}
 
@@ -55,12 +55,15 @@ public static class GUnixSocketAddressHandleExtensions
 internal class GUnixSocketAddressHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixSocketAddressHandle>))]
 	internal static extern MentorLake.Gio.GUnixSocketAddressHandle g_unix_socket_address_new(string path);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixSocketAddressHandle>))]
 	internal static extern MentorLake.Gio.GUnixSocketAddressHandle g_unix_socket_address_new_abstract(char[] path, int path_len);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixSocketAddressHandle>))]
 	internal static extern MentorLake.Gio.GUnixSocketAddressHandle g_unix_socket_address_new_with_type(char[] path, int path_len, MentorLake.Gio.GUnixSocketAddressType type);
 
 	[DllImport(GioLibrary.Name)]

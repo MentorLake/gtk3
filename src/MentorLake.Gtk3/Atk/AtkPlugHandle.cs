@@ -65,7 +65,7 @@ public static class AtkPlugHandleExtensions
 {
 	public static string GetId(this MentorLake.Atk.AtkPlugHandle plug)
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (AtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (AtkPlugHandle)");
 		return AtkPlugHandleExterns.atk_plug_get_id(plug);
 	}
 
@@ -74,6 +74,7 @@ public static class AtkPlugHandleExtensions
 internal class AtkPlugHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkPlugHandle>))]
 	internal static extern MentorLake.Atk.AtkPlugHandle atk_plug_new();
 
 	[DllImport(AtkLibrary.Name)]

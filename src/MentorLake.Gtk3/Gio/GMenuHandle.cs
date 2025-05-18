@@ -13,105 +13,105 @@ public static class GMenuHandleExtensions
 {
 	public static T Append<T>(this T menu, string label, string detailed_action) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_append(menu, label, detailed_action);
 		return menu;
 	}
 
 	public static T AppendItem<T>(this T menu, MentorLake.Gio.GMenuItemHandle item) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_append_item(menu, item);
 		return menu;
 	}
 
 	public static T AppendSection<T>(this T menu, string label, MentorLake.Gio.GMenuModelHandle section) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_append_section(menu, label, section);
 		return menu;
 	}
 
 	public static T AppendSubmenu<T>(this T menu, string label, MentorLake.Gio.GMenuModelHandle submenu) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_append_submenu(menu, label, submenu);
 		return menu;
 	}
 
 	public static T Freeze<T>(this T menu) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_freeze(menu);
 		return menu;
 	}
 
 	public static T Insert<T>(this T menu, int position, string label, string detailed_action) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_insert(menu, position, label, detailed_action);
 		return menu;
 	}
 
 	public static T InsertItem<T>(this T menu, int position, MentorLake.Gio.GMenuItemHandle item) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_insert_item(menu, position, item);
 		return menu;
 	}
 
 	public static T InsertSection<T>(this T menu, int position, string label, MentorLake.Gio.GMenuModelHandle section) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_insert_section(menu, position, label, section);
 		return menu;
 	}
 
 	public static T InsertSubmenu<T>(this T menu, int position, string label, MentorLake.Gio.GMenuModelHandle submenu) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_insert_submenu(menu, position, label, submenu);
 		return menu;
 	}
 
 	public static T Prepend<T>(this T menu, string label, string detailed_action) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_prepend(menu, label, detailed_action);
 		return menu;
 	}
 
 	public static T PrependItem<T>(this T menu, MentorLake.Gio.GMenuItemHandle item) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_prepend_item(menu, item);
 		return menu;
 	}
 
 	public static T PrependSection<T>(this T menu, string label, MentorLake.Gio.GMenuModelHandle section) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_prepend_section(menu, label, section);
 		return menu;
 	}
 
 	public static T PrependSubmenu<T>(this T menu, string label, MentorLake.Gio.GMenuModelHandle submenu) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_prepend_submenu(menu, label, submenu);
 		return menu;
 	}
 
 	public static T Remove<T>(this T menu, int position) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_remove(menu, position);
 		return menu;
 	}
 
 	public static T RemoveAll<T>(this T menu) where T : GMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GMenuHandle)");
 		GMenuHandleExterns.g_menu_remove_all(menu);
 		return menu;
 	}
@@ -121,6 +121,7 @@ public static class GMenuHandleExtensions
 internal class GMenuHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMenuHandle>))]
 	internal static extern MentorLake.Gio.GMenuHandle g_menu_new();
 
 	[DllImport(GioLibrary.Name)]

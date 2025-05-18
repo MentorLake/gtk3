@@ -68,26 +68,26 @@ public static class GtkTextTagHandleExtensions
 {
 	public static T Changed<T>(this T tag, bool size_changed) where T : GtkTextTagHandle
 	{
-		if (tag.IsInvalid || tag.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagHandle)");
+		if (tag.IsInvalid) throw new Exception("Invalid handle (GtkTextTagHandle)");
 		GtkTextTagHandleExterns.gtk_text_tag_changed(tag, size_changed);
 		return tag;
 	}
 
 	public static bool Event(this MentorLake.Gtk.GtkTextTagHandle tag, MentorLake.GObject.GObjectHandle event_object, MentorLake.Gdk.GdkEventHandle @event, MentorLake.Gtk.GtkTextIterHandle iter)
 	{
-		if (tag.IsInvalid || tag.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagHandle)");
+		if (tag.IsInvalid) throw new Exception("Invalid handle (GtkTextTagHandle)");
 		return GtkTextTagHandleExterns.gtk_text_tag_event(tag, event_object, @event, iter);
 	}
 
 	public static int GetPriority(this MentorLake.Gtk.GtkTextTagHandle tag)
 	{
-		if (tag.IsInvalid || tag.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagHandle)");
+		if (tag.IsInvalid) throw new Exception("Invalid handle (GtkTextTagHandle)");
 		return GtkTextTagHandleExterns.gtk_text_tag_get_priority(tag);
 	}
 
 	public static T SetPriority<T>(this T tag, int priority) where T : GtkTextTagHandle
 	{
-		if (tag.IsInvalid || tag.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagHandle)");
+		if (tag.IsInvalid) throw new Exception("Invalid handle (GtkTextTagHandle)");
 		GtkTextTagHandleExterns.gtk_text_tag_set_priority(tag, priority);
 		return tag;
 	}
@@ -97,6 +97,7 @@ public static class GtkTextTagHandleExtensions
 internal class GtkTextTagHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextTagHandle gtk_text_tag_new(string name);
 
 	[DllImport(GtkLibrary.Name)]

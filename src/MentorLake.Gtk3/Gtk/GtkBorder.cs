@@ -14,13 +14,13 @@ public static class GtkBorderExtensions
 {
 	public static MentorLake.Gtk.GtkBorderHandle Copy(this MentorLake.Gtk.GtkBorderHandle border_)
 	{
-		if (border_.IsInvalid || border_.IsClosed) throw new Exception("Invalid or closed handle (GtkBorder)");
+		if (border_.IsInvalid) throw new Exception("Invalid handle (GtkBorder)");
 		return GtkBorderExterns.gtk_border_copy(border_);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkBorderHandle border_)
 	{
-		if (border_.IsInvalid || border_.IsClosed) throw new Exception("Invalid or closed handle (GtkBorder)");
+		if (border_.IsInvalid) throw new Exception("Invalid handle (GtkBorder)");
 		GtkBorderExterns.gtk_border_free(border_);
 	}
 
@@ -30,9 +30,11 @@ public static class GtkBorderExtensions
 internal class GtkBorderExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBorderHandle>))]
 	internal static extern MentorLake.Gtk.GtkBorderHandle gtk_border_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBorderHandle>))]
 	internal static extern MentorLake.Gtk.GtkBorderHandle gtk_border_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBorderHandle>))] MentorLake.Gtk.GtkBorderHandle border_);
 
 	[DllImport(GtkLibrary.Name)]

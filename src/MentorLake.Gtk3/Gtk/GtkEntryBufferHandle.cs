@@ -108,64 +108,64 @@ public static class GtkEntryBufferHandleExtensions
 {
 	public static uint DeleteText(this MentorLake.Gtk.GtkEntryBufferHandle buffer, uint position, int n_chars)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_delete_text(buffer, position, n_chars);
 	}
 
 	public static T EmitDeletedText<T>(this T buffer, uint position, uint n_chars) where T : GtkEntryBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		GtkEntryBufferHandleExterns.gtk_entry_buffer_emit_deleted_text(buffer, position, n_chars);
 		return buffer;
 	}
 
 	public static T EmitInsertedText<T>(this T buffer, uint position, string chars, uint n_chars) where T : GtkEntryBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		GtkEntryBufferHandleExterns.gtk_entry_buffer_emit_inserted_text(buffer, position, chars, n_chars);
 		return buffer;
 	}
 
 	public static UIntPtr GetBytes(this MentorLake.Gtk.GtkEntryBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_get_bytes(buffer);
 	}
 
 	public static uint GetLength(this MentorLake.Gtk.GtkEntryBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_get_length(buffer);
 	}
 
 	public static int GetMaxLength(this MentorLake.Gtk.GtkEntryBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_get_max_length(buffer);
 	}
 
 	public static string GetText(this MentorLake.Gtk.GtkEntryBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_get_text(buffer);
 	}
 
 	public static uint InsertText(this MentorLake.Gtk.GtkEntryBufferHandle buffer, uint position, string chars, int n_chars)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		return GtkEntryBufferHandleExterns.gtk_entry_buffer_insert_text(buffer, position, chars, n_chars);
 	}
 
 	public static T SetMaxLength<T>(this T buffer, int max_length) where T : GtkEntryBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		GtkEntryBufferHandleExterns.gtk_entry_buffer_set_max_length(buffer, max_length);
 		return buffer;
 	}
 
 	public static T SetText<T>(this T buffer, string chars, int n_chars) where T : GtkEntryBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkEntryBufferHandle)");
 		GtkEntryBufferHandleExterns.gtk_entry_buffer_set_text(buffer, chars, n_chars);
 		return buffer;
 	}
@@ -175,6 +175,7 @@ public static class GtkEntryBufferHandleExtensions
 internal class GtkEntryBufferHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEntryBufferHandle>))]
 	internal static extern MentorLake.Gtk.GtkEntryBufferHandle gtk_entry_buffer_new(string initial_chars, int n_initial_chars);
 
 	[DllImport(GtkLibrary.Name)]

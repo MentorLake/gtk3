@@ -306,128 +306,128 @@ public static class GtkApplicationHandleExtensions
 {
 	public static T AddAccelerator<T>(this T application, string accelerator, string action_name, MentorLake.GLib.GVariantHandle parameter) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_add_accelerator(application, accelerator, action_name, parameter);
 		return application;
 	}
 
 	public static T AddWindow<T>(this T application, MentorLake.Gtk.GtkWindowHandle window) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_add_window(application, window);
 		return application;
 	}
 
 	public static string[] GetAccelsForAction(this MentorLake.Gtk.GtkApplicationHandle application, string detailed_action_name)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_accels_for_action(application, detailed_action_name);
 	}
 
 	public static string[] GetActionsForAccel(this MentorLake.Gtk.GtkApplicationHandle application, string accel)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_actions_for_accel(application, accel);
 	}
 
 	public static MentorLake.Gtk.GtkWindowHandle GetActiveWindow(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_active_window(application);
 	}
 
 	public static MentorLake.Gio.GMenuModelHandle GetAppMenu(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_app_menu(application);
 	}
 
 	public static MentorLake.Gio.GMenuHandle GetMenuById(this MentorLake.Gtk.GtkApplicationHandle application, string id)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_menu_by_id(application, id);
 	}
 
 	public static MentorLake.Gio.GMenuModelHandle GetMenubar(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_menubar(application);
 	}
 
 	public static MentorLake.Gtk.GtkWindowHandle GetWindowById(this MentorLake.Gtk.GtkApplicationHandle application, uint id)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_window_by_id(application, id);
 	}
 
 	public static MentorLake.GLib.GListHandle GetWindows(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_get_windows(application);
 	}
 
 	public static uint Inhibit(this MentorLake.Gtk.GtkApplicationHandle application, MentorLake.Gtk.GtkWindowHandle window, MentorLake.Gtk.GtkApplicationInhibitFlags flags, string reason)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_inhibit(application, window, flags, reason);
 	}
 
 	public static bool IsInhibited(this MentorLake.Gtk.GtkApplicationHandle application, MentorLake.Gtk.GtkApplicationInhibitFlags flags)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_is_inhibited(application, flags);
 	}
 
 	public static string[] ListActionDescriptions(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_list_action_descriptions(application);
 	}
 
 	public static bool PrefersAppMenu(this MentorLake.Gtk.GtkApplicationHandle application)
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		return GtkApplicationHandleExterns.gtk_application_prefers_app_menu(application);
 	}
 
 	public static T RemoveAccelerator<T>(this T application, string action_name, MentorLake.GLib.GVariantHandle parameter) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_remove_accelerator(application, action_name, parameter);
 		return application;
 	}
 
 	public static T RemoveWindow<T>(this T application, MentorLake.Gtk.GtkWindowHandle window) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_remove_window(application, window);
 		return application;
 	}
 
 	public static T SetAccelsForAction<T>(this T application, string detailed_action_name, string[] accels) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_set_accels_for_action(application, detailed_action_name, accels);
 		return application;
 	}
 
 	public static T SetAppMenu<T>(this T application, MentorLake.Gio.GMenuModelHandle app_menu) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_set_app_menu(application, app_menu);
 		return application;
 	}
 
 	public static T SetMenubar<T>(this T application, MentorLake.Gio.GMenuModelHandle menubar) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_set_menubar(application, menubar);
 		return application;
 	}
 
 	public static T Uninhibit<T>(this T application, uint cookie) where T : GtkApplicationHandle
 	{
-		if (application.IsInvalid || application.IsClosed) throw new Exception("Invalid or closed handle (GtkApplicationHandle)");
+		if (application.IsInvalid) throw new Exception("Invalid handle (GtkApplicationHandle)");
 		GtkApplicationHandleExterns.gtk_application_uninhibit(application, cookie);
 		return application;
 	}
@@ -437,6 +437,7 @@ public static class GtkApplicationHandleExtensions
 internal class GtkApplicationHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))]
 	internal static extern MentorLake.Gtk.GtkApplicationHandle gtk_application_new(string application_id, MentorLake.Gio.GApplicationFlags flags);
 
 	[DllImport(GtkLibrary.Name)]
@@ -454,21 +455,27 @@ internal class GtkApplicationHandleExterns
 	internal static extern string[] gtk_application_get_actions_for_accel([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application, string accel);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowHandle gtk_application_get_active_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GMenuModelHandle gtk_application_get_app_menu([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuHandle>))]
 	internal static extern MentorLake.Gio.GMenuHandle gtk_application_get_menu_by_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application, string id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GMenuModelHandle gtk_application_get_menubar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowHandle gtk_application_get_window_by_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application, uint id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_application_get_windows([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))] MentorLake.Gtk.GtkApplicationHandle application);
 
 	[DllImport(GtkLibrary.Name)]

@@ -13,84 +13,84 @@ public static class GNotificationHandleExtensions
 {
 	public static T AddButton<T>(this T notification, string label, string detailed_action) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_add_button(notification, label, detailed_action);
 		return notification;
 	}
 
 	public static T AddButtonWithTarget<T>(this T notification, string label, string action, string target_format, IntPtr @__arglist) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_add_button_with_target(notification, label, action, target_format, @__arglist);
 		return notification;
 	}
 
 	public static T AddButtonWithTargetValue<T>(this T notification, string label, string action, MentorLake.GLib.GVariantHandle target) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_add_button_with_target_value(notification, label, action, target);
 		return notification;
 	}
 
 	public static T SetBody<T>(this T notification, string body) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_body(notification, body);
 		return notification;
 	}
 
 	public static T SetCategory<T>(this T notification, string category) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_category(notification, category);
 		return notification;
 	}
 
 	public static T SetDefaultAction<T>(this T notification, string detailed_action) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_default_action(notification, detailed_action);
 		return notification;
 	}
 
 	public static T SetDefaultActionAndTarget<T>(this T notification, string action, string target_format, IntPtr @__arglist) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_default_action_and_target(notification, action, target_format, @__arglist);
 		return notification;
 	}
 
 	public static T SetDefaultActionAndTargetValue<T>(this T notification, string action, MentorLake.GLib.GVariantHandle target) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_default_action_and_target_value(notification, action, target);
 		return notification;
 	}
 
 	public static T SetIcon<T>(this T notification, MentorLake.Gio.GIconHandle icon) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_icon(notification, icon);
 		return notification;
 	}
 
 	public static T SetPriority<T>(this T notification, MentorLake.Gio.GNotificationPriority priority) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_priority(notification, priority);
 		return notification;
 	}
 
 	public static T SetTitle<T>(this T notification, string title) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_title(notification, title);
 		return notification;
 	}
 
 	public static T SetUrgent<T>(this T notification, bool urgent) where T : GNotificationHandle
 	{
-		if (notification.IsInvalid || notification.IsClosed) throw new Exception("Invalid or closed handle (GNotificationHandle)");
+		if (notification.IsInvalid) throw new Exception("Invalid handle (GNotificationHandle)");
 		GNotificationHandleExterns.g_notification_set_urgent(notification, urgent);
 		return notification;
 	}
@@ -100,6 +100,7 @@ public static class GNotificationHandleExtensions
 internal class GNotificationHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GNotificationHandle>))]
 	internal static extern MentorLake.Gio.GNotificationHandle g_notification_new(string title);
 
 	[DllImport(GioLibrary.Name)]

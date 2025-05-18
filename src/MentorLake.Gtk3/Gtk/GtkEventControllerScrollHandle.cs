@@ -185,13 +185,13 @@ public static class GtkEventControllerScrollHandleExtensions
 {
 	public static MentorLake.Gtk.GtkEventControllerScrollFlags GetFlags(this MentorLake.Gtk.GtkEventControllerScrollHandle scroll)
 	{
-		if (scroll.IsInvalid || scroll.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerScrollHandle)");
+		if (scroll.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerScrollHandle)");
 		return GtkEventControllerScrollHandleExterns.gtk_event_controller_scroll_get_flags(scroll);
 	}
 
 	public static T SetFlags<T>(this T scroll, MentorLake.Gtk.GtkEventControllerScrollFlags flags) where T : GtkEventControllerScrollHandle
 	{
-		if (scroll.IsInvalid || scroll.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerScrollHandle)");
+		if (scroll.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerScrollHandle)");
 		GtkEventControllerScrollHandleExterns.gtk_event_controller_scroll_set_flags(scroll, flags);
 		return scroll;
 	}
@@ -201,6 +201,7 @@ public static class GtkEventControllerScrollHandleExtensions
 internal class GtkEventControllerScrollHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerScrollHandle>))]
 	internal static extern MentorLake.Gtk.GtkEventControllerScrollHandle gtk_event_controller_scroll_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkEventControllerScrollFlags flags);
 
 	[DllImport(GtkLibrary.Name)]

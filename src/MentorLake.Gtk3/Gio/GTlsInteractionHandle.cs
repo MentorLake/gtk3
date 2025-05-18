@@ -8,7 +8,7 @@ public static class GTlsInteractionHandleExtensions
 {
 	public static MentorLake.Gio.GTlsInteractionResult AskPassword(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsPasswordHandle password, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_ask_password(interaction, password, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -16,14 +16,14 @@ public static class GTlsInteractionHandleExtensions
 
 	public static T AskPasswordAsync<T>(this T interaction, MentorLake.Gio.GTlsPasswordHandle password, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsInteractionHandle
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		GTlsInteractionHandleExterns.g_tls_interaction_ask_password_async(interaction, password, cancellable, callback, user_data);
 		return interaction;
 	}
 
 	public static MentorLake.Gio.GTlsInteractionResult AskPasswordFinish(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_ask_password_finish(interaction, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -31,7 +31,7 @@ public static class GTlsInteractionHandleExtensions
 
 	public static MentorLake.Gio.GTlsInteractionResult InvokeAskPassword(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsPasswordHandle password, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_invoke_ask_password(interaction, password, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -39,7 +39,7 @@ public static class GTlsInteractionHandleExtensions
 
 	public static MentorLake.Gio.GTlsInteractionResult InvokeRequestCertificate(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsConnectionHandle connection, MentorLake.Gio.GTlsCertificateRequestFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_invoke_request_certificate(interaction, connection, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -47,7 +47,7 @@ public static class GTlsInteractionHandleExtensions
 
 	public static MentorLake.Gio.GTlsInteractionResult RequestCertificate(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GTlsConnectionHandle connection, MentorLake.Gio.GTlsCertificateRequestFlags flags, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_request_certificate(interaction, connection, flags, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -55,14 +55,14 @@ public static class GTlsInteractionHandleExtensions
 
 	public static T RequestCertificateAsync<T>(this T interaction, MentorLake.Gio.GTlsConnectionHandle connection, MentorLake.Gio.GTlsCertificateRequestFlags flags, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GTlsInteractionHandle
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		GTlsInteractionHandleExterns.g_tls_interaction_request_certificate_async(interaction, connection, flags, cancellable, callback, user_data);
 		return interaction;
 	}
 
 	public static MentorLake.Gio.GTlsInteractionResult RequestCertificateFinish(this MentorLake.Gio.GTlsInteractionHandle interaction, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		if (interaction.IsInvalid || interaction.IsClosed) throw new Exception("Invalid or closed handle (GTlsInteractionHandle)");
+		if (interaction.IsInvalid) throw new Exception("Invalid handle (GTlsInteractionHandle)");
 		var externCallResult = GTlsInteractionHandleExterns.g_tls_interaction_request_certificate_finish(interaction, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

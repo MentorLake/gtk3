@@ -69,33 +69,33 @@ public static class GtkPlugHandleExtensions
 {
 	public static T Construct<T>(this T plug, MentorLake.xlib.Window socket_id) where T : GtkPlugHandle
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugHandle)");
 		GtkPlugHandleExterns.gtk_plug_construct(plug, socket_id);
 		return plug;
 	}
 
 	public static T ConstructForDisplay<T>(this T plug, MentorLake.Gdk.GdkDisplayHandle display, MentorLake.xlib.Window socket_id) where T : GtkPlugHandle
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugHandle)");
 		GtkPlugHandleExterns.gtk_plug_construct_for_display(plug, display, socket_id);
 		return plug;
 	}
 
 	public static bool GetEmbedded(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_embedded(plug);
 	}
 
 	public static MentorLake.xlib.Window GetId(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_id(plug);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetSocketWindow(this MentorLake.Gtk.GtkPlugHandle plug)
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugHandle)");
 		return GtkPlugHandleExterns.gtk_plug_get_socket_window(plug);
 	}
 
@@ -104,9 +104,11 @@ public static class GtkPlugHandleExtensions
 internal class GtkPlugHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkPlugHandle>))]
 	internal static extern MentorLake.Gtk.GtkPlugHandle gtk_plug_new(MentorLake.xlib.Window socket_id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkPlugHandle>))]
 	internal static extern MentorLake.Gtk.GtkPlugHandle gtk_plug_new_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.xlib.Window socket_id);
 
 	[DllImport(GtkLibrary.Name)]
@@ -122,6 +124,7 @@ internal class GtkPlugHandleExterns
 	internal static extern MentorLake.xlib.Window gtk_plug_get_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPlugHandle>))] MentorLake.Gtk.GtkPlugHandle plug);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_plug_get_socket_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPlugHandle>))] MentorLake.Gtk.GtkPlugHandle plug);
 
 }

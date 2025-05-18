@@ -14,14 +14,14 @@ public static class GAsyncInitableHandleExtensions
 {
 	public static T InitAsync<T>(this T initable, int io_priority, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GAsyncInitableHandle
 	{
-		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
+		if (initable.IsInvalid) throw new Exception("Invalid handle (GAsyncInitableHandle)");
 		GAsyncInitableHandleExterns.g_async_initable_init_async(initable, io_priority, cancellable, callback, user_data);
 		return initable;
 	}
 
 	public static bool InitFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
 	{
-		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
+		if (initable.IsInvalid) throw new Exception("Invalid handle (GAsyncInitableHandle)");
 		var externCallResult = GAsyncInitableHandleExterns.g_async_initable_init_finish(initable, res, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -29,7 +29,7 @@ public static class GAsyncInitableHandleExtensions
 
 	public static MentorLake.GObject.GObjectHandle NewFinish(this MentorLake.Gio.GAsyncInitableHandle initable, MentorLake.Gio.GAsyncResultHandle res)
 	{
-		if (initable.IsInvalid || initable.IsClosed) throw new Exception("Invalid or closed handle (GAsyncInitableHandle)");
+		if (initable.IsInvalid) throw new Exception("Invalid handle (GAsyncInitableHandle)");
 		var externCallResult = GAsyncInitableHandleExterns.g_async_initable_new_finish(initable, res, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -61,6 +61,7 @@ internal class GAsyncInitableHandleExterns
 	internal static extern bool g_async_initable_init_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_async_initable_new_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncInitableHandleImpl>))] MentorLake.Gio.GAsyncInitableHandle initable, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAsyncResultHandleImpl>))] MentorLake.Gio.GAsyncResultHandle res, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]

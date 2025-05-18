@@ -14,37 +14,37 @@ public static class graphene_size_tExtensions
 {
 	public static bool Equal(this MentorLake.Graphene.graphene_size_tHandle a, MentorLake.Graphene.graphene_size_tHandle b)
 	{
-		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		return graphene_size_tExterns.graphene_size_equal(a, b);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_size_tHandle s)
 	{
-		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (s.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		graphene_size_tExterns.graphene_size_free(s);
 	}
 
 	public static MentorLake.Graphene.graphene_size_tHandle Init(this MentorLake.Graphene.graphene_size_tHandle s, float width, float height)
 	{
-		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (s.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		return graphene_size_tExterns.graphene_size_init(s, width, height);
 	}
 
 	public static MentorLake.Graphene.graphene_size_tHandle InitFromSize(this MentorLake.Graphene.graphene_size_tHandle s, MentorLake.Graphene.graphene_size_tHandle src)
 	{
-		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (s.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		return graphene_size_tExterns.graphene_size_init_from_size(s, src);
 	}
 
 	public static void Interpolate(this MentorLake.Graphene.graphene_size_tHandle a, MentorLake.Graphene.graphene_size_tHandle b, double factor, out MentorLake.Graphene.graphene_size_t res)
 	{
-		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		graphene_size_tExterns.graphene_size_interpolate(a, b, factor, out res);
 	}
 
 	public static void Scale(this MentorLake.Graphene.graphene_size_tHandle s, float factor, out MentorLake.Graphene.graphene_size_t res)
 	{
-		if (s.IsInvalid || s.IsClosed) throw new Exception("Invalid or closed handle (graphene_size_t)");
+		if (s.IsInvalid) throw new Exception("Invalid handle (graphene_size_t)");
 		graphene_size_tExterns.graphene_size_scale(s, factor, out res);
 	}
 
@@ -54,6 +54,7 @@ public static class graphene_size_tExtensions
 internal class graphene_size_tExterns
 {
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_size_tHandle graphene_size_alloc();
 
 	[DllImport(GrapheneLibrary.Name)]
@@ -63,9 +64,11 @@ internal class graphene_size_tExterns
 	internal static extern void graphene_size_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))] MentorLake.Graphene.graphene_size_tHandle s);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_size_tHandle graphene_size_init([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))] MentorLake.Graphene.graphene_size_tHandle s, float width, float height);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_size_tHandle graphene_size_init_from_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))] MentorLake.Graphene.graphene_size_tHandle s, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))] MentorLake.Graphene.graphene_size_tHandle src);
 
 	[DllImport(GrapheneLibrary.Name)]
@@ -75,6 +78,7 @@ internal class graphene_size_tExterns
 	internal static extern void graphene_size_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))] MentorLake.Graphene.graphene_size_tHandle s, float factor, out MentorLake.Graphene.graphene_size_t res);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_size_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_size_tHandle graphene_size_zero();
 
 }

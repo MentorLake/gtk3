@@ -14,7 +14,7 @@ public static class GMarkupParseContextExtensions
 {
 	public static bool EndParse(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		var externCallResult = GMarkupParseContextExterns.g_markup_parse_context_end_parse(context, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -22,37 +22,37 @@ public static class GMarkupParseContextExtensions
 
 	public static void Free(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		GMarkupParseContextExterns.g_markup_parse_context_free(context);
 	}
 
 	public static string GetElement(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		return GMarkupParseContextExterns.g_markup_parse_context_get_element(context);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetElementStack(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		return GMarkupParseContextExterns.g_markup_parse_context_get_element_stack(context);
 	}
 
 	public static void GetPosition(this MentorLake.GLib.GMarkupParseContextHandle context, out int line_number, out int char_number)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		GMarkupParseContextExterns.g_markup_parse_context_get_position(context, out line_number, out char_number);
 	}
 
 	public static IntPtr GetUserData(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		return GMarkupParseContextExterns.g_markup_parse_context_get_user_data(context);
 	}
 
 	public static bool Parse(this MentorLake.GLib.GMarkupParseContextHandle context, string text, UIntPtr text_len)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		var externCallResult = GMarkupParseContextExterns.g_markup_parse_context_parse(context, text, text_len, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -60,25 +60,25 @@ public static class GMarkupParseContextExtensions
 
 	public static IntPtr Pop(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		return GMarkupParseContextExterns.g_markup_parse_context_pop(context);
 	}
 
 	public static void Push(this MentorLake.GLib.GMarkupParseContextHandle context, MentorLake.GLib.GMarkupParserHandle parser, IntPtr user_data)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		GMarkupParseContextExterns.g_markup_parse_context_push(context, parser, user_data);
 	}
 
 	public static MentorLake.GLib.GMarkupParseContextHandle Ref(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		return GMarkupParseContextExterns.g_markup_parse_context_ref(context);
 	}
 
 	public static void Unref(this MentorLake.GLib.GMarkupParseContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GMarkupParseContext)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GMarkupParseContext)");
 		GMarkupParseContextExterns.g_markup_parse_context_unref(context);
 	}
 
@@ -88,6 +88,7 @@ public static class GMarkupParseContextExtensions
 internal class GMarkupParseContextExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))]
 	internal static extern MentorLake.GLib.GMarkupParseContextHandle g_markup_parse_context_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParserHandle>))] MentorLake.GLib.GMarkupParserHandle parser, MentorLake.GLib.GMarkupParseFlags flags, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_dnotify);
 
 	[DllImport(GLibLibrary.Name)]
@@ -101,6 +102,7 @@ internal class GMarkupParseContextExterns
 	internal static extern string g_markup_parse_context_get_element([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle g_markup_parse_context_get_element_stack([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
 	[DllImport(GLibLibrary.Name)]
@@ -119,6 +121,7 @@ internal class GMarkupParseContextExterns
 	internal static extern void g_markup_parse_context_push([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParserHandle>))] MentorLake.GLib.GMarkupParserHandle parser, IntPtr user_data);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))]
 	internal static extern MentorLake.GLib.GMarkupParseContextHandle g_markup_parse_context_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context);
 
 	[DllImport(GLibLibrary.Name)]

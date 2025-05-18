@@ -59,131 +59,131 @@ public static class GtkTreeSelectionHandleExtensions
 {
 	public static int CountSelectedRows(this MentorLake.Gtk.GtkTreeSelectionHandle selection)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_count_selected_rows(selection);
 	}
 
 	public static MentorLake.Gtk.GtkSelectionMode GetMode(this MentorLake.Gtk.GtkTreeSelectionHandle selection)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_mode(selection);
 	}
 
 	public static MentorLake.Gtk.GtkTreeSelectionFunc GetSelectFunction(this MentorLake.Gtk.GtkTreeSelectionHandle selection)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_select_function(selection);
 	}
 
 	public static bool GetSelected(this MentorLake.Gtk.GtkTreeSelectionHandle selection, out MentorLake.Gtk.GtkTreeModelHandle model, out MentorLake.Gtk.GtkTreeIter iter)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_selected(selection, out model, out iter);
 	}
 
 	public static MentorLake.GLib.GListHandle GetSelectedRows(this MentorLake.Gtk.GtkTreeSelectionHandle selection, out MentorLake.Gtk.GtkTreeModelHandle model)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_selected_rows(selection, out model);
 	}
 
 	public static MentorLake.Gtk.GtkTreeViewHandle GetTreeView(this MentorLake.Gtk.GtkTreeSelectionHandle selection)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_tree_view(selection);
 	}
 
 	public static IntPtr GetUserData(this MentorLake.Gtk.GtkTreeSelectionHandle selection)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_get_user_data(selection);
 	}
 
 	public static bool IterIsSelected(this MentorLake.Gtk.GtkTreeSelectionHandle selection, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_iter_is_selected(selection, iter);
 	}
 
 	public static bool PathIsSelected(this MentorLake.Gtk.GtkTreeSelectionHandle selection, MentorLake.Gtk.GtkTreePathHandle path)
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		return GtkTreeSelectionHandleExterns.gtk_tree_selection_path_is_selected(selection, path);
 	}
 
 	public static T SelectAll<T>(this T selection) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_select_all(selection);
 		return selection;
 	}
 
 	public static T SelectIter<T>(this T selection, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_select_iter(selection, iter);
 		return selection;
 	}
 
 	public static T SelectPath<T>(this T selection, MentorLake.Gtk.GtkTreePathHandle path) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_select_path(selection, path);
 		return selection;
 	}
 
 	public static T SelectRange<T>(this T selection, MentorLake.Gtk.GtkTreePathHandle start_path, MentorLake.Gtk.GtkTreePathHandle end_path) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_select_range(selection, start_path, end_path);
 		return selection;
 	}
 
 	public static T SelectedForeach<T>(this T selection, MentorLake.Gtk.GtkTreeSelectionForeachFunc func, IntPtr data) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_selected_foreach(selection, func, data);
 		return selection;
 	}
 
 	public static T SetMode<T>(this T selection, MentorLake.Gtk.GtkSelectionMode type) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_set_mode(selection, type);
 		return selection;
 	}
 
 	public static T SetSelectFunction<T>(this T selection, MentorLake.Gtk.GtkTreeSelectionFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify destroy) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_set_select_function(selection, func, data, destroy);
 		return selection;
 	}
 
 	public static T UnselectAll<T>(this T selection) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_unselect_all(selection);
 		return selection;
 	}
 
 	public static T UnselectIter<T>(this T selection, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_unselect_iter(selection, iter);
 		return selection;
 	}
 
 	public static T UnselectPath<T>(this T selection, MentorLake.Gtk.GtkTreePathHandle path) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_unselect_path(selection, path);
 		return selection;
 	}
 
 	public static T UnselectRange<T>(this T selection, MentorLake.Gtk.GtkTreePathHandle start_path, MentorLake.Gtk.GtkTreePathHandle end_path) where T : GtkTreeSelectionHandle
 	{
-		if (selection.IsInvalid || selection.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeSelectionHandle)");
+		if (selection.IsInvalid) throw new Exception("Invalid handle (GtkTreeSelectionHandle)");
 		GtkTreeSelectionHandleExterns.gtk_tree_selection_unselect_range(selection, start_path, end_path);
 		return selection;
 	}
@@ -205,9 +205,11 @@ internal class GtkTreeSelectionHandleExterns
 	internal static extern bool gtk_tree_selection_get_selected([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeSelectionHandle>))] MentorLake.Gtk.GtkTreeSelectionHandle selection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] out MentorLake.Gtk.GtkTreeModelHandle model, out MentorLake.Gtk.GtkTreeIter iter);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_tree_selection_get_selected_rows([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeSelectionHandle>))] MentorLake.Gtk.GtkTreeSelectionHandle selection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] out MentorLake.Gtk.GtkTreeModelHandle model);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeViewHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreeViewHandle gtk_tree_selection_get_tree_view([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeSelectionHandle>))] MentorLake.Gtk.GtkTreeSelectionHandle selection);
 
 	[DllImport(GtkLibrary.Name)]

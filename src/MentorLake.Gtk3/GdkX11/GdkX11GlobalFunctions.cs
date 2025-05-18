@@ -126,6 +126,7 @@ internal class GdkX11GlobalFunctionsExterns
 	internal static extern int gdk_x11_device_get_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DeviceCoreHandle>))] MentorLake.GdkX11.GdkX11DeviceCoreHandle device);
 
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DeviceCoreHandle>))]
 	internal static extern MentorLake.GdkX11.GdkX11DeviceCoreHandle gdk_x11_device_manager_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DeviceManagerCoreHandle>))] MentorLake.GdkX11.GdkX11DeviceManagerCoreHandle device_manager, int device_id);
 
 	[DllImport(GdkX11Library.Name)]
@@ -141,9 +142,11 @@ internal class GdkX11GlobalFunctionsExterns
 	internal static extern int gdk_x11_get_default_screen();
 
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.xlib.DisplayHandle>))]
 	internal static extern MentorLake.xlib.DisplayHandle gdk_x11_get_default_xdisplay();
 
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle gdk_x11_get_parent_relative_pattern();
 
 	[DllImport(GdkX11Library.Name)]
@@ -167,6 +170,7 @@ internal class GdkX11GlobalFunctionsExterns
 	internal static extern void gdk_x11_grab_server();
 
 	[DllImport(GdkX11Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))]
 	internal static extern MentorLake.GdkX11.GdkX11DisplayHandle gdk_x11_lookup_xdisplay([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.xlib.DisplayHandle>))] MentorLake.xlib.DisplayHandle xdisplay);
 
 	[DllImport(GdkX11Library.Name)]

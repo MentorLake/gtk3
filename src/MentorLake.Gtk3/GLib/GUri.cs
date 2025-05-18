@@ -9,73 +9,73 @@ public static class GUriExtensions
 {
 	public static string GetAuthParams(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_auth_params(uri);
 	}
 
 	public static MentorLake.GLib.GUriFlags GetFlags(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_flags(uri);
 	}
 
 	public static string GetFragment(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_fragment(uri);
 	}
 
 	public static string GetHost(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_host(uri);
 	}
 
 	public static string GetPassword(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_password(uri);
 	}
 
 	public static string GetPath(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_path(uri);
 	}
 
 	public static int GetPort(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_port(uri);
 	}
 
 	public static string GetQuery(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_query(uri);
 	}
 
 	public static string GetScheme(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_scheme(uri);
 	}
 
 	public static string GetUser(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_user(uri);
 	}
 
 	public static string GetUserinfo(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_get_userinfo(uri);
 	}
 
 	public static MentorLake.GLib.GUriHandle ParseRelative(this MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags)
 	{
-		if (base_uri.IsInvalid || base_uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (base_uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		var externCallResult = GUriExterns.g_uri_parse_relative(base_uri, uri_ref, flags, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -83,25 +83,25 @@ public static class GUriExtensions
 
 	public static MentorLake.GLib.GUriHandle Ref(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_ref(uri);
 	}
 
 	public static string ToString(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_to_string(uri);
 	}
 
 	public static string ToStringPartial(this MentorLake.GLib.GUriHandle uri, MentorLake.GLib.GUriHideFlags flags)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		return GUriExterns.g_uri_to_string_partial(uri, flags);
 	}
 
 	public static void Unref(this MentorLake.GLib.GUriHandle uri)
 	{
-		if (uri.IsInvalid || uri.IsClosed) throw new Exception("Invalid or closed handle (GUri)");
+		if (uri.IsInvalid) throw new Exception("Invalid handle (GUri)");
 		GUriExterns.g_uri_unref(uri);
 	}
 
@@ -153,9 +153,11 @@ internal class GUriExterns
 	internal static extern string g_uri_get_userinfo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle uri);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_parse_relative([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle base_uri, string uri_ref, MentorLake.GLib.GUriFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle uri);
 
 	[DllImport(GLibLibrary.Name)]
@@ -170,9 +172,11 @@ internal class GUriExterns
 	internal static extern void g_uri_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))] MentorLake.GLib.GUriHandle uri);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_build(MentorLake.GLib.GUriFlags flags, string scheme, string userinfo, string host, int port, string path, string query, string fragment);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_build_with_user(MentorLake.GLib.GUriFlags flags, string scheme, string user, string password, string auth_params, string host, int port, string path, string query, string fragment);
 
 	[DllImport(GLibLibrary.Name)]
@@ -202,9 +206,11 @@ internal class GUriExterns
 	internal static extern string[] g_uri_list_extract_uris(string uri_list);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GUriHandle>))]
 	internal static extern MentorLake.GLib.GUriHandle g_uri_parse(string uri_string, MentorLake.GLib.GUriFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHashTableHandle>))]
 	internal static extern MentorLake.GLib.GHashTableHandle g_uri_parse_params(string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
@@ -229,6 +235,7 @@ internal class GUriExterns
 	internal static extern bool g_uri_split_with_user(string uri_ref, MentorLake.GLib.GUriFlags flags, out string scheme, out string user, out string password, out string auth_params, out string host, out int port, out string path, out string query, out string fragment, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))]
 	internal static extern MentorLake.GLib.GBytesHandle g_uri_unescape_bytes(string escaped_string, UIntPtr length, string illegal_characters, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]

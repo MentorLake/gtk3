@@ -16,25 +16,25 @@ public static class GDBusNodeInfoExtensions
 {
 	public static void GenerateXml(this MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, MentorLake.GLib.GStringHandle string_builder)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusNodeInfo)");
 		GDBusNodeInfoExterns.g_dbus_node_info_generate_xml(info, indent, string_builder);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceInfoHandle LookupInterface(this MentorLake.Gio.GDBusNodeInfoHandle info, string name)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusNodeInfo)");
 		return GDBusNodeInfoExterns.g_dbus_node_info_lookup_interface(info, name);
 	}
 
 	public static MentorLake.Gio.GDBusNodeInfoHandle Ref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusNodeInfo)");
 		return GDBusNodeInfoExterns.g_dbus_node_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusNodeInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusNodeInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusNodeInfo)");
 		GDBusNodeInfoExterns.g_dbus_node_info_unref(info);
 	}
 
@@ -44,15 +44,18 @@ public static class GDBusNodeInfoExtensions
 internal class GDBusNodeInfoExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_new_for_xml(string xml_data, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_dbus_node_info_generate_xml([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info, uint indent, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringHandle>))] MentorLake.GLib.GStringHandle string_builder);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusInterfaceInfoHandle g_dbus_node_info_lookup_interface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info, string name);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusNodeInfoHandle g_dbus_node_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusNodeInfoHandle>))] MentorLake.Gio.GDBusNodeInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]

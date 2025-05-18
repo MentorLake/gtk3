@@ -9,31 +9,31 @@ public static class GObjectClassExtensions
 {
 	public static MentorLake.GObject.GParamSpecHandle FindProperty(this MentorLake.GObject.GObjectClassHandle oclass, string property_name)
 	{
-		if (oclass.IsInvalid || oclass.IsClosed) throw new Exception("Invalid or closed handle (GObjectClass)");
+		if (oclass.IsInvalid) throw new Exception("Invalid handle (GObjectClass)");
 		return GObjectClassExterns.g_object_class_find_property(oclass, property_name);
 	}
 
 	public static void InstallProperties(this MentorLake.GObject.GObjectClassHandle oclass, uint n_pspecs, MentorLake.GObject.GParamSpecHandle[] pspecs)
 	{
-		if (oclass.IsInvalid || oclass.IsClosed) throw new Exception("Invalid or closed handle (GObjectClass)");
+		if (oclass.IsInvalid) throw new Exception("Invalid handle (GObjectClass)");
 		GObjectClassExterns.g_object_class_install_properties(oclass, n_pspecs, pspecs);
 	}
 
 	public static void InstallProperty(this MentorLake.GObject.GObjectClassHandle oclass, uint property_id, MentorLake.GObject.GParamSpecHandle pspec)
 	{
-		if (oclass.IsInvalid || oclass.IsClosed) throw new Exception("Invalid or closed handle (GObjectClass)");
+		if (oclass.IsInvalid) throw new Exception("Invalid handle (GObjectClass)");
 		GObjectClassExterns.g_object_class_install_property(oclass, property_id, pspec);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle[] ListProperties(this MentorLake.GObject.GObjectClassHandle oclass, out uint n_properties)
 	{
-		if (oclass.IsInvalid || oclass.IsClosed) throw new Exception("Invalid or closed handle (GObjectClass)");
+		if (oclass.IsInvalid) throw new Exception("Invalid handle (GObjectClass)");
 		return GObjectClassExterns.g_object_class_list_properties(oclass, out n_properties);
 	}
 
 	public static void OverrideProperty(this MentorLake.GObject.GObjectClassHandle oclass, uint property_id, string name)
 	{
-		if (oclass.IsInvalid || oclass.IsClosed) throw new Exception("Invalid or closed handle (GObjectClass)");
+		if (oclass.IsInvalid) throw new Exception("Invalid handle (GObjectClass)");
 		GObjectClassExterns.g_object_class_override_property(oclass, property_id, name);
 	}
 
@@ -43,6 +43,7 @@ public static class GObjectClassExtensions
 internal class GObjectClassExterns
 {
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle g_object_class_find_property([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectClassHandle>))] MentorLake.GObject.GObjectClassHandle oclass, string property_name);
 
 	[DllImport(GObjectLibrary.Name)]

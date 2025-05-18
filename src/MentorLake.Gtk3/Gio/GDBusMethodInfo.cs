@@ -9,13 +9,13 @@ public static class GDBusMethodInfoExtensions
 {
 	public static MentorLake.Gio.GDBusMethodInfoHandle Ref(this MentorLake.Gio.GDBusMethodInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusMethodInfo)");
 		return GDBusMethodInfoExterns.g_dbus_method_info_ref(info);
 	}
 
 	public static void Unref(this MentorLake.Gio.GDBusMethodInfoHandle info)
 	{
-		if (info.IsInvalid || info.IsClosed) throw new Exception("Invalid or closed handle (GDBusMethodInfo)");
+		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusMethodInfo)");
 		GDBusMethodInfoExterns.g_dbus_method_info_unref(info);
 	}
 
@@ -25,6 +25,7 @@ public static class GDBusMethodInfoExtensions
 internal class GDBusMethodInfoExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMethodInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusMethodInfoHandle g_dbus_method_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMethodInfoHandle>))] MentorLake.Gio.GDBusMethodInfoHandle info);
 
 	[DllImport(GioLibrary.Name)]

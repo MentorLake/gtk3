@@ -9,49 +9,49 @@ public static class GdkFrameTimingsExtensions
 {
 	public static bool GetComplete(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_complete(timings);
 	}
 
 	public static long GetFrameCounter(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_frame_counter(timings);
 	}
 
 	public static long GetFrameTime(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_frame_time(timings);
 	}
 
 	public static long GetPredictedPresentationTime(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_predicted_presentation_time(timings);
 	}
 
 	public static long GetPresentationTime(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_presentation_time(timings);
 	}
 
 	public static long GetRefreshInterval(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_get_refresh_interval(timings);
 	}
 
 	public static MentorLake.Gdk.GdkFrameTimingsHandle Ref(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		return GdkFrameTimingsExterns.gdk_frame_timings_ref(timings);
 	}
 
 	public static void Unref(this MentorLake.Gdk.GdkFrameTimingsHandle timings)
 	{
-		if (timings.IsInvalid || timings.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameTimings)");
+		if (timings.IsInvalid) throw new Exception("Invalid handle (GdkFrameTimings)");
 		GdkFrameTimingsExterns.gdk_frame_timings_unref(timings);
 	}
 
@@ -79,6 +79,7 @@ internal class GdkFrameTimingsExterns
 	internal static extern long gdk_frame_timings_get_refresh_interval([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameTimingsHandle>))] MentorLake.Gdk.GdkFrameTimingsHandle timings);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameTimingsHandle>))]
 	internal static extern MentorLake.Gdk.GdkFrameTimingsHandle gdk_frame_timings_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameTimingsHandle>))] MentorLake.Gdk.GdkFrameTimingsHandle timings);
 
 	[DllImport(GdkLibrary.Name)]

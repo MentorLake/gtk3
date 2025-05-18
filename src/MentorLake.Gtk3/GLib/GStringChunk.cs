@@ -9,31 +9,31 @@ public static class GStringChunkExtensions
 {
 	public static void Clear(this MentorLake.GLib.GStringChunkHandle chunk)
 	{
-		if (chunk.IsInvalid || chunk.IsClosed) throw new Exception("Invalid or closed handle (GStringChunk)");
+		if (chunk.IsInvalid) throw new Exception("Invalid handle (GStringChunk)");
 		GStringChunkExterns.g_string_chunk_clear(chunk);
 	}
 
 	public static void Free(this MentorLake.GLib.GStringChunkHandle chunk)
 	{
-		if (chunk.IsInvalid || chunk.IsClosed) throw new Exception("Invalid or closed handle (GStringChunk)");
+		if (chunk.IsInvalid) throw new Exception("Invalid handle (GStringChunk)");
 		GStringChunkExterns.g_string_chunk_free(chunk);
 	}
 
 	public static string Insert(this MentorLake.GLib.GStringChunkHandle chunk, string @string)
 	{
-		if (chunk.IsInvalid || chunk.IsClosed) throw new Exception("Invalid or closed handle (GStringChunk)");
+		if (chunk.IsInvalid) throw new Exception("Invalid handle (GStringChunk)");
 		return GStringChunkExterns.g_string_chunk_insert(chunk, @string);
 	}
 
 	public static string InsertConst(this MentorLake.GLib.GStringChunkHandle chunk, string @string)
 	{
-		if (chunk.IsInvalid || chunk.IsClosed) throw new Exception("Invalid or closed handle (GStringChunk)");
+		if (chunk.IsInvalid) throw new Exception("Invalid handle (GStringChunk)");
 		return GStringChunkExterns.g_string_chunk_insert_const(chunk, @string);
 	}
 
 	public static string InsertLen(this MentorLake.GLib.GStringChunkHandle chunk, string @string, UIntPtr len)
 	{
-		if (chunk.IsInvalid || chunk.IsClosed) throw new Exception("Invalid or closed handle (GStringChunk)");
+		if (chunk.IsInvalid) throw new Exception("Invalid handle (GStringChunk)");
 		return GStringChunkExterns.g_string_chunk_insert_len(chunk, @string, len);
 	}
 
@@ -61,6 +61,7 @@ internal class GStringChunkExterns
 	internal static extern string g_string_chunk_insert_len([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringChunkHandle>))] MentorLake.GLib.GStringChunkHandle chunk, string @string, UIntPtr len);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringChunkHandle>))]
 	internal static extern MentorLake.GLib.GStringChunkHandle g_string_chunk_new(UIntPtr size);
 
 }

@@ -228,268 +228,268 @@ public static class GSettingsHandleExtensions
 {
 	public static T Apply<T>(this T settings) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_apply(settings);
 		return settings;
 	}
 
 	public static T Bind<T>(this T settings, string key, MentorLake.GObject.GObjectHandle @object, string property, MentorLake.Gio.GSettingsBindFlags flags) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_bind(settings, key, @object, property, flags);
 		return settings;
 	}
 
 	public static T BindWithMapping<T>(this T settings, string key, MentorLake.GObject.GObjectHandle @object, string property, MentorLake.Gio.GSettingsBindFlags flags, MentorLake.Gio.GSettingsBindGetMapping get_mapping, MentorLake.Gio.GSettingsBindSetMapping set_mapping, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_bind_with_mapping(settings, key, @object, property, flags, get_mapping, set_mapping, user_data, destroy);
 		return settings;
 	}
 
 	public static T BindWithMappingClosures<T>(this T settings, string key, MentorLake.GObject.GObjectHandle @object, string property, MentorLake.Gio.GSettingsBindFlags flags, MentorLake.GObject.GClosureHandle get_mapping, MentorLake.GObject.GClosureHandle set_mapping) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_bind_with_mapping_closures(settings, key, @object, property, flags, get_mapping, set_mapping);
 		return settings;
 	}
 
 	public static T BindWritable<T>(this T settings, string key, MentorLake.GObject.GObjectHandle @object, string property, bool inverted) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_bind_writable(settings, key, @object, property, inverted);
 		return settings;
 	}
 
 	public static MentorLake.Gio.GActionHandle CreateAction(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_create_action(settings, key);
 	}
 
 	public static T Delay<T>(this T settings) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_delay(settings);
 		return settings;
 	}
 
 	public static T Get<T>(this T settings, string key, string format, IntPtr @__arglist) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_get(settings, key, format, @__arglist);
 		return settings;
 	}
 
 	public static bool GetBoolean(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_boolean(settings, key);
 	}
 
 	public static MentorLake.Gio.GSettingsHandle GetChild(this MentorLake.Gio.GSettingsHandle settings, string name)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_child(settings, name);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetDefaultValue(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_default_value(settings, key);
 	}
 
 	public static double GetDouble(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_double(settings, key);
 	}
 
 	public static int GetEnum(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_enum(settings, key);
 	}
 
 	public static uint GetFlags(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_flags(settings, key);
 	}
 
 	public static bool GetHasUnapplied(this MentorLake.Gio.GSettingsHandle settings)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_has_unapplied(settings);
 	}
 
 	public static int GetInt(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_int(settings, key);
 	}
 
 	public static long GetInt64(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_int64(settings, key);
 	}
 
 	public static IntPtr GetMapped(this MentorLake.Gio.GSettingsHandle settings, string key, MentorLake.Gio.GSettingsGetMapping mapping, IntPtr user_data)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_mapped(settings, key, mapping, user_data);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetRange(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_range(settings, key);
 	}
 
 	public static string GetString(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_string(settings, key);
 	}
 
 	public static string[] GetStrv(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_strv(settings, key);
 	}
 
 	public static uint GetUint(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_uint(settings, key);
 	}
 
 	public static ulong GetUint64(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_uint64(settings, key);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetUserValue(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_user_value(settings, key);
 	}
 
 	public static MentorLake.GLib.GVariantHandle GetValue(this MentorLake.Gio.GSettingsHandle settings, string key)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_get_value(settings, key);
 	}
 
 	public static bool IsWritable(this MentorLake.Gio.GSettingsHandle settings, string name)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_is_writable(settings, name);
 	}
 
 	public static string[] ListChildren(this MentorLake.Gio.GSettingsHandle settings)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_list_children(settings);
 	}
 
 	public static string[] ListKeys(this MentorLake.Gio.GSettingsHandle settings)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_list_keys(settings);
 	}
 
 	public static bool RangeCheck(this MentorLake.Gio.GSettingsHandle settings, string key, MentorLake.GLib.GVariantHandle value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_range_check(settings, key, value);
 	}
 
 	public static T Reset<T>(this T settings, string key) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_reset(settings, key);
 		return settings;
 	}
 
 	public static T Revert<T>(this T settings) where T : GSettingsHandle
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		GSettingsHandleExterns.g_settings_revert(settings);
 		return settings;
 	}
 
 	public static bool Set(this MentorLake.Gio.GSettingsHandle settings, string key, string format, IntPtr @__arglist)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set(settings, key, format, @__arglist);
 	}
 
 	public static bool SetBoolean(this MentorLake.Gio.GSettingsHandle settings, string key, bool value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_boolean(settings, key, value);
 	}
 
 	public static bool SetDouble(this MentorLake.Gio.GSettingsHandle settings, string key, double value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_double(settings, key, value);
 	}
 
 	public static bool SetEnum(this MentorLake.Gio.GSettingsHandle settings, string key, int value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_enum(settings, key, value);
 	}
 
 	public static bool SetFlags(this MentorLake.Gio.GSettingsHandle settings, string key, uint value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_flags(settings, key, value);
 	}
 
 	public static bool SetInt(this MentorLake.Gio.GSettingsHandle settings, string key, int value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_int(settings, key, value);
 	}
 
 	public static bool SetInt64(this MentorLake.Gio.GSettingsHandle settings, string key, long value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_int64(settings, key, value);
 	}
 
 	public static bool SetString(this MentorLake.Gio.GSettingsHandle settings, string key, string value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_string(settings, key, value);
 	}
 
 	public static bool SetStrv(this MentorLake.Gio.GSettingsHandle settings, string key, string[] value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_strv(settings, key, value);
 	}
 
 	public static bool SetUint(this MentorLake.Gio.GSettingsHandle settings, string key, uint value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_uint(settings, key, value);
 	}
 
 	public static bool SetUint64(this MentorLake.Gio.GSettingsHandle settings, string key, ulong value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_uint64(settings, key, value);
 	}
 
 	public static bool SetValue(this MentorLake.Gio.GSettingsHandle settings, string key, MentorLake.GLib.GVariantHandle value)
 	{
-		if (settings.IsInvalid || settings.IsClosed) throw new Exception("Invalid or closed handle (GSettingsHandle)");
+		if (settings.IsInvalid) throw new Exception("Invalid handle (GSettingsHandle)");
 		return GSettingsHandleExterns.g_settings_set_value(settings, key, value);
 	}
 
@@ -498,18 +498,23 @@ public static class GSettingsHandleExtensions
 internal class GSettingsHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_new(string schema_id);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_new_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsSchemaHandle>))] MentorLake.Gio.GSettingsSchemaHandle schema, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsBackendHandle>))] MentorLake.Gio.GSettingsBackendHandle backend, string path);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_new_with_backend(string schema_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsBackendHandle>))] MentorLake.Gio.GSettingsBackendHandle backend);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_new_with_backend_and_path(string schema_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsBackendHandle>))] MentorLake.Gio.GSettingsBackendHandle backend, string path);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_new_with_path(string schema_id, string path);
 
 	[DllImport(GioLibrary.Name)]
@@ -528,6 +533,7 @@ internal class GSettingsHandleExterns
 	internal static extern void g_settings_bind_writable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object, string property, bool inverted);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionHandleImpl>))]
 	internal static extern MentorLake.Gio.GActionHandle g_settings_create_action([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
@@ -540,9 +546,11 @@ internal class GSettingsHandleExterns
 	internal static extern bool g_settings_get_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_get_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string name);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))]
 	internal static extern MentorLake.GLib.GVariantHandle g_settings_get_default_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
@@ -567,6 +575,7 @@ internal class GSettingsHandleExterns
 	internal static extern IntPtr g_settings_get_mapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key, MentorLake.Gio.GSettingsGetMapping mapping, IntPtr user_data);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))]
 	internal static extern MentorLake.GLib.GVariantHandle g_settings_get_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
@@ -584,9 +593,11 @@ internal class GSettingsHandleExterns
 	internal static extern ulong g_settings_get_uint64([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))]
 	internal static extern MentorLake.GLib.GVariantHandle g_settings_get_user_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))]
 	internal static extern MentorLake.GLib.GVariantHandle g_settings_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]

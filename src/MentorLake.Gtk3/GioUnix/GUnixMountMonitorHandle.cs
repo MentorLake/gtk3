@@ -116,9 +116,11 @@ public static class GUnixMountMonitorHandleExtensions
 internal class GUnixMountMonitorHandleExterns
 {
 	[DllImport(GioUnixLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GioUnix.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.GioUnix.GUnixMountMonitorHandle g_unix_mount_monitor_new();
 
 	[DllImport(GioUnixLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.Gio.GUnixMountMonitorHandle g_unix_mount_monitor_get();
 
 	[DllImport(GioUnixLibrary.Name)]

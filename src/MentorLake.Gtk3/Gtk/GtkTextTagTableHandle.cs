@@ -146,32 +146,32 @@ public static class GtkTextTagTableHandleExtensions
 {
 	public static bool Add(this MentorLake.Gtk.GtkTextTagTableHandle table, MentorLake.Gtk.GtkTextTagHandle tag)
 	{
-		if (table.IsInvalid || table.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagTableHandle)");
+		if (table.IsInvalid) throw new Exception("Invalid handle (GtkTextTagTableHandle)");
 		return GtkTextTagTableHandleExterns.gtk_text_tag_table_add(table, tag);
 	}
 
 	public static T Foreach<T>(this T table, MentorLake.Gtk.GtkTextTagTableForeach func, IntPtr data) where T : GtkTextTagTableHandle
 	{
-		if (table.IsInvalid || table.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagTableHandle)");
+		if (table.IsInvalid) throw new Exception("Invalid handle (GtkTextTagTableHandle)");
 		GtkTextTagTableHandleExterns.gtk_text_tag_table_foreach(table, func, data);
 		return table;
 	}
 
 	public static int GetSize(this MentorLake.Gtk.GtkTextTagTableHandle table)
 	{
-		if (table.IsInvalid || table.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagTableHandle)");
+		if (table.IsInvalid) throw new Exception("Invalid handle (GtkTextTagTableHandle)");
 		return GtkTextTagTableHandleExterns.gtk_text_tag_table_get_size(table);
 	}
 
 	public static MentorLake.Gtk.GtkTextTagHandle Lookup(this MentorLake.Gtk.GtkTextTagTableHandle table, string name)
 	{
-		if (table.IsInvalid || table.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagTableHandle)");
+		if (table.IsInvalid) throw new Exception("Invalid handle (GtkTextTagTableHandle)");
 		return GtkTextTagTableHandleExterns.gtk_text_tag_table_lookup(table, name);
 	}
 
 	public static T Remove<T>(this T table, MentorLake.Gtk.GtkTextTagHandle tag) where T : GtkTextTagTableHandle
 	{
-		if (table.IsInvalid || table.IsClosed) throw new Exception("Invalid or closed handle (GtkTextTagTableHandle)");
+		if (table.IsInvalid) throw new Exception("Invalid handle (GtkTextTagTableHandle)");
 		GtkTextTagTableHandleExterns.gtk_text_tag_table_remove(table, tag);
 		return table;
 	}
@@ -181,6 +181,7 @@ public static class GtkTextTagTableHandleExtensions
 internal class GtkTextTagTableHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagTableHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextTagTableHandle gtk_text_tag_table_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -193,6 +194,7 @@ internal class GtkTextTagTableHandleExterns
 	internal static extern int gtk_text_tag_table_get_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagTableHandle>))] MentorLake.Gtk.GtkTextTagTableHandle table);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextTagHandle gtk_text_tag_table_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagTableHandle>))] MentorLake.Gtk.GtkTextTagTableHandle table, string name);
 
 	[DllImport(GtkLibrary.Name)]

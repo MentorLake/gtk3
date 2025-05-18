@@ -21,31 +21,31 @@ public static class GThreadExtensions
 {
 	public static string GetName(this MentorLake.GLib.GThreadHandle thread)
 	{
-		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
+		if (thread.IsInvalid) throw new Exception("Invalid handle (GThread)");
 		return GThreadExterns.g_thread_get_name(thread);
 	}
 
 	public static IntPtr Join(this MentorLake.GLib.GThreadHandle thread)
 	{
-		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
+		if (thread.IsInvalid) throw new Exception("Invalid handle (GThread)");
 		return GThreadExterns.g_thread_join(thread);
 	}
 
 	public static MentorLake.GLib.GThreadHandle Ref(this MentorLake.GLib.GThreadHandle thread)
 	{
-		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
+		if (thread.IsInvalid) throw new Exception("Invalid handle (GThread)");
 		return GThreadExterns.g_thread_ref(thread);
 	}
 
 	public static void SetPriority(this MentorLake.GLib.GThreadHandle thread, MentorLake.GLib.GThreadPriority priority)
 	{
-		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
+		if (thread.IsInvalid) throw new Exception("Invalid handle (GThread)");
 		GThreadExterns.g_thread_set_priority(thread, priority);
 	}
 
 	public static void Unref(this MentorLake.GLib.GThreadHandle thread)
 	{
-		if (thread.IsInvalid || thread.IsClosed) throw new Exception("Invalid or closed handle (GThread)");
+		if (thread.IsInvalid) throw new Exception("Invalid handle (GThread)");
 		GThreadExterns.g_thread_unref(thread);
 	}
 
@@ -55,9 +55,11 @@ public static class GThreadExtensions
 internal class GThreadExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_try_new(string name, MentorLake.GLib.GThreadFunc func, IntPtr data, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
@@ -68,6 +70,7 @@ internal class GThreadExterns
 	internal static extern IntPtr g_thread_join([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))] MentorLake.GLib.GThreadHandle thread);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))] MentorLake.GLib.GThreadHandle thread);
 
 	[DllImport(GLibLibrary.Name)]
@@ -77,9 +80,11 @@ internal class GThreadExterns
 	internal static extern void g_thread_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))] MentorLake.GLib.GThreadHandle thread);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_create(MentorLake.GLib.GThreadFunc func, IntPtr data, bool joinable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_create_full(MentorLake.GLib.GThreadFunc func, IntPtr data, ulong stack_size, bool joinable, bool bound, MentorLake.GLib.GThreadPriority priority, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
@@ -101,6 +106,7 @@ internal class GThreadExterns
 	internal static extern void g_thread_init_with_errorcheck_mutexes(IntPtr vtable);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GThreadHandle>))]
 	internal static extern MentorLake.GLib.GThreadHandle g_thread_self();
 
 	[DllImport(GLibLibrary.Name)]

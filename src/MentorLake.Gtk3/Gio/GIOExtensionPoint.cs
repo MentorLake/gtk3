@@ -9,25 +9,25 @@ public static class GIOExtensionPointExtensions
 {
 	public static MentorLake.Gio.GIOExtensionHandle GetExtensionByName(this MentorLake.Gio.GIOExtensionPointHandle extension_point, string name)
 	{
-		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
+		if (extension_point.IsInvalid) throw new Exception("Invalid handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_extension_by_name(extension_point, name);
 	}
 
 	public static MentorLake.GLib.GListHandle GetExtensions(this MentorLake.Gio.GIOExtensionPointHandle extension_point)
 	{
-		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
+		if (extension_point.IsInvalid) throw new Exception("Invalid handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_extensions(extension_point);
 	}
 
 	public static MentorLake.GObject.GType GetRequiredType(this MentorLake.Gio.GIOExtensionPointHandle extension_point)
 	{
-		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
+		if (extension_point.IsInvalid) throw new Exception("Invalid handle (GIOExtensionPoint)");
 		return GIOExtensionPointExterns.g_io_extension_point_get_required_type(extension_point);
 	}
 
 	public static void SetRequiredType(this MentorLake.Gio.GIOExtensionPointHandle extension_point, MentorLake.GObject.GType type)
 	{
-		if (extension_point.IsInvalid || extension_point.IsClosed) throw new Exception("Invalid or closed handle (GIOExtensionPoint)");
+		if (extension_point.IsInvalid) throw new Exception("Invalid handle (GIOExtensionPoint)");
 		GIOExtensionPointExterns.g_io_extension_point_set_required_type(extension_point, type);
 	}
 
@@ -37,9 +37,11 @@ public static class GIOExtensionPointExtensions
 internal class GIOExtensionPointExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionHandle>))]
 	internal static extern MentorLake.Gio.GIOExtensionHandle g_io_extension_point_get_extension_by_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionPointHandle>))] MentorLake.Gio.GIOExtensionPointHandle extension_point, string name);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_io_extension_point_get_extensions([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionPointHandle>))] MentorLake.Gio.GIOExtensionPointHandle extension_point);
 
 	[DllImport(GioLibrary.Name)]
@@ -49,12 +51,15 @@ internal class GIOExtensionPointExterns
 	internal static extern void g_io_extension_point_set_required_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionPointHandle>))] MentorLake.Gio.GIOExtensionPointHandle extension_point, MentorLake.GObject.GType type);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionHandle>))]
 	internal static extern MentorLake.Gio.GIOExtensionHandle g_io_extension_point_implement(string extension_point_name, MentorLake.GObject.GType type, string extension_name, int priority);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionPointHandle>))]
 	internal static extern MentorLake.Gio.GIOExtensionPointHandle g_io_extension_point_lookup(string name);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOExtensionPointHandle>))]
 	internal static extern MentorLake.Gio.GIOExtensionPointHandle g_io_extension_point_register(string name);
 
 }

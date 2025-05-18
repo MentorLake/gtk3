@@ -8,7 +8,7 @@ public static class GPermissionHandleExtensions
 {
 	public static bool Acquire(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		var externCallResult = GPermissionHandleExterns.g_permission_acquire(permission, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -16,14 +16,14 @@ public static class GPermissionHandleExtensions
 
 	public static T AcquireAsync<T>(this T permission, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		GPermissionHandleExterns.g_permission_acquire_async(permission, cancellable, callback, user_data);
 		return permission;
 	}
 
 	public static bool AcquireFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		var externCallResult = GPermissionHandleExterns.g_permission_acquire_finish(permission, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -31,32 +31,32 @@ public static class GPermissionHandleExtensions
 
 	public static bool GetAllowed(this MentorLake.Gio.GPermissionHandle permission)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		return GPermissionHandleExterns.g_permission_get_allowed(permission);
 	}
 
 	public static bool GetCanAcquire(this MentorLake.Gio.GPermissionHandle permission)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		return GPermissionHandleExterns.g_permission_get_can_acquire(permission);
 	}
 
 	public static bool GetCanRelease(this MentorLake.Gio.GPermissionHandle permission)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		return GPermissionHandleExterns.g_permission_get_can_release(permission);
 	}
 
 	public static T ImplUpdate<T>(this T permission, bool allowed, bool can_acquire, bool can_release) where T : GPermissionHandle
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		GPermissionHandleExterns.g_permission_impl_update(permission, allowed, can_acquire, can_release);
 		return permission;
 	}
 
 	public static bool Release(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		var externCallResult = GPermissionHandleExterns.g_permission_release(permission, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -64,14 +64,14 @@ public static class GPermissionHandleExtensions
 
 	public static T ReleaseAsync<T>(this T permission, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GPermissionHandle
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		GPermissionHandleExterns.g_permission_release_async(permission, cancellable, callback, user_data);
 		return permission;
 	}
 
 	public static bool ReleaseFinish(this MentorLake.Gio.GPermissionHandle permission, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		if (permission.IsInvalid || permission.IsClosed) throw new Exception("Invalid or closed handle (GPermissionHandle)");
+		if (permission.IsInvalid) throw new Exception("Invalid handle (GPermissionHandle)");
 		var externCallResult = GPermissionHandleExterns.g_permission_release_finish(permission, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

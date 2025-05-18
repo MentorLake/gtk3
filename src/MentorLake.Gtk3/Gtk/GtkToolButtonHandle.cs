@@ -69,78 +69,78 @@ public static class GtkToolButtonHandleExtensions
 {
 	public static string GetIconName(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_icon_name(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetIconWidget(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_icon_widget(button);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_label(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetLabelWidget(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_label_widget(button);
 	}
 
 	public static string GetStockId(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_stock_id(button);
 	}
 
 	public static bool GetUseUnderline(this MentorLake.Gtk.GtkToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		return GtkToolButtonHandleExterns.gtk_tool_button_get_use_underline(button);
 	}
 
 	public static T SetIconName<T>(this T button, string icon_name) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_icon_name(button, icon_name);
 		return button;
 	}
 
 	public static T SetIconWidget<T>(this T button, MentorLake.Gtk.GtkWidgetHandle icon_widget) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_icon_widget(button, icon_widget);
 		return button;
 	}
 
 	public static T SetLabel<T>(this T button, string label) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_label(button, label);
 		return button;
 	}
 
 	public static T SetLabelWidget<T>(this T button, MentorLake.Gtk.GtkWidgetHandle label_widget) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_label_widget(button, label_widget);
 		return button;
 	}
 
 	public static T SetStockId<T>(this T button, string stock_id) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_stock_id(button, stock_id);
 		return button;
 	}
 
 	public static T SetUseUnderline<T>(this T button, bool use_underline) where T : GtkToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToolButtonHandle)");
 		GtkToolButtonHandleExterns.gtk_tool_button_set_use_underline(button, use_underline);
 		return button;
 	}
@@ -150,9 +150,11 @@ public static class GtkToolButtonHandleExtensions
 internal class GtkToolButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkToolButtonHandle gtk_tool_button_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle icon_widget, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkToolButtonHandle gtk_tool_button_new_from_stock(string stock_id);
 
 	[DllImport(GtkLibrary.Name)]
@@ -160,6 +162,7 @@ internal class GtkToolButtonHandleExterns
 	internal static extern string gtk_tool_button_get_icon_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))] MentorLake.Gtk.GtkToolButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_tool_button_get_icon_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))] MentorLake.Gtk.GtkToolButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
@@ -167,6 +170,7 @@ internal class GtkToolButtonHandleExterns
 	internal static extern string gtk_tool_button_get_label([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))] MentorLake.Gtk.GtkToolButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_tool_button_get_label_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkToolButtonHandle>))] MentorLake.Gtk.GtkToolButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]

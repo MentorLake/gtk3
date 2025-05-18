@@ -26,12 +26,15 @@ public static class GtkCheckButtonHandleExtensions
 internal class GtkCheckButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCheckButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkCheckButtonHandle gtk_check_button_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCheckButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkCheckButtonHandle gtk_check_button_new_with_label(string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCheckButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkCheckButtonHandle gtk_check_button_new_with_mnemonic(string label);
 
 }

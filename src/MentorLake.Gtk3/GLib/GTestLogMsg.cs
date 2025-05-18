@@ -9,7 +9,7 @@ public static class GTestLogMsgExtensions
 {
 	public static void Free(this MentorLake.GLib.GTestLogMsgHandle tmsg)
 	{
-		if (tmsg.IsInvalid || tmsg.IsClosed) throw new Exception("Invalid or closed handle (GTestLogMsg)");
+		if (tmsg.IsInvalid) throw new Exception("Invalid handle (GTestLogMsg)");
 		GTestLogMsgExterns.g_test_log_msg_free(tmsg);
 	}
 

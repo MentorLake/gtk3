@@ -9,13 +9,13 @@ public static class GTimeValExtensions
 {
 	public static void Add(this MentorLake.GLib.GTimeValHandle time_, long microseconds)
 	{
-		if (time_.IsInvalid || time_.IsClosed) throw new Exception("Invalid or closed handle (GTimeVal)");
+		if (time_.IsInvalid) throw new Exception("Invalid handle (GTimeVal)");
 		GTimeValExterns.g_time_val_add(time_, microseconds);
 	}
 
 	public static string ToIso8601(this MentorLake.GLib.GTimeValHandle time_)
 	{
-		if (time_.IsInvalid || time_.IsClosed) throw new Exception("Invalid or closed handle (GTimeVal)");
+		if (time_.IsInvalid) throw new Exception("Invalid handle (GTimeVal)");
 		return GTimeValExterns.g_time_val_to_iso8601(time_);
 	}
 

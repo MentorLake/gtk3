@@ -23,14 +23,14 @@ public static class GMemoryInputStreamHandleExtensions
 {
 	public static T AddBytes<T>(this T stream, MentorLake.GLib.GBytesHandle bytes) where T : GMemoryInputStreamHandle
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryInputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GMemoryInputStreamHandle)");
 		GMemoryInputStreamHandleExterns.g_memory_input_stream_add_bytes(stream, bytes);
 		return stream;
 	}
 
 	public static T AddData<T>(this T stream, byte[] data, UIntPtr len, MentorLake.GLib.GDestroyNotify destroy) where T : GMemoryInputStreamHandle
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GMemoryInputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GMemoryInputStreamHandle)");
 		GMemoryInputStreamHandleExterns.g_memory_input_stream_add_data(stream, data, len, destroy);
 		return stream;
 	}
@@ -40,12 +40,15 @@ public static class GMemoryInputStreamHandleExtensions
 internal class GMemoryInputStreamHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMemoryInputStreamHandle>))]
 	internal static extern MentorLake.Gio.GMemoryInputStreamHandle g_memory_input_stream_new();
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMemoryInputStreamHandle>))]
 	internal static extern MentorLake.Gio.GMemoryInputStreamHandle g_memory_input_stream_new_from_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GBytesHandle>))] MentorLake.GLib.GBytesHandle bytes);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMemoryInputStreamHandle>))]
 	internal static extern MentorLake.Gio.GMemoryInputStreamHandle g_memory_input_stream_new_from_data(byte[] data, UIntPtr len, MentorLake.GLib.GDestroyNotify destroy);
 
 	[DllImport(GioLibrary.Name)]

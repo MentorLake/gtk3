@@ -14,180 +14,180 @@ public static class GtkTreeModelHandleExtensions
 {
 	public static MentorLake.Gtk.GtkTreeModelHandle FilterNew(this MentorLake.Gtk.GtkTreeModelHandle child_model, MentorLake.Gtk.GtkTreePathHandle root)
 	{
-		if (child_model.IsInvalid || child_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (child_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_filter_new(child_model, root);
 	}
 
 	public static T Foreach<T>(this T model, MentorLake.Gtk.GtkTreeModelForeachFunc func, IntPtr user_data) where T : GtkTreeModelHandle
 	{
-		if (model.IsInvalid || model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_foreach(model, func, user_data);
 		return model;
 	}
 
 	public static T Get<T>(this T tree_model, MentorLake.Gtk.GtkTreeIterHandle iter, IntPtr @__arglist) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_get(tree_model, iter, @__arglist);
 		return tree_model;
 	}
 
 	public static MentorLake.GObject.GType GetColumnType(this MentorLake.Gtk.GtkTreeModelHandle tree_model, int index_)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_column_type(tree_model, index_);
 	}
 
 	public static MentorLake.Gtk.GtkTreeModelFlags GetFlags(this MentorLake.Gtk.GtkTreeModelHandle tree_model)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_flags(tree_model);
 	}
 
 	public static bool GetIter(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreePathHandle path)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_iter(tree_model, out iter, path);
 	}
 
 	public static bool GetIterFirst(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_iter_first(tree_model, out iter);
 	}
 
 	public static bool GetIterFromString(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter, string path_string)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_iter_from_string(tree_model, out iter, path_string);
 	}
 
 	public static int GetNColumns(this MentorLake.Gtk.GtkTreeModelHandle tree_model)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_n_columns(tree_model);
 	}
 
 	public static MentorLake.Gtk.GtkTreePathHandle GetPath(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_path(tree_model, iter);
 	}
 
 	public static string GetStringFromIter(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_get_string_from_iter(tree_model, iter);
 	}
 
 	public static T GetValist<T>(this T tree_model, MentorLake.Gtk.GtkTreeIterHandle iter, IntPtr var_args) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_get_valist(tree_model, iter, var_args);
 		return tree_model;
 	}
 
 	public static T GetValue<T>(this T tree_model, MentorLake.Gtk.GtkTreeIterHandle iter, int column, out MentorLake.GObject.GValue value) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_get_value(tree_model, iter, column, out value);
 		return tree_model;
 	}
 
 	public static bool IterChildren(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_children(tree_model, out iter, parent);
 	}
 
 	public static bool IterHasChild(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_has_child(tree_model, iter);
 	}
 
 	public static int IterNChildren(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_n_children(tree_model, iter);
 	}
 
 	public static bool IterNext(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_next(tree_model, iter);
 	}
 
 	public static bool IterNthChild(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle parent, int n)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_nth_child(tree_model, out iter, parent, n);
 	}
 
 	public static bool IterParent(this MentorLake.Gtk.GtkTreeModelHandle tree_model, out MentorLake.Gtk.GtkTreeIter iter, MentorLake.Gtk.GtkTreeIterHandle child)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_parent(tree_model, out iter, child);
 	}
 
 	public static bool IterPrevious(this MentorLake.Gtk.GtkTreeModelHandle tree_model, MentorLake.Gtk.GtkTreeIterHandle iter)
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		return GtkTreeModelHandleExterns.gtk_tree_model_iter_previous(tree_model, iter);
 	}
 
 	public static T RefNode<T>(this T tree_model, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_ref_node(tree_model, iter);
 		return tree_model;
 	}
 
 	public static T RowChanged<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_row_changed(tree_model, path, iter);
 		return tree_model;
 	}
 
 	public static T RowDeleted<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_row_deleted(tree_model, path);
 		return tree_model;
 	}
 
 	public static T RowHasChildToggled<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_row_has_child_toggled(tree_model, path, iter);
 		return tree_model;
 	}
 
 	public static T RowInserted<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_row_inserted(tree_model, path, iter);
 		return tree_model;
 	}
 
 	public static T RowsReordered<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreeIterHandle iter, int new_order) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_rows_reordered(tree_model, path, iter, new_order);
 		return tree_model;
 	}
 
 	public static T RowsReorderedWithLength<T>(this T tree_model, MentorLake.Gtk.GtkTreePathHandle path, MentorLake.Gtk.GtkTreeIterHandle iter, int[] new_order, int length) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_rows_reordered_with_length(tree_model, path, iter, new_order, length);
 		return tree_model;
 	}
 
 	public static T UnrefNode<T>(this T tree_model, MentorLake.Gtk.GtkTreeIterHandle iter) where T : GtkTreeModelHandle
 	{
-		if (tree_model.IsInvalid || tree_model.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeModelHandle)");
+		if (tree_model.IsInvalid) throw new Exception("Invalid handle (GtkTreeModelHandle)");
 		GtkTreeModelHandleExterns.gtk_tree_model_unref_node(tree_model, iter);
 		return tree_model;
 	}
@@ -197,6 +197,7 @@ public static class GtkTreeModelHandleExtensions
 internal class GtkTreeModelHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))]
 	internal static extern MentorLake.Gtk.GtkTreeModelHandle gtk_tree_model_filter_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] MentorLake.Gtk.GtkTreeModelHandle child_model, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreePathHandle>))] MentorLake.Gtk.GtkTreePathHandle root);
 
 	[DllImport(GtkLibrary.Name)]
@@ -224,6 +225,7 @@ internal class GtkTreeModelHandleExterns
 	internal static extern int gtk_tree_model_get_n_columns([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] MentorLake.Gtk.GtkTreeModelHandle tree_model);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreePathHandle>))]
 	internal static extern MentorLake.Gtk.GtkTreePathHandle gtk_tree_model_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeModelHandleImpl>))] MentorLake.Gtk.GtkTreeModelHandle tree_model, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTreeIterHandle>))] MentorLake.Gtk.GtkTreeIterHandle iter);
 
 	[DllImport(GtkLibrary.Name)]

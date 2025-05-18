@@ -140,19 +140,19 @@ public static class GdkDeviceManagerHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDeviceHandle GetClientPointer(this MentorLake.Gdk.GdkDeviceManagerHandle device_manager)
 	{
-		if (device_manager.IsInvalid || device_manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceManagerHandle)");
+		if (device_manager.IsInvalid) throw new Exception("Invalid handle (GdkDeviceManagerHandle)");
 		return GdkDeviceManagerHandleExterns.gdk_device_manager_get_client_pointer(device_manager);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gdk.GdkDeviceManagerHandle device_manager)
 	{
-		if (device_manager.IsInvalid || device_manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceManagerHandle)");
+		if (device_manager.IsInvalid) throw new Exception("Invalid handle (GdkDeviceManagerHandle)");
 		return GdkDeviceManagerHandleExterns.gdk_device_manager_get_display(device_manager);
 	}
 
 	public static MentorLake.GLib.GListHandle ListDevices(this MentorLake.Gdk.GdkDeviceManagerHandle device_manager, MentorLake.Gdk.GdkDeviceType type)
 	{
-		if (device_manager.IsInvalid || device_manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDeviceManagerHandle)");
+		if (device_manager.IsInvalid) throw new Exception("Invalid handle (GdkDeviceManagerHandle)");
 		return GdkDeviceManagerHandleExterns.gdk_device_manager_list_devices(device_manager, type);
 	}
 
@@ -161,12 +161,15 @@ public static class GdkDeviceManagerHandleExtensions
 internal class GdkDeviceManagerHandleExterns
 {
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceHandle>))]
 	internal static extern MentorLake.Gdk.GdkDeviceHandle gdk_device_manager_get_client_pointer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceManagerHandle>))] MentorLake.Gdk.GdkDeviceManagerHandle device_manager);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))]
 	internal static extern MentorLake.Gdk.GdkDisplayHandle gdk_device_manager_get_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceManagerHandle>))] MentorLake.Gdk.GdkDeviceManagerHandle device_manager);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gdk_device_manager_list_devices([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceManagerHandle>))] MentorLake.Gdk.GdkDeviceManagerHandle device_manager, MentorLake.Gdk.GdkDeviceType type);
 
 }

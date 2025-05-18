@@ -14,31 +14,31 @@ public static class AtkRangeExtensions
 {
 	public static MentorLake.Atk.AtkRangeHandle Copy(this MentorLake.Atk.AtkRangeHandle src)
 	{
-		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
+		if (src.IsInvalid) throw new Exception("Invalid handle (AtkRange)");
 		return AtkRangeExterns.atk_range_copy(src);
 	}
 
 	public static void Free(this MentorLake.Atk.AtkRangeHandle range)
 	{
-		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
+		if (range.IsInvalid) throw new Exception("Invalid handle (AtkRange)");
 		AtkRangeExterns.atk_range_free(range);
 	}
 
 	public static string GetDescription(this MentorLake.Atk.AtkRangeHandle range)
 	{
-		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
+		if (range.IsInvalid) throw new Exception("Invalid handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_description(range);
 	}
 
 	public static double GetLowerLimit(this MentorLake.Atk.AtkRangeHandle range)
 	{
-		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
+		if (range.IsInvalid) throw new Exception("Invalid handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_lower_limit(range);
 	}
 
 	public static double GetUpperLimit(this MentorLake.Atk.AtkRangeHandle range)
 	{
-		if (range.IsInvalid || range.IsClosed) throw new Exception("Invalid or closed handle (AtkRange)");
+		if (range.IsInvalid) throw new Exception("Invalid handle (AtkRange)");
 		return AtkRangeExterns.atk_range_get_upper_limit(range);
 	}
 
@@ -48,9 +48,11 @@ public static class AtkRangeExtensions
 internal class AtkRangeExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRangeHandle>))]
 	internal static extern MentorLake.Atk.AtkRangeHandle atk_range_new(double lower_limit, double upper_limit, string description);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRangeHandle>))]
 	internal static extern MentorLake.Atk.AtkRangeHandle atk_range_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRangeHandle>))] MentorLake.Atk.AtkRangeHandle src);
 
 	[DllImport(AtkLibrary.Name)]

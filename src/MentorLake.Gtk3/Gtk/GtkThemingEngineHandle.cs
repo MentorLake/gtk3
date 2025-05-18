@@ -18,145 +18,145 @@ public static class GtkThemingEngineHandleExtensions
 {
 	public static T Get<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, IntPtr @__arglist) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get(engine, state, @__arglist);
 		return engine;
 	}
 
 	public static T GetBackgroundColor<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_background_color(engine, state, out color);
 		return engine;
 	}
 
 	public static T GetBorder<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder border) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_border(engine, state, out border);
 		return engine;
 	}
 
 	public static T GetBorderColor<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_border_color(engine, state, out color);
 		return engine;
 	}
 
 	public static T GetColor<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gdk.GdkRGBA color) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_color(engine, state, out color);
 		return engine;
 	}
 
 	public static MentorLake.Gtk.GtkTextDirection GetDirection(this MentorLake.Gtk.GtkThemingEngineHandle engine)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_direction(engine);
 	}
 
 	public static MentorLake.Pango.PangoFontDescriptionHandle GetFont(this MentorLake.Gtk.GtkThemingEngineHandle engine, MentorLake.Gtk.GtkStateFlags state)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_font(engine, state);
 	}
 
 	public static MentorLake.Gtk.GtkJunctionSides GetJunctionSides(this MentorLake.Gtk.GtkThemingEngineHandle engine)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_junction_sides(engine);
 	}
 
 	public static T GetMargin<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder margin) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_margin(engine, state, out margin);
 		return engine;
 	}
 
 	public static T GetPadding<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder padding) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_padding(engine, state, out padding);
 		return engine;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetPathHandle GetPath(this MentorLake.Gtk.GtkThemingEngineHandle engine)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_path(engine);
 	}
 
 	public static T GetProperty<T>(this T engine, string property, MentorLake.Gtk.GtkStateFlags state, out MentorLake.GObject.GValue value) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_property(engine, property, state, out value);
 		return engine;
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkThemingEngineHandle engine)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_screen(engine);
 	}
 
 	public static MentorLake.Gtk.GtkStateFlags GetState(this MentorLake.Gtk.GtkThemingEngineHandle engine)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_get_state(engine);
 	}
 
 	public static T GetStyle<T>(this T engine, IntPtr @__arglist) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_style(engine, @__arglist);
 		return engine;
 	}
 
 	public static T GetStyleProperty<T>(this T engine, string property_name, out MentorLake.GObject.GValue value) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_style_property(engine, property_name, out value);
 		return engine;
 	}
 
 	public static T GetStyleValist<T>(this T engine, IntPtr args) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_style_valist(engine, args);
 		return engine;
 	}
 
 	public static T GetValist<T>(this T engine, MentorLake.Gtk.GtkStateFlags state, IntPtr args) where T : GtkThemingEngineHandle
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		GtkThemingEngineHandleExterns.gtk_theming_engine_get_valist(engine, state, args);
 		return engine;
 	}
 
 	public static bool HasClass(this MentorLake.Gtk.GtkThemingEngineHandle engine, string style_class)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_has_class(engine, style_class);
 	}
 
 	public static bool HasRegion(this MentorLake.Gtk.GtkThemingEngineHandle engine, string style_region, out MentorLake.Gtk.GtkRegionFlags flags)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_has_region(engine, style_region, out flags);
 	}
 
 	public static bool LookupColor(this MentorLake.Gtk.GtkThemingEngineHandle engine, string color_name, out MentorLake.Gdk.GdkRGBA color)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_lookup_color(engine, color_name, out color);
 	}
 
 	public static bool StateIsRunning(this MentorLake.Gtk.GtkThemingEngineHandle engine, MentorLake.Gtk.GtkStateType state, out double progress)
 	{
-		if (engine.IsInvalid || engine.IsClosed) throw new Exception("Invalid or closed handle (GtkThemingEngineHandle)");
+		if (engine.IsInvalid) throw new Exception("Invalid handle (GtkThemingEngineHandle)");
 		return GtkThemingEngineHandleExterns.gtk_theming_engine_state_is_running(engine, state, out progress);
 	}
 
@@ -183,6 +183,7 @@ internal class GtkThemingEngineHandleExterns
 	internal static extern MentorLake.Gtk.GtkTextDirection gtk_theming_engine_get_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))]
 	internal static extern MentorLake.Pango.PangoFontDescriptionHandle gtk_theming_engine_get_font([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine, MentorLake.Gtk.GtkStateFlags state);
 
 	[DllImport(GtkLibrary.Name)]
@@ -195,12 +196,14 @@ internal class GtkThemingEngineHandleExterns
 	internal static extern void gtk_theming_engine_get_padding([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine, MentorLake.Gtk.GtkStateFlags state, out MentorLake.Gtk.GtkBorder padding);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetPathHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetPathHandle gtk_theming_engine_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_theming_engine_get_property([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine, string property, MentorLake.Gtk.GtkStateFlags state, out MentorLake.GObject.GValue value);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))]
 	internal static extern MentorLake.Gdk.GdkScreenHandle gtk_theming_engine_get_screen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine);
 
 	[DllImport(GtkLibrary.Name)]
@@ -231,6 +234,7 @@ internal class GtkThemingEngineHandleExterns
 	internal static extern bool gtk_theming_engine_state_is_running([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))] MentorLake.Gtk.GtkThemingEngineHandle engine, MentorLake.Gtk.GtkStateType state, out double progress);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkThemingEngineHandle>))]
 	internal static extern MentorLake.Gtk.GtkThemingEngineHandle gtk_theming_engine_load(string name);
 
 	[DllImport(GtkLibrary.Name)]

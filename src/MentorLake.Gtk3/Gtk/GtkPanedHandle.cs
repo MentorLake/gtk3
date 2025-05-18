@@ -268,72 +268,72 @@ public static class GtkPanedHandleExtensions
 {
 	public static T Add1<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_add1(paned, child);
 		return paned;
 	}
 
 	public static T Add2<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_add2(paned, child);
 		return paned;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetChild1(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_child1(paned);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetChild2(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_child2(paned);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetHandleWindow(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_handle_window(paned);
 	}
 
 	public static int GetPosition(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_position(paned);
 	}
 
 	public static bool GetWideHandle(this MentorLake.Gtk.GtkPanedHandle paned)
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		return GtkPanedHandleExterns.gtk_paned_get_wide_handle(paned);
 	}
 
 	public static T Pack1<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_pack1(paned, child, resize, shrink);
 		return paned;
 	}
 
 	public static T Pack2<T>(this T paned, MentorLake.Gtk.GtkWidgetHandle child, bool resize, bool shrink) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_pack2(paned, child, resize, shrink);
 		return paned;
 	}
 
 	public static T SetPosition<T>(this T paned, int position) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_set_position(paned, position);
 		return paned;
 	}
 
 	public static T SetWideHandle<T>(this T paned, bool wide) where T : GtkPanedHandle
 	{
-		if (paned.IsInvalid || paned.IsClosed) throw new Exception("Invalid or closed handle (GtkPanedHandle)");
+		if (paned.IsInvalid) throw new Exception("Invalid handle (GtkPanedHandle)");
 		GtkPanedHandleExterns.gtk_paned_set_wide_handle(paned, wide);
 		return paned;
 	}
@@ -343,6 +343,7 @@ public static class GtkPanedHandleExtensions
 internal class GtkPanedHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkPanedHandle>))]
 	internal static extern MentorLake.Gtk.GtkPanedHandle gtk_paned_new(MentorLake.Gtk.GtkOrientation orientation);
 
 	[DllImport(GtkLibrary.Name)]
@@ -352,12 +353,15 @@ internal class GtkPanedHandleExterns
 	internal static extern void gtk_paned_add2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPanedHandle>))] MentorLake.Gtk.GtkPanedHandle paned, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle child);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_paned_get_child1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPanedHandle>))] MentorLake.Gtk.GtkPanedHandle paned);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_paned_get_child2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPanedHandle>))] MentorLake.Gtk.GtkPanedHandle paned);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_paned_get_handle_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPanedHandle>))] MentorLake.Gtk.GtkPanedHandle paned);
 
 	[DllImport(GtkLibrary.Name)]

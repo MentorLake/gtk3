@@ -9,31 +9,31 @@ public static class GtkContainerClassExtensions
 {
 	public static MentorLake.GObject.GParamSpecHandle FindChildProperty(this MentorLake.GObject.GObjectClassHandle cclass, string property_name)
 	{
-		if (cclass.IsInvalid || cclass.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerClass)");
+		if (cclass.IsInvalid) throw new Exception("Invalid handle (GtkContainerClass)");
 		return GtkContainerClassExterns.gtk_container_class_find_child_property(cclass, property_name);
 	}
 
 	public static void HandleBorderWidth(this MentorLake.Gtk.GtkContainerClassHandle klass)
 	{
-		if (klass.IsInvalid || klass.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerClass)");
+		if (klass.IsInvalid) throw new Exception("Invalid handle (GtkContainerClass)");
 		GtkContainerClassExterns.gtk_container_class_handle_border_width(klass);
 	}
 
 	public static void InstallChildProperties(this MentorLake.Gtk.GtkContainerClassHandle cclass, uint n_pspecs, MentorLake.GObject.GParamSpecHandle[] pspecs)
 	{
-		if (cclass.IsInvalid || cclass.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerClass)");
+		if (cclass.IsInvalid) throw new Exception("Invalid handle (GtkContainerClass)");
 		GtkContainerClassExterns.gtk_container_class_install_child_properties(cclass, n_pspecs, pspecs);
 	}
 
 	public static void InstallChildProperty(this MentorLake.Gtk.GtkContainerClassHandle cclass, uint property_id, MentorLake.GObject.GParamSpecHandle pspec)
 	{
-		if (cclass.IsInvalid || cclass.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerClass)");
+		if (cclass.IsInvalid) throw new Exception("Invalid handle (GtkContainerClass)");
 		GtkContainerClassExterns.gtk_container_class_install_child_property(cclass, property_id, pspec);
 	}
 
 	public static MentorLake.GObject.GParamSpecHandle[] ListChildProperties(this MentorLake.GObject.GObjectClassHandle cclass, out uint n_properties)
 	{
-		if (cclass.IsInvalid || cclass.IsClosed) throw new Exception("Invalid or closed handle (GtkContainerClass)");
+		if (cclass.IsInvalid) throw new Exception("Invalid handle (GtkContainerClass)");
 		return GtkContainerClassExterns.gtk_container_class_list_child_properties(cclass, out n_properties);
 	}
 
@@ -43,6 +43,7 @@ public static class GtkContainerClassExtensions
 internal class GtkContainerClassExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GParamSpecHandle>))]
 	internal static extern MentorLake.GObject.GParamSpecHandle gtk_container_class_find_child_property([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectClassHandle>))] MentorLake.GObject.GObjectClassHandle cclass, string property_name);
 
 	[DllImport(GtkLibrary.Name)]

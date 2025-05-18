@@ -8,19 +8,19 @@ public static class AtkObjectFactoryHandleExtensions
 {
 	public static MentorLake.Atk.AtkObjectHandle CreateAccessible(this MentorLake.Atk.AtkObjectFactoryHandle factory, MentorLake.GObject.GObjectHandle obj)
 	{
-		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
+		if (factory.IsInvalid) throw new Exception("Invalid handle (AtkObjectFactoryHandle)");
 		return AtkObjectFactoryHandleExterns.atk_object_factory_create_accessible(factory, obj);
 	}
 
 	public static MentorLake.GObject.GType GetAccessibleType(this MentorLake.Atk.AtkObjectFactoryHandle factory)
 	{
-		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
+		if (factory.IsInvalid) throw new Exception("Invalid handle (AtkObjectFactoryHandle)");
 		return AtkObjectFactoryHandleExterns.atk_object_factory_get_accessible_type(factory);
 	}
 
 	public static T Invalidate<T>(this T factory) where T : AtkObjectFactoryHandle
 	{
-		if (factory.IsInvalid || factory.IsClosed) throw new Exception("Invalid or closed handle (AtkObjectFactoryHandle)");
+		if (factory.IsInvalid) throw new Exception("Invalid handle (AtkObjectFactoryHandle)");
 		AtkObjectFactoryHandleExterns.atk_object_factory_invalidate(factory);
 		return factory;
 	}
@@ -30,6 +30,7 @@ public static class AtkObjectFactoryHandleExtensions
 internal class AtkObjectFactoryHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_object_factory_create_accessible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectFactoryHandle>))] MentorLake.Atk.AtkObjectFactoryHandle factory, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle obj);
 
 	[DllImport(AtkLibrary.Name)]

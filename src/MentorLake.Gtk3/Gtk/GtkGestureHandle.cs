@@ -221,117 +221,117 @@ public static class GtkGestureHandleExtensions
 {
 	public static bool GetBoundingBox(this MentorLake.Gtk.GtkGestureHandle gesture, out MentorLake.Gdk.GdkRectangle rect)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_bounding_box(gesture, out rect);
 	}
 
 	public static bool GetBoundingBoxCenter(this MentorLake.Gtk.GtkGestureHandle gesture, out double x, out double y)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_bounding_box_center(gesture, out x, out y);
 	}
 
 	public static MentorLake.Gdk.GdkDeviceHandle GetDevice(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_device(gesture);
 	}
 
 	public static MentorLake.GLib.GListHandle GetGroup(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_group(gesture);
 	}
 
 	public static MentorLake.Gdk.GdkEventHandle GetLastEvent(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gdk.GdkEventSequenceHandle sequence)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_last_event(gesture, sequence);
 	}
 
 	public static MentorLake.Gdk.GdkEventSequenceHandle GetLastUpdatedSequence(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_last_updated_sequence(gesture);
 	}
 
 	public static bool GetPoint(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gdk.GdkEventSequenceHandle sequence, out double x, out double y)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_point(gesture, sequence, out x, out y);
 	}
 
 	public static MentorLake.Gtk.GtkEventSequenceState GetSequenceState(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gdk.GdkEventSequenceHandle sequence)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_sequence_state(gesture, sequence);
 	}
 
 	public static MentorLake.GLib.GListHandle GetSequences(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_sequences(gesture);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindow(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_get_window(gesture);
 	}
 
 	public static T Group<T>(this T group_gesture, MentorLake.Gtk.GtkGestureHandle gesture) where T : GtkGestureHandle
 	{
-		if (group_gesture.IsInvalid || group_gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (group_gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		GtkGestureHandleExterns.gtk_gesture_group(group_gesture, gesture);
 		return group_gesture;
 	}
 
 	public static bool HandlesSequence(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gdk.GdkEventSequenceHandle sequence)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_handles_sequence(gesture, sequence);
 	}
 
 	public static bool IsActive(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_is_active(gesture);
 	}
 
 	public static bool IsGroupedWith(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gtk.GtkGestureHandle other)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_is_grouped_with(gesture, other);
 	}
 
 	public static bool IsRecognized(this MentorLake.Gtk.GtkGestureHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_is_recognized(gesture);
 	}
 
 	public static bool SetSequenceState(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gdk.GdkEventSequenceHandle sequence, MentorLake.Gtk.GtkEventSequenceState state)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_set_sequence_state(gesture, sequence, state);
 	}
 
 	public static bool SetState(this MentorLake.Gtk.GtkGestureHandle gesture, MentorLake.Gtk.GtkEventSequenceState state)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		return GtkGestureHandleExterns.gtk_gesture_set_state(gesture, state);
 	}
 
 	public static T SetWindow<T>(this T gesture, MentorLake.Gdk.GdkWindowHandle window) where T : GtkGestureHandle
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		GtkGestureHandleExterns.gtk_gesture_set_window(gesture, window);
 		return gesture;
 	}
 
 	public static T Ungroup<T>(this T gesture) where T : GtkGestureHandle
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureHandle)");
 		GtkGestureHandleExterns.gtk_gesture_ungroup(gesture);
 		return gesture;
 	}
@@ -347,15 +347,19 @@ internal class GtkGestureHandleExterns
 	internal static extern bool gtk_gesture_get_bounding_box_center([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture, out double x, out double y);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceHandle>))]
 	internal static extern MentorLake.Gdk.GdkDeviceHandle gtk_gesture_get_device([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_gesture_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))]
 	internal static extern MentorLake.Gdk.GdkEventHandle gtk_gesture_get_last_event([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventSequenceHandle>))] MentorLake.Gdk.GdkEventSequenceHandle sequence);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventSequenceHandle>))]
 	internal static extern MentorLake.Gdk.GdkEventSequenceHandle gtk_gesture_get_last_updated_sequence([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture);
 
 	[DllImport(GtkLibrary.Name)]
@@ -365,9 +369,11 @@ internal class GtkGestureHandleExterns
 	internal static extern MentorLake.Gtk.GtkEventSequenceState gtk_gesture_get_sequence_state([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventSequenceHandle>))] MentorLake.Gdk.GdkEventSequenceHandle sequence);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_gesture_get_sequences([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_gesture_get_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureHandle>))] MentorLake.Gtk.GtkGestureHandle gesture);
 
 	[DllImport(GtkLibrary.Name)]

@@ -259,74 +259,74 @@ public static class GtkIMContextHandleExtensions
 {
 	public static bool DeleteSurrounding(this MentorLake.Gtk.GtkIMContextHandle context, int offset, int n_chars)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		return GtkIMContextHandleExterns.gtk_im_context_delete_surrounding(context, offset, n_chars);
 	}
 
 	public static bool FilterKeypress(this MentorLake.Gtk.GtkIMContextHandle context, MentorLake.Gdk.GdkEventKeyHandle @event)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		return GtkIMContextHandleExterns.gtk_im_context_filter_keypress(context, @event);
 	}
 
 	public static T FocusIn<T>(this T context) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_focus_in(context);
 		return context;
 	}
 
 	public static T FocusOut<T>(this T context) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_focus_out(context);
 		return context;
 	}
 
 	public static T GetPreeditString<T>(this T context, out string str, out MentorLake.Pango.PangoAttrListHandle attrs, out int cursor_pos) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_get_preedit_string(context, out str, out attrs, out cursor_pos);
 		return context;
 	}
 
 	public static bool GetSurrounding(this MentorLake.Gtk.GtkIMContextHandle context, out string text, out int cursor_index)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		return GtkIMContextHandleExterns.gtk_im_context_get_surrounding(context, out text, out cursor_index);
 	}
 
 	public static T Reset<T>(this T context) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_reset(context);
 		return context;
 	}
 
 	public static T SetClientWindow<T>(this T context, MentorLake.Gdk.GdkWindowHandle window) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_set_client_window(context, window);
 		return context;
 	}
 
 	public static T SetCursorLocation<T>(this T context, MentorLake.Gdk.GdkRectangleHandle area) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_set_cursor_location(context, area);
 		return context;
 	}
 
 	public static T SetSurrounding<T>(this T context, string text, int len, int cursor_index) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_set_surrounding(context, text, len, cursor_index);
 		return context;
 	}
 
 	public static T SetUsePreedit<T>(this T context, bool use_preedit) where T : GtkIMContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMContextHandle)");
 		GtkIMContextHandleExterns.gtk_im_context_set_use_preedit(context, use_preedit);
 		return context;
 	}

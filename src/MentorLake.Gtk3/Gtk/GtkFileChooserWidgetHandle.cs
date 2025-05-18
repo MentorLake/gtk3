@@ -694,6 +694,7 @@ public static class GtkFileChooserWidgetHandleExtensions
 internal class GtkFileChooserWidgetHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkFileChooserWidgetHandle gtk_file_chooser_widget_new(MentorLake.Gtk.GtkFileChooserAction action);
 
 }

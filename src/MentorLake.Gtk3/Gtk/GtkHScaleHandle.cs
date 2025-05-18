@@ -21,9 +21,11 @@ public static class GtkHScaleHandleExtensions
 internal class GtkHScaleHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHScaleHandle>))]
 	internal static extern MentorLake.Gtk.GtkHScaleHandle gtk_hscale_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))] MentorLake.Gtk.GtkAdjustmentHandle adjustment);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHScaleHandle>))]
 	internal static extern MentorLake.Gtk.GtkHScaleHandle gtk_hscale_new_with_range(double min, double max, double step);
 
 }

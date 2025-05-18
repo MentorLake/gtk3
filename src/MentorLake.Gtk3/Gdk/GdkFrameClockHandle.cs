@@ -293,58 +293,58 @@ public static class GdkFrameClockHandleExtensions
 {
 	public static T BeginUpdating<T>(this T frame_clock) where T : GdkFrameClockHandle
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		GdkFrameClockHandleExterns.gdk_frame_clock_begin_updating(frame_clock);
 		return frame_clock;
 	}
 
 	public static T EndUpdating<T>(this T frame_clock) where T : GdkFrameClockHandle
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		GdkFrameClockHandleExterns.gdk_frame_clock_end_updating(frame_clock);
 		return frame_clock;
 	}
 
 	public static MentorLake.Gdk.GdkFrameTimingsHandle GetCurrentTimings(this MentorLake.Gdk.GdkFrameClockHandle frame_clock)
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		return GdkFrameClockHandleExterns.gdk_frame_clock_get_current_timings(frame_clock);
 	}
 
 	public static long GetFrameCounter(this MentorLake.Gdk.GdkFrameClockHandle frame_clock)
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		return GdkFrameClockHandleExterns.gdk_frame_clock_get_frame_counter(frame_clock);
 	}
 
 	public static long GetFrameTime(this MentorLake.Gdk.GdkFrameClockHandle frame_clock)
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		return GdkFrameClockHandleExterns.gdk_frame_clock_get_frame_time(frame_clock);
 	}
 
 	public static long GetHistoryStart(this MentorLake.Gdk.GdkFrameClockHandle frame_clock)
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		return GdkFrameClockHandleExterns.gdk_frame_clock_get_history_start(frame_clock);
 	}
 
 	public static T GetRefreshInfo<T>(this T frame_clock, long base_time, out long refresh_interval_return, out long presentation_time_return) where T : GdkFrameClockHandle
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		GdkFrameClockHandleExterns.gdk_frame_clock_get_refresh_info(frame_clock, base_time, out refresh_interval_return, out presentation_time_return);
 		return frame_clock;
 	}
 
 	public static MentorLake.Gdk.GdkFrameTimingsHandle GetTimings(this MentorLake.Gdk.GdkFrameClockHandle frame_clock, long frame_counter)
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		return GdkFrameClockHandleExterns.gdk_frame_clock_get_timings(frame_clock, frame_counter);
 	}
 
 	public static T RequestPhase<T>(this T frame_clock, MentorLake.Gdk.GdkFrameClockPhase phase) where T : GdkFrameClockHandle
 	{
-		if (frame_clock.IsInvalid || frame_clock.IsClosed) throw new Exception("Invalid or closed handle (GdkFrameClockHandle)");
+		if (frame_clock.IsInvalid) throw new Exception("Invalid handle (GdkFrameClockHandle)");
 		GdkFrameClockHandleExterns.gdk_frame_clock_request_phase(frame_clock, phase);
 		return frame_clock;
 	}
@@ -360,6 +360,7 @@ internal class GdkFrameClockHandleExterns
 	internal static extern void gdk_frame_clock_end_updating([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameClockHandle>))] MentorLake.Gdk.GdkFrameClockHandle frame_clock);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameTimingsHandle>))]
 	internal static extern MentorLake.Gdk.GdkFrameTimingsHandle gdk_frame_clock_get_current_timings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameClockHandle>))] MentorLake.Gdk.GdkFrameClockHandle frame_clock);
 
 	[DllImport(GdkLibrary.Name)]
@@ -375,6 +376,7 @@ internal class GdkFrameClockHandleExterns
 	internal static extern void gdk_frame_clock_get_refresh_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameClockHandle>))] MentorLake.Gdk.GdkFrameClockHandle frame_clock, long base_time, out long refresh_interval_return, out long presentation_time_return);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameTimingsHandle>))]
 	internal static extern MentorLake.Gdk.GdkFrameTimingsHandle gdk_frame_clock_get_timings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameClockHandle>))] MentorLake.Gdk.GdkFrameClockHandle frame_clock, long frame_counter);
 
 	[DllImport(GdkLibrary.Name)]

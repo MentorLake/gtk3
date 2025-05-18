@@ -65,7 +65,7 @@ public static class GtkGestureZoomHandleExtensions
 {
 	public static double GetScaleDelta(this MentorLake.Gtk.GtkGestureZoomHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureZoomHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureZoomHandle)");
 		return GtkGestureZoomHandleExterns.gtk_gesture_zoom_get_scale_delta(gesture);
 	}
 
@@ -74,6 +74,7 @@ public static class GtkGestureZoomHandleExtensions
 internal class GtkGestureZoomHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureZoomHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureZoomHandle gtk_gesture_zoom_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]

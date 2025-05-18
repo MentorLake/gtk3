@@ -59,49 +59,49 @@ public static class AtkHyperlinkHandleExtensions
 {
 	public static int GetEndIndex(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_get_end_index(link_);
 	}
 
 	public static int GetNAnchors(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_get_n_anchors(link_);
 	}
 
 	public static MentorLake.Atk.AtkObjectHandle GetObject(this MentorLake.Atk.AtkHyperlinkHandle link_, int i)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_get_object(link_, i);
 	}
 
 	public static int GetStartIndex(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_get_start_index(link_);
 	}
 
 	public static string GetUri(this MentorLake.Atk.AtkHyperlinkHandle link_, int i)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_get_uri(link_, i);
 	}
 
 	public static bool IsInline(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_is_inline(link_);
 	}
 
 	public static bool IsSelectedLink(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_is_selected_link(link_);
 	}
 
 	public static bool IsValid(this MentorLake.Atk.AtkHyperlinkHandle link_)
 	{
-		if (link_.IsInvalid || link_.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkHandle)");
+		if (link_.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkHandle)");
 		return AtkHyperlinkHandleExterns.atk_hyperlink_is_valid(link_);
 	}
 
@@ -116,6 +116,7 @@ internal class AtkHyperlinkHandleExterns
 	internal static extern int atk_hyperlink_get_n_anchors([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHyperlinkHandle>))] MentorLake.Atk.AtkHyperlinkHandle link_);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_hyperlink_get_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHyperlinkHandle>))] MentorLake.Atk.AtkHyperlinkHandle link_, int i);
 
 	[DllImport(AtkLibrary.Name)]

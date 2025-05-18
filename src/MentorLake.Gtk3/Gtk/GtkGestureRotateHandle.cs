@@ -66,7 +66,7 @@ public static class GtkGestureRotateHandleExtensions
 {
 	public static double GetAngleDelta(this MentorLake.Gtk.GtkGestureRotateHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureRotateHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureRotateHandle)");
 		return GtkGestureRotateHandleExterns.gtk_gesture_rotate_get_angle_delta(gesture);
 	}
 
@@ -75,6 +75,7 @@ public static class GtkGestureRotateHandleExtensions
 internal class GtkGestureRotateHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureRotateHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureRotateHandle gtk_gesture_rotate_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]

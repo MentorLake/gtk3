@@ -23,7 +23,7 @@ public static class GUnixCredentialsMessageHandleExtensions
 {
 	public static MentorLake.Gio.GCredentialsHandle GetCredentials(this MentorLake.Gio.GUnixCredentialsMessageHandle message)
 	{
-		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GUnixCredentialsMessageHandle)");
+		if (message.IsInvalid) throw new Exception("Invalid handle (GUnixCredentialsMessageHandle)");
 		return GUnixCredentialsMessageHandleExterns.g_unix_credentials_message_get_credentials(message);
 	}
 
@@ -32,12 +32,15 @@ public static class GUnixCredentialsMessageHandleExtensions
 internal class GUnixCredentialsMessageHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixCredentialsMessageHandle>))]
 	internal static extern MentorLake.Gio.GUnixCredentialsMessageHandle g_unix_credentials_message_new();
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixCredentialsMessageHandle>))]
 	internal static extern MentorLake.Gio.GUnixCredentialsMessageHandle g_unix_credentials_message_new_with_credentials([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))] MentorLake.Gio.GCredentialsHandle credentials);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCredentialsHandle>))]
 	internal static extern MentorLake.Gio.GCredentialsHandle g_unix_credentials_message_get_credentials([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixCredentialsMessageHandle>))] MentorLake.Gio.GUnixCredentialsMessageHandle message);
 
 	[DllImport(GioLibrary.Name)]

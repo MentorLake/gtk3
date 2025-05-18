@@ -13,13 +13,13 @@ public static class GtkStackSwitcherHandleExtensions
 {
 	public static MentorLake.Gtk.GtkStackHandle GetStack(this MentorLake.Gtk.GtkStackSwitcherHandle switcher)
 	{
-		if (switcher.IsInvalid || switcher.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSwitcherHandle)");
+		if (switcher.IsInvalid) throw new Exception("Invalid handle (GtkStackSwitcherHandle)");
 		return GtkStackSwitcherHandleExterns.gtk_stack_switcher_get_stack(switcher);
 	}
 
 	public static T SetStack<T>(this T switcher, MentorLake.Gtk.GtkStackHandle stack) where T : GtkStackSwitcherHandle
 	{
-		if (switcher.IsInvalid || switcher.IsClosed) throw new Exception("Invalid or closed handle (GtkStackSwitcherHandle)");
+		if (switcher.IsInvalid) throw new Exception("Invalid handle (GtkStackSwitcherHandle)");
 		GtkStackSwitcherHandleExterns.gtk_stack_switcher_set_stack(switcher, stack);
 		return switcher;
 	}
@@ -29,9 +29,11 @@ public static class GtkStackSwitcherHandleExtensions
 internal class GtkStackSwitcherHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkStackSwitcherHandle>))]
 	internal static extern MentorLake.Gtk.GtkStackSwitcherHandle gtk_stack_switcher_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStackHandle>))]
 	internal static extern MentorLake.Gtk.GtkStackHandle gtk_stack_switcher_get_stack([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStackSwitcherHandle>))] MentorLake.Gtk.GtkStackSwitcherHandle switcher);
 
 	[DllImport(GtkLibrary.Name)]

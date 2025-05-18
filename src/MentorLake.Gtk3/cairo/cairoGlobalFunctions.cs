@@ -1683,18 +1683,22 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_close_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_list_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_rectangle_list_tHandle cairo_copy_clip_rectangle_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
 	internal static extern void cairo_copy_page([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_path_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_path_tHandle cairo_copy_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_path_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_path_tHandle cairo_copy_path_flat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_tHandle cairo_create([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle target);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1749,6 +1753,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern double cairo_device_observer_stroke_elapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_device_tHandle>))] MentorLake.cairo.cairo_device_tHandle device);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_device_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_device_tHandle cairo_device_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_device_tHandle>))] MentorLake.cairo.cairo_device_tHandle device);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1791,6 +1796,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern IntPtr cairo_font_face_get_user_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))] MentorLake.cairo.cairo_font_face_tHandle font_face, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_user_data_key_tHandle>))] MentorLake.cairo.cairo_user_data_key_tHandle key);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_face_tHandle cairo_font_face_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))] MentorLake.cairo.cairo_font_face_tHandle font_face);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1800,9 +1806,11 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_status_t cairo_font_face_status([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))] MentorLake.cairo.cairo_font_face_tHandle font_face);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_options_tHandle cairo_font_options_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))] MentorLake.cairo.cairo_font_options_tHandle original);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_options_tHandle cairo_font_options_create();
 
 	[DllImport(cairoLibrary.Name)]
@@ -1870,6 +1878,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_fill_rule_t cairo_get_fill_rule([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_face_tHandle cairo_get_font_face([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1879,6 +1888,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_get_font_options([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))] MentorLake.cairo.cairo_font_options_tHandle options);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_get_group_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1903,12 +1913,15 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern uint cairo_get_reference_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_scaled_font_tHandle cairo_get_scaled_font([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_get_source([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_get_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1918,6 +1931,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern IntPtr cairo_get_user_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_user_data_key_tHandle>))] MentorLake.cairo.cairo_user_data_key_tHandle key);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_glyph_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_glyph_tHandle cairo_glyph_allocate(int num_glyphs);
 
 	[DllImport(cairoLibrary.Name)]
@@ -1936,15 +1950,19 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_identity_matrix([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create(MentorLake.cairo.cairo_format_t format, int width, int height);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_for_data(byte[] data, MentorLake.cairo.cairo_format_t format, int width, int height, int stride);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_from_png(string filename);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_image_surface_create_from_png_stream(MentorLake.cairo.cairo_read_func_t read_func, IntPtr closure);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2035,6 +2053,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_status_t cairo_mesh_pattern_get_patch_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern, uint count);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_path_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_path_tHandle cairo_mesh_pattern_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern, uint patch_num);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2080,24 +2099,31 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_pattern_add_color_stop_rgba([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern, double offset, double red, double green, double blue, double alpha);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_for_surface([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_linear(double x0, double y0, double x1, double y1);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_mesh();
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_radial(double cx0, double cy0, double radius0, double cx1, double cy1, double radius1);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_raster_source(IntPtr user_data, MentorLake.cairo.cairo_content_t content, int width, int height);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_rgb(double red, double green, double blue);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_create_rgba(double red, double green, double blue, double alpha);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2140,6 +2166,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern IntPtr cairo_pattern_get_user_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_user_data_key_tHandle>))] MentorLake.cairo.cairo_user_data_key_tHandle key);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pattern_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2158,6 +2185,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_status_t cairo_pattern_status([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_pattern_tHandle cairo_pop_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2200,6 +2228,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_raster_source_pattern_set_snapshot([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_pattern_tHandle>))] MentorLake.cairo.cairo_pattern_tHandle pattern, MentorLake.cairo.cairo_raster_source_snapshot_func_t snapshot);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_recording_surface_create(MentorLake.cairo.cairo_content_t content, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_tHandle>))] MentorLake.cairo.cairo_rectangle_tHandle extents);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2215,6 +2244,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_rectangle_list_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_list_tHandle>))] MentorLake.cairo.cairo_rectangle_list_tHandle rectangle_list);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_tHandle cairo_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2224,15 +2254,19 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_region_overlap_t cairo_region_contains_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle region, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_int_tHandle>))] MentorLake.cairo.cairo_rectangle_int_tHandle rectangle);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle cairo_region_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle original);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle cairo_region_create();
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle cairo_region_create_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_int_tHandle>))] MentorLake.cairo.cairo_rectangle_int_tHandle rectangle);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle cairo_region_create_rectangles([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_int_tHandle>))] MentorLake.cairo.cairo_rectangle_int_tHandle rects, int count);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2260,6 +2294,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern int cairo_region_num_rectangles([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle region);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle cairo_region_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle region);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2311,6 +2346,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, double sx, double sy);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_scaled_font_tHandle cairo_scaled_font_create([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))] MentorLake.cairo.cairo_font_face_tHandle font_face, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_matrix_tHandle>))] MentorLake.cairo.cairo_matrix_tHandle font_matrix, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_matrix_tHandle>))] MentorLake.cairo.cairo_matrix_tHandle ctm, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))] MentorLake.cairo.cairo_font_options_tHandle options);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2323,6 +2359,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_scaled_font_get_ctm([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))] MentorLake.cairo.cairo_scaled_font_tHandle scaled_font, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_matrix_tHandle>))] MentorLake.cairo.cairo_matrix_tHandle ctm);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_face_tHandle cairo_scaled_font_get_font_face([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))] MentorLake.cairo.cairo_scaled_font_tHandle scaled_font);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2347,6 +2384,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_scaled_font_glyph_extents([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))] MentorLake.cairo.cairo_scaled_font_tHandle scaled_font, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_glyph_tHandle>))] MentorLake.cairo.cairo_glyph_tHandle glyphs, int num_glyphs, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_text_extents_tHandle>))] MentorLake.cairo.cairo_text_extents_tHandle extents);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_scaled_font_tHandle cairo_scaled_font_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_scaled_font_tHandle>))] MentorLake.cairo.cairo_scaled_font_tHandle scaled_font);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2456,15 +2494,19 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_surface_copy_page([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_create_for_rectangle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle target, double x, double y, double width, double height);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_create_observer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle target, MentorLake.cairo.cairo_surface_observer_mode_t mode);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_create_similar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle other, MentorLake.cairo.cairo_content_t content, int width, int height);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_create_similar_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle other, MentorLake.cairo.cairo_format_t format, int width, int height);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2480,6 +2522,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_content_t cairo_surface_get_content([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_device_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_device_tHandle cairo_surface_get_device([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2510,6 +2553,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_bool_t cairo_surface_has_show_text_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_map_to_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_rectangle_int_tHandle>))] MentorLake.cairo.cairo_rectangle_int_tHandle extents);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2546,6 +2590,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern MentorLake.cairo.cairo_status_t cairo_surface_observer_print([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface, MentorLake.cairo.cairo_write_func_t write_func, IntPtr closure);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_surface_tHandle cairo_surface_reference([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_surface_tHandle>))] MentorLake.cairo.cairo_surface_tHandle surface);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2588,6 +2633,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_tag_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, string tag_name);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_text_cluster_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_text_cluster_tHandle cairo_text_cluster_allocate(int num_clusters);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2600,6 +2646,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_text_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, string utf8);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_face_tHandle cairo_toy_font_face_create(string family, MentorLake.cairo.cairo_font_slant_t slant, MentorLake.cairo.cairo_font_weight_t weight);
 
 	[DllImport(cairoLibrary.Name)]
@@ -2619,6 +2666,7 @@ internal class cairoGlobalFunctionsExterns
 	internal static extern void cairo_translate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, double tx, double ty);
 
 	[DllImport(cairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_face_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_face_tHandle cairo_user_font_face_create();
 
 	[DllImport(cairoLibrary.Name)]

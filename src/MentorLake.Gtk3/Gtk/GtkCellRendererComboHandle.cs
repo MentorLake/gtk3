@@ -69,6 +69,7 @@ public static class GtkCellRendererComboHandleExtensions
 internal class GtkCellRendererComboHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererComboHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellRendererComboHandle gtk_cell_renderer_combo_new();
 
 }

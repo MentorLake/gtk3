@@ -13,13 +13,13 @@ public static class GtkTextChildAnchorHandleExtensions
 {
 	public static bool GetDeleted(this MentorLake.Gtk.GtkTextChildAnchorHandle anchor)
 	{
-		if (anchor.IsInvalid || anchor.IsClosed) throw new Exception("Invalid or closed handle (GtkTextChildAnchorHandle)");
+		if (anchor.IsInvalid) throw new Exception("Invalid handle (GtkTextChildAnchorHandle)");
 		return GtkTextChildAnchorHandleExterns.gtk_text_child_anchor_get_deleted(anchor);
 	}
 
 	public static MentorLake.GLib.GListHandle GetWidgets(this MentorLake.Gtk.GtkTextChildAnchorHandle anchor)
 	{
-		if (anchor.IsInvalid || anchor.IsClosed) throw new Exception("Invalid or closed handle (GtkTextChildAnchorHandle)");
+		if (anchor.IsInvalid) throw new Exception("Invalid handle (GtkTextChildAnchorHandle)");
 		return GtkTextChildAnchorHandleExterns.gtk_text_child_anchor_get_widgets(anchor);
 	}
 
@@ -28,12 +28,14 @@ public static class GtkTextChildAnchorHandleExtensions
 internal class GtkTextChildAnchorHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkTextChildAnchorHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextChildAnchorHandle gtk_text_child_anchor_new();
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_text_child_anchor_get_deleted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextChildAnchorHandle>))] MentorLake.Gtk.GtkTextChildAnchorHandle anchor);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_text_child_anchor_get_widgets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextChildAnchorHandle>))] MentorLake.Gtk.GtkTextChildAnchorHandle anchor);
 
 }

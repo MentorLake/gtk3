@@ -13,7 +13,7 @@ public static class GTcpWrapperConnectionHandleExtensions
 {
 	public static MentorLake.Gio.GIOStreamHandle GetBaseIoStream(this MentorLake.Gio.GTcpWrapperConnectionHandle conn)
 	{
-		if (conn.IsInvalid || conn.IsClosed) throw new Exception("Invalid or closed handle (GTcpWrapperConnectionHandle)");
+		if (conn.IsInvalid) throw new Exception("Invalid handle (GTcpWrapperConnectionHandle)");
 		return GTcpWrapperConnectionHandleExterns.g_tcp_wrapper_connection_get_base_io_stream(conn);
 	}
 
@@ -22,9 +22,11 @@ public static class GTcpWrapperConnectionHandleExtensions
 internal class GTcpWrapperConnectionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GTcpWrapperConnectionHandle>))]
 	internal static extern MentorLake.Gio.GTcpWrapperConnectionHandle g_tcp_wrapper_connection_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))] MentorLake.Gio.GIOStreamHandle base_io_stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketHandle>))] MentorLake.Gio.GSocketHandle socket);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOStreamHandle>))]
 	internal static extern MentorLake.Gio.GIOStreamHandle g_tcp_wrapper_connection_get_base_io_stream([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTcpWrapperConnectionHandle>))] MentorLake.Gio.GTcpWrapperConnectionHandle conn);
 
 }

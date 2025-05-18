@@ -14,31 +14,31 @@ public static class GPatternSpecExtensions
 {
 	public static MentorLake.GLib.GPatternSpecHandle Copy(this MentorLake.GLib.GPatternSpecHandle pspec)
 	{
-		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GPatternSpec)");
+		if (pspec.IsInvalid) throw new Exception("Invalid handle (GPatternSpec)");
 		return GPatternSpecExterns.g_pattern_spec_copy(pspec);
 	}
 
 	public static bool Equal(this MentorLake.GLib.GPatternSpecHandle pspec1, MentorLake.GLib.GPatternSpecHandle pspec2)
 	{
-		if (pspec1.IsInvalid || pspec1.IsClosed) throw new Exception("Invalid or closed handle (GPatternSpec)");
+		if (pspec1.IsInvalid) throw new Exception("Invalid handle (GPatternSpec)");
 		return GPatternSpecExterns.g_pattern_spec_equal(pspec1, pspec2);
 	}
 
 	public static void Free(this MentorLake.GLib.GPatternSpecHandle pspec)
 	{
-		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GPatternSpec)");
+		if (pspec.IsInvalid) throw new Exception("Invalid handle (GPatternSpec)");
 		GPatternSpecExterns.g_pattern_spec_free(pspec);
 	}
 
 	public static bool Match(this MentorLake.GLib.GPatternSpecHandle pspec, UIntPtr string_length, string @string, string string_reversed)
 	{
-		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GPatternSpec)");
+		if (pspec.IsInvalid) throw new Exception("Invalid handle (GPatternSpec)");
 		return GPatternSpecExterns.g_pattern_spec_match(pspec, string_length, @string, string_reversed);
 	}
 
 	public static bool MatchString(this MentorLake.GLib.GPatternSpecHandle pspec, string @string)
 	{
-		if (pspec.IsInvalid || pspec.IsClosed) throw new Exception("Invalid or closed handle (GPatternSpec)");
+		if (pspec.IsInvalid) throw new Exception("Invalid handle (GPatternSpec)");
 		return GPatternSpecExterns.g_pattern_spec_match_string(pspec, @string);
 	}
 
@@ -48,9 +48,11 @@ public static class GPatternSpecExtensions
 internal class GPatternSpecExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPatternSpecHandle>))]
 	internal static extern MentorLake.GLib.GPatternSpecHandle g_pattern_spec_new(string pattern);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPatternSpecHandle>))]
 	internal static extern MentorLake.GLib.GPatternSpecHandle g_pattern_spec_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPatternSpecHandle>))] MentorLake.GLib.GPatternSpecHandle pspec);
 
 	[DllImport(GLibLibrary.Name)]

@@ -14,13 +14,13 @@ public static class GtkTreeDragDestHandleExtensions
 {
 	public static bool DragDataReceived(this MentorLake.Gtk.GtkTreeDragDestHandle drag_dest, MentorLake.Gtk.GtkTreePathHandle dest, MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
-		if (drag_dest.IsInvalid || drag_dest.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeDragDestHandle)");
+		if (drag_dest.IsInvalid) throw new Exception("Invalid handle (GtkTreeDragDestHandle)");
 		return GtkTreeDragDestHandleExterns.gtk_tree_drag_dest_drag_data_received(drag_dest, dest, selection_data);
 	}
 
 	public static bool RowDropPossible(this MentorLake.Gtk.GtkTreeDragDestHandle drag_dest, MentorLake.Gtk.GtkTreePathHandle dest_path, MentorLake.Gtk.GtkSelectionDataHandle selection_data)
 	{
-		if (drag_dest.IsInvalid || drag_dest.IsClosed) throw new Exception("Invalid or closed handle (GtkTreeDragDestHandle)");
+		if (drag_dest.IsInvalid) throw new Exception("Invalid handle (GtkTreeDragDestHandle)");
 		return GtkTreeDragDestHandleExterns.gtk_tree_drag_dest_row_drop_possible(drag_dest, dest_path, selection_data);
 	}
 

@@ -147,35 +147,35 @@ public static class GDBusObjectSkeletonHandleExtensions
 {
 	public static T AddInterface<T>(this T @object, MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_) where T : GDBusObjectSkeletonHandle
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectSkeletonHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (GDBusObjectSkeletonHandle)");
 		GDBusObjectSkeletonHandleExterns.g_dbus_object_skeleton_add_interface(@object, interface_);
 		return @object;
 	}
 
 	public static T Flush<T>(this T @object) where T : GDBusObjectSkeletonHandle
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectSkeletonHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (GDBusObjectSkeletonHandle)");
 		GDBusObjectSkeletonHandleExterns.g_dbus_object_skeleton_flush(@object);
 		return @object;
 	}
 
 	public static T RemoveInterface<T>(this T @object, MentorLake.Gio.GDBusInterfaceSkeletonHandle interface_) where T : GDBusObjectSkeletonHandle
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectSkeletonHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (GDBusObjectSkeletonHandle)");
 		GDBusObjectSkeletonHandleExterns.g_dbus_object_skeleton_remove_interface(@object, interface_);
 		return @object;
 	}
 
 	public static T RemoveInterfaceByName<T>(this T @object, string interface_name) where T : GDBusObjectSkeletonHandle
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectSkeletonHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (GDBusObjectSkeletonHandle)");
 		GDBusObjectSkeletonHandleExterns.g_dbus_object_skeleton_remove_interface_by_name(@object, interface_name);
 		return @object;
 	}
 
 	public static T SetObjectPath<T>(this T @object, string object_path) where T : GDBusObjectSkeletonHandle
 	{
-		if (@object.IsInvalid || @object.IsClosed) throw new Exception("Invalid or closed handle (GDBusObjectSkeletonHandle)");
+		if (@object.IsInvalid) throw new Exception("Invalid handle (GDBusObjectSkeletonHandle)");
 		GDBusObjectSkeletonHandleExterns.g_dbus_object_skeleton_set_object_path(@object, object_path);
 		return @object;
 	}
@@ -185,6 +185,7 @@ public static class GDBusObjectSkeletonHandleExtensions
 internal class GDBusObjectSkeletonHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GDBusObjectSkeletonHandle>))]
 	internal static extern MentorLake.Gio.GDBusObjectSkeletonHandle g_dbus_object_skeleton_new(string object_path);
 
 	[DllImport(GioLibrary.Name)]

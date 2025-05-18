@@ -23,20 +23,20 @@ public static class GThemedIconHandleExtensions
 {
 	public static T AppendName<T>(this T icon, string iconname) where T : GThemedIconHandle
 	{
-		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GThemedIconHandle)");
+		if (icon.IsInvalid) throw new Exception("Invalid handle (GThemedIconHandle)");
 		GThemedIconHandleExterns.g_themed_icon_append_name(icon, iconname);
 		return icon;
 	}
 
 	public static string[] GetNames(this MentorLake.Gio.GThemedIconHandle icon)
 	{
-		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GThemedIconHandle)");
+		if (icon.IsInvalid) throw new Exception("Invalid handle (GThemedIconHandle)");
 		return GThemedIconHandleExterns.g_themed_icon_get_names(icon);
 	}
 
 	public static T PrependName<T>(this T icon, string iconname) where T : GThemedIconHandle
 	{
-		if (icon.IsInvalid || icon.IsClosed) throw new Exception("Invalid or closed handle (GThemedIconHandle)");
+		if (icon.IsInvalid) throw new Exception("Invalid handle (GThemedIconHandle)");
 		GThemedIconHandleExterns.g_themed_icon_prepend_name(icon, iconname);
 		return icon;
 	}
@@ -46,12 +46,15 @@ public static class GThemedIconHandleExtensions
 internal class GThemedIconHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GThemedIconHandle>))]
 	internal static extern MentorLake.Gio.GThemedIconHandle g_themed_icon_new(string iconname);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GThemedIconHandle>))]
 	internal static extern MentorLake.Gio.GThemedIconHandle g_themed_icon_new_from_names(string[] iconnames, int len);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GThemedIconHandle>))]
 	internal static extern MentorLake.Gio.GThemedIconHandle g_themed_icon_new_with_default_fallbacks(string iconname);
 
 	[DllImport(GioLibrary.Name)]

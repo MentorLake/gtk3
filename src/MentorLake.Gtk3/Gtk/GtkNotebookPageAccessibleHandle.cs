@@ -65,7 +65,7 @@ public static class GtkNotebookPageAccessibleHandleExtensions
 {
 	public static T Invalidate<T>(this T page) where T : GtkNotebookPageAccessibleHandle
 	{
-		if (page.IsInvalid || page.IsClosed) throw new Exception("Invalid or closed handle (GtkNotebookPageAccessibleHandle)");
+		if (page.IsInvalid) throw new Exception("Invalid handle (GtkNotebookPageAccessibleHandle)");
 		GtkNotebookPageAccessibleHandleExterns.gtk_notebook_page_accessible_invalidate(page);
 		return page;
 	}
@@ -75,6 +75,7 @@ public static class GtkNotebookPageAccessibleHandleExtensions
 internal class GtkNotebookPageAccessibleHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkNotebookPageAccessibleHandle>))]
 	internal static extern MentorLake.Gtk.GtkNotebookPageAccessibleHandle gtk_notebook_page_accessible_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkNotebookAccessibleHandle>))] MentorLake.Gtk.GtkNotebookAccessibleHandle notebook, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle child);
 
 	[DllImport(GtkLibrary.Name)]

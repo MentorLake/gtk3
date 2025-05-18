@@ -66,7 +66,7 @@ public static class GtkCellRendererTextHandleExtensions
 {
 	public static T SetFixedHeightFromFont<T>(this T renderer, int number_of_rows) where T : GtkCellRendererTextHandle
 	{
-		if (renderer.IsInvalid || renderer.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererTextHandle)");
+		if (renderer.IsInvalid) throw new Exception("Invalid handle (GtkCellRendererTextHandle)");
 		GtkCellRendererTextHandleExterns.gtk_cell_renderer_text_set_fixed_height_from_font(renderer, number_of_rows);
 		return renderer;
 	}
@@ -76,6 +76,7 @@ public static class GtkCellRendererTextHandleExtensions
 internal class GtkCellRendererTextHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererTextHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellRendererTextHandle gtk_cell_renderer_text_new();
 
 	[DllImport(GtkLibrary.Name)]

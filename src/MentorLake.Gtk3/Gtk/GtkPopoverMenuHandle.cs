@@ -13,7 +13,7 @@ public static class GtkPopoverMenuHandleExtensions
 {
 	public static T OpenSubmenu<T>(this T popover, string name) where T : GtkPopoverMenuHandle
 	{
-		if (popover.IsInvalid || popover.IsClosed) throw new Exception("Invalid or closed handle (GtkPopoverMenuHandle)");
+		if (popover.IsInvalid) throw new Exception("Invalid handle (GtkPopoverMenuHandle)");
 		GtkPopoverMenuHandleExterns.gtk_popover_menu_open_submenu(popover, name);
 		return popover;
 	}
@@ -23,6 +23,7 @@ public static class GtkPopoverMenuHandleExtensions
 internal class GtkPopoverMenuHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkPopoverMenuHandle>))]
 	internal static extern MentorLake.Gtk.GtkPopoverMenuHandle gtk_popover_menu_new();
 
 	[DllImport(GtkLibrary.Name)]

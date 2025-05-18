@@ -13,27 +13,27 @@ public static class GtkCellAreaBoxHandleExtensions
 {
 	public static int GetSpacing(this MentorLake.Gtk.GtkCellAreaBoxHandle box)
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkCellAreaBoxHandle)");
 		return GtkCellAreaBoxHandleExterns.gtk_cell_area_box_get_spacing(box);
 	}
 
 	public static T PackEnd<T>(this T box, MentorLake.Gtk.GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed) where T : GtkCellAreaBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkCellAreaBoxHandle)");
 		GtkCellAreaBoxHandleExterns.gtk_cell_area_box_pack_end(box, renderer, expand, align, @fixed);
 		return box;
 	}
 
 	public static T PackStart<T>(this T box, MentorLake.Gtk.GtkCellRendererHandle renderer, bool expand, bool align, bool @fixed) where T : GtkCellAreaBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkCellAreaBoxHandle)");
 		GtkCellAreaBoxHandleExterns.gtk_cell_area_box_pack_start(box, renderer, expand, align, @fixed);
 		return box;
 	}
 
 	public static T SetSpacing<T>(this T box, int spacing) where T : GtkCellAreaBoxHandle
 	{
-		if (box.IsInvalid || box.IsClosed) throw new Exception("Invalid or closed handle (GtkCellAreaBoxHandle)");
+		if (box.IsInvalid) throw new Exception("Invalid handle (GtkCellAreaBoxHandle)");
 		GtkCellAreaBoxHandleExterns.gtk_cell_area_box_set_spacing(box, spacing);
 		return box;
 	}
@@ -43,6 +43,7 @@ public static class GtkCellAreaBoxHandleExtensions
 internal class GtkCellAreaBoxHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellAreaBoxHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellAreaBoxHandle gtk_cell_area_box_new();
 
 	[DllImport(GtkLibrary.Name)]

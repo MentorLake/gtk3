@@ -68,6 +68,7 @@ public static class GtkFontChooserWidgetHandleExtensions
 internal class GtkFontChooserWidgetHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFontChooserWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkFontChooserWidgetHandle gtk_font_chooser_widget_new();
 
 }

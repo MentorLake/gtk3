@@ -104,20 +104,20 @@ public static class GtkSocketHandleExtensions
 {
 	public static T AddId<T>(this T socket_, MentorLake.xlib.Window window) where T : GtkSocketHandle
 	{
-		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
+		if (socket_.IsInvalid) throw new Exception("Invalid handle (GtkSocketHandle)");
 		GtkSocketHandleExterns.gtk_socket_add_id(socket_, window);
 		return socket_;
 	}
 
 	public static MentorLake.xlib.Window GetId(this MentorLake.Gtk.GtkSocketHandle socket_)
 	{
-		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
+		if (socket_.IsInvalid) throw new Exception("Invalid handle (GtkSocketHandle)");
 		return GtkSocketHandleExterns.gtk_socket_get_id(socket_);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetPlugWindow(this MentorLake.Gtk.GtkSocketHandle socket_)
 	{
-		if (socket_.IsInvalid || socket_.IsClosed) throw new Exception("Invalid or closed handle (GtkSocketHandle)");
+		if (socket_.IsInvalid) throw new Exception("Invalid handle (GtkSocketHandle)");
 		return GtkSocketHandleExterns.gtk_socket_get_plug_window(socket_);
 	}
 
@@ -126,6 +126,7 @@ public static class GtkSocketHandleExtensions
 internal class GtkSocketHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSocketHandle>))]
 	internal static extern MentorLake.Gtk.GtkSocketHandle gtk_socket_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -135,6 +136,7 @@ internal class GtkSocketHandleExterns
 	internal static extern MentorLake.xlib.Window gtk_socket_get_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSocketHandle>))] MentorLake.Gtk.GtkSocketHandle socket_);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_socket_get_plug_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSocketHandle>))] MentorLake.Gtk.GtkSocketHandle socket_);
 
 }

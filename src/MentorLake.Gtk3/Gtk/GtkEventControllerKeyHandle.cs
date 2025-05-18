@@ -268,25 +268,25 @@ public static class GtkEventControllerKeyHandleExtensions
 {
 	public static bool Forward(this MentorLake.Gtk.GtkEventControllerKeyHandle controller, MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
+		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_forward(controller, widget);
 	}
 
 	public static uint GetGroup(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
-		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
+		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_group(controller);
 	}
 
 	public static MentorLake.Gtk.GtkIMContextHandle GetImContext(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
-		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
+		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_im_context(controller);
 	}
 
 	public static T SetImContext<T>(this T controller, MentorLake.Gtk.GtkIMContextHandle im_context) where T : GtkEventControllerKeyHandle
 	{
-		if (controller.IsInvalid || controller.IsClosed) throw new Exception("Invalid or closed handle (GtkEventControllerKeyHandle)");
+		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		GtkEventControllerKeyHandleExterns.gtk_event_controller_key_set_im_context(controller, im_context);
 		return controller;
 	}
@@ -296,6 +296,7 @@ public static class GtkEventControllerKeyHandleExtensions
 internal class GtkEventControllerKeyHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))]
 	internal static extern MentorLake.Gtk.GtkEventControllerKeyHandle gtk_event_controller_key_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -305,6 +306,7 @@ internal class GtkEventControllerKeyHandleExterns
 	internal static extern uint gtk_event_controller_key_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle controller);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIMContextHandle>))]
 	internal static extern MentorLake.Gtk.GtkIMContextHandle gtk_event_controller_key_get_im_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle controller);
 
 	[DllImport(GtkLibrary.Name)]

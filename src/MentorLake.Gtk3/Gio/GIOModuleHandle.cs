@@ -18,14 +18,14 @@ public static class GIOModuleHandleExtensions
 {
 	public static T Load<T>(this T module) where T : GIOModuleHandle
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleHandle)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GIOModuleHandle)");
 		GIOModuleHandleExterns.g_io_module_load(module);
 		return module;
 	}
 
 	public static T Unload<T>(this T module) where T : GIOModuleHandle
 	{
-		if (module.IsInvalid || module.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleHandle)");
+		if (module.IsInvalid) throw new Exception("Invalid handle (GIOModuleHandle)");
 		GIOModuleHandleExterns.g_io_module_unload(module);
 		return module;
 	}
@@ -35,6 +35,7 @@ public static class GIOModuleHandleExtensions
 internal class GIOModuleHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GIOModuleHandle>))]
 	internal static extern MentorLake.Gio.GIOModuleHandle g_io_module_new(string filename);
 
 	[DllImport(GioLibrary.Name)]

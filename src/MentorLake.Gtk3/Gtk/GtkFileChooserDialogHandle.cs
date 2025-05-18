@@ -224,6 +224,7 @@ public static class GtkFileChooserDialogHandleExtensions
 internal class GtkFileChooserDialogHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFileChooserDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkFileChooserDialogHandle gtk_file_chooser_dialog_new(string title, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, MentorLake.Gtk.GtkFileChooserAction action, string first_button_text, IntPtr @__arglist);
 
 }

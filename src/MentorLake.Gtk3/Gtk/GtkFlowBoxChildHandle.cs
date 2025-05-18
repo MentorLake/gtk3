@@ -64,20 +64,20 @@ public static class GtkFlowBoxChildHandleExtensions
 {
 	public static T Changed<T>(this T child) where T : GtkFlowBoxChildHandle
 	{
-		if (child.IsInvalid || child.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxChildHandle)");
+		if (child.IsInvalid) throw new Exception("Invalid handle (GtkFlowBoxChildHandle)");
 		GtkFlowBoxChildHandleExterns.gtk_flow_box_child_changed(child);
 		return child;
 	}
 
 	public static int GetIndex(this MentorLake.Gtk.GtkFlowBoxChildHandle child)
 	{
-		if (child.IsInvalid || child.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxChildHandle)");
+		if (child.IsInvalid) throw new Exception("Invalid handle (GtkFlowBoxChildHandle)");
 		return GtkFlowBoxChildHandleExterns.gtk_flow_box_child_get_index(child);
 	}
 
 	public static bool IsSelected(this MentorLake.Gtk.GtkFlowBoxChildHandle child)
 	{
-		if (child.IsInvalid || child.IsClosed) throw new Exception("Invalid or closed handle (GtkFlowBoxChildHandle)");
+		if (child.IsInvalid) throw new Exception("Invalid handle (GtkFlowBoxChildHandle)");
 		return GtkFlowBoxChildHandleExterns.gtk_flow_box_child_is_selected(child);
 	}
 
@@ -86,6 +86,7 @@ public static class GtkFlowBoxChildHandleExtensions
 internal class GtkFlowBoxChildHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFlowBoxChildHandle>))]
 	internal static extern MentorLake.Gtk.GtkFlowBoxChildHandle gtk_flow_box_child_new();
 
 	[DllImport(GtkLibrary.Name)]

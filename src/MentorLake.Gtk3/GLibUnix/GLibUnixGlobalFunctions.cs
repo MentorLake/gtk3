@@ -85,6 +85,7 @@ internal class GLibUnixGlobalFunctionsExterns
 	internal static extern uint g_unix_fd_add_full(int priority, int fd, MentorLake.GLib.GIOCondition condition, MentorLake.GLib.GUnixFDSourceFunc function, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify);
 
 	[DllImport(GLibUnixLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSourceHandle>))]
 	internal static extern MentorLake.GLib.GSourceHandle g_unix_fd_source_new(int fd, MentorLake.GLib.GIOCondition condition);
 
 	[DllImport(GLibUnixLibrary.Name)]
@@ -106,6 +107,7 @@ internal class GLibUnixGlobalFunctionsExterns
 	internal static extern uint g_unix_signal_add_full(int priority, int signum, MentorLake.GLib.GSourceFunc handler, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify);
 
 	[DllImport(GLibUnixLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSourceHandle>))]
 	internal static extern MentorLake.GLib.GSourceHandle g_unix_signal_source_new(int signum);
 
 }

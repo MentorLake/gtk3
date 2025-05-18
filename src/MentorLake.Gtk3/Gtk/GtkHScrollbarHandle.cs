@@ -16,6 +16,7 @@ public static class GtkHScrollbarHandleExtensions
 internal class GtkHScrollbarHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHScrollbarHandle>))]
 	internal static extern MentorLake.Gtk.GtkHScrollbarHandle gtk_hscrollbar_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))] MentorLake.Gtk.GtkAdjustmentHandle adjustment);
 
 }

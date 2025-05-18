@@ -18,13 +18,13 @@ public static class GEmblemHandleExtensions
 {
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GEmblemHandle emblem)
 	{
-		if (emblem.IsInvalid || emblem.IsClosed) throw new Exception("Invalid or closed handle (GEmblemHandle)");
+		if (emblem.IsInvalid) throw new Exception("Invalid handle (GEmblemHandle)");
 		return GEmblemHandleExterns.g_emblem_get_icon(emblem);
 	}
 
 	public static MentorLake.Gio.GEmblemOrigin GetOrigin(this MentorLake.Gio.GEmblemHandle emblem)
 	{
-		if (emblem.IsInvalid || emblem.IsClosed) throw new Exception("Invalid or closed handle (GEmblemHandle)");
+		if (emblem.IsInvalid) throw new Exception("Invalid handle (GEmblemHandle)");
 		return GEmblemHandleExterns.g_emblem_get_origin(emblem);
 	}
 
@@ -33,12 +33,15 @@ public static class GEmblemHandleExtensions
 internal class GEmblemHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GEmblemHandle>))]
 	internal static extern MentorLake.Gio.GEmblemHandle g_emblem_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GEmblemHandle>))]
 	internal static extern MentorLake.Gio.GEmblemHandle g_emblem_new_with_origin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))] MentorLake.Gio.GIconHandle icon, MentorLake.Gio.GEmblemOrigin origin);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle g_emblem_get_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GEmblemHandle>))] MentorLake.Gio.GEmblemHandle emblem);
 
 	[DllImport(GioLibrary.Name)]

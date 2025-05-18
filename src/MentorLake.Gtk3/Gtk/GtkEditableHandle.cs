@@ -14,87 +14,87 @@ public static class GtkEditableHandleExtensions
 {
 	public static T CopyClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_copy_clipboard(editable);
 		return editable;
 	}
 
 	public static T CutClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_cut_clipboard(editable);
 		return editable;
 	}
 
 	public static T DeleteSelection<T>(this T editable) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_delete_selection(editable);
 		return editable;
 	}
 
 	public static T DeleteText<T>(this T editable, int start_pos, int end_pos) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_delete_text(editable, start_pos, end_pos);
 		return editable;
 	}
 
 	public static string GetChars(this MentorLake.Gtk.GtkEditableHandle editable, int start_pos, int end_pos)
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		return GtkEditableHandleExterns.gtk_editable_get_chars(editable, start_pos, end_pos);
 	}
 
 	public static bool GetEditable(this MentorLake.Gtk.GtkEditableHandle editable)
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		return GtkEditableHandleExterns.gtk_editable_get_editable(editable);
 	}
 
 	public static int GetPosition(this MentorLake.Gtk.GtkEditableHandle editable)
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		return GtkEditableHandleExterns.gtk_editable_get_position(editable);
 	}
 
 	public static bool GetSelectionBounds(this MentorLake.Gtk.GtkEditableHandle editable, out int start_pos, out int end_pos)
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		return GtkEditableHandleExterns.gtk_editable_get_selection_bounds(editable, out start_pos, out end_pos);
 	}
 
 	public static T InsertText<T>(this T editable, string new_text, int new_text_length, ref int position) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_insert_text(editable, new_text, new_text_length, ref position);
 		return editable;
 	}
 
 	public static T PasteClipboard<T>(this T editable) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_paste_clipboard(editable);
 		return editable;
 	}
 
 	public static T SelectRegion<T>(this T editable, int start_pos, int end_pos) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_select_region(editable, start_pos, end_pos);
 		return editable;
 	}
 
 	public static T SetEditable<T>(this T editable, bool is_editable) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_set_editable(editable, is_editable);
 		return editable;
 	}
 
 	public static T SetPosition<T>(this T editable, int position) where T : GtkEditableHandle
 	{
-		if (editable.IsInvalid || editable.IsClosed) throw new Exception("Invalid or closed handle (GtkEditableHandle)");
+		if (editable.IsInvalid) throw new Exception("Invalid handle (GtkEditableHandle)");
 		GtkEditableHandleExterns.gtk_editable_set_position(editable, position);
 		return editable;
 	}

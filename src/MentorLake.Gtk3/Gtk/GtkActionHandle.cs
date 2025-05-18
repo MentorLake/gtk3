@@ -64,265 +64,265 @@ public static class GtkActionHandleExtensions
 {
 	public static T Activate<T>(this T action) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_activate(action);
 		return action;
 	}
 
 	public static T BlockActivate<T>(this T action) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_block_activate(action);
 		return action;
 	}
 
 	public static T ConnectAccelerator<T>(this T action) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_connect_accelerator(action);
 		return action;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle CreateIcon(this MentorLake.Gtk.GtkActionHandle action, MentorLake.Gtk.GtkIconSize icon_size)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_create_icon(action, icon_size);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle CreateMenu(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_create_menu(action);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle CreateMenuItem(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_create_menu_item(action);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle CreateToolItem(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_create_tool_item(action);
 	}
 
 	public static T DisconnectAccelerator<T>(this T action) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_disconnect_accelerator(action);
 		return action;
 	}
 
 	public static MentorLake.GObject.GClosureHandle GetAccelClosure(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_accel_closure(action);
 	}
 
 	public static string GetAccelPath(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_accel_path(action);
 	}
 
 	public static bool GetAlwaysShowImage(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_always_show_image(action);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetGicon(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_gicon(action);
 	}
 
 	public static string GetIconName(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_icon_name(action);
 	}
 
 	public static bool GetIsImportant(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_is_important(action);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_label(action);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_name(action);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetProxies(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_proxies(action);
 	}
 
 	public static bool GetSensitive(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_sensitive(action);
 	}
 
 	public static string GetShortLabel(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_short_label(action);
 	}
 
 	public static string GetStockId(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_stock_id(action);
 	}
 
 	public static string GetTooltip(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_tooltip(action);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_visible(action);
 	}
 
 	public static bool GetVisibleHorizontal(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_visible_horizontal(action);
 	}
 
 	public static bool GetVisibleVertical(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_get_visible_vertical(action);
 	}
 
 	public static bool IsSensitive(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_is_sensitive(action);
 	}
 
 	public static bool IsVisible(this MentorLake.Gtk.GtkActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		return GtkActionHandleExterns.gtk_action_is_visible(action);
 	}
 
 	public static T SetAccelGroup<T>(this T action, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_accel_group(action, accel_group);
 		return action;
 	}
 
 	public static T SetAccelPath<T>(this T action, string accel_path) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_accel_path(action, accel_path);
 		return action;
 	}
 
 	public static T SetAlwaysShowImage<T>(this T action, bool always_show) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_always_show_image(action, always_show);
 		return action;
 	}
 
 	public static T SetGicon<T>(this T action, MentorLake.Gio.GIconHandle icon) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_gicon(action, icon);
 		return action;
 	}
 
 	public static T SetIconName<T>(this T action, string icon_name) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_icon_name(action, icon_name);
 		return action;
 	}
 
 	public static T SetIsImportant<T>(this T action, bool is_important) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_is_important(action, is_important);
 		return action;
 	}
 
 	public static T SetLabel<T>(this T action, string label) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_label(action, label);
 		return action;
 	}
 
 	public static T SetSensitive<T>(this T action, bool sensitive) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_sensitive(action, sensitive);
 		return action;
 	}
 
 	public static T SetShortLabel<T>(this T action, string short_label) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_short_label(action, short_label);
 		return action;
 	}
 
 	public static T SetStockId<T>(this T action, string stock_id) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_stock_id(action, stock_id);
 		return action;
 	}
 
 	public static T SetTooltip<T>(this T action, string tooltip) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_tooltip(action, tooltip);
 		return action;
 	}
 
 	public static T SetVisible<T>(this T action, bool visible) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_visible(action, visible);
 		return action;
 	}
 
 	public static T SetVisibleHorizontal<T>(this T action, bool visible_horizontal) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_visible_horizontal(action, visible_horizontal);
 		return action;
 	}
 
 	public static T SetVisibleVertical<T>(this T action, bool visible_vertical) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_set_visible_vertical(action, visible_vertical);
 		return action;
 	}
 
 	public static T UnblockActivate<T>(this T action) where T : GtkActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkActionHandle)");
 		GtkActionHandleExterns.gtk_action_unblock_activate(action);
 		return action;
 	}
@@ -332,6 +332,7 @@ public static class GtkActionHandleExtensions
 internal class GtkActionHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkActionHandle gtk_action_new(string name, string label, string tooltip, string stock_id);
 
 	[DllImport(GtkLibrary.Name)]
@@ -344,21 +345,26 @@ internal class GtkActionHandleExterns
 	internal static extern void gtk_action_connect_accelerator([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_action_create_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action, MentorLake.Gtk.GtkIconSize icon_size);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_action_create_menu([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_action_create_menu_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_action_create_tool_item([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_action_disconnect_accelerator([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GClosureHandle>))]
 	internal static extern MentorLake.GObject.GClosureHandle gtk_action_get_accel_closure([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
@@ -369,6 +375,7 @@ internal class GtkActionHandleExterns
 	internal static extern bool gtk_action_get_always_show_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle gtk_action_get_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
@@ -387,6 +394,7 @@ internal class GtkActionHandleExterns
 	internal static extern string gtk_action_get_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gtk_action_get_proxies([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))] MentorLake.Gtk.GtkActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]

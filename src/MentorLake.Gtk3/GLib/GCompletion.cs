@@ -9,43 +9,43 @@ public static class GCompletionExtensions
 {
 	public static void AddItems(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GListHandle items)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		GCompletionExterns.g_completion_add_items(cmp, items);
 	}
 
 	public static void ClearItems(this MentorLake.GLib.GCompletionHandle cmp)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		GCompletionExterns.g_completion_clear_items(cmp);
 	}
 
 	public static MentorLake.GLib.GListHandle Complete(this MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		return GCompletionExterns.g_completion_complete(cmp, prefix, new_prefix);
 	}
 
 	public static MentorLake.GLib.GListHandle CompleteUtf8(this MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		return GCompletionExterns.g_completion_complete_utf8(cmp, prefix, new_prefix);
 	}
 
 	public static void Free(this MentorLake.GLib.GCompletionHandle cmp)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		GCompletionExterns.g_completion_free(cmp);
 	}
 
 	public static void RemoveItems(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GListHandle items)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		GCompletionExterns.g_completion_remove_items(cmp, items);
 	}
 
 	public static void SetCompare(this MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GCompletionStrncmpFunc strncmp_func)
 	{
-		if (cmp.IsInvalid || cmp.IsClosed) throw new Exception("Invalid or closed handle (GCompletion)");
+		if (cmp.IsInvalid) throw new Exception("Invalid handle (GCompletion)");
 		GCompletionExterns.g_completion_set_compare(cmp, strncmp_func);
 	}
 
@@ -61,9 +61,11 @@ internal class GCompletionExterns
 	internal static extern void g_completion_clear_items([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCompletionHandle>))] MentorLake.GLib.GCompletionHandle cmp);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_completion_complete([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCompletionHandle>))] MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle g_completion_complete_utf8([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCompletionHandle>))] MentorLake.GLib.GCompletionHandle cmp, string prefix, string new_prefix);
 
 	[DllImport(GLibLibrary.Name)]
@@ -76,6 +78,7 @@ internal class GCompletionExterns
 	internal static extern void g_completion_set_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCompletionHandle>))] MentorLake.GLib.GCompletionHandle cmp, MentorLake.GLib.GCompletionStrncmpFunc strncmp_func);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCompletionHandle>))]
 	internal static extern MentorLake.GLib.GCompletionHandle g_completion_new(MentorLake.GLib.GCompletionFunc func);
 
 }

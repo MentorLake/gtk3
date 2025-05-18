@@ -13,14 +13,14 @@ public static class GtkFixedHandleExtensions
 {
 	public static T Move<T>(this T @fixed, MentorLake.Gtk.GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
-		if (@fixed.IsInvalid || @fixed.IsClosed) throw new Exception("Invalid or closed handle (GtkFixedHandle)");
+		if (@fixed.IsInvalid) throw new Exception("Invalid handle (GtkFixedHandle)");
 		GtkFixedHandleExterns.gtk_fixed_move(@fixed, widget, x, y);
 		return @fixed;
 	}
 
 	public static T Put<T>(this T @fixed, MentorLake.Gtk.GtkWidgetHandle widget, int x, int y) where T : GtkFixedHandle
 	{
-		if (@fixed.IsInvalid || @fixed.IsClosed) throw new Exception("Invalid or closed handle (GtkFixedHandle)");
+		if (@fixed.IsInvalid) throw new Exception("Invalid handle (GtkFixedHandle)");
 		GtkFixedHandleExterns.gtk_fixed_put(@fixed, widget, x, y);
 		return @fixed;
 	}
@@ -30,6 +30,7 @@ public static class GtkFixedHandleExtensions
 internal class GtkFixedHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFixedHandle>))]
 	internal static extern MentorLake.Gtk.GtkFixedHandle gtk_fixed_new();
 
 	[DllImport(GtkLibrary.Name)]

@@ -14,7 +14,7 @@ public static class GNetworkMonitorHandleExtensions
 {
 	public static bool CanReach(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		var externCallResult = GNetworkMonitorHandleExterns.g_network_monitor_can_reach(monitor, connectable, cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -22,14 +22,14 @@ public static class GNetworkMonitorHandleExtensions
 
 	public static T CanReachAsync<T>(this T monitor, MentorLake.Gio.GSocketConnectableHandle connectable, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GNetworkMonitorHandle
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		GNetworkMonitorHandleExterns.g_network_monitor_can_reach_async(monitor, connectable, cancellable, callback, user_data);
 		return monitor;
 	}
 
 	public static bool CanReachFinish(this MentorLake.Gio.GNetworkMonitorHandle monitor, MentorLake.Gio.GAsyncResultHandle result)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		var externCallResult = GNetworkMonitorHandleExterns.g_network_monitor_can_reach_finish(monitor, result, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -37,19 +37,19 @@ public static class GNetworkMonitorHandleExtensions
 
 	public static MentorLake.Gio.GNetworkConnectivity GetConnectivity(this MentorLake.Gio.GNetworkMonitorHandle monitor)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		return GNetworkMonitorHandleExterns.g_network_monitor_get_connectivity(monitor);
 	}
 
 	public static bool GetNetworkAvailable(this MentorLake.Gio.GNetworkMonitorHandle monitor)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		return GNetworkMonitorHandleExterns.g_network_monitor_get_network_available(monitor);
 	}
 
 	public static bool GetNetworkMetered(this MentorLake.Gio.GNetworkMonitorHandle monitor)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GNetworkMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GNetworkMonitorHandle)");
 		return GNetworkMonitorHandleExterns.g_network_monitor_get_network_metered(monitor);
 	}
 
@@ -81,6 +81,7 @@ internal class GNetworkMonitorHandleExterns
 	internal static extern bool g_network_monitor_get_network_metered([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))] MentorLake.Gio.GNetworkMonitorHandle monitor);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GNetworkMonitorHandleImpl>))]
 	internal static extern MentorLake.Gio.GNetworkMonitorHandle g_network_monitor_get_default();
 
 }

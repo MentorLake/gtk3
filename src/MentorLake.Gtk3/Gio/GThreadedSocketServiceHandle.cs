@@ -70,6 +70,7 @@ public static class GThreadedSocketServiceHandleExtensions
 internal class GThreadedSocketServiceHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GThreadedSocketServiceHandle>))]
 	internal static extern MentorLake.Gio.GThreadedSocketServiceHandle g_threaded_socket_service_new(int max_threads);
 
 }

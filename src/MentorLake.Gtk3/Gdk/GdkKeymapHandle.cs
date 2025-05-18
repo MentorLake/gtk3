@@ -147,80 +147,80 @@ public static class GdkKeymapHandleExtensions
 {
 	public static T AddVirtualModifiers<T>(this T keymap, ref MentorLake.Gdk.GdkModifierType state) where T : GdkKeymapHandle
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		GdkKeymapHandleExterns.gdk_keymap_add_virtual_modifiers(keymap, ref state);
 		return keymap;
 	}
 
 	public static bool GetCapsLockState(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_caps_lock_state(keymap);
 	}
 
 	public static MentorLake.Pango.PangoDirection GetDirection(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_direction(keymap);
 	}
 
 	public static bool GetEntriesForKeycode(this MentorLake.Gdk.GdkKeymapHandle keymap, uint hardware_keycode, out MentorLake.Gdk.GdkKeymapKey[] keys, out uint[] keyvals, out int n_entries)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_entries_for_keycode(keymap, hardware_keycode, out keys, out keyvals, out n_entries);
 	}
 
 	public static bool GetEntriesForKeyval(this MentorLake.Gdk.GdkKeymapHandle keymap, uint keyval, out MentorLake.Gdk.GdkKeymapKey[] keys, out int n_keys)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_entries_for_keyval(keymap, keyval, out keys, out n_keys);
 	}
 
 	public static MentorLake.Gdk.GdkModifierType GetModifierMask(this MentorLake.Gdk.GdkKeymapHandle keymap, MentorLake.Gdk.GdkModifierIntent intent)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_modifier_mask(keymap, intent);
 	}
 
 	public static uint GetModifierState(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_modifier_state(keymap);
 	}
 
 	public static bool GetNumLockState(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_num_lock_state(keymap);
 	}
 
 	public static bool GetScrollLockState(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_get_scroll_lock_state(keymap);
 	}
 
 	public static bool HaveBidiLayouts(this MentorLake.Gdk.GdkKeymapHandle keymap)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_have_bidi_layouts(keymap);
 	}
 
 	public static uint LookupKey(this MentorLake.Gdk.GdkKeymapHandle keymap, MentorLake.Gdk.GdkKeymapKeyHandle key)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_lookup_key(keymap, key);
 	}
 
 	public static bool MapVirtualModifiers(this MentorLake.Gdk.GdkKeymapHandle keymap, ref MentorLake.Gdk.GdkModifierType state)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_map_virtual_modifiers(keymap, ref state);
 	}
 
 	public static bool TranslateKeyboardState(this MentorLake.Gdk.GdkKeymapHandle keymap, uint hardware_keycode, MentorLake.Gdk.GdkModifierType state, int group, out uint keyval, out int effective_group, out int level, out MentorLake.Gdk.GdkModifierType consumed_modifiers)
 	{
-		if (keymap.IsInvalid || keymap.IsClosed) throw new Exception("Invalid or closed handle (GdkKeymapHandle)");
+		if (keymap.IsInvalid) throw new Exception("Invalid handle (GdkKeymapHandle)");
 		return GdkKeymapHandleExterns.gdk_keymap_translate_keyboard_state(keymap, hardware_keycode, state, group, out keyval, out effective_group, out level, out consumed_modifiers);
 	}
 
@@ -268,9 +268,11 @@ internal class GdkKeymapHandleExterns
 	internal static extern bool gdk_keymap_translate_keyboard_state([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, uint hardware_keycode, MentorLake.Gdk.GdkModifierType state, int group, out uint keyval, out int effective_group, out int level, out MentorLake.Gdk.GdkModifierType consumed_modifiers);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))]
 	internal static extern MentorLake.Gdk.GdkKeymapHandle gdk_keymap_get_default();
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))]
 	internal static extern MentorLake.Gdk.GdkKeymapHandle gdk_keymap_get_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display);
 
 }

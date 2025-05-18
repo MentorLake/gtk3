@@ -2858,1729 +2858,1729 @@ public static class GtkWidgetHandleExtensions
 {
 	public static bool Activate(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_activate(widget);
 	}
 
 	public static T AddAccelerator<T>(this T widget, string accel_signal, MentorLake.Gtk.GtkAccelGroupHandle accel_group, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods, MentorLake.Gtk.GtkAccelFlags accel_flags) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_add_accelerator(widget, accel_signal, accel_group, accel_key, accel_mods, accel_flags);
 		return widget;
 	}
 
 	public static T AddDeviceEvents<T>(this T widget, MentorLake.Gdk.GdkDeviceHandle device, MentorLake.Gdk.GdkEventMask events) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_add_device_events(widget, device, events);
 		return widget;
 	}
 
 	public static T AddEvents<T>(this T widget, int events) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_add_events(widget, events);
 		return widget;
 	}
 
 	public static T AddMnemonicLabel<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle label) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_add_mnemonic_label(widget, label);
 		return widget;
 	}
 
 	public static uint AddTickCallback(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkTickCallback callback, IntPtr user_data, MentorLake.GLib.GDestroyNotify notify)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_add_tick_callback(widget, callback, user_data, notify);
 	}
 
 	public static bool CanActivateAccel(this MentorLake.Gtk.GtkWidgetHandle widget, uint signal_id)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_can_activate_accel(widget, signal_id);
 	}
 
 	public static bool ChildFocus(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkDirectionType direction)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_child_focus(widget, direction);
 	}
 
 	public static T ChildNotify<T>(this T widget, string child_property) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_child_notify(widget, child_property);
 		return widget;
 	}
 
 	public static T ClassPath<T>(this T widget, out uint path_length, out string path, out string path_reversed) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_class_path(widget, out path_length, out path, out path_reversed);
 		return widget;
 	}
 
 	public static bool ComputeExpand(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkOrientation orientation)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_compute_expand(widget, orientation);
 	}
 
 	public static MentorLake.Pango.PangoContextHandle CreatePangoContext(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_create_pango_context(widget);
 	}
 
 	public static MentorLake.Pango.PangoLayoutHandle CreatePangoLayout(this MentorLake.Gtk.GtkWidgetHandle widget, string text)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_create_pango_layout(widget, text);
 	}
 
 	public static T Destroy<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_destroy(widget);
 		return widget;
 	}
 
 	public static T Destroyed<T>(this T widget, ref MentorLake.Gtk.GtkWidgetHandle widget_pointer) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_destroyed(widget, ref widget_pointer);
 		return widget;
 	}
 
 	public static bool DeviceIsShadowed(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkDeviceHandle device)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_device_is_shadowed(widget, device);
 	}
 
 	public static MentorLake.Gdk.GdkDragContextHandle DragBegin(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkTargetListHandle targets, MentorLake.Gdk.GdkDragAction actions, int button, MentorLake.Gdk.GdkEventHandle @event)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_begin(widget, targets, actions, button, @event);
 	}
 
 	public static MentorLake.Gdk.GdkDragContextHandle DragBeginWithCoordinates(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkTargetListHandle targets, MentorLake.Gdk.GdkDragAction actions, int button, MentorLake.Gdk.GdkEventHandle @event, int x, int y)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_begin_with_coordinates(widget, targets, actions, button, @event, x, y);
 	}
 
 	public static bool DragCheckThreshold(this MentorLake.Gtk.GtkWidgetHandle widget, int start_x, int start_y, int current_x, int current_y)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_check_threshold(widget, start_x, start_y, current_x, current_y);
 	}
 
 	public static T DragDestAddImageTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_add_image_targets(widget);
 		return widget;
 	}
 
 	public static T DragDestAddTextTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_add_text_targets(widget);
 		return widget;
 	}
 
 	public static T DragDestAddUriTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_add_uri_targets(widget);
 		return widget;
 	}
 
 	public static MentorLake.Gdk.GdkAtom DragDestFindTarget(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkDragContextHandle context, MentorLake.Gtk.GtkTargetListHandle target_list)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_dest_find_target(widget, context, target_list);
 	}
 
 	public static MentorLake.Gtk.GtkTargetListHandle DragDestGetTargetList(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_dest_get_target_list(widget);
 	}
 
 	public static bool DragDestGetTrackMotion(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_dest_get_track_motion(widget);
 	}
 
 	public static T DragDestSet<T>(this T widget, MentorLake.Gtk.GtkDestDefaults flags, MentorLake.Gtk.GtkTargetEntry[] targets, int n_targets, MentorLake.Gdk.GdkDragAction actions) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_set(widget, flags, targets, n_targets, actions);
 		return widget;
 	}
 
 	public static T DragDestSetProxy<T>(this T widget, MentorLake.Gdk.GdkWindowHandle proxy_window, MentorLake.Gdk.GdkDragProtocol protocol, bool use_coordinates) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_set_proxy(widget, proxy_window, protocol, use_coordinates);
 		return widget;
 	}
 
 	public static T DragDestSetTargetList<T>(this T widget, MentorLake.Gtk.GtkTargetListHandle target_list) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_set_target_list(widget, target_list);
 		return widget;
 	}
 
 	public static T DragDestSetTrackMotion<T>(this T widget, bool track_motion) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_set_track_motion(widget, track_motion);
 		return widget;
 	}
 
 	public static T DragDestUnset<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_dest_unset(widget);
 		return widget;
 	}
 
 	public static T DragGetData<T>(this T widget, MentorLake.Gdk.GdkDragContextHandle context, MentorLake.Gdk.GdkAtom target, uint time_) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_get_data(widget, context, target, time_);
 		return widget;
 	}
 
 	public static T DragHighlight<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_highlight(widget);
 		return widget;
 	}
 
 	public static T DragSourceAddImageTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_add_image_targets(widget);
 		return widget;
 	}
 
 	public static T DragSourceAddTextTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_add_text_targets(widget);
 		return widget;
 	}
 
 	public static T DragSourceAddUriTargets<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_add_uri_targets(widget);
 		return widget;
 	}
 
 	public static MentorLake.Gtk.GtkTargetListHandle DragSourceGetTargetList(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_drag_source_get_target_list(widget);
 	}
 
 	public static T DragSourceSet<T>(this T widget, MentorLake.Gdk.GdkModifierType start_button_mask, MentorLake.Gtk.GtkTargetEntry[] targets, int n_targets, MentorLake.Gdk.GdkDragAction actions) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set(widget, start_button_mask, targets, n_targets, actions);
 		return widget;
 	}
 
 	public static T DragSourceSetIconGicon<T>(this T widget, MentorLake.Gio.GIconHandle icon) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set_icon_gicon(widget, icon);
 		return widget;
 	}
 
 	public static T DragSourceSetIconName<T>(this T widget, string icon_name) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set_icon_name(widget, icon_name);
 		return widget;
 	}
 
 	public static T DragSourceSetIconPixbuf<T>(this T widget, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set_icon_pixbuf(widget, pixbuf);
 		return widget;
 	}
 
 	public static T DragSourceSetIconStock<T>(this T widget, string stock_id) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set_icon_stock(widget, stock_id);
 		return widget;
 	}
 
 	public static T DragSourceSetTargetList<T>(this T widget, MentorLake.Gtk.GtkTargetListHandle target_list) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_set_target_list(widget, target_list);
 		return widget;
 	}
 
 	public static T DragSourceUnset<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_source_unset(widget);
 		return widget;
 	}
 
 	public static T DragUnhighlight<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_drag_unhighlight(widget);
 		return widget;
 	}
 
 	public static T Draw<T>(this T widget, MentorLake.cairo.cairo_tHandle cr) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_draw(widget, cr);
 		return widget;
 	}
 
 	public static T EnsureStyle<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_ensure_style(widget);
 		return widget;
 	}
 
 	public static T ErrorBell<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_error_bell(widget);
 		return widget;
 	}
 
 	public static bool Event(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkEventHandle @event)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_event(widget, @event);
 	}
 
 	public static T FreezeChildNotify<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_freeze_child_notify(widget);
 		return widget;
 	}
 
 	public static MentorLake.Atk.AtkObjectHandle GetAccessible(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_accessible(widget);
 	}
 
 	public static MentorLake.Gio.GActionGroupHandle GetActionGroup(this MentorLake.Gtk.GtkWidgetHandle widget, string prefix)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_action_group(widget, prefix);
 	}
 
 	public static int GetAllocatedBaseline(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_allocated_baseline(widget);
 	}
 
 	public static int GetAllocatedHeight(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_allocated_height(widget);
 	}
 
 	public static T GetAllocatedSize<T>(this T widget, out MentorLake.Gtk.GtkAllocation allocation, out int baseline) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_allocated_size(widget, out allocation, out baseline);
 		return widget;
 	}
 
 	public static int GetAllocatedWidth(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_allocated_width(widget);
 	}
 
 	public static T GetAllocation<T>(this T widget, out MentorLake.Gtk.GtkAllocation allocation) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_allocation(widget, out allocation);
 		return widget;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetAncestor(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType widget_type)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_ancestor(widget, widget_type);
 	}
 
 	public static bool GetAppPaintable(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_app_paintable(widget);
 	}
 
 	public static bool GetCanDefault(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_can_default(widget);
 	}
 
 	public static bool GetCanFocus(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_can_focus(widget);
 	}
 
 	public static T GetChildRequisition<T>(this T widget, out MentorLake.Gtk.GtkRequisition requisition) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_child_requisition(widget, out requisition);
 		return widget;
 	}
 
 	public static bool GetChildVisible(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_child_visible(widget);
 	}
 
 	public static T GetClip<T>(this T widget, out MentorLake.Gtk.GtkAllocation clip) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_clip(widget, out clip);
 		return widget;
 	}
 
 	public static MentorLake.Gtk.GtkClipboardHandle GetClipboard(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkAtom selection)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_clipboard(widget, selection);
 	}
 
 	public static string GetCompositeName(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_composite_name(widget);
 	}
 
 	public static bool GetDeviceEnabled(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkDeviceHandle device)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_device_enabled(widget, device);
 	}
 
 	public static MentorLake.Gdk.GdkEventMask GetDeviceEvents(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkDeviceHandle device)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_device_events(widget, device);
 	}
 
 	public static MentorLake.Gtk.GtkTextDirection GetDirection(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_direction(widget);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle GetDisplay(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_display(widget);
 	}
 
 	public static bool GetDoubleBuffered(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_double_buffered(widget);
 	}
 
 	public static int GetEvents(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_events(widget);
 	}
 
 	public static bool GetFocusOnClick(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_focus_on_click(widget);
 	}
 
 	public static MentorLake.Pango.PangoFontMapHandle GetFontMap(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_font_map(widget);
 	}
 
 	public static MentorLake.cairo.cairo_font_options_tHandle GetFontOptions(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_font_options(widget);
 	}
 
 	public static MentorLake.Gdk.GdkFrameClockHandle GetFrameClock(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_frame_clock(widget);
 	}
 
 	public static MentorLake.Gtk.GtkAlign GetHalign(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_halign(widget);
 	}
 
 	public static bool GetHasTooltip(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_has_tooltip(widget);
 	}
 
 	public static bool GetHasWindow(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_has_window(widget);
 	}
 
 	public static bool GetHexpand(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_hexpand(widget);
 	}
 
 	public static bool GetHexpandSet(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_hexpand_set(widget);
 	}
 
 	public static bool GetMapped(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_mapped(widget);
 	}
 
 	public static int GetMarginBottom(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_bottom(widget);
 	}
 
 	public static int GetMarginEnd(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_end(widget);
 	}
 
 	public static int GetMarginLeft(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_left(widget);
 	}
 
 	public static int GetMarginRight(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_right(widget);
 	}
 
 	public static int GetMarginStart(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_start(widget);
 	}
 
 	public static int GetMarginTop(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_margin_top(widget);
 	}
 
 	public static MentorLake.Gdk.GdkModifierType GetModifierMask(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkModifierIntent intent)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_modifier_mask(widget, intent);
 	}
 
 	public static MentorLake.Gtk.GtkRcStyleHandle GetModifierStyle(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_modifier_style(widget);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_name(widget);
 	}
 
 	public static bool GetNoShowAll(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_no_show_all(widget);
 	}
 
 	public static double GetOpacity(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_opacity(widget);
 	}
 
 	public static MentorLake.Pango.PangoContextHandle GetPangoContext(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_pango_context(widget);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetParent(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_parent(widget);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetParentWindow(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_parent_window(widget);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetPathHandle GetPath(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_path(widget);
 	}
 
 	public static T GetPointer<T>(this T widget, out int x, out int y) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_pointer(widget, out x, out y);
 		return widget;
 	}
 
 	public static T GetPreferredHeight<T>(this T widget, out int minimum_height, out int natural_height) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_height(widget, out minimum_height, out natural_height);
 		return widget;
 	}
 
 	public static T GetPreferredHeightAndBaselineForWidth<T>(this T widget, int width, out int minimum_height, out int natural_height, out int minimum_baseline, out int natural_baseline) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_height_and_baseline_for_width(widget, width, out minimum_height, out natural_height, out minimum_baseline, out natural_baseline);
 		return widget;
 	}
 
 	public static T GetPreferredHeightForWidth<T>(this T widget, int width, out int minimum_height, out int natural_height) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_height_for_width(widget, width, out minimum_height, out natural_height);
 		return widget;
 	}
 
 	public static T GetPreferredSize<T>(this T widget, out MentorLake.Gtk.GtkRequisition minimum_size, out MentorLake.Gtk.GtkRequisition natural_size) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_size(widget, out minimum_size, out natural_size);
 		return widget;
 	}
 
 	public static T GetPreferredWidth<T>(this T widget, out int minimum_width, out int natural_width) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_width(widget, out minimum_width, out natural_width);
 		return widget;
 	}
 
 	public static T GetPreferredWidthForHeight<T>(this T widget, int height, out int minimum_width, out int natural_width) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_preferred_width_for_height(widget, height, out minimum_width, out natural_width);
 		return widget;
 	}
 
 	public static bool GetRealized(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_realized(widget);
 	}
 
 	public static bool GetReceivesDefault(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_receives_default(widget);
 	}
 
 	public static MentorLake.Gtk.GtkSizeRequestMode GetRequestMode(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_request_mode(widget);
 	}
 
 	public static T GetRequisition<T>(this T widget, out MentorLake.Gtk.GtkRequisition requisition) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_requisition(widget, out requisition);
 		return widget;
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetRootWindow(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_root_window(widget);
 	}
 
 	public static int GetScaleFactor(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_scale_factor(widget);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_screen(widget);
 	}
 
 	public static bool GetSensitive(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_sensitive(widget);
 	}
 
 	public static MentorLake.Gtk.GtkSettingsHandle GetSettings(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_settings(widget);
 	}
 
 	public static T GetSizeRequest<T>(this T widget, out int width, out int height) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_get_size_request(widget, out width, out height);
 		return widget;
 	}
 
 	public static MentorLake.Gtk.GtkStateType GetState(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_state(widget);
 	}
 
 	public static MentorLake.Gtk.GtkStateFlags GetStateFlags(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_state_flags(widget);
 	}
 
 	public static MentorLake.Gtk.GtkStyleHandle GetStyle(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_style(widget);
 	}
 
 	public static MentorLake.Gtk.GtkStyleContextHandle GetStyleContext(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_style_context(widget);
 	}
 
 	public static bool GetSupportMultidevice(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_support_multidevice(widget);
 	}
 
 	public static MentorLake.GObject.GObjectHandle GetTemplateChild(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType widget_type, string name)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_template_child(widget, widget_type, name);
 	}
 
 	public static string GetTooltipMarkup(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_tooltip_markup(widget);
 	}
 
 	public static string GetTooltipText(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_tooltip_text(widget);
 	}
 
 	public static MentorLake.Gtk.GtkWindowHandle GetTooltipWindow(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_tooltip_window(widget);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetToplevel(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_toplevel(widget);
 	}
 
 	public static MentorLake.Gtk.GtkAlign GetValign(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_valign(widget);
 	}
 
 	public static MentorLake.Gtk.GtkAlign GetValignWithBaseline(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_valign_with_baseline(widget);
 	}
 
 	public static bool GetVexpand(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_vexpand(widget);
 	}
 
 	public static bool GetVexpandSet(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_vexpand_set(widget);
 	}
 
 	public static bool GetVisible(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_visible(widget);
 	}
 
 	public static MentorLake.Gdk.GdkVisualHandle GetVisual(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_visual(widget);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetWindow(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_get_window(widget);
 	}
 
 	public static T GrabAdd<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_grab_add(widget);
 		return widget;
 	}
 
 	public static T GrabDefault<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_grab_default(widget);
 		return widget;
 	}
 
 	public static T GrabFocus<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_grab_focus(widget);
 		return widget;
 	}
 
 	public static T GrabRemove<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_grab_remove(widget);
 		return widget;
 	}
 
 	public static bool HasDefault(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_default(widget);
 	}
 
 	public static bool HasFocus(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_focus(widget);
 	}
 
 	public static bool HasGrab(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_grab(widget);
 	}
 
 	public static bool HasRcStyle(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_rc_style(widget);
 	}
 
 	public static bool HasScreen(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_screen(widget);
 	}
 
 	public static bool HasVisibleFocus(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_has_visible_focus(widget);
 	}
 
 	public static T Hide<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_hide(widget);
 		return widget;
 	}
 
 	public static bool HideOnDelete(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_hide_on_delete(widget);
 	}
 
 	public static bool InDestruction(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_in_destruction(widget);
 	}
 
 	public static T InitTemplate<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_init_template(widget);
 		return widget;
 	}
 
 	public static T InputShapeCombineRegion<T>(this T widget, MentorLake.cairo.cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_input_shape_combine_region(widget, region);
 		return widget;
 	}
 
 	public static T InsertActionGroup<T>(this T widget, string name, MentorLake.Gio.GActionGroupHandle group) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_insert_action_group(widget, name, group);
 		return widget;
 	}
 
 	public static bool Intersect(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkRectangleHandle area, out MentorLake.Gdk.GdkRectangle intersection)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_intersect(widget, area, out intersection);
 	}
 
 	public static bool IsAncestor(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkWidgetHandle ancestor)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_ancestor(widget, ancestor);
 	}
 
 	public static bool IsComposited(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_composited(widget);
 	}
 
 	public static bool IsDrawable(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_drawable(widget);
 	}
 
 	public static bool IsFocus(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_focus(widget);
 	}
 
 	public static bool IsSensitive(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_sensitive(widget);
 	}
 
 	public static bool IsToplevel(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_toplevel(widget);
 	}
 
 	public static bool IsVisible(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_is_visible(widget);
 	}
 
 	public static bool KeynavFailed(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkDirectionType direction)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_keynav_failed(widget, direction);
 	}
 
 	public static MentorLake.GLib.GListHandle ListAccelClosures(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_list_accel_closures(widget);
 	}
 
 	public static string[] ListActionPrefixes(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_list_action_prefixes(widget);
 	}
 
 	public static MentorLake.GLib.GListHandle ListMnemonicLabels(this MentorLake.Gtk.GtkWidgetHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_list_mnemonic_labels(widget);
 	}
 
 	public static T Map<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_map(widget);
 		return widget;
 	}
 
 	public static bool MnemonicActivate(this MentorLake.Gtk.GtkWidgetHandle widget, bool group_cycling)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_mnemonic_activate(widget, group_cycling);
 	}
 
 	public static T ModifyBase<T>(this T widget, MentorLake.Gtk.GtkStateType state, MentorLake.Gdk.GdkColorHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_base(widget, state, color);
 		return widget;
 	}
 
 	public static T ModifyBg<T>(this T widget, MentorLake.Gtk.GtkStateType state, MentorLake.Gdk.GdkColorHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_bg(widget, state, color);
 		return widget;
 	}
 
 	public static T ModifyCursor<T>(this T widget, MentorLake.Gdk.GdkColorHandle primary, MentorLake.Gdk.GdkColorHandle secondary) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_cursor(widget, primary, secondary);
 		return widget;
 	}
 
 	public static T ModifyFg<T>(this T widget, MentorLake.Gtk.GtkStateType state, MentorLake.Gdk.GdkColorHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_fg(widget, state, color);
 		return widget;
 	}
 
 	public static T ModifyFont<T>(this T widget, MentorLake.Pango.PangoFontDescriptionHandle font_desc) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_font(widget, font_desc);
 		return widget;
 	}
 
 	public static T ModifyStyle<T>(this T widget, MentorLake.Gtk.GtkRcStyleHandle style) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_style(widget, style);
 		return widget;
 	}
 
 	public static T ModifyText<T>(this T widget, MentorLake.Gtk.GtkStateType state, MentorLake.Gdk.GdkColorHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_modify_text(widget, state, color);
 		return widget;
 	}
 
 	public static T OverrideBackgroundColor<T>(this T widget, MentorLake.Gtk.GtkStateFlags state, MentorLake.Gdk.GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_override_background_color(widget, state, color);
 		return widget;
 	}
 
 	public static T OverrideColor<T>(this T widget, MentorLake.Gtk.GtkStateFlags state, MentorLake.Gdk.GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_override_color(widget, state, color);
 		return widget;
 	}
 
 	public static T OverrideCursor<T>(this T widget, MentorLake.Gdk.GdkRGBAHandle cursor, MentorLake.Gdk.GdkRGBAHandle secondary_cursor) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_override_cursor(widget, cursor, secondary_cursor);
 		return widget;
 	}
 
 	public static T OverrideFont<T>(this T widget, MentorLake.Pango.PangoFontDescriptionHandle font_desc) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_override_font(widget, font_desc);
 		return widget;
 	}
 
 	public static T OverrideSymbolicColor<T>(this T widget, string name, MentorLake.Gdk.GdkRGBAHandle color) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_override_symbolic_color(widget, name, color);
 		return widget;
 	}
 
 	public static T Path<T>(this T widget, out uint path_length, out string path, out string path_reversed) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_path(widget, out path_length, out path, out path_reversed);
 		return widget;
 	}
 
 	public static T QueueAllocate<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_allocate(widget);
 		return widget;
 	}
 
 	public static T QueueComputeExpand<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_compute_expand(widget);
 		return widget;
 	}
 
 	public static T QueueDraw<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_draw(widget);
 		return widget;
 	}
 
 	public static T QueueDrawArea<T>(this T widget, int x, int y, int width, int height) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_draw_area(widget, x, y, width, height);
 		return widget;
 	}
 
 	public static T QueueDrawRegion<T>(this T widget, MentorLake.cairo.cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_draw_region(widget, region);
 		return widget;
 	}
 
 	public static T QueueResize<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_resize(widget);
 		return widget;
 	}
 
 	public static T QueueResizeNoRedraw<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_queue_resize_no_redraw(widget);
 		return widget;
 	}
 
 	public static T Realize<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_realize(widget);
 		return widget;
 	}
 
 	public static MentorLake.cairo.cairo_region_tHandle RegionIntersect(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.cairo.cairo_region_tHandle region)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_region_intersect(widget, region);
 	}
 
 	public static T RegisterWindow<T>(this T widget, MentorLake.Gdk.GdkWindowHandle window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_register_window(widget, window);
 		return widget;
 	}
 
 	public static bool RemoveAccelerator(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkAccelGroupHandle accel_group, uint accel_key, MentorLake.Gdk.GdkModifierType accel_mods)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_remove_accelerator(widget, accel_group, accel_key, accel_mods);
 	}
 
 	public static T RemoveMnemonicLabel<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle label) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_remove_mnemonic_label(widget, label);
 		return widget;
 	}
 
 	public static T RemoveTickCallback<T>(this T widget, uint id) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_remove_tick_callback(widget, id);
 		return widget;
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle RenderIcon(this MentorLake.Gtk.GtkWidgetHandle widget, string stock_id, MentorLake.Gtk.GtkIconSize size, string detail)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_render_icon(widget, stock_id, size, detail);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle RenderIconPixbuf(this MentorLake.Gtk.GtkWidgetHandle widget, string stock_id, MentorLake.Gtk.GtkIconSize size)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_render_icon_pixbuf(widget, stock_id, size);
 	}
 
 	public static T Reparent<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle new_parent) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_reparent(widget, new_parent);
 		return widget;
 	}
 
 	public static T ResetRcStyles<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_reset_rc_styles(widget);
 		return widget;
 	}
 
 	public static T ResetStyle<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_reset_style(widget);
 		return widget;
 	}
 
 	public static int SendExpose(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkEventHandle @event)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_send_expose(widget, @event);
 	}
 
 	public static bool SendFocusChange(this MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkEventHandle @event)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_send_focus_change(widget, @event);
 	}
 
 	public static T SetAccelPath<T>(this T widget, string accel_path, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_accel_path(widget, accel_path, accel_group);
 		return widget;
 	}
 
 	public static T SetAllocation<T>(this T widget, MentorLake.Gtk.GtkAllocationHandle allocation) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_allocation(widget, allocation);
 		return widget;
 	}
 
 	public static T SetAppPaintable<T>(this T widget, bool app_paintable) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_app_paintable(widget, app_paintable);
 		return widget;
 	}
 
 	public static T SetCanDefault<T>(this T widget, bool can_default) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_can_default(widget, can_default);
 		return widget;
 	}
 
 	public static T SetCanFocus<T>(this T widget, bool can_focus) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_can_focus(widget, can_focus);
 		return widget;
 	}
 
 	public static T SetChildVisible<T>(this T widget, bool is_visible) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_child_visible(widget, is_visible);
 		return widget;
 	}
 
 	public static T SetClip<T>(this T widget, MentorLake.Gtk.GtkAllocationHandle clip) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_clip(widget, clip);
 		return widget;
 	}
 
 	public static T SetCompositeName<T>(this T widget, string name) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_composite_name(widget, name);
 		return widget;
 	}
 
 	public static T SetDeviceEnabled<T>(this T widget, MentorLake.Gdk.GdkDeviceHandle device, bool enabled) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_device_enabled(widget, device, enabled);
 		return widget;
 	}
 
 	public static T SetDeviceEvents<T>(this T widget, MentorLake.Gdk.GdkDeviceHandle device, MentorLake.Gdk.GdkEventMask events) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_device_events(widget, device, events);
 		return widget;
 	}
 
 	public static T SetDirection<T>(this T widget, MentorLake.Gtk.GtkTextDirection dir) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_direction(widget, dir);
 		return widget;
 	}
 
 	public static T SetDoubleBuffered<T>(this T widget, bool double_buffered) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_double_buffered(widget, double_buffered);
 		return widget;
 	}
 
 	public static T SetEvents<T>(this T widget, int events) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_events(widget, events);
 		return widget;
 	}
 
 	public static T SetFocusOnClick<T>(this T widget, bool focus_on_click) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_focus_on_click(widget, focus_on_click);
 		return widget;
 	}
 
 	public static T SetFontMap<T>(this T widget, MentorLake.Pango.PangoFontMapHandle font_map) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_font_map(widget, font_map);
 		return widget;
 	}
 
 	public static T SetFontOptions<T>(this T widget, MentorLake.cairo.cairo_font_options_tHandle options) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_font_options(widget, options);
 		return widget;
 	}
 
 	public static T SetHalign<T>(this T widget, MentorLake.Gtk.GtkAlign align) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_halign(widget, align);
 		return widget;
 	}
 
 	public static T SetHasTooltip<T>(this T widget, bool has_tooltip) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_has_tooltip(widget, has_tooltip);
 		return widget;
 	}
 
 	public static T SetHasWindow<T>(this T widget, bool has_window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_has_window(widget, has_window);
 		return widget;
 	}
 
 	public static T SetHexpand<T>(this T widget, bool expand) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_hexpand(widget, expand);
 		return widget;
 	}
 
 	public static T SetHexpandSet<T>(this T widget, bool set) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_hexpand_set(widget, set);
 		return widget;
 	}
 
 	public static T SetMapped<T>(this T widget, bool mapped) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_mapped(widget, mapped);
 		return widget;
 	}
 
 	public static T SetMarginBottom<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_bottom(widget, margin);
 		return widget;
 	}
 
 	public static T SetMarginEnd<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_end(widget, margin);
 		return widget;
 	}
 
 	public static T SetMarginLeft<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_left(widget, margin);
 		return widget;
 	}
 
 	public static T SetMarginRight<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_right(widget, margin);
 		return widget;
 	}
 
 	public static T SetMarginStart<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_start(widget, margin);
 		return widget;
 	}
 
 	public static T SetMarginTop<T>(this T widget, int margin) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_margin_top(widget, margin);
 		return widget;
 	}
 
 	public static T SetName<T>(this T widget, string name) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_name(widget, name);
 		return widget;
 	}
 
 	public static T SetNoShowAll<T>(this T widget, bool no_show_all) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_no_show_all(widget, no_show_all);
 		return widget;
 	}
 
 	public static T SetOpacity<T>(this T widget, double opacity) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_opacity(widget, opacity);
 		return widget;
 	}
 
 	public static T SetParent<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle parent) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_parent(widget, parent);
 		return widget;
 	}
 
 	public static T SetParentWindow<T>(this T widget, MentorLake.Gdk.GdkWindowHandle parent_window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_parent_window(widget, parent_window);
 		return widget;
 	}
 
 	public static T SetRealized<T>(this T widget, bool realized) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_realized(widget, realized);
 		return widget;
 	}
 
 	public static T SetReceivesDefault<T>(this T widget, bool receives_default) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_receives_default(widget, receives_default);
 		return widget;
 	}
 
 	public static T SetRedrawOnAllocate<T>(this T widget, bool redraw_on_allocate) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_redraw_on_allocate(widget, redraw_on_allocate);
 		return widget;
 	}
 
 	public static T SetSensitive<T>(this T widget, bool sensitive) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_sensitive(widget, sensitive);
 		return widget;
 	}
 
 	public static T SetSizeRequest<T>(this T widget, int width, int height) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_size_request(widget, width, height);
 		return widget;
 	}
 
 	public static T SetState<T>(this T widget, MentorLake.Gtk.GtkStateType state) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_state(widget, state);
 		return widget;
 	}
 
 	public static T SetStateFlags<T>(this T widget, MentorLake.Gtk.GtkStateFlags flags, bool clear) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_state_flags(widget, flags, clear);
 		return widget;
 	}
 
 	public static T SetStyle<T>(this T widget, MentorLake.Gtk.GtkStyleHandle style) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_style(widget, style);
 		return widget;
 	}
 
 	public static T SetSupportMultidevice<T>(this T widget, bool support_multidevice) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_support_multidevice(widget, support_multidevice);
 		return widget;
 	}
 
 	public static T SetTooltipMarkup<T>(this T widget, string markup) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_tooltip_markup(widget, markup);
 		return widget;
 	}
 
 	public static T SetTooltipText<T>(this T widget, string text) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_tooltip_text(widget, text);
 		return widget;
 	}
 
 	public static T SetTooltipWindow<T>(this T widget, MentorLake.Gtk.GtkWindowHandle custom_window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_tooltip_window(widget, custom_window);
 		return widget;
 	}
 
 	public static T SetValign<T>(this T widget, MentorLake.Gtk.GtkAlign align) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_valign(widget, align);
 		return widget;
 	}
 
 	public static T SetVexpand<T>(this T widget, bool expand) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_vexpand(widget, expand);
 		return widget;
 	}
 
 	public static T SetVexpandSet<T>(this T widget, bool set) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_vexpand_set(widget, set);
 		return widget;
 	}
 
 	public static T SetVisible<T>(this T widget, bool visible) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_visible(widget, visible);
 		return widget;
 	}
 
 	public static T SetVisual<T>(this T widget, MentorLake.Gdk.GdkVisualHandle visual) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_visual(widget, visual);
 		return widget;
 	}
 
 	public static T SetWindow<T>(this T widget, MentorLake.Gdk.GdkWindowHandle window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_set_window(widget, window);
 		return widget;
 	}
 
 	public static T ShapeCombineRegion<T>(this T widget, MentorLake.cairo.cairo_region_tHandle region) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_shape_combine_region(widget, region);
 		return widget;
 	}
 
 	public static T Show<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_show(widget);
 		return widget;
 	}
 
 	public static T ShowAll<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_show_all(widget);
 		return widget;
 	}
 
 	public static T ShowNow<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_show_now(widget);
 		return widget;
 	}
 
 	public static T SizeAllocate<T>(this T widget, MentorLake.Gtk.GtkAllocationHandle allocation) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_size_allocate(widget, allocation);
 		return widget;
 	}
 
 	public static T SizeAllocateWithBaseline<T>(this T widget, MentorLake.Gtk.GtkAllocationHandle allocation, int baseline) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_size_allocate_with_baseline(widget, allocation, baseline);
 		return widget;
 	}
 
 	public static T SizeRequest<T>(this T widget, out MentorLake.Gtk.GtkRequisition requisition) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_size_request(widget, out requisition);
 		return widget;
 	}
 
 	public static T StyleAttach<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_style_attach(widget);
 		return widget;
 	}
 
 	public static T StyleGet<T>(this T widget, string first_property_name, IntPtr @__arglist) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_style_get(widget, first_property_name, @__arglist);
 		return widget;
 	}
 
 	public static T StyleGetProperty<T>(this T widget, string property_name, out MentorLake.GObject.GValue value) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_style_get_property(widget, property_name, out value);
 		return widget;
 	}
 
 	public static T StyleGetValist<T>(this T widget, string first_property_name, IntPtr var_args) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_style_get_valist(widget, first_property_name, var_args);
 		return widget;
 	}
 
 	public static T ThawChildNotify<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_thaw_child_notify(widget);
 		return widget;
 	}
 
 	public static bool TranslateCoordinates(this MentorLake.Gtk.GtkWidgetHandle src_widget, MentorLake.Gtk.GtkWidgetHandle dest_widget, int src_x, int src_y, out int dest_x, out int dest_y)
 	{
-		if (src_widget.IsInvalid || src_widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (src_widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		return GtkWidgetHandleExterns.gtk_widget_translate_coordinates(src_widget, dest_widget, src_x, src_y, out dest_x, out dest_y);
 	}
 
 	public static T TriggerTooltipQuery<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_trigger_tooltip_query(widget);
 		return widget;
 	}
 
 	public static T Unmap<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_unmap(widget);
 		return widget;
 	}
 
 	public static T Unparent<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_unparent(widget);
 		return widget;
 	}
 
 	public static T Unrealize<T>(this T widget) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_unrealize(widget);
 		return widget;
 	}
 
 	public static T UnregisterWindow<T>(this T widget, MentorLake.Gdk.GdkWindowHandle window) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_unregister_window(widget, window);
 		return widget;
 	}
 
 	public static T UnsetStateFlags<T>(this T widget, MentorLake.Gtk.GtkStateFlags flags) where T : GtkWidgetHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkWidgetHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkWidgetHandle)");
 		GtkWidgetHandleExterns.gtk_widget_unset_state_flags(widget, flags);
 		return widget;
 	}
@@ -4590,6 +4590,7 @@ public static class GtkWidgetHandleExtensions
 internal class GtkWidgetHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_widget_new(MentorLake.GObject.GType type, string first_property_name, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4626,9 +4627,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern bool gtk_widget_compute_expand([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkOrientation orientation);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle gtk_widget_create_pango_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))]
 	internal static extern MentorLake.Pango.PangoLayoutHandle gtk_widget_create_pango_layout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, string text);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4641,9 +4644,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern bool gtk_widget_device_is_shadowed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDeviceHandle>))] MentorLake.Gdk.GdkDeviceHandle device);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDragContextHandle gtk_drag_begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))] MentorLake.Gtk.GtkTargetListHandle targets, MentorLake.Gdk.GdkDragAction actions, int button, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))] MentorLake.Gdk.GdkEventHandle @event);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkDragContextHandle gtk_drag_begin_with_coordinates([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))] MentorLake.Gtk.GtkTargetListHandle targets, MentorLake.Gdk.GdkDragAction actions, int button, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkEventHandle>))] MentorLake.Gdk.GdkEventHandle @event, int x, int y);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4662,6 +4667,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern MentorLake.Gdk.GdkAtom gtk_drag_dest_find_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDragContextHandle>))] MentorLake.Gdk.GdkDragContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))] MentorLake.Gtk.GtkTargetListHandle target_list);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))]
 	internal static extern MentorLake.Gtk.GtkTargetListHandle gtk_drag_dest_get_target_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4698,6 +4704,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_drag_source_add_uri_targets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))]
 	internal static extern MentorLake.Gtk.GtkTargetListHandle gtk_drag_source_get_target_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4740,9 +4747,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_freeze_child_notify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle gtk_widget_get_accessible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GActionGroupHandleImpl>))]
 	internal static extern MentorLake.Gio.GActionGroupHandle gtk_widget_get_action_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, string prefix);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4761,6 +4770,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_get_allocation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, out MentorLake.Gtk.GtkAllocation allocation);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_widget_get_ancestor([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType widget_type);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4782,6 +4792,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_get_clip([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, out MentorLake.Gtk.GtkAllocation clip);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkClipboardHandle>))]
 	internal static extern MentorLake.Gtk.GtkClipboardHandle gtk_widget_get_clipboard([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkAtom selection);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4798,6 +4809,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern MentorLake.Gtk.GtkTextDirection gtk_widget_get_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))]
 	internal static extern MentorLake.Gdk.GdkDisplayHandle gtk_widget_get_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4810,12 +4822,15 @@ internal class GtkWidgetHandleExterns
 	internal static extern bool gtk_widget_get_focus_on_click([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle gtk_widget_get_font_map([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_options_tHandle gtk_widget_get_font_options([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkFrameClockHandle>))]
 	internal static extern MentorLake.Gdk.GdkFrameClockHandle gtk_widget_get_frame_clock([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4858,6 +4873,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern MentorLake.Gdk.GdkModifierType gtk_widget_get_modifier_mask([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkModifierIntent intent);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRcStyleHandle>))]
 	internal static extern MentorLake.Gtk.GtkRcStyleHandle gtk_widget_get_modifier_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4871,15 +4887,19 @@ internal class GtkWidgetHandleExterns
 	internal static extern double gtk_widget_get_opacity([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle gtk_widget_get_pango_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_widget_get_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_widget_get_parent_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetPathHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetPathHandle gtk_widget_get_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4916,18 +4936,21 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_get_requisition([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, out MentorLake.Gtk.GtkRequisition requisition);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_widget_get_root_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern int gtk_widget_get_scale_factor([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))]
 	internal static extern MentorLake.Gdk.GdkScreenHandle gtk_widget_get_screen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_widget_get_sensitive([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSettingsHandle>))]
 	internal static extern MentorLake.Gtk.GtkSettingsHandle gtk_widget_get_settings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4940,15 +4963,18 @@ internal class GtkWidgetHandleExterns
 	internal static extern MentorLake.Gtk.GtkStateFlags gtk_widget_get_state_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleHandle>))]
 	internal static extern MentorLake.Gtk.GtkStyleHandle gtk_widget_get_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleContextHandle>))]
 	internal static extern MentorLake.Gtk.GtkStyleContextHandle gtk_widget_get_style_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_widget_get_support_multidevice([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle gtk_widget_get_template_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.GObject.GType widget_type, string name);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4960,9 +4986,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern string gtk_widget_get_tooltip_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowHandle gtk_widget_get_tooltip_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_widget_get_toplevel([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -4981,9 +5009,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern bool gtk_widget_get_visible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkVisualHandle>))]
 	internal static extern MentorLake.Gdk.GdkVisualHandle gtk_widget_get_visual([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_widget_get_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -5062,6 +5092,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern bool gtk_widget_keynav_failed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkDirectionType direction);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_widget_list_accel_closures([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -5069,6 +5100,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern string[] gtk_widget_list_action_prefixes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_widget_list_mnemonic_labels([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
@@ -5141,6 +5173,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_realize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_region_tHandle gtk_widget_region_intersect([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_region_tHandle>))] MentorLake.cairo.cairo_region_tHandle region);
 
 	[DllImport(GtkLibrary.Name)]
@@ -5156,9 +5189,11 @@ internal class GtkWidgetHandleExterns
 	internal static extern void gtk_widget_remove_tick_callback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, uint id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_widget_render_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, string stock_id, MentorLake.Gtk.GtkIconSize size, string detail);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_widget_render_icon_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, string stock_id, MentorLake.Gtk.GtkIconSize size);
 
 	[DllImport(GtkLibrary.Name)]
@@ -5390,6 +5425,7 @@ internal class GtkWidgetHandleExterns
 	internal static extern MentorLake.Gtk.GtkTextDirection gtk_widget_get_default_direction();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleHandle>))]
 	internal static extern MentorLake.Gtk.GtkStyleHandle gtk_widget_get_default_style();
 
 	[DllImport(GtkLibrary.Name)]

@@ -14,13 +14,13 @@ public static class GtkOrientableHandleExtensions
 {
 	public static MentorLake.Gtk.GtkOrientation GetOrientation(this MentorLake.Gtk.GtkOrientableHandle orientable)
 	{
-		if (orientable.IsInvalid || orientable.IsClosed) throw new Exception("Invalid or closed handle (GtkOrientableHandle)");
+		if (orientable.IsInvalid) throw new Exception("Invalid handle (GtkOrientableHandle)");
 		return GtkOrientableHandleExterns.gtk_orientable_get_orientation(orientable);
 	}
 
 	public static T SetOrientation<T>(this T orientable, MentorLake.Gtk.GtkOrientation orientation) where T : GtkOrientableHandle
 	{
-		if (orientable.IsInvalid || orientable.IsClosed) throw new Exception("Invalid or closed handle (GtkOrientableHandle)");
+		if (orientable.IsInvalid) throw new Exception("Invalid handle (GtkOrientableHandle)");
 		GtkOrientableHandleExterns.gtk_orientable_set_orientation(orientable, orientation);
 		return orientable;
 	}

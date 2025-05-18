@@ -266,14 +266,14 @@ public static class GtkUIManagerHandleExtensions
 {
 	public static T AddUi<T>(this T manager, uint merge_id, string path, string name, string action, MentorLake.Gtk.GtkUIManagerItemType type, bool top) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_add_ui(manager, merge_id, path, name, action, type, top);
 		return manager;
 	}
 
 	public static uint AddUiFromFile(this MentorLake.Gtk.GtkUIManagerHandle manager, string filename)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_file(manager, filename, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -281,7 +281,7 @@ public static class GtkUIManagerHandleExtensions
 
 	public static uint AddUiFromResource(this MentorLake.Gtk.GtkUIManagerHandle manager, string resource_path)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_resource(manager, resource_path, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -289,7 +289,7 @@ public static class GtkUIManagerHandleExtensions
 
 	public static uint AddUiFromString(this MentorLake.Gtk.GtkUIManagerHandle manager, string buffer, UIntPtr length)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		var externCallResult = GtkUIManagerHandleExterns.gtk_ui_manager_add_ui_from_string(manager, buffer, length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -297,83 +297,83 @@ public static class GtkUIManagerHandleExtensions
 
 	public static T EnsureUpdate<T>(this T manager) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_ensure_update(manager);
 		return manager;
 	}
 
 	public static MentorLake.Gtk.GtkAccelGroupHandle GetAccelGroup(this MentorLake.Gtk.GtkUIManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_accel_group(manager);
 	}
 
 	public static MentorLake.Gtk.GtkActionHandle GetAction(this MentorLake.Gtk.GtkUIManagerHandle manager, string path)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_action(manager, path);
 	}
 
 	public static MentorLake.GLib.GListHandle GetActionGroups(this MentorLake.Gtk.GtkUIManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_action_groups(manager);
 	}
 
 	public static bool GetAddTearoffs(this MentorLake.Gtk.GtkUIManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_add_tearoffs(manager);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetToplevels(this MentorLake.Gtk.GtkUIManagerHandle manager, MentorLake.Gtk.GtkUIManagerItemType types)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_toplevels(manager, types);
 	}
 
 	public static string GetUi(this MentorLake.Gtk.GtkUIManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_ui(manager);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetWidget(this MentorLake.Gtk.GtkUIManagerHandle manager, string path)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_get_widget(manager, path);
 	}
 
 	public static T InsertActionGroup<T>(this T manager, MentorLake.Gtk.GtkActionGroupHandle action_group, int pos) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_insert_action_group(manager, action_group, pos);
 		return manager;
 	}
 
 	public static uint NewMergeId(this MentorLake.Gtk.GtkUIManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		return GtkUIManagerHandleExterns.gtk_ui_manager_new_merge_id(manager);
 	}
 
 	public static T RemoveActionGroup<T>(this T manager, MentorLake.Gtk.GtkActionGroupHandle action_group) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_remove_action_group(manager, action_group);
 		return manager;
 	}
 
 	public static T RemoveUi<T>(this T manager, uint merge_id) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_remove_ui(manager, merge_id);
 		return manager;
 	}
 
 	public static T SetAddTearoffs<T>(this T manager, bool add_tearoffs) where T : GtkUIManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GtkUIManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GtkUIManagerHandle)");
 		GtkUIManagerHandleExterns.gtk_ui_manager_set_add_tearoffs(manager, add_tearoffs);
 		return manager;
 	}
@@ -383,6 +383,7 @@ public static class GtkUIManagerHandleExtensions
 internal class GtkUIManagerHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))]
 	internal static extern MentorLake.Gtk.GtkUIManagerHandle gtk_ui_manager_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -401,18 +402,22 @@ internal class GtkUIManagerHandleExterns
 	internal static extern void gtk_ui_manager_ensure_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAccelGroupHandle>))]
 	internal static extern MentorLake.Gtk.GtkAccelGroupHandle gtk_ui_manager_get_accel_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkActionHandle gtk_ui_manager_get_action([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string path);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_ui_manager_get_action_groups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_ui_manager_get_add_tearoffs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gtk_ui_manager_get_toplevels([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, MentorLake.Gtk.GtkUIManagerItemType types);
 
 	[DllImport(GtkLibrary.Name)]
@@ -420,6 +425,7 @@ internal class GtkUIManagerHandleExterns
 	internal static extern string gtk_ui_manager_get_ui([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_ui_manager_get_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkUIManagerHandle>))] MentorLake.Gtk.GtkUIManagerHandle manager, string path);
 
 	[DllImport(GtkLibrary.Name)]

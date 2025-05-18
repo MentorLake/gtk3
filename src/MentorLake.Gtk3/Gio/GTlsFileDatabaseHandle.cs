@@ -24,6 +24,7 @@ public static class GTlsFileDatabaseHandleExtensions
 internal class GTlsFileDatabaseHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsDatabaseHandle>))]
 	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_file_database_new(string anchors, out MentorLake.GLib.GErrorHandle error);
 
 }

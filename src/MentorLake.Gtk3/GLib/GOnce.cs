@@ -9,7 +9,7 @@ public static class GOnceExtensions
 {
 	public static IntPtr Impl(this MentorLake.GLib.GOnceHandle once, MentorLake.GLib.GThreadFunc func, IntPtr arg)
 	{
-		if (once.IsInvalid || once.IsClosed) throw new Exception("Invalid or closed handle (GOnce)");
+		if (once.IsInvalid) throw new Exception("Invalid handle (GOnce)");
 		return GOnceExterns.g_once_impl(once, func, arg);
 	}
 

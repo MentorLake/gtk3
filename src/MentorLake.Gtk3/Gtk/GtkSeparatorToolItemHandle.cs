@@ -13,13 +13,13 @@ public static class GtkSeparatorToolItemHandleExtensions
 {
 	public static bool GetDraw(this MentorLake.Gtk.GtkSeparatorToolItemHandle item)
 	{
-		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkSeparatorToolItemHandle)");
+		if (item.IsInvalid) throw new Exception("Invalid handle (GtkSeparatorToolItemHandle)");
 		return GtkSeparatorToolItemHandleExterns.gtk_separator_tool_item_get_draw(item);
 	}
 
 	public static T SetDraw<T>(this T item, bool draw) where T : GtkSeparatorToolItemHandle
 	{
-		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkSeparatorToolItemHandle)");
+		if (item.IsInvalid) throw new Exception("Invalid handle (GtkSeparatorToolItemHandle)");
 		GtkSeparatorToolItemHandleExterns.gtk_separator_tool_item_set_draw(item, draw);
 		return item;
 	}
@@ -29,6 +29,7 @@ public static class GtkSeparatorToolItemHandleExtensions
 internal class GtkSeparatorToolItemHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSeparatorToolItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkSeparatorToolItemHandle gtk_separator_tool_item_new();
 
 	[DllImport(GtkLibrary.Name)]

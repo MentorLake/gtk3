@@ -481,108 +481,142 @@ public class PangoGlobalFunctions
 internal class PangoGlobalFunctionsExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_allow_breaks_new(bool allow_breaks);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_background_alpha_new(ushort alpha);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_background_new(ushort red, ushort green, ushort blue);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_baseline_shift_new(int shift);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_attr_break(string text, int length, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle attr_list, int offset, MentorLake.Pango.PangoLogAttr[] attrs, int attrs_len);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_fallback_new(bool enable_fallback);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_family_new(string family);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_desc_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))] MentorLake.Pango.PangoFontDescriptionHandle desc);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_features_new(string features);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_font_scale_new(MentorLake.Pango.PangoFontScale scale);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_foreground_alpha_new(ushort alpha);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_foreground_new(ushort red, ushort green, ushort blue);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_gravity_hint_new(MentorLake.Pango.PangoGravityHint hint);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_gravity_new(MentorLake.Pango.PangoGravity gravity);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_insert_hyphens_new(bool insert_hyphens);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_language_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_letter_spacing_new(int letter_spacing);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_line_height_new(double factor);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_line_height_new_absolute(int height);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))]
 	internal static extern MentorLake.Pango.PangoAttrListHandle pango_attr_list_from_string(string text);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_overline_color_new(ushort red, ushort green, ushort blue);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_overline_new(MentorLake.Pango.PangoOverline overline);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_rise_new(int rise);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_scale_new(double scale_factor);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_sentence_new();
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_shape_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle ink_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle logical_rect);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_shape_new_with_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle ink_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoRectangleHandle>))] MentorLake.Pango.PangoRectangleHandle logical_rect, IntPtr data, MentorLake.Pango.PangoAttrDataCopyFunc copy_func, MentorLake.GLib.GDestroyNotify destroy_func);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_show_new(MentorLake.Pango.PangoShowFlags flags);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_size_new(int size);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_size_new_absolute(int size);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_stretch_new(MentorLake.Pango.PangoStretch stretch);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_strikethrough_color_new(ushort red, ushort green, ushort blue);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_strikethrough_new(bool strikethrough);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_style_new(MentorLake.Pango.PangoStyle style);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_text_transform_new(MentorLake.Pango.PangoTextTransform transform);
 
 	[DllImport(PangoLibrary.Name)]
@@ -593,18 +627,23 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern MentorLake.Pango.PangoAttrType pango_attr_type_register(string name);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_underline_color_new(ushort red, ushort green, ushort blue);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_underline_new(MentorLake.Pango.PangoUnderline underline);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_variant_new(MentorLake.Pango.PangoVariant variant);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_weight_new(MentorLake.Pango.PangoWeight weight);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttributeHandle>))]
 	internal static extern MentorLake.Pango.PangoAttributeHandle pango_attr_word_new();
 
 	[DllImport(PangoLibrary.Name)]
@@ -626,6 +665,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern void pango_find_paragraph_boundary(string text, int length, out int paragraph_delimiter_index, out int next_paragraph_start);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))]
 	internal static extern MentorLake.Pango.PangoFontDescriptionHandle pango_font_description_from_string(string str);
 
 	[DllImport(PangoLibrary.Name)]
@@ -650,15 +690,19 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern bool pango_is_zero_width(char ch);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle pango_itemize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, string text, int start_index, int length, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle attrs, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle cached_iter);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle pango_itemize_with_base_dir([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, MentorLake.Pango.PangoDirection base_dir, string text, int start_index, int length, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] MentorLake.Pango.PangoAttrListHandle attrs, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrIteratorHandle>))] MentorLake.Pango.PangoAttrIteratorHandle cached_iter);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_from_string(string language);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_get_default();
 
 	[DllImport(PangoLibrary.Name)]
@@ -674,6 +718,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern bool pango_markup_parser_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))] MentorLake.GLib.GMarkupParseContextHandle context, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))] out MentorLake.Pango.PangoAttrListHandle attr_list, out string text, out char accel_char, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMarkupParseContextHandle>))]
 	internal static extern MentorLake.GLib.GMarkupParseContextHandle pango_markup_parser_new(char accel_marker);
 
 	[DllImport(PangoLibrary.Name)]
@@ -701,6 +746,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern int pango_read_line(IntPtr stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringHandle>))] MentorLake.GLib.GStringHandle str);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle pango_reorder_items([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))] MentorLake.GLib.GListHandle items);
 
 	[DllImport(PangoLibrary.Name)]
@@ -716,6 +762,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern MentorLake.Pango.PangoScript pango_script_for_unichar(char ch);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_script_get_sample_language(MentorLake.Pango.PangoScript script);
 
 	[DllImport(PangoLibrary.Name)]
@@ -738,6 +785,7 @@ internal class PangoGlobalFunctionsExterns
 	internal static extern string[] pango_split_file_list(string str);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle pango_tab_array_from_string(string text);
 
 	[DllImport(PangoLibrary.Name)]

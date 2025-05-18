@@ -14,7 +14,7 @@ public static class AtkHyperlinkImplHandleExtensions
 {
 	public static MentorLake.Atk.AtkHyperlinkHandle GetHyperlink(this MentorLake.Atk.AtkHyperlinkImplHandle impl)
 	{
-		if (impl.IsInvalid || impl.IsClosed) throw new Exception("Invalid or closed handle (AtkHyperlinkImplHandle)");
+		if (impl.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkImplHandle)");
 		return AtkHyperlinkImplHandleExterns.atk_hyperlink_impl_get_hyperlink(impl);
 	}
 
@@ -23,6 +23,7 @@ public static class AtkHyperlinkImplHandleExtensions
 internal class AtkHyperlinkImplHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHyperlinkHandle>))]
 	internal static extern MentorLake.Atk.AtkHyperlinkHandle atk_hyperlink_impl_get_hyperlink([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkHyperlinkImplHandleImpl>))] MentorLake.Atk.AtkHyperlinkImplHandle impl);
 
 }

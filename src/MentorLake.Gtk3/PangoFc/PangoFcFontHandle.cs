@@ -13,50 +13,50 @@ public static class PangoFcFontHandleExtensions
 {
 	public static uint GetGlyph(this MentorLake.PangoFc.PangoFcFontHandle font, char wc)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_get_glyph(font, wc);
 	}
 
 	public static MentorLake.Pango.PangoLanguageHandle[] GetLanguages(this MentorLake.PangoFc.PangoFcFontHandle font)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_get_languages(font);
 	}
 
 	public static MentorLake.fontconfig.FcPatternHandle GetPattern(this MentorLake.PangoFc.PangoFcFontHandle font)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_get_pattern(font);
 	}
 
 	public static MentorLake.Pango.PangoGlyph GetUnknownGlyph(this MentorLake.PangoFc.PangoFcFontHandle font, char wc)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_get_unknown_glyph(font, wc);
 	}
 
 	public static bool HasChar(this MentorLake.PangoFc.PangoFcFontHandle font, char wc)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_has_char(font, wc);
 	}
 
 	public static T KernGlyphs<T>(this T font, MentorLake.Pango.PangoGlyphStringHandle glyphs) where T : PangoFcFontHandle
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		PangoFcFontHandleExterns.pango_fc_font_kern_glyphs(font, glyphs);
 		return font;
 	}
 
 	public static MentorLake.freetype2.FT_Face LockFace(this MentorLake.PangoFc.PangoFcFontHandle font)
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		return PangoFcFontHandleExterns.pango_fc_font_lock_face(font);
 	}
 
 	public static T UnlockFace<T>(this T font) where T : PangoFcFontHandle
 	{
-		if (font.IsInvalid || font.IsClosed) throw new Exception("Invalid or closed handle (PangoFcFontHandle)");
+		if (font.IsInvalid) throw new Exception("Invalid handle (PangoFcFontHandle)");
 		PangoFcFontHandleExterns.pango_fc_font_unlock_face(font);
 		return font;
 	}
@@ -72,6 +72,7 @@ internal class PangoFcFontHandleExterns
 	internal static extern MentorLake.Pango.PangoLanguageHandle[] pango_fc_font_get_languages([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoFc.PangoFcFontHandle>))] MentorLake.PangoFc.PangoFcFontHandle font);
 
 	[DllImport(PangoFcLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.fontconfig.FcPatternHandle>))]
 	internal static extern MentorLake.fontconfig.FcPatternHandle pango_fc_font_get_pattern([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoFc.PangoFcFontHandle>))] MentorLake.PangoFc.PangoFcFontHandle font);
 
 	[DllImport(PangoFcLibrary.Name)]
@@ -90,6 +91,7 @@ internal class PangoFcFontHandleExterns
 	internal static extern void pango_fc_font_unlock_face([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoFc.PangoFcFontHandle>))] MentorLake.PangoFc.PangoFcFontHandle font);
 
 	[DllImport(PangoFcLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontDescriptionHandle>))]
 	internal static extern MentorLake.Pango.PangoFontDescriptionHandle pango_fc_font_description_from_pattern([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.fontconfig.FcPatternHandle>))] MentorLake.fontconfig.FcPatternHandle pattern, bool include_size);
 
 }

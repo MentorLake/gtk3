@@ -231,313 +231,313 @@ public static class GtkLabelHandleExtensions
 {
 	public static double GetAngle(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_angle(label);
 	}
 
 	public static MentorLake.Pango.PangoAttrListHandle GetAttributes(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_attributes(label);
 	}
 
 	public static string GetCurrentUri(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_current_uri(label);
 	}
 
 	public static MentorLake.Pango.PangoEllipsizeMode GetEllipsize(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_ellipsize(label);
 	}
 
 	public static MentorLake.Gtk.GtkJustification GetJustify(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_justify(label);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_label(label);
 	}
 
 	public static MentorLake.Pango.PangoLayoutHandle GetLayout(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_layout(label);
 	}
 
 	public static T GetLayoutOffsets<T>(this T label, out int x, out int y) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_get_layout_offsets(label, out x, out y);
 		return label;
 	}
 
 	public static bool GetLineWrap(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_line_wrap(label);
 	}
 
 	public static MentorLake.Pango.PangoWrapMode GetLineWrapMode(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_line_wrap_mode(label);
 	}
 
 	public static int GetLines(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_lines(label);
 	}
 
 	public static int GetMaxWidthChars(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_max_width_chars(label);
 	}
 
 	public static uint GetMnemonicKeyval(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_mnemonic_keyval(label);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMnemonicWidget(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_mnemonic_widget(label);
 	}
 
 	public static bool GetSelectable(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_selectable(label);
 	}
 
 	public static bool GetSelectionBounds(this MentorLake.Gtk.GtkLabelHandle label, out int start, out int end)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_selection_bounds(label, out start, out end);
 	}
 
 	public static bool GetSingleLineMode(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_single_line_mode(label);
 	}
 
 	public static string GetText(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_text(label);
 	}
 
 	public static bool GetTrackVisitedLinks(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_track_visited_links(label);
 	}
 
 	public static bool GetUseMarkup(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_use_markup(label);
 	}
 
 	public static bool GetUseUnderline(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_use_underline(label);
 	}
 
 	public static int GetWidthChars(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_width_chars(label);
 	}
 
 	public static float GetXalign(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_xalign(label);
 	}
 
 	public static float GetYalign(this MentorLake.Gtk.GtkLabelHandle label)
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		return GtkLabelHandleExterns.gtk_label_get_yalign(label);
 	}
 
 	public static T SelectRegion<T>(this T label, int start_offset, int end_offset) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_select_region(label, start_offset, end_offset);
 		return label;
 	}
 
 	public static T SetAngle<T>(this T label, double angle) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_angle(label, angle);
 		return label;
 	}
 
 	public static T SetAttributes<T>(this T label, MentorLake.Pango.PangoAttrListHandle attrs) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_attributes(label, attrs);
 		return label;
 	}
 
 	public static T SetEllipsize<T>(this T label, MentorLake.Pango.PangoEllipsizeMode mode) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_ellipsize(label, mode);
 		return label;
 	}
 
 	public static T SetJustify<T>(this T label, MentorLake.Gtk.GtkJustification jtype) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_justify(label, jtype);
 		return label;
 	}
 
 	public static T SetLabel<T>(this T label, string str) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_label(label, str);
 		return label;
 	}
 
 	public static T SetLineWrap<T>(this T label, bool wrap) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_line_wrap(label, wrap);
 		return label;
 	}
 
 	public static T SetLineWrapMode<T>(this T label, MentorLake.Pango.PangoWrapMode wrap_mode) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_line_wrap_mode(label, wrap_mode);
 		return label;
 	}
 
 	public static T SetLines<T>(this T label, int lines) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_lines(label, lines);
 		return label;
 	}
 
 	public static T SetMarkup<T>(this T label, string str) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_markup(label, str);
 		return label;
 	}
 
 	public static T SetMarkupWithMnemonic<T>(this T label, string str) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_markup_with_mnemonic(label, str);
 		return label;
 	}
 
 	public static T SetMaxWidthChars<T>(this T label, int n_chars) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_max_width_chars(label, n_chars);
 		return label;
 	}
 
 	public static T SetMnemonicWidget<T>(this T label, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_mnemonic_widget(label, widget);
 		return label;
 	}
 
 	public static T SetPattern<T>(this T label, string pattern) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_pattern(label, pattern);
 		return label;
 	}
 
 	public static T SetSelectable<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_selectable(label, setting);
 		return label;
 	}
 
 	public static T SetSingleLineMode<T>(this T label, bool single_line_mode) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_single_line_mode(label, single_line_mode);
 		return label;
 	}
 
 	public static T SetText<T>(this T label, string str) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_text(label, str);
 		return label;
 	}
 
 	public static T SetTextWithMnemonic<T>(this T label, string str) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_text_with_mnemonic(label, str);
 		return label;
 	}
 
 	public static T SetTrackVisitedLinks<T>(this T label, bool track_links) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_track_visited_links(label, track_links);
 		return label;
 	}
 
 	public static T SetUseMarkup<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_use_markup(label, setting);
 		return label;
 	}
 
 	public static T SetUseUnderline<T>(this T label, bool setting) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_use_underline(label, setting);
 		return label;
 	}
 
 	public static T SetWidthChars<T>(this T label, int n_chars) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_width_chars(label, n_chars);
 		return label;
 	}
 
 	public static T SetXalign<T>(this T label, float xalign) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_xalign(label, xalign);
 		return label;
 	}
 
 	public static T SetYalign<T>(this T label, float yalign) where T : GtkLabelHandle
 	{
-		if (label.IsInvalid || label.IsClosed) throw new Exception("Invalid or closed handle (GtkLabelHandle)");
+		if (label.IsInvalid) throw new Exception("Invalid handle (GtkLabelHandle)");
 		GtkLabelHandleExterns.gtk_label_set_yalign(label, yalign);
 		return label;
 	}
@@ -547,15 +547,18 @@ public static class GtkLabelHandleExtensions
 internal class GtkLabelHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))]
 	internal static extern MentorLake.Gtk.GtkLabelHandle gtk_label_new(string str);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))]
 	internal static extern MentorLake.Gtk.GtkLabelHandle gtk_label_new_with_mnemonic(string str);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern double gtk_label_get_angle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))]
 	internal static extern MentorLake.Pango.PangoAttrListHandle gtk_label_get_attributes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]
@@ -573,6 +576,7 @@ internal class GtkLabelHandleExterns
 	internal static extern string gtk_label_get_label([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))]
 	internal static extern MentorLake.Pango.PangoLayoutHandle gtk_label_get_layout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]
@@ -594,6 +598,7 @@ internal class GtkLabelHandleExterns
 	internal static extern uint gtk_label_get_mnemonic_keyval([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_label_get_mnemonic_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLabelHandle>))] MentorLake.Gtk.GtkLabelHandle label);
 
 	[DllImport(GtkLibrary.Name)]

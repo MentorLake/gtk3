@@ -68,6 +68,7 @@ public static class GtkFontChooserDialogHandleExtensions
 internal class GtkFontChooserDialogHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFontChooserDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkFontChooserDialogHandle gtk_font_chooser_dialog_new(string title, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent);
 
 }

@@ -9,13 +9,13 @@ public static class GtkBindingSetExtensions
 {
 	public static bool Activate(this MentorLake.Gtk.GtkBindingSetHandle binding_set, uint keyval, MentorLake.Gdk.GdkModifierType modifiers, MentorLake.GObject.GObjectHandle @object)
 	{
-		if (binding_set.IsInvalid || binding_set.IsClosed) throw new Exception("Invalid or closed handle (GtkBindingSet)");
+		if (binding_set.IsInvalid) throw new Exception("Invalid handle (GtkBindingSet)");
 		return GtkBindingSetExterns.gtk_binding_set_activate(binding_set, keyval, modifiers, @object);
 	}
 
 	public static void AddPath(this MentorLake.Gtk.GtkBindingSetHandle binding_set, MentorLake.Gtk.GtkPathType path_type, string path_pattern, MentorLake.Gtk.GtkPathPriorityType priority)
 	{
-		if (binding_set.IsInvalid || binding_set.IsClosed) throw new Exception("Invalid or closed handle (GtkBindingSet)");
+		if (binding_set.IsInvalid) throw new Exception("Invalid handle (GtkBindingSet)");
 		GtkBindingSetExterns.gtk_binding_set_add_path(binding_set, path_type, path_pattern, priority);
 	}
 
@@ -31,12 +31,15 @@ internal class GtkBindingSetExterns
 	internal static extern void gtk_binding_set_add_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBindingSetHandle>))] MentorLake.Gtk.GtkBindingSetHandle binding_set, MentorLake.Gtk.GtkPathType path_type, string path_pattern, MentorLake.Gtk.GtkPathPriorityType priority);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBindingSetHandle>))]
 	internal static extern MentorLake.Gtk.GtkBindingSetHandle gtk_binding_set_by_class(IntPtr object_class);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBindingSetHandle>))]
 	internal static extern MentorLake.Gtk.GtkBindingSetHandle gtk_binding_set_find(string set_name);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBindingSetHandle>))]
 	internal static extern MentorLake.Gtk.GtkBindingSetHandle gtk_binding_set_new(string set_name);
 
 }

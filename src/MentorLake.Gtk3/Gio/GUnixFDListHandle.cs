@@ -18,7 +18,7 @@ public static class GUnixFDListHandleExtensions
 {
 	public static int Append(this MentorLake.Gio.GUnixFDListHandle list, int fd)
 	{
-		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDListHandle)");
+		if (list.IsInvalid) throw new Exception("Invalid handle (GUnixFDListHandle)");
 		var externCallResult = GUnixFDListHandleExterns.g_unix_fd_list_append(list, fd, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -26,7 +26,7 @@ public static class GUnixFDListHandleExtensions
 
 	public static int Get(this MentorLake.Gio.GUnixFDListHandle list, int index_)
 	{
-		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDListHandle)");
+		if (list.IsInvalid) throw new Exception("Invalid handle (GUnixFDListHandle)");
 		var externCallResult = GUnixFDListHandleExterns.g_unix_fd_list_get(list, index_, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -34,19 +34,19 @@ public static class GUnixFDListHandleExtensions
 
 	public static int GetLength(this MentorLake.Gio.GUnixFDListHandle list)
 	{
-		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDListHandle)");
+		if (list.IsInvalid) throw new Exception("Invalid handle (GUnixFDListHandle)");
 		return GUnixFDListHandleExterns.g_unix_fd_list_get_length(list);
 	}
 
 	public static int[] PeekFds(this MentorLake.Gio.GUnixFDListHandle list, out int length)
 	{
-		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDListHandle)");
+		if (list.IsInvalid) throw new Exception("Invalid handle (GUnixFDListHandle)");
 		return GUnixFDListHandleExterns.g_unix_fd_list_peek_fds(list, out length);
 	}
 
 	public static int[] StealFds(this MentorLake.Gio.GUnixFDListHandle list, out int length)
 	{
-		if (list.IsInvalid || list.IsClosed) throw new Exception("Invalid or closed handle (GUnixFDListHandle)");
+		if (list.IsInvalid) throw new Exception("Invalid handle (GUnixFDListHandle)");
 		return GUnixFDListHandleExterns.g_unix_fd_list_steal_fds(list, out length);
 	}
 
@@ -55,9 +55,11 @@ public static class GUnixFDListHandleExtensions
 internal class GUnixFDListHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))]
 	internal static extern MentorLake.Gio.GUnixFDListHandle g_unix_fd_list_new();
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixFDListHandle>))]
 	internal static extern MentorLake.Gio.GUnixFDListHandle g_unix_fd_list_new_from_array(int[] fds, int n_fds);
 
 	[DllImport(GioLibrary.Name)]

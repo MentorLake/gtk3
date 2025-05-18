@@ -9,49 +9,49 @@ public static class GCondExtensions
 {
 	public static void Broadcast(this MentorLake.GLib.GCondHandle cond)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_broadcast(cond);
 	}
 
 	public static void Clear(this MentorLake.GLib.GCondHandle cond)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_clear(cond);
 	}
 
 	public static void Free(this MentorLake.GLib.GCondHandle cond)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_free(cond);
 	}
 
 	public static void Init(this MentorLake.GLib.GCondHandle cond)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_init(cond);
 	}
 
 	public static void Signal(this MentorLake.GLib.GCondHandle cond)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_signal(cond);
 	}
 
 	public static bool TimedWait(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex, MentorLake.GLib.GTimeValHandle abs_time)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		return GCondExterns.g_cond_timed_wait(cond, mutex, abs_time);
 	}
 
 	public static void Wait(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		GCondExterns.g_cond_wait(cond, mutex);
 	}
 
 	public static bool WaitUntil(this MentorLake.GLib.GCondHandle cond, MentorLake.GLib.GMutexHandle mutex, long end_time)
 	{
-		if (cond.IsInvalid || cond.IsClosed) throw new Exception("Invalid or closed handle (GCond)");
+		if (cond.IsInvalid) throw new Exception("Invalid handle (GCond)");
 		return GCondExterns.g_cond_wait_until(cond, mutex, end_time);
 	}
 
@@ -85,6 +85,7 @@ internal class GCondExterns
 	internal static extern bool g_cond_wait_until([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))] MentorLake.GLib.GCondHandle cond, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMutexHandle>))] MentorLake.GLib.GMutexHandle mutex, long end_time);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))]
 	internal static extern MentorLake.GLib.GCondHandle g_cond_new();
 
 }

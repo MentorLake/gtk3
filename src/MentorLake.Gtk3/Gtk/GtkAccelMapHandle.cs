@@ -150,6 +150,7 @@ internal class GtkAccelMapHandleExterns
 	internal static extern void gtk_accel_map_foreach_unfiltered(IntPtr data, MentorLake.Gtk.GtkAccelMapForeach foreach_func);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAccelMapHandle>))]
 	internal static extern MentorLake.Gtk.GtkAccelMapHandle gtk_accel_map_get();
 
 	[DllImport(GtkLibrary.Name)]

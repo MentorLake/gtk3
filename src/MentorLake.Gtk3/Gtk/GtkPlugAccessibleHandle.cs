@@ -411,7 +411,7 @@ public static class GtkPlugAccessibleHandleExtensions
 {
 	public static string GetId(this MentorLake.Gtk.GtkPlugAccessibleHandle plug)
 	{
-		if (plug.IsInvalid || plug.IsClosed) throw new Exception("Invalid or closed handle (GtkPlugAccessibleHandle)");
+		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugAccessibleHandle)");
 		return GtkPlugAccessibleHandleExterns.gtk_plug_accessible_get_id(plug);
 	}
 

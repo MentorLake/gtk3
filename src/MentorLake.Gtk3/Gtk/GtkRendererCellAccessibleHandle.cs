@@ -68,6 +68,7 @@ public static class GtkRendererCellAccessibleHandleExtensions
 internal class GtkRendererCellAccessibleHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRendererCellAccessibleHandle>))]
 	internal static extern MentorLake.Gtk.GtkRendererCellAccessibleHandle gtk_renderer_cell_accessible_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererHandle>))] MentorLake.Gtk.GtkCellRendererHandle renderer);
 
 }

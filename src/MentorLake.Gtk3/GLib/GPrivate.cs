@@ -9,19 +9,19 @@ public static class GPrivateExtensions
 {
 	public static IntPtr Get(this MentorLake.GLib.GPrivateHandle key)
 	{
-		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
+		if (key.IsInvalid) throw new Exception("Invalid handle (GPrivate)");
 		return GPrivateExterns.g_private_get(key);
 	}
 
 	public static void Replace(this MentorLake.GLib.GPrivateHandle key, IntPtr value)
 	{
-		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
+		if (key.IsInvalid) throw new Exception("Invalid handle (GPrivate)");
 		GPrivateExterns.g_private_replace(key, value);
 	}
 
 	public static void Set(this MentorLake.GLib.GPrivateHandle key, IntPtr value)
 	{
-		if (key.IsInvalid || key.IsClosed) throw new Exception("Invalid or closed handle (GPrivate)");
+		if (key.IsInvalid) throw new Exception("Invalid handle (GPrivate)");
 		GPrivateExterns.g_private_set(key, value);
 	}
 
@@ -40,6 +40,7 @@ internal class GPrivateExterns
 	internal static extern void g_private_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPrivateHandle>))] MentorLake.GLib.GPrivateHandle key, IntPtr value);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GPrivateHandle>))]
 	internal static extern MentorLake.GLib.GPrivateHandle g_private_new(MentorLake.GLib.GDestroyNotify notify);
 
 }

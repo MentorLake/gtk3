@@ -9,7 +9,7 @@ public static class GAllocatorExtensions
 {
 	public static void Free(this MentorLake.GLib.GAllocatorHandle allocator)
 	{
-		if (allocator.IsInvalid || allocator.IsClosed) throw new Exception("Invalid or closed handle (GAllocator)");
+		if (allocator.IsInvalid) throw new Exception("Invalid handle (GAllocator)");
 		GAllocatorExterns.g_allocator_free(allocator);
 	}
 
@@ -22,6 +22,7 @@ internal class GAllocatorExterns
 	internal static extern void g_allocator_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GAllocatorHandle>))] MentorLake.GLib.GAllocatorHandle allocator);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GAllocatorHandle>))]
 	internal static extern MentorLake.GLib.GAllocatorHandle g_allocator_new(string name, uint n_preallocs);
 
 }

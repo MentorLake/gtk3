@@ -66,13 +66,13 @@ public static class GtkGesturePanHandleExtensions
 {
 	public static MentorLake.Gtk.GtkOrientation GetOrientation(this MentorLake.Gtk.GtkGesturePanHandle gesture)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGesturePanHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGesturePanHandle)");
 		return GtkGesturePanHandleExterns.gtk_gesture_pan_get_orientation(gesture);
 	}
 
 	public static T SetOrientation<T>(this T gesture, MentorLake.Gtk.GtkOrientation orientation) where T : GtkGesturePanHandle
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGesturePanHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGesturePanHandle)");
 		GtkGesturePanHandleExterns.gtk_gesture_pan_set_orientation(gesture, orientation);
 		return gesture;
 	}
@@ -82,6 +82,7 @@ public static class GtkGesturePanHandleExtensions
 internal class GtkGesturePanHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGesturePanHandle>))]
 	internal static extern MentorLake.Gtk.GtkGesturePanHandle gtk_gesture_pan_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gtk.GtkOrientation orientation);
 
 	[DllImport(GtkLibrary.Name)]

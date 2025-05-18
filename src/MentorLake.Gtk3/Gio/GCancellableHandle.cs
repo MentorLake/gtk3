@@ -69,73 +69,73 @@ public static class GCancellableHandleExtensions
 {
 	public static T Cancel<T>(this T cancellable) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_cancel(cancellable);
 		return cancellable;
 	}
 
 	public static ulong Connect(this MentorLake.Gio.GCancellableHandle cancellable, MentorLake.GObject.GCallback callback, IntPtr data, MentorLake.GLib.GDestroyNotify data_destroy_func)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		return GCancellableHandleExterns.g_cancellable_connect(cancellable, callback, data, data_destroy_func);
 	}
 
 	public static T Disconnect<T>(this T cancellable, ulong handler_id) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_disconnect(cancellable, handler_id);
 		return cancellable;
 	}
 
 	public static int GetFd(this MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		return GCancellableHandleExterns.g_cancellable_get_fd(cancellable);
 	}
 
 	public static bool IsCancelled(this MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		return GCancellableHandleExterns.g_cancellable_is_cancelled(cancellable);
 	}
 
 	public static bool MakePollfd(this MentorLake.Gio.GCancellableHandle cancellable, MentorLake.GLib.GPollFDHandle pollfd)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		return GCancellableHandleExterns.g_cancellable_make_pollfd(cancellable, pollfd);
 	}
 
 	public static T PopCurrent<T>(this T cancellable) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_pop_current(cancellable);
 		return cancellable;
 	}
 
 	public static T PushCurrent<T>(this T cancellable) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_push_current(cancellable);
 		return cancellable;
 	}
 
 	public static T ReleaseFd<T>(this T cancellable) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_release_fd(cancellable);
 		return cancellable;
 	}
 
 	public static T Reset<T>(this T cancellable) where T : GCancellableHandle
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		GCancellableHandleExterns.g_cancellable_reset(cancellable);
 		return cancellable;
 	}
 
 	public static bool SetErrorIfCancelled(this MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		var externCallResult = GCancellableHandleExterns.g_cancellable_set_error_if_cancelled(cancellable, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -143,7 +143,7 @@ public static class GCancellableHandleExtensions
 
 	public static MentorLake.GLib.GSourceHandle SourceNew(this MentorLake.Gio.GCancellableHandle cancellable)
 	{
-		if (cancellable.IsInvalid || cancellable.IsClosed) throw new Exception("Invalid or closed handle (GCancellableHandle)");
+		if (cancellable.IsInvalid) throw new Exception("Invalid handle (GCancellableHandle)");
 		return GCancellableHandleExterns.g_cancellable_source_new(cancellable);
 	}
 
@@ -152,6 +152,7 @@ public static class GCancellableHandleExtensions
 internal class GCancellableHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))]
 	internal static extern MentorLake.Gio.GCancellableHandle g_cancellable_new();
 
 	[DllImport(GioLibrary.Name)]
@@ -188,9 +189,11 @@ internal class GCancellableHandleExterns
 	internal static extern bool g_cancellable_set_error_if_cancelled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSourceHandle>))]
 	internal static extern MentorLake.GLib.GSourceHandle g_cancellable_source_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))]
 	internal static extern MentorLake.Gio.GCancellableHandle g_cancellable_get_current();
 
 }

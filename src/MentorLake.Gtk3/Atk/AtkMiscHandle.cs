@@ -13,14 +13,14 @@ public static class AtkMiscHandleExtensions
 {
 	public static T ThreadsEnter<T>(this T misc) where T : AtkMiscHandle
 	{
-		if (misc.IsInvalid || misc.IsClosed) throw new Exception("Invalid or closed handle (AtkMiscHandle)");
+		if (misc.IsInvalid) throw new Exception("Invalid handle (AtkMiscHandle)");
 		AtkMiscHandleExterns.atk_misc_threads_enter(misc);
 		return misc;
 	}
 
 	public static T ThreadsLeave<T>(this T misc) where T : AtkMiscHandle
 	{
-		if (misc.IsInvalid || misc.IsClosed) throw new Exception("Invalid or closed handle (AtkMiscHandle)");
+		if (misc.IsInvalid) throw new Exception("Invalid handle (AtkMiscHandle)");
 		AtkMiscHandleExterns.atk_misc_threads_leave(misc);
 		return misc;
 	}
@@ -36,6 +36,7 @@ internal class AtkMiscHandleExterns
 	internal static extern void atk_misc_threads_leave([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkMiscHandle>))] MentorLake.Atk.AtkMiscHandle misc);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkMiscHandle>))]
 	internal static extern MentorLake.Atk.AtkMiscHandle atk_misc_get_instance();
 
 }

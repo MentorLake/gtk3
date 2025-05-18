@@ -13,13 +13,13 @@ public static class GtkLockButtonHandleExtensions
 {
 	public static MentorLake.Gio.GPermissionHandle GetPermission(this MentorLake.Gtk.GtkLockButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkLockButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkLockButtonHandle)");
 		return GtkLockButtonHandleExterns.gtk_lock_button_get_permission(button);
 	}
 
 	public static T SetPermission<T>(this T button, MentorLake.Gio.GPermissionHandle permission) where T : GtkLockButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkLockButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkLockButtonHandle)");
 		GtkLockButtonHandleExterns.gtk_lock_button_set_permission(button, permission);
 		return button;
 	}
@@ -29,9 +29,11 @@ public static class GtkLockButtonHandleExtensions
 internal class GtkLockButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkLockButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkLockButtonHandle gtk_lock_button_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))] MentorLake.Gio.GPermissionHandle permission);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPermissionHandle>))]
 	internal static extern MentorLake.Gio.GPermissionHandle gtk_lock_button_get_permission([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkLockButtonHandle>))] MentorLake.Gtk.GtkLockButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]

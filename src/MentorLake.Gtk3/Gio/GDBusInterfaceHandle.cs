@@ -14,25 +14,25 @@ public static class GDBusInterfaceHandleExtensions
 {
 	public static MentorLake.Gio.GDBusObjectHandle DupObject(this MentorLake.Gio.GDBusInterfaceHandle interface_)
 	{
-		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceHandle)");
+		if (interface_.IsInvalid) throw new Exception("Invalid handle (GDBusInterfaceHandle)");
 		return GDBusInterfaceHandleExterns.g_dbus_interface_dup_object(interface_);
 	}
 
 	public static MentorLake.Gio.GDBusInterfaceInfoHandle GetInfo(this MentorLake.Gio.GDBusInterfaceHandle interface_)
 	{
-		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceHandle)");
+		if (interface_.IsInvalid) throw new Exception("Invalid handle (GDBusInterfaceHandle)");
 		return GDBusInterfaceHandleExterns.g_dbus_interface_get_info(interface_);
 	}
 
 	public static MentorLake.Gio.GDBusObjectHandle GetObject(this MentorLake.Gio.GDBusInterfaceHandle interface_)
 	{
-		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceHandle)");
+		if (interface_.IsInvalid) throw new Exception("Invalid handle (GDBusInterfaceHandle)");
 		return GDBusInterfaceHandleExterns.g_dbus_interface_get_object(interface_);
 	}
 
 	public static T SetObject<T>(this T interface_, MentorLake.Gio.GDBusObjectHandle @object) where T : GDBusInterfaceHandle
 	{
-		if (interface_.IsInvalid || interface_.IsClosed) throw new Exception("Invalid or closed handle (GDBusInterfaceHandle)");
+		if (interface_.IsInvalid) throw new Exception("Invalid handle (GDBusInterfaceHandle)");
 		GDBusInterfaceHandleExterns.g_dbus_interface_set_object(interface_, @object);
 		return interface_;
 	}
@@ -42,12 +42,15 @@ public static class GDBusInterfaceHandleExtensions
 internal class GDBusInterfaceHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))]
 	internal static extern MentorLake.Gio.GDBusObjectHandle g_dbus_interface_dup_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceHandleImpl>))] MentorLake.Gio.GDBusInterfaceHandle interface_);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceInfoHandle>))]
 	internal static extern MentorLake.Gio.GDBusInterfaceInfoHandle g_dbus_interface_get_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceHandleImpl>))] MentorLake.Gio.GDBusInterfaceHandle interface_);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectHandleImpl>))]
 	internal static extern MentorLake.Gio.GDBusObjectHandle g_dbus_interface_get_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusInterfaceHandleImpl>))] MentorLake.Gio.GDBusInterfaceHandle interface_);
 
 	[DllImport(GioLibrary.Name)]

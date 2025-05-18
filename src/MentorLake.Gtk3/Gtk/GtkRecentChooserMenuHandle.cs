@@ -108,13 +108,13 @@ public static class GtkRecentChooserMenuHandleExtensions
 {
 	public static bool GetShowNumbers(this MentorLake.Gtk.GtkRecentChooserMenuHandle menu)
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentChooserMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GtkRecentChooserMenuHandle)");
 		return GtkRecentChooserMenuHandleExterns.gtk_recent_chooser_menu_get_show_numbers(menu);
 	}
 
 	public static T SetShowNumbers<T>(this T menu, bool show_numbers) where T : GtkRecentChooserMenuHandle
 	{
-		if (menu.IsInvalid || menu.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentChooserMenuHandle)");
+		if (menu.IsInvalid) throw new Exception("Invalid handle (GtkRecentChooserMenuHandle)");
 		GtkRecentChooserMenuHandleExterns.gtk_recent_chooser_menu_set_show_numbers(menu, show_numbers);
 		return menu;
 	}
@@ -124,9 +124,11 @@ public static class GtkRecentChooserMenuHandleExtensions
 internal class GtkRecentChooserMenuHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserMenuHandle>))]
 	internal static extern MentorLake.Gtk.GtkRecentChooserMenuHandle gtk_recent_chooser_menu_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRecentChooserMenuHandle>))]
 	internal static extern MentorLake.Gtk.GtkRecentChooserMenuHandle gtk_recent_chooser_menu_new_for_manager([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]

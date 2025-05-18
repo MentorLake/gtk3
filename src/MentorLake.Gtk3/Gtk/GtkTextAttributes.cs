@@ -14,25 +14,25 @@ public static class GtkTextAttributesExtensions
 {
 	public static MentorLake.Gtk.GtkTextAttributesHandle Copy(this MentorLake.Gtk.GtkTextAttributesHandle src)
 	{
-		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
+		if (src.IsInvalid) throw new Exception("Invalid handle (GtkTextAttributes)");
 		return GtkTextAttributesExterns.gtk_text_attributes_copy(src);
 	}
 
 	public static void CopyValues(this MentorLake.Gtk.GtkTextAttributesHandle src, MentorLake.Gtk.GtkTextAttributesHandle dest)
 	{
-		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
+		if (src.IsInvalid) throw new Exception("Invalid handle (GtkTextAttributes)");
 		GtkTextAttributesExterns.gtk_text_attributes_copy_values(src, dest);
 	}
 
 	public static MentorLake.Gtk.GtkTextAttributesHandle Ref(this MentorLake.Gtk.GtkTextAttributesHandle values)
 	{
-		if (values.IsInvalid || values.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
+		if (values.IsInvalid) throw new Exception("Invalid handle (GtkTextAttributes)");
 		return GtkTextAttributesExterns.gtk_text_attributes_ref(values);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkTextAttributesHandle values)
 	{
-		if (values.IsInvalid || values.IsClosed) throw new Exception("Invalid or closed handle (GtkTextAttributes)");
+		if (values.IsInvalid) throw new Exception("Invalid handle (GtkTextAttributes)");
 		GtkTextAttributesExterns.gtk_text_attributes_unref(values);
 	}
 
@@ -42,15 +42,18 @@ public static class GtkTextAttributesExtensions
 internal class GtkTextAttributesExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextAttributesHandle gtk_text_attributes_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextAttributesHandle gtk_text_attributes_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))] MentorLake.Gtk.GtkTextAttributesHandle src);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_text_attributes_copy_values([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))] MentorLake.Gtk.GtkTextAttributesHandle src, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))] MentorLake.Gtk.GtkTextAttributesHandle dest);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextAttributesHandle gtk_text_attributes_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextAttributesHandle>))] MentorLake.Gtk.GtkTextAttributesHandle values);
 
 	[DllImport(GtkLibrary.Name)]

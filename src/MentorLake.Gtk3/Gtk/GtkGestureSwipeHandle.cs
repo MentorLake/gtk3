@@ -66,7 +66,7 @@ public static class GtkGestureSwipeHandleExtensions
 {
 	public static bool GetVelocity(this MentorLake.Gtk.GtkGestureSwipeHandle gesture, out double velocity_x, out double velocity_y)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureSwipeHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureSwipeHandle)");
 		return GtkGestureSwipeHandleExterns.gtk_gesture_swipe_get_velocity(gesture, out velocity_x, out velocity_y);
 	}
 
@@ -75,6 +75,7 @@ public static class GtkGestureSwipeHandleExtensions
 internal class GtkGestureSwipeHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureSwipeHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureSwipeHandle gtk_gesture_swipe_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]

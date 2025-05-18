@@ -16,6 +16,7 @@ public static class GtkSeparatorMenuItemHandleExtensions
 internal class GtkSeparatorMenuItemHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSeparatorMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkSeparatorMenuItemHandle gtk_separator_menu_item_new();
 
 }

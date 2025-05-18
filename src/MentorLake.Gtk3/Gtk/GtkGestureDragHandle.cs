@@ -148,13 +148,13 @@ public static class GtkGestureDragHandleExtensions
 {
 	public static bool GetOffset(this MentorLake.Gtk.GtkGestureDragHandle gesture, out double x, out double y)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureDragHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureDragHandle)");
 		return GtkGestureDragHandleExterns.gtk_gesture_drag_get_offset(gesture, out x, out y);
 	}
 
 	public static bool GetStartPoint(this MentorLake.Gtk.GtkGestureDragHandle gesture, out double x, out double y)
 	{
-		if (gesture.IsInvalid || gesture.IsClosed) throw new Exception("Invalid or closed handle (GtkGestureDragHandle)");
+		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureDragHandle)");
 		return GtkGestureDragHandleExterns.gtk_gesture_drag_get_start_point(gesture, out x, out y);
 	}
 
@@ -163,6 +163,7 @@ public static class GtkGestureDragHandleExtensions
 internal class GtkGestureDragHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureDragHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureDragHandle gtk_gesture_drag_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 	[DllImport(GtkLibrary.Name)]

@@ -551,113 +551,113 @@ public static class GtkTextBufferHandleExtensions
 {
 	public static T AddMark<T>(this T buffer, MentorLake.Gtk.GtkTextMarkHandle mark, MentorLake.Gtk.GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_add_mark(buffer, mark, where);
 		return buffer;
 	}
 
 	public static T AddSelectionClipboard<T>(this T buffer, MentorLake.Gtk.GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_add_selection_clipboard(buffer, clipboard);
 		return buffer;
 	}
 
 	public static T ApplyTag<T>(this T buffer, MentorLake.Gtk.GtkTextTagHandle tag, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_apply_tag(buffer, tag, start, end);
 		return buffer;
 	}
 
 	public static T ApplyTagByName<T>(this T buffer, string name, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_apply_tag_by_name(buffer, name, start, end);
 		return buffer;
 	}
 
 	public static bool Backspace(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle iter, bool interactive, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_backspace(buffer, iter, interactive, default_editable);
 	}
 
 	public static T BeginUserAction<T>(this T buffer) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_begin_user_action(buffer);
 		return buffer;
 	}
 
 	public static T CopyClipboard<T>(this T buffer, MentorLake.Gtk.GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_copy_clipboard(buffer, clipboard);
 		return buffer;
 	}
 
 	public static MentorLake.Gtk.GtkTextChildAnchorHandle CreateChildAnchor(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle iter)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_create_child_anchor(buffer, iter);
 	}
 
 	public static MentorLake.Gtk.GtkTextMarkHandle CreateMark(this MentorLake.Gtk.GtkTextBufferHandle buffer, string mark_name, MentorLake.Gtk.GtkTextIterHandle where, bool left_gravity)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_create_mark(buffer, mark_name, where, left_gravity);
 	}
 
 	public static MentorLake.Gtk.GtkTextTagHandle CreateTag(this MentorLake.Gtk.GtkTextBufferHandle buffer, string tag_name, string first_property_name, IntPtr @__arglist)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_create_tag(buffer, tag_name, first_property_name, @__arglist);
 	}
 
 	public static T CutClipboard<T>(this T buffer, MentorLake.Gtk.GtkClipboardHandle clipboard, bool default_editable) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_cut_clipboard(buffer, clipboard, default_editable);
 		return buffer;
 	}
 
 	public static T Delete<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_delete(buffer, start, end);
 		return buffer;
 	}
 
 	public static bool DeleteInteractive(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle start_iter, MentorLake.Gtk.GtkTextIterHandle end_iter, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_delete_interactive(buffer, start_iter, end_iter, default_editable);
 	}
 
 	public static T DeleteMark<T>(this T buffer, MentorLake.Gtk.GtkTextMarkHandle mark) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_delete_mark(buffer, mark);
 		return buffer;
 	}
 
 	public static T DeleteMarkByName<T>(this T buffer, string name) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_delete_mark_by_name(buffer, name);
 		return buffer;
 	}
 
 	public static bool DeleteSelection(this MentorLake.Gtk.GtkTextBufferHandle buffer, bool interactive, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_delete_selection(buffer, interactive, default_editable);
 	}
 
 	public static bool Deserialize(this MentorLake.Gtk.GtkTextBufferHandle register_buffer, MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, MentorLake.Gtk.GtkTextIterHandle iter, byte[] data, UIntPtr length)
 	{
-		if (register_buffer.IsInvalid || register_buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (register_buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		var externCallResult = GtkTextBufferHandleExterns.gtk_text_buffer_deserialize(register_buffer, content_buffer, format, iter, data, length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -665,368 +665,368 @@ public static class GtkTextBufferHandleExtensions
 
 	public static bool DeserializeGetCanCreateTags(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gdk.GdkAtom format)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_deserialize_get_can_create_tags(buffer, format);
 	}
 
 	public static T DeserializeSetCanCreateTags<T>(this T buffer, MentorLake.Gdk.GdkAtom format, bool can_create_tags) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_deserialize_set_can_create_tags(buffer, format, can_create_tags);
 		return buffer;
 	}
 
 	public static T EndUserAction<T>(this T buffer) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_end_user_action(buffer);
 		return buffer;
 	}
 
 	public static T GetBounds<T>(this T buffer, out MentorLake.Gtk.GtkTextIter start, out MentorLake.Gtk.GtkTextIter end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_bounds(buffer, out start, out end);
 		return buffer;
 	}
 
 	public static int GetCharCount(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_char_count(buffer);
 	}
 
 	public static MentorLake.Gtk.GtkTargetListHandle GetCopyTargetList(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_copy_target_list(buffer);
 	}
 
 	public static MentorLake.Gdk.GdkAtom[] GetDeserializeFormats(this MentorLake.Gtk.GtkTextBufferHandle buffer, out int n_formats)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_deserialize_formats(buffer, out n_formats);
 	}
 
 	public static T GetEndIter<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_end_iter(buffer, out iter);
 		return buffer;
 	}
 
 	public static bool GetHasSelection(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_has_selection(buffer);
 	}
 
 	public static MentorLake.Gtk.GtkTextMarkHandle GetInsert(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_insert(buffer);
 	}
 
 	public static T GetIterAtChildAnchor<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, MentorLake.Gtk.GtkTextChildAnchorHandle anchor) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_child_anchor(buffer, out iter, anchor);
 		return buffer;
 	}
 
 	public static T GetIterAtLine<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, int line_number) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_line(buffer, out iter, line_number);
 		return buffer;
 	}
 
 	public static T GetIterAtLineIndex<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, int line_number, int byte_index) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_line_index(buffer, out iter, line_number, byte_index);
 		return buffer;
 	}
 
 	public static T GetIterAtLineOffset<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, int line_number, int char_offset) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_line_offset(buffer, out iter, line_number, char_offset);
 		return buffer;
 	}
 
 	public static T GetIterAtMark<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, MentorLake.Gtk.GtkTextMarkHandle mark) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_mark(buffer, out iter, mark);
 		return buffer;
 	}
 
 	public static T GetIterAtOffset<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter, int char_offset) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_iter_at_offset(buffer, out iter, char_offset);
 		return buffer;
 	}
 
 	public static int GetLineCount(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_line_count(buffer);
 	}
 
 	public static MentorLake.Gtk.GtkTextMarkHandle GetMark(this MentorLake.Gtk.GtkTextBufferHandle buffer, string name)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_mark(buffer, name);
 	}
 
 	public static bool GetModified(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_modified(buffer);
 	}
 
 	public static MentorLake.Gtk.GtkTargetListHandle GetPasteTargetList(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_paste_target_list(buffer);
 	}
 
 	public static MentorLake.Gtk.GtkTextMarkHandle GetSelectionBound(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_selection_bound(buffer);
 	}
 
 	public static bool GetSelectionBounds(this MentorLake.Gtk.GtkTextBufferHandle buffer, out MentorLake.Gtk.GtkTextIter start, out MentorLake.Gtk.GtkTextIter end)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_selection_bounds(buffer, out start, out end);
 	}
 
 	public static MentorLake.Gdk.GdkAtom[] GetSerializeFormats(this MentorLake.Gtk.GtkTextBufferHandle buffer, out int n_formats)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_serialize_formats(buffer, out n_formats);
 	}
 
 	public static string GetSlice(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end, bool include_hidden_chars)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_slice(buffer, start, end, include_hidden_chars);
 	}
 
 	public static T GetStartIter<T>(this T buffer, out MentorLake.Gtk.GtkTextIter iter) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_get_start_iter(buffer, out iter);
 		return buffer;
 	}
 
 	public static MentorLake.Gtk.GtkTextTagTableHandle GetTagTable(this MentorLake.Gtk.GtkTextBufferHandle buffer)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_tag_table(buffer);
 	}
 
 	public static string GetText(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end, bool include_hidden_chars)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_get_text(buffer, start, end, include_hidden_chars);
 	}
 
 	public static T Insert<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, string text, int len) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert(buffer, iter, text, len);
 		return buffer;
 	}
 
 	public static T InsertAtCursor<T>(this T buffer, string text, int len) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_at_cursor(buffer, text, len);
 		return buffer;
 	}
 
 	public static T InsertChildAnchor<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, MentorLake.Gtk.GtkTextChildAnchorHandle anchor) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_child_anchor(buffer, iter, anchor);
 		return buffer;
 	}
 
 	public static bool InsertInteractive(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle iter, string text, int len, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_insert_interactive(buffer, iter, text, len, default_editable);
 	}
 
 	public static bool InsertInteractiveAtCursor(this MentorLake.Gtk.GtkTextBufferHandle buffer, string text, int len, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_insert_interactive_at_cursor(buffer, text, len, default_editable);
 	}
 
 	public static T InsertMarkup<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, string markup, int len) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_markup(buffer, iter, markup, len);
 		return buffer;
 	}
 
 	public static T InsertPixbuf<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_pixbuf(buffer, iter, pixbuf);
 		return buffer;
 	}
 
 	public static T InsertRange<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_range(buffer, iter, start, end);
 		return buffer;
 	}
 
 	public static bool InsertRangeInteractive(this MentorLake.Gtk.GtkTextBufferHandle buffer, MentorLake.Gtk.GtkTextIterHandle iter, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end, bool default_editable)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_insert_range_interactive(buffer, iter, start, end, default_editable);
 	}
 
 	public static T InsertWithTags<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, string text, int len, MentorLake.Gtk.GtkTextTagHandle first_tag, IntPtr @__arglist) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_with_tags(buffer, iter, text, len, first_tag, @__arglist);
 		return buffer;
 	}
 
 	public static T InsertWithTagsByName<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle iter, string text, int len, string first_tag_name, IntPtr @__arglist) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_insert_with_tags_by_name(buffer, iter, text, len, first_tag_name, @__arglist);
 		return buffer;
 	}
 
 	public static T MoveMark<T>(this T buffer, MentorLake.Gtk.GtkTextMarkHandle mark, MentorLake.Gtk.GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_move_mark(buffer, mark, where);
 		return buffer;
 	}
 
 	public static T MoveMarkByName<T>(this T buffer, string name, MentorLake.Gtk.GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_move_mark_by_name(buffer, name, where);
 		return buffer;
 	}
 
 	public static T PasteClipboard<T>(this T buffer, MentorLake.Gtk.GtkClipboardHandle clipboard, MentorLake.Gtk.GtkTextIterHandle override_location, bool default_editable) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_paste_clipboard(buffer, clipboard, override_location, default_editable);
 		return buffer;
 	}
 
 	public static T PlaceCursor<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle where) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_place_cursor(buffer, where);
 		return buffer;
 	}
 
 	public static MentorLake.Gdk.GdkAtom RegisterDeserializeFormat(this MentorLake.Gtk.GtkTextBufferHandle buffer, string mime_type, MentorLake.Gtk.GtkTextBufferDeserializeFunc function, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_destroy)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_register_deserialize_format(buffer, mime_type, function, user_data, user_data_destroy);
 	}
 
 	public static MentorLake.Gdk.GdkAtom RegisterDeserializeTagset(this MentorLake.Gtk.GtkTextBufferHandle buffer, string tagset_name)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_register_deserialize_tagset(buffer, tagset_name);
 	}
 
 	public static MentorLake.Gdk.GdkAtom RegisterSerializeFormat(this MentorLake.Gtk.GtkTextBufferHandle buffer, string mime_type, MentorLake.Gtk.GtkTextBufferSerializeFunc function, IntPtr user_data, MentorLake.GLib.GDestroyNotify user_data_destroy)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_register_serialize_format(buffer, mime_type, function, user_data, user_data_destroy);
 	}
 
 	public static MentorLake.Gdk.GdkAtom RegisterSerializeTagset(this MentorLake.Gtk.GtkTextBufferHandle buffer, string tagset_name)
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_register_serialize_tagset(buffer, tagset_name);
 	}
 
 	public static T RemoveAllTags<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_remove_all_tags(buffer, start, end);
 		return buffer;
 	}
 
 	public static T RemoveSelectionClipboard<T>(this T buffer, MentorLake.Gtk.GtkClipboardHandle clipboard) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_remove_selection_clipboard(buffer, clipboard);
 		return buffer;
 	}
 
 	public static T RemoveTag<T>(this T buffer, MentorLake.Gtk.GtkTextTagHandle tag, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_remove_tag(buffer, tag, start, end);
 		return buffer;
 	}
 
 	public static T RemoveTagByName<T>(this T buffer, string name, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_remove_tag_by_name(buffer, name, start, end);
 		return buffer;
 	}
 
 	public static T SelectRange<T>(this T buffer, MentorLake.Gtk.GtkTextIterHandle ins, MentorLake.Gtk.GtkTextIterHandle bound) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_select_range(buffer, ins, bound);
 		return buffer;
 	}
 
 	public static byte[] Serialize(this MentorLake.Gtk.GtkTextBufferHandle register_buffer, MentorLake.Gtk.GtkTextBufferHandle content_buffer, MentorLake.Gdk.GdkAtom format, MentorLake.Gtk.GtkTextIterHandle start, MentorLake.Gtk.GtkTextIterHandle end, out UIntPtr length)
 	{
-		if (register_buffer.IsInvalid || register_buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (register_buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		return GtkTextBufferHandleExterns.gtk_text_buffer_serialize(register_buffer, content_buffer, format, start, end, out length);
 	}
 
 	public static T SetModified<T>(this T buffer, bool setting) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_set_modified(buffer, setting);
 		return buffer;
 	}
 
 	public static T SetText<T>(this T buffer, string text, int len) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_set_text(buffer, text, len);
 		return buffer;
 	}
 
 	public static T UnregisterDeserializeFormat<T>(this T buffer, MentorLake.Gdk.GdkAtom format) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_unregister_deserialize_format(buffer, format);
 		return buffer;
 	}
 
 	public static T UnregisterSerializeFormat<T>(this T buffer, MentorLake.Gdk.GdkAtom format) where T : GtkTextBufferHandle
 	{
-		if (buffer.IsInvalid || buffer.IsClosed) throw new Exception("Invalid or closed handle (GtkTextBufferHandle)");
+		if (buffer.IsInvalid) throw new Exception("Invalid handle (GtkTextBufferHandle)");
 		GtkTextBufferHandleExterns.gtk_text_buffer_unregister_serialize_format(buffer, format);
 		return buffer;
 	}
@@ -1036,6 +1036,7 @@ public static class GtkTextBufferHandleExtensions
 internal class GtkTextBufferHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextBufferHandle gtk_text_buffer_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagTableHandle>))] MentorLake.Gtk.GtkTextTagTableHandle table);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1060,12 +1061,15 @@ internal class GtkTextBufferHandleExterns
 	internal static extern void gtk_text_buffer_copy_clipboard([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkClipboardHandle>))] MentorLake.Gtk.GtkClipboardHandle clipboard);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextChildAnchorHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextChildAnchorHandle gtk_text_buffer_create_child_anchor([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextIterHandle>))] MentorLake.Gtk.GtkTextIterHandle iter);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextMarkHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextMarkHandle gtk_text_buffer_create_mark([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, string mark_name, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextIterHandle>))] MentorLake.Gtk.GtkTextIterHandle where, bool left_gravity);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextTagHandle gtk_text_buffer_create_tag([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, string tag_name, string first_property_name, IntPtr @__arglist);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1105,6 +1109,7 @@ internal class GtkTextBufferHandleExterns
 	internal static extern int gtk_text_buffer_get_char_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))]
 	internal static extern MentorLake.Gtk.GtkTargetListHandle gtk_text_buffer_get_copy_target_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1117,6 +1122,7 @@ internal class GtkTextBufferHandleExterns
 	internal static extern bool gtk_text_buffer_get_has_selection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextMarkHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextMarkHandle gtk_text_buffer_get_insert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1141,15 +1147,18 @@ internal class GtkTextBufferHandleExterns
 	internal static extern int gtk_text_buffer_get_line_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextMarkHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextMarkHandle gtk_text_buffer_get_mark([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, string name);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_text_buffer_get_modified([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTargetListHandle>))]
 	internal static extern MentorLake.Gtk.GtkTargetListHandle gtk_text_buffer_get_paste_target_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextMarkHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextMarkHandle gtk_text_buffer_get_selection_bound([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1166,6 +1175,7 @@ internal class GtkTextBufferHandleExterns
 	internal static extern void gtk_text_buffer_get_start_iter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer, out MentorLake.Gtk.GtkTextIter iter);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextTagTableHandle>))]
 	internal static extern MentorLake.Gtk.GtkTextTagTableHandle gtk_text_buffer_get_tag_table([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkTextBufferHandle>))] MentorLake.Gtk.GtkTextBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]

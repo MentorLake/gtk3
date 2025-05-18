@@ -68,6 +68,7 @@ public static class GtkColorChooserDialogHandleExtensions
 internal class GtkColorChooserDialogHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkColorChooserDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkColorChooserDialogHandle gtk_color_chooser_dialog_new(string title, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent);
 
 }

@@ -14,6 +14,7 @@ public class GdkPixdataGlobalFunctions
 internal class GdkPixdataGlobalFunctionsExterns
 {
 	[DllImport(GdkPixdataLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_from_pixdata([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixdata.GdkPixdataHandle>))] MentorLake.GdkPixdata.GdkPixdataHandle pixdata, bool copy_pixels, out MentorLake.GLib.GErrorHandle error);
 
 }

@@ -14,91 +14,91 @@ public static class graphene_triangle_tExtensions
 {
 	public static bool ContainsPoint(this MentorLake.Graphene.graphene_triangle_tHandle t, MentorLake.Graphene.graphene_point3d_tHandle p)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_contains_point(t, p);
 	}
 
 	public static bool Equal(this MentorLake.Graphene.graphene_triangle_tHandle a, MentorLake.Graphene.graphene_triangle_tHandle b)
 	{
-		if (a.IsInvalid || a.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_equal(a, b);
 	}
 
 	public static void Free(this MentorLake.Graphene.graphene_triangle_tHandle t)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_free(t);
 	}
 
 	public static float GetArea(this MentorLake.Graphene.graphene_triangle_tHandle t)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_get_area(t);
 	}
 
 	public static bool GetBarycoords(this MentorLake.Graphene.graphene_triangle_tHandle t, MentorLake.Graphene.graphene_point3d_tHandle p, out MentorLake.Graphene.graphene_vec2_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_get_barycoords(t, p, out res);
 	}
 
 	public static void GetBoundingBox(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_box_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_bounding_box(t, out res);
 	}
 
 	public static void GetMidpoint(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_point3d_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_midpoint(t, out res);
 	}
 
 	public static void GetNormal(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_vec3_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_normal(t, out res);
 	}
 
 	public static void GetPlane(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_plane_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_plane(t, out res);
 	}
 
 	public static void GetPoints(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_point3d_t a, out MentorLake.Graphene.graphene_point3d_t b, out MentorLake.Graphene.graphene_point3d_t c)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_points(t, out a, out b, out c);
 	}
 
 	public static bool GetUv(this MentorLake.Graphene.graphene_triangle_tHandle t, MentorLake.Graphene.graphene_point3d_tHandle p, MentorLake.Graphene.graphene_vec2_tHandle uv_a, MentorLake.Graphene.graphene_vec2_tHandle uv_b, MentorLake.Graphene.graphene_vec2_tHandle uv_c, out MentorLake.Graphene.graphene_vec2_t res)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_get_uv(t, p, uv_a, uv_b, uv_c, out res);
 	}
 
 	public static void GetVertices(this MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_vec3_t a, out MentorLake.Graphene.graphene_vec3_t b, out MentorLake.Graphene.graphene_vec3_t c)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		graphene_triangle_tExterns.graphene_triangle_get_vertices(t, out a, out b, out c);
 	}
 
 	public static MentorLake.Graphene.graphene_triangle_tHandle InitFromFloat(this MentorLake.Graphene.graphene_triangle_tHandle t, float[] a, float[] b, float[] c)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_init_from_float(t, a, b, c);
 	}
 
 	public static MentorLake.Graphene.graphene_triangle_tHandle InitFromPoint3D(this MentorLake.Graphene.graphene_triangle_tHandle t, MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b, MentorLake.Graphene.graphene_point3d_tHandle c)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_init_from_point3d(t, a, b, c);
 	}
 
 	public static MentorLake.Graphene.graphene_triangle_tHandle InitFromVec3(this MentorLake.Graphene.graphene_triangle_tHandle t, MentorLake.Graphene.graphene_vec3_tHandle a, MentorLake.Graphene.graphene_vec3_tHandle b, MentorLake.Graphene.graphene_vec3_tHandle c)
 	{
-		if (t.IsInvalid || t.IsClosed) throw new Exception("Invalid or closed handle (graphene_triangle_t)");
+		if (t.IsInvalid) throw new Exception("Invalid handle (graphene_triangle_t)");
 		return graphene_triangle_tExterns.graphene_triangle_init_from_vec3(t, a, b, c);
 	}
 
@@ -108,6 +108,7 @@ public static class graphene_triangle_tExtensions
 internal class graphene_triangle_tExterns
 {
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_triangle_tHandle graphene_triangle_alloc();
 
 	[DllImport(GrapheneLibrary.Name)]
@@ -147,12 +148,15 @@ internal class graphene_triangle_tExterns
 	internal static extern void graphene_triangle_get_vertices([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))] MentorLake.Graphene.graphene_triangle_tHandle t, out MentorLake.Graphene.graphene_vec3_t a, out MentorLake.Graphene.graphene_vec3_t b, out MentorLake.Graphene.graphene_vec3_t c);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_triangle_tHandle graphene_triangle_init_from_float([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))] MentorLake.Graphene.graphene_triangle_tHandle t, float[] a, float[] b, float[] c);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_triangle_tHandle graphene_triangle_init_from_point3d([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))] MentorLake.Graphene.graphene_triangle_tHandle t, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_point3d_tHandle>))] MentorLake.Graphene.graphene_point3d_tHandle a, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_point3d_tHandle>))] MentorLake.Graphene.graphene_point3d_tHandle b, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_point3d_tHandle>))] MentorLake.Graphene.graphene_point3d_tHandle c);
 
 	[DllImport(GrapheneLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))]
 	internal static extern MentorLake.Graphene.graphene_triangle_tHandle graphene_triangle_init_from_vec3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_triangle_tHandle>))] MentorLake.Graphene.graphene_triangle_tHandle t, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))] MentorLake.Graphene.graphene_vec3_tHandle a, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))] MentorLake.Graphene.graphene_vec3_tHandle b, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_vec3_tHandle>))] MentorLake.Graphene.graphene_vec3_tHandle c);
 
 }

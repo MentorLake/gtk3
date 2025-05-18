@@ -279,159 +279,159 @@ public static class GtkButtonHandleExtensions
 {
 	public static T Clicked<T>(this T button) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_clicked(button);
 		return button;
 	}
 
 	public static T Enter<T>(this T button) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_enter(button);
 		return button;
 	}
 
 	public static T GetAlignment<T>(this T button, out float xalign, out float yalign) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_get_alignment(button, out xalign, out yalign);
 		return button;
 	}
 
 	public static bool GetAlwaysShowImage(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_always_show_image(button);
 	}
 
 	public static MentorLake.Gdk.GdkWindowHandle GetEventWindow(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_event_window(button);
 	}
 
 	public static bool GetFocusOnClick(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_focus_on_click(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetImage(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_image(button);
 	}
 
 	public static MentorLake.Gtk.GtkPositionType GetImagePosition(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_image_position(button);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_label(button);
 	}
 
 	public static MentorLake.Gtk.GtkReliefStyle GetRelief(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_relief(button);
 	}
 
 	public static bool GetUseStock(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_use_stock(button);
 	}
 
 	public static bool GetUseUnderline(this MentorLake.Gtk.GtkButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		return GtkButtonHandleExterns.gtk_button_get_use_underline(button);
 	}
 
 	public static T Leave<T>(this T button) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_leave(button);
 		return button;
 	}
 
 	public static T Pressed<T>(this T button) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_pressed(button);
 		return button;
 	}
 
 	public static T Released<T>(this T button) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_released(button);
 		return button;
 	}
 
 	public static T SetAlignment<T>(this T button, float xalign, float yalign) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_alignment(button, xalign, yalign);
 		return button;
 	}
 
 	public static T SetAlwaysShowImage<T>(this T button, bool always_show) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_always_show_image(button, always_show);
 		return button;
 	}
 
 	public static T SetFocusOnClick<T>(this T button, bool focus_on_click) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_focus_on_click(button, focus_on_click);
 		return button;
 	}
 
 	public static T SetImage<T>(this T button, MentorLake.Gtk.GtkWidgetHandle image) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_image(button, image);
 		return button;
 	}
 
 	public static T SetImagePosition<T>(this T button, MentorLake.Gtk.GtkPositionType position) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_image_position(button, position);
 		return button;
 	}
 
 	public static T SetLabel<T>(this T button, string label) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_label(button, label);
 		return button;
 	}
 
 	public static T SetRelief<T>(this T button, MentorLake.Gtk.GtkReliefStyle relief) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_relief(button, relief);
 		return button;
 	}
 
 	public static T SetUseStock<T>(this T button, bool use_stock) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_use_stock(button, use_stock);
 		return button;
 	}
 
 	public static T SetUseUnderline<T>(this T button, bool use_underline) where T : GtkButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkButtonHandle)");
 		GtkButtonHandleExterns.gtk_button_set_use_underline(button, use_underline);
 		return button;
 	}
@@ -441,18 +441,23 @@ public static class GtkButtonHandleExtensions
 internal class GtkButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonHandle gtk_button_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonHandle gtk_button_new_from_icon_name(string icon_name, MentorLake.Gtk.GtkIconSize size);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonHandle gtk_button_new_from_stock(string stock_id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonHandle gtk_button_new_with_label(string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonHandle gtk_button_new_with_mnemonic(string label);
 
 	[DllImport(GtkLibrary.Name)]
@@ -468,12 +473,14 @@ internal class GtkButtonHandleExterns
 	internal static extern bool gtk_button_get_always_show_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))] MentorLake.Gtk.GtkButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))]
 	internal static extern MentorLake.Gdk.GdkWindowHandle gtk_button_get_event_window([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))] MentorLake.Gtk.GtkButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_button_get_focus_on_click([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))] MentorLake.Gtk.GtkButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_button_get_image([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkButtonHandle>))] MentorLake.Gtk.GtkButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]

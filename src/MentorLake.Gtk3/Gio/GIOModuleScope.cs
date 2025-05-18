@@ -9,13 +9,13 @@ public static class GIOModuleScopeExtensions
 {
 	public static void Block(this MentorLake.Gio.GIOModuleScopeHandle scope, string basename)
 	{
-		if (scope.IsInvalid || scope.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleScope)");
+		if (scope.IsInvalid) throw new Exception("Invalid handle (GIOModuleScope)");
 		GIOModuleScopeExterns.g_io_module_scope_block(scope, basename);
 	}
 
 	public static void Free(this MentorLake.Gio.GIOModuleScopeHandle scope)
 	{
-		if (scope.IsInvalid || scope.IsClosed) throw new Exception("Invalid or closed handle (GIOModuleScope)");
+		if (scope.IsInvalid) throw new Exception("Invalid handle (GIOModuleScope)");
 		GIOModuleScopeExterns.g_io_module_scope_free(scope);
 	}
 
@@ -31,6 +31,7 @@ internal class GIOModuleScopeExterns
 	internal static extern void g_io_module_scope_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))] MentorLake.Gio.GIOModuleScopeHandle scope);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIOModuleScopeHandle>))]
 	internal static extern MentorLake.Gio.GIOModuleScopeHandle g_io_module_scope_new(MentorLake.Gio.GIOModuleScopeFlags flags);
 
 }

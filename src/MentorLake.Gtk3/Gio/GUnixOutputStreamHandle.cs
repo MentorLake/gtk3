@@ -13,19 +13,19 @@ public static class GUnixOutputStreamHandleExtensions
 {
 	public static bool GetCloseFd(this MentorLake.Gio.GUnixOutputStreamHandle stream)
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GUnixOutputStreamHandle)");
 		return GUnixOutputStreamHandleExterns.g_unix_output_stream_get_close_fd(stream);
 	}
 
 	public static int GetFd(this MentorLake.Gio.GUnixOutputStreamHandle stream)
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GUnixOutputStreamHandle)");
 		return GUnixOutputStreamHandleExterns.g_unix_output_stream_get_fd(stream);
 	}
 
 	public static T SetCloseFd<T>(this T stream, bool close_fd) where T : GUnixOutputStreamHandle
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GUnixOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GUnixOutputStreamHandle)");
 		GUnixOutputStreamHandleExterns.g_unix_output_stream_set_close_fd(stream, close_fd);
 		return stream;
 	}
@@ -35,6 +35,7 @@ public static class GUnixOutputStreamHandleExtensions
 internal class GUnixOutputStreamHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixOutputStreamHandle>))]
 	internal static extern MentorLake.Gio.GUnixOutputStreamHandle g_unix_output_stream_new(int fd, bool close_fd);
 
 	[DllImport(GioLibrary.Name)]

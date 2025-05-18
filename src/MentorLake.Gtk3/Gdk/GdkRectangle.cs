@@ -9,19 +9,19 @@ public static class GdkRectangleExtensions
 {
 	public static bool Equal(this MentorLake.Gdk.GdkRectangleHandle rect1, MentorLake.Gdk.GdkRectangleHandle rect2)
 	{
-		if (rect1.IsInvalid || rect1.IsClosed) throw new Exception("Invalid or closed handle (GdkRectangle)");
+		if (rect1.IsInvalid) throw new Exception("Invalid handle (GdkRectangle)");
 		return GdkRectangleExterns.gdk_rectangle_equal(rect1, rect2);
 	}
 
 	public static bool Intersect(this MentorLake.Gdk.GdkRectangleHandle src1, MentorLake.Gdk.GdkRectangleHandle src2, out MentorLake.Gdk.GdkRectangle dest)
 	{
-		if (src1.IsInvalid || src1.IsClosed) throw new Exception("Invalid or closed handle (GdkRectangle)");
+		if (src1.IsInvalid) throw new Exception("Invalid handle (GdkRectangle)");
 		return GdkRectangleExterns.gdk_rectangle_intersect(src1, src2, out dest);
 	}
 
 	public static void Union(this MentorLake.Gdk.GdkRectangleHandle src1, MentorLake.Gdk.GdkRectangleHandle src2, out MentorLake.Gdk.GdkRectangle dest)
 	{
-		if (src1.IsInvalid || src1.IsClosed) throw new Exception("Invalid or closed handle (GdkRectangle)");
+		if (src1.IsInvalid) throw new Exception("Invalid handle (GdkRectangle)");
 		GdkRectangleExterns.gdk_rectangle_union(src1, src2, out dest);
 	}
 

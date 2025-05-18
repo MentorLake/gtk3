@@ -64,19 +64,19 @@ public static class GFilenameCompleterHandleExtensions
 {
 	public static string GetCompletionSuffix(this MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text)
 	{
-		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
+		if (completer.IsInvalid) throw new Exception("Invalid handle (GFilenameCompleterHandle)");
 		return GFilenameCompleterHandleExterns.g_filename_completer_get_completion_suffix(completer, initial_text);
 	}
 
 	public static string[] GetCompletions(this MentorLake.Gio.GFilenameCompleterHandle completer, string initial_text)
 	{
-		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
+		if (completer.IsInvalid) throw new Exception("Invalid handle (GFilenameCompleterHandle)");
 		return GFilenameCompleterHandleExterns.g_filename_completer_get_completions(completer, initial_text);
 	}
 
 	public static T SetDirsOnly<T>(this T completer, bool dirs_only) where T : GFilenameCompleterHandle
 	{
-		if (completer.IsInvalid || completer.IsClosed) throw new Exception("Invalid or closed handle (GFilenameCompleterHandle)");
+		if (completer.IsInvalid) throw new Exception("Invalid handle (GFilenameCompleterHandle)");
 		GFilenameCompleterHandleExterns.g_filename_completer_set_dirs_only(completer, dirs_only);
 		return completer;
 	}
@@ -86,6 +86,7 @@ public static class GFilenameCompleterHandleExtensions
 internal class GFilenameCompleterHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GFilenameCompleterHandle>))]
 	internal static extern MentorLake.Gio.GFilenameCompleterHandle g_filename_completer_new();
 
 	[DllImport(GioLibrary.Name)]

@@ -147,39 +147,39 @@ public static class GAppLaunchContextHandleExtensions
 {
 	public static string GetDisplay(this MentorLake.Gio.GAppLaunchContextHandle context, MentorLake.Gio.GAppInfoHandle info, MentorLake.GLib.GListHandle files)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		return GAppLaunchContextHandleExterns.g_app_launch_context_get_display(context, info, files);
 	}
 
 	public static string[] GetEnvironment(this MentorLake.Gio.GAppLaunchContextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		return GAppLaunchContextHandleExterns.g_app_launch_context_get_environment(context);
 	}
 
 	public static string GetStartupNotifyId(this MentorLake.Gio.GAppLaunchContextHandle context, MentorLake.Gio.GAppInfoHandle info, MentorLake.GLib.GListHandle files)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		return GAppLaunchContextHandleExterns.g_app_launch_context_get_startup_notify_id(context, info, files);
 	}
 
 	public static T LaunchFailed<T>(this T context, string startup_notify_id) where T : GAppLaunchContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		GAppLaunchContextHandleExterns.g_app_launch_context_launch_failed(context, startup_notify_id);
 		return context;
 	}
 
 	public static T Setenv<T>(this T context, string variable, string value) where T : GAppLaunchContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		GAppLaunchContextHandleExterns.g_app_launch_context_setenv(context, variable, value);
 		return context;
 	}
 
 	public static T Unsetenv<T>(this T context, string variable) where T : GAppLaunchContextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GAppLaunchContextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GAppLaunchContextHandle)");
 		GAppLaunchContextHandleExterns.g_app_launch_context_unsetenv(context, variable);
 		return context;
 	}
@@ -189,6 +189,7 @@ public static class GAppLaunchContextHandleExtensions
 internal class GAppLaunchContextHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GAppLaunchContextHandle>))]
 	internal static extern MentorLake.Gio.GAppLaunchContextHandle g_app_launch_context_new();
 
 	[DllImport(GioLibrary.Name)]

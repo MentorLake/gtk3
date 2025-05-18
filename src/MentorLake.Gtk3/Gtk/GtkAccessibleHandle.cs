@@ -8,20 +8,20 @@ public static class GtkAccessibleHandleExtensions
 {
 	public static T ConnectWidgetDestroyed<T>(this T accessible) where T : GtkAccessibleHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (GtkAccessibleHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (GtkAccessibleHandle)");
 		GtkAccessibleHandleExterns.gtk_accessible_connect_widget_destroyed(accessible);
 		return accessible;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetWidget(this MentorLake.Gtk.GtkAccessibleHandle accessible)
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (GtkAccessibleHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (GtkAccessibleHandle)");
 		return GtkAccessibleHandleExterns.gtk_accessible_get_widget(accessible);
 	}
 
 	public static T SetWidget<T>(this T accessible, MentorLake.Gtk.GtkWidgetHandle widget) where T : GtkAccessibleHandle
 	{
-		if (accessible.IsInvalid || accessible.IsClosed) throw new Exception("Invalid or closed handle (GtkAccessibleHandle)");
+		if (accessible.IsInvalid) throw new Exception("Invalid handle (GtkAccessibleHandle)");
 		GtkAccessibleHandleExterns.gtk_accessible_set_widget(accessible, widget);
 		return accessible;
 	}
@@ -34,6 +34,7 @@ internal class GtkAccessibleHandleExterns
 	internal static extern void gtk_accessible_connect_widget_destroyed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAccessibleHandle>))] MentorLake.Gtk.GtkAccessibleHandle accessible);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_accessible_get_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAccessibleHandle>))] MentorLake.Gtk.GtkAccessibleHandle accessible);
 
 	[DllImport(GtkLibrary.Name)]

@@ -201,7 +201,7 @@ public static class GdkPixbufLoaderHandleExtensions
 {
 	public static bool Close(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		var externCallResult = GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_close(loader, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -209,32 +209,32 @@ public static class GdkPixbufLoaderHandleExtensions
 
 	public static MentorLake.GdkPixbuf.GdkPixbufAnimationHandle GetAnimation(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_get_animation(loader);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufFormatHandle GetFormat(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_get_format(loader);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetPixbuf(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		return GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_get_pixbuf(loader);
 	}
 
 	public static T SetSize<T>(this T loader, int width, int height) where T : GdkPixbufLoaderHandle
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_set_size(loader, width, height);
 		return loader;
 	}
 
 	public static bool Write(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, char[] buf, UIntPtr count)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		var externCallResult = GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write(loader, buf, count, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -242,7 +242,7 @@ public static class GdkPixbufLoaderHandleExtensions
 
 	public static bool WriteBytes(this MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, MentorLake.GLib.GBytesHandle buffer)
 	{
-		if (loader.IsInvalid || loader.IsClosed) throw new Exception("Invalid or closed handle (GdkPixbufLoaderHandle)");
+		if (loader.IsInvalid) throw new Exception("Invalid handle (GdkPixbufLoaderHandle)");
 		var externCallResult = GdkPixbufLoaderHandleExterns.gdk_pixbuf_loader_write_bytes(loader, buffer, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -253,24 +253,30 @@ public static class GdkPixbufLoaderHandleExtensions
 internal class GdkPixbufLoaderHandleExterns
 {
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new();
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_mime_type(string mime_type, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufLoaderHandle gdk_pixbuf_loader_new_with_type(string image_type, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern bool gdk_pixbuf_loader_close([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufAnimationHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufAnimationHandle gdk_pixbuf_loader_get_animation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufFormatHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufFormatHandle gdk_pixbuf_loader_get_format([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader);
 
 	[DllImport(GdkPixbufLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_loader_get_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufLoaderHandle>))] MentorLake.GdkPixbuf.GdkPixbufLoaderHandle loader);
 
 	[DllImport(GdkPixbufLibrary.Name)]

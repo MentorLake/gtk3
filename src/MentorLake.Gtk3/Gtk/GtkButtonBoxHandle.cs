@@ -13,39 +13,39 @@ public static class GtkButtonBoxHandleExtensions
 {
 	public static bool GetChildNonHomogeneous(this MentorLake.Gtk.GtkButtonBoxHandle widget, MentorLake.Gtk.GtkWidgetHandle child)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		return GtkButtonBoxHandleExterns.gtk_button_box_get_child_non_homogeneous(widget, child);
 	}
 
 	public static bool GetChildSecondary(this MentorLake.Gtk.GtkButtonBoxHandle widget, MentorLake.Gtk.GtkWidgetHandle child)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		return GtkButtonBoxHandleExterns.gtk_button_box_get_child_secondary(widget, child);
 	}
 
 	public static MentorLake.Gtk.GtkButtonBoxStyle GetLayout(this MentorLake.Gtk.GtkButtonBoxHandle widget)
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		return GtkButtonBoxHandleExterns.gtk_button_box_get_layout(widget);
 	}
 
 	public static T SetChildNonHomogeneous<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle child, bool non_homogeneous) where T : GtkButtonBoxHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		GtkButtonBoxHandleExterns.gtk_button_box_set_child_non_homogeneous(widget, child, non_homogeneous);
 		return widget;
 	}
 
 	public static T SetChildSecondary<T>(this T widget, MentorLake.Gtk.GtkWidgetHandle child, bool is_secondary) where T : GtkButtonBoxHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		GtkButtonBoxHandleExterns.gtk_button_box_set_child_secondary(widget, child, is_secondary);
 		return widget;
 	}
 
 	public static T SetLayout<T>(this T widget, MentorLake.Gtk.GtkButtonBoxStyle layout_style) where T : GtkButtonBoxHandle
 	{
-		if (widget.IsInvalid || widget.IsClosed) throw new Exception("Invalid or closed handle (GtkButtonBoxHandle)");
+		if (widget.IsInvalid) throw new Exception("Invalid handle (GtkButtonBoxHandle)");
 		GtkButtonBoxHandleExterns.gtk_button_box_set_layout(widget, layout_style);
 		return widget;
 	}
@@ -55,6 +55,7 @@ public static class GtkButtonBoxHandleExtensions
 internal class GtkButtonBoxHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkButtonBoxHandle>))]
 	internal static extern MentorLake.Gtk.GtkButtonBoxHandle gtk_button_box_new(MentorLake.Gtk.GtkOrientation orientation);
 
 	[DllImport(GtkLibrary.Name)]

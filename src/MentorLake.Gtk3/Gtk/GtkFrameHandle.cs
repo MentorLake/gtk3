@@ -13,53 +13,53 @@ public static class GtkFrameHandleExtensions
 {
 	public static string GetLabel(this MentorLake.Gtk.GtkFrameHandle frame)
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		return GtkFrameHandleExterns.gtk_frame_get_label(frame);
 	}
 
 	public static T GetLabelAlign<T>(this T frame, out float xalign, out float yalign) where T : GtkFrameHandle
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		GtkFrameHandleExterns.gtk_frame_get_label_align(frame, out xalign, out yalign);
 		return frame;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetLabelWidget(this MentorLake.Gtk.GtkFrameHandle frame)
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		return GtkFrameHandleExterns.gtk_frame_get_label_widget(frame);
 	}
 
 	public static MentorLake.Gtk.GtkShadowType GetShadowType(this MentorLake.Gtk.GtkFrameHandle frame)
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		return GtkFrameHandleExterns.gtk_frame_get_shadow_type(frame);
 	}
 
 	public static T SetLabel<T>(this T frame, string label) where T : GtkFrameHandle
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		GtkFrameHandleExterns.gtk_frame_set_label(frame, label);
 		return frame;
 	}
 
 	public static T SetLabelAlign<T>(this T frame, float xalign, float yalign) where T : GtkFrameHandle
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		GtkFrameHandleExterns.gtk_frame_set_label_align(frame, xalign, yalign);
 		return frame;
 	}
 
 	public static T SetLabelWidget<T>(this T frame, MentorLake.Gtk.GtkWidgetHandle label_widget) where T : GtkFrameHandle
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		GtkFrameHandleExterns.gtk_frame_set_label_widget(frame, label_widget);
 		return frame;
 	}
 
 	public static T SetShadowType<T>(this T frame, MentorLake.Gtk.GtkShadowType type) where T : GtkFrameHandle
 	{
-		if (frame.IsInvalid || frame.IsClosed) throw new Exception("Invalid or closed handle (GtkFrameHandle)");
+		if (frame.IsInvalid) throw new Exception("Invalid handle (GtkFrameHandle)");
 		GtkFrameHandleExterns.gtk_frame_set_shadow_type(frame, type);
 		return frame;
 	}
@@ -69,6 +69,7 @@ public static class GtkFrameHandleExtensions
 internal class GtkFrameHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkFrameHandle>))]
 	internal static extern MentorLake.Gtk.GtkFrameHandle gtk_frame_new(string label);
 
 	[DllImport(GtkLibrary.Name)]
@@ -79,6 +80,7 @@ internal class GtkFrameHandleExterns
 	internal static extern void gtk_frame_get_label_align([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFrameHandle>))] MentorLake.Gtk.GtkFrameHandle frame, out float xalign, out float yalign);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_frame_get_label_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkFrameHandle>))] MentorLake.Gtk.GtkFrameHandle frame);
 
 	[DllImport(GtkLibrary.Name)]

@@ -65,25 +65,25 @@ public static class GdkDisplayManagerHandleExtensions
 {
 	public static MentorLake.Gdk.GdkDisplayHandle GetDefaultDisplay(this MentorLake.Gdk.GdkDisplayManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_get_default_display(manager);
 	}
 
 	public static MentorLake.GLib.GSListHandle ListDisplays(this MentorLake.Gdk.GdkDisplayManagerHandle manager)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_list_displays(manager);
 	}
 
 	public static MentorLake.Gdk.GdkDisplayHandle OpenDisplay(this MentorLake.Gdk.GdkDisplayManagerHandle manager, string name)
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GdkDisplayManagerHandle)");
 		return GdkDisplayManagerHandleExterns.gdk_display_manager_open_display(manager, name);
 	}
 
 	public static T SetDefaultDisplay<T>(this T manager, MentorLake.Gdk.GdkDisplayHandle display) where T : GdkDisplayManagerHandle
 	{
-		if (manager.IsInvalid || manager.IsClosed) throw new Exception("Invalid or closed handle (GdkDisplayManagerHandle)");
+		if (manager.IsInvalid) throw new Exception("Invalid handle (GdkDisplayManagerHandle)");
 		GdkDisplayManagerHandleExterns.gdk_display_manager_set_default_display(manager, display);
 		return manager;
 	}
@@ -93,18 +93,22 @@ public static class GdkDisplayManagerHandleExtensions
 internal class GdkDisplayManagerHandleExterns
 {
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))]
 	internal static extern MentorLake.Gdk.GdkDisplayHandle gdk_display_manager_get_default_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayManagerHandle>))] MentorLake.Gdk.GdkDisplayManagerHandle manager);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gdk_display_manager_list_displays([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayManagerHandle>))] MentorLake.Gdk.GdkDisplayManagerHandle manager);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))]
 	internal static extern MentorLake.Gdk.GdkDisplayHandle gdk_display_manager_open_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayManagerHandle>))] MentorLake.Gdk.GdkDisplayManagerHandle manager, string name);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_display_manager_set_default_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayManagerHandle>))] MentorLake.Gdk.GdkDisplayManagerHandle manager, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display);
 
 	[DllImport(GdkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayManagerHandle>))]
 	internal static extern MentorLake.Gdk.GdkDisplayManagerHandle gdk_display_manager_get();
 
 }

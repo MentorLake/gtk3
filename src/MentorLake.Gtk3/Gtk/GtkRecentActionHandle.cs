@@ -108,13 +108,13 @@ public static class GtkRecentActionHandleExtensions
 {
 	public static bool GetShowNumbers(this MentorLake.Gtk.GtkRecentActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRecentActionHandle)");
 		return GtkRecentActionHandleExterns.gtk_recent_action_get_show_numbers(action);
 	}
 
 	public static T SetShowNumbers<T>(this T action, bool show_numbers) where T : GtkRecentActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRecentActionHandle)");
 		GtkRecentActionHandleExterns.gtk_recent_action_set_show_numbers(action, show_numbers);
 		return action;
 	}
@@ -124,9 +124,11 @@ public static class GtkRecentActionHandleExtensions
 internal class GtkRecentActionHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRecentActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkRecentActionHandle gtk_recent_action_new(string name, string label, string tooltip, string stock_id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRecentActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkRecentActionHandle gtk_recent_action_new_for_manager(string name, string label, string tooltip, string stock_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRecentManagerHandle>))] MentorLake.Gtk.GtkRecentManagerHandle manager);
 
 	[DllImport(GtkLibrary.Name)]

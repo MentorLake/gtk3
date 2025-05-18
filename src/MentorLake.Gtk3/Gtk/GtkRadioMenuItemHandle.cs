@@ -89,20 +89,20 @@ public static class GtkRadioMenuItemHandleExtensions
 {
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioMenuItemHandle radio_menu_item)
 	{
-		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
+		if (radio_menu_item.IsInvalid) throw new Exception("Invalid handle (GtkRadioMenuItemHandle)");
 		return GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_get_group(radio_menu_item);
 	}
 
 	public static T JoinGroup<T>(this T radio_menu_item, MentorLake.Gtk.GtkRadioMenuItemHandle group_source) where T : GtkRadioMenuItemHandle
 	{
-		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
+		if (radio_menu_item.IsInvalid) throw new Exception("Invalid handle (GtkRadioMenuItemHandle)");
 		GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_join_group(radio_menu_item, group_source);
 		return radio_menu_item;
 	}
 
 	public static T SetGroup<T>(this T radio_menu_item, MentorLake.GLib.GSListHandle group) where T : GtkRadioMenuItemHandle
 	{
-		if (radio_menu_item.IsInvalid || radio_menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioMenuItemHandle)");
+		if (radio_menu_item.IsInvalid) throw new Exception("Invalid handle (GtkRadioMenuItemHandle)");
 		GtkRadioMenuItemHandleExterns.gtk_radio_menu_item_set_group(radio_menu_item, group);
 		return radio_menu_item;
 	}
@@ -112,24 +112,31 @@ public static class GtkRadioMenuItemHandleExtensions
 internal class GtkRadioMenuItemHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))] MentorLake.Gtk.GtkRadioMenuItemHandle group);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new_with_label([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new_with_label_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))] MentorLake.Gtk.GtkRadioMenuItemHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new_with_mnemonic([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))] MentorLake.GLib.GSListHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioMenuItemHandle gtk_radio_menu_item_new_with_mnemonic_from_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))] MentorLake.Gtk.GtkRadioMenuItemHandle group, string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gtk_radio_menu_item_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioMenuItemHandle>))] MentorLake.Gtk.GtkRadioMenuItemHandle radio_menu_item);
 
 	[DllImport(GtkLibrary.Name)]

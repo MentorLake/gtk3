@@ -14,19 +14,19 @@ public static class GtkStyleProviderHandleExtensions
 {
 	public static MentorLake.Gtk.GtkIconFactoryHandle GetIconFactory(this MentorLake.Gtk.GtkStyleProviderHandle provider, MentorLake.Gtk.GtkWidgetPathHandle path)
 	{
-		if (provider.IsInvalid || provider.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleProviderHandle)");
+		if (provider.IsInvalid) throw new Exception("Invalid handle (GtkStyleProviderHandle)");
 		return GtkStyleProviderHandleExterns.gtk_style_provider_get_icon_factory(provider, path);
 	}
 
 	public static MentorLake.Gtk.GtkStylePropertiesHandle GetStyle(this MentorLake.Gtk.GtkStyleProviderHandle provider, MentorLake.Gtk.GtkWidgetPathHandle path)
 	{
-		if (provider.IsInvalid || provider.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleProviderHandle)");
+		if (provider.IsInvalid) throw new Exception("Invalid handle (GtkStyleProviderHandle)");
 		return GtkStyleProviderHandleExterns.gtk_style_provider_get_style(provider, path);
 	}
 
 	public static bool GetStyleProperty(this MentorLake.Gtk.GtkStyleProviderHandle provider, MentorLake.Gtk.GtkWidgetPathHandle path, MentorLake.Gtk.GtkStateFlags state, MentorLake.GObject.GParamSpecHandle pspec, out MentorLake.GObject.GValue value)
 	{
-		if (provider.IsInvalid || provider.IsClosed) throw new Exception("Invalid or closed handle (GtkStyleProviderHandle)");
+		if (provider.IsInvalid) throw new Exception("Invalid handle (GtkStyleProviderHandle)");
 		return GtkStyleProviderHandleExterns.gtk_style_provider_get_style_property(provider, path, state, pspec, out value);
 	}
 
@@ -35,9 +35,11 @@ public static class GtkStyleProviderHandleExtensions
 internal class GtkStyleProviderHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconFactoryHandle>))]
 	internal static extern MentorLake.Gtk.GtkIconFactoryHandle gtk_style_provider_get_icon_factory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleProviderHandleImpl>))] MentorLake.Gtk.GtkStyleProviderHandle provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetPathHandle>))] MentorLake.Gtk.GtkWidgetPathHandle path);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStylePropertiesHandle>))]
 	internal static extern MentorLake.Gtk.GtkStylePropertiesHandle gtk_style_provider_get_style([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStyleProviderHandleImpl>))] MentorLake.Gtk.GtkStyleProviderHandle provider, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetPathHandle>))] MentorLake.Gtk.GtkWidgetPathHandle path);
 
 	[DllImport(GtkLibrary.Name)]

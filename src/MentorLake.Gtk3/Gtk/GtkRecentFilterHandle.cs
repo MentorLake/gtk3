@@ -13,74 +13,74 @@ public static class GtkRecentFilterHandleExtensions
 {
 	public static T AddAge<T>(this T filter, int days) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_age(filter, days);
 		return filter;
 	}
 
 	public static T AddApplication<T>(this T filter, string application) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_application(filter, application);
 		return filter;
 	}
 
 	public static T AddCustom<T>(this T filter, MentorLake.Gtk.GtkRecentFilterFlags needed, MentorLake.Gtk.GtkRecentFilterFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify data_destroy) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_custom(filter, needed, func, data, data_destroy);
 		return filter;
 	}
 
 	public static T AddGroup<T>(this T filter, string group) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_group(filter, group);
 		return filter;
 	}
 
 	public static T AddMimeType<T>(this T filter, string mime_type) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_mime_type(filter, mime_type);
 		return filter;
 	}
 
 	public static T AddPattern<T>(this T filter, string pattern) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_pattern(filter, pattern);
 		return filter;
 	}
 
 	public static T AddPixbufFormats<T>(this T filter) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_add_pixbuf_formats(filter);
 		return filter;
 	}
 
 	public static bool Filter(this MentorLake.Gtk.GtkRecentFilterHandle filter, MentorLake.Gtk.GtkRecentFilterInfoHandle filter_info)
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		return GtkRecentFilterHandleExterns.gtk_recent_filter_filter(filter, filter_info);
 	}
 
 	public static string GetName(this MentorLake.Gtk.GtkRecentFilterHandle filter)
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		return GtkRecentFilterHandleExterns.gtk_recent_filter_get_name(filter);
 	}
 
 	public static MentorLake.Gtk.GtkRecentFilterFlags GetNeeded(this MentorLake.Gtk.GtkRecentFilterHandle filter)
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		return GtkRecentFilterHandleExterns.gtk_recent_filter_get_needed(filter);
 	}
 
 	public static T SetName<T>(this T filter, string name) where T : GtkRecentFilterHandle
 	{
-		if (filter.IsInvalid || filter.IsClosed) throw new Exception("Invalid or closed handle (GtkRecentFilterHandle)");
+		if (filter.IsInvalid) throw new Exception("Invalid handle (GtkRecentFilterHandle)");
 		GtkRecentFilterHandleExterns.gtk_recent_filter_set_name(filter, name);
 		return filter;
 	}
@@ -90,6 +90,7 @@ public static class GtkRecentFilterHandleExtensions
 internal class GtkRecentFilterHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRecentFilterHandle>))]
 	internal static extern MentorLake.Gtk.GtkRecentFilterHandle gtk_recent_filter_new();
 
 	[DllImport(GtkLibrary.Name)]

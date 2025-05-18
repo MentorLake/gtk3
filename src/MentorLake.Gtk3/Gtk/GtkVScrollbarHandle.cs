@@ -16,6 +16,7 @@ public static class GtkVScrollbarHandleExtensions
 internal class GtkVScrollbarHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkVScrollbarHandle>))]
 	internal static extern MentorLake.Gtk.GtkVScrollbarHandle gtk_vscrollbar_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))] MentorLake.Gtk.GtkAdjustmentHandle adjustment);
 
 }

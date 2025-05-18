@@ -146,78 +146,78 @@ public static class GtkAppChooserWidgetHandleExtensions
 {
 	public static string GetDefaultText(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_default_text(self);
 	}
 
 	public static bool GetShowAll(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_show_all(self);
 	}
 
 	public static bool GetShowDefault(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_show_default(self);
 	}
 
 	public static bool GetShowFallback(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_show_fallback(self);
 	}
 
 	public static bool GetShowOther(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_show_other(self);
 	}
 
 	public static bool GetShowRecommended(this MentorLake.Gtk.GtkAppChooserWidgetHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		return GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_get_show_recommended(self);
 	}
 
 	public static T SetDefaultText<T>(this T self, string text) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_default_text(self, text);
 		return self;
 	}
 
 	public static T SetShowAll<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_show_all(self, setting);
 		return self;
 	}
 
 	public static T SetShowDefault<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_show_default(self, setting);
 		return self;
 	}
 
 	public static T SetShowFallback<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_show_fallback(self, setting);
 		return self;
 	}
 
 	public static T SetShowOther<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_show_other(self, setting);
 		return self;
 	}
 
 	public static T SetShowRecommended<T>(this T self, bool setting) where T : GtkAppChooserWidgetHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserWidgetHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserWidgetHandle)");
 		GtkAppChooserWidgetHandleExterns.gtk_app_chooser_widget_set_show_recommended(self, setting);
 		return self;
 	}
@@ -227,6 +227,7 @@ public static class GtkAppChooserWidgetHandleExtensions
 internal class GtkAppChooserWidgetHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkAppChooserWidgetHandle gtk_app_chooser_widget_new(string content_type);
 
 	[DllImport(GtkLibrary.Name)]

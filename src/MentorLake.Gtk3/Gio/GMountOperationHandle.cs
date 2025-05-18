@@ -272,124 +272,124 @@ public static class GMountOperationHandleExtensions
 {
 	public static bool GetAnonymous(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_anonymous(op);
 	}
 
 	public static int GetChoice(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_choice(op);
 	}
 
 	public static string GetDomain(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_domain(op);
 	}
 
 	public static bool GetIsTcryptHiddenVolume(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_is_tcrypt_hidden_volume(op);
 	}
 
 	public static bool GetIsTcryptSystemVolume(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_is_tcrypt_system_volume(op);
 	}
 
 	public static string GetPassword(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_password(op);
 	}
 
 	public static MentorLake.Gio.GPasswordSave GetPasswordSave(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_password_save(op);
 	}
 
 	public static uint GetPim(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_pim(op);
 	}
 
 	public static string GetUsername(this MentorLake.Gio.GMountOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		return GMountOperationHandleExterns.g_mount_operation_get_username(op);
 	}
 
 	public static T Reply<T>(this T op, MentorLake.Gio.GMountOperationResult result) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_reply(op, result);
 		return op;
 	}
 
 	public static T SetAnonymous<T>(this T op, bool anonymous) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_anonymous(op, anonymous);
 		return op;
 	}
 
 	public static T SetChoice<T>(this T op, int choice) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_choice(op, choice);
 		return op;
 	}
 
 	public static T SetDomain<T>(this T op, string domain) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_domain(op, domain);
 		return op;
 	}
 
 	public static T SetIsTcryptHiddenVolume<T>(this T op, bool hidden_volume) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_is_tcrypt_hidden_volume(op, hidden_volume);
 		return op;
 	}
 
 	public static T SetIsTcryptSystemVolume<T>(this T op, bool system_volume) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_is_tcrypt_system_volume(op, system_volume);
 		return op;
 	}
 
 	public static T SetPassword<T>(this T op, string password) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_password(op, password);
 		return op;
 	}
 
 	public static T SetPasswordSave<T>(this T op, MentorLake.Gio.GPasswordSave save) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_password_save(op, save);
 		return op;
 	}
 
 	public static T SetPim<T>(this T op, uint pim) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_pim(op, pim);
 		return op;
 	}
 
 	public static T SetUsername<T>(this T op, string username) where T : GMountOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GMountOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GMountOperationHandle)");
 		GMountOperationHandleExterns.g_mount_operation_set_username(op, username);
 		return op;
 	}
@@ -399,6 +399,7 @@ public static class GMountOperationHandleExtensions
 internal class GMountOperationHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMountOperationHandle>))]
 	internal static extern MentorLake.Gio.GMountOperationHandle g_mount_operation_new();
 
 	[DllImport(GioLibrary.Name)]

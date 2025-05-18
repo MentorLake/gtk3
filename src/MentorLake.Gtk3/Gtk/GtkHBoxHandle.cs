@@ -16,6 +16,7 @@ public static class GtkHBoxHandleExtensions
 internal class GtkHBoxHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkHBoxHandle>))]
 	internal static extern MentorLake.Gtk.GtkHBoxHandle gtk_hbox_new(bool homogeneous, int spacing);
 
 }

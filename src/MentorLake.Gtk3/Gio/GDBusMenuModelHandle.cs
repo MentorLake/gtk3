@@ -16,6 +16,7 @@ public static class GDBusMenuModelHandleExtensions
 internal class GDBusMenuModelHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GDBusMenuModelHandle g_dbus_menu_model_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, string bus_name, string object_path);
 
 }

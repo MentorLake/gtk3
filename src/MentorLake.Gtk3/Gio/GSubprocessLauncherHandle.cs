@@ -13,82 +13,82 @@ public static class GSubprocessLauncherHandleExtensions
 {
 	public static T Close<T>(this T self) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_close(self);
 		return self;
 	}
 
 	public static string Getenv(this MentorLake.Gio.GSubprocessLauncherHandle self, string variable)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_getenv(self, variable);
 	}
 
 	public static T SetChildSetup<T>(this T self, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, MentorLake.GLib.GDestroyNotify destroy_notify) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_child_setup(self, child_setup, user_data, destroy_notify);
 		return self;
 	}
 
 	public static T SetCwd<T>(this T self, string cwd) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_cwd(self, cwd);
 		return self;
 	}
 
 	public static T SetEnviron<T>(this T self, string[] env) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_environ(self, env);
 		return self;
 	}
 
 	public static T SetFlags<T>(this T self, MentorLake.Gio.GSubprocessFlags flags) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_flags(self, flags);
 		return self;
 	}
 
 	public static T SetStderrFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stderr_file_path(self, path);
 		return self;
 	}
 
 	public static T SetStdinFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stdin_file_path(self, path);
 		return self;
 	}
 
 	public static T SetStdoutFilePath<T>(this T self, string path) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_set_stdout_file_path(self, path);
 		return self;
 	}
 
 	public static T Setenv<T>(this T self, string variable, string value, bool overwrite) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_setenv(self, variable, value, overwrite);
 		return self;
 	}
 
 	public static MentorLake.Gio.GSubprocessHandle Spawn(this MentorLake.Gio.GSubprocessLauncherHandle self, IntPtr error, string argv0, IntPtr @__arglist)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		return GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawn(self, error, argv0, @__arglist);
 	}
 
 	public static MentorLake.Gio.GSubprocessHandle Spawnv(this MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		var externCallResult = GSubprocessLauncherHandleExterns.g_subprocess_launcher_spawnv(self, argv, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -96,35 +96,35 @@ public static class GSubprocessLauncherHandleExtensions
 
 	public static T TakeFd<T>(this T self, int source_fd, int target_fd) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_take_fd(self, source_fd, target_fd);
 		return self;
 	}
 
 	public static T TakeStderrFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_take_stderr_fd(self, fd);
 		return self;
 	}
 
 	public static T TakeStdinFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_take_stdin_fd(self, fd);
 		return self;
 	}
 
 	public static T TakeStdoutFd<T>(this T self, int fd) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_take_stdout_fd(self, fd);
 		return self;
 	}
 
 	public static T Unsetenv<T>(this T self, string variable) where T : GSubprocessLauncherHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GSubprocessLauncherHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GSubprocessLauncherHandle)");
 		GSubprocessLauncherHandleExterns.g_subprocess_launcher_unsetenv(self, variable);
 		return self;
 	}
@@ -134,6 +134,7 @@ public static class GSubprocessLauncherHandleExtensions
 internal class GSubprocessLauncherHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))]
 	internal static extern MentorLake.Gio.GSubprocessLauncherHandle g_subprocess_launcher_new(MentorLake.Gio.GSubprocessFlags flags);
 
 	[DllImport(GioLibrary.Name)]
@@ -168,9 +169,11 @@ internal class GSubprocessLauncherHandleExterns
 	internal static extern void g_subprocess_launcher_setenv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string variable, string value, bool overwrite);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessHandle>))]
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, IntPtr error, string argv0, IntPtr @__arglist);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessHandle>))]
 	internal static extern MentorLake.Gio.GSubprocessHandle g_subprocess_launcher_spawnv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSubprocessLauncherHandle>))] MentorLake.Gio.GSubprocessLauncherHandle self, string[] argv, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]

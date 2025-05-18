@@ -270,544 +270,544 @@ public static class GtkWindowHandleExtensions
 {
 	public static bool ActivateDefault(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_activate_default(window);
 	}
 
 	public static bool ActivateFocus(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_activate_focus(window);
 	}
 
 	public static bool ActivateKey(this MentorLake.Gtk.GtkWindowHandle window, MentorLake.Gdk.GdkEventKeyHandle @event)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_activate_key(window, @event);
 	}
 
 	public static T AddAccelGroup<T>(this T window, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_add_accel_group(window, accel_group);
 		return window;
 	}
 
 	public static T AddMnemonic<T>(this T window, uint keyval, MentorLake.Gtk.GtkWidgetHandle target) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_add_mnemonic(window, keyval, target);
 		return window;
 	}
 
 	public static T BeginMoveDrag<T>(this T window, int button, int root_x, int root_y, uint timestamp) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_begin_move_drag(window, button, root_x, root_y, timestamp);
 		return window;
 	}
 
 	public static T BeginResizeDrag<T>(this T window, MentorLake.Gdk.GdkWindowEdge edge, int button, int root_x, int root_y, uint timestamp) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_begin_resize_drag(window, edge, button, root_x, root_y, timestamp);
 		return window;
 	}
 
 	public static T Close<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_close(window);
 		return window;
 	}
 
 	public static T Deiconify<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_deiconify(window);
 		return window;
 	}
 
 	public static T Fullscreen<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_fullscreen(window);
 		return window;
 	}
 
 	public static T FullscreenOnMonitor<T>(this T window, MentorLake.Gdk.GdkScreenHandle screen, int monitor) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_fullscreen_on_monitor(window, screen, monitor);
 		return window;
 	}
 
 	public static bool GetAcceptFocus(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_accept_focus(window);
 	}
 
 	public static MentorLake.Gtk.GtkApplicationHandle GetApplication(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_application(window);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetAttachedTo(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_attached_to(window);
 	}
 
 	public static bool GetDecorated(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_decorated(window);
 	}
 
 	public static T GetDefaultSize<T>(this T window, out int width, out int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_get_default_size(window, out width, out height);
 		return window;
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetDefaultWidget(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_default_widget(window);
 	}
 
 	public static bool GetDeletable(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_deletable(window);
 	}
 
 	public static bool GetDestroyWithParent(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_destroy_with_parent(window);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetFocus(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_focus(window);
 	}
 
 	public static bool GetFocusOnMap(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_focus_on_map(window);
 	}
 
 	public static bool GetFocusVisible(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_focus_visible(window);
 	}
 
 	public static MentorLake.Gdk.GdkGravity GetGravity(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_gravity(window);
 	}
 
 	public static MentorLake.Gtk.GtkWindowGroupHandle GetGroup(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_group(window);
 	}
 
 	public static bool GetHasResizeGrip(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_has_resize_grip(window);
 	}
 
 	public static bool GetHideTitlebarWhenMaximized(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_hide_titlebar_when_maximized(window);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetIcon(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_icon(window);
 	}
 
 	public static MentorLake.GLib.GListHandle GetIconList(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_icon_list(window);
 	}
 
 	public static string GetIconName(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_icon_name(window);
 	}
 
 	public static MentorLake.Gdk.GdkModifierType GetMnemonicModifier(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_mnemonic_modifier(window);
 	}
 
 	public static bool GetMnemonicsVisible(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_mnemonics_visible(window);
 	}
 
 	public static bool GetModal(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_modal(window);
 	}
 
 	public static double GetOpacity(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_opacity(window);
 	}
 
 	public static T GetPosition<T>(this T window, out int root_x, out int root_y) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_get_position(window, out root_x, out root_y);
 		return window;
 	}
 
 	public static bool GetResizable(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_resizable(window);
 	}
 
 	public static bool GetResizeGripArea(this MentorLake.Gtk.GtkWindowHandle window, out MentorLake.Gdk.GdkRectangle rect)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_resize_grip_area(window, out rect);
 	}
 
 	public static string GetRole(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_role(window);
 	}
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_screen(window);
 	}
 
 	public static T GetSize<T>(this T window, out int width, out int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_get_size(window, out width, out height);
 		return window;
 	}
 
 	public static bool GetSkipPagerHint(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_skip_pager_hint(window);
 	}
 
 	public static bool GetSkipTaskbarHint(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_skip_taskbar_hint(window);
 	}
 
 	public static string GetTitle(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_title(window);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetTitlebar(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_titlebar(window);
 	}
 
 	public static MentorLake.Gtk.GtkWindowHandle GetTransientFor(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_transient_for(window);
 	}
 
 	public static MentorLake.Gdk.GdkWindowTypeHint GetTypeHint(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_type_hint(window);
 	}
 
 	public static bool GetUrgencyHint(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_urgency_hint(window);
 	}
 
 	public static MentorLake.Gtk.GtkWindowType GetWindowType(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_get_window_type(window);
 	}
 
 	public static bool HasGroup(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_has_group(window);
 	}
 
 	public static bool HasToplevelFocus(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_has_toplevel_focus(window);
 	}
 
 	public static T Iconify<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_iconify(window);
 		return window;
 	}
 
 	public static bool IsActive(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_is_active(window);
 	}
 
 	public static bool IsMaximized(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_is_maximized(window);
 	}
 
 	public static T Maximize<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_maximize(window);
 		return window;
 	}
 
 	public static bool MnemonicActivate(this MentorLake.Gtk.GtkWindowHandle window, uint keyval, MentorLake.Gdk.GdkModifierType modifier)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_mnemonic_activate(window, keyval, modifier);
 	}
 
 	public static T Move<T>(this T window, int x, int y) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_move(window, x, y);
 		return window;
 	}
 
 	public static bool ParseGeometry(this MentorLake.Gtk.GtkWindowHandle window, string geometry)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_parse_geometry(window, geometry);
 	}
 
 	public static T Present<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_present(window);
 		return window;
 	}
 
 	public static T PresentWithTime<T>(this T window, uint timestamp) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_present_with_time(window, timestamp);
 		return window;
 	}
 
 	public static bool PropagateKeyEvent(this MentorLake.Gtk.GtkWindowHandle window, MentorLake.Gdk.GdkEventKeyHandle @event)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_propagate_key_event(window, @event);
 	}
 
 	public static T RemoveAccelGroup<T>(this T window, MentorLake.Gtk.GtkAccelGroupHandle accel_group) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_remove_accel_group(window, accel_group);
 		return window;
 	}
 
 	public static T RemoveMnemonic<T>(this T window, uint keyval, MentorLake.Gtk.GtkWidgetHandle target) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_remove_mnemonic(window, keyval, target);
 		return window;
 	}
 
 	public static T ReshowWithInitialSize<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_reshow_with_initial_size(window);
 		return window;
 	}
 
 	public static T Resize<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_resize(window, width, height);
 		return window;
 	}
 
 	public static bool ResizeGripIsVisible(this MentorLake.Gtk.GtkWindowHandle window)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		return GtkWindowHandleExterns.gtk_window_resize_grip_is_visible(window);
 	}
 
 	public static T ResizeToGeometry<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_resize_to_geometry(window, width, height);
 		return window;
 	}
 
 	public static T SetAcceptFocus<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_accept_focus(window, setting);
 		return window;
 	}
 
 	public static T SetApplication<T>(this T window, MentorLake.Gtk.GtkApplicationHandle application) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_application(window, application);
 		return window;
 	}
 
 	public static T SetAttachedTo<T>(this T window, MentorLake.Gtk.GtkWidgetHandle attach_widget) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_attached_to(window, attach_widget);
 		return window;
 	}
 
 	public static T SetDecorated<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_decorated(window, setting);
 		return window;
 	}
 
 	public static T SetDefault<T>(this T window, MentorLake.Gtk.GtkWidgetHandle default_widget) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_default(window, default_widget);
 		return window;
 	}
 
 	public static T SetDefaultGeometry<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_default_geometry(window, width, height);
 		return window;
 	}
 
 	public static T SetDefaultSize<T>(this T window, int width, int height) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_default_size(window, width, height);
 		return window;
 	}
 
 	public static T SetDeletable<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_deletable(window, setting);
 		return window;
 	}
 
 	public static T SetDestroyWithParent<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_destroy_with_parent(window, setting);
 		return window;
 	}
 
 	public static T SetFocus<T>(this T window, MentorLake.Gtk.GtkWidgetHandle focus) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_focus(window, focus);
 		return window;
 	}
 
 	public static T SetFocusOnMap<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_focus_on_map(window, setting);
 		return window;
 	}
 
 	public static T SetFocusVisible<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_focus_visible(window, setting);
 		return window;
 	}
 
 	public static T SetGeometryHints<T>(this T window, MentorLake.Gtk.GtkWidgetHandle geometry_widget, MentorLake.Gdk.GdkGeometryHandle geometry, MentorLake.Gdk.GdkWindowHints geom_mask) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_geometry_hints(window, geometry_widget, geometry, geom_mask);
 		return window;
 	}
 
 	public static T SetGravity<T>(this T window, MentorLake.Gdk.GdkGravity gravity) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_gravity(window, gravity);
 		return window;
 	}
 
 	public static T SetHasResizeGrip<T>(this T window, bool value) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_has_resize_grip(window, value);
 		return window;
 	}
 
 	public static T SetHasUserRefCount<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_has_user_ref_count(window, setting);
 		return window;
 	}
 
 	public static T SetHideTitlebarWhenMaximized<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_hide_titlebar_when_maximized(window, setting);
 		return window;
 	}
 
 	public static T SetIcon<T>(this T window, MentorLake.GdkPixbuf.GdkPixbufHandle icon) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_icon(window, icon);
 		return window;
 	}
 
 	public static bool SetIconFromFile(this MentorLake.Gtk.GtkWindowHandle window, string filename)
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		var externCallResult = GtkWindowHandleExterns.gtk_window_set_icon_from_file(window, filename, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -815,175 +815,175 @@ public static class GtkWindowHandleExtensions
 
 	public static T SetIconList<T>(this T window, MentorLake.GLib.GListHandle list) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_icon_list(window, list);
 		return window;
 	}
 
 	public static T SetIconName<T>(this T window, string name) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_icon_name(window, name);
 		return window;
 	}
 
 	public static T SetKeepAbove<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_keep_above(window, setting);
 		return window;
 	}
 
 	public static T SetKeepBelow<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_keep_below(window, setting);
 		return window;
 	}
 
 	public static T SetMnemonicModifier<T>(this T window, MentorLake.Gdk.GdkModifierType modifier) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_mnemonic_modifier(window, modifier);
 		return window;
 	}
 
 	public static T SetMnemonicsVisible<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_mnemonics_visible(window, setting);
 		return window;
 	}
 
 	public static T SetModal<T>(this T window, bool modal) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_modal(window, modal);
 		return window;
 	}
 
 	public static T SetOpacity<T>(this T window, double opacity) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_opacity(window, opacity);
 		return window;
 	}
 
 	public static T SetPosition<T>(this T window, MentorLake.Gtk.GtkWindowPosition position) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_position(window, position);
 		return window;
 	}
 
 	public static T SetResizable<T>(this T window, bool resizable) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_resizable(window, resizable);
 		return window;
 	}
 
 	public static T SetRole<T>(this T window, string role) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_role(window, role);
 		return window;
 	}
 
 	public static T SetScreen<T>(this T window, MentorLake.Gdk.GdkScreenHandle screen) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_screen(window, screen);
 		return window;
 	}
 
 	public static T SetSkipPagerHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_skip_pager_hint(window, setting);
 		return window;
 	}
 
 	public static T SetSkipTaskbarHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_skip_taskbar_hint(window, setting);
 		return window;
 	}
 
 	public static T SetStartupId<T>(this T window, string startup_id) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_startup_id(window, startup_id);
 		return window;
 	}
 
 	public static T SetTitle<T>(this T window, string title) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_title(window, title);
 		return window;
 	}
 
 	public static T SetTitlebar<T>(this T window, MentorLake.Gtk.GtkWidgetHandle titlebar) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_titlebar(window, titlebar);
 		return window;
 	}
 
 	public static T SetTransientFor<T>(this T window, MentorLake.Gtk.GtkWindowHandle parent) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_transient_for(window, parent);
 		return window;
 	}
 
 	public static T SetTypeHint<T>(this T window, MentorLake.Gdk.GdkWindowTypeHint hint) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_type_hint(window, hint);
 		return window;
 	}
 
 	public static T SetUrgencyHint<T>(this T window, bool setting) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_urgency_hint(window, setting);
 		return window;
 	}
 
 	public static T SetWmclass<T>(this T window, string wmclass_name, string wmclass_class) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_set_wmclass(window, wmclass_name, wmclass_class);
 		return window;
 	}
 
 	public static T Stick<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_stick(window);
 		return window;
 	}
 
 	public static T Unfullscreen<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_unfullscreen(window);
 		return window;
 	}
 
 	public static T Unmaximize<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_unmaximize(window);
 		return window;
 	}
 
 	public static T Unstick<T>(this T window) where T : GtkWindowHandle
 	{
-		if (window.IsInvalid || window.IsClosed) throw new Exception("Invalid or closed handle (GtkWindowHandle)");
+		if (window.IsInvalid) throw new Exception("Invalid handle (GtkWindowHandle)");
 		GtkWindowHandleExterns.gtk_window_unstick(window);
 		return window;
 	}
@@ -993,6 +993,7 @@ public static class GtkWindowHandleExtensions
 internal class GtkWindowHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowHandle gtk_window_new(MentorLake.Gtk.GtkWindowType type);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1032,9 +1033,11 @@ internal class GtkWindowHandleExterns
 	internal static extern bool gtk_window_get_accept_focus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkApplicationHandle>))]
 	internal static extern MentorLake.Gtk.GtkApplicationHandle gtk_window_get_application([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_window_get_attached_to([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1044,6 +1047,7 @@ internal class GtkWindowHandleExterns
 	internal static extern void gtk_window_get_default_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window, out int width, out int height);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_window_get_default_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1053,6 +1057,7 @@ internal class GtkWindowHandleExterns
 	internal static extern bool gtk_window_get_destroy_with_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_window_get_focus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1065,6 +1070,7 @@ internal class GtkWindowHandleExterns
 	internal static extern MentorLake.Gdk.GdkGravity gtk_window_get_gravity([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowGroupHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowGroupHandle gtk_window_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1074,9 +1080,11 @@ internal class GtkWindowHandleExterns
 	internal static extern bool gtk_window_get_hide_titlebar_when_maximized([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_window_get_icon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_window_get_icon_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1109,6 +1117,7 @@ internal class GtkWindowHandleExterns
 	internal static extern string gtk_window_get_role([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkScreenHandle>))]
 	internal static extern MentorLake.Gdk.GdkScreenHandle gtk_window_get_screen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1125,9 +1134,11 @@ internal class GtkWindowHandleExterns
 	internal static extern string gtk_window_get_title([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_window_get_titlebar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))]
 	internal static extern MentorLake.Gtk.GtkWindowHandle gtk_window_get_transient_for([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1326,6 +1337,7 @@ internal class GtkWindowHandleExterns
 	internal static extern void gtk_window_unstick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle window);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_window_get_default_icon_list();
 
 	[DllImport(GtkLibrary.Name)]
@@ -1333,6 +1345,7 @@ internal class GtkWindowHandleExterns
 	internal static extern string gtk_window_get_default_icon_name();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GListHandle>))]
 	internal static extern MentorLake.GLib.GListHandle gtk_window_list_toplevels();
 
 	[DllImport(GtkLibrary.Name)]

@@ -39,25 +39,25 @@ public static class GtkSymbolicColorExtensions
 {
 	public static MentorLake.Gtk.GtkSymbolicColorHandle Ref(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
-		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
+		if (color.IsInvalid) throw new Exception("Invalid handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_ref(color);
 	}
 
 	public static bool Resolve(this MentorLake.Gtk.GtkSymbolicColorHandle color, MentorLake.Gtk.GtkStylePropertiesHandle props, out MentorLake.Gdk.GdkRGBA resolved_color)
 	{
-		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
+		if (color.IsInvalid) throw new Exception("Invalid handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_resolve(color, props, out resolved_color);
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
-		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
+		if (color.IsInvalid) throw new Exception("Invalid handle (GtkSymbolicColor)");
 		return GtkSymbolicColorExterns.gtk_symbolic_color_to_string(color);
 	}
 
 	public static void Unref(this MentorLake.Gtk.GtkSymbolicColorHandle color)
 	{
-		if (color.IsInvalid || color.IsClosed) throw new Exception("Invalid or closed handle (GtkSymbolicColor)");
+		if (color.IsInvalid) throw new Exception("Invalid handle (GtkSymbolicColor)");
 		GtkSymbolicColorExterns.gtk_symbolic_color_unref(color);
 	}
 
@@ -67,24 +67,31 @@ public static class GtkSymbolicColorExtensions
 internal class GtkSymbolicColorExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_alpha([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))] MentorLake.Gtk.GtkSymbolicColorHandle color, double factor);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_literal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle color);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_mix([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))] MentorLake.Gtk.GtkSymbolicColorHandle color1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))] MentorLake.Gtk.GtkSymbolicColorHandle color2, double factor);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_name(string name);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_shade([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))] MentorLake.Gtk.GtkSymbolicColorHandle color, double factor);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_new_win32(string theme_class, int id);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))]
 	internal static extern MentorLake.Gtk.GtkSymbolicColorHandle gtk_symbolic_color_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSymbolicColorHandle>))] MentorLake.Gtk.GtkSymbolicColorHandle color);
 
 	[DllImport(GtkLibrary.Name)]

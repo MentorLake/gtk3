@@ -14,7 +14,7 @@ public static class GFileDescriptorBasedHandleExtensions
 {
 	public static int GetFd(this MentorLake.Gio.GFileDescriptorBasedHandle fd_based)
 	{
-		if (fd_based.IsInvalid || fd_based.IsClosed) throw new Exception("Invalid or closed handle (GFileDescriptorBasedHandle)");
+		if (fd_based.IsInvalid) throw new Exception("Invalid handle (GFileDescriptorBasedHandle)");
 		return GFileDescriptorBasedHandleExterns.g_file_descriptor_based_get_fd(fd_based);
 	}
 

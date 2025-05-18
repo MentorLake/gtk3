@@ -143,51 +143,51 @@ public static class GtkScaleButtonHandleExtensions
 {
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetAdjustment(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_adjustment(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMinusButton(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_minus_button(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetPlusButton(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_plus_button(button);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetPopup(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_popup(button);
 	}
 
 	public static double GetValue(this MentorLake.Gtk.GtkScaleButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		return GtkScaleButtonHandleExterns.gtk_scale_button_get_value(button);
 	}
 
 	public static T SetAdjustment<T>(this T button, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkScaleButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_adjustment(button, adjustment);
 		return button;
 	}
 
 	public static T SetIcons<T>(this T button, string[] icons) where T : GtkScaleButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_icons(button, icons);
 		return button;
 	}
 
 	public static T SetValue<T>(this T button, double value) where T : GtkScaleButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkScaleButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkScaleButtonHandle)");
 		GtkScaleButtonHandleExterns.gtk_scale_button_set_value(button, value);
 		return button;
 	}
@@ -197,18 +197,23 @@ public static class GtkScaleButtonHandleExtensions
 internal class GtkScaleButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkScaleButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkScaleButtonHandle gtk_scale_button_new(MentorLake.Gtk.GtkIconSize size, double min, double max, double step, string[] icons);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))]
 	internal static extern MentorLake.Gtk.GtkAdjustmentHandle gtk_scale_button_get_adjustment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkScaleButtonHandle>))] MentorLake.Gtk.GtkScaleButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_scale_button_get_minus_button([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkScaleButtonHandle>))] MentorLake.Gtk.GtkScaleButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_scale_button_get_plus_button([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkScaleButtonHandle>))] MentorLake.Gtk.GtkScaleButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_scale_button_get_popup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkScaleButtonHandle>))] MentorLake.Gtk.GtkScaleButtonHandle button);
 
 	[DllImport(GtkLibrary.Name)]

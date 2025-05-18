@@ -22,6 +22,7 @@ public static class GMemoryMonitorHandleExtensions
 internal class GMemoryMonitorHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMemoryMonitorHandleImpl>))]
 	internal static extern MentorLake.Gio.GMemoryMonitorHandle g_memory_monitor_dup_default();
 
 }

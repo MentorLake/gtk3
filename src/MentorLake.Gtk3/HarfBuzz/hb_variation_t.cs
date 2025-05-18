@@ -9,7 +9,7 @@ public static class hb_variation_tExtensions
 {
 	public static void String(this MentorLake.HarfBuzz.hb_variation_tHandle variation, out string[] buf, out uint size)
 	{
-		if (variation.IsInvalid || variation.IsClosed) throw new Exception("Invalid or closed handle (hb_variation_t)");
+		if (variation.IsInvalid) throw new Exception("Invalid handle (hb_variation_t)");
 		hb_variation_tExterns.hb_variation_to_string(variation, out buf, out size);
 	}
 

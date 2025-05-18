@@ -9,25 +9,25 @@ public static class PangoOTRulesetDescriptionExtensions
 {
 	public static MentorLake.PangoOT.PangoOTRulesetDescriptionHandle Copy(this MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc)
 	{
-		if (desc.IsInvalid || desc.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetDescription)");
+		if (desc.IsInvalid) throw new Exception("Invalid handle (PangoOTRulesetDescription)");
 		return PangoOTRulesetDescriptionExterns.pango_ot_ruleset_description_copy(desc);
 	}
 
 	public static bool Equal(this MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc1, MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc2)
 	{
-		if (desc1.IsInvalid || desc1.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetDescription)");
+		if (desc1.IsInvalid) throw new Exception("Invalid handle (PangoOTRulesetDescription)");
 		return PangoOTRulesetDescriptionExterns.pango_ot_ruleset_description_equal(desc1, desc2);
 	}
 
 	public static void Free(this MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc)
 	{
-		if (desc.IsInvalid || desc.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetDescription)");
+		if (desc.IsInvalid) throw new Exception("Invalid handle (PangoOTRulesetDescription)");
 		PangoOTRulesetDescriptionExterns.pango_ot_ruleset_description_free(desc);
 	}
 
 	public static uint Hash(this MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc)
 	{
-		if (desc.IsInvalid || desc.IsClosed) throw new Exception("Invalid or closed handle (PangoOTRulesetDescription)");
+		if (desc.IsInvalid) throw new Exception("Invalid handle (PangoOTRulesetDescription)");
 		return PangoOTRulesetDescriptionExterns.pango_ot_ruleset_description_hash(desc);
 	}
 
@@ -37,6 +37,7 @@ public static class PangoOTRulesetDescriptionExtensions
 internal class PangoOTRulesetDescriptionExterns
 {
 	[DllImport(PangoOTLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTRulesetDescriptionHandle>))]
 	internal static extern MentorLake.PangoOT.PangoOTRulesetDescriptionHandle pango_ot_ruleset_description_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTRulesetDescriptionHandle>))] MentorLake.PangoOT.PangoOTRulesetDescriptionHandle desc);
 
 	[DllImport(PangoOTLibrary.Name)]

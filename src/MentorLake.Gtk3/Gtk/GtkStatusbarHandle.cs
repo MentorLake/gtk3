@@ -107,39 +107,39 @@ public static class GtkStatusbarHandleExtensions
 {
 	public static uint GetContextId(this MentorLake.Gtk.GtkStatusbarHandle statusbar, string context_description)
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_get_context_id(statusbar, context_description);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetMessageArea(this MentorLake.Gtk.GtkStatusbarHandle statusbar)
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_get_message_area(statusbar);
 	}
 
 	public static T Pop<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_pop(statusbar, context_id);
 		return statusbar;
 	}
 
 	public static uint Push(this MentorLake.Gtk.GtkStatusbarHandle statusbar, uint context_id, string text)
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		return GtkStatusbarHandleExterns.gtk_statusbar_push(statusbar, context_id, text);
 	}
 
 	public static T Remove<T>(this T statusbar, uint context_id, uint message_id) where T : GtkStatusbarHandle
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_remove(statusbar, context_id, message_id);
 		return statusbar;
 	}
 
 	public static T RemoveAll<T>(this T statusbar, uint context_id) where T : GtkStatusbarHandle
 	{
-		if (statusbar.IsInvalid || statusbar.IsClosed) throw new Exception("Invalid or closed handle (GtkStatusbarHandle)");
+		if (statusbar.IsInvalid) throw new Exception("Invalid handle (GtkStatusbarHandle)");
 		GtkStatusbarHandleExterns.gtk_statusbar_remove_all(statusbar, context_id);
 		return statusbar;
 	}
@@ -149,12 +149,14 @@ public static class GtkStatusbarHandleExtensions
 internal class GtkStatusbarHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkStatusbarHandle>))]
 	internal static extern MentorLake.Gtk.GtkStatusbarHandle gtk_statusbar_new();
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern uint gtk_statusbar_get_context_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusbarHandle>))] MentorLake.Gtk.GtkStatusbarHandle statusbar, string context_description);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_statusbar_get_message_area([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStatusbarHandle>))] MentorLake.Gtk.GtkStatusbarHandle statusbar);
 
 	[DllImport(GtkLibrary.Name)]

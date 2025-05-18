@@ -14,19 +14,19 @@ public static class GSocketConnectableHandleExtensions
 {
 	public static MentorLake.Gio.GSocketAddressEnumeratorHandle Enumerate(this MentorLake.Gio.GSocketConnectableHandle connectable)
 	{
-		if (connectable.IsInvalid || connectable.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectableHandle)");
+		if (connectable.IsInvalid) throw new Exception("Invalid handle (GSocketConnectableHandle)");
 		return GSocketConnectableHandleExterns.g_socket_connectable_enumerate(connectable);
 	}
 
 	public static MentorLake.Gio.GSocketAddressEnumeratorHandle ProxyEnumerate(this MentorLake.Gio.GSocketConnectableHandle connectable)
 	{
-		if (connectable.IsInvalid || connectable.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectableHandle)");
+		if (connectable.IsInvalid) throw new Exception("Invalid handle (GSocketConnectableHandle)");
 		return GSocketConnectableHandleExterns.g_socket_connectable_proxy_enumerate(connectable);
 	}
 
 	public static string ToString(this MentorLake.Gio.GSocketConnectableHandle connectable)
 	{
-		if (connectable.IsInvalid || connectable.IsClosed) throw new Exception("Invalid or closed handle (GSocketConnectableHandle)");
+		if (connectable.IsInvalid) throw new Exception("Invalid handle (GSocketConnectableHandle)");
 		return GSocketConnectableHandleExterns.g_socket_connectable_to_string(connectable);
 	}
 
@@ -35,9 +35,11 @@ public static class GSocketConnectableHandleExtensions
 internal class GSocketConnectableHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressEnumeratorHandle>))]
 	internal static extern MentorLake.Gio.GSocketAddressEnumeratorHandle g_socket_connectable_enumerate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketAddressEnumeratorHandle>))]
 	internal static extern MentorLake.Gio.GSocketAddressEnumeratorHandle g_socket_connectable_proxy_enumerate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketConnectableHandleImpl>))] MentorLake.Gio.GSocketConnectableHandle connectable);
 
 	[DllImport(GioLibrary.Name)]

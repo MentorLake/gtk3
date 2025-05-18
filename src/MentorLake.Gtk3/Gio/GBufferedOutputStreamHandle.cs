@@ -18,26 +18,26 @@ public static class GBufferedOutputStreamHandleExtensions
 {
 	public static bool GetAutoGrow(this MentorLake.Gio.GBufferedOutputStreamHandle stream)
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GBufferedOutputStreamHandle)");
 		return GBufferedOutputStreamHandleExterns.g_buffered_output_stream_get_auto_grow(stream);
 	}
 
 	public static UIntPtr GetBufferSize(this MentorLake.Gio.GBufferedOutputStreamHandle stream)
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GBufferedOutputStreamHandle)");
 		return GBufferedOutputStreamHandleExterns.g_buffered_output_stream_get_buffer_size(stream);
 	}
 
 	public static T SetAutoGrow<T>(this T stream, bool auto_grow) where T : GBufferedOutputStreamHandle
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GBufferedOutputStreamHandle)");
 		GBufferedOutputStreamHandleExterns.g_buffered_output_stream_set_auto_grow(stream, auto_grow);
 		return stream;
 	}
 
 	public static T SetBufferSize<T>(this T stream, UIntPtr size) where T : GBufferedOutputStreamHandle
 	{
-		if (stream.IsInvalid || stream.IsClosed) throw new Exception("Invalid or closed handle (GBufferedOutputStreamHandle)");
+		if (stream.IsInvalid) throw new Exception("Invalid handle (GBufferedOutputStreamHandle)");
 		GBufferedOutputStreamHandleExterns.g_buffered_output_stream_set_buffer_size(stream, size);
 		return stream;
 	}
@@ -47,9 +47,11 @@ public static class GBufferedOutputStreamHandleExtensions
 internal class GBufferedOutputStreamHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GBufferedOutputStreamHandle>))]
 	internal static extern MentorLake.Gio.GBufferedOutputStreamHandle g_buffered_output_stream_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GOutputStreamHandle>))] MentorLake.Gio.GOutputStreamHandle base_stream);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GBufferedOutputStreamHandle>))]
 	internal static extern MentorLake.Gio.GBufferedOutputStreamHandle g_buffered_output_stream_new_sized([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GOutputStreamHandle>))] MentorLake.Gio.GOutputStreamHandle base_stream, UIntPtr size);
 
 	[DllImport(GioLibrary.Name)]

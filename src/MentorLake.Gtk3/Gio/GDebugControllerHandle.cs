@@ -14,13 +14,13 @@ public static class GDebugControllerHandleExtensions
 {
 	public static bool GetDebugEnabled(this MentorLake.Gio.GDebugControllerHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GDebugControllerHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GDebugControllerHandle)");
 		return GDebugControllerHandleExterns.g_debug_controller_get_debug_enabled(self);
 	}
 
 	public static T SetDebugEnabled<T>(this T self, bool debug_enabled) where T : GDebugControllerHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GDebugControllerHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GDebugControllerHandle)");
 		GDebugControllerHandleExterns.g_debug_controller_set_debug_enabled(self, debug_enabled);
 		return self;
 	}

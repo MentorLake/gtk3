@@ -213,9 +213,11 @@ internal class AtkGlobalFunctionsExterns
 	internal static extern uint atk_get_binary_age();
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRegistryHandle>))]
 	internal static extern MentorLake.Atk.AtkRegistryHandle atk_get_default_registry();
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_get_focus_object();
 
 	[DllImport(AtkLibrary.Name)]
@@ -231,6 +233,7 @@ internal class AtkGlobalFunctionsExterns
 	internal static extern uint atk_get_minor_version();
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_get_root();
 
 	[DllImport(AtkLibrary.Name)]

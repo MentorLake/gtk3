@@ -65,33 +65,33 @@ public static class GtkRadioActionHandleExtensions
 {
 	public static int GetCurrentValue(this MentorLake.Gtk.GtkRadioActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRadioActionHandle)");
 		return GtkRadioActionHandleExterns.gtk_radio_action_get_current_value(action);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetGroup(this MentorLake.Gtk.GtkRadioActionHandle action)
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRadioActionHandle)");
 		return GtkRadioActionHandleExterns.gtk_radio_action_get_group(action);
 	}
 
 	public static T JoinGroup<T>(this T action, MentorLake.Gtk.GtkRadioActionHandle group_source) where T : GtkRadioActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRadioActionHandle)");
 		GtkRadioActionHandleExterns.gtk_radio_action_join_group(action, group_source);
 		return action;
 	}
 
 	public static T SetCurrentValue<T>(this T action, int current_value) where T : GtkRadioActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRadioActionHandle)");
 		GtkRadioActionHandleExterns.gtk_radio_action_set_current_value(action, current_value);
 		return action;
 	}
 
 	public static T SetGroup<T>(this T action, MentorLake.GLib.GSListHandle group) where T : GtkRadioActionHandle
 	{
-		if (action.IsInvalid || action.IsClosed) throw new Exception("Invalid or closed handle (GtkRadioActionHandle)");
+		if (action.IsInvalid) throw new Exception("Invalid handle (GtkRadioActionHandle)");
 		GtkRadioActionHandleExterns.gtk_radio_action_set_group(action, group);
 		return action;
 	}
@@ -101,12 +101,14 @@ public static class GtkRadioActionHandleExtensions
 internal class GtkRadioActionHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRadioActionHandle>))]
 	internal static extern MentorLake.Gtk.GtkRadioActionHandle gtk_radio_action_new(string name, string label, string tooltip, string stock_id, int value);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern int gtk_radio_action_get_current_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioActionHandle>))] MentorLake.Gtk.GtkRadioActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle gtk_radio_action_get_group([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRadioActionHandle>))] MentorLake.Gtk.GtkRadioActionHandle action);
 
 	[DllImport(GtkLibrary.Name)]

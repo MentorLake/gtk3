@@ -9,7 +9,7 @@ public static class GTypeInstanceExtensions
 {
 	public static IntPtr GetPrivate(this MentorLake.GObject.GTypeInstanceHandle instance, MentorLake.GObject.GType private_type)
 	{
-		if (instance.IsInvalid || instance.IsClosed) throw new Exception("Invalid or closed handle (GTypeInstance)");
+		if (instance.IsInvalid) throw new Exception("Invalid handle (GTypeInstance)");
 		return GTypeInstanceExterns.g_type_instance_get_private(instance, private_type);
 	}
 

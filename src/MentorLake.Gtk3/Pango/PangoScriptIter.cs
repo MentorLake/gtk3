@@ -14,19 +14,19 @@ public static class PangoScriptIterExtensions
 {
 	public static void Free(this MentorLake.Pango.PangoScriptIterHandle iter)
 	{
-		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoScriptIter)");
+		if (iter.IsInvalid) throw new Exception("Invalid handle (PangoScriptIter)");
 		PangoScriptIterExterns.pango_script_iter_free(iter);
 	}
 
 	public static void GetRange(this MentorLake.Pango.PangoScriptIterHandle iter, out string start, out string end, out MentorLake.Pango.PangoScript script)
 	{
-		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoScriptIter)");
+		if (iter.IsInvalid) throw new Exception("Invalid handle (PangoScriptIter)");
 		PangoScriptIterExterns.pango_script_iter_get_range(iter, out start, out end, out script);
 	}
 
 	public static bool Next(this MentorLake.Pango.PangoScriptIterHandle iter)
 	{
-		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (PangoScriptIter)");
+		if (iter.IsInvalid) throw new Exception("Invalid handle (PangoScriptIter)");
 		return PangoScriptIterExterns.pango_script_iter_next(iter);
 	}
 
@@ -36,6 +36,7 @@ public static class PangoScriptIterExtensions
 internal class PangoScriptIterExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoScriptIterHandle>))]
 	internal static extern MentorLake.Pango.PangoScriptIterHandle pango_script_iter_new(string text, int length);
 
 	[DllImport(PangoLibrary.Name)]

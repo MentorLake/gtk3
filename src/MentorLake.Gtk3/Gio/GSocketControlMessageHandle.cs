@@ -13,25 +13,25 @@ public static class GSocketControlMessageHandleExtensions
 {
 	public static int GetLevel(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
-		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
+		if (message.IsInvalid) throw new Exception("Invalid handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_level(message);
 	}
 
 	public static int GetMsgType(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
-		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
+		if (message.IsInvalid) throw new Exception("Invalid handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_msg_type(message);
 	}
 
 	public static UIntPtr GetSize(this MentorLake.Gio.GSocketControlMessageHandle message)
 	{
-		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
+		if (message.IsInvalid) throw new Exception("Invalid handle (GSocketControlMessageHandle)");
 		return GSocketControlMessageHandleExterns.g_socket_control_message_get_size(message);
 	}
 
 	public static T Serialize<T>(this T message, IntPtr data) where T : GSocketControlMessageHandle
 	{
-		if (message.IsInvalid || message.IsClosed) throw new Exception("Invalid or closed handle (GSocketControlMessageHandle)");
+		if (message.IsInvalid) throw new Exception("Invalid handle (GSocketControlMessageHandle)");
 		GSocketControlMessageHandleExterns.g_socket_control_message_serialize(message, data);
 		return message;
 	}
@@ -53,6 +53,7 @@ internal class GSocketControlMessageHandleExterns
 	internal static extern void g_socket_control_message_serialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle message, IntPtr data);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))]
 	internal static extern MentorLake.Gio.GSocketControlMessageHandle g_socket_control_message_deserialize(int level, int type, UIntPtr size, byte[] data);
 
 }

@@ -271,113 +271,113 @@ public static class GtkMenuItemHandleExtensions
 {
 	public static T Activate<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_activate(menu_item);
 		return menu_item;
 	}
 
 	public static T Deselect<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_deselect(menu_item);
 		return menu_item;
 	}
 
 	public static string GetAccelPath(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_accel_path(menu_item);
 	}
 
 	public static string GetLabel(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_label(menu_item);
 	}
 
 	public static bool GetReserveIndicator(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_reserve_indicator(menu_item);
 	}
 
 	public static bool GetRightJustified(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_right_justified(menu_item);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetSubmenu(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_submenu(menu_item);
 	}
 
 	public static bool GetUseUnderline(this MentorLake.Gtk.GtkMenuItemHandle menu_item)
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		return GtkMenuItemHandleExterns.gtk_menu_item_get_use_underline(menu_item);
 	}
 
 	public static T Select<T>(this T menu_item) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_select(menu_item);
 		return menu_item;
 	}
 
 	public static T SetAccelPath<T>(this T menu_item, string accel_path) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_accel_path(menu_item, accel_path);
 		return menu_item;
 	}
 
 	public static T SetLabel<T>(this T menu_item, string label) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_label(menu_item, label);
 		return menu_item;
 	}
 
 	public static T SetReserveIndicator<T>(this T menu_item, bool reserve) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_reserve_indicator(menu_item, reserve);
 		return menu_item;
 	}
 
 	public static T SetRightJustified<T>(this T menu_item, bool right_justified) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_right_justified(menu_item, right_justified);
 		return menu_item;
 	}
 
 	public static T SetSubmenu<T>(this T menu_item, MentorLake.Gtk.GtkWidgetHandle submenu) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_submenu(menu_item, submenu);
 		return menu_item;
 	}
 
 	public static T SetUseUnderline<T>(this T menu_item, bool setting) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_set_use_underline(menu_item, setting);
 		return menu_item;
 	}
 
 	public static T ToggleSizeAllocate<T>(this T menu_item, int allocation) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_toggle_size_allocate(menu_item, allocation);
 		return menu_item;
 	}
 
 	public static T ToggleSizeRequest<T>(this T menu_item, ref int requisition) where T : GtkMenuItemHandle
 	{
-		if (menu_item.IsInvalid || menu_item.IsClosed) throw new Exception("Invalid or closed handle (GtkMenuItemHandle)");
+		if (menu_item.IsInvalid) throw new Exception("Invalid handle (GtkMenuItemHandle)");
 		GtkMenuItemHandleExterns.gtk_menu_item_toggle_size_request(menu_item, ref requisition);
 		return menu_item;
 	}
@@ -387,12 +387,15 @@ public static class GtkMenuItemHandleExtensions
 internal class GtkMenuItemHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkMenuItemHandle gtk_menu_item_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkMenuItemHandle gtk_menu_item_new_with_label(string label);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkMenuItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkMenuItemHandle gtk_menu_item_new_with_mnemonic(string label);
 
 	[DllImport(GtkLibrary.Name)]
@@ -416,6 +419,7 @@ internal class GtkMenuItemHandleExterns
 	internal static extern bool gtk_menu_item_get_right_justified([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkMenuItemHandle>))] MentorLake.Gtk.GtkMenuItemHandle menu_item);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_menu_item_get_submenu([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkMenuItemHandle>))] MentorLake.Gtk.GtkMenuItemHandle menu_item);
 
 	[DllImport(GtkLibrary.Name)]

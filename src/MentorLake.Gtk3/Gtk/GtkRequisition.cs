@@ -14,13 +14,13 @@ public static class GtkRequisitionExtensions
 {
 	public static MentorLake.Gtk.GtkRequisitionHandle Copy(this MentorLake.Gtk.GtkRequisitionHandle requisition)
 	{
-		if (requisition.IsInvalid || requisition.IsClosed) throw new Exception("Invalid or closed handle (GtkRequisition)");
+		if (requisition.IsInvalid) throw new Exception("Invalid handle (GtkRequisition)");
 		return GtkRequisitionExterns.gtk_requisition_copy(requisition);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkRequisitionHandle requisition)
 	{
-		if (requisition.IsInvalid || requisition.IsClosed) throw new Exception("Invalid or closed handle (GtkRequisition)");
+		if (requisition.IsInvalid) throw new Exception("Invalid handle (GtkRequisition)");
 		GtkRequisitionExterns.gtk_requisition_free(requisition);
 	}
 
@@ -30,9 +30,11 @@ public static class GtkRequisitionExtensions
 internal class GtkRequisitionExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRequisitionHandle>))]
 	internal static extern MentorLake.Gtk.GtkRequisitionHandle gtk_requisition_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRequisitionHandle>))]
 	internal static extern MentorLake.Gtk.GtkRequisitionHandle gtk_requisition_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRequisitionHandle>))] MentorLake.Gtk.GtkRequisitionHandle requisition);
 
 	[DllImport(GtkLibrary.Name)]

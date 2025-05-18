@@ -16,6 +16,7 @@ public static class GSimplePermissionHandleExtensions
 internal class GSimplePermissionHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSimplePermissionHandle>))]
 	internal static extern MentorLake.Gio.GSimplePermissionHandle g_simple_permission_new(bool allowed);
 
 }

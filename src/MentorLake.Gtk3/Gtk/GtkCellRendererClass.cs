@@ -9,7 +9,7 @@ public static class GtkCellRendererClassExtensions
 {
 	public static void SetAccessibleType(this MentorLake.Gtk.GtkCellRendererClassHandle renderer_class, MentorLake.GObject.GType type)
 	{
-		if (renderer_class.IsInvalid || renderer_class.IsClosed) throw new Exception("Invalid or closed handle (GtkCellRendererClass)");
+		if (renderer_class.IsInvalid) throw new Exception("Invalid handle (GtkCellRendererClass)");
 		GtkCellRendererClassExterns.gtk_cell_renderer_class_set_accessible_type(renderer_class, type);
 	}
 

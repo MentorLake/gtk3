@@ -13,7 +13,7 @@ public static class GtkArrowHandleExtensions
 {
 	public static T Set<T>(this T arrow, MentorLake.Gtk.GtkArrowType arrow_type, MentorLake.Gtk.GtkShadowType shadow_type) where T : GtkArrowHandle
 	{
-		if (arrow.IsInvalid || arrow.IsClosed) throw new Exception("Invalid or closed handle (GtkArrowHandle)");
+		if (arrow.IsInvalid) throw new Exception("Invalid handle (GtkArrowHandle)");
 		GtkArrowHandleExterns.gtk_arrow_set(arrow, arrow_type, shadow_type);
 		return arrow;
 	}
@@ -23,6 +23,7 @@ public static class GtkArrowHandleExtensions
 internal class GtkArrowHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkArrowHandle>))]
 	internal static extern MentorLake.Gtk.GtkArrowHandle gtk_arrow_new(MentorLake.Gtk.GtkArrowType arrow_type, MentorLake.Gtk.GtkShadowType shadow_type);
 
 	[DllImport(GtkLibrary.Name)]

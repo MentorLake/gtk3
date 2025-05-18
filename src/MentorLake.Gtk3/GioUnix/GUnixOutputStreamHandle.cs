@@ -31,6 +31,7 @@ public static class GUnixOutputStreamHandleExtensions
 internal class GUnixOutputStreamHandleExterns
 {
 	[DllImport(GioUnixLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GioUnix.GUnixOutputStreamHandle>))]
 	internal static extern MentorLake.GioUnix.GUnixOutputStreamHandle g_unix_output_stream_new(int fd, bool close_fd);
 
 	[DllImport(GioUnixLibrary.Name)]

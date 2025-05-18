@@ -16,6 +16,7 @@ public static class AtkNoOpObjectFactoryHandleExtensions
 internal class AtkNoOpObjectFactoryHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkNoOpObjectFactoryHandle>))]
 	internal static extern MentorLake.Atk.AtkNoOpObjectFactoryHandle atk_no_op_object_factory_new();
 
 }

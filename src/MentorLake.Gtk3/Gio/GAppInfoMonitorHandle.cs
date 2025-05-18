@@ -67,6 +67,7 @@ public static class GAppInfoMonitorHandleExtensions
 internal class GAppInfoMonitorHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GAppInfoMonitorHandle>))]
 	internal static extern MentorLake.Gio.GAppInfoMonitorHandle g_app_info_monitor_get();
 
 }

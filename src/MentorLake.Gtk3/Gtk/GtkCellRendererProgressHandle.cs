@@ -16,6 +16,7 @@ public static class GtkCellRendererProgressHandleExtensions
 internal class GtkCellRendererProgressHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererProgressHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellRendererProgressHandle gtk_cell_renderer_progress_new();
 
 }

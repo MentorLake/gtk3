@@ -9,7 +9,7 @@ public static class AtkImplementorExtensions
 {
 	public static MentorLake.Atk.AtkObjectHandle RefAccessible(this MentorLake.Atk.AtkImplementorHandle implementor)
 	{
-		if (implementor.IsInvalid || implementor.IsClosed) throw new Exception("Invalid or closed handle (AtkImplementor)");
+		if (implementor.IsInvalid) throw new Exception("Invalid handle (AtkImplementor)");
 		return AtkImplementorExterns.atk_implementor_ref_accessible(implementor);
 	}
 
@@ -19,6 +19,7 @@ public static class AtkImplementorExtensions
 internal class AtkImplementorExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_implementor_ref_accessible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkImplementorHandle>))] MentorLake.Atk.AtkImplementorHandle implementor);
 
 }

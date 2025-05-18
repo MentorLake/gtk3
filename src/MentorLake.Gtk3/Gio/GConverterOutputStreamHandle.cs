@@ -13,7 +13,7 @@ public static class GConverterOutputStreamHandleExtensions
 {
 	public static MentorLake.Gio.GConverterHandle GetConverter(this MentorLake.Gio.GConverterOutputStreamHandle converter_stream)
 	{
-		if (converter_stream.IsInvalid || converter_stream.IsClosed) throw new Exception("Invalid or closed handle (GConverterOutputStreamHandle)");
+		if (converter_stream.IsInvalid) throw new Exception("Invalid handle (GConverterOutputStreamHandle)");
 		return GConverterOutputStreamHandleExterns.g_converter_output_stream_get_converter(converter_stream);
 	}
 
@@ -22,9 +22,11 @@ public static class GConverterOutputStreamHandleExtensions
 internal class GConverterOutputStreamHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GConverterOutputStreamHandle>))]
 	internal static extern MentorLake.Gio.GConverterOutputStreamHandle g_converter_output_stream_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GOutputStreamHandle>))] MentorLake.Gio.GOutputStreamHandle base_stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GConverterHandleImpl>))] MentorLake.Gio.GConverterHandle converter);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GConverterHandleImpl>))]
 	internal static extern MentorLake.Gio.GConverterHandle g_converter_output_stream_get_converter([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GConverterOutputStreamHandle>))] MentorLake.Gio.GConverterOutputStreamHandle converter_stream);
 
 }

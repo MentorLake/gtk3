@@ -13,7 +13,7 @@ public static class AtkGObjectAccessibleHandleExtensions
 {
 	public static MentorLake.GObject.GObjectHandle GetObject(this MentorLake.Atk.AtkGObjectAccessibleHandle obj)
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkGObjectAccessibleHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkGObjectAccessibleHandle)");
 		return AtkGObjectAccessibleHandleExterns.atk_gobject_accessible_get_object(obj);
 	}
 
@@ -22,9 +22,11 @@ public static class AtkGObjectAccessibleHandleExtensions
 internal class AtkGObjectAccessibleHandleExterns
 {
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle atk_gobject_accessible_get_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkGObjectAccessibleHandle>))] MentorLake.Atk.AtkGObjectAccessibleHandle obj);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkObjectHandle>))]
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_gobject_accessible_for_object([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle obj);
 
 }

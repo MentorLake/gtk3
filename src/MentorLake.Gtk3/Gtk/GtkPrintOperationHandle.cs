@@ -554,33 +554,33 @@ public static class GtkPrintOperationHandleExtensions
 {
 	public static T Cancel<T>(this T op) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_cancel(op);
 		return op;
 	}
 
 	public static T DrawPageFinish<T>(this T op) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_draw_page_finish(op);
 		return op;
 	}
 
 	public static MentorLake.Gtk.GtkPageSetupHandle GetDefaultPageSetup(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_default_page_setup(op);
 	}
 
 	public static bool GetEmbedPageSetup(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_embed_page_setup(op);
 	}
 
 	public static T GetError<T>(this T op) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_get_error(op, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return op;
@@ -588,49 +588,49 @@ public static class GtkPrintOperationHandleExtensions
 
 	public static bool GetHasSelection(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_has_selection(op);
 	}
 
 	public static int GetNPagesToPrint(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_n_pages_to_print(op);
 	}
 
 	public static MentorLake.Gtk.GtkPrintSettingsHandle GetPrintSettings(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_print_settings(op);
 	}
 
 	public static MentorLake.Gtk.GtkPrintStatus GetStatus(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_status(op);
 	}
 
 	public static string GetStatusString(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_status_string(op);
 	}
 
 	public static bool GetSupportSelection(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_get_support_selection(op);
 	}
 
 	public static bool IsFinished(this MentorLake.Gtk.GtkPrintOperationHandle op)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		return GtkPrintOperationHandleExterns.gtk_print_operation_is_finished(op);
 	}
 
 	public static MentorLake.Gtk.GtkPrintOperationResult Run(this MentorLake.Gtk.GtkPrintOperationHandle op, MentorLake.Gtk.GtkPrintOperationAction action, MentorLake.Gtk.GtkWindowHandle parent)
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		var externCallResult = GtkPrintOperationHandleExterns.gtk_print_operation_run(op, action, parent, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -638,112 +638,112 @@ public static class GtkPrintOperationHandleExtensions
 
 	public static T SetAllowAsync<T>(this T op, bool allow_async) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_allow_async(op, allow_async);
 		return op;
 	}
 
 	public static T SetCurrentPage<T>(this T op, int current_page) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_current_page(op, current_page);
 		return op;
 	}
 
 	public static T SetCustomTabLabel<T>(this T op, string label) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_custom_tab_label(op, label);
 		return op;
 	}
 
 	public static T SetDefaultPageSetup<T>(this T op, MentorLake.Gtk.GtkPageSetupHandle default_page_setup) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_default_page_setup(op, default_page_setup);
 		return op;
 	}
 
 	public static T SetDeferDrawing<T>(this T op) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_defer_drawing(op);
 		return op;
 	}
 
 	public static T SetEmbedPageSetup<T>(this T op, bool embed) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_embed_page_setup(op, embed);
 		return op;
 	}
 
 	public static T SetExportFilename<T>(this T op, string filename) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_export_filename(op, filename);
 		return op;
 	}
 
 	public static T SetHasSelection<T>(this T op, bool has_selection) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_has_selection(op, has_selection);
 		return op;
 	}
 
 	public static T SetJobName<T>(this T op, string job_name) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_job_name(op, job_name);
 		return op;
 	}
 
 	public static T SetNPages<T>(this T op, int n_pages) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_n_pages(op, n_pages);
 		return op;
 	}
 
 	public static T SetPrintSettings<T>(this T op, MentorLake.Gtk.GtkPrintSettingsHandle print_settings) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_print_settings(op, print_settings);
 		return op;
 	}
 
 	public static T SetShowProgress<T>(this T op, bool show_progress) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_show_progress(op, show_progress);
 		return op;
 	}
 
 	public static T SetSupportSelection<T>(this T op, bool support_selection) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_support_selection(op, support_selection);
 		return op;
 	}
 
 	public static T SetTrackPrintStatus<T>(this T op, bool track_status) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_track_print_status(op, track_status);
 		return op;
 	}
 
 	public static T SetUnit<T>(this T op, MentorLake.Gtk.GtkUnit unit) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_unit(op, unit);
 		return op;
 	}
 
 	public static T SetUseFullPage<T>(this T op, bool full_page) where T : GtkPrintOperationHandle
 	{
-		if (op.IsInvalid || op.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationHandle)");
+		if (op.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationHandle)");
 		GtkPrintOperationHandleExterns.gtk_print_operation_set_use_full_page(op, full_page);
 		return op;
 	}
@@ -753,6 +753,7 @@ public static class GtkPrintOperationHandleExtensions
 internal class GtkPrintOperationHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))]
 	internal static extern MentorLake.Gtk.GtkPrintOperationHandle gtk_print_operation_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -762,6 +763,7 @@ internal class GtkPrintOperationHandleExterns
 	internal static extern void gtk_print_operation_draw_page_finish([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPageSetupHandle>))]
 	internal static extern MentorLake.Gtk.GtkPageSetupHandle gtk_print_operation_get_default_page_setup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]
@@ -777,6 +779,7 @@ internal class GtkPrintOperationHandleExterns
 	internal static extern int gtk_print_operation_get_n_pages_to_print([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintSettingsHandle>))]
 	internal static extern MentorLake.Gtk.GtkPrintSettingsHandle gtk_print_operation_get_print_settings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkPrintOperationHandle>))] MentorLake.Gtk.GtkPrintOperationHandle op);
 
 	[DllImport(GtkLibrary.Name)]

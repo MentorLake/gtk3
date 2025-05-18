@@ -24,211 +24,211 @@ public static class GDateExtensions
 {
 	public static void AddDays(this MentorLake.GLib.GDateHandle date, uint n_days)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_add_days(date, n_days);
 	}
 
 	public static void AddMonths(this MentorLake.GLib.GDateHandle date, uint n_months)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_add_months(date, n_months);
 	}
 
 	public static void AddYears(this MentorLake.GLib.GDateHandle date, uint n_years)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_add_years(date, n_years);
 	}
 
 	public static void Clamp(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateHandle min_date, MentorLake.GLib.GDateHandle max_date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_clamp(date, min_date, max_date);
 	}
 
 	public static void Clear(this MentorLake.GLib.GDateHandle date, uint n_dates)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_clear(date, n_dates);
 	}
 
 	public static int Compare(this MentorLake.GLib.GDateHandle lhs, MentorLake.GLib.GDateHandle rhs)
 	{
-		if (lhs.IsInvalid || lhs.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (lhs.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_compare(lhs, rhs);
 	}
 
 	public static MentorLake.GLib.GDateHandle Copy(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_copy(date);
 	}
 
 	public static int DaysBetween(this MentorLake.GLib.GDateHandle date1, MentorLake.GLib.GDateHandle date2)
 	{
-		if (date1.IsInvalid || date1.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date1.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_days_between(date1, date2);
 	}
 
 	public static void Free(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_free(date);
 	}
 
 	public static MentorLake.GLib.GDateDay GetDay(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_day(date);
 	}
 
 	public static uint GetDayOfYear(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_day_of_year(date);
 	}
 
 	public static uint GetIso8601WeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_iso8601_week_of_year(date);
 	}
 
 	public static uint GetJulian(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_julian(date);
 	}
 
 	public static uint GetMondayWeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_monday_week_of_year(date);
 	}
 
 	public static MentorLake.GLib.GDateMonth GetMonth(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_month(date);
 	}
 
 	public static uint GetSundayWeekOfYear(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_sunday_week_of_year(date);
 	}
 
 	public static MentorLake.GLib.GDateWeekday GetWeekday(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_weekday(date);
 	}
 
 	public static MentorLake.GLib.GDateYear GetYear(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_get_year(date);
 	}
 
 	public static bool IsFirstOfMonth(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_is_first_of_month(date);
 	}
 
 	public static bool IsLastOfMonth(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_is_last_of_month(date);
 	}
 
 	public static void Order(this MentorLake.GLib.GDateHandle date1, MentorLake.GLib.GDateHandle date2)
 	{
-		if (date1.IsInvalid || date1.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date1.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_order(date1, date2);
 	}
 
 	public static void SetDay(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_day(date, day);
 	}
 
 	public static void SetDmy(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear y)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_dmy(date, day, month, y);
 	}
 
 	public static void SetJulian(this MentorLake.GLib.GDateHandle date, uint julian_date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_julian(date, julian_date);
 	}
 
 	public static void SetMonth(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateMonth month)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_month(date, month);
 	}
 
 	public static void SetParse(this MentorLake.GLib.GDateHandle date, string str)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_parse(date, str);
 	}
 
 	public static void SetTime(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GTime time_)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_time(date, time_);
 	}
 
 	public static void SetTimeT(this MentorLake.GLib.GDateHandle date, long timet)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_time_t(date, timet);
 	}
 
 	public static void SetTimeVal(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GTimeValHandle timeval)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_time_val(date, timeval);
 	}
 
 	public static void SetYear(this MentorLake.GLib.GDateHandle date, MentorLake.GLib.GDateYear year)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_set_year(date, year);
 	}
 
 	public static void SubtractDays(this MentorLake.GLib.GDateHandle date, uint n_days)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_subtract_days(date, n_days);
 	}
 
 	public static void SubtractMonths(this MentorLake.GLib.GDateHandle date, uint n_months)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_subtract_months(date, n_months);
 	}
 
 	public static void SubtractYears(this MentorLake.GLib.GDateHandle date, uint n_years)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_subtract_years(date, n_years);
 	}
 
 	public static void ToStructTm(this MentorLake.GLib.GDateHandle date, IntPtr tm)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		GDateExterns.g_date_to_struct_tm(date, tm);
 	}
 
 	public static bool Valid(this MentorLake.GLib.GDateHandle date)
 	{
-		if (date.IsInvalid || date.IsClosed) throw new Exception("Invalid or closed handle (GDate)");
+		if (date.IsInvalid) throw new Exception("Invalid handle (GDate)");
 		return GDateExterns.g_date_valid(date);
 	}
 
@@ -238,12 +238,15 @@ public static class GDateExtensions
 internal class GDateExterns
 {
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))]
 	internal static extern MentorLake.GLib.GDateHandle g_date_new();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))]
 	internal static extern MentorLake.GLib.GDateHandle g_date_new_dmy(MentorLake.GLib.GDateDay day, MentorLake.GLib.GDateMonth month, MentorLake.GLib.GDateYear year);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))]
 	internal static extern MentorLake.GLib.GDateHandle g_date_new_julian(uint julian_day);
 
 	[DllImport(GLibLibrary.Name)]
@@ -265,6 +268,7 @@ internal class GDateExterns
 	internal static extern int g_date_compare([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle lhs, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle rhs);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))]
 	internal static extern MentorLake.GLib.GDateHandle g_date_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GDateHandle>))] MentorLake.GLib.GDateHandle date);
 
 	[DllImport(GLibLibrary.Name)]

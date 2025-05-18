@@ -9,7 +9,7 @@ public static class GTypeInterfaceExtensions
 {
 	public static MentorLake.GObject.GTypeInterfaceHandle PeekParent(this MentorLake.GObject.GTypeInterfaceHandle g_iface)
 	{
-		if (g_iface.IsInvalid || g_iface.IsClosed) throw new Exception("Invalid or closed handle (GTypeInterface)");
+		if (g_iface.IsInvalid) throw new Exception("Invalid handle (GTypeInterface)");
 		return GTypeInterfaceExterns.g_type_interface_peek_parent(g_iface);
 	}
 
@@ -19,18 +19,21 @@ public static class GTypeInterfaceExtensions
 internal class GTypeInterfaceExterns
 {
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInterfaceHandle g_type_interface_peek_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))] MentorLake.GObject.GTypeInterfaceHandle g_iface);
 
 	[DllImport(GObjectLibrary.Name)]
 	internal static extern void g_type_interface_add_prerequisite(MentorLake.GObject.GType interface_type, MentorLake.GObject.GType prerequisite_type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypePluginHandleImpl>))]
 	internal static extern MentorLake.GObject.GTypePluginHandle g_type_interface_get_plugin(MentorLake.GObject.GType instance_type, MentorLake.GObject.GType interface_type);
 
 	[DllImport(GObjectLibrary.Name)]
 	internal static extern MentorLake.GObject.GType g_type_interface_instantiatable_prerequisite(MentorLake.GObject.GType interface_type);
 
 	[DllImport(GObjectLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeInterfaceHandle>))]
 	internal static extern MentorLake.GObject.GTypeInterfaceHandle g_type_interface_peek([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GTypeClassHandle>))] MentorLake.GObject.GTypeClassHandle instance_class, MentorLake.GObject.GType iface_type);
 
 	[DllImport(GObjectLibrary.Name)]

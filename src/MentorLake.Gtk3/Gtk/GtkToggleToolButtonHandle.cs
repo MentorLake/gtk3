@@ -69,13 +69,13 @@ public static class GtkToggleToolButtonHandleExtensions
 {
 	public static bool GetActive(this MentorLake.Gtk.GtkToggleToolButtonHandle button)
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToggleToolButtonHandle)");
 		return GtkToggleToolButtonHandleExterns.gtk_toggle_tool_button_get_active(button);
 	}
 
 	public static T SetActive<T>(this T button, bool is_active) where T : GtkToggleToolButtonHandle
 	{
-		if (button.IsInvalid || button.IsClosed) throw new Exception("Invalid or closed handle (GtkToggleToolButtonHandle)");
+		if (button.IsInvalid) throw new Exception("Invalid handle (GtkToggleToolButtonHandle)");
 		GtkToggleToolButtonHandleExterns.gtk_toggle_tool_button_set_active(button, is_active);
 		return button;
 	}
@@ -85,9 +85,11 @@ public static class GtkToggleToolButtonHandleExtensions
 internal class GtkToggleToolButtonHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToggleToolButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkToggleToolButtonHandle gtk_toggle_tool_button_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkToggleToolButtonHandle>))]
 	internal static extern MentorLake.Gtk.GtkToggleToolButtonHandle gtk_toggle_tool_button_new_from_stock(string stock_id);
 
 	[DllImport(GtkLibrary.Name)]

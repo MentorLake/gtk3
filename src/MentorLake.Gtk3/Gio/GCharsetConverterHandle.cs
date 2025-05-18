@@ -15,19 +15,19 @@ public static class GCharsetConverterHandleExtensions
 {
 	public static uint GetNumFallbacks(this MentorLake.Gio.GCharsetConverterHandle converter)
 	{
-		if (converter.IsInvalid || converter.IsClosed) throw new Exception("Invalid or closed handle (GCharsetConverterHandle)");
+		if (converter.IsInvalid) throw new Exception("Invalid handle (GCharsetConverterHandle)");
 		return GCharsetConverterHandleExterns.g_charset_converter_get_num_fallbacks(converter);
 	}
 
 	public static bool GetUseFallback(this MentorLake.Gio.GCharsetConverterHandle converter)
 	{
-		if (converter.IsInvalid || converter.IsClosed) throw new Exception("Invalid or closed handle (GCharsetConverterHandle)");
+		if (converter.IsInvalid) throw new Exception("Invalid handle (GCharsetConverterHandle)");
 		return GCharsetConverterHandleExterns.g_charset_converter_get_use_fallback(converter);
 	}
 
 	public static T SetUseFallback<T>(this T converter, bool use_fallback) where T : GCharsetConverterHandle
 	{
-		if (converter.IsInvalid || converter.IsClosed) throw new Exception("Invalid or closed handle (GCharsetConverterHandle)");
+		if (converter.IsInvalid) throw new Exception("Invalid handle (GCharsetConverterHandle)");
 		GCharsetConverterHandleExterns.g_charset_converter_set_use_fallback(converter, use_fallback);
 		return converter;
 	}
@@ -37,6 +37,7 @@ public static class GCharsetConverterHandleExtensions
 internal class GCharsetConverterHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GCharsetConverterHandle>))]
 	internal static extern MentorLake.Gio.GCharsetConverterHandle g_charset_converter_new(string to_charset, string from_charset, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]

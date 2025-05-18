@@ -70,85 +70,85 @@ public static class GtkLevelBarHandleExtensions
 {
 	public static T AddOffsetValue<T>(this T self, string name, double value) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_add_offset_value(self, name, value);
 		return self;
 	}
 
 	public static bool GetInverted(this MentorLake.Gtk.GtkLevelBarHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_inverted(self);
 	}
 
 	public static double GetMaxValue(this MentorLake.Gtk.GtkLevelBarHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_max_value(self);
 	}
 
 	public static double GetMinValue(this MentorLake.Gtk.GtkLevelBarHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_min_value(self);
 	}
 
 	public static MentorLake.Gtk.GtkLevelBarMode GetMode(this MentorLake.Gtk.GtkLevelBarHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_mode(self);
 	}
 
 	public static bool GetOffsetValue(this MentorLake.Gtk.GtkLevelBarHandle self, string name, out double value)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_offset_value(self, name, out value);
 	}
 
 	public static double GetValue(this MentorLake.Gtk.GtkLevelBarHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		return GtkLevelBarHandleExterns.gtk_level_bar_get_value(self);
 	}
 
 	public static T RemoveOffsetValue<T>(this T self, string name) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_remove_offset_value(self, name);
 		return self;
 	}
 
 	public static T SetInverted<T>(this T self, bool inverted) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_set_inverted(self, inverted);
 		return self;
 	}
 
 	public static T SetMaxValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_set_max_value(self, value);
 		return self;
 	}
 
 	public static T SetMinValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_set_min_value(self, value);
 		return self;
 	}
 
 	public static T SetMode<T>(this T self, MentorLake.Gtk.GtkLevelBarMode mode) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_set_mode(self, mode);
 		return self;
 	}
 
 	public static T SetValue<T>(this T self, double value) where T : GtkLevelBarHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkLevelBarHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkLevelBarHandle)");
 		GtkLevelBarHandleExterns.gtk_level_bar_set_value(self, value);
 		return self;
 	}
@@ -158,9 +158,11 @@ public static class GtkLevelBarHandleExtensions
 internal class GtkLevelBarHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkLevelBarHandle>))]
 	internal static extern MentorLake.Gtk.GtkLevelBarHandle gtk_level_bar_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkLevelBarHandle>))]
 	internal static extern MentorLake.Gtk.GtkLevelBarHandle gtk_level_bar_new_for_interval(double min_value, double max_value);
 
 	[DllImport(GtkLibrary.Name)]

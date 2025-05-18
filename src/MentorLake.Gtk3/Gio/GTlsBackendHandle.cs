@@ -14,62 +14,62 @@ public static class GTlsBackendHandleExtensions
 {
 	public static MentorLake.GObject.GType GetCertificateType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_certificate_type(backend);
 	}
 
 	public static MentorLake.GObject.GType GetClientConnectionType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_client_connection_type(backend);
 	}
 
 	public static MentorLake.Gio.GTlsDatabaseHandle GetDefaultDatabase(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_default_database(backend);
 	}
 
 	public static MentorLake.GObject.GType GetDtlsClientConnectionType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_dtls_client_connection_type(backend);
 	}
 
 	public static MentorLake.GObject.GType GetDtlsServerConnectionType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_dtls_server_connection_type(backend);
 	}
 
 	public static MentorLake.GObject.GType GetFileDatabaseType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_file_database_type(backend);
 	}
 
 	public static MentorLake.GObject.GType GetServerConnectionType(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_get_server_connection_type(backend);
 	}
 
 	public static T SetDefaultDatabase<T>(this T backend, MentorLake.Gio.GTlsDatabaseHandle database) where T : GTlsBackendHandle
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		GTlsBackendHandleExterns.g_tls_backend_set_default_database(backend, database);
 		return backend;
 	}
 
 	public static bool SupportsDtls(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_supports_dtls(backend);
 	}
 
 	public static bool SupportsTls(this MentorLake.Gio.GTlsBackendHandle backend)
 	{
-		if (backend.IsInvalid || backend.IsClosed) throw new Exception("Invalid or closed handle (GTlsBackendHandle)");
+		if (backend.IsInvalid) throw new Exception("Invalid handle (GTlsBackendHandle)");
 		return GTlsBackendHandleExterns.g_tls_backend_supports_tls(backend);
 	}
 
@@ -89,6 +89,7 @@ internal class GTlsBackendHandleExterns
 	internal static extern MentorLake.GObject.GType g_tls_backend_get_client_connection_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsBackendHandleImpl>))] MentorLake.Gio.GTlsBackendHandle backend);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsDatabaseHandle>))]
 	internal static extern MentorLake.Gio.GTlsDatabaseHandle g_tls_backend_get_default_database([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsBackendHandleImpl>))] MentorLake.Gio.GTlsBackendHandle backend);
 
 	[DllImport(GioLibrary.Name)]
@@ -113,6 +114,7 @@ internal class GTlsBackendHandleExterns
 	internal static extern bool g_tls_backend_supports_tls([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsBackendHandleImpl>))] MentorLake.Gio.GTlsBackendHandle backend);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsBackendHandleImpl>))]
 	internal static extern MentorLake.Gio.GTlsBackendHandle g_tls_backend_get_default();
 
 }

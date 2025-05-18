@@ -67,6 +67,7 @@ public class PangoFT2GlobalFunctions
 internal class PangoFT2GlobalFunctionsExterns
 {
 	[DllImport(PangoFT2Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoCoverageHandle>))]
 	internal static extern MentorLake.Pango.PangoCoverageHandle pango_ft2_font_get_coverage([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontHandle>))] MentorLake.Pango.PangoFontHandle font, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
 	[DllImport(PangoFT2Library.Name)]
@@ -76,6 +77,7 @@ internal class PangoFT2GlobalFunctionsExterns
 	internal static extern int pango_ft2_font_get_kerning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontHandle>))] MentorLake.Pango.PangoFontHandle font, MentorLake.Pango.PangoGlyph left, MentorLake.Pango.PangoGlyph right);
 
 	[DllImport(PangoFT2Library.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle pango_ft2_get_context(double dpi_x, double dpi_y);
 
 	[DllImport(PangoFT2Library.Name)]

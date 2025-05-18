@@ -788,481 +788,481 @@ public static class GtkEntryHandleExtensions
 {
 	public static bool GetActivatesDefault(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_activates_default(entry);
 	}
 
 	public static float GetAlignment(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_alignment(entry);
 	}
 
 	public static MentorLake.Pango.PangoAttrListHandle GetAttributes(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_attributes(entry);
 	}
 
 	public static MentorLake.Gtk.GtkEntryBufferHandle GetBuffer(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_buffer(entry);
 	}
 
 	public static MentorLake.Gtk.GtkEntryCompletionHandle GetCompletion(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_completion(entry);
 	}
 
 	public static int GetCurrentIconDragSource(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_current_icon_drag_source(entry);
 	}
 
 	public static MentorLake.Gtk.GtkAdjustmentHandle GetCursorHadjustment(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_cursor_hadjustment(entry);
 	}
 
 	public static bool GetHasFrame(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_has_frame(entry);
 	}
 
 	public static bool GetIconActivatable(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_activatable(entry, icon_pos);
 	}
 
 	public static T GetIconArea<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, out MentorLake.Gdk.GdkRectangle icon_area) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_get_icon_area(entry, icon_pos, out icon_area);
 		return entry;
 	}
 
 	public static int GetIconAtPos(this MentorLake.Gtk.GtkEntryHandle entry, int x, int y)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_at_pos(entry, x, y);
 	}
 
 	public static MentorLake.Gio.GIconHandle GetIconGicon(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_gicon(entry, icon_pos);
 	}
 
 	public static string GetIconName(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_name(entry, icon_pos);
 	}
 
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle GetIconPixbuf(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_pixbuf(entry, icon_pos);
 	}
 
 	public static bool GetIconSensitive(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_sensitive(entry, icon_pos);
 	}
 
 	public static string GetIconStock(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_stock(entry, icon_pos);
 	}
 
 	public static MentorLake.Gtk.GtkImageType GetIconStorageType(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_storage_type(entry, icon_pos);
 	}
 
 	public static string GetIconTooltipMarkup(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_tooltip_markup(entry, icon_pos);
 	}
 
 	public static string GetIconTooltipText(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_icon_tooltip_text(entry, icon_pos);
 	}
 
 	public static MentorLake.Gtk.GtkBorderHandle GetInnerBorder(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_inner_border(entry);
 	}
 
 	public static MentorLake.Gtk.GtkInputHints GetInputHints(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_input_hints(entry);
 	}
 
 	public static MentorLake.Gtk.GtkInputPurpose GetInputPurpose(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_input_purpose(entry);
 	}
 
 	public static char GetInvisibleChar(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_invisible_char(entry);
 	}
 
 	public static MentorLake.Pango.PangoLayoutHandle GetLayout(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_layout(entry);
 	}
 
 	public static T GetLayoutOffsets<T>(this T entry, out int x, out int y) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_get_layout_offsets(entry, out x, out y);
 		return entry;
 	}
 
 	public static int GetMaxLength(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_max_length(entry);
 	}
 
 	public static int GetMaxWidthChars(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_max_width_chars(entry);
 	}
 
 	public static bool GetOverwriteMode(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_overwrite_mode(entry);
 	}
 
 	public static string GetPlaceholderText(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_placeholder_text(entry);
 	}
 
 	public static double GetProgressFraction(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_progress_fraction(entry);
 	}
 
 	public static double GetProgressPulseStep(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_progress_pulse_step(entry);
 	}
 
 	public static MentorLake.Pango.PangoTabArrayHandle GetTabs(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_tabs(entry);
 	}
 
 	public static string GetText(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_text(entry);
 	}
 
 	public static T GetTextArea<T>(this T entry, out MentorLake.Gdk.GdkRectangle text_area) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_get_text_area(entry, out text_area);
 		return entry;
 	}
 
 	public static ushort GetTextLength(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_text_length(entry);
 	}
 
 	public static bool GetVisibility(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_visibility(entry);
 	}
 
 	public static int GetWidthChars(this MentorLake.Gtk.GtkEntryHandle entry)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_get_width_chars(entry);
 	}
 
 	public static T GrabFocusWithoutSelecting<T>(this T entry) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_grab_focus_without_selecting(entry);
 		return entry;
 	}
 
 	public static bool ImContextFilterKeypress(this MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gdk.GdkEventKeyHandle @event)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_im_context_filter_keypress(entry, @event);
 	}
 
 	public static int LayoutIndexToTextIndex(this MentorLake.Gtk.GtkEntryHandle entry, int layout_index)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_layout_index_to_text_index(entry, layout_index);
 	}
 
 	public static T ProgressPulse<T>(this T entry) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_progress_pulse(entry);
 		return entry;
 	}
 
 	public static T ResetImContext<T>(this T entry) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_reset_im_context(entry);
 		return entry;
 	}
 
 	public static T SetActivatesDefault<T>(this T entry, bool setting) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_activates_default(entry, setting);
 		return entry;
 	}
 
 	public static T SetAlignment<T>(this T entry, float xalign) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_alignment(entry, xalign);
 		return entry;
 	}
 
 	public static T SetAttributes<T>(this T entry, MentorLake.Pango.PangoAttrListHandle attrs) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_attributes(entry, attrs);
 		return entry;
 	}
 
 	public static T SetBuffer<T>(this T entry, MentorLake.Gtk.GtkEntryBufferHandle buffer) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_buffer(entry, buffer);
 		return entry;
 	}
 
 	public static T SetCompletion<T>(this T entry, MentorLake.Gtk.GtkEntryCompletionHandle completion) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_completion(entry, completion);
 		return entry;
 	}
 
 	public static T SetCursorHadjustment<T>(this T entry, MentorLake.Gtk.GtkAdjustmentHandle adjustment) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_cursor_hadjustment(entry, adjustment);
 		return entry;
 	}
 
 	public static T SetHasFrame<T>(this T entry, bool setting) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_has_frame(entry, setting);
 		return entry;
 	}
 
 	public static T SetIconActivatable<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, bool activatable) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_activatable(entry, icon_pos, activatable);
 		return entry;
 	}
 
 	public static T SetIconDragSource<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, MentorLake.Gtk.GtkTargetListHandle target_list, MentorLake.Gdk.GdkDragAction actions) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_drag_source(entry, icon_pos, target_list, actions);
 		return entry;
 	}
 
 	public static T SetIconFromGicon<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, MentorLake.Gio.GIconHandle icon) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_from_gicon(entry, icon_pos, icon);
 		return entry;
 	}
 
 	public static T SetIconFromIconName<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, string icon_name) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_from_icon_name(entry, icon_pos, icon_name);
 		return entry;
 	}
 
 	public static T SetIconFromPixbuf<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_from_pixbuf(entry, icon_pos, pixbuf);
 		return entry;
 	}
 
 	public static T SetIconFromStock<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, string stock_id) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_from_stock(entry, icon_pos, stock_id);
 		return entry;
 	}
 
 	public static T SetIconSensitive<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, bool sensitive) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_sensitive(entry, icon_pos, sensitive);
 		return entry;
 	}
 
 	public static T SetIconTooltipMarkup<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, string tooltip) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_tooltip_markup(entry, icon_pos, tooltip);
 		return entry;
 	}
 
 	public static T SetIconTooltipText<T>(this T entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos, string tooltip) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_icon_tooltip_text(entry, icon_pos, tooltip);
 		return entry;
 	}
 
 	public static T SetInnerBorder<T>(this T entry, MentorLake.Gtk.GtkBorderHandle border) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_inner_border(entry, border);
 		return entry;
 	}
 
 	public static T SetInputHints<T>(this T entry, MentorLake.Gtk.GtkInputHints hints) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_input_hints(entry, hints);
 		return entry;
 	}
 
 	public static T SetInputPurpose<T>(this T entry, MentorLake.Gtk.GtkInputPurpose purpose) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_input_purpose(entry, purpose);
 		return entry;
 	}
 
 	public static T SetInvisibleChar<T>(this T entry, char ch) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_invisible_char(entry, ch);
 		return entry;
 	}
 
 	public static T SetMaxLength<T>(this T entry, int max) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_max_length(entry, max);
 		return entry;
 	}
 
 	public static T SetMaxWidthChars<T>(this T entry, int n_chars) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_max_width_chars(entry, n_chars);
 		return entry;
 	}
 
 	public static T SetOverwriteMode<T>(this T entry, bool overwrite) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_overwrite_mode(entry, overwrite);
 		return entry;
 	}
 
 	public static T SetPlaceholderText<T>(this T entry, string text) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_placeholder_text(entry, text);
 		return entry;
 	}
 
 	public static T SetProgressFraction<T>(this T entry, double fraction) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_progress_fraction(entry, fraction);
 		return entry;
 	}
 
 	public static T SetProgressPulseStep<T>(this T entry, double fraction) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_progress_pulse_step(entry, fraction);
 		return entry;
 	}
 
 	public static T SetTabs<T>(this T entry, MentorLake.Pango.PangoTabArrayHandle tabs) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_tabs(entry, tabs);
 		return entry;
 	}
 
 	public static T SetText<T>(this T entry, string text) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_text(entry, text);
 		return entry;
 	}
 
 	public static T SetVisibility<T>(this T entry, bool visible) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_visibility(entry, visible);
 		return entry;
 	}
 
 	public static T SetWidthChars<T>(this T entry, int n_chars) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_set_width_chars(entry, n_chars);
 		return entry;
 	}
 
 	public static int TextIndexToLayoutIndex(this MentorLake.Gtk.GtkEntryHandle entry, int text_index)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		return GtkEntryHandleExterns.gtk_entry_text_index_to_layout_index(entry, text_index);
 	}
 
 	public static T UnsetInvisibleChar<T>(this T entry) where T : GtkEntryHandle
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkEntryHandle)");
 		GtkEntryHandleExterns.gtk_entry_unset_invisible_char(entry);
 		return entry;
 	}
@@ -1272,9 +1272,11 @@ public static class GtkEntryHandleExtensions
 internal class GtkEntryHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))]
 	internal static extern MentorLake.Gtk.GtkEntryHandle gtk_entry_new();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))]
 	internal static extern MentorLake.Gtk.GtkEntryHandle gtk_entry_new_with_buffer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryBufferHandle>))] MentorLake.Gtk.GtkEntryBufferHandle buffer);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1284,18 +1286,22 @@ internal class GtkEntryHandleExterns
 	internal static extern float gtk_entry_get_alignment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoAttrListHandle>))]
 	internal static extern MentorLake.Pango.PangoAttrListHandle gtk_entry_get_attributes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryBufferHandle>))]
 	internal static extern MentorLake.Gtk.GtkEntryBufferHandle gtk_entry_get_buffer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryCompletionHandle>))]
 	internal static extern MentorLake.Gtk.GtkEntryCompletionHandle gtk_entry_get_completion([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern int gtk_entry_get_current_icon_drag_source([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAdjustmentHandle>))]
 	internal static extern MentorLake.Gtk.GtkAdjustmentHandle gtk_entry_get_cursor_hadjustment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1311,6 +1317,7 @@ internal class GtkEntryHandleExterns
 	internal static extern int gtk_entry_get_icon_at_pos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry, int x, int y);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GIconHandleImpl>))]
 	internal static extern MentorLake.Gio.GIconHandle gtk_entry_get_icon_gicon([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1318,6 +1325,7 @@ internal class GtkEntryHandleExterns
 	internal static extern string gtk_entry_get_icon_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_entry_get_icon_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1339,6 +1347,7 @@ internal class GtkEntryHandleExterns
 	internal static extern string gtk_entry_get_icon_tooltip_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry, MentorLake.Gtk.GtkEntryIconPosition icon_pos);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkBorderHandle>))]
 	internal static extern MentorLake.Gtk.GtkBorderHandle gtk_entry_get_inner_border([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1351,6 +1360,7 @@ internal class GtkEntryHandleExterns
 	internal static extern char gtk_entry_get_invisible_char([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))]
 	internal static extern MentorLake.Pango.PangoLayoutHandle gtk_entry_get_layout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
@@ -1376,6 +1386,7 @@ internal class GtkEntryHandleExterns
 	internal static extern double gtk_entry_get_progress_pulse_step([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle gtk_entry_get_tabs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEntryHandle>))] MentorLake.Gtk.GtkEntryHandle entry);
 
 	[DllImport(GtkLibrary.Name)]

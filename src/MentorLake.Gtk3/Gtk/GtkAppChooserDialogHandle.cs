@@ -18,19 +18,19 @@ public static class GtkAppChooserDialogHandleExtensions
 {
 	public static string GetHeading(this MentorLake.Gtk.GtkAppChooserDialogHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserDialogHandle)");
 		return GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_get_heading(self);
 	}
 
 	public static MentorLake.Gtk.GtkWidgetHandle GetWidget(this MentorLake.Gtk.GtkAppChooserDialogHandle self)
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserDialogHandle)");
 		return GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_get_widget(self);
 	}
 
 	public static T SetHeading<T>(this T self, string heading) where T : GtkAppChooserDialogHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GtkAppChooserDialogHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GtkAppChooserDialogHandle)");
 		GtkAppChooserDialogHandleExterns.gtk_app_chooser_dialog_set_heading(self, heading);
 		return self;
 	}
@@ -40,9 +40,11 @@ public static class GtkAppChooserDialogHandleExtensions
 internal class GtkAppChooserDialogHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkAppChooserDialogHandle gtk_app_chooser_dialog_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, MentorLake.Gtk.GtkDialogFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GFileHandleImpl>))] MentorLake.Gio.GFileHandle file);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserDialogHandle>))]
 	internal static extern MentorLake.Gtk.GtkAppChooserDialogHandle gtk_app_chooser_dialog_new_for_content_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWindowHandle>))] MentorLake.Gtk.GtkWindowHandle parent, MentorLake.Gtk.GtkDialogFlags flags, string content_type);
 
 	[DllImport(GtkLibrary.Name)]
@@ -50,6 +52,7 @@ internal class GtkAppChooserDialogHandleExterns
 	internal static extern string gtk_app_chooser_dialog_get_heading([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserDialogHandle>))] MentorLake.Gtk.GtkAppChooserDialogHandle self);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))]
 	internal static extern MentorLake.Gtk.GtkWidgetHandle gtk_app_chooser_dialog_get_widget([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkAppChooserDialogHandle>))] MentorLake.Gtk.GtkAppChooserDialogHandle self);
 
 	[DllImport(GtkLibrary.Name)]

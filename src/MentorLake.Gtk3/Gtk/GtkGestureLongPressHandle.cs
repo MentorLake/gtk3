@@ -108,6 +108,7 @@ public static class GtkGestureLongPressHandleExtensions
 internal class GtkGestureLongPressHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkGestureLongPressHandle>))]
 	internal static extern MentorLake.Gtk.GtkGestureLongPressHandle gtk_gesture_long_press_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkWidgetHandle>))] MentorLake.Gtk.GtkWidgetHandle widget);
 
 }

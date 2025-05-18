@@ -381,7 +381,7 @@ public static class GtkSearchEntryHandleExtensions
 {
 	public static bool HandleEvent(this MentorLake.Gtk.GtkSearchEntryHandle entry, MentorLake.Gdk.GdkEventHandle @event)
 	{
-		if (entry.IsInvalid || entry.IsClosed) throw new Exception("Invalid or closed handle (GtkSearchEntryHandle)");
+		if (entry.IsInvalid) throw new Exception("Invalid handle (GtkSearchEntryHandle)");
 		return GtkSearchEntryHandleExterns.gtk_search_entry_handle_event(entry, @event);
 	}
 
@@ -390,6 +390,7 @@ public static class GtkSearchEntryHandleExtensions
 internal class GtkSearchEntryHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSearchEntryHandle>))]
 	internal static extern MentorLake.Gtk.GtkSearchEntryHandle gtk_search_entry_new();
 
 	[DllImport(GtkLibrary.Name)]

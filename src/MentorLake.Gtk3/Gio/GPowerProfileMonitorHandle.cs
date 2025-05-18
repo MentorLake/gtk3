@@ -14,7 +14,7 @@ public static class GPowerProfileMonitorHandleExtensions
 {
 	public static bool GetPowerSaverEnabled(this MentorLake.Gio.GPowerProfileMonitorHandle monitor)
 	{
-		if (monitor.IsInvalid || monitor.IsClosed) throw new Exception("Invalid or closed handle (GPowerProfileMonitorHandle)");
+		if (monitor.IsInvalid) throw new Exception("Invalid handle (GPowerProfileMonitorHandle)");
 		return GPowerProfileMonitorHandleExterns.g_power_profile_monitor_get_power_saver_enabled(monitor);
 	}
 
@@ -31,6 +31,7 @@ internal class GPowerProfileMonitorHandleExterns
 	internal static extern bool g_power_profile_monitor_get_power_saver_enabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPowerProfileMonitorHandleImpl>))] MentorLake.Gio.GPowerProfileMonitorHandle monitor);
 
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GPowerProfileMonitorHandleImpl>))]
 	internal static extern MentorLake.Gio.GPowerProfileMonitorHandle g_power_profile_monitor_dup_default();
 
 }

@@ -14,21 +14,21 @@ public static class GtkCellEditableHandleExtensions
 {
 	public static T EditingDone<T>(this T cell_editable) where T : GtkCellEditableHandle
 	{
-		if (cell_editable.IsInvalid || cell_editable.IsClosed) throw new Exception("Invalid or closed handle (GtkCellEditableHandle)");
+		if (cell_editable.IsInvalid) throw new Exception("Invalid handle (GtkCellEditableHandle)");
 		GtkCellEditableHandleExterns.gtk_cell_editable_editing_done(cell_editable);
 		return cell_editable;
 	}
 
 	public static T RemoveWidget<T>(this T cell_editable) where T : GtkCellEditableHandle
 	{
-		if (cell_editable.IsInvalid || cell_editable.IsClosed) throw new Exception("Invalid or closed handle (GtkCellEditableHandle)");
+		if (cell_editable.IsInvalid) throw new Exception("Invalid handle (GtkCellEditableHandle)");
 		GtkCellEditableHandleExterns.gtk_cell_editable_remove_widget(cell_editable);
 		return cell_editable;
 	}
 
 	public static T StartEditing<T>(this T cell_editable, MentorLake.Gdk.GdkEventHandle @event) where T : GtkCellEditableHandle
 	{
-		if (cell_editable.IsInvalid || cell_editable.IsClosed) throw new Exception("Invalid or closed handle (GtkCellEditableHandle)");
+		if (cell_editable.IsInvalid) throw new Exception("Invalid handle (GtkCellEditableHandle)");
 		GtkCellEditableHandleExterns.gtk_cell_editable_start_editing(cell_editable, @event);
 		return cell_editable;
 	}

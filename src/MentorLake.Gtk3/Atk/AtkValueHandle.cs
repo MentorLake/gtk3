@@ -14,66 +14,66 @@ public static class AtkValueHandleExtensions
 {
 	public static T GetCurrentValue<T>(this T obj, out MentorLake.GObject.GValue value) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_get_current_value(obj, out value);
 		return obj;
 	}
 
 	public static double GetIncrement(this MentorLake.Atk.AtkValueHandle obj)
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		return AtkValueHandleExterns.atk_value_get_increment(obj);
 	}
 
 	public static T GetMaximumValue<T>(this T obj, out MentorLake.GObject.GValue value) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_get_maximum_value(obj, out value);
 		return obj;
 	}
 
 	public static T GetMinimumIncrement<T>(this T obj, out MentorLake.GObject.GValue value) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_get_minimum_increment(obj, out value);
 		return obj;
 	}
 
 	public static T GetMinimumValue<T>(this T obj, out MentorLake.GObject.GValue value) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_get_minimum_value(obj, out value);
 		return obj;
 	}
 
 	public static MentorLake.Atk.AtkRangeHandle GetRange(this MentorLake.Atk.AtkValueHandle obj)
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		return AtkValueHandleExterns.atk_value_get_range(obj);
 	}
 
 	public static MentorLake.GLib.GSListHandle GetSubRanges(this MentorLake.Atk.AtkValueHandle obj)
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		return AtkValueHandleExterns.atk_value_get_sub_ranges(obj);
 	}
 
 	public static T GetValueAndText<T>(this T obj, out double value, out string text) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_get_value_and_text(obj, out value, out text);
 		return obj;
 	}
 
 	public static bool SetCurrentValue(this MentorLake.Atk.AtkValueHandle obj, MentorLake.GObject.GValueHandle value)
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		return AtkValueHandleExterns.atk_value_set_current_value(obj, value);
 	}
 
 	public static T SetValue<T>(this T obj, double new_value) where T : AtkValueHandle
 	{
-		if (obj.IsInvalid || obj.IsClosed) throw new Exception("Invalid or closed handle (AtkValueHandle)");
+		if (obj.IsInvalid) throw new Exception("Invalid handle (AtkValueHandle)");
 		AtkValueHandleExterns.atk_value_set_value(obj, new_value);
 		return obj;
 	}
@@ -98,9 +98,11 @@ internal class AtkValueHandleExterns
 	internal static extern void atk_value_get_minimum_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkValueHandleImpl>))] MentorLake.Atk.AtkValueHandle obj, out MentorLake.GObject.GValue value);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRangeHandle>))]
 	internal static extern MentorLake.Atk.AtkRangeHandle atk_value_get_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkValueHandleImpl>))] MentorLake.Atk.AtkValueHandle obj);
 
 	[DllImport(AtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GSListHandle>))]
 	internal static extern MentorLake.GLib.GSListHandle atk_value_get_sub_ranges([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkValueHandleImpl>))] MentorLake.Atk.AtkValueHandle obj);
 
 	[DllImport(AtkLibrary.Name)]

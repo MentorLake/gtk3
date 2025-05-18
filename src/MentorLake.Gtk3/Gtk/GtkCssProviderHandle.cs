@@ -76,7 +76,7 @@ public static class GtkCssProviderHandleExtensions
 {
 	public static bool LoadFromData(this MentorLake.Gtk.GtkCssProviderHandle css_provider, byte[] data, UIntPtr length)
 	{
-		if (css_provider.IsInvalid || css_provider.IsClosed) throw new Exception("Invalid or closed handle (GtkCssProviderHandle)");
+		if (css_provider.IsInvalid) throw new Exception("Invalid handle (GtkCssProviderHandle)");
 		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_data(css_provider, data, length, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -84,7 +84,7 @@ public static class GtkCssProviderHandleExtensions
 
 	public static bool LoadFromFile(this MentorLake.Gtk.GtkCssProviderHandle css_provider, MentorLake.Gio.GFileHandle file)
 	{
-		if (css_provider.IsInvalid || css_provider.IsClosed) throw new Exception("Invalid or closed handle (GtkCssProviderHandle)");
+		if (css_provider.IsInvalid) throw new Exception("Invalid handle (GtkCssProviderHandle)");
 		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_file(css_provider, file, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -92,7 +92,7 @@ public static class GtkCssProviderHandleExtensions
 
 	public static bool LoadFromPath(this MentorLake.Gtk.GtkCssProviderHandle css_provider, string path)
 	{
-		if (css_provider.IsInvalid || css_provider.IsClosed) throw new Exception("Invalid or closed handle (GtkCssProviderHandle)");
+		if (css_provider.IsInvalid) throw new Exception("Invalid handle (GtkCssProviderHandle)");
 		var externCallResult = GtkCssProviderHandleExterns.gtk_css_provider_load_from_path(css_provider, path, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -100,14 +100,14 @@ public static class GtkCssProviderHandleExtensions
 
 	public static T LoadFromResource<T>(this T css_provider, string resource_path) where T : GtkCssProviderHandle
 	{
-		if (css_provider.IsInvalid || css_provider.IsClosed) throw new Exception("Invalid or closed handle (GtkCssProviderHandle)");
+		if (css_provider.IsInvalid) throw new Exception("Invalid handle (GtkCssProviderHandle)");
 		GtkCssProviderHandleExterns.gtk_css_provider_load_from_resource(css_provider, resource_path);
 		return css_provider;
 	}
 
 	public static string ToString(this MentorLake.Gtk.GtkCssProviderHandle provider)
 	{
-		if (provider.IsInvalid || provider.IsClosed) throw new Exception("Invalid or closed handle (GtkCssProviderHandle)");
+		if (provider.IsInvalid) throw new Exception("Invalid handle (GtkCssProviderHandle)");
 		return GtkCssProviderHandleExterns.gtk_css_provider_to_string(provider);
 	}
 
@@ -116,6 +116,7 @@ public static class GtkCssProviderHandleExtensions
 internal class GtkCssProviderHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))]
 	internal static extern MentorLake.Gtk.GtkCssProviderHandle gtk_css_provider_new();
 
 	[DllImport(GtkLibrary.Name)]
@@ -135,9 +136,11 @@ internal class GtkCssProviderHandleExterns
 	internal static extern string gtk_css_provider_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))] MentorLake.Gtk.GtkCssProviderHandle provider);
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))]
 	internal static extern MentorLake.Gtk.GtkCssProviderHandle gtk_css_provider_get_default();
 
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkCssProviderHandle>))]
 	internal static extern MentorLake.Gtk.GtkCssProviderHandle gtk_css_provider_get_named(string name, string variant);
 
 }

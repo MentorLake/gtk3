@@ -9,19 +9,19 @@ public static class GTestSuiteExtensions
 {
 	public static void Add(this MentorLake.GLib.GTestSuiteHandle suite, MentorLake.GLib.GTestCaseHandle test_case)
 	{
-		if (suite.IsInvalid || suite.IsClosed) throw new Exception("Invalid or closed handle (GTestSuite)");
+		if (suite.IsInvalid) throw new Exception("Invalid handle (GTestSuite)");
 		GTestSuiteExterns.g_test_suite_add(suite, test_case);
 	}
 
 	public static void AddSuite(this MentorLake.GLib.GTestSuiteHandle suite, MentorLake.GLib.GTestSuiteHandle nestedsuite)
 	{
-		if (suite.IsInvalid || suite.IsClosed) throw new Exception("Invalid or closed handle (GTestSuite)");
+		if (suite.IsInvalid) throw new Exception("Invalid handle (GTestSuite)");
 		GTestSuiteExterns.g_test_suite_add_suite(suite, nestedsuite);
 	}
 
 	public static void Free(this MentorLake.GLib.GTestSuiteHandle suite)
 	{
-		if (suite.IsInvalid || suite.IsClosed) throw new Exception("Invalid or closed handle (GTestSuite)");
+		if (suite.IsInvalid) throw new Exception("Invalid handle (GTestSuite)");
 		GTestSuiteExterns.g_test_suite_free(suite);
 	}
 

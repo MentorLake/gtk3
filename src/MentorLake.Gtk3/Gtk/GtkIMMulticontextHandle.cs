@@ -13,20 +13,20 @@ public static class GtkIMMulticontextHandleExtensions
 {
 	public static T AppendMenuitems<T>(this T context, MentorLake.Gtk.GtkMenuShellHandle menushell) where T : GtkIMMulticontextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMMulticontextHandle)");
 		GtkIMMulticontextHandleExterns.gtk_im_multicontext_append_menuitems(context, menushell);
 		return context;
 	}
 
 	public static string GetContextId(this MentorLake.Gtk.GtkIMMulticontextHandle context)
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMMulticontextHandle)");
 		return GtkIMMulticontextHandleExterns.gtk_im_multicontext_get_context_id(context);
 	}
 
 	public static T SetContextId<T>(this T context, string context_id) where T : GtkIMMulticontextHandle
 	{
-		if (context.IsInvalid || context.IsClosed) throw new Exception("Invalid or closed handle (GtkIMMulticontextHandle)");
+		if (context.IsInvalid) throw new Exception("Invalid handle (GtkIMMulticontextHandle)");
 		GtkIMMulticontextHandleExterns.gtk_im_multicontext_set_context_id(context, context_id);
 		return context;
 	}
@@ -36,6 +36,7 @@ public static class GtkIMMulticontextHandleExtensions
 internal class GtkIMMulticontextHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkIMMulticontextHandle>))]
 	internal static extern MentorLake.Gtk.GtkIMMulticontextHandle gtk_im_multicontext_new();
 
 	[DllImport(GtkLibrary.Name)]

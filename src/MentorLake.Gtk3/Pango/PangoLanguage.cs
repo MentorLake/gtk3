@@ -9,31 +9,31 @@ public static class PangoLanguageExtensions
 {
 	public static string GetSampleString(this MentorLake.Pango.PangoLanguageHandle language)
 	{
-		if (language.IsInvalid || language.IsClosed) throw new Exception("Invalid or closed handle (PangoLanguage)");
+		if (language.IsInvalid) throw new Exception("Invalid handle (PangoLanguage)");
 		return PangoLanguageExterns.pango_language_get_sample_string(language);
 	}
 
 	public static MentorLake.Pango.PangoScript[] GetScripts(this MentorLake.Pango.PangoLanguageHandle language, out int num_scripts)
 	{
-		if (language.IsInvalid || language.IsClosed) throw new Exception("Invalid or closed handle (PangoLanguage)");
+		if (language.IsInvalid) throw new Exception("Invalid handle (PangoLanguage)");
 		return PangoLanguageExterns.pango_language_get_scripts(language, out num_scripts);
 	}
 
 	public static bool IncludesScript(this MentorLake.Pango.PangoLanguageHandle language, MentorLake.Pango.PangoScript script)
 	{
-		if (language.IsInvalid || language.IsClosed) throw new Exception("Invalid or closed handle (PangoLanguage)");
+		if (language.IsInvalid) throw new Exception("Invalid handle (PangoLanguage)");
 		return PangoLanguageExterns.pango_language_includes_script(language, script);
 	}
 
 	public static bool Matches(this MentorLake.Pango.PangoLanguageHandle language, string range_list)
 	{
-		if (language.IsInvalid || language.IsClosed) throw new Exception("Invalid or closed handle (PangoLanguage)");
+		if (language.IsInvalid) throw new Exception("Invalid handle (PangoLanguage)");
 		return PangoLanguageExterns.pango_language_matches(language, range_list);
 	}
 
 	public static string ToString(this MentorLake.Pango.PangoLanguageHandle language)
 	{
-		if (language.IsInvalid || language.IsClosed) throw new Exception("Invalid or closed handle (PangoLanguage)");
+		if (language.IsInvalid) throw new Exception("Invalid handle (PangoLanguage)");
 		return PangoLanguageExterns.pango_language_to_string(language);
 	}
 
@@ -60,9 +60,11 @@ internal class PangoLanguageExterns
 	internal static extern string pango_language_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))] MentorLake.Pango.PangoLanguageHandle language);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_from_string(string language);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLanguageHandle>))]
 	internal static extern MentorLake.Pango.PangoLanguageHandle pango_language_get_default();
 
 	[DllImport(PangoLibrary.Name)]

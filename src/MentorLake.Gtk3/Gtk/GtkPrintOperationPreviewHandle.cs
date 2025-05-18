@@ -14,20 +14,20 @@ public static class GtkPrintOperationPreviewHandleExtensions
 {
 	public static T EndPreview<T>(this T preview) where T : GtkPrintOperationPreviewHandle
 	{
-		if (preview.IsInvalid || preview.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationPreviewHandle)");
+		if (preview.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationPreviewHandle)");
 		GtkPrintOperationPreviewHandleExterns.gtk_print_operation_preview_end_preview(preview);
 		return preview;
 	}
 
 	public static bool IsSelected(this MentorLake.Gtk.GtkPrintOperationPreviewHandle preview, int page_nr)
 	{
-		if (preview.IsInvalid || preview.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationPreviewHandle)");
+		if (preview.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationPreviewHandle)");
 		return GtkPrintOperationPreviewHandleExterns.gtk_print_operation_preview_is_selected(preview, page_nr);
 	}
 
 	public static T RenderPage<T>(this T preview, int page_nr) where T : GtkPrintOperationPreviewHandle
 	{
-		if (preview.IsInvalid || preview.IsClosed) throw new Exception("Invalid or closed handle (GtkPrintOperationPreviewHandle)");
+		if (preview.IsInvalid) throw new Exception("Invalid handle (GtkPrintOperationPreviewHandle)");
 		GtkPrintOperationPreviewHandleExterns.gtk_print_operation_preview_render_page(preview, page_nr);
 		return preview;
 	}

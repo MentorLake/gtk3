@@ -68,7 +68,7 @@ public static class GDebugControllerDBusHandleExtensions
 {
 	public static T Stop<T>(this T self) where T : GDebugControllerDBusHandle
 	{
-		if (self.IsInvalid || self.IsClosed) throw new Exception("Invalid or closed handle (GDebugControllerDBusHandle)");
+		if (self.IsInvalid) throw new Exception("Invalid handle (GDebugControllerDBusHandle)");
 		GDebugControllerDBusHandleExterns.g_debug_controller_dbus_stop(self);
 		return self;
 	}
@@ -78,6 +78,7 @@ public static class GDebugControllerDBusHandleExtensions
 internal class GDebugControllerDBusHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GDebugControllerDBusHandle>))]
 	internal static extern MentorLake.Gio.GDebugControllerDBusHandle g_debug_controller_dbus_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))] MentorLake.Gio.GDBusConnectionHandle connection, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]

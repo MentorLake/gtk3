@@ -13,14 +13,14 @@ public static class GtkSpinnerHandleExtensions
 {
 	public static T Start<T>(this T spinner) where T : GtkSpinnerHandle
 	{
-		if (spinner.IsInvalid || spinner.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinnerHandle)");
+		if (spinner.IsInvalid) throw new Exception("Invalid handle (GtkSpinnerHandle)");
 		GtkSpinnerHandleExterns.gtk_spinner_start(spinner);
 		return spinner;
 	}
 
 	public static T Stop<T>(this T spinner) where T : GtkSpinnerHandle
 	{
-		if (spinner.IsInvalid || spinner.IsClosed) throw new Exception("Invalid or closed handle (GtkSpinnerHandle)");
+		if (spinner.IsInvalid) throw new Exception("Invalid handle (GtkSpinnerHandle)");
 		GtkSpinnerHandleExterns.gtk_spinner_stop(spinner);
 		return spinner;
 	}
@@ -30,6 +30,7 @@ public static class GtkSpinnerHandleExtensions
 internal class GtkSpinnerHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkSpinnerHandle>))]
 	internal static extern MentorLake.Gtk.GtkSpinnerHandle gtk_spinner_new();
 
 	[DllImport(GtkLibrary.Name)]

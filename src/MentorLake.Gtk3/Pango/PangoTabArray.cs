@@ -19,79 +19,79 @@ public static class PangoTabArrayExtensions
 {
 	public static MentorLake.Pango.PangoTabArrayHandle Copy(this MentorLake.Pango.PangoTabArrayHandle src)
 	{
-		if (src.IsInvalid || src.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (src.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		return PangoTabArrayExterns.pango_tab_array_copy(src);
 	}
 
 	public static void Free(this MentorLake.Pango.PangoTabArrayHandle tab_array)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_free(tab_array);
 	}
 
 	public static char GetDecimalPoint(this MentorLake.Pango.PangoTabArrayHandle tab_array, int tab_index)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		return PangoTabArrayExterns.pango_tab_array_get_decimal_point(tab_array, tab_index);
 	}
 
 	public static bool GetPositionsInPixels(this MentorLake.Pango.PangoTabArrayHandle tab_array)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		return PangoTabArrayExterns.pango_tab_array_get_positions_in_pixels(tab_array);
 	}
 
 	public static int GetSize(this MentorLake.Pango.PangoTabArrayHandle tab_array)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		return PangoTabArrayExterns.pango_tab_array_get_size(tab_array);
 	}
 
 	public static void GetTab(this MentorLake.Pango.PangoTabArrayHandle tab_array, int tab_index, out MentorLake.Pango.PangoTabAlign alignment, out int location)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_get_tab(tab_array, tab_index, out alignment, out location);
 	}
 
 	public static void GetTabs(this MentorLake.Pango.PangoTabArrayHandle tab_array, out MentorLake.Pango.PangoTabAlign[] alignments, out int[] locations)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_get_tabs(tab_array, out alignments, out locations);
 	}
 
 	public static void Resize(this MentorLake.Pango.PangoTabArrayHandle tab_array, int new_size)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_resize(tab_array, new_size);
 	}
 
 	public static void SetDecimalPoint(this MentorLake.Pango.PangoTabArrayHandle tab_array, int tab_index, char decimal_point)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_set_decimal_point(tab_array, tab_index, decimal_point);
 	}
 
 	public static void SetPositionsInPixels(this MentorLake.Pango.PangoTabArrayHandle tab_array, bool positions_in_pixels)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_set_positions_in_pixels(tab_array, positions_in_pixels);
 	}
 
 	public static void SetTab(this MentorLake.Pango.PangoTabArrayHandle tab_array, int tab_index, MentorLake.Pango.PangoTabAlign alignment, int location)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_set_tab(tab_array, tab_index, alignment, location);
 	}
 
 	public static void Sort(this MentorLake.Pango.PangoTabArrayHandle tab_array)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		PangoTabArrayExterns.pango_tab_array_sort(tab_array);
 	}
 
 	public static string ToString(this MentorLake.Pango.PangoTabArrayHandle tab_array)
 	{
-		if (tab_array.IsInvalid || tab_array.IsClosed) throw new Exception("Invalid or closed handle (PangoTabArray)");
+		if (tab_array.IsInvalid) throw new Exception("Invalid handle (PangoTabArray)");
 		return PangoTabArrayExterns.pango_tab_array_to_string(tab_array);
 	}
 
@@ -101,12 +101,15 @@ public static class PangoTabArrayExtensions
 internal class PangoTabArrayExterns
 {
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle pango_tab_array_new(int initial_size, bool positions_in_pixels);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle pango_tab_array_new_with_positions(int size, bool positions_in_pixels, MentorLake.Pango.PangoTabAlign first_alignment, int first_position, IntPtr @__arglist);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle pango_tab_array_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle src);
 
 	[DllImport(PangoLibrary.Name)]
@@ -147,6 +150,7 @@ internal class PangoTabArrayExterns
 	internal static extern string pango_tab_array_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle tab_array);
 
 	[DllImport(PangoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))]
 	internal static extern MentorLake.Pango.PangoTabArrayHandle pango_tab_array_from_string(string text);
 
 }

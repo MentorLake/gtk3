@@ -111,6 +111,7 @@ public static class GtkCellRendererAccelHandleExtensions
 internal class GtkCellRendererAccelHandleExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkCellRendererAccelHandle>))]
 	internal static extern MentorLake.Gtk.GtkCellRendererAccelHandle gtk_cell_renderer_accel_new();
 
 }

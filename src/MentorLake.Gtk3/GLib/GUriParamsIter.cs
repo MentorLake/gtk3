@@ -9,13 +9,13 @@ public static class GUriParamsIterExtensions
 {
 	public static void Init(this MentorLake.GLib.GUriParamsIterHandle iter, string @params, UIntPtr length, string separators, MentorLake.GLib.GUriParamsFlags flags)
 	{
-		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GUriParamsIter)");
+		if (iter.IsInvalid) throw new Exception("Invalid handle (GUriParamsIter)");
 		GUriParamsIterExterns.g_uri_params_iter_init(iter, @params, length, separators, flags);
 	}
 
 	public static bool Next(this MentorLake.GLib.GUriParamsIterHandle iter, out string attribute, out string value)
 	{
-		if (iter.IsInvalid || iter.IsClosed) throw new Exception("Invalid or closed handle (GUriParamsIter)");
+		if (iter.IsInvalid) throw new Exception("Invalid handle (GUriParamsIter)");
 		var externCallResult = GUriParamsIterExterns.g_uri_params_iter_next(iter, out attribute, out value, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;

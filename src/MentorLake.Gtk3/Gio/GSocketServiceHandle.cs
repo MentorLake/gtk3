@@ -67,20 +67,20 @@ public static class GSocketServiceHandleExtensions
 {
 	public static bool IsActive(this MentorLake.Gio.GSocketServiceHandle service)
 	{
-		if (service.IsInvalid || service.IsClosed) throw new Exception("Invalid or closed handle (GSocketServiceHandle)");
+		if (service.IsInvalid) throw new Exception("Invalid handle (GSocketServiceHandle)");
 		return GSocketServiceHandleExterns.g_socket_service_is_active(service);
 	}
 
 	public static T Start<T>(this T service) where T : GSocketServiceHandle
 	{
-		if (service.IsInvalid || service.IsClosed) throw new Exception("Invalid or closed handle (GSocketServiceHandle)");
+		if (service.IsInvalid) throw new Exception("Invalid handle (GSocketServiceHandle)");
 		GSocketServiceHandleExterns.g_socket_service_start(service);
 		return service;
 	}
 
 	public static T Stop<T>(this T service) where T : GSocketServiceHandle
 	{
-		if (service.IsInvalid || service.IsClosed) throw new Exception("Invalid or closed handle (GSocketServiceHandle)");
+		if (service.IsInvalid) throw new Exception("Invalid handle (GSocketServiceHandle)");
 		GSocketServiceHandleExterns.g_socket_service_stop(service);
 		return service;
 	}
@@ -90,6 +90,7 @@ public static class GSocketServiceHandleExtensions
 internal class GSocketServiceHandleExterns
 {
 	[DllImport(GioLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSocketServiceHandle>))]
 	internal static extern MentorLake.Gio.GSocketServiceHandle g_socket_service_new();
 
 	[DllImport(GioLibrary.Name)]

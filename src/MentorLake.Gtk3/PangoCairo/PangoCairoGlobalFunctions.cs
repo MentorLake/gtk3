@@ -117,6 +117,7 @@ public class PangoCairoGlobalFunctions
 internal class PangoCairoGlobalFunctionsExterns
 {
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_font_options_tHandle>))]
 	internal static extern MentorLake.cairo.cairo_font_options_tHandle pango_cairo_context_get_font_options([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context);
 
 	[DllImport(PangoCairoLibrary.Name)]
@@ -135,21 +136,26 @@ internal class PangoCairoGlobalFunctionsExterns
 	internal static extern void pango_cairo_context_set_shape_renderer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))] MentorLake.Pango.PangoContextHandle context, MentorLake.PangoCairo.PangoCairoShapeRendererFunc func, IntPtr data, MentorLake.GLib.GDestroyNotify dnotify);
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle pango_cairo_create_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))]
 	internal static extern MentorLake.Pango.PangoLayoutHandle pango_cairo_create_layout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr);
 
 	[DllImport(PangoCairoLibrary.Name)]
 	internal static extern void pango_cairo_error_underline_path([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.cairo.cairo_tHandle>))] MentorLake.cairo.cairo_tHandle cr, double x, double y, double width, double height);
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_get_default();
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_new();
 
 	[DllImport(PangoCairoLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontMapHandle>))]
 	internal static extern MentorLake.Pango.PangoFontMapHandle pango_cairo_font_map_new_for_font_type(MentorLake.cairo.cairo_font_type_t fonttype);
 
 	[DllImport(PangoCairoLibrary.Name)]

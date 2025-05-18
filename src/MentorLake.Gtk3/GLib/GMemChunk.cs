@@ -9,43 +9,43 @@ public static class GMemChunkExtensions
 {
 	public static IntPtr Alloc(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		return GMemChunkExterns.g_mem_chunk_alloc(mem_chunk);
 	}
 
 	public static IntPtr Alloc0(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		return GMemChunkExterns.g_mem_chunk_alloc0(mem_chunk);
 	}
 
 	public static void Clean(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_clean(mem_chunk);
 	}
 
 	public static void Destroy(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_destroy(mem_chunk);
 	}
 
 	public static void Free(this MentorLake.GLib.GMemChunkHandle mem_chunk, IntPtr mem)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_free(mem_chunk, mem);
 	}
 
 	public static void Print(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_print(mem_chunk);
 	}
 
 	public static void Reset(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
-		if (mem_chunk.IsInvalid || mem_chunk.IsClosed) throw new Exception("Invalid or closed handle (GMemChunk)");
+		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_reset(mem_chunk);
 	}
 
@@ -79,6 +79,7 @@ internal class GMemChunkExterns
 	internal static extern void g_mem_chunk_info();
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMemChunkHandle>))]
 	internal static extern MentorLake.GLib.GMemChunkHandle g_mem_chunk_new(string name, int atom_size, UIntPtr area_size, int type);
 
 }

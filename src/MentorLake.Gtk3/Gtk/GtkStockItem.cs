@@ -9,13 +9,13 @@ public static class GtkStockItemExtensions
 {
 	public static MentorLake.Gtk.GtkStockItemHandle Copy(this MentorLake.Gtk.GtkStockItemHandle item)
 	{
-		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkStockItem)");
+		if (item.IsInvalid) throw new Exception("Invalid handle (GtkStockItem)");
 		return GtkStockItemExterns.gtk_stock_item_copy(item);
 	}
 
 	public static void Free(this MentorLake.Gtk.GtkStockItemHandle item)
 	{
-		if (item.IsInvalid || item.IsClosed) throw new Exception("Invalid or closed handle (GtkStockItem)");
+		if (item.IsInvalid) throw new Exception("Invalid handle (GtkStockItem)");
 		GtkStockItemExterns.gtk_stock_item_free(item);
 	}
 
@@ -25,6 +25,7 @@ public static class GtkStockItemExtensions
 internal class GtkStockItemExterns
 {
 	[DllImport(GtkLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStockItemHandle>))]
 	internal static extern MentorLake.Gtk.GtkStockItemHandle gtk_stock_item_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkStockItemHandle>))] MentorLake.Gtk.GtkStockItemHandle item);
 
 	[DllImport(GtkLibrary.Name)]

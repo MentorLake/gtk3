@@ -9,7 +9,7 @@ public static class GMatchInfoExtensions
 {
 	public static string ExpandReferences(this MentorLake.GLib.GMatchInfoHandle match_info, string string_to_expand)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		var externCallResult = GMatchInfoExterns.g_match_info_expand_references(match_info, string_to_expand, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -17,73 +17,73 @@ public static class GMatchInfoExtensions
 
 	public static string Fetch(this MentorLake.GLib.GMatchInfoHandle match_info, int match_num)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_fetch(match_info, match_num);
 	}
 
 	public static string[] FetchAll(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_fetch_all(match_info);
 	}
 
 	public static string FetchNamed(this MentorLake.GLib.GMatchInfoHandle match_info, string name)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_fetch_named(match_info, name);
 	}
 
 	public static bool FetchNamedPos(this MentorLake.GLib.GMatchInfoHandle match_info, string name, out int start_pos, out int end_pos)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_fetch_named_pos(match_info, name, out start_pos, out end_pos);
 	}
 
 	public static bool FetchPos(this MentorLake.GLib.GMatchInfoHandle match_info, int match_num, out int start_pos, out int end_pos)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_fetch_pos(match_info, match_num, out start_pos, out end_pos);
 	}
 
 	public static void Free(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		GMatchInfoExterns.g_match_info_free(match_info);
 	}
 
 	public static int GetMatchCount(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_get_match_count(match_info);
 	}
 
 	public static MentorLake.GLib.GRegexHandle GetRegex(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_get_regex(match_info);
 	}
 
 	public static string GetString(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_get_string(match_info);
 	}
 
 	public static bool IsPartialMatch(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_is_partial_match(match_info);
 	}
 
 	public static bool Matches(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_matches(match_info);
 	}
 
 	public static bool Next(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		var externCallResult = GMatchInfoExterns.g_match_info_next(match_info, out var error);
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
@@ -91,13 +91,13 @@ public static class GMatchInfoExtensions
 
 	public static MentorLake.GLib.GMatchInfoHandle Ref(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		return GMatchInfoExterns.g_match_info_ref(match_info);
 	}
 
 	public static void Unref(this MentorLake.GLib.GMatchInfoHandle match_info)
 	{
-		if (match_info.IsInvalid || match_info.IsClosed) throw new Exception("Invalid or closed handle (GMatchInfo)");
+		if (match_info.IsInvalid) throw new Exception("Invalid handle (GMatchInfo)");
 		GMatchInfoExterns.g_match_info_unref(match_info);
 	}
 
@@ -135,6 +135,7 @@ internal class GMatchInfoExterns
 	internal static extern int g_match_info_get_match_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GRegexHandle>))]
 	internal static extern MentorLake.GLib.GRegexHandle g_match_info_get_regex([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 	[DllImport(GLibLibrary.Name)]
@@ -151,6 +152,7 @@ internal class GMatchInfoExterns
 	internal static extern bool g_match_info_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))]
 	internal static extern MentorLake.GLib.GMatchInfoHandle g_match_info_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMatchInfoHandle>))] MentorLake.GLib.GMatchInfoHandle match_info);
 
 	[DllImport(GLibLibrary.Name)]

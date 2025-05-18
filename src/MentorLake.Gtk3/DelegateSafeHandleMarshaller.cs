@@ -1,25 +1,13 @@
-using System.Runtime.InteropServices;
-
 namespace MentorLake.Gtk3;
 
-public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T : SafeHandle, new()
+public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T : BaseSafeHandle, new()
 {
 	private static readonly DelegateSafeHandleMarshaller<T> s_instance = new();
+	public static ICustomMarshaler GetInstance(string s) => s_instance;
 
-	public void CleanUpManagedData(object o)
-	{
-		var p = (T)o;
-		p.Dispose();
-	}
-
-	public void CleanUpNativeData(IntPtr ptr)
-	{
-	}
-
-	public int GetNativeDataSize()
-	{
-		return IntPtr.Size;
-	}
+	public void CleanUpManagedData(object o) { }
+	public void CleanUpNativeData(IntPtr ptr) { }
+	public int GetNativeDataSize() => IntPtr.Size;
 
 	public IntPtr MarshalManagedToNative(object o)
 	{
@@ -31,11 +19,7 @@ public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T :
 	{
 		var safeHandle = new T();
 		Marshal.InitHandle(safeHandle, ptr);
+		if (safeHandle is GObjectHandle gObjectHandle) GObjectMarshallingHelper.HandleGObjectHandle(gObjectHandle, true);
 		return safeHandle;
-	}
-
-	public static ICustomMarshaler GetInstance(string s)
-	{
-		return s_instance;
 	}
 }

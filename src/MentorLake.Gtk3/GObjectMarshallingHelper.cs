@@ -10,6 +10,9 @@ public class GObjectMarshallingHelper
 	[DllImport(GObjectLibrary.Name)]
 	private static extern void g_object_unref(IntPtr @object);
 
+	[DllImport(GObjectLibrary.Name)]
+	private static extern IntPtr g_object_ref_sink(IntPtr @object);
+
 	public static bool EnableLogging { get; set; } = false;
 
 	private class GObjectState
@@ -29,7 +32,8 @@ public class GObjectMarshallingHelper
 			Name = EnableLogging ? GObjectGlobalFunctions.TypeNameFromInstance(gObjectHandle) : null,
 		};
 
-		if (refObject) g_object_ref(gObjectHandle.DangerousGetHandle());
+		if (gObjectHandle.IsFloating()) g_object_ref_sink(gObjectHandle.DangerousGetHandle());
+		else if (refObject) g_object_ref(gObjectHandle.DangerousGetHandle());
 
 		if (EnableLogging)
 		{

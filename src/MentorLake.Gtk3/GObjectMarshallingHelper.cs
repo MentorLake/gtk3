@@ -53,9 +53,14 @@ public class GObjectMarshallingHelper
 
 			if (!s.Handle.IsInvalid && s.WeakPointer != IntPtr.Zero && (!s.WasFloating || s.Handle.IsFloating()))
 			{
-				if (EnableLogging) Console.WriteLine("Unref: " + s.Name);
-				g_object_unref(s.Handle.DangerousGetHandle());
+				GLibGlobalFunctions.MainContextDefault().InvokeFull(0, Unref, s.Handle.DangerousGetHandle(), null);
 			}
 		}, state);
+	}
+
+	private static bool Unref(IntPtr data)
+	{
+		g_object_unref(data);
+		return false;
 	}
 }

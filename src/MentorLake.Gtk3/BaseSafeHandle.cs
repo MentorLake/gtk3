@@ -6,9 +6,24 @@ public class BaseSafeHandle() : SafeHandleZeroOrMinusOneIsInvalid(true)
 {
 	private Action<object> _releaseAction;
 	private object _state;
+	private bool _released;
 
 	protected override bool ReleaseHandle()
 	{
+		if (_released)
+		{
+			Console.WriteLine("WARNING: Released more than once! " + this.GetType().FullName);
+			return true;
+		}
+
+		if (_state == null)
+		{
+			Console.WriteLine("State was null!!! " + this.GetType().FullName);
+			return true;
+		}
+
+		_released = true;
+
 		if (_releaseAction != null)
 		{
 			_releaseAction(_state);

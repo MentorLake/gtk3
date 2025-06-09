@@ -13,6 +13,12 @@ public class GObjectMarshallingHelper
 	[DllImport(GObjectLibrary.Name)]
 	private static extern IntPtr g_object_ref_sink(IntPtr @object);
 
+	[DllImport(GLibLibrary.Name)]
+	internal static extern IntPtr g_main_context_default();
+
+	[DllImport(GLibLibrary.Name)]
+	internal static extern void g_main_context_invoke_full(IntPtr context, int priority, MentorLake.GLib.GSourceFunc function, IntPtr data, MentorLake.GLib.GDestroyNotify notify);
+
 	public static bool EnableLogging { get; set; } = false;
 
 	private class GObjectState
@@ -53,7 +59,7 @@ public class GObjectMarshallingHelper
 
 			if (!s.Handle.IsInvalid && s.WeakPointer != IntPtr.Zero && (!s.WasFloating || s.Handle.IsFloating()))
 			{
-				GLibGlobalFunctions.MainContextDefault().InvokeFull(0, Unref, s.Handle.DangerousGetHandle(), null);
+				g_main_context_invoke_full(g_main_context_default(), 0, Unref, s.Handle.DangerousGetHandle(), null);
 			}
 		}, state);
 	}

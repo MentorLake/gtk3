@@ -31,6 +31,8 @@ public class GObjectMarshallingHelper
 
 	public static void HandleGObjectHandle(GObjectHandle gObjectHandle, bool refObject)
 	{
+		if (gObjectHandle.IsInvalid || gObjectHandle.IsClosed) return;
+
 		var state = new GObjectState()
 		{
 			Handle = gObjectHandle,

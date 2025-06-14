@@ -14,18 +14,22 @@ public class GObjectMarshallingHelper
 	private static extern IntPtr g_object_ref_sink(IntPtr @object);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern IntPtr g_main_context_default();
+	private static extern IntPtr g_main_context_default();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern void g_main_context_invoke_full(IntPtr context, int priority, MentorLake.GLib.GSourceFunc function, IntPtr data, MentorLake.GLib.GDestroyNotify notify);
+	private static extern void g_main_context_invoke_full(IntPtr context, int priority, MentorLake.GLib.GSourceFunc function, IntPtr data, MentorLake.GLib.GDestroyNotify notify);
+
+	[DllImport(GObjectLibrary.Name)]
+	private static extern void g_object_weak_ref(MentorLake.GObject.GObjectHandle @object, GWeakNotify notify, IntPtr data);
+
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+	private delegate void GWeakNotify(IntPtr data, IntPtr where_the_object_was);
 
 	public static bool EnableLogging { get; set; } = false;
 
 	private class GObjectState
 	{
 		public GObjectHandle Handle { get; set; }
-		public IntPtr WeakPointer = 3;
-		public bool WasFloating { get; set; }
 		public string Name { get; set; }
 	}
 
@@ -36,30 +40,25 @@ public class GObjectMarshallingHelper
 		var state = new GObjectState()
 		{
 			Handle = gObjectHandle,
-			WasFloating = gObjectHandle.IsFloating(),
 			Name = EnableLogging ? GObjectGlobalFunctions.TypeNameFromInstance(gObjectHandle) : null,
 		};
 
 		if (gObjectHandle.IsFloating()) g_object_ref_sink(gObjectHandle.DangerousGetHandle());
 		else if (refObject) g_object_ref(gObjectHandle.DangerousGetHandle());
 
-		if (EnableLogging)
+		g_object_weak_ref(gObjectHandle, static (data, _) =>
 		{
-			gObjectHandle.WeakRef(static (data, _) =>
-			{
-				var gcHandleInner = GCHandle.FromIntPtr(data);
-				Console.WriteLine("Finalize: " + ((string) gcHandleInner.Target));
-				gcHandleInner.Free();
-			}, GCHandle.ToIntPtr(GCHandle.Alloc(state.Name)));
-		}
-
-		gObjectHandle.AddWeakPointer(ref state.WeakPointer);
+			var gcHandleInner = GCHandle.FromIntPtr(data);
+			var s = (GObjectState)gcHandleInner.Target;
+			s.Handle.SetHandleAsInvalid();
+			gcHandleInner.Free();
+		}, GCHandle.ToIntPtr(GCHandle.Alloc(state)));
 
 		gObjectHandle.AddReleaseAction(static data =>
 		{
 			var s = (GObjectState) data;
 
-			if (!s.Handle.IsInvalid && s.WeakPointer != IntPtr.Zero && (!s.WasFloating || s.Handle.IsFloating()))
+			if (!s.Handle.IsInvalid)
 			{
 				g_main_context_invoke_full(g_main_context_default(), 0, Unref, s.Handle.DangerousGetHandle(), null);
 			}

@@ -4,7 +4,7 @@ namespace MentorLake.GObject;
 
 public partial class GObjectHandle
 {
-	~GObjectHandle()
+	protected override void Dispose(bool disposing)
 	{
 		if (!IsInvalid)
 		{
@@ -16,6 +16,8 @@ public partial class GObjectHandle
 
 			g_main_context_invoke_full(g_main_context_default(), 0, Unref, handle, null);
 		}
+
+		base.Dispose(disposing);
 	}
 
 	public void Init(bool addRef)
@@ -31,7 +33,7 @@ public partial class GObjectHandle
 		{
 			var gc = GCHandle.FromIntPtr(ptr);
 			var h = gc.Target as GObjectHandle;
-			h.SetHandleAsInvalid();
+			h?.SetHandleAsInvalid();
 			gc.Free();
 		}, GCHandle.ToIntPtr(gc));
 	}

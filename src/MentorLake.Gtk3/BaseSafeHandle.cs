@@ -39,9 +39,4 @@ public class BaseSafeHandle() : SafeHandleZeroOrMinusOneIsInvalid(true)
 	{
 		return DangerousGetHandle().GetHashCode();
 	}
-
-	~BaseSafeHandle()
-	{
-		Dispose();
-	}
 }

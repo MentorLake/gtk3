@@ -213,7 +213,7 @@ internal class AtkGlobalFunctionsExterns
 	internal static extern uint atk_get_binary_age();
 
 	[DllImport(AtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRegistryHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkRegistryHandle>))]
 	internal static extern MentorLake.Atk.AtkRegistryHandle atk_get_default_registry();
 
 	[DllImport(AtkLibrary.Name)]

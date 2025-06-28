@@ -20,7 +20,7 @@ public static class Program
 		{
 			var safeHandle = new T();
 			Marshal.InitHandle(safeHandle, GList.NthData(gListHandle, i));
-			if (safeHandle is GObjectHandle gObjectHandle) GObjectMarshallingHelper.HandleGObjectHandle(gObjectHandle, false);
+			if (safeHandle is GObjectHandle gObjectHandle) gObjectHandle.Init(false);
 			result.Add(safeHandle);
 		}
 
@@ -51,7 +51,6 @@ public static class Program
 
 	private static void MainInternal(ref IntPtr testPointer)
 	{
-		GObjectMarshallingHelper.EnableLogging = true;
 		SynchronizationContext.SetSynchronizationContext(new GLibSynchronizationContext());
 
 		var appHandle = GtkApplicationHandle.New("my.app", GApplicationFlags.G_APPLICATION_FLAGS_NONE);

@@ -19,7 +19,7 @@ public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T :
 	{
 		var safeHandle = new T();
 		Marshal.InitHandle(safeHandle, ptr);
-		if (safeHandle is GObjectHandle gObjectHandle) GObjectMarshallingHelper.HandleGObjectHandle(gObjectHandle, true);
+		if (safeHandle is GObjectHandle gObjectHandle) gObjectHandle.Init(true);
 		return safeHandle;
 	}
 }

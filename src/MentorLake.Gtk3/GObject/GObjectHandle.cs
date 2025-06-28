@@ -1,6 +1,6 @@
 namespace MentorLake.GObject;
 
-public class GObjectHandle : GTypeInstanceHandle
+public partial class GObjectHandle : GTypeInstanceHandle
 {
 	public static MentorLake.GObject.GObjectHandle New(MentorLake.GObject.GType object_type, string first_property_name, IntPtr @__arglist)
 	{
@@ -52,7 +52,7 @@ public static class GObjectHandleSignalExtensions
 		{
 			GObjectHandleSignalDelegates.notify handler = ( MentorLake.GObject.GObjectHandle self,  MentorLake.GObject.GParamSpecHandle pspec,  IntPtr user_data) =>
 			{
-				
+
 
 				var signalStruct = new GObjectHandleSignalStructs.NotifySignal()
 				{

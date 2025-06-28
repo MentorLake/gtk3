@@ -142,7 +142,7 @@ internal class GMenuItemHandleExterns
 	internal static extern MentorLake.GLib.GVariantHandle g_menu_item_get_attribute_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuItemHandle>))] MentorLake.Gio.GMenuItemHandle menu_item, string attribute, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantTypeHandle>))] MentorLake.GLib.GVariantTypeHandle expected_type);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GMenuModelHandle g_menu_item_get_link([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuItemHandle>))] MentorLake.Gio.GMenuItemHandle menu_item, string link);
 
 	[DllImport(GioLibrary.Name)]

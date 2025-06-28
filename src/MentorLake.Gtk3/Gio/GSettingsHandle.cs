@@ -546,7 +546,7 @@ internal class GSettingsHandleExterns
 	internal static extern bool g_settings_get_boolean([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string key);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))]
 	internal static extern MentorLake.Gio.GSettingsHandle g_settings_get_child([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsHandle>))] MentorLake.Gio.GSettingsHandle settings, string name);
 
 	[DllImport(GioLibrary.Name)]

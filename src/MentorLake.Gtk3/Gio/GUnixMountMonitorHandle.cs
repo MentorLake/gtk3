@@ -125,7 +125,7 @@ internal class GUnixMountMonitorHandleExterns
 	internal static extern void g_unix_mount_monitor_set_rate_limit([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))] MentorLake.Gio.GUnixMountMonitorHandle mount_monitor, int limit_msec);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.Gio.GUnixMountMonitorHandle g_unix_mount_monitor_get();
 
 }

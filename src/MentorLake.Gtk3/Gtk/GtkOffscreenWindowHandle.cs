@@ -32,7 +32,7 @@ internal class GtkOffscreenWindowHandleExterns
 	internal static extern MentorLake.Gtk.GtkOffscreenWindowHandle gtk_offscreen_window_new();
 
 	[DllImport(GtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
 	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gtk_offscreen_window_get_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkOffscreenWindowHandle>))] MentorLake.Gtk.GtkOffscreenWindowHandle offscreen);
 
 	[DllImport(GtkLibrary.Name)]

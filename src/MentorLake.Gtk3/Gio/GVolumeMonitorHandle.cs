@@ -567,7 +567,7 @@ internal class GVolumeMonitorHandleExterns
 	internal static extern MentorLake.Gio.GVolumeHandle g_volume_monitor_adopt_orphan_mount([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMountHandleImpl>))] MentorLake.Gio.GMountHandle mount);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GVolumeMonitorHandle>))]
 	internal static extern MentorLake.Gio.GVolumeMonitorHandle g_volume_monitor_get();
 
 }

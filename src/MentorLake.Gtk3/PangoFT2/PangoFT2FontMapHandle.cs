@@ -106,7 +106,7 @@ internal class PangoFT2FontMapHandleExterns
 	internal static extern MentorLake.PangoFT2.PangoFT2FontMapHandle pango_ft2_font_map_new();
 
 	[DllImport(PangoFT2Library.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Pango.PangoContextHandle>))]
 	internal static extern MentorLake.Pango.PangoContextHandle pango_ft2_font_map_create_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoFT2.PangoFT2FontMapHandle>))] MentorLake.PangoFT2.PangoFT2FontMapHandle fontmap);
 
 	[DllImport(PangoFT2Library.Name)]

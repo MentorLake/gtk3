@@ -239,7 +239,7 @@ internal class GDBusObjectManagerServerHandleExterns
 	internal static extern void g_dbus_object_manager_server_export_uniquely([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerServerHandle>))] MentorLake.Gio.GDBusObjectManagerServerHandle manager, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectSkeletonHandle>))] MentorLake.Gio.GDBusObjectSkeletonHandle @object);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GDBusConnectionHandle>))]
 	internal static extern MentorLake.Gio.GDBusConnectionHandle g_dbus_object_manager_server_get_connection([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDBusObjectManagerServerHandle>))] MentorLake.Gio.GDBusObjectManagerServerHandle manager);
 
 	[DllImport(GioLibrary.Name)]

@@ -26,7 +26,7 @@ internal class GtkRcStyleHandleExterns
 	internal static extern MentorLake.Gtk.GtkRcStyleHandle gtk_rc_style_new();
 
 	[DllImport(GtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRcStyleHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gtk.GtkRcStyleHandle>))]
 	internal static extern MentorLake.Gtk.GtkRcStyleHandle gtk_rc_style_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkRcStyleHandle>))] MentorLake.Gtk.GtkRcStyleHandle orig);
 
 }

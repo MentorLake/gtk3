@@ -88,7 +88,7 @@ internal class AtkStateSetHandleExterns
 	internal static extern void atk_state_set_add_states([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType[] types, int n_types);
 
 	[DllImport(AtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
 	internal static extern MentorLake.Atk.AtkStateSetHandle atk_state_set_and_sets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle compare_set);
 
 	[DllImport(AtkLibrary.Name)]
@@ -104,14 +104,14 @@ internal class AtkStateSetHandleExterns
 	internal static extern bool atk_state_set_is_empty([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set);
 
 	[DllImport(AtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
 	internal static extern MentorLake.Atk.AtkStateSetHandle atk_state_set_or_sets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle compare_set);
 
 	[DllImport(AtkLibrary.Name)]
 	internal static extern bool atk_state_set_remove_state([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set, MentorLake.Atk.AtkStateType type);
 
 	[DllImport(AtkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))]
 	internal static extern MentorLake.Atk.AtkStateSetHandle atk_state_set_xor_sets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle set, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkStateSetHandle>))] MentorLake.Atk.AtkStateSetHandle compare_set);
 
 }

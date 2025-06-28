@@ -42,7 +42,7 @@ internal class GMenuLinkIterHandleExterns
 	internal static extern bool g_menu_link_iter_get_next([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuLinkIterHandle>))] MentorLake.Gio.GMenuLinkIterHandle iter, out string out_link, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))] out MentorLake.Gio.GMenuModelHandle value);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GMenuModelHandle>))]
 	internal static extern MentorLake.Gio.GMenuModelHandle g_menu_link_iter_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GMenuLinkIterHandle>))] MentorLake.Gio.GMenuLinkIterHandle iter);
 
 	[DllImport(GioLibrary.Name)]

@@ -53,7 +53,7 @@ internal class GSocketControlMessageHandleExterns
 	internal static extern void g_socket_control_message_serialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))] MentorLake.Gio.GSocketControlMessageHandle message, IntPtr data);
 
 	[DllImport(GioLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSocketControlMessageHandle>))]
 	internal static extern MentorLake.Gio.GSocketControlMessageHandle g_socket_control_message_deserialize(int level, int type, UIntPtr size, byte[] data);
 
 }

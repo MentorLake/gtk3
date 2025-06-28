@@ -1351,7 +1351,7 @@ internal class GdkWindowHandleExterns
 	internal static extern void gdk_window_coords_to_parent([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, double x, double y, out double parent_x, out double parent_y);
 
 	[DllImport(GdkLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gdk.GdkGLContextHandle>))]
 	internal static extern MentorLake.Gdk.GdkGLContextHandle gdk_window_create_gl_context([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkLibrary.Name)]

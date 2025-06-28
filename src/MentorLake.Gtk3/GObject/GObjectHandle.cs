@@ -52,7 +52,7 @@ public static class GObjectHandleSignalExtensions
 		{
 			GObjectHandleSignalDelegates.notify handler = ( MentorLake.GObject.GObjectHandle self,  MentorLake.GObject.GParamSpecHandle pspec,  IntPtr user_data) =>
 			{
-
+				
 
 				var signalStruct = new GObjectHandleSignalStructs.NotifySignal()
 				{
@@ -521,7 +521,7 @@ internal class GObjectHandleExterns
 	internal static extern IntPtr g_object_steal_qdata([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object, MentorLake.GLib.GQuark quark);
 
 	[DllImport(GObjectLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_object_take_ref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))] MentorLake.GObject.GObjectHandle @object);
 
 	[DllImport(GObjectLibrary.Name)]

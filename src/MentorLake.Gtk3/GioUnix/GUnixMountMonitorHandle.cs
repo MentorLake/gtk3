@@ -120,7 +120,7 @@ internal class GUnixMountMonitorHandleExterns
 	internal static extern MentorLake.GioUnix.GUnixMountMonitorHandle g_unix_mount_monitor_new();
 
 	[DllImport(GioUnixLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GUnixMountMonitorHandle>))]
 	internal static extern MentorLake.Gio.GUnixMountMonitorHandle g_unix_mount_monitor_get();
 
 	[DllImport(GioUnixLibrary.Name)]

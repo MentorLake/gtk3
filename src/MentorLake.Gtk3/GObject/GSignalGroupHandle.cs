@@ -201,7 +201,7 @@ internal class GSignalGroupHandleExterns
 	internal static extern void g_signal_group_connect_swapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GSignalGroupHandle>))] MentorLake.GObject.GSignalGroupHandle self, string detailed_signal, MentorLake.GObject.GCallback c_handler, IntPtr data);
 
 	[DllImport(GObjectLibrary.Name)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
+	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GObject.GObjectHandle>))]
 	internal static extern MentorLake.GObject.GObjectHandle g_signal_group_dup_target([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GSignalGroupHandle>))] MentorLake.GObject.GSignalGroupHandle self);
 
 	[DllImport(GObjectLibrary.Name)]

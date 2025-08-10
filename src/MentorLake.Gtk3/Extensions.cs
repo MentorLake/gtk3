@@ -54,15 +54,7 @@ public static class Extensions
 	{
 		lock (s_managedData)
 		{
-			var objKeyPointer = obj.GetData("managed-data-id");
-
-			if (objKeyPointer == IntPtr.Zero)
-			{
-				obj.SetData("managed-data-id", (nint) s_keyCounter++);
-				objKeyPointer = obj.GetData("managed-data-id");
-			}
-
-			var objKey = (long)objKeyPointer;
+			var objKey = obj.GetOrCreateManagedUniqueId();
 
 			if (!s_managedData.ContainsKey(objKey))
 			{
@@ -100,19 +92,28 @@ public static class Extensions
 	{
 		lock (s_managedData)
 		{
-			var objKeyPointer = obj.GetData("managed-data-id");
-			if (objKeyPointer == IntPtr.Zero) return default(T);
-			var objKey = (long) objKeyPointer;
+			var objKey = obj.GetOrCreateManagedUniqueId();
 			var objects = s_managedData[objKey];
 			return (T) objects[key];
 		}
 	}
 
-	public static long GetManagedUniqueId(this GObjectHandle obj)
+	private static long GetOrCreateManagedUniqueId(this GObjectHandle obj)
 	{
 		var objKeyPointer = obj.GetData("managed-data-id");
-		if (objKeyPointer == IntPtr.Zero) return -1;
+
+		if (objKeyPointer == IntPtr.Zero)
+		{
+			obj.SetData("managed-data-id", (nint) s_keyCounter++);
+			objKeyPointer = obj.GetData("managed-data-id");
+		}
+
 		return objKeyPointer;
+	}
+
+	public static long GetManagedUniqueId(this GObjectHandle obj)
+	{
+		return GetOrCreateManagedUniqueId(obj);
 	}
 
 	public static T ToHandle<T>(this BaseSafeHandle handle) where T : BaseSafeHandle, new()

@@ -48,7 +48,7 @@ public static class Extensions
 	}
 
 	private static readonly Dictionary<long, Dictionary<string, object>> s_managedData = new();
-	private static long s_keyCounter = 0;
+	private static long s_keyCounter = 1;
 
 	public static T SetManagedData<T>(this T obj, string key, object val) where T : GObjectHandle
 	{

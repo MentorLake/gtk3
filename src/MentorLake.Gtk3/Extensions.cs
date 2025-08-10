@@ -48,12 +48,21 @@ public static class Extensions
 	}
 
 	private static readonly Dictionary<long, Dictionary<string, object>> s_managedData = new();
+	private static long s_keyCounter = 0;
 
 	public static T SetManagedData<T>(this T obj, string key, object val) where T : GObjectHandle
 	{
 		lock (s_managedData)
 		{
-			var objKey = obj.DangerousGetHandle().ToInt64();
+			var objKeyPointer = obj.GetData("managed-data-id");
+
+			if (objKeyPointer == IntPtr.Zero)
+			{
+				obj.SetData("managed-data-id", (nint) s_keyCounter++);
+				objKeyPointer = obj.GetData("managed-data-id");
+			}
+
+			var objKey = (long)objKeyPointer;
 
 			if (!s_managedData.ContainsKey(objKey))
 			{
@@ -75,11 +84,25 @@ public static class Extensions
 		}
 	}
 
+	public static bool HasManagedData(this GObjectHandle obj, string key)
+	{
+		lock (s_managedData)
+		{
+			var objKeyPointer = obj.GetData("managed-data-id");
+			if (objKeyPointer == IntPtr.Zero) return false;
+			var objKey = (long)objKeyPointer;
+			if (!s_managedData.TryGetValue(objKey, out var objects)) return false;
+			return objects.ContainsKey(key);
+		}
+	}
+
 	public static T GetManagedData<T>(this GObjectHandle obj, string key)
 	{
 		lock (s_managedData)
 		{
-			var objKey = obj.DangerousGetHandle().ToInt64();
+			var objKeyPointer = obj.GetData("managed-data-id");
+			if (objKeyPointer == IntPtr.Zero) return default(T);
+			var objKey = (long) objKeyPointer;
 			var objects = s_managedData[objKey];
 			return (T) objects[key];
 		}

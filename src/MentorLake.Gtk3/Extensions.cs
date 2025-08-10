@@ -108,6 +108,13 @@ public static class Extensions
 		}
 	}
 
+	public static long GetManagedUniqueId(this GObjectHandle obj)
+	{
+		var objKeyPointer = obj.GetData("managed-data-id");
+		if (objKeyPointer == IntPtr.Zero) return -1;
+		return objKeyPointer;
+	}
+
 	public static T ToHandle<T>(this BaseSafeHandle handle) where T : BaseSafeHandle, new()
 	{
 		var newHandle = new T();

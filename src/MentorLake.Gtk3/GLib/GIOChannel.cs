@@ -278,7 +278,7 @@ internal class GIOChannelExterns
 	internal static extern MentorLake.GLib.GIOError g_io_channel_read([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, string buf, UIntPtr count, UIntPtr bytes_read);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_chars([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, out byte[] buf, UIntPtr count, out UIntPtr bytes_read, out MentorLake.GLib.GErrorHandle error);
+	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_chars([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] buf, UIntPtr count, out UIntPtr bytes_read, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_line([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, out string str_return, out UIntPtr length, out UIntPtr terminator_pos, out MentorLake.GLib.GErrorHandle error);
@@ -287,7 +287,7 @@ internal class GIOChannelExterns
 	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_line_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GStringHandle>))] MentorLake.GLib.GStringHandle buffer, UIntPtr terminator_pos, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_to_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, out byte[] str_return, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
+	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_to_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] str_return, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GIOStatus g_io_channel_read_unichar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GIOChannelHandle>))] MentorLake.GLib.GIOChannelHandle channel, out char thechar, out MentorLake.GLib.GErrorHandle error);

@@ -1027,7 +1027,7 @@ internal class GtkGlobalFunctionsExterns
 	internal static extern void gtk_accelerator_parse(string accelerator, out uint accelerator_key, out MentorLake.Gdk.GdkModifierType accelerator_mods);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_accelerator_parse_with_keycode(string accelerator, out uint accelerator_key, out uint[] accelerator_codes, out MentorLake.Gdk.GdkModifierType accelerator_mods);
+	internal static extern void gtk_accelerator_parse_with_keycode(string accelerator, out uint accelerator_key, [MarshalAs(UnmanagedType.LPArray)] out uint[] accelerator_codes, out MentorLake.Gdk.GdkModifierType accelerator_mods);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern void gtk_accelerator_set_default_mod_mask(MentorLake.Gdk.GdkModifierType default_mod_mask);

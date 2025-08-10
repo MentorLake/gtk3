@@ -573,10 +573,10 @@ internal class GdkPixbufHandleExterns
 	internal static extern bool gdk_pixbuf_save([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, string filename, string type, IntPtr error, IntPtr @__arglist);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_save_to_buffer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out byte[] buffer, out UIntPtr buffer_size, string type, IntPtr error, IntPtr @__arglist);
+	internal static extern bool gdk_pixbuf_save_to_buffer([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] buffer, out UIntPtr buffer_size, string type, IntPtr error, IntPtr @__arglist);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern bool gdk_pixbuf_save_to_bufferv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out byte[] buffer, out UIntPtr buffer_size, string type, string[] option_keys, string[] option_values, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool gdk_pixbuf_save_to_bufferv([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] buffer, out UIntPtr buffer_size, string type, string[] option_keys, string[] option_values, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern bool gdk_pixbuf_save_to_callback([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, MentorLake.GdkPixbuf.GdkPixbufSaveFunc save_func, IntPtr user_data, string type, IntPtr error, IntPtr @__arglist);

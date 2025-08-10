@@ -526,7 +526,7 @@ internal class PangoLayoutHandleExterns
 	internal static extern MentorLake.GLib.GSListHandle pango_layout_get_lines_readonly([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern void pango_layout_get_log_attrs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, out MentorLake.Pango.PangoLogAttr[] attrs, out int n_attrs);
+	internal static extern void pango_layout_get_log_attrs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.Pango.PangoLogAttr[] attrs, out int n_attrs);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern MentorLake.Pango.PangoLogAttr[] pango_layout_get_log_attrs_readonly([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutHandle>))] MentorLake.Pango.PangoLayoutHandle layout, out int n_attrs);

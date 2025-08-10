@@ -85,7 +85,7 @@ internal class graphene_frustum_tExterns
 	internal static extern void graphene_frustum_free([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_frustum_tHandle>))] MentorLake.Graphene.graphene_frustum_tHandle f);
 
 	[DllImport(GrapheneLibrary.Name)]
-	internal static extern void graphene_frustum_get_planes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_frustum_tHandle>))] MentorLake.Graphene.graphene_frustum_tHandle f, out MentorLake.Graphene.graphene_plane_t[] planes);
+	internal static extern void graphene_frustum_get_planes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_frustum_tHandle>))] MentorLake.Graphene.graphene_frustum_tHandle f, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] out MentorLake.Graphene.graphene_plane_t[] planes);
 
 	[DllImport(GrapheneLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_frustum_tHandle>))]

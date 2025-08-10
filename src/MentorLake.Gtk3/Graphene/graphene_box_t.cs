@@ -202,7 +202,7 @@ internal class graphene_box_tExterns
 	internal static extern void graphene_box_get_size([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))] MentorLake.Graphene.graphene_box_tHandle box, out MentorLake.Graphene.graphene_vec3_t size);
 
 	[DllImport(GrapheneLibrary.Name)]
-	internal static extern void graphene_box_get_vertices([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))] MentorLake.Graphene.graphene_box_tHandle box, out MentorLake.Graphene.graphene_vec3_t[] vertices);
+	internal static extern void graphene_box_get_vertices([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))] MentorLake.Graphene.graphene_box_tHandle box, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] out MentorLake.Graphene.graphene_vec3_t[] vertices);
 
 	[DllImport(GrapheneLibrary.Name)]
 	internal static extern float graphene_box_get_width([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Graphene.graphene_box_tHandle>))] MentorLake.Graphene.graphene_box_tHandle box);

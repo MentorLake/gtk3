@@ -149,7 +149,7 @@ internal class GdkX11DisplayHandleExterns
 	internal static extern void gdk_x11_display_set_window_scale([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, int scale);
 
 	[DllImport(GdkX11Library.Name)]
-	internal static extern int gdk_x11_display_string_to_compound_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, out char[] ctext, out int length);
+	internal static extern int gdk_x11_display_string_to_compound_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out char[] ctext, out int length);
 
 	[DllImport(GdkX11Library.Name)]
 	internal static extern int gdk_x11_display_text_property_to_text_list([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char text, int length, string list);
@@ -158,7 +158,7 @@ internal class GdkX11DisplayHandleExterns
 	internal static extern void gdk_x11_display_ungrab([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display);
 
 	[DllImport(GdkX11Library.Name)]
-	internal static extern bool gdk_x11_display_utf8_to_compound_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, out char[] ctext, out int length);
+	internal static extern bool gdk_x11_display_utf8_to_compound_text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DisplayHandle>))] MentorLake.GdkX11.GdkX11DisplayHandle display, string str, out MentorLake.Gdk.GdkAtom encoding, out int format, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out char[] ctext, out int length);
 
 	[DllImport(GdkX11Library.Name)]
 	internal static extern bool gdk_x11_display_get_glx_version([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, out int major, out int minor);

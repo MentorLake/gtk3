@@ -57,6 +57,6 @@ internal class PangoFontFaceHandleExterns
 	internal static extern bool pango_font_face_is_synthesized([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontFaceHandle>))] MentorLake.Pango.PangoFontFaceHandle face);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern void pango_font_face_list_sizes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontFaceHandle>))] MentorLake.Pango.PangoFontFaceHandle face, out int[] sizes, out int n_sizes);
+	internal static extern void pango_font_face_list_sizes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoFontFaceHandle>))] MentorLake.Pango.PangoFontFaceHandle face, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out int[] sizes, out int n_sizes);
 
 }

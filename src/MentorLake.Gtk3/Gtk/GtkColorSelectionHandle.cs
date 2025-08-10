@@ -251,7 +251,7 @@ internal class GtkColorSelectionHandleExterns
 	internal static extern void gtk_color_selection_set_previous_rgba([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkColorSelectionHandle>))] MentorLake.Gtk.GtkColorSelectionHandle colorsel, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle rgba);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern bool gtk_color_selection_palette_from_string(string str, out MentorLake.Gdk.GdkColor[] colors, out int n_colors);
+	internal static extern bool gtk_color_selection_palette_from_string(string str, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.Gdk.GdkColor[] colors, out int n_colors);
 
 	[DllImport(GtkLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

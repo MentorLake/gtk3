@@ -88,7 +88,7 @@ internal class PangoCoverageHandleExterns
 	internal static extern void pango_coverage_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoCoverageHandle>))] MentorLake.Pango.PangoCoverageHandle coverage, int index_, MentorLake.Pango.PangoCoverageLevel level);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern void pango_coverage_to_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoCoverageHandle>))] MentorLake.Pango.PangoCoverageHandle coverage, out byte[] bytes, out int n_bytes);
+	internal static extern void pango_coverage_to_bytes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoCoverageHandle>))] MentorLake.Pango.PangoCoverageHandle coverage, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] bytes, out int n_bytes);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_coverage_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoCoverageHandle>))] MentorLake.Pango.PangoCoverageHandle coverage);

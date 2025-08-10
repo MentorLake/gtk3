@@ -844,13 +844,13 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_property_delete([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern bool gdk_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, out char[] data);
+	internal static extern bool gdk_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] out char[] data);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern void gdk_query_depths(out int[] depths, out int count);
+	internal static extern void gdk_query_depths([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out int[] depths, out int count);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern void gdk_query_visual_types(out MentorLake.Gdk.GdkVisualType[] visual_types, out int count);
+	internal static extern void gdk_query_visual_types([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out MentorLake.Gdk.GdkVisualType[] visual_types, out int count);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_selection_convert([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle requestor, MentorLake.Gdk.GdkAtom selection, MentorLake.Gdk.GdkAtom target, uint time_);
@@ -906,7 +906,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern bool gdk_test_simulate_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, int x, int y, uint keyval, MentorLake.Gdk.GdkModifierType modifiers, MentorLake.Gdk.GdkEventType key_pressrelease);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern int gdk_text_property_to_utf8_list_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char[] text, int length, out string[] list);
+	internal static extern int gdk_text_property_to_utf8_list_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char[] text, int length, [MarshalAs(UnmanagedType.LPArray)] out string[] list);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern uint gdk_threads_add_idle(MentorLake.GLib.GSourceFunc function, IntPtr data);

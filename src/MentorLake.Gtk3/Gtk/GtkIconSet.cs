@@ -86,7 +86,7 @@ internal class GtkIconSetExterns
 	internal static extern MentorLake.Gtk.GtkIconSetHandle gtk_icon_set_copy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSetHandle>))] MentorLake.Gtk.GtkIconSetHandle icon_set);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_icon_set_get_sizes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSetHandle>))] MentorLake.Gtk.GtkIconSetHandle icon_set, out MentorLake.Gtk.GtkIconSize[] sizes, out int n_sizes);
+	internal static extern void gtk_icon_set_get_sizes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSetHandle>))] MentorLake.Gtk.GtkIconSetHandle icon_set, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.Gtk.GtkIconSize[] sizes, out int n_sizes);
 
 	[DllImport(GtkLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkIconSetHandle>))]

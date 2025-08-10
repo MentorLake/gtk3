@@ -73,7 +73,7 @@ internal class PangoOTBufferExterns
 	internal static extern void pango_ot_buffer_destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTBufferHandle>))] MentorLake.PangoOT.PangoOTBufferHandle buffer);
 
 	[DllImport(PangoOTLibrary.Name)]
-	internal static extern void pango_ot_buffer_get_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTBufferHandle>))] MentorLake.PangoOT.PangoOTBufferHandle buffer, out MentorLake.PangoOT.PangoOTGlyph[] glyphs, out int n_glyphs);
+	internal static extern void pango_ot_buffer_get_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTBufferHandle>))] MentorLake.PangoOT.PangoOTBufferHandle buffer, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.PangoOT.PangoOTGlyph[] glyphs, out int n_glyphs);
 
 	[DllImport(PangoOTLibrary.Name)]
 	internal static extern void pango_ot_buffer_output([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.PangoOT.PangoOTBufferHandle>))] MentorLake.PangoOT.PangoOTBufferHandle buffer, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoGlyphStringHandle>))] MentorLake.Pango.PangoGlyphStringHandle glyphs);

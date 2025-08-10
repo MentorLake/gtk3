@@ -2475,10 +2475,10 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_ot_name_id_t hb_aat_layout_feature_type_get_name_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_aat_layout_feature_type_t feature_type);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_aat_layout_feature_type_get_selector_infos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_aat_layout_feature_type_t feature_type, uint start_offset, out uint selector_count, out MentorLake.HarfBuzz.hb_aat_layout_feature_selector_info_t[] selectors, out uint default_index);
+	internal static extern uint hb_aat_layout_feature_type_get_selector_infos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_aat_layout_feature_type_t feature_type, uint start_offset, out uint selector_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.HarfBuzz.hb_aat_layout_feature_selector_info_t[] selectors, out uint default_index);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_aat_layout_get_feature_types([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint feature_count, out MentorLake.HarfBuzz.hb_aat_layout_feature_type_t[] features);
+	internal static extern uint hb_aat_layout_get_feature_types([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint feature_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_aat_layout_feature_type_t[] features);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_aat_layout_has_positioning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
@@ -2676,7 +2676,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_buffer_reverse_range([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_buffer_serialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, out byte[] buf, out uint buf_size, out uint buf_consumed, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
+	internal static extern uint hb_buffer_serialize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out byte[] buf, out uint buf_size, out uint buf_consumed, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(byte[] str, int len);
@@ -2686,14 +2686,14 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern string hb_buffer_serialize_format_to_string(MentorLake.HarfBuzz.hb_buffer_serialize_format_t format);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_buffer_serialize_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, out byte[] buf, out uint buf_size, out uint buf_consumed, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
+	internal static extern uint hb_buffer_serialize_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out byte[] buf, out uint buf_size, out uint buf_consumed, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
 	internal static extern string[] hb_buffer_serialize_list_formats();
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_buffer_serialize_unicode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, out byte[] buf, out uint buf_size, out uint buf_consumed, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
+	internal static extern uint hb_buffer_serialize_unicode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, uint start, uint end, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out byte[] buf, out uint buf_size, out uint buf_consumed, MentorLake.HarfBuzz.hb_buffer_serialize_format_t format, MentorLake.HarfBuzz.hb_buffer_serialize_flags_t flags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern void hb_buffer_set_cluster_level([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_buffer_tHandle>))] MentorLake.HarfBuzz.hb_buffer_tHandle buffer, MentorLake.HarfBuzz.hb_buffer_cluster_level_t cluster_level);
@@ -2753,7 +2753,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern byte hb_color_get_red(MentorLake.HarfBuzz.hb_color_t color);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_color_line_get_color_stops([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_color_line_tHandle>))] MentorLake.HarfBuzz.hb_color_line_tHandle color_line, uint start, out uint count, out MentorLake.HarfBuzz.hb_color_stop_t[] color_stops);
+	internal static extern uint hb_color_line_get_color_stops([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_color_line_tHandle>))] MentorLake.HarfBuzz.hb_color_line_tHandle color_line, uint start, out uint count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_color_stop_t[] color_stops);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_paint_extend_t hb_color_line_get_extend([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_color_line_tHandle>))] MentorLake.HarfBuzz.hb_color_line_tHandle color_line);
@@ -2869,7 +2869,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern uint hb_face_get_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_face_get_table_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint table_count, out MentorLake.HarfBuzz.hb_tag_t[] table_tags);
+	internal static extern uint hb_face_get_table_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint table_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_tag_t[] table_tags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern uint hb_face_get_upem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
@@ -2911,7 +2911,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_feature_from_string(byte[] str, int len, out MentorLake.HarfBuzz.hb_feature_t feature);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_feature_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_feature_tHandle>))] MentorLake.HarfBuzz.hb_feature_tHandle feature, out string[] buf, out uint size);
+	internal static extern void hb_feature_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_feature_tHandle>))] MentorLake.HarfBuzz.hb_feature_tHandle feature, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out string[] buf, out uint size);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern void hb_font_add_glyph_origin_for_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, ref MentorLake.HarfBuzz.hb_position_t x, ref MentorLake.HarfBuzz.hb_position_t y);
@@ -3074,7 +3074,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_font_get_glyph_kerning_for_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t first_glyph, MentorLake.HarfBuzz.hb_codepoint_t second_glyph, MentorLake.HarfBuzz.hb_direction_t direction, out MentorLake.HarfBuzz.hb_position_t x, out MentorLake.HarfBuzz.hb_position_t y);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_font_get_glyph_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, out string[] name, out uint size);
+	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_font_get_glyph_name([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out string[] name, out uint size);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern void hb_font_get_glyph_origin_for_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, out MentorLake.HarfBuzz.hb_position_t x, out MentorLake.HarfBuzz.hb_position_t y);
@@ -3147,7 +3147,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_font_glyph_from_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, byte[] s, int len, out MentorLake.HarfBuzz.hb_codepoint_t glyph);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_font_glyph_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, out string[] s, out uint size);
+	internal static extern void hb_font_glyph_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out string[] s, out uint size);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_font_is_immutable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font);
@@ -3326,7 +3326,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_map_values([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_map_tHandle>))] MentorLake.HarfBuzz.hb_map_tHandle map, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_set_tHandle>))] MentorLake.HarfBuzz.hb_set_tHandle values);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_color_glyph_get_layers([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint layer_count, out MentorLake.HarfBuzz.hb_ot_color_layer_t[] layers);
+	internal static extern uint hb_ot_color_glyph_get_layers([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint layer_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.HarfBuzz.hb_ot_color_layer_t[] layers);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_color_glyph_has_paint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph);
@@ -3358,7 +3358,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_ot_name_id_t hb_ot_color_palette_color_get_name_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint color_index);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_color_palette_get_colors([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint palette_index, uint start_offset, out uint color_count, out MentorLake.HarfBuzz.hb_color_t[] colors);
+	internal static extern uint hb_ot_color_palette_get_colors([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint palette_index, uint start_offset, out uint color_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.HarfBuzz.hb_color_t[] colors);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern uint hb_ot_color_palette_get_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
@@ -3382,19 +3382,19 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_ot_layout_collect_lookups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, MentorLake.HarfBuzz.hb_tag_t[] scripts, MentorLake.HarfBuzz.hb_tag_t[] languages, MentorLake.HarfBuzz.hb_tag_t[] features, out MentorLake.HarfBuzz.hb_set_t lookup_indexes);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_feature_get_characters([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint start_offset, out uint char_count, out MentorLake.HarfBuzz.hb_codepoint_t[] characters);
+	internal static extern uint hb_ot_layout_feature_get_characters([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint start_offset, out uint char_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_codepoint_t[] characters);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_feature_get_lookups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint start_offset, out uint lookup_count, out uint[] lookup_indexes);
+	internal static extern uint hb_ot_layout_feature_get_lookups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint start_offset, out uint lookup_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out uint[] lookup_indexes);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_feature_get_name_ids([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, out MentorLake.HarfBuzz.hb_ot_name_id_t label_id, out MentorLake.HarfBuzz.hb_ot_name_id_t tooltip_id, out MentorLake.HarfBuzz.hb_ot_name_id_t sample_id, out uint num_named_parameters, out MentorLake.HarfBuzz.hb_ot_name_id_t first_param_id);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_feature_with_variations_get_lookups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint variations_index, uint start_offset, out uint lookup_count, out uint[] lookup_indexes);
+	internal static extern uint hb_ot_layout_feature_with_variations_get_lookups([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint feature_index, uint variations_index, uint start_offset, out uint lookup_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out uint[] lookup_indexes);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_get_attach_points([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint point_count, out uint[] point_array);
+	internal static extern uint hb_ot_layout_get_attach_points([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint point_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out uint[] point_array);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_get_baseline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_ot_layout_baseline_tag_t baseline_tag, MentorLake.HarfBuzz.hb_direction_t direction, MentorLake.HarfBuzz.hb_tag_t script_tag, MentorLake.HarfBuzz.hb_tag_t language_tag, out MentorLake.HarfBuzz.hb_position_t coord);
@@ -3424,7 +3424,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_ot_layout_baseline_tag_t hb_ot_layout_get_horizontal_baseline_tag_for_script(MentorLake.HarfBuzz.hb_script_t script);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_get_ligature_carets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_direction_t direction, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint caret_count, out MentorLake.HarfBuzz.hb_position_t[] caret_array);
+	internal static extern uint hb_ot_layout_get_ligature_carets([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_direction_t direction, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint caret_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_position_t[] caret_array);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_get_size_params([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, out uint design_size, out uint subfamily_id, out MentorLake.HarfBuzz.hb_ot_name_id_t subfamily_name_id, out uint range_start, out uint range_end);
@@ -3442,10 +3442,10 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_language_find_feature([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, MentorLake.HarfBuzz.hb_tag_t feature_tag, out uint feature_index);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_language_get_feature_indexes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, uint start_offset, out uint feature_count, out uint[] feature_indexes);
+	internal static extern uint hb_ot_layout_language_get_feature_indexes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, uint start_offset, out uint feature_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out uint[] feature_indexes);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_language_get_feature_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, uint start_offset, out uint feature_count, out MentorLake.HarfBuzz.hb_tag_t[] feature_tags);
+	internal static extern uint hb_ot_layout_language_get_feature_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, uint start_offset, out uint feature_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out MentorLake.HarfBuzz.hb_tag_t[] feature_tags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_language_get_required_feature([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_index, out uint feature_index, out MentorLake.HarfBuzz.hb_tag_t feature_tag);
@@ -3457,7 +3457,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_ot_layout_lookup_collect_glyphs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint lookup_index, out MentorLake.HarfBuzz.hb_set_t glyphs_before, out MentorLake.HarfBuzz.hb_set_t glyphs_input, out MentorLake.HarfBuzz.hb_set_t glyphs_after, out MentorLake.HarfBuzz.hb_set_t glyphs_output);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_lookup_get_glyph_alternates([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint lookup_index, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint alternate_count, out MentorLake.HarfBuzz.hb_codepoint_t[] alternate_glyphs);
+	internal static extern uint hb_ot_layout_lookup_get_glyph_alternates([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint lookup_index, MentorLake.HarfBuzz.hb_codepoint_t glyph, uint start_offset, out uint alternate_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_codepoint_t[] alternate_glyphs);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_layout_lookup_get_optical_bound([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, uint lookup_index, MentorLake.HarfBuzz.hb_direction_t direction, MentorLake.HarfBuzz.hb_codepoint_t glyph);
@@ -3475,7 +3475,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_script_find_language([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, MentorLake.HarfBuzz.hb_tag_t language_tag, uint language_index);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_script_get_language_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint start_offset, out uint language_count, out MentorLake.HarfBuzz.hb_tag_t[] language_tags);
+	internal static extern uint hb_ot_layout_script_get_language_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint start_offset, out uint language_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_tag_t[] language_tags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_script_select_language([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_index, uint language_count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_tag_tHandle>))] MentorLake.HarfBuzz.hb_tag_tHandle language_tags, out uint language_index);
@@ -3493,13 +3493,13 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_table_find_script([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, MentorLake.HarfBuzz.hb_tag_t script_tag, out uint script_index);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_table_get_feature_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint start_offset, out uint feature_count, out MentorLake.HarfBuzz.hb_tag_t[] feature_tags);
+	internal static extern uint hb_ot_layout_table_get_feature_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint start_offset, out uint feature_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.HarfBuzz.hb_tag_t[] feature_tags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern uint hb_ot_layout_table_get_lookup_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_layout_table_get_script_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint start_offset, out uint script_count, out MentorLake.HarfBuzz.hb_tag_t[] script_tags);
+	internal static extern uint hb_ot_layout_table_get_script_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint start_offset, out uint script_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.HarfBuzz.hb_tag_t[] script_tags);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_layout_table_select_script([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t table_tag, uint script_count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_tag_tHandle>))] MentorLake.HarfBuzz.hb_tag_tHandle script_tags, out uint script_index, out MentorLake.HarfBuzz.hb_tag_t chosen_script);
@@ -3508,7 +3508,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_math_get_constant([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_ot_math_constant_t constant);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_math_get_glyph_assembly([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, uint start_offset, out uint parts_count, out MentorLake.HarfBuzz.hb_ot_math_glyph_part_t[] parts, out MentorLake.HarfBuzz.hb_position_t italics_correction);
+	internal static extern uint hb_ot_math_get_glyph_assembly([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, uint start_offset, out uint parts_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_ot_math_glyph_part_t[] parts, out MentorLake.HarfBuzz.hb_position_t italics_correction);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_math_get_glyph_italics_correction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph);
@@ -3517,13 +3517,13 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_math_get_glyph_kerning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_ot_math_kern_t kern, MentorLake.HarfBuzz.hb_position_t correction_height);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_math_get_glyph_kernings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_ot_math_kern_t kern, uint start_offset, out uint entries_count, out MentorLake.HarfBuzz.hb_ot_math_kern_entry_t[] kern_entries);
+	internal static extern uint hb_ot_math_get_glyph_kernings([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_ot_math_kern_t kern, uint start_offset, out uint entries_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_ot_math_kern_entry_t[] kern_entries);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_math_get_glyph_top_accent_attachment([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_math_get_glyph_variants([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, uint start_offset, out uint variants_count, out MentorLake.HarfBuzz.hb_ot_math_glyph_variant_t[] variants);
+	internal static extern uint hb_ot_math_get_glyph_variants([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_codepoint_t glyph, MentorLake.HarfBuzz.hb_direction_t direction, uint start_offset, out uint variants_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.HarfBuzz.hb_ot_math_glyph_variant_t[] variants);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_math_get_min_connector_overlap([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_direction_t direction);
@@ -3535,7 +3535,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_math_is_glyph_extended_shape([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_codepoint_t glyph);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_meta_get_entry_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint entries_count, out MentorLake.HarfBuzz.hb_ot_meta_tag_t[] entries);
+	internal static extern uint hb_ot_meta_get_entry_tags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint entries_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_ot_meta_tag_t[] entries);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_blob_tHandle>))]
@@ -3557,13 +3557,13 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_position_t hb_ot_metrics_get_y_variation([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_font_tHandle>))] MentorLake.HarfBuzz.hb_font_tHandle font, MentorLake.HarfBuzz.hb_ot_metrics_tag_t metrics_tag);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_name_get_utf16([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, out ushort[] text);
+	internal static extern uint hb_ot_name_get_utf16([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out ushort[] text);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_name_get_utf32([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, out uint[] text);
+	internal static extern uint hb_ot_name_get_utf32([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out uint[] text);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_name_get_utf8([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, out string[] text);
+	internal static extern uint hb_ot_name_get_utf8([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_ot_name_id_t name_id, MentorLake.HarfBuzz.hb_language_t language, out uint text_size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out string[] text);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_ot_name_entry_t[] hb_ot_name_list_names([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, out uint num_entries);
@@ -3599,13 +3599,13 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_var_find_axis_info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, MentorLake.HarfBuzz.hb_tag_t axis_tag, out MentorLake.HarfBuzz.hb_ot_var_axis_info_t axis_info);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_var_get_axes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint axes_count, out MentorLake.HarfBuzz.hb_ot_var_axis_t[] axes_array);
+	internal static extern uint hb_ot_var_get_axes([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint axes_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_ot_var_axis_t[] axes_array);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern uint hb_ot_var_get_axis_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_var_get_axis_infos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint axes_count, out MentorLake.HarfBuzz.hb_ot_var_axis_info_t[] axes_array);
+	internal static extern uint hb_ot_var_get_axis_infos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint start_offset, out uint axes_count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out MentorLake.HarfBuzz.hb_ot_var_axis_info_t[] axes_array);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern uint hb_ot_var_get_named_instance_count([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
@@ -3614,7 +3614,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_ot_var_has_data([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern uint hb_ot_var_named_instance_get_design_coords([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint instance_index, out uint coords_length, out float[] coords);
+	internal static extern uint hb_ot_var_named_instance_get_design_coords([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint instance_index, out uint coords_length, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out float[] coords);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_ot_name_id_t hb_ot_var_named_instance_get_postscript_name_id([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint instance_index);
@@ -3626,7 +3626,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern void hb_ot_var_normalize_coords([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, uint coords_length, float design_coords, out int normalized_coords);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_ot_var_normalize_variations([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variations, uint variations_length, out int[] coords, out uint coords_length);
+	internal static extern void hb_ot_var_normalize_variations([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_face_tHandle>))] MentorLake.HarfBuzz.hb_face_tHandle face, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variations, uint variations_length, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out int[] coords, out uint coords_length);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern void hb_paint_color([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_paint_funcs_tHandle>))] MentorLake.HarfBuzz.hb_paint_funcs_tHandle funcs, IntPtr paint_data, MentorLake.HarfBuzz.hb_bool_t is_foreground, MentorLake.HarfBuzz.hb_color_t color);
@@ -3926,7 +3926,7 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_tag_t hb_tag_from_string(byte[] str, int len);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_tag_to_string(MentorLake.HarfBuzz.hb_tag_t tag, out byte[] buf);
+	internal static extern void hb_tag_to_string(MentorLake.HarfBuzz.hb_tag_t tag, [MarshalAs(UnmanagedType.LPArray)] out byte[] buf);
 
 	[DllImport(HarfBuzzLibrary.Name)]
 	internal static extern MentorLake.HarfBuzz.hb_unicode_combining_class_t hb_unicode_combining_class([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_unicode_funcs_tHandle>))] MentorLake.HarfBuzz.hb_unicode_funcs_tHandle ufuncs, MentorLake.HarfBuzz.hb_codepoint_t unicode);
@@ -4015,6 +4015,6 @@ internal class HarfBuzzGlobalFunctionsExterns
 	internal static extern MentorLake.HarfBuzz.hb_bool_t hb_variation_from_string(byte[] str, int len, out MentorLake.HarfBuzz.hb_variation_t variation);
 
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_variation_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variation, out string[] buf, out uint size);
+	internal static extern void hb_variation_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variation, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out string[] buf, out uint size);
 
 }

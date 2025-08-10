@@ -19,7 +19,7 @@ public static class hb_variation_tExtensions
 internal class hb_variation_tExterns
 {
 	[DllImport(HarfBuzzLibrary.Name)]
-	internal static extern void hb_variation_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variation, out string[] buf, out uint size);
+	internal static extern void hb_variation_to_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_variation_tHandle>))] MentorLake.HarfBuzz.hb_variation_tHandle variation, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out string[] buf, out uint size);
 
 }
 

@@ -103,7 +103,7 @@ internal class PangoLayoutLineExterns
 	internal static extern int pango_layout_line_get_start_index([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutLineHandle>))] MentorLake.Pango.PangoLayoutLineHandle line);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern void pango_layout_line_get_x_ranges([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutLineHandle>))] MentorLake.Pango.PangoLayoutLineHandle line, int start_index, int end_index, out int[] ranges, out int n_ranges);
+	internal static extern void pango_layout_line_get_x_ranges([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutLineHandle>))] MentorLake.Pango.PangoLayoutLineHandle line, int start_index, int end_index, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out int[] ranges, out int n_ranges);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_layout_line_index_to_x([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoLayoutLineHandle>))] MentorLake.Pango.PangoLayoutLineHandle line, int index_, bool trailing, out int x_pos);

@@ -81,7 +81,7 @@ internal class GSettingsBackendHandleExterns
 	internal static extern void g_settings_backend_writable_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GSettingsBackendHandle>))] MentorLake.Gio.GSettingsBackendHandle backend, string key);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_settings_backend_flatten_tree([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, out string path, out string[] keys, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] out MentorLake.GLib.GVariantHandle[] values);
+	internal static extern void g_settings_backend_flatten_tree([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GTreeHandle>))] MentorLake.GLib.GTreeHandle tree, out string path, [MarshalAs(UnmanagedType.LPArray)] out string[] keys, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GVariantHandle>))] out MentorLake.GLib.GVariantHandle[] values);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.Gio.GSettingsBackendHandle>))]

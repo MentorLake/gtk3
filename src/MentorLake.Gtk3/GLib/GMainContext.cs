@@ -236,7 +236,7 @@ internal class GMainContextExterns
 	internal static extern MentorLake.GLib.GMainContextPusherHandle g_main_context_pusher_new([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))] MentorLake.GLib.GMainContextHandle main_context);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern int g_main_context_query([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))] MentorLake.GLib.GMainContextHandle context, int max_priority, out int timeout_, out MentorLake.GLib.GPollFD[] fds, int n_fds);
+	internal static extern int g_main_context_query([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))] MentorLake.GLib.GMainContextHandle context, int max_priority, out int timeout_, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.GLib.GPollFD[] fds, int n_fds);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GMainContextHandle>))]

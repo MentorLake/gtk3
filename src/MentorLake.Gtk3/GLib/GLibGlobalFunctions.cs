@@ -3967,17 +3967,17 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern char g_base64_decode_inplace(ref byte[] text, ref UIntPtr out_len);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern UIntPtr g_base64_decode_step(byte[] @in, UIntPtr len, out byte[] @out, ref int state, ref uint save);
+	internal static extern UIntPtr g_base64_decode_step(byte[] @in, UIntPtr len, [MarshalAs(UnmanagedType.LPArray)] out byte[] @out, ref int state, ref uint save);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
 	internal static extern string g_base64_encode(byte[] data, UIntPtr len);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern UIntPtr g_base64_encode_close(bool break_lines, out byte[] @out, ref int state, ref int save);
+	internal static extern UIntPtr g_base64_encode_close(bool break_lines, [MarshalAs(UnmanagedType.LPArray)] out byte[] @out, ref int state, ref int save);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern UIntPtr g_base64_encode_step(byte[] @in, UIntPtr len, bool break_lines, out byte[] @out, ref int state, ref int save);
+	internal static extern UIntPtr g_base64_encode_step(byte[] @in, UIntPtr len, bool break_lines, [MarshalAs(UnmanagedType.LPArray)] out byte[] @out, ref int state, ref int save);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -4328,7 +4328,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_file_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_file_get_contents(string filename, out byte[] contents, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool g_file_get_contents(string filename, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] contents, out UIntPtr length, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_file_open_tmp(string tmpl, out string name_used, out MentorLake.GLib.GErrorHandle error);
@@ -4430,7 +4430,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern string[] g_get_environ();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_get_filename_charsets(out string[] filename_charsets);
+	internal static extern bool g_get_filename_charsets([MarshalAs(UnmanagedType.LPArray)] out string[] filename_charsets);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -5218,7 +5218,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_shell_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_shell_parse_argv(string command_line, out int argcp, out string[] argvp, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool g_shell_parse_argv(string command_line, out int argcp, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out string[] argvp, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -5304,7 +5304,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern bool g_spawn_command_line_async(string command_line, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_command_line_sync(string command_line, out byte[] standard_output, out byte[] standard_error, out int wait_status, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool g_spawn_command_line_sync(string command_line, [MarshalAs(UnmanagedType.LPArray)] out byte[] standard_output, [MarshalAs(UnmanagedType.LPArray)] out byte[] standard_error, out int wait_status, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern MentorLake.GLib.GQuark g_spawn_error_quark();
@@ -5313,7 +5313,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern MentorLake.GLib.GQuark g_spawn_exit_error_quark();
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern bool g_spawn_sync(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, out byte[] standard_output, out byte[] standard_error, out int wait_status, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool g_spawn_sync(string working_directory, string[] argv, string[] envp, MentorLake.GLib.GSpawnFlags flags, MentorLake.GLib.GSpawnChildSetupFunc child_setup, IntPtr user_data, [MarshalAs(UnmanagedType.LPArray)] out byte[] standard_output, [MarshalAs(UnmanagedType.LPArray)] out byte[] standard_error, out int wait_status, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern int g_sprintf(string @string, string format, IntPtr @__arglist);
@@ -5349,7 +5349,7 @@ internal class GLibGlobalFunctionsExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]
-	internal static extern string[] g_str_tokenize_and_fold(string @string, string translit_locale, out string[] ascii_alternates);
+	internal static extern string[] g_str_tokenize_and_fold(string @string, string translit_locale, [MarshalAs(UnmanagedType.LPArray)] out string[] ascii_alternates);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]

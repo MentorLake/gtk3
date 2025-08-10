@@ -238,10 +238,10 @@ internal class GdkKeymapHandleExterns
 	internal static extern MentorLake.Pango.PangoDirection gdk_keymap_get_direction([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern bool gdk_keymap_get_entries_for_keycode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, uint hardware_keycode, out MentorLake.Gdk.GdkKeymapKey[] keys, out uint[] keyvals, out int n_entries);
+	internal static extern bool gdk_keymap_get_entries_for_keycode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, uint hardware_keycode, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out MentorLake.Gdk.GdkKeymapKey[] keys, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] out uint[] keyvals, out int n_entries);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern bool gdk_keymap_get_entries_for_keyval([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, uint keyval, out MentorLake.Gdk.GdkKeymapKey[] keys, out int n_keys);
+	internal static extern bool gdk_keymap_get_entries_for_keyval([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, uint keyval, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out MentorLake.Gdk.GdkKeymapKey[] keys, out int n_keys);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern MentorLake.Gdk.GdkModifierType gdk_keymap_get_modifier_mask([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkKeymapHandle>))] MentorLake.Gdk.GdkKeymapHandle keymap, MentorLake.Gdk.GdkModifierIntent intent);

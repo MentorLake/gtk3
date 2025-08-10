@@ -128,7 +128,7 @@ internal class PangoTabArrayExterns
 	internal static extern void pango_tab_array_get_tab([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle tab_array, int tab_index, out MentorLake.Pango.PangoTabAlign alignment, out int location);
 
 	[DllImport(PangoLibrary.Name)]
-	internal static extern void pango_tab_array_get_tabs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle tab_array, out MentorLake.Pango.PangoTabAlign[] alignments, out int[] locations);
+	internal static extern void pango_tab_array_get_tabs([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle tab_array, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] out MentorLake.Pango.PangoTabAlign[] alignments, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] out int[] locations);
 
 	[DllImport(PangoLibrary.Name)]
 	internal static extern void pango_tab_array_resize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Pango.PangoTabArrayHandle>))] MentorLake.Pango.PangoTabArrayHandle tab_array, int new_size);

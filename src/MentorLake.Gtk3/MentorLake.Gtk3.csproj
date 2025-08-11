@@ -16,6 +16,7 @@
 		<PackageTags>gtk;ui</PackageTags>
 		<Copyright>Copyright (c) 2023-$([System.DateTime]::Now.ToString(yyyy)) MentorLake</Copyright>
 		<RootNamespace>MentorLake.Gtk3.Bindings</RootNamespace>
+		<IsAotCompatible>true</IsAotCompatible>
 	</PropertyGroup>
 
 	<ItemGroup>

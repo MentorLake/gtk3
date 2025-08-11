@@ -11,6 +11,7 @@ public sealed class DelegateSafeHandleMarshaller<T> : ICustomMarshaler where T :
 
 	public IntPtr MarshalManagedToNative(object o)
 	{
+		if (o == null) return IntPtr.Zero;
 		var p = (SafeHandle)o;
 		return p.DangerousGetHandle();
 	}

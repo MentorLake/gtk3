@@ -17,7 +17,7 @@ public static class GDataOutputStreamHandleExtensions
 		return GDataOutputStreamHandleExterns.g_data_output_stream_get_byte_order(stream);
 	}
 
-	public static bool PutByte(this MentorLake.Gio.GDataOutputStreamHandle stream, char data, MentorLake.Gio.GCancellableHandle cancellable)
+	public static bool PutByte(this MentorLake.Gio.GDataOutputStreamHandle stream, byte data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
 		var externCallResult = GDataOutputStreamHandleExterns.g_data_output_stream_put_byte(stream, data, cancellable, out var error);
@@ -100,7 +100,7 @@ internal class GDataOutputStreamHandleExterns
 	internal static extern MentorLake.Gio.GDataStreamByteOrder g_data_output_stream_get_byte_order([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataOutputStreamHandle>))] MentorLake.Gio.GDataOutputStreamHandle stream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern bool g_data_output_stream_put_byte([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataOutputStreamHandle>))] MentorLake.Gio.GDataOutputStreamHandle stream, char data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
+	internal static extern bool g_data_output_stream_put_byte([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataOutputStreamHandle>))] MentorLake.Gio.GDataOutputStreamHandle stream, byte data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern bool g_data_output_stream_put_int16([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataOutputStreamHandle>))] MentorLake.Gio.GDataOutputStreamHandle stream, short data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);

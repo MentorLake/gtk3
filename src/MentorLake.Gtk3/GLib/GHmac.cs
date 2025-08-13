@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 public class GHmacHandle : BaseSafeHandle
 {
-	public static MentorLake.GLib.GHmacHandle New(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len)
+	public static MentorLake.GLib.GHmacHandle New(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len)
 	{
 		return GHmacExterns.g_hmac_new(digest_type, key, key_len);
 	}
@@ -42,7 +42,7 @@ public static class GHmacExtensions
 		GHmacExterns.g_hmac_unref(hmac);
 	}
 
-	public static void Update(this MentorLake.GLib.GHmacHandle hmac, char[] data, UIntPtr length)
+	public static void Update(this MentorLake.GLib.GHmacHandle hmac, byte[] data, UIntPtr length)
 	{
 		if (hmac.IsInvalid) throw new Exception("Invalid handle (GHmac)");
 		GHmacExterns.g_hmac_update(hmac, data, length);
@@ -55,7 +55,7 @@ internal class GHmacExterns
 {
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))]
-	internal static extern MentorLake.GLib.GHmacHandle g_hmac_new(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len);
+	internal static extern MentorLake.GLib.GHmacHandle g_hmac_new(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))]
@@ -76,7 +76,7 @@ internal class GHmacExterns
 	internal static extern void g_hmac_unref([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern void g_hmac_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac, char[] data, UIntPtr length);
+	internal static extern void g_hmac_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GHmacHandle>))] MentorLake.GLib.GHmacHandle hmac, byte[] data, UIntPtr length);
 
 }
 

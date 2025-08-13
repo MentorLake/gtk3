@@ -12,7 +12,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_bytes(data, colorspace, has_alpha, bits_per_sample, width, height, rowstride);
 	}
 
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromData(char[] data, MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height, int rowstride, MentorLake.GdkPixbuf.GdkPixbufDestroyNotify destroy_fn, IntPtr destroy_fn_data)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle NewFromData(byte[] data, MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height, int rowstride, MentorLake.GdkPixbuf.GdkPixbufDestroyNotify destroy_fn, IntPtr destroy_fn_data)
 	{
 		return GdkPixbufHandleExterns.gdk_pixbuf_new_from_data(data, colorspace, has_alpha, bits_per_sample, width, height, rowstride, destroy_fn, destroy_fn_data);
 	}
@@ -140,7 +140,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 
 public static class GdkPixbufHandleExtensions
 {
-	public static MentorLake.GdkPixbuf.GdkPixbufHandle AddAlpha(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool substitute_color, char r, char g, char b)
+	public static MentorLake.GdkPixbuf.GdkPixbufHandle AddAlpha(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool substitute_color, byte r, byte g, byte b)
 	{
 		if (pixbuf.IsInvalid) throw new Exception("Invalid handle (GdkPixbufHandle)");
 		return GdkPixbufHandleExterns.gdk_pixbuf_add_alpha(pixbuf, substitute_color, r, g, b);
@@ -252,13 +252,13 @@ public static class GdkPixbufHandleExtensions
 		return GdkPixbufHandleExterns.gdk_pixbuf_get_options(pixbuf);
 	}
 
-	public static char[] GetPixels(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
+	public static byte[] GetPixels(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
 	{
 		if (pixbuf.IsInvalid) throw new Exception("Invalid handle (GdkPixbufHandle)");
 		return GdkPixbufHandleExterns.gdk_pixbuf_get_pixels(pixbuf);
 	}
 
-	public static char[] GetPixelsWithLength(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out uint length)
+	public static byte[] GetPixelsWithLength(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out uint length)
 	{
 		if (pixbuf.IsInvalid) throw new Exception("Invalid handle (GdkPixbufHandle)");
 		return GdkPixbufHandleExterns.gdk_pixbuf_get_pixels_with_length(pixbuf, out length);
@@ -429,7 +429,7 @@ internal class GdkPixbufHandleExterns
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_data(char[] data, MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height, int rowstride, MentorLake.GdkPixbuf.GdkPixbufDestroyNotify destroy_fn, IntPtr destroy_fn_data);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_new_from_data(byte[] data, MentorLake.GdkPixbuf.GdkColorspace colorspace, bool has_alpha, int bits_per_sample, int width, int height, int rowstride, MentorLake.GdkPixbuf.GdkPixbufDestroyNotify destroy_fn, IntPtr destroy_fn_data);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
@@ -473,7 +473,7 @@ internal class GdkPixbufHandleExterns
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
-	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_add_alpha([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool substitute_color, char r, char g, char b);
+	internal static extern MentorLake.GdkPixbuf.GdkPixbufHandle gdk_pixbuf_add_alpha([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, bool substitute_color, byte r, byte g, byte b);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ConstructorSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))]
@@ -533,10 +533,10 @@ internal class GdkPixbufHandleExterns
 	internal static extern MentorLake.GLib.GHashTableHandle gdk_pixbuf_get_options([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern char[] gdk_pixbuf_get_pixels([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf);
+	internal static extern byte[] gdk_pixbuf_get_pixels([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf);
 
 	[DllImport(GdkPixbufLibrary.Name)]
-	internal static extern char[] gdk_pixbuf_get_pixels_with_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out uint length);
+	internal static extern byte[] gdk_pixbuf_get_pixels_with_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf, out uint length);
 
 	[DllImport(GdkPixbufLibrary.Name)]
 	internal static extern int gdk_pixbuf_get_rowstride([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf);

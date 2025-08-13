@@ -336,7 +336,7 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_base64_decode(text, out out_len);
 	}
 
-	public static char Base64DecodeInplace(ref byte[] text, ref UIntPtr out_len)
+	public static byte Base64DecodeInplace(ref byte[] text, ref UIntPtr out_len)
 	{
 		return GLibGlobalFunctionsExterns.g_base64_decode_inplace(ref text, ref out_len);
 	}
@@ -609,12 +609,12 @@ public class GLibGlobalFunctions
 		return GLibGlobalFunctionsExterns.g_compute_hmac_for_bytes(digest_type, key, data);
 	}
 
-	public static string ComputeHmacForData(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len, char[] data, UIntPtr length)
+	public static string ComputeHmacForData(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len, byte[] data, UIntPtr length)
 	{
 		return GLibGlobalFunctionsExterns.g_compute_hmac_for_data(digest_type, key, key_len, data, length);
 	}
 
-	public static string ComputeHmacForString(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len, string str, UIntPtr length)
+	public static string ComputeHmacForString(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len, string str, UIntPtr length)
 	{
 		return GLibGlobalFunctionsExterns.g_compute_hmac_for_string(digest_type, key, key_len, str, length);
 	}
@@ -3964,7 +3964,7 @@ internal class GLibGlobalFunctionsExterns
 	internal static extern byte[] g_base64_decode(string text, out UIntPtr out_len);
 
 	[DllImport(GLibLibrary.Name)]
-	internal static extern char g_base64_decode_inplace(ref byte[] text, ref UIntPtr out_len);
+	internal static extern byte g_base64_decode_inplace(ref byte[] text, ref UIntPtr out_len);
 
 	[DllImport(GLibLibrary.Name)]
 	internal static extern UIntPtr g_base64_decode_step(byte[] @in, UIntPtr len, [MarshalAs(UnmanagedType.LPArray)] out byte[] @out, ref int state, ref uint save);
@@ -4152,11 +4152,11 @@ internal class GLibGlobalFunctionsExterns
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_compute_hmac_for_data(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len, char[] data, UIntPtr length);
+	internal static extern string g_compute_hmac_for_data(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len, byte[] data, UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_compute_hmac_for_string(MentorLake.GLib.GChecksumType digest_type, char[] key, UIntPtr key_len, string str, UIntPtr length);
+	internal static extern string g_compute_hmac_for_string(MentorLake.GLib.GChecksumType digest_type, byte[] key, UIntPtr key_len, string str, UIntPtr length);
 
 	[DllImport(GLibLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GLib.GCondHandle>))]

@@ -145,7 +145,7 @@ public static class GValueExtensions
 		return GValueExterns.g_value_get_string(value);
 	}
 
-	public static char GetUchar(this MentorLake.GObject.GValueHandle value)
+	public static byte GetUchar(this MentorLake.GObject.GValueHandle value)
 	{
 		if (value.IsInvalid) throw new Exception("Invalid handle (GValue)");
 		return GValueExterns.g_value_get_uchar(value);
@@ -343,7 +343,7 @@ public static class GValueExtensions
 		GValueExterns.g_value_set_string_take_ownership(value, v_string);
 	}
 
-	public static void SetUchar(this MentorLake.GObject.GValueHandle value, char v_uchar)
+	public static void SetUchar(this MentorLake.GObject.GValueHandle value, byte v_uchar)
 	{
 		if (value.IsInvalid) throw new Exception("Invalid handle (GValue)");
 		GValueExterns.g_value_set_uchar(value, v_uchar);
@@ -503,7 +503,7 @@ internal class GValueExterns
 	internal static extern string g_value_get_string([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
 	[DllImport(GObjectLibrary.Name)]
-	internal static extern char g_value_get_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
+	internal static extern byte g_value_get_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
 
 	[DllImport(GObjectLibrary.Name)]
 	internal static extern uint g_value_get_uint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value);
@@ -605,7 +605,7 @@ internal class GValueExterns
 	internal static extern void g_value_set_string_take_ownership([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, string v_string);
 
 	[DllImport(GObjectLibrary.Name)]
-	internal static extern void g_value_set_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, char v_uchar);
+	internal static extern void g_value_set_uchar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, byte v_uchar);
 
 	[DllImport(GObjectLibrary.Name)]
 	internal static extern void g_value_set_uint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GObject.GValueHandle>))] MentorLake.GObject.GValueHandle value, uint v_uint);

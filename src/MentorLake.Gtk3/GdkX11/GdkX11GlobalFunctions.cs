@@ -22,7 +22,7 @@ public class GdkX11GlobalFunctions
 		return GdkX11GlobalFunctionsExterns.gdk_x11_device_manager_lookup(device_manager, device_id);
 	}
 
-	public static void X11FreeCompoundText(char ctext)
+	public static void X11FreeCompoundText(byte ctext)
 	{
 		GdkX11GlobalFunctionsExterns.gdk_x11_free_compound_text(ctext);
 	}
@@ -130,7 +130,7 @@ internal class GdkX11GlobalFunctionsExterns
 	internal static extern MentorLake.GdkX11.GdkX11DeviceCoreHandle gdk_x11_device_manager_lookup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkX11.GdkX11DeviceManagerCoreHandle>))] MentorLake.GdkX11.GdkX11DeviceManagerCoreHandle device_manager, int device_id);
 
 	[DllImport(GdkX11Library.Name)]
-	internal static extern void gdk_x11_free_compound_text(char ctext);
+	internal static extern void gdk_x11_free_compound_text(byte ctext);
 
 	[DllImport(GdkX11Library.Name)]
 	internal static extern void gdk_x11_free_text_list(string list);

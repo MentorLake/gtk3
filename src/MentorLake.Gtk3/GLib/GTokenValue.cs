@@ -26,6 +26,6 @@ public struct GTokenValue
 	public ulong v_hex;
 	public string v_string;
 	public string v_comment;
-	public char v_char;
+	public byte v_char;
 	public uint v_error;
 }

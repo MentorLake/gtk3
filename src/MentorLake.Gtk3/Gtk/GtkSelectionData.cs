@@ -31,7 +31,7 @@ public static class GtkSelectionDataExtensions
 		return GtkSelectionDataExterns.gtk_selection_data_get_data_type(selection_data);
 	}
 
-	public static char[] GetDataWithLength(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, out int length)
+	public static byte[] GetDataWithLength(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, out int length)
 	{
 		if (selection_data.IsInvalid) throw new Exception("Invalid handle (GtkSelectionData)");
 		return GtkSelectionDataExterns.gtk_selection_data_get_data_with_length(selection_data, out length);
@@ -91,7 +91,7 @@ public static class GtkSelectionDataExtensions
 		return GtkSelectionDataExterns.gtk_selection_data_get_uris(selection_data);
 	}
 
-	public static void Set(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gdk.GdkAtom type, int format, char[] data, int length)
+	public static void Set(this MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gdk.GdkAtom type, int format, byte[] data, int length)
 	{
 		if (selection_data.IsInvalid) throw new Exception("Invalid handle (GtkSelectionData)");
 		GtkSelectionDataExterns.gtk_selection_data_set(selection_data, type, format, data, length);
@@ -158,7 +158,7 @@ internal class GtkSelectionDataExterns
 	internal static extern MentorLake.Gdk.GdkAtom gtk_selection_data_get_data_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern char[] gtk_selection_data_get_data_with_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data, out int length);
+	internal static extern byte[] gtk_selection_data_get_data_with_length([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data, out int length);
 
 	[DllImport(GtkLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))]
@@ -192,7 +192,7 @@ internal class GtkSelectionDataExterns
 	internal static extern string[] gtk_selection_data_get_uris([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data);
 
 	[DllImport(GtkLibrary.Name)]
-	internal static extern void gtk_selection_data_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gdk.GdkAtom type, int format, char[] data, int length);
+	internal static extern void gtk_selection_data_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data, MentorLake.Gdk.GdkAtom type, int format, byte[] data, int length);
 
 	[DllImport(GtkLibrary.Name)]
 	internal static extern bool gtk_selection_data_set_pixbuf([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkSelectionDataHandle>))] MentorLake.Gtk.GtkSelectionDataHandle selection_data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.GdkPixbuf.GdkPixbufHandle>))] MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf);

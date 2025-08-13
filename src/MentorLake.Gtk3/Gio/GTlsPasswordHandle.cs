@@ -23,7 +23,7 @@ public static class GTlsPasswordHandleExtensions
 		return GTlsPasswordHandleExterns.g_tls_password_get_flags(password);
 	}
 
-	public static char[] GetValue(this MentorLake.Gio.GTlsPasswordHandle password, out UIntPtr length)
+	public static byte[] GetValue(this MentorLake.Gio.GTlsPasswordHandle password, out UIntPtr length)
 	{
 		if (password.IsInvalid) throw new Exception("Invalid handle (GTlsPasswordHandle)");
 		return GTlsPasswordHandleExterns.g_tls_password_get_value(password, out length);
@@ -49,14 +49,14 @@ public static class GTlsPasswordHandleExtensions
 		return password;
 	}
 
-	public static T SetValue<T>(this T password, char[] value, UIntPtr length) where T : GTlsPasswordHandle
+	public static T SetValue<T>(this T password, byte[] value, UIntPtr length) where T : GTlsPasswordHandle
 	{
 		if (password.IsInvalid) throw new Exception("Invalid handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_value(password, value, length);
 		return password;
 	}
 
-	public static T SetValueFull<T>(this T password, char[] value, UIntPtr length, MentorLake.GLib.GDestroyNotify destroy) where T : GTlsPasswordHandle
+	public static T SetValueFull<T>(this T password, byte[] value, UIntPtr length, MentorLake.GLib.GDestroyNotify destroy) where T : GTlsPasswordHandle
 	{
 		if (password.IsInvalid) throw new Exception("Invalid handle (GTlsPasswordHandle)");
 		GTlsPasswordHandleExterns.g_tls_password_set_value_full(password, value, length, destroy);
@@ -86,7 +86,7 @@ internal class GTlsPasswordHandleExterns
 	internal static extern MentorLake.Gio.GTlsPasswordFlags g_tls_password_get_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char[] g_tls_password_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, out UIntPtr length);
+	internal static extern byte[] g_tls_password_get_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, out UIntPtr length);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
@@ -99,10 +99,10 @@ internal class GTlsPasswordHandleExterns
 	internal static extern void g_tls_password_set_flags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, MentorLake.Gio.GTlsPasswordFlags flags);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_tls_password_set_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, char[] value, UIntPtr length);
+	internal static extern void g_tls_password_set_value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, byte[] value, UIntPtr length);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern void g_tls_password_set_value_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, char[] value, UIntPtr length, MentorLake.GLib.GDestroyNotify destroy);
+	internal static extern void g_tls_password_set_value_full([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, byte[] value, UIntPtr length, MentorLake.GLib.GDestroyNotify destroy);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern void g_tls_password_set_warning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GTlsPasswordHandle>))] MentorLake.Gio.GTlsPasswordHandle password, string warning);

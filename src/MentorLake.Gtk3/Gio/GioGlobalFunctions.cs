@@ -223,7 +223,7 @@ public class GioGlobalFunctions
 		return GioGlobalFunctionsExterns.g_content_type_get_symbolic_icon(type);
 	}
 
-	public static string ContentTypeGuess(string filename, char[] data, UIntPtr data_size, out bool result_uncertain)
+	public static string ContentTypeGuess(string filename, byte[] data, UIntPtr data_size, out bool result_uncertain)
 	{
 		return GioGlobalFunctionsExterns.g_content_type_guess(filename, data, data_size, out result_uncertain);
 	}
@@ -1070,7 +1070,7 @@ internal class GioGlobalFunctionsExterns
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NoNativeFreeStringMarshaller))]
-	internal static extern string g_content_type_guess(string filename, char[] data, UIntPtr data_size, out bool result_uncertain);
+	internal static extern string g_content_type_guess(string filename, byte[] data, UIntPtr data_size, out bool result_uncertain);
 
 	[DllImport(GioLibrary.Name)]
 	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ReadNullTerminatedArrayMarshaller<NoNativeFreeStringMarshaller, string>))]

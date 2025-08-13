@@ -397,7 +397,7 @@ public class GdkGlobalFunctions
 		GdkGlobalFunctionsExterns.gdk_pre_parse_libgtk_only();
 	}
 
-	public static void PropertyChange(MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, int format, MentorLake.Gdk.GdkPropMode mode, char data, int nelements)
+	public static void PropertyChange(MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, int format, MentorLake.Gdk.GdkPropMode mode, byte data, int nelements)
 	{
 		GdkGlobalFunctionsExterns.gdk_property_change(window, property, type, format, mode, data, nelements);
 	}
@@ -407,7 +407,7 @@ public class GdkGlobalFunctions
 		GdkGlobalFunctionsExterns.gdk_property_delete(window, property);
 	}
 
-	public static bool PropertyGet(MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, out char[] data)
+	public static bool PropertyGet(MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, out byte[] data)
 	{
 		return GdkGlobalFunctionsExterns.gdk_property_get(window, property, type, offset, length, pdelete, out actual_property_type, out actual_format, out actual_length, out data);
 	}
@@ -447,7 +447,7 @@ public class GdkGlobalFunctions
 		return GdkGlobalFunctionsExterns.gdk_selection_owner_set_for_display(display, owner, selection, time_, send_event);
 	}
 
-	public static int SelectionPropertyGet(MentorLake.Gdk.GdkWindowHandle requestor, char data, MentorLake.Gdk.GdkAtomHandle prop_type, int prop_format)
+	public static int SelectionPropertyGet(MentorLake.Gdk.GdkWindowHandle requestor, byte data, MentorLake.Gdk.GdkAtomHandle prop_type, int prop_format)
 	{
 		return GdkGlobalFunctionsExterns.gdk_selection_property_get(requestor, data, prop_type, prop_format);
 	}
@@ -507,7 +507,7 @@ public class GdkGlobalFunctions
 		return GdkGlobalFunctionsExterns.gdk_test_simulate_key(window, x, y, keyval, modifiers, key_pressrelease);
 	}
 
-	public static int TextPropertyToUtf8ListForDisplay(MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char[] text, int length, out string[] list)
+	public static int TextPropertyToUtf8ListForDisplay(MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, byte[] text, int length, out string[] list)
 	{
 		return GdkGlobalFunctionsExterns.gdk_text_property_to_utf8_list_for_display(display, encoding, format, text, length, out list);
 	}
@@ -838,13 +838,13 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern void gdk_pre_parse_libgtk_only();
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern void gdk_property_change([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, int format, MentorLake.Gdk.GdkPropMode mode, char data, int nelements);
+	internal static extern void gdk_property_change([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, int format, MentorLake.Gdk.GdkPropMode mode, byte data, int nelements);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_property_delete([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern bool gdk_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] out char[] data);
+	internal static extern bool gdk_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, MentorLake.Gdk.GdkAtom property, MentorLake.Gdk.GdkAtom type, ulong offset, ulong length, int pdelete, out MentorLake.Gdk.GdkAtom actual_property_type, out int actual_format, out int actual_length, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] out byte[] data);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_query_depths([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out int[] depths, out int count);
@@ -870,7 +870,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern bool gdk_selection_owner_set_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle owner, MentorLake.Gdk.GdkAtom selection, uint time_, bool send_event);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern int gdk_selection_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle requestor, char data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkAtomHandle>))] MentorLake.Gdk.GdkAtomHandle prop_type, int prop_format);
+	internal static extern int gdk_selection_property_get([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle requestor, byte data, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkAtomHandle>))] MentorLake.Gdk.GdkAtomHandle prop_type, int prop_format);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern void gdk_selection_send_notify([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle requestor, MentorLake.Gdk.GdkAtom selection, MentorLake.Gdk.GdkAtom target, MentorLake.Gdk.GdkAtom property, uint time_);
@@ -906,7 +906,7 @@ internal class GdkGlobalFunctionsExterns
 	internal static extern bool gdk_test_simulate_key([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkWindowHandle>))] MentorLake.Gdk.GdkWindowHandle window, int x, int y, uint keyval, MentorLake.Gdk.GdkModifierType modifiers, MentorLake.Gdk.GdkEventType key_pressrelease);
 
 	[DllImport(GdkLibrary.Name)]
-	internal static extern int gdk_text_property_to_utf8_list_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, char[] text, int length, [MarshalAs(UnmanagedType.LPArray)] out string[] list);
+	internal static extern int gdk_text_property_to_utf8_list_for_display([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkDisplayHandle>))] MentorLake.Gdk.GdkDisplayHandle display, MentorLake.Gdk.GdkAtom encoding, int format, byte[] text, int length, [MarshalAs(UnmanagedType.LPArray)] out string[] list);
 
 	[DllImport(GdkLibrary.Name)]
 	internal static extern uint gdk_threads_add_idle(MentorLake.GLib.GSourceFunc function, IntPtr data);

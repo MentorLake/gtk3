@@ -23,7 +23,7 @@ public static class GDataInputStreamHandleExtensions
 		return GDataInputStreamHandleExterns.g_data_input_stream_get_newline_type(stream);
 	}
 
-	public static char ReadByte(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
+	public static byte ReadByte(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataInputStreamHandle)");
 		var externCallResult = GDataInputStreamHandleExterns.g_data_input_stream_read_byte(stream, cancellable, out var error);
@@ -193,7 +193,7 @@ internal class GDataInputStreamHandleExterns
 	internal static extern MentorLake.Gio.GDataStreamNewlineType g_data_input_stream_get_newline_type([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataInputStreamHandle>))] MentorLake.Gio.GDataInputStreamHandle stream);
 
 	[DllImport(GioLibrary.Name)]
-	internal static extern char g_data_input_stream_read_byte([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataInputStreamHandle>))] MentorLake.Gio.GDataInputStreamHandle stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
+	internal static extern byte g_data_input_stream_read_byte([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataInputStreamHandle>))] MentorLake.Gio.GDataInputStreamHandle stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);
 
 	[DllImport(GioLibrary.Name)]
 	internal static extern short g_data_input_stream_read_int16([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GDataInputStreamHandle>))] MentorLake.Gio.GDataInputStreamHandle stream, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gio.GCancellableHandle>))] MentorLake.Gio.GCancellableHandle cancellable, out MentorLake.GLib.GErrorHandle error);

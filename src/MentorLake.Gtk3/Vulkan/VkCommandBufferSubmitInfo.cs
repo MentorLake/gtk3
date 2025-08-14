@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCommandBufferSubmitInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCommandBufferSubmitInfoExtensions
 internal class VkCommandBufferSubmitInfoExterns
 {
 }
+
 
 public struct VkCommandBufferSubmitInfo
 {

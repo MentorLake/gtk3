@@ -1,7 +1,29 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// #GtkGestureRotate is a #GtkGesture implementation able to recognize
+/// 2-finger rotations, whenever the angle between both handled sequences
+/// changes, the #GtkGestureRotate::angle-changed signal is emitted.
+/// </para>
+/// </summary>
+
 public class GtkGestureRotateHandle : GtkGestureHandle
 {
+/// <summary>
+/// <para>
+/// Returns a newly created #GtkGesture that recognizes 2-touch
+/// rotation gestures.
+/// </para>
+/// </summary>
+
+/// <param name="widget">
+/// a #GtkWidget
+/// </param>
+/// <return>
+/// a newly created #GtkGestureRotate
+/// </return>
+
 	public static MentorLake.Gtk.GtkGestureRotateHandle New(MentorLake.Gtk.GtkWidgetHandle widget)
 	{
 		return GtkGestureRotateHandleExterns.gtk_gesture_rotate_new(widget);
@@ -10,6 +32,12 @@ public class GtkGestureRotateHandle : GtkGestureHandle
 }
 public static class GtkGestureRotateHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// This signal is emitted when the angle between both tracked points
+/// changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkGestureRotateHandleSignalStructs.AngleChangedSignal> Signal_AngleChanged(this GtkGestureRotateHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,15 +74,47 @@ public static class GtkGestureRotateHandleSignalStructs
 
 public class AngleChangedSignal
 {
+
 	public MentorLake.Gtk.GtkGestureRotateHandle Self;
+/// <summary>
+/// <para>
+/// Current angle in radians
+/// </para>
+/// </summary>
+
 	public double Angle;
+/// <summary>
+/// <para>
+/// Difference with the starting angle, in radians
+/// </para>
+/// </summary>
+
 	public double AngleDelta;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkGestureRotateHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// This signal is emitted when the angle between both tracked points
+/// changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="angle">
+/// Current angle in radians
+/// </param>
+/// <param name="angle_delta">
+/// Difference with the starting angle, in radians
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void angle_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureRotateHandle>))] MentorLake.Gtk.GtkGestureRotateHandle self, double angle, double angle_delta, IntPtr user_data);
@@ -64,6 +124,21 @@ public delegate void angle_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkGestureRotateHandleExtensions
 {
+/// <summary>
+/// <para>
+/// If @gesture is active, this function returns the angle difference
+/// in radians since the gesture was first recognized. If @gesture is
+/// not active, 0 is returned.
+/// </para>
+/// </summary>
+
+/// <param name="gesture">
+/// a #GtkGestureRotate
+/// </param>
+/// <return>
+/// the angle delta in radians
+/// </return>
+
 	public static double GetAngleDelta(this MentorLake.Gtk.GtkGestureRotateHandle gesture)
 	{
 		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureRotateHandle)");

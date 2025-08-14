@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeViewAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTreeViewAccessiblePrivateExtensions
 internal class GtkTreeViewAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkTreeViewAccessiblePrivate
 {

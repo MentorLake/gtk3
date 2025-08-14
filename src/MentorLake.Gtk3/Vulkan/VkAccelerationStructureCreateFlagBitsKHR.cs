@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureCreateFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureCreateFlagBitsKHRExtensions
 internal class VkAccelerationStructureCreateFlagBitsKHRExterns
 {
 }
+
 
 public struct VkAccelerationStructureCreateFlagBitsKHR
 {

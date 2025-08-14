@@ -1,5 +1,6 @@
 namespace MentorLake.libxml2;
 
+
 public class xmlCharHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class xmlCharExtensions
 internal class xmlCharExterns
 {
 }
+
 
 public struct xmlChar
 {

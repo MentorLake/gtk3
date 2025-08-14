@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewSampleWeightCreateInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewSampleWeightCreateInfoQCOMExtensions
 internal class VkImageViewSampleWeightCreateInfoQCOMExterns
 {
 }
+
 
 public struct VkImageViewSampleWeightCreateInfoQCOM
 {

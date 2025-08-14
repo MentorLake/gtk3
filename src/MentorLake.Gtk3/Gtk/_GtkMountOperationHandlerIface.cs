@@ -1,5 +1,11 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-Gtk-MountOperationHandler.top_of_page">org.Gtk.MountOperationHandler</link>.
+/// </para>
+/// </summary>
+
 public class _GtkMountOperationHandlerIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,11 +20,47 @@ internal class _GtkMountOperationHandlerIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Virtual table for the D-Bus interface <link linkend="gdbus-interface-org-Gtk-MountOperationHandler.top_of_page">org.Gtk.MountOperationHandler</link>.
+/// </para>
+/// </summary>
+
 public struct _GtkMountOperationHandlerIface
 {
-	public GTypeInterface parent_iface;
-	public IntPtr handle_ask_password;
-	public IntPtr handle_ask_question;
-	public IntPtr handle_close;
-	public IntPtr handle_show_processes;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface parent_iface;
+	/// <summary>
+/// <para>
+/// Handler for the #_GtkMountOperationHandler::handle-ask-password signal.
+/// </para>
+/// </summary>
+
+public IntPtr handle_ask_password;
+	/// <summary>
+/// <para>
+/// Handler for the #_GtkMountOperationHandler::handle-ask-question signal.
+/// </para>
+/// </summary>
+
+public IntPtr handle_ask_question;
+	/// <summary>
+/// <para>
+/// Handler for the #_GtkMountOperationHandler::handle-close signal.
+/// </para>
+/// </summary>
+
+public IntPtr handle_close;
+	/// <summary>
+/// <para>
+/// Handler for the #_GtkMountOperationHandler::handle-show-processes signal.
+/// </para>
+/// </summary>
+
+public IntPtr handle_show_processes;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExternalSemaphoreInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExternalSemaphoreInfoExtensions
 internal class VkPhysicalDeviceExternalSemaphoreInfoExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExternalSemaphoreInfo
 {

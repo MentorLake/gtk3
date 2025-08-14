@@ -1,5 +1,49 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// `GPathBuf` is a helper type that allows you to easily build paths from
+/// individual elements, using the platform specific conventions for path
+/// separators.
+/// </para>
+/// <para>
+/// ```c
+/// g_auto (GPathBuf) path;
+/// </para>
+/// <para>
+/// g_path_buf_init (&path);
+/// </para>
+/// <para>
+/// g_path_buf_push (&path, "usr");
+/// g_path_buf_push (&path, "bin");
+/// g_path_buf_push (&path, "echo");
+/// </para>
+/// <para>
+/// g_autofree char *echo = g_path_buf_to_path (&path);
+/// g_assert_cmpstr (echo, ==, "/usr/bin/echo");
+/// ```
+/// </para>
+/// <para>
+/// You can also load a full path and then operate on its components:
+/// </para>
+/// <para>
+/// ```c
+/// g_auto (GPathBuf) path;
+/// </para>
+/// <para>
+/// g_path_buf_init_from_path (&path, "/usr/bin/echo");
+/// </para>
+/// <para>
+/// g_path_buf_pop (&path);
+/// g_path_buf_push (&path, "sh");
+/// </para>
+/// <para>
+/// g_autofree char *sh = g_path_buf_to_path (&path);
+/// g_assert_cmpstr (sh, ==, "/usr/bin/sh");
+/// ```
+/// </para>
+/// </summary>
+
 public class GPathBufHandle : BaseSafeHandle
 {
 }
@@ -7,11 +51,45 @@ public class GPathBufHandle : BaseSafeHandle
 
 public static class GPathBufExtensions
 {
+/// <summary>
+/// <para>
+/// Clears the contents of the path buffer.
+/// </para>
+/// <para>
+/// This function should be use to free the resources in a stack-allocated
+/// `GPathBuf` initialized using g_path_buf_init() or
+/// g_path_buf_init_from_path().
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+
 	public static void Clear(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		GPathBufExterns.g_path_buf_clear(buf);
 	}
+
+/// <summary>
+/// <para>
+/// Clears the contents of the path buffer and returns the built path.
+/// </para>
+/// <para>
+/// This function returns `NULL` if the `GPathBuf` is empty.
+/// </para>
+/// <para>
+/// See also: g_path_buf_to_path()
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// the built path
+/// </return>
 
 	public static string ClearToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
@@ -19,11 +97,34 @@ public static class GPathBufExtensions
 		return GPathBufExterns.g_path_buf_clear_to_path(buf);
 	}
 
+/// <summary>
+/// <para>
+/// Copies the contents of a path buffer into a new `GPathBuf`.
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// the newly allocated path buffer
+/// </return>
+
 	public static MentorLake.GLib.GPathBufHandle Copy(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_copy(buf);
 	}
+
+/// <summary>
+/// <para>
+/// Frees a `GPathBuf` allocated by g_path_buf_new().
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
 
 	public static void Free(this MentorLake.GLib.GPathBufHandle buf)
 	{
@@ -31,11 +132,44 @@ public static class GPathBufExtensions
 		GPathBufExterns.g_path_buf_free(buf);
 	}
 
+/// <summary>
+/// <para>
+/// Frees a `GPathBuf` allocated by g_path_buf_new(), and
+/// returns the path inside the buffer.
+/// </para>
+/// <para>
+/// This function returns `NULL` if the `GPathBuf` is empty.
+/// </para>
+/// <para>
+/// See also: g_path_buf_to_path()
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// the path
+/// </return>
+
 	public static string FreeToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_free_to_path(buf);
 	}
+
+/// <summary>
+/// <para>
+/// Initializes a `GPathBuf` instance.
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// the initialized path builder
+/// </return>
 
 	public static MentorLake.GLib.GPathBufHandle Init(this MentorLake.GLib.GPathBufHandle buf)
 	{
@@ -43,11 +177,68 @@ public static class GPathBufExtensions
 		return GPathBufExterns.g_path_buf_init(buf);
 	}
 
+/// <summary>
+/// <para>
+/// Initializes a `GPathBuf` instance with the given path.
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <param name="path">
+/// a file system path
+/// </param>
+/// <return>
+/// the initialized path builder
+/// </return>
+
 	public static MentorLake.GLib.GPathBufHandle InitFromPath(this MentorLake.GLib.GPathBufHandle buf, string path)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_init_from_path(buf, path);
 	}
+
+/// <summary>
+/// <para>
+/// Removes the last element of the path buffer.
+/// </para>
+/// <para>
+/// If there is only one element in the path buffer (for example, `/` on
+/// Unix-like operating systems or the drive on Windows systems), it will
+/// not be removed and %FALSE will be returned instead.
+/// </para>
+/// <para>
+/// |[<!-- language="C" -->
+/// GPathBuf buf, cmp;
+/// </para>
+/// <para>
+/// g_path_buf_init_from_path (&buf, "/bin/sh");
+/// </para>
+/// <para>
+/// g_path_buf_pop (&buf);
+/// g_path_buf_init_from_path (&cmp, "/bin");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp));
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_pop (&buf);
+/// g_path_buf_init_from_path (&cmp, "/");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp));
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_clear (&buf);
+/// ]|
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// `TRUE` if the buffer was modified and `FALSE` otherwise
+/// </return>
 
 	public static bool Pop(this MentorLake.GLib.GPathBufHandle buf)
 	{
@@ -55,11 +246,83 @@ public static class GPathBufExtensions
 		return GPathBufExterns.g_path_buf_pop(buf);
 	}
 
+/// <summary>
+/// <para>
+/// Extends the given path buffer with @path.
+/// </para>
+/// <para>
+/// If @path is absolute, it replaces the current path.
+/// </para>
+/// <para>
+/// If @path contains a directory separator, the buffer is extended by
+/// as many elements the path provides.
+/// </para>
+/// <para>
+/// On Windows, both forward slashes and backslashes are treated as
+/// directory separators. On other platforms, %G_DIR_SEPARATOR_S is the
+/// only directory separator.
+/// </para>
+/// <para>
+/// |[<!-- language="C" -->
+/// GPathBuf buf, cmp;
+/// </para>
+/// <para>
+/// g_path_buf_init_from_path (&buf, "/tmp");
+/// g_path_buf_push (&buf, ".X11-unix/X0");
+/// g_path_buf_init_from_path (&cmp, "/tmp/.X11-unix/X0");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp));
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_push (&buf, "/etc/locale.conf");
+/// g_path_buf_init_from_path (&cmp, "/etc/locale.conf");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp));
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_clear (&buf);
+/// ]|
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <param name="path">
+/// a path
+/// </param>
+/// <return>
+/// the same pointer to @buf, for convenience
+/// </return>
+
 	public static MentorLake.GLib.GPathBufHandle Push(this MentorLake.GLib.GPathBufHandle buf, string path)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_push(buf, path);
 	}
+
+/// <summary>
+/// <para>
+/// Adds an extension to the file name in the path buffer.
+/// </para>
+/// <para>
+/// If @extension is `NULL`, the extension will be unset.
+/// </para>
+/// <para>
+/// If the path buffer does not have a file name set, this function returns
+/// `FALSE` and leaves the path buffer unmodified.
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <param name="extension">
+/// the file extension
+/// </param>
+/// <return>
+/// `TRUE` if the extension was replaced, and `FALSE` otherwise
+/// </return>
 
 	public static bool SetExtension(this MentorLake.GLib.GPathBufHandle buf, string extension)
 	{
@@ -67,11 +330,84 @@ public static class GPathBufExtensions
 		return GPathBufExterns.g_path_buf_set_extension(buf, extension);
 	}
 
+/// <summary>
+/// <para>
+/// Sets the file name of the path.
+/// </para>
+/// <para>
+/// If the path buffer is empty, the filename is left unset and this
+/// function returns `FALSE`.
+/// </para>
+/// <para>
+/// If the path buffer only contains the root element (on Unix-like operating
+/// systems) or the drive (on Windows), this is the equivalent of pushing
+/// the new @file_name.
+/// </para>
+/// <para>
+/// If the path buffer contains a path, this is the equivalent of
+/// popping the path buffer and pushing @file_name, creating a
+/// sibling of the original path.
+/// </para>
+/// <para>
+/// |[<!-- language="C" -->
+/// GPathBuf buf, cmp;
+/// </para>
+/// <para>
+/// g_path_buf_init_from_path (&buf, "/");
+/// </para>
+/// <para>
+/// g_path_buf_set_filename (&buf, "bar");
+/// g_path_buf_init_from_path (&cmp, "/bar");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp));
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_set_filename (&buf, "baz.txt");
+/// g_path_buf_init_from_path (&cmp, "/baz.txt");
+/// g_assert_true (g_path_buf_equal (&buf, &cmp);
+/// g_path_buf_clear (&cmp);
+/// </para>
+/// <para>
+/// g_path_buf_clear (&buf);
+/// ]|
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <param name="file_name">
+/// the file name in the path
+/// </param>
+/// <return>
+/// `TRUE` if the file name was replaced, and `FALSE` otherwise
+/// </return>
+
 	public static bool SetFilename(this MentorLake.GLib.GPathBufHandle buf, string file_name)
 	{
 		if (buf.IsInvalid) throw new Exception("Invalid handle (GPathBuf)");
 		return GPathBufExterns.g_path_buf_set_filename(buf, file_name);
 	}
+
+/// <summary>
+/// <para>
+/// Retrieves the built path from the path buffer.
+/// </para>
+/// <para>
+/// On Windows, the result contains backslashes as directory separators,
+/// even if forward slashes were used in input.
+/// </para>
+/// <para>
+/// If the path buffer is empty, this function returns `NULL`.
+/// </para>
+/// </summary>
+
+/// <param name="buf">
+/// a path buffer
+/// </param>
+/// <return>
+/// the path
+/// </return>
 
 	public static string ToPath(this MentorLake.GLib.GPathBufHandle buf)
 	{
@@ -140,17 +476,111 @@ internal class GPathBufExterns
 
 }
 
+/// <summary>
+/// <para>
+/// `GPathBuf` is a helper type that allows you to easily build paths from
+/// individual elements, using the platform specific conventions for path
+/// separators.
+/// </para>
+/// <para>
+/// ```c
+/// g_auto (GPathBuf) path;
+/// </para>
+/// <para>
+/// g_path_buf_init (&path);
+/// </para>
+/// <para>
+/// g_path_buf_push (&path, "usr");
+/// g_path_buf_push (&path, "bin");
+/// g_path_buf_push (&path, "echo");
+/// </para>
+/// <para>
+/// g_autofree char *echo = g_path_buf_to_path (&path);
+/// g_assert_cmpstr (echo, ==, "/usr/bin/echo");
+/// ```
+/// </para>
+/// <para>
+/// You can also load a full path and then operate on its components:
+/// </para>
+/// <para>
+/// ```c
+/// g_auto (GPathBuf) path;
+/// </para>
+/// <para>
+/// g_path_buf_init_from_path (&path, "/usr/bin/echo");
+/// </para>
+/// <para>
+/// g_path_buf_pop (&path);
+/// g_path_buf_push (&path, "sh");
+/// </para>
+/// <para>
+/// g_autofree char *sh = g_path_buf_to_path (&path);
+/// g_assert_cmpstr (sh, ==, "/usr/bin/sh");
+/// ```
+/// </para>
+/// </summary>
+
 public struct GPathBuf
 {
+/// <summary>
+/// <para>
+/// Compares two path buffers for equality and returns `TRUE`
+/// if they are equal.
+/// </para>
+/// <para>
+/// The path inside the paths buffers are not going to be normalized,
+/// so `X/Y/Z/A/..`, `X/./Y/Z` and `X/Y/Z` are not going to be considered
+/// equal.
+/// </para>
+/// <para>
+/// This function can be passed to g_hash_table_new() as the
+/// `key_equal_func` parameter.
+/// </para>
+/// </summary>
+
+/// <param name="v1">
+/// a path buffer to compare
+/// </param>
+/// <param name="v2">
+/// a path buffer to compare
+/// </param>
+/// <return>
+/// `TRUE` if the two path buffers are equal,
+///   and `FALSE` otherwise
+/// </return>
+
 	public static bool Equal(IntPtr v1, IntPtr v2)
 	{
 		return GPathBufExterns.g_path_buf_equal(v1, v2);
 	}
 
+/// <summary>
+/// <para>
+/// Allocates a new `GPathBuf`.
+/// </para>
+/// </summary>
+
+/// <return>
+/// the newly allocated path buffer
+/// </return>
+
 	public static MentorLake.GLib.GPathBufHandle New()
 	{
 		return GPathBufExterns.g_path_buf_new();
 	}
+
+/// <summary>
+/// <para>
+/// Allocates a new `GPathBuf` with the given @path.
+/// </para>
+/// </summary>
+
+/// <param name="path">
+/// the path used to initialize the buffer
+/// </param>
+/// <return>
+/// the newly allocated path buffer
+/// </return>
 
 	public static MentorLake.GLib.GPathBufHandle NewFromPath(string path)
 	{

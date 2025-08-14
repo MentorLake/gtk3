@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkReleaseSwapchainImagesInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkReleaseSwapchainImagesInfoEXTExtensions
 internal class VkReleaseSwapchainImagesInfoEXTExterns
 {
 }
+
 
 public struct VkReleaseSwapchainImagesInfoEXT
 {

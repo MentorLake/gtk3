@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRayTracingMotionBlurFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRayTracingMotionBlurFeaturesNVExtensions
 internal class VkPhysicalDeviceRayTracingMotionBlurFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRayTracingMotionBlurFeaturesNV
 {

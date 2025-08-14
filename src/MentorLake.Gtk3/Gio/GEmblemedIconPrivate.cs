@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GEmblemedIconPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GEmblemedIconPrivateExtensions
 internal class GEmblemedIconPrivateExterns
 {
 }
+
 
 public struct GEmblemedIconPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassDescriptionFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassDescriptionFlagBitsExtensions
 internal class VkSubpassDescriptionFlagBitsExterns
 {
 }
+
 
 public struct VkSubpassDescriptionFlagBits
 {

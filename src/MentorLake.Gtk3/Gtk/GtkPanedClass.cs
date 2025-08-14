@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPanedClassHandle : BaseSafeHandle
 {
 }
@@ -14,17 +15,29 @@ internal class GtkPanedClassExterns
 {
 }
 
+
 public struct GtkPanedClass
 {
-	public GtkContainerClass parent_class;
-	public IntPtr cycle_child_focus;
-	public IntPtr toggle_handle_focus;
-	public IntPtr move_handle;
-	public IntPtr cycle_handle_focus;
-	public IntPtr accept_position;
-	public IntPtr cancel_position;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkContainerClass parent_class;
+	
+public IntPtr cycle_child_focus;
+	
+public IntPtr toggle_handle_focus;
+	
+public IntPtr move_handle;
+	
+public IntPtr cycle_handle_focus;
+	
+public IntPtr accept_position;
+	
+public IntPtr cancel_position;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

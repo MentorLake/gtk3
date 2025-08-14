@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNVExtensio
 internal class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV
 {

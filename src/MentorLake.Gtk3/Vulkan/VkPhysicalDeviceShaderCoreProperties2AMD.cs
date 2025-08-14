@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderCoreProperties2AMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderCoreProperties2AMDExtensions
 internal class VkPhysicalDeviceShaderCoreProperties2AMDExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderCoreProperties2AMD
 {

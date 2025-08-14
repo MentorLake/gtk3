@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLayerPropertiesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLayerPropertiesExtensions
 internal class VkLayerPropertiesExterns
 {
 }
+
 
 public struct VkLayerProperties
 {

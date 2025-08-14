@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectSkeleton.
+/// </para>
+/// </summary>
+
 public class GDBusObjectSkeletonClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GDBusObjectSkeletonClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectSkeleton.
+/// </para>
+/// </summary>
+
 public struct GDBusObjectSkeletonClass
 {
-	public GObjectClass parent_class;
-	public IntPtr authorize_method;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// Signal class handler for the #GDBusObjectSkeleton::authorize-method signal.
+/// </para>
+/// </summary>
+
+public IntPtr authorize_method;
 }

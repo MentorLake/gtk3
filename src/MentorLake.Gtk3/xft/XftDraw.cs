@@ -1,5 +1,6 @@
 namespace MentorLake.xft;
 
+
 public class XftDrawHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XftDrawExtensions
 internal class XftDrawExterns
 {
 }
+
 
 public struct XftDraw
 {

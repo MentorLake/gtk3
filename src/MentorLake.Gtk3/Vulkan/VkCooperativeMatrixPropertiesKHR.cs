@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCooperativeMatrixPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCooperativeMatrixPropertiesKHRExtensions
 internal class VkCooperativeMatrixPropertiesKHRExterns
 {
 }
+
 
 public struct VkCooperativeMatrixPropertiesKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceGroupSubmitInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceGroupSubmitInfoExtensions
 internal class VkDeviceGroupSubmitInfoExterns
 {
 }
+
 
 public struct VkDeviceGroupSubmitInfo
 {

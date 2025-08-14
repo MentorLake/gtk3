@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAppChooserDialogClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,14 @@ internal class GtkAppChooserDialogClassExterns
 {
 }
 
+
 public struct GtkAppChooserDialogClass
 {
-	public GtkDialogClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkDialogClass parent_class;
 }

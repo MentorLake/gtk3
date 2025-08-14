@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GProxyAddress.
+/// </para>
+/// </summary>
+
 public class GProxyAddressClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,14 @@ internal class GProxyAddressClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GProxyAddress.
+/// </para>
+/// </summary>
+
 public struct GProxyAddressClass
 {
-	public GInetSocketAddressClass parent_class;
+	
+public GInetSocketAddressClass parent_class;
 }

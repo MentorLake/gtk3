@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainDisplayNativeHdrCreateInfoAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainDisplayNativeHdrCreateInfoAMDExtensions
 internal class VkSwapchainDisplayNativeHdrCreateInfoAMDExterns
 {
 }
+
 
 public struct VkSwapchainDisplayNativeHdrCreateInfoAMD
 {

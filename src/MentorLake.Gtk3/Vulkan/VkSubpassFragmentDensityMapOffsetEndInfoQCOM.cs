@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassFragmentDensityMapOffsetEndInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassFragmentDensityMapOffsetEndInfoQCOMExtensions
 internal class VkSubpassFragmentDensityMapOffsetEndInfoQCOMExterns
 {
 }
+
 
 public struct VkSubpassFragmentDensityMapOffsetEndInfoQCOM
 {

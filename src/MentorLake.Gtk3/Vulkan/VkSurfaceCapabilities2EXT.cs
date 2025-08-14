@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfaceCapabilities2EXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfaceCapabilities2EXTExtensions
 internal class VkSurfaceCapabilities2EXTExterns
 {
 }
+
 
 public struct VkSurfaceCapabilities2EXT
 {

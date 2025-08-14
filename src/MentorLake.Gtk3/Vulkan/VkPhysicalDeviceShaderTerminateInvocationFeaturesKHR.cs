@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderTerminateInvocationFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderTerminateInvocationFeaturesKHRExtensio
 internal class VkPhysicalDeviceShaderTerminateInvocationFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR
 {

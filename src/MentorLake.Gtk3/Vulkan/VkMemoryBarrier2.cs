@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryBarrier2Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryBarrier2Extensions
 internal class VkMemoryBarrier2Externs
 {
 }
+
 
 public struct VkMemoryBarrier2
 {

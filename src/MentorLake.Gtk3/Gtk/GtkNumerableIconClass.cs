@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkNumerableIconClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class GtkNumerableIconClassExterns
 {
 }
 
+
 public struct GtkNumerableIconClass
 {
-	public GEmblemedIconClass parent_class;
-	public IntPtr padding;
+	
+public GEmblemedIconClass parent_class;
+	
+public IntPtr padding;
 }

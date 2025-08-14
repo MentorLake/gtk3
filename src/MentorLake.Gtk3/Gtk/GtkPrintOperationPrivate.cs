@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPrintOperationPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkPrintOperationPrivateExtensions
 internal class GtkPrintOperationPrivateExterns
 {
 }
+
 
 public struct GtkPrintOperationPrivate
 {

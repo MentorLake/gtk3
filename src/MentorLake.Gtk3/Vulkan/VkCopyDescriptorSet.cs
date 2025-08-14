@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyDescriptorSetHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyDescriptorSetExtensions
 internal class VkCopyDescriptorSetExterns
 {
 }
+
 
 public struct VkCopyDescriptorSet
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryUnmapInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryUnmapInfoKHRExtensions
 internal class VkMemoryUnmapInfoKHRExterns
 {
 }
+
 
 public struct VkMemoryUnmapInfoKHR
 {

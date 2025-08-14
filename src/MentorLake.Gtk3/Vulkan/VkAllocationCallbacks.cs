@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAllocationCallbacksHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAllocationCallbacksExtensions
 internal class VkAllocationCallbacksExterns
 {
 }
+
 
 public struct VkAllocationCallbacks
 {

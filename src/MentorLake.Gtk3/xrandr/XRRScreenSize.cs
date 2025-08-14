@@ -1,5 +1,6 @@
 namespace MentorLake.xrandr;
 
+
 public class XRRScreenSizeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XRRScreenSizeExtensions
 internal class XRRScreenSizeExterns
 {
 }
+
 
 public struct XRRScreenSize
 {

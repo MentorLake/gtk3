@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoChromaSubsamplingFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoChromaSubsamplingFlagsKHRExtensions
 internal class VkVideoChromaSubsamplingFlagsKHRExterns
 {
 }
+
 
 public struct VkVideoChromaSubsamplingFlagsKHR
 {

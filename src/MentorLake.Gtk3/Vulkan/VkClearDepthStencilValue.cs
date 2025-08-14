@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkClearDepthStencilValueHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkClearDepthStencilValueExtensions
 internal class VkClearDepthStencilValueExterns
 {
 }
+
 
 public struct VkClearDepthStencilValue
 {

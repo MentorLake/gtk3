@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFramebufferMixedSamplesCombinationNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFramebufferMixedSamplesCombinationNVExtensions
 internal class VkFramebufferMixedSamplesCombinationNVExterns
 {
 }
+
 
 public struct VkFramebufferMixedSamplesCombinationNV
 {

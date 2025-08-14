@@ -1,5 +1,14 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Structure used for scatter/gather data output.
+/// You generally pass in an array of #GOutputVectors
+/// and the operation will use all the buffers as if they were
+/// one buffer.
+/// </para>
+/// </summary>
+
 public class GOutputVectorHandle : BaseSafeHandle
 {
 }
@@ -14,8 +23,29 @@ internal class GOutputVectorExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Structure used for scatter/gather data output.
+/// You generally pass in an array of #GOutputVectors
+/// and the operation will use all the buffers as if they were
+/// one buffer.
+/// </para>
+/// </summary>
+
 public struct GOutputVector
 {
-	public IntPtr buffer;
-	public UIntPtr size;
+	/// <summary>
+/// <para>
+/// Pointer to a buffer of data to read.
+/// </para>
+/// </summary>
+
+public IntPtr buffer;
+	/// <summary>
+/// <para>
+/// the size of @buffer.
+/// </para>
+/// </summary>
+
+public UIntPtr size;
 }

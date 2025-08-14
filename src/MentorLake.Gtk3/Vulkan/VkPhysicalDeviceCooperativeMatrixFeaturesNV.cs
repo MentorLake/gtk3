@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCooperativeMatrixFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCooperativeMatrixFeaturesNVExtensions
 internal class VkPhysicalDeviceCooperativeMatrixFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCooperativeMatrixFeaturesNV
 {

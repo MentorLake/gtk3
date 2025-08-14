@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentDescriptionHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentDescriptionExtensions
 internal class VkAttachmentDescriptionExterns
 {
 }
+
 
 public struct VkAttachmentDescription
 {

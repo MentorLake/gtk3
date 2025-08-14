@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkIndirectCommandsLayoutUsageFlagBitsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkIndirectCommandsLayoutUsageFlagBitsNVExtensions
 internal class VkIndirectCommandsLayoutUsageFlagBitsNVExterns
 {
 }
+
 
 public struct VkIndirectCommandsLayoutUsageFlagBitsNV
 {

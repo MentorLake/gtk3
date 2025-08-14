@@ -1,11 +1,20 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToplevelAccessibleHandle : AtkObjectHandle
 {
 }
 
 public static class GtkToplevelAccessibleHandleExtensions
 {
+
+/// <param name="accessible">
+/// </param>
+/// <return>
+/// List of
+///   children.
+/// </return>
+
 	public static MentorLake.GLib.GListHandle GetChildren(this MentorLake.Gtk.GtkToplevelAccessibleHandle accessible)
 	{
 		if (accessible.IsInvalid) throw new Exception("Invalid handle (GtkToplevelAccessibleHandle)");

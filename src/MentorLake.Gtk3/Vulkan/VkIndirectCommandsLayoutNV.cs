@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkIndirectCommandsLayoutNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkIndirectCommandsLayoutNVExtensions
 internal class VkIndirectCommandsLayoutNVExterns
 {
 }
+
 
 public struct VkIndirectCommandsLayoutNV
 {

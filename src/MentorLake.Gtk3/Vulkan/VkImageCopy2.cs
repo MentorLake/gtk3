@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageCopy2Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageCopy2Extensions
 internal class VkImageCopy2Externs
 {
 }
+
 
 public struct VkImageCopy2
 {

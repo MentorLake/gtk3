@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSocketAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSocketAccessiblePrivateExtensions
 internal class GtkSocketAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkSocketAccessiblePrivate
 {

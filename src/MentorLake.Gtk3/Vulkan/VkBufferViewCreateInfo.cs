@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBufferViewCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBufferViewCreateInfoExtensions
 internal class VkBufferViewCreateInfoExterns
 {
 }
+
 
 public struct VkBufferViewCreateInfo
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public struct Cursor
 {
 	public ulong Value;

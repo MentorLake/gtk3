@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLhandleARBHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLhandleARBExtensions
 internal class GLhandleARBExterns
 {
 }
+
 
 public struct GLhandleARB
 {

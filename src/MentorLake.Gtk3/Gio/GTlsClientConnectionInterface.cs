@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// vtable for a #GTlsClientConnection implementation.
+/// </para>
+/// </summary>
+
 public class GTlsClientConnectionInterfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GTlsClientConnectionInterfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// vtable for a #GTlsClientConnection implementation.
+/// </para>
+/// </summary>
+
 public struct GTlsClientConnectionInterface
 {
-	public GTypeInterface g_iface;
-	public IntPtr copy_session_state;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Copies session state from one #GTlsClientConnection to another.
+/// </para>
+/// </summary>
+
+public IntPtr copy_session_state;
 }

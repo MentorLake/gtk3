@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMultiviewPerViewAttributesInfoNVXHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMultiviewPerViewAttributesInfoNVXExtensions
 internal class VkMultiviewPerViewAttributesInfoNVXExterns
 {
 }
+
 
 public struct VkMultiviewPerViewAttributesInfoNVX
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineColorBlendStateCreateFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineColorBlendStateCreateFlagBitsExtensions
 internal class VkPipelineColorBlendStateCreateFlagBitsExterns
 {
 }
+
 
 public struct VkPipelineColorBlendStateCreateFlagBits
 {

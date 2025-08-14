@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GAppLaunchContextPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GAppLaunchContextPrivateExtensions
 internal class GAppLaunchContextPrivateExterns
 {
 }
+
 
 public struct GAppLaunchContextPrivate
 {

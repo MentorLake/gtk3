@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainKHRExtensions
 internal class VkSwapchainKHRExterns
 {
 }
+
 
 public struct VkSwapchainKHR
 {

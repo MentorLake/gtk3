@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccessFlagBits2Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccessFlagBits2Extensions
 internal class VkAccessFlagBits2Externs
 {
 }
+
 
 public struct VkAccessFlagBits2
 {

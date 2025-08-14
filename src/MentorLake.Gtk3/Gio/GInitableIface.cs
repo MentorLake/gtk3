@@ -1,5 +1,12 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Provides an interface for initializing object such that initialization
+/// may fail.
+/// </para>
+/// </summary>
+
 public class GInitableIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,27 @@ internal class GInitableIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Provides an interface for initializing object such that initialization
+/// may fail.
+/// </para>
+/// </summary>
+
 public struct GInitableIface
 {
-	public GTypeInterface g_iface;
-	public IntPtr init;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Initializes the object.
+/// </para>
+/// </summary>
+
+public IntPtr init;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceLegacyDitheringFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceLegacyDitheringFeaturesEXTExtensions
 internal class VkPhysicalDeviceLegacyDitheringFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceLegacyDitheringFeaturesEXT
 {

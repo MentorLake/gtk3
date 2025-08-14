@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTimeDomainKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTimeDomainKHRExtensions
 internal class VkTimeDomainKHRExterns
 {
 }
+
 
 public struct VkTimeDomainKHR
 {

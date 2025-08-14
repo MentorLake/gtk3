@@ -1,5 +1,15 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
+/// </para>
+/// <para>
+/// This method should retrieve the kerning-adjustment value for a glyph-pair in
+/// the specified font, for horizontal text segments.
+/// </para>
+/// </summary>
+
 public struct hb_font_get_glyph_h_kerning_func_t
 {
 	public MentorLake.HarfBuzz.hb_font_get_glyph_kerning_func_t Value;

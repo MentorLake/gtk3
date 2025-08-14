@@ -1,5 +1,13 @@
 namespace MentorLake.Atk;
 
+/// <summary>
+/// <para>
+/// The AtkImplementor interface is implemented by objects for which
+/// AtkObject peers may be obtained via calls to
+/// iface->(ref_accessible)(implementor);
+/// </para>
+/// </summary>
+
 public interface AtkImplementorIfaceHandle
 {
 	public bool IsInvalid { get; }

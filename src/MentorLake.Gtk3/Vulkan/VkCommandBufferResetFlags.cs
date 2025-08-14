@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCommandBufferResetFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCommandBufferResetFlagsExtensions
 internal class VkCommandBufferResetFlagsExterns
 {
 }
+
 
 public struct VkCommandBufferResetFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyAccelerationStructureToMemoryInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyAccelerationStructureToMemoryInfoKHRExtensions
 internal class VkCopyAccelerationStructureToMemoryInfoKHRExterns
 {
 }
+
 
 public struct VkCopyAccelerationStructureToMemoryInfoKHR
 {

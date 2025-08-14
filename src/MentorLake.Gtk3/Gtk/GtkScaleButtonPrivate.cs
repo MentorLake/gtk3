@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkScaleButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkScaleButtonPrivateExtensions
 internal class GtkScaleButtonPrivateExterns
 {
 }
+
 
 public struct GtkScaleButtonPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyMicromapToMemoryInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyMicromapToMemoryInfoEXTExtensions
 internal class VkCopyMicromapToMemoryInfoEXTExterns
 {
 }
+
 
 public struct VkCopyMicromapToMemoryInfoEXT
 {

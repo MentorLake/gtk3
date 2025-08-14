@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRawAccessChainsFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRawAccessChainsFeaturesNVExtensions
 internal class VkPhysicalDeviceRawAccessChainsFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRawAccessChainsFeaturesNV
 {

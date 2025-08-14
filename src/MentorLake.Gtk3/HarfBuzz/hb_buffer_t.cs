@@ -1,5 +1,12 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// The main structure holding the input text and its properties before shaping,
+/// and output glyphs and their information after shaping.
+/// </para>
+/// </summary>
+
 public class hb_buffer_tHandle : BaseSafeHandle
 {
 }
@@ -13,6 +20,13 @@ public static class hb_buffer_tExtensions
 internal class hb_buffer_tExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// The main structure holding the input text and its properties before shaping,
+/// and output glyphs and their information after shaping.
+/// </para>
+/// </summary>
 
 public struct hb_buffer_t
 {

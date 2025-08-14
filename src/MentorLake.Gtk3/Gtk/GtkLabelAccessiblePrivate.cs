@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLabelAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkLabelAccessiblePrivateExtensions
 internal class GtkLabelAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkLabelAccessiblePrivate
 {

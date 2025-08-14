@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkScrollableInterfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class GtkScrollableInterfaceExterns
 {
 }
 
+
 public struct GtkScrollableInterface
 {
-	public GTypeInterface base_iface;
-	public IntPtr get_border;
+	
+public GTypeInterface base_iface;
+	
+public IntPtr get_border;
 }

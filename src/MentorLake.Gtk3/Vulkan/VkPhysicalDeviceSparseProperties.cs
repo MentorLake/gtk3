@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSparsePropertiesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSparsePropertiesExtensions
 internal class VkPhysicalDeviceSparsePropertiesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSparseProperties
 {

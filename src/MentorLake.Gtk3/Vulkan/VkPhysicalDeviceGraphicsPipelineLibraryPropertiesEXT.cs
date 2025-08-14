@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXTExtensio
 internal class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDepthBiasRepresentationInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDepthBiasRepresentationInfoEXTExtensions
 internal class VkDepthBiasRepresentationInfoEXTExterns
 {
 }
+
 
 public struct VkDepthBiasRepresentationInfoEXT
 {

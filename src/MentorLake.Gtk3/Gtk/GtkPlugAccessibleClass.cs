@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPlugAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkPlugAccessibleClassExterns
 {
 }
 
+
 public struct GtkPlugAccessibleClass
 {
-	public GtkWindowAccessibleClass parent_class;
+	
+public GtkWindowAccessibleClass parent_class;
 }

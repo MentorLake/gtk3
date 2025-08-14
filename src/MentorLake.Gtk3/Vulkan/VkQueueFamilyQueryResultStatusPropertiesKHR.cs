@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueueFamilyQueryResultStatusPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueueFamilyQueryResultStatusPropertiesKHRExtensions
 internal class VkQueueFamilyQueryResultStatusPropertiesKHRExterns
 {
 }
+
 
 public struct VkQueueFamilyQueryResultStatusPropertiesKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCubicFilterWeightsQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCubicFilterWeightsQCOMExtensions
 internal class VkCubicFilterWeightsQCOMExterns
 {
 }
+
 
 public struct VkCubicFilterWeightsQCOM
 {

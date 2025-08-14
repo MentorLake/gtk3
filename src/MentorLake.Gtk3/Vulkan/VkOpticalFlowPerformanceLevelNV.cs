@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpticalFlowPerformanceLevelNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpticalFlowPerformanceLevelNVExtensions
 internal class VkOpticalFlowPerformanceLevelNVExterns
 {
 }
+
 
 public struct VkOpticalFlowPerformanceLevelNV
 {

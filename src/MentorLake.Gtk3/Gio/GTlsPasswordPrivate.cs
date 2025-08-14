@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTlsPasswordPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTlsPasswordPrivateExtensions
 internal class GTlsPasswordPrivateExterns
 {
 }
+
 
 public struct GTlsPasswordPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkScrolledWindowClassHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,40 @@ internal class GtkScrolledWindowClassExterns
 {
 }
 
+
 public struct GtkScrolledWindowClass
 {
-	public GtkBinClass parent_class;
-	public int scrollbar_spacing;
-	public IntPtr scroll_child;
-	public IntPtr move_focus_out;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBinClass parent_class;
+	
+public int scrollbar_spacing;
+	/// <summary>
+/// <para>
+/// Keybinding signal which gets emitted when a
+///    keybinding that scrolls is pressed.
+/// </para>
+/// </summary>
+
+public IntPtr scroll_child;
+	/// <summary>
+/// <para>
+/// Keybinding signal which gets emitted when focus is
+///    moved away from the scrolled window by a keybinding.
+/// </para>
+/// </summary>
+
+public IntPtr move_focus_out;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

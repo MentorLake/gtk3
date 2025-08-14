@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceTimelineSemaphoreFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceTimelineSemaphoreFeaturesExtensions
 internal class VkPhysicalDeviceTimelineSemaphoreFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceTimelineSemaphoreFeatures
 {

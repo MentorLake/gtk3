@@ -1,5 +1,6 @@
 namespace MentorLake.GObject;
 
+
 public class _Value__data__unionHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,25 @@ internal class _Value__data__unionExterns
 {
 }
 
+
 public struct _Value__data__union
 {
-	public int v_int;
-	public uint v_uint;
-	public long v_long;
-	public ulong v_ulong;
-	public long v_int64;
-	public ulong v_uint64;
-	public float v_float;
-	public double v_double;
-	public IntPtr v_pointer;
+	
+public int v_int;
+	
+public uint v_uint;
+	
+public long v_long;
+	
+public ulong v_ulong;
+	
+public long v_int64;
+	
+public ulong v_uint64;
+	
+public float v_float;
+	
+public double v_double;
+	
+public IntPtr v_pointer;
 }

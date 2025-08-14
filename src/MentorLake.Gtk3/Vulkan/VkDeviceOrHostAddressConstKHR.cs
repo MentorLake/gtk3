@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceOrHostAddressConstKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceOrHostAddressConstKHRExtensions
 internal class VkDeviceOrHostAddressConstKHRExterns
 {
 }
+
 
 public struct VkDeviceOrHostAddressConstKHR
 {

@@ -1,5 +1,11 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// Opaque type. See g_main_context_pusher_new() for details.
+/// </para>
+/// </summary>
+
 public struct GMainContextPusher
 {
 }

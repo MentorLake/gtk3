@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11DragContextClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11DragContextClassExtensions
 internal class GdkX11DragContextClassExterns
 {
 }
+
 
 public struct GdkX11DragContextClass
 {

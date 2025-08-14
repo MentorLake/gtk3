@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugUtilsObjectTagInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugUtilsObjectTagInfoEXTExtensions
 internal class VkDebugUtilsObjectTagInfoEXTExterns
 {
 }
+
 
 public struct VkDebugUtilsObjectTagInfoEXT
 {

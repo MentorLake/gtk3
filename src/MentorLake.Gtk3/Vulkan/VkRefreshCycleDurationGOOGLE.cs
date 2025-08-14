@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRefreshCycleDurationGOOGLEHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRefreshCycleDurationGOOGLEExtensions
 internal class VkRefreshCycleDurationGOOGLEExterns
 {
 }
+
 
 public struct VkRefreshCycleDurationGOOGLE
 {

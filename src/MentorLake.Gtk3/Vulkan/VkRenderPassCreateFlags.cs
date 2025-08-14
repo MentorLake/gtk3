@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassCreateFlagsExtensions
 internal class VkRenderPassCreateFlagsExterns
 {
 }
+
 
 public struct VkRenderPassCreateFlags
 {

@@ -1,5 +1,14 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// Integer representing a day of the month; between 1 and 31.
+/// </para>
+/// <para>
+/// The %G_DATE_BAD_DAY value represents an invalid day of the month.
+/// </para>
+/// </summary>
+
 public struct GDateDay
 {
 	public byte Value;

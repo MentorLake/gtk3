@@ -1,5 +1,6 @@
 namespace MentorLake.freetype2;
 
+
 public class FT_FaceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class FT_FaceExtensions
 internal class FT_FaceExterns
 {
 }
+
 
 public struct FT_Face
 {

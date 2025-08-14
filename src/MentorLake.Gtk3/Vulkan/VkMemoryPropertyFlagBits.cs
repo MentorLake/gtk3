@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryPropertyFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryPropertyFlagBitsExtensions
 internal class VkMemoryPropertyFlagBitsExterns
 {
 }
+
 
 public struct VkMemoryPropertyFlagBits
 {

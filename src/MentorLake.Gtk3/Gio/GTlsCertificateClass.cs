@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTlsCertificateClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class GTlsCertificateClassExterns
 {
 }
 
+
 public struct GTlsCertificateClass
 {
-	public GObjectClass parent_class;
-	public IntPtr verify;
+	
+public GObjectClass parent_class;
+	
+public IntPtr verify;
 }

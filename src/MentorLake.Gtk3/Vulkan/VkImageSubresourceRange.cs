@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageSubresourceRangeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageSubresourceRangeExtensions
 internal class VkImageSubresourceRangeExterns
 {
 }
+
 
 public struct VkImageSubresourceRange
 {

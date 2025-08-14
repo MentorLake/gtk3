@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineExecutableStatisticFormatKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineExecutableStatisticFormatKHRExtensions
 internal class VkPipelineExecutableStatisticFormatKHRExterns
 {
 }
+
 
 public struct VkPipelineExecutableStatisticFormatKHR
 {

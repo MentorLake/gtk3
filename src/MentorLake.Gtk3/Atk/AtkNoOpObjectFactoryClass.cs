@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkNoOpObjectFactoryClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class AtkNoOpObjectFactoryClassExterns
 {
 }
 
+
 public struct AtkNoOpObjectFactoryClass
 {
-	public AtkObjectFactoryClass parent_class;
+	
+public AtkObjectFactoryClass parent_class;
 }

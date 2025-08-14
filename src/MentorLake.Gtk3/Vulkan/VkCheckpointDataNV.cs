@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCheckpointDataNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCheckpointDataNVExtensions
 internal class VkCheckpointDataNVExterns
 {
 }
+
 
 public struct VkCheckpointDataNV
 {

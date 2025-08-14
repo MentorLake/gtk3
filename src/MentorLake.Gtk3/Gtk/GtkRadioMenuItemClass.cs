@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioMenuItemClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkRadioMenuItemClassExterns
 {
 }
 
+
 public struct GtkRadioMenuItemClass
 {
-	public GtkCheckMenuItemClass parent_class;
-	public IntPtr group_changed;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkCheckMenuItemClass parent_class;
+	
+public IntPtr group_changed;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

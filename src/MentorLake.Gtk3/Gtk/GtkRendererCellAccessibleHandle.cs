@@ -1,7 +1,12 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRendererCellAccessibleHandle : GtkCellAccessibleHandle, AtkActionHandle, AtkComponentHandle, AtkTableCellHandle
 {
+
+/// <param name="renderer">
+/// </param>
+
 	public static MentorLake.Gtk.GtkRendererCellAccessibleHandle New(MentorLake.Gtk.GtkCellRendererHandle renderer)
 	{
 		return GtkRendererCellAccessibleHandleExterns.gtk_renderer_cell_accessible_new(renderer);
@@ -10,6 +15,12 @@ public class GtkRendererCellAccessibleHandle : GtkCellAccessibleHandle, AtkActio
 }
 public static class GtkRendererCellAccessibleHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkRendererCellAccessibleHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this GtkRendererCellAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,14 +57,37 @@ public static class GtkRendererCellAccessibleHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkRendererCellAccessibleHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);

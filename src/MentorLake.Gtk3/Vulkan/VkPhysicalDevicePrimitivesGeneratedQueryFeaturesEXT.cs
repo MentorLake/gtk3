@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXTExtension
 internal class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
 {

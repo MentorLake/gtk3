@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCudaFunctionCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCudaFunctionCreateInfoNVExtensions
 internal class VkCudaFunctionCreateInfoNVExterns
 {
 }
+
 
 public struct VkCudaFunctionCreateInfoNV
 {

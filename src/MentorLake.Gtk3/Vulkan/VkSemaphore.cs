@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreExtensions
 internal class VkSemaphoreExterns
 {
 }
+
 
 public struct VkSemaphore
 {

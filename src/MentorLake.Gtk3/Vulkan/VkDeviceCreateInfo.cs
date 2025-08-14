@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceCreateInfoExtensions
 internal class VkDeviceCreateInfoExterns
 {
 }
+
 
 public struct VkDeviceCreateInfo
 {

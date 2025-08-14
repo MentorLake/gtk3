@@ -1,5 +1,13 @@
 namespace MentorLake.GObject;
 
+/// <summary>
+/// <para>
+/// This is the signature of va_list marshaller functions, an optional
+/// marshaller that can be used in some situations to avoid
+/// marshalling the signal argument into GValues.
+/// </para>
+/// </summary>
+
 public struct GSignalCVaMarshaller
 {
 	public MentorLake.GObject.GVaClosureMarshal Value;

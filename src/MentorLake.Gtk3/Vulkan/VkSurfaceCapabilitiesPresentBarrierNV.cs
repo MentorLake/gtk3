@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfaceCapabilitiesPresentBarrierNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfaceCapabilitiesPresentBarrierNVExtensions
 internal class VkSurfaceCapabilitiesPresentBarrierNVExterns
 {
 }
+
 
 public struct VkSurfaceCapabilitiesPresentBarrierNV
 {

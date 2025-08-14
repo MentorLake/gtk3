@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOMExtensio
 internal class VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM
 {

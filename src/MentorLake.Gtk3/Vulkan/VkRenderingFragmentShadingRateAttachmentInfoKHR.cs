@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderingFragmentShadingRateAttachmentInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderingFragmentShadingRateAttachmentInfoKHRExtensions
 internal class VkRenderingFragmentShadingRateAttachmentInfoKHRExterns
 {
 }
+
 
 public struct VkRenderingFragmentShadingRateAttachmentInfoKHR
 {

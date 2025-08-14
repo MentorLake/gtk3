@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainPresentBarrierCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainPresentBarrierCreateInfoNVExtensions
 internal class VkSwapchainPresentBarrierCreateInfoNVExterns
 {
 }
+
 
 public struct VkSwapchainPresentBarrierCreateInfoNV
 {

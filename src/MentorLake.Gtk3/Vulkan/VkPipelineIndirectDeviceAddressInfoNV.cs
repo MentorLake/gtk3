@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineIndirectDeviceAddressInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineIndirectDeviceAddressInfoNVExtensions
 internal class VkPipelineIndirectDeviceAddressInfoNVExterns
 {
 }
+
 
 public struct VkPipelineIndirectDeviceAddressInfoNV
 {

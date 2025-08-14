@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPointClippingBehaviorHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPointClippingBehaviorExtensions
 internal class VkPointClippingBehaviorExterns
 {
 }
+
 
 public struct VkPointClippingBehavior
 {

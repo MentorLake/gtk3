@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBufferHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBufferExtensions
 internal class VkBufferExterns
 {
 }
+
 
 public struct VkBuffer
 {

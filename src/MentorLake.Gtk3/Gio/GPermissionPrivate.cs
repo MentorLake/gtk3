@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GPermissionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GPermissionPrivateExtensions
 internal class GPermissionPrivateExterns
 {
 }
+
 
 public struct GPermissionPrivate
 {

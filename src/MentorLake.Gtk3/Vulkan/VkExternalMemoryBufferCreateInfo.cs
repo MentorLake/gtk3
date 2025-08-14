@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalMemoryBufferCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalMemoryBufferCreateInfoExtensions
 internal class VkExternalMemoryBufferCreateInfoExterns
 {
 }
+
 
 public struct VkExternalMemoryBufferCreateInfo
 {

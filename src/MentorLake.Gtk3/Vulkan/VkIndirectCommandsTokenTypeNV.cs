@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkIndirectCommandsTokenTypeNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkIndirectCommandsTokenTypeNVExtensions
 internal class VkIndirectCommandsTokenTypeNVExterns
 {
 }
+
 
 public struct VkIndirectCommandsTokenTypeNV
 {

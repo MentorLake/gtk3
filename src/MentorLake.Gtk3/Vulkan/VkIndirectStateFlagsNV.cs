@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkIndirectStateFlagsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkIndirectStateFlagsNVExtensions
 internal class VkIndirectStateFlagsNVExterns
 {
 }
+
 
 public struct VkIndirectStateFlagsNV
 {

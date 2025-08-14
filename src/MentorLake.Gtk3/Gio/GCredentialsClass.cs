@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GCredentials.
+/// </para>
+/// </summary>
+
 public class GCredentialsClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class GCredentialsClassExtensions
 internal class GCredentialsClassExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// Class structure for #GCredentials.
+/// </para>
+/// </summary>
 
 public struct GCredentialsClass
 {

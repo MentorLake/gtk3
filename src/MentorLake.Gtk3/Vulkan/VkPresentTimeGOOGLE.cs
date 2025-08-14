@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPresentTimeGOOGLEHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPresentTimeGOOGLEExtensions
 internal class VkPresentTimeGOOGLEExterns
 {
 }
+
 
 public struct VkPresentTimeGOOGLE
 {

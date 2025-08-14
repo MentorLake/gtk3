@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfaceCounterFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfaceCounterFlagBitsEXTExtensions
 internal class VkSurfaceCounterFlagBitsEXTExterns
 {
 }
+
 
 public struct VkSurfaceCounterFlagBitsEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLatencySubmissionPresentIdNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLatencySubmissionPresentIdNVExtensions
 internal class VkLatencySubmissionPresentIdNVExterns
 {
 }
+
 
 public struct VkLatencySubmissionPresentIdNV
 {

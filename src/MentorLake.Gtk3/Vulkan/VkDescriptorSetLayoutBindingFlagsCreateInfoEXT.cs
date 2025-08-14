@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetLayoutBindingFlagsCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetLayoutBindingFlagsCreateInfoEXTExtensions
 internal class VkDescriptorSetLayoutBindingFlagsCreateInfoEXTExterns
 {
 }
+
 
 public struct VkDescriptorSetLayoutBindingFlagsCreateInfoEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassShadingPipelineCreateInfoHUAWEIHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassShadingPipelineCreateInfoHUAWEIExtensions
 internal class VkSubpassShadingPipelineCreateInfoHUAWEIExterns
 {
 }
+
 
 public struct VkSubpassShadingPipelineCreateInfoHUAWEI
 {

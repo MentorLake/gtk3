@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerCustomBorderColorCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerCustomBorderColorCreateInfoEXTExtensions
 internal class VkSamplerCustomBorderColorCreateInfoEXTExterns
 {
 }
+
 
 public struct VkSamplerCustomBorderColorCreateInfoEXT
 {

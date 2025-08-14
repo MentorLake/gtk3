@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentSampleLocationsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentSampleLocationsEXTExtensions
 internal class VkAttachmentSampleLocationsEXTExterns
 {
 }
+
 
 public struct VkAttachmentSampleLocationsEXT
 {

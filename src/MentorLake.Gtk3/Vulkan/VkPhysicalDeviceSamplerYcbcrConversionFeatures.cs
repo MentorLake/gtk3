@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSamplerYcbcrConversionFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSamplerYcbcrConversionFeaturesExtensions
 internal class VkPhysicalDeviceSamplerYcbcrConversionFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSamplerYcbcrConversionFeatures
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceImageMemoryRequirementsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceImageMemoryRequirementsKHRExtensions
 internal class VkDeviceImageMemoryRequirementsKHRExterns
 {
 }
+
 
 public struct VkDeviceImageMemoryRequirementsKHR
 {

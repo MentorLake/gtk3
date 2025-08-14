@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTimelineSemaphoreSubmitInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTimelineSemaphoreSubmitInfoExtensions
 internal class VkTimelineSemaphoreSubmitInfoExterns
 {
 }
+
 
 public struct VkTimelineSemaphoreSubmitInfo
 {

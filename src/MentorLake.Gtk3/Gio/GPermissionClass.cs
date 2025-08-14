@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GPermissionClassHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,23 @@ internal class GPermissionClassExterns
 {
 }
 
+
 public struct GPermissionClass
 {
-	public GObjectClass parent_class;
-	public IntPtr acquire;
-	public IntPtr acquire_async;
-	public IntPtr acquire_finish;
-	public IntPtr release;
-	public IntPtr release_async;
-	public IntPtr release_finish;
-	public IntPtr reserved;
+	
+public GObjectClass parent_class;
+	
+public IntPtr acquire;
+	
+public IntPtr acquire_async;
+	
+public IntPtr acquire_finish;
+	
+public IntPtr release;
+	
+public IntPtr release_async;
+	
+public IntPtr release_finish;
+	
+public IntPtr reserved;
 }

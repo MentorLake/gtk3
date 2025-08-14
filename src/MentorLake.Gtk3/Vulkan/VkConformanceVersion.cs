@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkConformanceVersionHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkConformanceVersionExtensions
 internal class VkConformanceVersionExterns
 {
 }
+
 
 public struct VkConformanceVersion
 {

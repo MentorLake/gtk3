@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlitImageInfo2Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlitImageInfo2Extensions
 internal class VkBlitImageInfo2Externs
 {
 }
+
 
 public struct VkBlitImageInfo2
 {

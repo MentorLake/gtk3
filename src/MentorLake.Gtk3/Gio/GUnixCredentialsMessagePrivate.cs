@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixCredentialsMessagePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GUnixCredentialsMessagePrivateExtensions
 internal class GUnixCredentialsMessagePrivateExterns
 {
 }
+
 
 public struct GUnixCredentialsMessagePrivate
 {

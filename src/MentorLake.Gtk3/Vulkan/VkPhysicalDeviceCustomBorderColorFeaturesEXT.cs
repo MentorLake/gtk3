@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCustomBorderColorFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCustomBorderColorFeaturesEXTExtensions
 internal class VkPhysicalDeviceCustomBorderColorFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCustomBorderColorFeaturesEXT
 {

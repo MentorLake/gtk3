@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDependencyFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDependencyFlagsExtensions
 internal class VkDependencyFlagsExterns
 {
 }
+
 
 public struct VkDependencyFlags
 {

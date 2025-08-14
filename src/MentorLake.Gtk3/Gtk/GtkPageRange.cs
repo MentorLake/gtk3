@@ -1,5 +1,11 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// See also gtk_print_settings_set_page_ranges().
+/// </para>
+/// </summary>
+
 public class GtkPageRangeHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GtkPageRangeExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// See also gtk_print_settings_set_page_ranges().
+/// </para>
+/// </summary>
+
 public struct GtkPageRange
 {
-	public int start;
-	public int end;
+	/// <summary>
+/// <para>
+/// start of page range.
+/// </para>
+/// </summary>
+
+public int start;
+	/// <summary>
+/// <para>
+/// end of page range.
+/// </para>
+/// </summary>
+
+public int end;
 }

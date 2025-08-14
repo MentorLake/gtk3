@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GDesktopAppInfoClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GDesktopAppInfoClassExterns
 {
 }
 
+
 public struct GDesktopAppInfoClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerYcbcrModelConversionKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerYcbcrModelConversionKHRExtensions
 internal class VkSamplerYcbcrModelConversionKHRExterns
 {
 }
+
 
 public struct VkSamplerYcbcrModelConversionKHR
 {

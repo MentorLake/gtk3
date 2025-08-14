@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkEventControllerKeyClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkEventControllerKeyClassExtensions
 internal class GtkEventControllerKeyClassExterns
 {
 }
+
 
 public struct GtkEventControllerKeyClass
 {

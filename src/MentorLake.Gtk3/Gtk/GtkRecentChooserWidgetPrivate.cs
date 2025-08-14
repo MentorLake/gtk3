@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRecentChooserWidgetPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRecentChooserWidgetPrivateExtensions
 internal class GtkRecentChooserWidgetPrivateExterns
 {
 }
+
 
 public struct GtkRecentChooserWidgetPrivate
 {

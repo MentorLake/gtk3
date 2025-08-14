@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlockMatchWindowCompareModeQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlockMatchWindowCompareModeQCOMExtensions
 internal class VkBlockMatchWindowCompareModeQCOMExterns
 {
 }
+
 
 public struct VkBlockMatchWindowCompareModeQCOM
 {

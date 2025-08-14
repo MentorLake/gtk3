@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderQuadControlFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderQuadControlFeaturesKHRExtensions
 internal class VkPhysicalDeviceShaderQuadControlFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderQuadControlFeaturesKHR
 {

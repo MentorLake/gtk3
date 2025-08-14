@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLevelBarPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkLevelBarPrivateExtensions
 internal class GtkLevelBarPrivateExterns
 {
 }
+
 
 public struct GtkLevelBarPrivate
 {

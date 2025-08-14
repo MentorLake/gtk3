@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLayoutClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GtkLayoutClassExterns
 {
 }
 
+
 public struct GtkLayoutClass
 {
-	public GtkContainerClass parent_class;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkContainerClass parent_class;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

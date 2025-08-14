@@ -1,5 +1,11 @@
 namespace MentorLake.Gdk;
 
+/// <summary>
+/// <para>
+/// A #GdkTimeCoord stores a single event in a motion history.
+/// </para>
+/// </summary>
+
 public class GdkTimeCoordHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GdkTimeCoordExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A #GdkTimeCoord stores a single event in a motion history.
+/// </para>
+/// </summary>
+
 public struct GdkTimeCoord
 {
-	public uint time;
-	[MarshalAs(UnmanagedType.ByValArray)] public double[] axes;
+	/// <summary>
+/// <para>
+/// The timestamp for this event.
+/// </para>
+/// </summary>
+
+public uint time;
+	/// <summary>
+/// <para>
+/// the values of the device’s axes.
+/// </para>
+/// </summary>
+
+[MarshalAs(UnmanagedType.ByValArray)] public double[] axes;
 }

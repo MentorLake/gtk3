@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GZlibCompressorClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GZlibCompressorClassExterns
 {
 }
 
+
 public struct GZlibCompressorClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

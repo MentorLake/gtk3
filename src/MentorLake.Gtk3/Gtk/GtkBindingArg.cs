@@ -1,5 +1,13 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// A #GtkBindingArg holds the data associated with
+/// an argument for a key binding signal emission as
+/// stored in #GtkBindingSignal.
+/// </para>
+/// </summary>
+
 public class GtkBindingArgHandle : BaseSafeHandle
 {
 }
@@ -14,7 +22,21 @@ internal class GtkBindingArgExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A #GtkBindingArg holds the data associated with
+/// an argument for a key binding signal emission as
+/// stored in #GtkBindingSignal.
+/// </para>
+/// </summary>
+
 public struct GtkBindingArg
 {
-	public GType arg_type;
+	/// <summary>
+/// <para>
+/// implementation detail
+/// </para>
+/// </summary>
+
+public GType arg_type;
 }

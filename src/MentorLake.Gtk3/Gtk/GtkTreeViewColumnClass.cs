@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeViewColumnClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkTreeViewColumnClassExterns
 {
 }
 
+
 public struct GtkTreeViewColumnClass
 {
-	public GInitiallyUnownedClass parent_class;
-	public IntPtr clicked;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GInitiallyUnownedClass parent_class;
+	
+public IntPtr clicked;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

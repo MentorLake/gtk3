@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GApplicationPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GApplicationPrivateExtensions
 internal class GApplicationPrivateExterns
 {
 }
+
 
 public struct GApplicationPrivate
 {

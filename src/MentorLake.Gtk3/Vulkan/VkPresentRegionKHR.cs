@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPresentRegionKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPresentRegionKHRExtensions
 internal class VkPresentRegionKHRExterns
 {
 }
+
 
 public struct VkPresentRegionKHR
 {

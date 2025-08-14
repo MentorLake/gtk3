@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorPoolCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorPoolCreateInfoExtensions
 internal class VkDescriptorPoolCreateInfoExterns
 {
 }
+
 
 public struct VkDescriptorPoolCreateInfo
 {

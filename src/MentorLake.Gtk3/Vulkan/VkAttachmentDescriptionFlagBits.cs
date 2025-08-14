@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentDescriptionFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentDescriptionFlagBitsExtensions
 internal class VkAttachmentDescriptionFlagBitsExterns
 {
 }
+
 
 public struct VkAttachmentDescriptionFlagBits
 {

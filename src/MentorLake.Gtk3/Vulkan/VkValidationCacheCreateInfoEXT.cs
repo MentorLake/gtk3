@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkValidationCacheCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkValidationCacheCreateInfoEXTExtensions
 internal class VkValidationCacheCreateInfoEXTExterns
 {
 }
+
 
 public struct VkValidationCacheCreateInfoEXT
 {

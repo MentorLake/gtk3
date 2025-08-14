@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRcStyleClassHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,30 @@ internal class GtkRcStyleClassExterns
 {
 }
 
+
 public struct GtkRcStyleClass
 {
-	public GObjectClass parent_class;
-	public IntPtr create_rc_style;
-	public IntPtr parse;
-	public IntPtr merge;
-	public IntPtr create_style;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
+	
+public IntPtr create_rc_style;
+	
+public IntPtr parse;
+	
+public IntPtr merge;
+	
+public IntPtr create_style;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

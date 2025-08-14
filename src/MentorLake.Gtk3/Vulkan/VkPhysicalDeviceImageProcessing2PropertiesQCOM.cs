@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageProcessing2PropertiesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageProcessing2PropertiesQCOMExtensions
 internal class VkPhysicalDeviceImageProcessing2PropertiesQCOMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageProcessing2PropertiesQCOM
 {

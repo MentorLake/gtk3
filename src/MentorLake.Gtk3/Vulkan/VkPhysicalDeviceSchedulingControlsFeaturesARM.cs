@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSchedulingControlsFeaturesARMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSchedulingControlsFeaturesARMExtensions
 internal class VkPhysicalDeviceSchedulingControlsFeaturesARMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSchedulingControlsFeaturesARM
 {

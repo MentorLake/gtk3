@@ -1,5 +1,6 @@
 namespace MentorLake.libxml2;
 
+
 public class xmlDocHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class xmlDocExtensions
 internal class xmlDocExterns
 {
 }
+
 
 public struct xmlDoc
 {

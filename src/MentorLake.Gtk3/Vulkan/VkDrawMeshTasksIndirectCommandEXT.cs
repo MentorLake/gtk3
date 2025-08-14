@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDrawMeshTasksIndirectCommandEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDrawMeshTasksIndirectCommandEXTExtensions
 internal class VkDrawMeshTasksIndirectCommandEXTExterns
 {
 }
+
 
 public struct VkDrawMeshTasksIndirectCommandEXT
 {

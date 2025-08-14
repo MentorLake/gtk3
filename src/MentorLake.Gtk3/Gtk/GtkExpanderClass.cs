@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkExpanderClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,29 @@ internal class GtkExpanderClassExterns
 {
 }
 
+
 public struct GtkExpanderClass
 {
-	public GtkBinClass parent_class;
-	public IntPtr activate;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBinClass parent_class;
+	/// <summary>
+/// <para>
+/// Keybinding signal is emitted when the user hits the Enter key.
+/// </para>
+/// </summary>
+
+public IntPtr activate;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

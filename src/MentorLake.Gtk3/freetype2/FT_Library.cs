@@ -1,5 +1,6 @@
 namespace MentorLake.freetype2;
 
+
 public class FT_LibraryHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class FT_LibraryExtensions
 internal class FT_LibraryExterns
 {
 }
+
 
 public struct FT_Library
 {

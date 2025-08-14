@@ -1,10 +1,17 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeViewAccessibleHandle : GtkContainerAccessibleHandle, AtkComponentHandle, AtkSelectionHandle, AtkTableHandle, GtkCellAccessibleParentHandle
 {
 }
 public static class GtkTreeViewAccessibleHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -34,6 +41,12 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "selection-changed" signal is emitted by an object which
+/// implements AtkSelection interface when the selection changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.SelectionChangedSignal> Signal_SelectionChanged(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -63,6 +76,12 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "column-deleted" signal is emitted by an object which
+/// implements the AtkTable interface when a column is deleted.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.ColumnDeletedSignal> Signal_ColumnDeleted(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -92,6 +111,12 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "column-inserted" signal is emitted by an object which
+/// implements the AtkTable interface when a column is inserted.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.ColumnInsertedSignal> Signal_ColumnInserted(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -121,6 +146,13 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "column-reordered" signal is emitted by an object which
+/// implements the AtkTable interface when the columns are
+/// reordered.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.ColumnReorderedSignal> Signal_ColumnReordered(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -150,6 +182,13 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "model-changed" signal is emitted by an object which
+/// implements the AtkTable interface when the model displayed by
+/// the table changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.ModelChangedSignal> Signal_ModelChanged(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -179,6 +218,12 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "row-deleted" signal is emitted by an object which
+/// implements the AtkTable interface when a row is deleted.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.RowDeletedSignal> Signal_RowDeleted(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -208,6 +253,12 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "row-inserted" signal is emitted by an object which
+/// implements the AtkTable interface when a row is inserted.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.RowInsertedSignal> Signal_RowInserted(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -237,6 +288,13 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The "row-reordered" signal is emitted by an object which
+/// implements the AtkTable interface when the rows are
+/// reordered.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkTreeViewAccessibleHandleSignalStructs.RowReorderedSignal> Signal_RowReordered(this GtkTreeViewAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -273,64 +331,136 @@ public static class GtkTreeViewAccessibleHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 
 public class SelectionChangedSignal
 {
+
 	public MentorLake.Atk.AtkSelectionHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class ColumnDeletedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+/// <summary>
+/// <para>
+/// The index of the first column deleted.
+/// </para>
+/// </summary>
+
 	public int Arg1;
+/// <summary>
+/// <para>
+/// The number of columns deleted.
+/// </para>
+/// </summary>
+
 	public int Arg2;
+
 	public IntPtr UserData;
 }
 
 public class ColumnInsertedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+/// <summary>
+/// <para>
+/// The index of the column inserted.
+/// </para>
+/// </summary>
+
 	public int Arg1;
+/// <summary>
+/// <para>
+/// The number of colums inserted.
+/// </para>
+/// </summary>
+
 	public int Arg2;
+
 	public IntPtr UserData;
 }
 
 public class ColumnReorderedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class ModelChangedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class RowDeletedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+/// <summary>
+/// <para>
+/// The index of the first row deleted.
+/// </para>
+/// </summary>
+
 	public int Arg1;
+/// <summary>
+/// <para>
+/// The number of rows deleted.
+/// </para>
+/// </summary>
+
 	public int Arg2;
+
 	public IntPtr UserData;
 }
 
 public class RowInsertedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+/// <summary>
+/// <para>
+/// The index of the first row inserted.
+/// </para>
+/// </summary>
+
 	public int Arg1;
+/// <summary>
+/// <para>
+/// The number of rows inserted.
+/// </para>
+/// </summary>
+
 	public int Arg2;
+
 	public IntPtr UserData;
 }
 
 public class RowReorderedSignal
 {
+
 	public MentorLake.Atk.AtkTableHandle Self;
+
 	public IntPtr UserData;
 }
 }
@@ -338,37 +468,175 @@ public class RowReorderedSignal
 public static class GtkTreeViewAccessibleHandleSignalDelegates
 {
 
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The "selection-changed" signal is emitted by an object which
+/// implements AtkSelection interface when the selection changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void selection_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkSelectionHandleImpl>))] MentorLake.Atk.AtkSelectionHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The "column-deleted" signal is emitted by an object which
+/// implements the AtkTable interface when a column is deleted.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The index of the first column deleted.
+/// </param>
+/// <param name="arg2">
+/// The number of columns deleted.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void column_deleted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, int arg1, int arg2, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The "column-inserted" signal is emitted by an object which
+/// implements the AtkTable interface when a column is inserted.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The index of the column inserted.
+/// </param>
+/// <param name="arg2">
+/// The number of colums inserted.
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void column_inserted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, int arg1, int arg2, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The "column-reordered" signal is emitted by an object which
+/// implements the AtkTable interface when the columns are
+/// reordered.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void column_reordered([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The "model-changed" signal is emitted by an object which
+/// implements the AtkTable interface when the model displayed by
+/// the table changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void model_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The "row-deleted" signal is emitted by an object which
+/// implements the AtkTable interface when a row is deleted.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The index of the first row deleted.
+/// </param>
+/// <param name="arg2">
+/// The number of rows deleted.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void row_deleted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, int arg1, int arg2, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The "row-inserted" signal is emitted by an object which
+/// implements the AtkTable interface when a row is inserted.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The index of the first row inserted.
+/// </param>
+/// <param name="arg2">
+/// The number of rows inserted.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void row_inserted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, int arg1, int arg2, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The "row-reordered" signal is emitted by an object which
+/// implements the AtkTable interface when the rows are
+/// reordered.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void row_reordered([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkTableHandleImpl>))] MentorLake.Atk.AtkTableHandle self, IntPtr user_data);

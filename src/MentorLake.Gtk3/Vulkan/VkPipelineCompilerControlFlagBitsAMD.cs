@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCompilerControlFlagBitsAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCompilerControlFlagBitsAMDExtensions
 internal class VkPipelineCompilerControlFlagBitsAMDExterns
 {
 }
+
 
 public struct VkPipelineCompilerControlFlagBitsAMD
 {

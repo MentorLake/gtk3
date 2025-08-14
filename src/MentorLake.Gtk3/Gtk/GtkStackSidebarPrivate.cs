@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStackSidebarPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkStackSidebarPrivateExtensions
 internal class GtkStackSidebarPrivateExterns
 {
 }
+
 
 public struct GtkStackSidebarPrivate
 {

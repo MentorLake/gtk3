@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileIconClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GFileIconClassExtensions
 internal class GFileIconClassExterns
 {
 }
+
 
 public struct GFileIconClass
 {

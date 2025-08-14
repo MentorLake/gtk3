@@ -1,5 +1,12 @@
 namespace MentorLake.Pango;
 
+/// <summary>
+/// <para>
+/// The `PangoAttrInt` structure is used to represent attributes with
+/// an integer or enumeration value.
+/// </para>
+/// </summary>
+
 public class PangoAttrIntHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,27 @@ internal class PangoAttrIntExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The `PangoAttrInt` structure is used to represent attributes with
+/// an integer or enumeration value.
+/// </para>
+/// </summary>
+
 public struct PangoAttrInt
 {
-	public PangoAttribute attr;
-	public int value;
+	/// <summary>
+/// <para>
+/// the common portion of the attribute
+/// </para>
+/// </summary>
+
+public PangoAttribute attr;
+	/// <summary>
+/// <para>
+/// the value of the attribute
+/// </para>
+/// </summary>
+
+public int value;
 }

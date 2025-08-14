@@ -1,5 +1,11 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// A value representing an interval of time, in microseconds.
+/// </para>
+/// </summary>
+
 public struct GTimeSpan
 {
 	public long Value;

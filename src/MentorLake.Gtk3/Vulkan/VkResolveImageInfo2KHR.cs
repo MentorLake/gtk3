@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkResolveImageInfo2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkResolveImageInfo2KHRExtensions
 internal class VkResolveImageInfo2KHRExterns
 {
 }
+
 
 public struct VkResolveImageInfo2KHR
 {

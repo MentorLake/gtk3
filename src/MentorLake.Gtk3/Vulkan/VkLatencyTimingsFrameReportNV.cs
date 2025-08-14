@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLatencyTimingsFrameReportNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLatencyTimingsFrameReportNVExtensions
 internal class VkLatencyTimingsFrameReportNVExterns
 {
 }
+
 
 public struct VkLatencyTimingsFrameReportNV
 {

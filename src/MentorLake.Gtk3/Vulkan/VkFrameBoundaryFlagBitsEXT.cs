@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFrameBoundaryFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFrameBoundaryFlagBitsEXTExtensions
 internal class VkFrameBoundaryFlagBitsEXTExterns
 {
 }
+
 
 public struct VkFrameBoundaryFlagBitsEXT
 {

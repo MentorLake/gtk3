@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSocketClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,21 @@ internal class GtkSocketClassExterns
 {
 }
 
+
 public struct GtkSocketClass
 {
-	public GtkContainerClass parent_class;
-	public IntPtr plug_added;
-	public IntPtr plug_removed;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkContainerClass parent_class;
+	
+public IntPtr plug_added;
+	
+public IntPtr plug_removed;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

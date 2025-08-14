@@ -1,5 +1,6 @@
 namespace MentorLake.GObject;
 
+
 public class GClosureNotifyDataHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class GClosureNotifyDataExterns
 {
 }
 
+
 public struct GClosureNotifyData
 {
-	public IntPtr data;
-	public GClosureNotify notify;
+	
+public IntPtr data;
+	
+public GClosureNotify notify;
 }

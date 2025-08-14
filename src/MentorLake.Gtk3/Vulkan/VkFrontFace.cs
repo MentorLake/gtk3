@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFrontFaceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFrontFaceExtensions
 internal class VkFrontFaceExterns
 {
 }
+
 
 public struct VkFrontFace
 {

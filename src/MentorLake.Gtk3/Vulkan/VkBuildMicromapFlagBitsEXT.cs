@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBuildMicromapFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBuildMicromapFlagBitsEXTExtensions
 internal class VkBuildMicromapFlagBitsEXTExterns
 {
 }
+
 
 public struct VkBuildMicromapFlagBitsEXT
 {

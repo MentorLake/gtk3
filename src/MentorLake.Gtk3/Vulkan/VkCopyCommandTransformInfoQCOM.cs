@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyCommandTransformInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyCommandTransformInfoQCOMExtensions
 internal class VkCopyCommandTransformInfoQCOMExterns
 {
 }
+
 
 public struct VkCopyCommandTransformInfoQCOM
 {

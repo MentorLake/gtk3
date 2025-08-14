@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfaceTransformFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfaceTransformFlagBitsKHRExtensions
 internal class VkSurfaceTransformFlagBitsKHRExterns
 {
 }
+
 
 public struct VkSurfaceTransformFlagBitsKHR
 {

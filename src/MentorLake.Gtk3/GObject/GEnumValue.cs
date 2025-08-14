@@ -1,5 +1,12 @@
 namespace MentorLake.GObject;
 
+/// <summary>
+/// <para>
+/// A structure which contains a single enum value, its name, and its
+/// nickname.
+/// </para>
+/// </summary>
+
 public class GEnumValueHandle : BaseSafeHandle
 {
 }
@@ -14,9 +21,34 @@ internal class GEnumValueExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A structure which contains a single enum value, its name, and its
+/// nickname.
+/// </para>
+/// </summary>
+
 public struct GEnumValue
 {
-	public int value;
-	public string value_name;
-	public string value_nick;
+	/// <summary>
+/// <para>
+/// the enum value
+/// </para>
+/// </summary>
+
+public int value;
+	/// <summary>
+/// <para>
+/// the name of the value
+/// </para>
+/// </summary>
+
+public string value_name;
+	/// <summary>
+/// <para>
+/// the nickname of the value
+/// </para>
+/// </summary>
+
+public string value_nick;
 }

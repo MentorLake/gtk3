@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGraphicsPipelineCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGraphicsPipelineCreateInfoExtensions
 internal class VkGraphicsPipelineCreateInfoExterns
 {
 }
+
 
 public struct VkGraphicsPipelineCreateInfo
 {

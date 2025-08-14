@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureDeviceAddressInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureDeviceAddressInfoKHRExtensions
 internal class VkAccelerationStructureDeviceAddressInfoKHRExterns
 {
 }
+
 
 public struct VkAccelerationStructureDeviceAddressInfoKHR
 {

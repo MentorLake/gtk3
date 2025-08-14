@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPopoverAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkPopoverAccessibleClassExterns
 {
 }
 
+
 public struct GtkPopoverAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubresourceHostMemcpySizeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubresourceHostMemcpySizeEXTExtensions
 internal class VkSubresourceHostMemcpySizeEXTExterns
 {
 }
+
 
 public struct VkSubresourceHostMemcpySizeEXT
 {

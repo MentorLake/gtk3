@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GListStoreClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GListStoreClassExterns
 {
 }
 
+
 public struct GListStoreClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

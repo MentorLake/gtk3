@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugReportObjectTypeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugReportObjectTypeEXTExtensions
 internal class VkDebugReportObjectTypeEXTExterns
 {
 }
+
 
 public struct VkDebugReportObjectTypeEXT
 {

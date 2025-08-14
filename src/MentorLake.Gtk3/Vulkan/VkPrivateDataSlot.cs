@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPrivateDataSlotHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPrivateDataSlotExtensions
 internal class VkPrivateDataSlotExterns
 {
 }
+
 
 public struct VkPrivateDataSlot
 {

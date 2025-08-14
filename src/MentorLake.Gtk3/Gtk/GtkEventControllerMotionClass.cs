@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkEventControllerMotionClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkEventControllerMotionClassExtensions
 internal class GtkEventControllerMotionClassExterns
 {
 }
+
 
 public struct GtkEventControllerMotionClass
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDriverPropertiesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDriverPropertiesExtensions
 internal class VkPhysicalDeviceDriverPropertiesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDriverProperties
 {

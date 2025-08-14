@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoEncodeH265CtbSizeFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoEncodeH265CtbSizeFlagBitsKHRExtensions
 internal class VkVideoEncodeH265CtbSizeFlagBitsKHRExterns
 {
 }
+
 
 public struct VkVideoEncodeH265CtbSizeFlagBitsKHR
 {

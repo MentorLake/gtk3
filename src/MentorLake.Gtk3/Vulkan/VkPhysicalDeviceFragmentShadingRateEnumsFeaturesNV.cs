@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNVExtensions
 internal class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV
 {

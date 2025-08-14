@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineRobustnessCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineRobustnessCreateInfoEXTExtensions
 internal class VkPipelineRobustnessCreateInfoEXTExterns
 {
 }
+
 
 public struct VkPipelineRobustnessCreateInfoEXT
 {

@@ -2,6 +2,8 @@ namespace MentorLake.fontconfig;
 
 public class fontconfigGlobalFunctions
 {
+
+
 	public static void Init()
 	{
 		fontconfigGlobalFunctionsExterns.FcInit();

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkListBoxRowAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkListBoxRowAccessibleClassExterns
 {
 }
 
+
 public struct GtkListBoxRowAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GIOStreamAdapterHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GIOStreamAdapterExtensions
 internal class GIOStreamAdapterExterns
 {
 }
+
 
 public struct GIOStreamAdapter
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTextViewAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkTextViewAccessibleClassExterns
 {
 }
 
+
 public struct GtkTextViewAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

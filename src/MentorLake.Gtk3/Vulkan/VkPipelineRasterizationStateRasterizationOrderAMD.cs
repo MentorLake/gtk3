@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineRasterizationStateRasterizationOrderAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineRasterizationStateRasterizationOrderAMDExtensions
 internal class VkPipelineRasterizationStateRasterizationOrderAMDExterns
 {
 }
+
 
 public struct VkPipelineRasterizationStateRasterizationOrderAMD
 {

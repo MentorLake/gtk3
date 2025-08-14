@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStatusbarPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkStatusbarPrivateExtensions
 internal class GtkStatusbarPrivateExterns
 {
 }
+
 
 public struct GtkStatusbarPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkVBoxClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkVBoxClassExterns
 {
 }
 
+
 public struct GtkVBoxClass
 {
-	public GtkBoxClass parent_class;
+	
+public GtkBoxClass parent_class;
 }

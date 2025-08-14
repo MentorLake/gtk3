@@ -1,5 +1,11 @@
 namespace MentorLake.PangoXft;
 
+/// <summary>
+/// <para>
+/// The class structure for `PangoXftRenderer`
+/// </para>
+/// </summary>
+
 public class PangoXftRendererClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,16 @@ internal class PangoXftRendererClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The class structure for `PangoXftRenderer`
+/// </para>
+/// </summary>
+
 public struct PangoXftRendererClass
 {
-	public IntPtr composite_trapezoids;
-	public IntPtr composite_glyphs;
+	
+public IntPtr composite_trapezoids;
+	
+public IntPtr composite_glyphs;
 }

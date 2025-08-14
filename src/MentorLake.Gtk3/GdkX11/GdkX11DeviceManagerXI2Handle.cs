@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11DeviceManagerXI2Handle : GdkX11DeviceManagerCoreHandle
 {
 }

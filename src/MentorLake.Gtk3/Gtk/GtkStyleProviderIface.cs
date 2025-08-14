@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStyleProviderIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,28 @@ internal class GtkStyleProviderIfaceExterns
 {
 }
 
+
 public struct GtkStyleProviderIface
 {
-	public IntPtr get_style;
-	public IntPtr get_style_property;
-	public IntPtr get_icon_factory;
+	/// <summary>
+/// <para>
+/// Gets a set of style information that applies to a widget path.
+/// </para>
+/// </summary>
+
+public IntPtr get_style;
+	/// <summary>
+/// <para>
+/// Gets the value of a widget style property that applies to a widget path.
+/// </para>
+/// </summary>
+
+public IntPtr get_style_property;
+	/// <summary>
+/// <para>
+/// Gets the icon factory that applies to a widget path.
+/// </para>
+/// </summary>
+
+public IntPtr get_icon_factory;
 }

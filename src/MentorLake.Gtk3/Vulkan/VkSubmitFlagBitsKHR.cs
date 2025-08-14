@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubmitFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubmitFlagBitsKHRExtensions
 internal class VkSubmitFlagBitsKHRExterns
 {
 }
+
 
 public struct VkSubmitFlagBitsKHR
 {

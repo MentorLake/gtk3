@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageAlignmentControlFeaturesMESAHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageAlignmentControlFeaturesMESAExtensions
 internal class VkPhysicalDeviceImageAlignmentControlFeaturesMESAExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageAlignmentControlFeaturesMESA
 {

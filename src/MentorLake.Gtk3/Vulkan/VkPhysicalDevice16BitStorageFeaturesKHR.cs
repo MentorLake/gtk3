@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevice16BitStorageFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevice16BitStorageFeaturesKHRExtensions
 internal class VkPhysicalDevice16BitStorageFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDevice16BitStorageFeaturesKHR
 {

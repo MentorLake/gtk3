@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryResultFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryResultFlagsExtensions
 internal class VkQueryResultFlagsExterns
 {
 }
+
 
 public struct VkQueryResultFlags
 {

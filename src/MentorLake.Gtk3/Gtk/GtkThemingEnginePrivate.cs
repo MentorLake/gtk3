@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkThemingEnginePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkThemingEnginePrivateExtensions
 internal class GtkThemingEnginePrivateExterns
 {
 }
+
 
 public struct GtkThemingEnginePrivate
 {

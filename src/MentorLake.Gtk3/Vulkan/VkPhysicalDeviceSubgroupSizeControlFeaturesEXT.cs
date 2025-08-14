@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSubgroupSizeControlFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSubgroupSizeControlFeaturesEXTExtensions
 internal class VkPhysicalDeviceSubgroupSizeControlFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSubgroupSizeControlFeaturesEXT
 {

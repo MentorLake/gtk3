@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPrimitiveTopologyHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPrimitiveTopologyExtensions
 internal class VkPrimitiveTopologyExterns
 {
 }
+
 
 public struct VkPrimitiveTopology
 {

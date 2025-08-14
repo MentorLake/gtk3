@@ -1,5 +1,11 @@
 namespace MentorLake.Atk;
 
+/// <summary>
+/// <para>
+/// A structure used to describe a text range.
+/// </para>
+/// </summary>
+
 public class AtkTextRangeHandle : BaseSafeHandle
 {
 }
@@ -14,10 +20,40 @@ internal class AtkTextRangeExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A structure used to describe a text range.
+/// </para>
+/// </summary>
+
 public struct AtkTextRange
 {
-	public AtkTextRectangle bounds;
-	public int start_offset;
-	public int end_offset;
-	public string content;
+	/// <summary>
+/// <para>
+/// A rectangle giving the bounds of the text range
+/// </para>
+/// </summary>
+
+public AtkTextRectangle bounds;
+	/// <summary>
+/// <para>
+/// The start offset of a AtkTextRange
+/// </para>
+/// </summary>
+
+public int start_offset;
+	/// <summary>
+/// <para>
+/// The end offset of a AtkTextRange
+/// </para>
+/// </summary>
+
+public int end_offset;
+	/// <summary>
+/// <para>
+/// The text in the text range
+/// </para>
+/// </summary>
+
+public string content;
 }

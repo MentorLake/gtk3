@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Provides an interface for implementing seekable functionality on I/O Streams.
+/// </para>
+/// </summary>
+
 public class GSeekableIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,12 +20,54 @@ internal class GSeekableIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Provides an interface for implementing seekable functionality on I/O Streams.
+/// </para>
+/// </summary>
+
 public struct GSeekableIface
 {
-	public GTypeInterface g_iface;
-	public IntPtr tell;
-	public IntPtr can_seek;
-	public IntPtr seek;
-	public IntPtr can_truncate;
-	public IntPtr truncate_fn;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Tells the current location within a stream.
+/// </para>
+/// </summary>
+
+public IntPtr tell;
+	/// <summary>
+/// <para>
+/// Checks if seeking is supported by the stream.
+/// </para>
+/// </summary>
+
+public IntPtr can_seek;
+	/// <summary>
+/// <para>
+/// Seeks to a location within a stream.
+/// </para>
+/// </summary>
+
+public IntPtr seek;
+	/// <summary>
+/// <para>
+/// Checks if truncation is supported by the stream.
+/// </para>
+/// </summary>
+
+public IntPtr can_truncate;
+	/// <summary>
+/// <para>
+/// Truncates a stream.
+/// </para>
+/// </summary>
+
+public IntPtr truncate_fn;
 }

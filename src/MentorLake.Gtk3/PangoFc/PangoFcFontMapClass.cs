@@ -1,5 +1,6 @@
 namespace MentorLake.PangoFc;
 
+
 public class PangoFcFontMapClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class PangoFcFontMapClassExtensions
 internal class PangoFcFontMapClassExterns
 {
 }
+
 
 public struct PangoFcFontMapClass
 {

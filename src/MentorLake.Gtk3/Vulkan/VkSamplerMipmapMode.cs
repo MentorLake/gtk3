@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerMipmapModeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerMipmapModeExtensions
 internal class VkSamplerMipmapModeExterns
 {
 }
+
 
 public struct VkSamplerMipmapMode
 {

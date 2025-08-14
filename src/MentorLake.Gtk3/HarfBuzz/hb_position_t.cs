@@ -1,5 +1,13 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for holding a single coordinate value.
+/// Contour points and other multi-dimensional data are
+/// stored as tuples of #hb_position_t's.
+/// </para>
+/// </summary>
+
 public struct hb_position_t
 {
 	public int Value;

@@ -1,5 +1,6 @@
 namespace MentorLake.GioUnix;
 
+
 public class GUnixFDMessageClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class GUnixFDMessageClassExterns
 {
 }
 
+
 public struct GUnixFDMessageClass
 {
-	public GSocketControlMessageClass parent_class;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
+	
+public GSocketControlMessageClass parent_class;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
 }

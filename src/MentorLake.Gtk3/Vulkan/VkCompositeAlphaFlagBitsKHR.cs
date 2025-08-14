@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCompositeAlphaFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCompositeAlphaFlagBitsKHRExtensions
 internal class VkCompositeAlphaFlagBitsKHRExterns
 {
 }
+
 
 public struct VkCompositeAlphaFlagBitsKHR
 {

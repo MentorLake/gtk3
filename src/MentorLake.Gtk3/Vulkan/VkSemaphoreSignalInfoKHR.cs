@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreSignalInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreSignalInfoKHRExtensions
 internal class VkSemaphoreSignalInfoKHRExterns
 {
 }
+
 
 public struct VkSemaphoreSignalInfoKHR
 {

@@ -1,5 +1,16 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
+/// </para>
+/// <para>
+/// This method should retrieve the extents for a font, for vertical-direction
+/// text segments. Extents must be returned in an #hb_glyph_extents output
+/// parameter.
+/// </para>
+/// </summary>
+
 public struct hb_font_get_font_v_extents_func_t
 {
 	public MentorLake.HarfBuzz.hb_font_get_font_extents_func_t Value;

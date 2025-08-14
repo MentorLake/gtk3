@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGeometryTrianglesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGeometryTrianglesNVExtensions
 internal class VkGeometryTrianglesNVExterns
 {
 }
+
 
 public struct VkGeometryTrianglesNV
 {

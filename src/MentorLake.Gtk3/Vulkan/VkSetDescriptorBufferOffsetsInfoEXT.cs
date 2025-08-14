@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSetDescriptorBufferOffsetsInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSetDescriptorBufferOffsetsInfoEXTExtensions
 internal class VkSetDescriptorBufferOffsetsInfoEXTExterns
 {
 }
+
 
 public struct VkSetDescriptorBufferOffsetsInfoEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceQueueShaderCoreControlCreateInfoARMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceQueueShaderCoreControlCreateInfoARMExtensions
 internal class VkDeviceQueueShaderCoreControlCreateInfoARMExterns
 {
 }
+
 
 public struct VkDeviceQueueShaderCoreControlCreateInfoARM
 {

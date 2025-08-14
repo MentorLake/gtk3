@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GDBusProxyPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GDBusProxyPrivateExtensions
 internal class GDBusProxyPrivateExterns
 {
 }
+
 
 public struct GDBusProxyPrivate
 {

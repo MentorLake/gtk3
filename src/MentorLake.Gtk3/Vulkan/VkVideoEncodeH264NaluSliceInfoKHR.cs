@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoEncodeH264NaluSliceInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoEncodeH264NaluSliceInfoKHRExtensions
 internal class VkVideoEncodeH264NaluSliceInfoKHRExterns
 {
 }
+
 
 public struct VkVideoEncodeH264NaluSliceInfoKHR
 {

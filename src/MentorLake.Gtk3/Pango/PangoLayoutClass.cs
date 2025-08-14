@@ -1,5 +1,6 @@
 namespace MentorLake.Pango;
 
+
 public class PangoLayoutClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class PangoLayoutClassExtensions
 internal class PangoLayoutClassExterns
 {
 }
+
 
 public struct PangoLayoutClass
 {

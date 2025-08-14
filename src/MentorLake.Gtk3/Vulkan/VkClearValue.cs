@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkClearValueHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkClearValueExtensions
 internal class VkClearValueExterns
 {
 }
+
 
 public struct VkClearValue
 {

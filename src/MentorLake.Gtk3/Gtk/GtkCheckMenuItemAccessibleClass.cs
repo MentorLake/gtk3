@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCheckMenuItemAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkCheckMenuItemAccessibleClassExterns
 {
 }
 
+
 public struct GtkCheckMenuItemAccessibleClass
 {
-	public GtkMenuItemAccessibleClass parent_class;
+	
+public GtkMenuItemAccessibleClass parent_class;
 }

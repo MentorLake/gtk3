@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceAddressBindingFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceAddressBindingFlagBitsEXTExtensions
 internal class VkDeviceAddressBindingFlagBitsEXTExterns
 {
 }
+
 
 public struct VkDeviceAddressBindingFlagBitsEXT
 {

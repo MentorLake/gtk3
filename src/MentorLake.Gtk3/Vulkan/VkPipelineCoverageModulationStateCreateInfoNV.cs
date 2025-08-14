@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCoverageModulationStateCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCoverageModulationStateCreateInfoNVExtensions
 internal class VkPipelineCoverageModulationStateCreateInfoNVExterns
 {
 }
+
 
 public struct VkPipelineCoverageModulationStateCreateInfoNV
 {

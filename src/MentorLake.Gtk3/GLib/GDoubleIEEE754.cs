@@ -1,5 +1,15 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// The #GFloatIEEE754 and #GDoubleIEEE754 unions are used to access the sign,
+/// mantissa and exponent of IEEE floats and doubles. These unions are defined
+/// as appropriate for a given platform. IEEE floats and doubles are supported
+/// (used for storage) by at least Intel, PPC and Sparc.
+/// </para>
+/// </summary>
+
+
 public class GDoubleIEEE754_mpnHandle : BaseSafeHandle
 {
 }
@@ -14,12 +24,17 @@ internal class GDoubleIEEE754_mpnExterns
 {
 }
 
+
 public struct GDoubleIEEE754_mpn
 {
-	public uint mantissa_low;
-	public uint mantissa_high;
-	public uint biased_exponent;
-	public uint sign;
+	
+public uint mantissa_low;
+	
+public uint mantissa_high;
+	
+public uint biased_exponent;
+	
+public uint sign;
 }
 
 public class GDoubleIEEE754Handle : BaseSafeHandle
@@ -36,8 +51,23 @@ internal class GDoubleIEEE754Externs
 {
 }
 
+/// <summary>
+/// <para>
+/// The #GFloatIEEE754 and #GDoubleIEEE754 unions are used to access the sign,
+/// mantissa and exponent of IEEE floats and doubles. These unions are defined
+/// as appropriate for a given platform. IEEE floats and doubles are supported
+/// (used for storage) by at least Intel, PPC and Sparc.
+/// </para>
+/// </summary>
+
 public struct GDoubleIEEE754
 {
 	public GDoubleIEEE754_mpn mpn;
-	public double v_double;
+	/// <summary>
+/// <para>
+/// the double value
+/// </para>
+/// </summary>
+
+public double v_double;
 }

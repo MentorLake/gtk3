@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageLayoutHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageLayoutExtensions
 internal class VkImageLayoutExterns
 {
 }
+
 
 public struct VkImageLayout
 {

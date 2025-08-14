@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryPoolPerformanceCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryPoolPerformanceCreateInfoKHRExtensions
 internal class VkQueryPoolPerformanceCreateInfoKHRExterns
 {
 }
+
 
 public struct VkQueryPoolPerformanceCreateInfoKHR
 {

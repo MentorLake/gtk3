@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkShortcutsSectionClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkShortcutsSectionClassExtensions
 internal class GtkShortcutsSectionClassExterns
 {
 }
+
 
 public struct GtkShortcutsSectionClass
 {

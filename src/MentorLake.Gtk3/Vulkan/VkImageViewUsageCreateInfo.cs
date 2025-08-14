@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewUsageCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewUsageCreateInfoExtensions
 internal class VkImageViewUsageCreateInfoExterns
 {
 }
+
 
 public struct VkImageViewUsageCreateInfo
 {

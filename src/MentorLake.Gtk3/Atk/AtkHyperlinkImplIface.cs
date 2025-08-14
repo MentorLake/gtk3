@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkHyperlinkImplIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class AtkHyperlinkImplIfaceExterns
 {
 }
 
+
 public struct AtkHyperlinkImplIface
 {
-	public GTypeInterface parent;
-	public IntPtr get_hyperlink;
+	
+public GTypeInterface parent;
+	
+public IntPtr get_hyperlink;
 }

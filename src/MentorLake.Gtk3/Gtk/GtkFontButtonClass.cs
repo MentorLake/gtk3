@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFontButtonClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkFontButtonClassExterns
 {
 }
 
+
 public struct GtkFontButtonClass
 {
-	public GtkButtonClass parent_class;
-	public IntPtr font_set;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkButtonClass parent_class;
+	
+public IntPtr font_set;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

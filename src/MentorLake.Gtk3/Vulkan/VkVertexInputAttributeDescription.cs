@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVertexInputAttributeDescriptionHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVertexInputAttributeDescriptionExtensions
 internal class VkVertexInputAttributeDescriptionExterns
 {
 }
+
 
 public struct VkVertexInputAttributeDescription
 {

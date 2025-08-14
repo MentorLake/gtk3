@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSpinnerPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSpinnerPrivateExtensions
 internal class GtkSpinnerPrivateExterns
 {
 }
+
 
 public struct GtkSpinnerPrivate
 {

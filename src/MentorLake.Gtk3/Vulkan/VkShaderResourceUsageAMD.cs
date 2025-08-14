@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderResourceUsageAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderResourceUsageAMDExtensions
 internal class VkShaderResourceUsageAMDExterns
 {
 }
+
 
 public struct VkShaderResourceUsageAMD
 {

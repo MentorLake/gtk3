@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XFontStructHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XFontStructExtensions
 internal class XFontStructExterns
 {
 }
+
 
 public struct XFontStruct
 {

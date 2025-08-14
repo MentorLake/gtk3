@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGraphicsPipelineLibraryFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGraphicsPipelineLibraryFlagsEXTExtensions
 internal class VkGraphicsPipelineLibraryFlagsEXTExterns
 {
 }
+
 
 public struct VkGraphicsPipelineLibraryFlagsEXT
 {

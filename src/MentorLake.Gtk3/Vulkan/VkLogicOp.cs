@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLogicOpHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLogicOpExtensions
 internal class VkLogicOpExterns
 {
 }
+
 
 public struct VkLogicOp
 {

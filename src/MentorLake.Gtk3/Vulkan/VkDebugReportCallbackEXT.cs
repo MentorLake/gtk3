@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugReportCallbackEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugReportCallbackEXTExtensions
 internal class VkDebugReportCallbackEXTExterns
 {
 }
+
 
 public struct VkDebugReportCallbackEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpaqueCaptureDescriptorDataCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpaqueCaptureDescriptorDataCreateInfoEXTExtensions
 internal class VkOpaqueCaptureDescriptorDataCreateInfoEXTExterns
 {
 }
+
 
 public struct VkOpaqueCaptureDescriptorDataCreateInfoEXT
 {

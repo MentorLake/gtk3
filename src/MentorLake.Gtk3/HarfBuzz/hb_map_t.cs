@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for holding integer-to-integer hash maps.
+/// </para>
+/// </summary>
+
 public class hb_map_tHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class hb_map_tExtensions
 internal class hb_map_tExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// Data type for holding integer-to-integer hash maps.
+/// </para>
+/// </summary>
 
 public struct hb_map_t
 {

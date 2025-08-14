@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDisplayModeCreateFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDisplayModeCreateFlagsKHRExtensions
 internal class VkDisplayModeCreateFlagsKHRExterns
 {
 }
+
 
 public struct VkDisplayModeCreateFlagsKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11DeviceManagerCoreClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11DeviceManagerCoreClassExtensions
 internal class GdkX11DeviceManagerCoreClassExterns
 {
 }
+
 
 public struct GdkX11DeviceManagerCoreClass
 {

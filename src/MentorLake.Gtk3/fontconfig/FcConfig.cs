@@ -1,5 +1,6 @@
 namespace MentorLake.fontconfig;
 
+
 public class FcConfigHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class FcConfigExtensions
 internal class FcConfigExterns
 {
 }
+
 
 public struct FcConfig
 {

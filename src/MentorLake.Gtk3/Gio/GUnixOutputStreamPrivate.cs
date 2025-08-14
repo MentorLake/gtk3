@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixOutputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GUnixOutputStreamPrivateExtensions
 internal class GUnixOutputStreamPrivateExterns
 {
 }
+
 
 public struct GUnixOutputStreamPrivate
 {

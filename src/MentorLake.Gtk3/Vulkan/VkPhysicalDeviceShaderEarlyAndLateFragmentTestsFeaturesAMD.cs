@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDEx
 internal class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMDExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
 {

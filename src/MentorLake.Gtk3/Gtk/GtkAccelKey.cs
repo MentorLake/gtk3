@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAccelKeyHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,28 @@ internal class GtkAccelKeyExterns
 {
 }
 
+
 public struct GtkAccelKey
 {
-	public uint accel_key;
-	public GdkModifierType accel_mods;
-	public uint accel_flags;
+	/// <summary>
+/// <para>
+/// The accelerator keyval
+/// </para>
+/// </summary>
+
+public uint accel_key;
+	/// <summary>
+/// <para>
+/// The accelerator modifiers
+/// </para>
+/// </summary>
+
+public GdkModifierType accel_mods;
+	/// <summary>
+/// <para>
+/// The accelerator flags
+/// </para>
+/// </summary>
+
+public uint accel_flags;
 }

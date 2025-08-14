@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLatencySleepModeInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLatencySleepModeInfoNVExtensions
 internal class VkLatencySleepModeInfoNVExterns
 {
 }
+
 
 public struct VkLatencySleepModeInfoNV
 {

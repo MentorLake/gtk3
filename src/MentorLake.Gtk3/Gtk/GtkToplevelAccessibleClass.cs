@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToplevelAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkToplevelAccessibleClassExterns
 {
 }
 
+
 public struct GtkToplevelAccessibleClass
 {
-	public AtkObjectClass parent_class;
+	
+public AtkObjectClass parent_class;
 }

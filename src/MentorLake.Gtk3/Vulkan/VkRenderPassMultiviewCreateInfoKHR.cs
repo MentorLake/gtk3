@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassMultiviewCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassMultiviewCreateInfoKHRExtensions
 internal class VkRenderPassMultiviewCreateInfoKHRExterns
 {
 }
+
 
 public struct VkRenderPassMultiviewCreateInfoKHR
 {

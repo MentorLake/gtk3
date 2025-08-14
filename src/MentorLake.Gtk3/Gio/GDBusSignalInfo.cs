@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Information about a signal on a D-Bus interface.
+/// </para>
+/// </summary>
+
 public class GDBusSignalInfoHandle : BaseSafeHandle
 {
 }
@@ -7,11 +13,37 @@ public class GDBusSignalInfoHandle : BaseSafeHandle
 
 public static class GDBusSignalInfoExtensions
 {
+/// <summary>
+/// <para>
+/// If @info is statically allocated does nothing. Otherwise increases
+/// the reference count.
+/// </para>
+/// </summary>
+
+/// <param name="info">
+/// A #GDBusSignalInfo
+/// </param>
+/// <return>
+/// The same @info.
+/// </return>
+
 	public static MentorLake.Gio.GDBusSignalInfoHandle Ref(this MentorLake.Gio.GDBusSignalInfoHandle info)
 	{
 		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusSignalInfo)");
 		return GDBusSignalInfoExterns.g_dbus_signal_info_ref(info);
 	}
+
+/// <summary>
+/// <para>
+/// If @info is statically allocated, does nothing. Otherwise decreases
+/// the reference count of @info. When its reference count drops to 0,
+/// the memory used is freed.
+/// </para>
+/// </summary>
+
+/// <param name="info">
+/// A #GDBusSignalInfo.
+/// </param>
 
 	public static void Unref(this MentorLake.Gio.GDBusSignalInfoHandle info)
 	{
@@ -33,10 +65,40 @@ internal class GDBusSignalInfoExterns
 
 }
 
+/// <summary>
+/// <para>
+/// Information about a signal on a D-Bus interface.
+/// </para>
+/// </summary>
+
 public struct GDBusSignalInfo
 {
-	public int ref_count;
-	public string name;
-	public IntPtr args;
-	public IntPtr annotations;
+	/// <summary>
+/// <para>
+/// The reference count or -1 if statically allocated.
+/// </para>
+/// </summary>
+
+public int ref_count;
+	/// <summary>
+/// <para>
+/// The name of the D-Bus signal, e.g. "NameOwnerChanged".
+/// </para>
+/// </summary>
+
+public string name;
+	/// <summary>
+/// <para>
+/// A pointer to a %NULL-terminated array of pointers to #GDBusArgInfo structures or %NULL if there are no arguments.
+/// </para>
+/// </summary>
+
+public IntPtr args;
+	/// <summary>
+/// <para>
+/// A pointer to a %NULL-terminated array of pointers to #GDBusAnnotationInfo structures or %NULL if there are no annotations.
+/// </para>
+/// </summary>
+
+public IntPtr annotations;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindShaderGroupIndirectCommandNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindShaderGroupIndirectCommandNVExtensions
 internal class VkBindShaderGroupIndirectCommandNVExterns
 {
 }
+
 
 public struct VkBindShaderGroupIndirectCommandNV
 {

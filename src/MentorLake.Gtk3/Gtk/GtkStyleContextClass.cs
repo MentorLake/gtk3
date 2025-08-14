@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStyleContextClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkStyleContextClassExterns
 {
 }
 
+
 public struct GtkStyleContextClass
 {
-	public GObjectClass parent_class;
-	public IntPtr changed;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GObjectClass parent_class;
+	
+public IntPtr changed;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

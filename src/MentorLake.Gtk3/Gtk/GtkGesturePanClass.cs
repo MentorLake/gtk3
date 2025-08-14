@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkGesturePanClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkGesturePanClassExtensions
 internal class GtkGesturePanClassExterns
 {
 }
+
 
 public struct GtkGesturePanClass
 {

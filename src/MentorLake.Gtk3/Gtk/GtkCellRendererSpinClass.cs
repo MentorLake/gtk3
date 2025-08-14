@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCellRendererSpinClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GtkCellRendererSpinClassExterns
 {
 }
 
+
 public struct GtkCellRendererSpinClass
 {
-	public GtkCellRendererTextClass parent;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkCellRendererTextClass parent;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

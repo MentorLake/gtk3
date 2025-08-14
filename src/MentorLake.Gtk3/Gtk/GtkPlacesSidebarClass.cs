@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPlacesSidebarClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkPlacesSidebarClassExtensions
 internal class GtkPlacesSidebarClassExterns
 {
 }
+
 
 public struct GtkPlacesSidebarClass
 {

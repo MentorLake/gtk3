@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryOverallocationBehaviorAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryOverallocationBehaviorAMDExtensions
 internal class VkMemoryOverallocationBehaviorAMDExterns
 {
 }
+
 
 public struct VkMemoryOverallocationBehaviorAMD
 {

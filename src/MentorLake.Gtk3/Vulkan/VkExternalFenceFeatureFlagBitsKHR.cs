@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalFenceFeatureFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalFenceFeatureFlagBitsKHRExtensions
 internal class VkExternalFenceFeatureFlagBitsKHRExterns
 {
 }
+
 
 public struct VkExternalFenceFeatureFlagBitsKHR
 {

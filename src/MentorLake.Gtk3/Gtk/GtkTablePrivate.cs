@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTablePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTablePrivateExtensions
 internal class GtkTablePrivateExterns
 {
 }
+
 
 public struct GtkTablePrivate
 {

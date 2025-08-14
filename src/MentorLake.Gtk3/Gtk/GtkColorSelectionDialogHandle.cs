@@ -1,7 +1,21 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkColorSelectionDialogHandle : GtkDialogHandle, AtkImplementorIfaceHandle, GtkBuildableHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GtkColorSelectionDialog.
+/// </para>
+/// </summary>
+
+/// <param name="title">
+/// a string containing the title text for the dialog.
+/// </param>
+/// <return>
+/// a #GtkColorSelectionDialog.
+/// </return>
+
 	public static MentorLake.Gtk.GtkColorSelectionDialogHandle New(string title)
 	{
 		return GtkColorSelectionDialogHandleExterns.gtk_color_selection_dialog_new(title);
@@ -11,6 +25,19 @@ public class GtkColorSelectionDialogHandle : GtkDialogHandle, AtkImplementorIfac
 
 public static class GtkColorSelectionDialogHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Retrieves the #GtkColorSelection widget embedded in the dialog.
+/// </para>
+/// </summary>
+
+/// <param name="colorsel">
+/// a #GtkColorSelectionDialog
+/// </param>
+/// <return>
+/// the embedded #GtkColorSelection
+/// </return>
+
 	public static MentorLake.Gtk.GtkWidgetHandle GetColorSelection(this MentorLake.Gtk.GtkColorSelectionDialogHandle colorsel)
 	{
 		if (colorsel.IsInvalid) throw new Exception("Invalid handle (GtkColorSelectionDialogHandle)");

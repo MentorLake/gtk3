@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkImagePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkImagePrivateExtensions
 internal class GtkImagePrivateExterns
 {
 }
+
 
 public struct GtkImagePrivate
 {

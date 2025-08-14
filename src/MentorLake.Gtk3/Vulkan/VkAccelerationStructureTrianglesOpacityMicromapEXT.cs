@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureTrianglesOpacityMicromapEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureTrianglesOpacityMicromapEXTExtensions
 internal class VkAccelerationStructureTrianglesOpacityMicromapEXTExterns
 {
 }
+
 
 public struct VkAccelerationStructureTrianglesOpacityMicromapEXT
 {

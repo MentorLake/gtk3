@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTextBTreeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTextBTreeExtensions
 internal class GtkTextBTreeExterns
 {
 }
+
 
 public struct GtkTextBTree
 {

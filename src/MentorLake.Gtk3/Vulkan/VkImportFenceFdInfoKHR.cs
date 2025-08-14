@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImportFenceFdInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImportFenceFdInfoKHRExtensions
 internal class VkImportFenceFdInfoKHRExterns
 {
 }
+
 
 public struct VkImportFenceFdInfoKHR
 {

@@ -2,6 +2,8 @@ namespace MentorLake.xlib;
 
 public class xlibGlobalFunctions
 {
+
+
 	public static void OpenDisplay()
 	{
 		xlibGlobalFunctionsExterns.XOpenDisplay();

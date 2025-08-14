@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoFormatPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoFormatPropertiesKHRExtensions
 internal class VkVideoFormatPropertiesKHRExterns
 {
 }
+
 
 public struct VkVideoFormatPropertiesKHR
 {

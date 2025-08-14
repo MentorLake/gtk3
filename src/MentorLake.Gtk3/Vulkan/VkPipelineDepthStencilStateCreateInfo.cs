@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineDepthStencilStateCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineDepthStencilStateCreateInfoExtensions
 internal class VkPipelineDepthStencilStateCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineDepthStencilStateCreateInfo
 {

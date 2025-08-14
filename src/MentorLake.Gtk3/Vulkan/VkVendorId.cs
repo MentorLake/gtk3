@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVendorIdHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVendorIdExtensions
 internal class VkVendorIdExterns
 {
 }
+
 
 public struct VkVendorId
 {

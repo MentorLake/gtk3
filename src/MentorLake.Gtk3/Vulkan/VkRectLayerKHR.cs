@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRectLayerKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRectLayerKHRExtensions
 internal class VkRectLayerKHRExterns
 {
 }
+
 
 public struct VkRectLayerKHR
 {

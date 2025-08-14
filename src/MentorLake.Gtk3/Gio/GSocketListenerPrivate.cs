@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSocketListenerPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSocketListenerPrivateExtensions
 internal class GSocketListenerPrivateExterns
 {
 }
+
 
 public struct GSocketListenerPrivate
 {

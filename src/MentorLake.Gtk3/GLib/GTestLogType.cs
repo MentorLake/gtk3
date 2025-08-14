@@ -1,18 +1,31 @@
 namespace MentorLake.GLib;
 
+
 [Flags]
 public enum GTestLogType
 {
+
 	G_TEST_LOG_NONE = 0,
+
 	G_TEST_LOG_ERROR = 1,
+
 	G_TEST_LOG_START_BINARY = 2,
+
 	G_TEST_LOG_LIST_CASE = 3,
+
 	G_TEST_LOG_SKIP_CASE = 4,
+
 	G_TEST_LOG_START_CASE = 5,
+
 	G_TEST_LOG_STOP_CASE = 6,
+
 	G_TEST_LOG_MIN_RESULT = 7,
+
 	G_TEST_LOG_MAX_RESULT = 8,
+
 	G_TEST_LOG_MESSAGE = 9,
+
 	G_TEST_LOG_START_SUITE = 10,
+
 	G_TEST_LOG_STOP_SUITE = 11
 }

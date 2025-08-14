@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkContainerAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkContainerAccessiblePrivateExtensions
 internal class GtkContainerAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkContainerAccessiblePrivate
 {

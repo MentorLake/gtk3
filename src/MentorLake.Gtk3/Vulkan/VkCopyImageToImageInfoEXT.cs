@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyImageToImageInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyImageToImageInfoEXTExtensions
 internal class VkCopyImageToImageInfoEXTExterns
 {
 }
+
 
 public struct VkCopyImageToImageInfoEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerYcbcrConversionImageFormatPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerYcbcrConversionImageFormatPropertiesKHRExtensions
 internal class VkSamplerYcbcrConversionImageFormatPropertiesKHRExterns
 {
 }
+
 
 public struct VkSamplerYcbcrConversionImageFormatPropertiesKHR
 {

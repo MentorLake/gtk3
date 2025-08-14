@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDispatchIndirectCommandHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDispatchIndirectCommandExtensions
 internal class VkDispatchIndirectCommandExterns
 {
 }
+
 
 public struct VkDispatchIndirectCommand
 {

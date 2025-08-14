@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVEx
 internal class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
 {

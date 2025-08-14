@@ -1,10 +1,17 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkContainerAccessibleHandle : GtkWidgetAccessibleHandle, AtkComponentHandle
 {
 }
 public static class GtkContainerAccessibleHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkContainerAccessibleHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this GtkContainerAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -41,14 +48,37 @@ public static class GtkContainerAccessibleHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkContainerAccessibleHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);

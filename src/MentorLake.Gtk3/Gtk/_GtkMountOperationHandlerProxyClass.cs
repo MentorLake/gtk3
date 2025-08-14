@@ -1,5 +1,11 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// Class structure for #_GtkMountOperationHandlerProxy.
+/// </para>
+/// </summary>
+
 public class _GtkMountOperationHandlerProxyClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class _GtkMountOperationHandlerProxyClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #_GtkMountOperationHandlerProxy.
+/// </para>
+/// </summary>
+
 public struct _GtkMountOperationHandlerProxyClass
 {
-	public GDBusProxyClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GDBusProxyClass parent_class;
 }

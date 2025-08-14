@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GPowerProfileMonitor.
+/// </para>
+/// </summary>
+
 public class GPowerProfileMonitorInterfaceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class GPowerProfileMonitorInterfaceExtensions
 internal class GPowerProfileMonitorInterfaceExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// The virtual function table for #GPowerProfileMonitor.
+/// </para>
+/// </summary>
 
 public struct GPowerProfileMonitorInterface
 {

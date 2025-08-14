@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFramebufferCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFramebufferCreateInfoExtensions
 internal class VkFramebufferCreateInfoExterns
 {
 }
+
 
 public struct VkFramebufferCreateInfo
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderingAttachmentInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderingAttachmentInfoExtensions
 internal class VkRenderingAttachmentInfoExterns
 {
 }
+
 
 public struct VkRenderingAttachmentInfo
 {

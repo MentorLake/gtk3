@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePointClippingPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePointClippingPropertiesKHRExtensions
 internal class VkPhysicalDevicePointClippingPropertiesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDevicePointClippingPropertiesKHR
 {

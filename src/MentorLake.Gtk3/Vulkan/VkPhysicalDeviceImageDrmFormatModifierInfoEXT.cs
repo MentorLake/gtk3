@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageDrmFormatModifierInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageDrmFormatModifierInfoEXTExtensions
 internal class VkPhysicalDeviceImageDrmFormatModifierInfoEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageDrmFormatModifierInfoEXT
 {

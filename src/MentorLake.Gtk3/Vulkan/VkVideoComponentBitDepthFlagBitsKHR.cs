@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoComponentBitDepthFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoComponentBitDepthFlagBitsKHRExtensions
 internal class VkVideoComponentBitDepthFlagBitsKHRExterns
 {
 }
+
 
 public struct VkVideoComponentBitDepthFlagBitsKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkWriteDescriptorSetAccelerationStructureKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkWriteDescriptorSetAccelerationStructureKHRExtensions
 internal class VkWriteDescriptorSetAccelerationStructureKHRExterns
 {
 }
+
 
 public struct VkWriteDescriptorSetAccelerationStructureKHR
 {

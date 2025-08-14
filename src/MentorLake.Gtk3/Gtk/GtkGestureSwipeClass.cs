@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkGestureSwipeClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkGestureSwipeClassExtensions
 internal class GtkGestureSwipeClassExterns
 {
 }
+
 
 public struct GtkGestureSwipeClass
 {

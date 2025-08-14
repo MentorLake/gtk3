@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceGroupRenderPassBeginInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceGroupRenderPassBeginInfoExtensions
 internal class VkDeviceGroupRenderPassBeginInfoExterns
 {
 }
+
 
 public struct VkDeviceGroupRenderPassBeginInfo
 {

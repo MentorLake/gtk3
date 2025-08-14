@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpticalFlowGridSizeFlagsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpticalFlowGridSizeFlagsNVExtensions
 internal class VkOpticalFlowGridSizeFlagsNVExterns
 {
 }
+
 
 public struct VkOpticalFlowGridSizeFlagsNV
 {

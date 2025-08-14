@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPresentGravityFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPresentGravityFlagBitsEXTExtensions
 internal class VkPresentGravityFlagBitsEXTExterns
 {
 }
+
 
 public struct VkPresentGravityFlagBitsEXT
 {

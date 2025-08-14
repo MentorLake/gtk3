@@ -1,5 +1,12 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for holding Unicode codepoints. Also
+/// used to hold glyph IDs.
+/// </para>
+/// </summary>
+
 public struct hb_codepoint_t
 {
 	public uint Value;

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerAddressModeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerAddressModeExtensions
 internal class VkSamplerAddressModeExterns
 {
 }
+
 
 public struct VkSamplerAddressMode
 {

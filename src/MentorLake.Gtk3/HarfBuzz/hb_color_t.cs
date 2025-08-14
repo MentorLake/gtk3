@@ -1,5 +1,12 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for holding color values. Colors are eight bits per
+/// channel RGB plus alpha transparency.
+/// </para>
+/// </summary>
+
 public struct hb_color_t
 {
 	public uint Value;

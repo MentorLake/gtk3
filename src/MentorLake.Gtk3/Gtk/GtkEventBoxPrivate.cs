@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkEventBoxPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkEventBoxPrivateExtensions
 internal class GtkEventBoxPrivateExterns
 {
 }
+
 
 public struct GtkEventBoxPrivate
 {

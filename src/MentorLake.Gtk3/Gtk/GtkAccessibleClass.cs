@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkAccessibleClassExterns
 {
 }
 
+
 public struct GtkAccessibleClass
 {
-	public AtkObjectClass parent_class;
-	public IntPtr connect_widget_destroyed;
-	public IntPtr widget_set;
-	public IntPtr widget_unset;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public AtkObjectClass parent_class;
+	
+public IntPtr connect_widget_destroyed;
+	
+public IntPtr widget_set;
+	
+public IntPtr widget_unset;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

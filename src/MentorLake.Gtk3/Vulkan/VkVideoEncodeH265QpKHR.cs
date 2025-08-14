@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoEncodeH265QpKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoEncodeH265QpKHRExtensions
 internal class VkVideoEncodeH265QpKHRExterns
 {
 }
+
 
 public struct VkVideoEncodeH265QpKHR
 {

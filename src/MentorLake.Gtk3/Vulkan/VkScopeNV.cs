@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkScopeNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkScopeNVExtensions
 internal class VkScopeNVExterns
 {
 }
+
 
 public struct VkScopeNV
 {

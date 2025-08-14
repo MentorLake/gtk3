@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDriverIdKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDriverIdKHRExtensions
 internal class VkDriverIdKHRExterns
 {
 }
+
 
 public struct VkDriverIdKHR
 {

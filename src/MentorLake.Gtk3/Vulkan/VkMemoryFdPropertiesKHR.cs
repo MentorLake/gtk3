@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryFdPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryFdPropertiesKHRExtensions
 internal class VkMemoryFdPropertiesKHRExterns
 {
 }
+
 
 public struct VkMemoryFdPropertiesKHR
 {

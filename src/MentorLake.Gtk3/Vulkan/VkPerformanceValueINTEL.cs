@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPerformanceValueINTELHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPerformanceValueINTELExtensions
 internal class VkPerformanceValueINTELExterns
 {
 }
+
 
 public struct VkPerformanceValueINTEL
 {

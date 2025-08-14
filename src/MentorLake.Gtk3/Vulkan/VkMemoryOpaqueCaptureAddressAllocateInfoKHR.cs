@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryOpaqueCaptureAddressAllocateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryOpaqueCaptureAddressAllocateInfoKHRExtensions
 internal class VkMemoryOpaqueCaptureAddressAllocateInfoKHRExterns
 {
 }
+
 
 public struct VkMemoryOpaqueCaptureAddressAllocateInfoKHR
 {

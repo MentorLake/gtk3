@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceConditionalRenderingFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceConditionalRenderingFeaturesEXTExtensions
 internal class VkPhysicalDeviceConditionalRenderingFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceConditionalRenderingFeaturesEXT
 {

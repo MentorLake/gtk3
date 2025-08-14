@@ -1,5 +1,6 @@
 namespace MentorLake.xrandr;
 
+
 public class XRROutputChangeNotifyEventHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XRROutputChangeNotifyEventExtensions
 internal class XRROutputChangeNotifyEventExterns
 {
 }
+
 
 public struct XRROutputChangeNotifyEvent
 {

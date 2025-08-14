@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceFaultAddressTypeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceFaultAddressTypeEXTExtensions
 internal class VkDeviceFaultAddressTypeEXTExterns
 {
 }
+
 
 public struct VkDeviceFaultAddressTypeEXT
 {

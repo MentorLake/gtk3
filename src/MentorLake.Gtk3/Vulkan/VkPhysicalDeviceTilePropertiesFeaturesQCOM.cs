@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceTilePropertiesFeaturesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceTilePropertiesFeaturesQCOMExtensions
 internal class VkPhysicalDeviceTilePropertiesFeaturesQCOMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceTilePropertiesFeaturesQCOM
 {

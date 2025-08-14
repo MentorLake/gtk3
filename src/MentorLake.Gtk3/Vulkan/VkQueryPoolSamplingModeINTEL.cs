@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryPoolSamplingModeINTELHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryPoolSamplingModeINTELExtensions
 internal class VkQueryPoolSamplingModeINTELExterns
 {
 }
+
 
 public struct VkQueryPoolSamplingModeINTEL
 {

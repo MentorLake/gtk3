@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXTExten
 internal class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
 {

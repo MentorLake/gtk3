@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectManagerClient.
+/// </para>
+/// </summary>
+
 public class GDBusObjectManagerClientClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,33 @@ internal class GDBusObjectManagerClientClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectManagerClient.
+/// </para>
+/// </summary>
+
 public struct GDBusObjectManagerClientClass
 {
-	public GObjectClass parent_class;
-	public IntPtr interface_proxy_signal;
-	public IntPtr interface_proxy_properties_changed;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// Signal class handler for the #GDBusObjectManagerClient::interface-proxy-signal signal.
+/// </para>
+/// </summary>
+
+public IntPtr interface_proxy_signal;
+	/// <summary>
+/// <para>
+/// Signal class handler for the #GDBusObjectManagerClient::interface-proxy-properties-changed signal.
+/// </para>
+/// </summary>
+
+public IntPtr interface_proxy_properties_changed;
 }

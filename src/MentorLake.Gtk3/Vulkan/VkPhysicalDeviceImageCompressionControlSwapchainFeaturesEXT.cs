@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXTE
 internal class VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT
 {

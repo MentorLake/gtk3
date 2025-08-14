@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFontSelectionDialogPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkFontSelectionDialogPrivateExtensions
 internal class GtkFontSelectionDialogPrivateExterns
 {
 }
+
 
 public struct GtkFontSelectionDialogPrivate
 {

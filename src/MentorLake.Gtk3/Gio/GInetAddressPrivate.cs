@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GInetAddressPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GInetAddressPrivateExtensions
 internal class GInetAddressPrivateExterns
 {
 }
+
 
 public struct GInetAddressPrivate
 {

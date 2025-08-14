@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkShortcutLabelClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkShortcutLabelClassExtensions
 internal class GtkShortcutLabelClassExterns
 {
 }
+
 
 public struct GtkShortcutLabelClass
 {

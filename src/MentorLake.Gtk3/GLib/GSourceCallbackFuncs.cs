@@ -1,5 +1,12 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// The `GSourceCallbackFuncs` struct contains
+/// functions for managing callback objects.
+/// </para>
+/// </summary>
+
 public class GSourceCallbackFuncsHandle : BaseSafeHandle
 {
 }
@@ -14,9 +21,35 @@ internal class GSourceCallbackFuncsExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The `GSourceCallbackFuncs` struct contains
+/// functions for managing callback objects.
+/// </para>
+/// </summary>
+
 public struct GSourceCallbackFuncs
 {
-	public IntPtr @ref;
-	public IntPtr unref;
-	public IntPtr get;
+	/// <summary>
+/// <para>
+/// Called when a reference is added to the callback object
+/// </para>
+/// </summary>
+
+public IntPtr @ref;
+	/// <summary>
+/// <para>
+/// Called when a reference to the callback object is dropped
+/// </para>
+/// </summary>
+
+public IntPtr unref;
+	/// <summary>
+/// <para>
+/// Called to extract the callback function and data from the
+///     callback object.
+/// </para>
+/// </summary>
+
+public IntPtr get;
 }

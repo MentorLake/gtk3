@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GProxyAddressEnumeratorPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GProxyAddressEnumeratorPrivateExtensions
 internal class GProxyAddressEnumeratorPrivateExterns
 {
 }
+
 
 public struct GProxyAddressEnumeratorPrivate
 {

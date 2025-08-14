@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkRegistryClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class AtkRegistryClassExterns
 {
 }
 
+
 public struct AtkRegistryClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

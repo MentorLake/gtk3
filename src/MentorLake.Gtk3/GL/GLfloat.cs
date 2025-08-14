@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLfloatHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLfloatExtensions
 internal class GLfloatExterns
 {
 }
+
 
 public struct GLfloat
 {

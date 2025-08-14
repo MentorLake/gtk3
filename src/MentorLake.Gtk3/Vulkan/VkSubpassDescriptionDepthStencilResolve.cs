@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassDescriptionDepthStencilResolveHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassDescriptionDepthStencilResolveExtensions
 internal class VkSubpassDescriptionDepthStencilResolveExterns
 {
 }
+
 
 public struct VkSubpassDescriptionDepthStencilResolve
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImportMemoryHostPointerInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImportMemoryHostPointerInfoEXTExtensions
 internal class VkImportMemoryHostPointerInfoEXTExterns
 {
 }
+
 
 public struct VkImportMemoryHostPointerInfoEXT
 {

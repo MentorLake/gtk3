@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioActionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRadioActionPrivateExtensions
 internal class GtkRadioActionPrivateExterns
 {
 }
+
 
 public struct GtkRadioActionPrivate
 {

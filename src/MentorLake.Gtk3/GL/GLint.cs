@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLintHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLintExtensions
 internal class GLintExterns
 {
 }
+
 
 public struct GLint
 {

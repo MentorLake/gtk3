@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineInputAssemblyStateCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineInputAssemblyStateCreateFlagsExtensions
 internal class VkPipelineInputAssemblyStateCreateFlagsExterns
 {
 }
+
 
 public struct VkPipelineInputAssemblyStateCreateFlags
 {

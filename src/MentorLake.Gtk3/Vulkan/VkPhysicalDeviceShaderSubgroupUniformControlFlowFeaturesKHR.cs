@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRE
 internal class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
 {

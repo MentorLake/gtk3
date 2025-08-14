@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGeometryInstanceFlagBitsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGeometryInstanceFlagBitsNVExtensions
 internal class VkGeometryInstanceFlagBitsNVExterns
 {
 }
+
 
 public struct VkGeometryInstanceFlagBitsNV
 {

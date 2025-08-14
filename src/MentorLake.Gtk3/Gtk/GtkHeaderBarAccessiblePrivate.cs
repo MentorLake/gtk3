@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkHeaderBarAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkHeaderBarAccessiblePrivateExtensions
 internal class GtkHeaderBarAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkHeaderBarAccessiblePrivate
 {

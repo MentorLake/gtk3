@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerYcbcrRangeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerYcbcrRangeExtensions
 internal class VkSamplerYcbcrRangeExterns
 {
 }
+
 
 public struct VkSamplerYcbcrRange
 {

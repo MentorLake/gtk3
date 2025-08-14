@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11CursorClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11CursorClassExtensions
 internal class GdkX11CursorClassExterns
 {
 }
+
 
 public struct GdkX11CursorClass
 {

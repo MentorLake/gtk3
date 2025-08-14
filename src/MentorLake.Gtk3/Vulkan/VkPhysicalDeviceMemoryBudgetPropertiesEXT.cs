@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMemoryBudgetPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMemoryBudgetPropertiesEXTExtensions
 internal class VkPhysicalDeviceMemoryBudgetPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMemoryBudgetPropertiesEXT
 {

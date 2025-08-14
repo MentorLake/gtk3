@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAdjustmentClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,21 @@ internal class GtkAdjustmentClassExterns
 {
 }
 
+
 public struct GtkAdjustmentClass
 {
-	public GInitiallyUnownedClass parent_class;
-	public IntPtr changed;
-	public IntPtr value_changed;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GInitiallyUnownedClass parent_class;
+	
+public IntPtr changed;
+	
+public IntPtr value_changed;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

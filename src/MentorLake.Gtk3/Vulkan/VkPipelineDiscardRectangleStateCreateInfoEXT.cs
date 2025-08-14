@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineDiscardRectangleStateCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineDiscardRectangleStateCreateInfoEXTExtensions
 internal class VkPipelineDiscardRectangleStateCreateInfoEXTExterns
 {
 }
+
 
 public struct VkPipelineDiscardRectangleStateCreateInfoEXT
 {

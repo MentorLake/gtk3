@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceFaultCountsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceFaultCountsEXTExtensions
 internal class VkDeviceFaultCountsEXTExterns
 {
 }
+
 
 public struct VkDeviceFaultCountsEXT
 {

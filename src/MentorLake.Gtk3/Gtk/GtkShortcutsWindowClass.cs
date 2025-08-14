@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkShortcutsWindowClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class GtkShortcutsWindowClassExterns
 {
 }
 
+
 public struct GtkShortcutsWindowClass
 {
-	public GtkWindowClass parent_class;
-	public IntPtr close;
-	public IntPtr search;
+	
+public GtkWindowClass parent_class;
+	
+public IntPtr close;
+	
+public IntPtr search;
 }

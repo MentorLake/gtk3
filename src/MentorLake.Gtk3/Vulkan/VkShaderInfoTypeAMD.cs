@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderInfoTypeAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderInfoTypeAMDExtensions
 internal class VkShaderInfoTypeAMDExterns
 {
 }
+
 
 public struct VkShaderInfoTypeAMD
 {

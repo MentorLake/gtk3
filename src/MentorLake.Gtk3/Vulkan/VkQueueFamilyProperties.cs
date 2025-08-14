@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueueFamilyPropertiesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueueFamilyPropertiesExtensions
 internal class VkQueueFamilyPropertiesExterns
 {
 }
+
 
 public struct VkQueueFamilyProperties
 {

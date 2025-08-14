@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreCreateFlagsExtensions
 internal class VkSemaphoreCreateFlagsExterns
 {
 }
+
 
 public struct VkSemaphoreCreateFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceBufferMemoryRequirementsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceBufferMemoryRequirementsExtensions
 internal class VkDeviceBufferMemoryRequirementsExterns
 {
 }
+
 
 public struct VkDeviceBufferMemoryRequirements
 {

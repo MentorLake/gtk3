@@ -1,17 +1,29 @@
 namespace MentorLake.GLib;
 
+
 [Flags]
 public enum GAsciiType : uint
 {
+
 	G_ASCII_ALNUM = 1,
+
 	G_ASCII_ALPHA = 2,
+
 	G_ASCII_CNTRL = 4,
+
 	G_ASCII_DIGIT = 8,
+
 	G_ASCII_GRAPH = 16,
+
 	G_ASCII_LOWER = 32,
+
 	G_ASCII_PRINT = 64,
+
 	G_ASCII_PUNCT = 128,
+
 	G_ASCII_SPACE = 256,
+
 	G_ASCII_UPPER = 512,
+
 	G_ASCII_XDIGIT = 1024
 }

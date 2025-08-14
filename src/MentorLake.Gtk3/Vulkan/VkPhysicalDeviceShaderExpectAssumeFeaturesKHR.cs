@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderExpectAssumeFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderExpectAssumeFeaturesKHRExtensions
 internal class VkPhysicalDeviceShaderExpectAssumeFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderExpectAssumeFeaturesKHR
 {

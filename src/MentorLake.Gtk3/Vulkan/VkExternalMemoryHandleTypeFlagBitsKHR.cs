@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalMemoryHandleTypeFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalMemoryHandleTypeFlagBitsKHRExtensions
 internal class VkExternalMemoryHandleTypeFlagBitsKHRExterns
 {
 }
+
 
 public struct VkExternalMemoryHandleTypeFlagBitsKHR
 {

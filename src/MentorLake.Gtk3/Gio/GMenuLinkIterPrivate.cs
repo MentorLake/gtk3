@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GMenuLinkIterPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GMenuLinkIterPrivateExtensions
 internal class GMenuLinkIterPrivateExterns
 {
 }
+
 
 public struct GMenuLinkIterPrivate
 {

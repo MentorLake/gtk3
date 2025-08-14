@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageCompressionFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageCompressionFlagsEXTExtensions
 internal class VkImageCompressionFlagsEXTExterns
 {
 }
+
 
 public struct VkImageCompressionFlagsEXT
 {

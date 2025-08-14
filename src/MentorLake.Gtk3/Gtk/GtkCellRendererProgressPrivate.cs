@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCellRendererProgressPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCellRendererProgressPrivateExtensions
 internal class GtkCellRendererProgressPrivateExterns
 {
 }
+
 
 public struct GtkCellRendererProgressPrivate
 {

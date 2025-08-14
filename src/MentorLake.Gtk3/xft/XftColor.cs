@@ -1,5 +1,6 @@
 namespace MentorLake.xft;
 
+
 public class XftColorHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XftColorExtensions
 internal class XftColorExterns
 {
 }
+
 
 public struct XftColor
 {

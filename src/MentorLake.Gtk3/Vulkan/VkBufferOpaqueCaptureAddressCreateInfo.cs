@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBufferOpaqueCaptureAddressCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBufferOpaqueCaptureAddressCreateInfoExtensions
 internal class VkBufferOpaqueCaptureAddressCreateInfoExterns
 {
 }
+
 
 public struct VkBufferOpaqueCaptureAddressCreateInfo
 {

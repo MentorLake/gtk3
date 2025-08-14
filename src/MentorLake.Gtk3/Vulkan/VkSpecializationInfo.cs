@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSpecializationInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSpecializationInfoExtensions
 internal class VkSpecializationInfoExterns
 {
 }
+
 
 public struct VkSpecializationInfo
 {

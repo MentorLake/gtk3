@@ -1,5 +1,6 @@
 namespace MentorLake.GLib;
 
+
 public class GAllocatorHandle : BaseSafeHandle
 {
 }
@@ -7,6 +8,10 @@ public class GAllocatorHandle : BaseSafeHandle
 
 public static class GAllocatorExtensions
 {
+
+/// <param name="allocator">
+/// </param>
+
 	public static void Free(this MentorLake.GLib.GAllocatorHandle allocator)
 	{
 		if (allocator.IsInvalid) throw new Exception("Invalid handle (GAllocator)");
@@ -27,8 +32,15 @@ internal class GAllocatorExterns
 
 }
 
+
 public struct GAllocator
 {
+
+/// <param name="name">
+/// </param>
+/// <param name="n_preallocs">
+/// </param>
+
 	public static MentorLake.GLib.GAllocatorHandle New(string name, uint n_preallocs)
 	{
 		return GAllocatorExterns.g_allocator_new(name, n_preallocs);

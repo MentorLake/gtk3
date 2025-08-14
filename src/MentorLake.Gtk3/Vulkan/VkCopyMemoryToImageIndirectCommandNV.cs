@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyMemoryToImageIndirectCommandNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyMemoryToImageIndirectCommandNVExtensions
 internal class VkCopyMemoryToImageIndirectCommandNVExterns
 {
 }
+
 
 public struct VkCopyMemoryToImageIndirectCommandNV
 {

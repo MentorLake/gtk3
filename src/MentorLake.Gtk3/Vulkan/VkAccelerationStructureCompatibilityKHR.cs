@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureCompatibilityKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureCompatibilityKHRExtensions
 internal class VkAccelerationStructureCompatibilityKHRExterns
 {
 }
+
 
 public struct VkAccelerationStructureCompatibilityKHR
 {

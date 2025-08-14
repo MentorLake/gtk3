@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePresentWaitFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePresentWaitFeaturesKHRExtensions
 internal class VkPhysicalDevicePresentWaitFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDevicePresentWaitFeaturesKHR
 {

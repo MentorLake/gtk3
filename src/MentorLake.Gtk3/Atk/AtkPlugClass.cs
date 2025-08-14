@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkPlugClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class AtkPlugClassExterns
 {
 }
 
+
 public struct AtkPlugClass
 {
-	public AtkObjectClass parent_class;
-	public IntPtr get_object_id;
+	
+public AtkObjectClass parent_class;
+	
+public IntPtr get_object_id;
 }

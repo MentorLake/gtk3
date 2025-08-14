@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalSemaphoreHandleTypeFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalSemaphoreHandleTypeFlagBitsKHRExtensions
 internal class VkExternalSemaphoreHandleTypeFlagBitsKHRExterns
 {
 }
+
 
 public struct VkExternalSemaphoreHandleTypeFlagBitsKHR
 {

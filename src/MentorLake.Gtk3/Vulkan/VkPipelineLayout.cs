@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineLayoutHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineLayoutExtensions
 internal class VkPipelineLayoutExterns
 {
 }
+
 
 public struct VkPipelineLayout
 {

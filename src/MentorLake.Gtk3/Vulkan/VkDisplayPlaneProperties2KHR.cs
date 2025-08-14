@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDisplayPlaneProperties2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDisplayPlaneProperties2KHRExtensions
 internal class VkDisplayPlaneProperties2KHRExterns
 {
 }
+
 
 public struct VkDisplayPlaneProperties2KHR
 {

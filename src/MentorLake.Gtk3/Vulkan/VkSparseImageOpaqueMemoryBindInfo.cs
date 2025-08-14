@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSparseImageOpaqueMemoryBindInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSparseImageOpaqueMemoryBindInfoExtensions
 internal class VkSparseImageOpaqueMemoryBindInfoExterns
 {
 }
+
 
 public struct VkSparseImageOpaqueMemoryBindInfo
 {

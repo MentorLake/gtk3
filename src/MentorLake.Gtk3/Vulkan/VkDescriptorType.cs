@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorTypeExtensions
 internal class VkDescriptorTypeExterns
 {
 }
+
 
 public struct VkDescriptorType
 {

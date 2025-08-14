@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlendOpHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlendOpExtensions
 internal class VkBlendOpExterns
 {
 }
+
 
 public struct VkBlendOp
 {

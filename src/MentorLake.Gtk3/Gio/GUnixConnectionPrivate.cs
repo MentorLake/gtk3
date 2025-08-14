@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixConnectionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GUnixConnectionPrivateExtensions
 internal class GUnixConnectionPrivateExterns
 {
 }
+
 
 public struct GUnixConnectionPrivate
 {

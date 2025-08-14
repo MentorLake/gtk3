@@ -2,6 +2,8 @@ namespace MentorLake.xft;
 
 public class xftGlobalFunctions
 {
+
+
 	public static void Init()
 	{
 		xftGlobalFunctionsExterns.XftInit();

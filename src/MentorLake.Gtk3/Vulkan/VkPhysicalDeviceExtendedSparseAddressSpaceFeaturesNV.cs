@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNVExtensio
 internal class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
 {

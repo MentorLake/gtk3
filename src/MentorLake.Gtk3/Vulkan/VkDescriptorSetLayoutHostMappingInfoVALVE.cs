@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetLayoutHostMappingInfoVALVEHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetLayoutHostMappingInfoVALVEExtensions
 internal class VkDescriptorSetLayoutHostMappingInfoVALVEExterns
 {
 }
+
 
 public struct VkDescriptorSetLayoutHostMappingInfoVALVE
 {

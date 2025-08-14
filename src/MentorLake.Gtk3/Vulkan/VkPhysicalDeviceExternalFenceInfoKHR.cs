@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExternalFenceInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExternalFenceInfoKHRExtensions
 internal class VkPhysicalDeviceExternalFenceInfoKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExternalFenceInfoKHR
 {

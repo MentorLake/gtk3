@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceLayeredDriverPropertiesMSFTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceLayeredDriverPropertiesMSFTExtensions
 internal class VkPhysicalDeviceLayeredDriverPropertiesMSFTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceLayeredDriverPropertiesMSFT
 {

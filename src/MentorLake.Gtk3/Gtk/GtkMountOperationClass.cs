@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkMountOperationClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,22 @@ internal class GtkMountOperationClassExterns
 {
 }
 
+
 public struct GtkMountOperationClass
 {
-	public GMountOperationClass parent_class;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GMountOperationClass parent_class;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

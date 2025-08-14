@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Information about a D-Bus property on a D-Bus interface.
+/// </para>
+/// </summary>
+
 public class GDBusPropertyInfoHandle : BaseSafeHandle
 {
 }
@@ -7,11 +13,37 @@ public class GDBusPropertyInfoHandle : BaseSafeHandle
 
 public static class GDBusPropertyInfoExtensions
 {
+/// <summary>
+/// <para>
+/// If @info is statically allocated does nothing. Otherwise increases
+/// the reference count.
+/// </para>
+/// </summary>
+
+/// <param name="info">
+/// A #GDBusPropertyInfo
+/// </param>
+/// <return>
+/// The same @info.
+/// </return>
+
 	public static MentorLake.Gio.GDBusPropertyInfoHandle Ref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
 		if (info.IsInvalid) throw new Exception("Invalid handle (GDBusPropertyInfo)");
 		return GDBusPropertyInfoExterns.g_dbus_property_info_ref(info);
 	}
+
+/// <summary>
+/// <para>
+/// If @info is statically allocated, does nothing. Otherwise decreases
+/// the reference count of @info. When its reference count drops to 0,
+/// the memory used is freed.
+/// </para>
+/// </summary>
+
+/// <param name="info">
+/// A #GDBusPropertyInfo.
+/// </param>
 
 	public static void Unref(this MentorLake.Gio.GDBusPropertyInfoHandle info)
 	{
@@ -33,11 +65,47 @@ internal class GDBusPropertyInfoExterns
 
 }
 
+/// <summary>
+/// <para>
+/// Information about a D-Bus property on a D-Bus interface.
+/// </para>
+/// </summary>
+
 public struct GDBusPropertyInfo
 {
-	public int ref_count;
-	public string name;
-	public string signature;
-	public GDBusPropertyInfoFlags flags;
-	public IntPtr annotations;
+	/// <summary>
+/// <para>
+/// The reference count or -1 if statically allocated.
+/// </para>
+/// </summary>
+
+public int ref_count;
+	/// <summary>
+/// <para>
+/// The name of the D-Bus property, e.g. "SupportedFilesystems".
+/// </para>
+/// </summary>
+
+public string name;
+	/// <summary>
+/// <para>
+/// The D-Bus signature of the property (a single complete type).
+/// </para>
+/// </summary>
+
+public string signature;
+	/// <summary>
+/// <para>
+/// Access control flags for the property.
+/// </para>
+/// </summary>
+
+public GDBusPropertyInfoFlags flags;
+	/// <summary>
+/// <para>
+/// A pointer to a %NULL-terminated array of pointers to #GDBusAnnotationInfo structures or %NULL if there are no annotations.
+/// </para>
+/// </summary>
+
+public IntPtr annotations;
 }

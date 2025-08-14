@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCoarseSampleOrderTypeNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCoarseSampleOrderTypeNVExtensions
 internal class VkCoarseSampleOrderTypeNVExterns
 {
 }
+
 
 public struct VkCoarseSampleOrderTypeNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkWidgetClassPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkWidgetClassPrivateExtensions
 internal class GtkWidgetClassPrivateExterns
 {
 }
+
 
 public struct GtkWidgetClassPrivate
 {

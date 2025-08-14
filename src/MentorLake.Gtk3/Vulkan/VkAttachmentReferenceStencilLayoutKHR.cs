@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentReferenceStencilLayoutKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentReferenceStencilLayoutKHRExtensions
 internal class VkAttachmentReferenceStencilLayoutKHRExterns
 {
 }
+
 
 public struct VkAttachmentReferenceStencilLayoutKHR
 {

@@ -2,6 +2,28 @@ namespace MentorLake.GdkPixdata;
 
 public class GdkPixdataGlobalFunctions
 {
+/// <summary>
+/// <para>
+/// Converts a `GdkPixdata` to a `GdkPixbuf`.
+/// </para>
+/// <para>
+/// If `copy_pixels` is `TRUE` or if the pixel data is run-length-encoded,
+/// the pixel data is copied into newly-allocated memory; otherwise it is
+/// reused.
+/// </para>
+/// </summary>
+
+/// <param name="pixdata">
+/// a #GdkPixdata to convert into a `GdkPixbuf`.
+/// </param>
+/// <param name="copy_pixels">
+/// whether to copy raw pixel data; run-length encoded
+///   pixel data is always copied.
+/// </param>
+/// <return>
+/// a new pixbuf
+/// </return>
+
 	public static MentorLake.GdkPixbuf.GdkPixbufHandle PixbufFromPixdata(MentorLake.GdkPixdata.GdkPixdataHandle pixdata, bool copy_pixels)
 	{
 		var externCallResult = GdkPixdataGlobalFunctionsExterns.gdk_pixbuf_from_pixdata(pixdata, copy_pixels, out var error);

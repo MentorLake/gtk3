@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainCreateFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainCreateFlagsKHRExtensions
 internal class VkSwapchainCreateFlagsKHRExterns
 {
 }
+
 
 public struct VkSwapchainCreateFlagsKHR
 {

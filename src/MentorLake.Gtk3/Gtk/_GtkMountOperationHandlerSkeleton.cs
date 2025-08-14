@@ -1,5 +1,11 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// The #_GtkMountOperationHandlerSkeleton structure contains only private data and should only be accessed using the provided API.
+/// </para>
+/// </summary>
+
 public class _GtkMountOperationHandlerSkeletonHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class _GtkMountOperationHandlerSkeletonExtensions
 internal class _GtkMountOperationHandlerSkeletonExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// The #_GtkMountOperationHandlerSkeleton structure contains only private data and should only be accessed using the provided API.
+/// </para>
+/// </summary>
 
 public struct _GtkMountOperationHandlerSkeleton
 {

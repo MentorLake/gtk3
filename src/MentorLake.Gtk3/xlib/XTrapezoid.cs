@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XTrapezoidHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XTrapezoidExtensions
 internal class XTrapezoidExterns
 {
 }
+
 
 public struct XTrapezoid
 {

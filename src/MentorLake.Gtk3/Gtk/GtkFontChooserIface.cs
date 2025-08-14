@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFontChooserIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,25 @@ internal class GtkFontChooserIfaceExterns
 {
 }
 
+
 public struct GtkFontChooserIface
 {
-	public GTypeInterface base_iface;
-	public IntPtr get_font_family;
-	public IntPtr get_font_face;
-	public IntPtr get_font_size;
-	public IntPtr set_filter_func;
-	public IntPtr font_activated;
-	public IntPtr set_font_map;
-	public IntPtr get_font_map;
-	public IntPtr padding;
+	
+public GTypeInterface base_iface;
+	
+public IntPtr get_font_family;
+	
+public IntPtr get_font_face;
+	
+public IntPtr get_font_size;
+	
+public IntPtr set_filter_func;
+	
+public IntPtr font_activated;
+	
+public IntPtr set_font_map;
+	
+public IntPtr get_font_map;
+	
+public IntPtr padding;
 }

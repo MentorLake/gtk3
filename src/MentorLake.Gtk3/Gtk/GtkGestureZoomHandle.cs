@@ -1,7 +1,30 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// #GtkGestureZoom is a #GtkGesture implementation able to recognize
+/// pinch/zoom gestures, whenever the distance between both tracked
+/// sequences changes, the #GtkGestureZoom::scale-changed signal is
+/// emitted to report the scale factor.
+/// </para>
+/// </summary>
+
 public class GtkGestureZoomHandle : GtkGestureHandle
 {
+/// <summary>
+/// <para>
+/// Returns a newly created #GtkGesture that recognizes zoom
+/// in/out gestures (usually known as pinch/zoom).
+/// </para>
+/// </summary>
+
+/// <param name="widget">
+/// a #GtkWidget
+/// </param>
+/// <return>
+/// a newly created #GtkGestureZoom
+/// </return>
+
 	public static MentorLake.Gtk.GtkGestureZoomHandle New(MentorLake.Gtk.GtkWidgetHandle widget)
 	{
 		return GtkGestureZoomHandleExterns.gtk_gesture_zoom_new(widget);
@@ -10,6 +33,12 @@ public class GtkGestureZoomHandle : GtkGestureHandle
 }
 public static class GtkGestureZoomHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// This signal is emitted whenever the distance between both tracked
+/// sequences changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkGestureZoomHandleSignalStructs.ScaleChangedSignal> Signal_ScaleChanged(this GtkGestureZoomHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,14 +75,37 @@ public static class GtkGestureZoomHandleSignalStructs
 
 public class ScaleChangedSignal
 {
+
 	public MentorLake.Gtk.GtkGestureZoomHandle Self;
+/// <summary>
+/// <para>
+/// Scale delta, taking the initial state as 1:1
+/// </para>
+/// </summary>
+
 	public double Scale;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkGestureZoomHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// This signal is emitted whenever the distance between both tracked
+/// sequences changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="scale">
+/// Scale delta, taking the initial state as 1:1
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void scale_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkGestureZoomHandle>))] MentorLake.Gtk.GtkGestureZoomHandle self, double scale, IntPtr user_data);
@@ -63,6 +115,21 @@ public delegate void scale_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 public static class GtkGestureZoomHandleExtensions
 {
+/// <summary>
+/// <para>
+/// If @gesture is active, this function returns the zooming difference
+/// since the gesture was recognized (hence the starting point is
+/// considered 1:1). If @gesture is not active, 1 is returned.
+/// </para>
+/// </summary>
+
+/// <param name="gesture">
+/// a #GtkGestureZoom
+/// </param>
+/// <return>
+/// the scale delta
+/// </return>
+
 	public static double GetScaleDelta(this MentorLake.Gtk.GtkGestureZoomHandle gesture)
 	{
 		if (gesture.IsInvalid) throw new Exception("Invalid handle (GtkGestureZoomHandle)");

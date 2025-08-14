@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDiscardRectangleModeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDiscardRectangleModeEXTExtensions
 internal class VkDiscardRectangleModeEXTExterns
 {
 }
+
 
 public struct VkDiscardRectangleModeEXT
 {

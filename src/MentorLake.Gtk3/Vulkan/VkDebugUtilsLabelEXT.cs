@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugUtilsLabelEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugUtilsLabelEXTExtensions
 internal class VkDebugUtilsLabelEXTExterns
 {
 }
+
 
 public struct VkDebugUtilsLabelEXT
 {

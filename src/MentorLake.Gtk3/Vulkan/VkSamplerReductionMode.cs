@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerReductionModeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerReductionModeExtensions
 internal class VkSamplerReductionModeExterns
 {
 }
+
 
 public struct VkSamplerReductionMode
 {

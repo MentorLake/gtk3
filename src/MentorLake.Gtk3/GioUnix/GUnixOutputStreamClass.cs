@@ -1,5 +1,6 @@
 namespace MentorLake.GioUnix;
 
+
 public class GUnixOutputStreamClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GUnixOutputStreamClassExterns
 {
 }
 
+
 public struct GUnixOutputStreamClass
 {
-	public GOutputStreamClass parent_class;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
-	public IntPtr _g_reserved4;
-	public IntPtr _g_reserved5;
+	
+public GOutputStreamClass parent_class;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
+	
+public IntPtr _g_reserved4;
+	
+public IntPtr _g_reserved5;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class VisualHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VisualExtensions
 internal class VisualExterns
 {
 }
+
 
 public struct Visual
 {

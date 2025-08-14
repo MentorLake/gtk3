@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOMExtensi
 internal class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
 {

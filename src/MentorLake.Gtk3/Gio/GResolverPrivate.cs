@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GResolverPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GResolverPrivateExtensions
 internal class GResolverPrivateExterns
 {
 }
+
 
 public struct GResolverPrivate
 {

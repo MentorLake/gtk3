@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreGetFdInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreGetFdInfoKHRExtensions
 internal class VkSemaphoreGetFdInfoKHRExterns
 {
 }
+
 
 public struct VkSemaphoreGetFdInfoKHR
 {

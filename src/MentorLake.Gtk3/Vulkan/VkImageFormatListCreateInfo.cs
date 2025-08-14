@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageFormatListCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageFormatListCreateInfoExtensions
 internal class VkImageFormatListCreateInfoExterns
 {
 }
+
 
 public struct VkImageFormatListCreateInfo
 {

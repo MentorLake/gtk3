@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDepthStencilResolvePropertiesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDepthStencilResolvePropertiesExtensions
 internal class VkPhysicalDeviceDepthStencilResolvePropertiesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDepthStencilResolveProperties
 {

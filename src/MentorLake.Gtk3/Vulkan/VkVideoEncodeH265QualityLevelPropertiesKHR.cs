@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoEncodeH265QualityLevelPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoEncodeH265QualityLevelPropertiesKHRExtensions
 internal class VkVideoEncodeH265QualityLevelPropertiesKHRExterns
 {
 }
+
 
 public struct VkVideoEncodeH265QualityLevelPropertiesKHR
 {

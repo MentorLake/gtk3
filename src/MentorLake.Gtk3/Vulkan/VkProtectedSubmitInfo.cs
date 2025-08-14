@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkProtectedSubmitInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkProtectedSubmitInfoExtensions
 internal class VkProtectedSubmitInfoExterns
 {
 }
+
 
 public struct VkProtectedSubmitInfo
 {

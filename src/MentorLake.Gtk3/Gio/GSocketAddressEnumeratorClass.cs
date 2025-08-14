@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GSocketAddressEnumerator.
+/// </para>
+/// </summary>
+
 public class GSocketAddressEnumeratorClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,33 @@ internal class GSocketAddressEnumeratorClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GSocketAddressEnumerator.
+/// </para>
+/// </summary>
+
 public struct GSocketAddressEnumeratorClass
 {
-	public IntPtr next;
-	public IntPtr next_async;
-	public IntPtr next_finish;
+	/// <summary>
+/// <para>
+/// Virtual method for g_socket_address_enumerator_next().
+/// </para>
+/// </summary>
+
+public IntPtr next;
+	/// <summary>
+/// <para>
+/// Virtual method for g_socket_address_enumerator_next_async().
+/// </para>
+/// </summary>
+
+public IntPtr next_async;
+	/// <summary>
+/// <para>
+/// Virtual method for g_socket_address_enumerator_next_finish().
+/// </para>
+/// </summary>
+
+public IntPtr next_finish;
 }

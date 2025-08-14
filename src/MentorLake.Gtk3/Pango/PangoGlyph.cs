@@ -1,5 +1,11 @@
 namespace MentorLake.Pango;
 
+/// <summary>
+/// <para>
+/// A `PangoGlyph` represents a single glyph in the output form of a string.
+/// </para>
+/// </summary>
+
 public struct PangoGlyph
 {
 	public uint Value;

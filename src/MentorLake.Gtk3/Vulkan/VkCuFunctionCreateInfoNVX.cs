@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCuFunctionCreateInfoNVXHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCuFunctionCreateInfoNVXExtensions
 internal class VkCuFunctionCreateInfoNVXExterns
 {
 }
+
 
 public struct VkCuFunctionCreateInfoNVX
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueueFamilyCheckpointPropertiesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueueFamilyCheckpointPropertiesNVExtensions
 internal class VkQueueFamilyCheckpointPropertiesNVExterns
 {
 }
+
 
 public struct VkQueueFamilyCheckpointPropertiesNV
 {

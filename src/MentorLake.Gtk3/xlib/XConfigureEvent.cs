@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XConfigureEventHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XConfigureEventExtensions
 internal class XConfigureEventExterns
 {
 }
+
 
 public struct XConfigureEvent
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GMemoryOutputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GMemoryOutputStreamPrivateExtensions
 internal class GMemoryOutputStreamPrivateExterns
 {
 }
+
 
 public struct GMemoryOutputStreamPrivate
 {

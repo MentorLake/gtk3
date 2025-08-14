@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToggleActionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkToggleActionPrivateExtensions
 internal class GtkToggleActionPrivateExterns
 {
 }
+
 
 public struct GtkToggleActionPrivate
 {

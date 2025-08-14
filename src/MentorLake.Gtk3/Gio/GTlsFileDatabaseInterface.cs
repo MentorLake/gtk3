@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Provides an interface for #GTlsFileDatabase implementations.
+/// </para>
+/// </summary>
+
 public class GTlsFileDatabaseInterfaceHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class GTlsFileDatabaseInterfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Provides an interface for #GTlsFileDatabase implementations.
+/// </para>
+/// </summary>
+
 public struct GTlsFileDatabaseInterface
 {
-	public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
 }

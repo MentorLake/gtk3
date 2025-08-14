@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeSelectionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTreeSelectionPrivateExtensions
 internal class GtkTreeSelectionPrivateExterns
 {
 }
+
 
 public struct GtkTreeSelectionPrivate
 {

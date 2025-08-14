@@ -1,5 +1,15 @@
 namespace MentorLake.Atk;
 
+/// <summary>
+/// <para>
+/// A queryable interface which allows AtkHyperlink instances
+/// associated with an AtkObject to be obtained.  AtkHyperlinkImpl
+/// corresponds to AT-SPI's Hyperlink interface, and differs from
+/// AtkHyperlink in that AtkHyperlink is an object type, rather than an
+/// interface, and thus cannot be directly queried. FTW
+/// </para>
+/// </summary>
+
 public interface AtkHyperlinkImplHandle
 {
 	public bool IsInvalid { get; }
@@ -12,6 +22,20 @@ internal class AtkHyperlinkImplHandleImpl : BaseSafeHandle, AtkHyperlinkImplHand
 
 public static class AtkHyperlinkImplHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Gets the hyperlink associated with this object.
+/// </para>
+/// </summary>
+
+/// <param name="impl">
+/// a #GObject instance that implements AtkHyperlinkImplIface
+/// </param>
+/// <return>
+/// an AtkHyperlink object which points to this
+/// implementing AtkObject.
+/// </return>
+
 	public static MentorLake.Atk.AtkHyperlinkHandle GetHyperlink(this MentorLake.Atk.AtkHyperlinkImplHandle impl)
 	{
 		if (impl.IsInvalid) throw new Exception("Invalid handle (AtkHyperlinkImplHandle)");

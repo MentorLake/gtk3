@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesExtensions
 internal class VkPhysicalDeviceTextureCompressionASTCHDRFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceTextureCompressionASTCHDRFeatures
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderModuleCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderModuleCreateFlagsExtensions
 internal class VkShaderModuleCreateFlagsExterns
 {
 }
+
 
 public struct VkShaderModuleCreateFlags
 {

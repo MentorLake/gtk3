@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkListBoxAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkListBoxAccessiblePrivateExtensions
 internal class GtkListBoxAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkListBoxAccessiblePrivate
 {

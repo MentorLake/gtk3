@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineBindPointHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineBindPointExtensions
 internal class VkPipelineBindPointExterns
 {
 }
+
 
 public struct VkPipelineBindPoint
 {

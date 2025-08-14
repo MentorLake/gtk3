@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPerformanceCounterDescriptionFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPerformanceCounterDescriptionFlagsKHRExtensions
 internal class VkPerformanceCounterDescriptionFlagsKHRExterns
 {
 }
+
 
 public struct VkPerformanceCounterDescriptionFlagsKHR
 {

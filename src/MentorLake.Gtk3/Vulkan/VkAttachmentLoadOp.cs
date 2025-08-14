@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentLoadOpHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentLoadOpExtensions
 internal class VkAttachmentLoadOpExterns
 {
 }
+
 
 public struct VkAttachmentLoadOp
 {

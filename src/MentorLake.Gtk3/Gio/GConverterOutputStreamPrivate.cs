@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GConverterOutputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GConverterOutputStreamPrivateExtensions
 internal class GConverterOutputStreamPrivateExterns
 {
 }
+
 
 public struct GConverterOutputStreamPrivate
 {

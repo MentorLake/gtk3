@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkIconInfoClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkIconInfoClassExtensions
 internal class GtkIconInfoClassExterns
 {
 }
+
 
 public struct GtkIconInfoClass
 {

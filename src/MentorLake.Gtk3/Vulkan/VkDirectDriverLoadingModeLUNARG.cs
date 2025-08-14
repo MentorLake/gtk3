@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDirectDriverLoadingModeLUNARGHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDirectDriverLoadingModeLUNARGExtensions
 internal class VkDirectDriverLoadingModeLUNARGExterns
 {
 }
+
 
 public struct VkDirectDriverLoadingModeLUNARG
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorPoolResetFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorPoolResetFlagsExtensions
 internal class VkDescriptorPoolResetFlagsExterns
 {
 }
+
 
 public struct VkDescriptorPoolResetFlags
 {

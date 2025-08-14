@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOMExtensio
 internal class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOMExterns
 {
 }
+
 
 public struct VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
 {

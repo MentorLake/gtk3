@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GThreadedResolverClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GThreadedResolverClassExterns
 {
 }
 
+
 public struct GThreadedResolverClass
 {
-	public GResolverClass parent_class;
+	
+public GResolverClass parent_class;
 }

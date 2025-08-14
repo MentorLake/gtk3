@@ -1,5 +1,6 @@
 namespace MentorLake.xft;
 
+
 public class XftGlyphSpecHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XftGlyphSpecExtensions
 internal class XftGlyphSpecExterns
 {
 }
+
 
 public struct XftGlyphSpec
 {

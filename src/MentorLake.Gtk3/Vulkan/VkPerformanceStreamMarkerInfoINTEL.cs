@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPerformanceStreamMarkerInfoINTELHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPerformanceStreamMarkerInfoINTELExtensions
 internal class VkPerformanceStreamMarkerInfoINTELExterns
 {
 }
+
 
 public struct VkPerformanceStreamMarkerInfoINTEL
 {

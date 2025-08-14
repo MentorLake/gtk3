@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceNestedCommandBufferPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceNestedCommandBufferPropertiesEXTExtensions
 internal class VkPhysicalDeviceNestedCommandBufferPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceNestedCommandBufferPropertiesEXT
 {

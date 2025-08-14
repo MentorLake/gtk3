@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceProvokingVertexPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceProvokingVertexPropertiesEXTExtensions
 internal class VkPhysicalDeviceProvokingVertexPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceProvokingVertexPropertiesEXT
 {

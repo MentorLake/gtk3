@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkViewportPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkViewportPrivateExtensions
 internal class GtkViewportPrivateExterns
 {
 }
+
 
 public struct GtkViewportPrivate
 {

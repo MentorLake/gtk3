@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBufferDeviceAddressInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBufferDeviceAddressInfoEXTExtensions
 internal class VkBufferDeviceAddressInfoEXTExterns
 {
 }
+
 
 public struct VkBufferDeviceAddressInfoEXT
 {

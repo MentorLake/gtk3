@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCommandPoolTrimFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCommandPoolTrimFlagsKHRExtensions
 internal class VkCommandPoolTrimFlagsKHRExterns
 {
 }
+
 
 public struct VkCommandPoolTrimFlagsKHR
 {

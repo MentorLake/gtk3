@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkInternalAllocationTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkInternalAllocationTypeExtensions
 internal class VkInternalAllocationTypeExterns
 {
 }
+
 
 public struct VkInternalAllocationType
 {

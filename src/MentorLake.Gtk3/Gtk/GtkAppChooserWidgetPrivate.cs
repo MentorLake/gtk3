@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAppChooserWidgetPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkAppChooserWidgetPrivateExtensions
 internal class GtkAppChooserWidgetPrivateExterns
 {
 }
+
 
 public struct GtkAppChooserWidgetPrivate
 {

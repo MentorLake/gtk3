@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderCreateFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderCreateFlagBitsEXTExtensions
 internal class VkShaderCreateFlagBitsEXTExterns
 {
 }
+
 
 public struct VkShaderCreateFlagBitsEXT
 {

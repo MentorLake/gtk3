@@ -1,5 +1,13 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// An integral type representing an OpenType 'name' table name identifier.
+/// There are predefined name IDs, as well as name IDs return from other
+/// API.  These can be used to fetch name strings from a font face.
+/// </para>
+/// </summary>
+
 public struct hb_ot_name_id_t
 {
 	public uint Value;

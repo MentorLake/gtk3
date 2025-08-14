@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewHandleInfoNVXHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewHandleInfoNVXExtensions
 internal class VkImageViewHandleInfoNVXExterns
 {
 }
+
 
 public struct VkImageViewHandleInfoNVX
 {

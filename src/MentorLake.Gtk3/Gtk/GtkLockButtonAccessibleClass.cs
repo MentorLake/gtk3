@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLockButtonAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkLockButtonAccessibleClassExterns
 {
 }
 
+
 public struct GtkLockButtonAccessibleClass
 {
-	public GtkButtonAccessibleClass parent_class;
+	
+public GtkButtonAccessibleClass parent_class;
 }

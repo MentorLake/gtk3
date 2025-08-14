@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCompilerControlCreateInfoAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCompilerControlCreateInfoAMDExtensions
 internal class VkPipelineCompilerControlCreateInfoAMDExterns
 {
 }
+
 
 public struct VkPipelineCompilerControlCreateInfoAMD
 {

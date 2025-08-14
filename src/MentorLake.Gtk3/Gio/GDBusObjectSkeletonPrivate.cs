@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GDBusObjectSkeletonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GDBusObjectSkeletonPrivateExtensions
 internal class GDBusObjectSkeletonPrivateExterns
 {
 }
+
 
 public struct GDBusObjectSkeletonPrivate
 {

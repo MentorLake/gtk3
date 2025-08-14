@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryDecompressionMethodFlagsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryDecompressionMethodFlagsNVExtensions
 internal class VkMemoryDecompressionMethodFlagsNVExterns
 {
 }
+
 
 public struct VkMemoryDecompressionMethodFlagsNV
 {

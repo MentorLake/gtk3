@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderingFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderingFlagBitsExtensions
 internal class VkRenderingFlagBitsExterns
 {
 }
+
 
 public struct VkRenderingFlagBits
 {

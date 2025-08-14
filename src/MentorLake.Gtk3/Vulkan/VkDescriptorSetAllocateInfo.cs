@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetAllocateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetAllocateInfoExtensions
 internal class VkDescriptorSetAllocateInfoExterns
 {
 }
+
 
 public struct VkDescriptorSetAllocateInfo
 {

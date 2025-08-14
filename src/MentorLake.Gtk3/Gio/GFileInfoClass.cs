@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileInfoClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GFileInfoClassExtensions
 internal class GFileInfoClassExterns
 {
 }
+
 
 public struct GFileInfoClass
 {

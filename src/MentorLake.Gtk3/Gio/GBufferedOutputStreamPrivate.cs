@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GBufferedOutputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GBufferedOutputStreamPrivateExtensions
 internal class GBufferedOutputStreamPrivateExterns
 {
 }
+
 
 public struct GBufferedOutputStreamPrivate
 {

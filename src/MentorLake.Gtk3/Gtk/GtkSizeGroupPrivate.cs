@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSizeGroupPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSizeGroupPrivateExtensions
 internal class GtkSizeGroupPrivateExterns
 {
 }
+
 
 public struct GtkSizeGroupPrivate
 {

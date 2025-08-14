@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoSessionParametersCreateFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoSessionParametersCreateFlagsKHRExtensions
 internal class VkVideoSessionParametersCreateFlagsKHRExterns
 {
 }
+
 
 public struct VkVideoSessionParametersCreateFlagsKHR
 {

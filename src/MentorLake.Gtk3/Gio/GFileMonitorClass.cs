@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileMonitorClassHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,23 @@ internal class GFileMonitorClassExterns
 {
 }
 
+
 public struct GFileMonitorClass
 {
-	public GObjectClass parent_class;
-	public IntPtr changed;
-	public IntPtr cancel;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
-	public IntPtr _g_reserved4;
-	public IntPtr _g_reserved5;
+	
+public GObjectClass parent_class;
+	
+public IntPtr changed;
+	
+public IntPtr cancel;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
+	
+public IntPtr _g_reserved4;
+	
+public IntPtr _g_reserved5;
 }

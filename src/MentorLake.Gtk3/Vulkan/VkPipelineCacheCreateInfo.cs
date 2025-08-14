@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCacheCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCacheCreateInfoExtensions
 internal class VkPipelineCacheCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineCacheCreateInfo
 {

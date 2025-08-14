@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkDrawingContextClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkDrawingContextClassExtensions
 internal class GdkDrawingContextClassExterns
 {
 }
+
 
 public struct GdkDrawingContextClass
 {

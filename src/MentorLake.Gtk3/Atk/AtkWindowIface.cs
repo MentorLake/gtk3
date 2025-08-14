@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkWindowIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class AtkWindowIfaceExterns
 {
 }
 
+
 public struct AtkWindowIface
 {
-	public GTypeInterface parent;
+	
+public GTypeInterface parent;
 }

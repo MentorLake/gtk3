@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderTileImageFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderTileImageFeaturesEXTExtensions
 internal class VkPhysicalDeviceShaderTileImageFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderTileImageFeaturesEXT
 {

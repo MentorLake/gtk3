@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindImageMemoryDeviceGroupInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindImageMemoryDeviceGroupInfoExtensions
 internal class VkBindImageMemoryDeviceGroupInfoExterns
 {
 }
+
 
 public struct VkBindImageMemoryDeviceGroupInfo
 {

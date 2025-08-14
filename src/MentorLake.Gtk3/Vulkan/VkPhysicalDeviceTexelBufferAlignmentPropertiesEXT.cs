@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceTexelBufferAlignmentPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceTexelBufferAlignmentPropertiesEXTExtensions
 internal class VkPhysicalDeviceTexelBufferAlignmentPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT
 {

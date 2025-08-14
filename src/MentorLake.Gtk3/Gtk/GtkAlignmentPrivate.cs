@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAlignmentPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkAlignmentPrivateExtensions
 internal class GtkAlignmentPrivateExterns
 {
 }
+
 
 public struct GtkAlignmentPrivate
 {

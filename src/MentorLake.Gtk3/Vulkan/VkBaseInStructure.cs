@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBaseInStructureHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBaseInStructureExtensions
 internal class VkBaseInStructureExterns
 {
 }
+
 
 public struct VkBaseInStructure
 {

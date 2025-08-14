@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11AppLaunchContextClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11AppLaunchContextClassExtensions
 internal class GdkX11AppLaunchContextClassExterns
 {
 }
+
 
 public struct GdkX11AppLaunchContextClass
 {

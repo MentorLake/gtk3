@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAppChooserButtonClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,23 @@ internal class GtkAppChooserButtonClassExterns
 {
 }
 
+
 public struct GtkAppChooserButtonClass
 {
-	public GtkComboBoxClass parent_class;
-	public IntPtr custom_item_activated;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkComboBoxClass parent_class;
+	/// <summary>
+/// <para>
+/// Signal emitted when a custom item,
+///    previously added with gtk_app_chooser_button_append_custom_item(),
+///    is activated from the dropdown menu.
+/// </para>
+/// </summary>
+
+public IntPtr custom_item_activated;
 }

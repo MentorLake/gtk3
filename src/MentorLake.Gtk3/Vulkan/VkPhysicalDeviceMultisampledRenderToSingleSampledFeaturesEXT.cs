@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT
 internal class VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT
 {

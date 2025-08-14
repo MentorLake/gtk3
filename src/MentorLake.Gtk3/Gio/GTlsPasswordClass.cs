@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GTlsPassword.
+/// </para>
+/// </summary>
+
 public class GTlsPasswordClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +20,36 @@ internal class GTlsPasswordClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GTlsPassword.
+/// </para>
+/// </summary>
+
 public struct GTlsPasswordClass
 {
-	public GObjectClass parent_class;
-	public IntPtr get_value;
-	public IntPtr set_value;
-	public IntPtr get_default_warning;
+	
+public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// virtual method for g_tls_password_get_value()
+/// </para>
+/// </summary>
+
+public IntPtr get_value;
+	/// <summary>
+/// <para>
+/// virtual method for g_tls_password_set_value()
+/// </para>
+/// </summary>
+
+public IntPtr set_value;
+	/// <summary>
+/// <para>
+/// virtual method for g_tls_password_get_warning() if no
+///  value has been set using g_tls_password_set_warning()
+/// </para>
+/// </summary>
+
+public IntPtr get_default_warning;
 }

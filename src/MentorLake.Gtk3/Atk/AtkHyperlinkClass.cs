@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkHyperlinkClassHandle : BaseSafeHandle
 {
 }
@@ -14,17 +15,29 @@ internal class AtkHyperlinkClassExterns
 {
 }
 
+
 public struct AtkHyperlinkClass
 {
-	public GObjectClass parent;
-	public IntPtr get_uri;
-	public IntPtr get_object;
-	public IntPtr get_end_index;
-	public IntPtr get_start_index;
-	public IntPtr is_valid;
-	public IntPtr get_n_anchors;
-	public IntPtr link_state;
-	public IntPtr is_selected_link;
-	public IntPtr link_activated;
-	public AtkFunction pad1;
+	
+public GObjectClass parent;
+	
+public IntPtr get_uri;
+	
+public IntPtr get_object;
+	
+public IntPtr get_end_index;
+	
+public IntPtr get_start_index;
+	
+public IntPtr is_valid;
+	
+public IntPtr get_n_anchors;
+	
+public IntPtr link_state;
+	
+public IntPtr is_selected_link;
+	
+public IntPtr link_activated;
+	
+public AtkFunction pad1;
 }

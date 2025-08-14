@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRayTracingPipelineCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRayTracingPipelineCreateInfoNVExtensions
 internal class VkRayTracingPipelineCreateInfoNVExterns
 {
 }
+
 
 public struct VkRayTracingPipelineCreateInfoNV
 {

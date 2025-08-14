@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GDebugController.
+/// </para>
+/// </summary>
+
 public class GDebugControllerInterfaceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class GDebugControllerInterfaceExtensions
 internal class GDebugControllerInterfaceExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// The virtual function table for #GDebugController.
+/// </para>
+/// </summary>
 
 public struct GDebugControllerInterface
 {

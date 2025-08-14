@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkConditionalRenderingFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkConditionalRenderingFlagsEXTExtensions
 internal class VkConditionalRenderingFlagsEXTExterns
 {
 }
+
 
 public struct VkConditionalRenderingFlagsEXT
 {

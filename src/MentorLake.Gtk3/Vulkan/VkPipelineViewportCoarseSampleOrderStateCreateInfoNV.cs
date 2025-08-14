@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineViewportCoarseSampleOrderStateCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineViewportCoarseSampleOrderStateCreateInfoNVExtensio
 internal class VkPipelineViewportCoarseSampleOrderStateCreateInfoNVExterns
 {
 }
+
 
 public struct VkPipelineViewportCoarseSampleOrderStateCreateInfoNV
 {

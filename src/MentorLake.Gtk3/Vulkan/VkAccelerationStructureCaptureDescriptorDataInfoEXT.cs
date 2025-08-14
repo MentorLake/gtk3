@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureCaptureDescriptorDataInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureCaptureDescriptorDataInfoEXTExtension
 internal class VkAccelerationStructureCaptureDescriptorDataInfoEXTExterns
 {
 }
+
 
 public struct VkAccelerationStructureCaptureDescriptorDataInfoEXT
 {

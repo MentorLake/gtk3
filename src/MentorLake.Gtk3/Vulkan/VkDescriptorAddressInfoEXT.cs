@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorAddressInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorAddressInfoEXTExtensions
 internal class VkDescriptorAddressInfoEXTExterns
 {
 }
+
 
 public struct VkDescriptorAddressInfoEXT
 {

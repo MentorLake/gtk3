@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageMemoryBarrierHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageMemoryBarrierExtensions
 internal class VkImageMemoryBarrierExterns
 {
 }
+
 
 public struct VkImageMemoryBarrier
 {

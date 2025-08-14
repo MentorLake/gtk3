@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkHostImageCopyDevicePerformanceQueryEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkHostImageCopyDevicePerformanceQueryEXTExtensions
 internal class VkHostImageCopyDevicePerformanceQueryEXTExterns
 {
 }
+
 
 public struct VkHostImageCopyDevicePerformanceQueryEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCssProviderPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCssProviderPrivateExtensions
 internal class GtkCssProviderPrivateExterns
 {
 }
+
 
 public struct GtkCssProviderPrivate
 {

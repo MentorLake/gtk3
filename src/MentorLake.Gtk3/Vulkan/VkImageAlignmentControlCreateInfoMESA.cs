@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageAlignmentControlCreateInfoMESAHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageAlignmentControlCreateInfoMESAExtensions
 internal class VkImageAlignmentControlCreateInfoMESAExterns
 {
 }
+
 
 public struct VkImageAlignmentControlCreateInfoMESA
 {

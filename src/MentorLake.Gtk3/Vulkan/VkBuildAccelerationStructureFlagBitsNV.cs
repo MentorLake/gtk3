@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBuildAccelerationStructureFlagBitsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBuildAccelerationStructureFlagBitsNVExtensions
 internal class VkBuildAccelerationStructureFlagBitsNVExterns
 {
 }
+
 
 public struct VkBuildAccelerationStructureFlagBitsNV
 {

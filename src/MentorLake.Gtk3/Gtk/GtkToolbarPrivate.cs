@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToolbarPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkToolbarPrivateExtensions
 internal class GtkToolbarPrivateExterns
 {
 }
+
 
 public struct GtkToolbarPrivate
 {

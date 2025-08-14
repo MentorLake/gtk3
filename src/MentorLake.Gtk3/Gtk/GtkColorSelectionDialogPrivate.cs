@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkColorSelectionDialogPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkColorSelectionDialogPrivateExtensions
 internal class GtkColorSelectionDialogPrivateExterns
 {
 }
+
 
 public struct GtkColorSelectionDialogPrivate
 {

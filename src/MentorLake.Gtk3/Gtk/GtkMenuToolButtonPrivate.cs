@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkMenuToolButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkMenuToolButtonPrivateExtensions
 internal class GtkMenuToolButtonPrivateExterns
 {
 }
+
 
 public struct GtkMenuToolButtonPrivate
 {

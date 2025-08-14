@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class DisplayHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class DisplayExtensions
 internal class DisplayExterns
 {
 }
+
 
 public struct Display
 {

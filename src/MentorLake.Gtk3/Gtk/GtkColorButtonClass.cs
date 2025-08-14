@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkColorButtonClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkColorButtonClassExterns
 {
 }
 
+
 public struct GtkColorButtonClass
 {
-	public GtkButtonClass parent_class;
-	public IntPtr color_set;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkButtonClass parent_class;
+	
+public IntPtr color_set;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

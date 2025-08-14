@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkValidationCacheCreateFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkValidationCacheCreateFlagsEXTExtensions
 internal class VkValidationCacheCreateFlagsEXTExterns
 {
 }
+
 
 public struct VkValidationCacheCreateFlagsEXT
 {

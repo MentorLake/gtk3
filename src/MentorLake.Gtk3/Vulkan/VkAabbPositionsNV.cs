@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAabbPositionsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAabbPositionsNVExtensions
 internal class VkAabbPositionsNVExterns
 {
 }
+
 
 public struct VkAabbPositionsNV
 {

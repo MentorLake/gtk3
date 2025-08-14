@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalSemaphoreFeatureFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalSemaphoreFeatureFlagsKHRExtensions
 internal class VkExternalSemaphoreFeatureFlagsKHRExterns
 {
 }
+
 
 public struct VkExternalSemaphoreFeatureFlagsKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentSampleCountInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentSampleCountInfoNVExtensions
 internal class VkAttachmentSampleCountInfoNVExterns
 {
 }
+
 
 public struct VkAttachmentSampleCountInfoNV
 {

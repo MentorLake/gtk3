@@ -1,5 +1,6 @@
 namespace MentorLake.GdkPixbuf;
 
+
 public class GdkPixbufSimpleAnimClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkPixbufSimpleAnimClassExtensions
 internal class GdkPixbufSimpleAnimClassExterns
 {
 }
+
 
 public struct GdkPixbufSimpleAnimClass
 {

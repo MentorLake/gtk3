@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkIMContextSimpleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkIMContextSimpleClassExterns
 {
 }
 
+
 public struct GtkIMContextSimpleClass
 {
-	public GtkIMContextClass parent_class;
+	
+public GtkIMContextClass parent_class;
 }

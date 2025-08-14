@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineViewportExclusiveScissorStateCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineViewportExclusiveScissorStateCreateInfoNVExtension
 internal class VkPipelineViewportExclusiveScissorStateCreateInfoNVExterns
 {
 }
+
 
 public struct VkPipelineViewportExclusiveScissorStateCreateInfoNV
 {

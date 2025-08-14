@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExtent2DHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExtent2DExtensions
 internal class VkExtent2DExterns
 {
 }
+
 
 public struct VkExtent2D
 {

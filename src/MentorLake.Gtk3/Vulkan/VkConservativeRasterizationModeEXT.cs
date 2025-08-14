@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkConservativeRasterizationModeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkConservativeRasterizationModeEXTExtensions
 internal class VkConservativeRasterizationModeEXTExterns
 {
 }
+
 
 public struct VkConservativeRasterizationModeEXT
 {

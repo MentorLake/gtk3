@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeModelFilterPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTreeModelFilterPrivateExtensions
 internal class GtkTreeModelFilterPrivateExterns
 {
 }
+
 
 public struct GtkTreeModelFilterPrivate
 {

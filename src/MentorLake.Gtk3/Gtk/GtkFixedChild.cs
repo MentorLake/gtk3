@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFixedChildHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class GtkFixedChildExterns
 {
 }
 
+
 public struct GtkFixedChild
 {
-	public IntPtr widget;
-	public int x;
-	public int y;
+	
+public IntPtr widget;
+	
+public int x;
+	
+public int y;
 }

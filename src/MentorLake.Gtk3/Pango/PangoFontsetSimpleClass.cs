@@ -1,5 +1,6 @@
 namespace MentorLake.Pango;
 
+
 public class PangoFontsetSimpleClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class PangoFontsetSimpleClassExtensions
 internal class PangoFontsetSimpleClassExterns
 {
 }
+
 
 public struct PangoFontsetSimpleClass
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFileChooserNativeClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkFileChooserNativeClassExterns
 {
 }
 
+
 public struct GtkFileChooserNativeClass
 {
-	public GtkNativeDialogClass parent_class;
+	
+public GtkNativeDialogClass parent_class;
 }

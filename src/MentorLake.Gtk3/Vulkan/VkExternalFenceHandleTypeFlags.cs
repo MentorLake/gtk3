@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalFenceHandleTypeFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalFenceHandleTypeFlagsExtensions
 internal class VkExternalFenceHandleTypeFlagsExterns
 {
 }
+
 
 public struct VkExternalFenceHandleTypeFlags
 {

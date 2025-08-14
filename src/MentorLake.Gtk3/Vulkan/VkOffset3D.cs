@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOffset3DHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOffset3DExtensions
 internal class VkOffset3DExterns
 {
 }
+
 
 public struct VkOffset3D
 {

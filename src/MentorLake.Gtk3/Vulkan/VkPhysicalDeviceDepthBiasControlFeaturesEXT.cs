@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDepthBiasControlFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDepthBiasControlFeaturesEXTExtensions
 internal class VkPhysicalDeviceDepthBiasControlFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDepthBiasControlFeaturesEXT
 {

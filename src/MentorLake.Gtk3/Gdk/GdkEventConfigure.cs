@@ -1,5 +1,11 @@
 namespace MentorLake.Gdk;
 
+/// <summary>
+/// <para>
+/// Generated when a window size or position has changed.
+/// </para>
+/// </summary>
+
 public class GdkEventConfigureHandle : BaseSafeHandle
 {
 }
@@ -14,13 +20,61 @@ internal class GdkEventConfigureExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Generated when a window size or position has changed.
+/// </para>
+/// </summary>
+
 public struct GdkEventConfigure
 {
-	public GdkEventType type;
-	public IntPtr window;
-	public byte send_event;
-	public int x;
-	public int y;
-	public int width;
-	public int height;
+	/// <summary>
+/// <para>
+/// the type of the event (%GDK_CONFIGURE).
+/// </para>
+/// </summary>
+
+public GdkEventType type;
+	/// <summary>
+/// <para>
+/// the window which received the event.
+/// </para>
+/// </summary>
+
+public IntPtr window;
+	/// <summary>
+/// <para>
+/// %TRUE if the event was sent explicitly.
+/// </para>
+/// </summary>
+
+public byte send_event;
+	/// <summary>
+/// <para>
+/// the new x coordinate of the window, relative to its parent.
+/// </para>
+/// </summary>
+
+public int x;
+	/// <summary>
+/// <para>
+/// the new y coordinate of the window, relative to its parent.
+/// </para>
+/// </summary>
+
+public int y;
+	/// <summary>
+/// <para>
+/// the new width of the window.
+/// </para>
+/// </summary>
+
+public int width;
+	/// <summary>
+/// <para>
+/// the new height of the window.
+/// </para>
+/// </summary>
+
+public int height;
 }

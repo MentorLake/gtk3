@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkMountOperationPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkMountOperationPrivateExtensions
 internal class GtkMountOperationPrivateExterns
 {
 }
+
 
 public struct GtkMountOperationPrivate
 {

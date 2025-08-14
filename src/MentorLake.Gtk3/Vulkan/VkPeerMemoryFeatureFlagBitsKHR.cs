@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPeerMemoryFeatureFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPeerMemoryFeatureFlagBitsKHRExtensions
 internal class VkPeerMemoryFeatureFlagBitsKHRExterns
 {
 }
+
 
 public struct VkPeerMemoryFeatureFlagBitsKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLayeredDriverUnderlyingApiMSFTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLayeredDriverUnderlyingApiMSFTExtensions
 internal class VkLayeredDriverUnderlyingApiMSFTExterns
 {
 }
+
 
 public struct VkLayeredDriverUnderlyingApiMSFT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubmitFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubmitFlagsExtensions
 internal class VkSubmitFlagsExterns
 {
 }
+
 
 public struct VkSubmitFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRayTracingInvocationReorderModeNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRayTracingInvocationReorderModeNVExtensions
 internal class VkRayTracingInvocationReorderModeNVExterns
 {
 }
+
 
 public struct VkRayTracingInvocationReorderModeNV
 {

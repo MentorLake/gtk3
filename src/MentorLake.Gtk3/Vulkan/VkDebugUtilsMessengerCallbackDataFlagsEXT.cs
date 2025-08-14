@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugUtilsMessengerCallbackDataFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugUtilsMessengerCallbackDataFlagsEXTExtensions
 internal class VkDebugUtilsMessengerCallbackDataFlagsEXTExterns
 {
 }
+
 
 public struct VkDebugUtilsMessengerCallbackDataFlagsEXT
 {

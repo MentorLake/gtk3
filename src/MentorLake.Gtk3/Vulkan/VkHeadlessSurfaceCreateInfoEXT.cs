@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkHeadlessSurfaceCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkHeadlessSurfaceCreateInfoEXTExtensions
 internal class VkHeadlessSurfaceCreateInfoEXTExterns
 {
 }
+
 
 public struct VkHeadlessSurfaceCreateInfoEXT
 {

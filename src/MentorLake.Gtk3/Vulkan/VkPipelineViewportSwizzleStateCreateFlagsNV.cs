@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineViewportSwizzleStateCreateFlagsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineViewportSwizzleStateCreateFlagsNVExtensions
 internal class VkPipelineViewportSwizzleStateCreateFlagsNVExterns
 {
 }
+
 
 public struct VkPipelineViewportSwizzleStateCreateFlagsNV
 {

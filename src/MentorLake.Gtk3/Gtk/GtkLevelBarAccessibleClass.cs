@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLevelBarAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkLevelBarAccessibleClassExterns
 {
 }
 
+
 public struct GtkLevelBarAccessibleClass
 {
-	public GtkWidgetAccessibleClass parent_class;
+	
+public GtkWidgetAccessibleClass parent_class;
 }

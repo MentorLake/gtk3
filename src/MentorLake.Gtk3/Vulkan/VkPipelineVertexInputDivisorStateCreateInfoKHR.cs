@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineVertexInputDivisorStateCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineVertexInputDivisorStateCreateInfoKHRExtensions
 internal class VkPipelineVertexInputDivisorStateCreateInfoKHRExterns
 {
 }
+
 
 public struct VkPipelineVertexInputDivisorStateCreateInfoKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkColorSpaceKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkColorSpaceKHRExtensions
 internal class VkColorSpaceKHRExterns
 {
 }
+
 
 public struct VkColorSpaceKHR
 {

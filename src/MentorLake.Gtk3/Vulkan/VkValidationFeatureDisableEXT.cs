@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkValidationFeatureDisableEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkValidationFeatureDisableEXTExtensions
 internal class VkValidationFeatureDisableEXTExterns
 {
 }
+
 
 public struct VkValidationFeatureDisableEXT
 {

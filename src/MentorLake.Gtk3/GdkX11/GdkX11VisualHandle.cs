@@ -1,11 +1,25 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11VisualHandle : GdkVisualHandle
 {
 }
 
 public static class GdkX11VisualHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Returns the X visual belonging to a #GdkVisual.
+/// </para>
+/// </summary>
+
+/// <param name="visual">
+/// a #GdkVisual.
+/// </param>
+/// <return>
+/// an Xlib Visual*.
+/// </return>
+
 	public static MentorLake.xlib.VisualHandle GetXvisual(this MentorLake.GdkX11.GdkX11VisualHandle visual)
 	{
 		if (visual.IsInvalid) throw new Exception("Invalid handle (GdkX11VisualHandle)");

@@ -1,7 +1,21 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// #GtkEventControllerKey is an event controller meant for situations
+/// where you need access to key events.
+/// </para>
+/// <para>
+/// This object was added in 3.24.
+/// </para>
+/// </summary>
+
 public class GtkEventControllerKeyHandle : GtkEventControllerHandle
 {
+
+/// <param name="widget">
+/// </param>
+
 	public static MentorLake.Gtk.GtkEventControllerKeyHandle New(MentorLake.Gtk.GtkWidgetHandle widget)
 	{
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_new(widget);
@@ -97,6 +111,11 @@ public static class GtkEventControllerKeyHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// This signal is emitted whenever a key is pressed.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkEventControllerKeyHandleSignalStructs.KeyPressedSignal> Signal_KeyPressed(this GtkEventControllerKeyHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -126,6 +145,11 @@ public static class GtkEventControllerKeyHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// This signal is emitted whenever a key is released.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkEventControllerKeyHandleSignalStructs.KeyReleasedSignal> Signal_KeyReleased(this GtkEventControllerKeyHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -191,46 +215,102 @@ public static class GtkEventControllerKeyHandleSignalStructs
 
 public class FocusInSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class FocusOutSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class ImUpdateSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class KeyPressedSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+/// <summary>
+/// <para>
+/// the pressed key.
+/// </para>
+/// </summary>
+
 	public uint Keyval;
+/// <summary>
+/// <para>
+/// the raw code of the pressed key.
+/// </para>
+/// </summary>
+
 	public uint Keycode;
+/// <summary>
+/// <para>
+/// the bitmask, representing the state of modifier keys and pointer buttons. See #GdkModifierType.
+/// </para>
+/// </summary>
+
 	public MentorLake.Gdk.GdkModifierType State;
+
 	public IntPtr UserData;
+/// <summary>
+/// <para>
+/// %TRUE if the key press was handled, %FALSE otherwise.
+/// </para>
+/// </summary>
+
 	public bool ReturnValue;
 }
 
 public class KeyReleasedSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+/// <summary>
+/// <para>
+/// the released key.
+/// </para>
+/// </summary>
+
 	public uint Keyval;
+/// <summary>
+/// <para>
+/// the raw code of the released key.
+/// </para>
+/// </summary>
+
 	public uint Keycode;
+/// <summary>
+/// <para>
+/// the bitmask, representing the state of modifier keys and pointer buttons. See #GdkModifierType.
+/// </para>
+/// </summary>
+
 	public MentorLake.Gdk.GdkModifierType State;
+
 	public IntPtr UserData;
 }
 
 public class ModifiersSignal
 {
+
 	public MentorLake.Gtk.GtkEventControllerKeyHandle Self;
+
 	public MentorLake.Gdk.GdkModifierType Object;
+
 	public IntPtr UserData;
+
 	public bool ReturnValue;
 }
 }
@@ -238,25 +318,94 @@ public class ModifiersSignal
 public static class GtkEventControllerKeyHandleSignalDelegates
 {
 
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void focus_in([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, IntPtr user_data);
 
+
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void focus_out([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, IntPtr user_data);
 
 
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void im_update([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// This signal is emitted whenever a key is pressed.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="keyval">
+/// the pressed key.
+/// </param>
+/// <param name="keycode">
+/// the raw code of the pressed key.
+/// </param>
+/// <param name="state">
+/// the bitmask, representing the state of modifier keys and pointer buttons. See #GdkModifierType.
+/// </param>
+/// <param name="user_data">
+/// </param>
+/// <return>
+/// %TRUE if the key press was handled, %FALSE otherwise.
+/// </return>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate bool key_pressed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, uint keyval, uint keycode, MentorLake.Gdk.GdkModifierType state, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// This signal is emitted whenever a key is released.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="keyval">
+/// the released key.
+/// </param>
+/// <param name="keycode">
+/// the raw code of the released key.
+/// </param>
+/// <param name="state">
+/// the bitmask, representing the state of modifier keys and pointer buttons. See #GdkModifierType.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void key_released([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, uint keyval, uint keycode, MentorLake.Gdk.GdkModifierType state, IntPtr user_data);
 
+
+
+/// <param name="self">
+/// </param>
+/// <param name="@object">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate bool modifiers([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkEventControllerKeyHandle>))] MentorLake.Gtk.GtkEventControllerKeyHandle self, MentorLake.Gdk.GdkModifierType @object, IntPtr user_data);
@@ -266,11 +415,21 @@ public delegate bool modifiers([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 public static class GtkEventControllerKeyHandleExtensions
 {
+
+/// <param name="controller">
+/// </param>
+/// <param name="widget">
+/// </param>
+
 	public static bool Forward(this MentorLake.Gtk.GtkEventControllerKeyHandle controller, MentorLake.Gtk.GtkWidgetHandle widget)
 	{
 		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_forward(controller, widget);
 	}
+
+
+/// <param name="controller">
+/// </param>
 
 	public static uint GetGroup(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
@@ -278,11 +437,30 @@ public static class GtkEventControllerKeyHandleExtensions
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_group(controller);
 	}
 
+/// <summary>
+/// <para>
+/// Gets the IM context of a key controller.
+/// </para>
+/// </summary>
+
+/// <param name="controller">
+/// a #GtkEventControllerKey
+/// </param>
+/// <return>
+/// the IM context
+/// </return>
+
 	public static MentorLake.Gtk.GtkIMContextHandle GetImContext(this MentorLake.Gtk.GtkEventControllerKeyHandle controller)
 	{
 		if (controller.IsInvalid) throw new Exception("Invalid handle (GtkEventControllerKeyHandle)");
 		return GtkEventControllerKeyHandleExterns.gtk_event_controller_key_get_im_context(controller);
 	}
+
+
+/// <param name="controller">
+/// </param>
+/// <param name="im_context">
+/// </param>
 
 	public static T SetImContext<T>(this T controller, MentorLake.Gtk.GtkIMContextHandle im_context) where T : GtkEventControllerKeyHandle
 	{

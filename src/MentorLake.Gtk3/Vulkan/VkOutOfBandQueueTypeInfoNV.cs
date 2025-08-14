@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOutOfBandQueueTypeInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOutOfBandQueueTypeInfoNVExtensions
 internal class VkOutOfBandQueueTypeInfoNVExterns
 {
 }
+
 
 public struct VkOutOfBandQueueTypeInfoNV
 {

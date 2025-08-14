@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHRExtens
 internal class VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
 {

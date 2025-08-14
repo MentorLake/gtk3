@@ -1,5 +1,12 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// This function table is no longer used by g_thread_init()
+/// to initialize the thread system.
+/// </para>
+/// </summary>
+
 public class GThreadFunctionsHandle : BaseSafeHandle
 {
 }
@@ -14,27 +21,162 @@ internal class GThreadFunctionsExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// This function table is no longer used by g_thread_init()
+/// to initialize the thread system.
+/// </para>
+/// </summary>
+
 public struct GThreadFunctions
 {
-	public IntPtr mutex_new;
-	public IntPtr mutex_lock;
-	public IntPtr mutex_trylock;
-	public IntPtr mutex_unlock;
-	public IntPtr mutex_free;
-	public IntPtr cond_new;
-	public IntPtr cond_signal;
-	public IntPtr cond_broadcast;
-	public IntPtr cond_wait;
-	public IntPtr cond_timed_wait;
-	public IntPtr cond_free;
-	public IntPtr private_new;
-	public IntPtr private_get;
-	public IntPtr private_set;
-	public IntPtr thread_create;
-	public IntPtr thread_yield;
-	public IntPtr thread_join;
-	public IntPtr thread_exit;
-	public IntPtr thread_set_priority;
-	public IntPtr thread_self;
-	public IntPtr thread_equal;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_mutex_new()
+/// </para>
+/// </summary>
+
+public IntPtr mutex_new;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_mutex_lock()
+/// </para>
+/// </summary>
+
+public IntPtr mutex_lock;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_mutex_trylock()
+/// </para>
+/// </summary>
+
+public IntPtr mutex_trylock;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_mutex_unlock()
+/// </para>
+/// </summary>
+
+public IntPtr mutex_unlock;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_mutex_free()
+/// </para>
+/// </summary>
+
+public IntPtr mutex_free;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_new()
+/// </para>
+/// </summary>
+
+public IntPtr cond_new;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_signal()
+/// </para>
+/// </summary>
+
+public IntPtr cond_signal;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_broadcast()
+/// </para>
+/// </summary>
+
+public IntPtr cond_broadcast;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_wait()
+/// </para>
+/// </summary>
+
+public IntPtr cond_wait;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_timed_wait()
+/// </para>
+/// </summary>
+
+public IntPtr cond_timed_wait;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_cond_free()
+/// </para>
+/// </summary>
+
+public IntPtr cond_free;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_private_new()
+/// </para>
+/// </summary>
+
+public IntPtr private_new;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_private_get()
+/// </para>
+/// </summary>
+
+public IntPtr private_get;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_private_set()
+/// </para>
+/// </summary>
+
+public IntPtr private_set;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_thread_create()
+/// </para>
+/// </summary>
+
+public IntPtr thread_create;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_thread_yield()
+/// </para>
+/// </summary>
+
+public IntPtr thread_yield;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_thread_join()
+/// </para>
+/// </summary>
+
+public IntPtr thread_join;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_thread_exit()
+/// </para>
+/// </summary>
+
+public IntPtr thread_exit;
+	/// <summary>
+/// <para>
+/// virtual function pointer for
+///                       g_thread_set_priority()
+/// </para>
+/// </summary>
+
+public IntPtr thread_set_priority;
+	/// <summary>
+/// <para>
+/// virtual function pointer for g_thread_self()
+/// </para>
+/// </summary>
+
+public IntPtr thread_self;
+	/// <summary>
+/// <para>
+/// used internally by recursive mutex locks and by some
+///                assertion checks
+/// </para>
+/// </summary>
+
+public IntPtr thread_equal;
 }

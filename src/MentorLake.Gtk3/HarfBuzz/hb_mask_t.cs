@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for bitmasks.
+/// </para>
+/// </summary>
+
 public struct hb_mask_t
 {
 	public uint Value;

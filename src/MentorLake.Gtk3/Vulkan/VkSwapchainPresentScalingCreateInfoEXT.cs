@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainPresentScalingCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainPresentScalingCreateInfoEXTExtensions
 internal class VkSwapchainPresentScalingCreateInfoEXTExterns
 {
 }
+
 
 public struct VkSwapchainPresentScalingCreateInfoEXT
 {

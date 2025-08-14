@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineColorBlendAdvancedStateCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineColorBlendAdvancedStateCreateInfoEXTExtensions
 internal class VkPipelineColorBlendAdvancedStateCreateInfoEXTExterns
 {
 }
+
 
 public struct VkPipelineColorBlendAdvancedStateCreateInfoEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkGestureRotateClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkGestureRotateClassExtensions
 internal class GtkGestureRotateClassExterns
 {
 }
+
 
 public struct GtkGestureRotateClass
 {

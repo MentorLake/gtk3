@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkInputAttachmentAspectReferenceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkInputAttachmentAspectReferenceExtensions
 internal class VkInputAttachmentAspectReferenceExterns
 {
 }
+
 
 public struct VkInputAttachmentAspectReference
 {

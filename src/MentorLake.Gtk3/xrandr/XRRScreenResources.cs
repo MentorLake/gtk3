@@ -1,5 +1,6 @@
 namespace MentorLake.xrandr;
 
+
 public class XRRScreenResourcesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XRRScreenResourcesExtensions
 internal class XRRScreenResourcesExterns
 {
 }
+
 
 public struct XRRScreenResources
 {

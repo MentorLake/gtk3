@@ -1,5 +1,12 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// `GLoadableIcon` extends the [iface@Gio.Icon] interface and adds the ability
+/// to load icons from streams.
+/// </para>
+/// </summary>
+
 public interface GLoadableIconHandle
 {
 	public bool IsInvalid { get; }
@@ -12,6 +19,31 @@ internal class GLoadableIconHandleImpl : BaseSafeHandle, GLoadableIconHandle
 
 public static class GLoadableIconHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Loads a loadable icon. For the asynchronous version of this function,
+/// see g_loadable_icon_load_async().
+/// </para>
+/// </summary>
+
+/// <param name="icon">
+/// a #GLoadableIcon.
+/// </param>
+/// <param name="size">
+/// an integer.
+/// </param>
+/// <param name="type">
+/// a location to store the type of the loaded
+/// icon, %NULL to ignore.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to
+/// ignore.
+/// </param>
+/// <return>
+/// a #GInputStream to read the icon from.
+/// </return>
+
 	public static MentorLake.Gio.GInputStreamHandle Load(this MentorLake.Gio.GLoadableIconHandle icon, int size, out string type, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (icon.IsInvalid) throw new Exception("Invalid handle (GLoadableIconHandle)");
@@ -20,12 +52,57 @@ public static class GLoadableIconHandleExtensions
 		return externCallResult;
 	}
 
+/// <summary>
+/// <para>
+/// Loads an icon asynchronously. To finish this function, see
+/// g_loadable_icon_load_finish(). For the synchronous, blocking
+/// version of this function, see g_loadable_icon_load().
+/// </para>
+/// </summary>
+
+/// <param name="icon">
+/// a #GLoadableIcon.
+/// </param>
+/// <param name="size">
+/// an integer.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <param name="callback">
+/// a #GAsyncReadyCallback
+///   to call when the request is satisfied
+/// </param>
+/// <param name="user_data">
+/// the data to pass to callback function
+/// </param>
+
 	public static T LoadAsync<T>(this T icon, int size, MentorLake.Gio.GCancellableHandle cancellable, MentorLake.Gio.GAsyncReadyCallback callback, IntPtr user_data) where T : GLoadableIconHandle
 	{
 		if (icon.IsInvalid) throw new Exception("Invalid handle (GLoadableIconHandle)");
 		GLoadableIconHandleExterns.g_loadable_icon_load_async(icon, size, cancellable, callback, user_data);
 		return icon;
 	}
+
+/// <summary>
+/// <para>
+/// Finishes an asynchronous icon load started in g_loadable_icon_load_async().
+/// </para>
+/// </summary>
+
+/// <param name="icon">
+/// a #GLoadableIcon.
+/// </param>
+/// <param name="res">
+/// a #GAsyncResult.
+/// </param>
+/// <param name="type">
+/// a location to store the type of the loaded
+///        icon, %NULL to ignore.
+/// </param>
+/// <return>
+/// a #GInputStream to read the icon from.
+/// </return>
 
 	public static MentorLake.Gio.GInputStreamHandle LoadFinish(this MentorLake.Gio.GLoadableIconHandle icon, MentorLake.Gio.GAsyncResultHandle res, out string type)
 	{

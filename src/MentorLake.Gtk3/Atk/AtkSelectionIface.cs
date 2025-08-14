@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkSelectionIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,25 @@ internal class AtkSelectionIfaceExterns
 {
 }
 
+
 public struct AtkSelectionIface
 {
-	public GTypeInterface parent;
-	public IntPtr add_selection;
-	public IntPtr clear_selection;
-	public IntPtr ref_selection;
-	public IntPtr get_selection_count;
-	public IntPtr is_child_selected;
-	public IntPtr remove_selection;
-	public IntPtr select_all_selection;
-	public IntPtr selection_changed;
+	
+public GTypeInterface parent;
+	
+public IntPtr add_selection;
+	
+public IntPtr clear_selection;
+	
+public IntPtr ref_selection;
+	
+public IntPtr get_selection_count;
+	
+public IntPtr is_child_selected;
+	
+public IntPtr remove_selection;
+	
+public IntPtr select_all_selection;
+	
+public IntPtr selection_changed;
 }

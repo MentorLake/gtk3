@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryDedicatedAllocateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryDedicatedAllocateInfoExtensions
 internal class VkMemoryDedicatedAllocateInfoExterns
 {
 }
+
 
 public struct VkMemoryDedicatedAllocateInfo
 {

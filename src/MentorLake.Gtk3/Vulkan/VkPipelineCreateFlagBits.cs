@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCreateFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCreateFlagBitsExtensions
 internal class VkPipelineCreateFlagBitsExterns
 {
 }
+
 
 public struct VkPipelineCreateFlagBits
 {

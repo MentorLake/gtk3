@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkSocketClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class AtkSocketClassExterns
 {
 }
 
+
 public struct AtkSocketClass
 {
-	public AtkObjectClass parent_class;
-	public IntPtr embed;
+	
+public AtkObjectClass parent_class;
+	
+public IntPtr embed;
 }

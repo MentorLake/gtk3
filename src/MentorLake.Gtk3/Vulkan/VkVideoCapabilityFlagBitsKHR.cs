@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoCapabilityFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoCapabilityFlagBitsKHRExtensions
 internal class VkVideoCapabilityFlagBitsKHRExterns
 {
 }
+
 
 public struct VkVideoCapabilityFlagBitsKHR
 {

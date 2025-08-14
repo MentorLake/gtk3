@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioMenuItemAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkRadioMenuItemAccessibleClassExterns
 {
 }
 
+
 public struct GtkRadioMenuItemAccessibleClass
 {
-	public GtkCheckMenuItemAccessibleClass parent_class;
+	
+public GtkCheckMenuItemAccessibleClass parent_class;
 }

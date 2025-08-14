@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBufferUsageFlagBits2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBufferUsageFlagBits2KHRExtensions
 internal class VkBufferUsageFlagBits2KHRExterns
 {
 }
+
 
 public struct VkBufferUsageFlagBits2KHR
 {

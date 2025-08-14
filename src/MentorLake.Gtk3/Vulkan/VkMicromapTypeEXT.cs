@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMicromapTypeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMicromapTypeEXTExtensions
 internal class VkMicromapTypeEXTExterns
 {
 }
+
 
 public struct VkMicromapTypeEXT
 {

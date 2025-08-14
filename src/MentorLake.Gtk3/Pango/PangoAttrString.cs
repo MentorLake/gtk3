@@ -1,5 +1,12 @@
 namespace MentorLake.Pango;
 
+/// <summary>
+/// <para>
+/// The `PangoAttrString` structure is used to represent attributes with
+/// a string value.
+/// </para>
+/// </summary>
+
 public class PangoAttrStringHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,27 @@ internal class PangoAttrStringExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The `PangoAttrString` structure is used to represent attributes with
+/// a string value.
+/// </para>
+/// </summary>
+
 public struct PangoAttrString
 {
-	public PangoAttribute attr;
-	public string value;
+	/// <summary>
+/// <para>
+/// the common portion of the attribute
+/// </para>
+/// </summary>
+
+public PangoAttribute attr;
+	/// <summary>
+/// <para>
+/// the string which is the value of the attribute
+/// </para>
+/// </summary>
+
+public string value;
 }

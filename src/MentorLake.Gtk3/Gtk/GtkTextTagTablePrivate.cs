@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTextTagTablePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTextTagTablePrivateExtensions
 internal class GtkTextTagTablePrivateExterns
 {
 }
+
 
 public struct GtkTextTagTablePrivate
 {

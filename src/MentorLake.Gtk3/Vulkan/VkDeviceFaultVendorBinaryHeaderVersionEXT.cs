@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceFaultVendorBinaryHeaderVersionEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceFaultVendorBinaryHeaderVersionEXTExtensions
 internal class VkDeviceFaultVendorBinaryHeaderVersionEXTExterns
 {
 }
+
 
 public struct VkDeviceFaultVendorBinaryHeaderVersionEXT
 {

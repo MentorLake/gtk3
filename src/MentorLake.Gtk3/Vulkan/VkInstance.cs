@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkInstanceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkInstanceExtensions
 internal class VkInstanceExterns
 {
 }
+
 
 public struct VkInstance
 {

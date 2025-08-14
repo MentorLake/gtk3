@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCalibratedTimestampInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCalibratedTimestampInfoEXTExtensions
 internal class VkCalibratedTimestampInfoEXTExterns
 {
 }
+
 
 public struct VkCalibratedTimestampInfoEXT
 {

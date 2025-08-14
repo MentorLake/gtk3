@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XWindowAttributesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XWindowAttributesExtensions
 internal class XWindowAttributesExterns
 {
 }
+
 
 public struct XWindowAttributes
 {

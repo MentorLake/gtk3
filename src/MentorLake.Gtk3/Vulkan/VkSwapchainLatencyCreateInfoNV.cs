@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSwapchainLatencyCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSwapchainLatencyCreateInfoNVExtensions
 internal class VkSwapchainLatencyCreateInfoNVExterns
 {
 }
+
 
 public struct VkSwapchainLatencyCreateInfoNV
 {

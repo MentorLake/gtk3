@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Struct used in g_dbus_error_register_error_domain().
+/// </para>
+/// </summary>
+
 public class GDBusErrorEntryHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GDBusErrorEntryExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Struct used in g_dbus_error_register_error_domain().
+/// </para>
+/// </summary>
+
 public struct GDBusErrorEntry
 {
-	public int error_code;
-	public string dbus_error_name;
+	/// <summary>
+/// <para>
+/// An error code.
+/// </para>
+/// </summary>
+
+public int error_code;
+	/// <summary>
+/// <para>
+/// The D-Bus error name to associate with @error_code.
+/// </para>
+/// </summary>
+
+public string dbus_error_name;
 }

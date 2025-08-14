@@ -1,7 +1,30 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// The #GtkColorChooserDialog widget is a dialog for choosing
+/// a color. It implements the #GtkColorChooser interface.
+/// </para>
+/// </summary>
+
 public class GtkColorChooserDialogHandle : GtkDialogHandle, AtkImplementorIfaceHandle, GtkBuildableHandle, GtkColorChooserHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GtkColorChooserDialog.
+/// </para>
+/// </summary>
+
+/// <param name="title">
+/// Title of the dialog, or %NULL
+/// </param>
+/// <param name="parent">
+/// Transient parent of the dialog, or %NULL
+/// </param>
+/// <return>
+/// a new #GtkColorChooserDialog
+/// </return>
+
 	public static MentorLake.Gtk.GtkColorChooserDialogHandle New(string title, MentorLake.Gtk.GtkWindowHandle parent)
 	{
 		return GtkColorChooserDialogHandleExterns.gtk_color_chooser_dialog_new(title, parent);
@@ -10,6 +33,14 @@ public class GtkColorChooserDialogHandle : GtkDialogHandle, AtkImplementorIfaceH
 }
 public static class GtkColorChooserDialogHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// Emitted when a color is activated from the color chooser.
+/// This usually happens when the user clicks a color swatch,
+/// or a color is selected and the user presses one of the keys
+/// Space, Shift+Space, Return or Enter.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkColorChooserDialogHandleSignalStructs.ColorActivatedSignal> Signal_ColorActivated(this GtkColorChooserDialogHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,14 +77,39 @@ public static class GtkColorChooserDialogHandleSignalStructs
 
 public class ColorActivatedSignal
 {
+
 	public MentorLake.Gtk.GtkColorChooserHandle Self;
+/// <summary>
+/// <para>
+/// the color
+/// </para>
+/// </summary>
+
 	public MentorLake.Gdk.GdkRGBAHandle Color;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkColorChooserDialogHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// Emitted when a color is activated from the color chooser.
+/// This usually happens when the user clicks a color swatch,
+/// or a color is selected and the user presses one of the keys
+/// Space, Shift+Space, Return or Enter.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="color">
+/// the color
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void color_activated([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gtk.GtkColorChooserHandleImpl>))] MentorLake.Gtk.GtkColorChooserHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Gdk.GdkRGBAHandle>))] MentorLake.Gdk.GdkRGBAHandle color, IntPtr user_data);

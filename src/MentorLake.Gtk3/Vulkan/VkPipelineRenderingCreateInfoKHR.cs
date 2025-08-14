@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineRenderingCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineRenderingCreateInfoKHRExtensions
 internal class VkPipelineRenderingCreateInfoKHRExterns
 {
 }
+
 
 public struct VkPipelineRenderingCreateInfoKHR
 {

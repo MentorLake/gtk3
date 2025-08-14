@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSeparatorToolItemPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSeparatorToolItemPrivateExtensions
 internal class GtkSeparatorToolItemPrivateExterns
 {
 }
+
 
 public struct GtkSeparatorToolItemPrivate
 {

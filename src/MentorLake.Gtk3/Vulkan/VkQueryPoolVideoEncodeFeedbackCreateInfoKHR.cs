@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryPoolVideoEncodeFeedbackCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryPoolVideoEncodeFeedbackCreateInfoKHRExtensions
 internal class VkQueryPoolVideoEncodeFeedbackCreateInfoKHRExterns
 {
 }
+
 
 public struct VkQueryPoolVideoEncodeFeedbackCreateInfoKHR
 {

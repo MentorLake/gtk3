@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTcpConnectionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTcpConnectionPrivateExtensions
 internal class GTcpConnectionPrivateExterns
 {
 }
+
 
 public struct GTcpConnectionPrivate
 {

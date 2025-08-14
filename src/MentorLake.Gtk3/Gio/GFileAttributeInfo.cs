@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Information about a specific attribute.
+/// </para>
+/// </summary>
+
 public class GFileAttributeInfoHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,33 @@ internal class GFileAttributeInfoExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Information about a specific attribute.
+/// </para>
+/// </summary>
+
 public struct GFileAttributeInfo
 {
-	public string name;
-	public GFileAttributeType type;
-	public GFileAttributeInfoFlags flags;
+	/// <summary>
+/// <para>
+/// the name of the attribute.
+/// </para>
+/// </summary>
+
+public string name;
+	/// <summary>
+/// <para>
+/// the #GFileAttributeType type of the attribute.
+/// </para>
+/// </summary>
+
+public GFileAttributeType type;
+	/// <summary>
+/// <para>
+/// a set of #GFileAttributeInfoFlags.
+/// </para>
+/// </summary>
+
+public GFileAttributeInfoFlags flags;
 }

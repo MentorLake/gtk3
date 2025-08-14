@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkHScrollbarClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkHScrollbarClassExterns
 {
 }
 
+
 public struct GtkHScrollbarClass
 {
-	public GtkScrollbarClass parent_class;
+	
+public GtkScrollbarClass parent_class;
 }

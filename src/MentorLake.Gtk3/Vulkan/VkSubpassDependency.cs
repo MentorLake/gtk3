@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassDependencyHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassDependencyExtensions
 internal class VkSubpassDependencyExterns
 {
 }
+
 
 public struct VkSubpassDependency
 {

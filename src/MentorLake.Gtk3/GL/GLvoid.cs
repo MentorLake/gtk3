@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLvoidHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLvoidExtensions
 internal class GLvoidExterns
 {
 }
+
 
 public struct GLvoid
 {

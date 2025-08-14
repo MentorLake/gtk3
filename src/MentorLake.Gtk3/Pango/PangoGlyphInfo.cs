@@ -1,5 +1,12 @@
 namespace MentorLake.Pango;
 
+/// <summary>
+/// <para>
+/// A `PangoGlyphInfo` structure represents a single glyph with
+/// positioning information and visual attributes.
+/// </para>
+/// </summary>
+
 public class PangoGlyphInfoHandle : BaseSafeHandle
 {
 }
@@ -14,9 +21,34 @@ internal class PangoGlyphInfoExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A `PangoGlyphInfo` structure represents a single glyph with
+/// positioning information and visual attributes.
+/// </para>
+/// </summary>
+
 public struct PangoGlyphInfo
 {
-	public PangoGlyph glyph;
-	public PangoGlyphGeometry geometry;
-	public PangoGlyphVisAttr attr;
+	/// <summary>
+/// <para>
+/// the glyph itself.
+/// </para>
+/// </summary>
+
+public PangoGlyph glyph;
+	/// <summary>
+/// <para>
+/// the positional information about the glyph.
+/// </para>
+/// </summary>
+
+public PangoGlyphGeometry geometry;
+	/// <summary>
+/// <para>
+/// the visual attributes of the glyph.
+/// </para>
+/// </summary>
+
+public PangoGlyphVisAttr attr;
 }

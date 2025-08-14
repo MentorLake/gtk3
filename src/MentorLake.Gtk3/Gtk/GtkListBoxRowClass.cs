@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkListBoxRowClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,20 @@ internal class GtkListBoxRowClassExterns
 {
 }
 
+
 public struct GtkListBoxRowClass
 {
-	public GtkBinClass parent_class;
-	public IntPtr activate;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBinClass parent_class;
+	
+public IntPtr activate;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeferredOperationKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeferredOperationKHRExtensions
 internal class VkDeferredOperationKHRExterns
 {
 }
+
 
 public struct VkDeferredOperationKHR
 {

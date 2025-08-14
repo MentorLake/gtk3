@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkColorComponentFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkColorComponentFlagsExtensions
 internal class VkColorComponentFlagsExterns
 {
 }
+
 
 public struct VkColorComponentFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkEventCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkEventCreateInfoExtensions
 internal class VkEventCreateInfoExterns
 {
 }
+
 
 public struct VkEventCreateInfo
 {

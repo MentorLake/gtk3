@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkProgressBarAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkProgressBarAccessibleClassExterns
 {
 }
 
+
 public struct GtkProgressBarAccessibleClass
 {
-	public GtkWidgetAccessibleClass parent_class;
+	
+public GtkWidgetAccessibleClass parent_class;
 }

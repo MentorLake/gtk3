@@ -1,5 +1,6 @@
 namespace MentorLake.xft;
 
+
 public class XftFontHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XftFontExtensions
 internal class XftFontExterns
 {
 }
+
 
 public struct XftFont
 {

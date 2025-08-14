@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkComponentSwizzleHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkComponentSwizzleExtensions
 internal class VkComponentSwizzleExterns
 {
 }
+
 
 public struct VkComponentSwizzle
 {

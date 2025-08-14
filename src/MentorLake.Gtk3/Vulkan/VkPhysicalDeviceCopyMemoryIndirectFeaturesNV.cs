@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCopyMemoryIndirectFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCopyMemoryIndirectFeaturesNVExtensions
 internal class VkPhysicalDeviceCopyMemoryIndirectFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCopyMemoryIndirectFeaturesNV
 {

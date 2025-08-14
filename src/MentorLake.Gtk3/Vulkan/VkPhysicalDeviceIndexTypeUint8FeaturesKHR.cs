@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceIndexTypeUint8FeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceIndexTypeUint8FeaturesKHRExtensions
 internal class VkPhysicalDeviceIndexTypeUint8FeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceIndexTypeUint8FeaturesKHR
 {

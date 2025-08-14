@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPresentModeKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPresentModeKHRExtensions
 internal class VkPresentModeKHRExterns
 {
 }
+
 
 public struct VkPresentModeKHR
 {

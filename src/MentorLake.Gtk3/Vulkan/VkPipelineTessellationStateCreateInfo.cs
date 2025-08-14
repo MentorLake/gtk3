@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineTessellationStateCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineTessellationStateCreateInfoExtensions
 internal class VkPipelineTessellationStateCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineTessellationStateCreateInfo
 {

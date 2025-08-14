@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMemoryDecompressionFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMemoryDecompressionFeaturesNVExtensions
 internal class VkPhysicalDeviceMemoryDecompressionFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMemoryDecompressionFeaturesNV
 {

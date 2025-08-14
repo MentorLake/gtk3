@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Structure representing a setting for an #hb_aat_layout_feature_type_t.
+/// </para>
+/// </summary>
+
 public class hb_aat_layout_feature_selector_info_tHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,33 @@ internal class hb_aat_layout_feature_selector_info_tExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Structure representing a setting for an #hb_aat_layout_feature_type_t.
+/// </para>
+/// </summary>
+
 public struct hb_aat_layout_feature_selector_info_t
 {
-	public hb_ot_name_id_t name_id;
-	public hb_aat_layout_feature_selector_t enable;
-	public hb_aat_layout_feature_selector_t disable;
+	/// <summary>
+/// <para>
+/// The selector's name identifier
+/// </para>
+/// </summary>
+
+public hb_ot_name_id_t name_id;
+	/// <summary>
+/// <para>
+/// The value to turn the selector on
+/// </para>
+/// </summary>
+
+public hb_aat_layout_feature_selector_t enable;
+	/// <summary>
+/// <para>
+/// The value to turn the selector off
+/// </para>
+/// </summary>
+
+public hb_aat_layout_feature_selector_t disable;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSampleMaskHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSampleMaskExtensions
 internal class VkSampleMaskExterns
 {
 }
+
 
 public struct VkSampleMask
 {

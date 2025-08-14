@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixConnectionClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GUnixConnectionClassExterns
 {
 }
 
+
 public struct GUnixConnectionClass
 {
-	public GSocketConnectionClass parent_class;
+	
+public GSocketConnectionClass parent_class;
 }

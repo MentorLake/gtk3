@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GEmblemClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GEmblemClassExtensions
 internal class GEmblemClassExterns
 {
 }
+
 
 public struct GEmblemClass
 {

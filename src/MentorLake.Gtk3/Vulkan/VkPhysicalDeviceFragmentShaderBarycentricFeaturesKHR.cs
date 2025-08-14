@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHRExtensio
 internal class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR
 {

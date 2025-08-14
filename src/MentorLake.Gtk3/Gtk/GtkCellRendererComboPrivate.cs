@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCellRendererComboPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCellRendererComboPrivateExtensions
 internal class GtkCellRendererComboPrivateExterns
 {
 }
+
 
 public struct GtkCellRendererComboPrivate
 {

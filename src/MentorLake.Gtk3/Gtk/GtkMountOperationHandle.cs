@@ -1,7 +1,26 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// This should not be accessed directly. Use the accessor functions below.
+/// </para>
+/// </summary>
+
 public class GtkMountOperationHandle : GMountOperationHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GtkMountOperation
+/// </para>
+/// </summary>
+
+/// <param name="parent">
+/// transient parent of the window, or %NULL
+/// </param>
+/// <return>
+/// a new #GtkMountOperation
+/// </return>
+
 	public static MentorLake.Gtk.GtkMountOperationHandle New(MentorLake.Gtk.GtkWindowHandle parent)
 	{
 		return GtkMountOperationHandleExterns.gtk_mount_operation_new(parent);
@@ -11,11 +30,38 @@ public class GtkMountOperationHandle : GMountOperationHandle
 
 public static class GtkMountOperationHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Gets the transient parent used by the #GtkMountOperation
+/// </para>
+/// </summary>
+
+/// <param name="op">
+/// a #GtkMountOperation
+/// </param>
+/// <return>
+/// the transient parent for windows shown by @op
+/// </return>
+
 	public static MentorLake.Gtk.GtkWindowHandle GetParent(this MentorLake.Gtk.GtkMountOperationHandle op)
 	{
 		if (op.IsInvalid) throw new Exception("Invalid handle (GtkMountOperationHandle)");
 		return GtkMountOperationHandleExterns.gtk_mount_operation_get_parent(op);
 	}
+
+/// <summary>
+/// <para>
+/// Gets the screen on which windows of the #GtkMountOperation
+/// will be shown.
+/// </para>
+/// </summary>
+
+/// <param name="op">
+/// a #GtkMountOperation
+/// </param>
+/// <return>
+/// the screen on which windows of @op are shown
+/// </return>
 
 	public static MentorLake.Gdk.GdkScreenHandle GetScreen(this MentorLake.Gtk.GtkMountOperationHandle op)
 	{
@@ -23,11 +69,39 @@ public static class GtkMountOperationHandleExtensions
 		return GtkMountOperationHandleExterns.gtk_mount_operation_get_screen(op);
 	}
 
+/// <summary>
+/// <para>
+/// Returns whether the #GtkMountOperation is currently displaying
+/// a window.
+/// </para>
+/// </summary>
+
+/// <param name="op">
+/// a #GtkMountOperation
+/// </param>
+/// <return>
+/// %TRUE if @op is currently displaying a window
+/// </return>
+
 	public static bool IsShowing(this MentorLake.Gtk.GtkMountOperationHandle op)
 	{
 		if (op.IsInvalid) throw new Exception("Invalid handle (GtkMountOperationHandle)");
 		return GtkMountOperationHandleExterns.gtk_mount_operation_is_showing(op);
 	}
+
+/// <summary>
+/// <para>
+/// Sets the transient parent for windows shown by the
+/// #GtkMountOperation.
+/// </para>
+/// </summary>
+
+/// <param name="op">
+/// a #GtkMountOperation
+/// </param>
+/// <param name="parent">
+/// transient parent of the window, or %NULL
+/// </param>
 
 	public static T SetParent<T>(this T op, MentorLake.Gtk.GtkWindowHandle parent) where T : GtkMountOperationHandle
 	{
@@ -35,6 +109,19 @@ public static class GtkMountOperationHandleExtensions
 		GtkMountOperationHandleExterns.gtk_mount_operation_set_parent(op, parent);
 		return op;
 	}
+
+/// <summary>
+/// <para>
+/// Sets the screen to show windows of the #GtkMountOperation on.
+/// </para>
+/// </summary>
+
+/// <param name="op">
+/// a #GtkMountOperation
+/// </param>
+/// <param name="screen">
+/// a #GdkScreen
+/// </param>
 
 	public static T SetScreen<T>(this T op, MentorLake.Gdk.GdkScreenHandle screen) where T : GtkMountOperationHandle
 	{

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkConditionalRenderingBeginInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkConditionalRenderingBeginInfoEXTExtensions
 internal class VkConditionalRenderingBeginInfoEXTExterns
 {
 }
+
 
 public struct VkConditionalRenderingBeginInfoEXT
 {

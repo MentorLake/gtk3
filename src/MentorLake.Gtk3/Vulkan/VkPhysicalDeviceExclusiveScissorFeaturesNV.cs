@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExclusiveScissorFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExclusiveScissorFeaturesNVExtensions
 internal class VkPhysicalDeviceExclusiveScissorFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExclusiveScissorFeaturesNV
 {

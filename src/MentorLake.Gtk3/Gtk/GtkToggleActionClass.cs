@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToggleActionClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkToggleActionClassExterns
 {
 }
 
+
 public struct GtkToggleActionClass
 {
-	public GtkActionClass parent_class;
-	public IntPtr toggled;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkActionClass parent_class;
+	
+public IntPtr toggled;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

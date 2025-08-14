@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureGeometryMotionTrianglesDataNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureGeometryMotionTrianglesDataNVExtensio
 internal class VkAccelerationStructureGeometryMotionTrianglesDataNVExterns
 {
 }
+
 
 public struct VkAccelerationStructureGeometryMotionTrianglesDataNV
 {

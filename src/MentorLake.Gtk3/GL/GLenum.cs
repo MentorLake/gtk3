@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLenumHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLenumExtensions
 internal class GLenumExterns
 {
 }
+
 
 public struct GLenum
 {

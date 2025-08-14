@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSeparatorPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSeparatorPrivateExtensions
 internal class GtkSeparatorPrivateExterns
 {
 }
+
 
 public struct GtkSeparatorPrivate
 {

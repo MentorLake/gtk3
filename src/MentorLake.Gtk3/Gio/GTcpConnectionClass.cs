@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTcpConnectionClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GTcpConnectionClassExterns
 {
 }
 
+
 public struct GTcpConnectionClass
 {
-	public GSocketConnectionClass parent_class;
+	
+public GSocketConnectionClass parent_class;
 }

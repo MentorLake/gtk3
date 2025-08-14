@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDisplayEventInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDisplayEventInfoEXTExtensions
 internal class VkDisplayEventInfoEXTExterns
 {
 }
+
 
 public struct VkDisplayEventInfoEXT
 {

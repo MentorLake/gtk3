@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreWaitFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreWaitFlagsKHRExtensions
 internal class VkSemaphoreWaitFlagsKHRExterns
 {
 }
+
 
 public struct VkSemaphoreWaitFlagsKHR
 {

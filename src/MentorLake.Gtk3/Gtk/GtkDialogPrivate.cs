@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkDialogPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkDialogPrivateExtensions
 internal class GtkDialogPrivateExterns
 {
 }
+
 
 public struct GtkDialogPrivate
 {

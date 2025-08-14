@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkColorBlendEquationEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkColorBlendEquationEXTExtensions
 internal class VkColorBlendEquationEXTExterns
 {
 }
+
 
 public struct VkColorBlendEquationEXT
 {

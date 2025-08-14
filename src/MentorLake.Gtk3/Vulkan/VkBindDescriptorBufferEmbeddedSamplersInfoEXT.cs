@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindDescriptorBufferEmbeddedSamplersInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindDescriptorBufferEmbeddedSamplersInfoEXTExtensions
 internal class VkBindDescriptorBufferEmbeddedSamplersInfoEXTExterns
 {
 }
+
 
 public struct VkBindDescriptorBufferEmbeddedSamplersInfoEXT
 {

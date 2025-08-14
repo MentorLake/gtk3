@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderFloatControlsIndependenceKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderFloatControlsIndependenceKHRExtensions
 internal class VkShaderFloatControlsIndependenceKHRExterns
 {
 }
+
 
 public struct VkShaderFloatControlsIndependenceKHR
 {

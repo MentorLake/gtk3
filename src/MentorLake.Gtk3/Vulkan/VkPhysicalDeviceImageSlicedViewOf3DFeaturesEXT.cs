@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXTExtensions
 internal class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT
 {

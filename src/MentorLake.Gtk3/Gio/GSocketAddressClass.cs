@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSocketAddressClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,15 @@ internal class GSocketAddressClassExterns
 {
 }
 
+
 public struct GSocketAddressClass
 {
-	public GObjectClass parent_class;
-	public IntPtr get_family;
-	public IntPtr get_native_size;
-	public IntPtr to_native;
+	
+public GObjectClass parent_class;
+	
+public IntPtr get_family;
+	
+public IntPtr get_native_size;
+	
+public IntPtr to_native;
 }

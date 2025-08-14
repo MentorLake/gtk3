@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePipelineCreationCacheControlFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePipelineCreationCacheControlFeaturesExtensio
 internal class VkPhysicalDevicePipelineCreationCacheControlFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDevicePipelineCreationCacheControlFeatures
 {

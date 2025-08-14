@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceVideoFormatInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceVideoFormatInfoKHRExtensions
 internal class VkPhysicalDeviceVideoFormatInfoKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceVideoFormatInfoKHR
 {

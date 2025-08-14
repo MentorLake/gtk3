@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTlsCertificatePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTlsCertificatePrivateExtensions
 internal class GTlsCertificatePrivateExterns
 {
 }
+
 
 public struct GTlsCertificatePrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkIndexTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkIndexTypeExtensions
 internal class VkIndexTypeExterns
 {
 }
+
 
 public struct VkIndexType
 {

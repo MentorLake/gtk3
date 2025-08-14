@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileEnumeratorPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GFileEnumeratorPrivateExtensions
 internal class GFileEnumeratorPrivateExterns
 {
 }
+
 
 public struct GFileEnumeratorPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFormatFeatureFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFormatFeatureFlagBitsExtensions
 internal class VkFormatFeatureFlagBitsExterns
 {
 }
+
 
 public struct VkFormatFeatureFlagBits
 {

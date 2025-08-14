@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRecentChooserDialogPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRecentChooserDialogPrivateExtensions
 internal class GtkRecentChooserDialogPrivateExterns
 {
 }
+
 
 public struct GtkRecentChooserDialogPrivate
 {

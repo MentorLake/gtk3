@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkClearAttachmentHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkClearAttachmentExtensions
 internal class VkClearAttachmentExterns
 {
 }
+
 
 public struct VkClearAttachment
 {

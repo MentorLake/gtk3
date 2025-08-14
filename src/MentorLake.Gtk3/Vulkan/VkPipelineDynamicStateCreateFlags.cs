@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineDynamicStateCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineDynamicStateCreateFlagsExtensions
 internal class VkPipelineDynamicStateCreateFlagsExterns
 {
 }
+
 
 public struct VkPipelineDynamicStateCreateFlags
 {

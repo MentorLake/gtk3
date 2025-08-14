@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderImageFootprintFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderImageFootprintFeaturesNVExtensions
 internal class VkPhysicalDeviceShaderImageFootprintFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderImageFootprintFeaturesNV
 {

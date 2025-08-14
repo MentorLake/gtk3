@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorPoolInlineUniformBlockCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorPoolInlineUniformBlockCreateInfoExtensions
 internal class VkDescriptorPoolInlineUniformBlockCreateInfoExterns
 {
 }
+
 
 public struct VkDescriptorPoolInlineUniformBlockCreateInfo
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineRasterizationConservativeStateCreateFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineRasterizationConservativeStateCreateFlagsEXTExtens
 internal class VkPipelineRasterizationConservativeStateCreateFlagsEXTExterns
 {
 }
+
 
 public struct VkPipelineRasterizationConservativeStateCreateFlagsEXT
 {

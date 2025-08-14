@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageDrmFormatModifierExplicitCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageDrmFormatModifierExplicitCreateInfoEXTExtensions
 internal class VkImageDrmFormatModifierExplicitCreateInfoEXTExterns
 {
 }
+
 
 public struct VkImageDrmFormatModifierExplicitCreateInfoEXT
 {

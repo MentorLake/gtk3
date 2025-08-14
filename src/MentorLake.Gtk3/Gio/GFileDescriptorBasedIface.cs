@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// An interface for file descriptor based io objects.
+/// </para>
+/// </summary>
+
 public class GFileDescriptorBasedIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GFileDescriptorBasedIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// An interface for file descriptor based io objects.
+/// </para>
+/// </summary>
+
 public struct GFileDescriptorBasedIface
 {
-	public GTypeInterface g_iface;
-	public IntPtr get_fd;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Gets the underlying file descriptor.
+/// </para>
+/// </summary>
+
+public IntPtr get_fd;
 }

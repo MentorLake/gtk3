@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSparseImageFormatFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSparseImageFormatFlagsExtensions
 internal class VkSparseImageFormatFlagsExterns
 {
 }
+
 
 public struct VkSparseImageFormatFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkRelationSetClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class AtkRelationSetClassExterns
 {
 }
 
+
 public struct AtkRelationSetClass
 {
-	public GObjectClass parent;
-	public AtkFunction pad1;
-	public AtkFunction pad2;
+	
+public GObjectClass parent;
+	
+public AtkFunction pad1;
+	
+public AtkFunction pad2;
 }

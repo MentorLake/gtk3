@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMultisampledRenderToSingleSampledInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMultisampledRenderToSingleSampledInfoEXTExtensions
 internal class VkMultisampledRenderToSingleSampledInfoEXTExterns
 {
 }
+
 
 public struct VkMultisampledRenderToSingleSampledInfoEXT
 {

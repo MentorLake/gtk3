@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Interface for icons that can be loaded as a stream.
+/// </para>
+/// </summary>
+
 public class GLoadableIconIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,10 +20,40 @@ internal class GLoadableIconIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Interface for icons that can be loaded as a stream.
+/// </para>
+/// </summary>
+
 public struct GLoadableIconIface
 {
-	public GTypeInterface g_iface;
-	public IntPtr load;
-	public IntPtr load_async;
-	public IntPtr load_finish;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Loads an icon.
+/// </para>
+/// </summary>
+
+public IntPtr load;
+	/// <summary>
+/// <para>
+/// Loads an icon asynchronously.
+/// </para>
+/// </summary>
+
+public IntPtr load_async;
+	/// <summary>
+/// <para>
+/// Finishes an asynchronous icon load.
+/// </para>
+/// </summary>
+
+public IntPtr load_finish;
 }

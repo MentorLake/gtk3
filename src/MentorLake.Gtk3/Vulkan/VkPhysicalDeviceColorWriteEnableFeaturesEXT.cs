@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceColorWriteEnableFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceColorWriteEnableFeaturesEXTExtensions
 internal class VkPhysicalDeviceColorWriteEnableFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceColorWriteEnableFeaturesEXT
 {

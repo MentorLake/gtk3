@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderModuleCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderModuleCreateInfoExtensions
 internal class VkShaderModuleCreateInfoExterns
 {
 }
+
 
 public struct VkShaderModuleCreateInfo
 {

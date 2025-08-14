@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugUtilsMessageSeverityFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugUtilsMessageSeverityFlagsEXTExtensions
 internal class VkDebugUtilsMessageSeverityFlagsEXTExterns
 {
 }
+
 
 public struct VkDebugUtilsMessageSeverityFlagsEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGetLatencyMarkerInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGetLatencyMarkerInfoNVExtensions
 internal class VkGetLatencyMarkerInfoNVExterns
 {
 }
+
 
 public struct VkGetLatencyMarkerInfoNV
 {

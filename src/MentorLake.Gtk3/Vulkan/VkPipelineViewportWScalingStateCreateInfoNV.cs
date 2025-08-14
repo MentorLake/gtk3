@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineViewportWScalingStateCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineViewportWScalingStateCreateInfoNVExtensions
 internal class VkPipelineViewportWScalingStateCreateInfoNVExterns
 {
 }
+
 
 public struct VkPipelineViewportWScalingStateCreateInfoNV
 {

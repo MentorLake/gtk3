@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSemaphoreWaitFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSemaphoreWaitFlagBitsExtensions
 internal class VkSemaphoreWaitFlagBitsExterns
 {
 }
+
 
 public struct VkSemaphoreWaitFlagBits
 {

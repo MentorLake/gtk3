@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineColorBlendAttachmentStateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineColorBlendAttachmentStateExtensions
 internal class VkPipelineColorBlendAttachmentStateExterns
 {
 }
+
 
 public struct VkPipelineColorBlendAttachmentState
 {

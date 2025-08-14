@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GNativeSocketAddressClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GNativeSocketAddressClassExterns
 {
 }
 
+
 public struct GNativeSocketAddressClass
 {
-	public GSocketAddressClass parent_class;
+	
+public GSocketAddressClass parent_class;
 }

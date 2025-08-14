@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XVisualInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XVisualInfoExtensions
 internal class XVisualInfoExterns
 {
 }
+
 
 public struct XVisualInfo
 {

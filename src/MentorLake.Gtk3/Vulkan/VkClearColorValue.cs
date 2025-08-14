@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkClearColorValueHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkClearColorValueExtensions
 internal class VkClearColorValueExterns
 {
 }
+
 
 public struct VkClearColorValue
 {

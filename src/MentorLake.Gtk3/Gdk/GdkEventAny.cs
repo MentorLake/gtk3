@@ -1,5 +1,13 @@
 namespace MentorLake.Gdk;
 
+/// <summary>
+/// <para>
+/// Contains the fields which are common to all event structs.
+/// Any event pointer can safely be cast to a pointer to a #GdkEventAny to
+/// access these fields.
+/// </para>
+/// </summary>
+
 public class GdkEventAnyHandle : BaseSafeHandle
 {
 }
@@ -14,9 +22,35 @@ internal class GdkEventAnyExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Contains the fields which are common to all event structs.
+/// Any event pointer can safely be cast to a pointer to a #GdkEventAny to
+/// access these fields.
+/// </para>
+/// </summary>
+
 public struct GdkEventAny
 {
-	public GdkEventType type;
-	public IntPtr window;
-	public byte send_event;
+	/// <summary>
+/// <para>
+/// the type of the event.
+/// </para>
+/// </summary>
+
+public GdkEventType type;
+	/// <summary>
+/// <para>
+/// the window which received the event.
+/// </para>
+/// </summary>
+
+public IntPtr window;
+	/// <summary>
+/// <para>
+/// %TRUE if the event was sent explicitly.
+/// </para>
+/// </summary>
+
+public byte send_event;
 }

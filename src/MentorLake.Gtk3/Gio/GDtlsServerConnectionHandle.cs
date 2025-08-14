@@ -1,5 +1,12 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// `GDtlsServerConnection` is the server-side subclass of
+/// [iface@Gio.DtlsConnection], representing a server-side DTLS connection.
+/// </para>
+/// </summary>
+
 public interface GDtlsServerConnectionHandle
 {
 	public bool IsInvalid { get; }
@@ -12,6 +19,23 @@ internal class GDtlsServerConnectionHandleImpl : BaseSafeHandle, GDtlsServerConn
 
 public static class GDtlsServerConnectionHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Creates a new #GDtlsServerConnection wrapping @base_socket.
+/// </para>
+/// </summary>
+
+/// <param name="base_socket">
+/// the #GDatagramBased to wrap
+/// </param>
+/// <param name="certificate">
+/// the default server certificate, or %NULL
+/// </param>
+/// <return>
+/// the new
+///   #GDtlsServerConnection, or %NULL on error
+/// </return>
+
 	public static MentorLake.Gio.GDatagramBasedHandle New(MentorLake.Gio.GDatagramBasedHandle base_socket, MentorLake.Gio.GTlsCertificateHandle certificate)
 	{
 		var externCallResult = GDtlsServerConnectionHandleExterns.g_dtls_server_connection_new(base_socket, certificate, out var error);

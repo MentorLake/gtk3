@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkMonitorClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkMonitorClassExtensions
 internal class GdkMonitorClassExterns
 {
 }
+
 
 public struct GdkMonitorClass
 {

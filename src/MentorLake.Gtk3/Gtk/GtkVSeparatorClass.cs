@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkVSeparatorClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkVSeparatorClassExterns
 {
 }
 
+
 public struct GtkVSeparatorClass
 {
-	public GtkSeparatorClass parent_class;
+	
+public GtkSeparatorClass parent_class;
 }

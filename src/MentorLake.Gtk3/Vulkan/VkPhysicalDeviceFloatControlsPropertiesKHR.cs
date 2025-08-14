@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFloatControlsPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFloatControlsPropertiesKHRExtensions
 internal class VkPhysicalDeviceFloatControlsPropertiesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFloatControlsPropertiesKHR
 {

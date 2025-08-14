@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTlsInteractionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTlsInteractionPrivateExtensions
 internal class GTlsInteractionPrivateExterns
 {
 }
+
 
 public struct GTlsInteractionPrivate
 {

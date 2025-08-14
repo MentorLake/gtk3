@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkComboBoxTextPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkComboBoxTextPrivateExtensions
 internal class GtkComboBoxTextPrivateExterns
 {
 }
+
 
 public struct GtkComboBoxTextPrivate
 {

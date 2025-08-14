@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueueHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueueExtensions
 internal class VkQueueExterns
 {
 }
+
 
 public struct VkQueue
 {

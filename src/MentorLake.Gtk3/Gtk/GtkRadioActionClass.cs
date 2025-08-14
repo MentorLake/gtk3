@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioActionClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkRadioActionClassExterns
 {
 }
 
+
 public struct GtkRadioActionClass
 {
-	public GtkToggleActionClass parent_class;
-	public IntPtr changed;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkToggleActionClass parent_class;
+	
+public IntPtr changed;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

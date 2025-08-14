@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPanedAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkPanedAccessibleClassExterns
 {
 }
 
+
 public struct GtkPanedAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

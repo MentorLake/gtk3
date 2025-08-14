@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSampleCountFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSampleCountFlagBitsExtensions
 internal class VkSampleCountFlagBitsExterns
 {
 }
+
 
 public struct VkSampleCountFlagBits
 {

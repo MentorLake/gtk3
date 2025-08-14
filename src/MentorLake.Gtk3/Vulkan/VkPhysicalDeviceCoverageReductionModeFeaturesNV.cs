@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCoverageReductionModeFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCoverageReductionModeFeaturesNVExtensions
 internal class VkPhysicalDeviceCoverageReductionModeFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCoverageReductionModeFeaturesNV
 {

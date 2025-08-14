@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkHSVClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,21 @@ internal class GtkHSVClassExterns
 {
 }
 
+
 public struct GtkHSVClass
 {
-	public GtkWidgetClass parent_class;
-	public IntPtr changed;
-	public IntPtr move;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkWidgetClass parent_class;
+	
+public IntPtr changed;
+	
+public IntPtr move;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

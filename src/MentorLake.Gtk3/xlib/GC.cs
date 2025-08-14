@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public struct GC
 {
 	public IntPtr Value;

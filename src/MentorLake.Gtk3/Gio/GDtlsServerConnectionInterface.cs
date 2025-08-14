@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// vtable for a #GDtlsServerConnection implementation.
+/// </para>
+/// </summary>
+
 public class GDtlsServerConnectionInterfaceHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class GDtlsServerConnectionInterfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// vtable for a #GDtlsServerConnection implementation.
+/// </para>
+/// </summary>
+
 public struct GDtlsServerConnectionInterface
 {
-	public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// The parent interface.
+/// </para>
+/// </summary>
+
+public GTypeInterface g_iface;
 }

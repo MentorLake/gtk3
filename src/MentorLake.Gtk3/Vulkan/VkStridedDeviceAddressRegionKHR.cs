@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkStridedDeviceAddressRegionKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkStridedDeviceAddressRegionKHRExtensions
 internal class VkStridedDeviceAddressRegionKHRExterns
 {
 }
+
 
 public struct VkStridedDeviceAddressRegionKHR
 {

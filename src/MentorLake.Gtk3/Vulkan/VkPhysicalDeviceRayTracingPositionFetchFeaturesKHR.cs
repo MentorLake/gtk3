@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRayTracingPositionFetchFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRayTracingPositionFetchFeaturesKHRExtensions
 internal class VkPhysicalDeviceRayTracingPositionFetchFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR
 {

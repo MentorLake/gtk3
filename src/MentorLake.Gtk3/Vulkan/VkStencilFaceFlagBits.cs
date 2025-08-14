@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkStencilFaceFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkStencilFaceFlagBitsExtensions
 internal class VkStencilFaceFlagBitsExterns
 {
 }
+
 
 public struct VkStencilFaceFlagBits
 {

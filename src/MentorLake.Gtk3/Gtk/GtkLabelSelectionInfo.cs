@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLabelSelectionInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkLabelSelectionInfoExtensions
 internal class GtkLabelSelectionInfoExterns
 {
 }
+
 
 public struct GtkLabelSelectionInfo
 {

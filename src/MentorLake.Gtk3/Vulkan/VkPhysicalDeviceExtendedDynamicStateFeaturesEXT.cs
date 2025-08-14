@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExtendedDynamicStateFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExtendedDynamicStateFeaturesEXTExtensions
 internal class VkPhysicalDeviceExtendedDynamicStateFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExtendedDynamicStateFeaturesEXT
 {

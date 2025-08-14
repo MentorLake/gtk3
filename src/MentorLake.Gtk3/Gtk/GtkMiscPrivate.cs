@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkMiscPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkMiscPrivateExtensions
 internal class GtkMiscPrivateExterns
 {
 }
+
 
 public struct GtkMiscPrivate
 {

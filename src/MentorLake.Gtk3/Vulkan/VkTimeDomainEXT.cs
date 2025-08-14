@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTimeDomainEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTimeDomainEXTExtensions
 internal class VkTimeDomainEXTExterns
 {
 }
+
 
 public struct VkTimeDomainEXT
 {

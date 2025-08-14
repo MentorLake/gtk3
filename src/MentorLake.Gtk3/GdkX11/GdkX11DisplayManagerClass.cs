@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11DisplayManagerClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11DisplayManagerClassExtensions
 internal class GdkX11DisplayManagerClassExterns
 {
 }
+
 
 public struct GdkX11DisplayManagerClass
 {

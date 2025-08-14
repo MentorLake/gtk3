@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPadControllerClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkPadControllerClassExtensions
 internal class GtkPadControllerClassExterns
 {
 }
+
 
 public struct GtkPadControllerClass
 {

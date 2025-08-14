@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXTExtens
 internal class VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXTExterns
 {
 }
+
 
 public struct VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
 {

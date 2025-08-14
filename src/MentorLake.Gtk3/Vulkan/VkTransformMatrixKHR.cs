@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTransformMatrixKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTransformMatrixKHRExtensions
 internal class VkTransformMatrixKHRExterns
 {
 }
+
 
 public struct VkTransformMatrixKHR
 {

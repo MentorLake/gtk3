@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkStencilOpHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkStencilOpExtensions
 internal class VkStencilOpExterns
 {
 }
+
 
 public struct VkStencilOp
 {

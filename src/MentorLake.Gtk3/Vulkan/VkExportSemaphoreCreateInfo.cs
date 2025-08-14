@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExportSemaphoreCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExportSemaphoreCreateInfoExtensions
 internal class VkExportSemaphoreCreateInfoExterns
 {
 }
+
 
 public struct VkExportSemaphoreCreateInfo
 {

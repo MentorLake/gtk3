@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBool32Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBool32Extensions
 internal class VkBool32Externs
 {
 }
+
 
 public struct VkBool32
 {

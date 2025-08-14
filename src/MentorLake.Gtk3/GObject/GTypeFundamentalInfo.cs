@@ -1,5 +1,12 @@
 namespace MentorLake.GObject;
 
+/// <summary>
+/// <para>
+/// A structure that provides information to the type system which is
+/// used specifically for managing fundamental types.
+/// </para>
+/// </summary>
+
 public class GTypeFundamentalInfoHandle : BaseSafeHandle
 {
 }
@@ -14,7 +21,20 @@ internal class GTypeFundamentalInfoExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A structure that provides information to the type system which is
+/// used specifically for managing fundamental types.
+/// </para>
+/// </summary>
+
 public struct GTypeFundamentalInfo
 {
-	public GTypeFundamentalFlags type_flags;
+	/// <summary>
+/// <para>
+/// #GTypeFundamentalFlags describing the characteristics of the fundamental type
+/// </para>
+/// </summary>
+
+public GTypeFundamentalFlags type_flags;
 }

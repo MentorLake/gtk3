@@ -1,7 +1,12 @@
 namespace MentorLake.GdkPixbuf;
 
+
 public class GdkPixbufNonAnimHandle : GdkPixbufAnimationHandle
 {
+
+/// <param name="pixbuf">
+/// </param>
+
 	public static MentorLake.GdkPixbuf.GdkPixbufNonAnimHandle New(MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
 	{
 		return GdkPixbufNonAnimHandleExterns.gdk_pixbuf_non_anim_new(pixbuf);

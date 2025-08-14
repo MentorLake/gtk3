@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GCharsetConverterClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GCharsetConverterClassExterns
 {
 }
 
+
 public struct GCharsetConverterClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

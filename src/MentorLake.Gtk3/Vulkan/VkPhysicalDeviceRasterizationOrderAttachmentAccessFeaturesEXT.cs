@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEX
 internal class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
 {

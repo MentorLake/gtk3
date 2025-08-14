@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassMergeStatusEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassMergeStatusEXTExtensions
 internal class VkSubpassMergeStatusEXTExterns
 {
 }
+
 
 public struct VkSubpassMergeStatusEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAccelGroupEntryHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class GtkAccelGroupEntryExterns
 {
 }
 
+
 public struct GtkAccelGroupEntry
 {
-	public GtkAccelKey key;
-	public IntPtr closure;
-	public GQuark accel_path_quark;
+	
+public GtkAccelKey key;
+	
+public IntPtr closure;
+	
+public GQuark accel_path_quark;
 }

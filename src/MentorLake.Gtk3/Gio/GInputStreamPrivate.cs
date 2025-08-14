@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GInputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GInputStreamPrivateExtensions
 internal class GInputStreamPrivateExterns
 {
 }
+
 
 public struct GInputStreamPrivate
 {

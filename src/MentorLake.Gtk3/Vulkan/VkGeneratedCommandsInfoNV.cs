@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkGeneratedCommandsInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkGeneratedCommandsInfoNVExtensions
 internal class VkGeneratedCommandsInfoNVExterns
 {
 }
+
 
 public struct VkGeneratedCommandsInfoNV
 {

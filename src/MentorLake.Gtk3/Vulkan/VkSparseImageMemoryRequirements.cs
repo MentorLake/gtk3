@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSparseImageMemoryRequirementsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSparseImageMemoryRequirementsExtensions
 internal class VkSparseImageMemoryRequirementsExterns
 {
 }
+
 
 public struct VkSparseImageMemoryRequirements
 {

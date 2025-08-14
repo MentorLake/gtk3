@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkViewportHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkViewportExtensions
 internal class VkViewportExterns
 {
 }
+
 
 public struct VkViewport
 {

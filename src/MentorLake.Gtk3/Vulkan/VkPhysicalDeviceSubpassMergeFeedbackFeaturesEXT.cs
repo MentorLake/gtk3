@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXTExtensions
 internal class VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT
 {

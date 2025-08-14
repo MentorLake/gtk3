@@ -1,5 +1,6 @@
 namespace MentorLake.GLib;
 
+
 public class GTestLogMsgHandle : BaseSafeHandle
 {
 }
@@ -7,6 +8,15 @@ public class GTestLogMsgHandle : BaseSafeHandle
 
 public static class GTestLogMsgExtensions
 {
+/// <summary>
+/// <para>
+/// Internal function for gtester to free test log messages, no ABI guarantees provided.
+/// </para>
+/// </summary>
+
+/// <param name="tmsg">
+/// </param>
+
 	public static void Free(this MentorLake.GLib.GTestLogMsgHandle tmsg)
 	{
 		if (tmsg.IsInvalid) throw new Exception("Invalid handle (GTestLogMsg)");
@@ -23,11 +33,17 @@ internal class GTestLogMsgExterns
 
 }
 
+
 public struct GTestLogMsg
 {
-	public GTestLogType log_type;
-	public uint n_strings;
-	public string strings;
-	public uint n_nums;
-	public IntPtr nums;
+	
+public GTestLogType log_type;
+	
+public uint n_strings;
+	
+public string strings;
+	
+public uint n_nums;
+	
+public IntPtr nums;
 }

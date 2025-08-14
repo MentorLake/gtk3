@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSpinnerAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkSpinnerAccessibleClassExterns
 {
 }
 
+
 public struct GtkSpinnerAccessibleClass
 {
-	public GtkWidgetAccessibleClass parent_class;
+	
+public GtkWidgetAccessibleClass parent_class;
 }

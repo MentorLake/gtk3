@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class XImageHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class XImageExtensions
 internal class XImageExterns
 {
 }
+
 
 public struct XImage
 {

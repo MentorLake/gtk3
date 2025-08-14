@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassTransformBeginInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassTransformBeginInfoQCOMExtensions
 internal class VkRenderPassTransformBeginInfoQCOMExterns
 {
 }
+
 
 public struct VkRenderPassTransformBeginInfoQCOM
 {

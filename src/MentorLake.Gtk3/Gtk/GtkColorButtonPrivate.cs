@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkColorButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkColorButtonPrivateExtensions
 internal class GtkColorButtonPrivateExterns
 {
 }
+
 
 public struct GtkColorButtonPrivate
 {

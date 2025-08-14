@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMapMemoryPlacedFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMapMemoryPlacedFeaturesEXTExtensions
 internal class VkPhysicalDeviceMapMemoryPlacedFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMapMemoryPlacedFeaturesEXT
 {

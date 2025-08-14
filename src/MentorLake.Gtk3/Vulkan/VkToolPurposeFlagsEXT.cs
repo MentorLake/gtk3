@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkToolPurposeFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkToolPurposeFlagsEXTExtensions
 internal class VkToolPurposeFlagsEXTExterns
 {
 }
+
 
 public struct VkToolPurposeFlagsEXT
 {

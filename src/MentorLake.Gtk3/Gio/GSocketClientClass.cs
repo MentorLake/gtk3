@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSocketClientClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GSocketClientClassExterns
 {
 }
 
+
 public struct GSocketClientClass
 {
-	public GObjectClass parent_class;
-	public IntPtr @event;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
-	public IntPtr _g_reserved4;
+	
+public GObjectClass parent_class;
+	
+public IntPtr @event;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
+	
+public IntPtr _g_reserved4;
 }

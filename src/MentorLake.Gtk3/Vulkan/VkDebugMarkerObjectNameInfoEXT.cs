@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDebugMarkerObjectNameInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDebugMarkerObjectNameInfoEXTExtensions
 internal class VkDebugMarkerObjectNameInfoEXTExterns
 {
 }
+
 
 public struct VkDebugMarkerObjectNameInfoEXT
 {

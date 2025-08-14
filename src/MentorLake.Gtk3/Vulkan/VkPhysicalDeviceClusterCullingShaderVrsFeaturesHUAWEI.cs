@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEIHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEIExtensi
 internal class VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEIExterns
 {
 }
+
 
 public struct VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceBorderColorSwizzleFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceBorderColorSwizzleFeaturesEXTExtensions
 internal class VkPhysicalDeviceBorderColorSwizzleFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceBorderColorSwizzleFeaturesEXT
 {

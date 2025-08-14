@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpticalFlowImageFormatInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpticalFlowImageFormatInfoNVExtensions
 internal class VkOpticalFlowImageFormatInfoNVExterns
 {
 }
+
 
 public struct VkOpticalFlowImageFormatInfoNV
 {

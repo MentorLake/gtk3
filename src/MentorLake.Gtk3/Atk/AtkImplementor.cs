@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkImplementorHandle : BaseSafeHandle
 {
 }
@@ -7,6 +8,22 @@ public class AtkImplementorHandle : BaseSafeHandle
 
 public static class AtkImplementorExtensions
 {
+/// <summary>
+/// <para>
+/// Gets a reference to an object's #AtkObject implementation, if
+/// the object implements #AtkObjectIface
+/// </para>
+/// </summary>
+
+/// <param name="implementor">
+/// The #GObject instance which should implement #AtkImplementorIface
+/// if a non-null return value is required.
+/// </param>
+/// <return>
+/// a reference to an object's #AtkObject
+/// implementation
+/// </return>
+
 	public static MentorLake.Atk.AtkObjectHandle RefAccessible(this MentorLake.Atk.AtkImplementorHandle implementor)
 	{
 		if (implementor.IsInvalid) throw new Exception("Invalid handle (AtkImplementor)");
@@ -23,6 +40,7 @@ internal class AtkImplementorExterns
 	internal static extern MentorLake.Atk.AtkObjectHandle atk_implementor_ref_accessible([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkImplementorHandle>))] MentorLake.Atk.AtkImplementorHandle implementor);
 
 }
+
 
 public struct AtkImplementor
 {

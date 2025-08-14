@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfacePresentModeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfacePresentModeEXTExtensions
 internal class VkSurfacePresentModeEXTExterns
 {
 }
+
 
 public struct VkSurfacePresentModeEXT
 {

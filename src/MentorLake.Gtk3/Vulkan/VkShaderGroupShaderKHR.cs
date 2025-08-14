@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderGroupShaderKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderGroupShaderKHRExtensions
 internal class VkShaderGroupShaderKHRExterns
 {
 }
+
 
 public struct VkShaderGroupShaderKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineMultisampleStateCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineMultisampleStateCreateInfoExtensions
 internal class VkPipelineMultisampleStateCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineMultisampleStateCreateInfo
 {

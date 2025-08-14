@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GDebugControllerDBus.
+/// </para>
+/// </summary>
+
 public class GDebugControllerDBusClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,28 @@ internal class GDebugControllerDBusClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GDebugControllerDBus.
+/// </para>
+/// </summary>
+
 public struct GDebugControllerDBusClass
 {
-	public GObjectClass parent_class;
-	public IntPtr authorize;
-	public IntPtr padding;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// Default handler for the #GDebugControllerDBus::authorize signal.
+/// </para>
+/// </summary>
+
+public IntPtr authorize;
+	
+public IntPtr padding;
 }

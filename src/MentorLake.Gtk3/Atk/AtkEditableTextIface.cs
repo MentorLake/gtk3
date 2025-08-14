@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkEditableTextIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,23 @@ internal class AtkEditableTextIfaceExterns
 {
 }
 
+
 public struct AtkEditableTextIface
 {
-	public GTypeInterface parent_interface;
-	public IntPtr set_run_attributes;
-	public IntPtr set_text_contents;
-	public IntPtr insert_text;
-	public IntPtr copy_text;
-	public IntPtr cut_text;
-	public IntPtr delete_text;
-	public IntPtr paste_text;
+	
+public GTypeInterface parent_interface;
+	
+public IntPtr set_run_attributes;
+	
+public IntPtr set_text_contents;
+	
+public IntPtr insert_text;
+	
+public IntPtr copy_text;
+	
+public IntPtr cut_text;
+	
+public IntPtr delete_text;
+	
+public IntPtr paste_text;
 }

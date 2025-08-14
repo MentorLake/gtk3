@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GCancellablePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GCancellablePrivateExtensions
 internal class GCancellablePrivateExterns
 {
 }
+
 
 public struct GCancellablePrivate
 {

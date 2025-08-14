@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderClockFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderClockFeaturesKHRExtensions
 internal class VkPhysicalDeviceShaderClockFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderClockFeaturesKHR
 {

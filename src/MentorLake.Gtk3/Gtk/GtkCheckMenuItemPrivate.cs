@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCheckMenuItemPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCheckMenuItemPrivateExtensions
 internal class GtkCheckMenuItemPrivateExterns
 {
 }
+
 
 public struct GtkCheckMenuItemPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioButtonAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRadioButtonAccessiblePrivateExtensions
 internal class GtkRadioButtonAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkRadioButtonAccessiblePrivate
 {

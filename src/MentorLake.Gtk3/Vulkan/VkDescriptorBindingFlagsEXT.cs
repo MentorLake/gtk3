@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorBindingFlagsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorBindingFlagsEXTExtensions
 internal class VkDescriptorBindingFlagsEXTExterns
 {
 }
+
 
 public struct VkDescriptorBindingFlagsEXT
 {

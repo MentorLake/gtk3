@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkEventSequenceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkEventSequenceExtensions
 internal class GdkEventSequenceExterns
 {
 }
+
 
 public struct GdkEventSequence
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCommandBufferInheritanceInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCommandBufferInheritanceInfoExtensions
 internal class VkCommandBufferInheritanceInfoExterns
 {
 }
+
 
 public struct VkCommandBufferInheritanceInfo
 {

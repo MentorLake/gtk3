@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRenderPassStripedFeaturesARMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRenderPassStripedFeaturesARMExtensions
 internal class VkPhysicalDeviceRenderPassStripedFeaturesARMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRenderPassStripedFeaturesARM
 {

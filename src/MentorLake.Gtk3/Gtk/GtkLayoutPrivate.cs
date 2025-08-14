@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLayoutPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkLayoutPrivateExtensions
 internal class GtkLayoutPrivateExterns
 {
 }
+
 
 public struct GtkLayoutPrivate
 {

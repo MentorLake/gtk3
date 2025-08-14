@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkGestureZoomClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkGestureZoomClassExtensions
 internal class GtkGestureZoomClassExterns
 {
 }
+
 
 public struct GtkGestureZoomClass
 {

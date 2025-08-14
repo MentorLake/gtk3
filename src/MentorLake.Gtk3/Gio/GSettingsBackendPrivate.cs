@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSettingsBackendPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSettingsBackendPrivateExtensions
 internal class GSettingsBackendPrivateExterns
 {
 }
+
 
 public struct GSettingsBackendPrivate
 {

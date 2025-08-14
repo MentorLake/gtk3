@@ -1,5 +1,17 @@
 namespace MentorLake.cairo;
 
+/// <summary>
+/// <para>
+/// A #cairo_matrix_t holds an affine transformation, such as a scale,
+/// rotation, shear, or a combination of those. The transformation of
+/// a point (x, y) is given by:
+/// <programlisting>
+///     x_new = xx * x + xy * y + x0;
+///     y_new = yx * x + yy * y + y0;
+/// </programlisting>
+/// </para>
+/// </summary>
+
 public class cairo_matrix_tHandle : BaseSafeHandle
 {
 }
@@ -14,12 +26,60 @@ internal class cairo_matrix_tExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A #cairo_matrix_t holds an affine transformation, such as a scale,
+/// rotation, shear, or a combination of those. The transformation of
+/// a point (x, y) is given by:
+/// <programlisting>
+///     x_new = xx * x + xy * y + x0;
+///     y_new = yx * x + yy * y + y0;
+/// </programlisting>
+/// </para>
+/// </summary>
+
 public struct cairo_matrix_t
 {
-	public double xx;
-	public double yx;
-	public double xy;
-	public double yy;
-	public double x0;
-	public double y0;
+	/// <summary>
+/// <para>
+/// xx component of the affine transformation
+/// </para>
+/// </summary>
+
+public double xx;
+	/// <summary>
+/// <para>
+/// yx component of the affine transformation
+/// </para>
+/// </summary>
+
+public double yx;
+	/// <summary>
+/// <para>
+/// xy component of the affine transformation
+/// </para>
+/// </summary>
+
+public double xy;
+	/// <summary>
+/// <para>
+/// yy component of the affine transformation
+/// </para>
+/// </summary>
+
+public double yy;
+	/// <summary>
+/// <para>
+/// X translation component of the affine transformation
+/// </para>
+/// </summary>
+
+public double x0;
+	/// <summary>
+/// <para>
+/// Y translation component of the affine transformation
+/// </para>
+/// </summary>
+
+public double y0;
 }

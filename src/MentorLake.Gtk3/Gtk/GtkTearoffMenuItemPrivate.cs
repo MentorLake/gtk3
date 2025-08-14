@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTearoffMenuItemPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTearoffMenuItemPrivateExtensions
 internal class GtkTearoffMenuItemPrivateExterns
 {
 }
+
 
 public struct GtkTearoffMenuItemPrivate
 {

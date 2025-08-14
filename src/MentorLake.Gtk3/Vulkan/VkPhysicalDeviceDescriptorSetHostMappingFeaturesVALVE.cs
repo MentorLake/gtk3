@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVEHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVEExtensi
 internal class VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVEExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE
 {

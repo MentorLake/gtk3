@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalMemoryAcquireUnmodifiedEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalMemoryAcquireUnmodifiedEXTExtensions
 internal class VkExternalMemoryAcquireUnmodifiedEXTExterns
 {
 }
+
 
 public struct VkExternalMemoryAcquireUnmodifiedEXT
 {

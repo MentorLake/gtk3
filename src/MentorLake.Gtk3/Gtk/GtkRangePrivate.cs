@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRangePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRangePrivateExtensions
 internal class GtkRangePrivateExterns
 {
 }
+
 
 public struct GtkRangePrivate
 {

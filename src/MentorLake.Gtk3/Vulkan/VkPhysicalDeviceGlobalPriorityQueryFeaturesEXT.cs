@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceGlobalPriorityQueryFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceGlobalPriorityQueryFeaturesEXTExtensions
 internal class VkPhysicalDeviceGlobalPriorityQueryFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceGlobalPriorityQueryFeaturesEXT
 {

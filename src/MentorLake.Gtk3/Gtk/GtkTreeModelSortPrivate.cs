@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeModelSortPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkTreeModelSortPrivateExtensions
 internal class GtkTreeModelSortPrivateExterns
 {
 }
+
 
 public struct GtkTreeModelSortPrivate
 {

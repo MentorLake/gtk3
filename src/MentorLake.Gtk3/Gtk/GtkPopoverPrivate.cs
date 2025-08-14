@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPopoverPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkPopoverPrivateExtensions
 internal class GtkPopoverPrivateExterns
 {
 }
+
 
 public struct GtkPopoverPrivate
 {

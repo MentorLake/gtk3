@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkHostImageCopyFlagBitsEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkHostImageCopyFlagBitsEXTExtensions
 internal class VkHostImageCopyFlagBitsEXTExterns
 {
 }
+
 
 public struct VkHostImageCopyFlagBitsEXT
 {

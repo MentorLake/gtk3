@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCubicWeightsFeaturesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCubicWeightsFeaturesQCOMExtensions
 internal class VkPhysicalDeviceCubicWeightsFeaturesQCOMExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCubicWeightsFeaturesQCOM
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkWriteDescriptorSetInlineUniformBlockEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkWriteDescriptorSetInlineUniformBlockEXTExtensions
 internal class VkWriteDescriptorSetInlineUniformBlockEXTExterns
 {
 }
+
 
 public struct VkWriteDescriptorSetInlineUniformBlockEXT
 {

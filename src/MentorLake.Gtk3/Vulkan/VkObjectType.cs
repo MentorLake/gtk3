@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkObjectTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkObjectTypeExtensions
 internal class VkObjectTypeExterns
 {
 }
+
 
 public struct VkObjectType
 {

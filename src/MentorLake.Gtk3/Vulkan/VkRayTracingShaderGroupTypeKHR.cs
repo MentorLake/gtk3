@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRayTracingShaderGroupTypeKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRayTracingShaderGroupTypeKHRExtensions
 internal class VkRayTracingShaderGroupTypeKHRExterns
 {
 }
+
 
 public struct VkRayTracingShaderGroupTypeKHR
 {

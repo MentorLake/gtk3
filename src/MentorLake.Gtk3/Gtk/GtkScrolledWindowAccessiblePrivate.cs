@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkScrolledWindowAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkScrolledWindowAccessiblePrivateExtensions
 internal class GtkScrolledWindowAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkScrolledWindowAccessiblePrivate
 {

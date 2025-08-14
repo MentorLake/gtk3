@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCoarseSampleLocationNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCoarseSampleLocationNVExtensions
 internal class VkCoarseSampleLocationNVExterns
 {
 }
+
 
 public struct VkCoarseSampleLocationNV
 {

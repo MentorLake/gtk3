@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceLimitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceLimitsExtensions
 internal class VkPhysicalDeviceLimitsExterns
 {
 }
+
 
 public struct VkPhysicalDeviceLimits
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSimpleActionGroupClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSimpleActionGroupClassExtensions
 internal class GSimpleActionGroupClassExterns
 {
 }
+
 
 public struct GSimpleActionGroupClass
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXTExtensions
 internal class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT
 {

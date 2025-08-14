@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerExtensions
 internal class VkSamplerExterns
 {
 }
+
 
 public struct VkSampler
 {

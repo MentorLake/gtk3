@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFramePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkFramePrivateExtensions
 internal class GtkFramePrivateExterns
 {
 }
+
 
 public struct GtkFramePrivate
 {

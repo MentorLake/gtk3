@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetLayoutCreateFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetLayoutCreateFlagBitsExtensions
 internal class VkDescriptorSetLayoutCreateFlagBitsExterns
 {
 }
+
 
 public struct VkDescriptorSetLayoutCreateFlagBits
 {

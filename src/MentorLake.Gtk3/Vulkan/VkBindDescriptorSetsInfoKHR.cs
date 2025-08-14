@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindDescriptorSetsInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindDescriptorSetsInfoKHRExtensions
 internal class VkBindDescriptorSetsInfoKHRExterns
 {
 }
+
 
 public struct VkBindDescriptorSetsInfoKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkOverlayPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkOverlayPrivateExtensions
 internal class GtkOverlayPrivateExterns
 {
 }
+
 
 public struct GtkOverlayPrivate
 {

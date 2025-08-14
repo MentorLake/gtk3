@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMutableDescriptorTypeCreateInfoVALVEHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMutableDescriptorTypeCreateInfoVALVEExtensions
 internal class VkMutableDescriptorTypeCreateInfoVALVEExterns
 {
 }
+
 
 public struct VkMutableDescriptorTypeCreateInfoVALVE
 {

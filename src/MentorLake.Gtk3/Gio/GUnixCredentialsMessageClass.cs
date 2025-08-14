@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GUnixCredentialsMessage.
+/// </para>
+/// </summary>
+
 public class GUnixCredentialsMessageClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +20,18 @@ internal class GUnixCredentialsMessageClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GUnixCredentialsMessage.
+/// </para>
+/// </summary>
+
 public struct GUnixCredentialsMessageClass
 {
-	public GSocketControlMessageClass parent_class;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
+	
+public GSocketControlMessageClass parent_class;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
 }

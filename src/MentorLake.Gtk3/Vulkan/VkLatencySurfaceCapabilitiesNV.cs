@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkLatencySurfaceCapabilitiesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkLatencySurfaceCapabilitiesNVExtensions
 internal class VkLatencySurfaceCapabilitiesNVExterns
 {
 }
+
 
 public struct VkLatencySurfaceCapabilitiesNV
 {

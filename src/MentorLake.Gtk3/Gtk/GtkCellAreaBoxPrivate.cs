@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCellAreaBoxPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCellAreaBoxPrivateExtensions
 internal class GtkCellAreaBoxPrivateExterns
 {
 }
+
 
 public struct GtkCellAreaBoxPrivate
 {

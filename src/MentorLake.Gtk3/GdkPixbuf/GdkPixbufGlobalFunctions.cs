@@ -2,6 +2,8 @@ namespace MentorLake.GdkPixbuf;
 
 public class GdkPixbufGlobalFunctions
 {
+
+
 	public static MentorLake.GLib.GQuark PixbufErrorQuark()
 	{
 		return GdkPixbufGlobalFunctionsExterns.gdk_pixbuf_error_quark();

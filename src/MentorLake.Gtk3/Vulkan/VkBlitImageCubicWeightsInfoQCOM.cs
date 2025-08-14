@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlitImageCubicWeightsInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlitImageCubicWeightsInfoQCOMExtensions
 internal class VkBlitImageCubicWeightsInfoQCOMExterns
 {
 }
+
 
 public struct VkBlitImageCubicWeightsInfoQCOM
 {

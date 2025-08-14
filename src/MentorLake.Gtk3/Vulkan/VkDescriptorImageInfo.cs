@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorImageInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorImageInfoExtensions
 internal class VkDescriptorImageInfoExterns
 {
 }
+
 
 public struct VkDescriptorImageInfo
 {

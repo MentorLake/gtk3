@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExtent3DHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExtent3DExtensions
 internal class VkExtent3DExterns
 {
 }
+
 
 public struct VkExtent3D
 {

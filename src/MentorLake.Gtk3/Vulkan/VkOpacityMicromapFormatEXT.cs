@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpacityMicromapFormatEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpacityMicromapFormatEXTExtensions
 internal class VkOpacityMicromapFormatEXTExterns
 {
 }
+
 
 public struct VkOpacityMicromapFormatEXT
 {

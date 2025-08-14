@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GInetAddressMaskClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GInetAddressMaskClassExterns
 {
 }
 
+
 public struct GInetAddressMaskClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

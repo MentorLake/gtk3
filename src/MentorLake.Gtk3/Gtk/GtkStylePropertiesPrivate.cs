@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStylePropertiesPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkStylePropertiesPrivateExtensions
 internal class GtkStylePropertiesPrivateExterns
 {
 }
+
 
 public struct GtkStylePropertiesPrivate
 {

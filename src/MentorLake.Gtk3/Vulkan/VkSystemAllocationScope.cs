@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSystemAllocationScopeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSystemAllocationScopeExtensions
 internal class VkSystemAllocationScopeExterns
 {
 }
+
 
 public struct VkSystemAllocationScope
 {

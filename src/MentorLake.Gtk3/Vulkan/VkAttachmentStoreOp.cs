@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAttachmentStoreOpHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAttachmentStoreOpExtensions
 internal class VkAttachmentStoreOpExterns
 {
 }
+
 
 public struct VkAttachmentStoreOp
 {

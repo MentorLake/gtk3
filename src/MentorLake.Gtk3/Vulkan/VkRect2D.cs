@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRect2DHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRect2DExtensions
 internal class VkRect2DExterns
 {
 }
+
 
 public struct VkRect2D
 {

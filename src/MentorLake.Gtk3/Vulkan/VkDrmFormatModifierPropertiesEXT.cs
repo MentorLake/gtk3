@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDrmFormatModifierPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDrmFormatModifierPropertiesEXTExtensions
 internal class VkDrmFormatModifierPropertiesEXTExterns
 {
 }
+
 
 public struct VkDrmFormatModifierPropertiesEXT
 {

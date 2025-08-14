@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAccelLabelPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkAccelLabelPrivateExtensions
 internal class GtkAccelLabelPrivateExterns
 {
 }
+
 
 public struct GtkAccelLabelPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFlowBoxAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkFlowBoxAccessibleClassExterns
 {
 }
 
+
 public struct GtkFlowBoxAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXTExtensions
 internal class VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT
 {

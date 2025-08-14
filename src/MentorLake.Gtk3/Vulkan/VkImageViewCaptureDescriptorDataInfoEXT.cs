@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewCaptureDescriptorDataInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewCaptureDescriptorDataInfoEXTExtensions
 internal class VkImageViewCaptureDescriptorDataInfoEXTExterns
 {
 }
+
 
 public struct VkImageViewCaptureDescriptorDataInfoEXT
 {

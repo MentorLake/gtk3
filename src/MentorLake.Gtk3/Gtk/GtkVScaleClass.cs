@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkVScaleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkVScaleClassExterns
 {
 }
 
+
 public struct GtkVScaleClass
 {
-	public GtkScaleClass parent_class;
+	
+public GtkScaleClass parent_class;
 }

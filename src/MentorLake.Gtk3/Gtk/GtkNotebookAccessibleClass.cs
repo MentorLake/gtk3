@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkNotebookAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkNotebookAccessibleClassExterns
 {
 }
 
+
 public struct GtkNotebookAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

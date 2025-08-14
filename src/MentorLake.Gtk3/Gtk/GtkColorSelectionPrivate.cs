@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkColorSelectionPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkColorSelectionPrivateExtensions
 internal class GtkColorSelectionPrivateExterns
 {
 }
+
 
 public struct GtkColorSelectionPrivate
 {

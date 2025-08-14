@@ -1,7 +1,10 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkContainerCellAccessibleHandle : GtkCellAccessibleHandle, AtkActionHandle, AtkComponentHandle, AtkTableCellHandle
 {
+
+
 	public static MentorLake.Gtk.GtkContainerCellAccessibleHandle New()
 	{
 		return GtkContainerCellAccessibleHandleExterns.gtk_container_cell_accessible_new();
@@ -10,6 +13,12 @@ public class GtkContainerCellAccessibleHandle : GtkCellAccessibleHandle, AtkActi
 }
 public static class GtkContainerCellAccessibleHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkContainerCellAccessibleHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this GtkContainerCellAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,14 +55,37 @@ public static class GtkContainerCellAccessibleHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 }
 
 public static class GtkContainerCellAccessibleHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);
@@ -63,6 +95,12 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class GtkContainerCellAccessibleHandleExtensions
 {
+
+/// <param name="container">
+/// </param>
+/// <param name="child">
+/// </param>
+
 	public static T AddChild<T>(this T container, MentorLake.Gtk.GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{
 		if (container.IsInvalid) throw new Exception("Invalid handle (GtkContainerCellAccessibleHandle)");
@@ -70,11 +108,27 @@ public static class GtkContainerCellAccessibleHandleExtensions
 		return container;
 	}
 
+/// <summary>
+/// <para>
+/// Get a list of children.
+/// </para>
+/// </summary>
+
+/// <param name="container">
+/// the container
+/// </param>
+
 	public static MentorLake.GLib.GListHandle GetChildren(this MentorLake.Gtk.GtkContainerCellAccessibleHandle container)
 	{
 		if (container.IsInvalid) throw new Exception("Invalid handle (GtkContainerCellAccessibleHandle)");
 		return GtkContainerCellAccessibleHandleExterns.gtk_container_cell_accessible_get_children(container);
 	}
+
+
+/// <param name="container">
+/// </param>
+/// <param name="child">
+/// </param>
 
 	public static T RemoveChild<T>(this T container, MentorLake.Gtk.GtkCellAccessibleHandle child) where T : GtkContainerCellAccessibleHandle
 	{

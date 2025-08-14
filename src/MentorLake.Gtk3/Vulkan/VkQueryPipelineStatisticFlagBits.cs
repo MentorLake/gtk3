@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryPipelineStatisticFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryPipelineStatisticFlagBitsExtensions
 internal class VkQueryPipelineStatisticFlagBitsExterns
 {
 }
+
 
 public struct VkQueryPipelineStatisticFlagBits
 {

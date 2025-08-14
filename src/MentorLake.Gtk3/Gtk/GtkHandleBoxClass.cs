@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkHandleBoxClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,38 @@ internal class GtkHandleBoxClassExterns
 {
 }
 
+
 public struct GtkHandleBoxClass
 {
-	public GtkBinClass parent_class;
-	public IntPtr child_attached;
-	public IntPtr child_detached;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBinClass parent_class;
+	/// <summary>
+/// <para>
+/// Signal emitted when the contents of the handlebox
+///    are reattached to the main window. Deprecated: 3.4.
+/// </para>
+/// </summary>
+
+public IntPtr child_attached;
+	/// <summary>
+/// <para>
+/// Signal emitted when the contents of the handlebox
+///    are detached from the main window. Deprecated: 3.4.
+/// </para>
+/// </summary>
+
+public IntPtr child_detached;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

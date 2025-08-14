@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceLinearColorAttachmentFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceLinearColorAttachmentFeaturesNVExtensions
 internal class VkPhysicalDeviceLinearColorAttachmentFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceLinearColorAttachmentFeaturesNV
 {

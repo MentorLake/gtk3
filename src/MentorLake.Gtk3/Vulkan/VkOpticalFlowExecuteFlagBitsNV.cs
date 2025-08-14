@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpticalFlowExecuteFlagBitsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpticalFlowExecuteFlagBitsNVExtensions
 internal class VkOpticalFlowExecuteFlagBitsNVExterns
 {
 }
+
 
 public struct VkOpticalFlowExecuteFlagBitsNV
 {

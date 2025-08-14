@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineFragmentShadingRateEnumStateCreateInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineFragmentShadingRateEnumStateCreateInfoNVExtensions
 internal class VkPipelineFragmentShadingRateEnumStateCreateInfoNVExterns
 {
 }
+
 
 public struct VkPipelineFragmentShadingRateEnumStateCreateInfoNV
 {

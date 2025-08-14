@@ -1,5 +1,13 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// A GtkBindingSignal stores the necessary information to
+/// activate a widget in response to a key press via a signal
+/// emission.
+/// </para>
+/// </summary>
+
 public class GtkBindingSignalHandle : BaseSafeHandle
 {
 }
@@ -14,10 +22,42 @@ internal class GtkBindingSignalExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// A GtkBindingSignal stores the necessary information to
+/// activate a widget in response to a key press via a signal
+/// emission.
+/// </para>
+/// </summary>
+
 public struct GtkBindingSignal
 {
-	public IntPtr next;
-	public string signal_name;
-	public uint n_args;
-	[MarshalAs(UnmanagedType.ByValArray)] public GtkBindingArg[] args;
+	/// <summary>
+/// <para>
+/// implementation detail
+/// </para>
+/// </summary>
+
+public IntPtr next;
+	/// <summary>
+/// <para>
+/// the action signal to be emitted
+/// </para>
+/// </summary>
+
+public string signal_name;
+	/// <summary>
+/// <para>
+/// number of arguments specified for the signal
+/// </para>
+/// </summary>
+
+public uint n_args;
+	/// <summary>
+/// <para>
+/// the arguments specified for the signal
+/// </para>
+/// </summary>
+
+[MarshalAs(UnmanagedType.ByValArray)] public GtkBindingArg[] args;
 }

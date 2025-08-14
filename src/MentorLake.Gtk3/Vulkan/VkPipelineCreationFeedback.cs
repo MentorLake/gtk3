@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineCreationFeedbackHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineCreationFeedbackExtensions
 internal class VkPipelineCreationFeedbackExterns
 {
 }
+
 
 public struct VkPipelineCreationFeedback
 {

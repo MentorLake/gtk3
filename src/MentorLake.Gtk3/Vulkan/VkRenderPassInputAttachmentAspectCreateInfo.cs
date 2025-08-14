@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassInputAttachmentAspectCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassInputAttachmentAspectCreateInfoExtensions
 internal class VkRenderPassInputAttachmentAspectCreateInfoExterns
 {
 }
+
 
 public struct VkRenderPassInputAttachmentAspectCreateInfo
 {

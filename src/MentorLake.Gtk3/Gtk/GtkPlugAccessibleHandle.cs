@@ -1,10 +1,17 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPlugAccessibleHandle : GtkWindowAccessibleHandle, AtkComponentHandle, AtkWindowHandle
 {
 }
 public static class GtkPlugAccessibleHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -34,6 +41,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::activate is emitted when a window
+/// becomes the active window of the application or session.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.ActivateSignal> Signal_Activate(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -63,6 +76,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::create is emitted when a new window
+/// is created.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.CreateSignal> Signal_Create(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -92,6 +111,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::deactivate is emitted when a window is
+/// no longer the active window of the application or session.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.DeactivateSignal> Signal_Deactivate(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -121,6 +146,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::destroy is emitted when a window is
+/// destroyed.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.DestroySignal> Signal_Destroy(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -150,6 +181,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::maximize is emitted when a window
+/// is maximized.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.MaximizeSignal> Signal_Maximize(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -179,6 +216,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::minimize is emitted when a window
+/// is minimized.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.MinimizeSignal> Signal_Minimize(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -208,6 +251,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::move is emitted when a window
+/// is moved.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.MoveSignal> Signal_Move(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -237,6 +286,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::resize is emitted when a window
+/// is resized.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.ResizeSignal> Signal_Resize(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -266,6 +321,12 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 			});
 		});
 	}
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::restore is emitted when a window
+/// is restored.
+/// </para>
+/// </summary>
 
 	public static IObservable<GtkPlugAccessibleHandleSignalStructs.RestoreSignal> Signal_Restore(this GtkPlugAccessibleHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -302,62 +363,88 @@ public static class GtkPlugAccessibleHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 
 public class ActivateSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class CreateSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class DeactivateSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class DestroySignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class MaximizeSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class MinimizeSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class MoveSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class ResizeSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 
 public class RestoreSignal
 {
+
 	public MentorLake.Atk.AtkWindowHandle Self;
+
 	public IntPtr UserData;
 }
 }
@@ -365,41 +452,164 @@ public class RestoreSignal
 public static class GtkPlugAccessibleHandleSignalDelegates
 {
 
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::activate is emitted when a window
+/// becomes the active window of the application or session.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void activate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::create is emitted when a new window
+/// is created.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void create([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::deactivate is emitted when a window is
+/// no longer the active window of the application or session.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void deactivate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::destroy is emitted when a window is
+/// destroyed.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void destroy([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::maximize is emitted when a window
+/// is maximized.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void maximize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::minimize is emitted when a window
+/// is minimized.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void minimize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::move is emitted when a window
+/// is moved.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void move([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
 
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::resize is emitted when a window
+/// is resized.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void resize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
 
+
+/// <summary>
+/// <para>
+/// The signal #AtkWindow::restore is emitted when a window
+/// is restored.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void restore([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkWindowHandleImpl>))] MentorLake.Atk.AtkWindowHandle self, IntPtr user_data);
@@ -409,6 +619,10 @@ public delegate void restore([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 public static class GtkPlugAccessibleHandleExtensions
 {
+
+/// <param name="plug">
+/// </param>
+
 	public static string GetId(this MentorLake.Gtk.GtkPlugAccessibleHandle plug)
 	{
 		if (plug.IsInvalid) throw new Exception("Invalid handle (GtkPlugAccessibleHandle)");

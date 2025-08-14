@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFilterCubicImageViewImageFormatPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFilterCubicImageViewImageFormatPropertiesEXTExtensions
 internal class VkFilterCubicImageViewImageFormatPropertiesEXTExterns
 {
 }
+
 
 public struct VkFilterCubicImageViewImageFormatPropertiesEXT
 {

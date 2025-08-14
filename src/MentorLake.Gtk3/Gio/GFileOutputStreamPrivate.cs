@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileOutputStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GFileOutputStreamPrivateExtensions
 internal class GFileOutputStreamPrivateExterns
 {
 }
+
 
 public struct GFileOutputStreamPrivate
 {

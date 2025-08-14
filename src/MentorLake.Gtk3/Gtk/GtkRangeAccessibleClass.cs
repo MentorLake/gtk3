@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRangeAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkRangeAccessibleClassExterns
 {
 }
 
+
 public struct GtkRangeAccessibleClass
 {
-	public GtkWidgetAccessibleClass parent_class;
+	
+public GtkWidgetAccessibleClass parent_class;
 }

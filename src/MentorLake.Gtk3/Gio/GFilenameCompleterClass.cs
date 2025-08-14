@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFilenameCompleterClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GFilenameCompleterClassExterns
 {
 }
 
+
 public struct GFilenameCompleterClass
 {
-	public GObjectClass parent_class;
-	public IntPtr got_completion_data;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
+	
+public GObjectClass parent_class;
+	
+public IntPtr got_completion_data;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
 }

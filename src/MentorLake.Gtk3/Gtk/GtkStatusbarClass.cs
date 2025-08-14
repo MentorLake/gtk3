@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStatusbarClassHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,23 @@ internal class GtkStatusbarClassExterns
 {
 }
 
+
 public struct GtkStatusbarClass
 {
-	public GtkBoxClass parent_class;
-	public IntPtr reserved;
-	public IntPtr text_pushed;
-	public IntPtr text_popped;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkBoxClass parent_class;
+	
+public IntPtr reserved;
+	
+public IntPtr text_pushed;
+	
+public IntPtr text_popped;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

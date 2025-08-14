@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewTypeExtensions
 internal class VkImageViewTypeExterns
 {
 }
+
 
 public struct VkImageViewType
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLsizeiHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLsizeiExtensions
 internal class GLsizeiExterns
 {
 }
+
 
 public struct GLsizei
 {

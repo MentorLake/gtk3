@@ -1,5 +1,6 @@
 namespace MentorLake.Pango;
 
+
 public class PangoContextClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class PangoContextClassExtensions
 internal class PangoContextClassExterns
 {
 }
+
 
 public struct PangoContextClass
 {

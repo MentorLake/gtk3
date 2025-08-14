@@ -1,5 +1,11 @@
 namespace MentorLake.Gdk;
 
+/// <summary>
+/// <para>
+/// Defines the x and y coordinates of a point.
+/// </para>
+/// </summary>
+
 public class GdkPointHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class GdkPointExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Defines the x and y coordinates of a point.
+/// </para>
+/// </summary>
+
 public struct GdkPoint
 {
-	public int x;
-	public int y;
+	/// <summary>
+/// <para>
+/// the x coordinate of the point.
+/// </para>
+/// </summary>
+
+public int x;
+	/// <summary>
+/// <para>
+/// the y coordinate of the point.
+/// </para>
+/// </summary>
+
+public int y;
 }

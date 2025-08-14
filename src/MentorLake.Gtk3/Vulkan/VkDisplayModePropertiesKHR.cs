@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDisplayModePropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDisplayModePropertiesKHRExtensions
 internal class VkDisplayModePropertiesKHRExterns
 {
 }
+
 
 public struct VkDisplayModePropertiesKHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSubpassShadingFeaturesHUAWEIHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSubpassShadingFeaturesHUAWEIExtensions
 internal class VkPhysicalDeviceSubpassShadingFeaturesHUAWEIExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSubpassShadingFeaturesHUAWEI
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAccelerationStructureInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAccelerationStructureInfoNVExtensions
 internal class VkAccelerationStructureInfoNVExterns
 {
 }
+
 
 public struct VkAccelerationStructureInfoNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRendererCellAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkRendererCellAccessibleClassExterns
 {
 }
 
+
 public struct GtkRendererCellAccessibleClass
 {
-	public GtkCellAccessibleClass parent_class;
+	
+public GtkCellAccessibleClass parent_class;
 }

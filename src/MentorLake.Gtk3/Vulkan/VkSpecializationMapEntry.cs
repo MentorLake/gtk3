@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSpecializationMapEntryHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSpecializationMapEntryExtensions
 internal class VkSpecializationMapEntryExterns
 {
 }
+
 
 public struct VkSpecializationMapEntry
 {

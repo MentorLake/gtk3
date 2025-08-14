@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkShaderCorePropertiesFlagsAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkShaderCorePropertiesFlagsAMDExtensions
 internal class VkShaderCorePropertiesFlagsAMDExterns
 {
 }
+
 
 public struct VkShaderCorePropertiesFlagsAMD
 {

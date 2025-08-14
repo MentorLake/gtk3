@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassStripeBeginInfoARMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassStripeBeginInfoARMExtensions
 internal class VkRenderPassStripeBeginInfoARMExterns
 {
 }
+
 
 public struct VkRenderPassStripeBeginInfoARM
 {

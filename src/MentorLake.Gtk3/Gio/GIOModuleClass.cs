@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GIOModuleClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GIOModuleClassExtensions
 internal class GIOModuleClassExterns
 {
 }
+
 
 public struct GIOModuleClass
 {

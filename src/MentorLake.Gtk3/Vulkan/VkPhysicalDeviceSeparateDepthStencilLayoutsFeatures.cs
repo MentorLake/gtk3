@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesExtension
 internal class VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures
 {

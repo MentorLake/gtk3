@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubpassResolvePerformanceQueryEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubpassResolvePerformanceQueryEXTExtensions
 internal class VkSubpassResolvePerformanceQueryEXTExterns
 {
 }
+
 
 public struct VkSubpassResolvePerformanceQueryEXT
 {

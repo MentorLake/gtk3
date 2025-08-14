@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlendOverlapEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlendOverlapEXTExtensions
 internal class VkBlendOverlapEXTExterns
 {
 }
+
 
 public struct VkBlendOverlapEXT
 {

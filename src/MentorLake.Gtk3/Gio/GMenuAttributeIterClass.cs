@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GMenuAttributeIterClassHandle : BaseSafeHandle
 {
 }
@@ -14,8 +15,11 @@ internal class GMenuAttributeIterClassExterns
 {
 }
 
+
 public struct GMenuAttributeIterClass
 {
-	public GObjectClass parent_class;
-	public IntPtr get_next;
+	
+public GObjectClass parent_class;
+	
+public IntPtr get_next;
 }

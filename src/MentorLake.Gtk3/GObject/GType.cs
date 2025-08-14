@@ -1,5 +1,12 @@
 namespace MentorLake.GObject;
 
+/// <summary>
+/// <para>
+/// A numerical value which represents the unique identifier of a registered
+/// type.
+/// </para>
+/// </summary>
+
 public struct GType
 {
 	public UIntPtr Value;

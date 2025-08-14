@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkNotebookPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkNotebookPrivateExtensions
 internal class GtkNotebookPrivateExterns
 {
 }
+
 
 public struct GtkNotebookPrivate
 {

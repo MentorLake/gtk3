@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPopoverMenuClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkPopoverMenuClassExterns
 {
 }
 
+
 public struct GtkPopoverMenuClass
 {
-	public GtkPopoverClass parent_class;
+	
+public GtkPopoverClass parent_class;
 }

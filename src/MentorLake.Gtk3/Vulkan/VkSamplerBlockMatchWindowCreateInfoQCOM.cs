@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerBlockMatchWindowCreateInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerBlockMatchWindowCreateInfoQCOMExtensions
 internal class VkSamplerBlockMatchWindowCreateInfoQCOMExterns
 {
 }
+
 
 public struct VkSamplerBlockMatchWindowCreateInfoQCOM
 {

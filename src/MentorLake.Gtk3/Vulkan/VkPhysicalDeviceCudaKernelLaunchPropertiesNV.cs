@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCudaKernelLaunchPropertiesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCudaKernelLaunchPropertiesNVExtensions
 internal class VkPhysicalDeviceCudaKernelLaunchPropertiesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCudaKernelLaunchPropertiesNV
 {

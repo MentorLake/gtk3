@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPanedPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkPanedPrivateExtensions
 internal class GtkPanedPrivateExterns
 {
 }
+
 
 public struct GtkPanedPrivate
 {

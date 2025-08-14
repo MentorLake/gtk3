@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBlendFactorHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBlendFactorExtensions
 internal class VkBlendFactorExterns
 {
 }
+
 
 public struct VkBlendFactor
 {

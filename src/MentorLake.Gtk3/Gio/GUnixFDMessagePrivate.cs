@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixFDMessagePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GUnixFDMessagePrivateExtensions
 internal class GUnixFDMessagePrivateExterns
 {
 }
+
 
 public struct GUnixFDMessagePrivate
 {

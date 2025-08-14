@@ -1,5 +1,11 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// Class structure for #_GtkMountOperationHandlerSkeleton.
+/// </para>
+/// </summary>
+
 public class _GtkMountOperationHandlerSkeletonClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class _GtkMountOperationHandlerSkeletonClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #_GtkMountOperationHandlerSkeleton.
+/// </para>
+/// </summary>
+
 public struct _GtkMountOperationHandlerSkeletonClass
 {
-	public GDBusInterfaceSkeletonClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GDBusInterfaceSkeletonClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioButtonAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkRadioButtonAccessibleClassExterns
 {
 }
 
+
 public struct GtkRadioButtonAccessibleClass
 {
-	public GtkToggleButtonAccessibleClass parent_class;
+	
+public GtkToggleButtonAccessibleClass parent_class;
 }

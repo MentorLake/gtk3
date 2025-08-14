@@ -1,11 +1,52 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// `GEmblem` is an implementation of [iface@Gio.Icon] that supports
+/// having an emblem, which is an icon with additional properties.
+/// It can than be added to a [class@Gio.EmblemedIcon].
+/// </para>
+/// <para>
+/// Currently, only metainformation about the emblem's origin is
+/// supported. More may be added in the future.
+/// </para>
+/// </summary>
+
 public class GEmblemHandle : GObjectHandle, GIconHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new emblem for @icon.
+/// </para>
+/// </summary>
+
+/// <param name="icon">
+/// a GIcon containing the icon.
+/// </param>
+/// <return>
+/// a new #GEmblem.
+/// </return>
+
 	public static MentorLake.Gio.GEmblemHandle New(MentorLake.Gio.GIconHandle icon)
 	{
 		return GEmblemHandleExterns.g_emblem_new(icon);
 	}
+
+/// <summary>
+/// <para>
+/// Creates a new emblem for @icon.
+/// </para>
+/// </summary>
+
+/// <param name="icon">
+/// a GIcon containing the icon.
+/// </param>
+/// <param name="origin">
+/// a GEmblemOrigin enum defining the emblem's origin
+/// </param>
+/// <return>
+/// a new #GEmblem.
+/// </return>
 
 	public static MentorLake.Gio.GEmblemHandle NewWithOrigin(MentorLake.Gio.GIconHandle icon, MentorLake.Gio.GEmblemOrigin origin)
 	{
@@ -16,11 +57,38 @@ public class GEmblemHandle : GObjectHandle, GIconHandle
 
 public static class GEmblemHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Gives back the icon from @emblem.
+/// </para>
+/// </summary>
+
+/// <param name="emblem">
+/// a #GEmblem from which the icon should be extracted.
+/// </param>
+/// <return>
+/// a #GIcon. The returned object belongs to
+///          the emblem and should not be modified or freed.
+/// </return>
+
 	public static MentorLake.Gio.GIconHandle GetIcon(this MentorLake.Gio.GEmblemHandle emblem)
 	{
 		if (emblem.IsInvalid) throw new Exception("Invalid handle (GEmblemHandle)");
 		return GEmblemHandleExterns.g_emblem_get_icon(emblem);
 	}
+
+/// <summary>
+/// <para>
+/// Gets the origin of the emblem.
+/// </para>
+/// </summary>
+
+/// <param name="emblem">
+/// a #GEmblem
+/// </param>
+/// <return>
+/// the origin of the emblem
+/// </return>
 
 	public static MentorLake.Gio.GEmblemOrigin GetOrigin(this MentorLake.Gio.GEmblemHandle emblem)
 	{

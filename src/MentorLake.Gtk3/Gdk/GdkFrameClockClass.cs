@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkFrameClockClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkFrameClockClassExtensions
 internal class GdkFrameClockClassExterns
 {
 }
+
 
 public struct GdkFrameClockClass
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkHPanedClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkHPanedClassExterns
 {
 }
 
+
 public struct GtkHPanedClass
 {
-	public GtkPanedClass parent_class;
+	
+public GtkPanedClass parent_class;
 }

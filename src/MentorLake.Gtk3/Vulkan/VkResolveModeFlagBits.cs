@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkResolveModeFlagBitsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkResolveModeFlagBitsExtensions
 internal class VkResolveModeFlagBitsExterns
 {
 }
+
 
 public struct VkResolveModeFlagBits
 {

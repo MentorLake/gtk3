@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSampleCountFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSampleCountFlagsExtensions
 internal class VkSampleCountFlagsExterns
 {
 }
+
 
 public struct VkSampleCountFlags
 {

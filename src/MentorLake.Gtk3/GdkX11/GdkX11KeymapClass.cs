@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11KeymapClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11KeymapClassExtensions
 internal class GdkX11KeymapClassExterns
 {
 }
+
 
 public struct GdkX11KeymapClass
 {

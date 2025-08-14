@@ -1,7 +1,12 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11MonitorHandle : GdkMonitorHandle
 {
+
+/// <param name="monitor">
+/// </param>
+
 	public static ulong GetOutput(MentorLake.Gdk.GdkMonitorHandle monitor)
 	{
 		return GdkX11MonitorHandleExterns.gdk_x11_monitor_get_output(monitor);

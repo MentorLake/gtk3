@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkValidationCacheHeaderVersionEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkValidationCacheHeaderVersionEXTExtensions
 internal class VkValidationCacheHeaderVersionEXTExterns
 {
 }
+
 
 public struct VkValidationCacheHeaderVersionEXT
 {

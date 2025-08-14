@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceCoherentMemoryFeaturesAMDHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceCoherentMemoryFeaturesAMDExtensions
 internal class VkPhysicalDeviceCoherentMemoryFeaturesAMDExterns
 {
 }
+
 
 public struct VkPhysicalDeviceCoherentMemoryFeaturesAMD
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLsizeiptrHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLsizeiptrExtensions
 internal class GLsizeiptrExterns
 {
 }
+
 
 public struct GLsizeiptr
 {

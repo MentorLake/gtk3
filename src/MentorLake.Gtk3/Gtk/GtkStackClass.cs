@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStackClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkStackClassExterns
 {
 }
 
+
 public struct GtkStackClass
 {
-	public GtkContainerClass parent_class;
+	
+public GtkContainerClass parent_class;
 }

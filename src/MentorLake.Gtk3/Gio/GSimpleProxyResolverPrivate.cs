@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSimpleProxyResolverPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSimpleProxyResolverPrivateExtensions
 internal class GSimpleProxyResolverPrivateExterns
 {
 }
+
 
 public struct GSimpleProxyResolverPrivate
 {

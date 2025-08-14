@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceOpticalFlowPropertiesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceOpticalFlowPropertiesNVExtensions
 internal class VkPhysicalDeviceOpticalFlowPropertiesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceOpticalFlowPropertiesNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCommandBufferAllocateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCommandBufferAllocateInfoExtensions
 internal class VkCommandBufferAllocateInfoExterns
 {
 }
+
 
 public struct VkCommandBufferAllocateInfo
 {

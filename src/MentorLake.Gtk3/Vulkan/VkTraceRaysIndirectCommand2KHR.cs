@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTraceRaysIndirectCommand2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTraceRaysIndirectCommand2KHRExtensions
 internal class VkTraceRaysIndirectCommand2KHRExterns
 {
 }
+
 
 public struct VkTraceRaysIndirectCommand2KHR
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceSparseImageFormatInfo2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceSparseImageFormatInfo2KHRExtensions
 internal class VkPhysicalDeviceSparseImageFormatInfo2KHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceSparseImageFormatInfo2KHR
 {

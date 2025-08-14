@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDescriptorIndexingPropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDescriptorIndexingPropertiesEXTExtensions
 internal class VkPhysicalDeviceDescriptorIndexingPropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDescriptorIndexingPropertiesEXT
 {

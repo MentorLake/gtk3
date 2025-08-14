@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImagelessFramebufferFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImagelessFramebufferFeaturesKHRExtensions
 internal class VkPhysicalDeviceImagelessFramebufferFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImagelessFramebufferFeaturesKHR
 {

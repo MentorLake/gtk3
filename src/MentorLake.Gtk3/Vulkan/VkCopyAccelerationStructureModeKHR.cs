@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCopyAccelerationStructureModeKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCopyAccelerationStructureModeKHRExtensions
 internal class VkCopyAccelerationStructureModeKHRExterns
 {
 }
+
 
 public struct VkCopyAccelerationStructureModeKHR
 {

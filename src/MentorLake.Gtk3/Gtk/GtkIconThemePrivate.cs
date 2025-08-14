@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkIconThemePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkIconThemePrivateExtensions
 internal class GtkIconThemePrivateExterns
 {
 }
+
 
 public struct GtkIconThemePrivate
 {

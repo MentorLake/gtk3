@@ -1,5 +1,12 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// Associates a string with a bit flag.
+/// Used in g_parse_debug_string().
+/// </para>
+/// </summary>
+
 public class GDebugKeyHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,27 @@ internal class GDebugKeyExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Associates a string with a bit flag.
+/// Used in g_parse_debug_string().
+/// </para>
+/// </summary>
+
 public struct GDebugKey
 {
-	public string key;
-	public uint value;
+	/// <summary>
+/// <para>
+/// the string
+/// </para>
+/// </summary>
+
+public string key;
+	/// <summary>
+/// <para>
+/// the flag
+/// </para>
+/// </summary>
+
+public uint value;
 }

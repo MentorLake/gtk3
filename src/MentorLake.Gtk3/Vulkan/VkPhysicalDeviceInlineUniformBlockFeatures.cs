@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceInlineUniformBlockFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceInlineUniformBlockFeaturesExtensions
 internal class VkPhysicalDeviceInlineUniformBlockFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceInlineUniformBlockFeatures
 {

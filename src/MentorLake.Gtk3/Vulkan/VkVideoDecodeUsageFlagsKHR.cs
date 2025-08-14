@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoDecodeUsageFlagsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoDecodeUsageFlagsKHRExtensions
 internal class VkVideoDecodeUsageFlagsKHRExterns
 {
 }
+
 
 public struct VkVideoDecodeUsageFlagsKHR
 {

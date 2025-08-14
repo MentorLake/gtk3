@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImage2DViewOf3DFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImage2DViewOf3DFeaturesEXTExtensions
 internal class VkPhysicalDeviceImage2DViewOf3DFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImage2DViewOf3DFeaturesEXT
 {

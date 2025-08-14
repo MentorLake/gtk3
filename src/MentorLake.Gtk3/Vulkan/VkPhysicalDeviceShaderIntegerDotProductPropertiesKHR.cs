@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderIntegerDotProductPropertiesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderIntegerDotProductPropertiesKHRExtensio
 internal class VkPhysicalDeviceShaderIntegerDotProductPropertiesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR
 {

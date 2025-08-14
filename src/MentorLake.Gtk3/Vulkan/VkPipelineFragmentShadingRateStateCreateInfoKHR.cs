@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineFragmentShadingRateStateCreateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineFragmentShadingRateStateCreateInfoKHRExtensions
 internal class VkPipelineFragmentShadingRateStateCreateInfoKHRExterns
 {
 }
+
 
 public struct VkPipelineFragmentShadingRateStateCreateInfoKHR
 {

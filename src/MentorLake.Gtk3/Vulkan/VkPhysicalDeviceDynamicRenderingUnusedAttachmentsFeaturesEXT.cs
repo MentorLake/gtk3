@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 internal class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 {

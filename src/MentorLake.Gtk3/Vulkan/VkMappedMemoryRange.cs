@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMappedMemoryRangeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMappedMemoryRangeExtensions
 internal class VkMappedMemoryRangeExterns
 {
 }
+
 
 public struct VkMappedMemoryRange
 {

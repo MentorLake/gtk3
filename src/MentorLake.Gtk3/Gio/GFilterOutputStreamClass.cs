@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFilterOutputStreamClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,15 @@ internal class GFilterOutputStreamClassExterns
 {
 }
 
+
 public struct GFilterOutputStreamClass
 {
-	public GOutputStreamClass parent_class;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
+	
+public GOutputStreamClass parent_class;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
 }

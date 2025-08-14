@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GApplicationCommandLinePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GApplicationCommandLinePrivateExtensions
 internal class GApplicationCommandLinePrivateExterns
 {
 }
+
 
 public struct GApplicationCommandLinePrivate
 {

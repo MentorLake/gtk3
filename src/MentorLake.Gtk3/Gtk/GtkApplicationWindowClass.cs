@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkApplicationWindowClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,14 @@ internal class GtkApplicationWindowClassExterns
 {
 }
 
+
 public struct GtkApplicationWindowClass
 {
-	public GtkWindowClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkWindowClass parent_class;
 }

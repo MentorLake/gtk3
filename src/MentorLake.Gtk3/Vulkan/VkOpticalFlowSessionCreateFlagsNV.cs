@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkOpticalFlowSessionCreateFlagsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkOpticalFlowSessionCreateFlagsNVExtensions
 internal class VkOpticalFlowSessionCreateFlagsNVExterns
 {
 }
+
 
 public struct VkOpticalFlowSessionCreateFlagsNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFileChooserButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkFileChooserButtonPrivateExtensions
 internal class GtkFileChooserButtonPrivateExterns
 {
 }
+
 
 public struct GtkFileChooserButtonPrivate
 {

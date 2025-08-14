@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageViewASTCDecodeModeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageViewASTCDecodeModeEXTExtensions
 internal class VkImageViewASTCDecodeModeEXTExterns
 {
 }
+
 
 public struct VkImageViewASTCDecodeModeEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GUnixFDListPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GUnixFDListPrivateExtensions
 internal class GUnixFDListPrivateExterns
 {
 }
+
 
 public struct GUnixFDListPrivate
 {

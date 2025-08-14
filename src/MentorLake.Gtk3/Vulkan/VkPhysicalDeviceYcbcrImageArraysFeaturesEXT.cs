@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceYcbcrImageArraysFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceYcbcrImageArraysFeaturesEXTExtensions
 internal class VkPhysicalDeviceYcbcrImageArraysFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceYcbcrImageArraysFeaturesEXT
 {

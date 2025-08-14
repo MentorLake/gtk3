@@ -1,5 +1,15 @@
 namespace MentorLake.Atk;
 
+/// <summary>
+/// <para>
+/// This is a singly-linked list (a #GSList) of #AtkAttribute. It is
+/// used by atk_text_get_run_attributes(),
+/// atk_text_get_default_attributes(),
+/// atk_editable_text_set_run_attributes(),
+/// atk_document_get_attributes() and atk_object_get_attributes()
+/// </para>
+/// </summary>
+
 public struct AtkAttributeSet
 {
 	public MentorLake.GLib.GSList Value;

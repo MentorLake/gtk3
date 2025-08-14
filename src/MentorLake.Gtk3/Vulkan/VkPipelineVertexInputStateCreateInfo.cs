@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineVertexInputStateCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineVertexInputStateCreateInfoExtensions
 internal class VkPipelineVertexInputStateCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineVertexInputStateCreateInfo
 {

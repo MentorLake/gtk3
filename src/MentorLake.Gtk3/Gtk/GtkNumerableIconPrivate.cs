@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkNumerableIconPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkNumerableIconPrivateExtensions
 internal class GtkNumerableIconPrivateExterns
 {
 }
+
 
 public struct GtkNumerableIconPrivate
 {

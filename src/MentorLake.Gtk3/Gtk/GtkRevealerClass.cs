@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRevealerClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,14 @@ internal class GtkRevealerClassExterns
 {
 }
 
+
 public struct GtkRevealerClass
 {
-	public GtkBinClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBinClass parent_class;
 }

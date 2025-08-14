@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GMenuModelPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GMenuModelPrivateExtensions
 internal class GMenuModelPrivateExterns
 {
 }
+
 
 public struct GMenuModelPrivate
 {

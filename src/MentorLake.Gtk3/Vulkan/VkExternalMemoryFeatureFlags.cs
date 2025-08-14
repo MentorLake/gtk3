@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkExternalMemoryFeatureFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkExternalMemoryFeatureFlagsExtensions
 internal class VkExternalMemoryFeatureFlagsExterns
 {
 }
+
 
 public struct VkExternalMemoryFeatureFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFlags64Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFlags64Extensions
 internal class VkFlags64Externs
 {
 }
+
 
 public struct VkFlags64
 {

@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GMemoryMonitor.
+/// </para>
+/// </summary>
+
 public class GMemoryMonitorInterfaceHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,20 @@ internal class GMemoryMonitorInterfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The virtual function table for #GMemoryMonitor.
+/// </para>
+/// </summary>
+
 public struct GMemoryMonitorInterface
 {
-	public IntPtr low_memory_warning;
+	/// <summary>
+/// <para>
+/// the virtual function pointer for the
+///  #GMemoryMonitor::low-memory-warning signal.
+/// </para>
+/// </summary>
+
+public IntPtr low_memory_warning;
 }

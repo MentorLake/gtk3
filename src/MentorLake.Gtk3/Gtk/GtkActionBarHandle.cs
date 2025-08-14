@@ -1,7 +1,37 @@
 namespace MentorLake.Gtk;
 
+/// <summary>
+/// <para>
+/// GtkActionBar is designed to present contextual actions. It is
+/// expected to be displayed below the content and expand horizontally
+/// to fill the area.
+/// </para>
+/// <para>
+/// It allows placing children at the start or the end. In addition, it
+/// contains an internal centered box which is centered with respect to
+/// the full width of the box, even if the children at either side take
+/// up different amounts of space.
+/// </para>
+/// <para>
+/// # CSS nodes
+/// </para>
+/// <para>
+/// GtkActionBar has a single CSS node with name actionbar.
+/// </para>
+/// </summary>
+
 public class GtkActionBarHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuildableHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GtkActionBar widget.
+/// </para>
+/// </summary>
+
+/// <return>
+/// a new #GtkActionBar
+/// </return>
+
 	public static MentorLake.Gtk.GtkActionBarHandle New()
 	{
 		return GtkActionBarHandleExterns.gtk_action_bar_new();
@@ -11,11 +41,38 @@ public class GtkActionBarHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBu
 
 public static class GtkActionBarHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Retrieves the center bar widget of the bar.
+/// </para>
+/// </summary>
+
+/// <param name="action_bar">
+/// a #GtkActionBar
+/// </param>
+/// <return>
+/// the center #GtkWidget or %NULL.
+/// </return>
+
 	public static MentorLake.Gtk.GtkWidgetHandle GetCenterWidget(this MentorLake.Gtk.GtkActionBarHandle action_bar)
 	{
 		if (action_bar.IsInvalid) throw new Exception("Invalid handle (GtkActionBarHandle)");
 		return GtkActionBarHandleExterns.gtk_action_bar_get_center_widget(action_bar);
 	}
+
+/// <summary>
+/// <para>
+/// Adds @child to @action_bar, packed with reference to the
+/// end of the @action_bar.
+/// </para>
+/// </summary>
+
+/// <param name="action_bar">
+/// A #GtkActionBar
+/// </param>
+/// <param name="child">
+/// the #GtkWidget to be added to @action_bar
+/// </param>
 
 	public static T PackEnd<T>(this T action_bar, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkActionBarHandle
 	{
@@ -24,12 +81,39 @@ public static class GtkActionBarHandleExtensions
 		return action_bar;
 	}
 
+/// <summary>
+/// <para>
+/// Adds @child to @action_bar, packed with reference to the
+/// start of the @action_bar.
+/// </para>
+/// </summary>
+
+/// <param name="action_bar">
+/// A #GtkActionBar
+/// </param>
+/// <param name="child">
+/// the #GtkWidget to be added to @action_bar
+/// </param>
+
 	public static T PackStart<T>(this T action_bar, MentorLake.Gtk.GtkWidgetHandle child) where T : GtkActionBarHandle
 	{
 		if (action_bar.IsInvalid) throw new Exception("Invalid handle (GtkActionBarHandle)");
 		GtkActionBarHandleExterns.gtk_action_bar_pack_start(action_bar, child);
 		return action_bar;
 	}
+
+/// <summary>
+/// <para>
+/// Sets the center widget for the #GtkActionBar.
+/// </para>
+/// </summary>
+
+/// <param name="action_bar">
+/// a #GtkActionBar
+/// </param>
+/// <param name="center_widget">
+/// a widget to use for the center
+/// </param>
 
 	public static T SetCenterWidget<T>(this T action_bar, MentorLake.Gtk.GtkWidgetHandle center_widget) where T : GtkActionBarHandle
 	{

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceVertexAttributeDivisorFeaturesKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceVertexAttributeDivisorFeaturesKHRExtensions
 internal class VkPhysicalDeviceVertexAttributeDivisorFeaturesKHRExterns
 {
 }
+
 
 public struct VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR
 {

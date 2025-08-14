@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkStateSetClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class AtkStateSetClassExterns
 {
 }
 
+
 public struct AtkStateSetClass
 {
-	public GObjectClass parent;
+	
+public GObjectClass parent;
 }

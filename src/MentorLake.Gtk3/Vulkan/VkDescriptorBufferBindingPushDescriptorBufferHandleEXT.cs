@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorBufferBindingPushDescriptorBufferHandleEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorBufferBindingPushDescriptorBufferHandleEXTExtens
 internal class VkDescriptorBufferBindingPushDescriptorBufferHandleEXTExterns
 {
 }
+
 
 public struct VkDescriptorBufferBindingPushDescriptorBufferHandleEXT
 {

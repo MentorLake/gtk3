@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceOpacityMicromapFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceOpacityMicromapFeaturesEXTExtensions
 internal class VkPhysicalDeviceOpacityMicromapFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceOpacityMicromapFeaturesEXT
 {

@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectProxy.
+/// </para>
+/// </summary>
+
 public class GDBusObjectProxyClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class GDBusObjectProxyClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectProxy.
+/// </para>
+/// </summary>
+
 public struct GDBusObjectProxyClass
 {
-	public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
 }

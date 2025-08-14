@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkViewportCoordinateSwizzleNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkViewportCoordinateSwizzleNVExtensions
 internal class VkViewportCoordinateSwizzleNVExterns
 {
 }
+
 
 public struct VkViewportCoordinateSwizzleNV
 {

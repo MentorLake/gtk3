@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceHostQueryResetFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceHostQueryResetFeaturesEXTExtensions
 internal class VkPhysicalDeviceHostQueryResetFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceHostQueryResetFeaturesEXT
 {

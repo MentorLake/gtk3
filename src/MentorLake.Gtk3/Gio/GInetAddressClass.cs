@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GInetAddressClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class GInetAddressClassExterns
 {
 }
 
+
 public struct GInetAddressClass
 {
-	public GObjectClass parent_class;
-	public IntPtr to_string;
-	public IntPtr to_bytes;
+	
+public GObjectClass parent_class;
+	
+public IntPtr to_string;
+	
+public IntPtr to_bytes;
 }

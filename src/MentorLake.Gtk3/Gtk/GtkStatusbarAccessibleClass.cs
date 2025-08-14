@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkStatusbarAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkStatusbarAccessibleClassExterns
 {
 }
 
+
 public struct GtkStatusbarAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

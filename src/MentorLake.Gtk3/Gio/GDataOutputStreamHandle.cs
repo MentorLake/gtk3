@@ -1,7 +1,27 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Data output stream implements [class@Gio.OutputStream] and includes functions
+/// for writing data directly to an output stream.
+/// </para>
+/// </summary>
+
 public class GDataOutputStreamHandle : GFilterOutputStreamHandle, GSeekableHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new data output stream for @base_stream.
+/// </para>
+/// </summary>
+
+/// <param name="base_stream">
+/// a #GOutputStream.
+/// </param>
+/// <return>
+/// #GDataOutputStream.
+/// </return>
+
 	public static MentorLake.Gio.GDataOutputStreamHandle New(MentorLake.Gio.GOutputStreamHandle base_stream)
 	{
 		return GDataOutputStreamHandleExterns.g_data_output_stream_new(base_stream);
@@ -11,11 +31,43 @@ public class GDataOutputStreamHandle : GFilterOutputStreamHandle, GSeekableHandl
 
 public static class GDataOutputStreamHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Gets the byte order for the stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <return>
+/// the #GDataStreamByteOrder for the @stream.
+/// </return>
+
 	public static MentorLake.Gio.GDataStreamByteOrder GetByteOrder(this MentorLake.Gio.GDataOutputStreamHandle stream)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
 		return GDataOutputStreamHandleExterns.g_data_output_stream_get_byte_order(stream);
 	}
+
+/// <summary>
+/// <para>
+/// Puts a byte into the output stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #guchar.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
 
 	public static bool PutByte(this MentorLake.Gio.GDataOutputStreamHandle stream, byte data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
@@ -25,6 +77,25 @@ public static class GDataOutputStreamHandleExtensions
 		return externCallResult;
 	}
 
+/// <summary>
+/// <para>
+/// Puts a signed 16-bit integer into the output stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #gint16.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
+
 	public static bool PutInt16(this MentorLake.Gio.GDataOutputStreamHandle stream, short data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
@@ -32,6 +103,25 @@ public static class GDataOutputStreamHandleExtensions
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
 	}
+
+/// <summary>
+/// <para>
+/// Puts a signed 32-bit integer into the output stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #gint32.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
 
 	public static bool PutInt32(this MentorLake.Gio.GDataOutputStreamHandle stream, int data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
@@ -41,6 +131,25 @@ public static class GDataOutputStreamHandleExtensions
 		return externCallResult;
 	}
 
+/// <summary>
+/// <para>
+/// Puts a signed 64-bit integer into the stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #gint64.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
+
 	public static bool PutInt64(this MentorLake.Gio.GDataOutputStreamHandle stream, long data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
@@ -48,6 +157,25 @@ public static class GDataOutputStreamHandleExtensions
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
 	}
+
+/// <summary>
+/// <para>
+/// Puts a string into the output stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="str">
+/// a string.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @string was successfully added to the @stream.
+/// </return>
 
 	public static bool PutString(this MentorLake.Gio.GDataOutputStreamHandle stream, string str, MentorLake.Gio.GCancellableHandle cancellable)
 	{
@@ -57,6 +185,25 @@ public static class GDataOutputStreamHandleExtensions
 		return externCallResult;
 	}
 
+/// <summary>
+/// <para>
+/// Puts an unsigned 16-bit integer into the output stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #guint16.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
+
 	public static bool PutUint16(this MentorLake.Gio.GDataOutputStreamHandle stream, ushort data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
@@ -64,6 +211,25 @@ public static class GDataOutputStreamHandleExtensions
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
 	}
+
+/// <summary>
+/// <para>
+/// Puts an unsigned 32-bit integer into the stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #guint32.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
 
 	public static bool PutUint32(this MentorLake.Gio.GDataOutputStreamHandle stream, uint data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
@@ -73,6 +239,25 @@ public static class GDataOutputStreamHandleExtensions
 		return externCallResult;
 	}
 
+/// <summary>
+/// <para>
+/// Puts an unsigned 64-bit integer into the stream.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="data">
+/// a #guint64.
+/// </param>
+/// <param name="cancellable">
+/// optional #GCancellable object, %NULL to ignore.
+/// </param>
+/// <return>
+/// %TRUE if @data was successfully added to the @stream.
+/// </return>
+
 	public static bool PutUint64(this MentorLake.Gio.GDataOutputStreamHandle stream, ulong data, MentorLake.Gio.GCancellableHandle cancellable)
 	{
 		if (stream.IsInvalid) throw new Exception("Invalid handle (GDataOutputStreamHandle)");
@@ -80,6 +265,19 @@ public static class GDataOutputStreamHandleExtensions
 		if (!error.IsInvalid) throw new Exception(error.Dereference().message);
 		return externCallResult;
 	}
+
+/// <summary>
+/// <para>
+/// Sets the byte order of the data output stream to @order.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GDataOutputStream.
+/// </param>
+/// <param name="order">
+/// a %GDataStreamByteOrder.
+/// </param>
 
 	public static T SetByteOrder<T>(this T stream, MentorLake.Gio.GDataStreamByteOrder order) where T : GDataOutputStreamHandle
 	{

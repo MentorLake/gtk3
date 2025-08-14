@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDisplayKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDisplayKHRExtensions
 internal class VkDisplayKHRExterns
 {
 }
+
 
 public struct VkDisplayKHR
 {

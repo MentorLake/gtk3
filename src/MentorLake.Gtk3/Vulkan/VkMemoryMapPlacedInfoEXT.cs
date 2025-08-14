@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryMapPlacedInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryMapPlacedInfoEXTExtensions
 internal class VkMemoryMapPlacedInfoEXTExterns
 {
 }
+
 
 public struct VkMemoryMapPlacedInfoEXT
 {

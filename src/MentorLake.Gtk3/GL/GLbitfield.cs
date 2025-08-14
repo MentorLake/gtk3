@@ -1,5 +1,6 @@
 namespace MentorLake.GL;
 
+
 public class GLbitfieldHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GLbitfieldExtensions
 internal class GLbitfieldExterns
 {
 }
+
 
 public struct GLbitfield
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLevelBarClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkLevelBarClassExterns
 {
 }
 
+
 public struct GtkLevelBarClass
 {
-	public IntPtr offset_changed;
+	
+public IntPtr offset_changed;
 }

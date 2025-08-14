@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPushConstantRangeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPushConstantRangeExtensions
 internal class VkPushConstantRangeExterns
 {
 }
+
 
 public struct VkPushConstantRange
 {

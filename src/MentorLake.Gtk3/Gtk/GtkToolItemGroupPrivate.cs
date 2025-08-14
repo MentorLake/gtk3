@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkToolItemGroupPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkToolItemGroupPrivateExtensions
 internal class GtkToolItemGroupPrivateExterns
 {
 }
+
 
 public struct GtkToolItemGroupPrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceInvocationMaskFeaturesHUAWEIHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceInvocationMaskFeaturesHUAWEIExtensions
 internal class VkPhysicalDeviceInvocationMaskFeaturesHUAWEIExterns
 {
 }
+
 
 public struct VkPhysicalDeviceInvocationMaskFeaturesHUAWEI
 {

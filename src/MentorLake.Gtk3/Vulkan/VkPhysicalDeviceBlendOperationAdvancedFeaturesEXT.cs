@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXTExtensions
 internal class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT
 {

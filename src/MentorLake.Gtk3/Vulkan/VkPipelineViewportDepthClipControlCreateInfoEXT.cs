@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineViewportDepthClipControlCreateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineViewportDepthClipControlCreateInfoEXTExtensions
 internal class VkPipelineViewportDepthClipControlCreateInfoEXTExterns
 {
 }
+
 
 public struct VkPipelineViewportDepthClipControlCreateInfoEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSubresourceLayoutHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSubresourceLayoutExtensions
 internal class VkSubresourceLayoutExterns
 {
 }
+
 
 public struct VkSubresourceLayout
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSpinButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkSpinButtonPrivateExtensions
 internal class GtkSpinButtonPrivateExterns
 {
 }
+
 
 public struct GtkSpinButtonPrivate
 {

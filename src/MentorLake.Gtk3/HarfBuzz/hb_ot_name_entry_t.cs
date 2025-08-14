@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Structure representing a name ID in a particular language.
+/// </para>
+/// </summary>
+
 public class hb_ot_name_entry_tHandle : BaseSafeHandle
 {
 }
@@ -14,8 +20,26 @@ internal class hb_ot_name_entry_tExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Structure representing a name ID in a particular language.
+/// </para>
+/// </summary>
+
 public struct hb_ot_name_entry_t
 {
-	public hb_ot_name_id_t name_id;
-	public hb_language_t language;
+	/// <summary>
+/// <para>
+/// name ID
+/// </para>
+/// </summary>
+
+public hb_ot_name_id_t name_id;
+	/// <summary>
+/// <para>
+/// language
+/// </para>
+/// </summary>
+
+public hb_language_t language;
 }

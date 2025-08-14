@@ -1,5 +1,6 @@
 namespace MentorLake.Pango;
 
+
 public class PangoRendererPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class PangoRendererPrivateExtensions
 internal class PangoRendererPrivateExterns
 {
 }
+
 
 public struct PangoRendererPrivate
 {

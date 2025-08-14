@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSparseBufferMemoryBindInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSparseBufferMemoryBindInfoExtensions
 internal class VkSparseBufferMemoryBindInfoExterns
 {
 }
+
 
 public struct VkSparseBufferMemoryBindInfo
 {

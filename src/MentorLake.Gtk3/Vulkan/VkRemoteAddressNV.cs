@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRemoteAddressNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRemoteAddressNVExtensions
 internal class VkRemoteAddressNVExterns
 {
 }
+
 
 public struct VkRemoteAddressNV
 {

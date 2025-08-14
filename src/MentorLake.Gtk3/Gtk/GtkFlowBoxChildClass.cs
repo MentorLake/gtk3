@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFlowBoxChildClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,15 @@ internal class GtkFlowBoxChildClassExterns
 {
 }
 
+
 public struct GtkFlowBoxChildClass
 {
-	public GtkBinClass parent_class;
-	public IntPtr activate;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
+	
+public GtkBinClass parent_class;
+	
+public IntPtr activate;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAppChooserDialogPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkAppChooserDialogPrivateExtensions
 internal class GtkAppChooserDialogPrivateExterns
 {
 }
+
 
 public struct GtkAppChooserDialogPrivate
 {

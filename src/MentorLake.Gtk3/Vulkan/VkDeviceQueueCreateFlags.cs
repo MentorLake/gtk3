@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceQueueCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceQueueCreateFlagsExtensions
 internal class VkDeviceQueueCreateFlagsExterns
 {
 }
+
 
 public struct VkDeviceQueueCreateFlags
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTilePropertiesQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTilePropertiesQCOMExtensions
 internal class VkTilePropertiesQCOMExterns
 {
 }
+
 
 public struct VkTilePropertiesQCOM
 {

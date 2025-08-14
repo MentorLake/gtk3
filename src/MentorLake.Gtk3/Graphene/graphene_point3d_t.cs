@@ -1,7 +1,25 @@
 namespace MentorLake.Graphene;
 
+/// <summary>
+/// <para>
+/// A point with three components: X, Y, and Z.
+/// </para>
+/// </summary>
+
 public class graphene_point3d_tHandle : BaseSafeHandle
 {
+/// <summary>
+/// <para>
+/// Allocates a #graphene_point3d_t structure.
+/// </para>
+/// </summary>
+
+/// <return>
+/// the newly allocated structure.
+///   Use graphene_point3d_free() to free the resources
+///   allocated by this function.
+/// </return>
+
 	public static MentorLake.Graphene.graphene_point3d_tHandle Alloc()
 	{
 		return graphene_point3d_tExterns.graphene_point3d_alloc();
@@ -12,11 +30,48 @@ public class graphene_point3d_tHandle : BaseSafeHandle
 
 public static class graphene_point3d_tExtensions
 {
+/// <summary>
+/// <para>
+/// Computes the cross product of the two given #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="res">
+/// return location for the cross
+///   product
+/// </param>
+
 	public static void Cross(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b, out MentorLake.Graphene.graphene_point3d_t res)
 	{
 		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		graphene_point3d_tExterns.graphene_point3d_cross(a, b, out res);
 	}
+
+/// <summary>
+/// <para>
+/// Computes the distance between the two given #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="delta">
+/// return location for the distance
+///   components on the X, Y, and Z axis
+/// </param>
+/// <return>
+/// the distance between two points
+/// </return>
 
 	public static float Distance(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b, out MentorLake.Graphene.graphene_vec3_t delta)
 	{
@@ -24,11 +79,43 @@ public static class graphene_point3d_tExtensions
 		return graphene_point3d_tExterns.graphene_point3d_distance(a, b, out delta);
 	}
 
+/// <summary>
+/// <para>
+/// Computes the dot product of the two given #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <return>
+/// the value of the dot product
+/// </return>
+
 	public static float Dot(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b)
 	{
 		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		return graphene_point3d_tExterns.graphene_point3d_dot(a, b);
 	}
+
+/// <summary>
+/// <para>
+/// Checks whether two given points are equal.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <return>
+/// `true` if the points are equal
+/// </return>
 
 	public static bool Equal(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b)
 	{
@@ -36,11 +123,43 @@ public static class graphene_point3d_tExtensions
 		return graphene_point3d_tExterns.graphene_point3d_equal(a, b);
 	}
 
+/// <summary>
+/// <para>
+/// Frees the resources allocated via graphene_point3d_alloc().
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+
 	public static void Free(this MentorLake.Graphene.graphene_point3d_tHandle p)
 	{
 		if (p.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		graphene_point3d_tExterns.graphene_point3d_free(p);
 	}
+
+/// <summary>
+/// <para>
+/// Initializes a #graphene_point3d_t with the given coordinates.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// the #graphene_point3d_t to initialize
+/// </param>
+/// <param name="x">
+/// the X coordinate of the point
+/// </param>
+/// <param name="y">
+/// the Y coordinate of the point
+/// </param>
+/// <param name="z">
+/// the Z coordinate of the point
+/// </param>
+/// <return>
+/// the initialized #graphene_point3d_t
+/// </return>
 
 	public static MentorLake.Graphene.graphene_point3d_tHandle Init(this MentorLake.Graphene.graphene_point3d_tHandle p, float x, float y, float z)
 	{
@@ -48,11 +167,45 @@ public static class graphene_point3d_tExtensions
 		return graphene_point3d_tExterns.graphene_point3d_init(p, x, y, z);
 	}
 
+/// <summary>
+/// <para>
+/// Initializes a #graphene_point3d_t using the coordinates of
+/// another #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="src">
+/// a #graphene_point3d_t
+/// </param>
+/// <return>
+/// the initialized point
+/// </return>
+
 	public static MentorLake.Graphene.graphene_point3d_tHandle InitFromPoint(this MentorLake.Graphene.graphene_point3d_tHandle p, MentorLake.Graphene.graphene_point3d_tHandle src)
 	{
 		if (p.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		return graphene_point3d_tExterns.graphene_point3d_init_from_point(p, src);
 	}
+
+/// <summary>
+/// <para>
+/// Initializes a #graphene_point3d_t using the components
+/// of a #graphene_vec3_t.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="v">
+/// a #graphene_vec3_t
+/// </param>
+/// <return>
+/// the initialized #graphene_point3d_t
+/// </return>
 
 	public static MentorLake.Graphene.graphene_point3d_tHandle InitFromVec3(this MentorLake.Graphene.graphene_point3d_tHandle p, MentorLake.Graphene.graphene_vec3_tHandle v)
 	{
@@ -60,11 +213,46 @@ public static class graphene_point3d_tExtensions
 		return graphene_point3d_tExterns.graphene_point3d_init_from_vec3(p, v);
 	}
 
+/// <summary>
+/// <para>
+/// Linearly interpolates each component of @a and @b using the
+/// provided @factor, and places the result in @res.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="factor">
+/// the interpolation factor
+/// </param>
+/// <param name="res">
+/// the return location for the
+///   interpolated #graphene_point3d_t
+/// </param>
+
 	public static void Interpolate(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b, double factor, out MentorLake.Graphene.graphene_point3d_t res)
 	{
 		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		graphene_point3d_tExterns.graphene_point3d_interpolate(a, b, factor, out res);
 	}
+
+/// <summary>
+/// <para>
+/// Computes the length of the vector represented by the
+/// coordinates of the given #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <return>
+/// the length of the vector represented by the point
+/// </return>
 
 	public static float Length(this MentorLake.Graphene.graphene_point3d_tHandle p)
 	{
@@ -72,11 +260,46 @@ public static class graphene_point3d_tExtensions
 		return graphene_point3d_tExterns.graphene_point3d_length(p);
 	}
 
+/// <summary>
+/// <para>
+/// Checks whether the two points are near each other, within
+/// an @epsilon factor.
+/// </para>
+/// </summary>
+
+/// <param name="a">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="b">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="epsilon">
+/// fuzzyness factor
+/// </param>
+/// <return>
+/// `true` if the points are near each other
+/// </return>
+
 	public static bool Near(this MentorLake.Graphene.graphene_point3d_tHandle a, MentorLake.Graphene.graphene_point3d_tHandle b, float epsilon)
 	{
 		if (a.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		return graphene_point3d_tExterns.graphene_point3d_near(a, b, epsilon);
 	}
+
+/// <summary>
+/// <para>
+/// Computes the normalization of the vector represented by the
+/// coordinates of the given #graphene_point3d_t.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="res">
+/// return location for the normalized
+///   #graphene_point3d_t
+/// </param>
 
 	public static void Normalize(this MentorLake.Graphene.graphene_point3d_tHandle p, out MentorLake.Graphene.graphene_point3d_t res)
 	{
@@ -84,17 +307,78 @@ public static class graphene_point3d_tExtensions
 		graphene_point3d_tExterns.graphene_point3d_normalize(p, out res);
 	}
 
+/// <summary>
+/// <para>
+/// Normalizes the coordinates of a #graphene_point3d_t using the
+/// given viewport and clipping planes.
+/// </para>
+/// <para>
+/// The coordinates of the resulting #graphene_point3d_t will be
+/// in the [ -1, 1 ] range.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="viewport">
+/// a #graphene_rect_t representing a viewport
+/// </param>
+/// <param name="z_near">
+/// the coordinate of the near clipping plane, or 0 for
+///   the default near clipping plane
+/// </param>
+/// <param name="z_far">
+/// the coordinate of the far clipping plane, or 1 for the
+///   default far clipping plane
+/// </param>
+/// <param name="res">
+/// the return location for the
+///   normalized #graphene_point3d_t
+/// </param>
+
 	public static void NormalizeViewport(this MentorLake.Graphene.graphene_point3d_tHandle p, MentorLake.Graphene.graphene_rect_tHandle viewport, float z_near, float z_far, out MentorLake.Graphene.graphene_point3d_t res)
 	{
 		if (p.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		graphene_point3d_tExterns.graphene_point3d_normalize_viewport(p, viewport, z_near, z_far, out res);
 	}
 
+/// <summary>
+/// <para>
+/// Scales the coordinates of the given #graphene_point3d_t by
+/// the given @factor.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="factor">
+/// the scaling factor
+/// </param>
+/// <param name="res">
+/// return location for the scaled point
+/// </param>
+
 	public static void Scale(this MentorLake.Graphene.graphene_point3d_tHandle p, float factor, out MentorLake.Graphene.graphene_point3d_t res)
 	{
 		if (p.IsInvalid) throw new Exception("Invalid handle (graphene_point3d_t)");
 		graphene_point3d_tExterns.graphene_point3d_scale(p, factor, out res);
 	}
+
+/// <summary>
+/// <para>
+/// Stores the coordinates of a #graphene_point3d_t into a
+/// #graphene_vec3_t.
+/// </para>
+/// </summary>
+
+/// <param name="p">
+/// a #graphene_point3d_t
+/// </param>
+/// <param name="v">
+/// return location for a #graphene_vec3_t
+/// </param>
 
 	public static void ToVec3(this MentorLake.Graphene.graphene_point3d_tHandle p, out MentorLake.Graphene.graphene_vec3_t v)
 	{
@@ -165,11 +449,45 @@ internal class graphene_point3d_tExterns
 
 }
 
+/// <summary>
+/// <para>
+/// A point with three components: X, Y, and Z.
+/// </para>
+/// </summary>
+
 public struct graphene_point3d_t
 {
-	public float x;
-	public float y;
-	public float z;
+	/// <summary>
+/// <para>
+/// the X coordinate
+/// </para>
+/// </summary>
+
+public float x;
+	/// <summary>
+/// <para>
+/// the Y coordinate
+/// </para>
+/// </summary>
+
+public float y;
+	/// <summary>
+/// <para>
+/// the Z coordinate
+/// </para>
+/// </summary>
+
+public float z;
+/// <summary>
+/// <para>
+/// Retrieves a constant point with all three coordinates set to 0.
+/// </para>
+/// </summary>
+
+/// <return>
+/// a zero point
+/// </return>
+
 	public static MentorLake.Graphene.graphene_point3d_tHandle Zero()
 	{
 		return graphene_point3d_tExterns.graphene_point3d_zero();

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GThreadedSocketServicePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GThreadedSocketServicePrivateExtensions
 internal class GThreadedSocketServicePrivateExterns
 {
 }
+
 
 public struct GThreadedSocketServicePrivate
 {

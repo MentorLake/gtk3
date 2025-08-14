@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindVertexBufferIndirectCommandNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindVertexBufferIndirectCommandNVExtensions
 internal class VkBindVertexBufferIndirectCommandNVExterns
 {
 }
+
 
 public struct VkBindVertexBufferIndirectCommandNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTlsDatabasePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTlsDatabasePrivateExtensions
 internal class GTlsDatabasePrivateExterns
 {
 }
+
 
 public struct GTlsDatabasePrivate
 {

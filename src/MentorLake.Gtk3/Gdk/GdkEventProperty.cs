@@ -1,5 +1,11 @@
 namespace MentorLake.Gdk;
 
+/// <summary>
+/// <para>
+/// Describes a property change on a window.
+/// </para>
+/// </summary>
+
 public class GdkEventPropertyHandle : BaseSafeHandle
 {
 }
@@ -14,12 +20,55 @@ internal class GdkEventPropertyExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Describes a property change on a window.
+/// </para>
+/// </summary>
+
 public struct GdkEventProperty
 {
-	public GdkEventType type;
-	public IntPtr window;
-	public byte send_event;
-	public GdkAtom atom;
-	public uint time;
-	public GdkPropertyState state;
+	/// <summary>
+/// <para>
+/// the type of the event (%GDK_PROPERTY_NOTIFY).
+/// </para>
+/// </summary>
+
+public GdkEventType type;
+	/// <summary>
+/// <para>
+/// the window which received the event.
+/// </para>
+/// </summary>
+
+public IntPtr window;
+	/// <summary>
+/// <para>
+/// %TRUE if the event was sent explicitly.
+/// </para>
+/// </summary>
+
+public byte send_event;
+	/// <summary>
+/// <para>
+/// the property that was changed.
+/// </para>
+/// </summary>
+
+public GdkAtom atom;
+	/// <summary>
+/// <para>
+/// the time of the event in milliseconds.
+/// </para>
+/// </summary>
+
+public uint time;
+	/// <summary>
+/// <para>
+/// whether the property was changed
+///   (%GDK_PROPERTY_NEW_VALUE) or deleted (%GDK_PROPERTY_DELETE).
+/// </para>
+/// </summary>
+
+public GdkPropertyState state;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerCubicWeightsCreateInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerCubicWeightsCreateInfoQCOMExtensions
 internal class VkSamplerCubicWeightsCreateInfoQCOMExterns
 {
 }
+
 
 public struct VkSamplerCubicWeightsCreateInfoQCOM
 {

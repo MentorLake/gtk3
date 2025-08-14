@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for holding font faces.
+/// </para>
+/// </summary>
+
 public class hb_face_tHandle : BaseSafeHandle
 {
 }
@@ -13,6 +19,12 @@ public static class hb_face_tExtensions
 internal class hb_face_tExterns
 {
 }
+
+/// <summary>
+/// <para>
+/// Data type for holding font faces.
+/// </para>
+/// </summary>
 
 public struct hb_face_t
 {

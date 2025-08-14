@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetVariableDescriptorCountLayoutSupportEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetVariableDescriptorCountLayoutSupportEXTExtens
 internal class VkDescriptorSetVariableDescriptorCountLayoutSupportEXTExterns
 {
 }
+
 
 public struct VkDescriptorSetVariableDescriptorCountLayoutSupportEXT
 {

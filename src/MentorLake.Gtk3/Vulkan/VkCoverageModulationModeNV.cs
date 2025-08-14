@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCoverageModulationModeNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCoverageModulationModeNVExtensions
 internal class VkCoverageModulationModeNVExterns
 {
 }
+
 
 public struct VkCoverageModulationModeNV
 {

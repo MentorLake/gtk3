@@ -1,7 +1,18 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkVButtonBoxHandle : GtkButtonBoxHandle, AtkImplementorIfaceHandle, GtkBuildableHandle, GtkOrientableHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new vertical button box.
+/// </para>
+/// </summary>
+
+/// <return>
+/// a new button box #GtkWidget.
+/// </return>
+
 	public static MentorLake.Gtk.GtkVButtonBoxHandle New()
 	{
 		return GtkVButtonBoxHandleExterns.gtk_vbutton_box_new();

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GFileMonitorPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GFileMonitorPrivateExtensions
 internal class GFileMonitorPrivateExterns
 {
 }
+
 
 public struct GFileMonitorPrivate
 {

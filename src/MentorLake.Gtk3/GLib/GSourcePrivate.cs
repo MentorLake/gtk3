@@ -1,5 +1,6 @@
 namespace MentorLake.GLib;
 
+
 public class GSourcePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSourcePrivateExtensions
 internal class GSourcePrivateExterns
 {
 }
+
 
 public struct GSourcePrivate
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GNetworkAddressPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GNetworkAddressPrivateExtensions
 internal class GNetworkAddressPrivateExterns
 {
 }
+
 
 public struct GNetworkAddressPrivate
 {

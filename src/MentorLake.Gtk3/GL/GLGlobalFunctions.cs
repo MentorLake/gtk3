@@ -2,6 +2,8 @@ namespace MentorLake.GL;
 
 public class GLGlobalFunctions
 {
+
+
 	public static void InitNames()
 	{
 		GLGlobalFunctionsExterns.glInitNames();

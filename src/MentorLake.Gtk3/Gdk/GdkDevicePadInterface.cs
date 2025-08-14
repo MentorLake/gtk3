@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkDevicePadInterfaceHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkDevicePadInterfaceExtensions
 internal class GdkDevicePadInterfaceExterns
 {
 }
+
 
 public struct GdkDevicePadInterface
 {

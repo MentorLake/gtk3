@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSearchEntryClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GtkSearchEntryClassExterns
 {
 }
 
+
 public struct GtkSearchEntryClass
 {
-	public GtkEntryClass parent_class;
-	public IntPtr search_changed;
-	public IntPtr next_match;
-	public IntPtr previous_match;
-	public IntPtr stop_search;
+	
+public GtkEntryClass parent_class;
+	
+public IntPtr search_changed;
+	
+public IntPtr next_match;
+	
+public IntPtr previous_match;
+	
+public IntPtr stop_search;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkEntryBufferPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkEntryBufferPrivateExtensions
 internal class GtkEntryBufferPrivateExterns
 {
 }
+
 
 public struct GtkEntryBufferPrivate
 {

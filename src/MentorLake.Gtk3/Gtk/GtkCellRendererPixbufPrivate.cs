@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkCellRendererPixbufPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkCellRendererPixbufPrivateExtensions
 internal class GtkCellRendererPixbufPrivateExterns
 {
 }
+
 
 public struct GtkCellRendererPixbufPrivate
 {

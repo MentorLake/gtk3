@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceMultiviewFeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceMultiviewFeaturesExtensions
 internal class VkPhysicalDeviceMultiviewFeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceMultiviewFeatures
 {

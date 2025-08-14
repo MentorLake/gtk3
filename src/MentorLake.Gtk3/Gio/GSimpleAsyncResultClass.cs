@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSimpleAsyncResultClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GSimpleAsyncResultClassExtensions
 internal class GSimpleAsyncResultClassExterns
 {
 }
+
 
 public struct GSimpleAsyncResultClass
 {

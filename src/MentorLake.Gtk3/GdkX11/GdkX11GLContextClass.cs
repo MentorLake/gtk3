@@ -1,5 +1,6 @@
 namespace MentorLake.GdkX11;
 
+
 public class GdkX11GLContextClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkX11GLContextClassExtensions
 internal class GdkX11GLContextClassExterns
 {
 }
+
 
 public struct GdkX11GLContextClass
 {

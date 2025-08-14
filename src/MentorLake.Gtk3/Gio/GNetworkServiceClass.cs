@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GNetworkServiceClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GNetworkServiceClassExterns
 {
 }
 
+
 public struct GNetworkServiceClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

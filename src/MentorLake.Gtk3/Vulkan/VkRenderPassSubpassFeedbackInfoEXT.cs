@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassSubpassFeedbackInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassSubpassFeedbackInfoEXTExtensions
 internal class VkRenderPassSubpassFeedbackInfoEXTExterns
 {
 }
+
 
 public struct VkRenderPassSubpassFeedbackInfoEXT
 {

@@ -1,5 +1,11 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectManagerServer.
+/// </para>
+/// </summary>
+
 public class GDBusObjectManagerServerClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +20,19 @@ internal class GDBusObjectManagerServerClassExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Class structure for #GDBusObjectManagerServer.
+/// </para>
+/// </summary>
+
 public struct GDBusObjectManagerServerClass
 {
-	public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
 }

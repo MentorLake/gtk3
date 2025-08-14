@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderingFragmentDensityMapAttachmentInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderingFragmentDensityMapAttachmentInfoEXTExtensions
 internal class VkRenderingFragmentDensityMapAttachmentInfoEXTExterns
 {
 }
+
 
 public struct VkRenderingFragmentDensityMapAttachmentInfoEXT
 {

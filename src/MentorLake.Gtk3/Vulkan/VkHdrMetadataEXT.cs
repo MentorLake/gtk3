@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkHdrMetadataEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkHdrMetadataEXTExtensions
 internal class VkHdrMetadataEXTExterns
 {
 }
+
 
 public struct VkHdrMetadataEXT
 {

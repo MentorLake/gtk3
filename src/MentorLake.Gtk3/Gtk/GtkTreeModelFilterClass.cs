@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTreeModelFilterClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,21 @@ internal class GtkTreeModelFilterClassExterns
 {
 }
 
+
 public struct GtkTreeModelFilterClass
 {
-	public GObjectClass parent_class;
-	public IntPtr visible;
-	public IntPtr modify;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GObjectClass parent_class;
+	
+public IntPtr visible;
+	
+public IntPtr modify;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

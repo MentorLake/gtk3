@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceGroupBindSparseInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceGroupBindSparseInfoExtensions
 internal class VkDeviceGroupBindSparseInfoExterns
 {
 }
+
 
 public struct VkDeviceGroupBindSparseInfo
 {

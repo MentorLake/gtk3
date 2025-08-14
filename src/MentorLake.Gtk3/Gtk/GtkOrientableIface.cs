@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkOrientableIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkOrientableIfaceExterns
 {
 }
 
+
 public struct GtkOrientableIface
 {
-	public GTypeInterface base_iface;
+	
+public GTypeInterface base_iface;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkResultHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkResultExtensions
 internal class VkResultExterns
 {
 }
+
 
 public struct VkResult
 {

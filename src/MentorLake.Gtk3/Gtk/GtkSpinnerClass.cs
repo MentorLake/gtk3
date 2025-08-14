@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkSpinnerClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GtkSpinnerClassExterns
 {
 }
 
+
 public struct GtkSpinnerClass
 {
-	public GtkWidgetClass parent_class;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkWidgetClass parent_class;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

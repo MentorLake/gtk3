@@ -1,5 +1,11 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Data type for booleans.
+/// </para>
+/// </summary>
+
 public struct hb_bool_t
 {
 	public int Value;

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetVariableDescriptorCountAllocateInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetVariableDescriptorCountAllocateInfoEXTExtensi
 internal class VkDescriptorSetVariableDescriptorCountAllocateInfoEXTExterns
 {
 }
+
 
 public struct VkDescriptorSetVariableDescriptorCountAllocateInfoEXT
 {

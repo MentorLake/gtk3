@@ -1,5 +1,11 @@
 namespace MentorLake.GLib;
 
+/// <summary>
+/// <para>
+/// Opaque type. See g_mutex_locker_new() for details.
+/// </para>
+/// </summary>
+
 public struct GMutexLocker
 {
 }

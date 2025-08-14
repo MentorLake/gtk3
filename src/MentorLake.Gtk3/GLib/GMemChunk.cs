@@ -1,5 +1,6 @@
 namespace MentorLake.GLib;
 
+
 public class GMemChunkHandle : BaseSafeHandle
 {
 }
@@ -7,11 +8,19 @@ public class GMemChunkHandle : BaseSafeHandle
 
 public static class GMemChunkExtensions
 {
+
+/// <param name="mem_chunk">
+/// </param>
+
 	public static IntPtr Alloc(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
 		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		return GMemChunkExterns.g_mem_chunk_alloc(mem_chunk);
 	}
+
+
+/// <param name="mem_chunk">
+/// </param>
 
 	public static IntPtr Alloc0(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
@@ -19,11 +28,19 @@ public static class GMemChunkExtensions
 		return GMemChunkExterns.g_mem_chunk_alloc0(mem_chunk);
 	}
 
+
+/// <param name="mem_chunk">
+/// </param>
+
 	public static void Clean(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
 		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_clean(mem_chunk);
 	}
+
+
+/// <param name="mem_chunk">
+/// </param>
 
 	public static void Destroy(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
@@ -31,17 +48,31 @@ public static class GMemChunkExtensions
 		GMemChunkExterns.g_mem_chunk_destroy(mem_chunk);
 	}
 
+
+/// <param name="mem_chunk">
+/// </param>
+/// <param name="mem">
+/// </param>
+
 	public static void Free(this MentorLake.GLib.GMemChunkHandle mem_chunk, IntPtr mem)
 	{
 		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_free(mem_chunk, mem);
 	}
 
+
+/// <param name="mem_chunk">
+/// </param>
+
 	public static void Print(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
 		if (mem_chunk.IsInvalid) throw new Exception("Invalid handle (GMemChunk)");
 		GMemChunkExterns.g_mem_chunk_print(mem_chunk);
 	}
+
+
+/// <param name="mem_chunk">
+/// </param>
 
 	public static void Reset(this MentorLake.GLib.GMemChunkHandle mem_chunk)
 	{
@@ -84,12 +115,25 @@ internal class GMemChunkExterns
 
 }
 
+
 public struct GMemChunk
 {
+
+
 	public static void Info()
 	{
 		GMemChunkExterns.g_mem_chunk_info();
 	}
+
+
+/// <param name="name">
+/// </param>
+/// <param name="atom_size">
+/// </param>
+/// <param name="area_size">
+/// </param>
+/// <param name="type">
+/// </param>
 
 	public static MentorLake.GLib.GMemChunkHandle New(string name, int atom_size, UIntPtr area_size, int type)
 	{

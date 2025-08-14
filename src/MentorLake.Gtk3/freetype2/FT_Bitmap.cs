@@ -1,5 +1,6 @@
 namespace MentorLake.freetype2;
 
+
 public class FT_BitmapHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class FT_BitmapExtensions
 internal class FT_BitmapExterns
 {
 }
+
 
 public struct FT_Bitmap
 {

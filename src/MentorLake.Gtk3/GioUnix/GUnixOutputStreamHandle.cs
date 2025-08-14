@@ -1,21 +1,97 @@
 namespace MentorLake.GioUnix;
 
+/// <summary>
+/// <para>
+/// `GUnixOutputStream` implements [class@Gio.OutputStream] for writing to a UNIX
+/// file descriptor, including asynchronous operations. (If the file
+/// descriptor refers to a socket or pipe, this will use `poll()` to do
+/// asynchronous I/O. If it refers to a regular file, it will fall back
+/// to doing asynchronous I/O in another thread.)
+/// </para>
+/// <para>
+/// Note that `<gio/gunixoutputstream.h>` belongs to the UNIX-specific GIO
+/// interfaces, thus you have to use the `gio-unix-2.0.pc` pkg-config file
+/// file or the `GioUnix-2.0` GIR namespace when using it.
+/// </para>
+/// </summary>
+
 public class GUnixOutputStreamHandle : GOutputStreamHandle, GPollableOutputStreamHandle, GFileDescriptorBasedHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GUnixOutputStream for the given @fd.
+/// </para>
+/// <para>
+/// If @close_fd, is %TRUE, the file descriptor will be closed when
+/// the output stream is destroyed.
+/// </para>
+/// </summary>
+
+/// <param name="fd">
+/// a UNIX file descriptor
+/// </param>
+/// <param name="close_fd">
+/// %TRUE to close the file descriptor when done
+/// </param>
+/// <return>
+/// a new #GOutputStream
+/// </return>
+
 	public static MentorLake.GioUnix.GUnixOutputStreamHandle New(int fd, bool close_fd)
 	{
 		return GUnixOutputStreamHandleExterns.g_unix_output_stream_new(fd, close_fd);
 	}
+
+/// <summary>
+/// <para>
+/// Returns whether the file descriptor of @stream will be
+/// closed when the stream is closed.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GUnixOutputStream
+/// </param>
+/// <return>
+/// %TRUE if the file descriptor is closed when done
+/// </return>
 
 	public static bool GetCloseFd(MentorLake.Gio.GUnixOutputStreamHandle stream)
 	{
 		return GUnixOutputStreamHandleExterns.g_unix_output_stream_get_close_fd(stream);
 	}
 
+/// <summary>
+/// <para>
+/// Return the UNIX file descriptor that the stream writes to.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GUnixOutputStream
+/// </param>
+/// <return>
+/// The file descriptor of @stream
+/// </return>
+
 	public static int GetFd(MentorLake.Gio.GUnixOutputStreamHandle stream)
 	{
 		return GUnixOutputStreamHandleExterns.g_unix_output_stream_get_fd(stream);
 	}
+
+/// <summary>
+/// <para>
+/// Sets whether the file descriptor of @stream shall be closed
+/// when the stream is closed.
+/// </para>
+/// </summary>
+
+/// <param name="stream">
+/// a #GUnixOutputStream
+/// </param>
+/// <param name="close_fd">
+/// %TRUE to close the file descriptor when done
+/// </param>
 
 	public static void SetCloseFd(MentorLake.Gio.GUnixOutputStreamHandle stream, bool close_fd)
 	{

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAppChooserWidgetClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,38 @@ internal class GtkAppChooserWidgetClassExterns
 {
 }
 
+
 public struct GtkAppChooserWidgetClass
 {
-	public GtkBoxClass parent_class;
-	public IntPtr application_selected;
-	public IntPtr application_activated;
-	public IntPtr populate_popup;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkBoxClass parent_class;
+	/// <summary>
+/// <para>
+/// Signal emitted when an application item is
+///    selected from the widget’s list.
+/// </para>
+/// </summary>
+
+public IntPtr application_selected;
+	/// <summary>
+/// <para>
+/// Signal emitted when an application item is
+///    activated from the widget’s list.
+/// </para>
+/// </summary>
+
+public IntPtr application_activated;
+	/// <summary>
+/// <para>
+/// Signal emitted when a context menu is about to
+///    popup over an application item.
+/// </para>
+/// </summary>
+
+public IntPtr populate_popup;
 }

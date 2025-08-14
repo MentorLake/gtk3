@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkHostImageLayoutTransitionInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkHostImageLayoutTransitionInfoEXTExtensions
 internal class VkHostImageLayoutTransitionInfoEXTExterns
 {
 }
+
 
 public struct VkHostImageLayoutTransitionInfoEXT
 {

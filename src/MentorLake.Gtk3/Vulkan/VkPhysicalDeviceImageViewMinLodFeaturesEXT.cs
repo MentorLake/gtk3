@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceImageViewMinLodFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceImageViewMinLodFeaturesEXTExtensions
 internal class VkPhysicalDeviceImageViewMinLodFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceImageViewMinLodFeaturesEXT
 {

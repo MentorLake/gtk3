@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkArrowAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkArrowAccessiblePrivateExtensions
 internal class GtkArrowAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkArrowAccessiblePrivate
 {

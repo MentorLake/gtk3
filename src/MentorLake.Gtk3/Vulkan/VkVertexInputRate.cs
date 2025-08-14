@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVertexInputRateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVertexInputRateExtensions
 internal class VkVertexInputRateExterns
 {
 }
+
 
 public struct VkVertexInputRate
 {

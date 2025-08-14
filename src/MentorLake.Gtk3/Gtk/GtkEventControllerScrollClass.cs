@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkEventControllerScrollClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkEventControllerScrollClassExtensions
 internal class GtkEventControllerScrollClassExterns
 {
 }
+
 
 public struct GtkEventControllerScrollClass
 {

@@ -1,5 +1,12 @@
 namespace MentorLake.Pango;
 
+/// <summary>
+/// <para>
+/// The `PangoAttrFloat` structure is used to represent attributes with
+/// a float or double value.
+/// </para>
+/// </summary>
+
 public class PangoAttrFloatHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,27 @@ internal class PangoAttrFloatExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// The `PangoAttrFloat` structure is used to represent attributes with
+/// a float or double value.
+/// </para>
+/// </summary>
+
 public struct PangoAttrFloat
 {
-	public PangoAttribute attr;
-	public double value;
+	/// <summary>
+/// <para>
+/// the common portion of the attribute
+/// </para>
+/// </summary>
+
+public PangoAttribute attr;
+	/// <summary>
+/// <para>
+/// the value of the attribute
+/// </para>
+/// </summary>
+
+public double value;
 }

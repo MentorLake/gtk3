@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GNetworkAddressClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GNetworkAddressClassExterns
 {
 }
 
+
 public struct GNetworkAddressClass
 {
-	public GObjectClass parent_class;
+	
+public GObjectClass parent_class;
 }

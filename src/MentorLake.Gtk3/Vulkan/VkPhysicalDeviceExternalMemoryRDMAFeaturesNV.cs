@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExternalMemoryRDMAFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExternalMemoryRDMAFeaturesNVExtensions
 internal class VkPhysicalDeviceExternalMemoryRDMAFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExternalMemoryRDMAFeaturesNV
 {

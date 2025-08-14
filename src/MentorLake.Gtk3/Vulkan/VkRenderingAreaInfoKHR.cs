@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderingAreaInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderingAreaInfoKHRExtensions
 internal class VkRenderingAreaInfoKHRExterns
 {
 }
+
 
 public struct VkRenderingAreaInfoKHR
 {

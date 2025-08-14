@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceExternalBufferInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceExternalBufferInfoExtensions
 internal class VkPhysicalDeviceExternalBufferInfoExterns
 {
 }
+
 
 public struct VkPhysicalDeviceExternalBufferInfo
 {

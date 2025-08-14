@@ -1,5 +1,6 @@
 namespace MentorLake.Graphene;
 
+
 public class graphene_simd4f_tHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class graphene_simd4f_tExtensions
 internal class graphene_simd4f_tExterns
 {
 }
+
 
 public struct graphene_simd4f_t
 {

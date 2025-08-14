@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindImageMemoryInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindImageMemoryInfoKHRExtensions
 internal class VkBindImageMemoryInfoKHRExterns
 {
 }
+
 
 public struct VkBindImageMemoryInfoKHR
 {

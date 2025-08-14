@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoEncodeSessionParametersFeedbackInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoEncodeSessionParametersFeedbackInfoKHRExtensions
 internal class VkVideoEncodeSessionParametersFeedbackInfoKHRExterns
 {
 }
+
 
 public struct VkVideoEncodeSessionParametersFeedbackInfoKHR
 {

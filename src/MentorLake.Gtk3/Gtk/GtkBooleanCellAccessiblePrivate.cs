@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkBooleanCellAccessiblePrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkBooleanCellAccessiblePrivateExtensions
 internal class GtkBooleanCellAccessiblePrivateExterns
 {
 }
+
 
 public struct GtkBooleanCellAccessiblePrivate
 {

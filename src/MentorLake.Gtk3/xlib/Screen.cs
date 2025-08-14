@@ -1,5 +1,6 @@
 namespace MentorLake.xlib;
 
+
 public class ScreenHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class ScreenExtensions
 internal class ScreenExterns
 {
 }
+
 
 public struct Screen
 {

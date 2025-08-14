@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFragmentDensityMap2PropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFragmentDensityMap2PropertiesEXTExtensions
 internal class VkPhysicalDeviceFragmentDensityMap2PropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFragmentDensityMap2PropertiesEXT
 {

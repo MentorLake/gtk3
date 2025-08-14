@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOMHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOMExtensions
 internal class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOMExterns
 {
 }
+
 
 public struct VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
 {

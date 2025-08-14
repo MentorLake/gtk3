@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryLowLatencySupportNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryLowLatencySupportNVExtensions
 internal class VkQueryLowLatencySupportNVExterns
 {
 }
+
 
 public struct VkQueryLowLatencySupportNV
 {

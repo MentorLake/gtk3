@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMultisamplePropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMultisamplePropertiesEXTExtensions
 internal class VkMultisamplePropertiesEXTExterns
 {
 }
+
 
 public struct VkMultisamplePropertiesEXT
 {

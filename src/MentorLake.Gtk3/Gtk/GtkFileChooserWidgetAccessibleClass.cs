@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFileChooserWidgetAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,7 +15,9 @@ internal class GtkFileChooserWidgetAccessibleClassExterns
 {
 }
 
+
 public struct GtkFileChooserWidgetAccessibleClass
 {
-	public GtkContainerAccessibleClass parent_class;
+	
+public GtkContainerAccessibleClass parent_class;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkInitializePerformanceApiInfoINTELHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkInitializePerformanceApiInfoINTELExtensions
 internal class VkInitializePerformanceApiInfoINTELExterns
 {
 }
+
 
 public struct VkInitializePerformanceApiInfoINTEL
 {

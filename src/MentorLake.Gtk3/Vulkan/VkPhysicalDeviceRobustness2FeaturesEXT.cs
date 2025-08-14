@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceRobustness2FeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceRobustness2FeaturesEXTExtensions
 internal class VkPhysicalDeviceRobustness2FeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceRobustness2FeaturesEXT
 {

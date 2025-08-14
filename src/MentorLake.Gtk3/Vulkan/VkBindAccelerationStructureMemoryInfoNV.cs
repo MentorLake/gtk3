@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBindAccelerationStructureMemoryInfoNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBindAccelerationStructureMemoryInfoNVExtensions
 internal class VkBindAccelerationStructureMemoryInfoNVExterns
 {
 }
+
 
 public struct VkBindAccelerationStructureMemoryInfoNV
 {

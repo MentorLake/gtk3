@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkPlugClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GtkPlugClassExterns
 {
 }
 
+
 public struct GtkPlugClass
 {
-	public GtkWindowClass parent_class;
-	public IntPtr embedded;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkWindowClass parent_class;
+	
+public IntPtr embedded;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

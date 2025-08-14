@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public struct GtkStock
 {
 	public string Value;

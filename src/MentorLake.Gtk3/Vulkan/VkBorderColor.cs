@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkBorderColorHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkBorderColorExtensions
 internal class VkBorderColorExterns
 {
 }
+
 
 public struct VkBorderColor
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAcquireProfilingLockFlagBitsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAcquireProfilingLockFlagBitsKHRExtensions
 internal class VkAcquireProfilingLockFlagBitsKHRExterns
 {
 }
+
 
 public struct VkAcquireProfilingLockFlagBitsKHR
 {

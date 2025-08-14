@@ -1,4 +1,44 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// A virtual method for the #hb_paint_funcs_t to apply
+/// a transform to subsequent paint calls.
+/// </para>
+/// <para>
+/// This transform is applied after the current transform,
+/// and remains in effect until a matching call to
+/// the #hb_paint_funcs_pop_transform_func_t vfunc.
+/// </para>
+/// </summary>
+
+/// <param name="funcs">
+/// paint functions object
+/// </param>
+/// <param name="paint_data">
+/// The data accompanying the paint functions in hb_font_paint_glyph()
+/// </param>
+/// <param name="xx">
+/// xx component of the transform matrix
+/// </param>
+/// <param name="yx">
+/// yx component of the transform matrix
+/// </param>
+/// <param name="xy">
+/// xy component of the transform matrix
+/// </param>
+/// <param name="yy">
+/// yy component of the transform matrix
+/// </param>
+/// <param name="dx">
+/// dx component of the transform matrix
+/// </param>
+/// <param name="dy">
+/// dy component of the transform matrix
+/// </param>
+/// <param name="user_data">
+/// User data pointer passed to hb_paint_funcs_set_push_transform_func()
+/// </param>
+
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void hb_paint_push_transform_func_t([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.HarfBuzz.hb_paint_funcs_tHandle>))] MentorLake.HarfBuzz.hb_paint_funcs_tHandle funcs, IntPtr paint_data, float xx, float yx, float xy, float yy, float dx, float dy, IntPtr user_data);

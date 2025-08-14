@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueryTypeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueryTypeExtensions
 internal class VkQueryTypeExterns
 {
 }
+
 
 public struct VkQueryType
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkFenceCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkFenceCreateInfoExtensions
 internal class VkFenceCreateInfoExterns
 {
 }
+
 
 public struct VkFenceCreateInfo
 {

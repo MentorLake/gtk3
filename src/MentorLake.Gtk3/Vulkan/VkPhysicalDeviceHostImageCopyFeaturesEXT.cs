@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceHostImageCopyFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceHostImageCopyFeaturesEXTExtensions
 internal class VkPhysicalDeviceHostImageCopyFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceHostImageCopyFeaturesEXT
 {

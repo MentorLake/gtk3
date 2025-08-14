@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GSettingsClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,19 @@ internal class GSettingsClassExterns
 {
 }
 
+
 public struct GSettingsClass
 {
-	public GObjectClass parent_class;
-	public IntPtr writable_changed;
-	public IntPtr changed;
-	public IntPtr writable_change_event;
-	public IntPtr change_event;
-	public IntPtr padding;
+	
+public GObjectClass parent_class;
+	
+public IntPtr writable_changed;
+	
+public IntPtr changed;
+	
+public IntPtr writable_change_event;
+	
+public IntPtr change_event;
+	
+public IntPtr padding;
 }

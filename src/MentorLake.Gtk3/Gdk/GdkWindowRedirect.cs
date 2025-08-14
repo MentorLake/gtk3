@@ -1,5 +1,6 @@
 namespace MentorLake.Gdk;
 
+
 public class GdkWindowRedirectHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GdkWindowRedirectExtensions
 internal class GdkWindowRedirectExterns
 {
 }
+
 
 public struct GdkWindowRedirect
 {

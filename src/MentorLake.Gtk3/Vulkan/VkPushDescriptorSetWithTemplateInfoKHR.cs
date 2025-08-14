@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPushDescriptorSetWithTemplateInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPushDescriptorSetWithTemplateInfoKHRExtensions
 internal class VkPushDescriptorSetWithTemplateInfoKHRExterns
 {
 }
+
 
 public struct VkPushDescriptorSetWithTemplateInfoKHR
 {

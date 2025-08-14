@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageFormatProperties2Handle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageFormatProperties2Extensions
 internal class VkImageFormatProperties2Externs
 {
 }
+
 
 public struct VkImageFormatProperties2
 {

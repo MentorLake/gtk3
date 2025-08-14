@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkLockButtonClassHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,30 @@ internal class GtkLockButtonClassExterns
 {
 }
 
+
 public struct GtkLockButtonClass
 {
-	public GtkButtonClass parent_class;
-	public IntPtr reserved0;
-	public IntPtr reserved1;
-	public IntPtr reserved2;
-	public IntPtr reserved3;
-	public IntPtr reserved4;
-	public IntPtr reserved5;
-	public IntPtr reserved6;
-	public IntPtr reserved7;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GtkButtonClass parent_class;
+	
+public IntPtr reserved0;
+	
+public IntPtr reserved1;
+	
+public IntPtr reserved2;
+	
+public IntPtr reserved3;
+	
+public IntPtr reserved4;
+	
+public IntPtr reserved5;
+	
+public IntPtr reserved6;
+	
+public IntPtr reserved7;
 }

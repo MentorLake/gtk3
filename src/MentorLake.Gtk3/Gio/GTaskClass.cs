@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GTaskClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GTaskClassExtensions
 internal class GTaskClassExterns
 {
 }
+
 
 public struct GTaskClass
 {

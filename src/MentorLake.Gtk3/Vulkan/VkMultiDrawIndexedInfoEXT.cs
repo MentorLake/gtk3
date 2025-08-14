@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMultiDrawIndexedInfoEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMultiDrawIndexedInfoEXTExtensions
 internal class VkMultiDrawIndexedInfoEXTExterns
 {
 }
+
 
 public struct VkMultiDrawIndexedInfoEXT
 {

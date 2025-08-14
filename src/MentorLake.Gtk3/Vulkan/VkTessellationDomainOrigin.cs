@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkTessellationDomainOriginHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkTessellationDomainOriginExtensions
 internal class VkTessellationDomainOriginExterns
 {
 }
+
 
 public struct VkTessellationDomainOrigin
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Pango;
 
+
 public class PangoFontFamilyClassHandle : BaseSafeHandle
 {
 }
@@ -14,13 +15,21 @@ internal class PangoFontFamilyClassExterns
 {
 }
 
+
 public struct PangoFontFamilyClass
 {
-	public GObjectClass parent_class;
-	public IntPtr list_faces;
-	public IntPtr get_name;
-	public IntPtr is_monospace;
-	public IntPtr is_variable;
-	public IntPtr get_face;
-	public IntPtr _pango_reserved2;
+	
+public GObjectClass parent_class;
+	
+public IntPtr list_faces;
+	
+public IntPtr get_name;
+	
+public IntPtr is_monospace;
+	
+public IntPtr is_variable;
+	
+public IntPtr get_face;
+	
+public IntPtr _pango_reserved2;
 }

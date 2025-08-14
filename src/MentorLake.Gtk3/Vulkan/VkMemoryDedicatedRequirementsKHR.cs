@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkMemoryDedicatedRequirementsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkMemoryDedicatedRequirementsKHRExtensions
 internal class VkMemoryDedicatedRequirementsKHRExterns
 {
 }
+
 
 public struct VkMemoryDedicatedRequirementsKHR
 {

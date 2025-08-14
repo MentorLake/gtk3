@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDiscardRectanglePropertiesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDiscardRectanglePropertiesEXTExtensions
 internal class VkPhysicalDeviceDiscardRectanglePropertiesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDiscardRectanglePropertiesEXT
 {

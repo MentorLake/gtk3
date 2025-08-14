@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPipelineShaderStageCreateInfoHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPipelineShaderStageCreateInfoExtensions
 internal class VkPipelineShaderStageCreateInfoExterns
 {
 }
+
 
 public struct VkPipelineShaderStageCreateInfo
 {

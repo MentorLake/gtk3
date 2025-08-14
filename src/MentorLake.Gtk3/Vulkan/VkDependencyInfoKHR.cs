@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDependencyInfoKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDependencyInfoKHRExtensions
 internal class VkDependencyInfoKHRExterns
 {
 }
+
 
 public struct VkDependencyInfoKHR
 {

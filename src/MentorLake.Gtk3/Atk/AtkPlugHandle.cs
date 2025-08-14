@@ -1,7 +1,26 @@
 namespace MentorLake.Atk;
 
+/// <summary>
+/// <para>
+/// Toplevel for embedding into other processes
+/// </para>
+/// <para>
+/// See [class@AtkSocket]
+/// </para>
+/// </summary>
+
 public class AtkPlugHandle : AtkObjectHandle, AtkComponentHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #AtkPlug instance.
+/// </para>
+/// </summary>
+
+/// <return>
+/// the newly created #AtkPlug
+/// </return>
+
 	public static MentorLake.Atk.AtkPlugHandle New()
 	{
 		return AtkPlugHandleExterns.atk_plug_new();
@@ -10,6 +29,12 @@ public class AtkPlugHandle : AtkObjectHandle, AtkComponentHandle
 }
 public static class AtkPlugHandleSignalExtensions
 {
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
 
 	public static IObservable<AtkPlugHandleSignalStructs.BoundsChangedSignal> Signal_BoundsChanged(this AtkPlugHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
 	{
@@ -46,14 +71,37 @@ public static class AtkPlugHandleSignalStructs
 
 public class BoundsChangedSignal
 {
+
 	public MentorLake.Atk.AtkComponentHandle Self;
+/// <summary>
+/// <para>
+/// The AtkRectangle giving the new position and size.
+/// </para>
+/// </summary>
+
 	public MentorLake.Atk.AtkRectangleHandle Arg1;
+
 	public IntPtr UserData;
 }
 }
 
 public static class AtkPlugHandleSignalDelegates
 {
+
+/// <summary>
+/// <para>
+/// The 'bounds-changed" signal is emitted when the position or
+/// size of the component changes.
+/// </para>
+/// </summary>
+
+/// <param name="self">
+/// </param>
+/// <param name="arg1">
+/// The AtkRectangle giving the new position and size.
+/// </param>
+/// <param name="user_data">
+/// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkComponentHandleImpl>))] MentorLake.Atk.AtkComponentHandle self, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(DelegateSafeHandleMarshaller<MentorLake.Atk.AtkRectangleHandle>))] MentorLake.Atk.AtkRectangleHandle arg1, IntPtr user_data);
@@ -63,6 +111,27 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 public static class AtkPlugHandleExtensions
 {
+/// <summary>
+/// <para>
+/// Gets the unique ID of an #AtkPlug object, which can be used to
+/// embed inside of an #AtkSocket using atk_socket_embed().
+/// </para>
+/// <para>
+/// Internally, this calls a class function that should be registered
+/// by the IPC layer (usually at-spi2-atk). The implementor of an
+/// #AtkPlug object should call this function (after atk-bridge is
+/// loaded) and pass the value to the process implementing the
+/// #AtkSocket, so it could embed the plug.
+/// </para>
+/// </summary>
+
+/// <param name="plug">
+/// an #AtkPlug
+/// </param>
+/// <return>
+/// the unique ID for the plug
+/// </return>
+
 	public static string GetId(this MentorLake.Atk.AtkPlugHandle plug)
 	{
 		if (plug.IsInvalid) throw new Exception("Invalid handle (AtkPlugHandle)");

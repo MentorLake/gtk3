@@ -1,5 +1,6 @@
 namespace MentorLake.libxml2;
 
+
 public class xmlTextWriterPtrHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class xmlTextWriterPtrExtensions
 internal class xmlTextWriterPtrExterns
 {
 }
+
 
 public struct xmlTextWriterPtr
 {

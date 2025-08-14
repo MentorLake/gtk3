@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkRenderPassCreationControlEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkRenderPassCreationControlEXTExtensions
 internal class VkRenderPassCreationControlEXTExterns
 {
 }
+
 
 public struct VkRenderPassCreationControlEXT
 {

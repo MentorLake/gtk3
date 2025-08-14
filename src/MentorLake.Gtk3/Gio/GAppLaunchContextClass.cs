@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GAppLaunchContextClassHandle : BaseSafeHandle
 {
 }
@@ -14,15 +15,25 @@ internal class GAppLaunchContextClassExterns
 {
 }
 
+
 public struct GAppLaunchContextClass
 {
-	public GObjectClass parent_class;
-	public IntPtr get_display;
-	public IntPtr get_startup_notify_id;
-	public IntPtr launch_failed;
-	public IntPtr launched;
-	public IntPtr launch_started;
-	public IntPtr _g_reserved1;
-	public IntPtr _g_reserved2;
-	public IntPtr _g_reserved3;
+	
+public GObjectClass parent_class;
+	
+public IntPtr get_display;
+	
+public IntPtr get_startup_notify_id;
+	
+public IntPtr launch_failed;
+	
+public IntPtr launched;
+	
+public IntPtr launch_started;
+	
+public IntPtr _g_reserved1;
+	
+public IntPtr _g_reserved2;
+	
+public IntPtr _g_reserved3;
 }

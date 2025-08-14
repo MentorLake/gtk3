@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkRadioMenuItemPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkRadioMenuItemPrivateExtensions
 internal class GtkRadioMenuItemPrivateExterns
 {
 }
+
 
 public struct GtkRadioMenuItemPrivate
 {

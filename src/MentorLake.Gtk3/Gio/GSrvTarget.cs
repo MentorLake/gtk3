@@ -1,7 +1,56 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// A single target host/port that a network service is running on.
+/// </para>
+/// <para>
+/// SRV (service) records are used by some network protocols to provide
+/// service-specific aliasing and load-balancing. For example, XMPP
+/// (Jabber) uses SRV records to locate the XMPP server for a domain;
+/// rather than connecting directly to ‘example.com’ or assuming a
+/// specific server hostname like ‘xmpp.example.com’, an XMPP client
+/// would look up the `xmpp-client` SRV record for ‘example.com’, and
+/// then connect to whatever host was pointed to by that record.
+/// </para>
+/// <para>
+/// You can use [method@Gio.Resolver.lookup_service] or
+/// [method@Gio.Resolver.lookup_service_async] to find the `GSrvTarget`s
+/// for a given service. However, if you are simply planning to connect
+/// to the remote service, you can use [class@Gio.NetworkService]’s
+/// [iface@Gio.SocketConnectable] interface and not need to worry about
+/// `GSrvTarget` at all.
+/// </para>
+/// </summary>
+
 public class GSrvTargetHandle : BaseSafeHandle
 {
+/// <summary>
+/// <para>
+/// Creates a new #GSrvTarget with the given parameters.
+/// </para>
+/// <para>
+/// You should not need to use this; normally #GSrvTargets are
+/// created by #GResolver.
+/// </para>
+/// </summary>
+
+/// <param name="hostname">
+/// the host that the service is running on
+/// </param>
+/// <param name="port">
+/// the port that the service is running on
+/// </param>
+/// <param name="priority">
+/// the target's priority
+/// </param>
+/// <param name="weight">
+/// the target's weight
+/// </param>
+/// <return>
+/// a new #GSrvTarget.
+/// </return>
+
 	public static MentorLake.Gio.GSrvTargetHandle New(string hostname, ushort port, ushort priority, ushort weight)
 	{
 		return GSrvTargetExterns.g_srv_target_new(hostname, port, priority, weight);
@@ -12,11 +61,34 @@ public class GSrvTargetHandle : BaseSafeHandle
 
 public static class GSrvTargetExtensions
 {
+/// <summary>
+/// <para>
+/// Copies @target
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
+/// <return>
+/// a copy of @target
+/// </return>
+
 	public static MentorLake.Gio.GSrvTargetHandle Copy(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		if (target.IsInvalid) throw new Exception("Invalid handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_copy(target);
 	}
+
+/// <summary>
+/// <para>
+/// Frees @target
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
 
 	public static void Free(this MentorLake.Gio.GSrvTargetHandle target)
 	{
@@ -24,11 +96,40 @@ public static class GSrvTargetExtensions
 		GSrvTargetExterns.g_srv_target_free(target);
 	}
 
+/// <summary>
+/// <para>
+/// Gets @target's hostname (in ASCII form; if you are going to present
+/// this to the user, you should use g_hostname_is_ascii_encoded() to
+/// check if it contains encoded Unicode segments, and use
+/// g_hostname_to_unicode() to convert it if it does.)
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
+/// <return>
+/// @target's hostname
+/// </return>
+
 	public static string GetHostname(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		if (target.IsInvalid) throw new Exception("Invalid handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_hostname(target);
 	}
+
+/// <summary>
+/// <para>
+/// Gets @target's port
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
+/// <return>
+/// @target's port
+/// </return>
 
 	public static ushort GetPort(this MentorLake.Gio.GSrvTargetHandle target)
 	{
@@ -36,11 +137,41 @@ public static class GSrvTargetExtensions
 		return GSrvTargetExterns.g_srv_target_get_port(target);
 	}
 
+/// <summary>
+/// <para>
+/// Gets @target's priority. You should not need to look at this;
+/// #GResolver already sorts the targets according to the algorithm in
+/// RFC 2782.
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
+/// <return>
+/// @target's priority
+/// </return>
+
 	public static ushort GetPriority(this MentorLake.Gio.GSrvTargetHandle target)
 	{
 		if (target.IsInvalid) throw new Exception("Invalid handle (GSrvTarget)");
 		return GSrvTargetExterns.g_srv_target_get_priority(target);
 	}
+
+/// <summary>
+/// <para>
+/// Gets @target's weight. You should not need to look at this;
+/// #GResolver already sorts the targets according to the algorithm in
+/// RFC 2782.
+/// </para>
+/// </summary>
+
+/// <param name="target">
+/// a #GSrvTarget
+/// </param>
+/// <return>
+/// @target's weight
+/// </return>
 
 	public static ushort GetWeight(this MentorLake.Gio.GSrvTargetHandle target)
 	{
@@ -83,8 +214,44 @@ internal class GSrvTargetExterns
 
 }
 
+/// <summary>
+/// <para>
+/// A single target host/port that a network service is running on.
+/// </para>
+/// <para>
+/// SRV (service) records are used by some network protocols to provide
+/// service-specific aliasing and load-balancing. For example, XMPP
+/// (Jabber) uses SRV records to locate the XMPP server for a domain;
+/// rather than connecting directly to ‘example.com’ or assuming a
+/// specific server hostname like ‘xmpp.example.com’, an XMPP client
+/// would look up the `xmpp-client` SRV record for ‘example.com’, and
+/// then connect to whatever host was pointed to by that record.
+/// </para>
+/// <para>
+/// You can use [method@Gio.Resolver.lookup_service] or
+/// [method@Gio.Resolver.lookup_service_async] to find the `GSrvTarget`s
+/// for a given service. However, if you are simply planning to connect
+/// to the remote service, you can use [class@Gio.NetworkService]’s
+/// [iface@Gio.SocketConnectable] interface and not need to worry about
+/// `GSrvTarget` at all.
+/// </para>
+/// </summary>
+
 public struct GSrvTarget
 {
+/// <summary>
+/// <para>
+/// Sorts @targets in place according to the algorithm in RFC 2782.
+/// </para>
+/// </summary>
+
+/// <param name="targets">
+/// a #GList of #GSrvTarget
+/// </param>
+/// <return>
+/// the head of the sorted list.
+/// </return>
+
 	public static MentorLake.GLib.GListHandle ListSort(MentorLake.GLib.GListHandle targets)
 	{
 		return GSrvTargetExterns.g_srv_target_list_sort(targets);

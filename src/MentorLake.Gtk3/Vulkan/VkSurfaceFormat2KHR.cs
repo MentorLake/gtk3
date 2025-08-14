@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkSurfaceFormat2KHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkSurfaceFormat2KHRExtensions
 internal class VkSurfaceFormat2KHRExterns
 {
 }
+
 
 public struct VkSurfaceFormat2KHR
 {

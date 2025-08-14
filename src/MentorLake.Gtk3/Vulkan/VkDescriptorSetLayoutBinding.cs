@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDescriptorSetLayoutBindingHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDescriptorSetLayoutBindingExtensions
 internal class VkDescriptorSetLayoutBindingExterns
 {
 }
+
 
 public struct VkDescriptorSetLayoutBinding
 {

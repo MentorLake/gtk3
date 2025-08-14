@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkQueueGlobalPriorityKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkQueueGlobalPriorityKHRExtensions
 internal class VkQueueGlobalPriorityKHRExterns
 {
 }
+
 
 public struct VkQueueGlobalPriorityKHR
 {

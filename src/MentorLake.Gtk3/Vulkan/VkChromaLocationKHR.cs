@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkChromaLocationKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkChromaLocationKHRExtensions
 internal class VkChromaLocationKHRExterns
 {
 }
+
 
 public struct VkChromaLocationKHR
 {

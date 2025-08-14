@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkActionGroupClassHandle : BaseSafeHandle
 {
 }
@@ -14,12 +15,29 @@ internal class GtkActionGroupClassExterns
 {
 }
 
+
 public struct GtkActionGroupClass
 {
-	public GObjectClass parent_class;
-	public IntPtr get_action;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	/// <summary>
+/// <para>
+/// The parent class.
+/// </para>
+/// </summary>
+
+public GObjectClass parent_class;
+	/// <summary>
+/// <para>
+/// Looks up an action in the action group by name.
+/// </para>
+/// </summary>
+
+public IntPtr get_action;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

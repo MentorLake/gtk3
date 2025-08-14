@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkTableRowColHandle : BaseSafeHandle
 {
 }
@@ -14,14 +15,23 @@ internal class GtkTableRowColExterns
 {
 }
 
+
 public struct GtkTableRowCol
 {
-	public ushort requisition;
-	public ushort allocation;
-	public ushort spacing;
-	public uint need_expand;
-	public uint need_shrink;
-	public uint expand;
-	public uint shrink;
-	public uint empty;
+	
+public ushort requisition;
+	
+public ushort allocation;
+	
+public ushort spacing;
+	
+public uint need_expand;
+	
+public uint need_shrink;
+	
+public uint expand;
+	
+public uint shrink;
+	
+public uint empty;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkAmigoProfilingSubmitInfoSECHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkAmigoProfilingSubmitInfoSECExtensions
 internal class VkAmigoProfilingSubmitInfoSECExterns
 {
 }
+
 
 public struct VkAmigoProfilingSubmitInfoSEC
 {

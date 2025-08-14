@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GThemedIconClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GThemedIconClassExtensions
 internal class GThemedIconClassExterns
 {
 }
+
 
 public struct GThemedIconClass
 {

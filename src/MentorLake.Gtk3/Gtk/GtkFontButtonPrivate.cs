@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkFontButtonPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkFontButtonPrivateExtensions
 internal class GtkFontButtonPrivateExterns
 {
 }
+
 
 public struct GtkFontButtonPrivate
 {

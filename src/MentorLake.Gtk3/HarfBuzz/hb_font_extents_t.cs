@@ -1,5 +1,15 @@
 namespace MentorLake.HarfBuzz;
 
+/// <summary>
+/// <para>
+/// Font-wide extent values, measured in font units.
+/// </para>
+/// <para>
+/// Note that typically @ascender is positive and @descender
+/// negative, in coordinate systems that grow up.
+/// </para>
+/// </summary>
+
 public class hb_font_extents_tHandle : BaseSafeHandle
 {
 }
@@ -14,9 +24,37 @@ internal class hb_font_extents_tExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Font-wide extent values, measured in font units.
+/// </para>
+/// <para>
+/// Note that typically @ascender is positive and @descender
+/// negative, in coordinate systems that grow up.
+/// </para>
+/// </summary>
+
 public struct hb_font_extents_t
 {
-	public hb_position_t ascender;
-	public hb_position_t descender;
-	public hb_position_t line_gap;
+	/// <summary>
+/// <para>
+/// The height of typographic ascenders.
+/// </para>
+/// </summary>
+
+public hb_position_t ascender;
+	/// <summary>
+/// <para>
+/// The depth of typographic descenders.
+/// </para>
+/// </summary>
+
+public hb_position_t descender;
+	/// <summary>
+/// <para>
+/// The suggested line-spacing gap.
+/// </para>
+/// </summary>
+
+public hb_position_t line_gap;
 }

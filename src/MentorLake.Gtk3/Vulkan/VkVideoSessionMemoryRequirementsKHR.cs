@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkVideoSessionMemoryRequirementsKHRHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkVideoSessionMemoryRequirementsKHRExtensions
 internal class VkVideoSessionMemoryRequirementsKHRExterns
 {
 }
+
 
 public struct VkVideoSessionMemoryRequirementsKHR
 {

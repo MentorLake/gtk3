@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkDrawingAreaClassHandle : BaseSafeHandle
 {
 }
@@ -14,11 +15,17 @@ internal class GtkDrawingAreaClassExterns
 {
 }
 
+
 public struct GtkDrawingAreaClass
 {
-	public GtkWidgetClass parent_class;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GtkWidgetClass parent_class;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Atk;
 
+
 public class AtkGObjectAccessibleClassHandle : BaseSafeHandle
 {
 }
@@ -14,9 +15,13 @@ internal class AtkGObjectAccessibleClassExterns
 {
 }
 
+
 public struct AtkGObjectAccessibleClass
 {
-	public AtkObjectClass parent_class;
-	public AtkFunction pad1;
-	public AtkFunction pad2;
+	
+public AtkObjectClass parent_class;
+	
+public AtkFunction pad1;
+	
+public AtkFunction pad2;
 }

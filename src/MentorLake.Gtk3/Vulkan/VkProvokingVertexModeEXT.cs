@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkProvokingVertexModeEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkProvokingVertexModeEXTExtensions
 internal class VkProvokingVertexModeEXTExterns
 {
 }
+
 
 public struct VkProvokingVertexModeEXT
 {

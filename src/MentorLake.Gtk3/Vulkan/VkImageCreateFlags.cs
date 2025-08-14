@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkImageCreateFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkImageCreateFlagsExtensions
 internal class VkImageCreateFlagsExterns
 {
 }
+
 
 public struct VkImageCreateFlags
 {

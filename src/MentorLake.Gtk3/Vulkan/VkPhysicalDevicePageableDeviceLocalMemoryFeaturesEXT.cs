@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXTExtensio
 internal class VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
 {

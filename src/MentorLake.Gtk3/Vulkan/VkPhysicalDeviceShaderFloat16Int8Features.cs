@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceShaderFloat16Int8FeaturesHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceShaderFloat16Int8FeaturesExtensions
 internal class VkPhysicalDeviceShaderFloat16Int8FeaturesExterns
 {
 }
+
 
 public struct VkPhysicalDeviceShaderFloat16Int8Features
 {

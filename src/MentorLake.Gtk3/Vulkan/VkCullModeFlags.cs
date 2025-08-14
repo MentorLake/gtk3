@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkCullModeFlagsHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkCullModeFlagsExtensions
 internal class VkCullModeFlagsExterns
 {
 }
+
 
 public struct VkCullModeFlags
 {

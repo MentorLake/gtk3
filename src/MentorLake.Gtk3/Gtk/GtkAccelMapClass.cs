@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkAccelMapClassHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GtkAccelMapClassExtensions
 internal class GtkAccelMapClassExterns
 {
 }
+
 
 public struct GtkAccelMapClass
 {

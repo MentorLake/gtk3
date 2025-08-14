@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkUIManagerClassHandle : BaseSafeHandle
 {
 }
@@ -14,19 +15,33 @@ internal class GtkUIManagerClassExterns
 {
 }
 
+
 public struct GtkUIManagerClass
 {
-	public GObjectClass parent_class;
-	public IntPtr add_widget;
-	public IntPtr actions_changed;
-	public IntPtr connect_proxy;
-	public IntPtr disconnect_proxy;
-	public IntPtr pre_activate;
-	public IntPtr post_activate;
-	public IntPtr get_widget;
-	public IntPtr get_action;
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public GObjectClass parent_class;
+	
+public IntPtr add_widget;
+	
+public IntPtr actions_changed;
+	
+public IntPtr connect_proxy;
+	
+public IntPtr disconnect_proxy;
+	
+public IntPtr pre_activate;
+	
+public IntPtr post_activate;
+	
+public IntPtr get_widget;
+	
+public IntPtr get_action;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

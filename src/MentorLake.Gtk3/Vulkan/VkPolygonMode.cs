@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPolygonModeHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPolygonModeExtensions
 internal class VkPolygonModeExterns
 {
 }
+
 
 public struct VkPolygonMode
 {

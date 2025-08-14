@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkDeviceDiagnosticsConfigFlagBitsNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkDeviceDiagnosticsConfigFlagBitsNVExtensions
 internal class VkDeviceDiagnosticsConfigFlagBitsNVExterns
 {
 }
+
 
 public struct VkDeviceDiagnosticsConfigFlagBitsNV
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXTExtensions
 internal class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXTExterns
 {
 }
+
 
 public struct VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT
 {

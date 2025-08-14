@@ -1,5 +1,6 @@
 namespace MentorLake.Gio;
 
+
 public class GIOStreamPrivateHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class GIOStreamPrivateExtensions
 internal class GIOStreamPrivateExterns
 {
 }
+
 
 public struct GIOStreamPrivate
 {

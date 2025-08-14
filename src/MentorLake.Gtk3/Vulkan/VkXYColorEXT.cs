@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkXYColorEXTHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkXYColorEXTExtensions
 internal class VkXYColorEXTExterns
 {
 }
+
 
 public struct VkXYColorEXT
 {

@@ -1,5 +1,6 @@
 namespace MentorLake.Gtk;
 
+
 public class GtkActionBarClassHandle : BaseSafeHandle
 {
 }
@@ -14,10 +15,15 @@ internal class GtkActionBarClassExterns
 {
 }
 
+
 public struct GtkActionBarClass
 {
-	public IntPtr _gtk_reserved1;
-	public IntPtr _gtk_reserved2;
-	public IntPtr _gtk_reserved3;
-	public IntPtr _gtk_reserved4;
+	
+public IntPtr _gtk_reserved1;
+	
+public IntPtr _gtk_reserved2;
+	
+public IntPtr _gtk_reserved3;
+	
+public IntPtr _gtk_reserved4;
 }

@@ -1,5 +1,6 @@
 namespace MentorLake.Vulkan;
 
+
 public class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNVHandle : BaseSafeHandle
 {
 }
@@ -13,6 +14,7 @@ public static class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNVExtensions
 internal class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNVExterns
 {
 }
+
 
 public struct VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV
 {

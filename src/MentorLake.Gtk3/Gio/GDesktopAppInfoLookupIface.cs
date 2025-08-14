@@ -1,5 +1,12 @@
 namespace MentorLake.Gio;
 
+/// <summary>
+/// <para>
+/// Interface that is used by backends to associate default
+/// handlers with URI schemes.
+/// </para>
+/// </summary>
+
 public class GDesktopAppInfoLookupIfaceHandle : BaseSafeHandle
 {
 }
@@ -14,8 +21,23 @@ internal class GDesktopAppInfoLookupIfaceExterns
 {
 }
 
+/// <summary>
+/// <para>
+/// Interface that is used by backends to associate default
+/// handlers with URI schemes.
+/// </para>
+/// </summary>
+
 public struct GDesktopAppInfoLookupIface
 {
-	public GTypeInterface g_iface;
-	public IntPtr get_default_for_uri_scheme;
+	
+public GTypeInterface g_iface;
+	/// <summary>
+/// <para>
+/// Virtual method for
+///  g_desktop_app_info_lookup_get_default_for_uri_scheme().
+/// </para>
+/// </summary>
+
+public IntPtr get_default_for_uri_scheme;
 }

@@ -80,7 +80,7 @@ public static class GCredentialsHandleExtensions
 /// <para>
 /// It is a programming error (which will cause a warning to be
 /// logged) to use this method if there is no #GCredentials support for
-/// the OS or if @native_type isn't supported by the OS.
+/// the OS or if @native_type isn&apos;t supported by the OS.
 /// </para>
 /// </summary>
 
@@ -93,7 +93,7 @@ public static class GCredentialsHandleExtensions
 /// <return>
 /// The pointer to native credentials or
 ///     %NULL if there is no #GCredentials support for the OS or if @native_type
-///     isn't supported by the OS. Do not free the returned data, it is owned
+///     isn&apos;t supported by the OS. Do not free the returned data, it is owned
 ///     by @credentials.
 /// </return>
 
@@ -194,7 +194,7 @@ public static class GCredentialsHandleExtensions
 /// <para>
 /// It is a programming error (which will cause a warning to be
 /// logged) to use this method if there is no #GCredentials support for
-/// the OS or if @native_type isn't supported by the OS.
+/// the OS or if @native_type isn&apos;t supported by the OS.
 /// </para>
 /// </summary>
 
@@ -224,7 +224,7 @@ public static class GCredentialsHandleExtensions
 /// This operation can fail if #GCredentials is not supported on the
 /// OS or if the native credentials type does not contain information
 /// about the UNIX user. It can also fail if the OS does not allow the
-/// use of "spoofed" credentials.
+/// use of &quot;spoofed&quot; credentials.
 /// </para>
 /// </summary>
 

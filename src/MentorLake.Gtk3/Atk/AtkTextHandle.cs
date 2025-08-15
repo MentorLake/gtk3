@@ -11,7 +11,7 @@ namespace MentorLake.Atk;
 /// unattributed, and very brief may expose that content via
 /// #atk_object_get_name instead; however if the text is editable,
 /// multi-line, typically longer than three or four words, attributed,
-/// selectable, or if the object already uses the 'name' ATK property
+/// selectable, or if the object already uses the &apos;name&apos; ATK property
 /// for other information, the #AtkText interface should be used to
 /// expose the text content.  In the case of editable text content,
 /// #AtkEditableText (a subtype of the #AtkText interface) should be
@@ -245,7 +245,7 @@ public static class AtkTextHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the offset of the character located at coordinates @x and @y. @x and @y
-/// are interpreted as being relative to the screen or this widget's window
+/// are interpreted as being relative to the screen or this widget&apos;s window
 /// depending on @coords.
 /// </para>
 /// </summary>
@@ -715,8 +715,8 @@ public static class AtkTextHandleExtensions
 /// </para>
 /// <para>
 /// Calling this method should also scroll the application viewport in a way
-/// that matches the behavior of the application's typical caret motion or tab
-/// navigation as closely as possible. This also means that if the application's
+/// that matches the behavior of the application&apos;s typical caret motion or tab
+/// navigation as closely as possible. This also means that if the application&apos;s
 /// caret motion or focus navigation does not trigger a scroll operation, this
 /// method should not trigger one either. If the application does not have a caret
 /// motion or focus navigation operation, this method should try to scroll the new

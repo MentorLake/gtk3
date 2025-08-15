@@ -37,28 +37,27 @@ namespace MentorLake.Gtk;
 /// section to ”horizontal-buttons” and set the icons of your items
 /// with the ”verb-icon” attribute.
 /// </para>
-/// <para>
-/// |[
-/// <section>
-///   <attribute name="display-hint">horizontal-buttons</attribute>
-///   <item>
-///     <attribute name="label">Cut</attribute>
-///     <attribute name="action">app.cut</attribute>
-///     <attribute name="verb-icon">edit-cut-symbolic</attribute>
-///   </item>
-///   <item>
-///     <attribute name="label">Copy</attribute>
-///     <attribute name="action">app.copy</attribute>
-///     <attribute name="verb-icon">edit-copy-symbolic</attribute>
-///   </item>
-///   <item>
-///     <attribute name="label">Paste</attribute>
-///     <attribute name="action">app.paste</attribute>
-///     <attribute name="verb-icon">edit-paste-symbolic</attribute>
-///   </item>
-/// </section>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;section&amp;gt;
+/// &amp;lt;section&amp;gt;
+///   &amp;lt;attribute name=&quot;display-hint&quot;&amp;gt;horizontal-buttons&amp;lt;/attribute&amp;gt;
+///   &amp;lt;item&amp;gt;
+///     &amp;lt;attribute name=&quot;label&quot;&amp;gt;Cut&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;action&quot;&amp;gt;app.cut&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;verb-icon&quot;&amp;gt;edit-cut-symbolic&amp;lt;/attribute&amp;gt;
+///   &amp;lt;/item&amp;gt;
+///   &amp;lt;item&amp;gt;
+///     &amp;lt;attribute name=&quot;label&quot;&amp;gt;Copy&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;action&quot;&amp;gt;app.copy&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;verb-icon&quot;&amp;gt;edit-copy-symbolic&amp;lt;/attribute&amp;gt;
+///   &amp;lt;/item&amp;gt;
+///   &amp;lt;item&amp;gt;
+///     &amp;lt;attribute name=&quot;label&quot;&amp;gt;Paste&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;action&quot;&amp;gt;app.paste&amp;lt;/attribute&amp;gt;
+///     &amp;lt;attribute name=&quot;verb-icon&quot;&amp;gt;edit-paste-symbolic&amp;lt;/attribute&amp;gt;
+///   &amp;lt;/item&amp;gt;
+/// &amp;lt;/section&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>

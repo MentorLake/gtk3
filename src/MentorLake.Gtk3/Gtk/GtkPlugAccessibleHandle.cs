@@ -8,7 +8,7 @@ public static class GtkPlugAccessibleHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -454,7 +454,7 @@ public static class GtkPlugAccessibleHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>

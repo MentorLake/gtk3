@@ -7,8 +7,8 @@ namespace MentorLake.cairo;
 /// collection of shapes used to draw text. A glyph is one of these
 /// shapes. There can be multiple glyphs for a single character
 /// (alternates to be used in different contexts, for example), or a
-/// glyph can be a <firstterm>ligature</firstterm> of multiple
-/// characters. Cairo doesn't expose any way of converting input text
+/// glyph can be a &amp;lt;firstterm&amp;gt;ligature&amp;lt;/firstterm&amp;gt; of multiple
+/// characters. Cairo doesn&apos;t expose any way of converting input text
 /// into glyphs, so in order to use the Cairo interfaces that take
 /// arrays of glyphs, you must directly access the appropriate
 /// underlying font system.
@@ -41,8 +41,8 @@ internal class cairo_glyph_tExterns
 /// collection of shapes used to draw text. A glyph is one of these
 /// shapes. There can be multiple glyphs for a single character
 /// (alternates to be used in different contexts, for example), or a
-/// glyph can be a <firstterm>ligature</firstterm> of multiple
-/// characters. Cairo doesn't expose any way of converting input text
+/// glyph can be a &amp;lt;firstterm&amp;gt;ligature&amp;lt;/firstterm&amp;gt; of multiple
+/// characters. Cairo doesn&apos;t expose any way of converting input text
 /// into glyphs, so in order to use the Cairo interfaces that take
 /// arrays of glyphs, you must directly access the appropriate
 /// underlying font system.

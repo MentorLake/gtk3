@@ -28,8 +28,8 @@ namespace MentorLake.Gdk;
 /// <para>
 /// ## Backend-specific code ## {#backend-specific}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// #ifdef GDK_WINDOWING_X11
 /// #ifdef GDK_WINDOWING_X11
 ///   if (GDK_IS_X11_DISPLAY (display))
 ///     {
@@ -44,9 +44,8 @@ namespace MentorLake.Gdk;
 ///     }
 ///   else
 /// #endif
-///   g_error ("Unsupported GDK backend");
-/// ]|
-/// </para>
+///   g_error (&quot;Unsupported GDK backend&quot;);
+/// </code>
 /// </summary>
 
 public class GdkDisplayManagerHandle : GObjectHandle

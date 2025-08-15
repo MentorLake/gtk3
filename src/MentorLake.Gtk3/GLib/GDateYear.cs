@@ -19,6 +19,20 @@ public struct GDateYear
 	public ushort Value;
 }
 
+/// <summary>
+/// <para>
+/// Integer type representing a year.
+/// </para>
+/// <para>
+/// The %G_DATE_BAD_YEAR value is the invalid value. The year
+/// must be 1 or higher; negative ([BCE](https://en.wikipedia.org/wiki/Common_Era))
+/// years are not allowed.
+/// </para>
+/// <para>
+/// The year is represented with four digits.
+/// </para>
+/// </summary>
+
 public class GDateYearHandle : BaseSafeHandle
 {
 }

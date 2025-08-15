@@ -8,42 +8,38 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// Take for example the following function:
-/// |[<!-- language="C" -->
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static int current_number = 0;
-/// </para>
-/// <para>
+/// 
 ///     // now do a very complicated calculation to calculate the new
 ///     // number, this might for example be a random number generator
 ///     current_number = calc_next_number (current_number);
-/// </para>
-/// <para>
+/// 
 ///     return current_number;
 ///   }
-/// ]|
-/// It is easy to see that this won't work in a multi-threaded
+/// </code>
 /// application. There current_number must be protected against shared
 /// access. A #GMutex can be used as a solution to this problem:
-/// |[<!-- language="C" -->
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static GMutex mutex;
 ///     static int current_number = 0;
 ///     int ret_val;
-/// </para>
-/// <para>
-///     g_mutex_lock (&mutex);
+/// 
+///     g_mutex_lock (&amp;mutex);
 ///     ret_val = current_number = calc_next_number (current_number);
-///     g_mutex_unlock (&mutex);
-/// </para>
-/// <para>
+///     g_mutex_unlock (&amp;mutex);
+/// 
 ///     return ret_val;
 ///   }
-/// ]|
-/// Notice that the #GMutex is not initialised to any particular value.
+/// </code>
 /// Its placement in static storage ensures that it will be initialised
 /// to all-zeros, which is appropriate.
 /// </para>
@@ -117,21 +113,18 @@ public static class GMutexExtensions
 /// It is not necessary to initialize a mutex that has been
 /// statically allocated.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   typedef struct {
 ///   typedef struct {
 ///     GMutex m;
 ///     ...
 ///   } Blob;
-/// </para>
-/// <para>
+/// 
 /// Blob *b;
-/// </para>
-/// <para>
+/// 
 /// b = g_new (Blob, 1);
-/// g_mutex_init (&b->m);
-/// ]|
-/// </para>
+/// g_mutex_init (&amp;b-&amp;gt;m);
+/// </code>
 /// <para>
 /// To undo the effect of g_mutex_init() when a mutex is no longer
 /// needed, use g_mutex_clear().
@@ -261,42 +254,38 @@ internal class GMutexExterns
 /// </para>
 /// <para>
 /// Take for example the following function:
-/// |[<!-- language="C" -->
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static int current_number = 0;
-/// </para>
-/// <para>
+/// 
 ///     // now do a very complicated calculation to calculate the new
 ///     // number, this might for example be a random number generator
 ///     current_number = calc_next_number (current_number);
-/// </para>
-/// <para>
+/// 
 ///     return current_number;
 ///   }
-/// ]|
-/// It is easy to see that this won't work in a multi-threaded
+/// </code>
 /// application. There current_number must be protected against shared
 /// access. A #GMutex can be used as a solution to this problem:
-/// |[<!-- language="C" -->
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static GMutex mutex;
 ///     static int current_number = 0;
 ///     int ret_val;
-/// </para>
-/// <para>
-///     g_mutex_lock (&mutex);
+/// 
+///     g_mutex_lock (&amp;mutex);
 ///     ret_val = current_number = calc_next_number (current_number);
-///     g_mutex_unlock (&mutex);
-/// </para>
-/// <para>
+///     g_mutex_unlock (&amp;mutex);
+/// 
 ///     return ret_val;
 ///   }
-/// ]|
-/// Notice that the #GMutex is not initialised to any particular value.
+/// </code>
 /// Its placement in static storage ensures that it will be initialised
 /// to all-zeros, which is appropriate.
 /// </para>

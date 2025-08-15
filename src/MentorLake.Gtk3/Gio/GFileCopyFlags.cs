@@ -32,7 +32,7 @@ public enum GFileCopyFlags : uint
 	G_FILE_COPY_BACKUP = 2,
 /// <summary>
 /// <para>
-/// Don't follow symlinks.
+/// Don&apos;t follow symlinks.
 /// </para>
 /// </summary>
 
@@ -46,7 +46,7 @@ public enum GFileCopyFlags : uint
 	G_FILE_COPY_ALL_METADATA = 8,
 /// <summary>
 /// <para>
-/// Don't use copy and delete fallback if native move not supported.
+/// Don&apos;t use copy and delete fallback if native move not supported.
 /// </para>
 /// </summary>
 

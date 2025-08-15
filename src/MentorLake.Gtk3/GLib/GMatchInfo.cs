@@ -31,9 +31,9 @@ public static class GMatchInfoExtensions
 /// </para>
 /// <para>
 /// @match_info may be %NULL in which case @string_to_expand must not
-/// contain references. For instance "foo\n" does not refer to an actual
-/// pattern and '\n' merely will be replaced with \n character,
-/// while to expand "\0" (whole match) one needs the result of a match.
+/// contain references. For instance &quot;foo\n&quot; does not refer to an actual
+/// pattern and &apos;\n&apos; merely will be replaced with \n character,
+/// while to expand &quot;\0&quot; (whole match) one needs the result of a match.
 /// Use g_regex_check_replacement() to find out whether @string_to_expand
 /// contains references.
 /// </para>
@@ -59,13 +59,13 @@ public static class GMatchInfoExtensions
 
 /// <summary>
 /// <para>
-/// Retrieves the text matching the @match_num'th capturing
+/// Retrieves the text matching the @match_num&apos;th capturing
 /// parentheses. 0 is the full text of the match, 1 is the first paren
 /// set, 2 the second, and so on.
 /// </para>
 /// <para>
-/// If @match_num is a valid sub pattern but it didn't match anything
-/// (e.g. sub pattern 1, matching "b" against "(a)?b") then an empty
+/// If @match_num is a valid sub pattern but it didn&apos;t match anything
+/// (e.g. sub pattern 1, matching &quot;b&quot; against &quot;(a)?b&quot;) then an empty
 /// string is returned.
 /// </para>
 /// <para>
@@ -106,8 +106,8 @@ public static class GMatchInfoExtensions
 /// text.
 /// </para>
 /// <para>
-/// If a sub pattern didn't match anything (e.g. sub pattern 1, matching
-/// "b" against "(a)?b") then an empty string is inserted.
+/// If a sub pattern didn&apos;t match anything (e.g. sub pattern 1, matching
+/// &quot;b&quot; against &quot;(a)?b&quot;) then an empty string is inserted.
 /// </para>
 /// <para>
 /// If the last match was obtained using the DFA algorithm, that is using
@@ -142,8 +142,8 @@ public static class GMatchInfoExtensions
 /// Retrieves the text matching the capturing parentheses named @name.
 /// </para>
 /// <para>
-/// If @name is a valid sub pattern name but it didn't match anything
-/// (e.g. sub pattern `"X"`, matching `"b"` against `"(?P<X>a)?b"`)
+/// If @name is a valid sub pattern name but it didn&apos;t match anything
+/// (e.g. sub pattern `&quot;X&quot;`, matching `&quot;b&quot;` against `&quot;(?P&amp;lt;X&amp;gt;a)?b&quot;`)
 /// then an empty string is returned.
 /// </para>
 /// <para>
@@ -174,8 +174,8 @@ public static class GMatchInfoExtensions
 /// Retrieves the position in bytes of the capturing parentheses named @name.
 /// </para>
 /// <para>
-/// If @name is a valid sub pattern name but it didn't match anything
-/// (e.g. sub pattern `"X"`, matching `"b"` against `"(?P<X>a)?b"`)
+/// If @name is a valid sub pattern name but it didn&apos;t match anything
+/// (e.g. sub pattern `&quot;X&quot;`, matching `&quot;b&quot;` against `&quot;(?P&amp;lt;X&amp;gt;a)?b&quot;`)
 /// then @start_pos and @end_pos are set to -1 and %TRUE is returned.
 /// </para>
 /// </summary>
@@ -208,13 +208,13 @@ public static class GMatchInfoExtensions
 
 /// <summary>
 /// <para>
-/// Retrieves the position in bytes of the @match_num'th capturing
+/// Retrieves the position in bytes of the @match_num&apos;th capturing
 /// parentheses. 0 is the full text of the match, 1 is the first
 /// paren set, 2 the second, and so on.
 /// </para>
 /// <para>
-/// If @match_num is a valid sub pattern but it didn't match anything
-/// (e.g. sub pattern 1, matching "b" against "(a)?b") then @start_pos
+/// If @match_num is a valid sub pattern but it didn&apos;t match anything
+/// (e.g. sub pattern 1, matching &quot;b&quot; against &quot;(a)?b&quot;) then @start_pos
 /// and @end_pos are set to -1 and %TRUE is returned.
 /// </para>
 /// <para>
@@ -349,7 +349,7 @@ public static class GMatchInfoExtensions
 /// Consider, for example, an application where a human is required to
 /// type in data for a field with specific formatting requirements. An
 /// example might be a date in the form ddmmmyy, defined by the pattern
-/// "^\d?\d(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\d\d$".
+/// &quot;^\d?\d(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\d\d$&quot;.
 /// If the application sees the user’s keystrokes one by one, and can
 /// check that what has been typed so far is potentially valid, it is
 /// able to raise an error as soon as a mistake is made.

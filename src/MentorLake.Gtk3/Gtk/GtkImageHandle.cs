@@ -4,14 +4,14 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The #GtkImage widget displays an image. Various kinds of object
 /// can be displayed as an image; most typically, you would load a
-/// #GdkPixbuf ("pixel buffer") from a file, and then display that.
+/// #GdkPixbuf (&quot;pixel buffer&quot;) from a file, and then display that.
 /// There’s a convenience function to do this, gtk_image_new_from_file(),
 /// used as follows:
-/// |[<!-- language="C" -->
+/// <code>
 ///   GtkWidget *image;
-///   image = gtk_image_new_from_file ("myfile.png");
-/// ]|
-/// If the file isn’t loaded successfully, the image will contain a
+///   GtkWidget *image;
+///   image = gtk_image_new_from_file (&quot;myfile.png&quot;);
+/// </code>
 /// “broken image” icon similar to that used in many web browsers.
 /// If you want to handle errors in loading the file yourself,
 /// for example by displaying an error message, then load the image with
@@ -36,50 +36,42 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Handling button press events on a #GtkImage.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   static gboolean
 ///   static gboolean
 ///   button_press_callback (GtkWidget      *event_box,
 ///                          GdkEventButton *event,
 ///                          gpointer        data)
 ///   {
-///     g_print ("Event box clicked at coordinates %f,%f\n",
-///              event->x, event->y);
-/// </para>
-/// <para>
+///     g_print (&quot;Event box clicked at coordinates %f,%f\n&quot;,
+///              event-&amp;gt;x, event-&amp;gt;y);
+/// 
 ///     // Returning TRUE means we handled the event, so the signal
 ///     // emission should be stopped (don’t call any further callbacks
 ///     // that may be connected). Return FALSE to continue invoking callbacks.
 ///     return TRUE;
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   static GtkWidget*
 ///   create_image (void)
 ///   {
 ///     GtkWidget *image;
 ///     GtkWidget *event_box;
-/// </para>
-/// <para>
-///     image = gtk_image_new_from_file ("myfile.png");
-/// </para>
-/// <para>
+/// 
+///     image = gtk_image_new_from_file (&quot;myfile.png&quot;);
+/// 
 ///     event_box = gtk_event_box_new ();
-/// </para>
-/// <para>
+/// 
 ///     gtk_container_add (GTK_CONTAINER (event_box), image);
-/// </para>
-/// <para>
+/// 
 ///     g_signal_connect (G_OBJECT (event_box),
-///                       "button_press_event",
+///                       &quot;button_press_event&quot;,
 ///                       G_CALLBACK (button_press_callback),
 ///                       image);
-/// </para>
-/// <para>
+/// 
 ///     return image;
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// When handling events on the event box, keep in mind that coordinates
 /// in the image may be different from event box coordinates due to

@@ -37,7 +37,7 @@ public struct GVolumeIface
 public GTypeInterface g_iface;
 	/// <summary>
 /// <para>
-/// Changed signal that is emitted when the volume's state has changed.
+/// Changed signal that is emitted when the volume&apos;s state has changed.
 /// </para>
 /// </summary>
 
@@ -132,7 +132,7 @@ public IntPtr eject_finish;
 	/// <summary>
 /// <para>
 /// Returns the [identifier](#volume-identifiers) of the given kind, or %NULL if
-///    the #GVolume doesn't have one.
+///    the #GVolume doesn&apos;t have one.
 /// </para>
 /// </summary>
 

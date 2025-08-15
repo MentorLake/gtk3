@@ -137,7 +137,7 @@ public static class GMainContextExtensions
 /// the maximum numerical priority of sources to check
 /// </param>
 /// <param name="fds">
-/// array of #GPollFD's that was passed to
+/// array of #GPollFD&apos;s that was passed to
 ///       the last call to [method@GLib.MainContext.query]
 /// </param>
 /// <param name="n_fds">
@@ -521,8 +521,8 @@ public static class GMainContextExtensions
 /// of the thread.
 /// </para>
 /// <para>
-/// If you don't have control over how the new thread was created (e.g.
-/// in the new thread isn't newly created, or if the thread life
+/// If you don&apos;t have control over how the new thread was created (e.g.
+/// in the new thread isn&apos;t newly created, or if the thread life
 /// cycle is managed by a #GThreadPool), it is always suggested to wrap
 /// the logic that needs to use the new [struct@GLib.MainContext] inside a
 /// [method@GLib.MainContext.push_thread_default] /
@@ -574,36 +574,32 @@ public static class GMainContextExtensions
 /// This is intended to be used with g_autoptr().  Note that g_autoptr()
 /// is only available when using GCC or clang, so the following example
 /// will only work with those compilers:
-/// |[
+/// <code>
+/// typedef struct
 /// typedef struct
 /// {
 ///   ...
 ///   GMainContext *context;
 ///   ...
 /// } MyObject;
-/// </para>
-/// <para>
+/// 
 /// static void
 /// my_object_do_stuff (MyObject *self)
 /// {
-///   g_autoptr(GMainContextPusher) pusher = g_main_context_pusher_new (self->context);
-/// </para>
-/// <para>
+///   g_autoptr(GMainContextPusher) pusher = g_main_context_pusher_new (self-&amp;gt;context);
+/// 
 ///   // Code with main context as the thread default here
-/// </para>
-/// <para>
+/// 
 ///   if (cond)
 ///     // No need to pop
 ///     return;
-/// </para>
-/// <para>
+/// 
 ///   // Optionally early pop
-///   g_clear_pointer (&pusher, g_main_context_pusher_free);
-/// </para>
-/// <para>
+///   g_clear_pointer (&amp;pusher, g_main_context_pusher_free);
+/// 
 ///   // Code with main context no longer the thread default here
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -731,8 +727,8 @@ public static class GMainContextExtensions
 /// <para>
 /// Sets the function to use to handle polling of file descriptors. It
 /// will be used instead of the poll() system call
-/// (or GLib's replacement function, which is used where
-/// poll() isn't available).
+/// (or GLib&apos;s replacement function, which is used where
+/// poll() isn&apos;t available).
 /// </para>
 /// <para>
 /// This function could possibly be used to integrate the GLib event
@@ -819,26 +815,24 @@ public static class GMainContextExtensions
 /// Another related use for this function is when implementing a main
 /// loop with a termination condition, computed from multiple threads:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   #define NUM_TASKS 10
 ///   #define NUM_TASKS 10
 ///   static gint tasks_remaining = NUM_TASKS;  // (atomic)
 ///   ...
-/// </para>
-/// <para>
-///   while (g_atomic_int_get (&tasks_remaining) != 0)
+/// 
+///   while (g_atomic_int_get (&amp;tasks_remaining) != 0)
 ///     g_main_context_iteration (NULL, TRUE);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Then in a thread:
-/// |[<!-- language="C" -->
+/// <code>
 ///   perform_work();
-/// </para>
-/// <para>
-///   if (g_atomic_int_dec_and_test (&tasks_remaining))
+///   perform_work();
+/// 
+///   if (g_atomic_int_dec_and_test (&amp;tasks_remaining))
 ///     g_main_context_wakeup (NULL);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -976,7 +970,7 @@ public struct GMainContext
 /// <para>
 /// Returns the global-default main context. This is the main context
 /// used for main loop functions when a main loop is not explicitly
-/// specified, and corresponds to the "main" main loop. See also
+/// specified, and corresponds to the &quot;main&quot; main loop. See also
 /// [func@GLib.MainContext.get_thread_default].
 /// </para>
 /// </summary>

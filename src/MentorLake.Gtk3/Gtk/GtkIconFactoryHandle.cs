@@ -24,8 +24,8 @@ namespace MentorLake.Gtk;
 /// # GtkIconFactory as GtkBuildable # {#GtkIconFactory-BUILDER-UI}
 /// </para>
 /// <para>
-/// GtkIconFactory supports a custom `<sources>` element, which can contain
-/// multiple `<source>` elements. The following attributes are allowed:
+/// GtkIconFactory supports a custom `&amp;lt;sources&amp;gt;` element, which can contain
+/// multiple `&amp;lt;source&amp;gt;` elements. The following attributes are allowed:
 /// </para>
 /// <para>
 /// - stock-id
@@ -69,28 +69,26 @@ namespace MentorLake.Gtk;
 ///     State of the source, a #GtkStateType enum value.  This
 ///     attribute is optional.
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// ## A #GtkIconFactory UI definition fragment. ##
 /// </para>
-/// <para>
-/// |[
-/// <object class="GtkIconFactory" id="iconfactory1">
-///   <sources>
-///     <source stock-id="apple-red" filename="apple-red.png"/>
-///   </sources>
-/// </object>
-/// <object class="GtkWindow" id="window1">
-///   <child>
-///     <object class="GtkButton" id="apple_button">
-///       <property name="label">apple-red</property>
-///       <property name="use-stock">True</property>
-///     </object>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkIconFactory&quot; id=&quot;iconfactory1&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkIconFactory&quot; id=&quot;iconfactory1&quot;&amp;gt;
+///   &amp;lt;sources&amp;gt;
+///     &amp;lt;source stock-id=&quot;apple-red&quot; filename=&quot;apple-red.png&quot;/&amp;gt;
+///   &amp;lt;/sources&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// &amp;lt;object class=&quot;GtkWindow&quot; id=&quot;window1&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkButton&quot; id=&quot;apple_button&quot;&amp;gt;
+///       &amp;lt;property name=&quot;label&quot;&amp;gt;apple-red&amp;lt;/property&amp;gt;
+///       &amp;lt;property name=&quot;use-stock&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkIconFactoryHandle : GObjectHandle, GtkBuildableHandle
@@ -156,7 +154,7 @@ public static class GtkIconFactoryHandleExtensions
 /// #GtkIconFactory, then add it to the list of default factories with
 /// gtk_icon_factory_add_default(). Then they pass the @stock_id to
 /// widgets such as #GtkImage to display the icon. Themes can provide
-/// an icon with the same name (such as "myapp-whatever-icon") to
+/// an icon with the same name (such as &quot;myapp-whatever-icon&quot;) to
 /// override your application’s default icons. If an icon already
 /// existed in @factory for @stock_id, it is unreferenced and replaced
 /// with the new @icon_set.

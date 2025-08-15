@@ -596,11 +596,11 @@ public static class GValueExtensions
 /// <summary>
 /// <para>
 /// Initializes and sets @value from an instantiatable type via the
-/// value_table's collect_value() function.
+/// value_table&apos;s collect_value() function.
 /// </para>
 /// <para>
 /// Note: The @value will be initialised with the exact type of
-/// @instance.  If you wish to set the @value's type to a different GType
+/// @instance.  If you wish to set the @value&apos;s type to a different GType
 /// (such as a parent class GType), you need to manually call
 /// g_value_init() and g_value_set_instance().
 /// </para>
@@ -834,7 +834,7 @@ public static class GValueExtensions
 /// <summary>
 /// <para>
 /// Sets @value from an instantiatable type via the
-/// value_table's collect_value() function.
+/// value_table&apos;s collect_value() function.
 /// </para>
 /// </summary>
 
@@ -942,7 +942,7 @@ public static class GValueExtensions
 /// </para>
 /// <para>
 /// It is important that your #GValue holds a reference to @v_object (either its
-/// own, or one it has taken) to ensure that the object won't be destroyed while
+/// own, or one it has taken) to ensure that the object won&apos;t be destroyed while
 /// the #GValue still exists).
 /// </para>
 /// </summary>
@@ -1240,7 +1240,7 @@ public static class GValueExtensions
 /// <summary>
 /// <para>
 /// Steal ownership on contents of a %G_TYPE_STRING #GValue.
-/// As a result of this operation the value's contents will be reset to %NULL.
+/// As a result of this operation the value&apos;s contents will be reset to %NULL.
 /// </para>
 /// <para>
 /// The purpose of this call is to provide a way to avoid an extra copy
@@ -1357,8 +1357,8 @@ public static class GValueExtensions
 /// <summary>
 /// <para>
 /// Set the contents of a variant #GValue to @variant, and takes over
-/// the ownership of the caller's reference to @variant;
-/// the caller doesn't have to unref it any more (i.e. the reference
+/// the ownership of the caller&apos;s reference to @variant;
+/// the caller doesn&apos;t have to unref it any more (i.e. the reference
 /// count of the variant is not increased).
 /// </para>
 /// <para>
@@ -1394,7 +1394,7 @@ public static class GValueExtensions
 /// into a %G_TYPE_FLOAT value. Performing transformations between
 /// value types might incur precision lossage. Especially
 /// transformations into strings might reveal seemingly arbitrary
-/// results and shouldn't be relied upon for production code (such
+/// results and shouldn&apos;t be relied upon for production code (such
 /// as rcfile value or object property serialization).
 /// </para>
 /// </summary>
@@ -1418,7 +1418,7 @@ public static class GValueExtensions
 
 /// <summary>
 /// <para>
-/// Clears the current value in @value (if any) and "unsets" the type,
+/// Clears the current value in @value (if any) and &quot;unsets&quot; the type,
 /// this releases all resources associated with this GValue. An unset
 /// value is the same as an uninitialized (zero-filled) #GValue
 /// structure.

@@ -5,7 +5,7 @@ namespace MentorLake.GdkPixbuf;
 /// Save functions used by [method@GdkPixbuf.Pixbuf.save_to_callback].
 /// </para>
 /// <para>
-/// This function is called once for each block of bytes that is "written"
+/// This function is called once for each block of bytes that is &quot;written&quot;
 /// by `gdk_pixbuf_save_to_callback()`.
 /// </para>
 /// <para>

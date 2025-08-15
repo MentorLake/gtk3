@@ -7,24 +7,20 @@ namespace MentorLake.Gtk;
 /// <para>
 /// This is functionally equivalent to:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-///   GtkWidget *icon = gtk_image_new_from_icon_name ("folder-music-symbolic", GTK_ICON_SIZE_MENU);
-///   GtkWidget *label = gtk_label_new ("Music");
+///   GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+///   GtkWidget *icon = gtk_image_new_from_icon_name (&quot;folder-music-symbolic&quot;, GTK_ICON_SIZE_MENU);
+///   GtkWidget *label = gtk_label_new (&quot;Music&quot;);
 ///   GtkWidget *menu_item = gtk_menu_item_new ();
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (box), icon);
 ///   gtk_container_add (GTK_CONTAINER (box), label);
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (menu_item), box);
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (menu_item);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that the user may disable display of menu icons using
 /// the #GtkSettings:gtk-menu-images setting, so make sure to still
@@ -38,9 +34,9 @@ namespace MentorLake.Gtk;
 /// #GtkBox with a #GtkImage and a #GtkLabel instead. You should also consider
 /// using #GtkBuilder and the XML #GMenu description for creating menus, by
 /// following the [GMenu guide][https://developer.gnome.org/GMenu/]. You should
-/// consider using icons in menu items only sparingly, and for "objects" (or
-/// "nouns") elements only, like bookmarks, files, and links; "actions" (or
-/// "verbs") should not have icons.
+/// consider using icons in menu items only sparingly, and for &quot;objects&quot; (or
+/// &quot;nouns&quot;) elements only, like bookmarks, files, and links; &quot;actions&quot; (or
+/// &quot;verbs&quot;) should not have icons.
 /// </para>
 /// <para>
 /// Furthermore, if you would like to display keyboard accelerator, you must
@@ -49,36 +45,29 @@ namespace MentorLake.Gtk;
 /// code snippet adds a keyboard accelerator to the menu item, with a key
 /// binding of Ctrl+M:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-///   GtkWidget *icon = gtk_image_new_from_icon_name ("folder-music-symbolic", GTK_ICON_SIZE_MENU);
-///   GtkWidget *label = gtk_accel_label_new ("Music");
+///   GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+///   GtkWidget *icon = gtk_image_new_from_icon_name (&quot;folder-music-symbolic&quot;, GTK_ICON_SIZE_MENU);
+///   GtkWidget *label = gtk_accel_label_new (&quot;Music&quot;);
 ///   GtkWidget *menu_item = gtk_menu_item_new ();
 ///   GtkAccelGroup *accel_group = gtk_accel_group_new ();
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (box), icon);
-/// </para>
-/// <para>
+/// 
 ///   gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
 ///   gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-/// </para>
-/// <para>
-///   gtk_widget_add_accelerator (menu_item, "activate", accel_group,
+/// 
+///   gtk_widget_add_accelerator (menu_item, &quot;activate&quot;, accel_group,
 ///                               GDK_KEY_m, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
 ///   gtk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), menu_item);
-/// </para>
-/// <para>
+/// 
 ///   gtk_box_pack_end (GTK_BOX (box), label, TRUE, TRUE, 0);
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (menu_item), box);
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (menu_item);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkImageMenuItemHandle : GtkMenuItemHandle, AtkImplementorIfaceHandle, GtkActionableHandle, GtkActivatableHandle, GtkBuildableHandle

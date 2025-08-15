@@ -249,7 +249,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Differs from [func@GLib.unichar_digit_value] because it takes a char, so
-/// there's no worry about sign extension if characters are signed.
+/// there&apos;s no worry about sign extension if characters are signed.
 /// </para>
 /// </summary>
 
@@ -267,7 +267,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Converts a `gdouble` to a string, using the '.' as
+/// Converts a `gdouble` to a string, using the &apos;.&apos; as
 /// decimal point.
 /// </para>
 /// <para>
@@ -300,10 +300,10 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Converts a `gdouble` to a string, using the '.' as
+/// Converts a `gdouble` to a string, using the &apos;.&apos; as
 /// decimal point. To format the number you pass in
 /// a `printf()`-style format string. Allowed conversion
-/// specifiers are 'e', 'E', 'f', 'F', 'g' and 'G'.
+/// specifiers are &apos;e&apos;, &apos;E&apos;, &apos;f&apos;, &apos;F&apos;, &apos;g&apos; and &apos;G&apos;.
 /// </para>
 /// <para>
 /// The @format must just be a single format specifier
@@ -370,8 +370,8 @@ public class GLibGlobalFunctions
 /// string to compare with @s1
 /// </param>
 /// <return>
-/// 0 if the strings match, a negative value if @s1 < @s2,
-///   or a positive value if @s1 > @s2
+/// 0 if the strings match, a negative value if @s1 &amp;lt; @s2,
+///   or a positive value if @s1 &amp;gt; @s2
 /// </return>
 
 	public static int AsciiStrcasecmp(string s1, string s2)
@@ -416,7 +416,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @base can be between 2 and 36 inclusive. Hexadecimal numbers must
-/// not be prefixed with "0x" or "0X". Such a problem does not exist
+/// not be prefixed with &quot;0x&quot; or &quot;0X&quot;. Such a problem does not exist
 /// for octal numbers, since they were usually prefixed with a zero
 /// which does not change the value of the parsed number.
 /// </para>
@@ -473,7 +473,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @base can be between 2 and 36 inclusive. Hexadecimal numbers must
-/// not be prefixed with "0x" or "0X". Such a problem does not exist
+/// not be prefixed with &quot;0x&quot; or &quot;0X&quot;. Such a problem does not exist
 /// for octal numbers, since they were usually prefixed with a zero
 /// which does not change the value of the parsed number.
 /// </para>
@@ -545,8 +545,8 @@ public class GLibGlobalFunctions
 /// number of characters to compare
 /// </param>
 /// <return>
-/// 0 if the strings match, a negative value if @s1 < @s2,
-///   or a positive value if @s1 > @s2
+/// 0 if the strings match, a negative value if @s1 &amp;lt; @s2,
+///   or a positive value if @s1 &amp;gt; @s2
 /// </return>
 
 	public static int AsciiStrncasecmp(string s1, string s2, UIntPtr n)
@@ -734,7 +734,7 @@ public class GLibGlobalFunctions
 /// all non-ASCII characters unchanged, even if they are lower case
 /// letters in a particular character set. Also unlike the standard
 /// library function, this takes and returns a char, not an int, so
-/// don't call it on `EOF` but no need to worry about casting to `guchar`
+/// don&apos;t call it on `EOF` but no need to worry about casting to `guchar`
 /// before passing a possibly non-ASCII character in.
 /// </para>
 /// </summary>
@@ -762,7 +762,7 @@ public class GLibGlobalFunctions
 /// all non-ASCII characters unchanged, even if they are upper case
 /// letters in a particular character set. Also unlike the standard
 /// library function, this takes and returns a char, not an int, so
-/// don't call it on `EOF` but no need to worry about casting to `guchar`
+/// don&apos;t call it on `EOF` but no need to worry about casting to `guchar`
 /// before passing a possibly non-ASCII character in.
 /// </para>
 /// </summary>
@@ -787,11 +787,11 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Differs from [func@GLib.unichar_xdigit_value] because it takes a char, so
-/// there's no worry about sign extension if characters are signed.
+/// there&apos;s no worry about sign extension if characters are signed.
 /// </para>
 /// <para>
 /// Differs from [func@GLib.unichar_xdigit_value] because it takes a char, so
-/// there's no worry about sign extension if characters are signed.
+/// there&apos;s no worry about sign extension if characters are signed.
 /// </para>
 /// </summary>
 
@@ -1058,7 +1058,7 @@ public class GLibGlobalFunctions
 /// resided. This is presumably the most robust approach.
 /// </para>
 /// <para>
-/// As can be seen from the above, for portability it's best to avoid
+/// As can be seen from the above, for portability it&apos;s best to avoid
 /// calling g_atexit() (or atexit()) except in the main executable of a
 /// program.
 /// </para>
@@ -1111,7 +1111,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'and' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;and&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
@@ -1119,7 +1119,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Think of this operation as an atomic version of
-/// `{ tmp = *atomic; *atomic &= val; return tmp; }`.
+/// `{ tmp = *atomic; *atomic &amp;= val; return tmp; }`.
 /// </para>
 /// <para>
 /// While @atomic has a `volatile` qualifier, this is a historical artifact and
@@ -1131,7 +1131,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gint or #guint
 /// </param>
 /// <param name="val">
-/// the value to 'and'
+/// the value to &apos;and&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -1287,7 +1287,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// This function existed before g_atomic_int_add() returned the prior
 /// value of the integer (which it now does).  It is retained only for
-/// compatibility reasons.  Don't use this function in new code.
+/// compatibility reasons.  Don&apos;t use this function in new code.
 /// </para>
 /// </summary>
 
@@ -1359,7 +1359,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'or' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;or&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
@@ -1379,7 +1379,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gint or #guint
 /// </param>
 /// <param name="val">
-/// the value to 'or'
+/// the value to &apos;or&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -1418,7 +1418,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'xor' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;xor&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
@@ -1438,7 +1438,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gint or #guint
 /// </param>
 /// <param name="val">
-/// the value to 'xor'
+/// the value to &apos;xor&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -1488,12 +1488,12 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'and' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;and&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
 /// Think of this operation as an atomic version of
-/// `{ tmp = *atomic; *atomic &= val; return tmp; }`.
+/// `{ tmp = *atomic; *atomic &amp;= val; return tmp; }`.
 /// </para>
 /// <para>
 /// This call acts as a full compiler and hardware memory barrier.
@@ -1513,7 +1513,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gpointer-sized value
 /// </param>
 /// <param name="val">
-/// the value to 'and'
+/// the value to &apos;and&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -1664,7 +1664,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'or' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;or&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
@@ -1689,7 +1689,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gpointer-sized value
 /// </param>
 /// <param name="val">
-/// the value to 'or'
+/// the value to &apos;or&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -1728,7 +1728,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Performs an atomic bitwise 'xor' of the value of @atomic and @val,
+/// Performs an atomic bitwise &apos;xor&apos; of the value of @atomic and @val,
 /// storing the result back in @atomic.
 /// </para>
 /// <para>
@@ -1753,7 +1753,7 @@ public class GLibGlobalFunctions
 /// a pointer to a #gpointer-sized value
 /// </param>
 /// <param name="val">
-/// the value to 'xor'
+/// the value to &apos;xor&apos;
 /// </param>
 /// <return>
 /// the value of @atomic before the operation, unsigned
@@ -2238,7 +2238,7 @@ public class GLibGlobalFunctions
 /// not supported and will very probably cause deadlocks.
 /// </para>
 /// <para>
-/// The value of the bit that is set is (1u << @bit).  If @bit is not
+/// The value of the bit that is set is (1u &amp;lt;&amp;lt; @bit).  If @bit is not
 /// between 0 and 31 then the result is undefined.
 /// </para>
 /// <para>
@@ -2341,7 +2341,7 @@ public class GLibGlobalFunctions
 /// not supported.
 /// </para>
 /// <para>
-/// The value of the bit that is set is (1u << @bit).  If @bit is not
+/// The value of the bit that is set is (1u &amp;lt;&amp;lt; @bit).  If @bit is not
 /// between 0 and 31 then the result is undefined.
 /// </para>
 /// <para>
@@ -2975,11 +2975,11 @@ public class GLibGlobalFunctions
 /// <para>
 /// If @filename is an absolute path, @relative_to is ignored. Otherwise,
 /// @relative_to will be prepended to @filename to make it absolute. @relative_to
-/// must be an absolute path, or %NULL. If @relative_to is %NULL, it'll fallback
+/// must be an absolute path, or %NULL. If @relative_to is %NULL, it&apos;ll fallback
 /// to g_get_current_dir().
 /// </para>
 /// <para>
-/// This function never fails, and will canonicalize file paths even if they don't
+/// This function never fails, and will canonicalize file paths even if they don&apos;t
 /// exist.
 /// </para>
 /// <para>
@@ -3121,7 +3121,7 @@ public class GLibGlobalFunctions
 
 /// <param name="pid">
 /// process id to watch. On POSIX the positive pid of a child
-///   process. On Windows a handle for a process (which doesn't have
+///   process. On Windows a handle for a process (which doesn&apos;t have
 ///   to be a child).
 /// </param>
 /// <param name="function">
@@ -3181,7 +3181,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <param name="pid">
 /// process to watch. On POSIX the positive pid of a child process. On
-/// Windows a handle for a process (which doesn't have to be a child).
+/// Windows a handle for a process (which doesn&apos;t have to be a child).
 /// </param>
 /// <param name="function">
 /// function to call
@@ -3237,7 +3237,7 @@ public class GLibGlobalFunctions
 ///   watched @pid in a race free manner. Since 2.78, you can do that while the
 ///   associated [struct@GLib.MainContext] is acquired.
 /// * Before 2.78, even after destroying the [struct@GLib.Source], you could not
-///   be sure that @pid wasn't already reaped. Hence, it was also not
+///   be sure that @pid wasn&apos;t already reaped. Hence, it was also not
 ///   safe to `kill()` or `waitpid()` on the process ID after the child watch
 ///   source was gone. Destroying the source before it fired made it
 ///   impossible to reliably reap the process.
@@ -3255,7 +3255,7 @@ public class GLibGlobalFunctions
 
 /// <param name="pid">
 /// process to watch. On POSIX the positive pid of a child process. On
-/// Windows a handle for a process (which doesn't have to be a child).
+/// Windows a handle for a process (which doesn&apos;t have to be a child).
 /// </param>
 /// <return>
 /// the newly-created child watch source
@@ -3408,7 +3408,7 @@ public class GLibGlobalFunctions
 /// // …
 /// </para>
 /// <para>
-/// g_clear_pointer (&sync, destroy_sync);
+/// g_clear_pointer (&amp;sync, destroy_sync);
 /// ```
 /// </para>
 /// </summary>
@@ -3467,8 +3467,8 @@ public class GLibGlobalFunctions
 /// if (and only if) @error is %NULL and @fd is a valid open file descriptor.
 /// This makes it safe to call from a signal handler or a #GSpawnChildSetupFunc
 /// under those conditions.
-/// See <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>) for more details.
+/// See &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;) for more details.
 /// </para>
 /// </summary>
 
@@ -3504,8 +3504,8 @@ public class GLibGlobalFunctions
 /// This function is async-signal safe, making it safe to call from a
 /// signal handler or a [callback@GLib.SpawnChildSetupFunc], as long as @lowfd is
 /// non-negative.
-/// See <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>) for more details.
+/// See &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;) for more details.
 /// </para>
 /// </summary>
 
@@ -3736,14 +3736,14 @@ public class GLibGlobalFunctions
 /// Despite the fact that @bytes_read can return information about partial
 /// characters, the g_convert_... functions are not generally suitable
 /// for streaming. If the underlying converter maintains internal state,
-/// then this won't be preserved across successive calls to g_convert(),
+/// then this won&apos;t be preserved across successive calls to g_convert(),
 /// g_convert_with_iconv() or g_convert_with_fallback(). (An example of
 /// this is the GNU C converter for CP1255 which does not emit a base
 /// character until it knows that the next character is not a mark that
 /// could combine with the base character.)
 /// </para>
 /// <para>
-/// Using extensions such as "//TRANSLIT" may not work (or may not work
+/// Using extensions such as &quot;//TRANSLIT&quot; may not work (or may not work
 /// well) on many platforms.  Consider using g_str_to_ascii() instead.
 /// </para>
 /// </summary>
@@ -3814,7 +3814,7 @@ public class GLibGlobalFunctions
 /// Despite the fact that @bytes_read can return information about partial
 /// characters, the g_convert_... functions are not generally suitable
 /// for streaming. If the underlying converter maintains internal state,
-/// then this won't be preserved across successive calls to g_convert(),
+/// then this won&apos;t be preserved across successive calls to g_convert(),
 /// g_convert_with_iconv() or g_convert_with_fallback(). (An example of
 /// this is the GNU C converter for CP1255 which does not emit a base
 /// character until it knows that the next character is not a mark that
@@ -3879,7 +3879,7 @@ public class GLibGlobalFunctions
 /// Despite the fact that @bytes_read can return information about partial
 /// characters, the g_convert_... functions are not generally suitable
 /// for streaming. If the underlying converter maintains internal state,
-/// then this won't be preserved across successive calls to g_convert(),
+/// then this won&apos;t be preserved across successive calls to g_convert(),
 /// g_convert_with_iconv() or g_convert_with_fallback(). (An example of
 /// this is the GNU C converter for CP1255 which does not emit a base
 /// character until it knows that the next character is not a mark that
@@ -3945,7 +3945,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// On POSIX systems file descriptors are implemented by the operating
-/// system. On Windows, it's the C library that implements creat() and
+/// system. On Windows, it&apos;s the C library that implements creat() and
 /// file descriptors. The actual Windows API for opening files is
 /// different, see MSDN documentation for CreateFile(). The Win32 API
 /// uses file handles, which are more randomish integers, not small
@@ -3985,7 +3985,7 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Frees all the data elements of the datalist.
-/// The data elements' destroy functions are called
+/// The data elements&apos; destroy functions are called
 /// if they have been set.
 /// </para>
 /// </summary>
@@ -4002,7 +4002,7 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Calls the given function for each data element of the datalist. The
-/// function is called with each data element's #GQuark id and data,
+/// function is called with each data element&apos;s #GQuark id and data,
 /// together with the given @user_data parameter. Note that this
 /// function is NOT thread-safe. So unless @datalist can be protected
 /// from any modifications during invocation of this function, it should
@@ -4075,8 +4075,8 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// This is a variant of g_datalist_id_get_data() which
-/// returns a 'duplicate' of the value. @dup_func defines the
-/// meaning of 'duplicate' in this context, it could e.g.
+/// returns a &apos;duplicate&apos; of the value. @dup_func defines the
+/// meaning of &apos;duplicate&apos; in this context, it could e.g.
 /// take a reference on a ref-counted object.
 /// </para>
 /// <para>
@@ -4305,7 +4305,7 @@ public class GLibGlobalFunctions
 /// the flags to turn on. The values of the flags are
 ///   restricted by %G_DATALIST_FLAGS_MASK (currently
 ///   3; giving two possible boolean flags).
-///   A value for @flags that doesn't fit within the mask is
+///   A value for @flags that doesn&apos;t fit within the mask is
 ///   an error.
 /// </param>
 
@@ -4327,7 +4327,7 @@ public class GLibGlobalFunctions
 /// the flags to turn off. The values of the flags are
 ///   restricted by %G_DATALIST_FLAGS_MASK (currently
 ///   3: giving two possible boolean flags).
-///   A value for @flags that doesn't fit within the mask is
+///   A value for @flags that doesn&apos;t fit within the mask is
 ///   an error.
 /// </param>
 
@@ -4483,7 +4483,7 @@ public class GLibGlobalFunctions
 /// Returns the number of weeks in the year, where weeks
 /// are taken to start on Monday. Will be 52 or 53. The
 /// date must be valid. (Years always have 52 7-day periods,
-/// plus 1 or 2 extra days depending on whether it's a leap
+/// plus 1 or 2 extra days depending on whether it&apos;s a leap
 /// year. This function is basically telling you how many
 /// Mondays are in the year, i.e. there are 53 Mondays if
 /// one of the extra days happens to be a Monday.)
@@ -4507,7 +4507,7 @@ public class GLibGlobalFunctions
 /// Returns the number of weeks in the year, where weeks
 /// are taken to start on Sunday. Will be 52 or 53. The
 /// date must be valid. (Years always have 52 7-day periods,
-/// plus 1 or 2 extra days depending on whether it's a leap
+/// plus 1 or 2 extra days depending on whether it&apos;s a leap
 /// year. This function is basically telling you how many
 /// Sundays are in the year, i.e. there are 53 Sundays if
 /// one of the extra days happens to be a Sunday.)
@@ -4554,7 +4554,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Generates a printed representation of the date, in a
 /// [locale][setlocale]-specific way.
-/// Works just like the platform's C library strftime() function,
+/// Works just like the platform&apos;s C library strftime() function,
 /// but only accepts date-related formats; time-related formats
 /// give undefined results. Date must be valid. Unlike strftime()
 /// (which uses the locale encoding), works on a UTF-8 format
@@ -4562,8 +4562,8 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// This function does not provide any conversion specifiers in
-/// addition to those implemented by the platform's C library.
-/// For example, don't expect that using g_date_strftime() would
+/// addition to those implemented by the platform&apos;s C library.
+/// For example, don&apos;t expect that using g_date_strftime() would
 /// make the \%F provided by the C99 strftime() work on Windows
 /// where the C library only complies to C89.
 /// </para>
@@ -4592,7 +4592,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Returns %TRUE if the day of the month is valid (a day is valid if it's
+/// Returns %TRUE if the day of the month is valid (a day is valid if it&apos;s
 /// between 1 and 31 inclusive).
 /// </para>
 /// </summary>
@@ -4770,8 +4770,8 @@ public class GLibGlobalFunctions
 ///   and the current locale
 /// </para>
 /// <para>
-/// - current locale is not "C" or any English locales (those
-///   starting with "en_")
+/// - current locale is not &quot;C&quot; or any English locales (those
+///   starting with &quot;en_&quot;)
 /// </para>
 /// <para>
 /// Note that this behavior may not be desired for example if an application
@@ -4807,7 +4807,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding containing
-/// a sequence of six 'X' characters, as the parameter to g_mkstemp().
+/// a sequence of six &apos;X&apos; characters, as the parameter to g_mkstemp().
 /// However, unlike these functions, the template should only be a
 /// basename, no directory components are allowed. If template is
 /// %NULL, a default template is used.
@@ -4973,10 +4973,10 @@ public class GLibGlobalFunctions
 /// <para>
 /// This function is a variant of g_dgettext() which supports
 /// a disambiguating message context. GNU gettext uses the
-/// '\004' character to separate the message context and
+/// &apos;\004&apos; character to separate the message context and
 /// message id in @msgctxtid.
 /// If 0 is passed as @msgidoffset, this function will fall back to
-/// trying to use the deprecated convention of using "|" as a separation
+/// trying to use the deprecated convention of using &quot;|&quot; as a separation
 /// character.
 /// </para>
 /// <para>
@@ -5013,7 +5013,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// This function is a variant of g_dgettext() which supports
 /// a disambiguating message context. GNU gettext uses the
-/// '\004' character to separate the message context and
+/// &apos;\004&apos; character to separate the message context and
 /// message id in @msgctxtid.
 /// </para>
 /// <para>
@@ -5087,7 +5087,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <param name="variable">
 /// the environment variable to set, must not
-///     contain '='
+///     contain &apos;=&apos;
 /// </param>
 /// <param name="value">
 /// the value for to set the variable to
@@ -5119,7 +5119,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <param name="variable">
 /// the environment variable to remove, must not
-///     contain '='
+///     contain &apos;=&apos;
 /// </param>
 /// <return>
 /// 
@@ -5231,8 +5231,8 @@ public class GLibGlobalFunctions
 /// This function is async-signal safe, making it safe to call from a
 /// signal handler or a [callback@GLib.SpawnChildSetupFunc], as long as @lowfd is
 /// non-negative.
-/// See <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>) for more details.
+/// See &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;) for more details.
 /// </para>
 /// </summary>
 
@@ -5265,7 +5265,7 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="err_no">
-/// an "errno" value
+/// an &quot;errno&quot; value
 /// </param>
 /// <return>
 /// #GFileError corresponding to the given @err_no
@@ -5327,7 +5327,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding containing
-/// a sequence of six 'X' characters, as the parameter to g_mkstemp().
+/// a sequence of six &apos;X&apos; characters, as the parameter to g_mkstemp().
 /// However, unlike these functions, the template should only be a
 /// basename, no directory components are allowed. If template is
 /// %NULL, a default template is used.
@@ -5379,24 +5379,21 @@ public class GLibGlobalFunctions
 /// The returned string may also be a relative path. Use g_build_filename()
 /// to convert it to an absolute path:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// g_autoptr(GError) local_error = NULL;
-/// g_autofree gchar *link_target = g_file_read_link ("/etc/localtime", &local_error);
-/// </para>
-/// <para>
+/// g_autoptr(GError) local_error = NULL;
+/// g_autofree gchar *link_target = g_file_read_link (&quot;/etc/localtime&quot;, &amp;local_error);
+/// 
 /// if (local_error != NULL)
-///   g_error ("Error reading link: %s", local_error->message);
-/// </para>
-/// <para>
+///   g_error (&quot;Error reading link: %s&quot;, local_error-&amp;gt;message);
+/// 
 /// if (!g_path_is_absolute (link_target))
 ///   {
-///     g_autofree gchar *absolute_link_target = g_build_filename ("/etc", link_target, NULL);
+///     g_autofree gchar *absolute_link_target = g_build_filename (&quot;/etc&quot;, link_target, NULL);
 ///     g_free (link_target);
-///     link_target = g_steal_pointer (&absolute_link_target);
+///     link_target = g_steal_pointer (&amp;absolute_link_target);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="filename">
@@ -5546,9 +5543,9 @@ public class GLibGlobalFunctions
 /// <para>
 /// Returns %TRUE if any of the tests in the bitfield @test are
 /// %TRUE. For example, `(G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR)`
-/// will return %TRUE if the file exists; the check whether it's a
-/// directory doesn't matter since the existence test is %TRUE. With
-/// the current set of available tests, there's no point passing in
+/// will return %TRUE if the file exists; the check whether it&apos;s a
+/// directory doesn&apos;t matter since the existence test is %TRUE. With
+/// the current set of available tests, there&apos;s no point passing in
 /// more than one test at a time.
 /// </para>
 /// <para>
@@ -5569,18 +5566,17 @@ public class GLibGlobalFunctions
 /// <para>
 /// For example, you might think you could use %G_FILE_TEST_IS_SYMLINK
 /// to know whether it is safe to write to a file without being
-/// tricked into writing into a different location. It doesn't work!
+/// tricked into writing into a different location. It doesn&apos;t work!
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-///  // DON'T DO THIS
+/// <code>
+///  // DON&apos;T DO THIS
+///  // DON&apos;T DO THIS
 ///  if (!g_file_test (filename, G_FILE_TEST_IS_SYMLINK))
 ///    {
 ///      fd = g_open (filename, O_WRONLY);
 ///      // write to fd
 ///    }
-/// </para>
-/// <para>
+/// 
 ///  // DO THIS INSTEAD
 ///  fd = g_open (filename, O_WRONLY | O_NOFOLLOW | O_CLOEXEC);
 ///  if (fd == -1)
@@ -5595,12 +5591,11 @@ public class GLibGlobalFunctions
 ///    {
 ///      // write to fd
 ///    }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Another thing to note is that %G_FILE_TEST_EXISTS and
 /// %G_FILE_TEST_IS_EXECUTABLE are implemented using the access()
-/// system call. This usually doesn't matter, but if your program
+/// system call. This usually doesn&apos;t matter, but if your program
 /// is setuid or setgid it means that these tests will give you
 /// the answer for the real user ID and group ID, rather than the
 /// effective user ID and group ID.
@@ -5641,7 +5636,7 @@ public class GLibGlobalFunctions
 /// If GLib cannot make sense of the encoding of @filename, as a last resort it
 /// replaces unknown characters with U+FFFD, the Unicode replacement character.
 /// You can search the result for the UTF-8 encoding of this character (which is
-/// "\357\277\275" in octal notation) to find out if @filename was in an invalid
+/// &quot;\357\277\275&quot; in octal notation) to find out if @filename was in an invalid
 /// encoding.
 /// </para>
 /// <para>
@@ -5674,13 +5669,13 @@ public class GLibGlobalFunctions
 /// not necessarily reversible, so you should keep the original around
 /// and use the return value of this function only for display purposes.
 /// Unlike g_filename_to_utf8(), the result is guaranteed to be non-%NULL
-/// even if the filename actually isn't in the GLib file name encoding.
+/// even if the filename actually isn&apos;t in the GLib file name encoding.
 /// </para>
 /// <para>
 /// If GLib cannot make sense of the encoding of @filename, as a last resort it
 /// replaces unknown characters with U+FFFD, the Unicode replacement character.
 /// You can search the result for the UTF-8 encoding of this character (which is
-/// "\357\277\275" in octal notation) to find out if @filename was in an invalid
+/// &quot;\357\277\275&quot; in octal notation) to find out if @filename was in an invalid
 /// encoding.
 /// </para>
 /// <para>
@@ -5713,7 +5708,7 @@ public class GLibGlobalFunctions
 /// Since GLib 2.78, the query string and fragment can be present in the URI,
 /// but are not part of the resulting filename.
 /// We take inspiration from https://url.spec.whatwg.org/#file-state,
-/// but we don't support the entire standard.
+/// but we don&apos;t support the entire standard.
 /// </para>
 /// </summary>
 
@@ -5867,7 +5862,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Locates the first executable named @program in the user's path, in the
+/// Locates the first executable named @program in the user&apos;s path, in the
 /// same way that execvp() would locate it. Returns an allocated string
 /// with the absolute path name, or %NULL if the program is not found in
 /// the path. If @program is already an absolute path, returns a copy of
@@ -5948,7 +5943,7 @@ public class GLibGlobalFunctions
 /// Formats a size (for example the size of a file) into a human readable
 /// string.  Sizes are rounded to the nearest size prefix (kB, MB, GB)
 /// and are displayed rounded to the nearest tenth. E.g. the file size
-/// 3292528 bytes will be converted into the string "3.2 MB". The returned string
+/// 3292528 bytes will be converted into the string &quot;3.2 MB&quot;. The returned string
 /// is UTF-8, and may use a non-breaking space to separate the number and units,
 /// to ensure they aren’t separated when line wrapped.
 /// </para>
@@ -5983,7 +5978,7 @@ public class GLibGlobalFunctions
 /// readable string. Sizes are rounded to the nearest size prefix
 /// (KB, MB, GB) and are displayed rounded to the nearest tenth.
 /// E.g. the file size 3292528 bytes will be converted into the
-/// string "3.1 MB".
+/// string &quot;3.1 MB&quot;.
 /// </para>
 /// <para>
 /// The prefix units base is 1024 (i.e. 1 KB is 1024 bytes).
@@ -6156,7 +6151,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// A wrapper for the POSIX `fsync()` function. On Windows, `_commit()` will be
 /// used. On macOS, `fcntl(F_FULLFSYNC)` will be used.
-/// The `fsync()` function is used to synchronize a file's in-core
+/// The `fsync()` function is used to synchronize a file&apos;s in-core
 /// state with that of the disk.
 /// </para>
 /// <para>
@@ -6206,15 +6201,15 @@ public class GLibGlobalFunctions
 /// <para>
 /// Obtains the character set for the [current locale][setlocale]; you
 /// might use this character set as an argument to g_convert(), to convert
-/// from the current locale's encoding to some other encoding. (Frequently
+/// from the current locale&apos;s encoding to some other encoding. (Frequently
 /// g_locale_to_utf8() and g_locale_from_utf8() are nice shortcuts, though.)
 /// </para>
 /// <para>
 /// On Windows the character set returned by this function is the
 /// so-called system default ANSI code-page. That is the character set
-/// used by the "narrow" versions of C library and Win32 functions that
+/// used by the &quot;narrow&quot; versions of C library and Win32 functions that
 /// handle file names. It might be different from the character set
-/// used by the C library's current locale.
+/// used by the C library&apos;s current locale.
 /// </para>
 /// <para>
 /// On Linux, the character set is found by consulting nl_langinfo() if
@@ -6223,7 +6218,7 @@ public class GLibGlobalFunctions
 /// no locale has been loaded by setlocale().
 /// </para>
 /// <para>
-/// The return value is %TRUE if the locale's encoding is UTF-8, in that
+/// The return value is %TRUE if the locale&apos;s encoding is UTF-8, in that
 /// case you can perhaps avoid calling g_convert().
 /// </para>
 /// <para>
@@ -6268,17 +6263,17 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Usually this matches the result returned by g_get_charset(), but in
-/// environments where the locale's character set does not match the encoding
+/// environments where the locale&apos;s character set does not match the encoding
 /// of the console this function tries to guess a more suitable value instead.
 /// </para>
 /// <para>
 /// On Windows the character set returned by this function is the
 /// output code page used by the console associated with the calling process.
-/// If the codepage can't be determined (for example because there is no
+/// If the codepage can&apos;t be determined (for example because there is no
 /// console attached) UTF-8 is assumed.
 /// </para>
 /// <para>
-/// The return value is %TRUE if the locale's encoding is UTF-8, in that
+/// The return value is %TRUE if the locale&apos;s encoding is UTF-8, in that
 /// case you can perhaps avoid calling g_convert().
 /// </para>
 /// <para>
@@ -6310,7 +6305,7 @@ public class GLibGlobalFunctions
 /// On Windows, it is always UTF-8.
 /// </para>
 /// <para>
-/// Since GLib 2.40, this function will return the value of the "PWD"
+/// Since GLib 2.40, this function will return the value of the &quot;PWD&quot;
 /// environment variable if it is set and it happens to be the same as
 /// the current directory.  This can make a difference in the case that
 /// the current directory is the target of a symbolic link.
@@ -6350,10 +6345,10 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The list is %NULL terminated and each item in the list is of the
-/// form 'NAME=VALUE'.
+/// form &apos;NAME=VALUE&apos;.
 /// </para>
 /// <para>
-/// This is equivalent to direct access to the 'environ' global variable,
+/// This is equivalent to direct access to the &apos;environ&apos; global variable,
 /// except portable.
 /// </para>
 /// <para>
@@ -6387,7 +6382,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// `G_FILENAME_ENCODING` may be set to a comma-separated list of
-/// character set names. The special token "\@locale" is taken
+/// character set names. The special token &quot;\@locale&quot; is taken
 /// to  mean the character set for the [current locale][setlocale].
 /// If `G_FILENAME_ENCODING` is not set, but `G_BROKEN_FILENAMES` is,
 /// the character set of the current locale is taken as the filename
@@ -6420,7 +6415,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Gets the current user's home directory.
+/// Gets the current user&apos;s home directory.
 /// </para>
 /// <para>
 /// As with most UNIX tools, this function will return the value of the
@@ -6440,7 +6435,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If your program has a strong requirement for either the new or the
-/// old behaviour (and if you don't wish to increase your GLib
+/// old behaviour (and if you don&apos;t wish to increase your GLib
 /// dependency to ensure that the new behaviour is in effect) then you
 /// should either directly check the `HOME` environment variable yourself
 /// or unset it before calling any functions in GLib.
@@ -6448,7 +6443,7 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <return>
-/// the current user's home directory
+/// the current user&apos;s home directory
 /// </return>
 
 	public static string GetHomeDir()
@@ -6469,7 +6464,7 @@ public class GLibGlobalFunctions
 /// of the machine is changed while an application is running, the
 /// return value from this function does not change. The returned
 /// string is owned by GLib and should not be modified or freed. If no
-/// name can be determined, a default fixed string "localhost" is
+/// name can be determined, a default fixed string &quot;localhost&quot; is
 /// returned.
 /// </para>
 /// <para>
@@ -6491,11 +6486,11 @@ public class GLibGlobalFunctions
 /// Computes a list of applicable locale names, which can be used to
 /// e.g. construct locale-dependent filenames or search paths. The returned
 /// list is sorted from most desirable to least desirable and always contains
-/// the default locale "C".
+/// the default locale &quot;C&quot;.
 /// </para>
 /// <para>
 /// For example, if LANGUAGE=de:en_US, then the returned list is
-/// "de", "en_US", "en", "C".
+/// &quot;de&quot;, &quot;en_US&quot;, &quot;en&quot;, &quot;C&quot;.
 /// </para>
 /// <para>
 /// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
@@ -6519,7 +6514,7 @@ public class GLibGlobalFunctions
 /// Computes a list of applicable locale names with a locale category name,
 /// which can be used to construct the fallback locale-dependent filenames
 /// or search paths. The returned list is sorted from most desirable to
-/// least desirable and always contains the default locale "C".
+/// least desirable and always contains the default locale &quot;C&quot;.
 /// </para>
 /// <para>
 /// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
@@ -6527,7 +6522,7 @@ public class GLibGlobalFunctions
 /// user.
 /// </para>
 /// <para>
-/// g_get_language_names() returns g_get_language_names_with_category("LC_MESSAGES").
+/// g_get_language_names() returns g_get_language_names_with_category(&quot;LC_MESSAGES&quot;).
 /// </para>
 /// </summary>
 
@@ -6551,7 +6546,7 @@ public class GLibGlobalFunctions
 /// e.g. construct locale-dependent filenames or search paths. The returned
 /// list is sorted from most desirable to least desirable.
 /// This function handles territory, charset and extra locale modifiers. See
-/// <see href="man:setlocale">setlocale(3)</see> for information about locales and their format.
+/// &amp;lt;see href=&quot;man:setlocale&quot;&amp;gt;setlocale(3)&amp;lt;/see&amp;gt; for information about locales and their format.
 /// </para>
 /// <para>
 /// @locale itself is guaranteed to be returned in the output.
@@ -6587,7 +6582,7 @@ public class GLibGlobalFunctions
 /// Queries the system monotonic time.
 /// </para>
 /// <para>
-/// The monotonic clock will always increase and doesn't suffer
+/// The monotonic clock will always increase and doesn&apos;t suffer
 /// discontinuities when the user (or NTP) changes the system time.  It
 /// may or may not continue to tick during times where the machine is
 /// suspended.
@@ -6680,16 +6675,16 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Gets the real name of the user. This usually comes from the user's
+/// Gets the real name of the user. This usually comes from the user&apos;s
 /// entry in the `passwd` file. The encoding of the returned string is
 /// system-defined. (On Windows, it is, however, always UTF-8.) If the
-/// real user name cannot be determined, the string "Unknown" is
+/// real user name cannot be determined, the string &quot;Unknown&quot; is
 /// returned.
 /// </para>
 /// </summary>
 
 /// <return>
-/// the user's real name.
+/// the user&apos;s real name.
 /// </return>
 
 	public static string GetRealName()
@@ -6782,19 +6777,19 @@ public class GLibGlobalFunctions
 /// FOLDERID_PublicDocuments.
 /// </para>
 /// <para>
-/// Then follows the "share" subfolder in the installation folder for
+/// Then follows the &quot;share&quot; subfolder in the installation folder for
 /// the package containing the DLL that calls this function, if it can
 /// be determined.
 /// </para>
 /// <para>
-/// Finally the list contains the "share" subfolder in the installation
+/// Finally the list contains the &quot;share&quot; subfolder in the installation
 /// folder for GLib, and in the installation folder for the package the
-/// application's .exe file belongs to.
+/// application&apos;s .exe file belongs to.
 /// </para>
 /// <para>
 /// The installation folders above are determined by looking up the
 /// folder where the module (DLL or EXE) in question is located. If the
-/// folder's name is "bin", its parent is used, otherwise the folder
+/// folder&apos;s name is &quot;bin&quot;, its parent is used, otherwise the folder
 /// itself.
 /// </para>
 /// <para>
@@ -6826,11 +6821,11 @@ public class GLibGlobalFunctions
 /// On UNIX, this is taken from the `TMPDIR` environment variable.
 /// If the variable is not set, `P_tmpdir` is
 /// used, as defined by the system C library. Failing that, a
-/// hard-coded default of "/tmp" is returned.
+/// hard-coded default of &quot;/tmp&quot; is returned.
 /// </para>
 /// <para>
 /// On Windows, the `TEMP` environment variable is used, with the
-/// root directory of the Windows installation (eg: "C:\") used
+/// root directory of the Windows installation (eg: &quot;C:\&quot;) used
 /// as a default.
 /// </para>
 /// <para>
@@ -7075,7 +7070,7 @@ public class GLibGlobalFunctions
 /// On UNIX, the name and value are byte strings which might or might not
 /// be in some consistent character set and encoding. On Windows, they are
 /// in UTF-8.
-/// On Windows, in case the environment variable's value contains
+/// On Windows, in case the environment variable&apos;s value contains
 /// references to other environment variables, they are expanded.
 /// </para>
 /// </summary>
@@ -7179,7 +7174,7 @@ public class GLibGlobalFunctions
 /// Calls the given function for key/value pairs in the #GHashTable
 /// until @predicate returns %TRUE. The function is passed the key
 /// and value of each pair, and the given @user_data parameter. The
-/// hash table may not be modified while iterating over it (you can't
+/// hash table may not be modified while iterating over it (you can&apos;t
 /// add/remove items).
 /// </para>
 /// <para>
@@ -7218,7 +7213,7 @@ public class GLibGlobalFunctions
 /// Calls the given function for each of the key/value pairs in the
 /// #GHashTable.  The function is passed the key and value of each
 /// pair, and the given @user_data parameter.  The hash table may not
-/// be modified while iterating over it (you can't add/remove
+/// be modified while iterating over it (you can&apos;t add/remove
 /// items). To remove all items matching a predicate, use
 /// g_hash_table_foreach_remove().
 /// </para>
@@ -7927,7 +7922,7 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Tests if @hostname is the string form of an IPv4 or IPv6 address.
-/// (Eg, "192.168.0.1".)
+/// (Eg, &quot;192.168.0.1&quot;.)
 /// </para>
 /// <para>
 /// Since 2.66, IPv6 addresses with a zone-id are accepted (RFC6874).
@@ -8081,7 +8076,7 @@ public class GLibGlobalFunctions
 /// source codeset
 /// </param>
 /// <return>
-/// a "conversion descriptor", or (GIConv)-1 if
+/// a &quot;conversion descriptor&quot;, or (GIConv)-1 if
 ///  opening the converter failed.
 /// </return>
 
@@ -8208,7 +8203,7 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="data">
-/// the data for the idle source's callback.
+/// the data for the idle source&apos;s callback.
 /// </param>
 /// <return>
 /// %TRUE if an idle source was found and removed.
@@ -8300,7 +8295,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Note that this function acts on pointers to #gint, not on #gint
-/// directly: if your hash table's keys are of the form
+/// directly: if your hash table&apos;s keys are of the form
 /// `GINT_TO_POINTER (n)`, use g_direct_equal() instead.
 /// </para>
 /// </summary>
@@ -8328,7 +8323,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Note that this function acts on pointers to #gint, not on #gint
-/// directly: if your hash table's keys are of the form
+/// directly: if your hash table&apos;s keys are of the form
 /// `GINT_TO_POINTER (n)`, use g_direct_hash() instead.
 /// </para>
 /// </summary>
@@ -8491,9 +8486,9 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Creates a #GSource that's dispatched when @condition is met for the
+/// Creates a #GSource that&apos;s dispatched when @condition is met for the
 /// given @channel. For example, if condition is %G_IO_IN, the source will
-/// be dispatched when there's data available for reading.
+/// be dispatched when there&apos;s data available for reading.
 /// </para>
 /// <para>
 /// The callback function invoked by the #GSource should be added with
@@ -8759,7 +8754,7 @@ public class GLibGlobalFunctions
 
 /// <param name="log_domain">
 /// the log domain of the message, or `NULL` for the
-///   default `""` application domain
+///   default `&quot;&quot;` application domain
 /// </param>
 /// <param name="log_level">
 /// the level of the message
@@ -8991,7 +8986,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// ```c
-/// g_log_set_handler ("Gtk", G_LOG_LEVEL_CRITICAL | G_LOG_FLAG_FATAL
+/// g_log_set_handler (&quot;Gtk&quot;, G_LOG_LEVEL_CRITICAL | G_LOG_FLAG_FATAL
 ///                    | G_LOG_FLAG_RECURSION, my_log_handler, NULL);
 /// ```
 /// </para>
@@ -9000,7 +8995,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// ```c
-/// g_log_set_handler ("GLib", G_LOG_LEVEL_MASK | G_LOG_FLAG_FATAL
+/// g_log_set_handler (&quot;GLib&quot;, G_LOG_LEVEL_MASK | G_LOG_FLAG_FATAL
 ///                    | G_LOG_FLAG_RECURSION, my_log_handler, NULL);
 /// ```
 /// </para>
@@ -9133,31 +9128,31 @@ public class GLibGlobalFunctions
 /// `GLIB_` prefix.
 /// </para>
 /// <para>
-/// Note that keys that expect UTF-8 strings (specifically `"MESSAGE"` and
-/// `"GLIB_DOMAIN"`) must be passed as nul-terminated UTF-8 strings until GLib
+/// Note that keys that expect UTF-8 strings (specifically `&quot;MESSAGE&quot;` and
+/// `&quot;GLIB_DOMAIN&quot;`) must be passed as nul-terminated UTF-8 strings until GLib
 /// version 2.74.1 because the default log handler did not consider the length of
 /// the `GLogField`. Starting with GLib 2.74.1 this is fixed and
 /// non-nul-terminated UTF-8 strings can be passed with their correct length,
-/// with the exception of `"GLIB_DOMAIN"` which was only fixed with GLib 2.82.3.
+/// with the exception of `&quot;GLIB_DOMAIN&quot;` which was only fixed with GLib 2.82.3.
 /// </para>
 /// <para>
 /// The @log_domain will be converted into a `GLIB_DOMAIN` field. @log_level will
 /// be converted into a
-/// <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#PRIORITY=">PRIORITY</see>
+/// &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#PRIORITY=&quot;&amp;gt;PRIORITY&amp;lt;/see&amp;gt;
 /// field. The format string will have its placeholders substituted for the provided
 /// values and be converted into a
-/// <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#MESSAGE=">MESSAGE</see>
+/// &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#MESSAGE=&quot;&amp;gt;MESSAGE&amp;lt;/see&amp;gt;
 /// field.
 /// </para>
 /// <para>
 /// Other fields you may commonly want to pass into this function:
 /// </para>
 /// <para>
-///  * <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#MESSAGE_ID=">MESSAGE_ID</see>
-///  * <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_FILE=">CODE_FILE</see>
-///  * <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_LINE=">CODE_LINE</see>
-///  * <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_FUNC=">CODE_FUNC</see>
-///  * <see href="https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#ERRNO=">ERRNO</see>
+///  * &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#MESSAGE_ID=&quot;&amp;gt;MESSAGE_ID&amp;lt;/see&amp;gt;
+///  * &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_FILE=&quot;&amp;gt;CODE_FILE&amp;lt;/see&amp;gt;
+///  * &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_LINE=&quot;&amp;gt;CODE_LINE&amp;lt;/see&amp;gt;
+///  * &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#CODE_FUNC=&quot;&amp;gt;CODE_FUNC&amp;lt;/see&amp;gt;
+///  * &amp;lt;see href=&quot;https://www.freedesktop.org/software/systemd/man/systemd.journal-fields.html#ERRNO=&quot;&amp;gt;ERRNO&amp;lt;/see&amp;gt;
 /// </para>
 /// <para>
 /// Note that `CODE_FILE`, `CODE_LINE` and `CODE_FUNC` are automatically set by
@@ -9171,9 +9166,9 @@ public class GLibGlobalFunctions
 /// <para>
 /// ```c
 /// g_log_structured (G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG,
-///                   "MESSAGE_ID", "06d4df59e6c24647bfe69d2c27ef0b4e",
-///                   "MY_APPLICATION_CUSTOM_FIELD", "some debug string",
-///                   "MESSAGE", "This is a debug message about pointer %p and integer %u.",
+///                   &quot;MESSAGE_ID&quot;, &quot;06d4df59e6c24647bfe69d2c27ef0b4e&quot;,
+///                   &quot;MY_APPLICATION_CUSTOM_FIELD&quot;, &quot;some debug string&quot;,
+///                   &quot;MESSAGE&quot;, &quot;This is a debug message about pointer %p and integer %u.&quot;,
 ///                   some_pointer, some_integer);
 /// ```
 /// </para>
@@ -9196,10 +9191,10 @@ public class GLibGlobalFunctions
 /// <para>
 /// ```c
 /// const GLogField fields[] = {
-///   { "MESSAGE", "This is a debug message.", -1 },
-///   { "MESSAGE_ID", "fcfb2e1e65c3494386b74878f1abf893", -1 },
-///   { "MY_APPLICATION_CUSTOM_FIELD", "some debug string", -1 },
-///   { "MY_APPLICATION_STATE", state_object, 0 },
+///   { &quot;MESSAGE&quot;, &quot;This is a debug message.&quot;, -1 },
+///   { &quot;MESSAGE_ID&quot;, &quot;fcfb2e1e65c3494386b74878f1abf893&quot;, -1 },
+///   { &quot;MY_APPLICATION_CUSTOM_FIELD&quot;, &quot;some debug string&quot;, -1 },
+///   { &quot;MY_APPLICATION_STATE&quot;, state_object, 0 },
 /// };
 /// g_log_structured_array (G_LOG_LEVEL_DEBUG, fields, G_N_ELEMENTS (fields));
 /// ```
@@ -9300,7 +9295,7 @@ public class GLibGlobalFunctions
 /// This version is especially useful for use in other languages, via introspection.
 /// </para>
 /// <para>
-/// The only mandatory item in the @fields dictionary is the `"MESSAGE"` which must
+/// The only mandatory item in the @fields dictionary is the `&quot;MESSAGE&quot;` which must
 /// contain the text shown to the user.
 /// </para>
 /// <para>
@@ -9401,7 +9396,7 @@ public class GLibGlobalFunctions
 
 /// <param name="domains">
 /// `NULL`-terminated array with domains to be printed.
-///   `NULL` or an array with no values means none. Array with a single value `"all"` means all.
+///   `NULL` or an array with no values means none. Array with a single value `&quot;all&quot;` means all.
 /// </param>
 
 	public static void LogWriterDefaultSetDebugDomains(string domains)
@@ -9474,7 +9469,7 @@ public class GLibGlobalFunctions
 ///     g_autofree gchar *result = expensive_computation (my_object);
 /// </para>
 /// <para>
-///     g_debug ("my_object result: %s", result);
+///     g_debug (&quot;my_object result: %s&quot;, result);
 ///   }
 /// ```
 /// </para>
@@ -9690,7 +9685,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Log facility will be defined via the SYSLOG_FACILITY field and accepts the following
-/// values: "auth", "daemon", and "user". If SYSLOG_FACILITY is not specified, LOG_USER
+/// values: &quot;auth&quot;, &quot;daemon&quot;, and &quot;user&quot;. If SYSLOG_FACILITY is not specified, LOG_USER
 /// facility will be used.
 /// </para>
 /// <para>
@@ -9803,7 +9798,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Returns the global-default main context. This is the main context
 /// used for main loop functions when a main loop is not explicitly
-/// specified, and corresponds to the "main" main loop. See also
+/// specified, and corresponds to the &quot;main&quot; main loop. See also
 /// [func@GLib.MainContext.get_thread_default].
 /// </para>
 /// </summary>
@@ -9893,13 +9888,12 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// This function is useful in a situation like the following:
-/// Imagine an extremely simple "garbage collected" system.
+/// Imagine an extremely simple &quot;garbage collected&quot; system.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// static GList *free_list;
-/// </para>
-/// <para>
+/// static GList *free_list;
+/// 
 /// gpointer
 /// allocate_memory (gsize size)
 /// {
@@ -9907,83 +9901,75 @@ public class GLibGlobalFunctions
 ///   free_list = g_list_prepend (free_list, result);
 ///   return result;
 /// }
-/// </para>
-/// <para>
+/// 
 /// void
 /// free_allocated_memory (void)
 /// {
 ///   GList *l;
-///   for (l = free_list; l; l = l->next);
-///     g_free (l->data);
+///   for (l = free_list; l; l = l-&amp;gt;next);
+///     g_free (l-&amp;gt;data);
 ///   g_list_free (free_list);
 ///   free_list = NULL;
 ///  }
-/// </para>
-/// <para>
+/// 
 /// [...]
-/// </para>
-/// <para>
+/// 
 /// while (TRUE);
 ///  {
 ///    g_main_context_iteration (NULL, TRUE);
 ///    free_allocated_memory();
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This works from an application, however, if you want to do the same
 /// thing from a library, it gets more difficult, since you no longer
 /// control the main loop. You might think you can simply use an idle
 /// function to make the call to free_allocated_memory(), but that
-/// doesn't work, since the idle function could be called from a
+/// doesn&apos;t work, since the idle function could be called from a
 /// recursive callback. This can be fixed by using [func@GLib.main_depth]
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// gpointer
 /// gpointer
 /// allocate_memory (gsize size)
 /// {
 ///   FreeListBlock *block = g_new (FreeListBlock, 1);
-///   block->mem = g_malloc (size);
-///   block->depth = g_main_depth ();
+///   block-&amp;gt;mem = g_malloc (size);
+///   block-&amp;gt;depth = g_main_depth ();
 ///   free_list = g_list_prepend (free_list, block);
-///   return block->mem;
+///   return block-&amp;gt;mem;
 /// }
-/// </para>
-/// <para>
+/// 
 /// void
 /// free_allocated_memory (void)
 /// {
 ///   GList *l;
-/// </para>
-/// <para>
+/// 
 ///   int depth = g_main_depth ();
 ///   for (l = free_list; l; );
 ///     {
-///       GList *next = l->next;
-///       FreeListBlock *block = l->data;
-///       if (block->depth > depth)
+///       GList *next = l-&amp;gt;next;
+///       FreeListBlock *block = l-&amp;gt;data;
+///       if (block-&amp;gt;depth &amp;gt; depth)
 ///         {
-///           g_free (block->mem);
+///           g_free (block-&amp;gt;mem);
 ///           g_free (block);
 ///           free_list = g_list_delete_link (free_list, l);
 ///         }
-/// </para>
-/// <para>
+/// 
 ///       l = next;
 ///     }
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// There is a temptation to use [func@GLib.main_depth] to solve
 /// problems with reentrancy. For instance, while waiting for data
 /// to be received from the network in response to a menu item,
 /// the menu item might be selected again. It might seem that
-/// one could make the menu item's callback return immediately
+/// one could make the menu item&apos;s callback return immediately
 /// and do nothing if [func@GLib.main_depth] returns a value greater than 1.
 /// However, this should be avoided since the user then sees selecting
-/// the menu item do nothing. Furthermore, you'll find yourself adding
+/// the menu item do nothing. Furthermore, you&apos;ll find yourself adding
 /// these checks all over your code, since there are doubtless many,
 /// many things that the user could do. Instead, you can use the
 /// following techniques:
@@ -9994,7 +9980,7 @@ public class GLibGlobalFunctions
 ///    loop is recursing.
 /// </para>
 /// <para>
-/// 2. Avoid main loop recursion in situations where you can't handle
+/// 2. Avoid main loop recursion in situations where you can&apos;t handle
 ///    arbitrary  callbacks. Instead, structure your code so that you
 ///    simply return to the main loop and then get called again when
 ///    there is more work to do.
@@ -10035,7 +10021,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Allocates @n_bytes bytes of memory, initialized to 0's.
+/// Allocates @n_bytes bytes of memory, initialized to 0&apos;s.
 /// If @n_bytes is 0 it returns %NULL.
 /// </para>
 /// <para>
@@ -10124,7 +10110,7 @@ public class GLibGlobalFunctions
 /// unmodified to this function.
 /// </para>
 /// <para>
-/// Following these arguments is a list of "supported" attributes to collect.
+/// Following these arguments is a list of &quot;supported&quot; attributes to collect.
 /// It is an error to specify multiple attributes with the same name. If any
 /// attribute not in the list appears in the @attribute_names array then an
 /// unknown attribute error will result.
@@ -10199,13 +10185,13 @@ public class GLibGlobalFunctions
 /// when writing out a file to be parsed with the markup parser.
 /// </para>
 /// <para>
-/// Note that this function doesn't protect whitespace and line endings
+/// Note that this function doesn&apos;t protect whitespace and line endings
 /// from being processed according to the XML rules for normalization
 /// of line endings and attribute values.
 /// </para>
 /// <para>
 /// Note also that this function will produce character references in
-/// the range of &#x1; ... &#x1f; for all control sequences
+/// the range of &amp;#x1; ... &amp;#x1f; for all control sequences
 /// except for tabstop, newline and carriage return.  The character
 /// references in this range are not valid XML 1.0, but they are
 /// valid XML 1.1 and will be accepted by the GMarkup parser.
@@ -10236,20 +10222,18 @@ public class GLibGlobalFunctions
 /// output, without having to worry that the strings
 /// might themselves contain markup.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// const char *store = "Fortnum & Mason";
-/// const char *item = "Tea";
+/// <code>
+/// const char *store = &quot;Fortnum &amp; Mason&quot;;
+/// const char *store = &quot;Fortnum &amp; Mason&quot;;
+/// const char *item = &quot;Tea&quot;;
 /// char *output;
-/// </para>
-/// <para>
-/// output = g_markup_printf_escaped ("<purchase>"
-///                                   "<store>%s</store>"
-///                                   "<item>%s</item>"
-///                                   "</purchase>",
+/// 
+/// output = g_markup_printf_escaped (&quot;&amp;lt;purchase&amp;gt;&quot;
+///                                   &quot;&amp;lt;store&amp;gt;%s&amp;lt;/store&amp;gt;&quot;
+///                                   &quot;&amp;lt;item&amp;gt;%s&amp;lt;/item&amp;gt;&quot;
+///                                   &quot;&amp;lt;/purchase&amp;gt;&quot;,
 ///                                   store, item);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="format">
@@ -10301,7 +10285,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Checks whether the allocator used by g_malloc() is the system's
+/// Checks whether the allocator used by g_malloc() is the system&apos;s
 /// malloc implementation. If it returns %TRUE memory allocated with
 /// malloc() can be used interchangeably with memory allocated using g_malloc().
 /// This function is useful for avoiding an extra copy of allocated memory returned
@@ -10428,7 +10412,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Create a directory if it doesn't already exist. Create intermediate
+/// Create a directory if it doesn&apos;t already exist. Create intermediate
 /// parent directories as needed, too.
 /// </para>
 /// </summary>
@@ -10456,11 +10440,11 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The parameter is a string that should follow the rules for
-/// mkdtemp() templates, i.e. contain the string "XXXXXX".
+/// mkdtemp() templates, i.e. contain the string &quot;XXXXXX&quot;.
 /// g_mkdtemp() is slightly more flexible than mkdtemp() in that the
 /// sequence does not have to occur at the very end of the template.
 /// The X string will be modified to form the name of a directory that
-/// didn't exist.
+/// didn&apos;t exist.
 /// The string should be in the GLib file name encoding. Most importantly,
 /// on Windows it should be in UTF-8.
 /// </para>
@@ -10492,11 +10476,11 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The parameter is a string that should follow the rules for
-/// mkdtemp() templates, i.e. contain the string "XXXXXX".
+/// mkdtemp() templates, i.e. contain the string &quot;XXXXXX&quot;.
 /// g_mkdtemp_full() is slightly more flexible than mkdtemp() in that the
 /// sequence does not have to occur at the very end of the template
 /// and you can pass a @mode. The X string will be modified to form
-/// the name of a directory that didn't exist. The string should be
+/// the name of a directory that didn&apos;t exist. The string should be
 /// in the GLib file name encoding. Most importantly, on Windows it
 /// should be in UTF-8.
 /// </para>
@@ -10531,11 +10515,11 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The parameter is a string that should follow the rules for
-/// mkstemp() templates, i.e. contain the string "XXXXXX".
+/// mkstemp() templates, i.e. contain the string &quot;XXXXXX&quot;.
 /// g_mkstemp() is slightly more flexible than mkstemp() in that the
 /// sequence does not have to occur at the very end of the template.
 /// The X string will be modified to form the name of a file that
-/// didn't exist. The string should be in the GLib file name encoding.
+/// didn&apos;t exist. The string should be in the GLib file name encoding.
 /// Most importantly, on Windows it should be in UTF-8.
 /// </para>
 /// </summary>
@@ -10563,11 +10547,11 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The parameter is a string that should follow the rules for
-/// mkstemp() templates, i.e. contain the string "XXXXXX".
+/// mkstemp() templates, i.e. contain the string &quot;XXXXXX&quot;.
 /// g_mkstemp_full() is slightly more flexible than mkstemp()
 /// in that the sequence does not have to occur at the very end of the
 /// template and you can pass a @mode and additional @flags. The X
-/// string will be modified to form the name of a file that didn't exist.
+/// string will be modified to form the name of a file that didn&apos;t exist.
 /// The string should be in the GLib file name encoding. Most importantly,
 /// on Windows it should be in UTF-8.
 /// </para>
@@ -10656,11 +10640,10 @@ public class GLibGlobalFunctions
 /// The following example shows how it can be used together with
 /// the g_log() functions.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// #include <glib.h>
-/// </para>
-/// <para>
+/// <code>
+/// #include &amp;lt;glib.h&amp;gt;
+/// #include &amp;lt;glib.h&amp;gt;
+/// 
 /// static void
 /// log_handler (const gchar   *log_domain,
 ///              GLogLevelFlags log_level,
@@ -10668,12 +10651,10 @@ public class GLibGlobalFunctions
 ///              gpointer       user_data)
 /// {
 ///   g_log_default_handler (log_domain, log_level, message, user_data);
-/// </para>
-/// <para>
+/// 
 ///   g_on_error_query (MY_PROGRAM_NAME);
 /// }
-/// </para>
-/// <para>
+/// 
 /// int
 /// main (int argc, char *argv[])
 /// {
@@ -10684,19 +10665,18 @@ public class GLibGlobalFunctions
 ///                      log_handler,
 ///                      NULL);
 ///   ...
-/// ]|
-/// </para>
+/// </code>
 /// <para>
-/// If "[E]xit" is selected, the application terminates with a call
+/// If &quot;[E]xit&quot; is selected, the application terminates with a call
 /// to _exit(0).
 /// </para>
 /// <para>
-/// If "[S]tack" trace is selected, g_on_error_stack_trace() is called.
+/// If &quot;[S]tack&quot; trace is selected, g_on_error_stack_trace() is called.
 /// This invokes gdb, which attaches to the current process and shows
 /// a stack trace. The prompt is then shown again.
 /// </para>
 /// <para>
-/// If "[P]roceed" is selected, the function returns.
+/// If &quot;[P]roceed&quot; is selected, the function returns.
 /// </para>
 /// <para>
 /// This function may cause different actions on non-UNIX platforms.
@@ -10709,7 +10689,7 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="prg_name">
-/// the program name, needed by gdb for the "[S]tack trace"
+/// the program name, needed by gdb for the &quot;[S]tack trace&quot;
 ///     option. If @prg_name is %NULL, g_get_prgname() is called to get
 ///     the program name (which will work correctly if gdk_init() or
 ///     gtk_init() has been called)
@@ -10723,8 +10703,8 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Invokes gdb, which attaches to the current process and shows a
-/// stack trace. Called by g_on_error_query() when the "[S]tack trace"
-/// option is selected. You can get the current process's program name
+/// stack trace. Called by g_on_error_query() when the &quot;[S]tack trace&quot;
+/// option is selected. You can get the current process&apos;s program name
 /// with g_get_prgname(), assuming that you have called gtk_init() or
 /// gdk_init().
 /// </para>
@@ -10742,7 +10722,7 @@ public class GLibGlobalFunctions
 
 /// <param name="prg_name">
 /// the program name, needed by gdb for the
-///   "[S]tack trace" option, or `NULL` to use a default string
+///   &quot;[S]tack trace&quot; option, or `NULL` to use a default string
 /// </param>
 
 	public static void OnErrorStackTrace(string prg_name)
@@ -10758,27 +10738,23 @@ public class GLibGlobalFunctions
 /// the end of the initialization section. In combination with
 /// g_once_init_leave() and the unique address @value_location, it can
 /// be ensured that an initialization section will be executed only once
-/// during a program's life time, and that concurrent threads are
+/// during a program&apos;s life time, and that concurrent threads are
 /// blocked until initialization completed. To be used in constructs
 /// like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   static gsize initialization_value = 0;
-/// </para>
-/// <para>
-///   if (g_once_init_enter (&initialization_value))
+///   static gsize initialization_value = 0;
+/// 
+///   if (g_once_init_enter (&amp;initialization_value))
 ///     {
 ///       gsize setup_value = 42; // initialization code here
-/// </para>
-/// <para>
-///       g_once_init_leave (&initialization_value, setup_value);
+/// 
+///       g_once_init_leave (&amp;initialization_value, setup_value);
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // use initialization_value here
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// While @location has a `volatile` qualifier, this is a historical artifact and
 /// the pointer passed to it should not be `volatile`.
@@ -10813,23 +10789,19 @@ public class GLibGlobalFunctions
 /// This functions behaves in the same way as g_once_init_enter(), but can
 /// can be used to initialize pointers (or #guintptr) instead of #gsize.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   static MyStruct *interesting_struct = NULL;
-/// </para>
-/// <para>
-///   if (g_once_init_enter_pointer (&interesting_struct))
+///   static MyStruct *interesting_struct = NULL;
+/// 
+///   if (g_once_init_enter_pointer (&amp;interesting_struct))
 ///     {
 ///       MyStruct *setup_value = allocate_my_struct (); // initialization code here
-/// </para>
-/// <para>
-///       g_once_init_leave_pointer (&interesting_struct, g_steal_pointer (&setup_value));
+/// 
+///       g_once_init_leave_pointer (&amp;interesting_struct, g_steal_pointer (&amp;setup_value));
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // use interesting_struct here
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="location">
@@ -10907,7 +10879,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// On POSIX systems file descriptors are implemented by the operating
-/// system. On Windows, it's the C library that implements open() and
+/// system. On Windows, it&apos;s the C library that implements open() and
 /// file descriptors. The actual Win32 API for opening files is quite
 /// different, see MSDN documentation for CreateFile(). The Win32 API
 /// uses file handles, which are more randomish integers, not small
@@ -10962,13 +10934,13 @@ public class GLibGlobalFunctions
 /// command line or through environment variables.
 /// </para>
 /// <para>
-/// If @string is equal to "all", all flags are set. Any flags
-/// specified along with "all" in @string are inverted; thus,
-/// "all,foo,bar" or "foo,bar,all" sets all flags except those
-/// corresponding to "foo" and "bar".
+/// If @string is equal to &quot;all&quot;, all flags are set. Any flags
+/// specified along with &quot;all&quot; in @string are inverted; thus,
+/// &quot;all,foo,bar&quot; or &quot;foo,bar,all&quot; sets all flags except those
+/// corresponding to &quot;foo&quot; and &quot;bar&quot;.
 /// </para>
 /// <para>
-/// If @string is equal to "help", all the available keys in @keys
+/// If @string is equal to &quot;help&quot;, all the available keys in @keys
 /// are printed out to standard error.
 /// </para>
 /// </summary>
@@ -11033,7 +11005,7 @@ public class GLibGlobalFunctions
 /// If @file_name ends with a directory separator it gets the component
 /// before the last slash. If @file_name consists only of directory
 /// separators (and on Windows, possibly a drive letter), a single
-/// separator is returned. If @file_name is empty, it gets ".".
+/// separator is returned. If @file_name is empty, it gets &quot;.&quot;.
 /// </para>
 /// </summary>
 
@@ -11057,7 +11029,7 @@ public class GLibGlobalFunctions
 /// is `/`.
 /// </para>
 /// <para>
-/// If the file name has no directory components "." is returned.
+/// If the file name has no directory components &quot;.&quot; is returned.
 /// The returned string should be freed when no longer needed.
 /// </para>
 /// </summary>
@@ -11081,15 +11053,15 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// On POSIX systems, an absolute file name is well-defined. It always
-/// starts from the single root directory. For example "/usr/local".
+/// starts from the single root directory. For example &quot;/usr/local&quot;.
 /// </para>
 /// <para>
 /// On Windows, the concepts of current drive and drive-specific
 /// current directory introduce vagueness. This function interprets as
 /// an absolute file name one that either begins with a directory
-/// separator such as "\Users\tml" or begins with the root on a drive,
-/// for example "C:\Windows". The first case also includes UNC paths
-/// such as "\\\\myserver\docs\foo". In all cases, either slashes or
+/// separator such as &quot;\Users\tml&quot; or begins with the root on a drive,
+/// for example &quot;C:\Windows&quot;. The first case also includes UNC paths
+/// such as &quot;\\\\myserver\docs\foo&quot;. In all cases, either slashes or
 /// backslashes are accepted.
 /// </para>
 /// <para>
@@ -11099,7 +11071,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// File names relative the current directory on some specific drive,
-/// such as "D:foo/bar", are not interpreted as absolute by this
+/// such as &quot;D:foo/bar&quot;, are not interpreted as absolute by this
 /// function, but they obviously are not relative to the normal current
 /// directory as returned by getcwd() or g_get_current_dir()
 /// either. Such paths should be avoided, or need to be handled using
@@ -11122,7 +11094,7 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Returns a pointer into @file_name after the root component,
-/// i.e. after the "/" in UNIX or "C:\" under Windows. If @file_name
+/// i.e. after the &quot;/&quot; in UNIX or &quot;C:\&quot; under Windows. If @file_name
 /// is not an absolute path it returns %NULL.
 /// </para>
 /// </summary>
@@ -11430,10 +11402,10 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Polls @fds, as with the poll() system call, but portably. (On
-/// systems that don't have poll(), it is emulated using select().)
+/// systems that don&apos;t have poll(), it is emulated using select().)
 /// This is used internally by #GMainContext, but it can be called
 /// directly if you need to block until a file descriptor is ready, but
-/// don't want to run the full main loop.
+/// don&apos;t want to run the full main loop.
 /// </para>
 /// <para>
 /// Each element of @fds is a #GPollFD describing a single file
@@ -11962,9 +11934,9 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// This is just like the standard C <see href="man:qsort(3">qsort()</see>) function, but
+/// This is just like the standard C &amp;lt;see href=&quot;man:qsort(3&quot;&amp;gt;qsort()&amp;lt;/see&amp;gt;) function, but
 /// the comparison routine accepts a user data argument
-/// (like <see href="man:qsort_r(3">qsort_r()</see>)).
+/// (like &amp;lt;see href=&quot;man:qsort_r(3&quot;&amp;gt;qsort_r()&amp;lt;/see&amp;gt;)).
 /// </para>
 /// <para>
 /// Unlike `qsort()`, this is guaranteed to be a stable sort (since GLib 2.32).
@@ -12076,7 +12048,7 @@ public class GLibGlobalFunctions
 /// %NULL or it has no associated #GQuark.
 /// </para>
 /// <para>
-/// If you want the GQuark to be created if it doesn't already exist,
+/// If you want the GQuark to be created if it doesn&apos;t already exist,
 /// use g_quark_from_string() or g_quark_from_static_string().
 /// </para>
 /// <para>
@@ -12353,7 +12325,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Reallocates the memory pointed to by @mem, so that it now has space for
 /// @n_bytes bytes of memory. It returns the new address of the memory, which may
-/// have been moved. @mem may be %NULL, in which case it's considered to
+/// have been moved. @mem may be %NULL, in which case it&apos;s considered to
 /// have zero-length. @n_bytes may be 0, in which case %NULL will be returned
 /// and @mem will be freed unless it is %NULL.
 /// </para>
@@ -12595,7 +12567,7 @@ public class GLibGlobalFunctions
 /// into it, up to @len bytes.
 /// </para>
 /// <para>
-/// Since this function does not stop at nul bytes, it is the caller's
+/// Since this function does not stop at nul bytes, it is the caller&apos;s
 /// responsibility to ensure that @str has at least @len addressable bytes.
 /// </para>
 /// </summary>
@@ -12639,9 +12611,9 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If @has_references is not %NULL then @replacement is checked
-/// for pattern references. For instance, replacement text 'foo\n'
+/// for pattern references. For instance, replacement text &apos;foo\n&apos;
 /// does not contain references and may be evaluated without information
-/// about actual match, but '\0\1' (whole match followed by first
+/// about actual match, but &apos;\0\1&apos; (whole match followed by first
 /// subpattern) requires valid #GMatchInfo object.
 /// </para>
 /// </summary>
@@ -12673,7 +12645,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Escapes the nul characters in @string to "\x00".  It can be used
+/// Escapes the nul characters in @string to &quot;\x00&quot;.  It can be used
 /// to compile a regex with embedded nul characters.
 /// </para>
 /// <para>
@@ -12700,11 +12672,11 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Escapes the special characters used for regular expressions
-/// in @string, for instance "a.b*c" becomes "a\.b\*c". This
+/// in @string, for instance &quot;a.b*c&quot; becomes &quot;a\.b\*c&quot;. This
 /// function is useful to dynamically generate regular expressions.
 /// </para>
 /// <para>
-/// @string can contain nul characters that are replaced with "\0",
+/// @string can contain nul characters that are replaced with &quot;\0&quot;,
 /// in this case remember to specify the correct length of @string
 /// in @length.
 /// </para>
@@ -12737,7 +12709,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If this function is to be called on the same @pattern more than
-/// once, it's more efficient to compile the pattern once with
+/// once, it&apos;s more efficient to compile the pattern once with
 /// g_regex_new() and then use g_regex_match().
 /// </para>
 /// </summary>
@@ -12779,23 +12751,23 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If this function is to be called on the same @pattern more than
-/// once, it's more efficient to compile the pattern once with
+/// once, it&apos;s more efficient to compile the pattern once with
 /// g_regex_new() and then use g_regex_split().
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string ""
+/// As a special case, the result of splitting the empty string &quot;&quot;
 /// is an empty vector, not a vector containing a single string.
 /// The reason for this special case is that being able to represent
 /// an empty vector is typically more useful than consistent handling
 /// of empty elements. If you do need to represent empty elements,
-/// you'll need to check for the empty string before calling this
+/// you&apos;ll need to check for the empty string before calling this
 /// function.
 /// </para>
 /// <para>
 /// A pattern that can match empty strings splits @string into
 /// separate characters wherever it matches the empty string between
-/// characters. For example splitting "ab c" using as a separator
-/// "\s*", you will get "a", "b" and "c".
+/// characters. For example splitting &quot;ab c&quot; using as a separator
+/// &quot;\s*&quot;, you will get &quot;a&quot;, &quot;b&quot; and &quot;c&quot;.
 /// </para>
 /// </summary>
 
@@ -12830,7 +12802,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Due to thread safety issues this may cause leaking of strings
 /// that were previously returned from g_get_user_special_dir()
-/// that can't be freed. We ensure to only leak the data for
+/// that can&apos;t be freed. We ensure to only leak the data for
 /// the directories that actually changed value though.
 /// </para>
 /// </summary>
@@ -12857,7 +12829,7 @@ public class GLibGlobalFunctions
 /// open to some process, or mapped into memory.
 /// </para>
 /// <para>
-/// If this function fails on Windows you can't infer too much from the
+/// If this function fails on Windows you can&apos;t infer too much from the
 /// errno value. rmdir() is tried regardless of what caused remove() to
 /// fail. Any errno value set by remove() will be overwritten by that
 /// set by rmdir().
@@ -13253,7 +13225,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The application name will be used in contexts such as error messages,
-/// or when displaying an application's name in the task list.
+/// or when displaying an application&apos;s name in the task list.
 /// </para>
 /// </summary>
 
@@ -13299,7 +13271,7 @@ public class GLibGlobalFunctions
 /// Does nothing if @err is %NULL; if @err is non-%NULL, then `*err`
 /// must be %NULL. A new #GError is created and assigned to `*err`.
 /// Unlike g_set_error(), @message is not a printf()-style format string.
-/// Use this function if @message contains text you don't have control over,
+/// Use this function if @message contains text you don&apos;t have control over,
 /// that could include printf() escape sequences.
 /// </para>
 /// </summary>
@@ -13422,13 +13394,13 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Sets an environment variable. On UNIX, both the variable's name and
-/// value can be arbitrary byte strings, except that the variable's name
-/// cannot contain '='. On Windows, they should be in UTF-8.
+/// Sets an environment variable. On UNIX, both the variable&apos;s name and
+/// value can be arbitrary byte strings, except that the variable&apos;s name
+/// cannot contain &apos;=&apos;. On Windows, they should be in UTF-8.
 /// </para>
 /// <para>
 /// Note that on some systems, when variables are overwritten, the memory
-/// used for the previous variables and its value isn't reclaimed.
+/// used for the previous variables and its value isn&apos;t reclaimed.
 /// </para>
 /// <para>
 /// You should be mindful of the fact that environment variable handling
@@ -13449,7 +13421,7 @@ public class GLibGlobalFunctions
 
 /// <param name="variable">
 /// the environment variable to set, must not
-///     contain '='.
+///     contain &apos;=&apos;.
 /// </param>
 /// <param name="value">
 /// the value for to set the variable to.
@@ -13458,7 +13430,7 @@ public class GLibGlobalFunctions
 /// whether to change the variable if it already exists.
 /// </param>
 /// <return>
-/// %FALSE if the environment variable couldn't be set.
+/// %FALSE if the environment variable couldn&apos;t be set.
 /// </return>
 
 	public static bool Setenv(string variable, string value, bool overwrite)
@@ -13582,8 +13554,8 @@ public class GLibGlobalFunctions
 /// <para>
 /// Shell quoting rules are a bit strange. Single quotes preserve the
 /// literal string exactly. escape sequences are not allowed; not even
-/// `\'` - if you want a `'` in the quoted text, you have to do something
-/// like `'foo'\''bar'`. Double quotes allow `$`, ```, `"`, `\`, and
+/// `\&apos;` - if you want a `&apos;` in the quoted text, you have to do something
+/// like `&apos;foo&apos;\&apos;&apos;bar&apos;`. Double quotes allow `$`, ```, `&quot;`, `\`, and
 /// newline to be escaped with backslash. Otherwise double quotes
 /// preserve things literally.
 /// </para>
@@ -13853,9 +13825,9 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// This is just like the standard C <see href="man:qsort(3">qsort()</see>) function, but
+/// This is just like the standard C &amp;lt;see href=&quot;man:qsort(3&quot;&amp;gt;qsort()&amp;lt;/see&amp;gt;) function, but
 /// the comparison routine accepts a user data argument
-/// (like <see href="man:qsort_r(3">qsort_r()</see>)).
+/// (like &amp;lt;see href=&quot;man:qsort_r(3&quot;&amp;gt;qsort_r()&amp;lt;/see&amp;gt;)).
 /// </para>
 /// <para>
 /// Unlike `qsort()`, this is guaranteed to be a stable sort.
@@ -14037,7 +14009,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// You should call g_spawn_close_pid() on the returned child process
-/// reference when you don't need it any more.
+/// reference when you don&apos;t need it any more.
 /// </para>
 /// <para>
 /// If you are writing a GTK application, and the program you are spawning is a
@@ -14053,16 +14025,16 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="working_directory">
-/// child's current working
-///     directory, or %NULL to inherit parent's
+/// child&apos;s current working
+///     directory, or %NULL to inherit parent&apos;s
 /// </param>
 /// <param name="argv">
 /// 
-///     child's argument vector
+///     child&apos;s argument vector
 /// </param>
 /// <param name="envp">
 /// 
-///     child's environment, or %NULL to inherit parent's
+///     child&apos;s environment, or %NULL to inherit parent&apos;s
 /// </param>
 /// <param name="flags">
 /// flags from #GSpawnFlags
@@ -14099,14 +14071,14 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="working_directory">
-/// child's current working directory, or %NULL to inherit parent's, in the GLib file name encoding
+/// child&apos;s current working directory, or %NULL to inherit parent&apos;s, in the GLib file name encoding
 /// </param>
 /// <param name="argv">
-/// child's argument vector, in the GLib file name encoding;
+/// child&apos;s argument vector, in the GLib file name encoding;
 ///   it must be non-empty and %NULL-terminated
 /// </param>
 /// <param name="envp">
-/// child's environment, or %NULL to inherit parent's, in the GLib file name encoding
+/// child&apos;s environment, or %NULL to inherit parent&apos;s, in the GLib file name encoding
 /// </param>
 /// <param name="flags">
 /// flags from #GSpawnFlags
@@ -14122,13 +14094,13 @@ public class GLibGlobalFunctions
 /// return location for child process ID, or %NULL
 /// </param>
 /// <param name="stdin_fd">
-/// file descriptor to use for child's stdin, or `-1`
+/// file descriptor to use for child&apos;s stdin, or `-1`
 /// </param>
 /// <param name="stdout_fd">
-/// file descriptor to use for child's stdout, or `-1`
+/// file descriptor to use for child&apos;s stdout, or `-1`
 /// </param>
 /// <param name="stderr_fd">
-/// file descriptor to use for child's stderr, or `-1`
+/// file descriptor to use for child&apos;s stderr, or `-1`
 /// </param>
 /// <return>
 /// %TRUE on success, %FALSE if an error was set
@@ -14149,16 +14121,16 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="working_directory">
-/// child's current working
-///     directory, or %NULL to inherit parent's, in the GLib file name encoding
+/// child&apos;s current working
+///     directory, or %NULL to inherit parent&apos;s, in the GLib file name encoding
 /// </param>
 /// <param name="argv">
-/// child's argument
+/// child&apos;s argument
 ///     vector, in the GLib file name encoding; it must be non-empty and %NULL-terminated
 /// </param>
 /// <param name="envp">
 /// 
-///     child's environment, or %NULL to inherit parent's, in the GLib file
+///     child&apos;s environment, or %NULL to inherit parent&apos;s, in the GLib file
 ///     name encoding
 /// </param>
 /// <param name="flags">
@@ -14175,13 +14147,13 @@ public class GLibGlobalFunctions
 /// return location for child process ID, or %NULL
 /// </param>
 /// <param name="standard_input">
-/// return location for file descriptor to write to child's stdin, or %NULL
+/// return location for file descriptor to write to child&apos;s stdin, or %NULL
 /// </param>
 /// <param name="standard_output">
-/// return location for file descriptor to read child's stdout, or %NULL
+/// return location for file descriptor to read child&apos;s stdout, or %NULL
 /// </param>
 /// <param name="standard_error">
-/// return location for file descriptor to read child's stderr, or %NULL
+/// return location for file descriptor to read child&apos;s stderr, or %NULL
 /// </param>
 /// <return>
 /// %TRUE on success, %FALSE if an error was set
@@ -14225,25 +14197,25 @@ public class GLibGlobalFunctions
 /// GLib file name encoding. Unicode characters that are not part of
 /// the system codepage passed in these arguments will be correctly
 /// available in the spawned program only if it uses wide character API
-/// to retrieve its command line. For C programs built with Microsoft's
+/// to retrieve its command line. For C programs built with Microsoft&apos;s
 /// tools it is enough to make the program have a `wmain()` instead of
 /// `main()`. `wmain()` has a wide character argument vector as parameter.
 /// </para>
 /// <para>
-/// At least currently, mingw doesn't support `wmain()`, so if you use
+/// At least currently, mingw doesn&apos;t support `wmain()`, so if you use
 /// mingw to develop the spawned program, it should call
 /// g_win32_get_command_line() to get arguments in UTF-8.
 /// </para>
 /// <para>
 /// On Windows the low-level child process creation API `CreateProcess()`
-/// doesn't use argument vectors, but a command line. The C runtime
-/// library's `spawn*()` family of functions (which g_spawn_async_with_pipes()
+/// doesn&apos;t use argument vectors, but a command line. The C runtime
+/// library&apos;s `spawn*()` family of functions (which g_spawn_async_with_pipes()
 /// eventually calls) paste the argument vector elements together into
 /// a command line, and the C runtime startup code does a corresponding
 /// reconstruction of an argument vector from the command line, to be
 /// passed to `main()`. Complications arise when you have argument vector
 /// elements that contain spaces or double quotes. The `spawn*()` functions
-/// don't do any quoting or escaping, but on the other hand the startup
+/// don&apos;t do any quoting or escaping, but on the other hand the startup
 /// code does do unquoting and unescaping in order to enable receiving
 /// arguments with embedded spaces or double quotes. To work around this
 /// asymmetry, g_spawn_async_with_pipes() will do quoting and escaping on
@@ -14257,12 +14229,12 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @envp is a %NULL-terminated array of strings, where each string
-/// has the form `KEY=VALUE`. This will become the child's environment.
-/// If @envp is %NULL, the child inherits its parent's environment.
+/// has the form `KEY=VALUE`. This will become the child&apos;s environment.
+/// If @envp is %NULL, the child inherits its parent&apos;s environment.
 /// </para>
 /// <para>
 /// @flags should be the bitwise OR of any flags you want to affect the
-/// function's behaviour. The %G_SPAWN_DO_NOT_REAP_CHILD means that the
+/// function&apos;s behaviour. The %G_SPAWN_DO_NOT_REAP_CHILD means that the
 /// child will not automatically be reaped; you must use a child watch
 /// (g_child_watch_add()) to be notified about the death of the child process,
 /// otherwise it will stay around as a zombie process until this process exits.
@@ -14286,22 +14258,22 @@ public class GLibGlobalFunctions
 /// are used, the value from @envp takes precedence over the environment.
 /// </para>
 /// <para>
-/// %G_SPAWN_CHILD_INHERITS_STDIN means that the child will inherit the parent's
-/// standard input (by default, the child's standard input is attached to
+/// %G_SPAWN_CHILD_INHERITS_STDIN means that the child will inherit the parent&apos;s
+/// standard input (by default, the child&apos;s standard input is attached to
 /// `/dev/null`). %G_SPAWN_STDIN_FROM_DEV_NULL explicitly imposes the default
 /// behavior. Both flags cannot be enabled at the same time and, in both cases,
 /// the @stdin_pipe_out argument is ignored.
 /// </para>
 /// <para>
-/// %G_SPAWN_STDOUT_TO_DEV_NULL means that the child's standard output
-/// will be discarded (by default, it goes to the same location as the parent's
+/// %G_SPAWN_STDOUT_TO_DEV_NULL means that the child&apos;s standard output
+/// will be discarded (by default, it goes to the same location as the parent&apos;s
 /// standard output). %G_SPAWN_CHILD_INHERITS_STDOUT explicitly imposes the
 /// default behavior. Both flags cannot be enabled at the same time and, in
 /// both cases, the @stdout_pipe_out argument is ignored.
 /// </para>
 /// <para>
-/// %G_SPAWN_STDERR_TO_DEV_NULL means that the child's standard error
-/// will be discarded (by default, it goes to the same location as the parent's
+/// %G_SPAWN_STDERR_TO_DEV_NULL means that the child&apos;s standard error
+/// will be discarded (by default, it goes to the same location as the parent&apos;s
 /// standard error). %G_SPAWN_CHILD_INHERITS_STDERR explicitly imposes the
 /// default behavior. Both flags cannot be enabled at the same time and, in
 /// both cases, the @stderr_pipe_out argument is ignored.
@@ -14346,7 +14318,7 @@ public class GLibGlobalFunctions
 /// could be used for on Windows so it is ignored and not called.
 /// </para>
 /// <para>
-/// If non-%NULL, @child_pid will on Unix be filled with the child's
+/// If non-%NULL, @child_pid will on Unix be filled with the child&apos;s
 /// process ID. You can use the process ID to send signals to the child,
 /// or to use g_child_watch_add() (or `waitpid()`) if you specified the
 /// %G_SPAWN_DO_NOT_REAP_CHILD flag. On Windows, @child_pid will be
@@ -14359,24 +14331,24 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If non-%NULL, the @stdin_pipe_out, @stdout_pipe_out, @stderr_pipe_out
-/// locations will be filled with file descriptors for writing to the child's
+/// locations will be filled with file descriptors for writing to the child&apos;s
 /// standard input or reading from its standard output or standard error.
 /// The caller of g_spawn_async_with_pipes() must close these file descriptors
 /// when they are no longer in use. If these parameters are %NULL, the
-/// corresponding pipe won't be created.
+/// corresponding pipe won&apos;t be created.
 /// </para>
 /// <para>
-/// If @stdin_pipe_out is %NULL, the child's standard input is attached to
+/// If @stdin_pipe_out is %NULL, the child&apos;s standard input is attached to
 /// `/dev/null` unless %G_SPAWN_CHILD_INHERITS_STDIN is set.
 /// </para>
 /// <para>
-/// If @stderr_pipe_out is NULL, the child's standard error goes to the same
-/// location as the parent's standard error unless %G_SPAWN_STDERR_TO_DEV_NULL
+/// If @stderr_pipe_out is NULL, the child&apos;s standard error goes to the same
+/// location as the parent&apos;s standard error unless %G_SPAWN_STDERR_TO_DEV_NULL
 /// is set.
 /// </para>
 /// <para>
-/// If @stdout_pipe_out is NULL, the child's standard output goes to the same
-/// location as the parent's standard output unless %G_SPAWN_STDOUT_TO_DEV_NULL
+/// If @stdout_pipe_out is NULL, the child&apos;s standard output goes to the same
+/// location as the parent&apos;s standard output unless %G_SPAWN_STDOUT_TO_DEV_NULL
 /// is set.
 /// </para>
 /// <para>
@@ -14423,16 +14395,16 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="working_directory">
-/// child's current working
-///     directory, or %NULL to inherit parent's, in the GLib file name encoding
+/// child&apos;s current working
+///     directory, or %NULL to inherit parent&apos;s, in the GLib file name encoding
 /// </param>
 /// <param name="argv">
-/// child's argument
+/// child&apos;s argument
 ///     vector, in the GLib file name encoding; it must be non-empty and %NULL-terminated
 /// </param>
 /// <param name="envp">
 /// 
-///     child's environment, or %NULL to inherit parent's, in the GLib file
+///     child&apos;s environment, or %NULL to inherit parent&apos;s, in the GLib file
 ///     name encoding
 /// </param>
 /// <param name="flags">
@@ -14446,13 +14418,13 @@ public class GLibGlobalFunctions
 /// user data for @child_setup
 /// </param>
 /// <param name="stdin_fd">
-/// file descriptor to use for child's stdin, or `-1`
+/// file descriptor to use for child&apos;s stdin, or `-1`
 /// </param>
 /// <param name="stdout_fd">
-/// file descriptor to use for child's stdout, or `-1`
+/// file descriptor to use for child&apos;s stdout, or `-1`
 /// </param>
 /// <param name="stderr_fd">
-/// file descriptor to use for child's stderr, or `-1`
+/// file descriptor to use for child&apos;s stderr, or `-1`
 /// </param>
 /// <param name="source_fds">
 /// array of FDs from the parent
@@ -14469,13 +14441,13 @@ public class GLibGlobalFunctions
 /// return location for child process ID, or %NULL
 /// </param>
 /// <param name="stdin_pipe_out">
-/// return location for file descriptor to write to child's stdin, or %NULL
+/// return location for file descriptor to write to child&apos;s stdin, or %NULL
 /// </param>
 /// <param name="stdout_pipe_out">
-/// return location for file descriptor to read child's stdout, or %NULL
+/// return location for file descriptor to read child&apos;s stdout, or %NULL
 /// </param>
 /// <param name="stderr_pipe_out">
-/// return location for file descriptor to read child's stderr, or %NULL
+/// return location for file descriptor to read child&apos;s stderr, or %NULL
 /// </param>
 /// <return>
 /// %TRUE on success, %FALSE if an error was set
@@ -14542,7 +14514,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// The @domain and @code of @error have special semantics in the case
-/// where the process has an "exit code", as opposed to being killed by
+/// where the process has an &quot;exit code&quot;, as opposed to being killed by
 /// a signal. On Unix, this happens if WIFEXITED() would be true of
 /// @wait_status. On Windows, it is always the case.
 /// </para>
@@ -14589,7 +14561,7 @@ public class GLibGlobalFunctions
 /// On some platforms, notably Windows, the #GPid type represents a resource
 /// which must be closed to prevent resource leaking. g_spawn_close_pid()
 /// is provided for this purpose. It should be used on all platforms, even
-/// though it doesn't do anything under UNIX.
+/// though it doesn&apos;t do anything under UNIX.
 /// </para>
 /// </summary>
 
@@ -14666,10 +14638,10 @@ public class GLibGlobalFunctions
 /// Windows command interpreter rules.
 /// Space is a separator, and backslashes are
 /// special. Thus you cannot simply pass a @command_line containing
-/// canonical Windows paths, like "c:\\program files\\app\\app.exe", as
+/// canonical Windows paths, like &quot;c:\\program files\\app\\app.exe&quot;, as
 /// the backslashes will be eaten, and the space will act as a
 /// separator. You need to enclose such paths with single quotes, like
-/// "'c:\\program files\\app\\app.exe' 'e:\\folder\\argument.txt'".
+/// &quot;&apos;c:\\program files\\app\\app.exe&apos; &apos;e:\\folder\\argument.txt&apos;&quot;.
 /// </para>
 /// </summary>
 
@@ -14744,16 +14716,16 @@ public class GLibGlobalFunctions
 /// </summary>
 
 /// <param name="working_directory">
-/// child's current working
-///     directory, or %NULL to inherit parent's
+/// child&apos;s current working
+///     directory, or %NULL to inherit parent&apos;s
 /// </param>
 /// <param name="argv">
 /// 
-///     child's argument vector, which must be non-empty and %NULL-terminated
+///     child&apos;s argument vector, which must be non-empty and %NULL-terminated
 /// </param>
 /// <param name="envp">
 /// 
-///     child's environment, or %NULL to inherit parent's
+///     child&apos;s environment, or %NULL to inherit parent&apos;s
 /// </param>
 /// <param name="flags">
 /// flags from #GSpawnFlags
@@ -14838,7 +14810,7 @@ public class GLibGlobalFunctions
 /// the one with 32-bit size and time fields, specifically called _stat32().
 /// </para>
 /// <para>
-/// In Microsoft's compiler, by default struct stat means one with
+/// In Microsoft&apos;s compiler, by default struct stat means one with
 /// 64-bit time fields while in MinGW struct stat is the legacy one
 /// with 32-bit fields. To hopefully clear up this messs, the gstdio.h
 /// header defines a type #GStatBuf which is the appropriate struct type
@@ -14969,9 +14941,9 @@ public class GLibGlobalFunctions
 /// Converts a string to a hash value.
 /// </para>
 /// <para>
-/// This function implements the widely used "djb" hash apparently
+/// This function implements the widely used &quot;djb&quot; hash apparently
 /// posted by Daniel Bernstein to comp.lang.c some time ago.  The 32
-/// bit unsigned hash value starts at 5381 and for each byte 'c' in
+/// bit unsigned hash value starts at 5381 and for each byte &apos;c&apos; in
 /// the string, is updated: `hash = hash * 33 + c`. This function
 /// uses the signed value of each byte.
 /// </para>
@@ -15033,7 +15005,7 @@ public class GLibGlobalFunctions
 /// folded token from @potential_hit.
 /// </para>
 /// <para>
-/// Depending on how you're performing the search, it will typically be
+/// Depending on how you&apos;re performing the search, it will typically be
 /// faster to call `g_str_tokenize_and_fold()` on each string in
 /// your corpus and build an index on the returned folded tokens, then
 /// call `g_str_tokenize_and_fold()` on the search term and
@@ -15089,7 +15061,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If you want to do translation for no specific locale, and you want it
-/// to be done independently of the currently locale, specify `"C"` for
+/// to be done independently of the currently locale, specify `&quot;C&quot;` for
 /// @from_locale.
 /// </para>
 /// </summary>
@@ -15116,7 +15088,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// A token is a non-empty sequence of alphanumeric characters in the
 /// source string, separated by non-alphanumeric characters.  An
-/// "alphanumeric" character for this purpose is one that matches
+/// &quot;alphanumeric&quot; character for this purpose is one that matches
 /// [func@GLib.unichar_isalnum] or [func@GLib.unichar_ismark].
 /// </para>
 /// <para>
@@ -15136,8 +15108,8 @@ public class GLibGlobalFunctions
 /// a string to tokenize
 /// </param>
 /// <param name="translit_locale">
-/// the language code (like 'de' or
-///   'en_GB') from which @string originates
+/// the language code (like &apos;de&apos; or
+///   &apos;en_GB&apos;) from which @string originates
 /// </param>
 /// <param name="ascii_alternates">
 /// 
@@ -15161,13 +15133,13 @@ public class GLibGlobalFunctions
 /// Modifies @string in place, and return @string itself, not a copy. The
 /// return value is to allow nesting such as:
 /// ```C
-/// g_ascii_strup (g_strcanon (str, "abc", '?'))
+/// g_ascii_strup (g_strcanon (str, &quot;abc&quot;, &apos;?&apos;))
 /// ```
 /// </para>
 /// <para>
 /// In order to modify a copy, you may use [func@GLib.strdup]:
 /// ```C
-/// reformatted = g_strcanon (g_strdup (const_str), "abc", '?');
+/// reformatted = g_strcanon (g_strdup (const_str), &quot;abc&quot;, &apos;?&apos;);
 /// …
 /// g_free (reformatted);
 /// ```
@@ -15206,8 +15178,8 @@ public class GLibGlobalFunctions
 /// string to compare with @s1
 /// </param>
 /// <return>
-/// 0 if the strings match, a negative value if @s1 < @s2,
-///   or a positive value if @s1 > @s2
+/// 0 if the strings match, a negative value if @s1 &amp;lt; @s2,
+///   or a positive value if @s1 &amp;gt; @s2
 /// </return>
 
 	public static int Strcasecmp(string s1, string s2)
@@ -15220,7 +15192,7 @@ public class GLibGlobalFunctions
 /// Removes trailing whitespace from a string.
 /// </para>
 /// <para>
-/// This function doesn't allocate or reallocate any memory;
+/// This function doesn&apos;t allocate or reallocate any memory;
 /// it modifies @string in place. Therefore, it cannot be used
 /// on statically allocated strings.
 /// </para>
@@ -15250,7 +15222,7 @@ public class GLibGlobalFunctions
 /// of the characters forward.
 /// </para>
 /// <para>
-/// This function doesn't allocate or reallocate any memory;
+/// This function doesn&apos;t allocate or reallocate any memory;
 /// it modifies @string in place. Therefore, it cannot be used on
 /// statically allocated strings.
 /// </para>
@@ -15292,7 +15264,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <return>
 /// an integer less than, equal to, or greater than zero,
-///   if @str1 is <, == or > than @str2
+///   if @str1 is &amp;lt;, == or &amp;gt; than @str2
 /// </return>
 
 	public static int Strcmp0(string str1, string str2)
@@ -15314,7 +15286,7 @@ public class GLibGlobalFunctions
 /// - `\v` → [U+000B Vertical Tabulation](https://en.wikipedia.org/wiki/Vertical_Tab)
 /// - `\` followed by one to three octal digits → the numeric value (mod 255)
 /// - `\` followed by any other character → the character as is.
-///   For example, `\\` will turn into a backslash (`\`) and `\"` into a double quote (`"`).
+///   For example, `\\` will turn into a backslash (`\`) and `\&quot;` into a double quote (`&quot;`).
 /// </para>
 /// <para>
 /// [func@GLib.strescape] does the reverse conversion.
@@ -15376,13 +15348,13 @@ public class GLibGlobalFunctions
 /// <para>
 /// The return value is to allow nesting such as:
 /// ```C
-/// g_ascii_strup (g_strdelimit (str, "abc", '?'))
+/// g_ascii_strup (g_strdelimit (str, &quot;abc&quot;, &apos;?&apos;))
 /// ```
 /// </para>
 /// <para>
 /// In order to modify a copy, you may use [func@GLib.strdup]:
 /// ```C
-/// reformatted = g_strdelimit (g_strdup (const_str), "abc", '?');
+/// reformatted = g_strdelimit (g_strdup (const_str), &quot;abc&quot;, &apos;?&apos;);
 /// …
 /// g_free (reformatted);
 /// ```
@@ -15533,14 +15505,14 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Returns a string corresponding to the given error code, e.g. "no
-/// such process".
+/// Returns a string corresponding to the given error code, e.g. &quot;no
+/// such process&quot;.
 /// </para>
 /// <para>
 /// Unlike `strerror()`, this always returns a string in
 /// UTF-8 encoding, and the pointer is guaranteed to remain valid for
 /// the lifetime of the process. If the error code is unknown, it returns a
-/// string like “Unknown error <code\>”.
+/// string like “Unknown error &amp;lt;code\&amp;gt;”.
 /// </para>
 /// <para>
 /// Note that the string may be translated according to the current locale.
@@ -15590,7 +15562,7 @@ public class GLibGlobalFunctions
 ///  [U+000B Vertical Tabulation](https://en.wikipedia.org/wiki/Vertical_Tab) | `\v`
 /// </para>
 /// <para>
-/// It also inserts a backslash (`\`) before any backslash or a double quote (`"`).
+/// It also inserts a backslash (`\`) before any backslash or a double quote (`&quot;`).
 /// Additionally all characters in the range 0x01-0x1F (everything
 /// below SPACE) and in the range 0x7F-0xFF (all non-ASCII chars) are
 /// replaced with a backslash followed by their octal representation.
@@ -15649,8 +15621,8 @@ public class GLibGlobalFunctions
 /// </param>
 /// <return>
 /// @msgval, unless @msgval is identical to @msgid
-///     and contains a '|' character, in which case a pointer to
-///     the substring of msgid after the first '|' character is returned.
+///     and contains a &apos;|&apos; character, in which case a pointer to
+///     the substring of msgid after the first &apos;|&apos; character is returned.
 /// </return>
 
 	public static string StripContext(string msgid, string msgval)
@@ -15713,7 +15685,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Portability wrapper that calls `strlcat()` on systems which have it,
 /// and emulates it otherwise. Appends nul-terminated @src string to @dest,
-/// guaranteeing nul-termination for @dest. The total size of @dest won't
+/// guaranteeing nul-termination for @dest. The total size of @dest won&apos;t
 /// exceed @dest_size.
 /// </para>
 /// <para>
@@ -15741,7 +15713,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <return>
 /// size of attempted result, which is `MIN (dest_size, strlen
-///   (original dest)) + strlen (src)`, so if @retval >= @dest_size,
+///   (original dest)) + strlen (src)`, so if @retval &amp;gt;= @dest_size,
 ///   truncation occurred
 /// </return>
 
@@ -15760,9 +15732,9 @@ public class GLibGlobalFunctions
 /// <para>
 /// At most @dest_size - 1 characters will be copied. Always nul-terminates
 /// (unless @dest_size is 0). This function does not allocate memory. Unlike
-/// `strncpy()`, this function doesn't pad @dest (so it's often faster). It
+/// `strncpy()`, this function doesn&apos;t pad @dest (so it&apos;s often faster). It
 /// returns the size of the attempted result, `strlen (src)`, so if
-/// @retval >= @dest_size, truncation occurred.
+/// @retval &amp;gt;= @dest_size, truncation occurred.
 /// </para>
 /// <para>
 /// Caveat: `strlcpy()` is supposedly more secure than `strcpy()` or `strncpy()`,
@@ -15808,8 +15780,8 @@ public class GLibGlobalFunctions
 /// the maximum number of characters to compare
 /// </param>
 /// <return>
-/// 0 if the strings match, a negative value if @s1 < @s2,
-///   or a positive value if @s1 > @s2
+/// 0 if the strings match, a negative value if @s1 &amp;lt; @s2,
+///   or a positive value if @s1 &amp;gt; @s2
 /// </return>
 
 	public static int Strncasecmp(string s1, string s2, uint n)
@@ -15870,10 +15842,10 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Reverses all of the bytes in a string. For example,
-/// `g_strreverse ("abcdef")` will result in "fedcba".
+/// `g_strreverse (&quot;abcdef&quot;)` will result in &quot;fedcba&quot;.
 /// </para>
 /// <para>
-/// Note that `g_strreverse()` doesn't work on UTF-8 strings
+/// Note that `g_strreverse()` doesn&apos;t work on UTF-8 strings
 /// containing multibyte characters. For that purpose, use
 /// [func@GLib.utf8_strreverse].
 /// </para>
@@ -15935,7 +15907,7 @@ public class GLibGlobalFunctions
 /// </param>
 /// <param name="haystack_len">
 /// the maximum length of @haystack in bytes. A length of `-1`
-///   can be used to mean "search the entire string", like [func@GLib.strrstr]
+///   can be used to mean &quot;search the entire string&quot;, like [func@GLib.strrstr]
 /// </param>
 /// <param name="needle">
 /// the string to search for
@@ -15952,8 +15924,8 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Returns a string describing the given signal, e.g. "Segmentation fault".
-/// If the signal is unknown, it returns “unknown signal (<signum\>)”.
+/// Returns a string describing the given signal, e.g. &quot;Segmentation fault&quot;.
+/// If the signal is unknown, it returns “unknown signal (&amp;lt;signum\&amp;gt;)”.
 /// </para>
 /// <para>
 /// You should use this function in preference to `strsignal()`, because it
@@ -15981,15 +15953,15 @@ public class GLibGlobalFunctions
 /// appended to the last token.
 /// </para>
 /// <para>
-/// As an example, the result of `g_strsplit (":a:bc::d:", ":", -1)` is an array
-/// containing the six strings "", "a", "bc", "", "d" and "".
+/// As an example, the result of `g_strsplit (&quot;:a:bc::d:&quot;, &quot;:&quot;, -1)` is an array
+/// containing the six strings &quot;&quot;, &quot;a&quot;, &quot;bc&quot;, &quot;&quot;, &quot;d&quot; and &quot;&quot;.
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string "" is an empty
+/// As a special case, the result of splitting the empty string &quot;&quot; is an empty
 /// array, not an array containing a single string. The reason for this
 /// special case is that being able to represent an empty array is typically
 /// more useful than consistent handling of empty elements. If you do need
-/// to represent empty elements, you'll need to check for the empty string
+/// to represent empty elements, you&apos;ll need to check for the empty string
 /// before calling `g_strsplit()`.
 /// </para>
 /// </summary>
@@ -16024,23 +15996,23 @@ public class GLibGlobalFunctions
 /// remainder is appended to the last token.
 /// </para>
 /// <para>
-/// For example, the result of g_strsplit_set ("abc:def/ghi", ":/", -1) is an
-/// array containing the three strings "abc", "def", and "ghi".
+/// For example, the result of g_strsplit_set (&quot;abc:def/ghi&quot;, &quot;:/&quot;, -1) is an
+/// array containing the three strings &quot;abc&quot;, &quot;def&quot;, and &quot;ghi&quot;.
 /// </para>
 /// <para>
-/// The result of g_strsplit_set (":def/ghi:", ":/", -1) is an array containing
-/// the four strings "", "def", "ghi", and "".
+/// The result of g_strsplit_set (&quot;:def/ghi:&quot;, &quot;:/&quot;, -1) is an array containing
+/// the four strings &quot;&quot;, &quot;def&quot;, &quot;ghi&quot;, and &quot;&quot;.
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string "" is an empty
+/// As a special case, the result of splitting the empty string &quot;&quot; is an empty
 /// array, not an array containing a single string. The reason for this
 /// special case is that being able to represent an empty array is typically
 /// more useful than consistent handling of empty elements. If you do need
-/// to represent empty elements, you'll need to check for the empty string
+/// to represent empty elements, you&apos;ll need to check for the empty string
 /// before calling `g_strsplit_set()`.
 /// </para>
 /// <para>
-/// Note that this function works on bytes not characters, so it can't be used
+/// Note that this function works on bytes not characters, so it can&apos;t be used
 /// to delimit UTF-8 strings for anything but ASCII characters.
 /// </para>
 /// </summary>
@@ -16115,7 +16087,7 @@ public class GLibGlobalFunctions
 /// This function should seldom be used. The normal situation when reading
 /// numbers not for human consumption is to use [func@GLib.ascii_strtod]. Only when
 /// you know that you must expect both locale formatted and C formatted numbers
-/// should you use this. Make sure that you don't pass strings such as comma
+/// should you use this. Make sure that you don&apos;t pass strings such as comma
 /// separated lists of values, since the commas may be interpreted as a decimal
 /// point in some locales, causing unexpected results.
 /// </para>
@@ -16245,7 +16217,7 @@ public class GLibGlobalFunctions
 /// argument will be passed as first argument to @test_func.
 /// </para>
 /// <para>
-/// If @testpath includes the component "subprocess" anywhere in it,
+/// If @testpath includes the component &quot;subprocess&quot; anywhere in it,
 /// the test will be skipped by default, and only run if explicitly
 /// required via the `-p` command-line option or [func@GLib.test_trap_subprocess].
 /// </para>
@@ -16310,7 +16282,7 @@ public class GLibGlobalFunctions
 /// based on the /-separated portions of @testpath.
 /// </para>
 /// <para>
-/// If @testpath includes the component "subprocess" anywhere in it,
+/// If @testpath includes the component &quot;subprocess&quot; anywhere in it,
 /// the test will be skipped by default, and only run if explicitly
 /// required via the `-p` command-line option or [func@GLib.test_trap_subprocess].
 /// </para>
@@ -16448,7 +16420,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// In case neither variable is set, this function will fall back to
-/// using the dirname portion of `argv[0]`, possibly removing ".libs".
+/// using the dirname portion of `argv[0]`, possibly removing &quot;.libs&quot;.
 /// This allows for casual running of tests directly from the commandline
 /// in the srcdir == builddir case and should also support running of
 /// installed tests, assuming the data files have been installed in the
@@ -16593,7 +16565,7 @@ public class GLibGlobalFunctions
 /// // context is already owned by another thread.
 /// g_test_expect_message (G_LOG_DOMAIN,
 ///                        G_LOG_LEVEL_CRITICAL,
-///                        "assertion*acquired_context*failed");
+///                        &quot;assertion*acquired_context*failed&quot;);
 /// g_main_context_push_thread_default (bad_context);
 /// g_test_assert_expected_messages ();
 /// ```
@@ -16718,8 +16690,8 @@ public class GLibGlobalFunctions
 /// specified by @file_type.
 /// </para>
 /// <para>
-/// This is approximately the same as calling `g_test_build_filename(".")`,
-/// but you don't need to free the return value.
+/// This is approximately the same as calling `g_test_build_filename(&quot;.&quot;)`,
+/// but you don&apos;t need to free the return value.
 /// </para>
 /// </summary>
 
@@ -16886,7 +16858,7 @@ public class GLibGlobalFunctions
 /// - `-p PATH`: Execute all tests matching the given path.
 /// - `-s PATH`: Skip all tests matching the given path.
 ///   This can also be used to force a test to run that would otherwise
-///   be skipped (ie, a test whose name contains "/subprocess").
+///   be skipped (ie, a test whose name contains &quot;/subprocess&quot;).
 /// - `-m {perf|slow|thorough|quick|undefined|no-undefined}`: Execute tests according
 ///   to these test modes:
 /// </para>
@@ -17152,7 +17124,7 @@ public class GLibGlobalFunctions
 /// the minimum value not returned by this function
 /// </param>
 /// <return>
-/// a number with @range_start <= number < @range_end
+/// a number with @range_start &amp;lt;= number &amp;lt; @range_end
 /// </return>
 
 	public static double TestRandDoubleRange(double range_start, double range_end)
@@ -17201,7 +17173,7 @@ public class GLibGlobalFunctions
 /// the smallest value not to be returned by this function
 /// </param>
 /// <return>
-/// a number with @begin <= number < @end
+/// a number with @begin &amp;lt;= number &amp;lt; @end
 /// </return>
 
 	public static int TestRandIntRange(int begin, int end)
@@ -17227,18 +17199,18 @@ public class GLibGlobalFunctions
 /// the order in which they are defined. However, note that prior to
 /// GLib 2.36, there was a bug in the `g_test_add_*`
 /// functions which caused them to create multiple suites with the same
-/// name, meaning that if you created tests "/foo/simple",
-/// "/bar/simple", and "/foo/using-bar" in that order, they would get
-/// run in that order (since [func@GLib.test_run] would run the first "/foo"
-/// suite, then the "/bar" suite, then the second "/foo" suite). As of
+/// name, meaning that if you created tests &quot;/foo/simple&quot;,
+/// &quot;/bar/simple&quot;, and &quot;/foo/using-bar&quot; in that order, they would get
+/// run in that order (since [func@GLib.test_run] would run the first &quot;/foo&quot;
+/// suite, then the &quot;/bar&quot; suite, then the second &quot;/foo&quot; suite). As of
 /// 2.36, this bug is fixed, and adding the tests in that order would
-/// result in a running order of "/foo/simple", "/foo/using-bar",
-/// "/bar/simple". If this new ordering is sub-optimal (because it puts
+/// result in a running order of &quot;/foo/simple&quot;, &quot;/foo/using-bar&quot;,
+/// &quot;/bar/simple&quot;. If this new ordering is sub-optimal (because it puts
 /// more-complicated tests before simpler ones, making it harder to
 /// figure out exactly what has failed), you can fix it by changing the
 /// test paths to group tests by suite in a way that will result in the
-/// desired running order. Eg, "/simple/foo", "/simple/bar",
-/// "/complex/foo-using-bar".
+/// desired running order. Eg, &quot;/simple/foo&quot;, &quot;/simple/bar&quot;,
+/// &quot;/complex/foo-using-bar&quot;.
 /// </para>
 /// <para>
 /// However, you should never make the actual result of a test depend
@@ -17249,7 +17221,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// If all tests are skipped or marked as incomplete (expected failures),
 /// this function will return 0 if producing TAP output, or 77 (treated
-/// as "skip test" by Automake) otherwise.
+/// as &quot;skip test&quot; by Automake) otherwise.
 /// </para>
 /// </summary>
 
@@ -17402,8 +17374,8 @@ public class GLibGlobalFunctions
 /// static void
 /// test_array_sort (void)
 /// {
-///   g_test_summary ("Test my_array_sort() sorts the array correctly and stably, "
-///                   "including testing zero length and one-element arrays.");
+///   g_test_summary (&quot;Test my_array_sort() sorts the array correctly and stably, &quot;
+///                   &quot;including testing zero length and one-element arrays.&quot;);
 /// </para>
 /// <para>
 ///   // ...
@@ -17516,15 +17488,15 @@ public class GLibGlobalFunctions
 ///   {
 ///     if (g_test_trap_fork (0, G_TEST_TRAP_SILENCE_STDOUT | G_TEST_TRAP_SILENCE_STDERR))
 ///       {
-///         g_print ("some stdout text: somagic17
-/// ");
-///         g_printerr ("some stderr text: semagic43
-/// ");
+///         g_print (&quot;some stdout text: somagic17
+/// &quot;);
+///         g_printerr (&quot;some stderr text: semagic43
+/// &quot;);
 ///         exit (0); // successful test run
 ///       }
 ///     g_test_trap_assert_passed ();
-///     g_test_trap_assert_stdout ("*somagic17*");
-///     g_test_trap_assert_stderr ("*semagic43*");
+///     g_test_trap_assert_stdout (&quot;*somagic17*&quot;);
+///     g_test_trap_assert_stderr (&quot;*semagic43*&quot;);
 ///   }
 /// ```
 /// </para>
@@ -17617,8 +17589,8 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// @test_path can also be the name of the parent test, followed by
-/// "`/subprocess/`" and then a name for the specific subtest (or just
-/// ending with "`/subprocess`" if the test only has one child test);
+/// &quot;`/subprocess/`&quot; and then a name for the specific subtest (or just
+/// ending with &quot;`/subprocess`&quot; if the test only has one child test);
 /// tests with names of this form will automatically be skipped in the
 /// parent process.
 /// </para>
@@ -17671,7 +17643,7 @@ public class GLibGlobalFunctions
 ///     // Reruns this same test in a subprocess
 ///     g_test_trap_subprocess (NULL, 0, G_TEST_SUBPROCESS_DEFAULT);
 ///     g_test_trap_assert_failed ();
-///     g_test_trap_assert_stderr ("*ERROR*too large*");
+///     g_test_trap_assert_stderr (&quot;*ERROR*too large*&quot;);
 ///   }
 /// </para>
 /// <para>
@@ -17681,29 +17653,29 @@ public class GLibGlobalFunctions
 ///     if (g_test_subprocess ())
 ///       {
 ///         // Code under test goes here
-///         g_message ("Username is now simulated as %s", g_getenv ("USER"));
+///         g_message (&quot;Username is now simulated as %s&quot;, g_getenv (&quot;USER&quot;));
 ///         return;
 ///       }
 /// </para>
 /// <para>
 ///     // Reruns this same test in a subprocess
 ///     g_autoptr(GStrv) envp = g_get_environ ();
-///     envp = g_environ_setenv (g_steal_pointer (&envp), "USER", "charlie", TRUE);
+///     envp = g_environ_setenv (g_steal_pointer (&amp;envp), &quot;USER&quot;, &quot;charlie&quot;, TRUE);
 ///     g_test_trap_subprocess_with_envp (NULL, envp, 0, G_TEST_SUBPROCESS_DEFAULT);
 ///     g_test_trap_assert_passed ();
-///     g_test_trap_assert_stdout ("Username is now simulated as charlie");
+///     g_test_trap_assert_stdout (&quot;Username is now simulated as charlie&quot;);
 ///   }
 /// </para>
 /// <para>
 ///   int
 ///   main (int argc, char **argv)
 ///   {
-///     g_test_init (&argc, &argv, NULL);
+///     g_test_init (&amp;argc, &amp;argv, NULL);
 /// </para>
 /// <para>
-///     g_test_add_func ("/myobject/create-large-object",
+///     g_test_add_func (&quot;/myobject/create-large-object&quot;,
 ///                      test_create_large_object);
-///     g_test_add_func ("/myobject/different-username",
+///     g_test_add_func (&quot;/myobject/different-username&quot;,
 ///                      test_different_username);
 ///     return g_test_run ();
 ///   }
@@ -17850,7 +17822,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Note that threads may decide to exit while @thread_func is
 /// running, so without intimate knowledge about the lifetime of
-/// foreign threads, @thread_func shouldn't access the GThread*
+/// foreign threads, @thread_func shouldn&apos;t access the GThread*
 /// pointer passed in as first argument. However, @thread_func will
 /// not be called for threads which are known to have exited already.
 /// </para>
@@ -18106,11 +18078,12 @@ public class GLibGlobalFunctions
 /// <para>
 /// This function was deprecated, along with #GTimeVal itself, in GLib 2.62.
 /// Equivalent functionality is available using code like:
-/// |[
+/// <code>
+/// GDateTime *dt = g_date_time_new_from_iso8601 (iso8601_string, NULL);
 /// GDateTime *dt = g_date_time_new_from_iso8601 (iso8601_string, NULL);
 /// gint64 time_val = g_date_time_to_unix (dt);
 /// g_date_time_unref (dt);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -18145,14 +18118,14 @@ public class GLibGlobalFunctions
 /// event sources. Thus they should not be relied on for precise timing.
 /// After each call to the timeout function, the time of the next
 /// timeout is recalculated based on the current time and the given interval
-/// (it does not try to 'catch up' time lost in delays).
+/// (it does not try to &apos;catch up&apos; time lost in delays).
 /// </para>
 /// <para>
 /// See [mainloop memory management](main-loop.html#memory-management-of-sources) for details
 /// on how to handle the return value and memory management of @data.
 /// </para>
 /// <para>
-/// If you want to have a timer in the "seconds" range and do not care
+/// If you want to have a timer in the &quot;seconds&quot; range and do not care
 /// about the exact time of the first call of the timer, use the
 /// [func@GLib.timeout_add_seconds] function; this function allows for more
 /// optimizations and more efficient system power usage.
@@ -18207,7 +18180,7 @@ public class GLibGlobalFunctions
 /// event sources. Thus they should not be relied on for precise timing.
 /// After each call to the timeout function, the time of the next
 /// timeout is recalculated based on the current time and the given interval
-/// (it does not try to 'catch up' time lost in delays).
+/// (it does not try to &apos;catch up&apos; time lost in delays).
 /// </para>
 /// <para>
 /// See [mainloop memory management](main-loop.html#memory-management-of-sources) for details
@@ -18374,7 +18347,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// The grouping of timers to fire at the same time results in a more power
 /// and CPU efficient behavior so if your timer is in multiples of seconds
-/// and you don't require the first timer exactly one second from now, the
+/// and you don&apos;t require the first timer exactly one second from now, the
 /// use of [func@GLib.timeout_add_seconds] is preferred over
 /// [func@GLib.timeout_add].
 /// </para>
@@ -18600,7 +18573,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Attempts to allocate @n_bytes, initialized to 0's, and returns %NULL on
+/// Attempts to allocate @n_bytes, initialized to 0&apos;s, and returns %NULL on
 /// failure. Contrast with g_malloc0(), which aborts the program on failure.
 /// </para>
 /// </summary>
@@ -18795,7 +18768,7 @@ public class GLibGlobalFunctions
 /// Determines the break type of @c. @c should be a Unicode character
 /// (to derive a character from UTF-8 encoded text, use
 /// g_utf8_get_char()). The break type is used to find word and line
-/// breaks ("text boundaries"), Pango implements the Unicode boundary
+/// breaks (&quot;text boundaries&quot;), Pango implements the Unicode boundary
 /// resolution algorithms and normally you would use a function such
 /// as pango_break() instead of caring about break types yourself.
 /// </para>
@@ -18842,7 +18815,7 @@ public class GLibGlobalFunctions
 /// No composition can have either of @a or @b equal to zero.
 /// To be precise, this function composes if and only if
 /// there exists a Primary Composite P which is canonically
-/// equivalent to the sequence <@a,@b>.  See the Unicode
+/// equivalent to the sequence &amp;lt;@a,@b&amp;gt;.  See the Unicode
 /// Standard for the definition of Primary Composite.
 /// </para>
 /// <para>
@@ -18881,7 +18854,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// This function does not include compatibility
 /// decompositions. It does, however, include algorithmic
-/// Hangul Jamo decomposition, as well as 'singleton'
+/// Hangul Jamo decomposition, as well as &apos;singleton&apos;
 /// decompositions which replace a character by a single
 /// other character. In the case of singletons `*b` will
 /// be set to zero.
@@ -18992,14 +18965,14 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// In Unicode, some characters are "mirrored". This means that their
+/// In Unicode, some characters are &quot;mirrored&quot;. This means that their
 /// images are mirrored horizontally in text that is laid out from right
-/// to left. For instance, "(" would become its mirror image, ")", in
+/// to left. For instance, &quot;(&quot; would become its mirror image, &quot;)&quot;, in
 /// right-to-left text.
 /// </para>
 /// <para>
 /// If @ch has the Unicode mirrored property and there is another unicode
-/// character that typically has a glyph that is the mirror image of @ch's
+/// character that typically has a glyph that is the mirror image of @ch&apos;s
 /// glyph and @mirrored_ch is set, it puts that character in the address
 /// pointed to by @mirrored_ch.  Otherwise the original character is put.
 /// </para>
@@ -19158,7 +19131,7 @@ public class GLibGlobalFunctions
 /// a Unicode character
 /// </param>
 /// <return>
-/// %TRUE if @c is printable unless it's a space
+/// %TRUE if @c is printable unless it&apos;s a space
 /// </return>
 
 	public static bool UnicharIsgraph(char c)
@@ -19261,7 +19234,7 @@ public class GLibGlobalFunctions
 /// character value with g_utf8_get_char().
 /// </para>
 /// <para>
-/// (Note: don't use this to do word breaking; you have to use
+/// (Note: don&apos;t use this to do word breaking; you have to use
 /// Pango or equivalent to get word breaking right, the algorithm
 /// is fairly complex.)
 /// </para>
@@ -19601,10 +19574,10 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Looks up the Unicode script for @iso15924.  ISO 15924 assigns four-letter
-/// codes to scripts.  For example, the code for Arabic is 'Arab'.
+/// codes to scripts.  For example, the code for Arabic is &apos;Arab&apos;.
 /// This function accepts four letter codes encoded as a @guint32 in a
 /// big-endian fashion.  That is, the code expected for Arabic is
-/// 0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
+/// 0x41726162 (0x41 is ASCII code for &apos;A&apos;, 0x72 is ASCII code for &apos;r&apos;, etc).
 /// </para>
 /// <para>
 /// See
@@ -19630,10 +19603,10 @@ public class GLibGlobalFunctions
 /// <summary>
 /// <para>
 /// Looks up the ISO 15924 code for @script.  ISO 15924 assigns four-letter
-/// codes to scripts.  For example, the code for Arabic is 'Arab'.  The
+/// codes to scripts.  For example, the code for Arabic is &apos;Arab&apos;.  The
 /// four letter codes are encoded as a @guint32 by this function in a
 /// big-endian fashion.  That is, the code returned for Arabic is
-/// 0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
+/// 0x41726162 (0x41 is ASCII code for &apos;A&apos;, 0x72 is ASCII code for &apos;r&apos;, etc).
 /// </para>
 /// <para>
 /// See
@@ -19648,7 +19621,7 @@ public class GLibGlobalFunctions
 /// <return>
 /// the ISO 15924 code for @script, encoded as an integer,
 ///   of zero if @script is %G_UNICODE_SCRIPT_INVALID_CODE or
-///   ISO 15924 code 'Zzzz' (script code for UNKNOWN) if @script is not understood.
+///   ISO 15924 code &apos;Zzzz&apos; (script code for UNKNOWN) if @script is not understood.
 /// </return>
 
 	public static uint UnicodeScriptToIso15924(MentorLake.GLib.GUnicodeScript script)
@@ -20014,7 +19987,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// Note that on some systems, when variables are overwritten, the
-/// memory used for the previous variables and its value isn't reclaimed.
+/// memory used for the previous variables and its value isn&apos;t reclaimed.
 /// </para>
 /// <para>
 /// You should be mindful of the fact that environment variable handling
@@ -20035,7 +20008,7 @@ public class GLibGlobalFunctions
 
 /// <param name="variable">
 /// the environment variable to remove, must
-///     not contain '='
+///     not contain &apos;=&apos;
 /// </param>
 
 	public static void Unsetenv(string variable)
@@ -20049,7 +20022,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// See also g_uri_build_with_user(), which allows specifying the
-/// components of the "userinfo" separately.
+/// components of the &quot;userinfo&quot; separately.
 /// </para>
 /// </summary>
 
@@ -20189,10 +20162,10 @@ public class GLibGlobalFunctions
 /// Escapes a string for use in a URI.
 /// </para>
 /// <para>
-/// Normally all characters that are not "unreserved" (i.e. ASCII
+/// Normally all characters that are not &quot;unreserved&quot; (i.e. ASCII
 /// alphanumerical characters plus dash, dot, underscore and tilde) are
 /// escaped. But if you specify characters in @reserved_chars_allowed
-/// they are not escaped. This is useful for the "reserved" characters
+/// they are not escaped. This is useful for the &quot;reserved&quot; characters
 /// in the URI specification, since those are allowed unescaped in some
 /// portions of a URI.
 /// </para>
@@ -20432,7 +20405,7 @@ public class GLibGlobalFunctions
 /// </para>
 /// <para>
 /// If %G_URI_PARAMS_CASE_INSENSITIVE is passed to @flags, attributes will be
-/// compared case-insensitively, so a params string `attr=123&Attr=456` will only
+/// compared case-insensitively, so a params string `attr=123&amp;Attr=456` will only
 /// return a single attribute–value pair, `Attr=456`. Case will be preserved in
 /// the returned attributes.
 /// </para>
@@ -20451,8 +20424,8 @@ public class GLibGlobalFunctions
 /// </param>
 /// <param name="separators">
 /// the separator byte character set between parameters. (usually
-///   `&`, but sometimes `;` or both `&;`). Note that this function works on
-///   bytes not characters, so it can't be used to delimit UTF-8 strings for
+///   `&amp;`, but sometimes `;` or both `&amp;;`). Note that this function works on
+///   bytes not characters, so it can&apos;t be used to delimit UTF-8 strings for
 ///   anything but ASCII characters. You may pass an empty set, in which case
 ///   no splitting will occur.
 /// </param>
@@ -20477,10 +20450,10 @@ public class GLibGlobalFunctions
 /// Gets the scheme portion of a URI string.
 /// [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
 /// as:
-/// |[
-/// URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-/// ]|
-/// Common schemes include `file`, `https`, `svn+ssh`, etc.
+/// <code>
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// </code>
 /// </para>
 /// </summary>
 
@@ -20502,10 +20475,10 @@ public class GLibGlobalFunctions
 /// Gets the scheme portion of a URI string.
 /// [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
 /// as:
-/// |[
-/// URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-/// ]|
-/// Common schemes include `file`, `https`, `svn+ssh`, etc.
+/// <code>
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// </code>
 /// </para>
 /// <para>
 /// Unlike g_uri_parse_scheme(), the returned scheme is normalized to
@@ -20565,7 +20538,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Parses @uri_ref (which can be an
 /// [absolute or relative URI](#relative-and-absolute-uris)) according to @flags, and
-/// returns the pieces. Any component that doesn't appear in @uri_ref will be
+/// returns the pieces. Any component that doesn&apos;t appear in @uri_ref will be
 /// returned as %NULL (but note that all URIs always have a path component,
 /// though it may be the empty string).
 /// </para>
@@ -20675,7 +20648,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// Parses @uri_ref (which can be an
 /// [absolute or relative URI](#relative-and-absolute-uris)) according to @flags, and
-/// returns the pieces. Any component that doesn't appear in @uri_ref will be
+/// returns the pieces. Any component that doesn&apos;t appear in @uri_ref will be
 /// returned as %NULL (but note that all URIs always have a path component,
 /// though it may be the empty string).
 /// </para>
@@ -20860,7 +20833,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// There are 1 million microseconds per second (represented by the
 /// %G_USEC_PER_SEC macro). g_usleep() may have limited precision,
-/// depending on hardware and operating system; don't rely on the exact
+/// depending on hardware and operating system; don&apos;t rely on the exact
 /// length of the sleep.
 /// </para>
 /// </summary>
@@ -21022,8 +20995,8 @@ public class GLibGlobalFunctions
 /// a UTF-8 encoded string
 /// </param>
 /// <return>
-/// < 0 if @str1 compares before @str2,
-///   0 if they compare equal, > 0 if @str1 compares after @str2.
+/// &amp;lt; 0 if @str1 compares before @str2,
+///   0 if they compare equal, &amp;gt; 0 if @str1 compares after @str2.
 /// </return>
 
 	public static int Utf8Collate(string str1, string str2)
@@ -21075,12 +21048,12 @@ public class GLibGlobalFunctions
 /// with other collation keys produced by the same function using strcmp().
 /// </para>
 /// <para>
-/// In order to sort filenames correctly, this function treats the dot '.'
+/// In order to sort filenames correctly, this function treats the dot &apos;.&apos;
 /// as a special case. Most dictionary orderings seem to consider it
-/// insignificant, thus producing the ordering "event.c" "eventgenerator.c"
-/// "event.h" instead of "event.c" "event.h" "eventgenerator.c". Also, we
-/// would like to treat numbers intelligently so that "file1" "file10" "file5"
-/// is sorted as "file1" "file5" "file10".
+/// insignificant, thus producing the ordering &quot;event.c&quot; &quot;eventgenerator.c&quot;
+/// &quot;event.h&quot; instead of &quot;event.c&quot; &quot;event.h&quot; &quot;eventgenerator.c&quot;. Also, we
+/// would like to treat numbers intelligently so that &quot;file1&quot; &quot;file10&quot; &quot;file5&quot;
+/// is sorted as &quot;file1&quot; &quot;file5&quot; &quot;file10&quot;.
 /// </para>
 /// <para>
 /// Note that this function depends on the [current locale][setlocale].
@@ -21276,7 +21249,7 @@ public class GLibGlobalFunctions
 /// standardizes differences that do not affect the
 /// text content, such as the above-mentioned accent
 /// representation. %G_NORMALIZE_ALL also standardizes
-/// the "compatibility" characters in Unicode, such
+/// the &quot;compatibility&quot; characters in Unicode, such
 /// as SUPERSCRIPT THREE to the standard forms
 /// (in this case DIGIT THREE). Formatting information
 /// may be lost but for most text operations such
@@ -21483,7 +21456,7 @@ public class GLibGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Like the standard C <see href="man:strncpy">strncpy()</see> function, but copies a given
+/// Like the standard C &amp;lt;see href=&quot;man:strncpy&quot;&amp;gt;strncpy()&amp;lt;/see&amp;gt; function, but copies a given
 /// number of characters instead of a given number of bytes.
 /// </para>
 /// <para>
@@ -22006,7 +21979,7 @@ public class GLibGlobalFunctions
 /// <para>
 /// If @type is non-%NULL then the value will be parsed to have that
 /// type.  This may result in additional parse errors (in the case that
-/// the parsed value doesn't fit the type) but may also result in fewer
+/// the parsed value doesn&apos;t fit the type) but may also result in fewer
 /// errors (in the case that the type would have been ambiguous, such as
 /// with empty arrays).
 /// </para>
@@ -22066,23 +22039,21 @@ public class GLibGlobalFunctions
 /// <para>
 /// The message will typically look something like one of the following:
 /// </para>
-/// <para>
-/// |[
+/// <code>
 /// unterminated string constant:
-///   (1, 2, 3, 'abc
+/// unterminated string constant:
+///   (1, 2, 3, &apos;abc
 ///             ^^^^
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// or
 /// </para>
-/// <para>
-/// |[
+/// <code>
 /// unable to find a common type:
-///   [1, 2, 3, 'str']
+/// unable to find a common type:
+///   [1, 2, 3, &apos;str&apos;]
 ///    ^        ^^^^^
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The format of the message may change in a future version.
 /// </para>

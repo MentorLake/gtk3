@@ -3,7 +3,7 @@ namespace MentorLake.GLib;
 /// <summary>
 /// <para>
 /// Many URI schemes include one or more attribute/value pairs as part of the URI
-/// value. For example `scheme://server/path?query=string&is=there` has two
+/// value. For example `scheme://server/path?query=string&amp;is=there` has two
 /// attributes – `query=string` and `is=there` – in its query part.
 /// </para>
 /// <para>
@@ -43,26 +43,24 @@ public static class GUriParamsIterExtensions
 /// effect if passed to @flags for g_uri_params_iter_init(). The caller is
 /// responsible for doing their own case-insensitive comparisons.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GUriParamsIter iter;
 /// GUriParamsIter iter;
 /// GError *error = NULL;
 /// gchar *unowned_attr, *unowned_value;
-/// </para>
-/// <para>
-/// g_uri_params_iter_init (&iter, "foo=bar&baz=bar&Foo=frob&baz=bar2", -1, "&", G_URI_PARAMS_NONE);
-/// while (g_uri_params_iter_next (&iter, &unowned_attr, &unowned_value, &error))
+/// 
+/// g_uri_params_iter_init (&amp;iter, &quot;foo=bar&amp;baz=bar&amp;Foo=frob&amp;baz=bar2&quot;, -1, &quot;&amp;&quot;, G_URI_PARAMS_NONE);
+/// while (g_uri_params_iter_next (&amp;iter, &amp;unowned_attr, &amp;unowned_value, &amp;error))
 ///   {
-///     g_autofree gchar *attr = g_steal_pointer (&unowned_attr);
-///     g_autofree gchar *value = g_steal_pointer (&unowned_value);
+///     g_autofree gchar *attr = g_steal_pointer (&amp;unowned_attr);
+///     g_autofree gchar *value = g_steal_pointer (&amp;unowned_value);
 ///     // do something with attr and value; this code will be called 4 times
 ///     // for the params string in this example: once with attr=foo and value=bar,
 ///     // then with baz/bar, then Foo/frob, then baz/bar2.
 ///   }
 /// if (error)
 ///   // handle parsing error
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="iter">
@@ -77,8 +75,8 @@ public static class GUriParamsIterExtensions
 /// </param>
 /// <param name="separators">
 /// the separator byte character set between parameters. (usually
-///   `&`, but sometimes `;` or both `&;`). Note that this function works on
-///   bytes not characters, so it can't be used to delimit UTF-8 strings for
+///   `&amp;`, but sometimes `;` or both `&amp;;`). Note that this function works on
+///   bytes not characters, so it can&apos;t be used to delimit UTF-8 strings for
 ///   anything but ASCII characters. You may pass an empty set, in which case
 ///   no splitting will occur.
 /// </param>
@@ -147,7 +145,7 @@ internal class GUriParamsIterExterns
 /// <summary>
 /// <para>
 /// Many URI schemes include one or more attribute/value pairs as part of the URI
-/// value. For example `scheme://server/path?query=string&is=there` has two
+/// value. For example `scheme://server/path?query=string&amp;is=there` has two
 /// attributes – `query=string` and `is=there` – in its query part.
 /// </para>
 /// <para>

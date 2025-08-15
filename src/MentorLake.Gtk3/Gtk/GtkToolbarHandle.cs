@@ -56,7 +56,7 @@ public static class GtkToolbarHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// A keybinding signal used internally by GTK+. This signal can't
+/// A keybinding signal used internally by GTK+. This signal can&apos;t
 /// be used in application code
 /// </para>
 /// </summary>
@@ -298,7 +298,7 @@ public static class GtkToolbarHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// A keybinding signal used internally by GTK+. This signal can't
+/// A keybinding signal used internally by GTK+. This signal can&apos;t
 /// be used in application code
 /// </para>
 /// </summary>
@@ -487,8 +487,8 @@ public static class GtkToolbarHandleExtensions
 
 /// <summary>
 /// <para>
-/// Returns the @n'th item on @toolbar, or %NULL if the
-/// toolbar does not contain an @n'th item.
+/// Returns the @n&apos;th item on @toolbar, or %NULL if the
+/// toolbar does not contain an @n&apos;th item.
 /// </para>
 /// </summary>
 
@@ -499,8 +499,8 @@ public static class GtkToolbarHandleExtensions
 /// A position on the toolbar
 /// </param>
 /// <return>
-/// The @n'th #GtkToolItem on @toolbar,
-///     or %NULL if there isn’t an @n'th item.
+/// The @n&apos;th #GtkToolItem on @toolbar,
+///     or %NULL if there isn’t an @n&apos;th item.
 /// </return>
 
 	public static MentorLake.Gtk.GtkToolItemHandle GetNthItem(this MentorLake.Gtk.GtkToolbarHandle toolbar, int n)

@@ -64,7 +64,7 @@ public static class GNodeExtensions
 /// <summary>
 /// <para>
 /// Calls a function for each of the children of a #GNode. Note that it
-/// doesn't descend beneath the child nodes. @func must not do anything
+/// doesn&apos;t descend beneath the child nodes. @func must not do anything
 /// that would modify the structure of the tree.
 /// </para>
 /// </summary>
@@ -526,7 +526,7 @@ public static class GNodeExtensions
 /// <summary>
 /// <para>
 /// Reverses the order of the children of a #GNode.
-/// (It doesn't change the order of the grandchildren.)
+/// (It doesn&apos;t change the order of the grandchildren.)
 /// </para>
 /// </summary>
 
@@ -717,7 +717,7 @@ public struct GNode
 public IntPtr data;
 	/// <summary>
 /// <para>
-/// points to the node's next sibling (a sibling is another
+/// points to the node&apos;s next sibling (a sibling is another
 ///        #GNode with the same parent).
 /// </para>
 /// </summary>
@@ -725,7 +725,7 @@ public IntPtr data;
 public IntPtr next;
 	/// <summary>
 /// <para>
-/// points to the node's previous sibling.
+/// points to the node&apos;s previous sibling.
 /// </para>
 /// </summary>
 

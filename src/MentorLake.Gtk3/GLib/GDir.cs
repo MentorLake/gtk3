@@ -78,7 +78,7 @@ public static class GDirExtensions
 /// check `errno` to find out if %NULL was returned because of an error.
 /// </para>
 /// <para>
-/// On Unix, the '.' and '..' entries are omitted, and the returned
+/// On Unix, the &apos;.&apos; and &apos;..&apos; entries are omitted, and the returned
 /// name is in the on-disk encoding.
 /// </para>
 /// <para>
@@ -91,7 +91,7 @@ public static class GDirExtensions
 /// a #GDir* created by g_dir_open()
 /// </param>
 /// <return>
-/// The entry's name or %NULL if there are no
+/// The entry&apos;s name or %NULL if there are no
 ///   more entries. The return value is owned by GLib and
 ///   must not be modified or freed.
 /// </return>
@@ -213,7 +213,7 @@ public struct GDir
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding containing
-/// a sequence of six 'X' characters, as the parameter to g_mkstemp().
+/// a sequence of six &apos;X&apos; characters, as the parameter to g_mkstemp().
 /// However, unlike these functions, the template should only be a
 /// basename, no directory components are allowed. If template is
 /// %NULL, a default template is used.

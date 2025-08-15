@@ -34,43 +34,38 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Creating a simple menu item with an accelerator key.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GtkWidget *window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   GtkWidget *window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   GtkWidget *menu = gtk_menu_new ();
 ///   GtkWidget *save_item;
 ///   GtkAccelGroup *accel_group;
-/// </para>
-/// <para>
+/// 
 ///   // Create a GtkAccelGroup and add it to the window.
 ///   accel_group = gtk_accel_group_new ();
 ///   gtk_window_add_accel_group (GTK_WINDOW (window), accel_group);
-/// </para>
-/// <para>
+/// 
 ///   // Create the menu item using the convenience function.
-///   save_item = gtk_menu_item_new_with_label ("Save");
+///   save_item = gtk_menu_item_new_with_label (&quot;Save&quot;);
 ///   gtk_widget_show (save_item);
 ///   gtk_container_add (GTK_CONTAINER (menu), save_item);
-/// </para>
-/// <para>
+/// 
 ///   // Now add the accelerator to the GtkMenuItem. Note that since we
 ///   // called gtk_menu_item_new_with_label() to create the GtkMenuItem
 ///   // the GtkAccelLabel is automatically set up to display the
 ///   // GtkMenuItem accelerators. We just need to make sure we use
 ///   // GTK_ACCEL_VISIBLE here.
-///   gtk_widget_add_accelerator (save_item, "activate", accel_group,
+///   gtk_widget_add_accelerator (save_item, &quot;activate&quot;, accel_group,
 ///                               GDK_KEY_s, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// label
 /// label
 /// ╰── accelerator
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Like #GtkLabel, GtkAccelLabel has a main CSS node with the name label.
 /// It adds a subnode with name accelerator.
@@ -148,7 +143,7 @@ public static class GtkAccelLabelHandleExtensions
 /// <summary>
 /// <para>
 /// Returns the width needed to display the accelerator key(s).
-/// This is used by menus to align all of the #GtkMenuItem widgets, and shouldn't
+/// This is used by menus to align all of the #GtkMenuItem widgets, and shouldn&apos;t
 /// be needed by applications.
 /// </para>
 /// </summary>

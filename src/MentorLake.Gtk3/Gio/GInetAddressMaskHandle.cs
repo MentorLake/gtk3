@@ -39,7 +39,7 @@ public class GInetAddressMaskHandle : GObjectHandle, GInitableHandle
 /// <para>
 /// Parses @mask_string as an IP address and (optional) length, and
 /// creates a new #GInetAddressMask. The length, if present, is
-/// delimited by a "/". If it is not present, then the length is
+/// delimited by a &quot;/&quot;. If it is not present, then the length is
 /// assumed to be the full length of the address.
 /// </para>
 /// </summary>
@@ -87,7 +87,7 @@ public static class GInetAddressMaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @mask's base address
+/// Gets @mask&apos;s base address
 /// </para>
 /// </summary>
 
@@ -95,7 +95,7 @@ public static class GInetAddressMaskHandleExtensions
 /// a #GInetAddressMask
 /// </param>
 /// <return>
-/// @mask's base address
+/// @mask&apos;s base address
 /// </return>
 
 	public static MentorLake.Gio.GInetAddressHandle GetAddress(this MentorLake.Gio.GInetAddressMaskHandle mask)
@@ -106,7 +106,7 @@ public static class GInetAddressMaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the #GSocketFamily of @mask's address
+/// Gets the #GSocketFamily of @mask&apos;s address
 /// </para>
 /// </summary>
 
@@ -114,7 +114,7 @@ public static class GInetAddressMaskHandleExtensions
 /// a #GInetAddressMask
 /// </param>
 /// <return>
-/// the #GSocketFamily of @mask's address
+/// the #GSocketFamily of @mask&apos;s address
 /// </return>
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GInetAddressMaskHandle mask)
@@ -125,7 +125,7 @@ public static class GInetAddressMaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @mask's length
+/// Gets @mask&apos;s length
 /// </para>
 /// </summary>
 
@@ -133,7 +133,7 @@ public static class GInetAddressMaskHandleExtensions
 /// a #GInetAddressMask
 /// </param>
 /// <return>
-/// @mask's length
+/// @mask&apos;s length
 /// </return>
 
 	public static uint GetLength(this MentorLake.Gio.GInetAddressMaskHandle mask)

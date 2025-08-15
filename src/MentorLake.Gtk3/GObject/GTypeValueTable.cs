@@ -69,14 +69,14 @@ public GTypeValuePeekPointerFunc value_peek_pointer;
 ///   this value bit-by-bit. Each character in the format represents
 ///   an argument to be collected, and the characters themselves indicate
 ///   the type of the argument. Currently supported arguments are:
-///    - `'i'`: Integers, passed as `collect_values[].v_int`
-///    - `'l'`: Longs, passed as `collect_values[].v_long`
-///    - `'d'`: Doubles, passed as `collect_values[].v_double`
-///    - `'p'`: Pointers, passed as `collect_values[].v_pointer`
+///    - `&apos;i&apos;`: Integers, passed as `collect_values[].v_int`
+///    - `&apos;l&apos;`: Longs, passed as `collect_values[].v_long`
+///    - `&apos;d&apos;`: Doubles, passed as `collect_values[].v_double`
+///    - `&apos;p&apos;`: Pointers, passed as `collect_values[].v_pointer`
 ///   It should be noted that for variable argument list construction,
 ///   ANSI C promotes every type smaller than an integer to an int, and
-///   floats to doubles. So for collection of short int or char, `'i'`
-///   needs to be used, and for collection of floats `'d'`.
+///   floats to doubles. So for collection of short int or char, `&apos;i&apos;`
+///   needs to be used, and for collection of floats `&apos;d&apos;`.
 /// </para>
 /// </summary>
 
@@ -93,7 +93,7 @@ public GTypeValueCollectFunc collect_value;
 /// <para>
 /// Format description of the arguments to collect for @lcopy_value,
 ///   analogous to @collect_format. Usually, @lcopy_format string consists
-///   only of `'p'`s to provide lcopy_value() with pointers to storage locations.
+///   only of `&apos;p&apos;`s to provide lcopy_value() with pointers to storage locations.
 /// </para>
 /// </summary>
 

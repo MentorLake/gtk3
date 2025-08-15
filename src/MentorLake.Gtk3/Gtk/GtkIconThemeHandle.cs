@@ -54,21 +54,21 @@ namespace MentorLake.Gtk;
 /// efficient to use the standard icon theme for the #GdkScreen
 /// so that the icon information is shared with other people
 /// looking up icons.
-/// |[<!-- language="C" -->
+/// <code>
+/// GError *error = NULL;
 /// GError *error = NULL;
 /// GtkIconTheme *icon_theme;
 /// GdkPixbuf *pixbuf;
-/// </para>
-/// <para>
+/// 
 /// icon_theme = gtk_icon_theme_get_default ();
 /// pixbuf = gtk_icon_theme_load_icon (icon_theme,
-///                                    "my-icon-name", // icon name
+///                                    &quot;my-icon-name&quot;, // icon name
 ///                                    48, // icon size
 ///                                    0,  // flags
-///                                    &error);
+///                                    &amp;error);
 /// if (!pixbuf)
 ///   {
-///     g_warning ("Couldn’t load icon: %s", error->message);
+///     g_warning (&quot;Couldn’t load icon: %s&quot;, error-&amp;gt;message);
 ///     g_error_free (error);
 ///   }
 /// else
@@ -76,7 +76,7 @@ namespace MentorLake.Gtk;
 ///     // Use the pixbuf
 ///     g_object_unref (pixbuf);
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

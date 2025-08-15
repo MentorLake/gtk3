@@ -18,19 +18,19 @@ public class GFileAttributeMatcherHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// The @attributes string should be formatted with specific keys separated
-/// from namespaces with a double colon. Several "namespace::key" strings may be
-/// concatenated with a single comma (e.g. "standard::type,standard::is-hidden").
-/// The wildcard "*" may be used to match all keys and namespaces, or
-/// "namespace::*" will match all keys in a given namespace.
+/// from namespaces with a double colon. Several &quot;namespace::key&quot; strings may be
+/// concatenated with a single comma (e.g. &quot;standard::type,standard::is-hidden&quot;).
+/// The wildcard &quot;*&quot; may be used to match all keys and namespaces, or
+/// &quot;namespace::*&quot; will match all keys in a given namespace.
 /// </para>
 /// <para>
 /// ## Examples of file attribute matcher strings and results
 /// </para>
 /// <para>
-/// - `"*"`: matches all attributes.
-/// - `"standard::is-hidden"`: matches only the key is-hidden in the
+/// - `&quot;*&quot;`: matches all attributes.
+/// - `&quot;standard::is-hidden&quot;`: matches only the key is-hidden in the
 ///   standard namespace.
-/// - `"standard::type,unix::*"`: matches the type key in the standard
+/// - `&quot;standard::type,unix::*&quot;`: matches the type key in the standard
 ///   namespace and all keys in the unix namespace.
 /// </para>
 /// </summary>
@@ -56,8 +56,8 @@ public static class GFileAttributeMatcherExtensions
 /// <para>
 /// Checks if the matcher will match all of the keys in a given namespace.
 /// This will always return %TRUE if a wildcard character is in use (e.g. if
-/// matcher was created with "standard::*" and @ns is "standard", or if matcher was created
-/// using "*" and namespace is anything.)
+/// matcher was created with &quot;standard::*&quot; and @ns is &quot;standard&quot;, or if matcher was created
+/// using &quot;*&quot; and namespace is anything.)
 /// </para>
 /// <para>
 /// TODO: this is awkwardly worded.
@@ -104,7 +104,7 @@ public static class GFileAttributeMatcherExtensions
 /// <summary>
 /// <para>
 /// Checks if an attribute will be matched by an attribute matcher. If
-/// the matcher was created with the "*" matching string, this function
+/// the matcher was created with the &quot;*&quot; matching string, this function
 /// will always return %TRUE.
 /// </para>
 /// </summary>
@@ -128,7 +128,7 @@ public static class GFileAttributeMatcherExtensions
 /// <summary>
 /// <para>
 /// Checks if an attribute matcher only matches a given attribute. Always
-/// returns %FALSE if "*" was used when creating the matcher.
+/// returns %FALSE if &quot;*&quot; was used when creating the matcher.
 /// </para>
 /// </summary>
 

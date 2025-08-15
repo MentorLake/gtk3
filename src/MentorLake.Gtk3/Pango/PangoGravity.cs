@@ -26,28 +26,28 @@ public enum PangoGravity
 {
 /// <summary>
 /// <para>
-/// Glyphs stand upright (default) <img align="right" valign="center" src="m-south.png">
+/// Glyphs stand upright (default) &amp;lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-south.png&quot;&amp;gt;
 /// </para>
 /// </summary>
 
 	PANGO_GRAVITY_SOUTH = 0,
 /// <summary>
 /// <para>
-/// Glyphs are rotated 90 degrees counter-clockwise. <img align="right" valign="center" src="m-east.png">
+/// Glyphs are rotated 90 degrees counter-clockwise. &amp;lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-east.png&quot;&amp;gt;
 /// </para>
 /// </summary>
 
 	PANGO_GRAVITY_EAST = 1,
 /// <summary>
 /// <para>
-/// Glyphs are upside-down. <img align="right" valign="cener" src="m-north.png">
+/// Glyphs are upside-down. &amp;lt;img align=&quot;right&quot; valign=&quot;cener&quot; src=&quot;m-north.png&quot;&amp;gt;
 /// </para>
 /// </summary>
 
 	PANGO_GRAVITY_NORTH = 2,
 /// <summary>
 /// <para>
-/// Glyphs are rotated 90 degrees clockwise. <img align="right" valign="center" src="m-west.png">
+/// Glyphs are rotated 90 degrees clockwise. &amp;lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-west.png&quot;&amp;gt;
 /// </para>
 /// </summary>
 

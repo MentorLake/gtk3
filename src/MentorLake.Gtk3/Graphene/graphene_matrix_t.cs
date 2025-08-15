@@ -40,7 +40,7 @@ public static class graphene_matrix_tExtensions
 /// The algorithm for decomposing a matrix is taken from the
 /// [CSS3 Transforms specification](http://dev.w3.org/csswg/css-transforms/);
 /// specifically, the decomposition code is based on the equivalent code
-/// published in "Graphics Gems II", edited by Jim Arvo, and
+/// published in &quot;Graphics Gems II&quot;, edited by Jim Arvo, and
 /// [available online](http://web.archive.org/web/20150512160205/http://tog.acm.org/resources/GraphicsGems/gemsii/unmatrix.c).
 /// </para>
 /// </summary>
@@ -125,8 +125,8 @@ public static class graphene_matrix_tExtensions
 /// conjuction with either graphene_matrix_equal() or
 /// graphene_matrix_near(). For instance:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   if (graphene_matrix_equal_fast (a, b))
 ///   if (graphene_matrix_equal_fast (a, b))
 ///     {
 ///       // matrices are definitely the same
@@ -140,8 +140,7 @@ public static class graphene_matrix_tExtensions
 ///       else
 ///         // matrices are not equal
 ///     }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="a">
@@ -346,13 +345,12 @@ public static class graphene_matrix_tExtensions
 /// <para>
 /// The arguments map to the following matrix layout:
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+///   ⎛ xx  yx ⎞   ⎛  a   b  0 ⎞
 ///   ⎛ xx  yx ⎞   ⎛  a   b  0 ⎞
 ///   ⎜ xy  yy ⎟ = ⎜  c   d  0 ⎟
 ///   ⎝ x0  y0 ⎠   ⎝ tx  ty  1 ⎠
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This function can be used to convert between an affine matrix type
 /// from other libraries and a #graphene_matrix_t.
@@ -530,7 +528,7 @@ public static class graphene_matrix_tExtensions
 
 /// <summary>
 /// <para>
-/// Initializes a #graphene_matrix_t so that it positions the "camera"
+/// Initializes a #graphene_matrix_t so that it positions the &quot;camera&quot;
 /// at the given @eye coordinates towards an object at the @center
 /// coordinates. The top of the camera is aligned to the direction
 /// of the @up vector.
@@ -561,7 +559,7 @@ public static class graphene_matrix_tExtensions
 /// the vector describing the position to look at
 /// </param>
 /// <param name="up">
-/// the vector describing the world's upward direction; usually,
+/// the vector describing the world&apos;s upward direction; usually,
 ///   this is the graphene_vec3_y_axis() vector
 /// </param>
 /// <return>
@@ -1306,13 +1304,12 @@ public static class graphene_matrix_tExtensions
 /// <para>
 /// The returned values have the following layout:
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+///   ⎛ xx  yx ⎞   ⎛  a   b  0 ⎞
 ///   ⎛ xx  yx ⎞   ⎛  a   b  0 ⎞
 ///   ⎜ xy  yy ⎟ = ⎜  c   d  0 ⎟
 ///   ⎝ x0  y0 ⎠   ⎝ tx  ty  1 ⎠
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This function can be used to convert between a #graphene_matrix_t
 /// and an affine matrix type from other libraries.

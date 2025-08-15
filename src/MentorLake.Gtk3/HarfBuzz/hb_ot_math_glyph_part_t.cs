@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// Data type to hold information for a "part" component of a math-variant glyph.
+/// Data type to hold information for a &quot;part&quot; component of a math-variant glyph.
 /// Large variants for stretchable math glyphs (such as parentheses) can be constructed
 /// on the fly from parts.
 /// </para>
@@ -24,7 +24,7 @@ internal class hb_ot_math_glyph_part_tExterns
 
 /// <summary>
 /// <para>
-/// Data type to hold information for a "part" component of a math-variant glyph.
+/// Data type to hold information for a &quot;part&quot; component of a math-variant glyph.
 /// Large variants for stretchable math glyphs (such as parentheses) can be constructed
 /// on the fly from parts.
 /// </para>

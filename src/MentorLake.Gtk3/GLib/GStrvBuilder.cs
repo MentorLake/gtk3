@@ -10,14 +10,14 @@ namespace MentorLake.GLib;
 /// <para>
 /// ```c
 ///   g_autoptr(GStrvBuilder) builder = g_strv_builder_new ();
-///   g_strv_builder_add (builder, "hello");
-///   g_strv_builder_add (builder, "world");
+///   g_strv_builder_add (builder, &quot;hello&quot;);
+///   g_strv_builder_add (builder, &quot;world&quot;);
 /// </para>
 /// <para>
 ///   g_auto(GStrv) array = g_strv_builder_end (builder);
 /// </para>
 /// <para>
-///   g_assert_true (g_strv_equal (array, (const char *[]) { "hello", "world", NULL }));
+///   g_assert_true (g_strv_equal (array, (const char *[]) { &quot;hello&quot;, &quot;world&quot;, NULL }));
 /// ```
 /// </para>
 /// </summary>
@@ -204,20 +204,20 @@ public static class GStrvBuilderExtensions
 /// its contents as a `NULL`-terminated string array.
 /// </para>
 /// <para>
-/// This function is especially useful for cases where it's not possible
+/// This function is especially useful for cases where it&apos;s not possible
 /// to use `g_autoptr()`.
 /// </para>
 /// <para>
 /// ```c
 /// GStrvBuilder *builder = g_strv_builder_new ();
-/// g_strv_builder_add (builder, "hello");
-/// g_strv_builder_add (builder, "world");
+/// g_strv_builder_add (builder, &quot;hello&quot;);
+/// g_strv_builder_add (builder, &quot;world&quot;);
 /// </para>
 /// <para>
 /// GStrv array = g_strv_builder_unref_to_strv (builder);
 /// </para>
 /// <para>
-/// g_assert_true (g_strv_equal (array, (const char *[]) { "hello", "world", NULL }));
+/// g_assert_true (g_strv_equal (array, (const char *[]) { &quot;hello&quot;, &quot;world&quot;, NULL }));
 /// </para>
 /// <para>
 /// g_strfreev (array);
@@ -287,14 +287,14 @@ internal class GStrvBuilderExterns
 /// <para>
 /// ```c
 ///   g_autoptr(GStrvBuilder) builder = g_strv_builder_new ();
-///   g_strv_builder_add (builder, "hello");
-///   g_strv_builder_add (builder, "world");
+///   g_strv_builder_add (builder, &quot;hello&quot;);
+///   g_strv_builder_add (builder, &quot;world&quot;);
 /// </para>
 /// <para>
 ///   g_auto(GStrv) array = g_strv_builder_end (builder);
 /// </para>
 /// <para>
-///   g_assert_true (g_strv_equal (array, (const char *[]) { "hello", "world", NULL }));
+///   g_assert_true (g_strv_equal (array, (const char *[]) { &quot;hello&quot;, &quot;world&quot;, NULL }));
 /// ```
 /// </para>
 /// </summary>

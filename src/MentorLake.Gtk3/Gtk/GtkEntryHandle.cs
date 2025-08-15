@@ -45,8 +45,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// entry[.read-only][.flat][.warning][.error]
 /// entry[.read-only][.flat][.warning][.error]
 /// ├── image.left
 /// ├── image.right
@@ -55,8 +55,7 @@ namespace MentorLake.Gtk;
 /// ├── [selection]
 /// ├── [progress[.pulse]]
 /// ╰── [window.popup]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkEntry has a main node with the name entry. Depending on the properties
 /// of the entry, the style classes .read-only and .flat may appear. The style
@@ -758,7 +757,7 @@ public static class GtkEntryHandleSignalExtensions
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -1584,7 +1583,7 @@ public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -2290,7 +2289,7 @@ public static class GtkEntryHandleExtensions
 /// @entry. See gtk_entry_set_max_length().
 /// </para>
 /// <para>
-/// This is equivalent to getting @entry's #GtkEntryBuffer and
+/// This is equivalent to getting @entry&apos;s #GtkEntryBuffer and
 /// calling gtk_entry_buffer_get_max_length() on it.
 /// </para>
 /// </summary>
@@ -2433,7 +2432,7 @@ public static class GtkEntryHandleExtensions
 /// See also gtk_editable_get_chars().
 /// </para>
 /// <para>
-/// This is equivalent to getting @entry's #GtkEntryBuffer and calling
+/// This is equivalent to getting @entry&apos;s #GtkEntryBuffer and calling
 /// gtk_entry_buffer_get_text() on it.
 /// </para>
 /// </summary>
@@ -2487,7 +2486,7 @@ public static class GtkEntryHandleExtensions
 /// @entry.
 /// </para>
 /// <para>
-/// This is equivalent to getting @entry's #GtkEntryBuffer and
+/// This is equivalent to getting @entry&apos;s #GtkEntryBuffer and
 /// calling gtk_entry_buffer_get_length() on it.
 /// </para>
 /// </summary>
@@ -2551,9 +2550,9 @@ public static class GtkEntryHandleExtensions
 /// </para>
 /// <para>
 /// It behaves like gtk_widget_grab_focus(),
-/// except that it doesn't select the contents of the entry.
+/// except that it doesn&apos;t select the contents of the entry.
 /// You only want to call this on some special entries
-/// which the user usually doesn't want to replace all text in,
+/// which the user usually doesn&apos;t want to replace all text in,
 /// such as search-as-you-type entries.
 /// </para>
 /// </summary>
@@ -3206,7 +3205,7 @@ public static class GtkEntryHandleExtensions
 /// will be truncated to fit.
 /// </para>
 /// <para>
-/// This is equivalent to getting @entry's #GtkEntryBuffer and
+/// This is equivalent to getting @entry&apos;s #GtkEntryBuffer and
 /// calling gtk_entry_buffer_set_max_length() on it.
 /// ]|
 /// </para>

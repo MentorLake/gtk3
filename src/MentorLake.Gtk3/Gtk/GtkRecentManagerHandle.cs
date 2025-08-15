@@ -22,15 +22,13 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Adding a new recently used file is as simple as:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkRecentManager *manager;
-/// </para>
-/// <para>
+/// GtkRecentManager *manager;
+/// 
 /// manager = gtk_recent_manager_get_default ();
 /// gtk_recent_manager_add_item (manager, file_uri);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The #GtkRecentManager will try to gather all the needed information
 /// from the file itself through GIO.
@@ -39,18 +37,17 @@ namespace MentorLake.Gtk;
 /// Looking up the meta-data associated with a recently used file
 /// given its URI requires calling gtk_recent_manager_lookup_item():
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkRecentManager *manager;
 /// GtkRecentManager *manager;
 /// GtkRecentInfo *info;
 /// GError *error = NULL;
-/// </para>
-/// <para>
+/// 
 /// manager = gtk_recent_manager_get_default ();
-/// info = gtk_recent_manager_lookup_item (manager, file_uri, &error);
+/// info = gtk_recent_manager_lookup_item (manager, file_uri, &amp;error);
 /// if (error)
 ///   {
-///     g_warning ("Could not find the file: %s", error->message);
+///     g_warning (&quot;Could not find the file: %s&quot;, error-&amp;gt;message);
 ///     g_error_free (error);
 ///   }
 /// else
@@ -58,8 +55,7 @@ namespace MentorLake.Gtk;
 ///    // Use the info object
 ///    gtk_recent_info_unref (info);
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// In order to retrieve the list of recently used files, you can use
 /// gtk_recent_manager_get_items(), which returns a list of #GtkRecentInfo-structs.

@@ -13,7 +13,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// `GApplication` provides convenient life-cycle management by maintaining
-/// a "use count" for the primary application instance. The use count can
+/// a &quot;use count&quot; for the primary application instance. The use count can
 /// be changed using [method@Gio.Application.hold] and
 /// [method@Gio.Application.release]. If it drops to zero, the application
 /// exits. Higher-level classes such as `GtkApplication` employ the use count
@@ -29,7 +29,7 @@ namespace MentorLake.Gio;
 /// desktop login. When your application is launched again, its
 /// arguments are passed through platform communication to the already
 /// running program. The already running instance of the program is
-/// called the "primary instance"; for non-unique applications this is
+/// called the &quot;primary instance&quot;; for non-unique applications this is
 /// always the current instance. On Linux, the D-Bus session bus
 /// is used for communication.
 /// </para>
@@ -57,7 +57,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// On Linux, the application identifier is claimed as a well-known bus name
-/// on the user's session bus. This means that the uniqueness of your
+/// on the user&apos;s session bus. This means that the uniqueness of your
 /// application is scoped to the current session. It also means that your
 /// application may provide additional services (through registration of other
 /// object paths) at that bus name. The registration of these object paths
@@ -89,10 +89,10 @@ namespace MentorLake.Gio;
 /// There is a number of different entry points into a `GApplication`:
 /// </para>
 /// <para>
-/// - via 'Activate' (i.e. just starting the application)
+/// - via &apos;Activate&apos; (i.e. just starting the application)
 /// </para>
 /// <para>
-/// - via 'Open' (i.e. opening some files)
+/// - via &apos;Open&apos; (i.e. opening some files)
 /// </para>
 /// <para>
 /// - by handling a command-line
@@ -242,7 +242,7 @@ public class GApplicationHandle : GObjectHandle, GActionGroupHandle, GActionMapH
 /// [Flatpak application IDs](http://docs.flatpak.org/en/latest/introduction.html#identifiers),
 /// the
 /// [`DBusActivatable` interface in the Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus),
-/// and the convention that an application's "main" interface and object path
+/// and the convention that an application&apos;s &quot;main&quot; interface and object path
 /// resemble its application identifier and bus name. To avoid situations that
 /// require special-case handling, it is recommended that new application
 /// identifiers consistently replace hyphens with underscores.
@@ -254,7 +254,7 @@ public class GApplicationHandle : GObjectHandle, GActionGroupHandle, GActionMapH
 /// words run together, with initial capital letters.
 /// </para>
 /// <para>
-/// As with D-Bus interface names, if the author's DNS domain name contains
+/// As with D-Bus interface names, if the author&apos;s DNS domain name contains
 /// hyphen/minus characters they should be replaced by underscores, and if it
 /// contains leading digits they should be escaped by prepending an underscore.
 /// For example, if the owner of 7-zip.org used an application identifier for an
@@ -366,7 +366,7 @@ public static class GApplicationHandleSignalExtensions
 /// </para>
 /// <para>
 /// In the event that the application is marked
-/// %G_APPLICATION_HANDLES_COMMAND_LINE the "normal processing" will
+/// %G_APPLICATION_HANDLES_COMMAND_LINE the &quot;normal processing&quot; will
 /// send the @options dictionary to the primary instance where it can be
 /// read with g_application_command_line_get_options_dict().  The signal
 /// handler can modify the dictionary before returning, and the
@@ -374,7 +374,7 @@ public static class GApplicationHandleSignalExtensions
 /// </para>
 /// <para>
 /// In the event that %G_APPLICATION_HANDLES_COMMAND_LINE is not set,
-/// "normal processing" will treat the remaining uncollected command
+/// &quot;normal processing&quot; will treat the remaining uncollected command
 /// line arguments as filenames or URIs.  If there are no arguments,
 /// the application is activated by g_application_activate().  One or
 /// more arguments results in a call to g_application_open().
@@ -391,7 +391,7 @@ public static class GApplicationHandleSignalExtensions
 /// </para>
 /// <para>
 /// Note that this signal is emitted from the default implementation of
-/// local_command_line().  If you override that function and don't
+/// local_command_line().  If you override that function and don&apos;t
 /// chain up then this signal will never be emitted.
 /// </para>
 /// <para>
@@ -976,7 +976,7 @@ public delegate int command_line([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// </para>
 /// <para>
 /// In the event that the application is marked
-/// %G_APPLICATION_HANDLES_COMMAND_LINE the "normal processing" will
+/// %G_APPLICATION_HANDLES_COMMAND_LINE the &quot;normal processing&quot; will
 /// send the @options dictionary to the primary instance where it can be
 /// read with g_application_command_line_get_options_dict().  The signal
 /// handler can modify the dictionary before returning, and the
@@ -984,7 +984,7 @@ public delegate int command_line([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// </para>
 /// <para>
 /// In the event that %G_APPLICATION_HANDLES_COMMAND_LINE is not set,
-/// "normal processing" will treat the remaining uncollected command
+/// &quot;normal processing&quot; will treat the remaining uncollected command
 /// line arguments as filenames or URIs.  If there are no arguments,
 /// the application is activated by g_application_activate().  One or
 /// more arguments results in a call to g_application_open().
@@ -1001,7 +1001,7 @@ public delegate int command_line([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// </para>
 /// <para>
 /// Note that this signal is emitted from the default implementation of
-/// local_command_line().  If you override that function and don't
+/// local_command_line().  If you override that function and don&apos;t
 /// chain up then this signal will never be emitted.
 /// </para>
 /// <para>
@@ -1297,10 +1297,10 @@ public static class GApplicationHandleExtensions
 /// where g_application_command_line_get_options_dict() will return it.
 /// As it has been passed outside the process at this point, the types of all
 /// values in the options dict must be checked before being used.
-/// This "packing" is done according to the type of the argument --
+/// This &quot;packing&quot; is done according to the type of the argument --
 /// booleans for normal flags, strings for strings, bytestrings for
 /// filenames, etc.  The packing only occurs if the flag is given (ie: we
-/// do not pack a "false" #GVariant in the case that a flag is missing).
+/// do not pack a &quot;false&quot; #GVariant in the case that a flag is missing).
 /// </para>
 /// <para>
 /// In general, it is recommended that all commandline arguments are
@@ -1314,7 +1314,7 @@ public static class GApplicationHandleExtensions
 /// This function is new in GLib 2.40.  Before then, the only real choice
 /// was to send all of the commandline arguments (options and all) to the
 /// primary instance for handling.  #GApplication ignored them completely
-/// on the local side.  Calling this function "opts in" to the new
+/// on the local side.  Calling this function &quot;opts in&quot; to the new
 /// behaviour, and in particular, means that unrecognized options will be
 /// treated as errors.  Unrecognized options have never been ignored when
 /// %G_APPLICATION_HANDLES_COMMAND_LINE is unset.
@@ -1332,13 +1332,13 @@ public static class GApplicationHandleExtensions
 /// It is important to use the proper GVariant format when retrieving
 /// the options with g_variant_dict_lookup():
 /// - for %G_OPTION_ARG_NONE, use `b`
-/// - for %G_OPTION_ARG_STRING, use `&s`
+/// - for %G_OPTION_ARG_STRING, use `&amp;s`
 /// - for %G_OPTION_ARG_INT, use `i`
 /// - for %G_OPTION_ARG_INT64, use `x`
 /// - for %G_OPTION_ARG_DOUBLE, use `d`
-/// - for %G_OPTION_ARG_FILENAME, use `^&ay`
-/// - for %G_OPTION_ARG_STRING_ARRAY, use `^a&s`
-/// - for %G_OPTION_ARG_FILENAME_ARRAY, use `^a&ay`
+/// - for %G_OPTION_ARG_FILENAME, use `^&amp;ay`
+/// - for %G_OPTION_ARG_STRING_ARRAY, use `^a&amp;s`
+/// - for %G_OPTION_ARG_FILENAME_ARRAY, use `^a&amp;ay`
 /// </para>
 /// </summary>
 
@@ -1386,7 +1386,7 @@ public static class GApplicationHandleExtensions
 /// </para>
 /// <para>
 /// Calling this function will cause the options in the supplied option
-/// group to be parsed, but it does not cause you to be "opted in" to the
+/// group to be parsed, but it does not cause you to be &quot;opted in&quot; to the
 /// new functionality whereby unrecognized options are rejected even if
 /// %G_APPLICATION_HANDLES_COMMAND_LINE was given.
 /// </para>
@@ -1570,7 +1570,7 @@ public static class GApplicationHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the application's current busy state, as set through
+/// Gets the application&apos;s current busy state, as set through
 /// g_application_mark_busy() or g_application_bind_busy_property().
 /// </para>
 /// </summary>
@@ -1617,7 +1617,7 @@ public static class GApplicationHandleExtensions
 /// </para>
 /// <para>
 /// If @application is remote then it means that another instance of
-/// application already exists (the 'primary' instance).  Calls to
+/// application already exists (the &apos;primary&apos; instance).  Calls to
 /// perform actions on @application will result in the actions being
 /// performed by the primary instance.
 /// </para>
@@ -1753,8 +1753,8 @@ public static class GApplicationHandleExtensions
 /// <para>
 /// @hint is simply passed through to the ::open signal.  It is
 /// intended to be used by applications that have multiple modes for
-/// opening files (eg: "view" vs "edit", etc).  Unless you have a need
-/// for this functionality, you should use "".
+/// opening files (eg: &quot;view&quot; vs &quot;edit&quot;, etc).  Unless you have a need
+/// for this functionality, you should use &quot;&quot;.
 /// </para>
 /// <para>
 /// The application must be registered before calling this function
@@ -1772,7 +1772,7 @@ public static class GApplicationHandleExtensions
 /// the length of the @files array
 /// </param>
 /// <param name="hint">
-/// a hint (or ""), but never %NULL
+/// a hint (or &quot;&quot;), but never %NULL
 /// </param>
 
 	public static T Open<T>(this T application, MentorLake.Gio.GFileHandle[] files, int n_files, string hint) where T : GApplicationHandle
@@ -1788,7 +1788,7 @@ public static class GApplicationHandleExtensions
 /// </para>
 /// <para>
 /// Upon return to the mainloop, g_application_run() will return,
-/// calling only the 'shutdown' function before doing so.
+/// calling only the &apos;shutdown&apos; function before doing so.
 /// </para>
 /// <para>
 /// The hold count is ignored.
@@ -1972,15 +1972,15 @@ public static class GApplicationHandleExtensions
 /// Since 2.40, applications that are not explicitly flagged as services
 /// or launchers (ie: neither %G_APPLICATION_IS_SERVICE or
 /// %G_APPLICATION_IS_LAUNCHER are given as flags) will check (from the
-/// default handler for local_command_line) if "--gapplication-service"
+/// default handler for local_command_line) if &quot;--gapplication-service&quot;
 /// was given in the command line.  If this flag is present then normal
 /// commandline processing is interrupted and the
-/// %G_APPLICATION_IS_SERVICE flag is set.  This provides a "compromise"
+/// %G_APPLICATION_IS_SERVICE flag is set.  This provides a &quot;compromise&quot;
 /// solution whereby running an application directly from the commandline
 /// will invoke it in the normal way (which can be useful for debugging)
 /// while still allowing applications to be D-Bus activated in service
 /// mode.  The D-Bus service file should invoke the executable with
-/// "--gapplication-service" as the sole commandline argument.  This
+/// &quot;--gapplication-service&quot; as the sole commandline argument.  This
 /// approach is suitable for use by most graphical applications but
 /// should not be used from applications like editors that need precise
 /// control over when processes invoked via the commandline will exit and
@@ -2026,7 +2026,7 @@ public static class GApplicationHandleExtensions
 /// <para>
 /// @id may be any string that uniquely identifies the event for the
 /// application. It does not need to be in any special format. For
-/// example, "new-message" might be appropriate for a notification about
+/// example, &quot;new-message&quot; might be appropriate for a notification about
 /// new messages.
 /// </para>
 /// <para>
@@ -2282,17 +2282,17 @@ public static class GApplicationHandleExtensions
 /// </para>
 /// <para>
 /// By default, the resource base path is determined from the application
-/// ID by prefixing '/' and replacing each '.' with '/'.  This is done at
+/// ID by prefixing &apos;/&apos; and replacing each &apos;.&apos; with &apos;/&apos;.  This is done at
 /// the time that the #GApplication object is constructed.  Changes to
 /// the application ID after that point will not have an impact on the
 /// resource base path.
 /// </para>
 /// <para>
-/// As an example, if the application has an ID of "org.example.app" then
-/// the default resource base path will be "/org/example/app".  If this
+/// As an example, if the application has an ID of &quot;org.example.app&quot; then
+/// the default resource base path will be &quot;/org/example/app&quot;.  If this
 /// is a #GtkApplication (and you have not manually changed the path)
 /// then Gtk will then search for the menus of the application at
-/// "/org/example/app/gtk/menus.ui".
+/// &quot;/org/example/app/gtk/menus.ui&quot;.
 /// </para>
 /// <para>
 /// See #GResource for more information about adding resources to your
@@ -2409,7 +2409,7 @@ public static class GApplicationHandleExtensions
 /// g_application_send_notification().
 /// </para>
 /// <para>
-/// This call does nothing if a notification with @id doesn't exist or
+/// This call does nothing if a notification with @id doesn&apos;t exist or
 /// the notification was never sent.
 /// </para>
 /// <para>

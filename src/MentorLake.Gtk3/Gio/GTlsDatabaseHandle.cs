@@ -184,7 +184,7 @@ public static class GTlsDatabaseHandleExtensions
 /// certification path during certificate verification.
 /// [RFC 4158](https://datatracker.ietf.org/doc/html/rfc4158) explains
 /// why an issuer certificate cannot be naively assumed to be part of the
-/// the certification path (though GLib's TLS backends may not follow the
+/// the certification path (though GLib&apos;s TLS backends may not follow the
 /// path building strategies outlined in this RFC). Due to the complexity
 /// of certification path building, GLib does not provide any way to know
 /// which certification path will actually be used when verifying a TLS
@@ -437,7 +437,7 @@ public static class GTlsDatabaseHandleExtensions
 /// error flag set even if other problems exist with the certificate.
 /// </para>
 /// <para>
-/// Prior to GLib 2.48, GLib's default TLS backend modified @chain to
+/// Prior to GLib 2.48, GLib&apos;s default TLS backend modified @chain to
 /// represent the certification path built by #GTlsDatabase during
 /// certificate verification by adjusting the #GTlsCertificate:issuer
 /// property of each certificate in @chain. Since GLib 2.48, this no

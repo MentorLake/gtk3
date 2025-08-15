@@ -77,7 +77,7 @@ public class PangoOTRulesetHandle : GObjectHandle
 /// <para>
 /// Because of the way return values of [method@PangoOT.Info.find_script] and
 /// [method@PangoOT.Info.find_language] are ignored, this function automatically
-/// finds and uses the 'DFLT' script and the default language-system.
+/// finds and uses the &apos;DFLT&apos; script and the default language-system.
 /// </para>
 /// </summary>
 

@@ -18,12 +18,11 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// iconview.view
 /// iconview.view
 /// ╰── [rubberband]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkIconView has a single CSS node with name iconview and style class .view.
 /// For rubberband selection, a subnode with name rubberband is used.
@@ -135,9 +134,9 @@ public static class GtkIconViewHandleSignalExtensions
 /// <para>
 /// The ::item-activated signal is emitted when the method
 /// gtk_icon_view_item_activated() is called, when the user double
-/// clicks an item with the "activate-on-single-click" property set
+/// clicks an item with the &quot;activate-on-single-click&quot; property set
 /// to %FALSE, or when the user single clicks an item when the
-/// "activate-on-single-click" property set to %TRUE. It is also
+/// &quot;activate-on-single-click&quot; property set to %TRUE. It is also
 /// emitted when a non-editable item is selected and one of the keys:
 /// Space, Return or Enter is pressed.
 /// </para>
@@ -186,7 +185,7 @@ public static class GtkIconViewHandleSignalExtensions
 /// The default bindings for this signal include
 /// - Arrow keys which move by individual steps
 /// - Home/End keys which move to the first/last item
-/// - PageUp/PageDown which move by "pages"
+/// - PageUp/PageDown which move by &quot;pages&quot;
 /// All of these will extend the selection when combined with
 /// the Shift modifier.
 /// </para>
@@ -557,9 +556,9 @@ public delegate bool activate_cursor_item([MarshalAs(UnmanagedType.CustomMarshal
 /// <para>
 /// The ::item-activated signal is emitted when the method
 /// gtk_icon_view_item_activated() is called, when the user double
-/// clicks an item with the "activate-on-single-click" property set
+/// clicks an item with the &quot;activate-on-single-click&quot; property set
 /// to %FALSE, or when the user single clicks an item when the
-/// "activate-on-single-click" property set to %TRUE. It is also
+/// &quot;activate-on-single-click&quot; property set to %TRUE. It is also
 /// emitted when a non-editable item is selected and one of the keys:
 /// Space, Return or Enter is pressed.
 /// </para>
@@ -592,7 +591,7 @@ public delegate void item_activated([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// The default bindings for this signal include
 /// - Arrow keys which move by individual steps
 /// - Home/End keys which move to the first/last item
-/// - PageUp/PageDown which move by "pages"
+/// - PageUp/PageDown which move by &quot;pages&quot;
 /// All of these will extend the selection when combined with
 /// the Shift modifier.
 /// </para>
@@ -1320,9 +1319,10 @@ public static class GtkIconViewHandleExtensions
 /// </para>
 /// <para>
 /// To free the return value, use:
-/// |[<!-- language="C" -->
+/// <code>
 /// g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-/// ]|
+/// g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1927,7 +1927,7 @@ public static class GtkIconViewHandleExtensions
 /// support the #GtkTreeDragSourceIface and the #GtkTreeDragDestIface.  Both
 /// #GtkTreeStore and #GtkListStore support these.  If @reorderable is %TRUE, then
 /// the user can reorder the model by dragging and dropping rows.  The
-/// developer can listen to these changes by connecting to the model's
+/// developer can listen to these changes by connecting to the model&apos;s
 /// row_inserted and row_deleted signals. The reordering is implemented by setting up
 /// the icon view as a drag source and destination. Therefore, drag and
 /// drop can not be used in a reorderable view for any other purpose.
@@ -2080,7 +2080,7 @@ public static class GtkIconViewHandleExtensions
 /// </para>
 /// <para>
 /// Note that the signal handler sets the text with gtk_tooltip_set_markup(),
-/// so &, <, etc have to be escaped in the text.
+/// so &amp;, &amp;lt;, etc have to be escaped in the text.
 /// </para>
 /// </summary>
 

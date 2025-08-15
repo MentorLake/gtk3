@@ -62,7 +62,7 @@ public class GIOChannelHandle : BaseSafeHandle
 /// A string containing the name of a file
 /// </param>
 /// <param name="mode">
-/// One of "r", "w", "a", "r+", "w+", "a+". These have
+/// One of &quot;r&quot;, &quot;w&quot;, &quot;a&quot;, &quot;r+&quot;, &quot;w+&quot;, &quot;a+&quot;. These have
 ///        the same meaning as in fopen()
 /// </param>
 /// <return>
@@ -392,7 +392,7 @@ public static class GIOChannelExtensions
 /// </param>
 /// <param name="bytes_read">
 /// The number of bytes read. This may be
-///     zero even on success if count < 6 and the channel's encoding
+///     zero even on success if count &amp;lt; 6 and the channel&apos;s encoding
 ///     is non-%NULL. This indicates that the next UTF-8 character is
 ///     too wide for the buffer.
 /// </param>
@@ -629,11 +629,11 @@ public static class GIOChannelExtensions
 
 /// <summary>
 /// <para>
-/// The buffering state can only be set if the channel's encoding
+/// The buffering state can only be set if the channel&apos;s encoding
 /// is %NULL. For any other encoding, the channel must be buffered.
 /// </para>
 /// <para>
-/// A buffered channel can only be set unbuffered if the channel's
+/// A buffered channel can only be set unbuffered if the channel&apos;s
 /// internal buffers have been flushed. Newly created channels or
 /// channels which have returned %G_IO_STATUS_EOF
 /// not require such a flush. For write-only channels, a call to
@@ -736,8 +736,8 @@ public static class GIOChannelExtensions
 /// <para>
 /// Channels which do not meet one of the above conditions cannot call
 /// g_io_channel_seek_position() with an offset of %G_SEEK_CUR, and, if
-/// they are "seekable", cannot call g_io_channel_write_chars() after
-/// calling one of the API "read" functions.
+/// they are &quot;seekable&quot;, cannot call g_io_channel_write_chars() after
+/// calling one of the API &quot;read&quot; functions.
 /// </para>
 /// </summary>
 
@@ -761,7 +761,7 @@ public static class GIOChannelExtensions
 
 /// <summary>
 /// <para>
-/// Sets the (writeable) flags in @channel to (@flags & %G_IO_FLAG_SET_MASK).
+/// Sets the (writeable) flags in @channel to (@flags &amp; %G_IO_FLAG_SET_MASK).
 /// </para>
 /// </summary>
 
@@ -795,7 +795,7 @@ public static class GIOChannelExtensions
 /// </param>
 /// <param name="line_term">
 /// The line termination string. Use %NULL for
-///             autodetect.  Autodetection breaks on "\n", "\r\n", "\r", "\0",
+///             autodetect.  Autodetection breaks on &quot;\n&quot;, &quot;\r\n&quot;, &quot;\r&quot;, &quot;\0&quot;,
 ///             and the Unicode paragraph separator. Autodetection should not be
 ///             used for anything other than file-based channels.
 /// </param>
@@ -931,7 +931,7 @@ public static class GIOChannelExtensions
 ///                 even if the return value is not %G_IO_STATUS_NORMAL.
 ///                 If the return value is %G_IO_STATUS_NORMAL and the
 ///                 channel is blocking, this will always be equal
-///                 to @count if @count >= 0.
+///                 to @count if @count &amp;gt;= 0.
 /// </param>
 /// <return>
 /// the status of the operation.

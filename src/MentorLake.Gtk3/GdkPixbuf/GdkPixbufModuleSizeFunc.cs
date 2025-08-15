@@ -14,7 +14,7 @@ namespace MentorLake.GdkPixbuf;
 /// </para>
 /// <para>
 /// If the function sets @width or @height to zero, the module should interpret
-/// this as a hint that it will be closed soon and shouldn't allocate further
+/// this as a hint that it will be closed soon and shouldn&apos;t allocate further
 /// resources. This convention is used to implement gdk_pixbuf_get_file_info()
 /// efficiently.
 /// </para>

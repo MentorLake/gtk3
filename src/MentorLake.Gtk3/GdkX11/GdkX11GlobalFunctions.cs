@@ -49,11 +49,11 @@ public class GdkX11GlobalFunctions
 /// Returns the device ID as seen by XInput2.
 /// </para>
 /// <para>
-/// > If gdk_disable_multidevice() has been called, this function
-/// > will respectively return 2/3 for the core pointer and keyboard,
-/// > (matching the IDs for the Virtual Core Pointer and Keyboard in
-/// > XInput 2), but calling this function on any slave devices (i.e.
-/// > those managed via XInput 1.x), will return 0.
+/// &amp;gt; If gdk_disable_multidevice() has been called, this function
+/// &amp;gt; will respectively return 2/3 for the core pointer and keyboard,
+/// &amp;gt; (matching the IDs for the Virtual Core Pointer and Keyboard in
+/// &amp;gt; XInput 2), but calling this function on any slave devices (i.e.
+/// &amp;gt; those managed via XInput 1.x), will return 0.
 /// </para>
 /// </summary>
 

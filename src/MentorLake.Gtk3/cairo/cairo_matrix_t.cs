@@ -5,10 +5,10 @@ namespace MentorLake.cairo;
 /// A #cairo_matrix_t holds an affine transformation, such as a scale,
 /// rotation, shear, or a combination of those. The transformation of
 /// a point (x, y) is given by:
-/// <programlisting>
+/// &amp;lt;programlisting&amp;gt;
 ///     x_new = xx * x + xy * y + x0;
 ///     y_new = yx * x + yy * y + y0;
-/// </programlisting>
+/// &amp;lt;/programlisting&amp;gt;
 /// </para>
 /// </summary>
 
@@ -31,10 +31,10 @@ internal class cairo_matrix_tExterns
 /// A #cairo_matrix_t holds an affine transformation, such as a scale,
 /// rotation, shear, or a combination of those. The transformation of
 /// a point (x, y) is given by:
-/// <programlisting>
+/// &amp;lt;programlisting&amp;gt;
 ///     x_new = xx * x + xy * y + x0;
 ///     y_new = yx * x + yy * y + y0;
-/// </programlisting>
+/// &amp;lt;/programlisting&amp;gt;
 /// </para>
 /// </summary>
 

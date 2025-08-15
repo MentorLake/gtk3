@@ -156,7 +156,7 @@ public struct GList
 {
 	/// <summary>
 /// <para>
-/// holds the element's data, which can be a pointer to any kind
+/// holds the element&apos;s data, which can be a pointer to any kind
 ///        of data, or any integer value using the
 ///        [Type Conversion Macros][glib-Type-Conversion-Macros]
 /// </para>
@@ -208,22 +208,19 @@ public IntPtr prev;
 /// to avoid the inefficiency is to use g_list_prepend() and reverse
 /// the list with g_list_reverse() when all elements have been added.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Notice that these are initialized to the empty list.
 /// // Notice that these are initialized to the empty list.
 /// GList *string_list = NULL, *number_list = NULL;
-/// </para>
-/// <para>
+/// 
 /// // This is a list of strings.
-/// string_list = g_list_append (string_list, "first");
-/// string_list = g_list_append (string_list, "second");
-/// </para>
-/// <para>
+/// string_list = g_list_append (string_list, &quot;first&quot;);
+/// string_list = g_list_append (string_list, &quot;second&quot;);
+/// 
 /// // This is a list of integers.
 /// number_list = g_list_append (number_list, GINT_TO_POINTER (27));
 /// number_list = g_list_append (number_list, GINT_TO_POINTER (14));
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="list">
@@ -250,10 +247,11 @@ public IntPtr prev;
 /// <para>
 /// This function is for example used to move an element in the list.
 /// The following example moves an element to the top of the list:
-/// |[<!-- language="C" -->
+/// <code>
+/// list = g_list_remove_link (list, llink);
 /// list = g_list_remove_link (list, llink);
 /// list = g_list_concat (llink, list);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -278,7 +276,7 @@ public IntPtr prev;
 /// Copies a #GList.
 /// </para>
 /// <para>
-/// Note that this is a "shallow" copy. If the list elements
+/// Note that this is a &quot;shallow&quot; copy. If the list elements
 /// consist of pointers to data, the pointers are copied but
 /// the actual data is not. See g_list_copy_deep() if you need
 /// to copy the data as well.
@@ -308,22 +306,22 @@ public IntPtr prev;
 /// </para>
 /// <para>
 /// @func, as a #GCopyFunc, takes two arguments, the data to be copied
-/// and a @user_data pointer. On common processor architectures, it's safe to
+/// and a @user_data pointer. On common processor architectures, it&apos;s safe to
 /// pass %NULL as @user_data if the copy function takes only one argument. You
 /// may get compiler warnings from this though if compiling with GCC’s
 /// `-Wcast-function-type` warning.
 /// </para>
 /// <para>
 /// For instance, if @list holds a list of GObjects, you can do:
-/// |[<!-- language="C" -->
+/// <code>
 /// another_list = g_list_copy_deep (list, (GCopyFunc) g_object_ref, NULL);
-/// ]|
-/// </para>
-/// <para>
+/// another_list = g_list_copy_deep (list, (GCopyFunc) g_object_ref, NULL);
+/// </code>
 /// And, to entirely free the new list, you could do:
-/// |[<!-- language="C" -->
+/// <code>
 /// g_list_free_full (another_list, g_object_unref);
-/// ]|
+/// g_list_free_full (another_list, g_object_unref);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -396,7 +394,7 @@ public IntPtr prev;
 /// find the desired element. It iterates over the list, calling
 /// the given function which should return 0 when the desired
 /// element is found. The function takes two #gconstpointer arguments,
-/// the #GList element's data as the first argument and the
+/// the #GList element&apos;s data as the first argument and the
 /// given user data.
 /// </para>
 /// </summary>
@@ -453,7 +451,7 @@ public IntPtr prev;
 /// a #GList, this must point to the top of the list
 /// </param>
 /// <param name="func">
-/// the function to call with each element's data
+/// the function to call with each element&apos;s data
 /// </param>
 /// <param name="user_data">
 /// user data to pass to the function
@@ -476,10 +474,11 @@ public IntPtr prev;
 /// <para>
 /// It can be combined with g_steal_pointer() to ensure the list head pointer
 /// is not left dangling:
-/// |[<!-- language="C" -->
-/// GList *list_of_borrowed_things = …;  /<!-- -->* (transfer container) *<!-- -->/
-/// g_list_free (g_steal_pointer (&list_of_borrowed_things));
-/// ]|
+/// <code>
+/// GList *list_of_borrowed_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer container) *&amp;lt;!-- --&amp;gt;/
+/// GList *list_of_borrowed_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer container) *&amp;lt;!-- --&amp;gt;/
+/// g_list_free (g_steal_pointer (&amp;list_of_borrowed_things));
+/// </code>
 /// </para>
 /// </summary>
 
@@ -515,7 +514,7 @@ public IntPtr prev;
 /// <summary>
 /// <para>
 /// Convenience method, which frees all the memory used by a #GList,
-/// and calls @free_func on every element's data.
+/// and calls @free_func on every element&apos;s data.
 /// </para>
 /// <para>
 /// @free_func must not modify the list (eg, by removing the freed
@@ -526,10 +525,11 @@ public IntPtr prev;
 /// is not left dangling ­— this also has the nice property that the head pointer
 /// is cleared before any of the list elements are freed, to prevent double frees
 /// from @free_func:
-/// |[<!-- language="C" -->
-/// GList *list_of_owned_things = …;  /<!-- -->* (transfer full) (element-type GObject) *<!-- -->/
-/// g_list_free_full (g_steal_pointer (&list_of_owned_things), g_object_unref);
-/// ]|
+/// <code>
+/// GList *list_of_owned_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer full) (element-type GObject) *&amp;lt;!-- --&amp;gt;/
+/// GList *list_of_owned_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer full) (element-type GObject) *&amp;lt;!-- --&amp;gt;/
+/// g_list_free_full (g_steal_pointer (&amp;list_of_owned_things), g_object_unref);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -537,7 +537,7 @@ public IntPtr prev;
 /// the first link of a #GList
 /// </param>
 /// <param name="free_func">
-/// the function to be called to free each element's data
+/// the function to be called to free each element&apos;s data
 /// </param>
 
 	public static void FreeFull(MentorLake.GLib.GListHandle list, MentorLake.GLib.GDestroyNotify free_func)
@@ -667,7 +667,7 @@ public IntPtr prev;
 /// </param>
 /// <param name="func">
 /// the function to compare elements in the list. It should
-///     return a number > 0 if the first parameter comes after the
+///     return a number &amp;gt; 0 if the first parameter comes after the
 ///     second parameter in the sort order.
 /// </param>
 /// <return>
@@ -701,7 +701,7 @@ public IntPtr prev;
 /// </param>
 /// <param name="func">
 /// the function to compare elements in the list. It should
-///     return a number > 0 if the first parameter  comes after the
+///     return a number &amp;gt; 0 if the first parameter  comes after the
 ///     second parameter in the sort order.
 /// </param>
 /// <param name="user_data">
@@ -804,7 +804,7 @@ public IntPtr prev;
 /// the position of the element
 /// </param>
 /// <return>
-/// the element's data, or %NULL if the position
+/// the element&apos;s data, or %NULL if the position
 ///     is off the end of the #GList
 /// </return>
 
@@ -873,16 +873,14 @@ public IntPtr prev;
 /// Note that the return value is the new start of the list,
 /// which will have changed, so make sure you store the new value.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Notice that it is initialized to the empty list.
 /// // Notice that it is initialized to the empty list.
 /// GList *list = NULL;
-/// </para>
-/// <para>
-/// list = g_list_prepend (list, "last");
-/// list = g_list_prepend (list, "first");
-/// ]|
-/// </para>
+/// 
+/// list = g_list_prepend (list, &quot;last&quot;);
+/// list = g_list_prepend (list, &quot;first&quot;);
+/// </code>
 /// <para>
 /// Do not use this function to prepend a new element to a different
 /// element than the start of the list. Use g_list_insert_before() instead.
@@ -964,18 +962,19 @@ public IntPtr prev;
 /// <summary>
 /// <para>
 /// Removes an element from a #GList, without freeing the element.
-/// The removed element's prev and next links are set to %NULL, so
+/// The removed element&apos;s prev and next links are set to %NULL, so
 /// that it becomes a self-contained list with one element.
 /// </para>
 /// <para>
 /// This function is for example used to move an element in the list
 /// (see the example for g_list_concat()) or to remove an element in
 /// the list before freeing its data:
-/// |[<!-- language="C" -->
+/// <code>
 /// list = g_list_remove_link (list, llink);
-/// free_some_data_that_may_access_the_list_again (llink->data);
+/// list = g_list_remove_link (list, llink);
+/// free_some_data_that_may_access_the_list_again (llink-&amp;gt;data);
 /// g_list_free (llink);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

@@ -16,16 +16,16 @@ namespace MentorLake.GLib;
 /// Desktop Bookmark Specification, here is a quick summary: bookmark
 /// files use a sub-class of the XML Bookmark Exchange Language
 /// specification, consisting of valid UTF-8 encoded XML, under the
-/// `<xbel>` root element; each bookmark is stored inside a
-/// `<bookmark>` element, using its URI: no relative paths can
+/// `&amp;lt;xbel&amp;gt;` root element; each bookmark is stored inside a
+/// `&amp;lt;bookmark&amp;gt;` element, using its URI: no relative paths can
 /// be used inside a bookmark file. The bookmark may have a user defined
 /// title and description, to be used instead of the URI. Under the
-/// `<metadata>` element, with its owner attribute set to
+/// `&amp;lt;metadata&amp;gt;` element, with its owner attribute set to
 /// `http://freedesktop.org`, is stored the meta-data about a resource
-/// pointed by its URI. The meta-data consists of the resource's MIME
+/// pointed by its URI. The meta-data consists of the resource&apos;s MIME
 /// type; the applications that have registered a bookmark; the groups
 /// to which a bookmark belongs to; a visibility flag, used to set the
-/// bookmark as "private" to the applications and groups that has it
+/// bookmark as &quot;private&quot; to the applications and groups that has it
 /// registered; the URI and MIME type of an icon, to be used when
 /// displaying the bookmark inside a GUI.
 /// </para>
@@ -41,7 +41,7 @@ namespace MentorLake.GLib;
 /// The important caveat of bookmark files is that when you add a new
 /// bookmark you must also add the application that is registering it, using
 /// [method@GLib.BookmarkFile.add_application] or [method@GLib.BookmarkFile.set_application_info].
-/// If a bookmark has no applications then it won't be dumped when creating
+/// If a bookmark has no applications then it won&apos;t be dumped when creating
 /// the on disk representation, using [method@GLib.BookmarkFile.to_data] or
 /// [method@GLib.BookmarkFile.to_file].
 /// </para>
@@ -91,8 +91,8 @@ public static class GBookmarkFileExtensions
 /// If @name is %NULL, the name of the application will be the
 /// same returned by g_get_application_name(); if @exec is %NULL, the
 /// command line will be a composition of the program name as
-/// returned by g_get_prgname() and the "\%u" modifier, which will be
-/// expanded to the bookmark's URI.
+/// returned by g_get_prgname() and the &quot;\%u&quot; modifier, which will be
+/// expanded to the bookmark&apos;s URI.
 /// </para>
 /// <para>
 /// This function will automatically take care of updating the
@@ -270,7 +270,7 @@ public static class GBookmarkFileExtensions
 /// a valid URI
 /// </param>
 /// <param name="name">
-/// an application's name
+/// an application&apos;s name
 /// </param>
 /// <param name="exec">
 /// return location for the command line of the application, or %NULL
@@ -320,7 +320,7 @@ public static class GBookmarkFileExtensions
 /// a valid URI
 /// </param>
 /// <param name="name">
-/// an application's name
+/// an application&apos;s name
 /// </param>
 /// <param name="exec">
 /// return location for the command line of the application, or %NULL
@@ -458,10 +458,10 @@ public static class GBookmarkFileExtensions
 /// a valid URI
 /// </param>
 /// <param name="href">
-/// return location for the icon's location or %NULL
+/// return location for the icon&apos;s location or %NULL
 /// </param>
 /// <param name="mime_type">
-/// return location for the icon's MIME type or %NULL
+/// return location for the icon&apos;s MIME type or %NULL
 /// </param>
 /// <return>
 /// %TRUE if the icon for the bookmark for the URI was found.
@@ -845,7 +845,7 @@ public static class GBookmarkFileExtensions
 /// <para>
 /// This function looks for a desktop bookmark file named @file in the
 /// paths returned from g_get_user_data_dir() and g_get_system_data_dirs(),
-/// loads the file into @bookmark and returns the file's full path in
+/// loads the file into @bookmark and returns the file&apos;s full path in
 /// @full_path.  If the file could not be loaded then @error is
 /// set to either a #GFileError or #GBookmarkFileError.
 /// </para>
@@ -1089,13 +1089,13 @@ public static class GBookmarkFileExtensions
 /// <para>
 /// @name can be any UTF-8 encoded string used to identify an
 /// application.
-/// @exec can have one of these two modifiers: "\%f", which will
-/// be expanded as the local file name retrieved from the bookmark's
-/// URI; "\%u", which will be expanded as the bookmark's URI.
+/// @exec can have one of these two modifiers: &quot;\%f&quot;, which will
+/// be expanded as the local file name retrieved from the bookmark&apos;s
+/// URI; &quot;\%u&quot;, which will be expanded as the bookmark&apos;s URI.
 /// The expansion is done automatically when retrieving the stored
 /// command line using the g_bookmark_file_get_application_info() function.
 /// @count is the number of times the application has registered the
-/// bookmark; if is < 0, the current registration count will be increased
+/// bookmark; if is &amp;lt; 0, the current registration count will be increased
 /// by one, if is 0, the application with @name will be removed from
 /// the list of registered applications.
 /// @stamp is the Unix time of the last registration; if it is -1, the
@@ -1119,10 +1119,10 @@ public static class GBookmarkFileExtensions
 /// a valid URI
 /// </param>
 /// <param name="name">
-/// an application's name
+/// an application&apos;s name
 /// </param>
 /// <param name="exec">
-/// an application's command line
+/// an application&apos;s command line
 /// </param>
 /// <param name="count">
 /// the number of registrations done for this application
@@ -1131,7 +1131,7 @@ public static class GBookmarkFileExtensions
 /// the time of the last registration for this application
 /// </param>
 /// <return>
-/// %TRUE if the application's meta-data was successfully
+/// %TRUE if the application&apos;s meta-data was successfully
 ///   changed.
 /// </return>
 
@@ -1156,13 +1156,13 @@ public static class GBookmarkFileExtensions
 /// <para>
 /// @name can be any UTF-8 encoded string used to identify an
 /// application.
-/// @exec can have one of these two modifiers: "\%f", which will
-/// be expanded as the local file name retrieved from the bookmark's
-/// URI; "\%u", which will be expanded as the bookmark's URI.
+/// @exec can have one of these two modifiers: &quot;\%f&quot;, which will
+/// be expanded as the local file name retrieved from the bookmark&apos;s
+/// URI; &quot;\%u&quot;, which will be expanded as the bookmark&apos;s URI.
 /// The expansion is done automatically when retrieving the stored
 /// command line using the g_bookmark_file_get_application_info() function.
 /// @count is the number of times the application has registered the
-/// bookmark; if is < 0, the current registration count will be increased
+/// bookmark; if is &amp;lt; 0, the current registration count will be increased
 /// by one, if is 0, the application with @name will be removed from
 /// the list of registered applications.
 /// @stamp is the Unix time of the last registration.
@@ -1185,10 +1185,10 @@ public static class GBookmarkFileExtensions
 /// a valid URI
 /// </param>
 /// <param name="name">
-/// an application's name
+/// an application&apos;s name
 /// </param>
 /// <param name="exec">
-/// an application's command line
+/// an application&apos;s command line
 /// </param>
 /// <param name="count">
 /// the number of registrations done for this application
@@ -1198,7 +1198,7 @@ public static class GBookmarkFileExtensions
 ///    which may be %NULL if @count is 0
 /// </param>
 /// <return>
-/// %TRUE if the application's meta-data was successfully
+/// %TRUE if the application&apos;s meta-data was successfully
 ///   changed.
 /// </return>
 
@@ -1252,7 +1252,7 @@ public static class GBookmarkFileExtensions
 /// a #GBookmarkFile
 /// </param>
 /// <param name="uri">
-/// an item's URI
+/// an item&apos;s URI
 /// </param>
 /// <param name="groups">
 /// an array of
@@ -1356,7 +1356,7 @@ public static class GBookmarkFileExtensions
 /// If no bookmark for @uri is found then it is created.
 /// </para>
 /// <para>
-/// The "modified" time should only be set when the bookmark's meta-data
+/// The &quot;modified&quot; time should only be set when the bookmark&apos;s meta-data
 /// was actually changed.  Every function of #GBookmarkFile that
 /// modifies a bookmark also changes the modification time, except for
 /// g_bookmark_file_set_visited_date_time().
@@ -1387,7 +1387,7 @@ public static class GBookmarkFileExtensions
 /// If no bookmark for @uri is found then it is created.
 /// </para>
 /// <para>
-/// The "modified" time should only be set when the bookmark's meta-data
+/// The &quot;modified&quot; time should only be set when the bookmark&apos;s meta-data
 /// was actually changed.  Every function of #GBookmarkFile that
 /// modifies a bookmark also changes the modification time, except for
 /// g_bookmark_file_set_visited_date_time().
@@ -1447,11 +1447,11 @@ public static class GBookmarkFileExtensions
 /// If no bookmark for @uri is found then it is created.
 /// </para>
 /// <para>
-/// The "visited" time should only be set if the bookmark was launched,
+/// The &quot;visited&quot; time should only be set if the bookmark was launched,
 /// either using the command line retrieved by g_bookmark_file_get_application_info()
-/// or by the default application for the bookmark's MIME type, retrieved
-/// using g_bookmark_file_get_mime_type().  Changing the "visited" time
-/// does not affect the "modified" time.
+/// or by the default application for the bookmark&apos;s MIME type, retrieved
+/// using g_bookmark_file_get_mime_type().  Changing the &quot;visited&quot; time
+/// does not affect the &quot;modified&quot; time.
 /// </para>
 /// </summary>
 
@@ -1479,11 +1479,11 @@ public static class GBookmarkFileExtensions
 /// If no bookmark for @uri is found then it is created.
 /// </para>
 /// <para>
-/// The "visited" time should only be set if the bookmark was launched,
+/// The &quot;visited&quot; time should only be set if the bookmark was launched,
 /// either using the command line retrieved by g_bookmark_file_get_application_info()
-/// or by the default application for the bookmark's MIME type, retrieved
-/// using g_bookmark_file_get_mime_type().  Changing the "visited" time
-/// does not affect the "modified" time.
+/// or by the default application for the bookmark&apos;s MIME type, retrieved
+/// using g_bookmark_file_get_mime_type().  Changing the &quot;visited&quot; time
+/// does not affect the &quot;modified&quot; time.
 /// </para>
 /// </summary>
 
@@ -1734,16 +1734,16 @@ internal class GBookmarkFileExterns
 /// Desktop Bookmark Specification, here is a quick summary: bookmark
 /// files use a sub-class of the XML Bookmark Exchange Language
 /// specification, consisting of valid UTF-8 encoded XML, under the
-/// `<xbel>` root element; each bookmark is stored inside a
-/// `<bookmark>` element, using its URI: no relative paths can
+/// `&amp;lt;xbel&amp;gt;` root element; each bookmark is stored inside a
+/// `&amp;lt;bookmark&amp;gt;` element, using its URI: no relative paths can
 /// be used inside a bookmark file. The bookmark may have a user defined
 /// title and description, to be used instead of the URI. Under the
-/// `<metadata>` element, with its owner attribute set to
+/// `&amp;lt;metadata&amp;gt;` element, with its owner attribute set to
 /// `http://freedesktop.org`, is stored the meta-data about a resource
-/// pointed by its URI. The meta-data consists of the resource's MIME
+/// pointed by its URI. The meta-data consists of the resource&apos;s MIME
 /// type; the applications that have registered a bookmark; the groups
 /// to which a bookmark belongs to; a visibility flag, used to set the
-/// bookmark as "private" to the applications and groups that has it
+/// bookmark as &quot;private&quot; to the applications and groups that has it
 /// registered; the URI and MIME type of an icon, to be used when
 /// displaying the bookmark inside a GUI.
 /// </para>
@@ -1759,7 +1759,7 @@ internal class GBookmarkFileExterns
 /// The important caveat of bookmark files is that when you add a new
 /// bookmark you must also add the application that is registering it, using
 /// [method@GLib.BookmarkFile.add_application] or [method@GLib.BookmarkFile.set_application_info].
-/// If a bookmark has no applications then it won't be dumped when creating
+/// If a bookmark has no applications then it won&apos;t be dumped when creating
 /// the on disk representation, using [method@GLib.BookmarkFile.to_data] or
 /// [method@GLib.BookmarkFile.to_file].
 /// </para>

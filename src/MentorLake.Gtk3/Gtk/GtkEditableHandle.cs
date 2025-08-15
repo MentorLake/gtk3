@@ -16,11 +16,10 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Forcing entry to uppercase.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// #include <ctype.h>;
-/// </para>
-/// <para>
+/// <code>
+/// #include &amp;lt;ctype.h&amp;gt;;
+/// #include &amp;lt;ctype.h&amp;gt;;
+/// 
 /// void
 /// insert_text_handler (GtkEditable *editable,
 ///                      const gchar *text,
@@ -29,22 +28,18 @@ namespace MentorLake.Gtk;
 ///                      gpointer     data)
 /// {
 ///   gchar *result = g_utf8_strup (text, length);
-/// </para>
-/// <para>
+/// 
 ///   g_signal_handlers_block_by_func (editable,
 ///                                (gpointer) insert_text_handler, data);
 ///   gtk_editable_insert_text (editable, result, length, position);
 ///   g_signal_handlers_unblock_by_func (editable,
 ///                                      (gpointer) insert_text_handler, data);
-/// </para>
-/// <para>
-///   g_signal_stop_emission_by_name (editable, "insert_text");
-/// </para>
-/// <para>
+/// 
+///   g_signal_stop_emission_by_name (editable, &quot;insert_text&quot;);
+/// 
 ///   g_free (result);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public interface GtkEditableHandle

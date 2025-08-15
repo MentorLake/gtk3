@@ -29,7 +29,7 @@ public static class GTypeInterfaceExtensions
 /// the
 ///     corresponding #GTypeInterface structure of the parent type of the
 ///     instance type to which @g_iface belongs, or %NULL if the parent
-///     type doesn't conform to the interface
+///     type doesn&apos;t conform to the interface
 /// </return>
 
 	public static MentorLake.GObject.GTypeInterfaceHandle PeekParent(this MentorLake.GObject.GTypeInterfaceHandle g_iface)
@@ -79,7 +79,7 @@ public struct GTypeInterface
 /// Adds @prerequisite_type to the list of prerequisites of @interface_type.
 /// This means that any type implementing @interface_type must also implement
 /// @prerequisite_type. Prerequisites can be thought of as an alternative to
-/// interface derivation (which GType doesn't support). An interface can have
+/// interface derivation (which GType doesn&apos;t support). An interface can have
 /// at most one instantiatable prerequisite type.
 /// </para>
 /// </summary>

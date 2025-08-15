@@ -13,35 +13,33 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkFrame implementation of the #GtkBuildable interface supports
 /// placing a child in the label position by specifying “label” as the
-/// “type” attribute of a `<child>` element. A normal content child can
-/// be specified without specifying a `<child>` type attribute.
+/// “type” attribute of a `&amp;lt;child&amp;gt;` element. A normal content child can
+/// be specified without specifying a `&amp;lt;child&amp;gt;` type attribute.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with `GtkFrame`:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkFrame">
-///   <child type="label">
-///     <object class="GtkLabel" id="frame-label"/>
-///   </child>
-///   <child>
-///     <object class="GtkEntry" id="frame-content"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkFrame&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkFrame&quot;&amp;gt;
+///   &amp;lt;child type=&quot;label&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;frame-label&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkEntry&quot; id=&quot;frame-content&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// frame
 /// frame
 /// ├── border[.flat]
-/// ├── <label widget>
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ├── &amp;lt;label widget&amp;gt;
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkFrame has a main CSS node named “frame” and a subnode named “border”. The
 /// “border” node is used to draw the visible border. You can set the appearance

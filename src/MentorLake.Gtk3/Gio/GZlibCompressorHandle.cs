@@ -55,7 +55,7 @@ public static class GZlibCompressorHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @file_info in @compressor. If non-%NULL, and @compressor's
+/// Sets @file_info in @compressor. If non-%NULL, and @compressor&apos;s
 /// #GZlibCompressor:format property is %G_ZLIB_COMPRESSOR_FORMAT_GZIP,
 /// it will be used to set the file name and modification time in
 /// the GZIP header of the compressed data.

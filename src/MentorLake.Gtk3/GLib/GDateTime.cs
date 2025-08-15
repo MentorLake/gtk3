@@ -110,22 +110,22 @@ public class GDateTimeHandle : BaseSafeHandle
 /// <para>
 /// Creates a #GDateTime corresponding to the given
 /// [ISO 8601 formatted string](https://en.wikipedia.org/wiki/ISO_8601)
-/// @text. ISO 8601 strings of the form `<date><sep><time><tz>` are supported, with
+/// @text. ISO 8601 strings of the form `&amp;lt;date&amp;gt;&amp;lt;sep&amp;gt;&amp;lt;time&amp;gt;&amp;lt;tz&amp;gt;` are supported, with
 /// some extensions from [RFC 3339](https://tools.ietf.org/html/rfc3339) as
 /// mentioned below.
 /// </para>
 /// <para>
-/// Note that as #GDateTime "is oblivious to leap seconds", leap seconds information
+/// Note that as #GDateTime &quot;is oblivious to leap seconds&quot;, leap seconds information
 /// in an ISO-8601 string will be ignored, so a `23:59:60` time would be parsed as
 /// `23:59:59`.
 /// </para>
 /// <para>
-/// `<sep>` is the separator and can be either 'T', 't' or ' '. The latter two
+/// `&amp;lt;sep&amp;gt;` is the separator and can be either &apos;T&apos;, &apos;t&apos; or &apos; &apos;. The latter two
 /// separators are an extension from
 /// [RFC 3339](https://tools.ietf.org/html/rfc3339#section-5.6).
 /// </para>
 /// <para>
-/// `<date>` is in the form:
+/// `&amp;lt;date&amp;gt;` is in the form:
 /// </para>
 /// <para>
 /// - `YYYY-MM-DD` - Year/month/day, e.g. 2016-08-24.
@@ -137,14 +137,14 @@ public class GDateTimeHandle : BaseSafeHandle
 /// - `YYYYWwwD` - Same as above without dividers.
 /// </para>
 /// <para>
-/// `<time>` is in the form:
+/// `&amp;lt;time&amp;gt;` is in the form:
 /// </para>
 /// <para>
 /// - `hh:mm:ss(.sss)` - Hours, minutes, seconds (subseconds), e.g. 22:10:42.123.
 /// - `hhmmss(.sss)` - Same as above without dividers.
 /// </para>
 /// <para>
-/// `<tz>` is an optional timezone suffix of the form:
+/// `&amp;lt;tz&amp;gt;` is an optional timezone suffix of the form:
 /// </para>
 /// <para>
 /// - `Z` - UTC.
@@ -169,7 +169,7 @@ public class GDateTimeHandle : BaseSafeHandle
 /// an ISO 8601 formatted time string.
 /// </param>
 /// <param name="default_tz">
-/// a #GTimeZone to use if the text doesn't contain a
+/// a #GTimeZone to use if the text doesn&apos;t contain a
 ///                          timezone, or %NULL.
 /// </param>
 /// <return>
@@ -1216,8 +1216,8 @@ public static class GDateTimeExtensions
 /// the time zone of @datetime.
 /// </para>
 /// <para>
-/// For example, in Toronto this is currently "EST" during the winter
-/// months and "EDT" during the summer months when daylight savings
+/// For example, in Toronto this is currently &quot;EST&quot; during the winter
+/// months and &quot;EDT&quot; during the summer months when daylight savings
 /// time is in effect.
 /// </para>
 /// </summary>
@@ -1494,14 +1494,14 @@ public static class GDateTimeExtensions
 /// zone associated with @datetime.
 /// </para>
 /// <para>
-/// On systems where 'long' is 32bit (ie: all 32bit systems and all
+/// On systems where &apos;long&apos; is 32bit (ie: all 32bit systems and all
 /// Windows systems), a #GTimeVal is incapable of storing the entire
 /// range of values that #GDateTime is capable of expressing.  On those
 /// systems, this function returns %FALSE to indicate that the time is
 /// out of range.
 /// </para>
 /// <para>
-/// On systems where 'long' is 64bit, this function never fails.
+/// On systems where &apos;long&apos; is 64bit, this function never fails.
 /// </para>
 /// </summary>
 

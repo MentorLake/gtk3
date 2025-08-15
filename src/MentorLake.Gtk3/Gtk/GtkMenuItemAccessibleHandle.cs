@@ -8,7 +8,7 @@ public static class GtkMenuItemAccessibleHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -43,7 +43,7 @@ public static class GtkMenuItemAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>
@@ -110,7 +110,7 @@ public static class GtkMenuItemAccessibleHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -129,7 +129,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>

@@ -10,9 +10,9 @@ namespace MentorLake.cairo;
 /// </para>
 /// <para>
 /// Other than various
-/// <function>cairo_pattern_create_<emphasis>type</emphasis>()</function>
+/// &amp;lt;function&amp;gt;cairo_pattern_create_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt;
 /// functions, some of the pattern types can be implicitly created using various
-/// <function>cairo_set_source_<emphasis>type</emphasis>()</function> functions;
+/// &amp;lt;function&amp;gt;cairo_set_source_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt; functions;
 /// for example cairo_set_source_rgb().
 /// </para>
 /// <para>
@@ -48,9 +48,9 @@ internal class cairo_pattern_tExterns
 /// </para>
 /// <para>
 /// Other than various
-/// <function>cairo_pattern_create_<emphasis>type</emphasis>()</function>
+/// &amp;lt;function&amp;gt;cairo_pattern_create_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt;
 /// functions, some of the pattern types can be implicitly created using various
-/// <function>cairo_set_source_<emphasis>type</emphasis>()</function> functions;
+/// &amp;lt;function&amp;gt;cairo_set_source_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt; functions;
 /// for example cairo_set_source_rgb().
 /// </para>
 /// <para>

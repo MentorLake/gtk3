@@ -3,7 +3,7 @@ namespace MentorLake.GObject;
 /// <summary>
 /// <para>
 /// This structure is used to provide the type system with the information
-/// required to initialize and destruct (finalize) a parameter's class and
+/// required to initialize and destruct (finalize) a parameter&apos;s class and
 /// instances thereof.
 /// </para>
 /// <para>
@@ -31,7 +31,7 @@ internal class GParamSpecTypeInfoExterns
 /// <summary>
 /// <para>
 /// This structure is used to provide the type system with the information
-/// required to initialize and destruct (finalize) a parameter's class and
+/// required to initialize and destruct (finalize) a parameter&apos;s class and
 /// instances thereof.
 /// </para>
 /// <para>

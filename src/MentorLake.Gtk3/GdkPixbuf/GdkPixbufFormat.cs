@@ -101,7 +101,7 @@ public static class GdkPixbufFormatExtensions
 /// </para>
 /// <para>
 /// The returned string should be a shorthand for a well known license, e.g.
-/// "LGPL", "GPL", "QPL", "GPL/QPL", or "other" to indicate some other license.
+/// &quot;LGPL&quot;, &quot;GPL&quot;, &quot;QPL&quot;, &quot;GPL/QPL&quot;, or &quot;other&quot; to indicate some other license.
 /// </para>
 /// </summary>
 
@@ -252,7 +252,7 @@ public static class GdkPixbufFormatExtensions
 /// Disables or enables an image format.
 /// </para>
 /// <para>
-/// If a format is disabled, GdkPixbuf won't use the image loader for
+/// If a format is disabled, GdkPixbuf won&apos;t use the image loader for
 /// this format to load images.
 /// </para>
 /// <para>
@@ -396,7 +396,7 @@ public bool disabled;
 	/// <summary>
 /// <para>
 /// a string containing license information, typically set to
-///   shorthands like "GPL", "LGPL", etc.
+///   shorthands like &quot;GPL&quot;, &quot;LGPL&quot;, etc.
 /// </para>
 /// </summary>
 

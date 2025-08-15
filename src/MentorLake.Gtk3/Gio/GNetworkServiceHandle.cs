@@ -26,10 +26,10 @@ public class GNetworkServiceHandle : GObjectHandle, GSocketConnectableHandle
 /// </summary>
 
 /// <param name="service">
-/// the service type to look up (eg, "ldap")
+/// the service type to look up (eg, &quot;ldap&quot;)
 /// </param>
 /// <param name="protocol">
-/// the networking protocol to use for @service (eg, "tcp")
+/// the networking protocol to use for @service (eg, &quot;tcp&quot;)
 /// </param>
 /// <param name="domain">
 /// the DNS domain to look up the service in
@@ -58,7 +58,7 @@ public static class GNetworkServiceHandleExtensions
 /// a #GNetworkService
 /// </param>
 /// <return>
-/// @srv's domain name
+/// @srv&apos;s domain name
 /// </return>
 
 	public static string GetDomain(this MentorLake.Gio.GNetworkServiceHandle srv)
@@ -69,7 +69,7 @@ public static class GNetworkServiceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @srv's protocol name (eg, "tcp").
+/// Gets @srv&apos;s protocol name (eg, &quot;tcp&quot;).
 /// </para>
 /// </summary>
 
@@ -77,7 +77,7 @@ public static class GNetworkServiceHandleExtensions
 /// a #GNetworkService
 /// </param>
 /// <return>
-/// @srv's protocol name
+/// @srv&apos;s protocol name
 /// </return>
 
 	public static string GetProtocol(this MentorLake.Gio.GNetworkServiceHandle srv)
@@ -97,7 +97,7 @@ public static class GNetworkServiceHandleExtensions
 /// a #GNetworkService
 /// </param>
 /// <return>
-/// @srv's scheme name
+/// @srv&apos;s scheme name
 /// </return>
 
 	public static string GetScheme(this MentorLake.Gio.GNetworkServiceHandle srv)
@@ -108,7 +108,7 @@ public static class GNetworkServiceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @srv's service name (eg, "ldap").
+/// Gets @srv&apos;s service name (eg, &quot;ldap&quot;).
 /// </para>
 /// </summary>
 
@@ -116,7 +116,7 @@ public static class GNetworkServiceHandleExtensions
 /// a #GNetworkService
 /// </param>
 /// <return>
-/// @srv's service name
+/// @srv&apos;s service name
 /// </return>
 
 	public static string GetService(this MentorLake.Gio.GNetworkServiceHandle srv)
@@ -127,7 +127,7 @@ public static class GNetworkServiceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Set's the URI scheme used to resolve proxies. By default, the service name
+/// Set&apos;s the URI scheme used to resolve proxies. By default, the service name
 /// is used as scheme.
 /// </para>
 /// </summary>

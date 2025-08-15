@@ -11,7 +11,7 @@ public enum AtkRelationType
 {
 /// <summary>
 /// <para>
-/// Not used, represens "no relationship" or an error condition.
+/// Not used, represens &quot;no relationship&quot; or an error condition.
 /// </para>
 /// </summary>
 
@@ -84,8 +84,8 @@ public enum AtkRelationType
 /// <summary>
 /// <para>
 /// Indicates that the object visually embeds
-///  another object's content, i.e. this object's content flows around
-///  another's content.
+///  another object&apos;s content, i.e. this object&apos;s content flows around
+///  another&apos;s content.
 /// </para>
 /// </summary>
 
@@ -93,7 +93,7 @@ public enum AtkRelationType
 /// <summary>
 /// <para>
 /// Reciprocal of %ATK_RELATION_EMBEDS, indicates that
-///  this object's content is visualy embedded in another object.
+///  this object&apos;s content is visualy embedded in another object.
 /// </para>
 /// </summary>
 
@@ -118,7 +118,7 @@ public enum AtkRelationType
 /// or more target objects provide descriptive information about this object. This relation
 /// type is most appropriate for information that is not essential as its presentation may
 /// be user-configurable and/or limited to an on-demand mechanism such as an assistive
-/// technology command. For brief, essential information such as can be found in a widget's
+/// technology command. For brief, essential information such as can be found in a widget&apos;s
 /// on-screen label, use %ATK_RELATION_LABELLED_BY. For an on-screen error message, use
 /// %ATK_RELATION_ERROR_MESSAGE. For lengthy extended descriptive information contained in
 /// an on-screen object, consider using %ATK_RELATION_DETAILS as assistive technologies may

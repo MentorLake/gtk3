@@ -4,7 +4,7 @@ public class HarfBuzzGlobalFunctions
 {
 /// <summary>
 /// <para>
-/// Fetches the name identifier of the specified feature type in the face's `name` table.
+/// Fetches the name identifier of the specified feature type in the face&apos;s `name` table.
 /// </para>
 /// </summary>
 
@@ -52,7 +52,7 @@ public class HarfBuzzGlobalFunctions
 ///             A buffer pointer. The selectors available for the feature type queries.
 /// </param>
 /// <param name="default_index">
-/// The index of the feature's default selector, if any
+/// The index of the feature&apos;s default selector, if any
 /// </param>
 /// <return>
 /// Number of all available feature selectors
@@ -97,7 +97,7 @@ public class HarfBuzzGlobalFunctions
 /// in the `kerx` table.
 /// </para>
 /// <para>
-/// <note>Note: does not examine the `GPOS` table.</note>
+/// &amp;lt;note&amp;gt;Note: does not examine the `GPOS` table.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -119,7 +119,7 @@ public class HarfBuzzGlobalFunctions
 /// `morx` or `mort` tables.
 /// </para>
 /// <para>
-/// <note>Note: does not examine the `GSUB` table.</note>
+/// &amp;lt;note&amp;gt;Note: does not examine the `GSUB` table.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -174,7 +174,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Creates a new "blob" object wrapping @data.  The @mode parameter is used
+/// Creates a new &quot;blob&quot; object wrapping @data.  The @mode parameter is used
 /// to negotiate ownership and lifecycle of @data.
 /// </para>
 /// </summary>
@@ -258,7 +258,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Creates a new "blob" object wrapping @data.  The @mode parameter is used
+/// Creates a new &quot;blob&quot; object wrapping @data.  The @mode parameter is used
 /// to negotiate ownership and lifecycle of @data.
 /// </para>
 /// <para>
@@ -316,7 +316,7 @@ public class HarfBuzzGlobalFunctions
 /// </param>
 /// <return>
 /// New blob, or the empty blob if something failed or if
-/// @length is zero or @offset is beyond the end of @parent's data.  Destroy
+/// @length is zero or @offset is beyond the end of @parent&apos;s data.  Destroy
 /// with hb_blob_destroy().
 /// </return>
 
@@ -413,7 +413,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the length of a blob's data.
+/// Fetches the length of a blob&apos;s data.
 /// </para>
 /// </summary>
 
@@ -612,7 +612,7 @@ public class HarfBuzzGlobalFunctions
 /// Unicode code points that can fit in 8-bit strings.
 /// </para>
 /// <para>
-/// <note>Has nothing to do with non-Unicode Latin-1 encoding.</note>
+/// &amp;lt;note&amp;gt;Has nothing to do with non-Unicode Latin-1 encoding.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -1298,7 +1298,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// Finally, if buffer language is not set (ie. is #HB_LANGUAGE_INVALID),
-/// it will be set to the process's default language as returned by
+/// it will be set to the process&apos;s default language as returned by
 /// hb_language_get_default().  This may change in the future by
 /// taking buffer script into consideration when choosing a language.
 /// Note that hb_language_get_default() is NOT threadsafe the first time
@@ -1341,7 +1341,7 @@ public class HarfBuzzGlobalFunctions
 /// The resulting clusters should behave identical to pre-reordering clusters.
 /// </para>
 /// <para>
-/// <note>This has nothing to do with Unicode normalization.</note>
+/// &amp;lt;note&amp;gt;This has nothing to do with Unicode normalization.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -1581,7 +1581,7 @@ public class HarfBuzzGlobalFunctions
 ///   - If #HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS is not set, the #hb_glyph_position_t in the format:
 ///     - If both #hb_glyph_position_t.x_offset and #hb_glyph_position_t.y_offset are not 0, `@x_offset,y_offset`. Then,
 ///     - `+x_advance`, then `,y_advance` if #hb_glyph_position_t.y_advance is not 0. Then,
-///   - If #HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS is set, the #hb_glyph_extents_t in the format `<x_bearing,y_bearing,width,height>`
+///   - If #HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS is set, the #hb_glyph_extents_t in the format `&amp;lt;x_bearing,y_bearing,width,height&amp;gt;`
 /// </para>
 /// <para>
 /// ## json
@@ -1590,8 +1590,8 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// ```
-/// [{"g":"uni0651","cl":0,"dx":518,"dy":0,"ax":0,"ay":0},
-/// {"g":"uni0628","cl":0,"dx":0,"dy":0,"ax":1897,"ay":0}]
+/// [{&quot;g&quot;:&quot;uni0651&quot;,&quot;cl&quot;:0,&quot;dx&quot;:518,&quot;dy&quot;:0,&quot;ax&quot;:0,&quot;ay&quot;:0},
+/// {&quot;g&quot;:&quot;uni0628&quot;,&quot;cl&quot;:0,&quot;dx&quot;:0,&quot;dy&quot;:0,&quot;ax&quot;:1897,&quot;ay&quot;:0}]
 /// ```
 /// </para>
 /// <para>
@@ -1678,7 +1678,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// ```
-///  <U+0651=0|U+0628=1>
+///  &amp;lt;U+0651=0|U+0628=1&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -1795,7 +1795,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// The above transitions are designed such that one can use a buffer
-/// in a loop of "reset : add-text : shape" without needing to ever
+/// in a loop of &quot;reset : add-text : shape&quot; without needing to ever
 /// modify the content type manually.
 /// </para>
 /// </summary>
@@ -1956,7 +1956,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// The not-found glyph defaults to zero, sometimes known as the
-/// ".notdef" glyph.  This API allows for differentiating the two.
+/// &quot;.notdef&quot; glyph.  This API allows for differentiating the two.
 /// </para>
 /// </summary>
 
@@ -2247,7 +2247,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// Matching is loose and applies only to the first letter. For
-/// examples, "LTR" and "left-to-right" will both return #HB_DIRECTION_LTR.
+/// examples, &quot;LTR&quot; and &quot;left-to-right&quot; will both return #HB_DIRECTION_LTR.
 /// </para>
 /// <para>
 /// Unmatched strings will return #HB_DIRECTION_INVALID.
@@ -2289,7 +2289,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "close-path" draw operation.
+/// Perform a &quot;close-path&quot; draw operation.
 /// </para>
 /// </summary>
 
@@ -2310,7 +2310,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "cubic-to" draw operation.
+/// Perform a &quot;cubic-to&quot; draw operation.
 /// </para>
 /// </summary>
 
@@ -2629,7 +2629,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "line-to" draw operation.
+/// Perform a &quot;line-to&quot; draw operation.
 /// </para>
 /// </summary>
 
@@ -2656,7 +2656,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "move-to" draw operation.
+/// Perform a &quot;move-to&quot; draw operation.
 /// </para>
 /// </summary>
 
@@ -2683,7 +2683,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "quadratic-to" draw operation.
+/// Perform a &quot;quadratic-to&quot; draw operation.
 /// </para>
 /// </summary>
 
@@ -2817,7 +2817,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Collects all Unicode "Variation Selector" characters covered by @face and adds
+/// Collects all Unicode &quot;Variation Selector&quot; characters covered by @face and adds
 /// them to the #hb_set_t set @out.
 /// </para>
 /// </summary>
@@ -2885,14 +2885,14 @@ public class HarfBuzzGlobalFunctions
 /// such collections are zero-based.
 /// </para>
 /// <para>
-/// <note>Note: If the blob font format is not a collection, @index
+/// &amp;lt;note&amp;gt;Note: If the blob font format is not a collection, @index
 /// is ignored.  Otherwise, only the lower 16-bits of @index are used.
-/// The unmodified @index can be accessed via hb_face_get_index().</note>
+/// The unmodified @index can be accessed via hb_face_get_index().&amp;lt;/note&amp;gt;
 /// </para>
 /// <para>
-/// <note>Note: The high 16-bits of @index, if non-zero, are used by
+/// &amp;lt;note&amp;gt;Note: The high 16-bits of @index, if non-zero, are used by
 /// hb_font_create() to load named-instances in variable fonts.  See
-/// hb_font_create() for details.</note>
+/// hb_font_create() for details.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -2997,7 +2997,7 @@ public class HarfBuzzGlobalFunctions
 /// Fetches the face-index corresponding to the given face.
 /// </para>
 /// <para>
-/// <note>Note: face indices within a collection are zero-based.</note>
+/// &amp;lt;note&amp;gt;Note: face indices within a collection are zero-based.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -3206,8 +3206,8 @@ public class HarfBuzzGlobalFunctions
 /// face is immutable.
 /// </para>
 /// <para>
-/// <note>Note: changing the index has no effect on the face itself
-/// This only changes the value returned by hb_face_get_index().</note>
+/// &amp;lt;note&amp;gt;Note: changing the index has no effect on the face itself
+/// This only changes the value returned by hb_face_get_index().&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -3280,7 +3280,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// The format for specifying feature strings follows. All valid CSS
-/// font-feature-settings values other than 'normal' and the global values are
+/// font-feature-settings values other than &apos;normal&apos; and the global values are
 /// also accepted, though not documented below. CSS string escapes are not
 /// supported.
 /// </para>
@@ -3292,31 +3292,31 @@ public class HarfBuzzGlobalFunctions
 /// The format is Python-esque.  Here is how it all works:
 /// </para>
 /// <para>
-/// <informaltable pgwide='1' align='left' frame='none'>
-/// <tgroup cols='5'>
-/// <thead>
-/// <row><entry>Syntax</entry>    <entry>Value</entry> <entry>Start</entry> <entry>End</entry></row>
-/// </thead>
-/// <tbody>
-/// <row><entry>Setting value:</entry></row>
-/// <row><entry>kern</entry>      <entry>1</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature on</entry></row>
-/// <row><entry>+kern</entry>     <entry>1</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature on</entry></row>
-/// <row><entry>-kern</entry>     <entry>0</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature off</entry></row>
-/// <row><entry>kern=0</entry>    <entry>0</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature off</entry></row>
-/// <row><entry>kern=1</entry>    <entry>1</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature on</entry></row>
-/// <row><entry>aalt=2</entry>    <entry>2</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Choose 2nd alternate</entry></row>
-/// <row><entry>Setting index:</entry></row>
-/// <row><entry>kern[]</entry>    <entry>1</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature on</entry></row>
-/// <row><entry>kern[:]</entry>   <entry>1</entry>     <entry>0</entry>      <entry>∞</entry>   <entry>Turn feature on</entry></row>
-/// <row><entry>kern[5:]</entry>  <entry>1</entry>     <entry>5</entry>      <entry>∞</entry>   <entry>Turn feature on, partial</entry></row>
-/// <row><entry>kern[:5]</entry>  <entry>1</entry>     <entry>0</entry>      <entry>5</entry>   <entry>Turn feature on, partial</entry></row>
-/// <row><entry>kern[3:5]</entry> <entry>1</entry>     <entry>3</entry>      <entry>5</entry>   <entry>Turn feature on, range</entry></row>
-/// <row><entry>kern[3]</entry>   <entry>1</entry>     <entry>3</entry>      <entry>3+1</entry> <entry>Turn feature on, single char</entry></row>
-/// <row><entry>Mixing it all:</entry></row>
-/// <row><entry>aalt[3:5]=2</entry> <entry>2</entry>   <entry>3</entry>      <entry>5</entry>   <entry>Turn 2nd alternate on for range</entry></row>
-/// </tbody>
-/// </tgroup>
-/// </informaltable>
+/// &amp;lt;informaltable pgwide=&apos;1&apos; align=&apos;left&apos; frame=&apos;none&apos;&amp;gt;
+/// &amp;lt;tgroup cols=&apos;5&apos;&amp;gt;
+/// &amp;lt;thead&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;Syntax&amp;lt;/entry&amp;gt;    &amp;lt;entry&amp;gt;Value&amp;lt;/entry&amp;gt; &amp;lt;entry&amp;gt;Start&amp;lt;/entry&amp;gt; &amp;lt;entry&amp;gt;End&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;/thead&amp;gt;
+/// &amp;lt;tbody&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;Setting value:&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;+kern&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;-kern&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature off&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern=0&amp;lt;/entry&amp;gt;    &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature off&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern=1&amp;lt;/entry&amp;gt;    &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;aalt=2&amp;lt;/entry&amp;gt;    &amp;lt;entry&amp;gt;2&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Choose 2nd alternate&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;Setting index:&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[]&amp;lt;/entry&amp;gt;    &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[:]&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[5:]&amp;lt;/entry&amp;gt;  &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;5&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;∞&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on, partial&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[:5]&amp;lt;/entry&amp;gt;  &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;0&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;5&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on, partial&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[3:5]&amp;lt;/entry&amp;gt; &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;3&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;5&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn feature on, range&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;kern[3]&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;1&amp;lt;/entry&amp;gt;     &amp;lt;entry&amp;gt;3&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;3+1&amp;lt;/entry&amp;gt; &amp;lt;entry&amp;gt;Turn feature on, single char&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;Mixing it all:&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;row&amp;gt;&amp;lt;entry&amp;gt;aalt[3:5]=2&amp;lt;/entry&amp;gt; &amp;lt;entry&amp;gt;2&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;3&amp;lt;/entry&amp;gt;      &amp;lt;entry&amp;gt;5&amp;lt;/entry&amp;gt;   &amp;lt;entry&amp;gt;Turn 2nd alternate on for range&amp;lt;/entry&amp;gt;&amp;lt;/row&amp;gt;
+/// &amp;lt;/tbody&amp;gt;
+/// &amp;lt;/tgroup&amp;gt;
+/// &amp;lt;/informaltable&amp;gt;
 /// </para>
 /// </summary>
 
@@ -3417,12 +3417,12 @@ public class HarfBuzzGlobalFunctions
 /// Constructs a new font object from the specified face.
 /// </para>
 /// <para>
-/// <note>Note: If @face's index value (as passed to hb_face_create()
+/// &amp;lt;note&amp;gt;Note: If @face&apos;s index value (as passed to hb_face_create()
 /// has non-zero top 16-bits, those bits minus one are passed to
 /// hb_font_set_var_named_instance(), effectively loading a named-instance
 /// of a variable font, instead of the default-instance.  This allows
 /// specifying which named-instance to load by default when creating the
-/// face.</note>
+/// face.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -3441,7 +3441,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Constructs a sub-font font object from the specified @parent font,
-/// replicating the parent's properties.
+/// replicating the parent&apos;s properties.
 /// </para>
 /// </summary>
 
@@ -4452,7 +4452,7 @@ public class HarfBuzzGlobalFunctions
 /// Fetches the glyph ID that corresponds to a name string in the specified @font.
 /// </para>
 /// <para>
-/// <note>Note: @len == -1 means the name string is null-terminated.</note>
+/// &amp;lt;note&amp;gt;Note: @len == -1 means the name string is null-terminated.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -4536,8 +4536,8 @@ public class HarfBuzzGlobalFunctions
 /// the specified font, for horizontal text segments.
 /// </para>
 /// <para>
-/// <note>It handles legacy kerning only (as returned by the corresponding
-/// #hb_font_funcs_t function).</note>
+/// &amp;lt;note&amp;gt;It handles legacy kerning only (as returned by the corresponding
+/// #hb_font_funcs_t function).&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -4769,8 +4769,8 @@ public class HarfBuzzGlobalFunctions
 /// the specified font, for vertical text segments.
 /// </para>
 /// <para>
-/// <note>It handles legacy kerning only (as returned by the corresponding
-/// #hb_font_funcs_t function).</note>
+/// &amp;lt;note&amp;gt;It handles legacy kerning only (as returned by the corresponding
+/// #hb_font_funcs_t function).&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -4948,7 +4948,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the "point size" of a font. Used in CoreText to
+/// Fetches the &quot;point size&quot; of a font. Used in CoreText to
 /// implement optical sizing.
 /// </para>
 /// </summary>
@@ -4957,7 +4957,7 @@ public class HarfBuzzGlobalFunctions
 /// #hb_font_t to work upon
 /// </param>
 /// <return>
-/// Point size.  A value of zero means "not set."
+/// Point size.  A value of zero means &quot;not set.&quot;
 /// </return>
 
 	public static float FontGetPtem(MentorLake.HarfBuzz.hb_font_tHandle font)
@@ -5008,7 +5008,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the "synthetic boldness" parameters of a font.
+/// Fetches the &quot;synthetic boldness&quot; parameters of a font.
 /// </para>
 /// </summary>
 
@@ -5032,7 +5032,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the "synthetic slant" of a font.
+/// Fetches the &quot;synthetic slant&quot; of a font.
 /// </para>
 /// </summary>
 
@@ -5206,7 +5206,7 @@ public class HarfBuzzGlobalFunctions
 /// Strings of the format `gidDDD` or `uniUUUU` are parsed automatically.
 /// </para>
 /// <para>
-/// <note>Note: @len == -1 means the string is null-terminated.</note>
+/// &amp;lt;note&amp;gt;Note: @len == -1 means the string is null-terminated.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -5326,7 +5326,7 @@ public class HarfBuzzGlobalFunctions
 /// User data to pass to paint callbacks
 /// </param>
 /// <param name="palette_index">
-/// The index of the font's color palette to use
+/// The index of the font&apos;s color palette to use
 /// </param>
 /// <param name="foreground">
 /// The foreground color, unpremultipled
@@ -5376,7 +5376,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Replaces the font-functions structure attached to a font, updating
-/// the font's user-data with @font-data and the @destroy callback.
+/// the font&apos;s user-data with @font-data and the @destroy callback.
 /// </para>
 /// </summary>
 
@@ -5400,7 +5400,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Replaces the user data attached to a font, updating the font's
+/// Replaces the user data attached to a font, updating the font&apos;s
 /// @destroy callback.
 /// </para>
 /// </summary>
@@ -5466,11 +5466,11 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Sets the "point size" of a font. Set to zero to unset.
+/// Sets the &quot;point size&quot; of a font. Set to zero to unset.
 /// Used in CoreText to implement optical sizing.
 /// </para>
 /// <para>
-/// <note>Note: There are 72 points in an inch.</note>
+/// &amp;lt;note&amp;gt;Note: There are 72 points in an inch.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -5518,7 +5518,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// Fonts default to a scale equal to the UPEM value of their face.
-/// A font with this setting is sometimes called an "unscaled" font.
+/// A font with this setting is sometimes called an &quot;unscaled&quot; font.
 /// </para>
 /// </summary>
 
@@ -5539,7 +5539,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Sets the "synthetic boldness" of a font.
+/// Sets the &quot;synthetic boldness&quot; of a font.
 /// </para>
 /// <para>
 /// Positive values for @x_embolden / @y_embolden make a font
@@ -5581,7 +5581,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Sets the "synthetic slant" of a font.  By default is zero.
+/// Sets the &quot;synthetic slant&quot; of a font.  By default is zero.
 /// Synthetic slant is the graphical skew applied to the font
 /// at rendering time.
 /// </para>
@@ -5590,12 +5590,12 @@ public class HarfBuzzGlobalFunctions
 /// metrics, and style values to match the slanted rendering.
 /// </para>
 /// <para>
-/// <note>Note: The glyph shape fetched via the hb_font_draw_glyph()
-/// function is slanted to reflect this value as well.</note>
+/// &amp;lt;note&amp;gt;Note: The glyph shape fetched via the hb_font_draw_glyph()
+/// function is slanted to reflect this value as well.&amp;lt;/note&amp;gt;
 /// </para>
 /// <para>
-/// <note>Note: The slant value is a ratio.  For example, a
-/// 20% slant would be represented as a 0.2 value.</note>
+/// &amp;lt;note&amp;gt;Note: The slant value is a ratio.  For example, a
+/// 20% slant would be represented as a 0.2 value.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -5679,7 +5679,7 @@ public class HarfBuzzGlobalFunctions
 /// default values.
 /// </para>
 /// <para>
-/// <note>Note: Coordinates should be normalized to 2.14.</note>
+/// &amp;lt;note&amp;gt;Note: Coordinates should be normalized to 2.14.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -5825,7 +5825,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// For more information, see
-/// <https://freetype.org/freetype2/docs/reference/ft2-glyph_retrieval.html#ft_load_xxx>
+/// &amp;lt;https://freetype.org/freetype2/docs/reference/ft2-glyph_retrieval.html#ft_load_xxx&amp;gt;
 /// </para>
 /// <para>
 /// This function works with #hb_font_t objects created by
@@ -5868,8 +5868,8 @@ public class HarfBuzzGlobalFunctions
 /// to update the underlying FT_Face.
 /// </para>
 /// <para>
-/// <note>Note: Internally, this function creates an FT_Face.
-/// </note>
+/// &amp;lt;note&amp;gt;Note: Internally, this function creates an FT_Face.
+/// &amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -5888,7 +5888,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// For more information, see
-/// <https://freetype.org/freetype2/docs/reference/ft2-glyph_retrieval.html#ft_load_xxx>
+/// &amp;lt;https://freetype.org/freetype2/docs/reference/ft2-glyph_retrieval.html#ft_load_xxx&amp;gt;
 /// </para>
 /// <para>
 /// This function works with #hb_font_t objects created by
@@ -6065,12 +6065,12 @@ public class HarfBuzzGlobalFunctions
 /// Fetch the default language from current locale.
 /// </para>
 /// <para>
-/// <note>Note that the first time this function is called, it calls
-/// "setlocale (LC_CTYPE, nullptr)" to fetch current locale.  The underlying
+/// &amp;lt;note&amp;gt;Note that the first time this function is called, it calls
+/// &quot;setlocale (LC_CTYPE, nullptr)&quot; to fetch current locale.  The underlying
 /// setlocale function is, in many implementations, NOT threadsafe.  To avoid
 /// problems, call this function once before multiple threads can call it.
 /// This function is only used from hb_buffer_guess_segment_properties() by
-/// HarfBuzz itself.</note>
+/// HarfBuzz itself.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -6088,7 +6088,7 @@ public class HarfBuzzGlobalFunctions
 /// <para>
 /// Check whether a second language tag is the same or a more
 /// specific version of the provided language tag.  For example,
-/// "fa_IR.utf8" is a more specific tag for "fa" or for "fa_IR".
+/// &quot;fa_IR.utf8&quot; is a more specific tag for &quot;fa&quot; or for &quot;fa_IR&quot;.
 /// </para>
 /// </summary>
 
@@ -6738,11 +6738,11 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the `name` table Name ID that provides display names for
-/// the specified color in a face's `CPAL` color palette.
+/// the specified color in a face&apos;s `CPAL` color palette.
 /// </para>
 /// <para>
-/// Display names can be generic (e.g., "Background") or specific
-/// (e.g., "Eye color").
+/// Display names can be generic (e.g., &quot;Background&quot;) or specific
+/// (e.g., &quot;Eye color&quot;).
 /// </para>
 /// </summary>
 
@@ -6849,8 +6849,8 @@ public class HarfBuzzGlobalFunctions
 /// a `CPAL` color palette.
 /// </para>
 /// <para>
-/// Palette display names can be generic (e.g., "Default") or provide
-/// specific, themed names (e.g., "Spring", "Summer", "Fall", and "Winter").
+/// Palette display names can be generic (e.g., &quot;Default&quot;) or provide
+/// specific, themed names (e.g., &quot;Spring&quot;, &quot;Summer&quot;, &quot;Fall&quot;, and &quot;Winter&quot;).
 /// </para>
 /// </summary>
 
@@ -6887,7 +6887,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all feature indexes in the specified face's GSUB table
+/// Fetches a list of all feature indexes in the specified face&apos;s GSUB table
 /// or GPOS table, underneath the specified scripts, languages, and features.
 /// If no list of scripts is provided, all scripts will be queried. If no list
 /// of languages is provided, all languages will be queried. If no list of
@@ -6952,7 +6952,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all feature-lookup indexes in the specified face's GSUB
+/// Fetches a list of all feature-lookup indexes in the specified face&apos;s GSUB
 /// table or GPOS table, underneath the specified scripts, languages, and
 /// features. If no list of scripts is provided, all scripts will be queried.
 /// If no list of languages is provided, all languages will be queried. If no
@@ -6990,7 +6990,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches a list of the characters defined as having a variant under the specified
-/// "Character Variant" ("cvXX") feature tag.
+/// &quot;Character Variant&quot; (&quot;cvXX&quot;) feature tag.
 /// </para>
 /// </summary>
 
@@ -6998,7 +6998,7 @@ public class HarfBuzzGlobalFunctions
 /// #hb_face_t to work upon
 /// </param>
 /// <param name="table_tag">
-/// table tag to query, "GSUB" or "GPOS".
+/// table tag to query, &quot;GSUB&quot; or &quot;GPOS&quot;.
 /// </param>
 /// <param name="feature_index">
 /// index of feature to query.
@@ -7027,7 +7027,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches a list of all lookups enumerated for the specified feature, in
-/// the specified face's GSUB table or GPOS table. The list returned will
+/// the specified face&apos;s GSUB table or GPOS table. The list returned will
 /// begin at the offset provided.
 /// </para>
 /// </summary>
@@ -7062,8 +7062,8 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches name indices from feature parameters for "Stylistic Set" ('ssXX') or
-/// "Character Variant" ('cvXX') features.
+/// Fetches name indices from feature parameters for &quot;Stylistic Set&quot; (&apos;ssXX&apos;) or
+/// &quot;Character Variant&quot; (&apos;cvXX&apos;) features.
 /// </para>
 /// </summary>
 
@@ -7071,7 +7071,7 @@ public class HarfBuzzGlobalFunctions
 /// #hb_face_t to work upon
 /// </param>
 /// <param name="table_tag">
-/// table tag to query, "GSUB" or "GPOS".
+/// table tag to query, &quot;GSUB&quot; or &quot;GPOS&quot;.
 /// </param>
 /// <param name="feature_index">
 /// index of feature to query.
@@ -7109,7 +7109,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches a list of all lookups enumerated for the specified feature, in
-/// the specified face's GSUB table or GPOS table, enabled at the specified
+/// the specified face&apos;s GSUB table or GPOS table, enabled at the specified
 /// variations index. The list returned will begin at the offset provided.
 /// </para>
 /// </summary>
@@ -7319,7 +7319,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches script/language-specific font extents.  These values are
-/// looked up in the `BASE` table's `MinMax` records.
+/// looked up in the `BASE` table&apos;s `MinMax` records.
 /// </para>
 /// <para>
 /// If no such extents are found, the default extents for the font are
@@ -7357,7 +7357,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches script/language-specific font extents.  These values are
-/// looked up in the `BASE` table's `MinMax` records.
+/// looked up in the `BASE` table&apos;s `MinMax` records.
 /// </para>
 /// <para>
 /// If no such extents are found, the default extents for the font are
@@ -7421,7 +7421,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Retrieves the set of all glyphs from the face that belong to the requested
-/// glyph class in the face's GDEF table.
+/// glyph class in the face&apos;s GDEF table.
 /// </para>
 /// </summary>
 
@@ -7470,7 +7470,7 @@ public class HarfBuzzGlobalFunctions
 /// since its caret position is the glyph position.
 /// </para>
 /// <para>
-/// The positions returned by this function are 'unshaped', and will have to
+/// The positions returned by this function are &apos;unshaped&apos;, and will have to
 /// be fixed up for kerning that may be applied to the ligature glyph.
 /// </para>
 /// </summary>
@@ -7600,7 +7600,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the index of a given feature tag in the specified face's GSUB table
+/// Fetches the index of a given feature tag in the specified face&apos;s GSUB table
 /// or GPOS table, underneath the specified script and language.
 /// </para>
 /// </summary>
@@ -7634,7 +7634,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all features in the specified face's GSUB table
+/// Fetches a list of all features in the specified face&apos;s GSUB table
 /// or GPOS table, underneath the specified script and language. The list
 /// returned will begin at the offset provided.
 /// </para>
@@ -7673,7 +7673,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all features in the specified face's GSUB table
+/// Fetches a list of all features in the specified face&apos;s GSUB table
 /// or GPOS table, underneath the specified script and language. The list
 /// returned will begin at the offset provided.
 /// </para>
@@ -7712,7 +7712,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the tag of a requested feature index in the given face's GSUB or GPOS table,
+/// Fetches the tag of a requested feature index in the given face&apos;s GSUB or GPOS table,
 /// underneath the specified script and language.
 /// </para>
 /// </summary>
@@ -7746,7 +7746,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the index of a requested feature in the given face's GSUB or GPOS table,
+/// Fetches the index of a requested feature in the given face&apos;s GSUB or GPOS table,
 /// underneath the specified script and language.
 /// </para>
 /// </summary>
@@ -7778,7 +7778,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches a list of all glyphs affected by the specified lookup in the
-/// specified face's GSUB table or GPOS table.
+/// specified face&apos;s GSUB table or GPOS table.
 /// </para>
 /// </summary>
 
@@ -7950,7 +7950,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the index of a given language tag in the specified face's GSUB table
+/// Fetches the index of a given language tag in the specified face&apos;s GSUB table
 /// or GPOS table, underneath the specified script tag.
 /// </para>
 /// </summary>
@@ -7981,7 +7981,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of language tags in the given face's GSUB or GPOS table, underneath
+/// Fetches a list of language tags in the given face&apos;s GSUB or GPOS table, underneath
 /// the specified script index. The list returned will begin at the offset provided.
 /// </para>
 /// </summary>
@@ -8017,7 +8017,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the index of the first language tag fom @language_tags that is present
-/// in the specified face's GSUB or GPOS table, underneath the specified script
+/// in the specified face&apos;s GSUB or GPOS table, underneath the specified script
 /// index.
 /// </para>
 /// <para>
@@ -8056,7 +8056,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the index of the first language tag fom @language_tags that is present
-/// in the specified face's GSUB or GPOS table, underneath the specified script
+/// in the specified face&apos;s GSUB or GPOS table, underneath the specified script
 /// index.
 /// </para>
 /// <para>
@@ -8125,7 +8125,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of feature variations in the specified face's GSUB table
+/// Fetches a list of feature variations in the specified face&apos;s GSUB table
 /// or GPOS table, at the specified variation coordinates.
 /// </para>
 /// </summary>
@@ -8156,7 +8156,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches the index if a given script tag in the specified face's GSUB table
+/// Fetches the index if a given script tag in the specified face&apos;s GSUB table
 /// or GPOS table.
 /// </para>
 /// </summary>
@@ -8184,7 +8184,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all feature tags in the given face's GSUB or GPOS table.
+/// Fetches a list of all feature tags in the given face&apos;s GSUB or GPOS table.
 /// Note that there might be duplicate feature tags, belonging to different
 /// script/language-system pairs of the table.
 /// </para>
@@ -8218,7 +8218,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the total number of lookups enumerated in the specified
-/// face's GSUB table or GPOS table.
+/// face&apos;s GSUB table or GPOS table.
 /// </para>
 /// </summary>
 
@@ -8239,7 +8239,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a list of all scripts enumerated in the specified face's GSUB table
+/// Fetches a list of all scripts enumerated in the specified face&apos;s GSUB table
 /// or GPOS table. The list returned will begin at the offset provided.
 /// </para>
 /// </summary>
@@ -8345,10 +8345,10 @@ public class HarfBuzzGlobalFunctions
 /// in the font).
 /// </para>
 /// <para>
-/// <note>The @direction parameter is only used to select between horizontal
+/// &amp;lt;note&amp;gt;The @direction parameter is only used to select between horizontal
 /// or vertical directions for the construction. Even though all #hb_direction_t
 /// values are accepted, only the result of #HB_DIRECTION_IS_HORIZONTAL is
-/// considered.</note>
+/// considered.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -8450,13 +8450,13 @@ public class HarfBuzzGlobalFunctions
 /// appropriate kern value for a given correction height.
 /// </para>
 /// <para>
-/// <note>For a glyph with @n defined kern values (where @n > 0), there are only
+/// &amp;lt;note&amp;gt;For a glyph with @n defined kern values (where @n &amp;gt; 0), there are only
 /// @n−1 defined correction heights, as each correction height defines a boundary
 /// past which the next kern value should be selected. Therefore, only the
 /// #hb_ot_math_kern_entry_t.kern_value of the uppermost #hb_ot_math_kern_entry_t
 /// actually comes from the font; its corresponding
 /// #hb_ot_math_kern_entry_t.max_correction_height is always set to
-/// <code>INT32_MAX</code>.</note>
+/// &amp;lt;code&amp;gt;INT32_MAX&amp;lt;/code&amp;gt;.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -8498,7 +8498,7 @@ public class HarfBuzzGlobalFunctions
 /// a glyph not covered by the `MathTopAccentAttachment` table (or, when
 /// @font has no `MathTopAccentAttachment` table or no `MATH` table, any
 /// glyph) - the function synthesizes a value, returning the position at
-/// one-half the glyph's advance width.
+/// one-half the glyph&apos;s advance width.
 /// </para>
 /// </summary>
 
@@ -8525,10 +8525,10 @@ public class HarfBuzzGlobalFunctions
 /// #hb_ot_math_glyph_variant_t structs.
 /// </para>
 /// <para>
-/// <note>The @direction parameter is only used to select between horizontal
+/// &amp;lt;note&amp;gt;The @direction parameter is only used to select between horizontal
 /// or vertical directions for the construction. Even though all #hb_direction_t
 /// values are accepted, only the result of #HB_DIRECTION_IS_HORIZONTAL is
-/// considered.</note>
+/// considered.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -8567,10 +8567,10 @@ public class HarfBuzzGlobalFunctions
 /// assembly in the specified direction.
 /// </para>
 /// <para>
-/// <note>The @direction parameter is only used to select between horizontal
+/// &amp;lt;note&amp;gt;The @direction parameter is only used to select between horizontal
 /// or vertical directions for the construction. Even though all #hb_direction_t
 /// values are accepted, only the result of #HB_DIRECTION_IS_HORIZONTAL is
-/// considered.</note>
+/// considered.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -8638,7 +8638,7 @@ public class HarfBuzzGlobalFunctions
 /// a face object
 /// </param>
 /// <param name="start_offset">
-/// iteration's start offset
+/// iteration&apos;s start offset
 /// </param>
 /// <param name="entries_count">
 /// buffer size as input, filled size as output
@@ -8790,10 +8790,10 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a font name from the OpenType 'name' table.
-/// If @language is #HB_LANGUAGE_INVALID, English ("en") is assumed.
+/// Fetches a font name from the OpenType &apos;name&apos; table.
+/// If @language is #HB_LANGUAGE_INVALID, English (&quot;en&quot;) is assumed.
 /// Returns string in UTF-16 encoding. A NUL terminator is always written
-/// for convenience, and isn't included in the output @text_size.
+/// for convenience, and isn&apos;t included in the output @text_size.
 /// </para>
 /// </summary>
 
@@ -8824,10 +8824,10 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a font name from the OpenType 'name' table.
-/// If @language is #HB_LANGUAGE_INVALID, English ("en") is assumed.
+/// Fetches a font name from the OpenType &apos;name&apos; table.
+/// If @language is #HB_LANGUAGE_INVALID, English (&quot;en&quot;) is assumed.
 /// Returns string in UTF-32 encoding. A NUL terminator is always written
-/// for convenience, and isn't included in the output @text_size.
+/// for convenience, and isn&apos;t included in the output @text_size.
 /// </para>
 /// </summary>
 
@@ -8858,10 +8858,10 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Fetches a font name from the OpenType 'name' table.
-/// If @language is #HB_LANGUAGE_INVALID, English ("en") is assumed.
+/// Fetches a font name from the OpenType &apos;name&apos; table.
+/// If @language is #HB_LANGUAGE_INVALID, English (&quot;en&quot;) is assumed.
 /// Returns string in UTF-8 encoding. A NUL terminator is always written
-/// for convenience, and isn't included in the output @text_size.
+/// for convenience, and isn&apos;t included in the output @text_size.
 /// </para>
 /// </summary>
 
@@ -9288,7 +9288,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the `name` table Name ID that provides display names for
-/// the "PostScript name" defined for the given named instance in the face.
+/// the &quot;PostScript name&quot; defined for the given named instance in the face.
 /// </para>
 /// </summary>
 
@@ -9310,7 +9310,7 @@ public class HarfBuzzGlobalFunctions
 /// <summary>
 /// <para>
 /// Fetches the `name` table Name ID that provides display names for
-/// the "Subfamily name" defined for the given named instance in the face.
+/// the &quot;Subfamily name&quot; defined for the given named instance in the face.
 /// </para>
 /// </summary>
 
@@ -9340,7 +9340,7 @@ public class HarfBuzzGlobalFunctions
 /// OpenType specification.
 /// </para>
 /// <para>
-/// Any additional scaling defined in the face's `avar` table is also
+/// Any additional scaling defined in the face&apos;s `avar` table is also
 /// applied, as described at https://docs.microsoft.com/en-us/typography/opentype/spec/avar
 /// </para>
 /// </summary>
@@ -9392,7 +9392,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "color" paint operation.
+/// Perform a &quot;color&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -9416,7 +9416,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "color-glyph" paint operation.
+/// Perform a &quot;color-glyph&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -9969,7 +9969,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "image" paint operation.
+/// Perform a &quot;image&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10005,7 +10005,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "linear-gradient" paint operation.
+/// Perform a &quot;linear-gradient&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10044,7 +10044,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "pop-clip" paint operation.
+/// Perform a &quot;pop-clip&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10062,7 +10062,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "pop-group" paint operation.
+/// Perform a &quot;pop-group&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10083,7 +10083,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "pop-transform" paint operation.
+/// Perform a &quot;pop-transform&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10101,7 +10101,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "push-clip-glyph" paint operation.
+/// Perform a &quot;push-clip-glyph&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10125,7 +10125,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "push-clip-rect" paint operation.
+/// Perform a &quot;push-clip-rect&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10155,7 +10155,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "push-group" paint operation.
+/// Perform a &quot;push-group&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10173,7 +10173,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "push-transform" paint operation.
+/// Perform a &quot;push-transform&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10209,7 +10209,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "radial-gradient" paint operation.
+/// Perform a &quot;radial-gradient&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10223,19 +10223,19 @@ public class HarfBuzzGlobalFunctions
 /// Color information for the gradient
 /// </param>
 /// <param name="x0">
-/// X coordinate of the first circle's center
+/// X coordinate of the first circle&apos;s center
 /// </param>
 /// <param name="y0">
-/// Y coordinate of the first circle's center
+/// Y coordinate of the first circle&apos;s center
 /// </param>
 /// <param name="r0">
 /// radius of the first circle
 /// </param>
 /// <param name="x1">
-/// X coordinate of the second circle's center
+/// X coordinate of the second circle&apos;s center
 /// </param>
 /// <param name="y1">
-/// Y coordinate of the second circle's center
+/// Y coordinate of the second circle&apos;s center
 /// </param>
 /// <param name="r1">
 /// radius of the second circle
@@ -10248,7 +10248,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Perform a "sweep-gradient" paint operation.
+/// Perform a &quot;sweep-gradient&quot; paint operation.
 /// </para>
 /// </summary>
 
@@ -10262,10 +10262,10 @@ public class HarfBuzzGlobalFunctions
 /// Color information for the gradient
 /// </param>
 /// <param name="x0">
-/// X coordinate of the circle's center
+/// X coordinate of the circle&apos;s center
 /// </param>
 /// <param name="y0">
-/// Y coordinate of the circle's center
+/// Y coordinate of the circle&apos;s center
 /// </param>
 /// <param name="start_angle">
 /// the start angle
@@ -10364,7 +10364,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Checks the equality of two #hb_segment_properties_t's.
+/// Checks the equality of two #hb_segment_properties_t&apos;s.
 /// </para>
 /// </summary>
 
@@ -11731,7 +11731,7 @@ public class HarfBuzzGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Don't use. Not used by HarfBuzz.
+/// Don&apos;t use. Not used by HarfBuzz.
 /// </para>
 /// </summary>
 
@@ -12201,7 +12201,7 @@ public class HarfBuzzGlobalFunctions
 /// </para>
 /// <para>
 /// The format for specifying variation settings follows. All valid CSS
-/// font-variation-settings values other than 'normal' and 'inherited' are also
+/// font-variation-settings values other than &apos;normal&apos; and &apos;inherited&apos; are also
 /// accepted, though, not documented below.
 /// </para>
 /// <para>

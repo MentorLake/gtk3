@@ -320,7 +320,7 @@ public static class graphene_plane_tExtensions
 /// <para>
 /// If @normal_matrix is %NULL, a transformation matrix for the plane
 /// normal will be computed from @matrix. If you are transforming
-/// multiple planes using the same @matrix it's recommended to compute
+/// multiple planes using the same @matrix it&apos;s recommended to compute
 /// the normal matrix beforehand to avoid incurring in the cost of
 /// recomputing it every time.
 /// </para>

@@ -14,7 +14,7 @@ namespace MentorLake.Gio;
 /// [method@Gio.UnixConnection.receive_fd].
 /// </para>
 /// <para>
-/// Note that `<gio/gunixfdmessage.h>` belongs to the UNIX-specific GIO
+/// Note that `&amp;lt;gio/gunixfdmessage.h&amp;gt;` belongs to the UNIX-specific GIO
 /// interfaces, thus you have to use the `gio-unix-2.0.pc` pkg-config
 /// file or the `GioUnix-2.0` GIR namespace when using it.
 /// </para>

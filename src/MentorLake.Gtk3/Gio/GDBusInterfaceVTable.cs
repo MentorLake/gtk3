@@ -9,7 +9,7 @@ namespace MentorLake.Gio;
 /// Since 2.38, if you want to handle getting/setting D-Bus properties
 /// asynchronously, give %NULL as your get_property() or set_property()
 /// function. The D-Bus call will be directed to your @method_call function,
-/// with the provided @interface_name set to "org.freedesktop.DBus.Properties".
+/// with the provided @interface_name set to &quot;org.freedesktop.DBus.Properties&quot;.
 /// </para>
 /// <para>
 /// Ownership of the #GDBusMethodInvocation object passed to the
@@ -75,7 +75,7 @@ internal class GDBusInterfaceVTableExterns
 /// Since 2.38, if you want to handle getting/setting D-Bus properties
 /// asynchronously, give %NULL as your get_property() or set_property()
 /// function. The D-Bus call will be directed to your @method_call function,
-/// with the provided @interface_name set to "org.freedesktop.DBus.Properties".
+/// with the provided @interface_name set to &quot;org.freedesktop.DBus.Properties&quot;.
 /// </para>
 /// <para>
 /// Ownership of the #GDBusMethodInvocation object passed to the

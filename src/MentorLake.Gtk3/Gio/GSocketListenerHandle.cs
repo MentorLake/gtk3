@@ -46,7 +46,7 @@ public static class GSocketListenerHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// Emitted when @listener's activity on @socket changes state.
+/// Emitted when @listener&apos;s activity on @socket changes state.
 /// Note that when @listener is used to listen on both IPv4 and
 /// IPv6, a separate set of signals will be emitted for each, and
 /// the order they happen in is undefined.
@@ -114,7 +114,7 @@ public static class GSocketListenerHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// Emitted when @listener's activity on @socket changes state.
+/// Emitted when @listener&apos;s activity on @socket changes state.
 /// Note that when @listener is used to listen on both IPv4 and
 /// IPv6, a separate set of signals will be emitted for each, and
 /// the order they happen in is undefined.
@@ -341,7 +341,7 @@ public static class GSocketListenerHandleExtensions
 /// <summary>
 /// <para>
 /// Creates a socket of type @type and protocol @protocol, binds
-/// it to @address and adds it to the set of sockets we're accepting
+/// it to @address and adds it to the set of sockets we&apos;re accepting
 /// sockets from.
 /// </para>
 /// <para>
@@ -353,14 +353,14 @@ public static class GSocketListenerHandleExtensions
 /// <para>
 /// @source_object will be passed out in the various calls
 /// to accept to identify this particular source, which is
-/// useful if you're listening on multiple addresses and do
+/// useful if you&apos;re listening on multiple addresses and do
 /// different things depending on what address is connected to.
 /// </para>
 /// <para>
 /// If successful and @effective_address is non-%NULL then it will
 /// be set to the address that the binding actually occurred at.  This
 /// is helpful for determining the port number that was used for when
-/// requesting a binding to port 0 (ie: "any port").  This address, if
+/// requesting a binding to port 0 (ie: &quot;any port&quot;).  This address, if
 /// requested, belongs to the caller and must be freed.
 /// </para>
 /// <para>
@@ -407,12 +407,12 @@ public static class GSocketListenerHandleExtensions
 /// </para>
 /// <para>
 /// This is useful if you need to have a socket for incoming connections
-/// but don't care about the specific port number.
+/// but don&apos;t care about the specific port number.
 /// </para>
 /// <para>
 /// @source_object will be passed out in the various calls
 /// to accept to identify this particular source, which is
-/// useful if you're listening on multiple addresses and do
+/// useful if you&apos;re listening on multiple addresses and do
 /// different things depending on what address is connected to.
 /// </para>
 /// </summary>
@@ -444,7 +444,7 @@ public static class GSocketListenerHandleExtensions
 /// <para>
 /// @source_object will be passed out in the various calls
 /// to accept to identify this particular source, which is
-/// useful if you're listening on multiple addresses and do
+/// useful if you&apos;re listening on multiple addresses and do
 /// different things depending on what address is connected to.
 /// </para>
 /// <para>
@@ -484,7 +484,7 @@ public static class GSocketListenerHandleExtensions
 /// <para>
 /// @source_object will be passed out in the various calls
 /// to accept to identify this particular source, which is
-/// useful if you're listening on multiple addresses and do
+/// useful if you&apos;re listening on multiple addresses and do
 /// different things depending on what address is connected to.
 /// </para>
 /// <para>

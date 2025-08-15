@@ -19,37 +19,32 @@ namespace MentorLake.Gtk;
 /// In the simplest of cases, you can use the following code to use
 /// a #GtkRecentChooserDialog to select a recently used file:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *dialog;
 /// GtkWidget *dialog;
 /// gint res;
-/// </para>
-/// <para>
-/// dialog = gtk_recent_chooser_dialog_new ("Recent Documents",
+/// 
+/// dialog = gtk_recent_chooser_dialog_new (&quot;Recent Documents&quot;,
 ///                                         parent_window,
-///                                         _("_Cancel"),
+///                                         _(&quot;_Cancel&quot;),
 ///                                         GTK_RESPONSE_CANCEL,
-///                                         _("_Open"),
+///                                         _(&quot;_Open&quot;),
 ///                                         GTK_RESPONSE_ACCEPT,
 ///                                         NULL);
-/// </para>
-/// <para>
+/// 
 /// res = gtk_dialog_run (GTK_DIALOG (dialog));
 /// if (res == GTK_RESPONSE_ACCEPT)
 ///   {
 ///     GtkRecentInfo *info;
 ///     GtkRecentChooser *chooser = GTK_RECENT_CHOOSER (dialog);
-/// </para>
-/// <para>
+/// 
 ///     info = gtk_recent_chooser_get_current_item (chooser);
 ///     open_file (gtk_recent_info_get_uri (info));
 ///     gtk_recent_info_unref (info);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (dialog);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Recently used files are supported since GTK+ 2.10.
 /// </para>
@@ -126,7 +121,7 @@ public static class GtkRecentChooserDialogHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.
@@ -225,7 +220,7 @@ public static class GtkRecentChooserDialogHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.

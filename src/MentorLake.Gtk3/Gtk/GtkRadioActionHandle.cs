@@ -95,7 +95,7 @@ public class ChangedSignal
 	public MentorLake.Gtk.GtkRadioActionHandle Self;
 /// <summary>
 /// <para>
-/// the member of @action's group which has just been activated
+/// the member of @action&apos;s group which has just been activated
 /// </para>
 /// </summary>
 
@@ -119,7 +119,7 @@ public static class GtkRadioActionHandleSignalDelegates
 /// <param name="self">
 /// </param>
 /// <param name="current">
-/// the member of @action's group which has just been activated
+/// the member of @action&apos;s group which has just been activated
 /// </param>
 /// <param name="user_data">
 /// </param>
@@ -160,20 +160,19 @@ public static class GtkRadioActionHandleExtensions
 /// </para>
 /// <para>
 /// A common way to set up a group of radio group is the following:
-/// |[<!-- language="C" -->
+/// <code>
+///   GSList *group = NULL;
 ///   GSList *group = NULL;
 ///   GtkRadioAction *action;
-/// </para>
-/// <para>
+/// 
 ///   while ( ...more actions to add... /)
 ///     {
 ///        action = gtk_radio_action_new (...);
-/// </para>
-/// <para>
+/// 
 ///        gtk_radio_action_set_group (action, group);
 ///        group = gtk_radio_action_get_group (action);
 ///     }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -200,20 +199,19 @@ public static class GtkRadioActionHandleExtensions
 /// </para>
 /// <para>
 /// A common way to set up a group of radio actions is the following:
-/// |[<!-- language="C" -->
+/// <code>
+///   GtkRadioAction *action;
 ///   GtkRadioAction *action;
 ///   GtkRadioAction *last_action;
-/// </para>
-/// <para>
+/// 
 ///   while ( ...more actions to add... /)
 ///     {
 ///        action = gtk_radio_action_new (...);
-/// </para>
-/// <para>
+/// 
 ///        gtk_radio_action_join_group (action, last_action);
 ///        last_action = action;
 ///     }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

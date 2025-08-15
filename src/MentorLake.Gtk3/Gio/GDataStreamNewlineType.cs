@@ -11,21 +11,21 @@ public enum GDataStreamNewlineType
 {
 /// <summary>
 /// <para>
-/// Selects "LF" line endings, common on most modern UNIX platforms.
+/// Selects &quot;LF&quot; line endings, common on most modern UNIX platforms.
 /// </para>
 /// </summary>
 
 	G_DATA_STREAM_NEWLINE_TYPE_LF = 0,
 /// <summary>
 /// <para>
-/// Selects "CR" line endings.
+/// Selects &quot;CR&quot; line endings.
 /// </para>
 /// </summary>
 
 	G_DATA_STREAM_NEWLINE_TYPE_CR = 1,
 /// <summary>
 /// <para>
-/// Selects "CR, LF" line ending, common on Microsoft Windows.
+/// Selects &quot;CR, LF&quot; line ending, common on Microsoft Windows.
 /// </para>
 /// </summary>
 

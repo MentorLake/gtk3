@@ -6,7 +6,7 @@ namespace MentorLake.Gio;
 /// virtual interaction methods to handle TLS interactions.
 /// </para>
 /// <para>
-/// Derived classes can choose to implement whichever interactions methods they'd
+/// Derived classes can choose to implement whichever interactions methods they&apos;d
 /// like to support by overriding those virtual methods in their class
 /// initialization function. If a derived class implements an async method,
 /// it must also implement the corresponding finish method.
@@ -42,7 +42,7 @@ internal class GTlsInteractionClassExterns
 /// virtual interaction methods to handle TLS interactions.
 /// </para>
 /// <para>
-/// Derived classes can choose to implement whichever interactions methods they'd
+/// Derived classes can choose to implement whichever interactions methods they&apos;d
 /// like to support by overriding those virtual methods in their class
 /// initialization function. If a derived class implements an async method,
 /// it must also implement the corresponding finish method.

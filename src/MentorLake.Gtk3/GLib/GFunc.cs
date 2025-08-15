@@ -8,7 +8,7 @@ namespace MentorLake.GLib;
 /// </summary>
 
 /// <param name="data">
-/// the element's data
+/// the element&apos;s data
 /// </param>
 /// <param name="user_data">
 /// user data passed to g_list_foreach() or g_slist_foreach()

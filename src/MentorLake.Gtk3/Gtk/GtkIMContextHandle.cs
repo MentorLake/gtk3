@@ -36,39 +36,38 @@ namespace MentorLake.Gtk;
 /// implements a subclass of #GtkIMContext or #GtkIMContextSimple and exports
 /// these four functions:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// void im_module_init(GTypeModule *module);
-/// ]|
-/// This function should register the #GType of the #GtkIMContext subclass which
+/// void im_module_init(GTypeModule *module);
+/// </code>
+/// <para>
 /// implements the input method by means of g_type_module_register_type(). Note
 /// that g_type_register_static() cannot be used as the type needs to be
 /// registered dynamically.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// void im_module_exit(void);
-/// ]|
-/// Here goes any cleanup code your input method might require on module unload.
-/// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// void im_module_exit(void);
+/// </code>
+/// 
+/// <code>
+/// void im_module_list(const GtkIMContextInfo ***contexts, int *n_contexts)
 /// void im_module_list(const GtkIMContextInfo ***contexts, int *n_contexts)
 /// {
 ///   *contexts = info_list;
 ///   *n_contexts = G_N_ELEMENTS (info_list);
 /// }
-/// ]|
-/// This function returns the list of input methods provided by the module. The
+/// </code>
+/// <para>
 /// example implementation above shows a common solution and simply returns a
 /// pointer to statically defined array of #GtkIMContextInfo items for each
 /// provided input method.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkIMContext * im_module_create(const gchar *context_id);
-/// ]|
-/// This function should return a pointer to a newly created instance of the
+/// GtkIMContext * im_module_create(const gchar *context_id);
+/// </code>
+/// <para>
 /// #GtkIMContext subclass identified by @context_id. The context ID is the same
 /// as specified in the #GtkIMContextInfo array returned by im_module_list().
 /// </para>

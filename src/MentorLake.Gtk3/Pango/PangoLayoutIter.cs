@@ -60,7 +60,7 @@ public static class PangoLayoutIterExtensions
 
 /// <summary>
 /// <para>
-/// Frees an iterator that's no longer in use.
+/// Frees an iterator that&apos;s no longer in use.
 /// </para>
 /// </summary>
 
@@ -76,7 +76,7 @@ public static class PangoLayoutIterExtensions
 
 /// <summary>
 /// <para>
-/// Gets the Y position of the current line's baseline, in layout
+/// Gets the Y position of the current line&apos;s baseline, in layout
 /// coordinates.
 /// </para>
 /// <para>
@@ -299,7 +299,7 @@ public static class PangoLayoutIterExtensions
 /// the current line.
 /// </para>
 /// <para>
-/// A line's range includes the line's logical extents. plus half of the
+/// A line&apos;s range includes the line&apos;s logical extents. plus half of the
 /// spacing above and below the line, if [method@Pango.Layout.set_spacing]
 /// has been called to set layout spacing. The Y positions are in layout
 /// coordinates (origin at top left of the entire layout).
@@ -331,7 +331,7 @@ public static class PangoLayoutIterExtensions
 /// Gets the current run.
 /// </para>
 /// <para>
-/// When iterating by run, at the end of each line, there's a position
+/// When iterating by run, at the end of each line, there&apos;s a position
 /// with a %NULL run, so this function can return %NULL. The %NULL run
 /// at the end of each line ensures that all lines have at least one run,
 /// even lines consisting of only a newline.
@@ -357,7 +357,7 @@ public static class PangoLayoutIterExtensions
 
 /// <summary>
 /// <para>
-/// Gets the Y position of the current run's baseline, in layout
+/// Gets the Y position of the current run&apos;s baseline, in layout
 /// coordinates.
 /// </para>
 /// <para>
@@ -409,7 +409,7 @@ public static class PangoLayoutIterExtensions
 /// Gets the current run for read-only access.
 /// </para>
 /// <para>
-/// When iterating by run, at the end of each line, there's a position
+/// When iterating by run, at the end of each line, there&apos;s a position
 /// with a %NULL run, so this function can return %NULL. The %NULL run
 /// at the end of each line ensures that all lines have at least one run,
 /// even lines consisting of only a newline.

@@ -18,7 +18,7 @@ public enum GFileQueryInfoFlags : uint
 	G_FILE_QUERY_INFO_NONE = 0,
 /// <summary>
 /// <para>
-/// Don't follow symlinks.
+/// Don&apos;t follow symlinks.
 /// </para>
 /// </summary>
 

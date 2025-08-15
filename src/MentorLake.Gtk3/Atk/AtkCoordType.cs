@@ -19,7 +19,7 @@ public enum AtkCoordType
 	ATK_XY_SCREEN = 0,
 /// <summary>
 /// <para>
-/// specifies xy coordinates relative to the widget's
+/// specifies xy coordinates relative to the widget&apos;s
 /// top-level window
 /// </para>
 /// </summary>
@@ -27,7 +27,7 @@ public enum AtkCoordType
 	ATK_XY_WINDOW = 1,
 /// <summary>
 /// <para>
-/// specifies xy coordinates relative to the widget's
+/// specifies xy coordinates relative to the widget&apos;s
 /// immediate parent. Since: 2.30
 /// </para>
 /// </summary>

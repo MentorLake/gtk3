@@ -2,7 +2,7 @@ namespace MentorLake.GObject;
 
 /// <summary>
 /// <para>
-/// The connection flags are used to specify the behaviour of a signal's
+/// The connection flags are used to specify the behaviour of a signal&apos;s
 /// connection.
 /// </para>
 /// </summary>

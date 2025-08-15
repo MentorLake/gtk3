@@ -647,10 +647,10 @@ public static class GResolverHandleExtensions
 /// a #GResolver
 /// </param>
 /// <param name="service">
-/// the service type to look up (eg, "ldap")
+/// the service type to look up (eg, &quot;ldap&quot;)
 /// </param>
 /// <param name="protocol">
-/// the networking protocol to use for @service (eg, "tcp")
+/// the networking protocol to use for @service (eg, &quot;tcp&quot;)
 /// </param>
 /// <param name="domain">
 /// the DNS domain to look up the service in
@@ -687,10 +687,10 @@ public static class GResolverHandleExtensions
 /// a #GResolver
 /// </param>
 /// <param name="service">
-/// the service type to look up (eg, "ldap")
+/// the service type to look up (eg, &quot;ldap&quot;)
 /// </param>
 /// <param name="protocol">
-/// the networking protocol to use for @service (eg, "tcp")
+/// the networking protocol to use for @service (eg, &quot;tcp&quot;)
 /// </param>
 /// <param name="domain">
 /// the DNS domain to look up the service in
@@ -746,13 +746,13 @@ public static class GResolverHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @resolver to be the application's default resolver (reffing
+/// Sets @resolver to be the application&apos;s default resolver (reffing
 /// @resolver, and unreffing the previous default resolver, if any).
 /// Future calls to g_resolver_get_default() will return this resolver.
 /// </para>
 /// <para>
 /// This can be used if an application wants to perform any sort of DNS
-/// caching or "pinning"; it can implement its own #GResolver that
+/// caching or &quot;pinning&quot;; it can implement its own #GResolver that
 /// calls the original default resolver for DNS operations, and
 /// implements its own cache policies on top of that, and then set
 /// itself as the default resolver for all later code to use.

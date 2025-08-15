@@ -423,7 +423,7 @@ public static class GdkSeatHandleExtensions
 /// </para>
 /// <para>
 /// As a rule of thumb, if a grab is desired over %GDK_SEAT_CAPABILITY_POINTER,
-/// all other "pointing" capabilities (eg. %GDK_SEAT_CAPABILITY_TOUCH) should
+/// all other &quot;pointing&quot; capabilities (eg. %GDK_SEAT_CAPABILITY_TOUCH) should
 /// be grabbed too, so the user is able to interact with all of those while
 /// the grab holds, you should thus use %GDK_SEAT_CAPABILITY_ALL_POINTING most
 /// commonly.

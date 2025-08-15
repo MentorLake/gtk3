@@ -14,7 +14,7 @@ namespace MentorLake.GObject;
 ///    introduces what types), like this:
 ///    ```c
 ///    new_type_id = g_type_register_dynamic (parent_type_id,
-///                                           "TypeName",
+///                                           &quot;TypeName&quot;,
 ///                                           new_type_plugin,
 ///                                           type_flags);
 ///    ```
@@ -22,18 +22,18 @@ namespace MentorLake.GObject;
 ///    `GTypePlugin` interface.
 /// </para>
 /// <para>
-/// 2. The type's implementation is referenced, e.g. through
+/// 2. The type&apos;s implementation is referenced, e.g. through
 ///    [func@GObject.TypeClass.ref] or through [func@GObject.type_create_instance]
 ///    (this is being called by [ctor@GObject.Object.new]) or through one of the above
 ///    done on a type derived from `new_type_id`.
 /// </para>
 /// <para>
-/// 3. This causes the type system to load the type's implementation by calling
+/// 3. This causes the type system to load the type&apos;s implementation by calling
 ///    [method@GObject.TypePlugin.use] and [method@GObject.TypePlugin.complete_type_info]
 ///    on `new_type_plugin`.
 /// </para>
 /// <para>
-/// 4. At some point the type's implementation isn't required anymore, e.g. after
+/// 4. At some point the type&apos;s implementation isn&apos;t required anymore, e.g. after
 ///    [method@GObject.TypeClass.unref] or [func@GObject.type_free_instance]
 ///    (called when the reference count of an instance drops to zero).
 /// </para>

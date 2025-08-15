@@ -175,7 +175,7 @@ public static class GtkEntryCompletionHandleSignalExtensions
 /// Applications may connect to this signal in order to insert only a
 /// smaller part of the @prefix into the entry - e.g. the entry used in
 /// the #GtkFileChooser inserts only the part of the prefix up to the
-/// next '/'.
+/// next &apos;/&apos;.
 /// </para>
 /// </summary>
 
@@ -456,7 +456,7 @@ public delegate bool cursor_on_match([MarshalAs(UnmanagedType.CustomMarshaler, M
 /// Applications may connect to this signal in order to insert only a
 /// smaller part of the @prefix into the entry - e.g. the entry used in
 /// the #GtkFileChooser inserts only the part of the prefix up to the
-/// next '/'.
+/// next &apos;/&apos;.
 /// </para>
 /// </summary>
 
@@ -1053,7 +1053,7 @@ public static class GtkEntryCompletionHandleExtensions
 /// </para>
 /// <para>
 /// This functions creates and adds a #GtkCellRendererText for the selected
-/// column. If you need to set the text column, but don't want the cell
+/// column. If you need to set the text column, but don&apos;t want the cell
 /// renderer, use g_object_set() to set the #GtkEntryCompletion:text-column
 /// property directly.
 /// </para>

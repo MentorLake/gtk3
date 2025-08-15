@@ -143,7 +143,7 @@ public class GdkGlobalFunctions
 /// a cairo context
 /// </param>
 /// <param name="window">
-/// The window we're rendering for (not necessarily into)
+/// The window we&apos;re rendering for (not necessarily into)
 /// </param>
 /// <param name="source">
 /// The GL ID of the source buffer
@@ -820,7 +820,7 @@ public class GdkGlobalFunctions
 /// May block until an error has been definitively received
 /// or not received from the X server. gdk_error_trap_pop_ignored()
 /// is preferred if you don’t need to know whether an error
-/// occurred, because it never has to block. If you don't
+/// occurred, because it never has to block. If you don&apos;t
 /// need the return value of gdk_error_trap_pop(), use
 /// gdk_error_trap_pop_ignored().
 /// </para>
@@ -876,22 +876,18 @@ public class GdkGlobalFunctions
 /// <para>
 /// ## Trapping an X error
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// gdk_error_trap_push ();
-/// </para>
-/// <para>
+/// gdk_error_trap_push ();
+/// 
 ///  // ... Call the X function which may cause an error here ...
-/// </para>
-/// <para>
-/// </para>
-/// <para>
+/// 
+/// 
 /// if (gdk_error_trap_pop ())
 ///  {
 ///    // ... Handle the error here ...
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 
@@ -976,17 +972,16 @@ public class GdkGlobalFunctions
 /// core pointer. Coordinate extraction, processing and requesting more
 /// motion events from a %GDK_MOTION_NOTIFY event usually works like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   // motion_event handler
-///   x = motion_event->x;
-///   y = motion_event->y;
+///   x = motion_event-&amp;gt;x;
+///   y = motion_event-&amp;gt;y;
 ///   // handle (x,y) motion
 ///   gdk_event_request_motions (motion_event); // handles is_hint events
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="@event">
@@ -2486,10 +2481,10 @@ public class GdkGlobalFunctions
 /// </para>
 /// <para>
 /// For example,
-/// |[<!-- language="C" -->
-/// gdk_set_allowed_backends ("wayland,quartz,*");
-/// ]|
-/// instructs GDK to try the Wayland backend first,
+/// <code>
+/// gdk_set_allowed_backends (&quot;wayland,quartz,*&quot;);
+/// gdk_set_allowed_backends (&quot;wayland,quartz,*&quot;);
+/// </code>
 /// followed by the Quartz backend, and then all
 /// others.
 /// </para>
@@ -2683,7 +2678,7 @@ public class GdkGlobalFunctions
 /// <summary>
 /// <para>
 /// This function is intended to be used in GTK+ test programs.
-/// If (@x,@y) are > (-1,-1), it will warp the mouse pointer to
+/// If (@x,@y) are &amp;gt; (-1,-1), it will warp the mouse pointer to
 /// the given (@x,@y) coordinates within @window and simulate a
 /// key press or release event.
 /// </para>
@@ -2805,44 +2800,38 @@ public class GdkGlobalFunctions
 /// running in thread A and accessing @self after it has been finalized
 /// in thread B:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// idle_callback (gpointer data)
 /// {
 ///    // gdk_threads_enter(); would be needed for g_idle_add()
-/// </para>
-/// <para>
+/// 
 ///    SomeWidget *self = data;
 ///    // do stuff with self
-/// </para>
-/// <para>
-///    self->idle_id = 0;
-/// </para>
-/// <para>
+/// 
+///    self-&amp;gt;idle_id = 0;
+/// 
 ///    // gdk_threads_leave(); would be needed for g_idle_add()
 ///    return FALSE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// some_widget_do_stuff_later (SomeWidget *self)
 /// {
-///    self->idle_id = gdk_threads_add_idle (idle_callback, self)
+///    self-&amp;gt;idle_id = gdk_threads_add_idle (idle_callback, self)
 ///    // using g_idle_add() here would require thread protection in the callback
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// some_widget_finalize (GObject *object)
 /// {
 ///    SomeWidget *self = SOME_WIDGET (object);
-///    if (self->idle_id)
-///      g_source_remove (self->idle_id);
-///    G_OBJECT_CLASS (parent_class)->finalize (object);
+///    if (self-&amp;gt;idle_id)
+///      g_source_remove (self-&amp;gt;idle_id);
+///    G_OBJECT_CLASS (parent_class)-&amp;gt;finalize (object);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="priority">
@@ -2916,42 +2905,34 @@ public class GdkGlobalFunctions
 /// This variant of g_timeout_add_full() can be thought of a MT-safe version
 /// for GTK+ widgets for the following use case:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean timeout_callback (gpointer data)
 /// static gboolean timeout_callback (gpointer data)
 /// {
 ///    SomeWidget *self = data;
-/// </para>
-/// <para>
+/// 
 ///    // do stuff with self
-/// </para>
-/// <para>
-///    self->timeout_id = 0;
-/// </para>
-/// <para>
+/// 
+///    self-&amp;gt;timeout_id = 0;
+/// 
 ///    return G_SOURCE_REMOVE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void some_widget_do_stuff_later (SomeWidget *self)
 /// {
-///    self->timeout_id = g_timeout_add (timeout_callback, self)
+///    self-&amp;gt;timeout_id = g_timeout_add (timeout_callback, self)
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void some_widget_finalize (GObject *object)
 /// {
 ///    SomeWidget *self = SOME_WIDGET (object);
-/// </para>
-/// <para>
-///    if (self->timeout_id)
-///      g_source_remove (self->timeout_id);
-/// </para>
-/// <para>
-///    G_OBJECT_CLASS (parent_class)->finalize (object);
+/// 
+///    if (self-&amp;gt;timeout_id)
+///      g_source_remove (self-&amp;gt;timeout_id);
+/// 
+///    G_OBJECT_CLASS (parent_class)-&amp;gt;finalize (object);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="priority">

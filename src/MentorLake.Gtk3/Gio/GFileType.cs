@@ -2,7 +2,7 @@ namespace MentorLake.Gio;
 
 /// <summary>
 /// <para>
-/// Indicates the file's on-disk type.
+/// Indicates the file&apos;s on-disk type.
 /// </para>
 /// <para>
 /// On Windows systems a file will never have %G_FILE_TYPE_SYMBOLIC_LINK type;
@@ -21,7 +21,7 @@ public enum GFileType
 {
 /// <summary>
 /// <para>
-/// File's type is unknown.
+/// File&apos;s type is unknown.
 /// </para>
 /// </summary>
 
@@ -50,7 +50,7 @@ public enum GFileType
 	G_FILE_TYPE_SYMBOLIC_LINK = 3,
 /// <summary>
 /// <para>
-/// File is a "special" file, such as a socket, fifo,
+/// File is a &quot;special&quot; file, such as a socket, fifo,
 ///    block device, or character device.
 /// </para>
 /// </summary>

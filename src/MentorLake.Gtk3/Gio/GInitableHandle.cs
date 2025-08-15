@@ -61,7 +61,7 @@ public static class GInitableHandleExtensions
 /// then initialization can be cancelled by triggering the cancellable object
 /// from another thread. If the operation was cancelled, the error
 /// %G_IO_ERROR_CANCELLED will be returned. If @cancellable is not %NULL and
-/// the object doesn't support cancellable initialization the error
+/// the object doesn&apos;t support cancellable initialization the error
 /// %G_IO_ERROR_NOT_SUPPORTED will be returned.
 /// </para>
 /// <para>

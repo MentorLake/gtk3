@@ -4,7 +4,7 @@ namespace MentorLake.Atk;
 /// <para>
 /// A queryable interface which allows AtkHyperlink instances
 /// associated with an AtkObject to be obtained.  AtkHyperlinkImpl
-/// corresponds to AT-SPI's Hyperlink interface, and differs from
+/// corresponds to AT-SPI&apos;s Hyperlink interface, and differs from
 /// AtkHyperlink in that AtkHyperlink is an object type, rather than an
 /// interface, and thus cannot be directly queried. FTW
 /// </para>

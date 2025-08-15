@@ -53,7 +53,7 @@ namespace MentorLake.Gio;
 /// g_free (uri);
 /// </para>
 /// <para>
-/// if (g_file_has_uri_scheme (file, "cdda"))
+/// if (g_file_has_uri_scheme (file, &quot;cdda&quot;))
 ///   {
 ///     // do something special with uri
 ///   }
@@ -756,15 +756,15 @@ public static class GAppInfoHandleExtensions
 /// </para>
 /// <para>
 /// For desktop files, this includes applications that have
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay">NoDisplay=true</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay&quot;&amp;gt;NoDisplay=true&amp;lt;/see&amp;gt;
 /// set or are excluded from display by means of
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin">OnlyShowIn</see>
-/// or <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin">NotShowIn</see>.
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin&quot;&amp;gt;OnlyShowIn&amp;lt;/see&amp;gt;
+/// or &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin&quot;&amp;gt;NotShowIn&amp;lt;/see&amp;gt;.
 /// See [method@Gio.AppInfo.should_show].
 /// </para>
 /// <para>
 /// The returned list does not include applications which have the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden">Hidden</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden&quot;&amp;gt;Hidden&amp;lt;/see&amp;gt;
 /// set.
 /// </para>
 /// </summary>

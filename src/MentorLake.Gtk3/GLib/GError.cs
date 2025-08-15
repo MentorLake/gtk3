@@ -41,7 +41,7 @@ public class GErrorHandle : BaseSafeHandle
 /// <para>
 /// Creates a new #GError; unlike g_error_new(), @message is
 /// not a printf()-style format string. Use this function if
-/// @message contains text you don't have control over,
+/// @message contains text you don&apos;t have control over,
 /// that could include printf() escape sequences.
 /// </para>
 /// </summary>

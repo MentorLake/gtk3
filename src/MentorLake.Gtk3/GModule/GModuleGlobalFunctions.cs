@@ -16,7 +16,7 @@ public class GModuleGlobalFunctions
 /// </para>
 /// <para>
 /// For example, calling g_module_build_path() on a Linux system with a
-/// @directory of `/lib` and a @module_name of "mylibrary" will return
+/// @directory of `/lib` and a @module_name of &quot;mylibrary&quot; will return
 /// `/lib/libmylibrary.so`. On a Windows system, using `\Windows` as the
 /// directory it will return `\Windows\mylibrary.dll`.
 /// </para>

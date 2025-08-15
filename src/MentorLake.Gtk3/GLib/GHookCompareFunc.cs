@@ -14,7 +14,7 @@ namespace MentorLake.GLib;
 /// the #GHook to compare with @new_hook
 /// </param>
 /// <return>
-/// a value <= 0 if @new_hook should be before @sibling
+/// a value &amp;lt;= 0 if @new_hook should be before @sibling
 /// </return>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

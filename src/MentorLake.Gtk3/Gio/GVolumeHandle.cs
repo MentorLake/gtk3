@@ -256,24 +256,22 @@ public static class GVolumeHandleExtensions
 /// either be equal or a prefix of what this function returns. In
 /// other words, in code
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GMount *mount;
 ///   GMount *mount;
 ///   GFile *mount_root
 ///   GFile *volume_activation_root;
-/// </para>
-/// <para>
+/// 
 ///   mount = g_volume_get_mount (volume); // mounted, so never NULL
 ///   mount_root = g_mount_get_root (mount);
 ///   volume_activation_root = g_volume_get_activation_root (volume); // assume not NULL
-/// ]|
-/// then the expression
-/// |[<!-- language="C" -->
+/// </code>
+/// <code>
+///   (g_file_has_prefix (volume_activation_root, mount_root) ||
 ///   (g_file_has_prefix (volume_activation_root, mount_root) ||
 ///    g_file_equal (volume_activation_root, mount_root))
-/// ]|
-/// will always be %TRUE.
-/// </para>
+/// </code>
+/// 
 /// <para>
 /// Activation roots are typically used in #GVolumeMonitor
 /// implementations to find the underlying mount to shadow, see
@@ -354,7 +352,7 @@ public static class GVolumeHandleExtensions
 /// <return>
 /// a newly allocated string containing the
 ///     requested identifier, or %NULL if the #GVolume
-///     doesn't have this kind of identifier
+///     doesn&apos;t have this kind of identifier
 /// </return>
 
 	public static string GetIdentifier(this MentorLake.Gio.GVolumeHandle volume, string kind)
@@ -373,7 +371,7 @@ public static class GVolumeHandleExtensions
 /// a #GVolume
 /// </param>
 /// <return>
-/// a #GMount or %NULL if @volume isn't mounted.
+/// a #GMount or %NULL if @volume isn&apos;t mounted.
 ///     The returned object should be unreffed with g_object_unref()
 ///     when no longer needed.
 /// </return>
@@ -511,7 +509,7 @@ public static class GVolumeHandleExtensions
 /// <para>
 /// If the mount operation succeeded, g_volume_get_mount() on @volume
 /// is guaranteed to return the mount right after calling this
-/// function; there's no need to listen for the 'mount-added' signal on
+/// function; there&apos;s no need to listen for the &apos;mount-added&apos; signal on
 /// #GVolumeMonitor.
 /// </para>
 /// </summary>

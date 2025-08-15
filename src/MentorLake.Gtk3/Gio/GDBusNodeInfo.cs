@@ -14,7 +14,7 @@ public class GDBusNodeInfoHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// The introspection XML must contain exactly one top-level
-/// `<node>` element.
+/// `&amp;lt;node&amp;gt;` element.
 /// </para>
 /// <para>
 /// Note that this routine is using a

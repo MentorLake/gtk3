@@ -56,7 +56,7 @@ public class GThreadHandle : BaseSafeHandle
 /// This behaviour changed in GLib 2.64: before threads on Windows were not
 /// inheriting the thread priority but were spawned with the default priority.
 /// Starting with GLib 2.64 the behaviour is now consistent between Windows and
-/// POSIX and all threads inherit their parent thread's priority.
+/// POSIX and all threads inherit their parent thread&apos;s priority.
 /// </para>
 /// </summary>
 
@@ -145,7 +145,7 @@ public static class GThreadExtensions
 /// </para>
 /// <para>
 /// Any thread can wait for any other thread by calling g_thread_join(),
-/// not just its 'creator'. Calling g_thread_join() from multiple threads
+/// not just its &apos;creator&apos;. Calling g_thread_join() from multiple threads
 /// for the same @thread leads to undefined behaviour.
 /// </para>
 /// <para>
@@ -219,7 +219,7 @@ public static class GThreadExtensions
 /// <para>
 /// Note that each thread holds a reference to its #GThread while
 /// it is running, so it is safe to drop your own reference to it
-/// if you don't need it anymore.
+/// if you don&apos;t need it anymore.
 /// </para>
 /// </summary>
 
@@ -440,7 +440,7 @@ public struct GThread
 /// <para>
 /// Note that threads may decide to exit while @thread_func is
 /// running, so without intimate knowledge about the lifetime of
-/// foreign threads, @thread_func shouldn't access the GThread*
+/// foreign threads, @thread_func shouldn&apos;t access the GThread*
 /// pointer passed in as first argument. However, @thread_func will
 /// not be called for threads which are known to have exited already.
 /// </para>

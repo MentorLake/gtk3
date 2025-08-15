@@ -2,7 +2,7 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// > This method can be called with a %NULL action at times.
+/// &amp;gt; This method can be called with a %NULL action at times.
 /// </para>
 /// </summary>
 
@@ -22,7 +22,7 @@ internal class GtkActivatableIfaceExterns
 
 /// <summary>
 /// <para>
-/// > This method can be called with a %NULL action at times.
+/// &amp;gt; This method can be called with a %NULL action at times.
 /// </para>
 /// </summary>
 

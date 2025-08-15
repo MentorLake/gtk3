@@ -6,7 +6,7 @@ namespace MentorLake.Gdk;
 /// state of a #GdkWindow.
 /// </para>
 /// <para>
-/// It's possible to use a #GdkDrawingContext to draw on a #GdkWindow
+/// It&apos;s possible to use a #GdkDrawingContext to draw on a #GdkWindow
 /// via rendering API like Cairo or OpenGL.
 /// </para>
 /// <para>

@@ -87,36 +87,30 @@ public static class GCancellableHandleSignalExtensions
 /// </para>
 /// <para>
 /// An example of how to us this:
-/// |[<!-- language="C" -->
-///     // Make sure we don't do unnecessary work if already cancelled
+/// <code>
+///     // Make sure we don&apos;t do unnecessary work if already cancelled
+///     // Make sure we don&apos;t do unnecessary work if already cancelled
 ///     if (g_cancellable_set_error_if_cancelled (cancellable, error))
 ///       return;
-/// </para>
-/// <para>
+/// 
 ///     // Set up all the data needed to be able to handle cancellation
 ///     // of the operation
 ///     my_data = my_data_new (...);
-/// </para>
-/// <para>
+/// 
 ///     id = 0;
 ///     if (cancellable)
 ///       id = g_cancellable_connect (cancellable,
 ///     			      G_CALLBACK (cancelled_handler)
 ///     			      data, NULL);
-/// </para>
-/// <para>
+/// 
 ///     // cancellable operation here...
-/// </para>
-/// <para>
+/// 
 ///     g_cancellable_disconnect (cancellable, id);
-/// </para>
-/// <para>
+/// 
 ///     // cancelled_handler is never called after this, it is now safe
 ///     // to free the data
 ///     my_data_free (my_data);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Note that the cancelled signal is emitted in the thread that
 /// the user cancelled from, which may be the main thread. So, the
 /// cancellable signal should not do something that can block.
@@ -199,36 +193,30 @@ public static class GCancellableHandleSignalDelegates
 /// </para>
 /// <para>
 /// An example of how to us this:
-/// |[<!-- language="C" -->
-///     // Make sure we don't do unnecessary work if already cancelled
+/// <code>
+///     // Make sure we don&apos;t do unnecessary work if already cancelled
+///     // Make sure we don&apos;t do unnecessary work if already cancelled
 ///     if (g_cancellable_set_error_if_cancelled (cancellable, error))
 ///       return;
-/// </para>
-/// <para>
+/// 
 ///     // Set up all the data needed to be able to handle cancellation
 ///     // of the operation
 ///     my_data = my_data_new (...);
-/// </para>
-/// <para>
+/// 
 ///     id = 0;
 ///     if (cancellable)
 ///       id = g_cancellable_connect (cancellable,
 ///     			      G_CALLBACK (cancelled_handler)
 ///     			      data, NULL);
-/// </para>
-/// <para>
+/// 
 ///     // cancellable operation here...
-/// </para>
-/// <para>
+/// 
 ///     g_cancellable_disconnect (cancellable, id);
-/// </para>
-/// <para>
+/// 
 ///     // cancelled_handler is never called after this, it is now safe
 ///     // to free the data
 ///     my_data_free (my_data);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Note that the cancelled signal is emitted in the thread that
 /// the user cancelled from, which may be the main thread. So, the
 /// cancellable signal should not do something that can block.
@@ -267,7 +255,7 @@ public static class GCancellableHandleExtensions
 /// The convention within GIO is that cancelling an asynchronous
 /// operation causes it to complete asynchronously. That is, if you
 /// cancel the operation from the same thread in which it is running,
-/// then the operation's #GAsyncReadyCallback will not be invoked until
+/// then the operation&apos;s #GAsyncReadyCallback will not be invoked until
 /// the application returns to the main loop.
 /// </para>
 /// </summary>

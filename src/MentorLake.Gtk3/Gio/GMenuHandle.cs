@@ -195,7 +195,7 @@ public static class GMenuHandleExtensions
 /// Inserts @item into @menu.
 /// </para>
 /// <para>
-/// The "insertion" is actually done by copying all of the attribute and
+/// The &quot;insertion&quot; is actually done by copying all of the attribute and
 /// link values of @item and using them to form a new item within @menu.
 /// As such, @item itself is not really inserted, but rather, a menu item
 /// that is exactly the same as the one presently described by @item.
@@ -206,12 +206,12 @@ public static class GMenuHandleExtensions
 /// again (at which point its updated values will be copied).
 /// </para>
 /// <para>
-/// You should probably just free @item once you're done.
+/// You should probably just free @item once you&apos;re done.
 /// </para>
 /// <para>
 /// There are many convenience functions to take care of common cases.
 /// See g_menu_insert(), g_menu_insert_section() and
-/// g_menu_insert_submenu() as well as "prepend" and "append" variants of
+/// g_menu_insert_submenu() as well as &quot;prepend&quot; and &quot;append&quot; variants of
 /// each of these functions.
 /// </para>
 /// </summary>

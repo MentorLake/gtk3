@@ -59,7 +59,7 @@ public struct GActionEntry
 public string name;
 	/// <summary>
 /// <para>
-/// the callback to connect to the "activate" signal of the action.
+/// the callback to connect to the &quot;activate&quot; signal of the action.
 ///   Since GLib 2.40, this can be `NULL` for stateful actions, in which case
 ///   the default handler is used. For boolean-stated actions with no
 ///   parameter, this is a toggle. For other state types (and parameter type
@@ -90,7 +90,7 @@ public string parameter_type;
 public string state;
 	/// <summary>
 /// <para>
-/// the callback to connect to the "change-state" signal of the
+/// the callback to connect to the &quot;change-state&quot; signal of the
 ///   action.  All stateful actions should provide a handler here; stateless
 ///   actions should not.
 /// </para>

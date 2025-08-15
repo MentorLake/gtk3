@@ -35,7 +35,7 @@ public enum GApplicationFlags : uint
 	G_APPLICATION_IS_SERVICE = 1,
 /// <summary>
 /// <para>
-/// Don't try to become the primary instance.
+/// Don&apos;t try to become the primary instance.
 /// </para>
 /// </summary>
 

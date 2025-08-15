@@ -16,25 +16,23 @@ public class graphene_point_tHandle : BaseSafeHandle
 /// The coordinates of the returned point are (0, 0).
 /// </para>
 /// <para>
-/// It's possible to chain this function with graphene_point_init()
+/// It&apos;s possible to chain this function with graphene_point_init()
 /// or graphene_point_init_from_point(), e.g.:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   graphene_point_t *
 ///   graphene_point_t *
 ///   point_new (float x, float y)
 ///   {
 ///     return graphene_point_init (graphene_point_alloc (), x, y);
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   graphene_point_t *
 ///   point_copy (const graphene_point_t *p)
 ///   {
 ///     return graphene_point_init_from_point (graphene_point_alloc (), p);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <return>
@@ -130,7 +128,7 @@ public static class graphene_point_tExtensions
 /// Initializes @p to the given @x and @y coordinates.
 /// </para>
 /// <para>
-/// It's safe to call this function multiple times.
+/// It&apos;s safe to call this function multiple times.
 /// </para>
 /// </summary>
 

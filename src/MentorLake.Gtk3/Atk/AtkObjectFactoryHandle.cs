@@ -28,7 +28,7 @@ public static class AtkObjectFactoryHandleExtensions
 /// </summary>
 
 /// <param name="factory">
-/// The #AtkObjectFactory associated with @obj's
+/// The #AtkObjectFactory associated with @obj&apos;s
 /// object type
 /// </param>
 /// <param name="obj">

@@ -10,13 +10,13 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The number of touches that a #GtkGesture need to be recognized is controlled
 /// by the #GtkGesture:n-points property, if a gesture is keeping track of less
-/// or more than that number of sequences, it won't check wether the gesture
+/// or more than that number of sequences, it won&apos;t check wether the gesture
 /// is recognized.
 /// </para>
 /// <para>
 /// As soon as the gesture has the expected number of touches, the gesture will
 /// run the #GtkGesture::check signal regularly on input events until the gesture
-/// is recognized, the criteria to consider a gesture as "recognized" is left to
+/// is recognized, the criteria to consider a gesture as &quot;recognized&quot; is left to
 /// #GtkGesture subclasses.
 /// </para>
 /// <para>
@@ -74,7 +74,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// If a sequence enters into the #GTK_EVENT_SEQUENCE_DENIED state, the gesture
 /// group will effectively ignore the sequence, letting events go unstopped
-/// through the gesture, but the "slot" will still remain occupied while
+/// through the gesture, but the &quot;slot&quot; will still remain occupied while
 /// the touch is active.
 /// </para>
 /// <para>
@@ -96,7 +96,7 @@ namespace MentorLake.Gtk;
 /// again.
 /// </para>
 /// <para>
-/// Sequence states can't be changed freely, see gtk_gesture_set_sequence_state()
+/// Sequence states can&apos;t be changed freely, see gtk_gesture_set_sequence_state()
 /// to know about the possible lifetimes of a #GdkEventSequence.
 /// </para>
 /// <para>
@@ -125,8 +125,8 @@ public static class GtkGestureHandleSignalExtensions
 /// </para>
 /// <para>
 /// Note: These conditions may also happen when an extra touch (eg. a third touch
-/// on a 2-touches gesture) is lifted, in that situation @sequence won't pertain
-/// to the current set of active touches, so don't rely on this being true.
+/// on a 2-touches gesture) is lifted, in that situation @sequence won&apos;t pertain
+/// to the current set of active touches, so don&apos;t rely on this being true.
 /// </para>
 /// </summary>
 
@@ -163,7 +163,7 @@ public static class GtkGestureHandleSignalExtensions
 /// This signal is emitted whenever a sequence is cancelled. This usually
 /// happens on active touches when gtk_event_controller_reset() is called
 /// on @gesture (manually, due to grabs...), or the individual @sequence
-/// was claimed by parent widgets' controllers (see gtk_gesture_set_sequence_state()).
+/// was claimed by parent widgets&apos; controllers (see gtk_gesture_set_sequence_state()).
 /// </para>
 /// <para>
 /// @gesture must forget everything about @sequence as a reaction to this signal.
@@ -411,8 +411,8 @@ public static class GtkGestureHandleSignalDelegates
 /// </para>
 /// <para>
 /// Note: These conditions may also happen when an extra touch (eg. a third touch
-/// on a 2-touches gesture) is lifted, in that situation @sequence won't pertain
-/// to the current set of active touches, so don't rely on this being true.
+/// on a 2-touches gesture) is lifted, in that situation @sequence won&apos;t pertain
+/// to the current set of active touches, so don&apos;t rely on this being true.
 /// </para>
 /// </summary>
 
@@ -433,7 +433,7 @@ public delegate void begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalType
 /// This signal is emitted whenever a sequence is cancelled. This usually
 /// happens on active touches when gtk_event_controller_reset() is called
 /// on @gesture (manually, due to grabs...), or the individual @sequence
-/// was claimed by parent widgets' controllers (see gtk_gesture_set_sequence_state()).
+/// was claimed by parent widgets&apos; controllers (see gtk_gesture_set_sequence_state()).
 /// </para>
 /// <para>
 /// @gesture must forget everything about @sequence as a reaction to this signal.
@@ -779,7 +779,7 @@ public static class GtkGestureHandleExtensions
 /// on one will transfer the same value to the others.
 /// </para>
 /// <para>
-/// Groups also perform an "implicit grabbing" of sequences, if a
+/// Groups also perform an &quot;implicit grabbing&quot; of sequences, if a
 /// #GdkEventSequence state is set to #GTK_EVENT_SEQUENCE_CLAIMED on one group,
 /// every other gesture group attached to the same #GtkWidget will switch the
 /// state for that sequence to #GTK_EVENT_SEQUENCE_DENIED.
@@ -910,8 +910,8 @@ public static class GtkGestureHandleExtensions
 /// the other gesture knows about the sequence. A safe way to
 /// perform this could be:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// static void
 /// static void
 /// first_gesture_begin_cb (GtkGesture       *first_gesture,
 ///                         GdkEventSequence *sequence,
@@ -920,8 +920,7 @@ public static class GtkGestureHandleExtensions
 ///   gtk_gesture_set_sequence_state (first_gesture, sequence, GTK_EVENT_SEQUENCE_CLAIMED);
 ///   gtk_gesture_set_sequence_state (second_gesture, sequence, GTK_EVENT_SEQUENCE_DENIED);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// second_gesture_begin_cb (GtkGesture       *second_gesture,
 ///                          GdkEventSequence *sequence,
@@ -930,12 +929,11 @@ public static class GtkGestureHandleExtensions
 ///   if (gtk_gesture_get_sequence_state (first_gesture, sequence) == GTK_EVENT_SEQUENCE_CLAIMED)
 ///     gtk_gesture_set_sequence_state (second_gesture, sequence, GTK_EVENT_SEQUENCE_DENIED);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// If both gestures are in the same group, just set the state on
 /// the gesture emitting the event, the sequence will be already
-/// be initialized to the group's global state when the second
+/// be initialized to the group&apos;s global state when the second
 /// gesture processes the event.
 /// </para>
 /// </summary>

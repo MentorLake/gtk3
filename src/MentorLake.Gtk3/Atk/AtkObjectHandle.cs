@@ -37,7 +37,7 @@ public static class AtkObjectHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The "active-descendant-changed" signal is emitted by an object
+/// The &quot;active-descendant-changed&quot; signal is emitted by an object
 /// which has the state ATK_STATE_MANAGES_DESCENDANTS when the focus
 /// object in the object changes. For instance, a table will emit the
 /// signal when the cell in the table which has focus changes.
@@ -74,7 +74,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "announcement" signal can be emitted to pass an announcement on to
+/// The &quot;announcement&quot; signal can be emitted to pass an announcement on to
 /// be read by a screen reader.
 /// </para>
 /// <para>
@@ -112,7 +112,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "attribute-changed" signal should be emitted when one of an object's
+/// The &quot;attribute-changed&quot; signal should be emitted when one of an object&apos;s
 /// attributes changes.
 /// </para>
 /// </summary>
@@ -147,9 +147,9 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The signal "children-changed" is emitted when a child is added or
-/// removed from an object. It supports two details: "add" and
-/// "remove"
+/// The signal &quot;children-changed&quot; is emitted when a child is added or
+/// removed from an object. It supports two details: &quot;add&quot; and
+/// &quot;remove&quot;
 /// </para>
 /// </summary>
 
@@ -183,7 +183,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The signal "focus-event" is emitted when an object gained or lost
+/// The signal &quot;focus-event&quot; is emitted when an object gained or lost
 /// focus.
 /// </para>
 /// </summary>
@@ -218,7 +218,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "notification" signal can be emitted to pass an announcement on to
+/// The &quot;notification&quot; signal can be emitted to pass an announcement on to
 /// be read by a screen reader.
 /// </para>
 /// </summary>
@@ -253,7 +253,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The signal "property-change" is emitted when an object's property
+/// The signal &quot;property-change&quot; is emitted when an object&apos;s property
 /// value changes. @arg1 contains an #AtkPropertyValues with the name
 /// and the new value of the property whose value has changed. Note
 /// that, as with GObject notify, getting this signal does not
@@ -266,7 +266,7 @@ public static class AtkObjectHandleSignalExtensions
 /// g_object_notify() to emit property-changed
 /// notifications. #AtkObject::property-changed is needed by the
 /// implementation of atk_add_global_event_listener() because GObject
-/// notify doesn't support emission hooks.
+/// notify doesn&apos;t support emission hooks.
 /// </para>
 /// </summary>
 
@@ -300,7 +300,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "state-change" signal is emitted when an object's state
+/// The &quot;state-change&quot; signal is emitted when an object&apos;s state
 /// changes.  The detail value identifies the state type which has
 /// changed.
 /// </para>
@@ -336,7 +336,7 @@ public static class AtkObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "visible-data-changed" signal is emitted when the visual
+/// The &quot;visible-data-changed&quot; signal is emitted when the visual
 /// appearance of the object changed.
 /// </para>
 /// </summary>
@@ -418,7 +418,7 @@ public class AttributeChangedSignal
 	public string Arg1;
 /// <summary>
 /// <para>
-/// the attribute's new value, or %null if not available.
+/// the attribute&apos;s new value, or %null if not available.
 /// </para>
 /// </summary>
 
@@ -545,7 +545,7 @@ public static class AtkObjectHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The "active-descendant-changed" signal is emitted by an object
+/// The &quot;active-descendant-changed&quot; signal is emitted by an object
 /// which has the state ATK_STATE_MANAGES_DESCENDANTS when the focus
 /// object in the object changes. For instance, a table will emit the
 /// signal when the cell in the table which has focus changes.
@@ -566,7 +566,7 @@ public delegate void active_descendant_changed([MarshalAs(UnmanagedType.CustomMa
 
 /// <summary>
 /// <para>
-/// The "announcement" signal can be emitted to pass an announcement on to
+/// The &quot;announcement&quot; signal can be emitted to pass an announcement on to
 /// be read by a screen reader.
 /// </para>
 /// <para>
@@ -588,7 +588,7 @@ public delegate void announcement([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "attribute-changed" signal should be emitted when one of an object's
+/// The &quot;attribute-changed&quot; signal should be emitted when one of an object&apos;s
 /// attributes changes.
 /// </para>
 /// </summary>
@@ -600,7 +600,7 @@ public delegate void announcement([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 ///          available.
 /// </param>
 /// <param name="arg2">
-/// the attribute's new value, or %null if not available.
+/// the attribute&apos;s new value, or %null if not available.
 /// </param>
 /// <param name="user_data">
 /// </param>
@@ -611,9 +611,9 @@ public delegate void attribute_changed([MarshalAs(UnmanagedType.CustomMarshaler,
 
 /// <summary>
 /// <para>
-/// The signal "children-changed" is emitted when a child is added or
-/// removed from an object. It supports two details: "add" and
-/// "remove"
+/// The signal &quot;children-changed&quot; is emitted when a child is added or
+/// removed from an object. It supports two details: &quot;add&quot; and
+/// &quot;remove&quot;
 /// </para>
 /// </summary>
 
@@ -639,7 +639,7 @@ public delegate void children_changed([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 /// <summary>
 /// <para>
-/// The signal "focus-event" is emitted when an object gained or lost
+/// The signal &quot;focus-event&quot; is emitted when an object gained or lost
 /// focus.
 /// </para>
 /// </summary>
@@ -659,7 +659,7 @@ public delegate void focus_event([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "notification" signal can be emitted to pass an announcement on to
+/// The &quot;notification&quot; signal can be emitted to pass an announcement on to
 /// be read by a screen reader.
 /// </para>
 /// </summary>
@@ -682,7 +682,7 @@ public delegate void notification([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The signal "property-change" is emitted when an object's property
+/// The signal &quot;property-change&quot; is emitted when an object&apos;s property
 /// value changes. @arg1 contains an #AtkPropertyValues with the name
 /// and the new value of the property whose value has changed. Note
 /// that, as with GObject notify, getting this signal does not
@@ -695,7 +695,7 @@ public delegate void notification([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// g_object_notify() to emit property-changed
 /// notifications. #AtkObject::property-changed is needed by the
 /// implementation of atk_add_global_event_listener() because GObject
-/// notify doesn't support emission hooks.
+/// notify doesn&apos;t support emission hooks.
 /// </para>
 /// </summary>
 
@@ -714,7 +714,7 @@ public delegate void property_change([MarshalAs(UnmanagedType.CustomMarshaler, M
 
 /// <summary>
 /// <para>
-/// The "state-change" signal is emitted when an object's state
+/// The &quot;state-change&quot; signal is emitted when an object&apos;s state
 /// changes.  The detail value identifies the state type which has
 /// changed.
 /// </para>
@@ -737,7 +737,7 @@ public delegate void state_change([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "visible-data-changed" signal is emitted when the visual
+/// The &quot;visible-data-changed&quot; signal is emitted when the visual
 /// appearance of the object changed.
 /// </para>
 /// </summary>
@@ -828,7 +828,7 @@ public static class AtkObjectHandleExtensions
 /// Get a list of properties applied to this object as a whole, as an #AtkAttributeSet consisting of
 /// name-value pairs. As such these attributes may be considered weakly-typed properties or annotations,
 /// as distinct from strongly-typed object data available via other get/set methods.
-/// Not all objects have explicit "name-value pair" #AtkAttributeSet properties.
+/// Not all objects have explicit &quot;name-value pair&quot; #AtkAttributeSet properties.
 /// </para>
 /// </summary>
 
@@ -1271,10 +1271,10 @@ public static class AtkObjectHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the accessible description of the accessible. You can't set
+/// Sets the accessible description of the accessible. You can&apos;t set
 /// the description to NULL. This is reserved for the initial value. In
 /// this aspect NULL is similar to ATK_ROLE_UNKNOWN. If you want to set
-/// the name to a empty value you can use "".
+/// the name to a empty value you can use &quot;&quot;.
 /// </para>
 /// </summary>
 
@@ -1296,9 +1296,9 @@ public static class AtkObjectHandleExtensions
 /// <para>
 /// Sets the help text associated with the accessible. This can be used to
 /// expose context-sensitive information to help a user understand how to
-/// interact with the object. You can't set the help text to NULL.
+/// interact with the object. You can&apos;t set the help text to NULL.
 /// This is reserved for the initial value. If you want to set the name to
-/// an empty value, you can use "".
+/// an empty value, you can use &quot;&quot;.
 /// </para>
 /// </summary>
 
@@ -1306,7 +1306,7 @@ public static class AtkObjectHandleExtensions
 /// an #AtkObject
 /// </param>
 /// <param name="help_text">
-/// a character string to be set as the accessible's help text
+/// a character string to be set as the accessible&apos;s help text
 /// </param>
 
 	public static T SetHelpText<T>(this T accessible, string help_text) where T : AtkObjectHandle
@@ -1318,10 +1318,10 @@ public static class AtkObjectHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the accessible name of the accessible. You can't set the name
+/// Sets the accessible name of the accessible. You can&apos;t set the name
 /// to NULL. This is reserved for the initial value. In this aspect
 /// NULL is similar to ATK_ROLE_UNKNOWN. If you want to set the name to
-/// a empty value you can use "".
+/// a empty value you can use &quot;&quot;.
 /// </para>
 /// </summary>
 

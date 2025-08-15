@@ -9,14 +9,14 @@ namespace MentorLake.Gio;
 /// general, new error codes either only apply to new APIs, or else
 /// replace %G_IO_ERROR_FAILED in cases that were not explicitly
 /// distinguished before. You should therefore avoid writing code like
-/// |[<!-- language="C" -->
+/// <code>
+/// if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_FAILED))
 /// if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_FAILED))
 ///   {
 ///     // Assume that this is EPRINTERONFIRE
 ///     ...
 ///   }
-/// ]|
-/// but should instead treat all unrecognized error codes the same as
+/// </code>
 /// %G_IO_ERROR_FAILED.
 /// </para>
 /// <para>
@@ -66,7 +66,7 @@ public enum GIOErrorEnum
 	G_IO_ERROR_NOT_DIRECTORY = 4,
 /// <summary>
 /// <para>
-/// File is a directory that isn't empty.
+/// File is a directory that isn&apos;t empty.
 /// </para>
 /// </summary>
 
@@ -143,7 +143,7 @@ public enum GIOErrorEnum
 	G_IO_ERROR_NOT_SUPPORTED = 15,
 /// <summary>
 /// <para>
-/// File isn't mounted.
+/// File isn&apos;t mounted.
 /// </para>
 /// </summary>
 
@@ -185,14 +185,14 @@ public enum GIOErrorEnum
 	G_IO_ERROR_READ_ONLY = 21,
 /// <summary>
 /// <para>
-/// Backup couldn't be created.
+/// Backup couldn&apos;t be created.
 /// </para>
 /// </summary>
 
 	G_IO_ERROR_CANT_CREATE_BACKUP = 22,
 /// <summary>
 /// <para>
-/// File's Entity Tag was incorrect.
+/// File&apos;s Entity Tag was incorrect.
 /// </para>
 /// </summary>
 
@@ -227,7 +227,7 @@ public enum GIOErrorEnum
 	G_IO_ERROR_WOULD_BLOCK = 27,
 /// <summary>
 /// <para>
-/// Host couldn't be found (remote operations).
+/// Host couldn&apos;t be found (remote operations).
 /// </para>
 /// </summary>
 
@@ -250,7 +250,7 @@ public enum GIOErrorEnum
 /// <summary>
 /// <para>
 /// The current process has too many files
-///     open and can't open any more. Duplicate descriptors do count toward
+///     open and can&apos;t open any more. Duplicate descriptors do count toward
 ///     this limit. Since 2.20
 /// </para>
 /// </summary>
@@ -287,7 +287,7 @@ public enum GIOErrorEnum
 /// <summary>
 /// <para>
 /// A remote object generated an error that
-///     doesn't correspond to a locally registered #GError error
+///     doesn&apos;t correspond to a locally registered #GError error
 ///     domain. Use g_dbus_error_get_remote_error() to extract the D-Bus
 ///     error name and g_dbus_error_strip_remote_error() to fix up the
 ///     message so it matches what was received on the wire. Since 2.26.
@@ -356,7 +356,7 @@ public enum GIOErrorEnum
 /// <para>
 /// Connection closed by peer. Note that this
 ///     is the same code as %G_IO_ERROR_BROKEN_PIPE; before 2.44 some
-///     "connection closed" errors returned %G_IO_ERROR_BROKEN_PIPE, but others
+///     &quot;connection closed&quot; errors returned %G_IO_ERROR_BROKEN_PIPE, but others
 ///     returned %G_IO_ERROR_FAILED. Now they should all return the same
 ///     value, which has this more logical name. Since 2.44.
 /// </para>

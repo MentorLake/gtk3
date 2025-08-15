@@ -152,7 +152,7 @@ public enum GSpawnError
 /// <summary>
 /// <para>
 /// Some other fatal failure,
-///   `error->message` should explain.
+///   `error-&amp;gt;message` should explain.
 /// </para>
 /// </summary>
 

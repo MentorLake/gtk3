@@ -86,7 +86,7 @@ public struct GDBusAnnotationInfo
 public int ref_count;
 	/// <summary>
 /// <para>
-/// The name of the annotation, e.g. "org.freedesktop.DBus.Deprecated".
+/// The name of the annotation, e.g. &quot;org.freedesktop.DBus.Deprecated&quot;.
 /// </para>
 /// </summary>
 

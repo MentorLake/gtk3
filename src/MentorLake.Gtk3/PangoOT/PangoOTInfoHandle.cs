@@ -82,7 +82,7 @@ public static class PangoOTInfoHandleExtensions
 /// If the language is not found, sets @language_index to %PANGO_OT_DEFAULT_LANGUAGE
 /// and the required feature of the default language system is returned in
 /// required_feature_index. For best compatibility with some fonts, also
-/// searches the language system tag 'dflt' before falling back to the default
+/// searches the language system tag &apos;dflt&apos; before falling back to the default
 /// language system, but that is transparent to the user. The user can simply
 /// ignore the return value of this function to automatically fall back to the
 /// default language system.
@@ -123,7 +123,7 @@ public static class PangoOTInfoHandleExtensions
 /// Finds the index of a script.
 /// </para>
 /// <para>
-/// If not found, tries to find the 'DFLT' and then 'dflt' scripts and
+/// If not found, tries to find the &apos;DFLT&apos; and then &apos;dflt&apos; scripts and
 /// return the index of that in @script_index. If none of those is found
 /// either, %PANGO_OT_NO_SCRIPT is placed in @script_index.
 /// </para>
@@ -131,7 +131,7 @@ public static class PangoOTInfoHandleExtensions
 /// All other functions taking an input script_index parameter know
 /// how to handle %PANGO_OT_NO_SCRIPT, so one can ignore the return
 /// value of this function completely and proceed, to enjoy the automatic
-/// fallback to the 'DFLT'/'dflt' script.
+/// fallback to the &apos;DFLT&apos;/&apos;dflt&apos; script.
 /// </para>
 /// </summary>
 

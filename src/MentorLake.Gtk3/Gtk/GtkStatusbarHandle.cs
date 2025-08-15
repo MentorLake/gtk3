@@ -2,8 +2,8 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// A #GtkStatusbar is usually placed along the bottom of an application's
-/// main #GtkWindow. It may provide a regular commentary of the application's
+/// A #GtkStatusbar is usually placed along the bottom of an application&apos;s
+/// main #GtkWindow. It may provide a regular commentary of the application&apos;s
 /// status (as is usually the case in a web browser, for example), or may be
 /// used to simply output a message when the status changes, (when an upload
 /// is complete in an FTP client, for example).
@@ -68,7 +68,7 @@ public static class GtkStatusbarHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// Is emitted whenever a new message is popped off a statusbar's stack.
+/// Is emitted whenever a new message is popped off a statusbar&apos;s stack.
 /// </para>
 /// </summary>
 
@@ -102,7 +102,7 @@ public static class GtkStatusbarHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// Is emitted whenever a new message gets pushed onto a statusbar's stack.
+/// Is emitted whenever a new message gets pushed onto a statusbar&apos;s stack.
 /// </para>
 /// </summary>
 
@@ -189,7 +189,7 @@ public static class GtkStatusbarHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// Is emitted whenever a new message is popped off a statusbar's stack.
+/// Is emitted whenever a new message is popped off a statusbar&apos;s stack.
 /// </para>
 /// </summary>
 
@@ -210,7 +210,7 @@ public delegate void text_popped([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// Is emitted whenever a new message gets pushed onto a statusbar's stack.
+/// Is emitted whenever a new message gets pushed onto a statusbar&apos;s stack.
 /// </para>
 /// </summary>
 
@@ -356,7 +356,7 @@ public static class GtkStatusbarHandleExtensions
 
 /// <summary>
 /// <para>
-/// Forces the removal of all messages from a statusbar's
+/// Forces the removal of all messages from a statusbar&apos;s
 /// stack with the exact @context_id.
 /// </para>
 /// </summary>

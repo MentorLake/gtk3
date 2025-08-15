@@ -11,9 +11,9 @@ namespace MentorLake.GLib;
 /// of that manual.
 /// </para>
 /// <para>
-/// It's not very portable to make detailed assumptions about exactly
+/// It&apos;s not very portable to make detailed assumptions about exactly
 /// which errors will be returned from a given operation. Some errors
-/// don't occur on some systems, etc., sometimes there are subtle
+/// don&apos;t occur on some systems, etc., sometimes there are subtle
 /// differences in when a system will report a given error, etc.
 /// </para>
 /// </summary>
@@ -55,8 +55,8 @@ public enum GFileError
 	G_FILE_ERROR_NAMETOOLONG = 3,
 /// <summary>
 /// <para>
-/// No such file or directory. This is a "file
-///     doesn't exist" error for ordinary files that are referenced in
+/// No such file or directory. This is a &quot;file
+///     doesn&apos;t exist&quot; error for ordinary files that are referenced in
 ///     contexts where they are expected to already exist.
 /// </para>
 /// </summary>
@@ -64,7 +64,7 @@ public enum GFileError
 	G_FILE_ERROR_NOENT = 4,
 /// <summary>
 /// <para>
-/// A file that isn't a directory was specified when
+/// A file that isn&apos;t a directory was specified when
 ///     a directory is required.
 /// </para>
 /// </summary>
@@ -74,7 +74,7 @@ public enum GFileError
 /// <para>
 /// No such device or address. The system tried to
 ///     use the device represented by a file you specified, and it
-///     couldn't find the device. This can mean that the device file was
+///     couldn&apos;t find the device. This can mean that the device file was
 ///     installed incorrectly, or that the physical device is missing or
 ///     not correctly attached to the computer.
 /// </para>
@@ -91,8 +91,8 @@ public enum GFileError
 	G_FILE_ERROR_NODEV = 7,
 /// <summary>
 /// <para>
-/// The directory containing the new link can't be
-///     modified because it's on a read-only file system.
+/// The directory containing the new link can&apos;t be
+///     modified because it&apos;s on a read-only file system.
 /// </para>
 /// </summary>
 
@@ -107,7 +107,7 @@ public enum GFileError
 /// <summary>
 /// <para>
 /// You passed in a pointer to bad memory.
-///     (GLib won't reliably return this, don't pass in pointers to bad
+///     (GLib won&apos;t reliably return this, don&apos;t pass in pointers to bad
 ///     memory.)
 /// </para>
 /// </summary>
@@ -141,7 +141,7 @@ public enum GFileError
 /// <summary>
 /// <para>
 /// The current process has too many files open and
-///     can't open any more. Duplicate descriptors do count toward this
+///     can&apos;t open any more. Duplicate descriptors do count toward this
 ///     limit.
 /// </para>
 /// </summary>
@@ -177,10 +177,10 @@ public enum GFileError
 /// <para>
 /// Broken pipe; there is no process reading from the
 ///     other end of a pipe. Every library function that returns this
-///     error code also generates a 'SIGPIPE' signal; this signal
+///     error code also generates a &apos;SIGPIPE&apos; signal; this signal
 ///     terminates the program if not handled or blocked. Thus, your
 ///     program will never actually see this code unless it has handled
-///     or blocked 'SIGPIPE'.
+///     or blocked &apos;SIGPIPE&apos;.
 /// </para>
 /// </summary>
 
@@ -231,7 +231,7 @@ public enum GFileError
 /// <summary>
 /// <para>
 /// Does not correspond to a UNIX error code; this
-///    is the standard "failed for unspecified reason" error code present
+///    is the standard &quot;failed for unspecified reason&quot; error code present
 ///    in all #GError error code enumerations. Returned if no specific
 ///    code applies.
 /// </para>

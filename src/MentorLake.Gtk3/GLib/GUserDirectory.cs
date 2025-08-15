@@ -18,56 +18,56 @@ public enum GUserDirectory
 {
 /// <summary>
 /// <para>
-/// the user's Desktop directory
+/// the user&apos;s Desktop directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_DESKTOP = 0,
 /// <summary>
 /// <para>
-/// the user's Documents directory
+/// the user&apos;s Documents directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_DOCUMENTS = 1,
 /// <summary>
 /// <para>
-/// the user's Downloads directory
+/// the user&apos;s Downloads directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_DOWNLOAD = 2,
 /// <summary>
 /// <para>
-/// the user's Music directory
+/// the user&apos;s Music directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_MUSIC = 3,
 /// <summary>
 /// <para>
-/// the user's Pictures directory
+/// the user&apos;s Pictures directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_PICTURES = 4,
 /// <summary>
 /// <para>
-/// the user's shared directory
+/// the user&apos;s shared directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_PUBLIC_SHARE = 5,
 /// <summary>
 /// <para>
-/// the user's Templates directory
+/// the user&apos;s Templates directory
 /// </para>
 /// </summary>
 
 	G_USER_DIRECTORY_TEMPLATES = 6,
 /// <summary>
 /// <para>
-/// the user's Movies directory
+/// the user&apos;s Movies directory
 /// </para>
 /// </summary>
 

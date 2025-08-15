@@ -31,14 +31,14 @@ public class GVolumeMonitorHandle : GObjectHandle
 /// If the return value is not %NULL, the caller must associate the
 /// returned #GVolume object with the #GMount. This involves returning
 /// it in its g_mount_get_volume() implementation. The caller must
-/// also listen for the "removed" signal on the returned object
+/// also listen for the &quot;removed&quot; signal on the returned object
 /// and give up its reference when handling that signal
 /// </para>
 /// <para>
 /// Similarly, if implementing g_volume_monitor_adopt_orphan_mount(),
 /// the implementor must take a reference to @mount and return it in
 /// its g_volume_get_mount() implemented. Also, the implementor must
-/// listen for the "unmounted" signal on @mount and give up its
+/// listen for the &quot;unmounted&quot; signal on @mount and give up its
 /// reference upon handling that signal.
 /// </para>
 /// <para>
@@ -54,7 +54,7 @@ public class GVolumeMonitorHandle : GObjectHandle
 /// <para>
 /// The other is for implementing a #GVolumeMonitor whose sole purpose
 /// is to return #GVolume objects representing entries in the users
-/// "favorite servers" list or similar.
+/// &quot;favorite servers&quot; list or similar.
 /// </para>
 /// </summary>
 

@@ -38,15 +38,15 @@ namespace MentorLake.Gio;
 ///   GList *l;
 /// </para>
 /// <para>
-///   self->priv->state = INITIALIZED;
+///   self-&amp;gt;priv-&amp;gt;state = INITIALIZED;
 /// </para>
 /// <para>
-///   for (l = self->priv->init_results; l != NULL; l = l->next)
+///   for (l = self-&amp;gt;priv-&amp;gt;init_results; l != NULL; l = l-&amp;gt;next)
 ///     {
-///       GTask *task = l->data;
+///       GTask *task = l-&amp;gt;data;
 /// </para>
 /// <para>
-///       if (self->priv->success)
+///       if (self-&amp;gt;priv-&amp;gt;success)
 ///         g_task_return_boolean (task, TRUE);
 ///       else
 ///         g_task_return_new_error (task, ...);
@@ -54,8 +54,8 @@ namespace MentorLake.Gio;
 ///     }
 /// </para>
 /// <para>
-///   g_list_free (self->priv->init_results);
-///   self->priv->init_results = NULL;
+///   g_list_free (self-&amp;gt;priv-&amp;gt;init_results);
+///   self-&amp;gt;priv-&amp;gt;init_results = NULL;
 /// }
 /// </para>
 /// <para>
@@ -74,20 +74,20 @@ namespace MentorLake.Gio;
 ///   g_task_set_name (task, G_STRFUNC);
 /// </para>
 /// <para>
-///   switch (self->priv->state)
+///   switch (self-&amp;gt;priv-&amp;gt;state)
 ///     {
 ///       case NOT_INITIALIZED:
 ///         _foo_get_ready (self);
-///         self->priv->init_results = g_list_append (self->priv->init_results,
+///         self-&amp;gt;priv-&amp;gt;init_results = g_list_append (self-&amp;gt;priv-&amp;gt;init_results,
 ///                                                   task);
-///         self->priv->state = INITIALIZING;
+///         self-&amp;gt;priv-&amp;gt;state = INITIALIZING;
 ///         break;
 ///       case INITIALIZING:
-///         self->priv->init_results = g_list_append (self->priv->init_results,
+///         self-&amp;gt;priv-&amp;gt;init_results = g_list_append (self-&amp;gt;priv-&amp;gt;init_results,
 ///                                                   task);
 ///         break;
 ///       case INITIALIZED:
-///         if (!self->priv->success)
+///         if (!self-&amp;gt;priv-&amp;gt;success)
 ///           g_task_return_new_error (task, ...);
 ///         else
 ///           g_task_return_boolean (task, TRUE);
@@ -116,8 +116,8 @@ namespace MentorLake.Gio;
 ///   GAsyncInitableIface *iface = g_iface;
 /// </para>
 /// <para>
-///   iface->init_async = foo_init_async;
-///   iface->init_finish = foo_init_finish;
+///   iface-&amp;gt;init_async = foo_init_async;
+///   iface-&amp;gt;init_finish = foo_init_finish;
 /// }
 /// ```
 /// </para>
@@ -156,7 +156,7 @@ public static class GAsyncInitableHandleExtensions
 /// %NULL, then initialization can be cancelled by triggering the cancellable
 /// object from another thread. If the operation was cancelled, the error
 /// %G_IO_ERROR_CANCELLED will be returned. If @cancellable is not %NULL, and
-/// the object doesn't support cancellable initialization, the error
+/// the object doesn&apos;t support cancellable initialization, the error
 /// %G_IO_ERROR_NOT_SUPPORTED will be returned.
 /// </para>
 /// <para>

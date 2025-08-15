@@ -19,8 +19,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// scrollbar[.fine-tune]
 /// scrollbar[.fine-tune]
 /// ╰── contents
 ///     ├── [button.up]
@@ -29,15 +29,14 @@ namespace MentorLake.Gtk;
 ///     │   ╰── slider
 ///     ├── [button.up]
 ///     ╰── [button.down]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkScrollbar has a main CSS node with name scrollbar and a subnode for its
 /// contents, with subnodes named trough and slider.
 /// </para>
 /// <para>
 /// The main node gets the style class .fine-tune added when the scrollbar is
-/// in 'fine-tuning' mode.
+/// in &apos;fine-tuning&apos; mode.
 /// </para>
 /// <para>
 /// If steppers are enabled, they are represented by up to four additional

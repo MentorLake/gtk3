@@ -39,7 +39,7 @@ public class GChecksumHandle : BaseSafeHandle
 /// hexadecimal string; or g_checksum_get_digest(), which will return a
 /// vector of raw bytes. Once either g_checksum_get_string() or
 /// g_checksum_get_digest() have been called on a #GChecksum, the checksum
-/// will be closed and it won't be possible to call g_checksum_update()
+/// will be closed and it won&apos;t be possible to call g_checksum_update()
 /// on it anymore.
 /// </para>
 /// </summary>

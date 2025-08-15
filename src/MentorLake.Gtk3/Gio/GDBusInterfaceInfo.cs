@@ -254,7 +254,7 @@ public struct GDBusInterfaceInfo
 public int ref_count;
 	/// <summary>
 /// <para>
-/// The name of the D-Bus interface, e.g. "org.freedesktop.DBus.Properties".
+/// The name of the D-Bus interface, e.g. &quot;org.freedesktop.DBus.Properties&quot;.
 /// </para>
 /// </summary>
 

@@ -11,7 +11,7 @@ namespace MentorLake.Pango;
 /// and [func@find_base_dir] cannot be `PANGO_DIRECTION_WEAK_LTR` or
 /// `PANGO_DIRECTION_WEAK_RTL`, since every character is either neutral
 /// or has a strong direction; on the other hand `PANGO_DIRECTION_NEUTRAL`
-/// doesn't make sense to pass to [func@itemize_with_base_dir].
+/// doesn&apos;t make sense to pass to [func@itemize_with_base_dir].
 /// </para>
 /// <para>
 /// The `PANGO_DIRECTION_TTB_LTR`, `PANGO_DIRECTION_TTB_RTL` values come from

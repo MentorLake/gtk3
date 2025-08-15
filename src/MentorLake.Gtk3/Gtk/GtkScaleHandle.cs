@@ -19,8 +19,8 @@ namespace MentorLake.Gtk;
 /// # GtkScale as GtkBuildable
 /// </para>
 /// <para>
-/// GtkScale supports a custom `<marks>` element, which can contain multiple
-/// `<mark>` elements. The “value” and “position” attributes have the same
+/// GtkScale supports a custom `&amp;lt;marks&amp;gt;` element, which can contain multiple
+/// `&amp;lt;mark&amp;gt;` elements. The “value” and “position” attributes have the same
 /// meaning as gtk_scale_add_mark() parameters of the same name. If the
 /// element is not empty, its content is taken as the markup to show at
 /// the mark. It can be translated with the usual ”translatable” and
@@ -29,8 +29,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// scale[.fine-tune][.marks-before][.marks-after]
 /// scale[.fine-tune][.marks-before][.marks-after]
 /// ├── marks.top
 /// │   ├── mark
@@ -49,15 +49,14 @@ namespace MentorLake.Gtk;
 ///     ┊    ├── indicator
 ///     ┊    ╰── [label]
 ///     ╰── mark
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkScale has a main CSS node with name scale and a subnode for its contents,
 /// with subnodes named trough and slider.
 /// </para>
 /// <para>
 /// The main node gets the style class .fine-tune added when the scale is in
-/// 'fine-tuning' mode.
+/// &apos;fine-tuning&apos; mode.
 /// </para>
 /// <para>
 /// If the scale has an origin (see gtk_scale_set_has_origin()), there is a
@@ -81,7 +80,7 @@ namespace MentorLake.Gtk;
 /// subnode is the first.
 /// </para>
 /// <para>
-/// The main CSS node gets the 'marks-before' and/or 'marks-after' style classes
+/// The main CSS node gets the &apos;marks-before&apos; and/or &apos;marks-after&apos; style classes
 /// added depending on what marks are present.
 /// </para>
 /// <para>
@@ -157,24 +156,25 @@ public static class GtkScaleHandleSignalExtensions
 /// <para>
 /// Signal which allows you to change how the scale value is displayed.
 /// Connect a signal handler which returns an allocated string representing
-/// @value. That string will then be used to display the scale's value.
+/// @value. That string will then be used to display the scale&apos;s value.
 /// </para>
 /// <para>
 /// If no user-provided handlers are installed, the value will be displayed on
 /// its own, rounded according to the value of the #GtkScale:digits property.
 /// </para>
 /// <para>
-/// Here's an example signal handler which displays a value 1.0 as
-/// with "-->1.0<--".
-/// |[<!-- language="C" -->
+/// Here&apos;s an example signal handler which displays a value 1.0 as
+/// with &quot;--&amp;gt;1.0&amp;lt;--&quot;.
+/// <code>
+/// static gchar*
 /// static gchar*
 /// format_value_callback (GtkScale *scale,
 ///                        gdouble   value)
 /// {
-///   return g_strdup_printf ("-->\%0.*g<--",
+///   return g_strdup_printf (&quot;--&amp;gt;\%0.*g&amp;lt;--&quot;,
 ///                           gtk_scale_get_digits (scale), value);
 ///  }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -241,24 +241,25 @@ public static class GtkScaleHandleSignalDelegates
 /// <para>
 /// Signal which allows you to change how the scale value is displayed.
 /// Connect a signal handler which returns an allocated string representing
-/// @value. That string will then be used to display the scale's value.
+/// @value. That string will then be used to display the scale&apos;s value.
 /// </para>
 /// <para>
 /// If no user-provided handlers are installed, the value will be displayed on
 /// its own, rounded according to the value of the #GtkScale:digits property.
 /// </para>
 /// <para>
-/// Here's an example signal handler which displays a value 1.0 as
-/// with "-->1.0<--".
-/// |[<!-- language="C" -->
+/// Here&apos;s an example signal handler which displays a value 1.0 as
+/// with &quot;--&amp;gt;1.0&amp;lt;--&quot;.
+/// <code>
+/// static gchar*
 /// static gchar*
 /// format_value_callback (GtkScale *scale,
 ///                        gdouble   value)
 /// {
-///   return g_strdup_printf ("-->\%0.*g<--",
+///   return g_strdup_printf (&quot;--&amp;gt;\%0.*g&amp;lt;--&quot;,
 ///                           gtk_scale_get_digits (scale), value);
 ///  }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

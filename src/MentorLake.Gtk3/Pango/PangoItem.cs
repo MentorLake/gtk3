@@ -38,7 +38,7 @@ public static class PangoItemExtensions
 /// Add attributes to a `PangoItem`.
 /// </para>
 /// <para>
-/// The idea is that you have attributes that don't affect itemization,
+/// The idea is that you have attributes that don&apos;t affect itemization,
 /// such as font features, so you filter them out using
 /// [method@Pango.AttrList.filter], itemize your text, then reapply the
 /// attributes to the resulting items using this function.
@@ -105,7 +105,7 @@ public static class PangoItemExtensions
 /// of the itemized text.
 /// </para>
 /// <para>
-/// If the item has not been obtained from Pango's itemization
+/// If the item has not been obtained from Pango&apos;s itemization
 /// machinery, then the character offset is not available. In
 /// that case, this function returns -1.
 /// </para>
@@ -135,10 +135,10 @@ public static class PangoItemExtensions
 /// You can think of @split_index as the length of the returned item.
 /// @split_index may not be 0, and it may not be greater than or equal
 /// to the length of @orig (that is, there must be at least one byte
-/// assigned to each item, you can't create a zero-length item).
+/// assigned to each item, you can&apos;t create a zero-length item).
 /// @split_offset is the length of the first item in chars, and must be
-/// provided because the text used to generate the item isn't available,
-/// so `pango_item_split()` can't count the char length of the split items
+/// provided because the text used to generate the item isn&apos;t available,
+/// so `pango_item_split()` can&apos;t count the char length of the split items
 /// itself.
 /// </para>
 /// </summary>

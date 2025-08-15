@@ -176,14 +176,14 @@ public static class GVfsHandleExtensions
 /// <para>
 /// When g_file_parse_name() is called with a parse name obtained from such file,
 /// @parse_name_func will be called to allow the #GFile to be created again. In
-/// that case, it's responsibility of @parse_name_func to make sure the parse
+/// that case, it&apos;s responsibility of @parse_name_func to make sure the parse
 /// name matches what the custom #GFile implementation returned when
 /// g_file_get_parse_name() was previously called. The implementation of
 /// @parse_name_func should not be blocking, and must not call
 /// g_vfs_register_uri_scheme() or g_vfs_unregister_uri_scheme().
 /// </para>
 /// <para>
-/// It's an error to call this function twice with the same scheme. To unregister
+/// It&apos;s an error to call this function twice with the same scheme. To unregister
 /// a custom URI scheme, use g_vfs_unregister_uri_scheme().
 /// </para>
 /// </summary>
@@ -192,7 +192,7 @@ public static class GVfsHandleExtensions
 /// a #GVfs
 /// </param>
 /// <param name="scheme">
-/// an URI scheme, e.g. "http"
+/// an URI scheme, e.g. &quot;http&quot;
 /// </param>
 /// <param name="uri_func">
 /// a #GVfsFileLookupFunc
@@ -239,7 +239,7 @@ public static class GVfsHandleExtensions
 /// a #GVfs
 /// </param>
 /// <param name="scheme">
-/// an URI scheme, e.g. "http"
+/// an URI scheme, e.g. &quot;http&quot;
 /// </param>
 /// <return>
 /// %TRUE if @scheme was successfully unregistered, or %FALSE if a

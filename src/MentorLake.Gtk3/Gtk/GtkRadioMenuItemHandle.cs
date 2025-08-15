@@ -16,32 +16,29 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## How to create a group of radio menu items.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GSList *group = NULL;
 /// GSList *group = NULL;
 /// GtkWidget *item;
 /// gint i;
-/// </para>
-/// <para>
-/// for (i = 0; i < 5; i++)
+/// 
+/// for (i = 0; i &amp;lt; 5; i++)
 /// {
-///   item = gtk_radio_menu_item_new_with_label (group, "This is an example");
+///   item = gtk_radio_menu_item_new_with_label (group, &quot;This is an example&quot;);
 ///   group = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (item));
 ///   if (i == 1)
 ///     gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), TRUE);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// menuitem
 /// menuitem
 /// ├── radio.left
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkRadioMenuItem has a main CSS node with name menuitem, and a subnode
 /// with name radio, which gets the .left or .right style class.
@@ -280,24 +277,20 @@ public static class GtkRadioMenuItemHandleExtensions
 /// <para>
 /// A common way to set up a group of #GtkRadioMenuItem instances is:
 /// </para>
-/// <para>
-/// |[
+/// <code>
 ///   GtkRadioMenuItem *last_item = NULL;
-/// </para>
-/// <para>
+///   GtkRadioMenuItem *last_item = NULL;
+/// 
 ///   while ( ...more items to add... )
 ///     {
 ///       GtkRadioMenuItem *radio_item;
-/// </para>
-/// <para>
+/// 
 ///       radio_item = gtk_radio_menu_item_new (...);
-/// </para>
-/// <para>
+/// 
 ///       gtk_radio_menu_item_join_group (radio_item, last_item);
 ///       last_item = radio_item;
 ///     }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="radio_menu_item">

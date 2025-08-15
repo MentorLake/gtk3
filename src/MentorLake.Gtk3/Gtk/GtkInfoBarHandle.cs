@@ -24,46 +24,41 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// A simple example for using a #GtkInfoBar:
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *widget, *message_label, *content_area;
 /// GtkWidget *widget, *message_label, *content_area;
 /// GtkWidget *grid;
 /// GtkInfoBar *bar;
-/// </para>
-/// <para>
+/// 
 /// // set up info bar
 /// widget = gtk_info_bar_new ();
 /// bar = GTK_INFO_BAR (widget);
 /// grid = gtk_grid_new ();
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_set_no_show_all (widget, TRUE);
-/// message_label = gtk_label_new ("");
+/// message_label = gtk_label_new (&quot;&quot;);
 /// content_area = gtk_info_bar_get_content_area (bar);
 /// gtk_container_add (GTK_CONTAINER (content_area),
 ///                    message_label);
 /// gtk_info_bar_add_button (bar,
-///                          _("_OK"),
+///                          _(&quot;_OK&quot;),
 ///                          GTK_RESPONSE_OK);
 /// g_signal_connect (bar,
-///                   "response",
+///                   &quot;response&quot;,
 ///                   G_CALLBACK (gtk_widget_hide),
 ///                   NULL);
 /// gtk_grid_attach (GTK_GRID (grid),
 ///                  widget,
 ///                  0, 2, 1, 1);
-/// </para>
-/// <para>
+/// 
 /// // ...
-/// </para>
-/// <para>
+/// 
 /// // show an error message
-/// gtk_label_set_text (GTK_LABEL (message_label), "An error occurred!");
+/// gtk_label_set_text (GTK_LABEL (message_label), &quot;An error occurred!&quot;);
 /// gtk_info_bar_set_message_type (bar,
 ///                                GTK_MESSAGE_ERROR);
 /// gtk_widget_show (bar);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// # GtkInfoBar as GtkBuildable
 /// </para>
 /// <para>
@@ -72,8 +67,8 @@ namespace MentorLake.Gtk;
 /// “content_area” and “action_area”.
 /// </para>
 /// <para>
-/// GtkInfoBar supports a custom `<action-widgets>` element, which can contain
-/// multiple `<action-widget>` elements. The “response” attribute specifies a
+/// GtkInfoBar supports a custom `&amp;lt;action-widgets&amp;gt;` element, which can contain
+/// multiple `&amp;lt;action-widget&amp;gt;` elements. The “response” attribute specifies a
 /// numeric response, and the content of the element is the id of widget
 /// (which should be a child of the dialogs @action_area).
 /// </para>
@@ -318,8 +313,8 @@ public static class GtkInfoBarHandleExtensions
 /// <para>
 /// Adds a button with the given text and sets things up so that
 /// clicking the button will emit the “response” signal with the given
-/// response_id. The button is appended to the end of the info bars's
-/// action area. The button widget is returned, but usually you don't
+/// response_id. The button is appended to the end of the info bars&apos;s
+/// action area. The button widget is returned, but usually you don&apos;t
 /// need it.
 /// </para>
 /// </summary>

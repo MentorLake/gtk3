@@ -28,45 +28,37 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # The high-level printing API
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// static GtkPrintSettings *settings = NULL;
-/// </para>
-/// <para>
+/// static GtkPrintSettings *settings = NULL;
+/// 
 /// static void
 /// do_print (void)
 /// {
 ///   GtkPrintOperation *print;
 ///   GtkPrintOperationResult res;
-/// </para>
-/// <para>
+/// 
 ///   print = gtk_print_operation_new ();
-/// </para>
-/// <para>
+/// 
 ///   if (settings != NULL)
 ///     gtk_print_operation_set_print_settings (print, settings);
-/// </para>
-/// <para>
-///   g_signal_connect (print, "begin_print", G_CALLBACK (begin_print), NULL);
-///   g_signal_connect (print, "draw_page", G_CALLBACK (draw_page), NULL);
-/// </para>
-/// <para>
+/// 
+///   g_signal_connect (print, &quot;begin_print&quot;, G_CALLBACK (begin_print), NULL);
+///   g_signal_connect (print, &quot;draw_page&quot;, G_CALLBACK (draw_page), NULL);
+/// 
 ///   res = gtk_print_operation_run (print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,
 ///                                  GTK_WINDOW (main_window), NULL);
-/// </para>
-/// <para>
+/// 
 ///   if (res == GTK_PRINT_OPERATION_RESULT_APPLY)
 ///     {
 ///       if (settings != NULL)
 ///         g_object_unref (settings);
 ///       settings = g_object_ref (gtk_print_operation_get_print_settings (print));
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   g_object_unref (print);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// By default GtkPrintOperation uses an external application to do
 /// print preview. To implement a custom print preview, an application
@@ -268,9 +260,10 @@ public static class GtkPrintOperationHandleSignalExtensions
 /// <summary>
 /// <para>
 /// Emitted for every page that is printed. The signal handler
-/// must render the @page_nr's page onto the cairo context obtained
+/// must render the @page_nr&apos;s page onto the cairo context obtained
 /// from @context using gtk_print_context_get_cairo_context().
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// draw_page (GtkPrintOperation *operation,
 ///            GtkPrintContext   *context,
@@ -282,45 +275,34 @@ public static class GtkPrintOperationHandleSignalExtensions
 ///   gdouble width, text_height;
 ///   gint layout_height;
 ///   PangoFontDescription *desc;
-/// </para>
-/// <para>
+/// 
 ///   cr = gtk_print_context_get_cairo_context (context);
 ///   width = gtk_print_context_get_width (context);
-/// </para>
-/// <para>
+/// 
 ///   cairo_rectangle (cr, 0, 0, width, HEADER_HEIGHT);
-/// </para>
-/// <para>
+/// 
 ///   cairo_set_source_rgb (cr, 0.8, 0.8, 0.8);
 ///   cairo_fill (cr);
-/// </para>
-/// <para>
+/// 
 ///   layout = gtk_print_context_create_pango_layout (context);
-/// </para>
-/// <para>
-///   desc = pango_font_description_from_string ("sans 14");
+/// 
+///   desc = pango_font_description_from_string (&quot;sans 14&quot;);
 ///   pango_layout_set_font_description (layout, desc);
 ///   pango_font_description_free (desc);
-/// </para>
-/// <para>
-///   pango_layout_set_text (layout, "some text", -1);
+/// 
+///   pango_layout_set_text (layout, &quot;some text&quot;, -1);
 ///   pango_layout_set_width (layout, width * PANGO_SCALE);
 ///   pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);
-/// </para>
-/// <para>
-///   pango_layout_get_size (layout, NULL, &layout_height);
+/// 
+///   pango_layout_get_size (layout, NULL, &amp;layout_height);
 ///   text_height = (gdouble)layout_height / PANGO_SCALE;
-/// </para>
-/// <para>
+/// 
 ///   cairo_move_to (cr, width / 2,  (HEADER_HEIGHT - text_height) / 2);
 ///   pango_cairo_show_layout (cr, layout);
-/// </para>
-/// <para>
+/// 
 ///   g_object_unref (layout);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Use gtk_print_operation_set_use_full_page() and
 /// gtk_print_operation_set_unit() before starting the print operation
 /// to set up the transformation of the cairo context according to your
@@ -406,7 +388,7 @@ public static class GtkPrintOperationHandleSignalExtensions
 /// has been completely paginated.
 /// </para>
 /// <para>
-/// If you don't need to do pagination in chunks, you can simply do
+/// If you don&apos;t need to do pagination in chunks, you can simply do
 /// it all in the ::begin-print handler, and set the number of pages
 /// from there.
 /// </para>
@@ -1054,9 +1036,10 @@ public delegate void done([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 /// <summary>
 /// <para>
 /// Emitted for every page that is printed. The signal handler
-/// must render the @page_nr's page onto the cairo context obtained
+/// must render the @page_nr&apos;s page onto the cairo context obtained
 /// from @context using gtk_print_context_get_cairo_context().
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// draw_page (GtkPrintOperation *operation,
 ///            GtkPrintContext   *context,
@@ -1068,45 +1051,34 @@ public delegate void done([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 ///   gdouble width, text_height;
 ///   gint layout_height;
 ///   PangoFontDescription *desc;
-/// </para>
-/// <para>
+/// 
 ///   cr = gtk_print_context_get_cairo_context (context);
 ///   width = gtk_print_context_get_width (context);
-/// </para>
-/// <para>
+/// 
 ///   cairo_rectangle (cr, 0, 0, width, HEADER_HEIGHT);
-/// </para>
-/// <para>
+/// 
 ///   cairo_set_source_rgb (cr, 0.8, 0.8, 0.8);
 ///   cairo_fill (cr);
-/// </para>
-/// <para>
+/// 
 ///   layout = gtk_print_context_create_pango_layout (context);
-/// </para>
-/// <para>
-///   desc = pango_font_description_from_string ("sans 14");
+/// 
+///   desc = pango_font_description_from_string (&quot;sans 14&quot;);
 ///   pango_layout_set_font_description (layout, desc);
 ///   pango_font_description_free (desc);
-/// </para>
-/// <para>
-///   pango_layout_set_text (layout, "some text", -1);
+/// 
+///   pango_layout_set_text (layout, &quot;some text&quot;, -1);
 ///   pango_layout_set_width (layout, width * PANGO_SCALE);
 ///   pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);
-/// </para>
-/// <para>
-///   pango_layout_get_size (layout, NULL, &layout_height);
+/// 
+///   pango_layout_get_size (layout, NULL, &amp;layout_height);
 ///   text_height = (gdouble)layout_height / PANGO_SCALE;
-/// </para>
-/// <para>
+/// 
 ///   cairo_move_to (cr, width / 2,  (HEADER_HEIGHT - text_height) / 2);
 ///   pango_cairo_show_layout (cr, layout);
-/// </para>
-/// <para>
+/// 
 ///   g_object_unref (layout);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Use gtk_print_operation_set_use_full_page() and
 /// gtk_print_operation_set_unit() before starting the print operation
 /// to set up the transformation of the cairo context according to your
@@ -1163,7 +1135,7 @@ public delegate void end_print([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 /// has been completely paginated.
 /// </para>
 /// <para>
-/// If you don't need to do pagination in chunks, you can simply do
+/// If you don&apos;t need to do pagination in chunks, you can simply do
 /// it all in the ::begin-print handler, and set the number of pages
 /// from there.
 /// </para>
@@ -1638,36 +1610,33 @@ public static class GtkPrintOperationHandleExtensions
 /// #GtkPrintOperation::done signal will be emitted with the result of the
 /// operation when the it is done (i.e. when the dialog is canceled, or when
 /// the print succeeds or fails).
-/// |[<!-- language="C" -->
+/// <code>
+/// if (settings != NULL)
 /// if (settings != NULL)
 ///   gtk_print_operation_set_print_settings (print, settings);
-/// </para>
-/// <para>
+/// 
 /// if (page_setup != NULL)
 ///   gtk_print_operation_set_default_page_setup (print, page_setup);
-/// </para>
-/// <para>
-/// g_signal_connect (print, "begin-print",
-///                   G_CALLBACK (begin_print), &data);
-/// g_signal_connect (print, "draw-page",
-///                   G_CALLBACK (draw_page), &data);
-/// </para>
-/// <para>
+/// 
+/// g_signal_connect (print, &quot;begin-print&quot;,
+///                   G_CALLBACK (begin_print), &amp;data);
+/// g_signal_connect (print, &quot;draw-page&quot;,
+///                   G_CALLBACK (draw_page), &amp;data);
+/// 
 /// res = gtk_print_operation_run (print,
 ///                                GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,
 ///                                parent,
-///                                &error);
-/// </para>
-/// <para>
+///                                &amp;error);
+/// 
 /// if (res == GTK_PRINT_OPERATION_RESULT_ERROR)
 ///  {
 ///    error_dialog = gtk_message_dialog_new (GTK_WINDOW (parent),
 ///   			                     GTK_DIALOG_DESTROY_WITH_PARENT,
 /// 					     GTK_MESSAGE_ERROR,
 /// 					     GTK_BUTTONS_CLOSE,
-/// 					     "Error printing file:\n%s",
-/// 					     error->message);
-///    g_signal_connect (error_dialog, "response",
+/// 					     &quot;Error printing file:\n%s&quot;,
+/// 					     error-&amp;gt;message);
+///    g_signal_connect (error_dialog, &quot;response&quot;,
 ///                      G_CALLBACK (gtk_widget_destroy), NULL);
 ///    gtk_widget_show (error_dialog);
 ///    g_error_free (error);
@@ -1678,9 +1647,7 @@ public static class GtkPrintOperationHandleExtensions
 /// g_object_unref (settings);
 ///    settings = g_object_ref (gtk_print_operation_get_print_settings (print));
 ///  }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Note that gtk_print_operation_run() can only be called once on a
 /// given #GtkPrintOperation.
 /// </para>

@@ -57,21 +57,21 @@ public class GtkTreeViewColumnHandle : GInitiallyUnownedHandle, GtkBuildableHand
 /// </para>
 /// <para>
 /// Here’s a simple example:
-/// |[<!-- language="C" -->
+/// <code>
+///  enum { TEXT_COLUMN, COLOR_COLUMN, N_COLUMNS };
 ///  enum { TEXT_COLUMN, COLOR_COLUMN, N_COLUMNS };
 ///  // ...
 ///  {
 ///    GtkTreeViewColumn *column;
 ///    GtkCellRenderer   *renderer = gtk_cell_renderer_text_new ();
-/// </para>
-/// <para>
-///    column = gtk_tree_view_column_new_with_attributes ("Title",
+/// 
+///    column = gtk_tree_view_column_new_with_attributes (&quot;Title&quot;,
 ///                                                       renderer,
-///                                                       "text", TEXT_COLUMN,
-///                                                       "foreground", COLOR_COLUMN,
+///                                                       &quot;text&quot;, TEXT_COLUMN,
+///                                                       &quot;foreground&quot;, COLOR_COLUMN,
 ///                                                       NULL);
 ///  }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -896,7 +896,7 @@ public static class GtkTreeViewColumnHandleExtensions
 /// <para>
 /// Sets the #GtkTreeCellDataFunc to use for the column.  This
 /// function is used instead of the standard attributes mapping for
-/// setting the column value, and should set the value of @tree_column's
+/// setting the column value, and should set the value of @tree_column&apos;s
 /// cell renderer as appropriate.  @func may be %NULL to remove an
 /// older one.
 /// </para>

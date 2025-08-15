@@ -26,7 +26,7 @@ public enum GDataStreamByteOrder
 	G_DATA_STREAM_BYTE_ORDER_LITTLE_ENDIAN = 1,
 /// <summary>
 /// <para>
-/// Selects endianness based on host machine's architecture.
+/// Selects endianness based on host machine&apos;s architecture.
 /// </para>
 /// </summary>
 

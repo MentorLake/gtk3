@@ -689,7 +689,7 @@ public IntPtr keynav_failed;
 /// The GTK+ main loop will emit three signals for each GDK
 ///   event delivered to a widget: one generic ::event signal, another,
 ///   more specific, signal that matches the type of event delivered
-///   (e.g. "key-press-event") and finally a generic "event-after"
+///   (e.g. &quot;key-press-event&quot;) and finally a generic &quot;event-after&quot;
 ///   signal.
 /// </para>
 /// </summary>
@@ -830,7 +830,7 @@ public IntPtr selection_clear_event;
 	/// <summary>
 /// <para>
 /// Signal will be emitted when another
-///   client requests ownership of the selection owned by the widget's
+///   client requests ownership of the selection owned by the widget&apos;s
 ///   window.
 /// </para>
 /// </summary>
@@ -1012,10 +1012,10 @@ public IntPtr query_tooltip;
 public IntPtr compute_expand;
 	/// <summary>
 /// <para>
-/// Convert an initial size request from a widget's
+/// Convert an initial size request from a widget&apos;s
 ///   #GtkSizeRequestMode virtual method implementations into a size request to
 ///   be used by parent containers in laying out the widget.
-///   adjust_size_request adjusts from a child widget's
+///   adjust_size_request adjusts from a child widget&apos;s
 ///   original request to what a parent container should
 ///   use for layout. The @for_size argument will be -1 if the request should
 ///   not be for a particular size in the opposing orientation, i.e. if the
@@ -1076,7 +1076,7 @@ public IntPtr adjust_baseline_allocation;
 	/// <summary>
 /// <para>
 /// Invalidates the area of widget defined by
-///   region by calling gdk_window_invalidate_region() on the widget's
+///   region by calling gdk_window_invalidate_region() on the widget&apos;s
 ///   window and all its child windows.
 /// </para>
 /// </summary>

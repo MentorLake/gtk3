@@ -10,51 +10,42 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// Take a look at the following example:
-/// |[
+/// <code>
+///   GStaticRWLock rwlock = G_STATIC_RW_LOCK_INIT;
 ///   GStaticRWLock rwlock = G_STATIC_RW_LOCK_INIT;
 ///   GPtrArray *array;
-/// </para>
-/// <para>
+/// 
 ///   gpointer
 ///   my_array_get (guint index)
 ///   {
 ///     gpointer retval = NULL;
-/// </para>
-/// <para>
+/// 
 ///     if (!array)
 ///       return NULL;
-/// </para>
-/// <para>
-///     g_static_rw_lock_reader_lock (&rwlock);
-///     if (index < array->len)
+/// 
+///     g_static_rw_lock_reader_lock (&amp;rwlock);
+///     if (index &amp;lt; array-&amp;gt;len)
 ///       retval = g_ptr_array_index (array, index);
-///     g_static_rw_lock_reader_unlock (&rwlock);
-/// </para>
-/// <para>
+///     g_static_rw_lock_reader_unlock (&amp;rwlock);
+/// 
 ///     return retval;
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   void
 ///   my_array_set (guint index, gpointer data)
 ///   {
-///     g_static_rw_lock_writer_lock (&rwlock);
-/// </para>
-/// <para>
+///     g_static_rw_lock_writer_lock (&amp;rwlock);
+/// 
 ///     if (!array)
 ///       array = g_ptr_array_new ();
-/// </para>
-/// <para>
-///     if (index >= array->len)
+/// 
+///     if (index &amp;gt;= array-&amp;gt;len)
 ///       g_ptr_array_set_size (array, index + 1);
 ///     g_ptr_array_index (array, index) = data;
-/// </para>
-/// <para>
-///     g_static_rw_lock_writer_unlock (&rwlock);
+/// 
+///     g_static_rw_lock_writer_unlock (&amp;rwlock);
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// This example shows an array which can be accessed by many readers
 /// (the my_array_get() function) simultaneously, whereas the writers
 /// (the my_array_set() function) will only be allowed once at a time
@@ -103,8 +94,8 @@ public static class GStaticRWLockExtensions
 /// Releases all resources allocated to @lock.
 /// </para>
 /// <para>
-/// You don't have to call this functions for a #GStaticRWLock with an
-/// unbounded lifetime, i.e. objects declared 'static', but if you have
+/// You don&apos;t have to call this functions for a #GStaticRWLock with an
+/// unbounded lifetime, i.e. objects declared &apos;static&apos;, but if you have
 /// a #GStaticRWLock as a member of a structure, and the structure is
 /// freed, you should also free the #GStaticRWLock.
 /// </para>
@@ -312,51 +303,42 @@ internal class GStaticRWLockExterns
 /// </para>
 /// <para>
 /// Take a look at the following example:
-/// |[
+/// <code>
+///   GStaticRWLock rwlock = G_STATIC_RW_LOCK_INIT;
 ///   GStaticRWLock rwlock = G_STATIC_RW_LOCK_INIT;
 ///   GPtrArray *array;
-/// </para>
-/// <para>
+/// 
 ///   gpointer
 ///   my_array_get (guint index)
 ///   {
 ///     gpointer retval = NULL;
-/// </para>
-/// <para>
+/// 
 ///     if (!array)
 ///       return NULL;
-/// </para>
-/// <para>
-///     g_static_rw_lock_reader_lock (&rwlock);
-///     if (index < array->len)
+/// 
+///     g_static_rw_lock_reader_lock (&amp;rwlock);
+///     if (index &amp;lt; array-&amp;gt;len)
 ///       retval = g_ptr_array_index (array, index);
-///     g_static_rw_lock_reader_unlock (&rwlock);
-/// </para>
-/// <para>
+///     g_static_rw_lock_reader_unlock (&amp;rwlock);
+/// 
 ///     return retval;
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   void
 ///   my_array_set (guint index, gpointer data)
 ///   {
-///     g_static_rw_lock_writer_lock (&rwlock);
-/// </para>
-/// <para>
+///     g_static_rw_lock_writer_lock (&amp;rwlock);
+/// 
 ///     if (!array)
 ///       array = g_ptr_array_new ();
-/// </para>
-/// <para>
-///     if (index >= array->len)
+/// 
+///     if (index &amp;gt;= array-&amp;gt;len)
 ///       g_ptr_array_set_size (array, index + 1);
 ///     g_ptr_array_index (array, index) = data;
-/// </para>
-/// <para>
-///     g_static_rw_lock_writer_unlock (&rwlock);
+/// 
+///     g_static_rw_lock_writer_unlock (&amp;rwlock);
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// This example shows an array which can be accessed by many readers
 /// (the my_array_get() function) simultaneously, whereas the writers
 /// (the my_array_set() function) will only be allowed once at a time

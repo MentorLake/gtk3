@@ -34,7 +34,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// The main use for `GApplicationCommandLine` (and the
-/// [signal@Gio.Application::command-line] signal) is 'Emacs server' like use cases:
+/// [signal@Gio.Application::command-line] signal) is &apos;Emacs server&apos; like use cases:
 /// You can set the `EDITOR` environment variable to have e.g. git use
 /// your favourite editor to edit commit messages, and if you already
 /// have an instance of the editor running, the editing will happen
@@ -60,16 +60,16 @@ namespace MentorLake.Gio;
 ///   gint i;
 /// </para>
 /// <para>
-///   argv = g_application_command_line_get_arguments (cmdline, &argc);
+///   argv = g_application_command_line_get_arguments (cmdline, &amp;argc);
 /// </para>
 /// <para>
 ///   g_application_command_line_print (cmdline,
-///                                     "This text is written back\n"
-///                                     "to stdout of the caller\n");
+///                                     &quot;This text is written back\n&quot;
+///                                     &quot;to stdout of the caller\n&quot;);
 /// </para>
 /// <para>
-///   for (i = 0; i < argc; i++)
-///     g_print ("argument %d: %s\n", i, argv[i]);
+///   for (i = 0; i &amp;lt; argc; i++)
+///     g_print (&quot;argument %d: %s\n&quot;, i, argv[i]);
 /// </para>
 /// <para>
 ///   g_strfreev (argv);
@@ -111,16 +111,16 @@ namespace MentorLake.Gio;
 ///   i = 1;
 ///   while (argv[i])
 ///     {
-///       if (g_str_has_prefix (argv[i], "--local-"))
+///       if (g_str_has_prefix (argv[i], &quot;--local-&quot;))
 ///         {
-///           g_print ("handling argument %s locally\n", argv[i]);
+///           g_print (&quot;handling argument %s locally\n&quot;, argv[i]);
 ///           g_free (argv[i]);
 ///           for (j = i; argv[j]; j++)
 ///             argv[j] = argv[j + 1];
 ///         }
 ///       else
 ///         {
-///           g_print ("not handling argument %s locally\n", argv[i]);
+///           g_print (&quot;not handling argument %s locally\n&quot;, argv[i]);
 ///           i++;
 ///         }
 ///     }
@@ -136,7 +136,7 @@ namespace MentorLake.Gio;
 /// static void
 /// test_application_class_init (TestApplicationClass *class)
 /// {
-///   G_APPLICATION_CLASS (class)->local_command_line = test_local_cmdline;
+///   G_APPLICATION_CLASS (class)-&amp;gt;local_command_line = test_local_cmdline;
 /// </para>
 /// <para>
 ///   ...
@@ -184,7 +184,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   g_object_set_data_full (G_OBJECT (cmdline),
-///                           "application", application,
+///                           &quot;application&quot;, application,
 ///                           (GDestroyNotify)g_application_release);
 /// </para>
 /// <para>
@@ -345,9 +345,9 @@ public static class GApplicationCommandLineHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the contents of the 'environ' variable of the command line
+/// Gets the contents of the &apos;environ&apos; variable of the command line
 /// invocation, as would be returned by g_get_environ(), ie as a
-/// %NULL-terminated list of strings in the form 'NAME=VALUE'.
+/// %NULL-terminated list of strings in the form &apos;NAME=VALUE&apos;.
 /// The strings may contain non-utf8 data.
 /// </para>
 /// <para>
@@ -431,7 +431,7 @@ public static class GApplicationCommandLineHandleExtensions
 /// </para>
 /// <para>
 /// If no options were sent then an empty dictionary is returned so that
-/// you don't need to check for %NULL.
+/// you don&apos;t need to check for %NULL.
 /// </para>
 /// <para>
 /// The data has been passed via an untrusted external process, so the types of
@@ -491,7 +491,7 @@ public static class GApplicationCommandLineHandleExtensions
 /// <para>
 /// The #GInputStream can be used to read data passed to the standard
 /// input of the invoking process.
-/// This doesn't work on all platforms.  Presently, it is only available
+/// This doesn&apos;t work on all platforms.  Presently, it is only available
 /// on UNIX when using a D-Bus daemon capable of passing file descriptors.
 /// If stdin is not available then %NULL will be returned.  In the
 /// future, support may be expanded to other platforms.
@@ -583,7 +583,7 @@ public static class GApplicationCommandLineHandleExtensions
 /// </para>
 /// <para>
 /// Unlike g_application_command_line_print(), @message is not a `printf()`-style
-/// format string. Use this function if @message contains text you don't have
+/// format string. Use this function if @message contains text you don&apos;t have
 /// control over, that could include `printf()` escape sequences.
 /// </para>
 /// </summary>
@@ -638,7 +638,7 @@ public static class GApplicationCommandLineHandleExtensions
 /// <para>
 /// Unlike g_application_command_line_printerr(), @message is not
 /// a `printf()`-style format string. Use this function if @message contains text
-/// you don't have control over, that could include `printf()` escape sequences.
+/// you don&apos;t have control over, that could include `printf()` escape sequences.
 /// </para>
 /// </summary>
 
@@ -679,7 +679,7 @@ public static class GApplicationCommandLineHandleExtensions
 /// is slightly more complicated.  If the commandline invocation results
 /// in the mainloop running (ie: because the use-count of the application
 /// increased to a non-zero value) then the application is considered to
-/// have been 'successful' in a certain sense, and the exit status is
+/// have been &apos;successful&apos; in a certain sense, and the exit status is
 /// always zero.  If the application use count is zero, though, the exit
 /// status of the local #GApplicationCommandLine is used.
 /// </para>

@@ -47,20 +47,20 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// For example, it might be useful to create a [iface@Gio.Action] corresponding
-/// to the `visible-child-name` property of a <see href="https://docs.gtk.org/gtk4/class.Stack.html">GtkStack</see>
+/// to the `visible-child-name` property of a &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Stack.html&quot;&amp;gt;GtkStack&amp;lt;/see&amp;gt;
 /// so that the current page can be switched from a menu.  The active radio
 /// indication in the menu is then directly determined from the active page of
 /// the `GtkStack`.
 /// </para>
 /// <para>
 /// An anti-example would be binding the `active-id` property on a
-/// <see href="https://docs.gtk.org/gtk4/class.ComboBox.html">GtkComboBox</see>. This is
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.ComboBox.html&quot;&amp;gt;GtkComboBox&amp;lt;/see&amp;gt;. This is
 /// because the state of the combo box itself is probably uninteresting and is
 /// actually being used to control something else.
 /// </para>
 /// <para>
 /// Another anti-example would be to bind to the `visible-child-name`
-/// property of a <see href="https://docs.gtk.org/gtk4/class.Stack.html">GtkStack</see> if
+/// property of a &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Stack.html&quot;&amp;gt;GtkStack&amp;lt;/see&amp;gt; if
 /// this value is actually stored in [class@Gio.Settings].  In that case, the
 /// real source of the value is* [class@Gio.Settings].  If you want
 /// a [iface@Gio.Action] to control a setting stored in [class@Gio.Settings],
@@ -81,7 +81,7 @@ public class GPropertyActionHandle : GObjectHandle, GActionHandle
 /// construct-only).
 /// </para>
 /// <para>
-/// This function takes a reference on @object and doesn't release it
+/// This function takes a reference on @object and doesn&apos;t release it
 /// until the action is destroyed.
 /// </para>
 /// </summary>

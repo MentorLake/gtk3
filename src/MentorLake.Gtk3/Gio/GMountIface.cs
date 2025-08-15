@@ -37,7 +37,7 @@ public struct GMountIface
 public GTypeInterface g_iface;
 	/// <summary>
 /// <para>
-/// Changed signal that is emitted when the mount's state has changed.
+/// Changed signal that is emitted when the mount&apos;s state has changed.
 /// </para>
 /// </summary>
 

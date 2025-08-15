@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// Flags from comparing two #hb_buffer_t's.
+/// Flags from comparing two #hb_buffer_t&apos;s.
 /// </para>
 /// <para>
 /// Buffer with different #hb_buffer_content_type_t cannot be meaningfully

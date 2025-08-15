@@ -128,7 +128,7 @@ public class GtkGlobalFunctions
 /// <para>
 /// Converts an accelerator keyval and modifier mask into a string
 /// parseable by gtk_accelerator_parse(). For example, if you pass in
-/// #GDK_KEY_q and #GDK_CONTROL_MASK, this function returns “<Control>q”.
+/// #GDK_KEY_q and #GDK_CONTROL_MASK, this function returns “&amp;lt;Control&amp;gt;q”.
 /// </para>
 /// <para>
 /// If you need to display accelerators in the user interface,
@@ -185,15 +185,15 @@ public class GtkGlobalFunctions
 /// <summary>
 /// <para>
 /// Parses a string representing an accelerator. The format looks like
-/// `<Control>a` or `<Shift><Alt>F1` or `<Release>z` (the last one is
+/// `&amp;lt;Control&amp;gt;a` or `&amp;lt;Shift&amp;gt;&amp;lt;Alt&amp;gt;F1` or `&amp;lt;Release&amp;gt;z` (the last one is
 /// for key release).
 /// </para>
 /// <para>
 /// The parser is fairly liberal and allows lower or upper case, and also
-/// abbreviations such as `<Ctl>` and `<Ctrl>`. Key names are parsed using
+/// abbreviations such as `&amp;lt;Ctl&amp;gt;` and `&amp;lt;Ctrl&amp;gt;`. Key names are parsed using
 /// gdk_keyval_from_name(). For character keys the name is not the symbol,
-/// but the lowercase name, e.g. one would use `<Ctrl>minus` instead of
-/// `<Ctrl>-`.
+/// but the lowercase name, e.g. one would use `&amp;lt;Ctrl&amp;gt;minus` instead of
+/// `&amp;lt;Ctrl&amp;gt;-`.
 /// </para>
 /// <para>
 /// If the parse fails, @accelerator_key and @accelerator_mods will
@@ -293,7 +293,7 @@ public class GtkGlobalFunctions
 /// Determines whether a given keyval and modifier mask constitute
 /// a valid keyboard accelerator. For example, the #GDK_KEY_a keyval
 /// plus #GDK_CONTROL_MASK is valid - this is a “Ctrl+a” accelerator.
-/// But, you can't, for instance, use the #GDK_KEY_Control_L keyval
+/// But, you can&apos;t, for instance, use the #GDK_KEY_Control_L keyval
 /// as an accelerator.
 /// </para>
 /// </summary>
@@ -348,20 +348,18 @@ public class GtkGlobalFunctions
 /// <para>
 /// Signal descriptions may either bind a key combination to
 /// one or more signals:
-/// |[
-///   bind "key" {
-///     "signalname" (param, ...)
+/// <code>
+///   bind &quot;key&quot; {
+///   bind &quot;key&quot; {
+///     &quot;signalname&quot; (param, ...)
 ///     ...
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Or they may also unbind a key combination:
-/// |[
-///   unbind "key"
-/// ]|
-/// </para>
-/// <para>
+/// <code>
+///   unbind &quot;key&quot;
+///   unbind &quot;key&quot;
+/// </code>
 /// Key combinations must be in a format that can be parsed by
 /// gtk_accelerator_parse().
 /// </para>
@@ -740,7 +738,7 @@ public class GtkGlobalFunctions
 /// <para>
 /// Prevents gtk_init(), gtk_init_check(), gtk_init_with_args() and
 /// gtk_parse_args() from automatically
-/// calling `setlocale (LC_ALL, "")`. You would
+/// calling `setlocale (LC_ALL, &quot;&quot;)`. You would
 /// want to use this function if you wanted to set the locale for
 /// your program to something other than the user’s locale, or if
 /// you wanted to set different values for different locale categories.
@@ -1056,7 +1054,7 @@ public class GtkGlobalFunctions
 /// cairo context to draw to
 /// </param>
 /// <param name="location">
-/// location where to draw the cursor (@location->width is ignored)
+/// location where to draw the cursor (@location-&amp;gt;width is ignored)
 /// </param>
 /// <param name="is_primary">
 /// if the cursor should be the primary cursor color.
@@ -1086,18 +1084,15 @@ public class GtkGlobalFunctions
 /// <para>
 /// ## Updating the UI during a long computation
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///  // computation going on...
-/// </para>
-/// <para>
+///  // computation going on...
+/// 
 ///  while (gtk_events_pending ())
 ///    gtk_main_iteration ();
-/// </para>
-/// <para>
+/// 
 ///  // ...computation continued
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <return>
@@ -1144,7 +1139,7 @@ public class GtkGlobalFunctions
 /// <para>
 /// Returns the binary age as passed to `libtool`
 /// when building the GTK+ library the process is running against.
-/// If `libtool` means nothing to you, don't
+/// If `libtool` means nothing to you, don&apos;t
 /// worry about it.
 /// </para>
 /// </summary>
@@ -1302,7 +1297,7 @@ public class GtkGlobalFunctions
 /// <para>
 /// Returns the interface age as passed to `libtool`
 /// when building the GTK+ library the process is running against.
-/// If `libtool` means nothing to you, don't
+/// If `libtool` means nothing to you, don&apos;t
 /// worry about it.
 /// </para>
 /// </summary>
@@ -1337,13 +1332,12 @@ public class GtkGlobalFunctions
 /// changed after GTK+ has already been initialized. In this case,
 /// you can use it to update the default text direction as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// setlocale (LC_ALL, new_locale);
 /// setlocale (LC_ALL, new_locale);
 /// direction = gtk_get_locale_direction ();
 /// gtk_widget_set_default_direction (direction);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <return>
@@ -1643,7 +1637,7 @@ public class GtkGlobalFunctions
 /// you don’t have to call gtk_init().
 /// </para>
 /// <para>
-/// And if you are using #GtkApplication, you don't have to call any of the
+/// And if you are using #GtkApplication, you don&apos;t have to call any of the
 /// initialization functions either; the #GtkApplication::startup handler
 /// does it for you.
 /// </para>
@@ -2183,7 +2177,7 @@ public class GtkGlobalFunctions
 /// center the expander. The size of the expander is determined by the
 /// “expander-size” style property of @widget.  (If widget is not
 /// specified or doesn’t have an “expander-size” property, an
-/// unspecified default size will be used, since the caller doesn't
+/// unspecified default size will be used, since the caller doesn&apos;t
 /// have sufficient information to position the expander, this is
 /// likely not useful.) The expander is expander_size pixels tall
 /// in the collapsed position and expander_size pixels wide in the
@@ -3187,13 +3181,14 @@ public class GtkGlobalFunctions
 /// </para>
 /// <para>
 /// The action of gtk_rc_get_style() is similar to:
-/// |[<!-- language="C" -->
-///  gtk_widget_path (widget, NULL, &path, NULL);
-///  gtk_widget_class_path (widget, NULL, &class_path, NULL);
+/// <code>
+///  gtk_widget_path (widget, NULL, &amp;path, NULL);
+///  gtk_widget_path (widget, NULL, &amp;path, NULL);
+///  gtk_widget_class_path (widget, NULL, &amp;class_path, NULL);
 ///  gtk_rc_get_style_by_paths (gtk_widget_get_settings (widget),
 ///                             path, class_path,
 ///                             G_OBJECT_TYPE (widget));
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -3383,7 +3378,7 @@ public class GtkGlobalFunctions
 /// A #GtkRcPropertyParser for use with gtk_settings_install_property_parser()
 /// or gtk_widget_class_install_style_property_parser() which parses
 /// borders in the form
-/// `"{ left, right, top, bottom }"` for integers
+/// `&quot;{ left, right, top, bottom }&quot;` for integers
 /// left, right, top and bottom.
 /// </para>
 /// </summary>
@@ -3477,7 +3472,7 @@ public class GtkGlobalFunctions
 /// <para>
 /// Flags can be specified by their name, their nickname or
 /// numerically. Multiple flags can be specified in the form
-/// `"( flag1 | flag2 | ... )"`.
+/// `&quot;( flag1 | flag2 | ... )&quot;`.
 /// </para>
 /// </summary>
 
@@ -3505,7 +3500,7 @@ public class GtkGlobalFunctions
 /// A #GtkRcPropertyParser for use with gtk_settings_install_property_parser()
 /// or gtk_widget_class_install_style_property_parser() which parses a
 /// requisition in the form
-/// `"{ width, height }"` for integers %width and %height.
+/// `&quot;{ width, height }&quot;` for integers %width and %height.
 /// </para>
 /// </summary>
 
@@ -4721,33 +4716,28 @@ public class GtkGlobalFunctions
 /// the correct domain when calling dgettext(). This can be useful, e.g.
 /// when dealing with message contexts:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkStockItem items[] = {
-///  { MY_ITEM1, NC_("odd items", "Item 1"), 0, 0, "odd-item-domain" },
-///  { MY_ITEM2, NC_("even items", "Item 2"), 0, 0, "even-item-domain" },
+/// GtkStockItem items[] = {
+///  { MY_ITEM1, NC_(&quot;odd items&quot;, &quot;Item 1&quot;), 0, 0, &quot;odd-item-domain&quot; },
+///  { MY_ITEM2, NC_(&quot;even items&quot;, &quot;Item 2&quot;), 0, 0, &quot;even-item-domain&quot; },
 /// };
-/// </para>
-/// <para>
+/// 
 /// gchar *
 /// my_translate_func (const gchar *msgid,
 ///                    gpointer     data)
 /// {
 ///   gchar *msgctxt = data;
-/// </para>
-/// <para>
+/// 
 ///   return (gchar*)g_dpgettext2 (GETTEXT_PACKAGE, msgctxt, msgid);
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// gtk_stock_add (items, G_N_ELEMENTS (items));
-/// gtk_stock_set_translate_func ("odd-item-domain", my_translate_func, "odd items");
-/// gtk_stock_set_translate_func ("even-item-domain", my_translate_func, "even items");
-/// ]|
-/// </para>
+/// gtk_stock_set_translate_func (&quot;odd-item-domain&quot;, my_translate_func, &quot;odd items&quot;);
+/// gtk_stock_set_translate_func (&quot;even-item-domain&quot;, my_translate_func, &quot;even items&quot;);
+/// </code>
 /// </summary>
 
 /// <param name="domain">
@@ -5002,7 +4992,7 @@ public class GtkGlobalFunctions
 /// widget with a text string matching @label_pattern.
 /// The @label_pattern may contain asterisks “*” and question marks “?” as
 /// placeholders, g_pattern_match() is used for the matching.
-/// Note that locales other than "C“ tend to alter (translate” label strings,
+/// Note that locales other than &quot;C“ tend to alter (translate” label strings,
 /// so this function is genrally only useful in test programs with
 /// predetermined locales, see gtk_test_init() for more details.
 /// </para>
@@ -5265,7 +5255,7 @@ public class GtkGlobalFunctions
 /// to @widget.
 /// For windowless widgets like #GtkButton (which returns %FALSE from
 /// gtk_widget_get_has_window()), this will often be an
-/// input-only event window. For other widgets, this is usually widget->window.
+/// input-only event window. For other widgets, this is usually widget-&amp;gt;window.
 /// Certain caveats should be considered when using this function, in
 /// particular because the mouse pointer is warped to the button click
 /// location, see gdk_test_simulate_button() for details.
@@ -5296,7 +5286,7 @@ public class GtkGlobalFunctions
 /// the middle of the first GdkWindow found that belongs to @widget.
 /// For windowless widgets like #GtkButton (which returns %FALSE from
 /// gtk_widget_get_has_window()), this will often be an
-/// input-only event window. For other widgets, this is usually widget->window.
+/// input-only event window. For other widgets, this is usually widget-&amp;gt;window.
 /// Certain caveats should be considered when using this function, in
 /// particular because the mouse pointer is warped to the key press
 /// location, see gdk_test_simulate_key() for details.
@@ -5349,7 +5339,7 @@ public class GtkGlobalFunctions
 /// %GTK_TREE_MODEL_ROW. Normally called from a drag_data_received handler.
 /// This function can only be used if @selection_data originates from the same
 /// process that’s calling this function, because a pointer to the tree model
-/// is being passed around. If you aren’t in the same process, then you'll
+/// is being passed around. If you aren’t in the same process, then you&apos;ll
 /// get memory corruption. In the #GtkTreeDragDest drag_data_received handler,
 /// you can assume that selection data of type %GTK_TREE_MODEL_ROW is
 /// in from the current process. The returned path must be freed with
@@ -5479,48 +5469,40 @@ public class GtkGlobalFunctions
 /// <para>
 /// ## A persistent window
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// #include <gtk/gtk.h>
-/// </para>
-/// <para>
+/// <code>
+/// #include &amp;lt;gtk/gtk.h&amp;gt;
+/// #include &amp;lt;gtk/gtk.h&amp;gt;
+/// 
 /// int
 /// main (int argc, char **argv)
 /// {
 ///   GtkWidget *win, *but;
-///   const char *text = "Close yourself. I mean it!";
-/// </para>
-/// <para>
-///   gtk_init (&argc, &argv);
-/// </para>
-/// <para>
+///   const char *text = &quot;Close yourself. I mean it!&quot;;
+/// 
+///   gtk_init (&amp;argc, &amp;argv);
+/// 
 ///   win = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   g_signal_connect (win,
-///                     "delete-event",
+///                     &quot;delete-event&quot;,
 ///                     G_CALLBACK (gtk_true),
 ///                     NULL);
-///   g_signal_connect (win, "destroy",
+///   g_signal_connect (win, &quot;destroy&quot;,
 ///                     G_CALLBACK (gtk_main_quit),
 ///                     NULL);
-/// </para>
-/// <para>
+/// 
 ///   but = gtk_button_new_with_label (text);
-///   g_signal_connect_swapped (but, "clicked",
+///   g_signal_connect_swapped (but, &quot;clicked&quot;,
 ///                             G_CALLBACK (gtk_object_destroy),
 ///                             win);
 ///   gtk_container_add (GTK_CONTAINER (win), but);
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (win);
-/// </para>
-/// <para>
+/// 
 ///   gtk_main ();
-/// </para>
-/// <para>
+/// 
 ///   return 0;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <return>

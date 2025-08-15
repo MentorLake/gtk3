@@ -6,7 +6,7 @@ namespace MentorLake.Atk;
 /// </para>
 /// <para>
 /// A set of ATK utility functions which are used to support event
-/// registration of various types, and obtaining the 'root' accessible
+/// registration of various types, and obtaining the &apos;root&apos; accessible
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
 /// </para>

@@ -419,7 +419,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the sensitivity policy for the stepper that points to the
-/// 'lower' end of the GtkRange’s adjustment.
+/// &apos;lower&apos; end of the GtkRange’s adjustment.
 /// </para>
 /// </summary>
 
@@ -461,7 +461,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// This function returns the area that contains the range’s trough
-/// and its steppers, in widget->window coordinates.
+/// and its steppers, in widget-&amp;gt;window coordinates.
 /// </para>
 /// <para>
 /// This function is useful mainly for #GtkRange subclasses.
@@ -543,7 +543,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// This function returns sliders range along the long dimension,
-/// in widget->window coordinates.
+/// in widget-&amp;gt;window coordinates.
 /// </para>
 /// <para>
 /// This function is useful mainly for #GtkRange subclasses.
@@ -554,11 +554,11 @@ public static class GtkRangeHandleExtensions
 /// a #GtkRange
 /// </param>
 /// <param name="slider_start">
-/// return location for the slider's
+/// return location for the slider&apos;s
 ///     start, or %NULL
 /// </param>
 /// <param name="slider_end">
-/// return location for the slider's
+/// return location for the slider&apos;s
 ///     end, or %NULL
 /// </param>
 
@@ -594,7 +594,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the sensitivity policy for the stepper that points to the
-/// 'upper' end of the GtkRange’s adjustment.
+/// &apos;upper&apos; end of the GtkRange’s adjustment.
 /// </para>
 /// </summary>
 
@@ -771,7 +771,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// Sets the sensitivity policy for the stepper that points to the
-/// 'lower' end of the GtkRange’s adjustment.
+/// &apos;lower&apos; end of the GtkRange’s adjustment.
 /// </para>
 /// </summary>
 
@@ -929,7 +929,7 @@ public static class GtkRangeHandleExtensions
 /// <summary>
 /// <para>
 /// Sets the sensitivity policy for the stepper that points to the
-/// 'upper' end of the GtkRange’s adjustment.
+/// &apos;upper&apos; end of the GtkRange’s adjustment.
 /// </para>
 /// </summary>
 

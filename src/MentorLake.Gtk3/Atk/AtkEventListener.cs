@@ -5,7 +5,7 @@ namespace MentorLake.Atk;
 /// A function which is called when an object emits a matching event,
 /// as used in #atk_add_focus_tracker.
 /// Currently the only events for which object-specific handlers are
-/// supported are events of type "focus:".  Most clients of ATK will prefer to
+/// supported are events of type &quot;focus:&quot;.  Most clients of ATK will prefer to
 /// attach signal handlers for the various ATK signals instead.
 /// </para>
 /// <para>
@@ -15,7 +15,7 @@ namespace MentorLake.Atk;
 
 /// <param name="obj">
 /// An #AtkObject instance for whom the callback will be called when
-/// the specified event (e.g. 'focus:') takes place.
+/// the specified event (e.g. &apos;focus:&apos;) takes place.
 /// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

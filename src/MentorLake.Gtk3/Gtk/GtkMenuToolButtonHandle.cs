@@ -16,20 +16,19 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkMenuToolButton implementation of the GtkBuildable interface
 /// supports adding a menu by specifying “menu” as the “type” attribute
-/// of a `<child>` element.
+/// of a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// An example for a UI definition fragment with menus:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkMenuToolButton">
-///   <child type="menu">
-///     <object class="GtkMenu"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkMenuToolButton&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkMenuToolButton&quot;&amp;gt;
+///   &amp;lt;child type=&quot;menu&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkMenu&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkMenuToolButtonHandle : GtkToolButtonHandle, AtkImplementorIfaceHandle, GtkActionableHandle, GtkActivatableHandle, GtkBuildableHandle

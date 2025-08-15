@@ -259,7 +259,7 @@ public static class GdkX11WindowHandleExtensions
 /// received for this window.  This property may be used by the window
 /// manager to alter the focus, stacking, and/or placement behavior of
 /// windows when they are mapped depending on whether the new window
-/// was created by a user action or is a "pop-up" window activated by a
+/// was created by a user action or is a &quot;pop-up&quot; window activated by a
 /// timer or some other event.
 /// </para>
 /// <para>

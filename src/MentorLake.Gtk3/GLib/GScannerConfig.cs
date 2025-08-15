@@ -44,7 +44,7 @@ public string cset_skip_characters;
 	/// <summary>
 /// <para>
 /// specifies the characters which can start
-///     identifiers (the default is %G_CSET_a_2_z, "_", and %G_CSET_A_2_Z).
+///     identifiers (the default is %G_CSET_a_2_z, &quot;_&quot;, and %G_CSET_A_2_Z).
 /// </para>
 /// </summary>
 
@@ -53,7 +53,7 @@ public string cset_identifier_first;
 /// <para>
 /// specifies the characters which can be used
 ///     in identifiers, after the first character (the default is
-///     %G_CSET_a_2_z, "_0123456789", %G_CSET_A_2_Z, %G_CSET_LATINS,
+///     %G_CSET_a_2_z, &quot;_0123456789&quot;, %G_CSET_A_2_Z, %G_CSET_LATINS,
 ///     %G_CSET_LATINC).
 /// </para>
 /// </summary>
@@ -62,9 +62,9 @@ public string cset_identifier_nth;
 	/// <summary>
 /// <para>
 /// specifies the characters at the start and
-///     end of single-line comments. The default is "#\n" which means
-///     that single-line comments start with a '#' and continue until
-///     a '\n' (end of line).
+///     end of single-line comments. The default is &quot;#\n&quot; which means
+///     that single-line comments start with a &apos;#&apos; and continue until
+///     a &apos;\n&apos; (end of line).
 /// </para>
 /// </summary>
 
@@ -167,7 +167,7 @@ public uint scan_float;
 public uint scan_hex;
 	/// <summary>
 /// <para>
-/// specifies if '$' is recognized as a prefix for
+/// specifies if &apos;$&apos; is recognized as a prefix for
 ///     hexadecimal numbers (the default is %FALSE).
 /// </para>
 /// </summary>

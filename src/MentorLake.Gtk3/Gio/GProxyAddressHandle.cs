@@ -14,7 +14,7 @@ public class GProxyAddressHandle : GInetSocketAddressHandle, GSocketConnectableH
 /// tunnel through @dest_hostname and @dest_port.
 /// </para>
 /// <para>
-/// (Note that this method doesn't set the #GProxyAddress:uri or
+/// (Note that this method doesn&apos;t set the #GProxyAddress:uri or
 /// #GProxyAddress:destination-protocol fields; use g_object_new()
 /// directly if you want to set those.)
 /// </para>
@@ -58,7 +58,7 @@ public static class GProxyAddressHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @proxy's destination hostname; that is, the name of the host
+/// Gets @proxy&apos;s destination hostname; that is, the name of the host
 /// that will be connected to via the proxy, not the name of the proxy
 /// itself.
 /// </para>
@@ -68,7 +68,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's destination hostname
+/// the @proxy&apos;s destination hostname
 /// </return>
 
 	public static string GetDestinationHostname(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -79,7 +79,7 @@ public static class GProxyAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @proxy's destination port; that is, the port on the
+/// Gets @proxy&apos;s destination port; that is, the port on the
 /// destination host that will be connected to via the proxy, not the
 /// port number of the proxy itself.
 /// </para>
@@ -89,7 +89,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's destination port
+/// the @proxy&apos;s destination port
 /// </return>
 
 	public static ushort GetDestinationPort(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -101,7 +101,7 @@ public static class GProxyAddressHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the protocol that is being spoken to the destination
-/// server; eg, "http" or "ftp".
+/// server; eg, &quot;http&quot; or &quot;ftp&quot;.
 /// </para>
 /// </summary>
 
@@ -109,7 +109,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's destination protocol
+/// the @proxy&apos;s destination protocol
 /// </return>
 
 	public static string GetDestinationProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -120,7 +120,7 @@ public static class GProxyAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @proxy's password.
+/// Gets @proxy&apos;s password.
 /// </para>
 /// </summary>
 
@@ -128,7 +128,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's password
+/// the @proxy&apos;s password
 /// </return>
 
 	public static string GetPassword(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -139,7 +139,7 @@ public static class GProxyAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @proxy's protocol. eg, "socks" or "http"
+/// Gets @proxy&apos;s protocol. eg, &quot;socks&quot; or &quot;http&quot;
 /// </para>
 /// </summary>
 
@@ -147,7 +147,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's protocol
+/// the @proxy&apos;s protocol
 /// </return>
 
 	public static string GetProtocol(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -166,7 +166,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's URI, or %NULL if unknown
+/// the @proxy&apos;s URI, or %NULL if unknown
 /// </return>
 
 	public static string GetUri(this MentorLake.Gio.GProxyAddressHandle proxy)
@@ -177,7 +177,7 @@ public static class GProxyAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @proxy's username.
+/// Gets @proxy&apos;s username.
 /// </para>
 /// </summary>
 
@@ -185,7 +185,7 @@ public static class GProxyAddressHandleExtensions
 /// a #GProxyAddress
 /// </param>
 /// <return>
-/// the @proxy's username
+/// the @proxy&apos;s username
 /// </return>
 
 	public static string GetUsername(this MentorLake.Gio.GProxyAddressHandle proxy)

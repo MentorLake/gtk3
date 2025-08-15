@@ -27,7 +27,7 @@ public class GSimpleProxyResolverHandle : GObjectHandle, GProxyResolverHandle
 
 /// <param name="default_proxy">
 /// the default proxy to use, eg
-///     "socks://192.168.1.1"
+///     &quot;socks://192.168.1.1&quot;
 /// </param>
 /// <param name="ignore_hosts">
 /// an optional list of hosts/IP addresses
@@ -49,11 +49,11 @@ public static class GSimpleProxyResolverHandleExtensions
 /// <summary>
 /// <para>
 /// Sets the default proxy on @resolver, to be used for any URIs that
-/// don't match #GSimpleProxyResolver:ignore-hosts or a proxy set
+/// don&apos;t match #GSimpleProxyResolver:ignore-hosts or a proxy set
 /// via g_simple_proxy_resolver_set_uri_proxy().
 /// </para>
 /// <para>
-/// If @default_proxy starts with "socks://",
+/// If @default_proxy starts with &quot;socks://&quot;,
 /// #GSimpleProxyResolver will treat it as referring to all three of
 /// the socks5, socks4a, and socks4 proxy types.
 /// </para>
@@ -101,12 +101,12 @@ public static class GSimpleProxyResolverHandleExtensions
 /// <summary>
 /// <para>
 /// Adds a URI-scheme-specific proxy to @resolver; URIs whose scheme
-/// matches @uri_scheme (and which don't match
+/// matches @uri_scheme (and which don&apos;t match
 /// #GSimpleProxyResolver:ignore-hosts) will be proxied via @proxy.
 /// </para>
 /// <para>
 /// As with #GSimpleProxyResolver:default-proxy, if @proxy starts with
-/// "socks://", #GSimpleProxyResolver will treat it
+/// &quot;socks://&quot;, #GSimpleProxyResolver will treat it
 /// as referring to all three of the socks5, socks4a, and socks4 proxy
 /// types.
 /// </para>

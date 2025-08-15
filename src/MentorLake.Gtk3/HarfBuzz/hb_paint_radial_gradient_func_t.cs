@@ -30,19 +30,19 @@ namespace MentorLake.HarfBuzz;
 /// Color information for the gradient
 /// </param>
 /// <param name="x0">
-/// X coordinate of the first circle's center
+/// X coordinate of the first circle&apos;s center
 /// </param>
 /// <param name="y0">
-/// Y coordinate of the first circle's center
+/// Y coordinate of the first circle&apos;s center
 /// </param>
 /// <param name="r0">
 /// radius of the first circle
 /// </param>
 /// <param name="x1">
-/// X coordinate of the second circle's center
+/// X coordinate of the second circle&apos;s center
 /// </param>
 /// <param name="y1">
-/// Y coordinate of the second circle's center
+/// Y coordinate of the second circle&apos;s center
 /// </param>
 /// <param name="r1">
 /// radius of the second circle

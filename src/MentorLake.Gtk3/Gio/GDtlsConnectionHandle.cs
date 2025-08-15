@@ -155,7 +155,7 @@ public static class GDtlsConnectionHandleExtensions
 /// a #GDtlsConnection
 /// </param>
 /// <param name="peer_cert">
-/// the peer's #GTlsCertificate
+/// the peer&apos;s #GTlsCertificate
 /// </param>
 /// <param name="errors">
 /// the problems with @peer_cert
@@ -173,7 +173,7 @@ public static class GDtlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's certificate, as set by
+/// Gets @conn&apos;s certificate, as set by
 /// g_dtls_connection_set_certificate().
 /// </para>
 /// </summary>
@@ -182,7 +182,7 @@ public static class GDtlsConnectionHandleExtensions
 /// a #GDtlsConnection
 /// </param>
 /// <return>
-/// @conn's certificate, or %NULL
+/// @conn&apos;s certificate, or %NULL
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetCertificate(this MentorLake.Gio.GDtlsConnectionHandle conn)
@@ -306,7 +306,7 @@ public static class GDtlsConnectionHandleExtensions
 /// </para>
 /// <para>
 /// If the peer did not use the ALPN extension, or did not advertise a
-/// protocol that matched one of @conn's protocols, or the TLS backend
+/// protocol that matched one of @conn&apos;s protocols, or the TLS backend
 /// does not support ALPN, then this will be %NULL. See
 /// g_dtls_connection_set_advertised_protocols().
 /// </para>
@@ -327,7 +327,7 @@ public static class GDtlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's peer's certificate after the handshake has completed
+/// Gets @conn&apos;s peer&apos;s certificate after the handshake has completed
 /// or failed. (It is not set during the emission of
 /// #GDtlsConnection::accept-certificate.)
 /// </para>
@@ -337,7 +337,7 @@ public static class GDtlsConnectionHandleExtensions
 /// a #GDtlsConnection
 /// </param>
 /// <return>
-/// @conn's peer's certificate, or %NULL
+/// @conn&apos;s peer&apos;s certificate, or %NULL
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetPeerCertificate(this MentorLake.Gio.GDtlsConnectionHandle conn)
@@ -348,7 +348,7 @@ public static class GDtlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the errors associated with validating @conn's peer's
+/// Gets the errors associated with validating @conn&apos;s peer&apos;s
 /// certificate, after the handshake has completed or failed. (It is
 /// not set during the emission of #GDtlsConnection::accept-certificate.)
 /// </para>
@@ -358,7 +358,7 @@ public static class GDtlsConnectionHandleExtensions
 /// a #GDtlsConnection
 /// </param>
 /// <return>
-/// @conn's peer's certificate errors
+/// @conn&apos;s peer&apos;s certificate errors
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetPeerCertificateErrors(this MentorLake.Gio.GDtlsConnectionHandle conn)
@@ -560,7 +560,7 @@ public static class GDtlsConnectionHandleExtensions
 /// </param>
 /// <param name="protocols">
 /// a %NULL-terminated
-///   array of ALPN protocol names (eg, "http/1.1", "h2"), or %NULL
+///   array of ALPN protocol names (eg, &quot;http/1.1&quot;, &quot;h2&quot;), or %NULL
 /// </param>
 
 	public static T SetAdvertisedProtocols<T>(this T conn, string[] protocols) where T : GDtlsConnectionHandle
@@ -588,7 +588,7 @@ public static class GDtlsConnectionHandleExtensions
 /// </para>
 /// <para>
 /// (It is also possible that a server will allow the connection with
-/// or without a certificate; in that case, if you don't provide a
+/// or without a certificate; in that case, if you don&apos;t provide a
 /// certificate, you can tell that the server requested one by the fact
 /// that g_dtls_client_connection_get_accepted_cas() will return
 /// non-%NULL.)
@@ -706,7 +706,7 @@ public static class GDtlsConnectionHandleExtensions
 /// somehow self-delimiting); in this case, the close notify is
 /// redundant and may be omitted. You
 /// can use g_dtls_connection_set_require_close_notify() to tell @conn
-/// to allow an "unannounced" connection close, in which case the close
+/// to allow an &quot;unannounced&quot; connection close, in which case the close
 /// will show up as a 0-length read, as in a non-TLS
 /// #GDatagramBased, and it is up to the application to check that
 /// the data has been fully received.
@@ -716,7 +716,7 @@ public static class GDtlsConnectionHandleExtensions
 /// connection; when the application calls g_dtls_connection_close_async() on
 /// @conn itself, this will send a close notification regardless of the
 /// setting of this property. If you explicitly want to do an unclean
-/// close, you can close @conn's #GDtlsConnection:base-socket rather
+/// close, you can close @conn&apos;s #GDtlsConnection:base-socket rather
 /// than closing @conn itself.
 /// </para>
 /// </summary>

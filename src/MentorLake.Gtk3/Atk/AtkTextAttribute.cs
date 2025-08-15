@@ -39,14 +39,14 @@ public enum AtkTextAttribute
 	ATK_TEXT_ATTR_INDENT = 3,
 /// <summary>
 /// <para>
-/// Either "true" or "false" indicating whether text is visible or not
+/// Either &quot;true&quot; or &quot;false&quot; indicating whether text is visible or not
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_INVISIBLE = 4,
 /// <summary>
 /// <para>
-/// Either "true" or "false" indicating whether text is editable or not
+/// Either &quot;true&quot; or &quot;false&quot; indicating whether text is editable or not
 /// </para>
 /// </summary>
 
@@ -74,7 +74,7 @@ public enum AtkTextAttribute
 	ATK_TEXT_ATTR_PIXELS_INSIDE_WRAP = 8,
 /// <summary>
 /// <para>
-/// "true" or "false" whether to make the background color for each character the height of the highest font used on the current line, or the height of the font used for the current character.
+/// &quot;true&quot; or &quot;false&quot; whether to make the background color for each character the height of the highest font used on the current line, or the height of the font used for the current character.
 /// </para>
 /// </summary>
 
@@ -88,14 +88,14 @@ public enum AtkTextAttribute
 	ATK_TEXT_ATTR_RISE = 10,
 /// <summary>
 /// <para>
-/// "none", "single", "double", "low", or "error"
+/// &quot;none&quot;, &quot;single&quot;, &quot;double&quot;, &quot;low&quot;, or &quot;error&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_UNDERLINE = 11,
 /// <summary>
 /// <para>
-/// "true" or "false" whether the text is strikethrough
+/// &quot;true&quot; or &quot;false&quot; whether the text is strikethrough
 /// </para>
 /// </summary>
 
@@ -137,77 +137,77 @@ public enum AtkTextAttribute
 	ATK_TEXT_ATTR_FAMILY_NAME = 17,
 /// <summary>
 /// <para>
-/// The background color. The value is an RGB value of the format "%u,%u,%u"
+/// The background color. The value is an RGB value of the format &quot;%u,%u,%u&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_BG_COLOR = 18,
 /// <summary>
 /// <para>
-/// The foreground color. The value is an RGB value of the format "%u,%u,%u"
+/// The foreground color. The value is an RGB value of the format &quot;%u,%u,%u&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_FG_COLOR = 19,
 /// <summary>
 /// <para>
-/// "true" if a #GdkBitmap is set for stippling the background color.
+/// &quot;true&quot; if a #GdkBitmap is set for stippling the background color.
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_BG_STIPPLE = 20,
 /// <summary>
 /// <para>
-/// "true" if a #GdkBitmap is set for stippling the foreground color.
+/// &quot;true&quot; if a #GdkBitmap is set for stippling the foreground color.
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_FG_STIPPLE = 21,
 /// <summary>
 /// <para>
-/// The wrap mode of the text, if any. Values are "none", "char", "word", or "word_char".
+/// The wrap mode of the text, if any. Values are &quot;none&quot;, &quot;char&quot;, &quot;word&quot;, or &quot;word_char&quot;.
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_WRAP_MODE = 22,
 /// <summary>
 /// <para>
-/// The direction of the text, if set. Values are "none", "ltr" or "rtl"
+/// The direction of the text, if set. Values are &quot;none&quot;, &quot;ltr&quot; or &quot;rtl&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_DIRECTION = 23,
 /// <summary>
 /// <para>
-/// The justification of the text, if set. Values are "left", "right", "center" or "fill"
+/// The justification of the text, if set. Values are &quot;left&quot;, &quot;right&quot;, &quot;center&quot; or &quot;fill&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_JUSTIFICATION = 24,
 /// <summary>
 /// <para>
-/// The stretch of the text, if set. Values are "ultra_condensed", "extra_condensed", "condensed", "semi_condensed", "normal", "semi_expanded", "expanded", "extra_expanded" or "ultra_expanded"
+/// The stretch of the text, if set. Values are &quot;ultra_condensed&quot;, &quot;extra_condensed&quot;, &quot;condensed&quot;, &quot;semi_condensed&quot;, &quot;normal&quot;, &quot;semi_expanded&quot;, &quot;expanded&quot;, &quot;extra_expanded&quot; or &quot;ultra_expanded&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_STRETCH = 25,
 /// <summary>
 /// <para>
-/// The capitalization variant of the text, if set. Values are "normal" or "small_caps"
+/// The capitalization variant of the text, if set. Values are &quot;normal&quot; or &quot;small_caps&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_VARIANT = 26,
 /// <summary>
 /// <para>
-/// The slant style of the text, if set. Values are "normal", "oblique" or "italic"
+/// The slant style of the text, if set. Values are &quot;normal&quot;, &quot;oblique&quot; or &quot;italic&quot;
 /// </para>
 /// </summary>
 
 	ATK_TEXT_ATTR_STYLE = 27,
 /// <summary>
 /// <para>
-/// The vertical position with respect to the baseline. Values are "baseline", "super", or "sub". Note that a super or sub text attribute refers to position with respect to the baseline of the prior character.
+/// The vertical position with respect to the baseline. Values are &quot;baseline&quot;, &quot;super&quot;, or &quot;sub&quot;. Note that a super or sub text attribute refers to position with respect to the baseline of the prior character.
 /// </para>
 /// </summary>
 

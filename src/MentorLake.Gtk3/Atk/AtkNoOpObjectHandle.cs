@@ -38,7 +38,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -73,7 +73,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "document-attribute-changed" signal should be emitted when there is a
+/// The &quot;document-attribute-changed&quot; signal should be emitted when there is a
 /// change to one of the document attributes returned by
 /// atk_document_get_attributes.
 /// </para>
@@ -109,12 +109,12 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'load-complete' signal is emitted when a pending load of
+/// The &apos;load-complete&apos; signal is emitted when a pending load of
 /// a static document has completed.  This signal is to be
 /// expected by ATK clients if and when AtkDocument implementors
 /// expose ATK_STATE_BUSY.  If the state of an AtkObject which
 /// implements AtkDocument does not include ATK_STATE_BUSY, it
-/// should be safe for clients to assume that the AtkDocument's
+/// should be safe for clients to assume that the AtkDocument&apos;s
 /// static contents are fully loaded into the container.
 /// (Dynamic document contents should be exposed via other
 /// signals.)
@@ -151,7 +151,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'load-stopped' signal is emitted when a pending load of
+/// The &apos;load-stopped&apos; signal is emitted when a pending load of
 /// document contents is cancelled, paused, or otherwise
 /// interrupted by the user or application logic.  It should not
 /// however be emitted while waiting for a resource (for instance
@@ -190,7 +190,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'page-changed' signal is emitted when the current page of
+/// The &apos;page-changed&apos; signal is emitted when the current page of
 /// a document changes, e.g. pressing page up/down in a document
 /// viewer.
 /// </para>
@@ -226,9 +226,9 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'reload' signal is emitted when the contents of a
-/// document is refreshed from its source.  Once 'reload' has
-/// been emitted, a matching 'load-complete' or 'load-stopped'
+/// The &apos;reload&apos; signal is emitted when the contents of a
+/// document is refreshed from its source.  Once &apos;reload&apos; has
+/// been emitted, a matching &apos;load-complete&apos; or &apos;load-stopped&apos;
 /// signal should follow, which clients may await before
 /// interrogating ATK for the latest document content.
 /// </para>
@@ -264,7 +264,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "link-selected" signal is emitted by an AtkHyperText
+/// The &quot;link-selected&quot; signal is emitted by an AtkHyperText
 /// object when one of the hyperlinks associated with the object
 /// is selected.
 /// </para>
@@ -300,7 +300,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>
@@ -335,7 +335,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-deleted" signal is emitted by an object which
+/// The &quot;column-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is deleted.
 /// </para>
 /// </summary>
@@ -370,7 +370,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-inserted" signal is emitted by an object which
+/// The &quot;column-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is inserted.
 /// </para>
 /// </summary>
@@ -405,7 +405,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-reordered" signal is emitted by an object which
+/// The &quot;column-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the columns are
 /// reordered.
 /// </para>
@@ -441,7 +441,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "model-changed" signal is emitted by an object which
+/// The &quot;model-changed&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the model displayed by
 /// the table changes.
 /// </para>
@@ -477,7 +477,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-deleted" signal is emitted by an object which
+/// The &quot;row-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is deleted.
 /// </para>
 /// </summary>
@@ -512,7 +512,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-inserted" signal is emitted by an object which
+/// The &quot;row-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is inserted.
 /// </para>
 /// </summary>
@@ -547,7 +547,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-reordered" signal is emitted by an object which
+/// The &quot;row-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the rows are
 /// reordered.
 /// </para>
@@ -583,7 +583,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-attributes-changed" signal is emitted when the text
+/// The &quot;text-attributes-changed&quot; signal is emitted when the text
 /// attributes of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -619,7 +619,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-caret-moved" signal is emitted when the caret
+/// The &quot;text-caret-moved&quot; signal is emitted when the caret
 /// position of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -655,10 +655,10 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-changed" signal is emitted when the text of the
+/// The &quot;text-changed&quot; signal is emitted when the text of the
 /// object which implements the AtkText interface changes, This
-/// signal will have a detail which is either "insert" or
-/// "delete" which identifies whether the text change was an
+/// signal will have a detail which is either &quot;insert&quot; or
+/// &quot;delete&quot; which identifies whether the text change was an
 /// insertion or a deletion.
 /// </para>
 /// </summary>
@@ -693,9 +693,9 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-insert" signal is emitted when a new text is
+/// The &quot;text-insert&quot; signal is emitted when a new text is
 /// inserted. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -730,9 +730,9 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-remove" signal is emitted when a new text is
+/// The &quot;text-remove&quot; signal is emitted when a new text is
 /// removed. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -767,7 +767,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-selection-changed" signal is emitted when the
+/// The &quot;text-selection-changed&quot; signal is emitted when the
 /// selected text of an object which implements AtkText changes.
 /// </para>
 /// </summary>
@@ -802,7 +802,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'value-changed' signal is emitted when the current value
+/// The &apos;value-changed&apos; signal is emitted when the current value
 /// that represent the object changes. @value is the numerical
 /// representation of this new value.  @text is the human
 /// readable text alternative of @value, and can be NULL if it is
@@ -814,7 +814,7 @@ public static class AtkNoOpObjectHandleSignalExtensions
 /// <para>
 /// Example: a password meter whose value changes as the user
 /// types their new password. Appropiate value text would be
-/// "weak", "acceptable" and "strong".
+/// &quot;weak&quot;, &quot;acceptable&quot; and &quot;strong&quot;.
 /// </para>
 /// </summary>
 
@@ -1195,7 +1195,7 @@ public class DocumentAttributeChangedSignal
 	public string Arg1;
 /// <summary>
 /// <para>
-/// the attribute's new value, or %null if not available.
+/// the attribute&apos;s new value, or %null if not available.
 /// </para>
 /// </summary>
 
@@ -1591,7 +1591,7 @@ public static class AtkNoOpObjectHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -1610,7 +1610,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "document-attribute-changed" signal should be emitted when there is a
+/// The &quot;document-attribute-changed&quot; signal should be emitted when there is a
 /// change to one of the document attributes returned by
 /// atk_document_get_attributes.
 /// </para>
@@ -1623,7 +1623,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 ///          available.
 /// </param>
 /// <param name="arg2">
-/// the attribute's new value, or %null if not available.
+/// the attribute&apos;s new value, or %null if not available.
 /// </param>
 /// <param name="user_data">
 /// </param>
@@ -1634,12 +1634,12 @@ public delegate void document_attribute_changed([MarshalAs(UnmanagedType.CustomM
 
 /// <summary>
 /// <para>
-/// The 'load-complete' signal is emitted when a pending load of
+/// The &apos;load-complete&apos; signal is emitted when a pending load of
 /// a static document has completed.  This signal is to be
 /// expected by ATK clients if and when AtkDocument implementors
 /// expose ATK_STATE_BUSY.  If the state of an AtkObject which
 /// implements AtkDocument does not include ATK_STATE_BUSY, it
-/// should be safe for clients to assume that the AtkDocument's
+/// should be safe for clients to assume that the AtkDocument&apos;s
 /// static contents are fully loaded into the container.
 /// (Dynamic document contents should be exposed via other
 /// signals.)
@@ -1657,7 +1657,7 @@ public delegate void load_complete([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 /// <summary>
 /// <para>
-/// The 'load-stopped' signal is emitted when a pending load of
+/// The &apos;load-stopped&apos; signal is emitted when a pending load of
 /// document contents is cancelled, paused, or otherwise
 /// interrupted by the user or application logic.  It should not
 /// however be emitted while waiting for a resource (for instance
@@ -1677,7 +1677,7 @@ public delegate void load_stopped([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The 'page-changed' signal is emitted when the current page of
+/// The &apos;page-changed&apos; signal is emitted when the current page of
 /// a document changes, e.g. pressing page up/down in a document
 /// viewer.
 /// </para>
@@ -1698,9 +1698,9 @@ public delegate void page_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The 'reload' signal is emitted when the contents of a
-/// document is refreshed from its source.  Once 'reload' has
-/// been emitted, a matching 'load-complete' or 'load-stopped'
+/// The &apos;reload&apos; signal is emitted when the contents of a
+/// document is refreshed from its source.  Once &apos;reload&apos; has
+/// been emitted, a matching &apos;load-complete&apos; or &apos;load-stopped&apos;
 /// signal should follow, which clients may await before
 /// interrogating ATK for the latest document content.
 /// </para>
@@ -1717,7 +1717,7 @@ public delegate void reload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 
 /// <summary>
 /// <para>
-/// The "link-selected" signal is emitted by an AtkHyperText
+/// The &quot;link-selected&quot; signal is emitted by an AtkHyperText
 /// object when one of the hyperlinks associated with the object
 /// is selected.
 /// </para>
@@ -1737,7 +1737,7 @@ public delegate void link_selected([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>
@@ -1753,7 +1753,7 @@ public delegate void selection_changed([MarshalAs(UnmanagedType.CustomMarshaler,
 
 /// <summary>
 /// <para>
-/// The "column-deleted" signal is emitted by an object which
+/// The &quot;column-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is deleted.
 /// </para>
 /// </summary>
@@ -1775,7 +1775,7 @@ public delegate void column_deleted([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "column-inserted" signal is emitted by an object which
+/// The &quot;column-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is inserted.
 /// </para>
 /// </summary>
@@ -1797,7 +1797,7 @@ public delegate void column_inserted([MarshalAs(UnmanagedType.CustomMarshaler, M
 
 /// <summary>
 /// <para>
-/// The "column-reordered" signal is emitted by an object which
+/// The &quot;column-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the columns are
 /// reordered.
 /// </para>
@@ -1814,7 +1814,7 @@ public delegate void column_reordered([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 /// <summary>
 /// <para>
-/// The "model-changed" signal is emitted by an object which
+/// The &quot;model-changed&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the model displayed by
 /// the table changes.
 /// </para>
@@ -1831,7 +1831,7 @@ public delegate void model_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 /// <summary>
 /// <para>
-/// The "row-deleted" signal is emitted by an object which
+/// The &quot;row-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is deleted.
 /// </para>
 /// </summary>
@@ -1853,7 +1853,7 @@ public delegate void row_deleted([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "row-inserted" signal is emitted by an object which
+/// The &quot;row-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is inserted.
 /// </para>
 /// </summary>
@@ -1875,7 +1875,7 @@ public delegate void row_inserted([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "row-reordered" signal is emitted by an object which
+/// The &quot;row-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the rows are
 /// reordered.
 /// </para>
@@ -1892,7 +1892,7 @@ public delegate void row_reordered([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 /// <summary>
 /// <para>
-/// The "text-attributes-changed" signal is emitted when the text
+/// The &quot;text-attributes-changed&quot; signal is emitted when the text
 /// attributes of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -1909,7 +1909,7 @@ public delegate void text_attributes_changed([MarshalAs(UnmanagedType.CustomMars
 
 /// <summary>
 /// <para>
-/// The "text-caret-moved" signal is emitted when the caret
+/// The &quot;text-caret-moved&quot; signal is emitted when the caret
 /// position of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -1929,10 +1929,10 @@ public delegate void text_caret_moved([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 /// <summary>
 /// <para>
-/// The "text-changed" signal is emitted when the text of the
+/// The &quot;text-changed&quot; signal is emitted when the text of the
 /// object which implements the AtkText interface changes, This
-/// signal will have a detail which is either "insert" or
-/// "delete" which identifies whether the text change was an
+/// signal will have a detail which is either &quot;insert&quot; or
+/// &quot;delete&quot; which identifies whether the text change was an
 /// insertion or a deletion.
 /// </para>
 /// </summary>
@@ -1954,9 +1954,9 @@ public delegate void text_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "text-insert" signal is emitted when a new text is
+/// The &quot;text-insert&quot; signal is emitted when a new text is
 /// inserted. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -1981,9 +1981,9 @@ public delegate void text_insert([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "text-remove" signal is emitted when a new text is
+/// The &quot;text-remove&quot; signal is emitted when a new text is
 /// removed. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -2008,7 +2008,7 @@ public delegate void text_remove([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "text-selection-changed" signal is emitted when the
+/// The &quot;text-selection-changed&quot; signal is emitted when the
 /// selected text of an object which implements AtkText changes.
 /// </para>
 /// </summary>
@@ -2024,7 +2024,7 @@ public delegate void text_selection_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 /// <summary>
 /// <para>
-/// The 'value-changed' signal is emitted when the current value
+/// The &apos;value-changed&apos; signal is emitted when the current value
 /// that represent the object changes. @value is the numerical
 /// representation of this new value.  @text is the human
 /// readable text alternative of @value, and can be NULL if it is
@@ -2036,7 +2036,7 @@ public delegate void text_selection_changed([MarshalAs(UnmanagedType.CustomMarsh
 /// <para>
 /// Example: a password meter whose value changes as the user
 /// types their new password. Appropiate value text would be
-/// "weak", "acceptable" and "strong".
+/// &quot;weak&quot;, &quot;acceptable&quot; and &quot;strong&quot;.
 /// </para>
 /// </summary>
 

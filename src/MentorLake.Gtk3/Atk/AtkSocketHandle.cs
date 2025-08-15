@@ -19,13 +19,13 @@ namespace MentorLake.Atk;
 /// by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 /// the case, at-spi-atk2 is the responsible to implement the abstract
 /// methods atk_plug_get_id() and atk_socket_embed(), so an ATK
-/// implementor shouldn't reimplement them. The process that contains
+/// implementor shouldn&apos;t reimplement them. The process that contains
 /// the #AtkPlug is responsible to send the ID returned by
 /// atk_plug_id() to the process that contains the #AtkSocket, so it
 /// could call the method atk_socket_embed() in order to embed it.
 /// </para>
 /// <para>
-/// For the same reasons, an implementor doesn't need to implement
+/// For the same reasons, an implementor doesn&apos;t need to implement
 /// atk_object_get_n_accessible_children() and
 /// atk_object_ref_accessible_child(). All the logic related to those
 /// functions will be implemented by the IPC layer.
@@ -57,7 +57,7 @@ public static class AtkSocketHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -116,7 +116,7 @@ public static class AtkSocketHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>

@@ -4,14 +4,14 @@ namespace MentorLake.Gio;
 /// <para>
 /// Applications and libraries often contain binary or textual data that is
 /// really part of the application, rather than user data. For instance
-/// <see href="https://docs.gtk.org/gtk4/class.Builder.html">GtkBuilder</see> `.ui` files,
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Builder.html&quot;&amp;gt;GtkBuilder&amp;lt;/see&amp;gt; `.ui` files,
 /// splashscreen images, [class@Gio.Menu] markup XML, CSS files, icons, etc.
 /// These are often shipped as files in `$datadir/appname`, or manually
 /// included as literal strings in the code.
 /// </para>
 /// <para>
 /// The `GResource` API and the
-/// <see href="glib-compile-resources.html">glib-compile-resources</see> program provide a
+/// &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; program provide a
 /// convenient and efficient alternative to this which has some nice properties.
 /// You maintain the files as normal files, so it’s easy to edit them, but during
 /// the build the files are combined into a binary bundle that is linked into the
@@ -32,7 +32,7 @@ namespace MentorLake.Gio;
 /// The only options currently supported are:
 /// </para>
 /// <para>
-///  - `xml-stripblanks` which will use the <see href="man:xmllint(1">xmllint</see>) command
+///  - `xml-stripblanks` which will use the &amp;lt;see href=&quot;man:xmllint(1&quot;&amp;gt;xmllint&amp;lt;/see&amp;gt;) command
 ///    to strip ignorable whitespace from the XML file. For this to work,
 ///    the `XMLLINT` environment variable must be set to the full path to
 ///    the xmllint executable, or xmllint must be in the `PATH`; otherwise
@@ -40,7 +40,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///  - `to-pixdata` (deprecated since gdk-pixbuf 2.32) which will use the
-///    `gdk-pixbuf-pixdata` command to convert images to the <see href="https://docs.gtk.org/gdk-pixbuf/class.Pixdata.html">GdkPixdata</see>
+///    `gdk-pixbuf-pixdata` command to convert images to the &amp;lt;see href=&quot;https://docs.gtk.org/gdk-pixbuf/class.Pixdata.html&quot;&amp;gt;GdkPixdata&amp;lt;/see&amp;gt;
 ///    format, which allows you to create pixbufs directly using the data inside
 ///    the resource file, rather than an (uncompressed) copy of it. For this, the
 ///    `gdk-pixbuf-pixdata` program must be in the `PATH`, or the
@@ -52,7 +52,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///  - `json-stripblanks` which will use the
-///    <see href="man:json-glib-format(1">json-glib-format</see>) command to strip ignorable
+///    &amp;lt;see href=&quot;man:json-glib-format(1&quot;&amp;gt;json-glib-format&amp;lt;/see&amp;gt;) command to strip ignorable
 ///    whitespace from the JSON file. For this to work, the `JSON_GLIB_FORMAT`
 ///    environment variable must be set to the full path to the
 ///    `json-glib-format` executable, or it must be in the `PATH`; otherwise the
@@ -69,22 +69,22 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// Resource bundles are created by the
-/// <see href="glib-compile-resources.html">glib-compile-resources</see> program
+/// &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; program
 /// which takes an XML file that describes the bundle, and a set of files that
 /// the XML references. These are combined into a binary resource bundle.
 /// </para>
 /// <para>
 /// An example resource description:
 /// ```xml
-/// <?xml version="1.0" encoding="UTF-8"?>
-/// <gresources>
-///   <gresource prefix="/org/gtk/Example">
-///     <file>data/splashscreen.png</file>
-///     <file compressed="true">dialog.ui</file>
-///     <file preprocess="xml-stripblanks">menumarkup.xml</file>
-///     <file alias="example.css">data/example.css</file>
-///   </gresource>
-/// </gresources>
+/// &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+/// &amp;lt;gresources&amp;gt;
+///   &amp;lt;gresource prefix=&quot;/org/gtk/Example&quot;&amp;gt;
+///     &amp;lt;file&amp;gt;data/splashscreen.png&amp;lt;/file&amp;gt;
+///     &amp;lt;file compressed=&quot;true&quot;&amp;gt;dialog.ui&amp;lt;/file&amp;gt;
+///     &amp;lt;file preprocess=&quot;xml-stripblanks&quot;&amp;gt;menumarkup.xml&amp;lt;/file&amp;gt;
+///     &amp;lt;file alias=&quot;example.css&quot;&amp;gt;data/example.css&amp;lt;/file&amp;gt;
+///   &amp;lt;/gresource&amp;gt;
+/// &amp;lt;/gresources&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -101,14 +101,14 @@ namespace MentorLake.Gio;
 /// Java-style path prefixes (like in the above example) to avoid conflicts.
 /// </para>
 /// <para>
-/// You can then use <see href="glib-compile-resources.html">glib-compile-resources</see> to
+/// You can then use &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; to
 /// compile the XML to a binary bundle that you can load with
 /// [func@Gio.Resource.load]. However, it’s more common to use the
 /// `--generate-source` and `--generate-header` arguments to create a source file
 /// and header to link directly into your application.
 /// This will generate `get_resource()`, `register_resource()` and
 /// `unregister_resource()` functions, prefixed by the `--c-name` argument passed
-/// to <see href="glib-compile-resources.html">glib-compile-resources</see>. `get_resource()`
+/// to &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt;. `get_resource()`
 /// returns the generated `GResource` object. The register and unregister
 /// functions register the resource so its files can be accessed using
 /// [func@Gio.resources_lookup_data].
@@ -122,7 +122,7 @@ namespace MentorLake.Gio;
 /// [iface@Gio.File] to access the resource data.
 /// </para>
 /// <para>
-/// Some higher-level APIs, such as <see href="https://docs.gtk.org/gtk4/class.Application.html">GtkApplication</see>,
+/// Some higher-level APIs, such as &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Application.html&quot;&amp;gt;GtkApplication&amp;lt;/see&amp;gt;,
 /// will automatically load resources from certain well-known paths in the
 /// resource namespace as a convenience. See the documentation for those APIs
 /// for details.
@@ -549,14 +549,14 @@ internal class GResourceExterns
 /// <para>
 /// Applications and libraries often contain binary or textual data that is
 /// really part of the application, rather than user data. For instance
-/// <see href="https://docs.gtk.org/gtk4/class.Builder.html">GtkBuilder</see> `.ui` files,
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Builder.html&quot;&amp;gt;GtkBuilder&amp;lt;/see&amp;gt; `.ui` files,
 /// splashscreen images, [class@Gio.Menu] markup XML, CSS files, icons, etc.
 /// These are often shipped as files in `$datadir/appname`, or manually
 /// included as literal strings in the code.
 /// </para>
 /// <para>
 /// The `GResource` API and the
-/// <see href="glib-compile-resources.html">glib-compile-resources</see> program provide a
+/// &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; program provide a
 /// convenient and efficient alternative to this which has some nice properties.
 /// You maintain the files as normal files, so it’s easy to edit them, but during
 /// the build the files are combined into a binary bundle that is linked into the
@@ -577,7 +577,7 @@ internal class GResourceExterns
 /// The only options currently supported are:
 /// </para>
 /// <para>
-///  - `xml-stripblanks` which will use the <see href="man:xmllint(1">xmllint</see>) command
+///  - `xml-stripblanks` which will use the &amp;lt;see href=&quot;man:xmllint(1&quot;&amp;gt;xmllint&amp;lt;/see&amp;gt;) command
 ///    to strip ignorable whitespace from the XML file. For this to work,
 ///    the `XMLLINT` environment variable must be set to the full path to
 ///    the xmllint executable, or xmllint must be in the `PATH`; otherwise
@@ -585,7 +585,7 @@ internal class GResourceExterns
 /// </para>
 /// <para>
 ///  - `to-pixdata` (deprecated since gdk-pixbuf 2.32) which will use the
-///    `gdk-pixbuf-pixdata` command to convert images to the <see href="https://docs.gtk.org/gdk-pixbuf/class.Pixdata.html">GdkPixdata</see>
+///    `gdk-pixbuf-pixdata` command to convert images to the &amp;lt;see href=&quot;https://docs.gtk.org/gdk-pixbuf/class.Pixdata.html&quot;&amp;gt;GdkPixdata&amp;lt;/see&amp;gt;
 ///    format, which allows you to create pixbufs directly using the data inside
 ///    the resource file, rather than an (uncompressed) copy of it. For this, the
 ///    `gdk-pixbuf-pixdata` program must be in the `PATH`, or the
@@ -597,7 +597,7 @@ internal class GResourceExterns
 /// </para>
 /// <para>
 ///  - `json-stripblanks` which will use the
-///    <see href="man:json-glib-format(1">json-glib-format</see>) command to strip ignorable
+///    &amp;lt;see href=&quot;man:json-glib-format(1&quot;&amp;gt;json-glib-format&amp;lt;/see&amp;gt;) command to strip ignorable
 ///    whitespace from the JSON file. For this to work, the `JSON_GLIB_FORMAT`
 ///    environment variable must be set to the full path to the
 ///    `json-glib-format` executable, or it must be in the `PATH`; otherwise the
@@ -614,22 +614,22 @@ internal class GResourceExterns
 /// </para>
 /// <para>
 /// Resource bundles are created by the
-/// <see href="glib-compile-resources.html">glib-compile-resources</see> program
+/// &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; program
 /// which takes an XML file that describes the bundle, and a set of files that
 /// the XML references. These are combined into a binary resource bundle.
 /// </para>
 /// <para>
 /// An example resource description:
 /// ```xml
-/// <?xml version="1.0" encoding="UTF-8"?>
-/// <gresources>
-///   <gresource prefix="/org/gtk/Example">
-///     <file>data/splashscreen.png</file>
-///     <file compressed="true">dialog.ui</file>
-///     <file preprocess="xml-stripblanks">menumarkup.xml</file>
-///     <file alias="example.css">data/example.css</file>
-///   </gresource>
-/// </gresources>
+/// &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+/// &amp;lt;gresources&amp;gt;
+///   &amp;lt;gresource prefix=&quot;/org/gtk/Example&quot;&amp;gt;
+///     &amp;lt;file&amp;gt;data/splashscreen.png&amp;lt;/file&amp;gt;
+///     &amp;lt;file compressed=&quot;true&quot;&amp;gt;dialog.ui&amp;lt;/file&amp;gt;
+///     &amp;lt;file preprocess=&quot;xml-stripblanks&quot;&amp;gt;menumarkup.xml&amp;lt;/file&amp;gt;
+///     &amp;lt;file alias=&quot;example.css&quot;&amp;gt;data/example.css&amp;lt;/file&amp;gt;
+///   &amp;lt;/gresource&amp;gt;
+/// &amp;lt;/gresources&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -646,14 +646,14 @@ internal class GResourceExterns
 /// Java-style path prefixes (like in the above example) to avoid conflicts.
 /// </para>
 /// <para>
-/// You can then use <see href="glib-compile-resources.html">glib-compile-resources</see> to
+/// You can then use &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt; to
 /// compile the XML to a binary bundle that you can load with
 /// [func@Gio.Resource.load]. However, it’s more common to use the
 /// `--generate-source` and `--generate-header` arguments to create a source file
 /// and header to link directly into your application.
 /// This will generate `get_resource()`, `register_resource()` and
 /// `unregister_resource()` functions, prefixed by the `--c-name` argument passed
-/// to <see href="glib-compile-resources.html">glib-compile-resources</see>. `get_resource()`
+/// to &amp;lt;see href=&quot;glib-compile-resources.html&quot;&amp;gt;glib-compile-resources&amp;lt;/see&amp;gt;. `get_resource()`
 /// returns the generated `GResource` object. The register and unregister
 /// functions register the resource so its files can be accessed using
 /// [func@Gio.resources_lookup_data].
@@ -667,7 +667,7 @@ internal class GResourceExterns
 /// [iface@Gio.File] to access the resource data.
 /// </para>
 /// <para>
-/// Some higher-level APIs, such as <see href="https://docs.gtk.org/gtk4/class.Application.html">GtkApplication</see>,
+/// Some higher-level APIs, such as &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Application.html&quot;&amp;gt;GtkApplication&amp;lt;/see&amp;gt;,
 /// will automatically load resources from certain well-known paths in the
 /// resource namespace as a convenience. See the documentation for those APIs
 /// for details.

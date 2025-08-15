@@ -24,7 +24,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the X, Y, and Z order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SXYZ
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SXYZ
 /// </para>
 /// </summary>
 
@@ -32,7 +32,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the Y, Z, and X order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SYZX
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SYZX
 /// </para>
 /// </summary>
 
@@ -40,7 +40,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the Z, X, and Y order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SZXY
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SZXY
 /// </para>
 /// </summary>
 
@@ -48,7 +48,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the X, Z, and Y order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SXZY
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SXZY
 /// </para>
 /// </summary>
 
@@ -56,7 +56,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the Y, X, and Z order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SYXZ
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SYXZ
 /// </para>
 /// </summary>
 
@@ -64,7 +64,7 @@ public enum graphene_euler_order_t
 /// <summary>
 /// <para>
 /// Rotate in the Z, Y, and X order. Deprecated in
-///   Graphene 1.10, it's an alias for %GRAPHENE_EULER_ORDER_SZYX
+///   Graphene 1.10, it&apos;s an alias for %GRAPHENE_EULER_ORDER_SZYX
 /// </para>
 /// </summary>
 

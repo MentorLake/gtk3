@@ -39,7 +39,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Among the children of the places sidebar, the following style classes can
 /// be used:
-/// - .sidebar-new-bookmark-row for the 'Add new bookmark' row
+/// - .sidebar-new-bookmark-row for the &apos;Add new bookmark&apos; row
 /// - .sidebar-placeholder-row for a row that is a placeholder
 /// - .has-open-popup when a popup is open for a row
 /// </para>
@@ -152,7 +152,7 @@ public static class GtkPlacesSidebarHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The places sidebar emits this signal when the user completes a
-/// drag-and-drop operation and one of the sidebar's items is the
+/// drag-and-drop operation and one of the sidebar&apos;s items is the
 /// destination.  This item is in the @dest_file, and the
 /// @source_file_list has the list of files that are dropped into it and
 /// which should be copied/moved/etc. based on the specified @action.
@@ -266,7 +266,7 @@ public static class GtkPlacesSidebarHandleSignalExtensions
 /// The places sidebar emits this signal when the user invokes a contextual
 /// popup on one of its items. In the signal handler, the application may
 /// add extra items to the menu as appropriate. For example, a file manager
-/// may want to add a "Properties" command to the menu.
+/// may want to add a &quot;Properties&quot; command to the menu.
 /// </para>
 /// <para>
 /// It is not necessary to store the @selected_item for each menu item;
@@ -328,7 +328,7 @@ public static class GtkPlacesSidebarHandleSignalExtensions
 /// The places sidebar emits this signal when it needs the calling
 /// application to present an way to connect directly to a network server.
 /// For example, the application may bring up a dialog box asking for
-/// a URL like "sftp://ftp.example.com".  It is up to the application to create
+/// a URL like &quot;sftp://ftp.example.com&quot;.  It is up to the application to create
 /// the corresponding mount by using, for example, g_file_mount_enclosing_volume().
 /// </para>
 /// </summary>
@@ -366,7 +366,7 @@ public static class GtkPlacesSidebarHandleSignalExtensions
 /// The places sidebar emits this signal when it needs the calling
 /// application to present an way to directly enter a location.
 /// For example, the application may bring up a dialog box asking for
-/// a URL like "http://http.example.com".
+/// a URL like &quot;http://http.example.com&quot;.
 /// </para>
 /// </summary>
 
@@ -632,8 +632,7 @@ public class DragActionRequestedSignal
 
 	public MentorLake.Gio.GFileHandle DestFile;
 /// <summary>
-/// <para>
-/// </para>
+/// 
 /// <para>
 ///   List of #GFile that are being dragged
 /// </para>
@@ -665,8 +664,7 @@ public class DragPerformDropSignal
 
 	public MentorLake.Gio.GFileHandle DestFile;
 /// <summary>
-/// <para>
-/// </para>
+/// 
 /// <para>
 ///   #GList of #GFile that got dropped.
 /// </para>
@@ -914,7 +912,7 @@ public delegate int drag_action_requested([MarshalAs(UnmanagedType.CustomMarshal
 /// <summary>
 /// <para>
 /// The places sidebar emits this signal when the user completes a
-/// drag-and-drop operation and one of the sidebar's items is the
+/// drag-and-drop operation and one of the sidebar&apos;s items is the
 /// destination.  This item is in the @dest_file, and the
 /// @source_file_list has the list of files that are dropped into it and
 /// which should be copied/moved/etc. based on the specified @action.
@@ -990,7 +988,7 @@ public delegate void open_location([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 /// The places sidebar emits this signal when the user invokes a contextual
 /// popup on one of its items. In the signal handler, the application may
 /// add extra items to the menu as appropriate. For example, a file manager
-/// may want to add a "Properties" command to the menu.
+/// may want to add a &quot;Properties&quot; command to the menu.
 /// </para>
 /// <para>
 /// It is not necessary to store the @selected_item for each menu item;
@@ -1044,7 +1042,7 @@ public delegate void populate_popup([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// The places sidebar emits this signal when it needs the calling
 /// application to present an way to connect directly to a network server.
 /// For example, the application may bring up a dialog box asking for
-/// a URL like "sftp://ftp.example.com".  It is up to the application to create
+/// a URL like &quot;sftp://ftp.example.com&quot;.  It is up to the application to create
 /// the corresponding mount by using, for example, g_file_mount_enclosing_volume().
 /// </para>
 /// </summary>
@@ -1063,7 +1061,7 @@ public delegate void show_connect_to_server([MarshalAs(UnmanagedType.CustomMarsh
 /// The places sidebar emits this signal when it needs the calling
 /// application to present an way to directly enter a location.
 /// For example, the application may bring up a dialog box asking for
-/// a URL like "http://http.example.com".
+/// a URL like &quot;http://http.example.com&quot;.
 /// </para>
 /// </summary>
 
@@ -1283,7 +1281,7 @@ public static class GtkPlacesSidebarHandleExtensions
 /// <return>
 /// The bookmark specified by the index @n, or
 /// %NULL if no such index exist.  Note that the indices start at 0, even though
-/// the file chooser starts them with the keyboard shortcut "Alt-1".
+/// the file chooser starts them with the keyboard shortcut &quot;Alt-1&quot;.
 /// </return>
 
 	public static MentorLake.Gio.GFileHandle GetNthBookmark(this MentorLake.Gtk.GtkPlacesSidebarHandle sidebar, int n)
@@ -1458,7 +1456,7 @@ public static class GtkPlacesSidebarHandleExtensions
 ///     A #GSList of #GFile of the locations that have been added as
 ///     application-specific shortcuts with gtk_places_sidebar_add_shortcut().
 ///     To free this list, you can use
-/// |[<!-- language="C" -->
+/// |[&amp;lt;!-- language=&quot;C&quot; --&amp;gt;
 /// g_slist_free_full (list, (GDestroyNotify) g_object_unref);
 /// ]|
 /// </return>
@@ -1494,7 +1492,7 @@ public static class GtkPlacesSidebarHandleExtensions
 /// <summary>
 /// <para>
 /// Make the GtkPlacesSidebar show drop targets, so it can show the available
-/// drop targets and a "new bookmark" row. This improves the Drag-and-Drop
+/// drop targets and a &quot;new bookmark&quot; row. This improves the Drag-and-Drop
 /// experience of the user and allows applications to show all available
 /// drop targets at once.
 /// </para>

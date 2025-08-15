@@ -197,14 +197,14 @@ public static class GActionGroupHandleExtensions
 /// <para>
 /// ```c
 /// // call ‘quit’ action on primary instance
-/// g_action_group_activate_action (G_ACTION_GROUP (app), "quit", NULL);
+/// g_action_group_activate_action (G_ACTION_GROUP (app), &quot;quit&quot;, NULL);
 /// </para>
 /// <para>
 /// // make sure the action is activated now
 /// g_dbus_connection_flush (…);
 /// </para>
 /// <para>
-/// g_debug ("Application has been terminated. Exiting.");
+/// g_debug (&quot;Application has been terminated. Exiting.&quot;);
 /// </para>
 /// <para>
 /// exit (0);

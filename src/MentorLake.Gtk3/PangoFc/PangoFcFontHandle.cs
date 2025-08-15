@@ -22,7 +22,7 @@ public class PangoFcFontHandle : PangoFontHandle
 /// </para>
 /// <para>
 /// Many possible Fontconfig pattern values, such as %FC_RASTERIZER
-/// or %FC_DPI, don't make sense in the context of `PangoFontDescription`,
+/// or %FC_DPI, don&apos;t make sense in the context of `PangoFontDescription`,
 /// so will be ignored.
 /// </para>
 /// </summary>
@@ -68,7 +68,7 @@ public static class PangoFcFontHandleExtensions
 /// </param>
 /// <return>
 /// the glyph index, or 0, if the Unicode
-///   character doesn't exist in the font.
+///   character doesn&apos;t exist in the font.
 /// </return>
 
 	public static uint GetGlyph(this MentorLake.PangoFc.PangoFcFontHandle font, char wc)

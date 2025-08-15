@@ -22,38 +22,33 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Using a #GtkTreeModelSort
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkTreeView *tree_view1;
 ///   GtkTreeView *tree_view2;
 ///   GtkTreeModel *sort_model1;
 ///   GtkTreeModel *sort_model2;
 ///   GtkTreeModel *child_model;
-/// </para>
-/// <para>
+/// 
 ///   // get the child model
 ///   child_model = get_my_model ();
-/// </para>
-/// <para>
+/// 
 ///   // Create the first tree
 ///   sort_model1 = gtk_tree_model_sort_new_with_model (child_model);
 ///   tree_view1 = gtk_tree_view_new_with_model (sort_model1);
-/// </para>
-/// <para>
+/// 
 ///   // Create the second tree
 ///   sort_model2 = gtk_tree_model_sort_new_with_model (child_model);
 ///   tree_view2 = gtk_tree_view_new_with_model (sort_model2);
-/// </para>
-/// <para>
+/// 
 ///   // Now we can sort the two models independently
 ///   gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model1),
 ///                                         COLUMN_1, GTK_SORT_ASCENDING);
 ///   gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model2),
 ///                                         COLUMN_1, GTK_SORT_DESCENDING);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// To demonstrate how to access the underlying child model from the sort
 /// model, the next example will be a callback for the #GtkTreeSelection
@@ -64,8 +59,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Accessing the child model of in a selection changed callback
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// selection_changed (GtkTreeSelection *selection, gpointer data)
 /// {
@@ -75,43 +70,37 @@ namespace MentorLake.Gtk;
 ///   GtkTreeIter child_iter;
 ///   char *some_data = NULL;
 ///   char *modified_data;
-/// </para>
-/// <para>
+/// 
 ///   // Get the current selected row and the model.
 ///   if (! gtk_tree_selection_get_selected (selection,
-///                                          &sort_model,
-///                                          &sort_iter))
+///                                          &amp;sort_model,
+///                                          &amp;sort_iter))
 ///     return;
-/// </para>
-/// <para>
+/// 
 ///   // Look up the current value on the selected row and get
 ///   // a new value to change it to.
-///   gtk_tree_model_get (GTK_TREE_MODEL (sort_model), &sort_iter,
-///                       COLUMN_1, &some_data,
+///   gtk_tree_model_get (GTK_TREE_MODEL (sort_model), &amp;sort_iter,
+///                       COLUMN_1, &amp;some_data,
 ///                       -1);
-/// </para>
-/// <para>
+/// 
 ///   modified_data = change_the_data (some_data);
 ///   g_free (some_data);
-/// </para>
-/// <para>
+/// 
 ///   // Get an iterator on the child model, instead of the sort model.
 ///   gtk_tree_model_sort_convert_iter_to_child_iter (GTK_TREE_MODEL_SORT (sort_model),
-///                                                   &child_iter,
-///                                                   &sort_iter);
-/// </para>
-/// <para>
+///                                                   &amp;child_iter,
+///                                                   &amp;sort_iter);
+/// 
 ///   // Get the child model and change the value of the row. In this
 ///   // example, the child model is a GtkListStore. It could be any other
 ///   // type of model, though.
 ///   child_model = gtk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (sort_model));
-///   gtk_list_store_set (GTK_LIST_STORE (child_model), &child_iter,
-///                       COLUMN_1, &modified_data,
+///   gtk_list_store_set (GTK_LIST_STORE (child_model), &amp;child_iter,
+///                       COLUMN_1, &amp;modified_data,
 ///                       -1);
 ///   g_free (modified_data);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkTreeModelSortHandle : GObjectHandle, GtkTreeDragSourceHandle, GtkTreeModelHandle, GtkTreeSortableHandle
@@ -782,7 +771,7 @@ public static class GtkTreeModelSortHandleExtensions
 /// a #GtkTreeModelSort
 /// </param>
 /// <return>
-/// the "child model" being sorted
+/// the &quot;child model&quot; being sorted
 /// </return>
 
 	public static MentorLake.Gtk.GtkTreeModelHandle GetModel(this MentorLake.Gtk.GtkTreeModelSortHandle tree_model)
@@ -793,8 +782,8 @@ public static class GtkTreeModelSortHandleExtensions
 
 /// <summary>
 /// <para>
-/// > This function is slow. Only use it for debugging and/or testing
-/// > purposes.
+/// &amp;gt; This function is slow. Only use it for debugging and/or testing
+/// &amp;gt; purposes.
 /// </para>
 /// <para>
 /// Checks if the given iter is a valid iter for this #GtkTreeModelSort.

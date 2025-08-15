@@ -10,6 +10,12 @@ public struct GMutexLocker
 {
 }
 
+/// <summary>
+/// <para>
+/// Opaque type. See g_mutex_locker_new() for details.
+/// </para>
+/// </summary>
+
 public class GMutexLockerHandle : BaseSafeHandle
 {
 }

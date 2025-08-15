@@ -6,9 +6,10 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// A filter function is passed a #GDBusMessage and expected to return
-/// a #GDBusMessage too. Passive filter functions that don't modify the
+/// a #GDBusMessage too. Passive filter functions that don&apos;t modify the
 /// message can simply return the @message object:
-/// |[
+/// <code>
+/// static GDBusMessage *
 /// static GDBusMessage *
 /// passive_filter (GDBusConnection *connection
 ///                 GDBusMessage    *message,
@@ -18,9 +19,9 @@ namespace MentorLake.Gio;
 ///   // inspect @message
 ///   return message;
 /// }
-/// ]|
-/// Filter functions that wants to drop a message can simply return %NULL:
-/// |[
+/// </code>
+/// <code>
+/// static GDBusMessage *
 /// static GDBusMessage *
 /// drop_filter (GDBusConnection *connection
 ///              GDBusMessage    *message,
@@ -34,9 +35,9 @@ namespace MentorLake.Gio;
 ///     }
 ///   return message;
 /// }
-/// ]|
-/// Finally, a filter function may modify a message by copying it:
-/// |[
+/// </code>
+/// <code>
+/// static GDBusMessage *
 /// static GDBusMessage *
 /// modifying_filter (GDBusConnection *connection
 ///                   GDBusMessage    *message,
@@ -45,21 +46,17 @@ namespace MentorLake.Gio;
 /// {
 ///   GDBusMessage *copy;
 ///   GError *error;
-/// </para>
-/// <para>
+/// 
 ///   error = NULL;
-///   copy = g_dbus_message_copy (message, &error);
+///   copy = g_dbus_message_copy (message, &amp;error);
 ///   // handle @error being set
 ///   g_object_unref (message);
-/// </para>
-/// <para>
+/// 
 ///   // modify @copy
-/// </para>
-/// <para>
+/// 
 ///   return copy;
 /// }
-/// ]|
-/// If the returned #GDBusMessage is different from @message and cannot
+/// </code>
 /// be sent on @connection (it could use features, such as file
 /// descriptors, not compatible with @connection), then a warning is
 /// logged to standard error. Applications can

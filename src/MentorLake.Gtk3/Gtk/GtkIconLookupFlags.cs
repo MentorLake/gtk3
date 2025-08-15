@@ -38,7 +38,7 @@ public enum GtkIconLookupFlags : uint
 	GTK_ICON_LOOKUP_USE_BUILTIN = 4,
 /// <summary>
 /// <para>
-/// Try to shorten icon name at '-'
+/// Try to shorten icon name at &apos;-&apos;
 ///   characters before looking at inherited themes. This flag is only
 ///   supported in functions that take a single icon name. For more general
 ///   fallback, see gtk_icon_theme_choose_icon(). Since 2.12.

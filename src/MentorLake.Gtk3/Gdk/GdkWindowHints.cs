@@ -4,7 +4,7 @@ namespace MentorLake.Gdk;
 /// <para>
 /// Used to indicate which fields of a #GdkGeometry struct should be paid
 /// attention to. Also, the presence/absence of @GDK_HINT_POS,
-/// @GDK_HINT_USER_POS, and @GDK_HINT_USER_SIZE is significant, though they don't
+/// @GDK_HINT_USER_POS, and @GDK_HINT_USER_SIZE is significant, though they don&apos;t
 /// directly refer to #GdkGeometry fields. @GDK_HINT_USER_POS will be set
 /// automatically by #GtkWindow if you call gtk_window_move().
 /// @GDK_HINT_USER_POS and @GDK_HINT_USER_SIZE should be set if the user

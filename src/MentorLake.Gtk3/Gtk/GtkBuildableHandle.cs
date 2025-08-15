@@ -149,7 +149,7 @@ public static class GtkBuildableHandleExtensions
 
 /// <summary>
 /// <para>
-/// This is called for each unknown element under `<child>`.
+/// This is called for each unknown element under `&amp;lt;child&amp;gt;`.
 /// </para>
 /// </summary>
 
@@ -174,7 +174,7 @@ public static class GtkBuildableHandleExtensions
 /// </param>
 /// <return>
 /// %TRUE if a object has a custom implementation, %FALSE
-///          if it doesn't.
+///          if it doesn&apos;t.
 /// </return>
 
 	public static bool CustomTagStart(this MentorLake.Gtk.GtkBuildableHandle buildable, MentorLake.Gtk.GtkBuilderHandle builder, MentorLake.GObject.GObjectHandle child, string tagname, out MentorLake.GLib.GMarkupParser parser, out IntPtr data)

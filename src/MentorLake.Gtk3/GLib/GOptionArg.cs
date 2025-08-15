@@ -68,7 +68,7 @@ public enum GOptionArg
 /// <summary>
 /// <para>
 /// The option takes a double argument. The argument
-///     can be formatted either for the user's locale or for the "C" locale.
+///     can be formatted either for the user&apos;s locale or for the &quot;C&quot; locale.
 ///     Since 2.12
 /// </para>
 /// </summary>

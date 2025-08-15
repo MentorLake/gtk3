@@ -12,6 +12,13 @@ public struct GType
 	public UIntPtr Value;
 }
 
+/// <summary>
+/// <para>
+/// A numerical value which represents the unique identifier of a registered
+/// type.
+/// </para>
+/// </summary>
+
 public class GTypeHandle : BaseSafeHandle
 {
 }

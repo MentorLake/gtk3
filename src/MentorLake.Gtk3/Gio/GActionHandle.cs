@@ -6,7 +6,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// The main interface to an action is that it can be activated with
-/// [method@Gio.Action.activate]. This results in the 'activate' signal being
+/// [method@Gio.Action.activate]. This results in the &apos;activate&apos; signal being
 /// emitted. An activation has a `GVariant` parameter (which may be
 /// `NULL`). The correct type for the parameter is determined by a static
 /// parameter type (which is given at construction time).
@@ -336,7 +336,7 @@ public static class GActionHandleExtensions
 /// target value is parsed using [func@GLib.Variant.parse].  If a tuple-typed
 /// value is desired, it must be specified in the same way, resulting in
 /// two sets of parens, for example: `app.action((1,2,3))`.  A string
-/// target can be specified this way as well: `app.action('target')`.
+/// target can be specified this way as well: `app.action(&apos;target&apos;)`.
 /// For strings, this third format must be used if target value is
 /// empty or contains characters other than alphanumerics, `-` and `.`.
 /// </para>

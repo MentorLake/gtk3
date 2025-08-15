@@ -28,7 +28,7 @@ public enum GMarkupParseFlags : uint
 /// When this flag is set, CDATA marked
 ///     sections are not passed literally to the @passthrough function of
 ///     the parser. Instead, the content of the section (without the
-///     `<![CDATA[` and `]]>`) is
+///     `&amp;lt;![CDATA[` and `]]&amp;gt;`) is
 ///     passed to the @text function. This flag was added in GLib 2.12
 /// </para>
 /// </summary>
@@ -47,9 +47,9 @@ public enum GMarkupParseFlags : uint
 	G_MARKUP_PREFIX_ERROR_POSITION = 4,
 /// <summary>
 /// <para>
-/// Ignore (don't report) qualified
+/// Ignore (don&apos;t report) qualified
 ///     attributes and tags, along with their contents.  A qualified
-///     attribute or tag is one that contains ':' in its name (ie: is in
+///     attribute or tag is one that contains &apos;:&apos; in its name (ie: is in
 ///     another namespace).  Since: 2.40.
 /// </para>
 /// </summary>

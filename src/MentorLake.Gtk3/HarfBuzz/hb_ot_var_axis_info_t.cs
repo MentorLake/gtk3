@@ -8,8 +8,8 @@ namespace MentorLake.HarfBuzz;
 /// The minimum, default, and maximum values are in un-normalized, user scales.
 /// </para>
 /// <para>
-/// <note>Note: at present, the only flag defined for @flags is
-/// #HB_OT_VAR_AXIS_FLAG_HIDDEN.</note>
+/// &amp;lt;note&amp;gt;Note: at present, the only flag defined for @flags is
+/// #HB_OT_VAR_AXIS_FLAG_HIDDEN.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -35,8 +35,8 @@ internal class hb_ot_var_axis_info_tExterns
 /// The minimum, default, and maximum values are in un-normalized, user scales.
 /// </para>
 /// <para>
-/// <note>Note: at present, the only flag defined for @flags is
-/// #HB_OT_VAR_AXIS_FLAG_HIDDEN.</note>
+/// &amp;lt;note&amp;gt;Note: at present, the only flag defined for @flags is
+/// #HB_OT_VAR_AXIS_FLAG_HIDDEN.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 
@@ -79,7 +79,7 @@ public hb_ot_var_axis_flags_t flags;
 public float min_value;
 	/// <summary>
 /// <para>
-/// The position on the variation axis corresponding to the font's defaults
+/// The position on the variation axis corresponding to the font&apos;s defaults
 /// </para>
 /// </summary>
 

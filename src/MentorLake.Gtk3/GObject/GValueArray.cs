@@ -152,7 +152,7 @@ public static class GValueArrayExtensions
 /// #GValueArray to add an element to
 /// </param>
 /// <param name="index_">
-/// insertion position, must be <= value_array->;n_values
+/// insertion position, must be &amp;lt;= value_array-&amp;gt;;n_values
 /// </param>
 /// <param name="value">
 /// #GValue to copy into #GValueArray, or %NULL
@@ -201,7 +201,7 @@ public static class GValueArrayExtensions
 /// </param>
 /// <param name="index_">
 /// position of value to remove, which must be less than
-///     @value_array->n_values
+///     @value_array-&amp;gt;n_values
 /// </param>
 /// <return>
 /// the #GValueArray passed in as @value_array

@@ -12,7 +12,7 @@ public enum GtkPopoverConstraint
 {
 /// <summary>
 /// <para>
-/// Don't constrain the popover position
+/// Don&apos;t constrain the popover position
 ///   beyond what is imposed by the implementation
 /// </para>
 /// </summary>

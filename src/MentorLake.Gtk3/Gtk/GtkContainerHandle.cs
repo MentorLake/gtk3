@@ -29,10 +29,10 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// For implementations of #GtkContainer the virtual method #GtkContainerClass.forall()
-/// is always required, since it's used for drawing and other internal operations
+/// is always required, since it&apos;s used for drawing and other internal operations
 /// on the children.
 /// If the #GtkContainer implementation expect to have non internal children
-/// it's needed to implement both #GtkContainerClass.add() and #GtkContainerClass.remove().
+/// it&apos;s needed to implement both #GtkContainerClass.add() and #GtkContainerClass.remove().
 /// If the GtkContainer implementation has internal children, they should be added
 /// with gtk_widget_set_parent() on init() and removed with gtk_widget_unparent()
 /// in the #GtkWidgetClass.destroy() implementation.
@@ -73,8 +73,8 @@ namespace MentorLake.Gtk;
 /// the container must return the height for its minimum width. This is easily achieved by
 /// simply calling the reverse apis implemented for itself as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_container_get_preferred_height (GtkWidget *widget,
 ///                                     gint *min_height,
@@ -83,12 +83,11 @@ namespace MentorLake.Gtk;
 ///    if (i_am_in_height_for_width_mode)
 ///      {
 ///        gint min_width;
-/// </para>
-/// <para>
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget,
-///                                                            &min_width,
+/// 
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_width (widget,
+///                                                            &amp;min_width,
 ///                                                            NULL);
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_height_for_width
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_height_for_width
 ///                                                           (widget,
 ///                                                            min_width,
 ///                                                            min_height,
@@ -103,14 +102,13 @@ namespace MentorLake.Gtk;
 ///        ...
 ///      }
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Similarly, when gtk_widget_get_preferred_width_for_height() is called for a container or widget
 /// that is height-for-width, it then only needs to return the base minimum width like so:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_container_get_preferred_width_for_height (GtkWidget *widget,
 ///                                               gint for_height,
@@ -119,7 +117,7 @@ namespace MentorLake.Gtk;
 /// {
 ///    if (i_am_in_height_for_width_mode)
 ///      {
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget,
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_width (widget,
 ///                                                            min_width,
 ///                                                            nat_width);
 ///      }
@@ -130,8 +128,7 @@ namespace MentorLake.Gtk;
 ///        container were to be allocated the said height ...
 ///      }
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Height for width requests are generally implemented in terms of a virtual allocation
 /// of widgets in the input orientation. Assuming an height-for-width request mode, a container
@@ -199,7 +196,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkContainer implementation of the GtkBuildable interface supports
-/// a `<packing>` element for children, which can contain multiple `<property>`
+/// a `&amp;lt;packing&amp;gt;` element for children, which can contain multiple `&amp;lt;property&amp;gt;`
 /// elements that specify child properties for the child.
 /// </para>
 /// <para>
@@ -208,32 +205,31 @@ namespace MentorLake.Gtk;
 /// for regular properties.
 /// </para>
 /// <para>
-/// Since 3.16, containers can have a `<focus-chain>` element containing multiple
-/// `<widget>` elements, one for each child that should be added to the focus
+/// Since 3.16, containers can have a `&amp;lt;focus-chain&amp;gt;` element containing multiple
+/// `&amp;lt;widget&amp;gt;` elements, one for each child that should be added to the focus
 /// chain. The ”name” attribute gives the id of the widget.
 /// </para>
 /// <para>
 /// An example of these properties in UI definitions:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkBox">
-///   <child>
-///     <object class="GtkEntry" id="entry1"/>
-///     <packing>
-///       <property name="pack-type">start</property>
-///     </packing>
-///   </child>
-///   <child>
-///     <object class="GtkEntry" id="entry2"/>
-///   </child>
-///   <focus-chain>
-///     <widget name="entry1"/>
-///     <widget name="entry2"/>
-///   </focus-chain>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkBox&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkBox&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkEntry&quot; id=&quot;entry1&quot;/&amp;gt;
+///     &amp;lt;packing&amp;gt;
+///       &amp;lt;property name=&quot;pack-type&quot;&amp;gt;start&amp;lt;/property&amp;gt;
+///     &amp;lt;/packing&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkEntry&quot; id=&quot;entry2&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;focus-chain&amp;gt;
+///     &amp;lt;widget name=&quot;entry1&quot;/&amp;gt;
+///     &amp;lt;widget name=&quot;entry2&quot;/&amp;gt;
+///   &amp;lt;/focus-chain&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkContainerHandle : GtkWidgetHandle, AtkImplementorIfaceHandle, GtkBuildableHandle
@@ -859,7 +855,7 @@ public static class GtkContainerHandleExtensions
 /// <summary>
 /// <para>
 /// Returns the container’s non-internal children. See
-/// gtk_container_forall() for details on what constitutes an "internal" child.
+/// gtk_container_forall() for details on what constitutes an &quot;internal&quot; child.
 /// </para>
 /// </summary>
 

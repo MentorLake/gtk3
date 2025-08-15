@@ -40,7 +40,7 @@ public static class GDBusObjectSkeletonHandleSignalExtensions
 /// determine if the method call is authorized.
 /// </para>
 /// <para>
-/// This signal is like #GDBusInterfaceSkeleton's
+/// This signal is like #GDBusInterfaceSkeleton&apos;s
 /// #GDBusInterfaceSkeleton::g-authorize-method signal,
 /// except that it is for the enclosing object.
 /// </para>
@@ -219,7 +219,7 @@ public static class GDBusObjectSkeletonHandleSignalDelegates
 /// determine if the method call is authorized.
 /// </para>
 /// <para>
-/// This signal is like #GDBusInterfaceSkeleton's
+/// This signal is like #GDBusInterfaceSkeleton&apos;s
 /// #GDBusInterfaceSkeleton::g-authorize-method signal,
 /// except that it is for the enclosing object.
 /// </para>

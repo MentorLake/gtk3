@@ -30,37 +30,35 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkComboBoxText implementation of the GtkBuildable interface supports
-/// adding items directly using the `<items>` element and specifying `<item>`
-/// elements for each item. Each `<item>` element can specify the “id”
+/// adding items directly using the `&amp;lt;items&amp;gt;` element and specifying `&amp;lt;item&amp;gt;`
+/// elements for each item. Each `&amp;lt;item&amp;gt;` element can specify the “id”
 /// corresponding to the appended text and also supports the regular
 /// translation attributes “translatable”, “context” and “comments”.
 /// </para>
 /// <para>
 /// Here is a UI definition fragment specifying GtkComboBoxText items:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkComboBoxText">
-///   <items>
-///     <item translatable="yes" id="factory">Factory</item>
-///     <item translatable="yes" id="home">Home</item>
-///     <item translatable="yes" id="subway">Subway</item>
-///   </items>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkComboBoxText&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkComboBoxText&quot;&amp;gt;
+///   &amp;lt;items&amp;gt;
+///     &amp;lt;item translatable=&quot;yes&quot; id=&quot;factory&quot;&amp;gt;Factory&amp;lt;/item&amp;gt;
+///     &amp;lt;item translatable=&quot;yes&quot; id=&quot;home&quot;&amp;gt;Home&amp;lt;/item&amp;gt;
+///     &amp;lt;item translatable=&quot;yes&quot; id=&quot;subway&quot;&amp;gt;Subway&amp;lt;/item&amp;gt;
+///   &amp;lt;/items&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// combobox
 /// combobox
 /// ╰── box.linked
 ///     ├── entry.combo
 ///     ├── button.combo
 ///     ╰── window.popup
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkComboBoxText has a single CSS node with name combobox. It adds
 /// the style class .combo to the main CSS nodes of its entry and button
@@ -161,7 +159,7 @@ public static class GtkComboBoxTextHandleSignalExtensions
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -260,7 +258,7 @@ public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>

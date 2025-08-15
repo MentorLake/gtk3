@@ -159,22 +159,22 @@ public uint len;
 /// </para>
 /// <para>
 /// This example defines a comparison function and search an element in a #GArray:
-/// |[<!-- language="C" -->
+/// <code>
+/// static gint
 /// static gint
 /// cmpint (gconstpointer a, gconstpointer b)
 /// {
 ///   const gint *_a = a;
 ///   const gint *_b = b;
-/// </para>
-/// <para>
+/// 
 ///   return *_a - *_b;
 /// }
 /// ...
 /// gint i = 424242;
 /// guint matched_index;
-/// gboolean result = g_array_binary_search (garray, &i, cmpint, &matched_index);
+/// gboolean result = g_array_binary_search (garray, &amp;i, cmpint, &amp;matched_index);
 /// ...
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -574,30 +574,27 @@ public uint len;
 /// functions, @clear_func is expected to clear the contents of
 /// the array element it is given, but not free the element itself.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct
 /// typedef struct
 /// {
 ///   gchar *str;
 ///   GObject *obj;
 /// } ArrayElement;
-/// </para>
-/// <para>
+/// 
 /// static void
 /// array_element_clear (ArrayElement *element)
 /// {
-///   g_clear_pointer (&element->str, g_free);
-///   g_clear_object (&element->obj);
+///   g_clear_pointer (&amp;element-&amp;gt;str, g_free);
+///   g_clear_object (&amp;element-&amp;gt;obj);
 /// }
-/// </para>
-/// <para>
+/// 
 /// // main code
 /// GArray *garray = g_array_new (FALSE, FALSE, sizeof (ArrayElement));
 /// g_array_set_clear_func (garray, (GDestroyNotify) array_element_clear);
 /// // assign data to the structure
 /// g_array_free (garray, TRUE);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="array">
@@ -736,13 +733,14 @@ public uint len;
 /// </para>
 /// <para>
 /// A short example of use:
-/// |[<!-- language="C" -->
+/// <code>
+/// ...
 /// ...
 /// gpointer data;
 /// gsize data_len;
-/// data = g_array_steal (some_array, &data_len);
+/// data = g_array_steal (some_array, &amp;data_len);
 /// ...
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

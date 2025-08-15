@@ -18,14 +18,14 @@ public enum GDBusProxyFlags : uint
 	G_DBUS_PROXY_FLAGS_NONE = 0,
 /// <summary>
 /// <para>
-/// Don't load properties.
+/// Don&apos;t load properties.
 /// </para>
 /// </summary>
 
 	G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES = 1,
 /// <summary>
 /// <para>
-/// Don't connect to signals on the remote object.
+/// Don&apos;t connect to signals on the remote object.
 /// </para>
 /// </summary>
 
@@ -41,7 +41,7 @@ public enum GDBusProxyFlags : uint
 	G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START = 4,
 /// <summary>
 /// <para>
-/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the <see href="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-properties">PropertiesChanged</see> D-Bus signal and the property will not cause emission of the #GDBusProxy::g-properties-changed signal. When the value is received the #GDBusProxy::g-properties-changed signal is emitted for the property along with the retrieved value. Since 2.32.
+/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the &amp;lt;see href=&quot;http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-properties&quot;&amp;gt;PropertiesChanged&amp;lt;/see&amp;gt; D-Bus signal and the property will not cause emission of the #GDBusProxy::g-properties-changed signal. When the value is received the #GDBusProxy::g-properties-changed signal is emitted for the property along with the retrieved value. Since 2.32.
 /// </para>
 /// </summary>
 
@@ -58,7 +58,7 @@ public enum GDBusProxyFlags : uint
 	G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION = 16,
 /// <summary>
 /// <para>
-/// Don't actually send the AddMatch D-Bus
+/// Don&apos;t actually send the AddMatch D-Bus
 ///    call for this signal subscription. This gives you more control
 ///    over which match rules you add (but you must add them manually). (Since: 2.72)
 /// </para>

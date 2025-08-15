@@ -123,20 +123,19 @@ public IntPtr signals;
 /// <para>
 /// ## Adding a Key Binding
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkBindingSet *binding_set;
 /// GtkBindingSet *binding_set;
 /// GdkModifierType modmask = GDK_CONTROL_MASK;
 /// int count = 1;
 /// gtk_binding_entry_add_signal (binding_set,
 ///                               GDK_KEY_space,
 ///                               modmask,
-///                               "move-cursor", 2,
+///                               &quot;move-cursor&quot;, 2,
 ///                               GTK_TYPE_MOVEMENT_STEP, GTK_MOVEMENT_PAGES,
 ///                               G_TYPE_INT, count,
 ///                               G_TYPE_BOOLEAN, FALSE);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="binding_set">
@@ -171,20 +170,18 @@ public IntPtr signals;
 /// <para>
 /// Signal descriptions may either bind a key combination to
 /// one or more signals:
-/// |[
-///   bind "key" {
-///     "signalname" (param, ...)
+/// <code>
+///   bind &quot;key&quot; {
+///   bind &quot;key&quot; {
+///     &quot;signalname&quot; (param, ...)
 ///     ...
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Or they may also unbind a key combination:
-/// |[
-///   unbind "key"
-/// ]|
-/// </para>
-/// <para>
+/// <code>
+///   unbind &quot;key&quot;
+///   unbind &quot;key&quot;
+/// </code>
 /// Key combinations must be in a format that can be parsed by
 /// gtk_accelerator_parse().
 /// </para>

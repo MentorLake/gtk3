@@ -48,13 +48,13 @@ public class GTreeHandle : BaseSafeHandle
 /// </param>
 /// <param name="key_destroy_func">
 /// a function to free the memory allocated for the key
-///   used when removing the entry from the #GTree or %NULL if you don't
+///   used when removing the entry from the #GTree or %NULL if you don&apos;t
 ///   want to supply such a function
 /// </param>
 /// <param name="value_destroy_func">
 /// a function to free the memory allocated for the
 ///   value used when removing the entry from the #GTree or %NULL if you
-///   don't want to supply such a function
+///   don&apos;t want to supply such a function
 /// </param>
 /// <return>
 /// a newly allocated #GTree
@@ -120,7 +120,7 @@ public static class GTreeExtensions
 /// @data parameter. The tree is traversed in sorted order.
 /// </para>
 /// <para>
-/// The tree may not be modified while iterating over it (you can't
+/// The tree may not be modified while iterating over it (you can&apos;t
 /// add/remove items). To remove all items matching a predicate, you need
 /// to add each item to a list in your #GTraverseFunc as you walk over
 /// the tree, then walk the list and remove each item.
@@ -151,7 +151,7 @@ public static class GTreeExtensions
 /// @data parameter. The tree traversal happens in-order.
 /// </para>
 /// <para>
-/// The tree may not be modified while iterating over it (you can't
+/// The tree may not be modified while iterating over it (you can&apos;t
 /// add/remove items). To remove all items matching a predicate, you need
 /// to add each item to a list in your #GTraverseFunc as you walk over
 /// the tree, then walk the list and remove each item.
@@ -237,7 +237,7 @@ public static class GTreeExtensions
 /// key is freed using that function.
 /// </para>
 /// <para>
-/// The tree is automatically 'balanced' as new key/value pairs are added,
+/// The tree is automatically &apos;balanced&apos; as new key/value pairs are added,
 /// so that the distance from the root to every leaf is as small as possible.
 /// The cost of maintaining a balanced tree while inserting new key/value
 /// result in a O(n log(n)) operation where most of the other operations
@@ -546,7 +546,7 @@ public static class GTreeExtensions
 /// freed using that function.
 /// </para>
 /// <para>
-/// The tree is automatically 'balanced' as new key/value pairs are added,
+/// The tree is automatically &apos;balanced&apos; as new key/value pairs are added,
 /// so that the distance from the root to every leaf is as small as possible.
 /// </para>
 /// </summary>

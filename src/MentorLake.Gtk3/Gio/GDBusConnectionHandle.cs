@@ -469,13 +469,13 @@ public static class GDBusConnectionHandleExtensions
 /// incoming and outgoing messages, prior to standard dispatch. Filters
 /// are run in the order that they were added.  The same handler can be
 /// added as a filter more than once, in which case it will be run more
-/// than once.  Filters added during a filter callback won't be run on
+/// than once.  Filters added during a filter callback won&apos;t be run on
 /// the message being processed. Filter functions are allowed to modify
 /// and even drop messages.
 /// </para>
 /// <para>
 /// Note that filters are run in a dedicated message handling thread so
-/// they can't block and, generally, can't do anything but signal a
+/// they can&apos;t block and, generally, can&apos;t do anything but signal a
 /// worker thread. Also note that filters are rarely needed - use API
 /// such as g_dbus_connection_send_message_with_reply(),
 /// g_dbus_connection_signal_subscribe() or g_dbus_connection_call() instead.
@@ -544,25 +544,24 @@ public static class GDBusConnectionHandleExtensions
 /// </para>
 /// <para>
 /// If the @parameters #GVariant is floating, it is consumed. This allows
-/// convenient 'inline' use of g_variant_new(), e.g.:
-/// |[<!-- language="C" -->
+/// convenient &apos;inline&apos; use of g_variant_new(), e.g.:
+/// <code>
 ///  g_dbus_connection_call (connection,
-///                          "org.freedesktop.StringThings",
-///                          "/org/freedesktop/StringThings",
-///                          "org.freedesktop.StringThings",
-///                          "TwoStrings",
-///                          g_variant_new ("(ss)",
-///                                         "Thing One",
-///                                         "Thing Two"),
+///  g_dbus_connection_call (connection,
+///                          &quot;org.freedesktop.StringThings&quot;,
+///                          &quot;/org/freedesktop/StringThings&quot;,
+///                          &quot;org.freedesktop.StringThings&quot;,
+///                          &quot;TwoStrings&quot;,
+///                          g_variant_new (&quot;(ss)&quot;,
+///                                         &quot;Thing One&quot;,
+///                                         &quot;Thing Two&quot;),
 ///                          NULL,
 ///                          G_DBUS_CALL_FLAGS_NONE,
 ///                          -1,
 ///                          NULL,
 ///                          (GAsyncReadyCallback) two_strings_done,
 ///                          NULL);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// This is an asynchronous method. When the operation is finished,
 /// @callback will be invoked in the
 /// [thread-default main context][g-main-context-push-thread-default]
@@ -613,7 +612,7 @@ public static class GDBusConnectionHandleExtensions
 /// </param>
 /// <param name="callback">
 /// a #GAsyncReadyCallback to call when the request
-///     is satisfied or %NULL if you don't care about the result of the
+///     is satisfied or %NULL if you don&apos;t care about the result of the
 ///     method invocation
 /// </param>
 /// <param name="user_data">
@@ -673,24 +672,23 @@ public static class GDBusConnectionHandleExtensions
 /// </para>
 /// <para>
 /// If the @parameters #GVariant is floating, it is consumed.
-/// This allows convenient 'inline' use of g_variant_new(), e.g.:
-/// |[<!-- language="C" -->
+/// This allows convenient &apos;inline&apos; use of g_variant_new(), e.g.:
+/// <code>
 ///  g_dbus_connection_call_sync (connection,
-///                               "org.freedesktop.StringThings",
-///                               "/org/freedesktop/StringThings",
-///                               "org.freedesktop.StringThings",
-///                               "TwoStrings",
-///                               g_variant_new ("(ss)",
-///                                              "Thing One",
-///                                              "Thing Two"),
+///  g_dbus_connection_call_sync (connection,
+///                               &quot;org.freedesktop.StringThings&quot;,
+///                               &quot;/org/freedesktop/StringThings&quot;,
+///                               &quot;org.freedesktop.StringThings&quot;,
+///                               &quot;TwoStrings&quot;,
+///                               g_variant_new (&quot;(ss)&quot;,
+///                                              &quot;Thing One&quot;,
+///                                              &quot;Thing Two&quot;),
 ///                               NULL,
 ///                               G_DBUS_CALL_FLAGS_NONE,
 ///                               -1,
 ///                               NULL,
-///                               &error);
-/// ]|
-/// </para>
-/// <para>
+///                               &amp;error);
+/// </code>
 /// The calling thread is blocked until a reply is received. See
 /// g_dbus_connection_call() for the asynchronous version of
 /// this method.
@@ -804,7 +802,7 @@ public static class GDBusConnectionHandleExtensions
 /// </param>
 /// <param name="callback">
 /// a #GAsyncReadyCallback to call when the request is
-///     satisfied or %NULL if you don't * care about the result of the
+///     satisfied or %NULL if you don&apos;t * care about the result of the
 ///     method invocation
 /// </param>
 /// <param name="user_data">
@@ -964,7 +962,7 @@ public static class GDBusConnectionHandleExtensions
 /// </param>
 /// <param name="callback">
 /// a #GAsyncReadyCallback to call when the request is
-///     satisfied or %NULL if you don't care about the result
+///     satisfied or %NULL if you don&apos;t care about the result
 /// </param>
 /// <param name="user_data">
 /// The data to pass to @callback
@@ -1200,7 +1198,7 @@ public static class GDBusConnectionHandleExtensions
 /// </param>
 /// <param name="callback">
 /// a #GAsyncReadyCallback to call when the
-///     request is satisfied or %NULL if you don't care about the result
+///     request is satisfied or %NULL if you don&apos;t care about the result
 /// </param>
 /// <param name="user_data">
 /// The data to pass to @callback
@@ -1501,7 +1499,7 @@ public static class GDBusConnectionHandleExtensions
 /// <para>
 /// GDBus automatically implements the standard D-Bus interfaces
 /// org.freedesktop.DBus.Properties, org.freedesktop.DBus.Introspectable
-/// and org.freedesktop.Peer, so you don't have to implement those for the
+/// and org.freedesktop.Peer, so you don&apos;t have to implement those for the
 /// objects you export. You can implement org.freedesktop.DBus.Properties
 /// yourself, e.g. to handle getting and setting of properties asynchronously.
 /// </para>
@@ -1814,7 +1812,7 @@ public static class GDBusConnectionHandleExtensions
 /// </param>
 /// <param name="callback">
 /// a #GAsyncReadyCallback to call when the request
-///     is satisfied or %NULL if you don't care about the result
+///     is satisfied or %NULL if you don&apos;t care about the result
 /// </param>
 /// <param name="user_data">
 /// The data to pass to @callback
@@ -1945,7 +1943,7 @@ public static class GDBusConnectionHandleExtensions
 /// <para>
 /// Note that this function should be used with care. Most modern UNIX
 /// desktops tie the notion of a user session with the session bus, and expect
-/// all of a user's applications to quit when their bus connection goes away.
+/// all of a user&apos;s applications to quit when their bus connection goes away.
 /// If you are setting @exit_on_close to %FALSE for the shared session
 /// bus connection, you should make sure that your application exits
 /// when the user session ends.
@@ -2113,7 +2111,7 @@ public static class GDBusConnectionHandleExtensions
 /// <para>
 /// If @connection was created with
 /// %G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING, this method
-/// starts processing messages. Does nothing on if @connection wasn't
+/// starts processing messages. Does nothing on if @connection wasn&apos;t
 /// created with this flag or if the method has already been called.
 /// </para>
 /// </summary>
@@ -2161,7 +2159,7 @@ public static class GDBusConnectionHandleExtensions
 /// g_dbus_connection_export_menu_model().
 /// </para>
 /// <para>
-/// It is an error to call this function with an ID that wasn't returned
+/// It is an error to call this function with an ID that wasn&apos;t returned
 /// from g_dbus_connection_export_menu_model() or to call it with the
 /// same ID more than once.
 /// </para>

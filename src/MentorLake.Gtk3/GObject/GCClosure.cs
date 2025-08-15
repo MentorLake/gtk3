@@ -210,7 +210,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -245,7 +245,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -286,7 +286,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -321,7 +321,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -361,7 +361,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -396,7 +396,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -435,7 +435,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -470,7 +470,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -509,7 +509,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -544,7 +544,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -583,7 +583,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -618,7 +618,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -657,7 +657,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -692,7 +692,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -731,7 +731,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -766,7 +766,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -805,7 +805,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -840,7 +840,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -879,7 +879,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -914,7 +914,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -953,7 +953,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -988,7 +988,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1027,7 +1027,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1062,7 +1062,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1101,7 +1101,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1136,7 +1136,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1175,7 +1175,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1210,7 +1210,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1254,7 +1254,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1289,7 +1289,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1328,7 +1328,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1363,7 +1363,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1402,7 +1402,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1437,7 +1437,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1476,7 +1476,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1512,7 +1512,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1547,7 +1547,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1585,7 +1585,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1624,7 +1624,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1659,7 +1659,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1698,7 +1698,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1733,7 +1733,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1771,7 +1771,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1806,7 +1806,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">
@@ -1849,7 +1849,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_gvalue">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1885,7 +1885,7 @@ public IntPtr callback;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="instance">

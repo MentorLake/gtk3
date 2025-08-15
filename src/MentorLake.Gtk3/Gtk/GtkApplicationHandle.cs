@@ -32,21 +32,21 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// #GtkApplication will automatically load menus from the #GtkBuilder
-/// resource located at "gtk/menus.ui", relative to the application's
+/// resource located at &quot;gtk/menus.ui&quot;, relative to the application&apos;s
 /// resource base path (see g_application_set_resource_base_path()).  The
-/// menu with the ID "app-menu" is taken as the application's app menu
-/// and the menu with the ID "menubar" is taken as the application's
+/// menu with the ID &quot;app-menu&quot; is taken as the application&apos;s app menu
+/// and the menu with the ID &quot;menubar&quot; is taken as the application&apos;s
 /// menubar.  Additional menus (most interesting submenus) can be named
 /// and accessed via gtk_application_get_menu_by_id() which allows for
 /// dynamic population of a part of the menu structure.
 /// </para>
 /// <para>
-/// If the resources "gtk/menus-appmenu.ui" or "gtk/menus-traditional.ui" are
+/// If the resources &quot;gtk/menus-appmenu.ui&quot; or &quot;gtk/menus-traditional.ui&quot; are
 /// present then these files will be used in preference, depending on the value
-/// of gtk_application_prefers_app_menu(). If the resource "gtk/menus-common.ui"
+/// of gtk_application_prefers_app_menu(). If the resource &quot;gtk/menus-common.ui&quot;
 /// is present it will be loaded as well. This is useful for storing items that
-/// are referenced from both "gtk/menus-appmenu.ui" and
-/// "gtk/menus-traditional.ui".
+/// are referenced from both &quot;gtk/menus-appmenu.ui&quot; and
+/// &quot;gtk/menus-traditional.ui&quot;.
 /// </para>
 /// <para>
 /// It is also possible to provide the menus manually using
@@ -54,14 +54,14 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// #GtkApplication will also automatically setup an icon search path for
-/// the default icon theme by appending "icons" to the resource base
+/// the default icon theme by appending &quot;icons&quot; to the resource base
 /// path.  This allows your application to easily store its icons as
 /// resources.  See gtk_icon_theme_add_resource_path() for more
 /// information.
 /// </para>
 /// <para>
-/// If there is a resource located at "gtk/help-overlay.ui" which
-/// defines a #GtkShortcutsWindow with ID "help_overlay" then GtkApplication
+/// If there is a resource located at &quot;gtk/help-overlay.ui&quot; which
+/// defines a #GtkShortcutsWindow with ID &quot;help_overlay&quot; then GtkApplication
 /// associates an instance of this shortcuts window with each
 /// #GtkApplicationWindow and sets up keyboard accelerators (Control-F1
 /// and Control-?) to open it. To create a menu item that displays the
@@ -679,7 +679,7 @@ public static class GtkApplicationHandleExtensions
 /// </para>
 /// <para>
 /// @accelerator must be a string that can be parsed by gtk_accelerator_parse(),
-/// e.g. "<Primary>q" or “<Control><Alt>p”.
+/// e.g. &quot;&amp;lt;Primary&amp;gt;q&quot; or “&amp;lt;Control&amp;gt;&amp;lt;Alt&amp;gt;p”.
 /// </para>
 /// <para>
 /// @action_name must be the name of an action as it would be used
@@ -835,7 +835,7 @@ public static class GtkApplicationHandleExtensions
 /// </param>
 /// <return>
 /// the active window, or %NULL if
-///   there isn't one.
+///   there isn&apos;t one.
 /// </return>
 
 	public static MentorLake.Gtk.GtkWindowHandle GetActiveWindow(this MentorLake.Gtk.GtkApplicationHandle application)
@@ -1085,14 +1085,14 @@ public static class GtkApplicationHandleExtensions
 /// <para>
 /// The value returned by this function is purely advisory and you are
 /// free to ignore it.  If you call gtk_application_set_app_menu() even
-/// if the desktop environment doesn't support app menus, then a fallback
+/// if the desktop environment doesn&apos;t support app menus, then a fallback
 /// will be provided.
 /// </para>
 /// <para>
 /// Applications are similarly free not to set an app menu even if the
 /// desktop environment wants to show one.  In that case, a fallback will
 /// also be created by the desktop environment (GNOME, for example, uses
-/// a menu with only a "Quit" item in it).
+/// a menu with only a &quot;Quit&quot; item in it).
 /// </para>
 /// <para>
 /// The value returned by this function never changes.  Once it returns a
@@ -1100,7 +1100,7 @@ public static class GtkApplicationHandleExtensions
 /// </para>
 /// <para>
 /// You may only call this function after the application has been
-/// registered and after the base startup handler has run.  You're most
+/// registered and after the base startup handler has run.  You&apos;re most
 /// likely to want to use this from your own startup handler.  It may
 /// also make sense to consult this function while constructing UI (in
 /// activate, open or an action activation handler) in order to determine
@@ -1108,7 +1108,7 @@ public static class GtkApplicationHandleExtensions
 /// </para>
 /// <para>
 /// This function will return %FALSE on Mac OS and a default app menu
-/// will be created automatically with the "usual" contents of that menu
+/// will be created automatically with the &quot;usual&quot; contents of that menu
 /// typical to most Mac OS applications.  If you call
 /// gtk_application_set_app_menu() anyway, then this menu will be
 /// replaced with your own.

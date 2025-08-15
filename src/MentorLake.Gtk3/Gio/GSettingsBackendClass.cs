@@ -32,7 +32,7 @@ public struct GSettingsBackendClass
 public GObjectClass parent_class;
 	/// <summary>
 /// <para>
-/// virtual method to read a key's value
+/// virtual method to read a key&apos;s value
 /// </para>
 /// </summary>
 
@@ -46,7 +46,7 @@ public IntPtr read;
 public IntPtr get_writable;
 	/// <summary>
 /// <para>
-/// virtual method to change key's value
+/// virtual method to change key&apos;s value
 /// </para>
 /// </summary>
 
@@ -95,7 +95,7 @@ public IntPtr sync;
 public IntPtr get_permission;
 	/// <summary>
 /// <para>
-/// virtual method to read user's key value
+/// virtual method to read user&apos;s key value
 /// </para>
 /// </summary>
 

@@ -11,7 +11,7 @@ public enum GtkEventControllerScrollFlags : uint
 {
 /// <summary>
 /// <para>
-/// Don't emit scroll.
+/// Don&apos;t emit scroll.
 /// </para>
 /// </summary>
 

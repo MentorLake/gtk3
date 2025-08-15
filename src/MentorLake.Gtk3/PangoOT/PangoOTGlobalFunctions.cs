@@ -29,13 +29,13 @@ public class PangoOTGlobalFunctions
 /// <para>
 /// The %PANGO_SCRIPT_COMMON, %PANGO_SCRIPT_INHERITED, and
 /// %PANGO_SCRIPT_UNKNOWN scripts are mapped to the OpenType
-/// 'DFLT' script tag that is also defined as
+/// &apos;DFLT&apos; script tag that is also defined as
 /// %PANGO_OT_TAG_DEFAULT_SCRIPT.
 /// </para>
 /// <para>
 /// Note that multiple `PangoScript` values may map to the same
 /// OpenType script tag.  In particular, %PANGO_SCRIPT_HIRAGANA
-/// and %PANGO_SCRIPT_KATAKANA both map to the OT tag 'kana'.
+/// and %PANGO_SCRIPT_KATAKANA both map to the OT tag &apos;kana&apos;.
 /// </para>
 /// </summary>
 
@@ -63,7 +63,7 @@ public class PangoOTGlobalFunctions
 /// </param>
 /// <return>
 /// `PangoLanguage` best matching @language_tag or
-/// `PangoLanguage` corresponding to the string "xx" if none found.
+/// `PangoLanguage` corresponding to the string &quot;xx&quot; if none found.
 /// </return>
 
 	public static MentorLake.Pango.PangoLanguageHandle TagToLanguage(MentorLake.PangoOT.PangoOTTag language_tag)
@@ -76,16 +76,16 @@ public class PangoOTGlobalFunctions
 /// Finds the `PangoScript` corresponding to @script_tag.
 /// </para>
 /// <para>
-/// The 'DFLT' script tag is mapped to %PANGO_SCRIPT_COMMON.
+/// The &apos;DFLT&apos; script tag is mapped to %PANGO_SCRIPT_COMMON.
 /// </para>
 /// <para>
 /// Note that an OpenType script tag may correspond to multiple
 /// `PangoScript` values.  In such cases, the `PangoScript` value
 /// with the smallest value is returned.
 /// In particular, %PANGO_SCRIPT_HIRAGANA
-/// and %PANGO_SCRIPT_KATAKANA both map to the OT tag 'kana'.
+/// and %PANGO_SCRIPT_KATAKANA both map to the OT tag &apos;kana&apos;.
 /// This function will return %PANGO_SCRIPT_HIRAGANA for
-/// 'kana'.
+/// &apos;kana&apos;.
 /// </para>
 /// </summary>
 

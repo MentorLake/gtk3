@@ -7,12 +7,12 @@ namespace MentorLake.Atk;
 /// </para>
 /// <para>
 /// The AtkRelationSet held by an object establishes its relationships
-/// with objects beyond the normal "parent/child" hierarchical
+/// with objects beyond the normal &quot;parent/child&quot; hierarchical
 /// relationships that all user interface objects have.
 /// AtkRelationSets establish whether objects are labelled or
 /// controlled by other components, share group membership with other
 /// components (for instance within a radio-button group), or share
-/// content which "flows" between them, among other types of possible
+/// content which &quot;flows&quot; between them, among other types of possible
 /// relationships.
 /// </para>
 /// </summary>
@@ -42,7 +42,7 @@ public static class AtkRelationSetHandleExtensions
 /// <para>
 /// Add a new relation to the current relation set if it is not already
 /// present.
-/// This function ref's the AtkRelation so the caller of this function
+/// This function ref&apos;s the AtkRelation so the caller of this function
 /// should unref it to ensure that it will be destroyed when the AtkRelationSet
 /// is destroyed.
 /// </para>
@@ -208,7 +208,7 @@ public static class AtkRelationSetHandleExtensions
 /// <summary>
 /// <para>
 /// Removes a relation from the relation set.
-/// This function unref's the #AtkRelation so it will be deleted unless there
+/// This function unref&apos;s the #AtkRelation so it will be deleted unless there
 /// is another reference to it.
 /// </para>
 /// </summary>

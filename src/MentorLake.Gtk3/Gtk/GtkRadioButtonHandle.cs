@@ -40,24 +40,22 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// radiobutton
 /// radiobutton
 /// ├── radio
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// A GtkRadioButton with indicator (see gtk_toggle_button_set_mode()) has a
 /// main CSS node with name radiobutton and a subnode with name radio.
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// button.radio
 /// button.radio
 /// ├── radio
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// A GtkRadioButton without indicator changes the name of its main node
 /// to button and adds a .radio style class to it. The subnode is invisible
@@ -66,30 +64,25 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## How to create a group of two radio buttons.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// void create_radio_buttons (void) {
-/// </para>
-/// <para>
+/// void create_radio_buttons (void) {
+/// 
 ///    GtkWidget *window, *radio1, *radio2, *box, *entry;
 ///    window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///    box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 ///    gtk_box_set_homogeneous (GTK_BOX (box), TRUE);
-/// </para>
-/// <para>
+/// 
 ///    // Create a radio button with a GtkEntry widget
 ///    radio1 = gtk_radio_button_new (NULL);
 ///    entry = gtk_entry_new ();
 ///    gtk_container_add (GTK_CONTAINER (radio1), entry);
-/// </para>
-/// <para>
-/// </para>
-/// <para>
+/// 
+/// 
 ///    // Create a radio button with a label
 ///    radio2 = gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio1),
-///                                                          "I’m the second radio button.");
-/// </para>
-/// <para>
+///                                                          &quot;I’m the second radio button.&quot;);
+/// 
 ///    // Pack them into a box, then show all the widgets
 ///    gtk_box_pack_start (GTK_BOX (box), radio1);
 ///    gtk_box_pack_start (GTK_BOX (box), radio2);
@@ -97,8 +90,7 @@ namespace MentorLake.Gtk;
 ///    gtk_widget_show_all (window);
 ///    return;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// When an unselected button in the group is clicked the clicked button
 /// receives the #GtkToggleButton::toggled signal, as does the previously
@@ -359,20 +351,19 @@ public static class GtkRadioButtonHandleExtensions
 /// </para>
 /// <para>
 /// A common way to set up a group of radio buttons is the following:
-/// |[<!-- language="C" -->
+/// <code>
+///   GtkRadioButton *radio_button;
 ///   GtkRadioButton *radio_button;
 ///   GtkRadioButton *last_button;
-/// </para>
-/// <para>
+/// 
 ///   while (some_condition)
 ///     {
 ///        radio_button = gtk_radio_button_new (NULL);
-/// </para>
-/// <para>
+/// 
 ///        gtk_radio_button_join_group (radio_button, last_button);
 ///        last_button = radio_button;
 ///     }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

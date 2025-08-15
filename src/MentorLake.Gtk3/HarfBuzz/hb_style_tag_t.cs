@@ -12,7 +12,7 @@ public enum hb_style_tag_t
 /// <summary>
 /// <para>
 /// Used to vary between non-italic and italic.
-/// A value of 0 can be interpreted as "Roman" (non-italic); a value of 1 can
+/// A value of 0 can be interpreted as &quot;Roman&quot; (non-italic); a value of 1 can
 /// be interpreted as (fully) italic.
 /// </para>
 /// </summary>

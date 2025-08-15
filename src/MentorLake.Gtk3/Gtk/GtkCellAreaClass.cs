@@ -149,7 +149,7 @@ public IntPtr render;
 	/// <summary>
 /// <para>
 /// Apply the cell attributes to the cells. This is
-///     implemented as a signal and generally #GtkCellArea subclasses don't
+///     implemented as a signal and generally #GtkCellArea subclasses don&apos;t
 ///     need to implement it since it is handled by the base class.
 /// </para>
 /// </summary>

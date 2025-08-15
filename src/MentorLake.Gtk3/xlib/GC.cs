@@ -6,6 +6,7 @@ public struct GC
 	public IntPtr Value;
 }
 
+
 public class GCHandle : BaseSafeHandle
 {
 }

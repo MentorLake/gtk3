@@ -50,7 +50,7 @@ public int group;
 /// <para>
 /// indicates which symbol on the key will be used, in a vertical direction.
 ///   So on a standard US keyboard, the key with the number “1” on it also has the
-///   exclamation point ("!") character on it. The level indicates whether to use
+///   exclamation point (&quot;!&quot;) character on it. The level indicates whether to use
 ///   the “1” or the “!” symbol. The letter keys are considered to have a lowercase
 ///   letter at level 0, and an uppercase letter at level 1, though only the
 ///   uppercase letter is printed.

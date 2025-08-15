@@ -9,10 +9,10 @@ namespace MentorLake.cairo;
 /// <para>
 /// Because font metrics are in user-space coordinates, they are
 /// mostly, but not entirely, independent of the current transformation
-/// matrix. If you call <literal>cairo_scale(cr, 2.0, 2.0)</literal>,
+/// matrix. If you call &amp;lt;literal&amp;gt;cairo_scale(cr, 2.0, 2.0)&amp;lt;/literal&amp;gt;,
 /// text will be drawn twice as big, but the reported text extents will
 /// not be doubled. They will change slightly due to hinting (so you
-/// can't assume that metrics are independent of the transformation
+/// can&apos;t assume that metrics are independent of the transformation
 /// matrix), but otherwise will remain unchanged.
 /// </para>
 /// </summary>
@@ -40,10 +40,10 @@ internal class cairo_font_extents_tExterns
 /// <para>
 /// Because font metrics are in user-space coordinates, they are
 /// mostly, but not entirely, independent of the current transformation
-/// matrix. If you call <literal>cairo_scale(cr, 2.0, 2.0)</literal>,
+/// matrix. If you call &amp;lt;literal&amp;gt;cairo_scale(cr, 2.0, 2.0)&amp;lt;/literal&amp;gt;,
 /// text will be drawn twice as big, but the reported text extents will
 /// not be doubled. They will change slightly due to hinting (so you
-/// can't assume that metrics are independent of the transformation
+/// can&apos;t assume that metrics are independent of the transformation
 /// matrix), but otherwise will remain unchanged.
 /// </para>
 /// </summary>
@@ -55,7 +55,7 @@ public struct cairo_font_extents_t
 /// the distance that the font extends above the baseline.
 ///          Note that this is not always exactly equal to the maximum
 ///          of the extents of all the glyphs in the font, but rather
-///          is picked to express the font designer's intent as to
+///          is picked to express the font designer&apos;s intent as to
 ///          how the font should align with elements above it.
 /// </para>
 /// </summary>
@@ -68,7 +68,7 @@ public double ascent;
 ///           portions below the baseline. Note that this is not always
 ///           exactly equal to the maximum of the extents of all the
 ///           glyphs in the font, but rather is picked to express the
-///           font designer's intent as to how the font should
+///           font designer&apos;s intent as to how the font should
 ///           align with elements below it.
 /// </para>
 /// </summary>
@@ -79,8 +79,8 @@ public double descent;
 /// the recommended vertical distance between baselines when
 ///          setting consecutive lines of text with the font. This
 ///          is greater than @ascent+@descent by a
-///          quantity known as the <firstterm>line spacing</firstterm>
-///          or <firstterm>external leading</firstterm>. When space
+///          quantity known as the &amp;lt;firstterm&amp;gt;line spacing&amp;lt;/firstterm&amp;gt;
+///          or &amp;lt;firstterm&amp;gt;external leading&amp;lt;/firstterm&amp;gt;. When space
 ///          is at a premium, most fonts can be set with only
 ///          a distance of @ascent+@descent between lines.
 /// </para>

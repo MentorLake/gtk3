@@ -213,7 +213,7 @@ public struct GHashTable
 /// Calls the given function for key/value pairs in the #GHashTable
 /// until @predicate returns %TRUE. The function is passed the key
 /// and value of each pair, and the given @user_data parameter. The
-/// hash table may not be modified while iterating over it (you can't
+/// hash table may not be modified while iterating over it (you can&apos;t
 /// add/remove items).
 /// </para>
 /// <para>
@@ -252,7 +252,7 @@ public struct GHashTable
 /// Calls the given function for each of the key/value pairs in the
 /// #GHashTable.  The function is passed the key and value of each
 /// pair, and the given @user_data parameter.  The hash table may not
-/// be modified while iterating over it (you can't add/remove
+/// be modified while iterating over it (you can&apos;t add/remove
 /// items). To remove all items matching a predicate, use
 /// g_hash_table_foreach_remove().
 /// </para>
@@ -377,7 +377,7 @@ public struct GHashTable
 /// </para>
 /// <para>
 /// The returned array is %NULL-terminated but may contain %NULL as a
-/// key.  Use @length to determine the true length if it's possible that
+/// key.  Use @length to determine the true length if it&apos;s possible that
 /// %NULL was used as the value for a key.
 /// </para>
 /// <para>
@@ -657,12 +657,12 @@ public struct GHashTable
 /// <param name="key_destroy_func">
 /// a function to free the memory allocated for the key
 ///     used when removing the entry from the #GHashTable, or %NULL
-///     if you don't want to supply such a function.
+///     if you don&apos;t want to supply such a function.
 /// </param>
 /// <param name="value_destroy_func">
 /// a function to free the memory allocated for the
 ///     value used when removing the entry from the #GHashTable, or %NULL
-///     if you don't want to supply such a function.
+///     if you don&apos;t want to supply such a function.
 /// </param>
 /// <return>
 /// a new #GHashTable

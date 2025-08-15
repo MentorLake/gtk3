@@ -209,7 +209,7 @@ public struct GParamSpecPool
 /// <para>
 /// If @type_prefixing is %TRUE, lookups in the newly created pool will
 /// allow to specify the owner as a colon-separated prefix of the
-/// property name, like "GtkContainer:border-width". This feature is
+/// property name, like &quot;GtkContainer:border-width&quot;. This feature is
 /// deprecated, so you should always set @type_prefixing to %FALSE.
 /// </para>
 /// </summary>

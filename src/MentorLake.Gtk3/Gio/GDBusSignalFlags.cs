@@ -18,7 +18,7 @@ public enum GDBusSignalFlags : uint
 	G_DBUS_SIGNAL_FLAGS_NONE = 0,
 /// <summary>
 /// <para>
-/// Don't actually send the AddMatch
+/// Don&apos;t actually send the AddMatch
 /// D-Bus call for this signal subscription.  This gives you more control
 /// over which match rules you add (but you must add them manually).
 /// </para>

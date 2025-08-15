@@ -3,7 +3,7 @@ namespace MentorLake.PangoXft;
 /// <summary>
 /// <para>
 /// `PangoXftRenderer` is a subclass of `PangoRenderer` used for rendering
-/// with Pango's Xft backend. It can be used directly, or it can be
+/// with Pango&apos;s Xft backend. It can be used directly, or it can be
 /// further subclassed to modify exactly how drawing of individual
 /// elements occurs.
 /// </para>

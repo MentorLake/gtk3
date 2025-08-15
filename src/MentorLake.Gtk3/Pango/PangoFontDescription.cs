@@ -95,7 +95,7 @@ public static class PangoFontDescriptionExtensions
 
 /// <summary>
 /// <para>
-/// Make a copy of a `PangoFontDescription`, but don't duplicate
+/// Make a copy of a `PangoFontDescription`, but don&apos;t duplicate
 /// allocated fields.
 /// </para>
 /// <para>
@@ -439,7 +439,7 @@ public static class PangoFontDescriptionExtensions
 /// </para>
 /// <para>
 /// This is suitable to be used, for example, as an argument
-/// to g_hash_table_new(). The hash value is independent of @desc->mask.
+/// to g_hash_table_new(). The hash value is independent of @desc-&amp;gt;mask.
 /// </para>
 /// </summary>
 
@@ -1128,33 +1128,33 @@ public struct PangoFontDescription
 /// terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
 /// of words where each word describes one of style, variant, weight,
 /// stretch, or gravity, and SIZE is a decimal number (size in points)
-/// or optionally followed by the unit modifier "px" for absolute size.
+/// or optionally followed by the unit modifier &quot;px&quot; for absolute size.
 /// </para>
 /// <para>
 /// The following words are understood as styles:
-/// "Normal", "Roman", "Oblique", "Italic".
+/// &quot;Normal&quot;, &quot;Roman&quot;, &quot;Oblique&quot;, &quot;Italic&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as variants:
-/// "Small-Caps", "All-Small-Caps", "Petite-Caps", "All-Petite-Caps",
-/// "Unicase", "Title-Caps".
+/// &quot;Small-Caps&quot;, &quot;All-Small-Caps&quot;, &quot;Petite-Caps&quot;, &quot;All-Petite-Caps&quot;,
+/// &quot;Unicase&quot;, &quot;Title-Caps&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as weights:
-/// "Thin", "Ultra-Light", "Extra-Light", "Light", "Semi-Light",
-/// "Demi-Light", "Book", "Regular", "Medium", "Semi-Bold", "Demi-Bold",
-/// "Bold", "Ultra-Bold", "Extra-Bold", "Heavy", "Black", "Ultra-Black",
-/// "Extra-Black".
+/// &quot;Thin&quot;, &quot;Ultra-Light&quot;, &quot;Extra-Light&quot;, &quot;Light&quot;, &quot;Semi-Light&quot;,
+/// &quot;Demi-Light&quot;, &quot;Book&quot;, &quot;Regular&quot;, &quot;Medium&quot;, &quot;Semi-Bold&quot;, &quot;Demi-Bold&quot;,
+/// &quot;Bold&quot;, &quot;Ultra-Bold&quot;, &quot;Extra-Bold&quot;, &quot;Heavy&quot;, &quot;Black&quot;, &quot;Ultra-Black&quot;,
+/// &quot;Extra-Black&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as stretch values:
-/// "Ultra-Condensed", "Extra-Condensed", "Condensed", "Semi-Condensed",
-/// "Semi-Expanded", "Expanded", "Extra-Expanded", "Ultra-Expanded".
+/// &quot;Ultra-Condensed&quot;, &quot;Extra-Condensed&quot;, &quot;Condensed&quot;, &quot;Semi-Condensed&quot;,
+/// &quot;Semi-Expanded&quot;, &quot;Expanded&quot;, &quot;Extra-Expanded&quot;, &quot;Ultra-Expanded&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as gravity values:
-/// "Not-Rotated", "South", "Upside-Down", "North", "Rotated-Left",
-/// "East", "Rotated-Right", "West".
+/// &quot;Not-Rotated&quot;, &quot;South&quot;, &quot;Upside-Down&quot;, &quot;North&quot;, &quot;Rotated-Left&quot;,
+/// &quot;East&quot;, &quot;Rotated-Right&quot;, &quot;West&quot;.
 /// </para>
 /// <para>
 /// VARIATIONS is a comma-separated list of font variations

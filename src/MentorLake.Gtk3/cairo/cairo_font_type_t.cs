@@ -3,13 +3,13 @@ namespace MentorLake.cairo;
 /// <summary>
 /// <para>
 /// #cairo_font_type_t is used to describe the type of a given font
-/// face or scaled font. The font types are also known as "font
-/// backends" within cairo.
+/// face or scaled font. The font types are also known as &quot;font
+/// backends&quot; within cairo.
 /// </para>
 /// <para>
 /// The type of a font face is determined by the function used to
 /// create it, which will generally be of the form
-/// <function>cairo_<emphasis>type</emphasis>_font_face_create(<!-- -->)</function>.
+/// &amp;lt;function&amp;gt;cairo_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;_font_face_create(&amp;lt;!-- --&amp;gt;)&amp;lt;/function&amp;gt;.
 /// The font face type can be queried with cairo_font_face_get_type()
 /// </para>
 /// <para>
@@ -26,7 +26,7 @@ namespace MentorLake.cairo;
 /// fonts of any type, but some font backends also provide
 /// type-specific functions that must only be called with a scaled font
 /// of the appropriate type. These functions have names that begin with
-/// <function>cairo_<emphasis>type</emphasis>_scaled_font(<!-- -->)</function>
+/// &amp;lt;function&amp;gt;cairo_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;_scaled_font(&amp;lt;!-- --&amp;gt;)&amp;lt;/function&amp;gt;
 /// such as cairo_ft_scaled_font_lock_face().
 /// </para>
 /// <para>
@@ -43,7 +43,7 @@ public enum cairo_font_type_t
 {
 /// <summary>
 /// <para>
-/// The font was created using cairo's toy font api (Since: 1.2)
+/// The font was created using cairo&apos;s toy font api (Since: 1.2)
 /// </para>
 /// </summary>
 
@@ -72,7 +72,7 @@ public enum cairo_font_type_t
 	CAIRO_FONT_TYPE_QUARTZ = 3,
 /// <summary>
 /// <para>
-/// The font was create using cairo's user font api (Since: 1.8)
+/// The font was create using cairo&apos;s user font api (Since: 1.8)
 /// </para>
 /// </summary>
 

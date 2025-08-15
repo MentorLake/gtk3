@@ -21,7 +21,7 @@ namespace MentorLake.Gio;
 /// run time.
 /// </para>
 /// <para>
-/// Before GLib 2.72, `<gio/gunixsocketaddress.h>` belonged to the UNIX-specific
+/// Before GLib 2.72, `&amp;lt;gio/gunixsocketaddress.h&amp;gt;` belonged to the UNIX-specific
 /// GIO interfaces, thus you had to use the `gio-unix-2.0.pc` pkg-config file
 /// when using it. This is no longer necessary since GLib 2.72.
 /// </para>
@@ -87,16 +87,16 @@ public class GUnixSocketAddressHandle : GSocketAddressHandle, GSocketConnectable
 /// </para>
 /// <para>
 /// If @path_type is %G_UNIX_SOCKET_ADDRESS_ABSTRACT, then @path_len
-/// bytes of @path will be copied to the socket's path, and only those
+/// bytes of @path will be copied to the socket&apos;s path, and only those
 /// bytes will be considered part of the name. (If @path_len is -1,
 /// then @path is assumed to be NUL-terminated.) For example, if @path
-/// was "test", then calling g_socket_address_get_native_size() on the
+/// was &quot;test&quot;, then calling g_socket_address_get_native_size() on the
 /// returned socket would return 7 (2 bytes of overhead, 1 byte for the
-/// abstract-socket indicator byte, and 4 bytes for the name "test").
+/// abstract-socket indicator byte, and 4 bytes for the name &quot;test&quot;).
 /// </para>
 /// <para>
 /// If @path_type is %G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED, then
-/// @path_len bytes of @path will be copied to the socket's path, the
+/// @path_len bytes of @path will be copied to the socket&apos;s path, the
 /// rest of the path will be padded with 0 bytes, and the entire
 /// zero-padded buffer will be considered the name. (As above, if
 /// @path_len is -1, then @path is assumed to be NUL-terminated.) In
@@ -153,7 +153,7 @@ public static class GUnixSocketAddressHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @address's type.
+/// Gets @address&apos;s type.
 /// </para>
 /// </summary>
 
@@ -191,7 +191,7 @@ public static class GUnixSocketAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @address's path, or for abstract sockets the "name".
+/// Gets @address&apos;s path, or for abstract sockets the &quot;name&quot;.
 /// </para>
 /// <para>
 /// Guaranteed to be zero-terminated, but an abstract socket
@@ -216,7 +216,7 @@ public static class GUnixSocketAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the length of @address's path.
+/// Gets the length of @address&apos;s path.
 /// </para>
 /// <para>
 /// For details, see g_unix_socket_address_get_path().

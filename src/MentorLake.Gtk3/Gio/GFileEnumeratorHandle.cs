@@ -8,7 +8,7 @@ namespace MentorLake.Gio;
 /// of the children within a directory).
 /// </para>
 /// <para>
-/// To get the next file's information from a `GFileEnumerator`, use
+/// To get the next file&apos;s information from a `GFileEnumerator`, use
 /// [method@Gio.FileEnumerator.next_file] or its asynchronous version,
 /// [method@Gio.FileEnumerator.next_files_async]. Note that the asynchronous
 /// version will return a list of [class@Gio.FileInfo] objects, whereas the
@@ -152,12 +152,13 @@ public static class GFileEnumeratorHandleExtensions
 /// attributes list used when creating the #GFileEnumerator.
 /// </para>
 /// <para>
-/// This is a convenience method that's equivalent to:
-/// |[<!-- language="C" -->
+/// This is a convenience method that&apos;s equivalent to:
+/// <code>
+///   gchar *name = g_file_info_get_name (info);
 ///   gchar *name = g_file_info_get_name (info);
 ///   GFile *child = g_file_get_child (g_file_enumerator_get_container (enumr),
 ///                                    name);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -237,15 +238,15 @@ public static class GFileEnumeratorHandleExtensions
 
 /// <summary>
 /// <para>
-/// This is a version of g_file_enumerator_next_file() that's easier to
+/// This is a version of g_file_enumerator_next_file() that&apos;s easier to
 /// use correctly from C programs.  With g_file_enumerator_next_file(),
-/// the gboolean return value signifies "end of iteration or error", which
+/// the gboolean return value signifies &quot;end of iteration or error&quot;, which
 /// requires allocation of a temporary #GError.
 /// </para>
 /// <para>
 /// In contrast, with this function, a %FALSE return from
 /// g_file_enumerator_iterate() *always* means
-/// "error".  End of iteration is signaled by @out_info or @out_child being %NULL.
+/// &quot;error&quot;.  End of iteration is signaled by @out_info or @out_child being %NULL.
 /// </para>
 /// <para>
 /// Another crucial difference is that the references for @out_info and
@@ -265,24 +266,22 @@ public static class GFileEnumeratorHandleExtensions
 /// The code pattern for correctly using g_file_enumerator_iterate() from C
 /// is:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// direnum = g_file_enumerate_children (file, ...);
 /// direnum = g_file_enumerate_children (file, ...);
 /// while (TRUE)
 ///   {
 ///     GFileInfo *info;
-///     if (!g_file_enumerator_iterate (direnum, &info, NULL, cancellable, error))
+///     if (!g_file_enumerator_iterate (direnum, &amp;info, NULL, cancellable, error))
 ///       goto out;
 ///     if (!info)
 ///       break;
-///     ... do stuff with "info"; do not unref it! ...
+///     ... do stuff with &quot;info&quot;; do not unref it! ...
 ///   }
-/// </para>
-/// <para>
+/// 
 /// out:
 ///   g_object_unref (direnum); // Note: frees the last @info
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="direnum">
@@ -366,25 +365,24 @@ public static class GFileEnumeratorHandleExtensions
 /// </para>
 /// <para>
 /// This leads to the following pseudo-code usage:
-/// |[
+/// <code>
+/// g_autoptr(GFile) dir = get_directory ();
 /// g_autoptr(GFile) dir = get_directory ();
 /// g_autoptr(GFileEnumerator) enumerator = NULL;
 /// g_autolist(GFileInfo) files = NULL;
 /// g_autoptr(GError) local_error = NULL;
-/// </para>
-/// <para>
+/// 
 /// enumerator = yield g_file_enumerate_children_async (dir,
-///                                                     G_FILE_ATTRIBUTE_STANDARD_NAME ","
+///                                                     G_FILE_ATTRIBUTE_STANDARD_NAME &quot;,&quot;
 ///                                                     G_FILE_ATTRIBUTE_STANDARD_TYPE,
 ///                                                     G_FILE_QUERY_INFO_NONE,
 ///                                                     G_PRIORITY_DEFAULT,
 ///                                                     cancellable,
 ///                                                     …,
-///                                                     &local_error);
+///                                                     &amp;local_error);
 /// if (enumerator == NULL)
-///   g_error ("Error enumerating: %s", local_error->message);
-/// </para>
-/// <para>
+///   g_error (&quot;Error enumerating: %s&quot;, local_error-&amp;gt;message);
+/// 
 /// // Loop until no files are returned, either because the end of the enumerator
 /// // has been reached, or an error was returned.
 /// do
@@ -394,25 +392,21 @@ public static class GFileEnumeratorHandleExtensions
 ///                                                       G_PRIORITY_DEFAULT,
 ///                                                       cancellable,
 ///                                                       …,
-///                                                       &local_error);
-/// </para>
-/// <para>
+///                                                       &amp;local_error);
+/// 
 ///     // Process the returned files, but don’t assume that exactly 5 were returned.
-///     for (GList *l = files; l != NULL; l = l->next)
+///     for (GList *l = files; l != NULL; l = l-&amp;gt;next)
 ///       {
-///         GFileInfo *info = l->data;
+///         GFileInfo *info = l-&amp;gt;data;
 ///         handle_file_info (info);
 ///       }
 ///   }
 /// while (files != NULL);
-/// </para>
-/// <para>
-/// if (local_error != NULL &&
+/// 
+/// if (local_error != NULL &amp;&amp;
 ///     !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
-///   g_error ("Error while enumerating: %s", local_error->message);
-/// ]|
-/// </para>
-/// <para>
+///   g_error (&quot;Error while enumerating: %s&quot;, local_error-&amp;gt;message);
+/// </code>
 /// During an async request no other sync and async calls are allowed, and will
 /// result in %G_IO_ERROR_PENDING errors.
 /// </para>
@@ -464,7 +458,7 @@ public static class GFileEnumeratorHandleExtensions
 /// </param>
 /// <return>
 /// a #GList of #GFileInfos. You must free the list with
-///     g_list_free() and unref the infos with g_object_unref() when you're
+///     g_list_free() and unref the infos with g_object_unref() when you&apos;re
 ///     done with them.
 /// </return>
 

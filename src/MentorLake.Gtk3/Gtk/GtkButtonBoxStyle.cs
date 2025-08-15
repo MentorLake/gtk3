@@ -50,7 +50,7 @@ public enum GtkButtonBoxStyle
 /// <summary>
 /// <para>
 /// Buttons expand to fill the box. This entails giving
-///   buttons a "linked" appearance, making button sizes homogeneous, and
+///   buttons a &quot;linked&quot; appearance, making button sizes homogeneous, and
 ///   setting spacing to 0 (same as calling gtk_box_set_homogeneous() and
 ///   gtk_box_set_spacing() manually). Since 3.12.
 /// </para>

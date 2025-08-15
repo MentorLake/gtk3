@@ -28,7 +28,7 @@ namespace MentorLake.Gio;
 ///                     const gchar       *mechanism,
 ///                     gpointer           user_data)
 /// {
-///   if (g_strcmp0 (mechanism, "EXTERNAL") == 0)
+///   if (g_strcmp0 (mechanism, &quot;EXTERNAL&quot;) == 0)
 ///     {
 ///       return TRUE;
 ///     }

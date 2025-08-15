@@ -39,7 +39,7 @@ public class GtkSearchEntryHandle : GtkEntryHandle, AtkImplementorIfaceHandle, G
 /// <summary>
 /// <para>
 /// Creates a #GtkSearchEntry, with a find icon when the search field is
-/// empty, and a clear icon when it isn't.
+/// empty, and a clear icon when it isn&apos;t.
 /// </para>
 /// </summary>
 
@@ -274,7 +274,7 @@ public static class GtkSearchEntryHandleSignalExtensions
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -679,7 +679,7 @@ public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>

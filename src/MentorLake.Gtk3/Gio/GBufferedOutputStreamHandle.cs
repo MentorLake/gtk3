@@ -6,18 +6,18 @@ namespace MentorLake.Gio;
 /// for buffered writes.
 /// </para>
 /// <para>
-/// By default, `GBufferedOutputStream`'s buffer size is set at 4 kilobytes.
+/// By default, `GBufferedOutputStream`&apos;s buffer size is set at 4 kilobytes.
 /// </para>
 /// <para>
 /// To create a buffered output stream, use [ctor@Gio.BufferedOutputStream.new],
-/// or [ctor@Gio.BufferedOutputStream.new_sized] to specify the buffer's size
+/// or [ctor@Gio.BufferedOutputStream.new_sized] to specify the buffer&apos;s size
 /// at construction.
 /// </para>
 /// <para>
 /// To get the size of a buffer within a buffered input stream, use
 /// [method@Gio.BufferedOutputStream.get_buffer_size]. To change the size of a
-/// buffered output stream's buffer, use [method@Gio.BufferedOutputStream.set_buffer_size].
-/// Note that the buffer's size cannot be reduced below the size of the data within the buffer.
+/// buffered output stream&apos;s buffer, use [method@Gio.BufferedOutputStream.set_buffer_size].
+/// Note that the buffer&apos;s size cannot be reduced below the size of the data within the buffer.
 /// </para>
 /// </summary>
 
@@ -76,7 +76,7 @@ public static class GBufferedOutputStreamHandleExtensions
 /// a [class@Gio.BufferedOutputStream].
 /// </param>
 /// <return>
-/// `TRUE` if the @stream's buffer automatically grows,
+/// `TRUE` if the @stream&apos;s buffer automatically grows,
 /// `FALSE` otherwise.
 /// </return>
 
@@ -107,7 +107,7 @@ public static class GBufferedOutputStreamHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets whether or not the @stream's buffer should automatically grow.
+/// Sets whether or not the @stream&apos;s buffer should automatically grow.
 /// If @auto_grow is true, then each write will just make the buffer
 /// larger, and you must manually flush the buffer to actually write out
 /// the data to the underlying stream.

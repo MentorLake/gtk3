@@ -13,7 +13,7 @@ namespace MentorLake.Gio;
 /// the thread-default main context (see
 /// [method@GLib.MainContext.push_thread_default]) from where the operation was
 /// initiated. It will be passed a `GAsyncResult` instance filled with the
-/// details of the operation's success or failure, the object the asynchronous
+/// details of the operation&apos;s success or failure, the object the asynchronous
 /// function was started for and any error codes returned. The asynchronous
 /// callback function is then expected to call the corresponding `_finish()`
 /// function, passing the object the function was called for, the
@@ -24,11 +24,11 @@ namespace MentorLake.Gio;
 /// The `_finish()` function for an operation takes the generic result
 /// (of type `GAsyncResult`) and returns the specific result that the
 /// operation in question yields (e.g. a [class@Gio.FileEnumerator] for a
-/// "enumerate children" operation). If the result or error status of the
+/// &quot;enumerate children&quot; operation). If the result or error status of the
 /// operation is not needed, there is no need to call the `_finish()`
 /// function; GIO will take care of cleaning up the result and error
 /// information after the `GAsyncReadyCallback` returns. You can pass
-/// `NULL` for the `GAsyncReadyCallback` if you don't need to take any
+/// `NULL` for the `GAsyncReadyCallback` if you don&apos;t need to take any
 /// action at all after the operation completes. Applications may also
 /// take a reference to the `GAsyncResult` and call `_finish()` later;
 /// however, the `_finish()` function may be called at most once.
@@ -61,9 +61,9 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   if (success)
-///     g_printf ("Hurray!\n");
+///     g_printf (&quot;Hurray!\n&quot;);
 ///   else
-///     g_printf ("Uh oh!\n");
+///     g_printf (&quot;Uh oh!\n&quot;);
 /// </para>
 /// <para>
 ///   ...

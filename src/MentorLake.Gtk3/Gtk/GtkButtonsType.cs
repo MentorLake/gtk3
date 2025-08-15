@@ -7,9 +7,9 @@ namespace MentorLake.Gtk;
 /// then call gtk_dialog_add_buttons().
 /// </para>
 /// <para>
-/// > Please note that %GTK_BUTTONS_OK, %GTK_BUTTONS_YES_NO
-/// > and %GTK_BUTTONS_OK_CANCEL are discouraged by the
-/// > [GNOME Human Interface Guidelines](http://library.gnome.org/devel/hig-book/stable/).
+/// &amp;gt; Please note that %GTK_BUTTONS_OK, %GTK_BUTTONS_YES_NO
+/// &amp;gt; and %GTK_BUTTONS_OK_CANCEL are discouraged by the
+/// &amp;gt; [GNOME Human Interface Guidelines](http://library.gnome.org/devel/hig-book/stable/).
 /// </para>
 /// </summary>
 

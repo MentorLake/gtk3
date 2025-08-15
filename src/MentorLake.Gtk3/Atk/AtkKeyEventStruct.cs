@@ -64,8 +64,8 @@ public int length;
 /// <para>
 /// A string containing one of the following: either a string approximating the text that would
 /// result from this keypress, if the key is a control or graphic character, or a symbolic name for this keypress.
-/// Alphanumeric and printable keys will have the symbolic key name in this string member, for instance "A". "0",
-/// "semicolon", "aacute".  Keypad keys have the prefix "KP".
+/// Alphanumeric and printable keys will have the symbolic key name in this string member, for instance &quot;A&quot;. &quot;0&quot;,
+/// &quot;semicolon&quot;, &quot;aacute&quot;.  Keypad keys have the prefix &quot;KP&quot;.
 /// </para>
 /// </summary>
 

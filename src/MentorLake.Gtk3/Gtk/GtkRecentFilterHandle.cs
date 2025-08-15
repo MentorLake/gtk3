@@ -29,9 +29,9 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkRecentFilter implementation of the GtkBuildable interface
-/// supports adding rules using the `<mime-types>`, `<patterns>` and
-/// `<applications>` elements and listing the rules within. Specifying
-/// a `<mime-type>`, `<pattern>` or `<application>` has the same effect as
+/// supports adding rules using the `&amp;lt;mime-types&amp;gt;`, `&amp;lt;patterns&amp;gt;` and
+/// `&amp;lt;applications&amp;gt;` elements and listing the rules within. Specifying
+/// a `&amp;lt;mime-type&amp;gt;`, `&amp;lt;pattern&amp;gt;` or `&amp;lt;application&amp;gt;` has the same effect as
 /// calling gtk_recent_filter_add_mime_type(),
 /// gtk_recent_filter_add_pattern() or gtk_recent_filter_add_application().
 /// </para>
@@ -39,25 +39,24 @@ namespace MentorLake.Gtk;
 /// An example of a UI definition fragment specifying `GtkRecentFilter`
 /// rules:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkRecentFilter">
-///   <mime-types>
-///     <mime-type>text/plain</mime-type>
-///     <mime-type>image/png</mime-type>
-///   </mime-types>
-///   <patterns>
-///     <pattern>*.txt</pattern>
-///     <pattern>*.png</pattern>
-///   </patterns>
-///   <applications>
-///     <application>gimp</application>
-///     <application>gedit</application>
-///     <application>glade</application>
-///   </applications>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkRecentFilter&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkRecentFilter&quot;&amp;gt;
+///   &amp;lt;mime-types&amp;gt;
+///     &amp;lt;mime-type&amp;gt;text/plain&amp;lt;/mime-type&amp;gt;
+///     &amp;lt;mime-type&amp;gt;image/png&amp;lt;/mime-type&amp;gt;
+///   &amp;lt;/mime-types&amp;gt;
+///   &amp;lt;patterns&amp;gt;
+///     &amp;lt;pattern&amp;gt;*.txt&amp;lt;/pattern&amp;gt;
+///     &amp;lt;pattern&amp;gt;*.png&amp;lt;/pattern&amp;gt;
+///   &amp;lt;/patterns&amp;gt;
+///   &amp;lt;applications&amp;gt;
+///     &amp;lt;application&amp;gt;gimp&amp;lt;/application&amp;gt;
+///     &amp;lt;application&amp;gt;gedit&amp;lt;/application&amp;gt;
+///     &amp;lt;application&amp;gt;glade&amp;lt;/application&amp;gt;
+///   &amp;lt;/applications&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkRecentFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
@@ -70,10 +69,11 @@ public class GtkRecentFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
 /// gtk_recent_filter_add_pattern(), gtk_recent_filter_add_mime_type(),
 /// gtk_recent_filter_add_application(), gtk_recent_filter_add_age().
 /// To create a filter that accepts any recently used resource, use:
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkRecentFilter *filter = gtk_recent_filter_new ();
-/// gtk_recent_filter_add_pattern (filter, "*");
-/// ]|
+/// GtkRecentFilter *filter = gtk_recent_filter_new ();
+/// gtk_recent_filter_add_pattern (filter, &quot;*&quot;);
+/// </code>
 /// </para>
 /// </summary>
 

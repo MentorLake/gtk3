@@ -29,7 +29,7 @@ public class GThreadedSocketServiceHandle : GSocketServiceHandle
 /// <summary>
 /// <para>
 /// Creates a new #GThreadedSocketService with no listeners. Listeners
-/// must be added with one of the #GSocketListener "add" methods.
+/// must be added with one of the #GSocketListener &quot;add&quot; methods.
 /// </para>
 /// </summary>
 

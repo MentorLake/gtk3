@@ -9,7 +9,7 @@ namespace MentorLake.Gio;
 /// [class@Gio.OutputStream]) that are based on file descriptors.
 /// </para>
 /// <para>
-/// Note that `<gio/gfiledescriptorbased.h>` belongs to the UNIX-specific
+/// Note that `&amp;lt;gio/gfiledescriptorbased.h&amp;gt;` belongs to the UNIX-specific
 /// GIO interfaces, thus you have to use the `gio-unix-2.0.pc` pkg-config
 /// file or the `GioUnix-2.0` GIR namespace when using it.
 /// </para>

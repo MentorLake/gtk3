@@ -24,64 +24,56 @@ namespace MentorLake.Gtk;
 /// <para>
 /// An example for creating a simple list store:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// enum {
 /// enum {
 ///   COLUMN_STRING,
 ///   COLUMN_INT,
 ///   COLUMN_BOOLEAN,
 ///   N_COLUMNS
 /// };
-/// </para>
-/// <para>
+/// 
 /// {
 ///   GtkListStore *list_store;
 ///   GtkTreePath *path;
 ///   GtkTreeIter iter;
 ///   gint i;
-/// </para>
-/// <para>
+/// 
 ///   list_store = gtk_list_store_new (N_COLUMNS,
 ///                                    G_TYPE_STRING,
 ///                                    G_TYPE_INT,
 ///                                    G_TYPE_BOOLEAN);
-/// </para>
-/// <para>
-///   for (i = 0; i < 10; i++)
+/// 
+///   for (i = 0; i &amp;lt; 10; i++)
 ///     {
 ///       gchar *some_data;
-/// </para>
-/// <para>
+/// 
 ///       some_data = get_some_data (i);
-/// </para>
-/// <para>
+/// 
 ///       // Add a new row to the model
-///       gtk_list_store_append (list_store, &iter);
-///       gtk_list_store_set (list_store, &iter,
+///       gtk_list_store_append (list_store, &amp;iter);
+///       gtk_list_store_set (list_store, &amp;iter,
 ///                           COLUMN_STRING, some_data,
 ///                           COLUMN_INT, i,
 ///                           COLUMN_BOOLEAN,  FALSE,
 ///                           -1);
-/// </para>
-/// <para>
+/// 
 ///       // As the store will keep a copy of the string internally,
 ///       // we free some_data.
 ///       g_free (some_data);
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // Modify a particular row
-///   path = gtk_tree_path_new_from_string ("4");
+///   path = gtk_tree_path_new_from_string (&quot;4&quot;);
 ///   gtk_tree_model_get_iter (GTK_TREE_MODEL (list_store),
-///                            &iter,
+///                            &amp;iter,
 ///                            path);
 ///   gtk_tree_path_free (path);
-///   gtk_list_store_set (list_store, &iter,
+///   gtk_list_store_set (list_store, &amp;iter,
 ///                       COLUMN_BOOLEAN, TRUE,
 ///                       -1);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # Performance Considerations
 /// </para>
@@ -118,15 +110,15 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkListStore implementation of the GtkBuildable interface allows
-/// to specify the model columns with a `<columns>` element that may contain
-/// multiple `<column>` elements, each specifying one model column. The “type”
+/// to specify the model columns with a `&amp;lt;columns&amp;gt;` element that may contain
+/// multiple `&amp;lt;column&amp;gt;` elements, each specifying one model column. The “type”
 /// attribute specifies the data type for the column.
 /// </para>
 /// <para>
 /// Additionally, it is possible to specify content for the list store
-/// in the UI definition, with the `<data>` element. It can contain multiple
-/// `<row>` elements, each specifying to content for one row of the list model.
-/// Inside a `<row>`, the `<col>` elements specify the content for individual cells.
+/// in the UI definition, with the `&amp;lt;data&amp;gt;` element. It can contain multiple
+/// `&amp;lt;row&amp;gt;` elements, each specifying to content for one row of the list model.
+/// Inside a `&amp;lt;row&amp;gt;`, the `&amp;lt;col&amp;gt;` elements specify the content for individual cells.
 /// </para>
 /// <para>
 /// Note that it is probably more common to define your models in the code,
@@ -137,29 +129,28 @@ namespace MentorLake.Gtk;
 /// <para>
 /// An example of a UI Definition fragment for a list store:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkListStore">
-///   <columns>
-///     <column type="gchararray"/>
-///     <column type="gchararray"/>
-///     <column type="gint"/>
-///   </columns>
-///   <data>
-///     <row>
-///       <col id="0">John</col>
-///       <col id="1">Doe</col>
-///       <col id="2">25</col>
-///     </row>
-///     <row>
-///       <col id="0">Johan</col>
-///       <col id="1">Dahlin</col>
-///       <col id="2">50</col>
-///     </row>
-///   </data>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkListStore&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkListStore&quot;&amp;gt;
+///   &amp;lt;columns&amp;gt;
+///     &amp;lt;column type=&quot;gchararray&quot;/&amp;gt;
+///     &amp;lt;column type=&quot;gchararray&quot;/&amp;gt;
+///     &amp;lt;column type=&quot;gint&quot;/&amp;gt;
+///   &amp;lt;/columns&amp;gt;
+///   &amp;lt;data&amp;gt;
+///     &amp;lt;row&amp;gt;
+///       &amp;lt;col id=&quot;0&quot;&amp;gt;John&amp;lt;/col&amp;gt;
+///       &amp;lt;col id=&quot;1&quot;&amp;gt;Doe&amp;lt;/col&amp;gt;
+///       &amp;lt;col id=&quot;2&quot;&amp;gt;25&amp;lt;/col&amp;gt;
+///     &amp;lt;/row&amp;gt;
+///     &amp;lt;row&amp;gt;
+///       &amp;lt;col id=&quot;0&quot;&amp;gt;Johan&amp;lt;/col&amp;gt;
+///       &amp;lt;col id=&quot;1&quot;&amp;gt;Dahlin&amp;lt;/col&amp;gt;
+///       &amp;lt;col id=&quot;2&quot;&amp;gt;50&amp;lt;/col&amp;gt;
+///     &amp;lt;/row&amp;gt;
+///   &amp;lt;/data&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkListStoreHandle : GObjectHandle, GtkBuildableHandle, GtkTreeDragDestHandle, GtkTreeDragSourceHandle, GtkTreeModelHandle, GtkTreeSortableHandle
@@ -856,7 +847,8 @@ public static class GtkListStoreHandleExtensions
 /// Calling
 /// `gtk_list_store_insert_with_values (list_store, iter, position...)`
 /// has the same effect as calling
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// insert_value (GtkListStore *list_store,
 ///               GtkTreeIter  *iter,
@@ -868,8 +860,7 @@ public static class GtkListStoreHandleExtensions
 ///                       // ...
 ///                       );
 /// }
-/// ]|
-/// with the difference that the former will only emit a row_inserted signal,
+/// </code>
 /// while the latter will emit row_inserted, row_changed and, if the list store
 /// is sorted, rows_reordered. Since emitting the rows_reordered signal
 /// repeatedly can affect the performance of the program,
@@ -936,8 +927,8 @@ public static class GtkListStoreHandleExtensions
 
 /// <summary>
 /// <para>
-/// > This function is slow. Only use it for debugging and/or testing
-/// > purposes.
+/// &amp;gt; This function is slow. Only use it for debugging and/or testing
+/// &amp;gt; purposes.
 /// </para>
 /// <para>
 /// Checks if the given iter is a valid iter for this #GtkListStore.
@@ -1087,7 +1078,7 @@ public static class GtkListStoreHandleExtensions
 /// each column number followed by the value to be set.
 /// The list is terminated by a -1. For example, to set column 0 with type
 /// %G_TYPE_STRING to “Foo”, you would write `gtk_list_store_set (store, iter,
-/// 0, "Foo", -1)`.
+/// 0, &quot;Foo&quot;, -1)`.
 /// </para>
 /// <para>
 /// The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it

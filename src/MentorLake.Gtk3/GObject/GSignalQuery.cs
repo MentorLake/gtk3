@@ -81,11 +81,12 @@ public uint n_params;
 /// <para>
 /// The individual parameter types for
 ///  user callbacks, note that the effective callback signature is:
-///  |[<!-- language="C" -->
+/// <code>
+///  @return_type callback (#gpointer     data1,
 ///  @return_type callback (#gpointer     data1,
 ///  [param_types param_names,]
 ///  gpointer     data2);
-///  ]|
+/// </code>
 /// </para>
 /// </summary>
 

@@ -17,7 +17,7 @@ namespace MentorLake.Gtk;
 /// It is very important to notice that status icons depend on the existence
 /// of a notification area being available to the user; you should not use status
 /// icons as the only way to convey critical information regarding your application,
-/// as the notification area may not exist on the user's environment, or may have
+/// as the notification area may not exist on the user&apos;s environment, or may have
 /// been removed. You should always check that a status icon has been embedded into
 /// a notification area by using gtk_status_icon_is_embedded(), and gracefully
 /// recover if the function returns %FALSE.

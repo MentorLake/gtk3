@@ -22,29 +22,24 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Adding a custom offset on the bar
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// </para>
-/// <para>
+/// <code>
+/// 
+/// 
 /// static GtkWidget *
 /// create_level_bar (void)
 /// {
 ///   GtkWidget *widget;
 ///   GtkLevelBar *bar;
-/// </para>
-/// <para>
+/// 
 ///   widget = gtk_level_bar_new ();
 ///   bar = GTK_LEVEL_BAR (widget);
-/// </para>
-/// <para>
+/// 
 ///   // This changes the value of the default low offset
-/// </para>
-/// <para>
+/// 
 ///   gtk_level_bar_add_offset_value (bar,
 ///                                   GTK_LEVEL_BAR_OFFSET_LOW,
 ///                                   0.10);
-/// </para>
-/// <para>
+/// 
 ///   // This adds a new offset to the bar; the application will
 ///   // be able to change its color CSS like this:
 ///   //
@@ -54,15 +49,12 @@ namespace MentorLake.Gtk;
 ///   //   border-color: black;
 ///   //   border-style: 1px;
 ///   // }
-/// </para>
-/// <para>
-///   gtk_level_bar_add_offset_value (bar, "my-offset", 0.60);
-/// </para>
-/// <para>
+/// 
+///   gtk_level_bar_add_offset_value (bar, &quot;my-offset&quot;, 0.60);
+/// 
 ///   return widget;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The default interval of values is between zero and one, but it’s possible to
 /// modify the interval using gtk_level_bar_set_min_value() and
@@ -87,22 +79,21 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkLevelBar implementation of the GtkBuildable interface supports a
-/// custom `<offsets>` element, which can contain any number of `<offset>` elements,
-/// each of which must have "name" and "value" attributes.
+/// custom `&amp;lt;offsets&amp;gt;` element, which can contain any number of `&amp;lt;offset&amp;gt;` elements,
+/// each of which must have &quot;name&quot; and &quot;value&quot; attributes.
 /// </para>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// levelbar[.discrete]
 /// levelbar[.discrete]
 /// ╰── trough
 ///     ├── block.filled.level-name
 ///     ┊
 ///     ├── block.empty
 ///     ┊
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkLevelBar has a main CSS node with name levelbar and one of the style
 /// classes .discrete or .continuous and a subnode with name trough. Below the
@@ -167,8 +158,8 @@ public static class GtkLevelBarHandleSignalExtensions
 /// </para>
 /// <para>
 /// The signal supports detailed connections; you can connect to the
-/// detailed signal "changed::x" in order to only receive callbacks when
-/// the value of offset "x" changes.
+/// detailed signal &quot;changed::x&quot; in order to only receive callbacks when
+/// the value of offset &quot;x&quot; changes.
 /// </para>
 /// </summary>
 
@@ -231,8 +222,8 @@ public static class GtkLevelBarHandleSignalDelegates
 /// </para>
 /// <para>
 /// The signal supports detailed connections; you can connect to the
-/// detailed signal "changed::x" in order to only receive callbacks when
-/// the value of offset "x" changes.
+/// detailed signal &quot;changed::x&quot; in order to only receive callbacks when
+/// the value of offset &quot;x&quot; changes.
 /// </para>
 /// </summary>
 

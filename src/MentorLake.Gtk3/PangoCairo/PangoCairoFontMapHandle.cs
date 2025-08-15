@@ -74,7 +74,7 @@ public static class PangoCairoFontMapHandleExtensions
 /// a `PangoCairoFontMap`
 /// </param>
 /// <return>
-/// the resolution in "dots per inch"
+/// the resolution in &quot;dots per inch&quot;
 /// </return>
 
 	public static double GetResolution(this MentorLake.PangoCairo.PangoCairoFontMapHandle fontmap)
@@ -133,7 +133,7 @@ public static class PangoCairoFontMapHandleExtensions
 /// a `PangoCairoFontMap`
 /// </param>
 /// <param name="dpi">
-/// the resolution in "dots per inch". (Physical inches aren't actually
+/// the resolution in &quot;dots per inch&quot;. (Physical inches aren&apos;t actually
 ///   involved; the terminology is conventional.)
 /// </param>
 

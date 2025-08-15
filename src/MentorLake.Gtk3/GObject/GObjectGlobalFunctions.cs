@@ -90,7 +90,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -128,7 +128,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -165,7 +165,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -201,7 +201,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -237,7 +237,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -273,7 +273,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -309,7 +309,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -345,7 +345,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -381,7 +381,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -417,7 +417,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -453,7 +453,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -489,7 +489,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -525,7 +525,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -561,7 +561,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -602,7 +602,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -638,7 +638,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -674,7 +674,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -710,7 +710,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -746,7 +746,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -782,7 +782,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -818,7 +818,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -853,7 +853,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_value">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -893,7 +893,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <param name="return_gvalue">
 /// A #GValue to store the return value. May be %NULL
-///   if the callback of closure doesn't return a value.
+///   if the callback of closure doesn&apos;t return a value.
 /// </param>
 /// <param name="n_param_values">
 /// The length of the @param_values array.
@@ -1084,8 +1084,8 @@ public class GObjectGlobalFunctions
 /// function of a #GTypePlugin implementation, as in the following
 /// example:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// my_enum_complete_type_info (GTypePlugin     *plugin,
 ///                             GType            g_type,
@@ -1093,16 +1093,14 @@ public class GObjectGlobalFunctions
 ///                             GTypeValueTable *value_table)
 /// {
 ///   static const GEnumValue values[] = {
-///     { MY_ENUM_FOO, "MY_ENUM_FOO", "foo" },
-///     { MY_ENUM_BAR, "MY_ENUM_BAR", "bar" },
+///     { MY_ENUM_FOO, &quot;MY_ENUM_FOO&quot;, &quot;foo&quot; },
+///     { MY_ENUM_BAR, &quot;MY_ENUM_BAR&quot;, &quot;bar&quot; },
 ///     { 0, NULL, NULL }
 ///   };
-/// </para>
-/// <para>
+/// 
 ///   g_enum_complete_type_info (type, info, values);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="g_enum_type">
@@ -1158,7 +1156,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <return>
 /// the #GEnumValue with name @name,
-///          or %NULL if the enumeration doesn't have a member
+///          or %NULL if the enumeration doesn&apos;t have a member
 ///          with that name
 /// </return>
 
@@ -1181,7 +1179,7 @@ public class GObjectGlobalFunctions
 /// </param>
 /// <return>
 /// the #GEnumValue with nickname @nick,
-///          or %NULL if the enumeration doesn't have a member
+///          or %NULL if the enumeration doesn&apos;t have a member
 ///          with that nickname
 /// </return>
 
@@ -2435,14 +2433,14 @@ public class GObjectGlobalFunctions
 /// A predefined #GSignalAccumulator for signals intended to be used as a
 /// hook for application code to provide a particular value.  Usually
 /// only one such value is desired and multiple handlers for the same
-/// signal don't make much sense (except for the case of the default
+/// signal don&apos;t make much sense (except for the case of the default
 /// handler defined in the class structure, in which case you will
 /// usually want the signal connection to override the class handler).
 /// </para>
 /// <para>
 /// This accumulator will use the return value from the first signal
 /// handler that is run as the return value for the signal and not run
-/// any further handlers (ie: the first handler "wins").
+/// any further handlers (ie: the first handler &quot;wins&quot;).
 /// </para>
 /// </summary>
 
@@ -2504,7 +2502,7 @@ public class GObjectGlobalFunctions
 /// <para>
 /// Adds an emission hook for a signal, which will get called for any emission
 /// of that signal, independent of the instance. This is possible only
-/// for signals which don't have %G_SIGNAL_NO_HOOKS flag set.
+/// for signals which don&apos;t have %G_SIGNAL_NO_HOOKS flag set.
 /// </para>
 /// </summary>
 
@@ -2603,7 +2601,7 @@ public class GObjectGlobalFunctions
 /// the instance to connect to.
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 /// <param name="closure">
 /// the closure to connect.
@@ -2690,7 +2688,7 @@ public class GObjectGlobalFunctions
 /// the instance to connect to.
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect.
@@ -2728,7 +2726,7 @@ public class GObjectGlobalFunctions
 /// <para>
 /// This function cannot fail. If the given signal name doesn’t exist,
 /// a critical warning is emitted. No validation is performed on the
-/// "detail" string when specified in @detailed_signal, other than a
+/// &quot;detail&quot; string when specified in @detailed_signal, other than a
 /// non-empty check.
 /// </para>
 /// <para>
@@ -2741,7 +2739,7 @@ public class GObjectGlobalFunctions
 /// the instance to connect to.
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect.
@@ -2808,7 +2806,7 @@ public class GObjectGlobalFunctions
 /// the instance the signal is being emitted on.
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 /// <param name="@__arglist">
 /// parameters to be passed to the signal, followed by a
@@ -2860,7 +2858,7 @@ public class GObjectGlobalFunctions
 /// The method will only return control after all handlers are called or signal emission was stopped.
 /// </para>
 /// <para>
-/// Note that g_signal_emitv() doesn't change @return_value if no handlers are
+/// Note that g_signal_emitv() doesn&apos;t change @return_value if no handlers are
 /// connected, in contrast to g_signal_emit() and g_signal_emit_valist().
 /// </para>
 /// </summary>
@@ -2909,7 +2907,7 @@ public class GObjectGlobalFunctions
 /// <summary>
 /// <para>
 /// Blocks a handler of an instance so it will not be called during any
-/// signal emissions unless it is unblocked again. Thus "blocking" a
+/// signal emissions unless it is unblocked again. Thus &quot;blocking&quot; a
 /// signal handler means to temporarily deactivate it, a signal handler
 /// has to be unblocked exactly the same amount of times it has been
 /// blocked before to become active again.
@@ -2986,7 +2984,7 @@ public class GObjectGlobalFunctions
 /// The C closure callback of the handler (useless for non-C closures).
 /// </param>
 /// <param name="data">
-/// The closure data of the handler's closure.
+/// The closure data of the handler&apos;s closure.
 /// </param>
 /// <return>
 /// A valid non-0 signal handler id for a successful match.
@@ -3023,7 +3021,7 @@ public class GObjectGlobalFunctions
 /// Undoes the effect of a previous g_signal_handler_block() call.  A
 /// blocked handler is skipped during signal emissions and will not be
 /// invoked, unblocking it (for exactly the amount of times it has been
-/// blocked before) reverts its "blocked" state, so the handler will be
+/// blocked before) reverts its &quot;blocked&quot; state, so the handler will be
 /// recognized by the signal system and is called upon future or
 /// currently ongoing signal emissions (since the order in which
 /// handlers are called during signal emissions is deterministic,
@@ -3090,7 +3088,7 @@ public class GObjectGlobalFunctions
 /// The C closure callback of the handlers (useless for non-C closures).
 /// </param>
 /// <param name="data">
-/// The closure data of the handlers' closures.
+/// The closure data of the handlers&apos; closures.
 /// </param>
 /// <return>
 /// The number of handlers that matched.
@@ -3160,7 +3158,7 @@ public class GObjectGlobalFunctions
 /// The C closure callback of the handlers (useless for non-C closures).
 /// </param>
 /// <param name="data">
-/// The closure data of the handlers' closures.
+/// The closure data of the handlers&apos; closures.
 /// </param>
 /// <return>
 /// The number of handlers that matched.
@@ -3214,7 +3212,7 @@ public class GObjectGlobalFunctions
 /// The C closure callback of the handlers (useless for non-C closures).
 /// </param>
 /// <param name="data">
-/// The closure data of the handlers' closures.
+/// The closure data of the handlers&apos; closures.
 /// </param>
 /// <return>
 /// The number of handlers that matched.
@@ -3320,7 +3318,7 @@ public class GObjectGlobalFunctions
 /// <summary>
 /// <para>
 /// Given the name of the signal and the type of object it connects to, gets
-/// the signal's identifying integer. Emitting the signal by number is
+/// the signal&apos;s identifying integer. Emitting the signal by number is
 /// somewhat faster than using the name each time.
 /// </para>
 /// <para>
@@ -3337,13 +3335,13 @@ public class GObjectGlobalFunctions
 /// </summary>
 
 /// <param name="name">
-/// the signal's name.
+/// the signal&apos;s name.
 /// </param>
 /// <param name="itype">
 /// the type that the signal operates on.
 /// </param>
 /// <return>
-/// the signal's identifying number, or 0 if no signal was found.
+/// the signal&apos;s identifying number, or 0 if no signal was found.
 /// </return>
 
 	public static uint SignalLookup(string name, MentorLake.GObject.GType itype)
@@ -3353,7 +3351,7 @@ public class GObjectGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Given the signal's identifier, finds its name.
+/// Given the signal&apos;s identifier, finds its name.
 /// </para>
 /// <para>
 /// Two different signals may have the same name, if they have differing types.
@@ -3361,7 +3359,7 @@ public class GObjectGlobalFunctions
 /// </summary>
 
 /// <param name="signal_id">
-/// the signal's identifying number.
+/// the signal&apos;s identifying number.
 /// </param>
 /// <return>
 /// the signal name, or %NULL if the signal number was invalid.
@@ -3390,7 +3388,7 @@ public class GObjectGlobalFunctions
 /// </para>
 /// <para>
 /// If 0 is used for @class_offset subclasses cannot override the class handler
-/// in their class_init method by doing super_class->signal_handler = my_signal_handler.
+/// in their class_init method by doing super_class-&amp;gt;signal_handler = my_signal_handler.
 /// Instead they will have to use g_signal_override_class_handler().
 /// </para>
 /// <para>
@@ -3458,8 +3456,8 @@ public class GObjectGlobalFunctions
 /// </para>
 /// <para>
 /// This is a variant of g_signal_new() that takes a C callback instead
-/// of a class offset for the signal's class handler. This function
-/// doesn't need a function pointer exposed in the class structure of
+/// of a class offset for the signal&apos;s class handler. This function
+/// doesn&apos;t need a function pointer exposed in the class structure of
 /// an object definition, instead the function pointer is passed
 /// directly and can be overridden by derived classes with
 /// g_signal_override_class_closure() or
@@ -3706,10 +3704,10 @@ public class GObjectGlobalFunctions
 /// </summary>
 
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 /// <param name="itype">
-/// The interface/instance type that introduced "signal-name".
+/// The interface/instance type that introduced &quot;signal-name&quot;.
 /// </param>
 /// <param name="signal_id_p">
 /// Location to store the signal id.
@@ -3798,15 +3796,15 @@ public class GObjectGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Stops a signal's current emission.
+/// Stops a signal&apos;s current emission.
 /// </para>
 /// <para>
 /// This will prevent the default method from running, if the signal was
-/// %G_SIGNAL_RUN_LAST and you connected normally (i.e. without the "after"
+/// %G_SIGNAL_RUN_LAST and you connected normally (i.e. without the &quot;after&quot;
 /// flag).
 /// </para>
 /// <para>
-/// Prints a warning if used on a signal which isn't being emitted.
+/// Prints a warning if used on a signal which isn&apos;t being emitted.
 /// </para>
 /// </summary>
 
@@ -3827,7 +3825,7 @@ public class GObjectGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Stops a signal's current emission.
+/// Stops a signal&apos;s current emission.
 /// </para>
 /// <para>
 /// This is just like g_signal_stop_emission() except it will look up the
@@ -3839,7 +3837,7 @@ public class GObjectGlobalFunctions
 /// the object whose signal handlers you wish to stop.
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail".
+/// a string of the form &quot;signal-name::detail&quot;.
 /// </param>
 
 	public static void SignalStopEmissionByName(MentorLake.GObject.GObjectHandle instance, string detailed_signal)
@@ -3859,7 +3857,7 @@ public class GObjectGlobalFunctions
 /// the #GType identifier of an interface or classed type
 /// </param>
 /// <param name="struct_offset">
-/// the offset of the member function of @itype's class
+/// the offset of the member function of @itype&apos;s class
 ///  structure which is to be invoked by the new closure
 /// </param>
 /// <return>
@@ -3974,7 +3972,7 @@ public class GObjectGlobalFunctions
 /// </para>
 /// <para>
 /// This function should be called in the
-/// type's get_type() function after the type is registered.
+/// type&apos;s get_type() function after the type is registered.
 /// The private structure can be retrieved using the
 /// G_TYPE_CLASS_GET_PRIVATE() macro.
 /// </para>
@@ -4219,9 +4217,9 @@ public class GObjectGlobalFunctions
 /// <summary>
 /// <para>
 /// This function is essentially the same as g_type_class_ref(),
-/// except that the classes reference count isn't incremented.
+/// except that the classes reference count isn&apos;t incremented.
 /// As a consequence, this function may return %NULL if the class
-/// of the type passed in does not currently exist (hasn't been
+/// of the type passed in does not currently exist (hasn&apos;t been
 /// referenced before).
 /// </para>
 /// </summary>
@@ -4264,7 +4262,7 @@ public class GObjectGlobalFunctions
 /// <summary>
 /// <para>
 /// Increments the reference count of the class structure belonging to
-/// @type. This function will demand-create the class if it doesn't
+/// @type. This function will demand-create the class if it doesn&apos;t
 /// exist already.
 /// </para>
 /// </summary>
@@ -4287,11 +4285,11 @@ public class GObjectGlobalFunctions
 /// Creates and initializes an instance of @type if @type is valid and
 /// can be instantiated. The type system only performs basic allocation
 /// and structure setups for instances: actual instance creation should
-/// happen through functions supplied by the type's fundamental type
+/// happen through functions supplied by the type&apos;s fundamental type
 /// implementation.  So use of g_type_create_instance() is reserved for
 /// implementers of fundamental types only. E.g. instances of the
 /// #GObject hierarchy should be created via g_object_new() and never
-/// directly through g_type_create_instance() which doesn't handle things
+/// directly through g_type_create_instance() which doesn&apos;t handle things
 /// like singleton objects or object construction.
 /// </para>
 /// <para>
@@ -4299,7 +4297,7 @@ public class GObjectGlobalFunctions
 /// with zeros.
 /// </para>
 /// <para>
-/// Note: Do not use this function, unless you're implementing a
+/// Note: Do not use this function, unless you&apos;re implementing a
 /// fundamental type. Also language bindings should not use this
 /// function, but g_object_new() instead.
 /// </para>
@@ -4374,7 +4372,7 @@ public class GObjectGlobalFunctions
 /// Decrements the reference count for the type corresponding to the
 /// interface default vtable @g_iface. If the type is dynamic, then
 /// when no one is using the interface and all references have
-/// been released, the finalize function for the interface's default
+/// been released, the finalize function for the interface&apos;s default
 /// vtable (the @class_finalize member of #GTypeInfo) will be called.
 /// </para>
 /// </summary>
@@ -4414,7 +4412,7 @@ public class GObjectGlobalFunctions
 /// type system, and its _class_init() method has been run.
 /// </para>
 /// <para>
-/// In theory, simply calling the type's _get_type() method (or using
+/// In theory, simply calling the type&apos;s _get_type() method (or using
 /// the corresponding macro) is supposed take care of this. However,
 /// _get_type() methods are often marked %G_GNUC_CONST for performance
 /// reasons, even though this is technically incorrect (since
@@ -4422,7 +4420,7 @@ public class GObjectGlobalFunctions
 /// which _get_type() methods do on the first call). As a result, if
 /// you write a bare call to a _get_type() macro, it may get optimized
 /// out by the compiler. Using g_type_ensure() guarantees that the
-/// type's _get_type() method is called.
+/// type&apos;s _get_type() method is called.
 /// </para>
 /// </summary>
 
@@ -4642,7 +4640,7 @@ public class GObjectGlobalFunctions
 /// Adds @prerequisite_type to the list of prerequisites of @interface_type.
 /// This means that any type implementing @interface_type must also implement
 /// @prerequisite_type. Prerequisites can be thought of as an alternative to
-/// interface derivation (which GType doesn't support). An interface can have
+/// interface derivation (which GType doesn&apos;t support). An interface can have
 /// at most one instantiatable prerequisite type.
 /// </para>
 /// </summary>

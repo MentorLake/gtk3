@@ -22,7 +22,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Accelerators are handled by the GTK+ accelerator map. All actions are
 /// assigned an accelerator path (which normally has the form
-/// `<Actions>/group-name/action-name`) and a shortcut is associated with
+/// `&amp;lt;Actions&amp;gt;/group-name/action-name`) and a shortcut is associated with
 /// this accelerator path. All menuitems and toolitems take on this accelerator
 /// path. The GTK+ accelerator map code makes sure that the correct shortcut
 /// is displayed next to the menu item.
@@ -32,7 +32,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The #GtkActionGroup implementation of the #GtkBuildable interface accepts
-/// #GtkAction objects as `<child>` elements in UI definitions.
+/// #GtkAction objects as `&amp;lt;child&amp;gt;` elements in UI definitions.
 /// </para>
 /// <para>
 /// Note that it is probably more common to define actions and action groups
@@ -40,28 +40,27 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkActionGroup implementation of the GtkBuildable interface supports
-/// a custom `<accelerator>` element, which has attributes named “key“ and
+/// a custom `&amp;lt;accelerator&amp;gt;` element, which has attributes named “key“ and
 /// “modifiers“ and allows to specify accelerators. This is similar to the
-/// `<accelerator>` element of #GtkWidget, the main difference is that
+/// `&amp;lt;accelerator&amp;gt;` element of #GtkWidget, the main difference is that
 /// it doesn’t allow you to specify a signal.
 /// </para>
 /// <para>
 /// ## A #GtkDialog UI definition fragment. ##
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkActionGroup" id="actiongroup">
-///   <child>
-///       <object class="GtkAction" id="About">
-///           <property name="name">About</property>
-///           <property name="stock_id">gtk-about</property>
-///           <signal handler="about_activate" name="activate"/>
-///       </object>
-///       <accelerator key="F1" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkActionGroup&quot; id=&quot;actiongroup&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkActionGroup&quot; id=&quot;actiongroup&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///       &amp;lt;object class=&quot;GtkAction&quot; id=&quot;About&quot;&amp;gt;
+///           &amp;lt;property name=&quot;name&quot;&amp;gt;About&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;stock_id&quot;&amp;gt;gtk-about&amp;lt;/property&amp;gt;
+///           &amp;lt;signal handler=&quot;about_activate&quot; name=&quot;activate&quot;/&amp;gt;
+///       &amp;lt;/object&amp;gt;
+///       &amp;lt;accelerator key=&quot;F1&quot; modifiers=&quot;GDK_CONTROL_MASK | GDK_SHIFT_MASK&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkActionGroupHandle : GObjectHandle, GtkBuildableHandle
@@ -480,7 +479,7 @@ public static class GtkActionGroupHandleExtensions
 /// with the stock_id of the action.
 /// </para>
 /// <para>
-/// Accel paths are set to `<Actions>/group-name/action-name`.
+/// Accel paths are set to `&amp;lt;Actions&amp;gt;/group-name/action-name`.
 /// </para>
 /// </summary>
 
@@ -492,7 +491,7 @@ public static class GtkActionGroupHandleExtensions
 /// </param>
 /// <param name="accelerator">
 /// the accelerator for the action, in
-///   the format understood by gtk_accelerator_parse(), or "" for no accelerator, or
+///   the format understood by gtk_accelerator_parse(), or &quot;&quot; for no accelerator, or
 ///   %NULL to use the stock accelerator
 /// </param>
 
@@ -510,7 +509,7 @@ public static class GtkActionGroupHandleExtensions
 /// </para>
 /// <para>
 /// The “activate” signals of the actions are connected to the callbacks
-/// and their accel paths are set to `<Actions>/group-name/action-name`.
+/// and their accel paths are set to `&amp;lt;Actions&amp;gt;/group-name/action-name`.
 /// </para>
 /// </summary>
 
@@ -572,7 +571,7 @@ public static class GtkActionGroupHandleExtensions
 /// <para>
 /// The “changed” signal of the first radio action is connected to the
 /// @on_change callback and the accel paths of the actions are set to
-/// `<Actions>/group-name/action-name`.
+/// `&amp;lt;Actions&amp;gt;/group-name/action-name`.
 /// </para>
 /// </summary>
 
@@ -647,7 +646,7 @@ public static class GtkActionGroupHandleExtensions
 /// </para>
 /// <para>
 /// The “activate” signals of the actions are connected to the callbacks
-/// and their accel paths are set to `<Actions>/group-name/action-name`.
+/// and their accel paths are set to `&amp;lt;Actions&amp;gt;/group-name/action-name`.
 /// </para>
 /// </summary>
 

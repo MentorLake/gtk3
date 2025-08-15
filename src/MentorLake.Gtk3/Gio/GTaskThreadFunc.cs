@@ -26,13 +26,13 @@ namespace MentorLake.Gio;
 /// the #GTask
 /// </param>
 /// <param name="source_object">
-/// @task's source object
+/// @task&apos;s source object
 /// </param>
 /// <param name="task_data">
-/// @task's task data
+/// @task&apos;s task data
 /// </param>
 /// <param name="cancellable">
-/// @task's #GCancellable, or %NULL
+/// @task&apos;s #GCancellable, or %NULL
 /// </param>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

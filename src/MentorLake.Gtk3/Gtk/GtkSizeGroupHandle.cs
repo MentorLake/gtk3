@@ -59,26 +59,25 @@ namespace MentorLake.Gtk;
 /// # GtkSizeGroup as GtkBuildable
 /// </para>
 /// <para>
-/// Size groups can be specified in a UI definition by placing an `<object>`
-/// element with `class="GtkSizeGroup"` somewhere in the UI definition. The
-/// widgets that belong to the size group are specified by a `<widgets>` element
-/// that may contain multiple `<widget>` elements, one for each member of the
+/// Size groups can be specified in a UI definition by placing an `&amp;lt;object&amp;gt;`
+/// element with `class=&quot;GtkSizeGroup&quot;` somewhere in the UI definition. The
+/// widgets that belong to the size group are specified by a `&amp;lt;widgets&amp;gt;` element
+/// that may contain multiple `&amp;lt;widget&amp;gt;` elements, one for each member of the
 /// size group. The ”name” attribute gives the id of the widget.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with GtkSizeGroup:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkSizeGroup">
-///   <property name="mode">GTK_SIZE_GROUP_HORIZONTAL</property>
-///   <widgets>
-///     <widget name="radio1"/>
-///     <widget name="radio2"/>
-///   </widgets>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkSizeGroup&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkSizeGroup&quot;&amp;gt;
+///   &amp;lt;property name=&quot;mode&quot;&amp;gt;GTK_SIZE_GROUP_HORIZONTAL&amp;lt;/property&amp;gt;
+///   &amp;lt;widgets&amp;gt;
+///     &amp;lt;widget name=&quot;radio1&quot;/&amp;gt;
+///     &amp;lt;widget name=&quot;radio2&quot;/&amp;gt;
+///   &amp;lt;/widgets&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkSizeGroupHandle : GObjectHandle, GtkBuildableHandle

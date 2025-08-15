@@ -12,30 +12,28 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Create a button to let the user select a file in /etc
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkWidget *button;
-/// </para>
-/// <para>
-///   button = gtk_file_chooser_button_new (_("Select a file"),
+/// 
+///   button = gtk_file_chooser_button_new (_(&quot;Select a file&quot;),
 ///                                         GTK_FILE_CHOOSER_ACTION_OPEN);
 ///   gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (button),
-///                                        "/etc");
+///                                        &quot;/etc&quot;);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The #GtkFileChooserButton supports the #GtkFileChooserActions
 /// %GTK_FILE_CHOOSER_ACTION_OPEN and %GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER.
 /// </para>
 /// <para>
-/// > The #GtkFileChooserButton will ellipsize the label, and will thus
-/// > request little horizontal space.  To give the button more space,
-/// > you should call gtk_widget_get_preferred_size(),
-/// > gtk_file_chooser_button_set_width_chars(), or pack the button in
-/// > such a way that other interface elements give space to the
-/// > widget.
+/// &amp;gt; The #GtkFileChooserButton will ellipsize the label, and will thus
+/// &amp;gt; request little horizontal space.  To give the button more space,
+/// &amp;gt; you should call gtk_widget_get_preferred_size(),
+/// &amp;gt; gtk_file_chooser_button_set_width_chars(), or pack the button in
+/// &amp;gt; such a way that other interface elements give space to the
+/// &amp;gt; widget.
 /// </para>
 /// <para>
 /// # CSS nodes
@@ -171,17 +169,15 @@ public static class GtkFileChooserButtonHandleSignalExtensions
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -191,26 +187,20 @@ public static class GtkFileChooserButtonHandleSignalExtensions
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 	public static IObservable<GtkFileChooserButtonHandleSignalStructs.ConfirmOverwriteSignal> Signal_ConfirmOverwrite(this GtkFileChooserButtonHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
@@ -291,7 +281,7 @@ public static class GtkFileChooserButtonHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>
@@ -558,17 +548,15 @@ public delegate void file_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -578,26 +566,20 @@ public delegate void file_set([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="self">
@@ -644,7 +626,7 @@ public delegate void current_folder_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>

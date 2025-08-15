@@ -40,7 +40,7 @@ public class PangoCairoGlobalFunctions
 /// a `PangoContext`, from a pangocairo font map
 /// </param>
 /// <return>
-/// the resolution in "dots per inch". A negative value will
+/// the resolution in &quot;dots per inch&quot;. A negative value will
 ///   be returned if no resolution has previously been set.
 /// </return>
 
@@ -119,7 +119,7 @@ public class PangoCairoGlobalFunctions
 /// a `PangoContext`, from a pangocairo font map
 /// </param>
 /// <param name="dpi">
-/// the resolution in "dots per inch". (Physical inches aren't actually
+/// the resolution in &quot;dots per inch&quot;. (Physical inches aren&apos;t actually
 ///   involved; the terminology is conventional.) A 0 or negative value
 ///   means to use the resolution from the font map.
 /// </param>
@@ -469,7 +469,7 @@ public class PangoCairoGlobalFunctions
 /// </para>
 /// <para>
 /// Note that @text is the start of the text for layout, which is then
-/// indexed by `glyph_item->item->offset`.
+/// indexed by `glyph_item-&amp;gt;item-&amp;gt;offset`.
 /// </para>
 /// </summary>
 
@@ -564,7 +564,7 @@ public class PangoCairoGlobalFunctions
 /// context.
 /// </para>
 /// <para>
-/// If any layouts have been created for the context, it's necessary
+/// If any layouts have been created for the context, it&apos;s necessary
 /// to call [method@Pango.Layout.context_changed] on those layouts.
 /// </para>
 /// </summary>

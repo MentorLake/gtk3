@@ -11,6 +11,12 @@ public struct hb_bool_t
 	public int Value;
 }
 
+/// <summary>
+/// <para>
+/// Data type for booleans.
+/// </para>
+/// </summary>
+
 public class hb_bool_tHandle : BaseSafeHandle
 {
 }

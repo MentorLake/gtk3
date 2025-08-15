@@ -36,7 +36,7 @@ public enum GSettingsBindFlags : uint
 	G_SETTINGS_BIND_SET = 2,
 /// <summary>
 /// <para>
-/// Do not try to bind a "sensitivity" property to the writability of the setting
+/// Do not try to bind a &quot;sensitivity&quot; property to the writability of the setting
 /// </para>
 /// </summary>
 

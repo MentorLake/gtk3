@@ -82,7 +82,7 @@ public IntPtr change_state;
 	/// <summary>
 /// <para>
 /// the virtual function pointer for [method@Gio.Action.activate].  Note that [type@Gio.Action] does not have an
-///            'activate' signal but that implementations of it may have one.
+///            &apos;activate&apos; signal but that implementations of it may have one.
 /// </para>
 /// </summary>
 

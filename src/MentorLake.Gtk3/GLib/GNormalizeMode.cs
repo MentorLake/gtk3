@@ -46,7 +46,7 @@ public enum GNormalizeMode
 /// <summary>
 /// <para>
 /// beyond %G_NORMALIZE_DEFAULT also standardize the
-///     "compatibility" characters in Unicode, such as SUPERSCRIPT THREE
+///     &quot;compatibility&quot; characters in Unicode, such as SUPERSCRIPT THREE
 ///     to the standard forms (in this case DIGIT THREE). Formatting
 ///     information may be lost but for most text operations such
 ///     characters should be considered the same

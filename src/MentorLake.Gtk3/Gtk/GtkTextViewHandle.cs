@@ -10,8 +10,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// textview.view
 /// textview.view
 /// ├── border.top
 /// ├── border.left
@@ -20,8 +20,7 @@ namespace MentorLake.Gtk;
 /// ├── border.right
 /// ├── border.bottom
 /// ╰── [window.popup]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkTextView has a main css node with name textview and style class .view,
 /// and subnodes for each of the border windows, and the main text area,
@@ -635,9 +634,9 @@ public static class GtkTextViewHandleSignalExtensions
 /// <para>
 /// The ::set-anchor signal is a
 /// [keybinding signal][GtkBindingSignal]
-/// which gets emitted when the user initiates setting the "anchor"
-/// mark. The "anchor" mark gets placed at the same position as the
-/// "insert" mark.
+/// which gets emitted when the user initiates setting the &quot;anchor&quot;
+/// mark. The &quot;anchor&quot; mark gets placed at the same position as the
+/// &quot;insert&quot; mark.
 /// </para>
 /// <para>
 /// This signal has no default bindings.
@@ -1355,9 +1354,9 @@ public delegate void select_all([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 /// <para>
 /// The ::set-anchor signal is a
 /// [keybinding signal][GtkBindingSignal]
-/// which gets emitted when the user initiates setting the "anchor"
-/// mark. The "anchor" mark gets placed at the same position as the
-/// "insert" mark.
+/// which gets emitted when the user initiates setting the &quot;anchor&quot;
+/// mark. The &quot;anchor&quot; mark gets placed at the same position as the
+/// &quot;insert&quot; mark.
 /// </para>
 /// <para>
 /// This signal has no default bindings.
@@ -1443,7 +1442,7 @@ public static class GtkTextViewHandleExtensions
 
 /// <summary>
 /// <para>
-/// Adds a child at fixed coordinates in one of the text widget's
+/// Adds a child at fixed coordinates in one of the text widget&apos;s
 /// windows.
 /// </para>
 /// <para>
@@ -2239,7 +2238,7 @@ public static class GtkTextViewHandleExtensions
 /// </param>
 /// <return>
 /// copy of default tab array, or %NULL if
-///    “standard" tabs are used; must be freed with pango_tab_array_free().
+///    “standard&quot; tabs are used; must be freed with pango_tab_array_free().
 /// </return>
 
 	public static MentorLake.Pango.PangoTabArrayHandle GetTabs(this MentorLake.Gtk.GtkTextViewHandle text_view)
@@ -2341,7 +2340,7 @@ public static class GtkTextViewHandleExtensions
 /// </para>
 /// <para>
 /// If you connect to an event signal on @text_view, this function
-/// should be called on `event->window` to see which window it was.
+/// should be called on `event-&amp;gt;window` to see which window it was.
 /// </para>
 /// </summary>
 
@@ -2393,32 +2392,27 @@ public static class GtkTextViewHandleExtensions
 /// you need to insert your own key handling between the input method
 /// and the default key event handling of the #GtkTextView.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// gtk_foo_bar_key_press_event (GtkWidget   *widget,
 ///                              GdkEventKey *event)
 /// {
 ///   guint keyval;
-/// </para>
-/// <para>
-///   gdk_event_get_keyval ((GdkEvent*)event, &keyval);
-/// </para>
-/// <para>
+/// 
+///   gdk_event_get_keyval ((GdkEvent*)event, &amp;keyval);
+/// 
 ///   if (keyval == GDK_KEY_Return || keyval == GDK_KEY_KP_Enter)
 ///     {
 ///       if (gtk_text_view_im_context_filter_keypress (GTK_TEXT_VIEW (widget), event))
 ///         return TRUE;
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // Do some stuff
-/// </para>
-/// <para>
-///   return GTK_WIDGET_CLASS (gtk_foo_bar_parent_class)->key_press_event (widget, event);
+/// 
+///   return GTK_WIDGET_CLASS (gtk_foo_bar_parent_class)-&amp;gt;key_press_event (widget, event);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="text_view">
@@ -2465,7 +2459,7 @@ public static class GtkTextViewHandleExtensions
 
 /// <summary>
 /// <para>
-/// Moves a mark within the buffer so that it's
+/// Moves a mark within the buffer so that it&apos;s
 /// located within the currently-visible text area.
 /// </para>
 /// </summary>
@@ -2545,13 +2539,13 @@ public static class GtkTextViewHandleExtensions
 
 /// <summary>
 /// <para>
-/// Ensures that the cursor is shown (i.e. not in an 'off' blink
+/// Ensures that the cursor is shown (i.e. not in an &apos;off&apos; blink
 /// interval) and resets the time that it will stay blinking (or
 /// visible, in case blinking is disabled).
 /// </para>
 /// <para>
 /// This function should be called in response to user input
-/// (e.g. from derived classes that override the textview's
+/// (e.g. from derived classes that override the textview&apos;s
 /// #GtkWidget::key-press-event handler).
 /// </para>
 /// </summary>

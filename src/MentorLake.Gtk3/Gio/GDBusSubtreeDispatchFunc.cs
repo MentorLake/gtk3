@@ -32,7 +32,7 @@ namespace MentorLake.Gio;
 /// The @user_data #gpointer passed to g_dbus_connection_register_subtree().
 /// </param>
 /// <return>
-/// A #GDBusInterfaceVTable or %NULL if you don't want to handle the methods.
+/// A #GDBusInterfaceVTable or %NULL if you don&apos;t want to handle the methods.
 /// </return>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

@@ -8,8 +8,8 @@ namespace MentorLake.GLib;
 /// TlsSetValue()/TlsGetValue() on Windows.
 /// </para>
 /// <para>
-/// If you don't already know why you might want this functionality,
-/// then you probably don't need it.
+/// If you don&apos;t already know why you might want this functionality,
+/// then you probably don&apos;t need it.
 /// </para>
 /// <para>
 /// #GPrivate is a very limited resource (as far as 128 per program,
@@ -134,8 +134,8 @@ internal class GPrivateExterns
 /// TlsSetValue()/TlsGetValue() on Windows.
 /// </para>
 /// <para>
-/// If you don't already know why you might want this functionality,
-/// then you probably don't need it.
+/// If you don&apos;t already know why you might want this functionality,
+/// then you probably don&apos;t need it.
 /// </para>
 /// <para>
 /// #GPrivate is a very limited resource (as far as 128 per program,

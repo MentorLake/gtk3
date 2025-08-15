@@ -15,7 +15,7 @@ public enum GtkStyleContextPrintFlags : uint
 /// <summary>
 /// <para>
 /// Print the entire tree of
-///     CSS nodes starting at the style context's node
+///     CSS nodes starting at the style context&apos;s node
 /// </para>
 /// </summary>
 

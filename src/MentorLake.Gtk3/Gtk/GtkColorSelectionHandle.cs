@@ -234,7 +234,7 @@ public static class GtkColorSelectionHandleExtensions
 /// </param>
 /// <return>
 /// %TRUE if the @colorsel has an opacity control,
-///     %FALSE if it does't
+///     %FALSE if it does&apos;t
 /// </return>
 
 	public static bool GetHasOpacityControl(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)
@@ -253,7 +253,7 @@ public static class GtkColorSelectionHandleExtensions
 /// a #GtkColorSelection
 /// </param>
 /// <return>
-/// %TRUE if the selector has a palette, %FALSE if it hasn't
+/// %TRUE if the selector has a palette, %FALSE if it hasn&apos;t
 /// </return>
 
 	public static bool GetHasPalette(this MentorLake.Gtk.GtkColorSelectionHandle colorsel)

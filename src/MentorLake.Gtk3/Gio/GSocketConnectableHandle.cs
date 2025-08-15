@@ -29,11 +29,11 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   // Try each sockaddr until we succeed. Record the first connection error,
-///   // but not any further ones (since they'll probably be basically the same
+///   // but not any further ones (since they&apos;ll probably be basically the same
 ///   // as the first).
-///   while (!conn && (sockaddr = g_socket_address_enumerator_next (enumerator, cancellable, error))
+///   while (!conn &amp;&amp; (sockaddr = g_socket_address_enumerator_next (enumerator, cancellable, error))
 ///     {
-///       conn = connect_to_sockaddr (sockaddr, conn_error ? NULL : &conn_error);
+///       conn = connect_to_sockaddr (sockaddr, conn_error ? NULL : &amp;conn_error);
 ///       g_object_unref (sockaddr);
 ///     }
 ///   g_object_unref (enumerator);
@@ -43,7 +43,7 @@ namespace MentorLake.Gio;
 ///     {
 ///       if (conn_error)
 ///         {
-///           // We couldn't connect to the first address, but we succeeded
+///           // We couldn&apos;t connect to the first address, but we succeeded
 ///           // in connecting to a later address.
 ///           g_error_free (conn_error);
 ///         }

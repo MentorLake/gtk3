@@ -11,6 +11,12 @@ public struct hb_mask_t
 	public uint Value;
 }
 
+/// <summary>
+/// <para>
+/// Data type for bitmasks.
+/// </para>
+/// </summary>
+
 public class hb_mask_tHandle : BaseSafeHandle
 {
 }

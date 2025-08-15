@@ -11,6 +11,13 @@ public struct GdkXEvent
 {
 }
 
+/// <summary>
+/// <para>
+/// Used to represent native events (XEvents for the X11
+/// backend, MSGs for Win32).
+/// </para>
+/// </summary>
+
 public class GdkXEventHandle : BaseSafeHandle
 {
 }

@@ -17,7 +17,7 @@ namespace MentorLake.Atk;
 /// start of the selection is the active point or not.
 /// </para>
 /// <para>
-/// The active point corresponds to the user's focus or point of interest. The
+/// The active point corresponds to the user&apos;s focus or point of interest. The
 /// user moves the active point to expand or collapse the range. The anchor
 /// point is the other point of the range and typically remains constant. In
 /// most cases, anchor is the start of the range and active is the end. However,
@@ -58,7 +58,7 @@ internal class AtkTextSelectionExterns
 /// start of the selection is the active point or not.
 /// </para>
 /// <para>
-/// The active point corresponds to the user's focus or point of interest. The
+/// The active point corresponds to the user&apos;s focus or point of interest. The
 /// user moves the active point to expand or collapse the range. The anchor
 /// point is the other point of the range and typically remains constant. In
 /// most cases, anchor is the start of the range and active is the end. However,

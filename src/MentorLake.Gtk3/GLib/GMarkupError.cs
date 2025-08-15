@@ -33,7 +33,7 @@ public enum GMarkupError
 /// <summary>
 /// <para>
 /// error should be set by #GMarkupParser
-///     functions; element wasn't known
+///     functions; element wasn&apos;t known
 /// </para>
 /// </summary>
 
@@ -41,7 +41,7 @@ public enum GMarkupError
 /// <summary>
 /// <para>
 /// error should be set by #GMarkupParser
-///     functions; attribute wasn't known
+///     functions; attribute wasn&apos;t known
 /// </para>
 /// </summary>
 

@@ -14,7 +14,7 @@ namespace MentorLake.Gio;
 /// interaction methods to show the required dialogs.
 /// </para>
 /// <para>
-/// Callers should use the 'invoke' functions like
+/// Callers should use the &apos;invoke&apos; functions like
 /// [method@Gio.TlsInteraction.invoke_ask_password] to run interaction methods.
 /// These functions make sure that the interaction is invoked in the main loop
 /// and not in the current thread, if the current thread is not running the

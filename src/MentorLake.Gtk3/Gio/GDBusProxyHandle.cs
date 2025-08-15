@@ -41,7 +41,7 @@ namespace MentorLake.Gio;
 /// with. Therefore, the recommended way of working with proxies is to subclass
 /// `GDBusProxy`, and have more natural properties and signals in your derived
 /// class. This [example](migrating-gdbus.html#using-gdbus-codegen) shows how
-/// this can easily be done using the <see href="gdbus-codegen.html">gdbus-codegen</see> tool.
+/// this can easily be done using the &amp;lt;see href=&quot;gdbus-codegen.html&quot;&amp;gt;gdbus-codegen&amp;lt;/see&amp;gt; tool.
 /// </para>
 /// <para>
 /// A `GDBusProxy` instance can be used from multiple threads but note
@@ -53,7 +53,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// An example using a proxy for a well-known name can be found in
-/// <see href="https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-example-watch-proxy.c">gdbus-example-watch-proxy.c</see>.
+/// &amp;lt;see href=&quot;https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-example-watch-proxy.c&quot;&amp;gt;gdbus-example-watch-proxy.c&amp;lt;/see&amp;gt;.
 /// </para>
 /// </summary>
 
@@ -164,7 +164,7 @@ public class GDBusProxyHandle : GObjectHandle, GAsyncInitableHandle, GDBusInterf
 /// <para>
 /// If @name is a well-known name and the
 /// %G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START and %G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION
-/// flags aren't set and no name owner currently exists, the message bus
+/// flags aren&apos;t set and no name owner currently exists, the message bus
 /// will be requested to launch a name owner for the name.
 /// </para>
 /// <para>
@@ -231,7 +231,7 @@ public class GDBusProxyHandle : GObjectHandle, GAsyncInitableHandle, GDBusInterf
 /// <para>
 /// If @name is a well-known name and the
 /// %G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START and %G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION
-/// flags aren't set and no name owner currently exists, the message bus
+/// flags aren&apos;t set and no name owner currently exists, the message bus
 /// will be requested to launch a name owner for the name.
 /// </para>
 /// <para>
@@ -557,21 +557,20 @@ public static class GDBusProxyHandleExtensions
 /// </para>
 /// <para>
 /// If the @parameters #GVariant is floating, it is consumed. This allows
-/// convenient 'inline' use of g_variant_new(), e.g.:
-/// |[<!-- language="C" -->
+/// convenient &apos;inline&apos; use of g_variant_new(), e.g.:
+/// <code>
 ///  g_dbus_proxy_call (proxy,
-///                     "TwoStrings",
-///                     g_variant_new ("(ss)",
-///                                    "Thing One",
-///                                    "Thing Two"),
+///  g_dbus_proxy_call (proxy,
+///                     &quot;TwoStrings&quot;,
+///                     g_variant_new (&quot;(ss)&quot;,
+///                                    &quot;Thing One&quot;,
+///                                    &quot;Thing Two&quot;),
 ///                     G_DBUS_CALL_FLAGS_NONE,
 ///                     -1,
 ///                     NULL,
 ///                     (GAsyncReadyCallback) two_strings_done,
-///                     &data);
-/// ]|
-/// </para>
-/// <para>
+///                     &amp;data);
+/// </code>
 /// If @proxy has an expected interface (see
 /// #GDBusProxy:g-interface-info) and @method_name is referenced by it,
 /// then the return value is checked against the return type.
@@ -605,13 +604,13 @@ public static class GDBusProxyHandleExtensions
 /// </param>
 /// <param name="timeout_msec">
 /// The timeout in milliseconds (with %G_MAXINT meaning
-///                "infinite") or -1 to use the proxy default timeout.
+///                &quot;infinite&quot;) or -1 to use the proxy default timeout.
 /// </param>
 /// <param name="cancellable">
 /// A #GCancellable or %NULL.
 /// </param>
 /// <param name="callback">
-/// A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don't
+/// A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don&apos;t
 /// care about the result of the method invocation.
 /// </param>
 /// <param name="user_data">
@@ -669,20 +668,19 @@ public static class GDBusProxyHandleExtensions
 /// </para>
 /// <para>
 /// If the @parameters #GVariant is floating, it is consumed. This allows
-/// convenient 'inline' use of g_variant_new(), e.g.:
-/// |[<!-- language="C" -->
+/// convenient &apos;inline&apos; use of g_variant_new(), e.g.:
+/// <code>
 ///  g_dbus_proxy_call_sync (proxy,
-///                          "TwoStrings",
-///                          g_variant_new ("(ss)",
-///                                         "Thing One",
-///                                         "Thing Two"),
+///  g_dbus_proxy_call_sync (proxy,
+///                          &quot;TwoStrings&quot;,
+///                          g_variant_new (&quot;(ss)&quot;,
+///                                         &quot;Thing One&quot;,
+///                                         &quot;Thing Two&quot;),
 ///                          G_DBUS_CALL_FLAGS_NONE,
 ///                          -1,
 ///                          NULL,
-///                          &error);
-/// ]|
-/// </para>
-/// <para>
+///                          &amp;error);
+/// </code>
 /// The calling thread is blocked until a reply is received. See
 /// g_dbus_proxy_call() for the asynchronous version of this
 /// method.
@@ -709,7 +707,7 @@ public static class GDBusProxyHandleExtensions
 /// </param>
 /// <param name="timeout_msec">
 /// The timeout in milliseconds (with %G_MAXINT meaning
-///                "infinite") or -1 to use the proxy default timeout.
+///                &quot;infinite&quot;) or -1 to use the proxy default timeout.
 /// </param>
 /// <param name="cancellable">
 /// A #GCancellable or %NULL.
@@ -750,7 +748,7 @@ public static class GDBusProxyHandleExtensions
 /// </param>
 /// <param name="timeout_msec">
 /// The timeout in milliseconds (with %G_MAXINT meaning
-///                "infinite") or -1 to use the proxy default timeout.
+///                &quot;infinite&quot;) or -1 to use the proxy default timeout.
 /// </param>
 /// <param name="fd_list">
 /// A #GUnixFDList or %NULL.
@@ -759,7 +757,7 @@ public static class GDBusProxyHandleExtensions
 /// A #GCancellable or %NULL.
 /// </param>
 /// <param name="callback">
-/// A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don't
+/// A #GAsyncReadyCallback to call when the request is satisfied or %NULL if you don&apos;t
 /// care about the result of the method invocation.
 /// </param>
 /// <param name="user_data">
@@ -825,7 +823,7 @@ public static class GDBusProxyHandleExtensions
 /// </param>
 /// <param name="timeout_msec">
 /// The timeout in milliseconds (with %G_MAXINT meaning
-///                "infinite") or -1 to use the proxy default timeout.
+///                &quot;infinite&quot;) or -1 to use the proxy default timeout.
 /// </param>
 /// <param name="fd_list">
 /// A #GUnixFDList or %NULL.
@@ -1086,16 +1084,15 @@ public static class GDBusProxyHandleExtensions
 /// </para>
 /// <para>
 /// If the @value #GVariant is floating, it is consumed. This allows
-/// convenient 'inline' use of g_variant_new(), e.g.
-/// |[<!-- language="C" -->
+/// convenient &apos;inline&apos; use of g_variant_new(), e.g.
+/// <code>
 ///  g_dbus_proxy_set_cached_property (proxy,
-///                                    "SomeProperty",
-///                                    g_variant_new ("(si)",
-///                                                  "A String",
+///  g_dbus_proxy_set_cached_property (proxy,
+///                                    &quot;SomeProperty&quot;,
+///                                    g_variant_new (&quot;(si)&quot;,
+///                                                  &quot;A String&quot;,
 ///                                                  42));
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Normally you will not need to use this method since @proxy
 /// is tracking changes using the
 /// `org.freedesktop.DBus.Properties.PropertiesChanged`

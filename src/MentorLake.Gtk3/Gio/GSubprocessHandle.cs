@@ -84,7 +84,7 @@ public class GSubprocessHandle : GObjectHandle, GInitableHandle
 /// <para>
 /// Create a new process with the given flags and varargs argument
 /// list.  By default, matching the g_spawn_async() defaults, the
-/// child's stdin will be set to the system null device, and
+/// child&apos;s stdin will be set to the system null device, and
 /// stdout/stderr will be inherited from the parent.  You can use
 /// @flags to control this behavior.
 /// </para>
@@ -609,7 +609,7 @@ public static class GSubprocessHandleExtensions
 
 /// <summary>
 /// <para>
-/// Checks if the process was "successful".  A process is considered
+/// Checks if the process was &quot;successful&quot;.  A process is considered
 /// successful if it exited cleanly with an exit status of 0, either by
 /// way of the exit() system call or return from main().
 /// </para>
@@ -701,7 +701,7 @@ public static class GSubprocessHandleExtensions
 /// abnormal termination.  See g_subprocess_wait_check() for that.
 /// </para>
 /// <para>
-/// Cancelling @cancellable doesn't kill the subprocess.  Call
+/// Cancelling @cancellable doesn&apos;t kill the subprocess.  Call
 /// g_subprocess_force_exit() if it is desirable.
 /// </para>
 /// </summary>

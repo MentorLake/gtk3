@@ -40,7 +40,7 @@ namespace MentorLake.GdkPixbuf;
 /// `fill_vtable` function will simply not set the corresponding
 /// function pointers of the `GdkPixbufModule` structure. If a module supports
 /// incremental loading (i.e. provides `begin_load`, `stop_load` and
-/// `load_increment`), it doesn't have to implement `load`, since `GdkPixbuf`
+/// `load_increment`), it doesn&apos;t have to implement `load`, since `GdkPixbuf`
 /// can supply a generic `load` implementation wrapping the incremental loading.
 /// </para>
 /// <para>
@@ -113,7 +113,7 @@ internal class GdkPixbufModuleExterns
 /// `fill_vtable` function will simply not set the corresponding
 /// function pointers of the `GdkPixbufModule` structure. If a module supports
 /// incremental loading (i.e. provides `begin_load`, `stop_load` and
-/// `load_increment`), it doesn't have to implement `load`, since `GdkPixbuf`
+/// `load_increment`), it doesn&apos;t have to implement `load`, since `GdkPixbuf`
 /// can supply a generic `load` implementation wrapping the incremental loading.
 /// </para>
 /// <para>
@@ -137,7 +137,7 @@ public struct GdkPixbufModule
 	/// <summary>
 /// <para>
 /// the name of the module, usually the same as the
-///  usual file extension for images of this type, eg. "xpm", "jpeg" or "png".
+///  usual file extension for images of this type, eg. &quot;xpm&quot;, &quot;jpeg&quot; or &quot;png&quot;.
 /// </para>
 /// </summary>
 

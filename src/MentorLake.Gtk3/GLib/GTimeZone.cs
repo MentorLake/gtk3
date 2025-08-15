@@ -73,12 +73,12 @@ public class GTimeZoneHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// In Windows, @identifier can also be the unlocalized name of a time
-/// zone for standard time, for example "Pacific Standard Time".
+/// zone for standard time, for example &quot;Pacific Standard Time&quot;.
 /// </para>
 /// <para>
-/// Valid RFC3339 time offsets are `"Z"` (for UTC) or
-/// `"±hh:mm"`.  ISO 8601 additionally specifies
-/// `"±hhmm"` and `"±hh"`.  Offsets are
+/// Valid RFC3339 time offsets are `&quot;Z&quot;` (for UTC) or
+/// `&quot;±hh:mm&quot;`.  ISO 8601 additionally specifies
+/// `&quot;±hhmm&quot;` and `&quot;±hh&quot;`.  Offsets are
 /// time values to be added to Coordinated Universal Time (UTC) to get
 /// the local time.
 /// </para>
@@ -86,21 +86,21 @@ public class GTimeZoneHandle : BaseSafeHandle
 /// In UNIX, the `TZ` environment variable typically corresponds
 /// to the name of a file in the zoneinfo database, an absolute path to a file
 /// somewhere else, or a string in
-/// "std offset [dst [offset],start[/time],end[/time]]" (POSIX) format.
+/// &quot;std offset [dst [offset],start[/time],end[/time]]&quot; (POSIX) format.
 /// There  are  no spaces in the specification. The name of standard
 /// and daylight savings time zone must be three or more alphabetic
 /// characters. Offsets are time values to be added to local time to
 /// get Coordinated Universal Time (UTC) and should be
-/// `"[±]hh[[:]mm[:ss]]"`.  Dates are either
-/// `"Jn"` (Julian day with n between 1 and 365, leap
-/// years not counted), `"n"` (zero-based Julian day
-/// with n between 0 and 365) or `"Mm.w.d"` (day d
-/// (0 <= d <= 6) of week w (1 <= w <= 5) of month m (1 <= m <= 12), day
+/// `&quot;[±]hh[[:]mm[:ss]]&quot;`.  Dates are either
+/// `&quot;Jn&quot;` (Julian day with n between 1 and 365, leap
+/// years not counted), `&quot;n&quot;` (zero-based Julian day
+/// with n between 0 and 365) or `&quot;Mm.w.d&quot;` (day d
+/// (0 &amp;lt;= d &amp;lt;= 6) of week w (1 &amp;lt;= w &amp;lt;= 5) of month m (1 &amp;lt;= m &amp;lt;= 12), day
 /// 0 is a Sunday).  Times are in local wall clock time, the default is
 /// 02:00:00.
 /// </para>
 /// <para>
-/// In Windows, the "tzn[+|–]hh[:mm[:ss]][dzn]" format is used, but also
+/// In Windows, the &quot;tzn[+|–]hh[:mm[:ss]][dzn]&quot; format is used, but also
 /// accepts POSIX format.  The Windows format uses US rules for all time
 /// zones; daylight savings time is 60 minutes behind the standard time
 /// with date and time of change taken from Pacific Standard Time.
@@ -214,7 +214,7 @@ public class GTimeZoneHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// This is equivalent to calling g_time_zone_new() with a value like
-/// "Z", "UTC", "+00", etc.
+/// &quot;Z&quot;, &quot;UTC&quot;, &quot;+00&quot;, etc.
 /// </para>
 /// <para>
 /// You should release the return value by calling g_time_zone_unref()
@@ -330,8 +330,8 @@ public static class GTimeZoneExtensions
 /// @interval of time in the time zone @tz.
 /// </para>
 /// <para>
-/// For example, in Toronto this is currently "EST" during the winter
-/// months and "EDT" during the summer months when daylight savings time
+/// For example, in Toronto this is currently &quot;EST&quot; during the winter
+/// months and &quot;EDT&quot; during the summer months when daylight savings time
 /// is in effect.
 /// </para>
 /// </summary>

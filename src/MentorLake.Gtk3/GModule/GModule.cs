@@ -56,7 +56,7 @@ public static class GModuleExtensions
 /// Returns the filename that the module was opened with.
 /// </para>
 /// <para>
-/// If @module refers to the application itself, "main" is returned.
+/// If @module refers to the application itself, &quot;main&quot; is returned.
 /// </para>
 /// </summary>
 
@@ -165,7 +165,7 @@ public struct GModule
 /// </para>
 /// <para>
 /// For example, calling g_module_build_path() on a Linux system with a
-/// @directory of `/lib` and a @module_name of "mylibrary" will return
+/// @directory of `/lib` and a @module_name of &quot;mylibrary&quot; will return
 /// `/lib/libmylibrary.so`. On a Windows system, using `\Windows` as the
 /// directory it will return `\Windows\mylibrary.dll`.
 /// </para>
@@ -244,10 +244,10 @@ public struct GModule
 /// </para>
 /// <para>
 /// 1. If @file_name exists as a regular file, it is used as-is; else
-/// 2. If @file_name doesn't have the correct suffix and/or prefix for the
+/// 2. If @file_name doesn&apos;t have the correct suffix and/or prefix for the
 ///    platform, then possible suffixes and prefixes will be added to the
 ///    basename till a file is found and whatever is found will be used; else
-/// 3. If @file_name doesn't have the ".la"-suffix, ".la" is appended. Either
+/// 3. If @file_name doesn&apos;t have the &quot;.la&quot;-suffix, &quot;.la&quot; is appended. Either
 ///    way, if a matching .la file exists (and is a libtool archive) the
 ///    libtool archive is parsed to find the actual file name, and that is
 ///    used.

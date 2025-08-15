@@ -11,7 +11,7 @@ public enum GDBusError
 {
 /// <summary>
 /// <para>
-/// A generic error; "something went wrong" - see the error message for
+/// A generic error; &quot;something went wrong&quot; - see the error message for
 /// more.
 /// </para>
 /// </summary>
@@ -26,7 +26,7 @@ public enum GDBusError
 	G_DBUS_ERROR_NO_MEMORY = 1,
 /// <summary>
 /// <para>
-/// The bus doesn't know how to launch a service to supply the bus name
+/// The bus doesn&apos;t know how to launch a service to supply the bus name
 /// you wanted.
 /// </para>
 /// </summary>
@@ -34,7 +34,7 @@ public enum GDBusError
 	G_DBUS_ERROR_SERVICE_UNKNOWN = 2,
 /// <summary>
 /// <para>
-/// The bus name you referenced doesn't exist (i.e. no application owns
+/// The bus name you referenced doesn&apos;t exist (i.e. no application owns
 /// it).
 /// </para>
 /// </summary>
@@ -63,7 +63,7 @@ public enum GDBusError
 	G_DBUS_ERROR_BAD_ADDRESS = 6,
 /// <summary>
 /// <para>
-/// Requested operation isn't supported (like ENOSYS on UNIX).
+/// Requested operation isn&apos;t supported (like ENOSYS on UNIX).
 /// </para>
 /// </summary>
 
@@ -77,14 +77,14 @@ public enum GDBusError
 	G_DBUS_ERROR_LIMITS_EXCEEDED = 8,
 /// <summary>
 /// <para>
-/// Security restrictions don't allow doing what you're trying to do.
+/// Security restrictions don&apos;t allow doing what you&apos;re trying to do.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_ACCESS_DENIED = 9,
 /// <summary>
 /// <para>
-/// Authentication didn't work.
+/// Authentication didn&apos;t work.
 /// </para>
 /// </summary>
 
@@ -102,7 +102,7 @@ public enum GDBusError
 /// Certain timeout errors, possibly ETIMEDOUT on a socket.  Note that
 /// %G_DBUS_ERROR_NO_REPLY is used for message reply timeouts. Warning:
 /// this is confusingly-named given that %G_DBUS_ERROR_TIMED_OUT also
-/// exists. We can't fix it for compatibility reasons so just be
+/// exists. We can&apos;t fix it for compatibility reasons so just be
 /// careful.
 /// </para>
 /// </summary>
@@ -117,14 +117,14 @@ public enum GDBusError
 	G_DBUS_ERROR_NO_NETWORK = 13,
 /// <summary>
 /// <para>
-/// Can't bind a socket since its address is in use (i.e. EADDRINUSE).
+/// Can&apos;t bind a socket since its address is in use (i.e. EADDRINUSE).
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_ADDRESS_IN_USE = 14,
 /// <summary>
 /// <para>
-/// The connection is disconnected and you're trying to use it.
+/// The connection is disconnected and you&apos;re trying to use it.
 /// </para>
 /// </summary>
 
@@ -145,14 +145,14 @@ public enum GDBusError
 	G_DBUS_ERROR_FILE_NOT_FOUND = 17,
 /// <summary>
 /// <para>
-/// Existing file and the operation you're using does not silently overwrite.
+/// Existing file and the operation you&apos;re using does not silently overwrite.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_FILE_EXISTS = 18,
 /// <summary>
 /// <para>
-/// Method name you invoked isn't known by the object you invoked it on.
+/// Method name you invoked isn&apos;t known by the object you invoked it on.
 /// </para>
 /// </summary>
 
@@ -161,21 +161,21 @@ public enum GDBusError
 /// <para>
 /// Certain timeout errors, e.g. while starting a service. Warning: this is
 /// confusingly-named given that %G_DBUS_ERROR_TIMEOUT also exists. We
-/// can't fix it for compatibility reasons so just be careful.
+/// can&apos;t fix it for compatibility reasons so just be careful.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_TIMED_OUT = 20,
 /// <summary>
 /// <para>
-/// Tried to remove or modify a match rule that didn't exist.
+/// Tried to remove or modify a match rule that didn&apos;t exist.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_MATCH_RULE_NOT_FOUND = 21,
 /// <summary>
 /// <para>
-/// The match rule isn't syntactically valid.
+/// The match rule isn&apos;t syntactically valid.
 /// </para>
 /// </summary>
 
@@ -259,14 +259,14 @@ public enum GDBusError
 	G_DBUS_ERROR_SPAWN_FILE_INVALID = 33,
 /// <summary>
 /// <para>
-/// Tried to get a UNIX process ID and it wasn't available.
+/// Tried to get a UNIX process ID and it wasn&apos;t available.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_SPAWN_NO_MEMORY = 34,
 /// <summary>
 /// <para>
-/// Tried to get a UNIX process ID and it wasn't available.
+/// Tried to get a UNIX process ID and it wasn&apos;t available.
 /// </para>
 /// </summary>
 
@@ -287,42 +287,42 @@ public enum GDBusError
 	G_DBUS_ERROR_INVALID_FILE_CONTENT = 37,
 /// <summary>
 /// <para>
-/// Asked for SELinux security context and it wasn't available.
+/// Asked for SELinux security context and it wasn&apos;t available.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN = 38,
 /// <summary>
 /// <para>
-/// Asked for ADT audit data and it wasn't available.
+/// Asked for ADT audit data and it wasn&apos;t available.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_ADT_AUDIT_DATA_UNKNOWN = 39,
 /// <summary>
 /// <para>
-/// There's already an object with the requested object path.
+/// There&apos;s already an object with the requested object path.
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_OBJECT_PATH_IN_USE = 40,
 /// <summary>
 /// <para>
-/// Object you invoked a method on isn't known. Since 2.42
+/// Object you invoked a method on isn&apos;t known. Since 2.42
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_UNKNOWN_OBJECT = 41,
 /// <summary>
 /// <para>
-/// Interface you invoked a method on isn't known by the object. Since 2.42
+/// Interface you invoked a method on isn&apos;t known by the object. Since 2.42
 /// </para>
 /// </summary>
 
 	G_DBUS_ERROR_UNKNOWN_INTERFACE = 42,
 /// <summary>
 /// <para>
-/// Property you tried to access isn't known by the object. Since 2.42
+/// Property you tried to access isn&apos;t known by the object. Since 2.42
 /// </para>
 /// </summary>
 

@@ -27,18 +27,15 @@ namespace MentorLake.Gtk;
 /// that are specific to individual widgets may not be available before the
 /// widget type has been realized at least once. The following example
 /// demonstrates a way to do this:
-/// |[<!-- language="C" -->
-///   gtk_init (&argc, &argv);
-/// </para>
-/// <para>
+/// <code>
+///   gtk_init (&amp;argc, &amp;argv);
+///   gtk_init (&amp;argc, &amp;argv);
+/// 
 ///   // make sure the type is realized
 ///   g_type_class_unref (g_type_class_ref (GTK_TYPE_IMAGE_MENU_ITEM));
-/// </para>
-/// <para>
-///   g_object_set (gtk_settings_get_default (), "gtk-enable-animations", FALSE, NULL);
-/// ]|
-/// </para>
-/// <para>
+/// 
+///   g_object_set (gtk_settings_get_default (), &quot;gtk-enable-animations&quot;, FALSE, NULL);
+/// </code>
 /// There is one GtkSettings instance per screen. It can be obtained with
 /// gtk_settings_get_for_screen(), but in many cases, it is more convenient
 /// to use gtk_widget_get_settings(). gtk_settings_get_default() returns the

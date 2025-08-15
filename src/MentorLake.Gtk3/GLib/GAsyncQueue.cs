@@ -56,7 +56,7 @@ public static class GAsyncQueueExtensions
 /// of the queue or due to scheduling.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -75,7 +75,7 @@ public static class GAsyncQueueExtensions
 
 /// <summary>
 /// <para>
-/// Acquires the @queue's lock. If another thread is already
+/// Acquires the @queue&apos;s lock. If another thread is already
 /// holding the lock, this call will block until the lock
 /// becomes available.
 /// </para>
@@ -125,7 +125,7 @@ public static class GAsyncQueueExtensions
 /// blocks until data becomes available.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -194,7 +194,7 @@ public static class GAsyncQueueExtensions
 /// so that it will be the next one to be popped off the queue.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -265,7 +265,7 @@ public static class GAsyncQueueExtensions
 /// new elements, see g_async_queue_sort().
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// <para>
 /// For an example of @func see g_async_queue_sort().
@@ -299,7 +299,7 @@ public static class GAsyncQueueExtensions
 /// The @data parameter must not be %NULL.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -379,7 +379,7 @@ public static class GAsyncQueueExtensions
 /// Remove an item from the queue.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -417,17 +417,16 @@ public static class GAsyncQueueExtensions
 /// <para>
 /// If you were sorting a list of priority numbers to make sure the
 /// lowest priority would be at the top of the queue, you could use:
-/// |[<!-- language="C" -->
+/// <code>
+///  gint32 id1;
 ///  gint32 id1;
 ///  gint32 id2;
-/// </para>
-/// <para>
+/// 
 ///  id1 = GPOINTER_TO_INT (element1);
 ///  id2 = GPOINTER_TO_INT (element2);
-/// </para>
-/// <para>
-///  return (id1 > id2 ? +1 : id1 == id2 ? 0 : -1);
-/// ]|
+/// 
+///  return (id1 &amp;gt; id2 ? +1 : id1 == id2 ? 0 : -1);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -459,7 +458,7 @@ public static class GAsyncQueueExtensions
 /// element.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -523,7 +522,7 @@ public static class GAsyncQueueExtensions
 /// and g_time_val_add() can be used.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -580,7 +579,7 @@ public static class GAsyncQueueExtensions
 /// If no data is received before the timeout, %NULL is returned.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -628,7 +627,7 @@ public static class GAsyncQueueExtensions
 /// %NULL is returned.
 /// </para>
 /// <para>
-/// This function must be called while holding the @queue's lock.
+/// This function must be called while holding the @queue&apos;s lock.
 /// </para>
 /// </summary>
 
@@ -648,7 +647,7 @@ public static class GAsyncQueueExtensions
 
 /// <summary>
 /// <para>
-/// Releases the queue's lock.
+/// Releases the queue&apos;s lock.
 /// </para>
 /// <para>
 /// Calling this function when you have not acquired
@@ -693,7 +692,7 @@ public static class GAsyncQueueExtensions
 /// <para>
 /// Decreases the reference count of the asynchronous @queue by 1
 /// and releases the lock. This function must be called while holding
-/// the @queue's lock. If the reference count went to 0, the @queue
+/// the @queue&apos;s lock. If the reference count went to 0, the @queue
 /// will be destroyed and the memory allocated will be freed.
 /// </para>
 /// </summary>

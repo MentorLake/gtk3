@@ -42,7 +42,7 @@ public static class GtkTreeDragSourceHandleExtensions
 /// <summary>
 /// <para>
 /// Asks the #GtkTreeDragSource to fill in @selection_data with a
-/// representation of the row at @path. @selection_data->target gives
+/// representation of the row at @path. @selection_data-&amp;gt;target gives
 /// the required type of the data.  Should robustly handle a @path no
 /// longer found in the model!
 /// </para>

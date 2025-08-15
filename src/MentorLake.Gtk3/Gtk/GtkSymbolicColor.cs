@@ -27,8 +27,8 @@ public class GtkSymbolicColorHandle : BaseSafeHandle
 /// <summary>
 /// <para>
 /// Creates a symbolic color by modifying the relative alpha
-/// value of @color. A factor < 1.0 would resolve to a more
-/// transparent color, while > 1.0 would resolve to a more
+/// value of @color. A factor &amp;lt; 1.0 would resolve to a more
+/// transparent color, while &amp;gt; 1.0 would resolve to a more
 /// opaque color.
 /// </para>
 /// </summary>
@@ -115,8 +115,8 @@ public class GtkSymbolicColorHandle : BaseSafeHandle
 /// <summary>
 /// <para>
 /// Creates a symbolic color defined as a shade of
-/// another color. A factor > 1.0 would resolve to
-/// a brighter color, while < 1.0 would resolve to
+/// another color. A factor &amp;gt; 1.0 would resolve to
+/// a brighter color, while &amp;lt; 1.0 would resolve to
 /// a darker color.
 /// </para>
 /// </summary>

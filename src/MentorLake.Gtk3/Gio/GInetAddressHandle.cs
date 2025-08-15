@@ -20,8 +20,8 @@ public class GInetAddressHandle : GObjectHandle
 {
 /// <summary>
 /// <para>
-/// Creates a #GInetAddress for the "any" address (unassigned/"don't
-/// care") for @family.
+/// Creates a #GInetAddress for the &quot;any&quot; address (unassigned/&quot;don&apos;t
+/// care&quot;) for @family.
 /// </para>
 /// </summary>
 
@@ -29,7 +29,7 @@ public class GInetAddressHandle : GObjectHandle
 /// the address family
 /// </param>
 /// <return>
-/// a new #GInetAddress corresponding to the "any" address
+/// a new #GInetAddress corresponding to the &quot;any&quot; address
 /// for @family.
 ///     Free the returned object with g_object_unref().
 /// </return>
@@ -131,7 +131,7 @@ public static class GInetAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @address's family
+/// Gets @address&apos;s family
 /// </para>
 /// </summary>
 
@@ -139,7 +139,7 @@ public static class GInetAddressHandleExtensions
 /// a #GInetAddress
 /// </param>
 /// <return>
-/// @address's family
+/// @address&apos;s family
 /// </return>
 
 	public static MentorLake.Gio.GSocketFamily GetFamily(this MentorLake.Gio.GInetAddressHandle address)
@@ -150,7 +150,7 @@ public static class GInetAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Tests whether @address is the "any" address for its family.
+/// Tests whether @address is the &quot;any&quot; address for its family.
 /// </para>
 /// </summary>
 
@@ -158,7 +158,7 @@ public static class GInetAddressHandleExtensions
 /// a #GInetAddress
 /// </param>
 /// <return>
-/// %TRUE if @address is the "any" address for its family.
+/// %TRUE if @address is the &quot;any&quot; address for its family.
 /// </return>
 
 	public static bool GetIsAny(this MentorLake.Gio.GInetAddressHandle address)

@@ -40,17 +40,16 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// flowbox
 /// flowbox
 /// ├── flowboxchild
-/// │   ╰── <child>
+/// │   ╰── &amp;lt;child&amp;gt;
 /// ├── flowboxchild
-/// │   ╰── <child>
+/// │   ╰── &amp;lt;child&amp;gt;
 /// ┊
 /// ╰── [rubberband]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkFlowBox uses a single CSS node with name flowbox. GtkFlowBoxChild
 /// uses a single CSS node with name flowboxchild.

@@ -50,7 +50,7 @@ public IntPtr constructor;
 /// <para>
 /// the generic setter for all properties of this type. Should be
 ///  overridden for every type with properties. If implementations of
-///  @set_property don't emit property change notification explicitly, this will
+///  @set_property don&apos;t emit property change notification explicitly, this will
 ///  be done implicitly by the type system. However, if the notify signal is
 ///  emitted explicitly, the type system will not emit it a second time.
 /// </para>

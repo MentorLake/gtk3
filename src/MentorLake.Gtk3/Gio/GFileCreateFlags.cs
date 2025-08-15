@@ -27,11 +27,11 @@ public enum GFileCreateFlags : uint
 /// <summary>
 /// <para>
 /// Replace the destination
-///    as if it didn't exist before. Don't try to keep any old
+///    as if it didn&apos;t exist before. Don&apos;t try to keep any old
 ///    permissions, replace instead of following links. This
-///    is generally useful if you're doing a "copy over"
-///    rather than a "save new version of" replace operation.
-///    You can think of it as "unlink destination" before
+///    is generally useful if you&apos;re doing a &quot;copy over&quot;
+///    rather than a &quot;save new version of&quot; replace operation.
+///    You can think of it as &quot;unlink destination&quot; before
 ///    writing to it, although the implementation may not
 ///    be exactly like that. This flag can only be used with
 ///    g_file_replace() and its variants, including g_file_replace_contents().

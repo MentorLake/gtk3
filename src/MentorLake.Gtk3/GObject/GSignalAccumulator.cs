@@ -32,7 +32,7 @@ namespace MentorLake.GObject;
 ///  should be aborted. Returning %TRUE will continue with
 ///  the signal emission. Returning %FALSE will abort the current emission.
 ///  Since 2.62, returning %FALSE will skip to the CLEANUP stage. In this case,
-///  emission will occur as normal in the CLEANUP stage and the handler's
+///  emission will occur as normal in the CLEANUP stage and the handler&apos;s
 ///  return value will be accumulated.
 /// </return>
 

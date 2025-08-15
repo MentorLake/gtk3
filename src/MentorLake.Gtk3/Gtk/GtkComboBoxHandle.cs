@@ -32,8 +32,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// combobox
 /// combobox
 /// ├── box.linked
 /// │   ╰── button.combo
@@ -41,15 +41,14 @@ namespace MentorLake.Gtk;
 /// │           ├── cellview
 /// │           ╰── arrow
 /// ╰── window.popup
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// A normal combobox contains a box with the .linked class, a button
 /// with the .combo class and inside those buttons, there are a cellview and
 /// an arrow.
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// combobox
 /// combobox
 /// ├── box.linked
 /// │   ├── entry.combo
@@ -57,8 +56,7 @@ namespace MentorLake.Gtk;
 /// │       ╰── box
 /// │           ╰── arrow
 /// ╰── window.popup
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// A GtkComboBox with an entry has a single CSS node with name combobox. It
 /// contains a box with the .linked class. That box contains an entry and a
@@ -222,19 +220,20 @@ public static class GtkComboBoxHandleSignalExtensions
 /// For combo boxes that are created with an entry (See GtkComboBox:has-entry).
 /// </para>
 /// <para>
-/// A signal which allows you to change how the text displayed in a combo box's
+/// A signal which allows you to change how the text displayed in a combo box&apos;s
 /// entry is displayed.
 /// </para>
 /// <para>
 /// Connect a signal handler which returns an allocated string representing
-/// @path. That string will then be used to set the text in the combo box's entry.
+/// @path. That string will then be used to set the text in the combo box&apos;s entry.
 /// The default signal handler uses the text from the GtkComboBox::entry-text-column
 /// model column.
 /// </para>
 /// <para>
-/// Here's an example signal handler which fetches data from the model and
+/// Here&apos;s an example signal handler which fetches data from the model and
 /// displays it in the entry.
-/// |[<!-- language="C" -->
+/// <code>
+/// static gchar*
 /// static gchar*
 /// format_entry_text_callback (GtkComboBox *combo,
 ///                             const gchar *path,
@@ -243,20 +242,17 @@ public static class GtkComboBoxHandleSignalExtensions
 ///   GtkTreeIter iter;
 ///   GtkTreeModel model;
 ///   gdouble      value;
-/// </para>
-/// <para>
+/// 
 ///   model = gtk_combo_box_get_model (combo);
-/// </para>
-/// <para>
-///   gtk_tree_model_get_iter_from_string (model, &iter, path);
-///   gtk_tree_model_get (model, &iter,
-///                       THE_DOUBLE_VALUE_COLUMN, &value,
+/// 
+///   gtk_tree_model_get_iter_from_string (model, &amp;iter, path);
+///   gtk_tree_model_get (model, &amp;iter,
+///                       THE_DOUBLE_VALUE_COLUMN, &amp;value,
 ///                       -1);
-/// </para>
-/// <para>
-///   return g_strdup_printf ("%g", value);
+/// 
+///   return g_strdup_printf (&quot;%g&quot;, value);
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -458,7 +454,7 @@ public static class GtkComboBoxHandleSignalExtensions
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -514,7 +510,7 @@ public class FormatEntryTextSignal
 	public MentorLake.Gtk.GtkComboBoxHandle Self;
 /// <summary>
 /// <para>
-/// the GtkTreePath string from the combo box's current model to format text for
+/// the GtkTreePath string from the combo box&apos;s current model to format text for
 /// </para>
 /// </summary>
 
@@ -609,19 +605,20 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 /// For combo boxes that are created with an entry (See GtkComboBox:has-entry).
 /// </para>
 /// <para>
-/// A signal which allows you to change how the text displayed in a combo box's
+/// A signal which allows you to change how the text displayed in a combo box&apos;s
 /// entry is displayed.
 /// </para>
 /// <para>
 /// Connect a signal handler which returns an allocated string representing
-/// @path. That string will then be used to set the text in the combo box's entry.
+/// @path. That string will then be used to set the text in the combo box&apos;s entry.
 /// The default signal handler uses the text from the GtkComboBox::entry-text-column
 /// model column.
 /// </para>
 /// <para>
-/// Here's an example signal handler which fetches data from the model and
+/// Here&apos;s an example signal handler which fetches data from the model and
 /// displays it in the entry.
-/// |[<!-- language="C" -->
+/// <code>
+/// static gchar*
 /// static gchar*
 /// format_entry_text_callback (GtkComboBox *combo,
 ///                             const gchar *path,
@@ -630,27 +627,24 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 ///   GtkTreeIter iter;
 ///   GtkTreeModel model;
 ///   gdouble      value;
-/// </para>
-/// <para>
+/// 
 ///   model = gtk_combo_box_get_model (combo);
-/// </para>
-/// <para>
-///   gtk_tree_model_get_iter_from_string (model, &iter, path);
-///   gtk_tree_model_get (model, &iter,
-///                       THE_DOUBLE_VALUE_COLUMN, &value,
+/// 
+///   gtk_tree_model_get_iter_from_string (model, &amp;iter, path);
+///   gtk_tree_model_get (model, &amp;iter,
+///                       THE_DOUBLE_VALUE_COLUMN, &amp;value,
 ///                       -1);
-/// </para>
-/// <para>
-///   return g_strdup_printf ("%g", value);
+/// 
+///   return g_strdup_printf (&quot;%g&quot;, value);
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
 /// <param name="self">
 /// </param>
 /// <param name="path">
-/// the GtkTreePath string from the combo box's current model to format text for
+/// the GtkTreePath string from the combo box&apos;s current model to format text for
 /// </param>
 /// <param name="user_data">
 /// </param>
@@ -760,7 +754,7 @@ public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>

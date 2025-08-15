@@ -17,8 +17,8 @@ namespace MentorLake.GObject;
 /// - Zero initialization of the remaining members not copied
 ///   over from the parent class.
 /// - Invocation of the GBaseInitFunc() initializers of all parent
-///   types and the class' type.
-/// - Invocation of the class' GClassInitFunc() initializer.
+///   types and the class&apos; type.
+/// - Invocation of the class&apos; GClassInitFunc() initializer.
 /// </para>
 /// <para>
 /// Since derived classes are partially initialized through a memory copy
@@ -36,8 +36,8 @@ namespace MentorLake.GObject;
 /// An example may help to correspond the intend of the different class
 /// initializers:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct {
 /// typedef struct {
 ///   GObjectClass parent_class;
 ///   gint         static_integer;
@@ -46,20 +46,19 @@ namespace MentorLake.GObject;
 /// static void
 /// type_a_base_class_init (TypeAClass *class)
 /// {
-///   class->dynamic_string = g_strdup ("some string");
+///   class-&amp;gt;dynamic_string = g_strdup (&quot;some string&quot;);
 /// }
 /// static void
 /// type_a_base_class_finalize (TypeAClass *class)
 /// {
-///   g_free (class->dynamic_string);
+///   g_free (class-&amp;gt;dynamic_string);
 /// }
 /// static void
 /// type_a_class_init (TypeAClass *class)
 /// {
-///   class->static_integer = 42;
+///   class-&amp;gt;static_integer = 42;
 /// }
-/// </para>
-/// <para>
+/// 
 /// typedef struct {
 ///   TypeAClass   parent_class;
 ///   gfloat       static_float;
@@ -68,20 +67,19 @@ namespace MentorLake.GObject;
 /// static void
 /// type_b_base_class_init (TypeBClass *class)
 /// {
-///   class->dynamic_gstring = g_string_new ("some other string");
+///   class-&amp;gt;dynamic_gstring = g_string_new (&quot;some other string&quot;);
 /// }
 /// static void
 /// type_b_base_class_finalize (TypeBClass *class)
 /// {
-///   g_string_free (class->dynamic_gstring);
+///   g_string_free (class-&amp;gt;dynamic_gstring);
 /// }
 /// static void
 /// type_b_class_init (TypeBClass *class)
 /// {
-///   class->static_float = 3.14159265358979323846;
+///   class-&amp;gt;static_float = 3.14159265358979323846;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Initialization of TypeBClass will first cause initialization of
 /// TypeAClass (derived classes reference their parent classes, see

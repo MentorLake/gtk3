@@ -19,56 +19,56 @@ public enum GTokenType
 	G_TOKEN_EOF = 0,
 /// <summary>
 /// <para>
-/// a '(' character
+/// a &apos;(&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_LEFT_PAREN = 40,
 /// <summary>
 /// <para>
-/// a ')' character
+/// a &apos;)&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_RIGHT_PAREN = 41,
 /// <summary>
 /// <para>
-/// a '{' character
+/// a &apos;{&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_LEFT_CURLY = 123,
 /// <summary>
 /// <para>
-/// a '}' character
+/// a &apos;}&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_RIGHT_CURLY = 125,
 /// <summary>
 /// <para>
-/// a '[' character
+/// a &apos;[&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_LEFT_BRACE = 91,
 /// <summary>
 /// <para>
-/// a ']' character
+/// a &apos;]&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_RIGHT_BRACE = 93,
 /// <summary>
 /// <para>
-/// a '=' character
+/// a &apos;=&apos; character
 /// </para>
 /// </summary>
 
 	G_TOKEN_EQUAL_SIGN = 61,
 /// <summary>
 /// <para>
-/// a ',' character
+/// a &apos;,&apos; character
 /// </para>
 /// </summary>
 

@@ -8,7 +8,7 @@ namespace MentorLake.HarfBuzz;
 /// #hb_draw_move_to_func_t, #hb_draw_line_to_func_t and
 /// #hb_draw_cubic_to_func_t calls are necessary to be defined but we translate
 /// #hb_draw_quadratic_to_func_t calls to #hb_draw_cubic_to_func_t if the
-/// callback isn't defined.
+/// callback isn&apos;t defined.
 /// </para>
 /// </summary>
 
@@ -34,7 +34,7 @@ internal class hb_draw_funcs_tExterns
 /// #hb_draw_move_to_func_t, #hb_draw_line_to_func_t and
 /// #hb_draw_cubic_to_func_t calls are necessary to be defined but we translate
 /// #hb_draw_quadratic_to_func_t calls to #hb_draw_cubic_to_func_t if the
-/// callback isn't defined.
+/// callback isn&apos;t defined.
 /// </para>
 /// </summary>
 

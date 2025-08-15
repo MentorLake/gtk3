@@ -14,7 +14,7 @@ namespace MentorLake.GLib;
 /// <para>
 /// `GVariant` is useful whenever data needs to be serialized, for example when
 /// sending method parameters in D-Bus, or when saving settings using
-/// <see href="../gio/class.Settings.html">GSettings</see>.
+/// &amp;lt;see href=&quot;../gio/class.Settings.html&quot;&amp;gt;GSettings&amp;lt;/see&amp;gt;.
 /// </para>
 /// <para>
 /// When creating a new `GVariant`, you pass the data you want to store in it
@@ -26,7 +26,7 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// ```c
-/// GVariant *v = g_variant_new ("u", 40);
+/// GVariant *v = g_variant_new (&quot;u&quot;, 40);
 /// ```
 /// </para>
 /// <para>
@@ -316,8 +316,8 @@ public class GVariantHandle : BaseSafeHandle
 /// future.
 /// </para>
 /// <para>
-/// The first character of the format string must not be '*' '?' '@' or
-/// 'r'; in essence, a new #GVariant must always be constructed by this
+/// The first character of the format string must not be &apos;*&apos; &apos;?&apos; &apos;@&apos; or
+/// &apos;r&apos;; in essence, a new #GVariant must always be constructed by this
 /// function (and not merely passed through it unmodified).
 /// </para>
 /// <para>
@@ -325,19 +325,17 @@ public class GVariantHandle : BaseSafeHandle
 /// specified in @format_string. This can be achieved by casting them. See
 /// the [GVariant varargs documentation](gvariant-format-strings.html#varargs).
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// MyFlags some_flags = FLAG_ONE | FLAG_TWO;
-/// const gchar *some_strings[] = { "a", "b", "c", NULL };
+/// MyFlags some_flags = FLAG_ONE | FLAG_TWO;
+/// const gchar *some_strings[] = { &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, NULL };
 /// GVariant *new_variant;
-/// </para>
-/// <para>
-/// new_variant = g_variant_new ("(t^as)",
+/// 
+/// new_variant = g_variant_new (&quot;(t^as)&quot;,
 ///                              // This cast is required.
 ///                              (guint64) some_flags,
 ///                              some_strings);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="format_string">
@@ -540,8 +538,8 @@ public class GVariantHandle : BaseSafeHandle
 /// <para>
 /// @element_size must be the size of a single element in the array.
 /// For example, if calling this function for an array of 32-bit integers,
-/// you might say sizeof(gint32). This value isn't used except for the purpose
-/// of a double-check that the form of the serialized data matches the caller's
+/// you might say sizeof(gint32). This value isn&apos;t used except for the purpose
+/// of a double-check that the form of the serialized data matches the caller&apos;s
 /// expectation.
 /// </para>
 /// <para>
@@ -624,10 +622,10 @@ public class GVariantHandle : BaseSafeHandle
 /// within this process or read from a trusted location on the disk (such
 /// as a file installed in /usr/lib alongside your application).  You
 /// should set trusted to %FALSE if @data is read from the network, a
-/// file in the user's home directory, etc.
+/// file in the user&apos;s home directory, etc.
 /// </para>
 /// <para>
-/// If @data was not stored in this machine's native endianness, any multi-byte
+/// If @data was not stored in this machine&apos;s native endianness, any multi-byte
 /// numeric values in the returned variant will also be in non-native
 /// endianness. g_variant_byteswap() can be used to recover the original values.
 /// </para>
@@ -677,8 +675,8 @@ public class GVariantHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// By convention, handles are indexes into an array of file descriptors
-/// that are sent alongside a D-Bus message.  If you're not interacting
-/// with D-Bus, you probably don't need them.
+/// that are sent alongside a D-Bus message.  If you&apos;re not interacting
+/// with D-Bus, you probably don&apos;t need them.
 /// </para>
 /// </summary>
 
@@ -784,7 +782,7 @@ public class GVariantHandle : BaseSafeHandle
 /// <para>
 /// Creates a D-Bus object path #GVariant with the contents of @object_path.
 /// @object_path must be a valid D-Bus object path.  Use
-/// g_variant_is_object_path() if you're not sure.
+/// g_variant_is_object_path() if you&apos;re not sure.
 /// </para>
 /// </summary>
 
@@ -835,7 +833,7 @@ public class GVariantHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// @format must be a text format #GVariant with one extension: at any
-/// point that a value may appear in the text, a '%' character followed
+/// point that a value may appear in the text, a &apos;%&apos; character followed
 /// by a GVariant format string (as per g_variant_new()) may appear.  In
 /// that case, the same arguments are collected from the argument list as
 /// g_variant_new() would have collected.
@@ -847,19 +845,17 @@ public class GVariantHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// Consider this simple example:
-/// |[<!-- language="C" -->
-///  g_variant_new_parsed ("[('one', 1), ('two', %i), (%s, 3)]", 2, "three");
-/// ]|
-/// </para>
-/// <para>
+/// <code>
+///  g_variant_new_parsed (&quot;[(&apos;one&apos;, 1), (&apos;two&apos;, %i), (%s, 3)]&quot;, 2, &quot;three&quot;);
+///  g_variant_new_parsed (&quot;[(&apos;one&apos;, 1), (&apos;two&apos;, %i), (%s, 3)]&quot;, 2, &quot;three&quot;);
+/// </code>
 /// In the example, the variable argument parameters are collected and
 /// filled in as if they were part of the original string to produce the
 /// result of
-/// |[<!-- language="C" -->
-/// [('one', 1), ('two', 2), ('three', 3)]
-/// ]|
-/// </para>
-/// <para>
+/// <code>
+/// [(&apos;one&apos;, 1), (&apos;two&apos;, 2), (&apos;three&apos;, 3)]
+/// [(&apos;one&apos;, 1), (&apos;two&apos;, 2), (&apos;three&apos;, 3)]
+/// </code>
 /// This function is intended only to be used with @format as a string
 /// literal.  Any parse error is fatal to the calling process.  If you
 /// want to parse data from untrusted sources, use g_variant_parse().
@@ -867,8 +863,8 @@ public class GVariantHandle : BaseSafeHandle
 /// <para>
 /// You may not use this function to return, unmodified, a single
 /// #GVariant pointer from the argument list.  ie: @format may not solely
-/// be anything along the lines of "%*", "%?", "\%r", or anything starting
-/// with "%@".
+/// be anything along the lines of &quot;%*&quot;, &quot;%?&quot;, &quot;\%r&quot;, or anything starting
+/// with &quot;%@&quot;.
 /// </para>
 /// </summary>
 
@@ -898,7 +894,7 @@ public class GVariantHandle : BaseSafeHandle
 /// <para>
 /// The return value will be floating if it was a newly created GVariant
 /// instance.  In the case that @format simply specified the collection
-/// of a #GVariant pointer (eg: @format was "%*") then the collected
+/// of a #GVariant pointer (eg: @format was &quot;%*&quot;) then the collected
 /// #GVariant pointer will be returned unmodified, without adding any
 /// additional references.
 /// </para>
@@ -963,7 +959,7 @@ public class GVariantHandle : BaseSafeHandle
 /// <para>
 /// Creates a D-Bus type signature #GVariant with the contents of
 /// @string.  @string must be a valid D-Bus type signature.  Use
-/// g_variant_is_signature() if you're not sure.
+/// g_variant_is_signature() if you&apos;re not sure.
 /// </para>
 /// </summary>
 
@@ -1177,9 +1173,9 @@ public class GVariantHandle : BaseSafeHandle
 /// </para>
 /// <para>
 /// The return value will be floating if it was a newly created GVariant
-/// instance (for example, if the format string was "(ii)").  In the case
-/// that the format_string was '*', '?', 'r', or a format starting with
-/// '@' then the collected #GVariant pointer will be returned unmodified,
+/// instance (for example, if the format string was &quot;(ii)&quot;).  In the case
+/// that the format_string was &apos;*&apos;, &apos;?&apos;, &apos;r&apos;, or a format starting with
+/// &apos;@&apos; then the collected #GVariant pointer will be returned unmodified,
 /// without adding any additional references.
 /// </para>
 /// <para>
@@ -1371,9 +1367,9 @@ public static class GVariantExtensions
 /// a #GVariant instance of the same type
 /// </param>
 /// <return>
-/// negative value if a < b;
+/// negative value if a &amp;lt; b;
 ///          zero if a = b;
-///          positive value if a > b.
+///          positive value if a &amp;gt; b.
 /// </return>
 
 	public static int Compare(this MentorLake.GLib.GVariantHandle one, MentorLake.GLib.GVariantHandle two)
@@ -1428,7 +1424,7 @@ public static class GVariantExtensions
 /// </summary>
 
 /// <param name="value">
-/// an array of array of bytes #GVariant ('aay')
+/// an array of array of bytes #GVariant (&apos;aay&apos;)
 /// </param>
 /// <param name="length">
 /// the length of the result, or %NULL
@@ -1710,7 +1706,7 @@ public static class GVariantExtensions
 /// </summary>
 
 /// <param name="value">
-/// an array of array of bytes #GVariant ('aay')
+/// an array of array of bytes #GVariant (&apos;aay&apos;)
 /// </param>
 /// <param name="length">
 /// the length of the result, or %NULL
@@ -1772,7 +1768,7 @@ public static class GVariantExtensions
 /// </para>
 /// <para>
 /// The returned value is never floating.  You should free it with
-/// g_variant_unref() when you're done with it.
+/// g_variant_unref() when you&apos;re done with it.
 /// </para>
 /// <para>
 /// Note that values borrowed from the returned child are not guaranteed to
@@ -1834,8 +1830,8 @@ public static class GVariantExtensions
 /// machine might be different) the endianness of the machine that stored
 /// it. As a result, file formats or network messages that incorporate
 /// serialized #GVariants must include this information either
-/// implicitly (for instance "the file always contains a
-/// %G_VARIANT_TYPE_VARIANT and it is always in little-endian order") or
+/// implicitly (for instance &quot;the file always contains a
+/// %G_VARIANT_TYPE_VARIANT and it is always in little-endian order&quot;) or
 /// explicitly (by storing the type and/or endianness in addition to the
 /// serialized data).
 /// </para>
@@ -1925,8 +1921,8 @@ public static class GVariantExtensions
 /// </para>
 /// <para>
 /// For example, if calling this function for an array of 32-bit integers,
-/// you might say `sizeof(gint32)`. This value isn't used except for the purpose
-/// of a double-check that the form of the serialized data matches the caller's
+/// you might say `sizeof(gint32)`. This value isn&apos;t used except for the purpose
+/// of a double-check that the form of the serialized data matches the caller&apos;s
 /// expectation.
 /// </para>
 /// <para>
@@ -1965,8 +1961,8 @@ public static class GVariantExtensions
 /// </para>
 /// <para>
 /// By convention, handles are indexes into an array of file descriptors
-/// that are sent alongside a D-Bus message.  If you're not interacting
-/// with D-Bus, you probably don't need them.
+/// that are sent alongside a D-Bus message.  If you&apos;re not interacting
+/// with D-Bus, you probably don&apos;t need them.
 /// </para>
 /// </summary>
 
@@ -2093,7 +2089,7 @@ public static class GVariantExtensions
 /// normal form.
 /// </para>
 /// <para>
-/// It makes sense to call this function if you've received #GVariant
+/// It makes sense to call this function if you&apos;ve received #GVariant
 /// data from untrusted sources and you want to ensure your serialized
 /// output is definitely in normal form.
 /// </para>
@@ -2199,7 +2195,7 @@ public static class GVariantExtensions
 /// returned there.  For trusted values, this information is already
 /// known.  Untrusted values will be validated and, if valid, a strlen() will be
 /// performed. If invalid, a default value will be returned — for
-/// %G_VARIANT_TYPE_OBJECT_PATH, this is `"/"`, and for other types it is the
+/// %G_VARIANT_TYPE_OBJECT_PATH, this is `&quot;/&quot;`, and for other types it is the
 /// empty string.
 /// </para>
 /// <para>
@@ -2826,8 +2822,8 @@ public static class GVariantExtensions
 /// additional normal reference being added.
 /// </para>
 /// <para>
-/// In other words, if the @value is floating, then this call "assumes
-/// ownership" of the floating reference, converting it to a normal
+/// In other words, if the @value is floating, then this call &quot;assumes
+/// ownership&quot; of the floating reference, converting it to a normal
 /// reference.  If the @value is not floating, then this call adds a
 /// new normal reference increasing the reference count by one.
 /// </para>
@@ -2913,7 +2909,7 @@ public static class GVariantExtensions
 /// reference.
 /// </para>
 /// <para>
-/// Using this function on the return value of the user's callback allows
+/// Using this function on the return value of the user&apos;s callback allows
 /// the user to do whichever is more convenient for them.  The caller
 /// will always receives exactly one full reference to the value: either
 /// the one that was returned in the first place, or a floating reference
@@ -3311,7 +3307,7 @@ internal class GVariantExterns
 /// <para>
 /// `GVariant` is useful whenever data needs to be serialized, for example when
 /// sending method parameters in D-Bus, or when saving settings using
-/// <see href="../gio/class.Settings.html">GSettings</see>.
+/// &amp;lt;see href=&quot;../gio/class.Settings.html&quot;&amp;gt;GSettings&amp;lt;/see&amp;gt;.
 /// </para>
 /// <para>
 /// When creating a new `GVariant`, you pass the data you want to store in it
@@ -3323,7 +3319,7 @@ internal class GVariantExterns
 /// </para>
 /// <para>
 /// ```c
-/// GVariant *v = g_variant_new ("u", 40);
+/// GVariant *v = g_variant_new (&quot;u&quot;, 40);
 /// ```
 /// </para>
 /// <para>
@@ -3673,7 +3669,7 @@ public struct GVariant
 /// <para>
 /// If @type is non-%NULL then the value will be parsed to have that
 /// type.  This may result in additional parse errors (in the case that
-/// the parsed value doesn't fit the type) but may also result in fewer
+/// the parsed value doesn&apos;t fit the type) but may also result in fewer
 /// errors (in the case that the type would have been ambiguous, such as
 /// with empty arrays).
 /// </para>
@@ -3733,23 +3729,21 @@ public struct GVariant
 /// <para>
 /// The message will typically look something like one of the following:
 /// </para>
-/// <para>
-/// |[
+/// <code>
 /// unterminated string constant:
-///   (1, 2, 3, 'abc
+/// unterminated string constant:
+///   (1, 2, 3, &apos;abc
 ///             ^^^^
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// or
 /// </para>
-/// <para>
-/// |[
+/// <code>
 /// unable to find a common type:
-///   [1, 2, 3, 'str']
+/// unable to find a common type:
+///   [1, 2, 3, &apos;str&apos;]
 ///    ^        ^^^^^
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The format of the message may change in a future version.
 /// </para>

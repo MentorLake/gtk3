@@ -107,7 +107,7 @@ public static class PangoGlyphStringExtensions
 /// </param>
 /// <param name="end">
 /// end index (the range is the set of bytes with
-///   indices such that start <= index < end)
+///   indices such that start &amp;lt;= index &amp;lt; end)
 /// </param>
 /// <param name="font">
 /// a `PangoFont`
@@ -187,7 +187,7 @@ public static class PangoGlyphStringExtensions
 /// </para>
 /// <para>
 /// This can also be computed using [method@Pango.GlyphString.extents].
-/// However, since this only computes the width, it's much faster. This
+/// However, since this only computes the width, it&apos;s much faster. This
 /// is in fact only a convenience function that computes the sum of
 /// @geometry.width for each glyph in the @glyphs.
 /// </para>
@@ -217,10 +217,10 @@ public static class PangoGlyphStringExtensions
 /// into equal portions, otherwise.
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="glyphstring-positions-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Glyph positions" src="glyphstring-positions-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;glyphstring-positions-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Glyph positions&quot; src=&quot;glyphstring-positions-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 

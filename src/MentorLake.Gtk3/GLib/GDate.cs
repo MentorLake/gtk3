@@ -8,7 +8,7 @@ namespace MentorLake.GLib;
 /// The `GDate` data structure represents a day between January 1, Year 1,
 /// and sometime a few thousand years in the future (right now it will go
 /// to the year 65535 or so, but [method@GLib.Date.set_parse] only parses up to the
-/// year 8000 or so - just count on "a few thousand"). `GDate` is meant to
+/// year 8000 or so - just count on &quot;a few thousand&quot;). `GDate` is meant to
 /// represent everyday dates, not astronomical dates or historical dates
 /// or ISO timestamps or the like. It extrapolates the current Gregorian
 /// calendar forward and backward in time; there is no attempt to change
@@ -22,17 +22,17 @@ namespace MentorLake.GLib;
 /// since some calculations are much easier with one representation or the
 /// other. A Julian representation is simply a count of days since some
 /// fixed day in the past; for #GDate the fixed day is January 1, 1 AD.
-/// ("Julian" dates in the #GDate API aren't really Julian dates in the
+/// (&quot;Julian&quot; dates in the #GDate API aren&apos;t really Julian dates in the
 /// technical sense; technically, Julian dates count from the start of the
 /// Julian period, Jan 1, 4713 BC).
 /// </para>
 /// <para>
-/// `GDate` is simple to use. First you need a "blank" date; you can get a
+/// `GDate` is simple to use. First you need a &quot;blank&quot; date; you can get a
 /// dynamically allocated date from [ctor@GLib.Date.new], or you can declare an
 /// automatic variable or array and initialize it by calling [method@GLib.Date.clear].
-/// A cleared date is safe; it's safe to call [method@GLib.Date.set_dmy] and the other
+/// A cleared date is safe; it&apos;s safe to call [method@GLib.Date.set_dmy] and the other
 /// mutator functions to initialize the value of a cleared date. However, a cleared date
-/// is initially invalid, meaning that it doesn't represent a day that exists.
+/// is initially invalid, meaning that it doesn&apos;t represent a day that exists.
 /// It is undefined to call any of the date calculation routines on an invalid date.
 /// If you obtain a date from a user or other unpredictable source, you should check
 /// its validity with the [method@GLib.Date.valid] predicate. [method@GLib.Date.valid]
@@ -55,7 +55,7 @@ public class GDateHandle : BaseSafeHandle
 /// <para>
 /// Allocates a #GDate and initializes
 /// it to a safe state. The new date will
-/// be cleared (as if you'd called g_date_clear()) but invalid (it won't
+/// be cleared (as if you&apos;d called g_date_clear()) but invalid (it won&apos;t
 /// represent an existing day). Free the return value with g_date_free().
 /// </para>
 /// </summary>
@@ -388,7 +388,7 @@ public static class GDateExtensions
 
 /// <summary>
 /// <para>
-/// Returns the Julian day or "serial number" of the #GDate. The
+/// Returns the Julian day or &quot;serial number&quot; of the #GDate. The
 /// Julian day is simply the number of days since January 1, Year 1; i.e.,
 /// January 1, Year 1 is Julian day 1; January 2, Year 1 is Julian day 2,
 /// etc. The date must be valid.
@@ -590,7 +590,7 @@ public static class GDateExtensions
 /// <summary>
 /// <para>
 /// Sets the value of a #GDate from a day, month, and year.
-/// The day-month-year triplet must be valid; if you aren't
+/// The day-month-year triplet must be valid; if you aren&apos;t
 /// sure it is, call g_date_valid_dmy() to check before you
 /// set it.
 /// </para>
@@ -664,8 +664,8 @@ public static class GDateExtensions
 /// </para>
 /// <para>
 /// This function is not appropriate for file formats and the like; it
-/// isn't very precise, and its exact behavior varies with the locale.
-/// It's intended to be a heuristic routine that guesses what the user
+/// isn&apos;t very precise, and its exact behavior varies with the locale.
+/// It&apos;s intended to be a heuristic routine that guesses what the user
 /// means by a given string (and it does work pretty well in that
 /// capacity).
 /// </para>
@@ -687,7 +687,7 @@ public static class GDateExtensions
 /// <summary>
 /// <para>
 /// Sets the value of a date from a #GTime value.
-/// The time to date conversion is done using the user's current timezone.
+/// The time to date conversion is done using the user&apos;s current timezone.
 /// </para>
 /// </summary>
 
@@ -708,16 +708,17 @@ public static class GDateExtensions
 /// <para>
 /// Sets the value of a date to the date corresponding to a time
 /// specified as a time_t. The time to date conversion is done using
-/// the user's current timezone.
+/// the user&apos;s current timezone.
 /// </para>
 /// <para>
 /// To set the value of a date to the current day, you could write:
-/// |[<!-- language="C" -->
+/// <code>
+///  time_t now = time (NULL);
 ///  time_t now = time (NULL);
 ///  if (now == (time_t) -1)
 ///    // handle the error
 ///  g_date_set_time_t (date, now);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -737,11 +738,11 @@ public static class GDateExtensions
 /// <summary>
 /// <para>
 /// Sets the value of a date from a #GTimeVal value.  Note that the
-/// @tv_usec member is ignored, because #GDate can't make use of the
+/// @tv_usec member is ignored, because #GDate can&apos;t make use of the
 /// additional precision.
 /// </para>
 /// <para>
-/// The time to date conversion is done using the user's current timezone.
+/// The time to date conversion is done using the user&apos;s current timezone.
 /// </para>
 /// </summary>
 
@@ -802,7 +803,7 @@ public static class GDateExtensions
 /// <summary>
 /// <para>
 /// Moves a date some number of months into the past.
-/// If the current day of the month doesn't exist in
+/// If the current day of the month doesn&apos;t exist in
 /// the destination month, the day of the month
 /// may change. The date must be valid.
 /// </para>
@@ -824,8 +825,8 @@ public static class GDateExtensions
 /// <summary>
 /// <para>
 /// Moves a date some number of years into the past.
-/// If the current day doesn't exist in the destination
-/// year (i.e. it's February 29 and you move to a non-leap-year)
+/// If the current day doesn&apos;t exist in the destination
+/// year (i.e. it&apos;s February 29 and you move to a non-leap-year)
 /// then the day is changed to February 29. The date
 /// must be valid.
 /// </para>
@@ -868,7 +869,7 @@ public static class GDateExtensions
 /// <para>
 /// Returns %TRUE if the #GDate represents an existing day. The date must not
 /// contain garbage; it should have been initialized with g_date_clear()
-/// if it wasn't allocated by one of the g_date_new() variants.
+/// if it wasn&apos;t allocated by one of the g_date_new() variants.
 /// </para>
 /// </summary>
 
@@ -1051,7 +1052,7 @@ internal class GDateExterns
 /// The `GDate` data structure represents a day between January 1, Year 1,
 /// and sometime a few thousand years in the future (right now it will go
 /// to the year 65535 or so, but [method@GLib.Date.set_parse] only parses up to the
-/// year 8000 or so - just count on "a few thousand"). `GDate` is meant to
+/// year 8000 or so - just count on &quot;a few thousand&quot;). `GDate` is meant to
 /// represent everyday dates, not astronomical dates or historical dates
 /// or ISO timestamps or the like. It extrapolates the current Gregorian
 /// calendar forward and backward in time; there is no attempt to change
@@ -1065,17 +1066,17 @@ internal class GDateExterns
 /// since some calculations are much easier with one representation or the
 /// other. A Julian representation is simply a count of days since some
 /// fixed day in the past; for #GDate the fixed day is January 1, 1 AD.
-/// ("Julian" dates in the #GDate API aren't really Julian dates in the
+/// (&quot;Julian&quot; dates in the #GDate API aren&apos;t really Julian dates in the
 /// technical sense; technically, Julian dates count from the start of the
 /// Julian period, Jan 1, 4713 BC).
 /// </para>
 /// <para>
-/// `GDate` is simple to use. First you need a "blank" date; you can get a
+/// `GDate` is simple to use. First you need a &quot;blank&quot; date; you can get a
 /// dynamically allocated date from [ctor@GLib.Date.new], or you can declare an
 /// automatic variable or array and initialize it by calling [method@GLib.Date.clear].
-/// A cleared date is safe; it's safe to call [method@GLib.Date.set_dmy] and the other
+/// A cleared date is safe; it&apos;s safe to call [method@GLib.Date.set_dmy] and the other
 /// mutator functions to initialize the value of a cleared date. However, a cleared date
-/// is initially invalid, meaning that it doesn't represent a day that exists.
+/// is initially invalid, meaning that it doesn&apos;t represent a day that exists.
 /// It is undefined to call any of the date calculation routines on an invalid date.
 /// If you obtain a date from a user or other unpredictable source, you should check
 /// its validity with the [method@GLib.Date.valid] predicate. [method@GLib.Date.valid]
@@ -1165,7 +1166,7 @@ public uint year;
 /// Returns the number of weeks in the year, where weeks
 /// are taken to start on Monday. Will be 52 or 53. The
 /// date must be valid. (Years always have 52 7-day periods,
-/// plus 1 or 2 extra days depending on whether it's a leap
+/// plus 1 or 2 extra days depending on whether it&apos;s a leap
 /// year. This function is basically telling you how many
 /// Mondays are in the year, i.e. there are 53 Mondays if
 /// one of the extra days happens to be a Monday.)
@@ -1189,7 +1190,7 @@ public uint year;
 /// Returns the number of weeks in the year, where weeks
 /// are taken to start on Sunday. Will be 52 or 53. The
 /// date must be valid. (Years always have 52 7-day periods,
-/// plus 1 or 2 extra days depending on whether it's a leap
+/// plus 1 or 2 extra days depending on whether it&apos;s a leap
 /// year. This function is basically telling you how many
 /// Sundays are in the year, i.e. there are 53 Sundays if
 /// one of the extra days happens to be a Sunday.)
@@ -1236,7 +1237,7 @@ public uint year;
 /// <para>
 /// Generates a printed representation of the date, in a
 /// [locale][setlocale]-specific way.
-/// Works just like the platform's C library strftime() function,
+/// Works just like the platform&apos;s C library strftime() function,
 /// but only accepts date-related formats; time-related formats
 /// give undefined results. Date must be valid. Unlike strftime()
 /// (which uses the locale encoding), works on a UTF-8 format
@@ -1244,8 +1245,8 @@ public uint year;
 /// </para>
 /// <para>
 /// This function does not provide any conversion specifiers in
-/// addition to those implemented by the platform's C library.
-/// For example, don't expect that using g_date_strftime() would
+/// addition to those implemented by the platform&apos;s C library.
+/// For example, don&apos;t expect that using g_date_strftime() would
 /// make the \%F provided by the C99 strftime() work on Windows
 /// where the C library only complies to C89.
 /// </para>
@@ -1274,7 +1275,7 @@ public uint year;
 
 /// <summary>
 /// <para>
-/// Returns %TRUE if the day of the month is valid (a day is valid if it's
+/// Returns %TRUE if the day of the month is valid (a day is valid if it&apos;s
 /// between 1 and 31 inclusive).
 /// </para>
 /// </summary>

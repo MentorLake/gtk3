@@ -63,8 +63,8 @@ namespace MentorLake.GLib;
 /// This is similar to how instances of abstract classes may not
 /// directly exist in other type systems, but instances of their
 /// non-abstract subtypes may.  For example, in GTK, no object that has
-/// the type of <see href="https://docs.gtk.org/gtk4/class.Widget.html">GtkWidget</see> can
-/// exist (since `GtkWidget` is an abstract class), but a <see href="https://docs.gtk.org/gtk4/class.Window.html">GtkWindow</see>
+/// the type of &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Widget.html&quot;&amp;gt;GtkWidget&amp;lt;/see&amp;gt; can
+/// exist (since `GtkWidget` is an abstract class), but a &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Window.html&quot;&amp;gt;GtkWindow&amp;lt;/see&amp;gt;
 /// can certainly be instantiated, and you would say that a `GtkWindow` is a
 /// `GtkWidget` (since `GtkWindow` is a subclass of `GtkWidget`).
 /// </para>
@@ -100,7 +100,7 @@ namespace MentorLake.GLib;
 /// `a(aa(ui)(qna{ya(yd)}))`. In order to not hit memory limits,
 /// [type@GLib.Variant] imposes a limit on recursion depth of 65 nested
 /// containers. This is the limit in the D-Bus specification (64) plus one to
-/// allow a <see href="../gio/class.DBusMessage.html">GDBusMessage</see> to be nested in
+/// allow a &amp;lt;see href=&quot;../gio/class.DBusMessage.html&quot;&amp;gt;GDBusMessage&amp;lt;/see&amp;gt; to be nested in
 /// a top-level tuple.
 /// </para>
 /// <para>
@@ -1092,8 +1092,8 @@ internal class GVariantTypeExterns
 /// This is similar to how instances of abstract classes may not
 /// directly exist in other type systems, but instances of their
 /// non-abstract subtypes may.  For example, in GTK, no object that has
-/// the type of <see href="https://docs.gtk.org/gtk4/class.Widget.html">GtkWidget</see> can
-/// exist (since `GtkWidget` is an abstract class), but a <see href="https://docs.gtk.org/gtk4/class.Window.html">GtkWindow</see>
+/// the type of &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Widget.html&quot;&amp;gt;GtkWidget&amp;lt;/see&amp;gt; can
+/// exist (since `GtkWidget` is an abstract class), but a &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Window.html&quot;&amp;gt;GtkWindow&amp;lt;/see&amp;gt;
 /// can certainly be instantiated, and you would say that a `GtkWindow` is a
 /// `GtkWidget` (since `GtkWindow` is a subclass of `GtkWidget`).
 /// </para>
@@ -1129,7 +1129,7 @@ internal class GVariantTypeExterns
 /// `a(aa(ui)(qna{ya(yd)}))`. In order to not hit memory limits,
 /// [type@GLib.Variant] imposes a limit on recursion depth of 65 nested
 /// containers. This is the limit in the D-Bus specification (64) plus one to
-/// allow a <see href="../gio/class.DBusMessage.html">GDBusMessage</see> to be nested in
+/// allow a &amp;lt;see href=&quot;../gio/class.DBusMessage.html&quot;&amp;gt;GDBusMessage&amp;lt;/see&amp;gt; to be nested in
 /// a top-level tuple.
 /// </para>
 /// <para>

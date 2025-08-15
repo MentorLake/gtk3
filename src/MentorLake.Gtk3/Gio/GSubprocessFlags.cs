@@ -10,7 +10,7 @@ namespace MentorLake.Gio;
 /// corresponding descriptor from the calling process.
 /// </para>
 /// <para>
-/// Note that it is a programmer error to mix 'incompatible' flags.  For
+/// Note that it is a programmer error to mix &apos;incompatible&apos; flags.  For
 /// example, you may not request both %G_SUBPROCESS_FLAGS_STDOUT_PIPE and
 /// %G_SUBPROCESS_FLAGS_STDOUT_SILENCE.
 /// </para>
@@ -91,7 +91,7 @@ public enum GSubprocessFlags : uint
 /// spawned processes will inherit the
 ///   file descriptors of their parent, unless those descriptors have
 ///   been explicitly marked as close-on-exec.  This flag has no effect
-///   over the "standard" file descriptors (stdin, stdout, stderr).
+///   over the &quot;standard&quot; file descriptors (stdin, stdout, stderr).
 /// </para>
 /// </summary>
 

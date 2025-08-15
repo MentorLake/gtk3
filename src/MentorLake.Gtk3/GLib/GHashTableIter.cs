@@ -49,19 +49,17 @@ public static class GHashTableIterExtensions
 /// The iteration order of a #GHashTableIter over the keys/values in a hash
 /// table is not defined.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GHashTableIter iter;
 /// GHashTableIter iter;
 /// gpointer key, value;
-/// </para>
-/// <para>
-/// g_hash_table_iter_init (&iter, hash_table);
-/// while (g_hash_table_iter_next (&iter, &key, &value))
+/// 
+/// g_hash_table_iter_init (&amp;iter, hash_table);
+/// while (g_hash_table_iter_next (&amp;iter, &amp;key, &amp;value))
 ///   {
 ///     // do something with key and value
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="iter">
@@ -119,13 +117,14 @@ public static class GHashTableIterExtensions
 /// </para>
 /// <para>
 /// It is safe to continue iterating the #GHashTable afterward:
-/// |[<!-- language="C" -->
-/// while (g_hash_table_iter_next (&iter, &key, &value))
+/// <code>
+/// while (g_hash_table_iter_next (&amp;iter, &amp;key, &amp;value))
+/// while (g_hash_table_iter_next (&amp;iter, &amp;key, &amp;value))
 ///   {
 ///     if (condition)
-///       g_hash_table_iter_remove (&iter);
+///       g_hash_table_iter_remove (&amp;iter);
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

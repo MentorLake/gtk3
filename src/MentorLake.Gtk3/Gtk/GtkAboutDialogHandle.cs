@@ -17,8 +17,8 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// To specify a person with an email address, use a string like
-/// "Edgar Allan Poe <edgar\@poe.com>". To specify a website with a title,
-/// use a string like "GTK+ team http://www.gtk.org".
+/// &quot;Edgar Allan Poe &amp;lt;edgar\@poe.com&amp;gt;&quot;. To specify a website with a title,
+/// use a string like &quot;GTK+ team http://www.gtk.org&quot;.
 /// </para>
 /// <para>
 /// To make constructing a GtkAboutDialog as convenient as possible, you can
@@ -26,21 +26,20 @@ namespace MentorLake.Gtk;
 /// and keeps it around so that it can be shown again.
 /// </para>
 /// <para>
-/// Note that GTK+ sets a default title of `_("About %s")` on the dialog
+/// Note that GTK+ sets a default title of `_(&quot;About %s&quot;)` on the dialog
 /// window (where \%s is replaced by the name of the application, but in
 /// order to ensure proper translation of the title, applications should
 /// set the title property explicitly when constructing a GtkAboutDialog,
 /// as shown in the following example:
-/// |[<!-- language="C" -->
-/// GdkPixbuf *example_logo = gdk_pixbuf_new_from_file ("./logo.png", NULL);
+/// <code>
+/// GdkPixbuf *example_logo = gdk_pixbuf_new_from_file (&quot;./logo.png&quot;, NULL);
+/// GdkPixbuf *example_logo = gdk_pixbuf_new_from_file (&quot;./logo.png&quot;, NULL);
 /// gtk_show_about_dialog (NULL,
-///                        "program-name", "ExampleCode",
-///                        "logo", example_logo,
-///                        "title", _("About ExampleCode"),
+///                        &quot;program-name&quot;, &quot;ExampleCode&quot;,
+///                        &quot;logo&quot;, example_logo,
+///                        &quot;title&quot;, _(&quot;About ExampleCode&quot;),
 ///                        NULL);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// It is also possible to show a #GtkAboutDialog like any other #GtkDialog,
 /// e.g. using gtk_dialog_run(). In this case, you might need to know that
 /// the “Close” button returns the #GTK_RESPONSE_CANCEL response id.
@@ -719,12 +718,12 @@ public static class GtkAboutDialogHandleExtensions
 /// of the language which is currently used in the user interface.
 /// Using gettext(), a simple way to achieve that is to mark the
 /// string for translation:
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *about = gtk_about_dialog_new ();
 /// GtkWidget *about = gtk_about_dialog_new ();
 /// gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about),
-///                                          _("translator-credits"));
-/// ]|
-/// It is a good idea to use the customary msgid “translator-credits” for this
+///                                          _(&quot;translator-credits&quot;));
+/// </code>
 /// purpose, since translators will already know the purpose of that msgid, and
 /// since #GtkAboutDialog will detect if “translator-credits” is untranslated
 /// and hide the tab.
@@ -775,7 +774,7 @@ public static class GtkAboutDialogHandleExtensions
 /// a #GtkAboutDialog
 /// </param>
 /// <param name="website">
-/// a URL string starting with "http://"
+/// a URL string starting with &quot;http://&quot;
 /// </param>
 
 	public static T SetWebsite<T>(this T about, string website) where T : GtkAboutDialogHandle

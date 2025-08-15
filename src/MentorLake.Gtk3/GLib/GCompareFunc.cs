@@ -16,8 +16,8 @@ namespace MentorLake.GLib;
 /// a value to compare with
 /// </param>
 /// <return>
-/// negative value if @a < @b; zero if @a = @b; positive
-///          value if @a > @b
+/// negative value if @a &amp;lt; @b; zero if @a = @b; positive
+///          value if @a &amp;gt; @b
 /// </return>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

@@ -9,34 +9,31 @@ namespace MentorLake.Gdk;
 /// The event type is always the first field in all of the event types, and
 /// can always be accessed with the following code, no matter what type of
 /// event it is:
-/// |[<!-- language="C" -->
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   GdkEventType type;
-/// </para>
-/// <para>
-///   type = event->type;
-/// ]|
-/// </para>
-/// <para>
+/// 
+///   type = event-&amp;gt;type;
+/// </code>
 /// To access other fields of the event, the pointer to the event
 /// can be cast to the appropriate event type, or the union member
 /// name can be used. For example if the event type is %GDK_BUTTON_PRESS
 /// then the x coordinate of the button press can be accessed with:
-/// |[<!-- language="C" -->
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   gdouble x;
-/// </para>
-/// <para>
-///   x = ((GdkEventButton*)event)->x;
-/// ]|
-/// or:
-/// |[<!-- language="C" -->
+/// 
+///   x = ((GdkEventButton*)event)-&amp;gt;x;
+/// </code>
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   gdouble x;
-/// </para>
-/// <para>
-///   x = event->button.x;
-/// ]|
+/// 
+///   x = event-&amp;gt;button.x;
+/// </code>
 /// </para>
 /// </summary>
 
@@ -312,7 +309,7 @@ public static class GdkEventExtensions
 /// caused the event. Otherwise, %NULL will be returned.
 /// </para>
 /// <para>
-/// Note: the #GdkDeviceTool<!-- -->s will be constant during
+/// Note: the #GdkDeviceTool&amp;lt;!-- --&amp;gt;s will be constant during
 /// the application lifetime, if settings must be stored
 /// persistently across runs, see gdk_device_tool_get_serial()
 /// </para>
@@ -421,7 +418,7 @@ public static class GdkEventExtensions
 /// <summary>
 /// <para>
 /// #event: a #GdkEvent
-/// Returns whether this event is an 'emulated' pointer event (typically
+/// Returns whether this event is an &apos;emulated&apos; pointer event (typically
 /// from a touch event), as opposed to a real one.
 /// </para>
 /// </summary>
@@ -490,12 +487,12 @@ public static class GdkEventExtensions
 /// <summary>
 /// <para>
 /// Returns the screen for the event. The screen is
-/// typically the screen for `event->any.window`, but
+/// typically the screen for `event-&amp;gt;any.window`, but
 /// for events such as mouse events, it is the screen
 /// where the pointer was when the event occurs -
 /// that is, the screen which has the root window
-/// to which `event->motion.x_root` and
-/// `event->motion.y_root` are relative.
+/// to which `event-&amp;gt;motion.x_root` and
+/// `event-&amp;gt;motion.y_root` are relative.
 /// </para>
 /// </summary>
 
@@ -554,19 +551,17 @@ public static class GdkEventExtensions
 /// should check the return value of this function, or of
 /// gdk_event_get_scroll_deltas(); for instance:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GdkScrollDirection direction;
 ///   GdkScrollDirection direction;
 ///   double vscroll_factor = 0.0;
 ///   double x_scroll, y_scroll;
-/// </para>
-/// <para>
-///   if (gdk_event_get_scroll_direction (event, &direction))
+/// 
+///   if (gdk_event_get_scroll_direction (event, &amp;direction))
 ///     {
 ///       // Handle discrete scrolling with a known constant delta;
 ///       const double delta = 12.0;
-/// </para>
-/// <para>
+/// 
 ///       switch (direction)
 ///         {
 ///         case GDK_SCROLL_UP:
@@ -580,13 +575,12 @@ public static class GdkEventExtensions
 ///           break;
 ///         }
 ///     }
-///   else if (gdk_event_get_scroll_deltas (event, &x_scroll, &y_scroll))
+///   else if (gdk_event_get_scroll_deltas (event, &amp;x_scroll, &amp;y_scroll))
 ///     {
 ///       // Handle smooth scrolling directly
 ///       vscroll_factor = y_scroll;
 ///     }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="@event">
@@ -746,8 +740,8 @@ public static class GdkEventExtensions
 /// <summary>
 /// <para>
 /// Appends a copy of the given event onto the front of the event
-/// queue for event->any.window’s display, or the default event
-/// queue if event->any.window is %NULL. See gdk_display_put_event().
+/// queue for event-&amp;gt;any.window’s display, or the default event
+/// queue if event-&amp;gt;any.window is %NULL. See gdk_display_put_event().
 /// </para>
 /// </summary>
 
@@ -856,7 +850,7 @@ public static class GdkEventExtensions
 /// </para>
 /// <para>
 /// This function should always be used instead of simply checking for
-/// event->button == %GDK_BUTTON_SECONDARY.
+/// event-&amp;gt;button == %GDK_BUTTON_SECONDARY.
 /// </para>
 /// </summary>
 
@@ -1014,34 +1008,31 @@ internal class GdkEventExterns
 /// The event type is always the first field in all of the event types, and
 /// can always be accessed with the following code, no matter what type of
 /// event it is:
-/// |[<!-- language="C" -->
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   GdkEventType type;
-/// </para>
-/// <para>
-///   type = event->type;
-/// ]|
-/// </para>
-/// <para>
+/// 
+///   type = event-&amp;gt;type;
+/// </code>
 /// To access other fields of the event, the pointer to the event
 /// can be cast to the appropriate event type, or the union member
 /// name can be used. For example if the event type is %GDK_BUTTON_PRESS
 /// then the x coordinate of the button press can be accessed with:
-/// |[<!-- language="C" -->
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   gdouble x;
-/// </para>
-/// <para>
-///   x = ((GdkEventButton*)event)->x;
-/// ]|
-/// or:
-/// |[<!-- language="C" -->
+/// 
+///   x = ((GdkEventButton*)event)-&amp;gt;x;
+/// </code>
+/// <code>
+///   GdkEvent *event;
 ///   GdkEvent *event;
 ///   gdouble x;
-/// </para>
-/// <para>
-///   x = event->button.x;
-/// ]|
+/// 
+///   x = event-&amp;gt;button.x;
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1298,17 +1289,16 @@ public GdkEventPadGroupMode pad_group_mode;
 /// core pointer. Coordinate extraction, processing and requesting more
 /// motion events from a %GDK_MOTION_NOTIFY event usually works like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   // motion_event handler
-///   x = motion_event->x;
-///   y = motion_event->y;
+///   x = motion_event-&amp;gt;x;
+///   y = motion_event-&amp;gt;y;
 ///   // handle (x,y) motion
 ///   gdk_event_request_motions (motion_event); // handles is_hint events
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="@event">

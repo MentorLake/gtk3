@@ -20,26 +20,23 @@ namespace MentorLake.Gtk;
 /// both your added child widget from the #GtkViewport, and the #GtkViewport
 /// from the GtkScrolledWindow, like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *scrolled_window = gtk_scrolled_window_new (NULL, NULL);
 /// GtkWidget *scrolled_window = gtk_scrolled_window_new (NULL, NULL);
 /// GtkWidget *child_widget = gtk_button_new ();
-/// </para>
-/// <para>
+/// 
 /// // GtkButton is not a GtkScrollable, so GtkScrolledWindow will automatically
 /// // add a GtkViewport.
 /// gtk_container_add (GTK_CONTAINER (scrolled_window),
 ///                    child_widget);
-/// </para>
-/// <para>
+/// 
 /// // Either of these will result in child_widget being unparented:
 /// gtk_container_remove (GTK_CONTAINER (scrolled_window),
 ///                       child_widget);
 /// // or
 /// gtk_container_remove (GTK_CONTAINER (scrolled_window),
 ///                       gtk_bin_get_child (GTK_BIN (scrolled_window)));
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Unless #GtkScrolledWindow:policy is GTK_POLICY_NEVER or GTK_POLICY_EXTERNAL,
 /// GtkScrolledWindow adds internal #GtkScrollbar widgets around its child. The
@@ -60,11 +57,11 @@ namespace MentorLake.Gtk;
 /// <para>
 /// GtkScrolledWindow has built-in support for touch devices. When a
 /// touchscreen is used, swiping will move the scrolled window, and will
-/// expose 'kinetic' behavior. This can be turned off with the
+/// expose &apos;kinetic&apos; behavior. This can be turned off with the
 /// #GtkScrolledWindow:kinetic-scrolling property if it is undesired.
 /// </para>
 /// <para>
-/// GtkScrolledWindow also displays visual 'overshoot' indication when
+/// GtkScrolledWindow also displays visual &apos;overshoot&apos; indication when
 /// the content is pulled beyond the end, and this situation can be
 /// captured with the #GtkScrolledWindow::edge-overshot signal.
 /// </para>
@@ -855,7 +852,7 @@ public static class GtkScrolledWindowHandleExtensions
 /// </para>
 /// <para>
 /// This should be enabled if any child widgets perform non-reversible
-/// actions on #GtkWidget::button-press-event. If they don't, and handle
+/// actions on #GtkWidget::button-press-event. If they don&apos;t, and handle
 /// additionally handle #GtkWidget::grab-broken-event, it might be better
 /// to set @capture_button_press to %FALSE.
 /// </para>

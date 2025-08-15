@@ -10,7 +10,7 @@ namespace MentorLake.Gio;
 /// Plugin loading systems that wish to provide plugins a way to access
 /// settings face the problem of how to make the schemas for these
 /// settings visible to GSettings.  Typically, a plugin will want to ship
-/// the schema along with itself and it won't be installed into the
+/// the schema along with itself and it won&apos;t be installed into the
 /// standard system directories for schemas.
 /// </para>
 /// <para>
@@ -42,7 +42,7 @@ namespace MentorLake.Gio;
 ///   …
 /// </para>
 /// <para>
-///   plugin->schema_source =
+///   plugin-&amp;gt;schema_source =
 ///     g_settings_schema_source_new_from_directory (dir,
 ///       g_settings_schema_source_get_default (), FALSE, NULL);
 /// </para>
@@ -65,10 +65,10 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   if (schema_id == NULL)
-///     schema_id = plugin->identifier;
+///     schema_id = plugin-&amp;gt;identifier;
 /// </para>
 /// <para>
-///   schema = g_settings_schema_source_lookup (plugin->schema_source,
+///   schema = g_settings_schema_source_lookup (plugin-&amp;gt;schema_source,
 ///                                             schema_id, FALSE);
 /// </para>
 /// <para>
@@ -102,13 +102,13 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   settings = plugin_get_settings (self, NULL);
-///   some_value = g_settings_get_int (settings, "some-value");
+///   some_value = g_settings_get_int (settings, &quot;some-value&quot;);
 ///   …
 /// }
 /// ```
 /// </para>
 /// <para>
-/// It's also possible that the plugin system expects the schema source
+/// It&apos;s also possible that the plugin system expects the schema source
 /// files (ie: `.gschema.xml` files) instead of a `gschemas.compiled` file.
 /// In that case, the plugin loading system must compile the schemas for
 /// itself before attempting to create the settings source.
@@ -247,7 +247,7 @@ public static class GSettingsSchemaExtensions
 /// Introspects the list of keys on @schema.
 /// </para>
 /// <para>
-/// You should probably not be calling this function from "normal" code
+/// You should probably not be calling this function from &quot;normal&quot; code
 /// (since you should already know what keys are in your schema).  This
 /// function is intended for introspection reasons.
 /// </para>
@@ -349,7 +349,7 @@ internal class GSettingsSchemaExterns
 /// Plugin loading systems that wish to provide plugins a way to access
 /// settings face the problem of how to make the schemas for these
 /// settings visible to GSettings.  Typically, a plugin will want to ship
-/// the schema along with itself and it won't be installed into the
+/// the schema along with itself and it won&apos;t be installed into the
 /// standard system directories for schemas.
 /// </para>
 /// <para>
@@ -381,7 +381,7 @@ internal class GSettingsSchemaExterns
 ///   …
 /// </para>
 /// <para>
-///   plugin->schema_source =
+///   plugin-&amp;gt;schema_source =
 ///     g_settings_schema_source_new_from_directory (dir,
 ///       g_settings_schema_source_get_default (), FALSE, NULL);
 /// </para>
@@ -404,10 +404,10 @@ internal class GSettingsSchemaExterns
 /// </para>
 /// <para>
 ///   if (schema_id == NULL)
-///     schema_id = plugin->identifier;
+///     schema_id = plugin-&amp;gt;identifier;
 /// </para>
 /// <para>
-///   schema = g_settings_schema_source_lookup (plugin->schema_source,
+///   schema = g_settings_schema_source_lookup (plugin-&amp;gt;schema_source,
 ///                                             schema_id, FALSE);
 /// </para>
 /// <para>
@@ -441,13 +441,13 @@ internal class GSettingsSchemaExterns
 /// </para>
 /// <para>
 ///   settings = plugin_get_settings (self, NULL);
-///   some_value = g_settings_get_int (settings, "some-value");
+///   some_value = g_settings_get_int (settings, &quot;some-value&quot;);
 ///   …
 /// }
 /// ```
 /// </para>
 /// <para>
-/// It's also possible that the plugin system expects the schema source
+/// It&apos;s also possible that the plugin system expects the schema source
 /// files (ie: `.gschema.xml` files) instead of a `gschemas.compiled` file.
 /// In that case, the plugin loading system must compile the schemas for
 /// itself before attempting to create the settings source.

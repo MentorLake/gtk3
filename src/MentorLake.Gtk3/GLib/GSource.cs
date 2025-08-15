@@ -46,7 +46,7 @@ public static class GSourceExtensions
 {
 /// <summary>
 /// <para>
-/// Adds @child_source to @source as a "polled" source; when @source is
+/// Adds @child_source to @source as a &quot;polled&quot; source; when @source is
 /// added to a [struct@GLib.MainContext], @child_source will be automatically
 /// added with the same priority, when @child_source is triggered, it will
 /// cause @source to dispatch (in addition to calling its own
@@ -55,7 +55,7 @@ public static class GSourceExtensions
 /// its own prepare/check functions indicate that it is ready.)
 /// </para>
 /// <para>
-/// If you don't need @child_source to do anything on its own when it
+/// If you don&apos;t need @child_source to do anything on its own when it
 /// triggers, you can call g_source_set_dummy_callback() on it to set a
 /// callback that does nothing (except return %TRUE if appropriate).
 /// </para>
@@ -74,7 +74,7 @@ public static class GSourceExtensions
 /// a #GSource
 /// </param>
 /// <param name="child_source">
-/// a second #GSource that @source should "poll"
+/// a second #GSource that @source should &quot;poll&quot;
 /// </param>
 
 	public static void AddChildSource(this MentorLake.GLib.GSourceHandle source, MentorLake.GLib.GSourceHandle child_source)
@@ -87,7 +87,7 @@ public static class GSourceExtensions
 /// <para>
 /// Adds a file descriptor to the set of file descriptors polled for
 /// this source. This is usually combined with [ctor@GLib.Source.new] to add an
-/// event source. The event source's check function will typically test
+/// event source. The event source&apos;s check function will typically test
 /// the @revents field in the #GPollFD struct and return %TRUE if events need
 /// to be processed.
 /// </para>
@@ -204,7 +204,7 @@ public static class GSourceExtensions
 /// <para>
 /// If the source is currently attached to a [struct@GLib.MainContext],
 /// destroying it will effectively unset the callback similar to calling
-/// [method@GLib.Source.set_callback]. This can mean, that the data's
+/// [method@GLib.Source.set_callback]. This can mean, that the data&apos;s
 /// #GDestroyNotify gets called right away.
 /// </para>
 /// </summary>
@@ -358,7 +358,7 @@ public static class GSourceExtensions
 
 /// <summary>
 /// <para>
-/// Gets the "ready time" of @source, as set by
+/// Gets the &quot;ready time&quot; of @source, as set by
 /// [method@GLib.Source.set_ready_time].
 /// </para>
 /// <para>
@@ -371,7 +371,7 @@ public static class GSourceExtensions
 /// a #GSource
 /// </param>
 /// <return>
-/// the monotonic ready time, -1 for "never"
+/// the monotonic ready time, -1 for &quot;never&quot;
 /// </return>
 
 	public static long GetReadyTime(this MentorLake.GLib.GSourceHandle source)
@@ -415,60 +415,50 @@ public static class GSourceExtensions
 /// from within idle handlers, but may have freed the object
 /// before the dispatch of your idle handler.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// idle_callback (gpointer data)
 /// {
 ///   SomeWidget *self = data;
-/// </para>
-/// <para>
-///   g_mutex_lock (&self->idle_id_mutex);
+/// 
+///   g_mutex_lock (&amp;self-&amp;gt;idle_id_mutex);
 ///   // do stuff with self
-///   self->idle_id = 0;
-///   g_mutex_unlock (&self->idle_id_mutex);
-/// </para>
-/// <para>
+///   self-&amp;gt;idle_id = 0;
+///   g_mutex_unlock (&amp;self-&amp;gt;idle_id_mutex);
+/// 
 ///   return G_SOURCE_REMOVE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// some_widget_do_stuff_later (SomeWidget *self)
 /// {
-///   g_mutex_lock (&self->idle_id_mutex);
-///   self->idle_id = g_idle_add (idle_callback, self);
-///   g_mutex_unlock (&self->idle_id_mutex);
+///   g_mutex_lock (&amp;self-&amp;gt;idle_id_mutex);
+///   self-&amp;gt;idle_id = g_idle_add (idle_callback, self);
+///   g_mutex_unlock (&amp;self-&amp;gt;idle_id_mutex);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// some_widget_init (SomeWidget *self)
 /// {
-///   g_mutex_init (&self->idle_id_mutex);
-/// </para>
-/// <para>
+///   g_mutex_init (&amp;self-&amp;gt;idle_id_mutex);
+/// 
 ///   // ...
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// some_widget_finalize (GObject *object)
 /// {
 ///   SomeWidget *self = SOME_WIDGET (object);
-/// </para>
-/// <para>
-///   if (self->idle_id)
-///     g_source_remove (self->idle_id);
-/// </para>
-/// <para>
-///   g_mutex_clear (&self->idle_id_mutex);
-/// </para>
-/// <para>
-///   G_OBJECT_CLASS (parent_class)->finalize (object);
+/// 
+///   if (self-&amp;gt;idle_id)
+///     g_source_remove (self-&amp;gt;idle_id);
+/// 
+///   g_mutex_clear (&amp;self-&amp;gt;idle_id_mutex);
+/// 
+///   G_OBJECT_CLASS (parent_class)-&amp;gt;finalize (object);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This will fail in a multi-threaded application if the
 /// widget is destroyed before the idle handler fires due
@@ -476,26 +466,23 @@ public static class GSourceExtensions
 /// this particular problem, is to check to if the source
 /// has already been destroy within the callback.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// idle_callback (gpointer data)
 /// {
 ///   SomeWidget *self = data;
-/// </para>
-/// <para>
-///   g_mutex_lock (&self->idle_id_mutex);
+/// 
+///   g_mutex_lock (&amp;self-&amp;gt;idle_id_mutex);
 ///   if (!g_source_is_destroyed (g_main_current_source ()))
 ///     {
 ///       // do stuff with self
 ///     }
-///   g_mutex_unlock (&self->idle_id_mutex);
-/// </para>
-/// <para>
+///   g_mutex_unlock (&amp;self-&amp;gt;idle_id_mutex);
+/// 
 ///   return FALSE;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Calls to this function from a thread other than the one acquired by the
 /// [struct@GLib.MainContext] the #GSource is attached to are typically
@@ -526,7 +513,7 @@ public static class GSourceExtensions
 /// @tag is the tag returned from [method@GLib.Source.add_unix_fd].
 /// </para>
 /// <para>
-/// If you want to remove a fd, don't set its event mask to zero.
+/// If you want to remove a fd, don&apos;t set its event mask to zero.
 /// Instead, call [method@GLib.Source.remove_unix_fd].
 /// </para>
 /// <para>
@@ -689,7 +676,7 @@ public static class GSourceExtensions
 /// <summary>
 /// <para>
 /// Sets the callback function for a source. The callback for a source is
-/// called from the source's dispatch function.
+/// called from the source&apos;s dispatch function.
 /// </para>
 /// <para>
 /// The exact type of @func depends on the type of source; ie. you
@@ -702,7 +689,7 @@ public static class GSourceExtensions
 /// on how to handle memory management of @data.
 /// </para>
 /// <para>
-/// Typically, you won't use this function. Instead use functions specific
+/// Typically, you won&apos;t use this function. Instead use functions specific
 /// to the type of source you are using, such as [func@GLib.idle_add] or
 /// [func@GLib.timeout_add].
 /// </para>
@@ -739,11 +726,11 @@ public static class GSourceExtensions
 /// <summary>
 /// <para>
 /// Sets the callback function storing the data as a refcounted callback
-/// "object". This is used internally. Note that calling
+/// &quot;object&quot;. This is used internally. Note that calling
 /// [method@GLib.Source.set_callback_indirect] assumes
 /// an initial reference count on @callback_data, and thus
-/// @callback_funcs->unref will eventually be called once more
-/// than @callback_funcs->ref.
+/// @callback_funcs-&amp;gt;unref will eventually be called once more
+/// than @callback_funcs-&amp;gt;ref.
 /// </para>
 /// <para>
 /// It is safe to call this function multiple times on a source which has already
@@ -756,7 +743,7 @@ public static class GSourceExtensions
 /// the source
 /// </param>
 /// <param name="callback_data">
-/// pointer to callback data "object"
+/// pointer to callback data &quot;object&quot;
 /// </param>
 /// <param name="callback_funcs">
 /// functions for reference counting @callback_data
@@ -803,7 +790,7 @@ public static class GSourceExtensions
 /// returns.
 /// </para>
 /// <para>
-/// The dispose function can be used to clear any "weak" references to the
+/// The dispose function can be used to clear any &quot;weak&quot; references to the
 /// @source in other data structures in a thread-safe way where it is possible
 /// for another thread to increase the reference count of @source again while
 /// it is being freed.
@@ -857,13 +844,13 @@ public static class GSourceExtensions
 /// </para>
 /// <para>
 /// The source name should describe in a human-readable way
-/// what the source does. For example, "X11 event queue"
-/// or "GTK repaint idle handler" or whatever it is.
+/// what the source does. For example, &quot;X11 event queue&quot;
+/// or &quot;GTK repaint idle handler&quot; or whatever it is.
 /// </para>
 /// <para>
 /// It is permitted to call this function multiple times, but is not
 /// recommended due to the potential performance impact.  For example,
-/// one could change the name in the "check" function of a #GSourceFuncs
+/// one could change the name in the &quot;check&quot; function of a #GSourceFuncs
 /// to include details like the event type in the source name.
 /// </para>
 /// <para>
@@ -954,7 +941,7 @@ public static class GSourceExtensions
 /// </param>
 /// <param name="ready_time">
 /// the monotonic time at which the source will be ready,
-///              0 for "immediately", -1 for "never"
+///              0 for &quot;immediately&quot;, -1 for &quot;never&quot;
 /// </param>
 
 	public static void SetReadyTime(this MentorLake.GLib.GSourceHandle source, long ready_time)

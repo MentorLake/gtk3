@@ -7,7 +7,7 @@ namespace MentorLake.GdkPixbuf;
 /// </para>
 /// <para>
 /// #GdkPixbufLoader uses a function of this type to emit the
-/// "<link linkend="GdkPixbufLoader-area-prepared">area_prepared</link>"
+/// &quot;&amp;lt;link linkend=&quot;GdkPixbufLoader-area-prepared&quot;&amp;gt;area_prepared&amp;lt;/link&amp;gt;&quot;
 /// signal.
 /// </para>
 /// </summary>

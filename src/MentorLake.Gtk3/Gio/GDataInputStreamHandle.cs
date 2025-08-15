@@ -41,7 +41,7 @@ public static class GDataInputStreamHandleExtensions
 /// a given #GDataInputStream.
 /// </param>
 /// <return>
-/// the @stream's current #GDataStreamByteOrder.
+/// the @stream&apos;s current #GDataStreamByteOrder.
 /// </return>
 
 	public static MentorLake.Gio.GDataStreamByteOrder GetByteOrder(this MentorLake.Gio.GDataInputStreamHandle stream)
@@ -218,8 +218,8 @@ public static class GDataInputStreamHandleExtensions
 ///  a NUL terminated byte array with the line that was read in
 ///  (without the newlines).  Set @length to a #gsize to get the length
 ///  of the read line.  On an error, it will return %NULL and @error
-///  will be set. If there's no content to read, it will still return
-///  %NULL, but @error won't be set.
+///  will be set. If there&apos;s no content to read, it will still return
+///  %NULL, but @error won&apos;t be set.
 /// </return>
 
 	public static byte[] ReadLine(this MentorLake.Gio.GDataInputStreamHandle stream, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
@@ -288,8 +288,8 @@ public static class GDataInputStreamHandleExtensions
 ///  a NUL-terminated byte array with the line that was read in
 ///  (without the newlines).  Set @length to a #gsize to get the length
 ///  of the read line.  On an error, it will return %NULL and @error
-///  will be set. If there's no content to read, it will still return
-///  %NULL, but @error won't be set.
+///  will be set. If there&apos;s no content to read, it will still return
+///  %NULL, but @error won&apos;t be set.
 /// </return>
 
 	public static byte[] ReadLineFinish(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
@@ -321,8 +321,8 @@ public static class GDataInputStreamHandleExtensions
 ///  was read in (without the newlines).  Set @length to a #gsize to
 ///  get the length of the read line.  On an error, it will return
 ///  %NULL and @error will be set. For UTF-8 conversion errors, the set
-///  error domain is %G_CONVERT_ERROR.  If there's no content to read,
-///  it will still return %NULL, but @error won't be set.
+///  error domain is %G_CONVERT_ERROR.  If there&apos;s no content to read,
+///  it will still return %NULL, but @error won&apos;t be set.
 /// </return>
 
 	public static string ReadLineFinishUtf8(this MentorLake.Gio.GDataInputStreamHandle stream, MentorLake.Gio.GAsyncResultHandle result, out UIntPtr length)
@@ -359,8 +359,8 @@ public static class GDataInputStreamHandleExtensions
 ///  @length to a #gsize to get the length of the read line.  On an
 ///  error, it will return %NULL and @error will be set.  For UTF-8
 ///  conversion errors, the set error domain is %G_CONVERT_ERROR.  If
-///  there's no content to read, it will still return %NULL, but @error
-///  won't be set.
+///  there&apos;s no content to read, it will still return %NULL, but @error
+///  won&apos;t be set.
 /// </return>
 
 	public static string ReadLineUtf8(this MentorLake.Gio.GDataInputStreamHandle stream, out UIntPtr length, MentorLake.Gio.GCancellableHandle cancellable)
@@ -478,7 +478,7 @@ public static class GDataInputStreamHandleExtensions
 /// this function consumes the stop character that it finds.
 /// </para>
 /// <para>
-/// Don't use this function in new code.  Its functionality is
+/// Don&apos;t use this function in new code.  Its functionality is
 /// inconsistent with g_data_input_stream_read_until_async().  Both
 /// functions will be marked as deprecated in a future release.  Use
 /// g_data_input_stream_read_upto() instead, but note that that function
@@ -529,7 +529,7 @@ public static class GDataInputStreamHandleExtensions
 /// the result of the operation.
 /// </para>
 /// <para>
-/// Don't use this function in new code.  Its functionality is
+/// Don&apos;t use this function in new code.  Its functionality is
 /// inconsistent with g_data_input_stream_read_until().  Both functions
 /// will be marked as deprecated in a future release.  Use
 /// g_data_input_stream_read_upto_async() instead.
@@ -605,7 +605,7 @@ public static class GDataInputStreamHandleExtensions
 /// g_data_input_stream_read_upto() again.
 /// </para>
 /// <para>
-/// Note that @stop_chars may contain '\0' if @stop_chars_len is
+/// Note that @stop_chars may contain &apos;\0&apos; if @stop_chars_len is
 /// specified.
 /// </para>
 /// <para>
@@ -656,7 +656,7 @@ public static class GDataInputStreamHandleExtensions
 /// g_data_input_stream_read_upto() again.
 /// </para>
 /// <para>
-/// Note that @stop_chars may contain '\0' if @stop_chars_len is
+/// Note that @stop_chars may contain &apos;\0&apos; if @stop_chars_len is
 /// specified.
 /// </para>
 /// <para>
@@ -762,8 +762,8 @@ public static class GDataInputStreamHandleExtensions
 /// </para>
 /// <para>
 /// Note that using G_DATA_STREAM_NEWLINE_TYPE_ANY is slightly unsafe. If a read
-/// chunk ends in "CR" we must read an additional byte to know if this is "CR" or
-/// "CR LF", and this might block if there is no more data available.
+/// chunk ends in &quot;CR&quot; we must read an additional byte to know if this is &quot;CR&quot; or
+/// &quot;CR LF&quot;, and this might block if there is no more data available.
 /// </para>
 /// </summary>
 

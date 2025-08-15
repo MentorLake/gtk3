@@ -18,10 +18,10 @@ public enum GRegexMatchFlags : uint
 	G_REGEX_MATCH_DEFAULT = 0,
 /// <summary>
 /// <para>
-/// The pattern is forced to be "anchored", that is,
+/// The pattern is forced to be &quot;anchored&quot;, that is,
 ///     it is constrained to match only at the first matching point in the
 ///     string that is being searched. This effect can also be achieved by
-///     appropriate constructs in the pattern itself such as the "^"
+///     appropriate constructs in the pattern itself such as the &quot;^&quot;
 ///     metacharacter.
 /// </para>
 /// </summary>
@@ -34,7 +34,7 @@ public enum GRegexMatchFlags : uint
 ///     not match before it. Setting this without %G_REGEX_MULTILINE (at
 ///     compile time) causes circumflex never to match. This option affects
 ///     only the behaviour of the circumflex metacharacter, it does not
-///     affect "\A".
+///     affect &quot;\A&quot;.
 /// </para>
 /// </summary>
 
@@ -46,7 +46,7 @@ public enum GRegexMatchFlags : uint
 ///     it nor (except in multiline mode) a newline immediately before it.
 ///     Setting this without %G_REGEX_MULTILINE (at compile time) causes
 ///     dollar never to match. This option affects only the behaviour of
-///     the dollar metacharacter, it does not affect "\Z" or "\z".
+///     the dollar metacharacter, it does not affect &quot;\Z&quot; or &quot;\z&quot;.
 /// </para>
 /// </summary>
 
@@ -56,11 +56,11 @@ public enum GRegexMatchFlags : uint
 /// An empty string is not considered to be a valid
 ///     match if this option is set. If there are alternatives in the pattern,
 ///     they are tried. If all the alternatives match the empty string, the
-///     entire match fails. For example, if the pattern "a?b?" is applied to
-///     a string not beginning with "a" or "b", it matches the empty string
+///     entire match fails. For example, if the pattern &quot;a?b?&quot; is applied to
+///     a string not beginning with &quot;a&quot; or &quot;b&quot;, it matches the empty string
 ///     at the start of the string. With this flag set, this match is not
 ///     valid, so GRegex searches further into the string for occurrences
-///     of "a" or "b".
+///     of &quot;a&quot; or &quot;b&quot;.
 /// </para>
 /// </summary>
 
@@ -76,7 +76,7 @@ public enum GRegexMatchFlags : uint
 /// <summary>
 /// <para>
 /// Overrides the newline definition set when
-///     creating a new #GRegex, setting the '\r' character as line terminator.
+///     creating a new #GRegex, setting the &apos;\r&apos; character as line terminator.
 /// </para>
 /// </summary>
 
@@ -84,7 +84,7 @@ public enum GRegexMatchFlags : uint
 /// <summary>
 /// <para>
 /// Overrides the newline definition set when
-///     creating a new #GRegex, setting the '\n' character as line terminator.
+///     creating a new #GRegex, setting the &apos;\n&apos; character as line terminator.
 /// </para>
 /// </summary>
 
@@ -92,7 +92,7 @@ public enum GRegexMatchFlags : uint
 /// <summary>
 /// <para>
 /// Overrides the newline definition set when
-///     creating a new #GRegex, setting the '\r\n' characters sequence as line terminator.
+///     creating a new #GRegex, setting the &apos;\r\n&apos; characters sequence as line terminator.
 /// </para>
 /// </summary>
 
@@ -101,7 +101,7 @@ public enum GRegexMatchFlags : uint
 /// <para>
 /// Overrides the newline definition set when
 ///     creating a new #GRegex, any Unicode newline sequence
-///     is recognised as a newline. These are '\r', '\n' and '\rn', and the
+///     is recognised as a newline. These are &apos;\r&apos;, &apos;\n&apos; and &apos;\rn&apos;, and the
 ///     single characters U+000B LINE TABULATION, U+000C FORM FEED (FF),
 ///     U+0085 NEXT LINE (NEL), U+2028 LINE SEPARATOR and
 ///     U+2029 PARAGRAPH SEPARATOR.
@@ -112,7 +112,7 @@ public enum GRegexMatchFlags : uint
 /// <summary>
 /// <para>
 /// Overrides the newline definition set when
-///     creating a new #GRegex; any '\r', '\n', or '\r\n' character sequence
+///     creating a new #GRegex; any &apos;\r&apos;, &apos;\n&apos;, or &apos;\r\n&apos; character sequence
 ///     is recognized as a newline. Since: 2.34
 /// </para>
 /// </summary>
@@ -120,18 +120,18 @@ public enum GRegexMatchFlags : uint
 	G_REGEX_MATCH_NEWLINE_ANYCRLF = 5242880,
 /// <summary>
 /// <para>
-/// Overrides the newline definition for "\R" set when
-///     creating a new #GRegex; only '\r', '\n', or '\r\n' character sequences
-///     are recognized as a newline by "\R". Since: 2.34
+/// Overrides the newline definition for &quot;\R&quot; set when
+///     creating a new #GRegex; only &apos;\r&apos;, &apos;\n&apos;, or &apos;\r\n&apos; character sequences
+///     are recognized as a newline by &quot;\R&quot;. Since: 2.34
 /// </para>
 /// </summary>
 
 	G_REGEX_MATCH_BSR_ANYCRLF = 8388608,
 /// <summary>
 /// <para>
-/// Overrides the newline definition for "\R" set when
+/// Overrides the newline definition for &quot;\R&quot; set when
 ///     creating a new #GRegex; any Unicode newline character or character sequence
-///     are recognized as a newline by "\R". These are '\r', '\n' and '\rn', and the
+///     are recognized as a newline by &quot;\R&quot;. These are &apos;\r&apos;, &apos;\n&apos; and &apos;\rn&apos;, and the
 ///     single characters U+000B LINE TABULATION, U+000C FORM FEED (FF),
 ///     U+0085 NEXT LINE (NEL), U+2028 LINE SEPARATOR and
 ///     U+2029 PARAGRAPH SEPARATOR. Since: 2.34
@@ -160,7 +160,7 @@ public enum GRegexMatchFlags : uint
 /// <para>
 /// Like %G_REGEX_MATCH_NOTEMPTY, but only applied to
 ///     the start of the matched string. For anchored
-///     patterns this can only happen for pattern containing "\K". Since: 2.34
+///     patterns this can only happen for pattern containing &quot;\K&quot;. Since: 2.34
 /// </para>
 /// </summary>
 

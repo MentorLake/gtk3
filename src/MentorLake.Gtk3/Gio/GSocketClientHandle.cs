@@ -16,7 +16,7 @@ namespace MentorLake.Gio;
 /// connection it will be a [class@Gio.TcpConnection].
 /// </para>
 /// <para>
-/// As `GSocketClient` is a lightweight object, you don't need to cache it. You
+/// As `GSocketClient` is a lightweight object, you don&apos;t need to cache it. You
 /// can just create a new one any time you need one.
 /// </para>
 /// </summary>
@@ -44,7 +44,7 @@ public static class GSocketClientHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// Emitted when @client's activity on @connectable changes state.
+/// Emitted when @client&apos;s activity on @connectable changes state.
 /// Among other things, this can be used to provide progress
 /// information about a network connection in the UI. The meanings of
 /// the different @event values are as follows:
@@ -175,7 +175,7 @@ public static class GSocketClientHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// Emitted when @client's activity on @connectable changes state.
+/// Emitted when @client&apos;s activity on @connectable changes state.
 /// Among other things, this can be used to provide progress
 /// information about a network connection in the UI. The meanings of
 /// the different @event values are as follows:
@@ -268,7 +268,7 @@ public static class GSocketClientHandleExtensions
 /// not try to find a #GProxy instance to handle handshaking. The
 /// application must check for this case by calling
 /// g_socket_connection_get_remote_address() on the returned
-/// #GSocketConnection, and seeing if it's a #GProxyAddress of the
+/// #GSocketConnection, and seeing if it&apos;s a #GProxyAddress of the
 /// appropriate type, to determine whether or not it needs to handle
 /// the proxy handshaking itself.
 /// </para>
@@ -355,7 +355,7 @@ public static class GSocketClientHandleExtensions
 /// <para>
 /// You may wish to prefer the asynchronous version even in synchronous
 /// command line programs because, since 2.60, it implements
-/// [RFC 8305](https://tools.ietf.org/html/rfc8305) "Happy Eyeballs"
+/// [RFC 8305](https://tools.ietf.org/html/rfc8305) &quot;Happy Eyeballs&quot;
 /// recommendations to work around long connection timeouts in networks
 /// where IPv6 is broken by performing an IPv4 connection simultaneously
 /// without waiting for IPv6 to time out, which is not supported by the
@@ -549,7 +549,7 @@ public static class GSocketClientHandleExtensions
 /// </para>
 /// <para>
 /// This call looks up the SRV record for @service at @domain for the
-/// "tcp" protocol.  It then attempts to connect, in turn, to each of
+/// &quot;tcp&quot; protocol.  It then attempts to connect, in turn, to each of
 /// the hosts providing the service until either a connection succeeds
 /// or there are no hosts remaining.
 /// </para>
@@ -654,7 +654,7 @@ public static class GSocketClientHandleExtensions
 /// Attempts to create a TCP connection with a network URI.
 /// </para>
 /// <para>
-/// @uri may be any valid URI containing an "authority" (hostname/port)
+/// @uri may be any valid URI containing an &quot;authority&quot; (hostname/port)
 /// component. If a port is not specified in the URI, @default_port
 /// will be used. TLS will be negotiated if #GSocketClient:tls is %TRUE.
 /// (#GSocketClient does not know to automatically assume TLS for
@@ -1100,7 +1100,7 @@ public static class GSocketClientHandleExtensions
 /// type.
 /// </para>
 /// <para>
-/// It doesn't make sense to specify a type of %G_SOCKET_TYPE_DATAGRAM,
+/// It doesn&apos;t make sense to specify a type of %G_SOCKET_TYPE_DATAGRAM,
 /// as GSocketClient is used for connection oriented services.
 /// </para>
 /// </summary>
@@ -1163,7 +1163,7 @@ public static class GSocketClientHandleExtensions
 /// If you need to modify the behavior of the TLS handshake (eg, by
 /// setting a client-side certificate to use, or connecting to the
 /// #GTlsConnection::accept-certificate signal), you can connect to
-/// @client's #GSocketClient::event signal and wait for it to be
+/// @client&apos;s #GSocketClient::event signal and wait for it to be
 /// emitted with %G_SOCKET_CLIENT_TLS_HANDSHAKING, which will give you
 /// a chance to see the #GTlsClientConnection before the handshake
 /// starts.

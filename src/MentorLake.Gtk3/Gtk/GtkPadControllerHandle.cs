@@ -14,7 +14,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// Buttons and sensors are not constrained to triggering a single action, some
-/// %GDK_SOURCE_TABLET_PAD devices feature multiple "modes", all these input
+/// %GDK_SOURCE_TABLET_PAD devices feature multiple &quot;modes&quot;, all these input
 /// elements have one current mode, which may determine the final action
 /// being triggered. Pad devices often divide buttons and sensors into groups,
 /// all elements in a group share the same current mode, but different groups
@@ -29,24 +29,22 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// A simple example of #GtkPadController usage, assigning button 1 in all
-/// modes and pad devices to an "invert-selection" action:
-/// |[
+/// modes and pad devices to an &quot;invert-selection&quot; action:
+/// <code>
 ///   GtkPadActionEntry *pad_actions[] = {
-///     { GTK_PAD_ACTION_BUTTON, 1, -1, "Invert selection", "pad-actions.invert-selection" },
+///   GtkPadActionEntry *pad_actions[] = {
+///     { GTK_PAD_ACTION_BUTTON, 1, -1, &quot;Invert selection&quot;, &quot;pad-actions.invert-selection&quot; },
 ///     …
 ///   };
-/// </para>
-/// <para>
+/// 
 ///   …
 ///   action_group = g_simple_action_group_new ();
-///   action = g_simple_action_new ("pad-actions.invert-selection", NULL);
-///   g_signal_connect (action, "activate", on_invert_selection_activated, NULL);
+///   action = g_simple_action_new (&quot;pad-actions.invert-selection&quot;, NULL);
+///   g_signal_connect (action, &quot;activate&quot;, on_invert_selection_activated, NULL);
 ///   g_action_map_add_action (G_ACTION_MAP (action_group), action);
 ///   …
 ///   pad_controller = gtk_pad_controller_new (window, action_group, NULL);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// The actions belonging to rings/strips will be activated with a parameter
 /// of type %G_VARIANT_TYPE_DOUBLE bearing the value of the given axis, it
 /// is required that those are made stateful and accepting this #GVariantType.

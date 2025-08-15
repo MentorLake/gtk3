@@ -15,7 +15,7 @@ namespace MentorLake.GdkPixbuf;
 /// instructions for moving the sprite around a background.
 /// </para>
 /// <para>
-/// To display an animation you don't need to understand its
+/// To display an animation you don&apos;t need to understand its
 /// representation, however; you just ask `GdkPixbuf` what should
 /// be displayed at a given point in time.
 /// </para>
@@ -31,7 +31,7 @@ public class GdkPixbufAnimationHandle : GObjectHandle
 /// The file format is detected automatically.
 /// </para>
 /// <para>
-/// If the file's format does not support multi-frame images, then an animation
+/// If the file&apos;s format does not support multi-frame images, then an animation
 /// with a single frame will be created.
 /// </para>
 /// <para>
@@ -207,7 +207,7 @@ public static class GdkPixbufAnimationHandleExtensions
 /// should immediately display the pixbuf returned by
 /// gdk_pixbuf_animation_iter_get_pixbuf(). Then, you should install
 /// a timeout (with g_timeout_add()) or by some other mechanism ensure
-/// that you'll update the image after
+/// that you&apos;ll update the image after
 /// gdk_pixbuf_animation_iter_get_delay_time() milliseconds. Each time
 /// the image is updated, you should reinstall the timeout with the new,
 /// possibly-changed delay time.
@@ -222,7 +222,7 @@ public static class GdkPixbufAnimationHandleExtensions
 /// call gdk_pixbuf_animation_iter_advance().
 /// </para>
 /// <para>
-/// If you're using #GdkPixbufLoader, in addition to updating the image
+/// If you&apos;re using #GdkPixbufLoader, in addition to updating the image
 /// after the delay time, you should also update it whenever you
 /// receive the area_updated signal and
 /// gdk_pixbuf_animation_iter_on_currently_loading_frame() returns
@@ -234,7 +234,7 @@ public static class GdkPixbufAnimationHandleExtensions
 /// area_updated signal.
 /// </para>
 /// <para>
-/// A delay time of -1 is possible, indicating "infinite".
+/// A delay time of -1 is possible, indicating &quot;infinite&quot;.
 /// </para>
 /// </summary>
 
@@ -268,7 +268,7 @@ public static class GdkPixbufAnimationHandleExtensions
 /// frame, or something more sophisticated depending on the file format.
 /// </para>
 /// <para>
-/// If an animation hasn't loaded any frames yet, this function will
+/// If an animation hasn&apos;t loaded any frames yet, this function will
 /// return `NULL`.
 /// </para>
 /// </summary>
@@ -321,7 +321,7 @@ public static class GdkPixbufAnimationHandleExtensions
 /// a #GdkPixbufAnimation
 /// </param>
 /// <return>
-/// `TRUE` if the "animation" was really just an image
+/// `TRUE` if the &quot;animation&quot; was really just an image
 /// </return>
 
 	public static bool IsStaticImage(this MentorLake.GdkPixbuf.GdkPixbufAnimationHandle animation)

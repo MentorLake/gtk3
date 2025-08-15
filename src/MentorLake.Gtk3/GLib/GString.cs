@@ -5,12 +5,12 @@ namespace MentorLake.GLib;
 /// A `GString` is an object that handles the memory management of a C string.
 /// </para>
 /// <para>
-/// The emphasis of `GString` is on text, typically UTF-8. Crucially, the "str" member
+/// The emphasis of `GString` is on text, typically UTF-8. Crucially, the &quot;str&quot; member
 /// of a `GString` is guaranteed to have a trailing nul character, and it is therefore
 /// always safe to call functions such as `strchr()` or `strdup()` on it.
 /// </para>
 /// <para>
-/// However, a `GString` can also hold arbitrary binary data, because it has a "len" member,
+/// However, a `GString` can also hold arbitrary binary data, because it has a &quot;len&quot; member,
 /// which includes any possible embedded nul characters in the data. Conceptually then,
 /// `GString` is like a `GByteArray` with the addition of many convenience methods for
 /// text, and a guaranteed nul terminator.
@@ -45,7 +45,7 @@ public class GStringHandle : BaseSafeHandle
 /// and can contain embedded nul bytes.
 /// </para>
 /// <para>
-/// Since this function does not stop at nul bytes, it is the caller's
+/// Since this function does not stop at nul bytes, it is the caller&apos;s
 /// responsibility to ensure that @init has at least @len addressable
 /// bytes.
 /// </para>
@@ -95,7 +95,7 @@ public class GStringHandle : BaseSafeHandle
 /// <para>
 /// Creates a new #GString, with enough space for @dfl_size
 /// bytes. This is useful if you are going to add a lot of
-/// text to the string and don't want it to be reallocated
+/// text to the string and don&apos;t want it to be reallocated
 /// too often.
 /// </para>
 /// </summary>
@@ -169,7 +169,7 @@ public static class GStringExtensions
 /// </para>
 /// <para>
 /// If @len is positive, @val may contain embedded nuls and need
-/// not be nul-terminated. It is the caller's responsibility to
+/// not be nul-terminated. It is the caller&apos;s responsibility to
 /// ensure that @val has at least @len addressable bytes.
 /// </para>
 /// <para>
@@ -442,7 +442,7 @@ public static class GStringExtensions
 /// <para>
 /// Frees the memory allocated for the #GString.
 /// If @free_segment is %TRUE it also frees the character data.  If
-/// it's %FALSE, the caller gains ownership of the buffer and must
+/// it&apos;s %FALSE, the caller gains ownership of the buffer and must
 /// free it after use with g_free().
 /// </para>
 /// <para>
@@ -499,9 +499,9 @@ public static class GStringExtensions
 /// </para>
 /// <para>
 /// Note that while #GString ensures that its buffer always has a
-/// trailing nul character (not reflected in its "len"), the returned
+/// trailing nul character (not reflected in its &quot;len&quot;), the returned
 /// #GBytes does not include this extra nul; i.e. it has length exactly
-/// equal to the "len" member.
+/// equal to the &quot;len&quot; member.
 /// </para>
 /// </summary>
 
@@ -594,7 +594,7 @@ public static class GStringExtensions
 /// </para>
 /// <para>
 /// If @len is positive, @val may contain embedded nuls and need
-/// not be nul-terminated. It is the caller's responsibility to
+/// not be nul-terminated. It is the caller&apos;s responsibility to
 /// ensure that @val has at least @len addressable bytes.
 /// </para>
 /// <para>
@@ -762,7 +762,7 @@ public static class GStringExtensions
 /// </para>
 /// <para>
 /// If @len is positive, @val may contain embedded nuls and need
-/// not be nul-terminated. It is the caller's responsibility to
+/// not be nul-terminated. It is the caller&apos;s responsibility to
 /// ensure that @val has at least @len addressable bytes.
 /// </para>
 /// <para>
@@ -884,7 +884,7 @@ public static class GStringExtensions
 /// the current length, the string will be truncated. If the
 /// length is greater than the current length, the contents
 /// of the newly added area are undefined. (However, as
-/// always, string->str[string->len] will be a nul byte.)
+/// always, string-&amp;gt;str[string-&amp;gt;len] will be a nul byte.)
 /// </para>
 /// </summary>
 
@@ -1122,12 +1122,12 @@ internal class GStringExterns
 /// A `GString` is an object that handles the memory management of a C string.
 /// </para>
 /// <para>
-/// The emphasis of `GString` is on text, typically UTF-8. Crucially, the "str" member
+/// The emphasis of `GString` is on text, typically UTF-8. Crucially, the &quot;str&quot; member
 /// of a `GString` is guaranteed to have a trailing nul character, and it is therefore
 /// always safe to call functions such as `strchr()` or `strdup()` on it.
 /// </para>
 /// <para>
-/// However, a `GString` can also hold arbitrary binary data, because it has a "len" member,
+/// However, a `GString` can also hold arbitrary binary data, because it has a &quot;len&quot; member,
 /// which includes any possible embedded nul characters in the data. Conceptually then,
 /// `GString` is like a `GByteArray` with the addition of many convenience methods for
 /// text, and a guaranteed nul terminator.

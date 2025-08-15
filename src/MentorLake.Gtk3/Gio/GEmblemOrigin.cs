@@ -26,7 +26,7 @@ public enum GEmblemOrigin
 	G_EMBLEM_ORIGIN_DEVICE = 1,
 /// <summary>
 /// <para>
-/// Emblem depicts live metadata, such as "readonly"
+/// Emblem depicts live metadata, such as &quot;readonly&quot;
 /// </para>
 /// </summary>
 

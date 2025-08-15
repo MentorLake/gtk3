@@ -12,6 +12,13 @@ public struct GStrv
 	public string Value;
 }
 
+/// <summary>
+/// <para>
+/// A typedef alias for gchar**. This is mostly useful when used together with
+/// `g_auto()`.
+/// </para>
+/// </summary>
+
 public class GStrvHandle : BaseSafeHandle
 {
 }

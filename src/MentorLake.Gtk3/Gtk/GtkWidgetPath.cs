@@ -19,18 +19,16 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Defining a button within a window
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkWidgetPath *path;
-/// </para>
-/// <para>
+/// 
 ///   path = gtk_widget_path_new ();
 ///   gtk_widget_path_append_type (path, GTK_TYPE_WINDOW);
 ///   gtk_widget_path_append_type (path, GTK_TYPE_BUTTON);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Although more complex information, such as widget names, or
 /// different classes (property that may be used by other widget
@@ -39,25 +37,21 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Defining the first tab widget in a notebook
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkWidgetPath *path;
 ///   guint pos;
-/// </para>
-/// <para>
+/// 
 ///   path = gtk_widget_path_new ();
-/// </para>
-/// <para>
+/// 
 ///   pos = gtk_widget_path_append_type (path, GTK_TYPE_NOTEBOOK);
-///   gtk_widget_path_iter_add_region (path, pos, "tab", GTK_REGION_EVEN | GTK_REGION_FIRST);
-/// </para>
-/// <para>
+///   gtk_widget_path_iter_add_region (path, pos, &quot;tab&quot;, GTK_REGION_EVEN | GTK_REGION_FIRST);
+/// 
 ///   pos = gtk_widget_path_append_type (path, GTK_TYPE_LABEL);
-///   gtk_widget_path_iter_set_name (path, pos, "first tab label");
+///   gtk_widget_path_iter_set_name (path, pos, &quot;first tab label&quot;);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// All this information will be used to match the style information
 /// that applies to the described widget.
@@ -851,19 +845,17 @@ public static class GtkWidgetPathExtensions
 /// <para>
 /// ## Setting a flag
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// gtk_widget_path_iter_set_state (path, pos, gtk_widget_path_iter_get_state (path, pos) | flag);
-/// ]|
-/// </para>
+/// gtk_widget_path_iter_set_state (path, pos, gtk_widget_path_iter_get_state (path, pos) | flag);
+/// </code>
 /// <para>
 /// ## Unsetting a flag
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// gtk_widget_path_iter_set_state (path, pos, gtk_widget_path_iter_get_state (path, pos) & ~flag);
-/// ]|
-/// </para>
+/// <code>
+/// gtk_widget_path_iter_set_state (path, pos, gtk_widget_path_iter_get_state (path, pos) &amp; ~flag);
+/// gtk_widget_path_iter_set_state (path, pos, gtk_widget_path_iter_get_state (path, pos) &amp; ~flag);
+/// </code>
 /// </summary>
 
 /// <param name="path">
@@ -1131,18 +1123,16 @@ internal class GtkWidgetPathExterns
 /// <para>
 /// ## Defining a button within a window
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkWidgetPath *path;
-/// </para>
-/// <para>
+/// 
 ///   path = gtk_widget_path_new ();
 ///   gtk_widget_path_append_type (path, GTK_TYPE_WINDOW);
 ///   gtk_widget_path_append_type (path, GTK_TYPE_BUTTON);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Although more complex information, such as widget names, or
 /// different classes (property that may be used by other widget
@@ -1151,25 +1141,21 @@ internal class GtkWidgetPathExterns
 /// <para>
 /// ## Defining the first tab widget in a notebook
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkWidgetPath *path;
 ///   guint pos;
-/// </para>
-/// <para>
+/// 
 ///   path = gtk_widget_path_new ();
-/// </para>
-/// <para>
+/// 
 ///   pos = gtk_widget_path_append_type (path, GTK_TYPE_NOTEBOOK);
-///   gtk_widget_path_iter_add_region (path, pos, "tab", GTK_REGION_EVEN | GTK_REGION_FIRST);
-/// </para>
-/// <para>
+///   gtk_widget_path_iter_add_region (path, pos, &quot;tab&quot;, GTK_REGION_EVEN | GTK_REGION_FIRST);
+/// 
 ///   pos = gtk_widget_path_append_type (path, GTK_TYPE_LABEL);
-///   gtk_widget_path_iter_set_name (path, pos, "first tab label");
+///   gtk_widget_path_iter_set_name (path, pos, &quot;first tab label&quot;);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// All this information will be used to match the style information
 /// that applies to the described widget.

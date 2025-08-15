@@ -4,35 +4,31 @@ namespace MentorLake.GObject;
 /// <para>
 /// The class structure for the GObject type.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Example of implementing a singleton using a constructor.
 /// // Example of implementing a singleton using a constructor.
 /// static MySingleton *the_singleton = NULL;
-/// </para>
-/// <para>
+/// 
 /// static GObject*
 /// my_singleton_constructor (GType                  type,
 ///                           guint                  n_construct_params,
 ///                           GObjectConstructParam *construct_params)
 /// {
 ///   GObject *object;
-/// </para>
-/// <para>
+/// 
 ///   if (!the_singleton)
 ///     {
-///       object = G_OBJECT_CLASS (parent_class)->constructor (type,
+///       object = G_OBJECT_CLASS (parent_class)-&amp;gt;constructor (type,
 ///                                                            n_construct_params,
 ///                                                            construct_params);
 ///       the_singleton = MY_SINGLETON (object);
 ///     }
 ///   else
 ///     object = g_object_ref (G_OBJECT (the_singleton));
-/// </para>
-/// <para>
+/// 
 ///   return object;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GObjectClassHandle : BaseSafeHandle
@@ -56,7 +52,7 @@ public static class GObjectClassExtensions
 /// </param>
 /// <return>
 /// the #GParamSpec for the property, or
-///          %NULL if the class doesn't have a property of that name
+///          %NULL if the class doesn&apos;t have a property of that name
 /// </return>
 
 	public static MentorLake.GObject.GParamSpecHandle FindProperty(this MentorLake.GObject.GObjectClassHandle oclass, string property_name)
@@ -88,61 +84,54 @@ public static class GObjectClassExtensions
 /// #GParamSpecs and g_object_notify_by_pspec(). For instance, this
 /// class initialization:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef enum {
 /// typedef enum {
 ///   PROP_FOO = 1,
 ///   PROP_BAR,
 ///   N_PROPERTIES
 /// } MyObjectProperty;
-/// </para>
-/// <para>
+/// 
 /// static GParamSpec *obj_properties[N_PROPERTIES] = { NULL, };
-/// </para>
-/// <para>
+/// 
 /// static void
 /// my_object_class_init (MyObjectClass *klass)
 /// {
 ///   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-/// </para>
-/// <para>
+/// 
 ///   obj_properties[PROP_FOO] =
-///     g_param_spec_int ("foo", NULL, NULL,
+///     g_param_spec_int (&quot;foo&quot;, NULL, NULL,
 ///                       -1, G_MAXINT,
 ///                       0,
 ///                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
-/// </para>
-/// <para>
+/// 
 ///   obj_properties[PROP_BAR] =
-///     g_param_spec_string ("bar", NULL, NULL,
+///     g_param_spec_string (&quot;bar&quot;, NULL, NULL,
 ///                          NULL,
 ///                          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
-/// </para>
-/// <para>
-///   gobject_class->set_property = my_object_set_property;
-///   gobject_class->get_property = my_object_get_property;
+/// 
+///   gobject_class-&amp;gt;set_property = my_object_set_property;
+///   gobject_class-&amp;gt;get_property = my_object_get_property;
 ///   g_object_class_install_properties (gobject_class,
 ///                                      G_N_ELEMENTS (obj_properties),
 ///                                      obj_properties);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// allows calling g_object_notify_by_pspec() to notify of property changes:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// my_object_set_foo (MyObject *self, gint foo)
 /// {
-///   if (self->foo != foo)
+///   if (self-&amp;gt;foo != foo)
 ///     {
-///       self->foo = foo;
+///       self-&amp;gt;foo = foo;
 ///       g_object_notify_by_pspec (G_OBJECT (self), obj_properties[PROP_FOO]);
 ///     }
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="oclass">
@@ -222,7 +211,7 @@ public static class GObjectClassExtensions
 /// <para>
 /// Registers @property_id as referring to a property with the name
 /// @name in a parent class or in an interface implemented by @oclass.
-/// This allows this class to "override" a property implementation in
+/// This allows this class to &quot;override&quot; a property implementation in
 /// a parent class or to provide the implementation of a property from
 /// an interface.
 /// </para>
@@ -284,35 +273,31 @@ internal class GObjectClassExterns
 /// <para>
 /// The class structure for the GObject type.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Example of implementing a singleton using a constructor.
 /// // Example of implementing a singleton using a constructor.
 /// static MySingleton *the_singleton = NULL;
-/// </para>
-/// <para>
+/// 
 /// static GObject*
 /// my_singleton_constructor (GType                  type,
 ///                           guint                  n_construct_params,
 ///                           GObjectConstructParam *construct_params)
 /// {
 ///   GObject *object;
-/// </para>
-/// <para>
+/// 
 ///   if (!the_singleton)
 ///     {
-///       object = G_OBJECT_CLASS (parent_class)->constructor (type,
+///       object = G_OBJECT_CLASS (parent_class)-&amp;gt;constructor (type,
 ///                                                            n_construct_params,
 ///                                                            construct_params);
 ///       the_singleton = MY_SINGLETON (object);
 ///     }
 ///   else
 ///     object = g_object_ref (G_OBJECT (the_singleton));
-/// </para>
-/// <para>
+/// 
 ///   return object;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public struct GObjectClass
@@ -339,7 +324,7 @@ public IntPtr constructor;
 /// <para>
 /// the generic setter for all properties of this type. Should be
 ///  overridden for every type with properties. If implementations of
-///  @set_property don't emit property change notification explicitly, this will
+///  @set_property don&apos;t emit property change notification explicitly, this will
 ///  be done implicitly by the type system. However, if the notify signal is
 ///  emitted explicitly, the type system will not emit it a second time.
 /// </para>

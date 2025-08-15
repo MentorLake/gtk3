@@ -38,7 +38,7 @@ public static class GOptionContextExtensions
 
 /// <summary>
 /// <para>
-/// A convenience function which creates a main group if it doesn't
+/// A convenience function which creates a main group if it doesn&apos;t
 /// exist, adds the @entries to it and sets the translation domain.
 /// </para>
 /// </summary>
@@ -183,7 +183,7 @@ public static class GOptionContextExtensions
 /// </param>
 /// <return>
 /// the main group of @context, or %NULL if
-///  @context doesn't have a main group. Note that group belongs to
+///  @context doesn&apos;t have a main group. Note that group belongs to
 ///  @context and should not be modified or freed.
 /// </return>
 
@@ -244,9 +244,9 @@ public static class GOptionContextExtensions
 /// <para>
 /// If the parsing is successful, any parsed arguments are
 /// removed from the array and @argc and @argv are updated
-/// accordingly. A '--' option is stripped from @argv
+/// accordingly. A &apos;--&apos; option is stripped from @argv
 /// unless there are unparsed options before and after it,
-/// or some of the options after it start with '-'. In case
+/// or some of the options after it start with &apos;-&apos;. In case
 /// of an error, @argc and @argv are left unmodified.
 /// </para>
 /// <para>
@@ -387,7 +387,7 @@ public static class GOptionContextExtensions
 /// </para>
 /// <para>
 /// This setting does not affect non-option arguments (i.e. arguments
-/// which don't start with a dash). But note that GOption cannot reliably
+/// which don&apos;t start with a dash). But note that GOption cannot reliably
 /// determine whether a non-option belongs to a preceding unknown option.
 /// </para>
 /// </summary>
@@ -445,15 +445,15 @@ public static class GOptionContextExtensions
 /// where option arguments can be freely mixed with non-options.
 /// </para>
 /// <para>
-/// As an example, consider "ls foo -l".  With GNU style parsing, this
-/// will list "foo" in long mode.  In strict POSIX style, this will list
-/// the files named "foo" and "-l".
+/// As an example, consider &quot;ls foo -l&quot;.  With GNU style parsing, this
+/// will list &quot;foo&quot; in long mode.  In strict POSIX style, this will list
+/// the files named &quot;foo&quot; and &quot;-l&quot;.
 /// </para>
 /// <para>
-/// It may be useful to force strict POSIX mode when creating "verb
-/// style" command line tools.  For example, the "gsettings" command line
-/// tool supports the global option "--schemadir" as well as many
-/// subcommands ("get", "set", etc.) which each have their own set of
+/// It may be useful to force strict POSIX mode when creating &quot;verb
+/// style&quot; command line tools.  For example, the &quot;gsettings&quot; command line
+/// tool supports the global option &quot;--schemadir&quot; as well as many
+/// subcommands (&quot;get&quot;, &quot;set&quot;, etc.) which each have their own set of
 /// arguments.  Using strict POSIX mode will allow parsing the global
 /// options up to the verb name while leaving the remaining options to be
 /// parsed by the relevant subcommand (which can be determined by
@@ -649,16 +649,16 @@ public struct GOptionContext
 /// </para>
 /// <para>
 /// The @parameter_string can serve multiple purposes. It can be used
-/// to add descriptions for "rest" arguments, which are not parsed by
-/// the #GOptionContext, typically something like "FILES" or
-/// "FILE1 FILE2...". If you are using %G_OPTION_REMAINING for
-/// collecting "rest" arguments, GLib handles this automatically by
+/// to add descriptions for &quot;rest&quot; arguments, which are not parsed by
+/// the #GOptionContext, typically something like &quot;FILES&quot; or
+/// &quot;FILE1 FILE2...&quot;. If you are using %G_OPTION_REMAINING for
+/// collecting &quot;rest&quot; arguments, GLib handles this automatically by
 /// using the @arg_description of the corresponding #GOptionEntry in
 /// the usage summary.
 /// </para>
 /// <para>
 /// Another usage is to give a short summary of the program
-/// functionality, like " - frob the strings", which will be displayed
+/// functionality, like &quot; - frob the strings&quot;, which will be displayed
 /// in the same line as the usage. For a longer description of the
 /// program functionality that should be displayed as a paragraph
 /// below the usage line, use g_option_context_set_summary().

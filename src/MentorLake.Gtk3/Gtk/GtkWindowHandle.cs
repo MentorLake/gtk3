@@ -12,49 +12,45 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkWindow implementation of the #GtkBuildable interface supports a
-/// custom `<accel-groups>` element, which supports any number of `<group>`
+/// custom `&amp;lt;accel-groups&amp;gt;` element, which supports any number of `&amp;lt;group&amp;gt;`
 /// elements representing the #GtkAccelGroup objects you want to add to
 /// your window (synonymous with gtk_window_add_accel_group().
 /// </para>
 /// <para>
-/// It also supports the `<initial-focus>` element, whose name property names
+/// It also supports the `&amp;lt;initial-focus&amp;gt;` element, whose name property names
 /// the widget to receive the focus when the window is mapped.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with accel groups:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkWindow">
-///   <accel-groups>
-///     <group name="accelgroup1"/>
-///   </accel-groups>
-///   <initial-focus name="thunderclap"/>
-/// </object>
-/// </para>
-/// <para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkWindow&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkWindow&quot;&amp;gt;
+///   &amp;lt;accel-groups&amp;gt;
+///     &amp;lt;group name=&quot;accelgroup1&quot;/&amp;gt;
+///   &amp;lt;/accel-groups&amp;gt;
+///   &amp;lt;initial-focus name=&quot;thunderclap&quot;/&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// 
 /// ...
-/// </para>
-/// <para>
-/// <object class="GtkAccelGroup" id="accelgroup1"/>
-/// ]|
-/// </para>
+/// 
+/// &amp;lt;object class=&quot;GtkAccelGroup&quot; id=&quot;accelgroup1&quot;/&amp;gt;
+/// </code>
 /// <para>
 /// The GtkWindow implementation of the #GtkBuildable interface supports
 /// setting a child as the titlebar by specifying “titlebar” as the “type”
-/// attribute of a `<child>` element.
+/// attribute of a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// window.background
 /// window.background
 /// ├── decoration
-/// ├── <titlebar child>.titlebar [.default-decoration]
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ├── &amp;lt;titlebar child&amp;gt;.titlebar [.default-decoration]
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkWindow has a main CSS node with name window and style class .background,
 /// and a subnode with name decoration.
@@ -199,7 +195,7 @@ public class GtkWindowHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuild
 
 /// <summary>
 /// <para>
-/// Sets an icon to be used as fallback for windows that haven't
+/// Sets an icon to be used as fallback for windows that haven&apos;t
 /// had gtk_window_set_icon() called on them from a pixbuf.
 /// </para>
 /// </summary>
@@ -215,7 +211,7 @@ public class GtkWindowHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuild
 
 /// <summary>
 /// <para>
-/// Sets an icon to be used as fallback for windows that haven't
+/// Sets an icon to be used as fallback for windows that haven&apos;t
 /// had gtk_window_set_icon_list() called on them from a file
 /// on disk. Warns on failure if @err is %NULL.
 /// </para>
@@ -237,7 +233,7 @@ public class GtkWindowHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuild
 
 /// <summary>
 /// <para>
-/// Sets an icon list to be used as fallback for windows that haven't
+/// Sets an icon list to be used as fallback for windows that haven&apos;t
 /// had gtk_window_set_icon_list() called on them to set up a
 /// window-specific icon list. This function allows you to set up the
 /// icon for all windows in your app at once.
@@ -258,7 +254,7 @@ public class GtkWindowHandle : GtkBinHandle, AtkImplementorIfaceHandle, GtkBuild
 
 /// <summary>
 /// <para>
-/// Sets an icon to be used as fallback for windows that haven't
+/// Sets an icon to be used as fallback for windows that haven&apos;t
 /// had gtk_window_set_icon_list() called on them from a named
 /// themed icon, see gtk_window_set_icon_name().
 /// </para>
@@ -911,11 +907,11 @@ public static class GtkWindowHandleExtensions
 
 /// <summary>
 /// <para>
-/// Asks to place @window in the fullscreen state. Note that you shouldn't assume
+/// Asks to place @window in the fullscreen state. Note that you shouldn&apos;t assume
 /// the window is definitely full screen afterward.
 /// </para>
 /// <para>
-/// You can track the fullscreen state via the "window-state-event" signal
+/// You can track the fullscreen state via the &quot;window-state-event&quot; signal
 /// on #GtkWidget.
 /// </para>
 /// </summary>
@@ -1249,7 +1245,7 @@ public static class GtkWindowHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the value set by gtk_window_set_icon() (or if you've
+/// Gets the value set by gtk_window_set_icon() (or if you&apos;ve
 /// called gtk_window_set_icon_list(), gets the first icon in
 /// the icon list).
 /// </para>
@@ -1556,16 +1552,14 @@ public static class GtkWindowHandleExtensions
 /// implemented as an asynchronous operation, GTK+ cannot guarantee in any
 /// way that this code:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   // width and height are set elsewhere
 ///   // width and height are set elsewhere
 ///   gtk_window_resize (window, width, height);
-/// </para>
-/// <para>
+/// 
 ///   int new_width, new_height;
-///   gtk_window_get_size (window, &new_width, &new_height);
-/// ]|
-/// </para>
+///   gtk_window_get_size (window, &amp;new_width, &amp;new_height);
+/// </code>
 /// <para>
 /// will result in `new_width` and `new_height` matching `width` and
 /// `height`, respectively.
@@ -1589,21 +1583,18 @@ public static class GtkWindowHandleExtensions
 /// inside a handler for the #GtkWidget::size-allocate signal, or
 /// inside a handler for the #GtkWidget::configure-event signal:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// on_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
 /// {
 ///   int new_width, new_height;
-/// </para>
-/// <para>
-///   gtk_window_get_size (GTK_WINDOW (widget), &new_width, &new_height);
-/// </para>
-/// <para>
+/// 
+///   gtk_window_get_size (GTK_WINDOW (widget), &amp;new_width, &amp;new_height);
+/// 
 ///   ...
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that, if you connect to the #GtkWidget::size-allocate signal,
 /// you should not use the dimensions of the #GtkAllocation passed to
@@ -1617,7 +1608,7 @@ public static class GtkWindowHandleExtensions
 /// type with gtk_window_set_type_hint(), which allows the window manager
 /// to e.g. center dialogs. Also, if you set the transient parent of
 /// dialogs with gtk_window_set_transient_for() window managers will
-/// often center the dialog over its parent window. It's much preferred
+/// often center the dialog over its parent window. It&apos;s much preferred
 /// to let the window manager handle these cases rather than doing it
 /// yourself, because all apps will behave consistently and according to
 /// user or system preferences, if the window manager handles it. Also,
@@ -2071,17 +2062,16 @@ public static class GtkWindowHandleExtensions
 /// to be called when the window has its “final” size, i.e. after calling
 /// gtk_widget_show_all() on the contents and gtk_window_set_geometry_hints()
 /// on the window.
-/// |[<!-- language="C" -->
-/// #include <gtk/gtk.h>
-/// </para>
-/// <para>
+/// <code>
+/// #include &amp;lt;gtk/gtk.h&amp;gt;
+/// #include &amp;lt;gtk/gtk.h&amp;gt;
+/// 
 /// static void
 /// fill_with_content (GtkWidget *vbox)
 /// {
 ///   // fill with content...
 /// }
-/// </para>
-/// <para>
+/// 
 /// int
 /// main (int argc, char *argv[])
 /// {
@@ -2090,47 +2080,40 @@ public static class GtkWindowHandleExtensions
 ///     100, 50, 0, 0, 100, 50, 10,
 ///     10, 0.0, 0.0, GDK_GRAVITY_NORTH_WEST
 ///   };
-/// </para>
-/// <para>
-///   gtk_init (&argc, &argv);
-/// </para>
-/// <para>
+/// 
+///   gtk_init (&amp;argc, &amp;argv);
+/// 
 ///   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (window), vbox);
 ///   fill_with_content (vbox);
 ///   gtk_widget_show_all (vbox);
-/// </para>
-/// <para>
+/// 
 ///   gtk_window_set_geometry_hints (GTK_WINDOW (window),
 /// 	  			    NULL,
-/// 				    &size_hints,
+/// 				    &amp;size_hints,
 /// 				    GDK_HINT_MIN_SIZE |
 /// 				    GDK_HINT_BASE_SIZE |
 /// 				    GDK_HINT_RESIZE_INC);
-/// </para>
-/// <para>
-///   if (argc > 1)
+/// 
+///   if (argc &amp;gt; 1)
 ///     {
 ///       gboolean res;
 ///       res = gtk_window_parse_geometry (GTK_WINDOW (window),
 ///                                        argv[1]);
 ///       if (! res)
 ///         fprintf (stderr,
-///                  "Failed to parse “%s”\n",
+///                  &quot;Failed to parse “%s”\n&quot;,
 ///                  argv[1]);
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (window);
 ///   gtk_main ();
-/// </para>
-/// <para>
+/// 
 ///   return 0;
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -2304,7 +2287,7 @@ public static class GtkWindowHandleExtensions
 /// Resizes the window as if the user had done so, obeying geometry
 /// constraints. The default geometry constraint is that windows may
 /// not be smaller than their size request; to override this
-/// constraint, call gtk_widget_set_size_request() to set the window's
+/// constraint, call gtk_widget_set_size_request() to set the window&apos;s
 /// request to a smaller value.
 /// </para>
 /// <para>
@@ -2666,7 +2649,7 @@ public static class GtkWindowHandleExtensions
 /// <para>
 /// If @setting is %TRUE, then destroying the transient parent of @window
 /// will also destroy @window itself. This is useful for dialogs that
-/// shouldn’t persist beyond the lifetime of the main window they're
+/// shouldn’t persist beyond the lifetime of the main window they&apos;re
 /// associated with, for example.
 /// </para>
 /// </summary>
@@ -3266,8 +3249,8 @@ public static class GtkWindowHandleExtensions
 /// </para>
 /// <para>
 /// In combination with the window title, the window role allows a
-/// [window manager][gtk-X11-arch] to identify "the
-/// same" window when an application is restarted. So for example you
+/// [window manager][gtk-X11-arch] to identify &quot;the
+/// same&quot; window when an application is restarted. So for example you
 /// might set the “toolbox” role on your app’s toolbox window, so that
 /// when the user restarts their session, the window manager can put
 /// the toolbox back in the same place.
@@ -3319,7 +3302,7 @@ public static class GtkWindowHandleExtensions
 /// <para>
 /// Windows may set a hint asking the desktop environment not to display
 /// the window in the pager. This function sets this hint.
-/// (A "pager" is any desktop navigation tool such as a workspace
+/// (A &quot;pager&quot; is any desktop navigation tool such as a workspace
 /// switcher that displays a thumbnail representation of the windows
 /// on the screen.)
 /// </para>
@@ -3575,7 +3558,7 @@ public static class GtkWindowHandleExtensions
 /// stuck afterward, because other entities (e.g. the user or
 /// [window manager][gtk-X11-arch] could unstick it
 /// again, and some window managers do not support sticking
-/// windows. But normally the window will end up stuck. Just don't
+/// windows. But normally the window will end up stuck. Just don&apos;t
 /// write code that crashes if not.
 /// </para>
 /// <para>

@@ -74,7 +74,7 @@ public hb_tag_t tag;
 /// <para>
 /// The value of the feature. 0 disables the feature, non-zero (usually
 /// 1) enables the feature.  For features implemented as lookup type 3 (like
-/// 'salt') the @value is a one based index into the alternates.
+/// &apos;salt&apos;) the @value is a one based index into the alternates.
 /// </para>
 /// </summary>
 

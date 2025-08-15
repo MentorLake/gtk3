@@ -7,7 +7,7 @@ namespace MentorLake.Gio;
 /// It can than be added to a [class@Gio.EmblemedIcon].
 /// </para>
 /// <para>
-/// Currently, only metainformation about the emblem's origin is
+/// Currently, only metainformation about the emblem&apos;s origin is
 /// supported. More may be added in the future.
 /// </para>
 /// </summary>
@@ -42,7 +42,7 @@ public class GEmblemHandle : GObjectHandle, GIconHandle
 /// a GIcon containing the icon.
 /// </param>
 /// <param name="origin">
-/// a GEmblemOrigin enum defining the emblem's origin
+/// a GEmblemOrigin enum defining the emblem&apos;s origin
 /// </param>
 /// <return>
 /// a new #GEmblem.

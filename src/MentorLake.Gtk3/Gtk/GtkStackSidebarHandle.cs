@@ -3,7 +3,7 @@ namespace MentorLake.Gtk;
 /// <summary>
 /// <para>
 /// A GtkStackSidebar enables you to quickly and easily provide a
-/// consistent "sidebar" object for your user interface.
+/// consistent &quot;sidebar&quot; object for your user interface.
 /// </para>
 /// <para>
 /// In order to use a GtkStackSidebar, you simply use a GtkStack to

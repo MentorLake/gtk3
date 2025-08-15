@@ -25,7 +25,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// // Register an extension point
-/// ep = g_io_extension_point_register ("my-extension-point");
+/// ep = g_io_extension_point_register (&quot;my-extension-point&quot;);
 /// g_io_extension_point_set_required_type (ep, MY_TYPE_EXAMPLE);
 /// ```
 /// </para>
@@ -33,9 +33,9 @@ namespace MentorLake.Gio;
 /// ```c
 /// // Implement an extension point
 /// G_DEFINE_TYPE (MyExampleImpl, my_example_impl, MY_TYPE_EXAMPLE)
-/// g_io_extension_point_implement ("my-extension-point",
+/// g_io_extension_point_implement (&quot;my-extension-point&quot;,
 ///                                 my_example_impl_get_type (),
-///                                 "my-example",
+///                                 &quot;my-example&quot;,
 ///                                 10);
 /// ```
 /// </para>
@@ -214,7 +214,7 @@ internal class GIOExtensionPointExterns
 /// </para>
 /// <para>
 /// // Register an extension point
-/// ep = g_io_extension_point_register ("my-extension-point");
+/// ep = g_io_extension_point_register (&quot;my-extension-point&quot;);
 /// g_io_extension_point_set_required_type (ep, MY_TYPE_EXAMPLE);
 /// ```
 /// </para>
@@ -222,9 +222,9 @@ internal class GIOExtensionPointExterns
 /// ```c
 /// // Implement an extension point
 /// G_DEFINE_TYPE (MyExampleImpl, my_example_impl, MY_TYPE_EXAMPLE)
-/// g_io_extension_point_implement ("my-extension-point",
+/// g_io_extension_point_implement (&quot;my-extension-point&quot;,
 ///                                 my_example_impl_get_type (),
-///                                 "my-example",
+///                                 &quot;my-example&quot;,
 ///                                 10);
 /// ```
 /// </para>

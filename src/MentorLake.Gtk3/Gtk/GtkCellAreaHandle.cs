@@ -3,7 +3,7 @@ namespace MentorLake.Gtk;
 /// <summary>
 /// <para>
 /// The #GtkCellArea is an abstract class for #GtkCellLayout widgets
-/// (also referred to as "layouting widgets") to interface with an
+/// (also referred to as &quot;layouting widgets&quot;) to interface with an
 /// arbitrary number of #GtkCellRenderers and interact with the user
 /// for a given #GtkTreeModel row.
 /// </para>
@@ -59,25 +59,22 @@ namespace MentorLake.Gtk;
 /// In order to request the width of all the rows at the root level
 /// of a #GtkTreeModel one would do the following:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkTreeIter iter;
 /// GtkTreeIter iter;
 /// gint        minimum_width;
 /// gint        natural_width;
-/// </para>
-/// <para>
-/// valid = gtk_tree_model_get_iter_first (model, &iter);
+/// 
+/// valid = gtk_tree_model_get_iter_first (model, &amp;iter);
 /// while (valid)
 ///   {
-///     gtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);
+///     gtk_cell_area_apply_attributes (area, model, &amp;iter, FALSE, FALSE);
 ///     gtk_cell_area_get_preferred_width (area, context, widget, NULL, NULL);
-/// </para>
-/// <para>
-///     valid = gtk_tree_model_iter_next (model, &iter);
+/// 
+///     valid = gtk_tree_model_iter_next (model, &amp;iter);
 ///   }
-/// gtk_cell_area_context_get_preferred_width (context, &minimum_width, &natural_width);
-/// ]|
-/// </para>
+/// gtk_cell_area_context_get_preferred_width (context, &amp;minimum_width, &amp;natural_width);
+/// </code>
 /// <para>
 /// Note that in this example it’s not important to observe the
 /// returned minimum and natural width of the area for each row
@@ -100,24 +97,21 @@ namespace MentorLake.Gtk;
 /// A simple example where rows are rendered from top to bottom and
 /// take up the full width of the layouting widget would look like:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_get_preferred_width (GtkWidget       *widget,
 ///                          gint            *minimum_size,
 ///                          gint            *natural_size)
 /// {
 ///   Foo        *foo  = FOO (widget);
-///   FooPrivate *priv = foo->priv;
-/// </para>
-/// <para>
+///   FooPrivate *priv = foo-&amp;gt;priv;
+/// 
 ///   foo_ensure_at_least_one_handfull_of_rows_have_been_requested (foo);
-/// </para>
-/// <para>
-///   gtk_cell_area_context_get_preferred_width (priv->context, minimum_size, natural_size);
+/// 
+///   gtk_cell_area_context_get_preferred_width (priv-&amp;gt;context, minimum_size, natural_size);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// In the above example the Foo widget has to make sure that some
 /// row sizes have been calculated (the amount of rows that Foo judged
@@ -137,35 +131,30 @@ namespace MentorLake.Gtk;
 /// In order to request the height for width of all the rows at the
 /// root level of a #GtkTreeModel one would do the following:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkTreeIter iter;
 /// GtkTreeIter iter;
 /// gint        minimum_height;
 /// gint        natural_height;
 /// gint        full_minimum_height = 0;
 /// gint        full_natural_height = 0;
-/// </para>
-/// <para>
-/// valid = gtk_tree_model_get_iter_first (model, &iter);
+/// 
+/// valid = gtk_tree_model_get_iter_first (model, &amp;iter);
 /// while (valid)
 ///   {
-///     gtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);
+///     gtk_cell_area_apply_attributes (area, model, &amp;iter, FALSE, FALSE);
 ///     gtk_cell_area_get_preferred_height_for_width (area, context, widget,
-///                                                   width, &minimum_height, &natural_height);
-/// </para>
-/// <para>
+///                                                   width, &amp;minimum_height, &amp;natural_height);
+/// 
 ///     if (width_is_for_allocation)
-///        cache_row_height (&iter, minimum_height, natural_height);
-/// </para>
-/// <para>
+///        cache_row_height (&amp;iter, minimum_height, natural_height);
+/// 
 ///     full_minimum_height += minimum_height;
 ///     full_natural_height += natural_height;
-/// </para>
-/// <para>
-///     valid = gtk_tree_model_iter_next (model, &iter);
+/// 
+///     valid = gtk_tree_model_iter_next (model, &amp;iter);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that in the above example we would need to cache the heights
 /// returned for each row so that we would know what sizes to render the
@@ -201,37 +190,31 @@ namespace MentorLake.Gtk;
 /// A crude example of how to render all the rows at the root level
 /// runs as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkAllocation allocation;
 /// GtkAllocation allocation;
 /// GdkRectangle  cell_area = { 0, };
 /// GtkTreeIter   iter;
 /// gint          minimum_width;
 /// gint          natural_width;
-/// </para>
-/// <para>
-/// gtk_widget_get_allocation (widget, &allocation);
+/// 
+/// gtk_widget_get_allocation (widget, &amp;allocation);
 /// cell_area.width = allocation.width;
-/// </para>
-/// <para>
-/// valid = gtk_tree_model_get_iter_first (model, &iter);
+/// 
+/// valid = gtk_tree_model_get_iter_first (model, &amp;iter);
 /// while (valid)
 ///   {
-///     cell_area.height = get_cached_height_for_row (&iter);
-/// </para>
-/// <para>
-///     gtk_cell_area_apply_attributes (area, model, &iter, FALSE, FALSE);
+///     cell_area.height = get_cached_height_for_row (&amp;iter);
+/// 
+///     gtk_cell_area_apply_attributes (area, model, &amp;iter, FALSE, FALSE);
 ///     gtk_cell_area_render (area, context, widget, cr,
-///                           &cell_area, &cell_area, state_flags, FALSE);
-/// </para>
-/// <para>
+///                           &amp;cell_area, &amp;cell_area, state_flags, FALSE);
+/// 
 ///     cell_area.y += cell_area.height;
-/// </para>
-/// <para>
-///     valid = gtk_tree_model_iter_next (model, &iter);
+/// 
+///     valid = gtk_tree_model_iter_next (model, &amp;iter);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that the cached height in this example really depends on how
 /// the layouting widget works. The layouting widget might decide to
@@ -275,34 +258,30 @@ namespace MentorLake.Gtk;
 /// A basic example of how the #GtkWidgetClass.focus() virtual method
 /// should be implemented:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// foo_focus (GtkWidget       *widget,
 ///            GtkDirectionType direction)
 /// {
 ///   Foo        *foo  = FOO (widget);
-///   FooPrivate *priv = foo->priv;
+///   FooPrivate *priv = foo-&amp;gt;priv;
 ///   gint        focus_row;
 ///   gboolean    have_focus = FALSE;
-/// </para>
-/// <para>
-///   focus_row = priv->focus_row;
-/// </para>
-/// <para>
+/// 
+///   focus_row = priv-&amp;gt;focus_row;
+/// 
 ///   if (!gtk_widget_has_focus (widget))
 ///     gtk_widget_grab_focus (widget);
-/// </para>
-/// <para>
-///   valid = gtk_tree_model_iter_nth_child (priv->model, &iter, NULL, priv->focus_row);
+/// 
+///   valid = gtk_tree_model_iter_nth_child (priv-&amp;gt;model, &amp;iter, NULL, priv-&amp;gt;focus_row);
 ///   while (valid)
 ///     {
-///       gtk_cell_area_apply_attributes (priv->area, priv->model, &iter, FALSE, FALSE);
-/// </para>
-/// <para>
-///       if (gtk_cell_area_focus (priv->area, direction))
+///       gtk_cell_area_apply_attributes (priv-&amp;gt;area, priv-&amp;gt;model, &amp;iter, FALSE, FALSE);
+/// 
+///       if (gtk_cell_area_focus (priv-&amp;gt;area, direction))
 ///         {
-///            priv->focus_row = focus_row;
+///            priv-&amp;gt;focus_row = focus_row;
 ///            have_focus = TRUE;
 ///            break;
 ///         }
@@ -319,7 +298,7 @@ namespace MentorLake.Gtk;
 ///               else
 ///                {
 ///                   focus_row--;
-///                   valid = gtk_tree_model_iter_nth_child (priv->model, &iter, NULL, focus_row);
+///                   valid = gtk_tree_model_iter_nth_child (priv-&amp;gt;model, &amp;iter, NULL, focus_row);
 ///                }
 ///             }
 ///           else
@@ -329,15 +308,14 @@ namespace MentorLake.Gtk;
 ///               else
 ///                 {
 ///                   focus_row++;
-///                   valid = gtk_tree_model_iter_next (priv->model, &iter);
+///                   valid = gtk_tree_model_iter_next (priv-&amp;gt;model, &amp;iter);
 ///                 }
 ///             }
 ///         }
 ///     }
 ///     return have_focus;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that the layouting widget is responsible for matching the
 /// GtkDirectionType values to the way it lays out its cells.
@@ -451,7 +429,7 @@ public static class GtkCellAreaHandleSignalExtensions
 /// handling.
 /// </para>
 /// <para>
-/// It's possible that the signal is emitted even if the
+/// It&apos;s possible that the signal is emitted even if the
 /// currently focused renderer did not change, this is
 /// because focus may change to the same renderer in the
 /// same cell area for a different row of data.
@@ -710,7 +688,7 @@ public delegate void apply_attributes([MarshalAs(UnmanagedType.CustomMarshaler, 
 /// handling.
 /// </para>
 /// <para>
-/// It's possible that the signal is emitted even if the
+/// It&apos;s possible that the signal is emitted even if the
 /// currently focused renderer did not change, this is
 /// because focus may change to the same renderer in the
 /// same cell area for a different row of data.
@@ -799,7 +777,7 @@ public static class GtkCellAreaHandleExtensions
 /// <para>
 /// This is used by #GtkCellArea subclasses when handling events
 /// to activate cells, the base #GtkCellArea class activates cells
-/// for keyboard events for free in its own GtkCellArea->activate()
+/// for keyboard events for free in its own GtkCellArea-&amp;gt;activate()
 /// implementation.
 /// </para>
 /// </summary>

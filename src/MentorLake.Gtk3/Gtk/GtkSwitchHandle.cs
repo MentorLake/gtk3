@@ -13,12 +13,11 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// switch
 /// switch
 /// ╰── slider
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkSwitch has two css nodes, the main node with the name switch and a subnode
 /// named slider. Neither of them is using any style classes.

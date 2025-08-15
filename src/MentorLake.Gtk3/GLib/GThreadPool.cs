@@ -156,7 +156,7 @@ public static class GThreadPoolExtensions
 /// </para>
 /// <para>
 /// @error can be %NULL to ignore errors, or non-%NULL to report
-/// errors. An error can only occur when a new thread couldn't be
+/// errors. An error can only occur when a new thread couldn&apos;t be
 /// created. In that case @data is simply appended to the queue of
 /// work to do.
 /// </para>
@@ -204,7 +204,7 @@ public static class GThreadPoolExtensions
 /// </para>
 /// <para>
 /// @error can be %NULL to ignore errors, or non-%NULL to report
-/// errors. An error can only occur when a new thread couldn't be
+/// errors. An error can only occur when a new thread couldn&apos;t be
 /// created.
 /// </para>
 /// <para>

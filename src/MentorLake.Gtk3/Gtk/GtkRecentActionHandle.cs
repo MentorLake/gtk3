@@ -8,9 +8,9 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// To construct a submenu showing recently used files, use a #GtkRecentAction
-/// as the action for a `<menuitem>`. To construct a menu toolbutton showing
+/// as the action for a `&amp;lt;menuitem&amp;gt;`. To construct a menu toolbutton showing
 /// the recently used files in the popup menu, use a #GtkRecentAction as the
-/// action for a `<toolitem>` element.
+/// action for a `&amp;lt;toolitem&amp;gt;` element.
 /// </para>
 /// </summary>
 
@@ -87,7 +87,7 @@ public static class GtkRecentActionHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.
@@ -186,7 +186,7 @@ public static class GtkRecentActionHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.
@@ -247,7 +247,7 @@ public static class GtkRecentActionHandleExtensions
 /// <para>
 /// Sets whether a number should be added to the items shown by the
 /// widgets representing @action. The numbers are shown to provide
-/// a unique character for a mnemonic to be used inside the menu item's
+/// a unique character for a mnemonic to be used inside the menu item&apos;s
 /// label. Only the first ten items get a number to avoid clashes.
 /// </para>
 /// </summary>

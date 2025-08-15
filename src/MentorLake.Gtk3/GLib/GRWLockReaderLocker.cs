@@ -10,6 +10,12 @@ public struct GRWLockReaderLocker
 {
 }
 
+/// <summary>
+/// <para>
+/// Opaque type. See g_rw_lock_reader_locker_new() for details.
+/// </para>
+/// </summary>
+
 public class GRWLockReaderLockerHandle : BaseSafeHandle
 {
 }

@@ -834,8 +834,8 @@ public static class GtkTextIterExtensions
 /// characters. The most common example for European languages would be
 /// a carriage return/newline sequence. For some Unicode characters,
 /// the equivalent of say the letter “a” with an accent mark will be
-/// represented as two characters, first the letter then a "combining
-/// mark" that causes the accent to be rendered; so the cursor can’t go
+/// represented as two characters, first the letter then a &quot;combining
+/// mark&quot; that causes the accent to be rendered; so the cursor can’t go
 /// between those two characters. See also the #PangoLogAttr-struct and
 /// pango_break() function.
 /// </para>
@@ -1547,7 +1547,7 @@ public static class GtkTextIterExtensions
 /// <summary>
 /// <para>
 /// Returns a list of all #GtkTextMark at this location. Because marks
-/// are not iterable (they don’t take up any "space" in the buffer,
+/// are not iterable (they don’t take up any &quot;space&quot; in the buffer,
 /// they are just marks in between iterable locations), multiple marks
 /// can exist in the same place. The returned list is not in any
 /// meaningful order.

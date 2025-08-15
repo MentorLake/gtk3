@@ -8,7 +8,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -43,7 +43,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>
@@ -78,7 +78,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-deleted" signal is emitted by an object which
+/// The &quot;column-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is deleted.
 /// </para>
 /// </summary>
@@ -113,7 +113,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-inserted" signal is emitted by an object which
+/// The &quot;column-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is inserted.
 /// </para>
 /// </summary>
@@ -148,7 +148,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "column-reordered" signal is emitted by an object which
+/// The &quot;column-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the columns are
 /// reordered.
 /// </para>
@@ -184,7 +184,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "model-changed" signal is emitted by an object which
+/// The &quot;model-changed&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the model displayed by
 /// the table changes.
 /// </para>
@@ -220,7 +220,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-deleted" signal is emitted by an object which
+/// The &quot;row-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is deleted.
 /// </para>
 /// </summary>
@@ -255,7 +255,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-inserted" signal is emitted by an object which
+/// The &quot;row-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is inserted.
 /// </para>
 /// </summary>
@@ -290,7 +290,7 @@ public static class GtkTreeViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-reordered" signal is emitted by an object which
+/// The &quot;row-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the rows are
 /// reordered.
 /// </para>
@@ -470,7 +470,7 @@ public static class GtkTreeViewAccessibleHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -489,7 +489,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "selection-changed" signal is emitted by an object which
+/// The &quot;selection-changed&quot; signal is emitted by an object which
 /// implements AtkSelection interface when the selection changes.
 /// </para>
 /// </summary>
@@ -505,7 +505,7 @@ public delegate void selection_changed([MarshalAs(UnmanagedType.CustomMarshaler,
 
 /// <summary>
 /// <para>
-/// The "column-deleted" signal is emitted by an object which
+/// The &quot;column-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is deleted.
 /// </para>
 /// </summary>
@@ -527,7 +527,7 @@ public delegate void column_deleted([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "column-inserted" signal is emitted by an object which
+/// The &quot;column-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a column is inserted.
 /// </para>
 /// </summary>
@@ -549,7 +549,7 @@ public delegate void column_inserted([MarshalAs(UnmanagedType.CustomMarshaler, M
 
 /// <summary>
 /// <para>
-/// The "column-reordered" signal is emitted by an object which
+/// The &quot;column-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the columns are
 /// reordered.
 /// </para>
@@ -566,7 +566,7 @@ public delegate void column_reordered([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 /// <summary>
 /// <para>
-/// The "model-changed" signal is emitted by an object which
+/// The &quot;model-changed&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the model displayed by
 /// the table changes.
 /// </para>
@@ -583,7 +583,7 @@ public delegate void model_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 
 /// <summary>
 /// <para>
-/// The "row-deleted" signal is emitted by an object which
+/// The &quot;row-deleted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is deleted.
 /// </para>
 /// </summary>
@@ -605,7 +605,7 @@ public delegate void row_deleted([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "row-inserted" signal is emitted by an object which
+/// The &quot;row-inserted&quot; signal is emitted by an object which
 /// implements the AtkTable interface when a row is inserted.
 /// </para>
 /// </summary>
@@ -627,7 +627,7 @@ public delegate void row_inserted([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "row-reordered" signal is emitted by an object which
+/// The &quot;row-reordered&quot; signal is emitted by an object which
 /// implements the AtkTable interface when the rows are
 /// reordered.
 /// </para>

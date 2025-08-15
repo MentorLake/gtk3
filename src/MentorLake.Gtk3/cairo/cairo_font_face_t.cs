@@ -11,7 +11,7 @@ namespace MentorLake.cairo;
 /// </para>
 /// <para>
 /// There are various types of font faces, depending on the
-/// <firstterm>font backend</firstterm> they use. The type of a
+/// &amp;lt;firstterm&amp;gt;font backend&amp;lt;/firstterm&amp;gt; they use. The type of a
 /// font face can be queried using cairo_font_face_get_type().
 /// </para>
 /// <para>
@@ -45,7 +45,7 @@ internal class cairo_font_face_tExterns
 /// </para>
 /// <para>
 /// There are various types of font faces, depending on the
-/// <firstterm>font backend</firstterm> they use. The type of a
+/// &amp;lt;firstterm&amp;gt;font backend&amp;lt;/firstterm&amp;gt; they use. The type of a
 /// font face can be queried using cairo_font_face_get_type().
 /// </para>
 /// <para>

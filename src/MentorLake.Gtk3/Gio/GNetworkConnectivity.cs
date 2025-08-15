@@ -2,7 +2,7 @@ namespace MentorLake.Gio;
 
 /// <summary>
 /// <para>
-/// The host's network connectivity state, as reported by #GNetworkMonitor.
+/// The host&apos;s network connectivity state, as reported by #GNetworkMonitor.
 /// </para>
 /// </summary>
 

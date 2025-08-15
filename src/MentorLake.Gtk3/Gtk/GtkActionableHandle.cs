@@ -192,8 +192,8 @@ public static class GtkActionableHandleExtensions
 /// </para>
 /// <para>
 /// (Note that prior to version 3.22.25,
-/// this function is only usable for actions with a simple "s" target, and
-/// @detailed_action_name must be of the form `"action::target"` where
+/// this function is only usable for actions with a simple &quot;s&quot; target, and
+/// @detailed_action_name must be of the form `&quot;action::target&quot;` where
 /// `action` is the action name and `target` is the string to use
 /// as the target.)
 /// </para>

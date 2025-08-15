@@ -12,8 +12,8 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// When extending a class that is already #GtkActivatable; it is only
-/// necessary to implement the #GtkActivatable->sync_action_properties()
-/// and #GtkActivatable->update() methods and chain up to the parent
+/// necessary to implement the #GtkActivatable-&amp;gt;sync_action_properties()
+/// and #GtkActivatable-&amp;gt;update() methods and chain up to the parent
 /// implementation, however when introducing
 /// a new #GtkActivatable class; the #GtkActivatable:related-action and
 /// #GtkActivatable:use-action-appearance properties need to be handled by
@@ -25,34 +25,27 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## A class fragment implementing #GtkActivatable
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// </para>
-/// <para>
+/// <code>
+/// 
+/// 
 /// enum {
 /// ...
-/// </para>
-/// <para>
+/// 
 /// PROP_ACTIVATABLE_RELATED_ACTION,
 /// PROP_ACTIVATABLE_USE_ACTION_APPEARANCE
 /// }
-/// </para>
-/// <para>
+/// 
 /// struct _FooBarPrivate
 /// {
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
+/// 
 ///   GtkAction      *action;
 ///   gboolean        use_action_appearance;
 /// };
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// static void foo_bar_activatable_interface_init         (GtkActivatableIface  *iface);
 /// static void foo_bar_activatable_update                 (GtkActivatable       *activatable,
 /// 						           GtkAction            *action,
@@ -60,61 +53,48 @@ namespace MentorLake.Gtk;
 /// static void foo_bar_activatable_sync_action_properties (GtkActivatable       *activatable,
 /// 						           GtkAction            *action);
 /// ...
-/// </para>
-/// <para>
-/// </para>
-/// <para>
+/// 
+/// 
 /// static void
 /// foo_bar_class_init (FooBarClass *klass)
 /// {
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
-///   g_object_class_override_property (gobject_class, PROP_ACTIVATABLE_RELATED_ACTION, "related-action");
-///   g_object_class_override_property (gobject_class, PROP_ACTIVATABLE_USE_ACTION_APPEARANCE, "use-action-appearance");
-/// </para>
-/// <para>
+/// 
+///   g_object_class_override_property (gobject_class, PROP_ACTIVATABLE_RELATED_ACTION, &quot;related-action&quot;);
+///   g_object_class_override_property (gobject_class, PROP_ACTIVATABLE_USE_ACTION_APPEARANCE, &quot;use-action-appearance&quot;);
+/// 
 ///   ...
 /// }
-/// </para>
-/// <para>
-/// </para>
-/// <para>
+/// 
+/// 
 /// static void
 /// foo_bar_activatable_interface_init (GtkActivatableIface  *iface)
 /// {
-///   iface->update = foo_bar_activatable_update;
-///   iface->sync_action_properties = foo_bar_activatable_sync_action_properties;
+///   iface-&amp;gt;update = foo_bar_activatable_update;
+///   iface-&amp;gt;sync_action_properties = foo_bar_activatable_sync_action_properties;
 /// }
-/// </para>
-/// <para>
+/// 
 /// ... Break the reference using gtk_activatable_do_set_related_action()...
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_bar_dispose (GObject *object)
 /// {
 ///   FooBar *bar = FOO_BAR (object);
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (bar);
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
-///   if (priv->action)
+/// 
+///   if (priv-&amp;gt;action)
 ///     {
 ///       gtk_activatable_do_set_related_action (GTK_ACTIVATABLE (bar), NULL);
-///       priv->action = NULL;
+///       priv-&amp;gt;action = NULL;
 ///     }
-///   G_OBJECT_CLASS (foo_bar_parent_class)->dispose (object);
+///   G_OBJECT_CLASS (foo_bar_parent_class)-&amp;gt;dispose (object);
 /// }
-/// </para>
-/// <para>
+/// 
 /// ... Handle the “related-action” and “use-action-appearance” properties ...
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_bar_set_property (GObject         *object,
 ///                       guint            prop_id,
@@ -123,15 +103,12 @@ namespace MentorLake.Gtk;
 /// {
 ///   FooBar *bar = FOO_BAR (object);
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (bar);
-/// </para>
-/// <para>
+/// 
 ///   switch (prop_id)
 ///     {
-/// </para>
-/// <para>
+/// 
 ///       ...
-/// </para>
-/// <para>
+/// 
 ///     case PROP_ACTIVATABLE_RELATED_ACTION:
 ///       foo_bar_set_related_action (bar, g_value_get_object (value));
 ///       break;
@@ -143,8 +120,7 @@ namespace MentorLake.Gtk;
 ///       break;
 ///     }
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_bar_get_property (GObject         *object,
 ///                          guint            prop_id,
@@ -153,47 +129,39 @@ namespace MentorLake.Gtk;
 /// {
 ///   FooBar *bar = FOO_BAR (object);
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (bar);
-/// </para>
-/// <para>
+/// 
 ///   switch (prop_id)
 ///     {
-/// </para>
-/// <para>
+/// 
 ///       ...
-/// </para>
-/// <para>
+/// 
 ///     case PROP_ACTIVATABLE_RELATED_ACTION:
-///       g_value_set_object (value, priv->action);
+///       g_value_set_object (value, priv-&amp;gt;action);
 ///       break;
 ///     case PROP_ACTIVATABLE_USE_ACTION_APPEARANCE:
-///       g_value_set_boolean (value, priv->use_action_appearance);
+///       g_value_set_boolean (value, priv-&amp;gt;use_action_appearance);
 ///       break;
 ///     default:
 ///       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 ///       break;
 ///     }
 /// }
-/// </para>
-/// <para>
-/// </para>
-/// <para>
+/// 
+/// 
 /// static void
 /// foo_bar_set_use_action_appearance (FooBar   *bar,
 /// 				   gboolean  use_appearance)
 /// {
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (bar);
-/// </para>
-/// <para>
-///   if (priv->use_action_appearance != use_appearance)
+/// 
+///   if (priv-&amp;gt;use_action_appearance != use_appearance)
 ///     {
-///       priv->use_action_appearance = use_appearance;
-/// </para>
-/// <para>
-///       gtk_activatable_sync_action_properties (GTK_ACTIVATABLE (bar), priv->action);
+///       priv-&amp;gt;use_action_appearance = use_appearance;
+/// 
+///       gtk_activatable_sync_action_properties (GTK_ACTIVATABLE (bar), priv-&amp;gt;action);
 ///     }
 /// }
-/// </para>
-/// <para>
+/// 
 /// ... call gtk_activatable_do_set_related_action() and then assign the action pointer,
 /// no need to reference the action here since gtk_activatable_do_set_related_action() already
 /// holds a reference here for you...
@@ -202,94 +170,76 @@ namespace MentorLake.Gtk;
 /// 			    GtkAction *action)
 /// {
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (bar);
-/// </para>
-/// <para>
-///   if (priv->action == action)
+/// 
+///   if (priv-&amp;gt;action == action)
 ///     return;
-/// </para>
-/// <para>
+/// 
 ///   gtk_activatable_do_set_related_action (GTK_ACTIVATABLE (bar), action);
-/// </para>
-/// <para>
-///   priv->action = action;
+/// 
+///   priv-&amp;gt;action = action;
 /// }
-/// </para>
-/// <para>
+/// 
 /// ... Selectively reset and update activatable depending on the use-action-appearance property ...
 /// static void
 /// gtk_button_activatable_sync_action_properties (GtkActivatable       *activatable,
 /// 		                                  GtkAction            *action)
 /// {
 ///   GtkButtonPrivate *priv = GTK_BUTTON_GET_PRIVATE (activatable);
-/// </para>
-/// <para>
+/// 
 ///   if (!action)
 ///     return;
-/// </para>
-/// <para>
+/// 
 ///   if (gtk_action_is_visible (action))
 ///     gtk_widget_show (GTK_WIDGET (activatable));
 ///   else
 ///     gtk_widget_hide (GTK_WIDGET (activatable));
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_set_sensitive (GTK_WIDGET (activatable), gtk_action_is_sensitive (action));
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
-///   if (priv->use_action_appearance)
+/// 
+///   if (priv-&amp;gt;use_action_appearance)
 ///     {
 ///       if (gtk_action_get_stock_id (action))
 /// 	foo_bar_set_stock (button, gtk_action_get_stock_id (action));
 ///       else if (gtk_action_get_label (action))
 /// 	foo_bar_set_label (button, gtk_action_get_label (action));
-/// </para>
-/// <para>
+/// 
 ///       ...
-/// </para>
-/// <para>
+/// 
 ///     }
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_bar_activatable_update (GtkActivatable       *activatable,
 /// 			       GtkAction            *action,
 /// 			       const gchar          *property_name)
 /// {
 ///   FooBarPrivate *priv = FOO_BAR_GET_PRIVATE (activatable);
-/// </para>
-/// <para>
-///   if (strcmp (property_name, "visible") == 0)
+/// 
+///   if (strcmp (property_name, &quot;visible&quot;) == 0)
 ///     {
 ///       if (gtk_action_is_visible (action))
 /// 	gtk_widget_show (GTK_WIDGET (activatable));
 ///       else
 /// 	gtk_widget_hide (GTK_WIDGET (activatable));
 ///     }
-///   else if (strcmp (property_name, "sensitive") == 0)
+///   else if (strcmp (property_name, &quot;sensitive&quot;) == 0)
 ///     gtk_widget_set_sensitive (GTK_WIDGET (activatable), gtk_action_is_sensitive (action));
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
-///   if (!priv->use_action_appearance)
+/// 
+///   if (!priv-&amp;gt;use_action_appearance)
 ///     return;
-/// </para>
-/// <para>
-///   if (strcmp (property_name, "stock-id") == 0)
+/// 
+///   if (strcmp (property_name, &quot;stock-id&quot;) == 0)
 ///     foo_bar_set_stock (button, gtk_action_get_stock_id (action));
-///   else if (strcmp (property_name, "label") == 0)
+///   else if (strcmp (property_name, &quot;label&quot;) == 0)
 ///     foo_bar_set_label (button, gtk_action_get_label (action));
-/// </para>
-/// <para>
+/// 
 ///   ...
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public interface GtkActivatableHandle
@@ -311,19 +261,19 @@ public static class GtkActivatableHandleExtensions
 /// <para>
 /// When implementing #GtkActivatable you must call this when
 /// handling changes of the #GtkActivatable:related-action, and
-/// you must also use this to break references in #GObject->dispose().
+/// you must also use this to break references in #GObject-&amp;gt;dispose().
 /// </para>
 /// <para>
 /// This function adds a reference to the currently set related
-/// action for you, it also makes sure the #GtkActivatable->update()
+/// action for you, it also makes sure the #GtkActivatable-&amp;gt;update()
 /// method is called when the related #GtkAction properties change
 /// and registers to the action’s proxy list.
 /// </para>
 /// <para>
-/// > Be careful to call this before setting the local
-/// > copy of the #GtkAction property, since this function uses
-/// > gtk_activatable_get_related_action() to retrieve the
-/// > previous action.
+/// &amp;gt; Be careful to call this before setting the local
+/// &amp;gt; copy of the #GtkAction property, since this function uses
+/// &amp;gt; gtk_activatable_get_related_action() to retrieve the
+/// &amp;gt; previous action.
 /// </para>
 /// </summary>
 
@@ -386,8 +336,8 @@ public static class GtkActivatableHandleExtensions
 /// Sets the related action on the @activatable object.
 /// </para>
 /// <para>
-/// > #GtkActivatable implementors need to handle the #GtkActivatable:related-action
-/// > property and call gtk_activatable_do_set_related_action() when it changes.
+/// &amp;gt; #GtkActivatable implementors need to handle the #GtkActivatable:related-action
+/// &amp;gt; property and call gtk_activatable_do_set_related_action() when it changes.
 /// </para>
 /// </summary>
 
@@ -411,10 +361,10 @@ public static class GtkActivatableHandleExtensions
 /// when setting the related action or when the action changes appearance
 /// </para>
 /// <para>
-/// > #GtkActivatable implementors need to handle the
-/// > #GtkActivatable:use-action-appearance property and call
-/// > gtk_activatable_sync_action_properties() to update @activatable
-/// > if needed.
+/// &amp;gt; #GtkActivatable implementors need to handle the
+/// &amp;gt; #GtkActivatable:use-action-appearance property and call
+/// &amp;gt; gtk_activatable_sync_action_properties() to update @activatable
+/// &amp;gt; if needed.
 /// </para>
 /// </summary>
 

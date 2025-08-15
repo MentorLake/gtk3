@@ -121,7 +121,7 @@ public static class GQueueExtensions
 /// Finds an element in a #GQueue, using a supplied function to find the
 /// desired element. It iterates over the queue, calling the given function
 /// which should return 0 when the desired element is found. The function
-/// takes two gconstpointer arguments, the #GQueue element's data as the
+/// takes two gconstpointer arguments, the #GQueue element&apos;s data as the
 /// first argument and the given user data as the second argument.
 /// </para>
 /// </summary>
@@ -137,7 +137,7 @@ public static class GQueueExtensions
 ///     when the desired element is found
 /// </param>
 /// <return>
-/// the found link, or %NULL if it wasn't found
+/// the found link, or %NULL if it wasn&apos;t found
 /// </return>
 
 	public static MentorLake.GLib.GListHandle FindCustom(this MentorLake.GLib.GQueueHandle queue, IntPtr data, MentorLake.GLib.GCompareFunc func)
@@ -161,7 +161,7 @@ public static class GQueueExtensions
 /// a #GQueue
 /// </param>
 /// <param name="func">
-/// the function to call for each element's data
+/// the function to call for each element&apos;s data
 /// </param>
 /// <param name="user_data">
 /// user data to pass to @func
@@ -198,7 +198,7 @@ public static class GQueueExtensions
 /// <summary>
 /// <para>
 /// Convenience method, which frees all the memory used by a #GQueue,
-/// and calls the specified destroy function on every element's data.
+/// and calls the specified destroy function on every element&apos;s data.
 /// </para>
 /// <para>
 /// @free_func should not modify the queue (eg, by removing the freed
@@ -210,7 +210,7 @@ public static class GQueueExtensions
 /// a pointer to a #GQueue
 /// </param>
 /// <param name="free_func">
-/// the function to be called to free each element's data
+/// the function to be called to free each element&apos;s data
 /// </param>
 
 	public static void FreeFull(this MentorLake.GLib.GQueueHandle queue, MentorLake.GLib.GDestroyNotify free_func)
@@ -498,7 +498,7 @@ public static class GQueueExtensions
 
 /// <summary>
 /// <para>
-/// Returns the @n'th element of @queue.
+/// Returns the @n&apos;th element of @queue.
 /// </para>
 /// </summary>
 
@@ -509,7 +509,7 @@ public static class GQueueExtensions
 /// the position of the element
 /// </param>
 /// <return>
-/// the data for the @n'th element of @queue,
+/// the data for the @n&apos;th element of @queue,
 ///     or %NULL if @n is off the end of @queue
 /// </return>
 
@@ -532,7 +532,7 @@ public static class GQueueExtensions
 /// the position of the link
 /// </param>
 /// <return>
-/// the link at the @n'th position, or %NULL
+/// the link at the @n&apos;th position, or %NULL
 ///     if @n is off the end of the list
 /// </return>
 
@@ -623,7 +623,7 @@ public static class GQueueExtensions
 
 /// <summary>
 /// <para>
-/// Removes the @n'th element of @queue and returns its data.
+/// Removes the @n&apos;th element of @queue and returns its data.
 /// </para>
 /// </summary>
 
@@ -634,7 +634,7 @@ public static class GQueueExtensions
 /// the position of the element
 /// </param>
 /// <return>
-/// the element's data, or %NULL if @n is off the end of @queue
+/// the element&apos;s data, or %NULL if @n is off the end of @queue
 /// </return>
 
 	public static IntPtr PopNth(this MentorLake.GLib.GQueueHandle queue, uint n)
@@ -653,10 +653,10 @@ public static class GQueueExtensions
 /// a #GQueue
 /// </param>
 /// <param name="n">
-/// the link's position
+/// the link&apos;s position
 /// </param>
 /// <return>
-/// the @n'th link, or %NULL if @n is off the end of @queue
+/// the @n&apos;th link, or %NULL if @n is off the end of @queue
 /// </return>
 
 	public static MentorLake.GLib.GListHandle PopNthLink(this MentorLake.GLib.GQueueHandle queue, uint n)

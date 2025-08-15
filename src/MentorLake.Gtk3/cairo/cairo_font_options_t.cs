@@ -8,8 +8,8 @@ namespace MentorLake.cairo;
 /// <para>
 /// Individual features of a #cairo_font_options_t can be set or
 /// accessed using functions named
-/// <function>cairo_font_options_set_<emphasis>feature_name</emphasis>()</function> and
-/// <function>cairo_font_options_get_<emphasis>feature_name</emphasis>()</function>, like
+/// &amp;lt;function&amp;gt;cairo_font_options_set_&amp;lt;emphasis&amp;gt;feature_name&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt; and
+/// &amp;lt;function&amp;gt;cairo_font_options_get_&amp;lt;emphasis&amp;gt;feature_name&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt;, like
 /// cairo_font_options_set_antialias() and
 /// cairo_font_options_get_antialias().
 /// </para>
@@ -45,8 +45,8 @@ internal class cairo_font_options_tExterns
 /// <para>
 /// Individual features of a #cairo_font_options_t can be set or
 /// accessed using functions named
-/// <function>cairo_font_options_set_<emphasis>feature_name</emphasis>()</function> and
-/// <function>cairo_font_options_get_<emphasis>feature_name</emphasis>()</function>, like
+/// &amp;lt;function&amp;gt;cairo_font_options_set_&amp;lt;emphasis&amp;gt;feature_name&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt; and
+/// &amp;lt;function&amp;gt;cairo_font_options_get_&amp;lt;emphasis&amp;gt;feature_name&amp;lt;/emphasis&amp;gt;()&amp;lt;/function&amp;gt;, like
 /// cairo_font_options_set_antialias() and
 /// cairo_font_options_get_antialias().
 /// </para>

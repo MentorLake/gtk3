@@ -19,45 +19,41 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// An example for using a modal dialog:
-/// |[<!-- language="C" -->
+/// <code>
+///  GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
 ///  GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
 ///  dialog = gtk_message_dialog_new (parent_window,
 ///                                   flags,
 ///                                   GTK_MESSAGE_ERROR,
 ///                                   GTK_BUTTONS_CLOSE,
-///                                   "Error reading “%s”: %s",
+///                                   &quot;Error reading “%s”: %s&quot;,
 ///                                   filename,
 ///                                   g_strerror (errno));
 ///  gtk_dialog_run (GTK_DIALOG (dialog));
 ///  gtk_widget_destroy (dialog);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// You might do a non-modal #GtkMessageDialog as follows:
 /// </para>
 /// <para>
 /// An example for a non-modal dialog:
-/// |[<!-- language="C" -->
+/// <code>
+///  GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
 ///  GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
 ///  dialog = gtk_message_dialog_new (parent_window,
 ///                                   flags,
 ///                                   GTK_MESSAGE_ERROR,
 ///                                   GTK_BUTTONS_CLOSE,
-///                                   "Error reading “%s”: %s",
+///                                   &quot;Error reading “%s”: %s&quot;,
 ///                                   filename,
 ///                                   g_strerror (errno));
-/// </para>
-/// <para>
+/// 
 ///  // Destroy the dialog when the user responds to it
 ///  // (e.g. clicks a button)
-/// </para>
-/// <para>
-///  g_signal_connect_swapped (dialog, "response",
+/// 
+///  g_signal_connect_swapped (dialog, &quot;response&quot;,
 ///                            G_CALLBACK (gtk_widget_destroy),
 ///                            dialog);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// # GtkMessageDialog as GtkBuildable
 /// </para>
 /// <para>
@@ -121,7 +117,8 @@ public class GtkMessageDialogHandle : GtkDialogHandle, AtkImplementorIfaceHandle
 /// instead, since you can’t pass the markup string either
 /// as the format (it might contain “%” characters) or as a string
 /// argument.
-/// |[<!-- language="C" -->
+/// <code>
+///  GtkWidget *dialog;
 ///  GtkWidget *dialog;
 ///  GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
 ///  dialog = gtk_message_dialog_new (parent_window,
@@ -131,7 +128,7 @@ public class GtkMessageDialogHandle : GtkDialogHandle, AtkImplementorIfaceHandle
 ///                                   NULL);
 ///  gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog),
 ///                                 markup);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -178,17 +175,15 @@ public static class GtkMessageDialogHandleExtensions
 /// may contain special XML characters, you should use g_markup_printf_escaped()
 /// to escape it.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// gchar *msg;
-/// </para>
-/// <para>
+/// gchar *msg;
+/// 
 /// msg = g_markup_printf_escaped (message_format, ...);
 /// gtk_message_dialog_format_secondary_markup (message_dialog,
-///                                             "%s", msg);
+///                                             &quot;%s&quot;, msg);
 /// g_free (msg);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="message_dialog">

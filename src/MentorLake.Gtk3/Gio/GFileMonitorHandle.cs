@@ -38,9 +38,9 @@ public static class GFileMonitorHandleSignalExtensions
 /// <para>
 /// In all cases @file will be a child of the monitored directory.  For
 /// renames, @file will be the old name and @other_file is the new
-/// name.  For "moved in" events, @file is the name of the file that
+/// name.  For &quot;moved in&quot; events, @file is the name of the file that
 /// appeared and @other_file is the old name that it was moved from (in
-/// another directory).  For "moved out" events, @file is the name of
+/// another directory).  For &quot;moved out&quot; events, @file is the name of
 /// the file that used to be in this directory and @other_file is the
 /// name of the file at its new location.
 /// </para>
@@ -142,9 +142,9 @@ public static class GFileMonitorHandleSignalDelegates
 /// <para>
 /// In all cases @file will be a child of the monitored directory.  For
 /// renames, @file will be the old name and @other_file is the new
-/// name.  For "moved in" events, @file is the name of the file that
+/// name.  For &quot;moved in&quot; events, @file is the name of the file that
 /// appeared and @other_file is the old name that it was moved from (in
-/// another directory).  For "moved out" events, @file is the name of
+/// another directory).  For &quot;moved out&quot; events, @file is the name of
 /// the file that used to be in this directory and @other_file is the
 /// name of the file at its new location.
 /// </para>

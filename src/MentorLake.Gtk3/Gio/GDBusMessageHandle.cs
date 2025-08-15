@@ -716,10 +716,10 @@ public static class GDBusMessageHandleExtensions
 /// Version: 0
 /// Serial:  4
 /// Headers:
-///   path -> objectpath '/org/gtk/GDBus/TestObject'
-///   interface -> 'org.gtk.GDBus.TestInterface'
-///   member -> 'GimmeStdout'
-///   destination -> ':1.146'
+///   path -&amp;gt; objectpath &apos;/org/gtk/GDBus/TestObject&apos;
+///   interface -&amp;gt; &apos;org.gtk.GDBus.TestInterface&apos;
+///   member -&amp;gt; &apos;GimmeStdout&apos;
+///   destination -&amp;gt; &apos;:1.146&apos;
 /// Body: ()
 /// UNIX File Descriptors:
 ///   (none)
@@ -730,10 +730,10 @@ public static class GDBusMessageHandleExtensions
 /// Version: 0
 /// Serial:  477
 /// Headers:
-///   reply-serial -> uint32 4
-///   destination -> ':1.159'
-///   sender -> ':1.146'
-///   num-unix-fds -> uint32 1
+///   reply-serial -&amp;gt; uint32 4
+///   destination -&amp;gt; &apos;:1.159&apos;
+///   sender -&amp;gt; &apos;:1.146&apos;
+///   num-unix-fds -&amp;gt; uint32 1
 /// Body: ()
 /// UNIX File Descriptors:
 ///   fd 12: dev=0:10,mode=020620,ino=5,uid=500,gid=5,rdev=136:2,size=0,atime=1273085037,mtime=1273085851,ctime=1272982635
@@ -1140,7 +1140,7 @@ public static class GDBusMessageHandleExtensions
 /// Otherwise this method encodes the error in @message as a #GError
 /// using g_dbus_error_set_dbus_error() using the information in the
 /// %G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME header field of @message as
-/// well as the first string item in @message's body.
+/// well as the first string item in @message&apos;s body.
 /// </para>
 /// </summary>
 

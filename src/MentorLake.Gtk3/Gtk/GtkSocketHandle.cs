@@ -17,20 +17,18 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Obtaining the window ID of a socket.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *socket = gtk_socket_new ();
 /// GtkWidget *socket = gtk_socket_new ();
 /// gtk_widget_show (socket);
 /// gtk_container_add (GTK_CONTAINER (parent), socket);
-/// </para>
-/// <para>
+/// 
 /// // The following call is only necessary if one of
 /// // the ancestors of the socket is not yet visible.
 /// gtk_widget_realize (socket);
-/// g_print ("The ID of the sockets window is %#x\n",
+/// g_print (&quot;The ID of the sockets window is %#x\n&quot;,
 ///          gtk_socket_get_id (socket));
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that if you pass the window ID of the socket to another
 /// process that will create a plug in the socket, you must make

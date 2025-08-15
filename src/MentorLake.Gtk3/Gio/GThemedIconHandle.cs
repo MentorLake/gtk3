@@ -60,22 +60,22 @@ public class GThemedIconHandle : GObjectHandle, GIconHandle
 /// <summary>
 /// <para>
 /// Creates a new themed icon for @iconname, and all the names
-/// that can be created by shortening @iconname at '-' characters.
+/// that can be created by shortening @iconname at &apos;-&apos; characters.
 /// </para>
 /// <para>
 /// In the following example, @icon1 and @icon2 are equivalent:
-/// |[<!-- language="C" -->
+/// <code>
 /// const char *names[] = {
-///   "gnome-dev-cdrom-audio",
-///   "gnome-dev-cdrom",
-///   "gnome-dev",
-///   "gnome"
+/// const char *names[] = {
+///   &quot;gnome-dev-cdrom-audio&quot;,
+///   &quot;gnome-dev-cdrom&quot;,
+///   &quot;gnome-dev&quot;,
+///   &quot;gnome&quot;
 /// };
-/// </para>
-/// <para>
+/// 
 /// icon1 = g_themed_icon_new_from_names (names, 4);
-/// icon2 = g_themed_icon_new_with_default_fallbacks ("gnome-dev-cdrom-audio");
-/// ]|
+/// icon2 = g_themed_icon_new_with_default_fallbacks (&quot;gnome-dev-cdrom-audio&quot;);
+/// </code>
 /// </para>
 /// </summary>
 

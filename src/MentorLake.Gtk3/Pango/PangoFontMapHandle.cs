@@ -164,7 +164,7 @@ public static class PangoFontMapHandleExtensions
 /// </para>
 /// <para>
 /// This function is only useful when implementing a new backend
-/// for Pango, something applications won't do. Backends should
+/// for Pango, something applications won&apos;t do. Backends should
 /// call this function if they have attached extra data to the
 /// context and such data is changed.
 /// </para>
@@ -191,7 +191,7 @@ public static class PangoFontMapHandleExtensions
 /// </para>
 /// <para>
 /// If you are using Pango as part of a higher-level system,
-/// that system may have it's own way of create a `PangoContext`.
+/// that system may have it&apos;s own way of create a `PangoContext`.
 /// For instance, the GTK toolkit has, among others,
 /// gtk_widget_get_pango_context(). Use those instead.
 /// </para>
@@ -241,7 +241,7 @@ public static class PangoFontMapHandleExtensions
 /// The serial number is initialized to an small number larger than zero
 /// when a new fontmap is created and is increased whenever the fontmap
 /// is changed. It may wrap, but will never have the value 0. Since it can
-/// wrap, never compare it with "less than", always use "not equals".
+/// wrap, never compare it with &quot;less than&quot;, always use &quot;not equals&quot;.
 /// </para>
 /// <para>
 /// The fontmap can only be changed using backend-specific API, like changing

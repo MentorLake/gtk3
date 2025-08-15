@@ -7,7 +7,7 @@ namespace MentorLake.Atk;
 /// particular GType.
 /// </para>
 /// <para>
-/// The AtkRegistry is normally used to create appropriate ATK "peers"
+/// The AtkRegistry is normally used to create appropriate ATK &quot;peers&quot;
 /// for user interface components.  Application developers usually need
 /// only interact with the AtkRegistry by associating appropriate ATK
 /// implementation classes with GObject classes via the

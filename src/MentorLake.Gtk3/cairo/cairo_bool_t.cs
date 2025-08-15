@@ -8,11 +8,11 @@ namespace MentorLake.cairo;
 /// value as a boolean condition.
 /// </para>
 /// <para>
-/// <informalexample><programlisting>
+/// &amp;lt;informalexample&amp;gt;&amp;lt;programlisting&amp;gt;
 ///  if (cairo_in_stroke (cr, x, y)) {
-///      /<!-- -->* do something *<!-- -->/
+///      /&amp;lt;!-- --&amp;gt;* do something *&amp;lt;!-- --&amp;gt;/
 ///  }
-/// </programlisting></informalexample>
+/// &amp;lt;/programlisting&amp;gt;&amp;lt;/informalexample&amp;gt;
 /// </para>
 /// </summary>
 
@@ -20,6 +20,22 @@ public struct cairo_bool_t
 {
 	public int Value;
 }
+
+/// <summary>
+/// <para>
+/// #cairo_bool_t is used for boolean values. Returns of type
+/// #cairo_bool_t will always be either 0 or 1, but testing against
+/// these values explicitly is not encouraged; just use the
+/// value as a boolean condition.
+/// </para>
+/// <para>
+/// &amp;lt;informalexample&amp;gt;&amp;lt;programlisting&amp;gt;
+///  if (cairo_in_stroke (cr, x, y)) {
+///      /&amp;lt;!-- --&amp;gt;* do something *&amp;lt;!-- --&amp;gt;/
+///  }
+/// &amp;lt;/programlisting&amp;gt;&amp;lt;/informalexample&amp;gt;
+/// </para>
+/// </summary>
 
 public class cairo_bool_tHandle : BaseSafeHandle
 {

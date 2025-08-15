@@ -3,8 +3,8 @@ namespace MentorLake.Gdk;
 /// <summary>
 /// <para>
 /// Defines the reference point of a window and the meaning of coordinates
-/// passed to gtk_window_move(). See gtk_window_move() and the "implementation
-/// notes" section of the
+/// passed to gtk_window_move(). See gtk_window_move() and the &quot;implementation
+/// notes&quot; section of the
 /// [Extended Window Manager Hints](http://www.freedesktop.org/Standards/wm-spec)
 /// specification for more details.
 /// </para>

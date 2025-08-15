@@ -16,8 +16,8 @@ namespace MentorLake.Gtk;
 /// user data
 /// </param>
 /// <return>
-/// < 0 if @row1 should be before @row2, 0 if they are
-///     equal and > 0 otherwise
+/// &amp;lt; 0 if @row1 should be before @row2, 0 if they are
+///     equal and &amp;gt; 0 otherwise
 /// </return>
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

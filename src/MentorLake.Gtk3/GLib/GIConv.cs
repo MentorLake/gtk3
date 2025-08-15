@@ -128,7 +128,7 @@ public struct GIConv
 /// source codeset
 /// </param>
 /// <return>
-/// a "conversion descriptor", or (GIConv)-1 if
+/// a &quot;conversion descriptor&quot;, or (GIConv)-1 if
 ///  opening the converter failed.
 /// </return>
 

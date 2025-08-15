@@ -5,7 +5,7 @@ namespace MentorLake.Gtk;
 /// The #GtkRcStyle-struct is used to represent a set
 /// of information about the appearance of a widget.
 /// This can later be composited together with other
-/// #GtkRcStyle-struct<!-- -->s to form a #GtkStyle.
+/// #GtkRcStyle-struct&amp;lt;!-- --&amp;gt;s to form a #GtkStyle.
 /// </para>
 /// </summary>
 

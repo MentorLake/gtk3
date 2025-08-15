@@ -74,7 +74,7 @@ public static class GInputStreamHandleExtensions
 /// triggering the cancellable object from another thread. If the operation
 /// was cancelled, the error %G_IO_ERROR_CANCELLED will be returned.
 /// Cancelling a close will still leave the stream closed, but some streams
-/// can use a faster close that doesn't block to e.g. check errors.
+/// can use a faster close that doesn&apos;t block to e.g. check errors.
 /// </para>
 /// </summary>
 
@@ -216,7 +216,7 @@ public static class GInputStreamHandleExtensions
 /// </para>
 /// <para>
 /// The returned @buffer is not a nul-terminated string, it can contain nul bytes
-/// at any position, and this function doesn't nul-terminate the @buffer.
+/// at any position, and this function doesn&apos;t nul-terminate the @buffer.
 /// </para>
 /// <para>
 /// If @cancellable is not %NULL, then the operation can be cancelled by

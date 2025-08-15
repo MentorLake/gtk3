@@ -39,14 +39,13 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
 /// paned
-/// ├── <child>
+/// paned
+/// ├── &amp;lt;child&amp;gt;
 /// ├── separator[.wide]
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkPaned has a main CSS node with name paned, and a subnode for
 /// the separator with name separator. The subnode gets a .wide style
@@ -60,26 +59,22 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Creating a paned widget with minimum sizes.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
 /// GtkWidget *hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
 /// GtkWidget *frame1 = gtk_frame_new (NULL);
 /// GtkWidget *frame2 = gtk_frame_new (NULL);
 /// gtk_frame_set_shadow_type (GTK_FRAME (frame1), GTK_SHADOW_IN);
 /// gtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_IN);
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_set_size_request (hpaned, 200, -1);
-/// </para>
-/// <para>
+/// 
 /// gtk_paned_pack1 (GTK_PANED (hpaned), frame1, TRUE, FALSE);
 /// gtk_widget_set_size_request (frame1, 50, -1);
-/// </para>
-/// <para>
+/// 
 /// gtk_paned_pack2 (GTK_PANED (hpaned), frame2, FALSE, FALSE);
 /// gtk_widget_set_size_request (frame2, 50, -1);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkPanedHandle : GtkContainerHandle, AtkImplementorIfaceHandle, GtkBuildableHandle, GtkOrientableHandle

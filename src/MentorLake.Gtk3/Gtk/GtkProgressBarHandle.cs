@@ -31,20 +31,19 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// progressbar[.osd]
 /// progressbar[.osd]
 /// ├── [text]
 /// ╰── trough[.empty][.full]
 ///     ╰── progress[.pulse]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkProgressBar has a main CSS node with name progressbar and subnodes with
 /// names text and trough, of which the latter has a subnode named progress. The
 /// text subnode is only present if text is shown. The progress subnode has the
 /// style class .pulse when in activity mode. It gets the style classes .left,
-/// .right, .top or .bottom added when the progress 'touches' the corresponding
+/// .right, .top or .bottom added when the progress &apos;touches&apos; the corresponding
 /// end of the GtkProgressBar. The .osd class on the progressbar node is for use
 /// in overlays like the one Epiphany has for page loading progress.
 /// </para>
@@ -214,7 +213,7 @@ public static class GtkProgressBarHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the mode used to ellipsize (add an ellipsis: "...") the
+/// Sets the mode used to ellipsize (add an ellipsis: &quot;...&quot;) the
 /// text if there is not enough space to render the entire string.
 /// </para>
 /// </summary>

@@ -8,16 +8,16 @@ namespace MentorLake.Atk;
 /// #AtkTable should be implemented by components which present
 /// elements ordered via rows and columns.  It may also be used to
 /// present tree-structured information if the nodes of the trees can
-/// be said to contain multiple "columns".  Individual elements of an
-/// #AtkTable are typically referred to as "cells". Those cells should
-/// implement the interface #AtkTableCell, but #Atk doesn't require
+/// be said to contain multiple &quot;columns&quot;.  Individual elements of an
+/// #AtkTable are typically referred to as &quot;cells&quot;. Those cells should
+/// implement the interface #AtkTableCell, but #Atk doesn&apos;t require
 /// them to be direct children of the current #AtkTable. They can be
 /// grand-children, grand-grand-children etc. #AtkTable provides the
 /// API needed to get a individual cell based on the row and column
 /// numbers.
 /// </para>
 /// <para>
-/// Children of #AtkTable are frequently "lightweight" objects, that
+/// Children of #AtkTable are frequently &quot;lightweight&quot; objects, that
 /// is, they may not have backing widgets in the host UI toolkit.  They
 /// are therefore often transient.
 /// </para>

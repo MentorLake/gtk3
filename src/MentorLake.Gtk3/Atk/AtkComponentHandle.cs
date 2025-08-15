@@ -195,7 +195,7 @@ public static class AtkComponentHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the position of @component in the form of
-/// a point specifying @component's top-left corner.
+/// a point specifying @component&apos;s top-left corner.
 /// </para>
 /// <para>
 /// If the position can not be obtained (e.g. a non-embedded plug or missing
@@ -437,7 +437,7 @@ public static class AtkComponentHandleExtensions
 /// </param>
 /// <param name="coord_type">
 /// specifies whether the coordinates are relative to the screen
-/// or to the component's top level window
+/// or to the component&apos;s top level window
 /// </param>
 /// <return>
 /// %TRUE or %FALSE whether or not the position was set or not

@@ -6,7 +6,7 @@ namespace MentorLake.Gio;
 /// desktop files.
 /// </para>
 /// <para>
-/// Note that `<gio/gdesktopappinfo.h>` belongs to the UNIX-specific
+/// Note that `&amp;lt;gio/gdesktopappinfo.h&amp;gt;` belongs to the UNIX-specific
 /// GIO interfaces, thus you have to use the `gio-unix-2.0.pc` pkg-config
 /// file or the `GioUnix-2.0` GIR namespace when using it.
 /// </para>
@@ -147,8 +147,8 @@ public class GDesktopAppInfoHandle : GObjectHandle, GAppInfoHandle
 /// <para>
 /// This is used by [method@Gio.AppInfo.should_show] and
 /// [method@Gio.DesktopAppInfo.get_show_in] to evaluate the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin">OnlyShowIn</see>
-/// and <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin">NotShowIn</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin&quot;&amp;gt;OnlyShowIn&amp;lt;/see&amp;gt;
+/// and &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin&quot;&amp;gt;NotShowIn&amp;lt;/see&amp;gt;
 /// keys.
 /// </para>
 /// <para>
@@ -234,7 +234,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// </param>
 /// <return>
 /// The unparsed
-///   [`Categories` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-categories)
+///   &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-categories&quot;&amp;gt;Categories&amp;lt;/see&amp;gt;
 ///   from the desktop file;
 ///   i.e. no attempt is made to split it by `;` or validate it.
 /// </return>
@@ -278,7 +278,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// </param>
 /// <return>
 /// The value of the
-///   [`GenericName` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-genericname)
+///   &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-genericname&quot;&amp;gt;GenericName&amp;lt;/see&amp;gt;
 /// </return>
 
 	public static string GetGenericName(this MentorLake.Gio.GDesktopAppInfoHandle info)
@@ -290,7 +290,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// <summary>
 /// <para>
 /// A desktop file is hidden if the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden">Hidden</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden&quot;&amp;gt;Hidden&amp;lt;/see&amp;gt;
 /// in it is set to `True`.
 /// </para>
 /// </summary>
@@ -319,7 +319,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// </param>
 /// <return>
 /// The value of the
-///   [`Keywords` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-keywords)
+///   &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-keywords&quot;&amp;gt;Keywords&amp;lt;/see&amp;gt;
 /// </return>
 
 	public static string[] GetKeywords(this MentorLake.Gio.GDesktopAppInfoHandle info)
@@ -358,7 +358,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// <summary>
 /// <para>
 /// Gets the value of the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay">NoDisplay</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay&quot;&amp;gt;NoDisplay&amp;lt;/see&amp;gt;
 ///  which helps determine if the application info should be shown in menus. See
 /// `G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY` and [method@Gio.AppInfo.should_show].
 /// </para>
@@ -381,8 +381,8 @@ public static class GDesktopAppInfoHandleExtensions
 /// <para>
 /// Checks if the application info should be shown in menus that list available
 /// applications for a specific name of the desktop, based on the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin">OnlyShowIn</see>
-/// and <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin">NotShowIn</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin&quot;&amp;gt;OnlyShowIn&amp;lt;/see&amp;gt;
+/// and &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin&quot;&amp;gt;NotShowIn&amp;lt;/see&amp;gt;
 /// keys.
 /// </para>
 /// <para>
@@ -571,7 +571,7 @@ public static class GDesktopAppInfoHandleExtensions
 /// Additionally, @pid_callback (with @pid_callback_data) will be called to
 /// inform about the PID of the created process. See
 /// [func@GLib.spawn_async_with_pipes] for information on certain parameter
-/// conditions that can enable an optimized <see href="man:posix_spawn(3">posix_spawn()</see>)
+/// conditions that can enable an optimized &amp;lt;see href=&quot;man:posix_spawn(3&quot;&amp;gt;posix_spawn()&amp;lt;/see&amp;gt;)
 /// code path to be used.
 /// </para>
 /// <para>

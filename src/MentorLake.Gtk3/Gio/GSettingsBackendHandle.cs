@@ -101,7 +101,7 @@ public static class GSettingsBackendHandleExtensions
 /// </para>
 /// <para>
 /// @key must be a valid key (ie starting with a slash, not containing
-/// '//', and not ending with a slash).
+/// &apos;//&apos;, and not ending with a slash).
 /// </para>
 /// <para>
 /// The implementation must call this function during any call to
@@ -174,9 +174,9 @@ public static class GSettingsBackendHandleExtensions
 /// </para>
 /// <para>
 /// @path must be a valid path (ie starting and ending with a slash and
-/// not containing '//').  Each string in @items must form a valid key
+/// not containing &apos;//&apos;).  Each string in @items must form a valid key
 /// name when @path is prefixed to it (ie: each item must not start or
-/// end with '/' and must not contain '//').
+/// end with &apos;/&apos; and must not contain &apos;//&apos;).
 /// </para>
 /// <para>
 /// The meaning of this signal is that any of the key names resulting
@@ -224,7 +224,7 @@ public static class GSettingsBackendHandleExtensions
 /// </para>
 /// <para>
 /// @path must be a valid path (ie starting and ending with a slash and
-/// not containing '//').
+/// not containing &apos;//&apos;).
 /// </para>
 /// <para>
 /// The meaning of this signal is that any of the key which has a name
@@ -233,7 +233,7 @@ public static class GSettingsBackendHandleExtensions
 /// <para>
 /// The same rules for when notifications must occur apply as per
 /// g_settings_backend_changed().  This call might be an appropriate
-/// reasponse to a 'reset' call but implementations are also free to
+/// reasponse to a &apos;reset&apos; call but implementations are also free to
 /// explicitly list the keys that were affected by that call if they can
 /// easily do so.
 /// </para>
@@ -241,7 +241,7 @@ public static class GSettingsBackendHandleExtensions
 /// For efficiency reasons, the implementation should strive for @path to
 /// be as long as possible (ie: the longest common prefix of all of the
 /// keys that were changed) but this is not strictly required.  As an
-/// example, if this function is called with the path of "/" then every
+/// example, if this function is called with the path of &quot;/&quot; then every
 /// single key in the application will be notified of a possible change.
 /// </para>
 /// </summary>

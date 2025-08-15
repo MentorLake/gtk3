@@ -47,7 +47,7 @@ public string long_name;
 /// <para>
 /// If an option has a short name, it can be specified
 ///     `-short_name` in a commandline. @short_name must be  a printable
-///     ASCII character different from '-', or zero if the option has no
+///     ASCII character different from &apos;-&apos;, or zero if the option has no
 ///     short name.
 /// </para>
 /// </summary>

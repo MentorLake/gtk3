@@ -48,21 +48,21 @@ public enum GRegexError
 	G_REGEX_ERROR_INTERNAL = 4,
 /// <summary>
 /// <para>
-/// "\\" at end of pattern. Since 2.16
+/// &quot;\\&quot; at end of pattern. Since 2.16
 /// </para>
 /// </summary>
 
 	G_REGEX_ERROR_STRAY_BACKSLASH = 101,
 /// <summary>
 /// <para>
-/// "\\c" at end of pattern. Since 2.16
+/// &quot;\\c&quot; at end of pattern. Since 2.16
 /// </para>
 /// </summary>
 
 	G_REGEX_ERROR_MISSING_CONTROL_CHAR = 102,
 /// <summary>
 /// <para>
-/// Unrecognized character follows "\\".
+/// Unrecognized character follows &quot;\\&quot;.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -70,7 +70,7 @@ public enum GRegexError
 	G_REGEX_ERROR_UNRECOGNIZED_ESCAPE = 103,
 /// <summary>
 /// <para>
-/// Numbers out of order in "{}"
+/// Numbers out of order in &quot;{}&quot;
 ///     quantifier. Since 2.16
 /// </para>
 /// </summary>
@@ -78,7 +78,7 @@ public enum GRegexError
 	G_REGEX_ERROR_QUANTIFIERS_OUT_OF_ORDER = 104,
 /// <summary>
 /// <para>
-/// Number too big in "{}" quantifier.
+/// Number too big in &quot;{}&quot; quantifier.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -86,7 +86,7 @@ public enum GRegexError
 	G_REGEX_ERROR_QUANTIFIER_TOO_BIG = 105,
 /// <summary>
 /// <para>
-/// Missing terminating "]" for
+/// Missing terminating &quot;]&quot; for
 ///     character class. Since 2.16
 /// </para>
 /// </summary>
@@ -117,8 +117,8 @@ public enum GRegexError
 	G_REGEX_ERROR_NOTHING_TO_REPEAT = 109,
 /// <summary>
 /// <para>
-/// Unrecognized character after "(?",
-///     "(?<" or "(?P". Since 2.16
+/// Unrecognized character after &quot;(?&quot;,
+///     &quot;(?&amp;lt;&quot; or &quot;(?P&quot;. Since 2.16
 /// </para>
 /// </summary>
 
@@ -133,8 +133,8 @@ public enum GRegexError
 	G_REGEX_ERROR_POSIX_NAMED_CLASS_OUTSIDE_CLASS = 113,
 /// <summary>
 /// <para>
-/// Missing terminating ")" or ")"
-///     without opening "(". Since 2.16
+/// Missing terminating &quot;)&quot; or &quot;)&quot;
+///     without opening &quot;(&quot;. Since 2.16
 /// </para>
 /// </summary>
 
@@ -149,7 +149,7 @@ public enum GRegexError
 	G_REGEX_ERROR_INEXISTENT_SUBPATTERN_REFERENCE = 115,
 /// <summary>
 /// <para>
-/// Missing terminating ")" after comment.
+/// Missing terminating &quot;)&quot; after comment.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -180,7 +180,7 @@ public enum GRegexError
 	G_REGEX_ERROR_VARIABLE_LENGTH_LOOKBEHIND = 125,
 /// <summary>
 /// <para>
-/// Malformed number or name after "(?(".
+/// Malformed number or name after &quot;(?(&quot;.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -196,7 +196,7 @@ public enum GRegexError
 	G_REGEX_ERROR_TOO_MANY_CONDITIONAL_BRANCHES = 127,
 /// <summary>
 /// <para>
-/// Assertion expected after "(?(".
+/// Assertion expected after &quot;(?(&quot;.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -220,7 +220,7 @@ public enum GRegexError
 	G_REGEX_ERROR_POSIX_COLLATING_ELEMENTS_NOT_SUPPORTED = 131,
 /// <summary>
 /// <para>
-/// Character value in "\\x{...}" sequence
+/// Character value in &quot;\\x{...}&quot; sequence
 ///     is too large. Since 2.16
 /// </para>
 /// </summary>
@@ -228,7 +228,7 @@ public enum GRegexError
 	G_REGEX_ERROR_HEX_CODE_TOO_LARGE = 134,
 /// <summary>
 /// <para>
-/// Invalid condition "(?(0)". Since 2.16
+/// Invalid condition &quot;(?(0)&quot;. Since 2.16
 /// </para>
 /// </summary>
 
@@ -267,7 +267,7 @@ public enum GRegexError
 	G_REGEX_ERROR_DUPLICATE_SUBPATTERN_NAME = 143,
 /// <summary>
 /// <para>
-/// Malformed "\\P" or "\\p" sequence.
+/// Malformed &quot;\\P&quot; or &quot;\\p&quot; sequence.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -275,8 +275,8 @@ public enum GRegexError
 	G_REGEX_ERROR_MALFORMED_PROPERTY = 146,
 /// <summary>
 /// <para>
-/// Unknown property name after "\\P" or
-///     "\\p". Since 2.16
+/// Unknown property name after &quot;\\P&quot; or
+///     &quot;\\p&quot;. Since 2.16
 /// </para>
 /// </summary>
 
@@ -299,7 +299,7 @@ public enum GRegexError
 	G_REGEX_ERROR_TOO_MANY_SUBPATTERNS = 149,
 /// <summary>
 /// <para>
-/// Octal value is greater than "\\377".
+/// Octal value is greater than &quot;\\377&quot;.
 ///     Since 2.16
 /// </para>
 /// </summary>
@@ -307,7 +307,7 @@ public enum GRegexError
 	G_REGEX_ERROR_INVALID_OCTAL_VALUE = 151,
 /// <summary>
 /// <para>
-/// "DEFINE" group contains more
+/// &quot;DEFINE&quot; group contains more
 ///     than one branch. Since 2.16
 /// </para>
 /// </summary>
@@ -315,7 +315,7 @@ public enum GRegexError
 	G_REGEX_ERROR_TOO_MANY_BRANCHES_IN_DEFINE = 154,
 /// <summary>
 /// <para>
-/// Repeating a "DEFINE" group is not allowed.
+/// Repeating a &quot;DEFINE&quot; group is not allowed.
 ///     This error is never raised. Since: 2.16 Deprecated: 2.34
 /// </para>
 /// </summary>
@@ -331,7 +331,7 @@ public enum GRegexError
 	G_REGEX_ERROR_INCONSISTENT_NEWLINE_OPTIONS = 156,
 /// <summary>
 /// <para>
-/// "\\g" is not followed by a braced,
+/// &quot;\\g&quot; is not followed by a braced,
 ///      angle-bracketed, or quoted name or number, or by a plain number. Since: 2.16
 /// </para>
 /// </summary>
@@ -384,7 +384,7 @@ public enum GRegexError
 /// <summary>
 /// <para>
 /// In JavaScript compatibility mode,
-///     "[" is an invalid data character. Since: 2.34
+///     &quot;[&quot; is an invalid data character. Since: 2.34
 /// </para>
 /// </summary>
 
@@ -407,7 +407,7 @@ public enum GRegexError
 	G_REGEX_ERROR_BACKTRACKING_CONTROL_VERB_ARGUMENT_REQUIRED = 166,
 /// <summary>
 /// <para>
-/// "\\c" must be followed by an ASCII
+/// &quot;\\c&quot; must be followed by an ASCII
 ///     character. Since: 2.34
 /// </para>
 /// </summary>
@@ -415,7 +415,7 @@ public enum GRegexError
 	G_REGEX_ERROR_INVALID_CONTROL_CHAR = 168,
 /// <summary>
 /// <para>
-/// "\\k" is not followed by a braced, angle-bracketed, or
+/// &quot;\\k&quot; is not followed by a braced, angle-bracketed, or
 ///     quoted name. Since: 2.34
 /// </para>
 /// </summary>
@@ -423,7 +423,7 @@ public enum GRegexError
 	G_REGEX_ERROR_MISSING_NAME = 169,
 /// <summary>
 /// <para>
-/// "\\N" is not supported in a class. Since: 2.34
+/// &quot;\\N&quot; is not supported in a class. Since: 2.34
 /// </para>
 /// </summary>
 
@@ -437,8 +437,8 @@ public enum GRegexError
 	G_REGEX_ERROR_TOO_MANY_FORWARD_REFERENCES = 172,
 /// <summary>
 /// <para>
-/// the name is too long in "(*MARK)", "(*PRUNE)",
-///     "(*SKIP)", or "(*THEN)". Since: 2.34
+/// the name is too long in &quot;(*MARK)&quot;, &quot;(*PRUNE)&quot;,
+///     &quot;(*SKIP)&quot;, or &quot;(*THEN)&quot;. Since: 2.34
 /// </para>
 /// </summary>
 

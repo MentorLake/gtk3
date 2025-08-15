@@ -14,7 +14,7 @@ namespace MentorLake.Gio;
 /// underlying system support (such as Windows 10 with `AF_UNIX`) at run time.
 /// </para>
 /// <para>
-/// Before GLib 2.72, `<gio/gunixconnection.h>` belonged to the UNIX-specific GIO
+/// Before GLib 2.72, `&amp;lt;gio/gunixconnection.h&amp;gt;` belonged to the UNIX-specific GIO
 /// interfaces, thus you had to use the `gio-unix-2.0.pc` pkg-config file when
 /// using it. This is no longer necessary since GLib 2.72.
 /// </para>

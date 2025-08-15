@@ -8,11 +8,10 @@ namespace MentorLake.GObject;
 /// <para>
 /// To extend on our above string example:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// return value->data[0].v_pointer;
-/// ]|
-/// </para>
+/// <code>
+/// return value-&amp;gt;data[0].v_pointer;
+/// return value-&amp;gt;data[0].v_pointer;
+/// </code>
 /// </summary>
 
 /// <param name="value">

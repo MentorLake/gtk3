@@ -68,7 +68,7 @@ namespace MentorLake.Gio;
 /// [method@Gio.SimpleAsyncResult.set_op_res_gpointer],
 /// [method@Gio.SimpleAsyncResult.set_op_res_gboolean], and
 /// [method@Gio.SimpleAsyncResult.set_op_res_gssize]
-/// are provided, setting the operation's result to a `gpointer`, `gboolean`, or
+/// are provided, setting the operation&apos;s result to a `gpointer`, `gboolean`, or
 /// `gssize`, respectively.
 /// </para>
 /// <para>
@@ -99,17 +99,16 @@ namespace MentorLake.Gio;
 ///     g_simple_async_result_set_error (result,
 ///                                      BAKER_ERRORS,
 ///                                      BAKER_ERROR_NO_FLOUR,
-///                                      "Go to the supermarket");
+///                                      &quot;Go to the supermarket&quot;);
 ///   else
 ///     g_simple_async_result_set_op_res_gpointer (result,
 ///                                                g_object_ref (cake),
 ///                                                g_object_unref);
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 ///   // In this example, we assume that baked_cb is called as a callback from
-///   // the mainloop, so it's safe to complete the operation synchronously here.
+///   // the mainloop, so it&apos;s safe to complete the operation synchronously here.
 ///   // If, however, _baker_prepare_cake () might call its callback without
 ///   // first returning to the mainloop — inadvisable, but some APIs do so —
 ///   // we would need to use g_simple_async_result_complete_in_idle().
@@ -128,14 +127,14 @@ namespace MentorLake.Gio;
 ///   Cake               *cake;
 /// </para>
 /// <para>
-///   if (radius < 3)
+///   if (radius &amp;lt; 3)
 ///     {
 ///       g_simple_async_report_error_in_idle (G_OBJECT (self),
 ///                                            callback,
 ///                                            user_data,
 ///                                            BAKER_ERRORS,
 ///                                            BAKER_ERROR_TOO_SMALL,
-///                                            "%ucm radius cakes are silly",
+///                                            &quot;%ucm radius cakes are silly&quot;,
 ///                                            radius);
 ///       return;
 ///     }
@@ -208,7 +207,7 @@ public class GSimpleAsyncResultHandle : GObjectHandle, GAsyncResultHandle
 /// </para>
 /// <para>
 /// If your operation supports cancellation with #GCancellable (which it
-/// probably should) then you should provide the user's cancellable to
+/// probably should) then you should provide the user&apos;s cancellable to
 /// g_simple_async_result_set_check_cancellable() immediately after
 /// this function returns.
 /// </para>
@@ -301,7 +300,7 @@ public class GSimpleAsyncResultHandle : GObjectHandle, GAsyncResultHandle
 /// <summary>
 /// <para>
 /// Creates a #GSimpleAsyncResult from an error condition, and takes over the
-/// caller's ownership of @error, so the caller does not need to free it anymore.
+/// caller&apos;s ownership of @error, so the caller does not need to free it anymore.
 /// </para>
 /// </summary>
 
@@ -339,7 +338,7 @@ public class GSimpleAsyncResultHandle : GObjectHandle, GAsyncResultHandle
 /// to g_simple_async_result_new() (which, by convention, is a pointer
 /// to the _async function corresponding to the _finish function from
 /// which this function is called).  (Alternatively, if either
-/// @source_tag or @result's source tag is %NULL, then the source tag
+/// @source_tag or @result&apos;s source tag is %NULL, then the source tag
 /// check is skipped.)
 /// </para>
 /// </summary>
@@ -424,8 +423,8 @@ public static class GSimpleAsyncResultHandleExtensions
 /// a #GSimpleAsyncResult.
 /// </param>
 /// <return>
-/// %TRUE if the operation's result was %TRUE, %FALSE
-///     if the operation's result was %FALSE.
+/// %TRUE if the operation&apos;s result was %TRUE, %FALSE
+///     if the operation&apos;s result was %FALSE.
 /// </return>
 
 	public static bool GetOpResGboolean(this MentorLake.Gio.GSimpleAsyncResultHandle simple)
@@ -557,8 +556,8 @@ public static class GSimpleAsyncResultHandleExtensions
 /// <para>
 /// This function has one very specific purpose: the provided cancellable
 /// is checked at the time of g_simple_async_result_propagate_error() If
-/// it is cancelled, these functions will return an "Operation was
-/// cancelled" error (%G_IO_ERROR_CANCELLED).
+/// it is cancelled, these functions will return an &quot;Operation was
+/// cancelled&quot; error (%G_IO_ERROR_CANCELLED).
 /// </para>
 /// <para>
 /// Implementors of cancellable asynchronous functions should use this in
@@ -757,7 +756,7 @@ public static class GSimpleAsyncResultHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the result from @error, and takes over the caller's ownership
+/// Sets the result from @error, and takes over the caller&apos;s ownership
 /// of @error, so the caller does not need to free it any more.
 /// </para>
 /// </summary>

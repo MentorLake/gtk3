@@ -28,9 +28,9 @@ namespace MentorLake.Gtk;
 /// table will resize themselves to the size of the largest widget in the table.
 /// </para>
 /// <para>
-/// > #GtkTable has been deprecated. Use #GtkGrid instead. It provides the same
-/// > capabilities as GtkTable for arranging widgets in a rectangular grid, but
-/// > does support height-for-width geometry management.
+/// &amp;gt; #GtkTable has been deprecated. Use #GtkGrid instead. It provides the same
+/// &amp;gt; capabilities as GtkTable for arranging widgets in a rectangular grid, but
+/// &amp;gt; does support height-for-width geometry management.
 /// </para>
 /// </summary>
 
@@ -78,14 +78,14 @@ public static class GtkTableHandleExtensions
 /// </para>
 /// <para>
 /// To make a button occupy the lower right cell of a 2x2 table, use
-/// |[
+/// <code>
+/// gtk_table_attach (table, button,
 /// gtk_table_attach (table, button,
 ///                   1, 2, // left, right attach
 ///                   1, 2, // top, bottom attach
 ///                   xoptions, yoptions,
 ///                   xpadding, ypadding);
-/// ]|
-/// If you want to make the button span the entire bottom row, use @left_attach == 0 and @right_attach = 2 instead.
+/// </code>
 /// </para>
 /// </summary>
 

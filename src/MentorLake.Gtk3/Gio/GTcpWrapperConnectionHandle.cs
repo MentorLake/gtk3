@@ -40,7 +40,7 @@ public static class GTcpWrapperConnectionHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @conn's base #GIOStream
+/// Gets @conn&apos;s base #GIOStream
 /// </para>
 /// </summary>
 
@@ -48,7 +48,7 @@ public static class GTcpWrapperConnectionHandleExtensions
 /// a #GTcpWrapperConnection
 /// </param>
 /// <return>
-/// @conn's base #GIOStream
+/// @conn&apos;s base #GIOStream
 /// </return>
 
 	public static MentorLake.Gio.GIOStreamHandle GetBaseIoStream(this MentorLake.Gio.GTcpWrapperConnectionHandle conn)

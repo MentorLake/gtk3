@@ -163,7 +163,7 @@ public static class GNetworkAddressHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @addr's hostname. This might be either UTF-8 or ASCII-encoded,
+/// Gets @addr&apos;s hostname. This might be either UTF-8 or ASCII-encoded,
 /// depending on what @addr was created with.
 /// </para>
 /// </summary>
@@ -172,7 +172,7 @@ public static class GNetworkAddressHandleExtensions
 /// a #GNetworkAddress
 /// </param>
 /// <return>
-/// @addr's hostname
+/// @addr&apos;s hostname
 /// </return>
 
 	public static string GetHostname(this MentorLake.Gio.GNetworkAddressHandle addr)
@@ -183,7 +183,7 @@ public static class GNetworkAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @addr's port number
+/// Gets @addr&apos;s port number
 /// </para>
 /// </summary>
 
@@ -191,7 +191,7 @@ public static class GNetworkAddressHandleExtensions
 /// a #GNetworkAddress
 /// </param>
 /// <return>
-/// @addr's port (which may be 0)
+/// @addr&apos;s port (which may be 0)
 /// </return>
 
 	public static ushort GetPort(this MentorLake.Gio.GNetworkAddressHandle addr)
@@ -202,7 +202,7 @@ public static class GNetworkAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @addr's scheme
+/// Gets @addr&apos;s scheme
 /// </para>
 /// </summary>
 
@@ -210,7 +210,7 @@ public static class GNetworkAddressHandleExtensions
 /// a #GNetworkAddress
 /// </param>
 /// <return>
-/// @addr's scheme (%NULL if not built from URI)
+/// @addr&apos;s scheme (%NULL if not built from URI)
 /// </return>
 
 	public static string GetScheme(this MentorLake.Gio.GNetworkAddressHandle addr)

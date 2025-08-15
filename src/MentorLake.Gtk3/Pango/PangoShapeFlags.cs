@@ -22,7 +22,7 @@ public enum PangoShapeFlags : uint
 /// <summary>
 /// <para>
 /// Round glyph positions and widths to whole device units
-///   This option should be set if the target renderer can't do subpixel positioning of glyphs
+///   This option should be set if the target renderer can&apos;t do subpixel positioning of glyphs
 /// </para>
 /// </summary>
 

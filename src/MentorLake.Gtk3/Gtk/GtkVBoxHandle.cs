@@ -22,12 +22,11 @@ namespace MentorLake.Gtk;
 /// property to %GTK_ORIENTATION_VERTICAL in your instance init function,
 /// with a call like:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   gtk_orientable_set_orientation (GTK_ORIENTABLE (object),
 ///   gtk_orientable_set_orientation (GTK_ORIENTABLE (object),
 ///                                   GTK_ORIENTATION_VERTICAL);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// If you have a grid-like layout composed of nested boxes, and you don’t
 /// need first-child or last-child styling, the recommendation is to switch

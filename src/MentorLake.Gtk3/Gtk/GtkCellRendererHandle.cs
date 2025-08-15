@@ -100,11 +100,12 @@ public static class GtkCellRendererHandleSignalExtensions
 /// the @editable and a way to do setup that doesn’t depend on the @renderer.
 /// </para>
 /// <para>
-/// Note that GTK+ doesn't guarantee that cell renderers will
+/// Note that GTK+ doesn&apos;t guarantee that cell renderers will
 /// continue to use the same kind of widget for editing in future
 /// releases, therefore you should check the type of @editable
 /// before doing any specific setup, as in the following example:
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// text_editing_started (GtkCellRenderer *cell,
 ///                       GtkCellEditable *editable,
@@ -114,15 +115,13 @@ public static class GtkCellRendererHandleSignalExtensions
 ///   if (GTK_IS_ENTRY (editable))
 ///     {
 ///       GtkEntry *entry = GTK_ENTRY (editable);
-/// </para>
-/// <para>
+/// 
 ///       // ... create a GtkEntryCompletion
-/// </para>
-/// <para>
+/// 
 ///       gtk_entry_set_completion (entry, completion);
 ///     }
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -225,11 +224,12 @@ public delegate void editing_canceled([MarshalAs(UnmanagedType.CustomMarshaler, 
 /// the @editable and a way to do setup that doesn’t depend on the @renderer.
 /// </para>
 /// <para>
-/// Note that GTK+ doesn't guarantee that cell renderers will
+/// Note that GTK+ doesn&apos;t guarantee that cell renderers will
 /// continue to use the same kind of widget for editing in future
 /// releases, therefore you should check the type of @editable
 /// before doing any specific setup, as in the following example:
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// text_editing_started (GtkCellRenderer *cell,
 ///                       GtkCellEditable *editable,
@@ -239,15 +239,13 @@ public delegate void editing_canceled([MarshalAs(UnmanagedType.CustomMarshaler, 
 ///   if (GTK_IS_ENTRY (editable))
 ///     {
 ///       GtkEntry *entry = GTK_ENTRY (editable);
-/// </para>
-/// <para>
+/// 
 ///       // ... create a GtkEntryCompletion
-/// </para>
-/// <para>
+/// 
 ///       gtk_entry_set_completion (entry, completion);
 ///     }
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

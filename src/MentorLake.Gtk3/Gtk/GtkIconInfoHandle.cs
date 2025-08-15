@@ -699,7 +699,7 @@ public static class GtkIconInfoHandleExtensions
 /// </para>
 /// <para>
 /// This function is provided primarily to allow compatibility wrappers
-/// for older API's, and is not expected to be useful for applications.
+/// for older API&apos;s, and is not expected to be useful for applications.
 /// </para>
 /// </summary>
 

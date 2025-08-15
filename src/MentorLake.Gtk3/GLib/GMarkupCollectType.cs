@@ -28,7 +28,7 @@ public enum GMarkupCollectType : uint
 /// collect the string pointer directly from
 ///     the attribute_values[] array. Expects a parameter of type (const
 ///     char **). If %G_MARKUP_COLLECT_OPTIONAL is specified and the
-///     attribute isn't present then the pointer will be set to %NULL
+///     attribute isn&apos;t present then the pointer will be set to %NULL
 /// </para>
 /// </summary>
 
@@ -46,9 +46,9 @@ public enum GMarkupCollectType : uint
 /// <para>
 /// expects a parameter of type (gboolean *)
 ///     and parses the attribute value as a boolean. Sets %FALSE if the
-///     attribute isn't present. Valid boolean values consist of
-///     (case-insensitive) "false", "f", "no", "n", "0" and "true", "t",
-///     "yes", "y", "1"
+///     attribute isn&apos;t present. Valid boolean values consist of
+///     (case-insensitive) &quot;false&quot;, &quot;f&quot;, &quot;no&quot;, &quot;n&quot;, &quot;0&quot; and &quot;true&quot;, &quot;t&quot;,
+///     &quot;yes&quot;, &quot;y&quot;, &quot;1&quot;
 /// </para>
 /// </summary>
 

@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// The 'MATH' table constants, refer to
+/// The &apos;MATH&apos; table constants, refer to
 /// [OpenType documentation](https://docs.microsoft.com/en-us/typography/opentype/spec/math#mathconstants-table)
 /// For more explanations.
 /// </para>

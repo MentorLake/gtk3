@@ -61,8 +61,8 @@ namespace MentorLake.Gdk;
 /// <para>
 /// # Master and slave devices
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// carlos@sacarino:~$ xinput list
 /// carlos@sacarino:~$ xinput list
 /// ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
 /// ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
@@ -79,8 +79,7 @@ namespace MentorLake.Gdk;
 ///     ↳ Integrated Camera                         id=9    [slave  keyboard (3)]
 ///     ↳ AT Translated Set 2 keyboard              id=12   [slave  keyboard (3)]
 ///     ↳ ThinkPad Extra Buttons                    id=15   [slave  keyboard (3)]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// By default, GDK will automatically listen for events coming from all
 /// master devices, setting the #GdkDevice for all events coming from input
@@ -96,7 +95,7 @@ namespace MentorLake.Gdk;
 /// </para>
 /// <para>
 /// On a standard session, all physical devices are connected by default to
-/// the "Virtual Core Pointer/Keyboard" master devices, hence routing all events
+/// the &quot;Virtual Core Pointer/Keyboard&quot; master devices, hence routing all events
 /// through these. This behavior is only modified by device grabs, where the
 /// slave device is temporarily detached for as long as the grab is held, and
 /// more permanently by user modifications to the device hierarchy.
@@ -188,7 +187,7 @@ public static class GdkDeviceManagerHandleSignalExtensions
 /// If a slave device is detached from all master devices
 /// (gdk_device_get_associated_device() returns %NULL), its
 /// #GdkDeviceType will change to %GDK_DEVICE_TYPE_FLOATING,
-/// if it's attached, it will change to %GDK_DEVICE_TYPE_SLAVE.
+/// if it&apos;s attached, it will change to %GDK_DEVICE_TYPE_SLAVE.
 /// </para>
 /// </summary>
 
@@ -342,7 +341,7 @@ public delegate void device_added([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// If a slave device is detached from all master devices
 /// (gdk_device_get_associated_device() returns %NULL), its
 /// #GdkDeviceType will change to %GDK_DEVICE_TYPE_FLOATING,
-/// if it's attached, it will change to %GDK_DEVICE_TYPE_SLAVE.
+/// if it&apos;s attached, it will change to %GDK_DEVICE_TYPE_SLAVE.
 /// </para>
 /// </summary>
 

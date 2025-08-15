@@ -54,9 +54,9 @@ public static class GTimeValExtensions
 /// ISO 8601 allows a large number of date/time formats, with or without
 /// punctuation and optional elements. The format returned by this function
 /// is a complete date and time, with optional punctuation included, the
-/// UTC time zone represented as "Z", and the @tv_usec part included if
+/// UTC time zone represented as &quot;Z&quot;, and the @tv_usec part included if
 /// and only if it is nonzero, i.e. either
-/// "YYYY-MM-DDTHH:MM:SSZ" or "YYYY-MM-DDTHH:MM:SS.fffffZ".
+/// &quot;YYYY-MM-DDTHH:MM:SSZ&quot; or &quot;YYYY-MM-DDTHH:MM:SS.fffffZ&quot;.
 /// </para>
 /// <para>
 /// This corresponds to the Internet date/time format defined by
@@ -76,13 +76,12 @@ public static class GTimeValExtensions
 /// `GTimeVal` stores the number of seconds as a `glong`, on 32-bit systems it
 /// is subject to the year 2038 problem. Accordingly, since GLib 2.62, this
 /// function has been deprecated. Equivalent functionality is available using:
-/// |[
+/// <code>
+/// GDateTime *dt = g_date_time_new_from_unix_utc (time_val);
 /// GDateTime *dt = g_date_time_new_from_unix_utc (time_val);
 /// iso8601_string = g_date_time_format_iso8601 (dt);
 /// g_date_time_unref (dt);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// The return value of g_time_val_to_iso8601() has been nullable since GLib
 /// 2.54; before then, GLib would crash under the same conditions.
 /// </para>
@@ -169,11 +168,12 @@ public long tv_usec;
 /// <para>
 /// This function was deprecated, along with #GTimeVal itself, in GLib 2.62.
 /// Equivalent functionality is available using code like:
-/// |[
+/// <code>
+/// GDateTime *dt = g_date_time_new_from_iso8601 (iso8601_string, NULL);
 /// GDateTime *dt = g_date_time_new_from_iso8601 (iso8601_string, NULL);
 /// gint64 time_val = g_date_time_to_unix (dt);
 /// g_date_time_unref (dt);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

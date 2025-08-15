@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 /// <summary>
 /// <para>
-/// A `GRegex` is the "compiled" form of a regular expression pattern.
+/// A `GRegex` is the &quot;compiled&quot; form of a regular expression pattern.
 /// </para>
 /// <para>
 /// `GRegex` implements regular expression pattern matching using syntax and
@@ -13,13 +13,13 @@ namespace MentorLake.GLib;
 /// Some functions accept a @start_position argument, setting it differs
 /// from just passing over a shortened string and setting %G_REGEX_MATCH_NOTBOL
 /// in the case of a pattern that begins with any kind of lookbehind assertion.
-/// For example, consider the pattern "\Biss\B" which finds occurrences of "iss"
-/// in the middle of words. ("\B" matches only if the current position in the
-/// subject is not a word boundary.) When applied to the string "Mississipi"
-/// from the fourth byte, namely "issipi", it does not match, because "\B" is
+/// For example, consider the pattern &quot;\Biss\B&quot; which finds occurrences of &quot;iss&quot;
+/// in the middle of words. (&quot;\B&quot; matches only if the current position in the
+/// subject is not a word boundary.) When applied to the string &quot;Mississipi&quot;
+/// from the fourth byte, namely &quot;issipi&quot;, it does not match, because &quot;\B&quot; is
 /// always false at the start of the subject, which is deemed to be a word
 /// boundary. However, if the entire string is passed , but with
-/// @start_position set to 4, it finds the second occurrence of "iss" because
+/// @start_position set to 4, it finds the second occurrence of &quot;iss&quot; because
 /// it is able to look behind the starting point to discover that it is
 /// preceded by a letter.
 /// </para>
@@ -27,30 +27,30 @@ namespace MentorLake.GLib;
 /// Note that, unless you set the %G_REGEX_RAW flag, all the strings passed
 /// to these functions must be encoded in UTF-8. The lengths and the positions
 /// inside the strings are in bytes and not in characters, so, for instance,
-/// "\xc3\xa0" (i.e. "à") is two bytes long but it is treated as a
+/// &quot;\xc3\xa0&quot; (i.e. &quot;à&quot;) is two bytes long but it is treated as a
 /// single character. If you set %G_REGEX_RAW the strings can be non-valid
-/// UTF-8 strings and a byte is treated as a character, so "\xc3\xa0" is two
+/// UTF-8 strings and a byte is treated as a character, so &quot;\xc3\xa0&quot; is two
 /// bytes and two characters long.
 /// </para>
 /// <para>
-/// When matching a pattern, "\n" matches only against a "\n" character in
-/// the string, and "\r" matches only a "\r" character. To match any newline
-/// sequence use "\R". This particular group matches either the two-character
-/// sequence CR + LF ("\r\n"), or one of the single characters LF (linefeed,
-/// U+000A, "\n"), VT vertical tab, U+000B, "\v"), FF (formfeed, U+000C, "\f"),
-/// CR (carriage return, U+000D, "\r"), NEL (next line, U+0085), LS (line
+/// When matching a pattern, &quot;\n&quot; matches only against a &quot;\n&quot; character in
+/// the string, and &quot;\r&quot; matches only a &quot;\r&quot; character. To match any newline
+/// sequence use &quot;\R&quot;. This particular group matches either the two-character
+/// sequence CR + LF (&quot;\r\n&quot;), or one of the single characters LF (linefeed,
+/// U+000A, &quot;\n&quot;), VT vertical tab, U+000B, &quot;\v&quot;), FF (formfeed, U+000C, &quot;\f&quot;),
+/// CR (carriage return, U+000D, &quot;\r&quot;), NEL (next line, U+0085), LS (line
 /// separator, U+2028), or PS (paragraph separator, U+2029).
 /// </para>
 /// <para>
 /// The behaviour of the dot, circumflex, and dollar metacharacters are
 /// affected by newline characters, the default is to recognize any newline
-/// character (the same characters recognized by "\R"). This can be changed
+/// character (the same characters recognized by &quot;\R&quot;). This can be changed
 /// with `G_REGEX_NEWLINE_CR`, `G_REGEX_NEWLINE_LF` and `G_REGEX_NEWLINE_CRLF`
 /// compile options, and with `G_REGEX_MATCH_NEWLINE_ANY`,
 /// `G_REGEX_MATCH_NEWLINE_CR`, `G_REGEX_MATCH_NEWLINE_LF` and
 /// `G_REGEX_MATCH_NEWLINE_CRLF` match options. These settings are also
 /// relevant when compiling a pattern if `G_REGEX_EXTENDED` is set, and an
-/// unescaped "#" outside a character class is encountered. This indicates
+/// unescaped &quot;#&quot; outside a character class is encountered. This indicates
 /// a comment that lasts until after the next newline.
 /// </para>
 /// <para>
@@ -286,30 +286,28 @@ public static class GRegexExtensions
 /// To retrieve all the non-overlapping matches of the pattern in
 /// string you can use g_match_info_next().
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// print_uppercase_words (const gchar *string)
 /// {
 ///   // Print all uppercase-only words.
 ///   GRegex *regex;
 ///   GMatchInfo *match_info;
-/// </para>
-/// <para>
-///   regex = g_regex_new ("[A-Z]+", G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
-///   g_regex_match (regex, string, 0, &match_info);
+/// 
+///   regex = g_regex_new (&quot;[A-Z]+&quot;, G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
+///   g_regex_match (regex, string, 0, &amp;match_info);
 ///   while (g_match_info_matches (match_info))
 ///     {
 ///       gchar *word = g_match_info_fetch (match_info, 0);
-///       g_print ("Found: %s\n", word);
+///       g_print (&quot;Found: %s\n&quot;, word);
 ///       g_free (word);
 ///       g_match_info_next (match_info, NULL);
 ///     }
 ///   g_match_info_free (match_info);
 ///   g_regex_unref (regex);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// @string is not copied and is used in #GMatchInfo internally. If
 /// you use any #GMatchInfo method (except g_match_info_free()) after
@@ -389,16 +387,16 @@ public static class GRegexExtensions
 /// Using the standard algorithm for regular expression matching only
 /// the longest match in the @string is retrieved, it is not possible
 /// to obtain all the available matches. For instance matching
-/// `"<a> <b> <c>"` against the pattern `"<.*>"`
-/// you get `"<a> <b> <c>"`.
+/// `&quot;&amp;lt;a&amp;gt; &amp;lt;b&amp;gt; &amp;lt;c&amp;gt;&quot;` against the pattern `&quot;&amp;lt;.*&amp;gt;&quot;`
+/// you get `&quot;&amp;lt;a&amp;gt; &amp;lt;b&amp;gt; &amp;lt;c&amp;gt;&quot;`.
 /// </para>
 /// <para>
 /// This function uses a different algorithm (called DFA, i.e. deterministic
 /// finite automaton), so it can retrieve all the possible matches, all
 /// starting at the same point in the string. For instance matching
-/// `"<a> <b> <c>"` against the pattern `"<.*>"`
-/// you would obtain three matches: `"<a> <b> <c>"`,
-/// `"<a> <b>"` and `"<a>"`.
+/// `&quot;&amp;lt;a&amp;gt; &amp;lt;b&amp;gt; &amp;lt;c&amp;gt;&quot;` against the pattern `&quot;&amp;lt;.*&amp;gt;&quot;`
+/// you would obtain three matches: `&quot;&amp;lt;a&amp;gt; &amp;lt;b&amp;gt; &amp;lt;c&amp;gt;&quot;`,
+/// `&quot;&amp;lt;a&amp;gt; &amp;lt;b&amp;gt;&quot;` and `&quot;&amp;lt;a&amp;gt;&quot;`.
 /// </para>
 /// <para>
 /// The number of matched strings is retrieved using
@@ -415,7 +413,7 @@ public static class GRegexExtensions
 /// <para>
 /// Setting @start_position differs from just passing over a shortened
 /// string and setting %G_REGEX_MATCH_NOTBOL in the case of a pattern
-/// that begins with any kind of lookbehind assertion, such as "\b".
+/// that begins with any kind of lookbehind assertion, such as &quot;\b&quot;.
 /// </para>
 /// <para>
 /// Unless %G_REGEX_RAW is specified in the options, @string must be valid UTF-8.
@@ -475,7 +473,7 @@ public static class GRegexExtensions
 /// <para>
 /// Setting @start_position differs from just passing over a shortened
 /// string and setting %G_REGEX_MATCH_NOTBOL in the case of a pattern
-/// that begins with any kind of lookbehind assertion, such as "\b".
+/// that begins with any kind of lookbehind assertion, such as &quot;\b&quot;.
 /// </para>
 /// <para>
 /// Unless %G_REGEX_RAW is specified in the options, @string must be valid UTF-8.
@@ -496,8 +494,8 @@ public static class GRegexExtensions
 /// To retrieve all the non-overlapping matches of the pattern in
 /// string you can use g_match_info_next().
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// print_uppercase_words (const gchar *string)
 /// {
@@ -505,27 +503,25 @@ public static class GRegexExtensions
 ///   GRegex *regex;
 ///   GMatchInfo *match_info;
 ///   GError *error = NULL;
-/// </para>
-/// <para>
-///   regex = g_regex_new ("[A-Z]+", G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
-///   g_regex_match_full (regex, string, -1, 0, 0, &match_info, &error);
+/// 
+///   regex = g_regex_new (&quot;[A-Z]+&quot;, G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
+///   g_regex_match_full (regex, string, -1, 0, 0, &amp;match_info, &amp;error);
 ///   while (g_match_info_matches (match_info))
 ///     {
 ///       gchar *word = g_match_info_fetch (match_info, 0);
-///       g_print ("Found: %s\n", word);
+///       g_print (&quot;Found: %s\n&quot;, word);
 ///       g_free (word);
-///       g_match_info_next (match_info, &error);
+///       g_match_info_next (match_info, &amp;error);
 ///     }
 ///   g_match_info_free (match_info);
 ///   g_regex_unref (regex);
 ///   if (error != NULL)
 ///     {
-///       g_printerr ("Error while matching: %s\n", error->message);
+///       g_printerr (&quot;Error while matching: %s\n&quot;, error-&amp;gt;message);
 ///       g_error_free (error);
 ///     }
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="regex">
@@ -582,8 +578,8 @@ public static class GRegexExtensions
 /// <para>
 /// Replaces all occurrences of the pattern in @regex with the
 /// replacement text. Backreferences of the form `\number` or
-/// `\g<number>` in the replacement text are interpolated by the
-/// number-th captured subexpression of the match, `\g<name>` refers
+/// `\g&amp;lt;number&amp;gt;` in the replacement text are interpolated by the
+/// number-th captured subexpression of the match, `\g&amp;lt;name&amp;gt;` refers
 /// to the captured subexpression with the given name. `\0` refers
 /// to the complete match, but `\0` followed by a number is the octal
 /// representation of a character. To include a literal `\` in the
@@ -610,7 +606,7 @@ public static class GRegexExtensions
 /// <para>
 /// Setting @start_position differs from just passing over a shortened
 /// string and setting %G_REGEX_MATCH_NOTBOL in the case of a pattern that
-/// begins with any kind of lookbehind assertion, such as "\b".
+/// begins with any kind of lookbehind assertion, such as &quot;\b&quot;.
 /// </para>
 /// </summary>
 
@@ -652,12 +648,13 @@ public static class GRegexExtensions
 /// <para>
 /// Setting @start_position differs from just passing over a shortened
 /// string and setting %G_REGEX_MATCH_NOTBOL in the case of a pattern
-/// that begins with any kind of lookbehind assertion, such as "\b".
+/// that begins with any kind of lookbehind assertion, such as &quot;\b&quot;.
 /// </para>
 /// <para>
 /// The following example uses g_regex_replace_eval() to replace multiple
 /// strings at once:
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// eval_cb (const GMatchInfo *info,
 ///          GString          *res,
@@ -665,42 +662,34 @@ public static class GRegexExtensions
 /// {
 ///   gchar *match;
 ///   gchar *r;
-/// </para>
-/// <para>
+/// 
 ///    match = g_match_info_fetch (info, 0);
 ///    r = g_hash_table_lookup ((GHashTable *)data, match);
 ///    g_string_append (res, r);
 ///    g_free (match);
-/// </para>
-/// <para>
+/// 
 ///    return FALSE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// GRegex *reg;
 /// GHashTable *h;
 /// gchar *res;
-/// </para>
-/// <para>
+/// 
 /// h = g_hash_table_new (g_str_hash, g_str_equal);
-/// </para>
-/// <para>
-/// g_hash_table_insert (h, "1", "ONE");
-/// g_hash_table_insert (h, "2", "TWO");
-/// g_hash_table_insert (h, "3", "THREE");
-/// g_hash_table_insert (h, "4", "FOUR");
-/// </para>
-/// <para>
-/// reg = g_regex_new ("1|2|3|4", G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
+/// 
+/// g_hash_table_insert (h, &quot;1&quot;, &quot;ONE&quot;);
+/// g_hash_table_insert (h, &quot;2&quot;, &quot;TWO&quot;);
+/// g_hash_table_insert (h, &quot;3&quot;, &quot;THREE&quot;);
+/// g_hash_table_insert (h, &quot;4&quot;, &quot;FOUR&quot;);
+/// 
+/// reg = g_regex_new (&quot;1|2|3|4&quot;, G_REGEX_DEFAULT, G_REGEX_MATCH_DEFAULT, NULL);
 /// res = g_regex_replace_eval (reg, text, -1, 0, 0, eval_cb, h, NULL);
 /// g_hash_table_destroy (h);
-/// </para>
-/// <para>
+/// 
 /// ...
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -747,7 +736,7 @@ public static class GRegexExtensions
 /// Setting @start_position differs from just passing over a
 /// shortened string and setting %G_REGEX_MATCH_NOTBOL in the
 /// case of a pattern that begins with any kind of lookbehind
-/// assertion, such as "\b".
+/// assertion, such as &quot;\b&quot;.
 /// </para>
 /// </summary>
 
@@ -790,18 +779,18 @@ public static class GRegexExtensions
 /// token.
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string "" is an
+/// As a special case, the result of splitting the empty string &quot;&quot; is an
 /// empty vector, not a vector containing a single string. The reason for
 /// this special case is that being able to represent an empty vector is
 /// typically more useful than consistent handling of empty elements. If
-/// you do need to represent empty elements, you'll need to check for the
+/// you do need to represent empty elements, you&apos;ll need to check for the
 /// empty string before calling this function.
 /// </para>
 /// <para>
 /// A pattern that can match empty strings splits @string into separate
 /// characters wherever it matches the empty string between characters.
-/// For example splitting "ab c" using as a separator "\s*", you will get
-/// "a", "b" and "c".
+/// For example splitting &quot;ab c&quot; using as a separator &quot;\s*&quot;, you will get
+/// &quot;a&quot;, &quot;b&quot; and &quot;c&quot;.
 /// </para>
 /// </summary>
 
@@ -834,23 +823,23 @@ public static class GRegexExtensions
 /// token.
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string "" is an
+/// As a special case, the result of splitting the empty string &quot;&quot; is an
 /// empty vector, not a vector containing a single string. The reason for
 /// this special case is that being able to represent an empty vector is
 /// typically more useful than consistent handling of empty elements. If
-/// you do need to represent empty elements, you'll need to check for the
+/// you do need to represent empty elements, you&apos;ll need to check for the
 /// empty string before calling this function.
 /// </para>
 /// <para>
 /// A pattern that can match empty strings splits @string into separate
 /// characters wherever it matches the empty string between characters.
-/// For example splitting "ab c" using as a separator "\s*", you will get
-/// "a", "b" and "c".
+/// For example splitting &quot;ab c&quot; using as a separator &quot;\s*&quot;, you will get
+/// &quot;a&quot;, &quot;b&quot; and &quot;c&quot;.
 /// </para>
 /// <para>
 /// Setting @start_position differs from just passing over a shortened
 /// string and setting %G_REGEX_MATCH_NOTBOL in the case of a pattern
-/// that begins with any kind of lookbehind assertion, such as "\b".
+/// that begins with any kind of lookbehind assertion, such as &quot;\b&quot;.
 /// </para>
 /// </summary>
 
@@ -1001,7 +990,7 @@ internal class GRegexExterns
 
 /// <summary>
 /// <para>
-/// A `GRegex` is the "compiled" form of a regular expression pattern.
+/// A `GRegex` is the &quot;compiled&quot; form of a regular expression pattern.
 /// </para>
 /// <para>
 /// `GRegex` implements regular expression pattern matching using syntax and
@@ -1012,13 +1001,13 @@ internal class GRegexExterns
 /// Some functions accept a @start_position argument, setting it differs
 /// from just passing over a shortened string and setting %G_REGEX_MATCH_NOTBOL
 /// in the case of a pattern that begins with any kind of lookbehind assertion.
-/// For example, consider the pattern "\Biss\B" which finds occurrences of "iss"
-/// in the middle of words. ("\B" matches only if the current position in the
-/// subject is not a word boundary.) When applied to the string "Mississipi"
-/// from the fourth byte, namely "issipi", it does not match, because "\B" is
+/// For example, consider the pattern &quot;\Biss\B&quot; which finds occurrences of &quot;iss&quot;
+/// in the middle of words. (&quot;\B&quot; matches only if the current position in the
+/// subject is not a word boundary.) When applied to the string &quot;Mississipi&quot;
+/// from the fourth byte, namely &quot;issipi&quot;, it does not match, because &quot;\B&quot; is
 /// always false at the start of the subject, which is deemed to be a word
 /// boundary. However, if the entire string is passed , but with
-/// @start_position set to 4, it finds the second occurrence of "iss" because
+/// @start_position set to 4, it finds the second occurrence of &quot;iss&quot; because
 /// it is able to look behind the starting point to discover that it is
 /// preceded by a letter.
 /// </para>
@@ -1026,30 +1015,30 @@ internal class GRegexExterns
 /// Note that, unless you set the %G_REGEX_RAW flag, all the strings passed
 /// to these functions must be encoded in UTF-8. The lengths and the positions
 /// inside the strings are in bytes and not in characters, so, for instance,
-/// "\xc3\xa0" (i.e. "à") is two bytes long but it is treated as a
+/// &quot;\xc3\xa0&quot; (i.e. &quot;à&quot;) is two bytes long but it is treated as a
 /// single character. If you set %G_REGEX_RAW the strings can be non-valid
-/// UTF-8 strings and a byte is treated as a character, so "\xc3\xa0" is two
+/// UTF-8 strings and a byte is treated as a character, so &quot;\xc3\xa0&quot; is two
 /// bytes and two characters long.
 /// </para>
 /// <para>
-/// When matching a pattern, "\n" matches only against a "\n" character in
-/// the string, and "\r" matches only a "\r" character. To match any newline
-/// sequence use "\R". This particular group matches either the two-character
-/// sequence CR + LF ("\r\n"), or one of the single characters LF (linefeed,
-/// U+000A, "\n"), VT vertical tab, U+000B, "\v"), FF (formfeed, U+000C, "\f"),
-/// CR (carriage return, U+000D, "\r"), NEL (next line, U+0085), LS (line
+/// When matching a pattern, &quot;\n&quot; matches only against a &quot;\n&quot; character in
+/// the string, and &quot;\r&quot; matches only a &quot;\r&quot; character. To match any newline
+/// sequence use &quot;\R&quot;. This particular group matches either the two-character
+/// sequence CR + LF (&quot;\r\n&quot;), or one of the single characters LF (linefeed,
+/// U+000A, &quot;\n&quot;), VT vertical tab, U+000B, &quot;\v&quot;), FF (formfeed, U+000C, &quot;\f&quot;),
+/// CR (carriage return, U+000D, &quot;\r&quot;), NEL (next line, U+0085), LS (line
 /// separator, U+2028), or PS (paragraph separator, U+2029).
 /// </para>
 /// <para>
 /// The behaviour of the dot, circumflex, and dollar metacharacters are
 /// affected by newline characters, the default is to recognize any newline
-/// character (the same characters recognized by "\R"). This can be changed
+/// character (the same characters recognized by &quot;\R&quot;). This can be changed
 /// with `G_REGEX_NEWLINE_CR`, `G_REGEX_NEWLINE_LF` and `G_REGEX_NEWLINE_CRLF`
 /// compile options, and with `G_REGEX_MATCH_NEWLINE_ANY`,
 /// `G_REGEX_MATCH_NEWLINE_CR`, `G_REGEX_MATCH_NEWLINE_LF` and
 /// `G_REGEX_MATCH_NEWLINE_CRLF` match options. These settings are also
 /// relevant when compiling a pattern if `G_REGEX_EXTENDED` is set, and an
-/// unescaped "#" outside a character class is encountered. This indicates
+/// unescaped &quot;#&quot; outside a character class is encountered. This indicates
 /// a comment that lasts until after the next newline.
 /// </para>
 /// <para>
@@ -1074,9 +1063,9 @@ public struct GRegex
 /// </para>
 /// <para>
 /// If @has_references is not %NULL then @replacement is checked
-/// for pattern references. For instance, replacement text 'foo\n'
+/// for pattern references. For instance, replacement text &apos;foo\n&apos;
 /// does not contain references and may be evaluated without information
-/// about actual match, but '\0\1' (whole match followed by first
+/// about actual match, but &apos;\0\1&apos; (whole match followed by first
 /// subpattern) requires valid #GMatchInfo object.
 /// </para>
 /// </summary>
@@ -1108,7 +1097,7 @@ public struct GRegex
 
 /// <summary>
 /// <para>
-/// Escapes the nul characters in @string to "\x00".  It can be used
+/// Escapes the nul characters in @string to &quot;\x00&quot;.  It can be used
 /// to compile a regex with embedded nul characters.
 /// </para>
 /// <para>
@@ -1135,11 +1124,11 @@ public struct GRegex
 /// <summary>
 /// <para>
 /// Escapes the special characters used for regular expressions
-/// in @string, for instance "a.b*c" becomes "a\.b\*c". This
+/// in @string, for instance &quot;a.b*c&quot; becomes &quot;a\.b\*c&quot;. This
 /// function is useful to dynamically generate regular expressions.
 /// </para>
 /// <para>
-/// @string can contain nul characters that are replaced with "\0",
+/// @string can contain nul characters that are replaced with &quot;\0&quot;,
 /// in this case remember to specify the correct length of @string
 /// in @length.
 /// </para>
@@ -1172,7 +1161,7 @@ public struct GRegex
 /// </para>
 /// <para>
 /// If this function is to be called on the same @pattern more than
-/// once, it's more efficient to compile the pattern once with
+/// once, it&apos;s more efficient to compile the pattern once with
 /// g_regex_new() and then use g_regex_match().
 /// </para>
 /// </summary>
@@ -1214,23 +1203,23 @@ public struct GRegex
 /// </para>
 /// <para>
 /// If this function is to be called on the same @pattern more than
-/// once, it's more efficient to compile the pattern once with
+/// once, it&apos;s more efficient to compile the pattern once with
 /// g_regex_new() and then use g_regex_split().
 /// </para>
 /// <para>
-/// As a special case, the result of splitting the empty string ""
+/// As a special case, the result of splitting the empty string &quot;&quot;
 /// is an empty vector, not a vector containing a single string.
 /// The reason for this special case is that being able to represent
 /// an empty vector is typically more useful than consistent handling
 /// of empty elements. If you do need to represent empty elements,
-/// you'll need to check for the empty string before calling this
+/// you&apos;ll need to check for the empty string before calling this
 /// function.
 /// </para>
 /// <para>
 /// A pattern that can match empty strings splits @string into
 /// separate characters wherever it matches the empty string between
-/// characters. For example splitting "ab c" using as a separator
-/// "\s*", you will get "a", "b" and "c".
+/// characters. For example splitting &quot;ab c&quot; using as a separator
+/// &quot;\s*&quot;, you will get &quot;a&quot;, &quot;b&quot; and &quot;c&quot;.
 /// </para>
 /// </summary>
 

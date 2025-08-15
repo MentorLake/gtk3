@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 /// <summary>
 /// <para>
-/// This enumeration isn't used in the API, but may be useful if you need
+/// This enumeration isn&apos;t used in the API, but may be useful if you need
 /// to mark a number as a day, month, or year.
 /// </para>
 /// </summary>

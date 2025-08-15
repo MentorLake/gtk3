@@ -80,15 +80,15 @@ public class GdkPixbufLoaderHandle : GObjectHandle
 /// identifying the type automatically.
 /// </para>
 /// <para>
-/// This function is useful if you want an error if the image isn't the
-/// expected MIME type; for loading image formats that can't be reliably
+/// This function is useful if you want an error if the image isn&apos;t the
+/// expected MIME type; for loading image formats that can&apos;t be reliably
 /// identified by looking at the data; or if the user manually forces a
 /// specific MIME type.
 /// </para>
 /// <para>
 /// The list of supported mime types depends on what image loaders
-/// are installed, but typically "image/png", "image/jpeg", "image/gif",
-/// "image/tiff" and "image/x-xpixmap" are among the supported mime types.
+/// are installed, but typically &quot;image/png&quot;, &quot;image/jpeg&quot;, &quot;image/gif&quot;,
+/// &quot;image/tiff&quot; and &quot;image/x-xpixmap&quot; are among the supported mime types.
 /// To obtain the full list of supported mime types, call
 /// gdk_pixbuf_format_get_mime_types() on each of the #GdkPixbufFormat
 /// structs returned by gdk_pixbuf_get_formats().
@@ -116,15 +116,15 @@ public class GdkPixbufLoaderHandle : GObjectHandle
 /// identifying the type automatically.
 /// </para>
 /// <para>
-/// This function is useful if you want an error if the image isn't the
-/// expected type; for loading image formats that can't be reliably
+/// This function is useful if you want an error if the image isn&apos;t the
+/// expected type; for loading image formats that can&apos;t be reliably
 /// identified by looking at the data; or if the user manually forces
 /// a specific type.
 /// </para>
 /// <para>
 /// The list of supported image formats depends on what image loaders
-/// are installed, but typically "png", "jpeg", "gif", "tiff" and
-/// "xpm" are among the supported formats. To obtain the full list of
+/// are installed, but typically &quot;png&quot;, &quot;jpeg&quot;, &quot;gif&quot;, &quot;tiff&quot; and
+/// &quot;xpm&quot; are among the supported formats. To obtain the full list of
 /// supported image formats, call gdk_pixbuf_format_get_name() on each
 /// of the #GdkPixbufFormat structs returned by gdk_pixbuf_get_formats().
 /// </para>
@@ -509,7 +509,7 @@ public static class GdkPixbufLoaderHandleExtensions
 /// internal loading structures.
 /// </para>
 /// <para>
-/// This function also tries to parse any data that hasn't yet been parsed;
+/// This function also tries to parse any data that hasn&apos;t yet been parsed;
 /// if the remaining data is partial or corrupt, an error will be returned.
 /// </para>
 /// <para>
@@ -517,7 +517,7 @@ public static class GdkPixbufLoaderHandleExtensions
 /// `GDK_PIXBUF_ERROR` or `G_FILE_ERROR` domains.
 /// </para>
 /// <para>
-/// If you're just cancelling a load rather than expecting it to be finished,
+/// If you&apos;re just cancelling a load rather than expecting it to be finished,
 /// passing `NULL` for `error` to ignore it is reasonable.
 /// </para>
 /// <para>
@@ -552,7 +552,7 @@ public static class GdkPixbufLoaderHandleExtensions
 /// the loader.
 /// </para>
 /// <para>
-/// If the loader doesn't have enough bytes yet, and hasn't emitted the `area-prepared`
+/// If the loader doesn&apos;t have enough bytes yet, and hasn&apos;t emitted the `area-prepared`
 /// signal, this function will return `NULL`.
 /// </para>
 /// </summary>
@@ -610,8 +610,8 @@ public static class GdkPixbufLoaderHandleExtensions
 /// so if you want to keep using it, you should acquire a reference to it.
 /// </para>
 /// <para>
-/// Additionally, if the loader is an animation, it will return the "static
-/// image" of the animation (see gdk_pixbuf_animation_get_static_image()).
+/// Additionally, if the loader is an animation, it will return the &quot;static
+/// image&quot; of the animation (see gdk_pixbuf_animation_get_static_image()).
 /// </para>
 /// </summary>
 

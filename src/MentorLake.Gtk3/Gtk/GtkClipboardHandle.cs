@@ -124,7 +124,7 @@ public class GtkClipboardHandle : GObjectHandle
 /// </para>
 /// <para>
 /// (Passing #GDK_NONE is the same as using `gdk_atom_intern
-/// ("CLIPBOARD", FALSE)`.
+/// (&quot;CLIPBOARD&quot;, FALSE)`.
 /// </para>
 /// <para>
 /// See the

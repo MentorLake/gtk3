@@ -81,15 +81,15 @@ public class PangoGlobalFunctions
 /// relative to the run of preceding run.
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="baseline-shift-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Baseline Shift" src="baseline-shift-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;baseline-shift-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Baseline Shift&quot; src=&quot;baseline-shift-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 
 /// <param name="shift">
-/// either a `PangoBaselineShift` enumeration value or an absolute value (> 1024)
+/// either a `PangoBaselineShift` enumeration value or an absolute value (&amp;gt; 1024)
 ///   in Pango units, relative to the baseline of the previous run.
 ///   Positive values displace the text upwards.
 /// </param>
@@ -1207,33 +1207,33 @@ public class PangoGlobalFunctions
 /// terminated by a comma, STYLE_OPTIONS is a whitespace-separated list
 /// of words where each word describes one of style, variant, weight,
 /// stretch, or gravity, and SIZE is a decimal number (size in points)
-/// or optionally followed by the unit modifier "px" for absolute size.
+/// or optionally followed by the unit modifier &quot;px&quot; for absolute size.
 /// </para>
 /// <para>
 /// The following words are understood as styles:
-/// "Normal", "Roman", "Oblique", "Italic".
+/// &quot;Normal&quot;, &quot;Roman&quot;, &quot;Oblique&quot;, &quot;Italic&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as variants:
-/// "Small-Caps", "All-Small-Caps", "Petite-Caps", "All-Petite-Caps",
-/// "Unicase", "Title-Caps".
+/// &quot;Small-Caps&quot;, &quot;All-Small-Caps&quot;, &quot;Petite-Caps&quot;, &quot;All-Petite-Caps&quot;,
+/// &quot;Unicase&quot;, &quot;Title-Caps&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as weights:
-/// "Thin", "Ultra-Light", "Extra-Light", "Light", "Semi-Light",
-/// "Demi-Light", "Book", "Regular", "Medium", "Semi-Bold", "Demi-Bold",
-/// "Bold", "Ultra-Bold", "Extra-Bold", "Heavy", "Black", "Ultra-Black",
-/// "Extra-Black".
+/// &quot;Thin&quot;, &quot;Ultra-Light&quot;, &quot;Extra-Light&quot;, &quot;Light&quot;, &quot;Semi-Light&quot;,
+/// &quot;Demi-Light&quot;, &quot;Book&quot;, &quot;Regular&quot;, &quot;Medium&quot;, &quot;Semi-Bold&quot;, &quot;Demi-Bold&quot;,
+/// &quot;Bold&quot;, &quot;Ultra-Bold&quot;, &quot;Extra-Bold&quot;, &quot;Heavy&quot;, &quot;Black&quot;, &quot;Ultra-Black&quot;,
+/// &quot;Extra-Black&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as stretch values:
-/// "Ultra-Condensed", "Extra-Condensed", "Condensed", "Semi-Condensed",
-/// "Semi-Expanded", "Expanded", "Extra-Expanded", "Ultra-Expanded".
+/// &quot;Ultra-Condensed&quot;, &quot;Extra-Condensed&quot;, &quot;Condensed&quot;, &quot;Semi-Condensed&quot;,
+/// &quot;Semi-Expanded&quot;, &quot;Expanded&quot;, &quot;Extra-Expanded&quot;, &quot;Ultra-Expanded&quot;.
 /// </para>
 /// <para>
 /// The following words are understood as gravity values:
-/// "Not-Rotated", "South", "Upside-Down", "North", "Rotated-Left",
-/// "East", "Rotated-Right", "West".
+/// &quot;Not-Rotated&quot;, &quot;South&quot;, &quot;Upside-Down&quot;, &quot;North&quot;, &quot;Rotated-Left&quot;,
+/// &quot;East&quot;, &quot;Rotated-Right&quot;, &quot;West&quot;.
 /// </para>
 /// <para>
 /// VARIATIONS is a comma-separated list of font variations
@@ -1279,7 +1279,7 @@ public class PangoGlobalFunctions
 /// each position in @text; if @text contains N characters,
 /// it has N+1 positions, including the last position at the
 /// end of the text. @text should be an entire paragraph;
-/// logical attributes can't be computed without context
+/// logical attributes can&apos;t be computed without context
 /// (for example you need to see spaces on either side of
 /// a word to know the word is a word).
 /// </para>
@@ -1461,7 +1461,7 @@ public class PangoGlobalFunctions
 /// Checks if a character that should not be normally rendered.
 /// </para>
 /// <para>
-/// This includes all Unicode characters with "ZERO WIDTH" in their name,
+/// This includes all Unicode characters with &quot;ZERO WIDTH&quot; in their name,
 /// as well as *bidi* formatting characters, and a few other ones.
 /// </para>
 /// <para>
@@ -1512,7 +1512,7 @@ public class PangoGlobalFunctions
 /// </param>
 /// <param name="length">
 /// the number of bytes (not characters) to process
-///   after @start_index. This must be >= 0.
+///   after @start_index. This must be &amp;gt;= 0.
 /// </param>
 /// <param name="attrs">
 /// the set of attributes that apply to @text.
@@ -1557,7 +1557,7 @@ public class PangoGlobalFunctions
 /// </param>
 /// <param name="length">
 /// the number of bytes (not characters) to process
-///   after @start_index. This must be >= 0.
+///   after @start_index. This must be &amp;gt;= 0.
 /// </param>
 /// <param name="attrs">
 /// the set of attributes that apply to @text.
@@ -1587,8 +1587,8 @@ public class PangoGlobalFunctions
 /// </para>
 /// <para>
 /// This function first canonicalizes the string by converting it to
-/// lowercase, mapping '_' to '-', and stripping all characters other
-/// than letters and '-'.
+/// lowercase, mapping &apos;_&apos; to &apos;-&apos;, and stripping all characters other
+/// than letters and &apos;-&apos;.
 /// </para>
 /// <para>
 /// Use [func@Pango.Language.get_default] if you want to get the
@@ -1624,17 +1624,17 @@ public class PangoGlobalFunctions
 /// </para>
 /// <para>
 /// On Windows, the C library does not use any such environment
-/// variables, and setting them won't affect the behavior of functions
+/// variables, and setting them won&apos;t affect the behavior of functions
 /// like ctime(). The user sets the locale through the Regional Options
 /// in the Control Panel. The C library (in the setlocale() function)
 /// does not use country and language codes, but country and language
 /// names spelled out in English.
 /// However, this function does check the above environment
 /// variables, and does return a Unix-style locale string based on
-/// either said environment variables or the thread's current locale.
+/// either said environment variables or the thread&apos;s current locale.
 /// </para>
 /// <para>
-/// Your application should call `setlocale(LC_ALL, "")` for the user
+/// Your application should call `setlocale(LC_ALL, &quot;&quot;)` for the user
 /// settings to take effect. GTK does this in its initialization
 /// functions automatically (by calling gtk_set_locale()).
 /// See the setlocale() manpage for more details.
@@ -1815,7 +1815,7 @@ public class PangoGlobalFunctions
 /// for the enum and is not an integer, %FALSE is returned, a warning
 /// is issued if @warn is %TRUE, and a string representing the list of
 /// possible values is stored in @possible_values. The list is
-/// slash-separated, eg. "none/start/middle/end".
+/// slash-separated, eg. &quot;none/start/middle/end&quot;.
 /// </para>
 /// <para>
 /// If failed and @possible_values is not %NULL, returned string should
@@ -1909,10 +1909,10 @@ public class PangoGlobalFunctions
 /// </para>
 /// <para>
 /// The allowed values are
-/// "ultra_condensed", "extra_condensed", "condensed",
-/// "semi_condensed", "normal", "semi_expanded", "expanded",
-/// "extra_expanded" and "ultra_expanded". Case variations are
-/// ignored and the '_' characters may be omitted.
+/// &quot;ultra_condensed&quot;, &quot;extra_condensed&quot;, &quot;condensed&quot;,
+/// &quot;semi_condensed&quot;, &quot;normal&quot;, &quot;semi_expanded&quot;, &quot;expanded&quot;,
+/// &quot;extra_expanded&quot; and &quot;ultra_expanded&quot;. Case variations are
+/// ignored and the &apos;_&apos; characters may be omitted.
 /// </para>
 /// </summary>
 
@@ -1939,7 +1939,7 @@ public class PangoGlobalFunctions
 /// Parses a font style.
 /// </para>
 /// <para>
-/// The allowed values are "normal", "italic" and "oblique", case
+/// The allowed values are &quot;normal&quot;, &quot;italic&quot; and &quot;oblique&quot;, case
 /// variations being
 /// ignored.
 /// </para>
@@ -1968,8 +1968,8 @@ public class PangoGlobalFunctions
 /// Parses a font variant.
 /// </para>
 /// <para>
-/// The allowed values are "normal", "small-caps", "all-small-caps",
-/// "petite-caps", "all-petite-caps", "unicase" and "title-caps",
+/// The allowed values are &quot;normal&quot;, &quot;small-caps&quot;, &quot;all-small-caps&quot;,
+/// &quot;petite-caps&quot;, &quot;all-petite-caps&quot;, &quot;unicase&quot; and &quot;title-caps&quot;,
 /// case variations being ignored.
 /// </para>
 /// </summary>
@@ -1997,8 +1997,8 @@ public class PangoGlobalFunctions
 /// Parses a font weight.
 /// </para>
 /// <para>
-/// The allowed values are "heavy",
-/// "ultrabold", "bold", "normal", "light", "ultraleight"
+/// The allowed values are &quot;heavy&quot;,
+/// &quot;ultrabold&quot;, &quot;bold&quot;, &quot;normal&quot;, &quot;light&quot;, &quot;ultraleight&quot;
 /// and integers. Case variations are ignored.
 /// </para>
 /// </summary>
@@ -2053,10 +2053,10 @@ public class PangoGlobalFunctions
 /// Reads an entire line from a file into a buffer.
 /// </para>
 /// <para>
-/// Lines may be delimited with '\n', '\r', '\n\r', or '\r\n'. The delimiter
-/// is not written into the buffer. Text after a '#' character is treated as
-/// a comment and skipped. '\' can be used to escape a # character.
-/// '\' proceeding a line delimiter combines adjacent lines. A '\' proceeding
+/// Lines may be delimited with &apos;\n&apos;, &apos;\r&apos;, &apos;\n\r&apos;, or &apos;\r\n&apos;. The delimiter
+/// is not written into the buffer. Text after a &apos;#&apos; character is treated as
+/// a comment and skipped. &apos;\&apos; can be used to escape a # character.
+/// &apos;\&apos; proceeding a line delimiter combines adjacent lines. A &apos;\&apos; proceeding
 /// any other character is ignored and written into the output buffer
 /// unmodified.
 /// </para>
@@ -2071,7 +2071,7 @@ public class PangoGlobalFunctions
 /// <return>
 /// 0 if the stream was already at an %EOF character,
 ///   otherwise the number of lines read (this is useful for maintaining
-///   a line number counter which doesn't combine lines with '\')
+///   a line number counter which doesn&apos;t combine lines with &apos;\&apos;)
 /// </return>
 
 	public static int ReadLine(IntPtr stream, MentorLake.GLib.GStringHandle str)
@@ -2138,7 +2138,7 @@ public class PangoGlobalFunctions
 /// </para>
 /// <para>
 /// The string may either be a sequence of non-white-space characters,
-/// or a quoted string with '"'. Instead a quoted string, '\"' represents
+/// or a quoted string with &apos;&quot;&apos;. Instead a quoted string, &apos;\&quot;&apos; represents
 /// a literal quote. Leading white space outside of quotes is skipped.
 /// </para>
 /// </summary>
@@ -2242,9 +2242,9 @@ public class PangoGlobalFunctions
 /// will return the first language in the parsed list that Pango
 /// believes may use @script for writing. This last predicate
 /// is tested using [method@Pango.Language.includes_script]. This can
-/// be used to control Pango's font selection for non-primary
+/// be used to control Pango&apos;s font selection for non-primary
 /// languages. For example, a `PANGO_LANGUAGE` enviroment variable
-/// set to "en:fa" makes Pango choose fonts suitable for Persian (fa)
+/// set to &quot;en:fa&quot; makes Pango choose fonts suitable for Persian (fa)
 /// instead of Arabic (ar) when a segment of Arabic text is found
 /// in an otherwise non-Arabic text. The same trick can be used to
 /// choose a default language for %PANGO_SCRIPT_HAN when setting
@@ -2477,7 +2477,7 @@ public class PangoGlobalFunctions
 /// </param>
 /// <return>
 /// %FALSE if skipping the white space leaves
-///   the position at a '\0' character.
+///   the position at a &apos;\0&apos; character.
 /// </return>
 
 	public static bool SkipSpace(ref string pos)

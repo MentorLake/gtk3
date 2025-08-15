@@ -55,7 +55,7 @@ public class GioGlobalFunctions
 /// target value is parsed using [func@GLib.Variant.parse].  If a tuple-typed
 /// value is desired, it must be specified in the same way, resulting in
 /// two sets of parens, for example: `app.action((1,2,3))`.  A string
-/// target can be specified this way as well: `app.action('target')`.
+/// target can be specified this way as well: `app.action(&apos;target&apos;)`.
 /// For strings, this third format must be used if target value is
 /// empty or contains characters other than alphanumerics, `-` and `.`.
 /// </para>
@@ -165,15 +165,15 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// For desktop files, this includes applications that have
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay">NoDisplay=true</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-nodisplay&quot;&amp;gt;NoDisplay=true&amp;lt;/see&amp;gt;
 /// set or are excluded from display by means of
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin">OnlyShowIn</see>
-/// or <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin">NotShowIn</see>.
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-onlyshowin&quot;&amp;gt;OnlyShowIn&amp;lt;/see&amp;gt;
+/// or &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-notshowin&quot;&amp;gt;NotShowIn&amp;lt;/see&amp;gt;.
 /// See [method@Gio.AppInfo.should_show].
 /// </para>
 /// <para>
 /// The returned list does not include applications which have the
-/// <see href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden">Hidden</see>
+/// &amp;lt;see href=&quot;https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden&quot;&amp;gt;Hidden&amp;lt;/see&amp;gt;
 /// set.
 /// </para>
 /// </summary>
@@ -686,10 +686,10 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// - @name_lost_handler with a %NULL connection (if a connection to the bus
-///   can't be made).
+///   can&apos;t be made).
 /// </para>
 /// <para>
-/// - @bus_acquired_handler then @name_lost_handler (if the name can't be
+/// - @bus_acquired_handler then @name_lost_handler (if the name can&apos;t be
 ///   obtained)
 /// </para>
 /// <para>
@@ -1399,9 +1399,9 @@ public class GioGlobalFunctions
 
 /// <summary>
 /// <para>
-/// Checks if the content type is the generic "unknown" type.
-/// On UNIX this is the "application/octet-stream" mimetype,
-/// while on win32 it is "*" and on OSX it is a dynamic type
+/// Checks if the content type is the generic &quot;unknown&quot; type.
+/// On UNIX this is the &quot;application/octet-stream&quot; mimetype,
+/// while on win32 it is &quot;*&quot; and on OSX it is a dynamic type
 /// or octet-stream.
 /// </para>
 /// </summary>
@@ -1436,20 +1436,17 @@ public class GioGlobalFunctions
 /// depend on the system’s MIME database, you should call this function
 /// with @dirs set to %NULL before calling g_test_init(), for instance:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   // Load MIME data from the system
 ///   // Load MIME data from the system
 ///   g_content_type_set_mime_dirs (NULL);
 ///   // Isolate the environment
-///   g_test_init (&argc, &argv, G_TEST_OPTION_ISOLATE_DIRS, NULL);
-/// </para>
-/// <para>
+///   g_test_init (&amp;argc, &amp;argv, G_TEST_OPTION_ISOLATE_DIRS, NULL);
+/// 
 ///   …
-/// </para>
-/// <para>
+/// 
 ///   return g_test_run ();
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="dirs">
@@ -1765,7 +1762,7 @@ public class GioGlobalFunctions
 /// <para>
 /// In all three cases, @dbus_error_name can always be recovered from the
 /// returned #GError using the g_dbus_error_get_remote_error() function
-/// (unless g_dbus_error_strip_remote_error() hasn't been used on the returned error).
+/// (unless g_dbus_error_strip_remote_error() hasn&apos;t been used on the returned error).
 /// </para>
 /// <para>
 /// This function is typically only used in object mappings to prepare
@@ -1894,7 +1891,7 @@ public class GioGlobalFunctions
 /// A D-Bus error name.
 /// </param>
 /// <return>
-/// %TRUE if the association was destroyed, %FALSE if it wasn't found.
+/// %TRUE if the association was destroyed, %FALSE if it wasn&apos;t found.
 /// </return>
 
 	public static bool DbusErrorUnregisterError(MentorLake.GLib.GQuark error_domain, int error_code, string dbus_error_name)
@@ -1992,20 +1989,20 @@ public class GioGlobalFunctions
 /// The conversion is using the following rules:
 /// </para>
 /// <para>
-/// - `G_TYPE_STRING`: 's', 'o', 'g' or 'ay'
-/// - `G_TYPE_STRV`: 'as', 'ao' or 'aay'
-/// - `G_TYPE_BOOLEAN`: 'b'
-/// - `G_TYPE_UCHAR`: 'y'
-/// - `G_TYPE_INT`: 'i', 'n'
-/// - `G_TYPE_UINT`: 'u', 'q'
-/// - `G_TYPE_INT64`: 'x'
-/// - `G_TYPE_UINT64`: 't'
-/// - `G_TYPE_DOUBLE`: 'd'
+/// - `G_TYPE_STRING`: &apos;s&apos;, &apos;o&apos;, &apos;g&apos; or &apos;ay&apos;
+/// - `G_TYPE_STRV`: &apos;as&apos;, &apos;ao&apos; or &apos;aay&apos;
+/// - `G_TYPE_BOOLEAN`: &apos;b&apos;
+/// - `G_TYPE_UCHAR`: &apos;y&apos;
+/// - `G_TYPE_INT`: &apos;i&apos;, &apos;n&apos;
+/// - `G_TYPE_UINT`: &apos;u&apos;, &apos;q&apos;
+/// - `G_TYPE_INT64`: &apos;x&apos;
+/// - `G_TYPE_UINT64`: &apos;t&apos;
+/// - `G_TYPE_DOUBLE`: &apos;d&apos;
 /// - `G_TYPE_VARIANT`: Any #GVariantType
 /// </para>
 /// <para>
 /// This can fail if e.g. @gvalue is of type %G_TYPE_STRING and @type
-/// is 'i', i.e. %G_VARIANT_TYPE_INT32. It will also fail for any #GType
+/// is &apos;i&apos;, i.e. %G_VARIANT_TYPE_INT32. It will also fail for any #GType
 /// (including e.g. %G_TYPE_OBJECT and %G_TYPE_BOXED derived-types) not
 /// in the table above.
 /// </para>
@@ -2013,7 +2010,7 @@ public class GioGlobalFunctions
 /// Note that if @gvalue is of type %G_TYPE_VARIANT and its value is
 /// %NULL, the empty #GVariant instance (never %NULL) for @type is
 /// returned (e.g. 0 for scalar types, the empty string for string types,
-/// '/' for object path types, the empty array for any array type and so on).
+/// &apos;/&apos; for object path types, the empty array for any array type and so on).
 /// </para>
 /// <para>
 /// See the g_dbus_gvariant_to_gvalue() function for how to convert a
@@ -2074,7 +2071,7 @@ public class GioGlobalFunctions
 /// [D-Bus address](https://dbus.freedesktop.org/doc/dbus-specification.html#addresses).
 /// </para>
 /// <para>
-/// This doesn't check if @string is actually supported by #GDBusServer
+/// This doesn&apos;t check if @string is actually supported by #GDBusServer
 /// or #GDBusConnection - use g_dbus_is_supported_address() to do more
 /// checks.
 /// </para>
@@ -2453,7 +2450,7 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// <para>
@@ -2488,7 +2485,7 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// </summary>
@@ -2522,7 +2519,7 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// </summary>
@@ -2707,20 +2704,16 @@ public class GioGlobalFunctions
 /// calls, you should save its value immediately after the call returns,
 /// and use the saved value instead of `errno`:
 /// </para>
-/// <para>
-/// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// 
+/// <code>
 ///   int saved_errno;
-/// </para>
-/// <para>
+///   int saved_errno;
+/// 
 ///   ret = read (blah);
 ///   saved_errno = errno;
-/// </para>
-/// <para>
+/// 
 ///   g_io_error_from_errno (saved_errno);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="err_no">
@@ -2843,7 +2836,7 @@ public class GioGlobalFunctions
 /// Loads all the modules in the specified directory.
 /// </para>
 /// <para>
-/// If don't require all modules to be initialized (and thus registering
+/// If don&apos;t require all modules to be initialized (and thus registering
 /// all gtypes) then you can use g_io_modules_scan_all_in_directory()
 /// which allows delayed/lazy loading of modules.
 /// </para>
@@ -2872,7 +2865,7 @@ public class GioGlobalFunctions
 /// Loads all the modules in the specified directory.
 /// </para>
 /// <para>
-/// If don't require all modules to be initialized (and thus registering
+/// If don&apos;t require all modules to be initialized (and thus registering
 /// all gtypes) then you can use g_io_modules_scan_all_in_directory()
 /// which allows delayed/lazy loading of modules.
 /// </para>
@@ -3021,21 +3014,20 @@ public class GioGlobalFunctions
 /// <para>
 /// All settings read to or written from the backend must fall under the
 /// path given in @root_path (which must start and end with a slash and
-/// not contain two consecutive slashes).  @root_path may be "/".
+/// not contain two consecutive slashes).  @root_path may be &quot;/&quot;.
 /// </para>
 /// <para>
 /// If @root_group is non-%NULL then it specifies the name of the keyfile
 /// group used for keys that are written directly below @root_path.  For
-/// example, if @root_path is "/apps/example/" and @root_group is
-/// "toplevel", then settings the key "/apps/example/enabled" to a value
+/// example, if @root_path is &quot;/apps/example/&quot; and @root_group is
+/// &quot;toplevel&quot;, then settings the key &quot;/apps/example/enabled&quot; to a value
 /// of %TRUE will cause the following to appear in the keyfile:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+///   [toplevel]
 ///   [toplevel]
 ///   enabled=true
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// If @root_group is %NULL then it is not permitted to store keys
 /// directly below the @root_path.
@@ -3044,15 +3036,14 @@ public class GioGlobalFunctions
 /// For keys not stored directly below @root_path (ie: in a sub-path),
 /// the name of the subpath (with the final slash stripped) is used as
 /// the name of the keyfile group.  To continue the example, if
-/// "/apps/example/profiles/default/font-size" were set to
+/// &quot;/apps/example/profiles/default/font-size&quot; were set to
 /// 12 then the following would appear in the keyfile:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+///   [profiles/default]
 ///   [profiles/default]
 ///   font-size=12
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The backend will refuse writes (and return writability as being
 /// %FALSE) for keys outside of @root_path and, in the event that
@@ -3063,8 +3054,8 @@ public class GioGlobalFunctions
 /// </para>
 /// <para>
 /// There is no checking done for your key namespace clashing with the
-/// syntax of the key file format.  For example, if you have '[' or ']'
-/// characters in your path names or '=' in your key names you may be in
+/// syntax of the key file format.  For example, if you have &apos;[&apos; or &apos;]&apos;
+/// characters in your path names or &apos;=&apos; in your key names you may be in
 /// trouble.
 /// </para>
 /// <para>
@@ -3764,7 +3755,7 @@ public class GioGlobalFunctions
 /// <summary>
 /// <para>
 /// Reports an error in an idle function. Similar to
-/// g_simple_async_report_gerror_in_idle(), but takes over the caller's
+/// g_simple_async_report_gerror_in_idle(), but takes over the caller&apos;s
 /// ownership of @error, so the caller does not have to free it any more.
 /// </para>
 /// </summary>

@@ -9,7 +9,7 @@ namespace MentorLake.cairo;
 /// </para>
 /// <para>
 /// There are various types of scaled fonts, depending on the
-/// <firstterm>font backend</firstterm> they use. The type of a
+/// &amp;lt;firstterm&amp;gt;font backend&amp;lt;/firstterm&amp;gt; they use. The type of a
 /// scaled font can be queried using cairo_scaled_font_get_type().
 /// </para>
 /// <para>
@@ -41,7 +41,7 @@ internal class cairo_scaled_font_tExterns
 /// </para>
 /// <para>
 /// There are various types of scaled fonts, depending on the
-/// <firstterm>font backend</firstterm> they use. The type of a
+/// &amp;lt;firstterm&amp;gt;font backend&amp;lt;/firstterm&amp;gt; they use. The type of a
 /// scaled font can be queried using cairo_scaled_font_get_type().
 /// </para>
 /// <para>

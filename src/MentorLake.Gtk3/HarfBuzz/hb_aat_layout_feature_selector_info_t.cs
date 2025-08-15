@@ -30,7 +30,7 @@ public struct hb_aat_layout_feature_selector_info_t
 {
 	/// <summary>
 /// <para>
-/// The selector's name identifier
+/// The selector&apos;s name identifier
 /// </para>
 /// </summary>
 

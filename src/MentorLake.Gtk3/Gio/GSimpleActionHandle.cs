@@ -138,26 +138,23 @@ public static class GSimpleActionHandleSignalExtensions
 /// call g_simple_action_set_state() from the handler.
 /// </para>
 /// <para>
-/// An example of a 'change-state' handler:
-/// |[<!-- language="C" -->
+/// An example of a &apos;change-state&apos; handler:
+/// <code>
+/// static void
 /// static void
 /// change_volume_state (GSimpleAction *action,
 ///                      GVariant      *value,
 ///                      gpointer       user_data)
 /// {
 ///   gint requested;
-/// </para>
-/// <para>
+/// 
 ///   requested = g_variant_get_int32 (value);
-/// </para>
-/// <para>
+/// 
 ///   // Volume only goes from 0 to 10
-///   if (0 <= requested && requested <= 10)
+///   if (0 &amp;lt;= requested &amp;&amp; requested &amp;lt;= 10)
 ///     g_simple_action_set_state (action, value);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// The handler need not set the state to the requested value.
 /// It could set it to any value at all, or take some other action.
 /// </para>
@@ -283,26 +280,23 @@ public delegate void activate([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 /// call g_simple_action_set_state() from the handler.
 /// </para>
 /// <para>
-/// An example of a 'change-state' handler:
-/// |[<!-- language="C" -->
+/// An example of a &apos;change-state&apos; handler:
+/// <code>
+/// static void
 /// static void
 /// change_volume_state (GSimpleAction *action,
 ///                      GVariant      *value,
 ///                      gpointer       user_data)
 /// {
 ///   gint requested;
-/// </para>
-/// <para>
+/// 
 ///   requested = g_variant_get_int32 (value);
-/// </para>
-/// <para>
+/// 
 ///   // Volume only goes from 0 to 10
-///   if (0 <= requested && requested <= 10)
+///   if (0 &amp;lt;= requested &amp;&amp; requested &amp;lt;= 10)
 ///     g_simple_action_set_state (action, value);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// The handler need not set the state to the requested value.
 /// It could set it to any value at all, or take some other action.
 /// </para>
@@ -357,11 +351,11 @@ public static class GSimpleActionHandleExtensions
 /// Sets the state of the action.
 /// </para>
 /// <para>
-/// This directly updates the 'state' property to the given value.
+/// This directly updates the &apos;state&apos; property to the given value.
 /// </para>
 /// <para>
 /// This should only be called by the implementor of the action.  Users
-/// of the action should not attempt to directly modify the 'state'
+/// of the action should not attempt to directly modify the &apos;state&apos;
 /// property.  Instead, they should call g_action_change_state() to
 /// request the change.
 /// </para>

@@ -10,7 +10,7 @@ namespace MentorLake.Gio;
 /// This is useful when you obtained a [class@Gio.InputStream] and a
 /// [class@Gio.OutputStream] by other means, for instance creating them with
 /// platform specific methods as
-/// <see href="../gio-unix/ctor.UnixInputStream.new.html">g_unix_input_stream_new()</see>
+/// &amp;lt;see href=&quot;../gio-unix/ctor.UnixInputStream.new.html&quot;&amp;gt;g_unix_input_stream_new()&amp;lt;/see&amp;gt;
 /// (from `gio-unix-2.0.pc` / `GioUnix-2.0`), and you want to
 /// take advantage of the methods provided by [class@Gio.IOStream].
 /// </para>

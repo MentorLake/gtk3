@@ -582,7 +582,7 @@ public static class GdkFrameClockHandleExtensions
 /// <para>
 /// Gets the time that should currently be used for animations.  Inside
 /// the processing of a frame, it’s the time used to compute the
-/// animation position of everything in a frame. Outside of a frame, it's
+/// animation position of everything in a frame. Outside of a frame, it&apos;s
 /// the time of the conceptual “previous frame,” which may be either
 /// the actual previous frame time, or if that’s too old, an updated
 /// time.

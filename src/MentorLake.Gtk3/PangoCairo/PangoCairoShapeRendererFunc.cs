@@ -3,7 +3,7 @@ namespace MentorLake.PangoCairo;
 /// <summary>
 /// <para>
 /// Function type for rendering attributes of type %PANGO_ATTR_SHAPE
-/// with Pango's Cairo renderer.
+/// with Pango&apos;s Cairo renderer.
 /// </para>
 /// </summary>
 

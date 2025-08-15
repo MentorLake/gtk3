@@ -3,7 +3,7 @@ namespace MentorLake.cairo;
 /// <summary>
 /// <para>
 /// #cairo_extend_t is used to describe how pattern color/alpha will be
-/// determined for areas "outside" the pattern's natural area, (for
+/// determined for areas &quot;outside&quot; the pattern&apos;s natural area, (for
 /// example, outside the surface bounds or outside the gradient
 /// geometry).
 /// </para>

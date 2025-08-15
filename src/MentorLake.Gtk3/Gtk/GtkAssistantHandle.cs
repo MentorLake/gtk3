@@ -208,7 +208,7 @@ public static class GtkAssistantHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::prepare signal is emitted when a new page is set as the
-/// assistant's current page, before making the new page visible.
+/// assistant&apos;s current page, before making the new page visible.
 /// </para>
 /// <para>
 /// A handler for this signal can do any preparations which are
@@ -372,7 +372,7 @@ public delegate void escape([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTyp
 /// <summary>
 /// <para>
 /// The ::prepare signal is emitted when a new page is set as the
-/// assistant's current page, before making the new page visible.
+/// assistant&apos;s current page, before making the new page visible.
 /// </para>
 /// <para>
 /// A handler for this signal can do any preparations which are

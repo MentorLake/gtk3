@@ -7,7 +7,7 @@ namespace MentorLake.Atk;
 /// <para>
 /// Being #AtkTable a component which present elements ordered via rows
 /// and columns, an #AtkTableCell is the interface which each of those
-/// elements, so "cells" should implement.
+/// elements, so &quot;cells&quot; should implement.
 /// </para>
 /// <para>
 /// See [iface@AtkTable]

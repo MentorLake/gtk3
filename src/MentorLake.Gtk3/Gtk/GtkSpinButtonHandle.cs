@@ -11,7 +11,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The main properties of a GtkSpinButton are through an adjustment.
-/// See the #GtkAdjustment section for more details about an adjustment's
+/// See the #GtkAdjustment section for more details about an adjustment&apos;s
 /// properties. Note that GtkSpinButton will by default make its entry
 /// large enough to accomodate the lower and upper bounds of the adjustment,
 /// which can lead to surprising results. Best practice is to set both
@@ -21,8 +21,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// spinbutton.horizontal
 /// spinbutton.horizontal
 /// ├── undershoot.left
 /// ├── undershoot.right
@@ -30,10 +30,9 @@ namespace MentorLake.Gtk;
 /// │   ╰── ...
 /// ├── button.down
 /// ╰── button.up
-/// ]|
-/// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// </code>
+/// <code>
+/// spinbutton.vertical
 /// spinbutton.vertical
 /// ├── undershoot.left
 /// ├── undershoot.right
@@ -41,8 +40,7 @@ namespace MentorLake.Gtk;
 /// ├── entry
 /// │   ╰── ...
 /// ╰── button.down
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkSpinButtons main CSS node has the name spinbutton. It creates subnodes
 /// for the entry and the two buttons, with these names. The button nodes have
@@ -53,85 +51,70 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Using a GtkSpinButton to get an integer
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Provides a function to retrieve an integer value from a GtkSpinButton
 /// // Provides a function to retrieve an integer value from a GtkSpinButton
 /// // and creates a spin button to model percentage values.
-/// </para>
-/// <para>
+/// 
 /// gint
 /// grab_int_value (GtkSpinButton *button,
 ///                 gpointer       user_data)
 /// {
 ///   return gtk_spin_button_get_value_as_int (button);
 /// }
-/// </para>
-/// <para>
+/// 
 /// void
 /// create_integer_spin_button (void)
 /// {
-/// </para>
-/// <para>
+/// 
 ///   GtkWidget *window, *button;
 ///   GtkAdjustment *adjustment;
-/// </para>
-/// <para>
+/// 
 ///   adjustment = gtk_adjustment_new (50.0, 0.0, 100.0, 1.0, 5.0, 0.0);
-/// </para>
-/// <para>
+/// 
 ///   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   gtk_container_set_border_width (GTK_CONTAINER (window), 5);
-/// </para>
-/// <para>
+/// 
 ///   // creates the spinbutton, with no decimal places
 ///   button = gtk_spin_button_new (adjustment, 1.0, 0);
 ///   gtk_container_add (GTK_CONTAINER (window), button);
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (window);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Using a GtkSpinButton to get a floating point value
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Provides a function to retrieve a floating point value from a
 /// // Provides a function to retrieve a floating point value from a
 /// // GtkSpinButton, and creates a high precision spin button.
-/// </para>
-/// <para>
+/// 
 /// gfloat
 /// grab_float_value (GtkSpinButton *button,
 ///                   gpointer       user_data)
 /// {
 ///   return gtk_spin_button_get_value (button);
 /// }
-/// </para>
-/// <para>
+/// 
 /// void
 /// create_floating_spin_button (void)
 /// {
 ///   GtkWidget *window, *button;
 ///   GtkAdjustment *adjustment;
-/// </para>
-/// <para>
+/// 
 ///   adjustment = gtk_adjustment_new (2.500, 0.0, 5.0, 0.001, 0.1, 0.0);
-/// </para>
-/// <para>
+/// 
 ///   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   gtk_container_set_border_width (GTK_CONTAINER (window), 5);
-/// </para>
-/// <para>
+/// 
 ///   // creates the spinbutton, with three decimal places
 ///   button = gtk_spin_button_new (adjustment, 0.001, 3);
 ///   gtk_container_add (GTK_CONTAINER (window), button);
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_show_all (window);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkSpinButtonHandle : GtkEntryHandle, AtkImplementorIfaceHandle, GtkBuildableHandle, GtkCellEditableHandle, GtkEditableHandle, GtkOrientableHandle
@@ -285,7 +268,8 @@ public static class GtkSpinButtonHandleSignalExtensions
 /// <para>
 /// The ::output signal can be used to change to formatting
 /// of the value that is displayed in the spin buttons entry.
-/// |[<!-- language="C" -->
+/// <code>
+/// // show leading zeros
 /// // show leading zeros
 /// static gboolean
 /// on_output (GtkSpinButton *spin,
@@ -294,18 +278,16 @@ public static class GtkSpinButtonHandleSignalExtensions
 ///    GtkAdjustment *adjustment;
 ///    gchar *text;
 ///    int value;
-/// </para>
-/// <para>
+/// 
 ///    adjustment = gtk_spin_button_get_adjustment (spin);
 ///    value = (int)gtk_adjustment_get_value (adjustment);
-///    text = g_strdup_printf ("%02d", value);
+///    text = g_strdup_printf (&quot;%02d&quot;, value);
 ///    gtk_entry_set_text (GTK_ENTRY (spin), text);
 ///    g_free (text);
-/// </para>
-/// <para>
+/// 
 ///    return TRUE;
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -463,7 +445,7 @@ public static class GtkSpinButtonHandleSignalExtensions
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>
@@ -840,7 +822,8 @@ public delegate int input([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 /// <para>
 /// The ::output signal can be used to change to formatting
 /// of the value that is displayed in the spin buttons entry.
-/// |[<!-- language="C" -->
+/// <code>
+/// // show leading zeros
 /// // show leading zeros
 /// static gboolean
 /// on_output (GtkSpinButton *spin,
@@ -849,18 +832,16 @@ public delegate int input([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 ///    GtkAdjustment *adjustment;
 ///    gchar *text;
 ///    int value;
-/// </para>
-/// <para>
+/// 
 ///    adjustment = gtk_spin_button_get_adjustment (spin);
 ///    value = (int)gtk_adjustment_get_value (adjustment);
-///    text = g_strdup_printf ("%02d", value);
+///    text = g_strdup_printf (&quot;%02d&quot;, value);
 ///    gtk_entry_set_text (GTK_ENTRY (spin), text);
 ///    g_free (text);
-/// </para>
-/// <para>
+/// 
 ///    return TRUE;
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -945,7 +926,7 @@ public delegate void editing_done([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// Implementations of #GtkCellEditable are responsible for
 /// emitting this signal when they are done editing. It must
 /// be emitted after the #GtkCellEditable::editing-done signal,
-/// to give the cell renderer a chance to update the cell's value
+/// to give the cell renderer a chance to update the cell&apos;s value
 /// before the widget is removed.
 /// </para>
 /// <para>

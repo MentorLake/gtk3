@@ -12,7 +12,7 @@ namespace MentorLake.Gio;
 /// <para>
 /// One useful application of this interface is to map the
 /// names of actions from various action groups to unique,
-/// prefixed names (e.g. by prepending "app." or "win.").
+/// prefixed names (e.g. by prepending &quot;app.&quot; or &quot;win.&quot;).
 /// This is the motivation for the ‘Map’ part of the interface
 /// name.
 /// </para>
@@ -81,7 +81,7 @@ public static class GActionMapHandleExtensions
 ///                        GVariant      *parameter,
 ///                        gpointer       user_data)
 /// {
-///   g_print ("%s\n", g_variant_get_string (parameter, NULL));
+///   g_print (&quot;%s\n&quot;, g_variant_get_string (parameter, NULL));
 /// }
 /// </para>
 /// <para>
@@ -89,8 +89,8 @@ public static class GActionMapHandleExtensions
 /// create_action_group (void)
 /// {
 ///   const GActionEntry entries[] = {
-///     { "quit",         activate_quit              },
-///     { "print-string", activate_print_string, "s" }
+///     { &quot;quit&quot;,         activate_quit              },
+///     { &quot;print-string&quot;, activate_print_string, &quot;s&quot; }
 ///   };
 ///   GSimpleActionGroup *group;
 /// </para>
@@ -179,13 +179,12 @@ public static class GActionMapHandleExtensions
 /// Remove actions from a [iface@Gio.ActionMap]. This is meant as the reverse of
 /// [method@Gio.ActionMap.add_action_entries].
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// ```c
 /// static const GActionEntry entries[] = {
-///     { "quit",         activate_quit              },
-///     { "print-string", activate_print_string, "s" }
+///     { &quot;quit&quot;,         activate_quit              },
+///     { &quot;print-string&quot;, activate_print_string, &quot;s&quot; }
 /// };
 /// </para>
 /// <para>

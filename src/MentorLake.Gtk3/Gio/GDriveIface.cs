@@ -150,7 +150,7 @@ public IntPtr poll_for_media_finish;
 	/// <summary>
 /// <para>
 /// Returns the identifier of the given kind, or %NULL if
-///    the #GDrive doesn't have one.
+///    the #GDrive doesn&apos;t have one.
 /// </para>
 /// </summary>
 

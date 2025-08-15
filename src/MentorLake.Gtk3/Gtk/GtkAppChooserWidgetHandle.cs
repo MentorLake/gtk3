@@ -56,7 +56,7 @@ public static class GtkAppChooserWidgetHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// Emitted when an application item is activated from the widget's list.
+/// Emitted when an application item is activated from the widget&apos;s list.
 /// </para>
 /// <para>
 /// This usually happens when the user double clicks an item, or an item
@@ -95,7 +95,7 @@ public static class GtkAppChooserWidgetHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// Emitted when an application item is selected from the widget's list.
+/// Emitted when an application item is selected from the widget&apos;s list.
 /// </para>
 /// </summary>
 
@@ -227,7 +227,7 @@ public static class GtkAppChooserWidgetHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// Emitted when an application item is activated from the widget's list.
+/// Emitted when an application item is activated from the widget&apos;s list.
 /// </para>
 /// <para>
 /// This usually happens when the user double clicks an item, or an item
@@ -250,7 +250,7 @@ public delegate void application_activated([MarshalAs(UnmanagedType.CustomMarsha
 
 /// <summary>
 /// <para>
-/// Emitted when an application item is selected from the widget's list.
+/// Emitted when an application item is selected from the widget&apos;s list.
 /// </para>
 /// </summary>
 

@@ -9,7 +9,7 @@ namespace MentorLake.cairo;
 /// The default operator is %CAIRO_OPERATOR_OVER.
 /// </para>
 /// <para>
-/// The operators marked as <firstterm>unbounded</firstterm> modify their
+/// The operators marked as &amp;lt;firstterm&amp;gt;unbounded&amp;lt;/firstterm&amp;gt; modify their
 /// destination even outside of the mask layer (that is, their effect is not
 /// bound by the mask layer).  However, their effect can still be limited by
 /// way of clipping.
@@ -21,7 +21,7 @@ namespace MentorLake.cairo;
 /// translucent layers too.
 /// For a more detailed explanation of the effects of each operator, including
 /// the mathematical definitions, see
-/// <ulink url="https://cairographics.org/operators/">https://cairographics.org/operators/</ulink>.
+/// &amp;lt;ulink url=&quot;https://cairographics.org/operators/&quot;&amp;gt;https://cairographics.org/operators/&amp;lt;/ulink&amp;gt;.
 /// </para>
 /// </summary>
 

@@ -72,7 +72,7 @@ public enum GdkInputSource
 	GDK_SOURCE_TRACKPOINT = 7,
 /// <summary>
 /// <para>
-/// the device is a "pad", a collection of buttons,
+/// the device is a &quot;pad&quot;, a collection of buttons,
 ///     rings and strips found in drawing tablets. This device type has been
 ///     added in 3.22.
 /// </para>

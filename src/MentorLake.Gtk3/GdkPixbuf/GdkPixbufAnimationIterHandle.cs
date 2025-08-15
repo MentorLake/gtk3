@@ -26,17 +26,17 @@ public static class GdkPixbufAnimationIterHandleExtensions
 /// must be greater than or equal to the time passed to
 /// gdk_pixbuf_animation_get_iter(), and must increase or remain
 /// unchanged each time gdk_pixbuf_animation_iter_get_pixbuf() is
-/// called. That is, you can't go backward in time; animations only
+/// called. That is, you can&apos;t go backward in time; animations only
 /// play forward.
 /// </para>
 /// <para>
 /// As a shortcut, pass `NULL` for the current time and g_get_current_time()
 /// will be invoked on your behalf. So you only need to explicitly pass
-/// @current_time if you're doing something odd like playing the animation
+/// @current_time if you&apos;re doing something odd like playing the animation
 /// at double speed.
 /// </para>
 /// <para>
-/// If this function returns `FALSE`, there's no need to update the animation
+/// If this function returns `FALSE`, there&apos;s no need to update the animation
 /// display, assuming the display had been rendered prior to advancing;
 /// if `TRUE`, you need to call gdk_pixbuf_animation_iter_get_pixbuf()
 /// and update the display with the new pixbuf.
@@ -107,7 +107,7 @@ public static class GdkPixbufAnimationIterHandleExtensions
 /// gdk_pixbuf_animation_iter_advance().
 /// </para>
 /// <para>
-/// Copy the pixbuf to keep it (don't just add a reference), as it may get
+/// Copy the pixbuf to keep it (don&apos;t just add a reference), as it may get
 /// recycled as you advance the iterator.
 /// </para>
 /// </summary>
@@ -132,7 +132,7 @@ public static class GdkPixbufAnimationIterHandleExtensions
 /// </para>
 /// <para>
 /// The `::area_updated` signal is emitted for an area of the frame currently
-/// streaming in to the loader. So if you're on the currently loading frame,
+/// streaming in to the loader. So if you&apos;re on the currently loading frame,
 /// you will need to redraw the screen for the updated area.
 /// </para>
 /// </summary>
@@ -141,7 +141,7 @@ public static class GdkPixbufAnimationIterHandleExtensions
 /// a #GdkPixbufAnimationIter
 /// </param>
 /// <return>
-/// `TRUE` if the frame we're on is partially loaded, or the last frame
+/// `TRUE` if the frame we&apos;re on is partially loaded, or the last frame
 /// </return>
 
 	public static bool OnCurrentlyLoadingFrame(this MentorLake.GdkPixbuf.GdkPixbufAnimationIterHandle iter)

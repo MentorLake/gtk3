@@ -3,34 +3,32 @@ namespace MentorLake.GLib;
 /// <summary>
 /// <para>
 /// A #GStaticPrivate works almost like a #GPrivate, but it has one
-/// significant advantage. It doesn't need to be created at run-time
+/// significant advantage. It doesn&apos;t need to be created at run-time
 /// like a #GPrivate, but can be defined at compile-time. This is
 /// similar to the difference between #GMutex and #GStaticMutex.
 /// </para>
 /// <para>
 /// Now look at our give_me_next_number() example with #GStaticPrivate:
-/// |[
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number ()
 ///   {
 ///     static GStaticPrivate current_number_key = G_STATIC_PRIVATE_INIT;
-///     int *current_number = g_static_private_get (&current_number_key);
-/// </para>
-/// <para>
+///     int *current_number = g_static_private_get (&amp;current_number_key);
+/// 
 ///     if (!current_number)
 ///       {
 ///         current_number = g_new (int, 1);
 ///         *current_number = 0;
-///         g_static_private_set (&current_number_key, current_number, g_free);
+///         g_static_private_set (&amp;current_number_key, current_number, g_free);
 ///       }
-/// </para>
-/// <para>
+/// 
 ///     *current_number = calc_next_number (*current_number);
-/// </para>
-/// <para>
+/// 
 ///     return *current_number;
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -46,8 +44,8 @@ public static class GStaticPrivateExtensions
 /// Releases all resources allocated to @private_key.
 /// </para>
 /// <para>
-/// You don't have to call this functions for a #GStaticPrivate with an
-/// unbounded lifetime, i.e. objects declared 'static', but if you have
+/// You don&apos;t have to call this functions for a #GStaticPrivate with an
+/// unbounded lifetime, i.e. objects declared &apos;static&apos;, but if you have
 /// a #GStaticPrivate as a member of a structure and the structure is
 /// freed, you should also free the #GStaticPrivate.
 /// </para>
@@ -159,34 +157,32 @@ internal class GStaticPrivateExterns
 /// <summary>
 /// <para>
 /// A #GStaticPrivate works almost like a #GPrivate, but it has one
-/// significant advantage. It doesn't need to be created at run-time
+/// significant advantage. It doesn&apos;t need to be created at run-time
 /// like a #GPrivate, but can be defined at compile-time. This is
 /// similar to the difference between #GMutex and #GStaticMutex.
 /// </para>
 /// <para>
 /// Now look at our give_me_next_number() example with #GStaticPrivate:
-/// |[
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number ()
 ///   {
 ///     static GStaticPrivate current_number_key = G_STATIC_PRIVATE_INIT;
-///     int *current_number = g_static_private_get (&current_number_key);
-/// </para>
-/// <para>
+///     int *current_number = g_static_private_get (&amp;current_number_key);
+/// 
 ///     if (!current_number)
 ///       {
 ///         current_number = g_new (int, 1);
 ///         *current_number = 0;
-///         g_static_private_set (&current_number_key, current_number, g_free);
+///         g_static_private_set (&amp;current_number_key, current_number, g_free);
 ///       }
-/// </para>
-/// <para>
+/// 
 ///     *current_number = calc_next_number (*current_number);
-/// </para>
-/// <para>
+/// 
 ///     return *current_number;
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

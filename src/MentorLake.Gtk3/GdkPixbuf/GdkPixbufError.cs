@@ -43,7 +43,7 @@ public enum GdkPixbufError
 	GDK_PIXBUF_ERROR_UNKNOWN_TYPE = 3,
 /// <summary>
 /// <para>
-/// Don't know how to perform the
+/// Don&apos;t know how to perform the
 ///  given operation on the type of image at hand.
 /// </para>
 /// </summary>

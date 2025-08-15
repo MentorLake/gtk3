@@ -42,7 +42,7 @@ public class GMappedFileHandle : BaseSafeHandle
 /// whether the mapping should be writable
 /// </param>
 /// <return>
-/// a newly allocated #GMappedFile which must be unref'd
+/// a newly allocated #GMappedFile which must be unref&apos;d
 ///    with g_mapped_file_unref(), or %NULL if the mapping failed.
 /// </return>
 
@@ -78,7 +78,7 @@ public class GMappedFileHandle : BaseSafeHandle
 /// whether the mapping should be writable
 /// </param>
 /// <return>
-/// a newly allocated #GMappedFile which must be unref'd
+/// a newly allocated #GMappedFile which must be unref&apos;d
 ///    with g_mapped_file_unref(), or %NULL if the mapping failed.
 /// </return>
 

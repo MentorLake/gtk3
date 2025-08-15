@@ -3,7 +3,7 @@ namespace MentorLake.cairo;
 /// <summary>
 /// <para>
 /// The #cairo_text_cluster_t structure holds information about a single
-/// <firstterm>text cluster</firstterm>.  A text cluster is a minimal
+/// &amp;lt;firstterm&amp;gt;text cluster&amp;lt;/firstterm&amp;gt;.  A text cluster is a minimal
 /// mapping of some glyphs corresponding to some UTF-8 text.
 /// </para>
 /// <para>
@@ -36,7 +36,7 @@ internal class cairo_text_cluster_tExterns
 /// <summary>
 /// <para>
 /// The #cairo_text_cluster_t structure holds information about a single
-/// <firstterm>text cluster</firstterm>.  A text cluster is a minimal
+/// &amp;lt;firstterm&amp;gt;text cluster&amp;lt;/firstterm&amp;gt;.  A text cluster is a minimal
 /// mapping of some glyphs corresponding to some UTF-8 text.
 /// </para>
 /// <para>

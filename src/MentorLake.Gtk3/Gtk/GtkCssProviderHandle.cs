@@ -75,7 +75,7 @@ public class GtkCssProviderHandle : GObjectHandle, GtkStyleProviderHandle
 /// A theme name
 /// </param>
 /// <param name="variant">
-/// variant to load, for example, "dark", or
+/// variant to load, for example, &quot;dark&quot;, or
 ///     %NULL for the default
 /// </param>
 /// <return>

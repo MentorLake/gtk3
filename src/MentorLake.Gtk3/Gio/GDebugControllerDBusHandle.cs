@@ -33,17 +33,17 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// ```xml
-/// <?xml version="1.0"?> <!--*-nxml-*-->
-/// <!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
-///      "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
-/// <busconfig>
-///   <policy user="root">
-///     <allow send_destination="com.example.MyService" send_interface="org.gtk.Debugging"/>
-///   </policy>
-///   <policy context="default">
-///     <deny send_destination="com.example.MyService" send_interface="org.gtk.Debugging"/>
-///   </policy>
-/// </busconfig>
+/// &amp;lt;?xml version=&quot;1.0&quot;?&amp;gt; &amp;lt;!--*-nxml-*--&amp;gt;
+/// &amp;lt;!DOCTYPE busconfig PUBLIC &quot;-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN&quot;
+///      &quot;http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd&quot;&amp;gt;
+/// &amp;lt;busconfig&amp;gt;
+///   &amp;lt;policy user=&quot;root&quot;&amp;gt;
+///     &amp;lt;allow send_destination=&quot;com.example.MyService&quot; send_interface=&quot;org.gtk.Debugging&quot;/&amp;gt;
+///   &amp;lt;/policy&amp;gt;
+///   &amp;lt;policy context=&quot;default&quot;&amp;gt;
+///     &amp;lt;deny send_destination=&quot;com.example.MyService&quot; send_interface=&quot;org.gtk.Debugging&quot;/&amp;gt;
+///   &amp;lt;/policy&amp;gt;
+/// &amp;lt;/busconfig&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -65,16 +65,16 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   // Set up the debug controller.
-///   debug_controller = G_DEBUG_CONTROLLER (g_debug_controller_dbus_new (priv->connection, NULL, &child_error));
+///   debug_controller = G_DEBUG_CONTROLLER (g_debug_controller_dbus_new (priv-&amp;gt;connection, NULL, &amp;child_error));
 ///   if (debug_controller == NULL)
 ///     {
-///       g_error ("Could not register debug controller on bus: %s"),
-///                child_error->message);
+///       g_error (&quot;Could not register debug controller on bus: %s&quot;),
+///                child_error-&amp;gt;message);
 ///     }
 /// </para>
 /// <para>
 ///   debug_controller_authorize_id = g_signal_connect (debug_controller,
-///                                                     "authorize",
+///                                                     &quot;authorize&quot;,
 ///                                                     G_CALLBACK (debug_controller_authorize_cb),
 ///                                                     self);
 /// </para>
@@ -97,15 +97,15 @@ namespace MentorLake.Gio;
 ///     message_flags = g_dbus_message_get_flags (message);
 /// </para>
 /// <para>
-///     authority = polkit_authority_get_sync (NULL, &local_error);
+///     authority = polkit_authority_get_sync (NULL, &amp;local_error);
 ///     if (authority == NULL)
 ///       {
-///         g_warning ("Failed to get polkit authority: %s", local_error->message);
+///         g_warning (&quot;Failed to get polkit authority: %s&quot;, local_error-&amp;gt;message);
 ///         return FALSE;
 ///       }
 /// </para>
 /// <para>
-///     if (message_flags & G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION)
+///     if (message_flags &amp; G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION)
 ///       flags |= POLKIT_CHECK_AUTHORIZATION_FLAGS_ALLOW_USER_INTERACTION;
 /// </para>
 /// <para>
@@ -114,14 +114,14 @@ namespace MentorLake.Gio;
 /// <para>
 ///     auth_result = polkit_authority_check_authorization_sync (authority,
 ///                                                              subject,
-///                                                              "com.example.MyService.set-debug-enabled",
+///                                                              &quot;com.example.MyService.set-debug-enabled&quot;,
 ///                                                              NULL,
 ///                                                              flags,
 ///                                                              NULL,
-///                                                              &local_error);
+///                                                              &amp;local_error);
 ///     if (auth_result == NULL)
 ///       {
-///         g_warning ("Failed to get check polkit authorization: %s", local_error->message);
+///         g_warning (&quot;Failed to get check polkit authorization: %s&quot;, local_error-&amp;gt;message);
 ///         return FALSE;
 ///       }
 /// </para>

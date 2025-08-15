@@ -11,7 +11,7 @@ public enum GDriveStartStopType
 {
 /// <summary>
 /// <para>
-/// Unknown or drive doesn't support
+/// Unknown or drive doesn&apos;t support
 ///    start/stop.
 /// </para>
 /// </summary>

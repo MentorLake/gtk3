@@ -20,59 +20,57 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkNotebook implementation of the #GtkBuildable interface
 /// supports placing children into tabs by specifying “tab” as the
-/// “type” attribute of a `<child>` element. Note that the content
+/// “type” attribute of a `&amp;lt;child&amp;gt;` element. Note that the content
 /// of the tab must be created before the tab can be filled.
-/// A tab child can be specified without specifying a `<child>`
+/// A tab child can be specified without specifying a `&amp;lt;child&amp;gt;`
 /// type attribute.
 /// </para>
 /// <para>
 /// To add a child widget in the notebooks action area, specify
-/// "action-start" or “action-end” as the “type” attribute of the
-/// `<child>` element.
+/// &quot;action-start&quot; or “action-end” as the “type” attribute of the
+/// `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with GtkNotebook:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkNotebook">
-///   <child>
-///     <object class="GtkLabel" id="notebook-content">
-///       <property name="label">Content</property>
-///     </object>
-///   </child>
-///   <child type="tab">
-///     <object class="GtkLabel" id="notebook-tab">
-///       <property name="label">Tab</property>
-///     </object>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkNotebook&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkNotebook&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;notebook-content&quot;&amp;gt;
+///       &amp;lt;property name=&quot;label&quot;&amp;gt;Content&amp;lt;/property&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child type=&quot;tab&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;notebook-tab&quot;&amp;gt;
+///       &amp;lt;property name=&quot;label&quot;&amp;gt;Tab&amp;lt;/property&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// notebook
 /// notebook
 /// ├── header.top
-/// │   ├── [<action widget>]
+/// │   ├── [&amp;lt;action widget&amp;gt;]
 /// │   ├── tabs
 /// │   │   ├── [arrow]
 /// │   │   ├── tab
-/// │   │   │   ╰── <tab label>
+/// │   │   │   ╰── &amp;lt;tab label&amp;gt;
 /// ┊   ┊   ┊
 /// │   │   ├── tab[.reorderable-page]
-/// │   │   │   ╰── <tab label>
+/// │   │   │   ╰── &amp;lt;tab label&amp;gt;
 /// │   │   ╰── [arrow]
-/// │   ╰── [<action widget>]
+/// │   ╰── [&amp;lt;action widget&amp;gt;]
 /// │
 /// ╰── stack
-///     ├── <child>
+///     ├── &amp;lt;child&amp;gt;
 ///     ┊
-///     ╰── <child>
-/// ]|
-/// </para>
+///     ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkNotebook has a main CSS node with name notebook, a subnode
 /// with name header and below that a subnode with name tabs which
@@ -1781,8 +1779,8 @@ public static class GtkNotebookHandleExtensions
 /// removed from underneath the ongoing drag operation, and
 /// will initiate a drag cancel animation.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///  static void
 ///  static void
 ///  on_drag_data_received (GtkWidget        *widget,
 ///                         GdkDragContext   *context,
@@ -1795,19 +1793,15 @@ public static class GtkNotebookHandleExtensions
 ///  {
 ///    GtkWidget *notebook;
 ///    GtkWidget **child;
-/// </para>
-/// <para>
+/// 
 ///    notebook = gtk_drag_get_source_widget (context);
 ///    child = (void*) gtk_selection_data_get_data (data);
-/// </para>
-/// <para>
+/// 
 ///    // process_widget (*child);
-/// </para>
-/// <para>
+/// 
 ///    gtk_notebook_detach_tab (GTK_NOTEBOOK (notebook), *child);
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// If you want a notebook to accept drags from other widgets,
 /// you will have to set your own DnD code to do it.

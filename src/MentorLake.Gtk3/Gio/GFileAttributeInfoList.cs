@@ -88,7 +88,7 @@ public static class GFileAttributeInfoListExtensions
 /// </param>
 /// <return>
 /// a #GFileAttributeInfo for the @name, or %NULL if an
-/// attribute isn't found.
+/// attribute isn&apos;t found.
 /// </return>
 
 	public static MentorLake.Gio.GFileAttributeInfoHandle Lookup(this MentorLake.Gio.GFileAttributeInfoListHandle list, string name)

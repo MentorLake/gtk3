@@ -77,7 +77,7 @@ public GValue value;
 /// A #GtkRcPropertyParser for use with gtk_settings_install_property_parser()
 /// or gtk_widget_class_install_style_property_parser() which parses
 /// borders in the form
-/// `"{ left, right, top, bottom }"` for integers
+/// `&quot;{ left, right, top, bottom }&quot;` for integers
 /// left, right, top and bottom.
 /// </para>
 /// </summary>
@@ -171,7 +171,7 @@ public GValue value;
 /// <para>
 /// Flags can be specified by their name, their nickname or
 /// numerically. Multiple flags can be specified in the form
-/// `"( flag1 | flag2 | ... )"`.
+/// `&quot;( flag1 | flag2 | ... )&quot;`.
 /// </para>
 /// </summary>
 
@@ -199,7 +199,7 @@ public GValue value;
 /// A #GtkRcPropertyParser for use with gtk_settings_install_property_parser()
 /// or gtk_widget_class_install_style_property_parser() which parses a
 /// requisition in the form
-/// `"{ width, height }"` for integers %width and %height.
+/// `&quot;{ width, height }&quot;` for integers %width and %height.
 /// </para>
 /// </summary>
 

@@ -6,8 +6,8 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// A `GWeakRef` can either be empty (i.e. point to %NULL), or point to an
-/// object for as long as at least one "strong" reference to that object
-/// exists. Before the object's #GObjectClass.dispose method is called,
+/// object for as long as at least one &quot;strong&quot; reference to that object
+/// exists. Before the object&apos;s #GObjectClass.dispose method is called,
 /// every #GWeakRef associated with becomes empty (i.e. points to %NULL).
 /// </para>
 /// <para>
@@ -21,7 +21,7 @@ namespace MentorLake.GObject;
 /// objects.
 /// </para>
 /// <para>
-/// If the object's #GObjectClass.dispose method results in additional
+/// If the object&apos;s #GObjectClass.dispose method results in additional
 /// references to the object being held (‘re-referencing’), any #GWeakRefs taken
 /// before it was disposed will continue to point to %NULL.  Any #GWeakRefs taken
 /// during disposal and after re-referencing, or after disposal has returned due
@@ -172,8 +172,8 @@ internal class GWeakRefExterns
 /// </para>
 /// <para>
 /// A `GWeakRef` can either be empty (i.e. point to %NULL), or point to an
-/// object for as long as at least one "strong" reference to that object
-/// exists. Before the object's #GObjectClass.dispose method is called,
+/// object for as long as at least one &quot;strong&quot; reference to that object
+/// exists. Before the object&apos;s #GObjectClass.dispose method is called,
 /// every #GWeakRef associated with becomes empty (i.e. points to %NULL).
 /// </para>
 /// <para>
@@ -187,7 +187,7 @@ internal class GWeakRefExterns
 /// objects.
 /// </para>
 /// <para>
-/// If the object's #GObjectClass.dispose method results in additional
+/// If the object&apos;s #GObjectClass.dispose method results in additional
 /// references to the object being held (‘re-referencing’), any #GWeakRefs taken
 /// before it was disposed will continue to point to %NULL.  Any #GWeakRefs taken
 /// during disposal and after re-referencing, or after disposal has returned due

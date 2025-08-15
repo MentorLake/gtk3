@@ -18,7 +18,7 @@ namespace MentorLake.Gtk;
 /// When the action is specified via the #GtkActionable:action-name
 /// and #GtkActionable:action-target properties, the role of the button
 /// (i.e. whether it is a plain, check or radio button) is determined by
-/// the type of the action and doesn't have to be explicitly specified
+/// the type of the action and doesn&apos;t have to be explicitly specified
 /// with the #GtkModelButton:role property.
 /// </para>
 /// <para>
@@ -39,63 +39,59 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # Example
 /// </para>
-/// <para>
-/// |[
-/// <object class="GtkPopoverMenu">
-///   <child>
-///     <object class="GtkBox">
-///       <property name="visible">True</property>
-///       <property name="margin">10</property>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">view.cut</property>
-///           <property name="text" translatable="yes">Cut</property>
-///         </object>
-///       </child>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">view.copy</property>
-///           <property name="text" translatable="yes">Copy</property>
-///         </object>
-///       </child>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">view.paste</property>
-///           <property name="text" translatable="yes">Paste</property>
-///         </object>
-///       </child>
-///     </object>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkPopoverMenu&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkPopoverMenu&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkBox&quot;&amp;gt;
+///       &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///       &amp;lt;property name=&quot;margin&quot;&amp;gt;10&amp;lt;/property&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;view.cut&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Cut&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;view.copy&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Copy&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;view.paste&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Paste&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
 /// modelbutton
-/// ├── <child>
+/// modelbutton
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── check
-/// ]|
-/// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// </code>
+/// <code>
 /// modelbutton
-/// ├── <child>
+/// modelbutton
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── radio
-/// ]|
-/// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// </code>
+/// <code>
 /// modelbutton
-/// ├── <child>
+/// modelbutton
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── arrow
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkModelButton has a main CSS node with name modelbutton, and a subnode,
 /// which will have the name check, radio or arrow, depending on the role
@@ -105,13 +101,12 @@ namespace MentorLake.Gtk;
 /// The subnode is positioned before or after the content nodes and gets the
 /// .left or .right style class, depending on where it is located.
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
 /// button.model
-/// ├── <child>
+/// button.model
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── check
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Iconic model buttons (see #GtkModelButton:iconic) change the name of
 /// their main node to button and add a .model style class to it. The indicator

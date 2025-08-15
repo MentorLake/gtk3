@@ -140,7 +140,7 @@ public static class GIOStreamHandleExtensions
 /// triggering the cancellable object from another thread. If the operation
 /// was cancelled, the error %G_IO_ERROR_CANCELLED will be returned.
 /// Cancelling a close will still leave the stream closed, but some streams
-/// can use a faster close that doesn't block to e.g. check errors.
+/// can use a faster close that doesn&apos;t block to e.g. check errors.
 /// </para>
 /// <para>
 /// The default implementation of this method just calls close on the

@@ -30,53 +30,45 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Creating two #GtkToggleButton widgets.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// static void output_state (GtkToggleButton *source, gpointer user_data) {
-///   printf ("Active: %d\n", gtk_toggle_button_get_active (source));
+/// static void output_state (GtkToggleButton *source, gpointer user_data) {
+///   printf (&quot;Active: %d\n&quot;, gtk_toggle_button_get_active (source));
 /// }
-/// </para>
-/// <para>
+/// 
 /// void make_toggles (void) {
 ///   GtkWidget *window, *toggle1, *toggle2;
 ///   GtkWidget *box;
 ///   const char *text;
-/// </para>
-/// <para>
+/// 
 ///   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
-/// </para>
-/// <para>
-///   text = "Hi, I’m a toggle button.";
+/// 
+///   text = &quot;Hi, I’m a toggle button.&quot;;
 ///   toggle1 = gtk_toggle_button_new_with_label (text);
-/// </para>
-/// <para>
+/// 
 ///   // Makes this toggle button invisible
 ///   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle1),
 ///                               TRUE);
-/// </para>
-/// <para>
-///   g_signal_connect (toggle1, "toggled",
+/// 
+///   g_signal_connect (toggle1, &quot;toggled&quot;,
 ///                     G_CALLBACK (output_state),
 ///                     NULL);
 ///   gtk_container_add (GTK_CONTAINER (box), toggle1);
-/// </para>
-/// <para>
-///   text = "Hi, I’m a toggle button.";
+/// 
+///   text = &quot;Hi, I’m a toggle button.&quot;;
 ///   toggle2 = gtk_toggle_button_new_with_label (text);
 ///   gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (toggle2),
 ///                               FALSE);
-///   g_signal_connect (toggle2, "toggled",
+///   g_signal_connect (toggle2, &quot;toggled&quot;,
 ///                     G_CALLBACK (output_state),
 ///                     NULL);
 ///   gtk_container_add (GTK_CONTAINER (box), toggle2);
-/// </para>
-/// <para>
+/// 
 ///   gtk_container_add (GTK_CONTAINER (window), box);
 ///   gtk_widget_show_all (window);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkToggleButtonHandle : GtkButtonHandle, AtkImplementorIfaceHandle, GtkActionableHandle, GtkActivatableHandle, GtkBuildableHandle
@@ -141,7 +133,7 @@ public static class GtkToggleButtonHandleSignalExtensions
 /// <summary>
 /// <para>
 /// Should be connected if you wish to perform an action whenever the
-/// #GtkToggleButton's state is changed.
+/// #GtkToggleButton&apos;s state is changed.
 /// </para>
 /// </summary>
 
@@ -193,7 +185,7 @@ public static class GtkToggleButtonHandleSignalDelegates
 /// <summary>
 /// <para>
 /// Should be connected if you wish to perform an action whenever the
-/// #GtkToggleButton's state is changed.
+/// #GtkToggleButton&apos;s state is changed.
 /// </para>
 /// </summary>
 

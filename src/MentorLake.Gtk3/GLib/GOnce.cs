@@ -87,27 +87,23 @@ public IntPtr retval;
 /// the end of the initialization section. In combination with
 /// g_once_init_leave() and the unique address @value_location, it can
 /// be ensured that an initialization section will be executed only once
-/// during a program's life time, and that concurrent threads are
+/// during a program&apos;s life time, and that concurrent threads are
 /// blocked until initialization completed. To be used in constructs
 /// like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   static gsize initialization_value = 0;
-/// </para>
-/// <para>
-///   if (g_once_init_enter (&initialization_value))
+///   static gsize initialization_value = 0;
+/// 
+///   if (g_once_init_enter (&amp;initialization_value))
 ///     {
 ///       gsize setup_value = 42; // initialization code here
-/// </para>
-/// <para>
-///       g_once_init_leave (&initialization_value, setup_value);
+/// 
+///       g_once_init_leave (&amp;initialization_value, setup_value);
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // use initialization_value here
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// While @location has a `volatile` qualifier, this is a historical artifact and
 /// the pointer passed to it should not be `volatile`.
@@ -142,23 +138,19 @@ public IntPtr retval;
 /// This functions behaves in the same way as g_once_init_enter(), but can
 /// can be used to initialize pointers (or #guintptr) instead of #gsize.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   static MyStruct *interesting_struct = NULL;
-/// </para>
-/// <para>
-///   if (g_once_init_enter_pointer (&interesting_struct))
+///   static MyStruct *interesting_struct = NULL;
+/// 
+///   if (g_once_init_enter_pointer (&amp;interesting_struct))
 ///     {
 ///       MyStruct *setup_value = allocate_my_struct (); // initialization code here
-/// </para>
-/// <para>
-///       g_once_init_leave_pointer (&interesting_struct, g_steal_pointer (&setup_value));
+/// 
+///       g_once_init_leave_pointer (&amp;interesting_struct, g_steal_pointer (&amp;setup_value));
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   // use interesting_struct here
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="location">

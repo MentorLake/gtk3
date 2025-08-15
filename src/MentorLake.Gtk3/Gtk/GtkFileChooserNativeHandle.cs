@@ -24,20 +24,18 @@ namespace MentorLake.Gtk;
 /// In the simplest of cases, you can the following code to use
 /// #GtkFileChooserDialog to select a file for opening:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// GtkFileChooserNative *native;
 /// GtkFileChooserNative *native;
 /// GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
 /// gint res;
-/// </para>
-/// <para>
-/// native = gtk_file_chooser_native_new ("Open File",
+/// 
+/// native = gtk_file_chooser_native_new (&quot;Open File&quot;,
 ///                                       parent_window,
 ///                                       action,
-///                                       "_Open",
-///                                       "_Cancel");
-/// </para>
-/// <para>
+///                                       &quot;_Open&quot;,
+///                                       &quot;_Cancel&quot;);
+/// 
 /// res = gtk_native_dialog_run (GTK_NATIVE_DIALOG (native));
 /// if (res == GTK_RESPONSE_ACCEPT)
 ///   {
@@ -47,56 +45,47 @@ namespace MentorLake.Gtk;
 ///     open_file (filename);
 ///     g_free (filename);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// g_object_unref (native);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// To use a dialog for saving, you can use this:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// GtkFileChooserNative *native;
 /// GtkFileChooserNative *native;
 /// GtkFileChooser *chooser;
 /// GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_SAVE;
 /// gint res;
-/// </para>
-/// <para>
-/// native = gtk_file_chooser_native_new ("Save File",
+/// 
+/// native = gtk_file_chooser_native_new (&quot;Save File&quot;,
 ///                                       parent_window,
 ///                                       action,
-///                                       "_Save",
-///                                       "_Cancel");
+///                                       &quot;_Save&quot;,
+///                                       &quot;_Cancel&quot;);
 /// chooser = GTK_FILE_CHOOSER (native);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (chooser, TRUE);
-/// </para>
-/// <para>
+/// 
 /// if (user_edited_a_new_document)
 ///   gtk_file_chooser_set_current_name (chooser,
-///                                      _("Untitled document"));
+///                                      _(&quot;Untitled document&quot;));
 /// else
 ///   gtk_file_chooser_set_filename (chooser,
 ///                                  existing_filename);
-/// </para>
-/// <para>
+/// 
 /// res = gtk_native_dialog_run (GTK_NATIVE_DIALOG (native));
 /// if (res == GTK_RESPONSE_ACCEPT)
 ///   {
 ///     char *filename;
-/// </para>
-/// <para>
+/// 
 ///     filename = gtk_file_chooser_get_filename (chooser);
 ///     save_to_file (filename);
 ///     g_free (filename);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// g_object_unref (native);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// For more information on how to best set up a file dialog, see #GtkFileChooserDialog.
 /// </para>
@@ -269,17 +258,15 @@ public static class GtkFileChooserNativeHandleSignalExtensions
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -289,26 +276,20 @@ public static class GtkFileChooserNativeHandleSignalExtensions
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 	public static IObservable<GtkFileChooserNativeHandleSignalStructs.ConfirmOverwriteSignal> Signal_ConfirmOverwrite(this GtkFileChooserNativeHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
@@ -389,7 +370,7 @@ public static class GtkFileChooserNativeHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>
@@ -629,17 +610,15 @@ public static class GtkFileChooserNativeHandleSignalDelegates
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -649,26 +628,20 @@ public static class GtkFileChooserNativeHandleSignalDelegates
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="self">
@@ -715,7 +688,7 @@ public delegate void current_folder_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>

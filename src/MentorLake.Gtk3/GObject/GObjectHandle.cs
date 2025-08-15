@@ -232,7 +232,7 @@ public partial class GObjectHandle : GTypeInstanceHandle
 /// interface property.
 /// </para>
 /// <para>
-/// This function is meant to be called from the interface's default
+/// This function is meant to be called from the interface&apos;s default
 /// vtable initialization function (the @class_init member of
 /// #GTypeInfo.) It must not be called after after @class_init has
 /// been called for any object types implementing this interface.
@@ -308,13 +308,12 @@ public static class GObjectHandleSignalExtensions
 /// single property, by specifying the property name as a detail in the
 /// g_signal_connect() call, like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// g_signal_connect (text_view->buffer, "notify::paste-target-list",
+/// <code>
+/// g_signal_connect (text_view-&amp;gt;buffer, &quot;notify::paste-target-list&quot;,
+/// g_signal_connect (text_view-&amp;gt;buffer, &quot;notify::paste-target-list&quot;,
 ///                   G_CALLBACK (gtk_text_view_target_list_notify),
 ///                   text_view)
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// It is important to note that you must use
 /// [canonical parameter names][class@GObject.ParamSpec#parameter-names] as
@@ -394,13 +393,12 @@ public static class GObjectHandleSignalDelegates
 /// single property, by specifying the property name as a detail in the
 /// g_signal_connect() call, like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// g_signal_connect (text_view->buffer, "notify::paste-target-list",
+/// <code>
+/// g_signal_connect (text_view-&amp;gt;buffer, &quot;notify::paste-target-list&quot;,
+/// g_signal_connect (text_view-&amp;gt;buffer, &quot;notify::paste-target-list&quot;,
 ///                   G_CALLBACK (gtk_text_view_target_list_notify),
 ///                   text_view)
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// It is important to note that you must use
 /// [canonical parameter names][class@GObject.ParamSpec#parameter-names] as
@@ -444,7 +442,7 @@ public static class GObjectHandleExtensions
 /// to the proxy object, but when there are other references held to
 /// @object, a strong reference is held. The @notify callback is called
 /// when the reference from @object to the proxy object should be
-/// "toggled" from strong to weak (@is_last_ref true) or weak to strong
+/// &quot;toggled&quot; from strong to weak (@is_last_ref true) or weak to strong
 /// (@is_last_ref false).
 /// </para>
 /// <para>
@@ -499,7 +497,7 @@ public static class GObjectHandleExtensions
 /// <para>
 /// Note that as with g_object_weak_ref(), the weak references created by
 /// this method are not thread-safe: they cannot safely be used in one
-/// thread if the object's last g_object_unref() might happen in another
+/// thread if the object&apos;s last g_object_unref() might happen in another
 /// thread. Use #GWeakRef if thread-safety is required.
 /// </para>
 /// </summary>
@@ -528,14 +526,13 @@ public static class GObjectHandleExtensions
 /// Whenever the @source_property is changed the @target_property is
 /// updated using the same value. For instance:
 /// </para>
+/// <code>
+///   g_object_bind_property (action, &quot;active&quot;, widget, &quot;sensitive&quot;, 0);
+///   g_object_bind_property (action, &quot;active&quot;, widget, &quot;sensitive&quot;, 0);
+/// </code>
 /// <para>
-/// |[<!-- language="C" -->
-///   g_object_bind_property (action, "active", widget, "sensitive", 0);
-/// ]|
-/// </para>
-/// <para>
-/// Will result in the "sensitive" property of the widget #GObject instance to be
-/// updated with the same value of the "active" property of the action #GObject
+/// Will result in the &quot;sensitive&quot; property of the widget #GObject instance to be
+/// updated with the same value of the &quot;active&quot; property of the action #GObject
 /// instance.
 /// </para>
 /// <para>
@@ -737,13 +734,13 @@ public static class GObjectHandleExtensions
 /// </para>
 /// <para>
 /// ```c
-/// menu->toplevel = g_object_connect (g_object_new (GTK_TYPE_WINDOW,
-///                                                  "type", GTK_WINDOW_POPUP,
-///                                                  "child", menu,
+/// menu-&amp;gt;toplevel = g_object_connect (g_object_new (GTK_TYPE_WINDOW,
+///                                                  &quot;type&quot;, GTK_WINDOW_POPUP,
+///                                                  &quot;child&quot;, menu,
 ///                                                  NULL),
-///                                    "signal::event", gtk_menu_window_event, menu,
-///                                    "signal::size_request", gtk_menu_window_size_request, menu,
-///                                    "signal::destroy", gtk_widget_destroyed, &menu->toplevel,
+///                                    &quot;signal::event&quot;, gtk_menu_window_event, menu,
+///                                    &quot;signal::size_request&quot;, gtk_menu_window_size_request, menu,
+///                                    &quot;signal::destroy&quot;, gtk_widget_destroyed, &amp;menu-&amp;gt;toplevel,
 ///                                    NULL);
 /// ```
 /// </para>
@@ -776,9 +773,9 @@ public static class GObjectHandleExtensions
 /// </para>
 /// <para>
 /// The signal specs expected by this function have the form
-/// "any_signal", which means to disconnect any signal with matching
-/// callback and data, or "any_signal::signal_name", which only
-/// disconnects the signal named "signal_name".
+/// &quot;any_signal&quot;, which means to disconnect any signal with matching
+/// callback and data, or &quot;any_signal::signal_name&quot;, which only
+/// disconnects the signal named &quot;signal_name&quot;.
 /// </para>
 /// </summary>
 
@@ -804,8 +801,8 @@ public static class GObjectHandleExtensions
 /// <summary>
 /// <para>
 /// This is a variant of g_object_get_data() which returns
-/// a 'duplicate' of the value. @dup_func defines the
-/// meaning of 'duplicate' in this context, it could e.g.
+/// a &apos;duplicate&apos; of the value. @dup_func defines the
+/// meaning of &apos;duplicate&apos; in this context, it could e.g.
 /// take a reference on a ref-counted object.
 /// </para>
 /// <para>
@@ -851,8 +848,8 @@ public static class GObjectHandleExtensions
 /// <summary>
 /// <para>
 /// This is a variant of g_object_get_qdata() which returns
-/// a 'duplicate' of the value. @dup_func defines the
-/// meaning of 'duplicate' in this context, it could e.g.
+/// a &apos;duplicate&apos; of the value. @dup_func defines the
+/// meaning of &apos;duplicate&apos; in this context, it could e.g.
 /// take a reference on a ref-counted object.
 /// </para>
 /// <para>
@@ -918,7 +915,7 @@ public static class GObjectHandleExtensions
 /// <summary>
 /// <para>
 /// Increases the freeze count on @object. If the freeze count is
-/// non-zero, the emission of "notify" signals on @object is
+/// non-zero, the emission of &quot;notify&quot; signals on @object is
 /// stopped. The signals are queued until the freeze count is decreased
 /// to zero. Duplicate notifications are squashed so that at most one
 /// #GObject::notify signal is emitted for each property modified while the
@@ -953,27 +950,25 @@ public static class GObjectHandleExtensions
 /// <para>
 /// Here is an example of using g_object_get() to get the contents
 /// of three properties: an integer, a string and an object:
-/// |[<!-- language="C" -->
+/// <code>
+///  gint intval;
 ///  gint intval;
 ///  guint64 uint64val;
 ///  gchar *strval;
 ///  GObject *objval;
-/// </para>
-/// <para>
+/// 
 ///  g_object_get (my_object,
-///                "int-property", &intval,
-///                "uint64-property", &uint64val,
-///                "str-property", &strval,
-///                "obj-property", &objval,
+///                &quot;int-property&quot;, &amp;intval,
+///                &quot;uint64-property&quot;, &amp;uint64val,
+///                &quot;str-property&quot;, &amp;strval,
+///                &quot;obj-property&quot;, &amp;objval,
 ///                NULL);
-/// </para>
-/// <para>
+/// 
 ///  // Do something with intval, uint64val, strval, objval
-/// </para>
-/// <para>
+/// 
 ///  g_free (strval);
 ///  g_object_unref (objval);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1165,7 +1160,7 @@ public static class GObjectHandleExtensions
 
 /// <summary>
 /// <para>
-/// Emits a "notify" signal for the property @property_name on @object.
+/// Emits a &quot;notify&quot; signal for the property @property_name on @object.
 /// </para>
 /// <para>
 /// When possible, eg. when signaling a property change from within the class
@@ -1196,7 +1191,7 @@ public static class GObjectHandleExtensions
 
 /// <summary>
 /// <para>
-/// Emits a "notify" signal for the property specified by @pspec on @object.
+/// Emits a &quot;notify&quot; signal for the property specified by @pspec on @object.
 /// </para>
 /// <para>
 /// This function omits the property name lookup, hence it is faster than
@@ -1208,22 +1203,20 @@ public static class GObjectHandleExtensions
 /// instead, is to store the GParamSpec used with
 /// g_object_class_install_property() inside a static array, e.g.:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   typedef enum
 ///   typedef enum
 ///   {
 ///     PROP_FOO = 1,
 ///     PROP_LAST
 ///   } MyObjectProperty;
-/// </para>
-/// <para>
+/// 
 ///   static GParamSpec *properties[PROP_LAST];
-/// </para>
-/// <para>
+/// 
 ///   static void
 ///   my_object_class_init (MyObjectClass *klass)
 ///   {
-///     properties[PROP_FOO] = g_param_spec_int ("foo", NULL, NULL,
+///     properties[PROP_FOO] = g_param_spec_int (&quot;foo&quot;, NULL, NULL,
 ///                                              0, 100,
 ///                                              50,
 ///                                              G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
@@ -1231,16 +1224,14 @@ public static class GObjectHandleExtensions
 ///                                      PROP_FOO,
 ///                                      properties[PROP_FOO]);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
-/// and then notify a change on the "foo" property with:
+/// and then notify a change on the &quot;foo&quot; property with:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   g_object_notify_by_pspec (self, properties[PROP_FOO]);
-/// ]|
-/// </para>
+///   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+/// </code>
 /// </summary>
 
 /// <param name="@object">
@@ -1288,8 +1279,8 @@ public static class GObjectHandleExtensions
 /// [floating][floating-ref] reference, if @object has a floating reference.
 /// </para>
 /// <para>
-/// In other words, if the object is floating, then this call "assumes
-/// ownership" of the floating reference, converting it to a normal
+/// In other words, if the object is floating, then this call &quot;assumes
+/// ownership&quot; of the floating reference, converting it to a normal
 /// reference by clearing the floating flag while leaving the reference
 /// count unchanged.  If the object is not floating, then this call
 /// adds a new normal reference increasing the reference count by one.
@@ -1503,7 +1494,7 @@ public static class GObjectHandleExtensions
 /// %G_GINT64_CONSTANT or %G_GUINT64_CONSTANT macros.
 /// </para>
 /// <para>
-/// Note that the "notify" signals are queued and only emitted (in
+/// Note that the &quot;notify&quot; signals are queued and only emitted (in
 /// reverse order) after all properties have been set. See
 /// g_object_freeze_notify().
 /// </para>
@@ -1731,8 +1722,8 @@ public static class GObjectHandleExtensions
 
 /// <summary>
 /// <para>
-/// Remove a specified datum from the object's data associations,
-/// without invoking the association's destroy handler.
+/// Remove a specified datum from the object&apos;s data associations,
+/// without invoking the association&apos;s destroy handler.
 /// </para>
 /// </summary>
 
@@ -1761,34 +1752,32 @@ public static class GObjectHandleExtensions
 /// set).
 /// Usually, calling this function is only required to update
 /// user data pointers with a destroy notifier, for example:
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// object_add_to_user_list (GObject     *object,
 ///                          const gchar *new_string)
 /// {
 ///   // the quark, naming the object data
-///   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+///   GQuark quark_string_list = g_quark_from_static_string (&quot;my-string-list&quot;);
 ///   // retrieve the old string list
 ///   GList *list = g_object_steal_qdata (object, quark_string_list);
-/// </para>
-/// <para>
+/// 
 ///   // prepend new string
 ///   list = g_list_prepend (list, g_strdup (new_string));
-///   // this changed 'list', so we need to set it again
+///   // this changed &apos;list&apos;, so we need to set it again
 ///   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
 /// }
 /// static void
 /// free_string_list (gpointer data)
 /// {
 ///   GList *node, *list = data;
-/// </para>
-/// <para>
-///   for (node = list; node; node = node->next)
-///     g_free (node->data);
+/// 
+///   for (node = list; node; node = node-&amp;gt;next)
+///     g_free (node-&amp;gt;data);
 ///   g_list_free (list);
 /// }
-/// ]|
-/// Using g_object_get_qdata() in the above example, instead of
+/// </code>
 /// g_object_steal_qdata() would have left the destroy function set,
 /// and thus the partial string list would have been freed upon
 /// g_object_set_qdata_full().
@@ -1839,7 +1828,7 @@ public static class GObjectHandleExtensions
 /// return a floating reference.
 /// </para>
 /// <para>
-/// Using this function on the return value of the user's callback allows
+/// Using this function on the return value of the user&apos;s callback allows
 /// the user to do whichever is more convenient for them. The caller will
 /// always receives exactly one full reference to the value: either the
 /// one that was returned in the first place, or a floating reference
@@ -1874,7 +1863,7 @@ public static class GObjectHandleExtensions
 /// <para>
 /// Reverts the effect of a previous call to
 /// g_object_freeze_notify(). The freeze count is decreased on @object
-/// and when it reaches zero, queued "notify" signals are emitted.
+/// and when it reaches zero, queued &quot;notify&quot; signals are emitted.
 /// </para>
 /// <para>
 /// Duplicate notifications for each property are squashed so that at most one
@@ -1953,14 +1942,14 @@ public static class GObjectHandleExtensions
 /// <para>
 /// Adds a weak reference callback to an object. Weak references are
 /// used for notification when an object is disposed. They are called
-/// "weak references" because they allow you to safely hold a pointer
+/// &quot;weak references&quot; because they allow you to safely hold a pointer
 /// to an object without calling g_object_ref() (g_object_ref() adds a
 /// strong reference, that is, forces the object to stay alive).
 /// </para>
 /// <para>
 /// Note that the weak references created by this method are not
 /// thread-safe: they cannot safely be used in one thread if the
-/// object's last g_object_unref() might happen in another thread.
+/// object&apos;s last g_object_unref() might happen in another thread.
 /// Use #GWeakRef if thread-safety is required.
 /// </para>
 /// </summary>

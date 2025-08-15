@@ -6,7 +6,7 @@ namespace MentorLake.HarfBuzz;
 /// </para>
 /// <para>
 /// Shape plans contain information about how HarfBuzz will shape a
-/// particular text segment, based on the segment's properties and the
+/// particular text segment, based on the segment&apos;s properties and the
 /// capabilities in the font face in use.
 /// </para>
 /// <para>
@@ -36,7 +36,7 @@ internal class hb_shape_plan_tExterns
 /// </para>
 /// <para>
 /// Shape plans contain information about how HarfBuzz will shape a
-/// particular text segment, based on the segment's properties and the
+/// particular text segment, based on the segment&apos;s properties and the
 /// capabilities in the font face in use.
 /// </para>
 /// <para>

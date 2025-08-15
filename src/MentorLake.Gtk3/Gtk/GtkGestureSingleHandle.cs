@@ -148,7 +148,7 @@ public static class GtkGestureSingleHandleExtensions
 /// <summary>
 /// <para>
 /// Sets whether @gesture is exclusive. An exclusive gesture will
-/// only handle pointer and "pointer emulated" touch events, so at
+/// only handle pointer and &quot;pointer emulated&quot; touch events, so at
 /// any given time, there is only one sequence able to interact with
 /// those.
 /// </para>

@@ -150,7 +150,7 @@ public static class PangoRendererHandleExtensions
 /// </para>
 /// <para>
 /// Note that @text is the start of the text for layout, which is then
-/// indexed by `glyph_item->item->offset`.
+/// indexed by `glyph_item-&amp;gt;item-&amp;gt;offset`.
 /// </para>
 /// <para>
 /// If @text is %NULL, this simply calls [method@Pango.Renderer.draw_glyphs].
@@ -374,7 +374,7 @@ public static class PangoRendererHandleExtensions
 /// </param>
 /// <return>
 /// the alpha for the specified part,
-///   or 0 if it hasn't been set and should be
+///   or 0 if it hasn&apos;t been set and should be
 ///   inherited from the environment.
 /// </return>
 
@@ -398,7 +398,7 @@ public static class PangoRendererHandleExtensions
 /// </param>
 /// <return>
 /// the color for the
-///   specified part, or %NULL if it hasn't been set and should be
+///   specified part, or %NULL if it hasn&apos;t been set and should be
 ///   inherited from the environment.
 /// </return>
 
@@ -413,7 +413,7 @@ public static class PangoRendererHandleExtensions
 /// Gets the layout currently being rendered using @renderer.
 /// </para>
 /// <para>
-/// Calling this function only makes sense from inside a subclass's
+/// Calling this function only makes sense from inside a subclass&apos;s
 /// methods, like in its draw_shape vfunc, for example.
 /// </para>
 /// <para>
@@ -441,7 +441,7 @@ public static class PangoRendererHandleExtensions
 /// Gets the layout line currently being rendered using @renderer.
 /// </para>
 /// <para>
-/// Calling this function only makes sense from inside a subclass's
+/// Calling this function only makes sense from inside a subclass&apos;s
 /// methods, like in its draw_shape vfunc, for example.
 /// </para>
 /// <para>

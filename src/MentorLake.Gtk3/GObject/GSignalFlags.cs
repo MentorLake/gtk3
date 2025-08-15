@@ -2,7 +2,7 @@ namespace MentorLake.GObject;
 
 /// <summary>
 /// <para>
-/// The signal flags are used to specify a signal's behaviour.
+/// The signal flags are used to specify a signal&apos;s behaviour.
 /// </para>
 /// </summary>
 
@@ -41,7 +41,7 @@ public enum GSignalFlags : uint
 	G_SIGNAL_NO_RECURSE = 8,
 /// <summary>
 /// <para>
-/// This signal supports "::detail" appendices to the signal name
+/// This signal supports &quot;::detail&quot; appendices to the signal name
 ///  upon handler connections and emissions.
 /// </para>
 /// </summary>

@@ -9,7 +9,7 @@ public static class GdkDeviceToolHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets the hardware ID of this tool, or 0 if it's not known. When
+/// Gets the hardware ID of this tool, or 0 if it&apos;s not known. When
 /// non-zero, the identificator is unique for the given tool model,
 /// meaning that two identical tools will share the same @hardware_id,
 /// but will have different serial numbers (see gdk_device_tool_get_serial()).

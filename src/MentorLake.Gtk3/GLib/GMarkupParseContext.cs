@@ -18,7 +18,7 @@ public class GMarkupParseContextHandle : BaseSafeHandle
 /// Creates a new parse context. A parse context is used to parse
 /// marked-up documents. You can feed any number of documents into
 /// a context, as long as no errors occur; once an error occurs,
-/// the parse context can't continue to parse text (you have to
+/// the parse context can&apos;t continue to parse text (you have to
 /// free it and create a new parse context).
 /// </para>
 /// </summary>
@@ -56,7 +56,7 @@ public static class GMarkupParseContextExtensions
 /// fed into the parse context with g_markup_parse_context_parse().
 /// </para>
 /// <para>
-/// This function reports an error if the document isn't complete,
+/// This function reports an error if the document isn&apos;t complete,
 /// for example if elements are still open.
 /// </para>
 /// </summary>
@@ -81,7 +81,7 @@ public static class GMarkupParseContextExtensions
 /// Frees a #GMarkupParseContext.
 /// </para>
 /// <para>
-/// This function can't be called from inside one of the
+/// This function can&apos;t be called from inside one of the
 /// #GMarkupParser functions or while a subparser is pushed.
 /// </para>
 /// </summary>
@@ -155,8 +155,8 @@ public static class GMarkupParseContextExtensions
 /// <para>
 /// Retrieves the current line number and the number of the character on
 /// that line. Intended for use in error messages; there are no strict
-/// semantics for what constitutes the "current" line number other than
-/// "the best number we could come up with for error messages."
+/// semantics for what constitutes the &quot;current&quot; line number other than
+/// &quot;the best number we could come up with for error messages.&quot;
 /// </para>
 /// </summary>
 
@@ -208,7 +208,7 @@ public static class GMarkupParseContextExtensions
 /// </para>
 /// <para>
 /// The data need not be valid UTF-8; an error will be signaled if
-/// it's invalid. The data need not be an entire document; you can
+/// it&apos;s invalid. The data need not be an entire document; you can
 /// feed a document into the parser incrementally, via multiple calls
 /// to this function. Typically, as you receive data from a network
 /// connection or file, you feed each received chunk of data into this
@@ -292,8 +292,8 @@ public static class GMarkupParseContextExtensions
 /// <para>
 /// The end tag matching the start tag for which this call was made is
 /// handled by the previous parser (which is given its own user_data)
-/// which is why g_markup_parse_context_pop() is provided to allow "one
-/// last access" to the @user_data provided to this function. In the
+/// which is why g_markup_parse_context_pop() is provided to allow &quot;one
+/// last access&quot; to the @user_data provided to this function. In the
 /// case of error, the @user_data provided here is passed directly to
 /// the error callback of the subparser and g_markup_parse_context_pop()
 /// should not be called. In either case, if @user_data was allocated
@@ -309,14 +309,13 @@ public static class GMarkupParseContextExtensions
 /// As an example, see the following implementation of a simple
 /// parser that counts the number of tags encountered.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct
 /// typedef struct
 /// {
 ///   gint tag_count;
 /// } CounterData;
-/// </para>
-/// <para>
+/// 
 /// static void
 /// counter_start_element (GMarkupParseContext  *context,
 ///                        const gchar          *element_name,
@@ -326,24 +325,20 @@ public static class GMarkupParseContextExtensions
 ///                        GError              **error)
 /// {
 ///   CounterData *data = user_data;
-/// </para>
-/// <para>
-///   data->tag_count++;
+/// 
+///   data-&amp;gt;tag_count++;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// counter_error (GMarkupParseContext *context,
 ///                GError              *error,
 ///                gpointer             user_data)
 /// {
 ///   CounterData *data = user_data;
-/// </para>
-/// <para>
+/// 
 ///   g_slice_free (CounterData, data);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static GMarkupParser counter_subparser =
 /// {
 ///   counter_start_element,
@@ -352,65 +347,55 @@ public static class GMarkupParseContextExtensions
 ///   NULL,
 ///   counter_error
 /// };
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// In order to allow this parser to be easily used as a subparser, the
 /// following interface is provided:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// start_counting (GMarkupParseContext *context)
 /// {
 ///   CounterData *data = g_slice_new (CounterData);
-/// </para>
-/// <para>
-///   data->tag_count = 0;
-///   g_markup_parse_context_push (context, &counter_subparser, data);
+/// 
+///   data-&amp;gt;tag_count = 0;
+///   g_markup_parse_context_push (context, &amp;counter_subparser, data);
 /// }
-/// </para>
-/// <para>
+/// 
 /// gint
 /// end_counting (GMarkupParseContext *context)
 /// {
 ///   CounterData *data = g_markup_parse_context_pop (context);
 ///   int result;
-/// </para>
-/// <para>
-///   result = data->tag_count;
+/// 
+///   result = data-&amp;gt;tag_count;
 ///   g_slice_free (CounterData, data);
-/// </para>
-/// <para>
+/// 
 ///   return result;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The subparser would then be used as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void start_element (context, element_name, ...)
 /// static void start_element (context, element_name, ...)
 /// {
-///   if (strcmp (element_name, "count-these") == 0)
+///   if (strcmp (element_name, &quot;count-these&quot;) == 0)
 ///     start_counting (context);
-/// </para>
-/// <para>
+/// 
 ///   // else, handle other tags...
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void end_element (context, element_name, ...)
 /// {
-///   if (strcmp (element_name, "count-these") == 0)
-///     g_print ("Counted %d tags\n", end_counting (context));
-/// </para>
-/// <para>
+///   if (strcmp (element_name, &quot;count-these&quot;) == 0)
+///     g_print (&quot;Counted %d tags\n&quot;, end_counting (context));
+/// 
 ///   // else, handle other tags...
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="context">

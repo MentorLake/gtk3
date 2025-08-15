@@ -9,7 +9,7 @@ namespace MentorLake.Gtk;
 /// and the click counter is reset.
 /// </para>
 /// <para>
-/// Callers may also restrict the area that is considered valid for a >1
+/// Callers may also restrict the area that is considered valid for a &amp;gt;1
 /// touch/button press through gtk_gesture_multi_press_set_area(), so any
 /// click happening outside that area is considered to be a first click of
 /// its own.

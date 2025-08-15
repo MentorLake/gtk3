@@ -75,7 +75,7 @@ public static class GdkRectangleExtensions
 /// It is allowed for @dest to be the same as either @src1 or @src2.
 /// </para>
 /// <para>
-/// Note that this function does not ignore 'empty' rectangles (ie. with
+/// Note that this function does not ignore &apos;empty&apos; rectangles (ie. with
 /// zero width or height).
 /// </para>
 /// </summary>

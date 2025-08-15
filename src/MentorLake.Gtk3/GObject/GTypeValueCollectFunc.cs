@@ -31,41 +31,39 @@ namespace MentorLake.GObject;
 /// <para>
 /// For our above string example, we continue with:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// if (!collect_values[0].v_pointer)
-///   value->data[0].v_pointer = g_strdup ("");
-/// else if (collect_flags & G_VALUE_NOCOPY_CONTENTS)
+/// if (!collect_values[0].v_pointer)
+///   value-&amp;gt;data[0].v_pointer = g_strdup (&quot;&quot;);
+/// else if (collect_flags &amp; G_VALUE_NOCOPY_CONTENTS)
 ///   {
-///     value->data[0].v_pointer = collect_values[0].v_pointer;
+///     value-&amp;gt;data[0].v_pointer = collect_values[0].v_pointer;
 ///     // keep a flag for the value_free() implementation to not free this string
-///     value->data[1].v_uint = G_VALUE_NOCOPY_CONTENTS;
+///     value-&amp;gt;data[1].v_uint = G_VALUE_NOCOPY_CONTENTS;
 ///   }
 /// else
-///   value->data[0].v_pointer = g_strdup (collect_values[0].v_pointer);
+///   value-&amp;gt;data[0].v_pointer = g_strdup (collect_values[0].v_pointer);
 /// return NULL;
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// It should be noted, that it is generally a bad idea to follow the
 /// %G_VALUE_NOCOPY_CONTENTS hint for reference counted types. Due to
 /// reentrancy requirements and reference count assertions performed
 /// by the signal emission code, reference counts should always be
-/// incremented for reference counted contents stored in the `value->data`
+/// incremented for reference counted contents stored in the `value-&amp;gt;data`
 /// array. To deviate from our string example for a moment, and taking
 /// a look at an exemplary implementation for `GTypeValueTable.collect_value()`
 /// of `GObject`:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GObject *object = G_OBJECT (collect_values[0].v_pointer);
 /// GObject *object = G_OBJECT (collect_values[0].v_pointer);
 /// g_return_val_if_fail (object != NULL,
-///    g_strdup_printf ("Object %p passed as invalid NULL pointer", object));
+///    g_strdup_printf (&quot;Object %p passed as invalid NULL pointer&quot;, object));
 /// // never honour G_VALUE_NOCOPY_CONTENTS for ref-counted types
-/// value->data[0].v_pointer = g_object_ref (object);
+/// value-&amp;gt;data[0].v_pointer = g_object_ref (object);
 /// return NULL;
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The reference count for valid objects is always incremented, regardless
 /// of `collect_flags`. For invalid objects, the example returns a newly

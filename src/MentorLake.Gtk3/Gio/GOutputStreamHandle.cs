@@ -84,7 +84,7 @@ public static class GOutputStreamHandleExtensions
 /// triggering the cancellable object from another thread. If the operation
 /// was cancelled, the error %G_IO_ERROR_CANCELLED will be returned.
 /// Cancelling a close will still leave the stream closed, but there some streams
-/// can use a faster close that doesn't block to e.g. check errors. On
+/// can use a faster close that doesn&apos;t block to e.g. check errors. On
 /// cancellation (as with any error) there is no guarantee that all written
 /// data will reach the target.
 /// </para>
@@ -774,7 +774,7 @@ public static class GOutputStreamHandleExtensions
 /// </para>
 /// <para>
 /// You are guaranteed that this method will never fail with
-/// %G_IO_ERROR_WOULD_BLOCK - if @stream can't accept more data, the
+/// %G_IO_ERROR_WOULD_BLOCK - if @stream can&apos;t accept more data, the
 /// method will just wait until this changes.
 /// </para>
 /// <para>
@@ -1193,7 +1193,7 @@ public static class GOutputStreamHandleExtensions
 /// </para>
 /// <para>
 /// You are guaranteed that this method will never fail with
-/// %G_IO_ERROR_WOULD_BLOCK — if @stream can't accept more data, the
+/// %G_IO_ERROR_WOULD_BLOCK — if @stream can&apos;t accept more data, the
 /// method will just wait until this changes.
 /// </para>
 /// <para>

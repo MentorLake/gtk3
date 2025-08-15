@@ -8,7 +8,7 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -43,7 +43,7 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-attributes-changed" signal is emitted when the text
+/// The &quot;text-attributes-changed&quot; signal is emitted when the text
 /// attributes of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -79,7 +79,7 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-caret-moved" signal is emitted when the caret
+/// The &quot;text-caret-moved&quot; signal is emitted when the caret
 /// position of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -115,10 +115,10 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-changed" signal is emitted when the text of the
+/// The &quot;text-changed&quot; signal is emitted when the text of the
 /// object which implements the AtkText interface changes, This
-/// signal will have a detail which is either "insert" or
-/// "delete" which identifies whether the text change was an
+/// signal will have a detail which is either &quot;insert&quot; or
+/// &quot;delete&quot; which identifies whether the text change was an
 /// insertion or a deletion.
 /// </para>
 /// </summary>
@@ -153,9 +153,9 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-insert" signal is emitted when a new text is
+/// The &quot;text-insert&quot; signal is emitted when a new text is
 /// inserted. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -190,9 +190,9 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-remove" signal is emitted when a new text is
+/// The &quot;text-remove&quot; signal is emitted when a new text is
 /// removed. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -227,7 +227,7 @@ public static class GtkTextViewAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "text-selection-changed" signal is emitted when the
+/// The &quot;text-selection-changed&quot; signal is emitted when the
 /// selected text of an object which implements AtkText changes.
 /// </para>
 /// </summary>
@@ -397,7 +397,7 @@ public static class GtkTextViewAccessibleHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -416,7 +416,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The "text-attributes-changed" signal is emitted when the text
+/// The &quot;text-attributes-changed&quot; signal is emitted when the text
 /// attributes of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -433,7 +433,7 @@ public delegate void text_attributes_changed([MarshalAs(UnmanagedType.CustomMars
 
 /// <summary>
 /// <para>
-/// The "text-caret-moved" signal is emitted when the caret
+/// The &quot;text-caret-moved&quot; signal is emitted when the caret
 /// position of the text of an object which implements AtkText
 /// changes.
 /// </para>
@@ -453,10 +453,10 @@ public delegate void text_caret_moved([MarshalAs(UnmanagedType.CustomMarshaler, 
 
 /// <summary>
 /// <para>
-/// The "text-changed" signal is emitted when the text of the
+/// The &quot;text-changed&quot; signal is emitted when the text of the
 /// object which implements the AtkText interface changes, This
-/// signal will have a detail which is either "insert" or
-/// "delete" which identifies whether the text change was an
+/// signal will have a detail which is either &quot;insert&quot; or
+/// &quot;delete&quot; which identifies whether the text change was an
 /// insertion or a deletion.
 /// </para>
 /// </summary>
@@ -478,9 +478,9 @@ public delegate void text_changed([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "text-insert" signal is emitted when a new text is
+/// The &quot;text-insert&quot; signal is emitted when a new text is
 /// inserted. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -505,9 +505,9 @@ public delegate void text_insert([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "text-remove" signal is emitted when a new text is
+/// The &quot;text-remove&quot; signal is emitted when a new text is
 /// removed. If the signal was not triggered by the user
-/// (e.g. typing or pasting text), the "system" detail should be
+/// (e.g. typing or pasting text), the &quot;system&quot; detail should be
 /// included.
 /// </para>
 /// </summary>
@@ -532,7 +532,7 @@ public delegate void text_remove([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "text-selection-changed" signal is emitted when the
+/// The &quot;text-selection-changed&quot; signal is emitted when the
 /// selected text of an object which implements AtkText changes.
 /// </para>
 /// </summary>

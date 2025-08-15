@@ -165,7 +165,7 @@ public static class GdkX11ScreenHandleExtensions
 /// </param>
 /// <return>
 /// the name of the window manager screen @screen, or
-/// "unknown" if the window manager is unknown. The string is owned by GDK
+/// &quot;unknown&quot; if the window manager is unknown. The string is owned by GDK
 /// and should not be freed.
 /// </return>
 

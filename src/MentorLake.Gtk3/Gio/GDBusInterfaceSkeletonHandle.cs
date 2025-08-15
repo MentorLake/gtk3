@@ -43,7 +43,7 @@ public static class GDBusInterfaceSkeletonHandleSignalExtensions
 /// </para>
 /// <para>
 /// Please note that the common case is optimized: if no signals
-/// handlers are connected and the default class handler isn't
+/// handlers are connected and the default class handler isn&apos;t
 /// overridden (for both @interface and the enclosing
 /// #GDBusObjectSkeleton, if any) and #GDBusInterfaceSkeleton:g-flags does
 /// not have the
@@ -145,7 +145,7 @@ public static class GDBusInterfaceSkeletonHandleSignalDelegates
 /// </para>
 /// <para>
 /// Please note that the common case is optimized: if no signals
-/// handlers are connected and the default class handler isn't
+/// handlers are connected and the default class handler isn&apos;t
 /// overridden (for both @interface and the enclosing
 /// #GDBusObjectSkeleton, if any) and #GDBusInterfaceSkeleton:g-flags does
 /// not have the
@@ -349,7 +349,7 @@ public static class GDBusInterfaceSkeletonHandleExtensions
 /// </param>
 /// <return>
 /// A #GVariant of type
-/// ['a{sv}'][G-VARIANT-TYPE-VARDICT:CAPS].
+/// [&apos;a{sv}&apos;][G-VARIANT-TYPE-VARDICT:CAPS].
 /// Free with g_variant_unref().
 /// </return>
 

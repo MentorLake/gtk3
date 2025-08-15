@@ -7,7 +7,7 @@ namespace MentorLake.Gdk;
 /// </para>
 /// <para>
 /// When a filter is called, @event is unpopulated, except for
-/// `event->window`. The filter may translate the native
+/// `event-&amp;gt;window`. The filter may translate the native
 /// event to a GDK event and store the result in @event, or handle it without
 /// translation. If the filter translates the event and processing should
 /// continue, it should return %GDK_FILTER_TRANSLATE.

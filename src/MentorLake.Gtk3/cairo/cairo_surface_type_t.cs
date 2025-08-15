@@ -3,13 +3,13 @@ namespace MentorLake.cairo;
 /// <summary>
 /// <para>
 /// #cairo_surface_type_t is used to describe the type of a given
-/// surface. The surface types are also known as "backends" or "surface
-/// backends" within cairo.
+/// surface. The surface types are also known as &quot;backends&quot; or &quot;surface
+/// backends&quot; within cairo.
 /// </para>
 /// <para>
 /// The type of a surface is determined by the function used to create
 /// it, which will generally be of the form
-/// <function>cairo_<emphasis>type</emphasis>_surface_create(<!-- -->)</function>,
+/// &amp;lt;function&amp;gt;cairo_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;_surface_create(&amp;lt;!-- --&amp;gt;)&amp;lt;/function&amp;gt;,
 /// (though see cairo_surface_create_similar() as well).
 /// </para>
 /// <para>
@@ -20,7 +20,7 @@ namespace MentorLake.cairo;
 /// any type, but some backends also provide type-specific functions
 /// that must only be called with a surface of the appropriate
 /// type. These functions have names that begin with
-/// <literal>cairo_<emphasis>type</emphasis>_surface</literal> such as cairo_image_surface_get_width().
+/// &amp;lt;literal&amp;gt;cairo_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;_surface&amp;lt;/literal&amp;gt; such as cairo_image_surface_get_width().
 /// </para>
 /// <para>
 /// The behavior of calling a type-specific function with a surface of
@@ -176,7 +176,7 @@ public enum cairo_surface_type_t
 	CAIRO_SURFACE_TYPE_DRM = 19,
 /// <summary>
 /// <para>
-/// The surface is of type 'tee' (a multiplexing surface), since 1.10
+/// The surface is of type &apos;tee&apos; (a multiplexing surface), since 1.10
 /// </para>
 /// </summary>
 

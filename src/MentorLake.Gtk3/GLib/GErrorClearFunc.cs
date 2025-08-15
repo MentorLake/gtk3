@@ -4,7 +4,7 @@ namespace MentorLake.GLib;
 /// <para>
 /// Specifies the type of function which is called when an extended
 /// error instance is freed. It is passed the error pointer about to be
-/// freed, and should free the error's private data fields.
+/// freed, and should free the error&apos;s private data fields.
 /// </para>
 /// <para>
 /// Normally, it is better to use G_DEFINE_EXTENDED_ERROR(), as it

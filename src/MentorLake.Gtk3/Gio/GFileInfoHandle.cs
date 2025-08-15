@@ -174,7 +174,7 @@ public static class GFileInfoHandleExtensions
 /// <return>
 /// a UTF-8 string associated with the given @attribute, or
 ///    %NULL if the attribute wasn’t set.
-///    When you're done with the string it must be freed with g_free().
+///    When you&apos;re done with the string it must be freed with g_free().
 /// </return>
 
 	public static string GetAttributeAsString(this MentorLake.Gio.GFileInfoHandle info, string attribute)
@@ -509,7 +509,7 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the file's content type.
+/// Gets the file&apos;s content type.
 /// </para>
 /// <para>
 /// It is an error to call this if the #GFileInfo does not contain
@@ -521,7 +521,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <return>
-/// a string containing the file's content type,
+/// a string containing the file&apos;s content type,
 /// or %NULL if unknown.
 /// </return>
 
@@ -643,7 +643,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <return>
-/// a string containing the value of the "etag:value" attribute.
+/// a string containing the value of the &quot;etag:value&quot; attribute.
 /// </return>
 
 	public static string GetEtag(this MentorLake.Gio.GFileInfoHandle info)
@@ -654,8 +654,8 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets a file's type (whether it is a regular file, symlink, etc).
-/// This is different from the file's content type, see g_file_info_get_content_type().
+/// Gets a file&apos;s type (whether it is a regular file, symlink, etc).
+/// This is different from the file&apos;s content type, see g_file_info_get_content_type().
 /// </para>
 /// <para>
 /// It is an error to call this if the #GFileInfo does not contain
@@ -849,7 +849,7 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the file's size (in bytes). The size is retrieved through the value of
+/// Gets the file&apos;s size (in bytes). The size is retrieved through the value of
 /// the %G_FILE_ATTRIBUTE_STANDARD_SIZE attribute and is converted
 /// from #guint64 to #goffset before returning the result.
 /// </para>
@@ -863,7 +863,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <return>
-/// a #goffset containing the file's size (in bytes).
+/// a #goffset containing the file&apos;s size (in bytes).
 /// </return>
 
 	public static int GetSize(this MentorLake.Gio.GFileInfoHandle info)
@@ -887,7 +887,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <return>
-/// a #gint32 containing the value of the "standard::sort_order" attribute.
+/// a #gint32 containing the value of the &quot;standard::sort_order&quot; attribute.
 /// </return>
 
 	public static int GetSortOrder(this MentorLake.Gio.GFileInfoHandle info)
@@ -991,7 +991,7 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Lists the file info structure's attributes.
+/// Lists the file info structure&apos;s attributes.
 /// </para>
 /// </summary>
 
@@ -999,7 +999,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <param name="name_space">
-/// a file attribute key's namespace, or %NULL to list
+/// a file attribute key&apos;s namespace, or %NULL to list
 ///   all attributes.
 /// </param>
 /// <return>
@@ -1517,7 +1517,7 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the "is_hidden" attribute in a #GFileInfo according to @is_hidden.
+/// Sets the &quot;is_hidden&quot; attribute in a #GFileInfo according to @is_hidden.
 /// See %G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN.
 /// </para>
 /// </summary>
@@ -1538,7 +1538,7 @@ public static class GFileInfoHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the "is_symlink" attribute in a #GFileInfo according to @is_symlink.
+/// Sets the &quot;is_symlink&quot; attribute in a #GFileInfo according to @is_symlink.
 /// See %G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK.
 /// </para>
 /// </summary>
@@ -1639,7 +1639,7 @@ public static class GFileInfoHandleExtensions
 /// a #GFileInfo.
 /// </param>
 /// <param name="size">
-/// a #goffset containing the file's size.
+/// a #goffset containing the file&apos;s size.
 /// </param>
 
 	public static T SetSize<T>(this T info, int size) where T : GFileInfoHandle

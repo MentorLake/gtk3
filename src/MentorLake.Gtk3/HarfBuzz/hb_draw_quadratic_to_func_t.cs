@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// A virtual method for the #hb_draw_funcs_t to perform a "quadratic-to" draw
+/// A virtual method for the #hb_draw_funcs_t to perform a &quot;quadratic-to&quot; draw
 /// operation.
 /// </para>
 /// </summary>

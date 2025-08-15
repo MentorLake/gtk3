@@ -47,7 +47,7 @@ namespace MentorLake.Gio;
 /// static void
 /// decoration_data_free (DecorationData *decoration)
 /// {
-///   g_free (decoration->message);
+///   g_free (decoration-&amp;gt;message);
 ///   g_slice_free (DecorationData, decoration);
 /// }
 /// </para>
@@ -64,13 +64,13 @@ namespace MentorLake.Gio;
 ///   if (cake == NULL)
 ///     {
 ///       g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_NO_FLOUR,
-///                                "Go to the supermarket");
+///                                &quot;Go to the supermarket&quot;);
 ///       g_object_unref (task);
 ///       return;
 ///     }
 /// </para>
 /// <para>
-///   if (!cake_decorate (cake, decoration->frosting, decoration->message, &error))
+///   if (!cake_decorate (cake, decoration-&amp;gt;frosting, decoration-&amp;gt;message, &amp;error))
 ///     {
 ///       g_object_unref (cake);
 ///       // g_task_return_error() takes ownership of error
@@ -101,10 +101,10 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   task = g_task_new (self, cancellable, callback, user_data);
-///   if (radius < 3)
+///   if (radius &amp;lt; 3)
 ///     {
 ///       g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_TOO_SMALL,
-///                                "%ucm radius cakes are silly",
+///                                &quot;%ucm radius cakes are silly&quot;,
 ///                                radius);
 ///       g_object_unref (task);
 ///       return;
@@ -122,8 +122,8 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   decoration = g_slice_new (DecorationData);
-///   decoration->frosting = frosting;
-///   decoration->message = g_strdup (message);
+///   decoration-&amp;gt;frosting = frosting;
+///   decoration-&amp;gt;message = g_strdup (message);
 ///   g_task_set_task_data (task, decoration, (GDestroyNotify) decoration_data_free);
 /// </para>
 /// <para>
@@ -171,9 +171,9 @@ namespace MentorLake.Gio;
 /// static void
 /// decoration_data_free (BakingData *bd)
 /// {
-///   if (bd->cake)
-///     g_object_unref (bd->cake);
-///   g_free (bd->message);
+///   if (bd-&amp;gt;cake)
+///     g_object_unref (bd-&amp;gt;cake);
+///   g_free (bd-&amp;gt;message);
 ///   g_slice_free (BakingData, bd);
 /// }
 /// </para>
@@ -187,7 +187,7 @@ namespace MentorLake.Gio;
 ///   GError *error = NULL;
 /// </para>
 /// <para>
-///   if (!cake_decorate_finish (cake, result, &error))
+///   if (!cake_decorate_finish (cake, result, &amp;error))
 ///     {
 ///       g_object_unref (cake);
 ///       g_task_return_error (task, error);
@@ -210,7 +210,7 @@ namespace MentorLake.Gio;
 ///   BakingData *bd = g_task_get_task_data (task);
 /// </para>
 /// <para>
-///   cake_decorate_async (bd->cake, bd->frosting, bd->message,
+///   cake_decorate_async (bd-&amp;gt;cake, bd-&amp;gt;frosting, bd-&amp;gt;message,
 ///                        g_task_get_cancellable (task),
 ///                        decorated_cb, task);
 /// </para>
@@ -231,13 +231,13 @@ namespace MentorLake.Gio;
 ///   if (cake == NULL)
 ///     {
 ///       g_task_return_new_error (task, BAKER_ERROR, BAKER_ERROR_NO_FLOUR,
-///                                "Go to the supermarket");
+///                                &quot;Go to the supermarket&quot;);
 ///       g_object_unref (task);
 ///       return;
 ///     }
 /// </para>
 /// <para>
-///   bd->cake = cake;
+///   bd-&amp;gt;cake = cake;
 /// </para>
 /// <para>
 ///   // Bail out now if the user has already cancelled
@@ -284,8 +284,8 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   bd = g_slice_new0 (BakingData);
-///   bd->frosting = frosting;
-///   bd->message = g_strdup (message);
+///   bd-&amp;gt;frosting = frosting;
+///   bd-&amp;gt;message = g_strdup (message);
 ///   g_task_set_task_data (task, bd, (GDestroyNotify) baking_data_free);
 /// </para>
 /// <para>
@@ -329,7 +329,7 @@ namespace MentorLake.Gio;
 /// static void
 /// cake_data_free (CakeData *cake_data)
 /// {
-///   g_free (cake_data->message);
+///   g_free (cake_data-&amp;gt;message);
 ///   g_slice_free (CakeData, cake_data);
 /// }
 /// </para>
@@ -346,9 +346,9 @@ namespace MentorLake.Gio;
 ///   GError *error = NULL;
 /// </para>
 /// <para>
-///   cake = bake_cake (baker, cake_data->radius, cake_data->flavor,
-///                     cake_data->frosting, cake_data->message,
-///                     cancellable, &error);
+///   cake = bake_cake (baker, cake_data-&amp;gt;radius, cake_data-&amp;gt;flavor,
+///                     cake_data-&amp;gt;frosting, cake_data-&amp;gt;message,
+///                     cancellable, &amp;error);
 ///   if (cake)
 ///     g_task_return_pointer (task, cake, g_object_unref);
 ///   else
@@ -371,10 +371,10 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 ///   cake_data = g_slice_new (CakeData);
-///   cake_data->radius = radius;
-///   cake_data->flavor = flavor;
-///   cake_data->frosting = frosting;
-///   cake_data->message = g_strdup (message);
+///   cake_data-&amp;gt;radius = radius;
+///   cake_data-&amp;gt;flavor = flavor;
+///   cake_data-&amp;gt;frosting = frosting;
+///   cake_data-&amp;gt;message = g_strdup (message);
 ///   task = g_task_new (self, cancellable, callback, user_data);
 ///   g_task_set_task_data (task, cake_data, (GDestroyNotify) cake_data_free);
 ///   g_task_run_in_thread (task, bake_cake_thread);
@@ -425,9 +425,9 @@ namespace MentorLake.Gio;
 ///   GError *error = NULL;
 /// </para>
 /// <para>
-///   cake = bake_cake (baker, cake_data->radius, cake_data->flavor,
-///                     cake_data->frosting, cake_data->message,
-///                     &error);
+///   cake = bake_cake (baker, cake_data-&amp;gt;radius, cake_data-&amp;gt;flavor,
+///                     cake_data-&amp;gt;frosting, cake_data-&amp;gt;message,
+///                     &amp;error);
 ///   if (error)
 ///     {
 ///       g_task_return_error (task, error);
@@ -607,7 +607,7 @@ public class GTaskHandle : GObjectHandle, GAsyncResultHandle
 /// [thread-default main context][g-main-context-push-thread-default].
 /// </para>
 /// <para>
-/// Call this in the "start" method of your asynchronous method, and
+/// Call this in the &quot;start&quot; method of your asynchronous method, and
 /// pass the #GTask around throughout the asynchronous operation. You
 /// can use g_task_set_task_data() to attach task-specific data to the
 /// object, which you can retrieve later via g_task_get_task_data().
@@ -759,9 +759,9 @@ public static class GTaskHandleExtensions
 /// <summary>
 /// <para>
 /// A utility function for dealing with async operations where you need
-/// to wait for a #GSource to trigger. Attaches @source to @task's
-/// #GMainContext with @task's [priority](iface.AsyncResult.html#io-priority),
-/// and sets @source's callback to @callback, with @task as the callback's
+/// to wait for a #GSource to trigger. Attaches @source to @task&apos;s
+/// #GMainContext with @task&apos;s [priority](iface.AsyncResult.html#io-priority),
+/// and sets @source&apos;s callback to @callback, with @task as the callback&apos;s
 /// `user_data`.
 /// </para>
 /// <para>
@@ -793,7 +793,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's #GCancellable
+/// Gets @task&apos;s #GCancellable
 /// </para>
 /// </summary>
 
@@ -801,7 +801,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's #GCancellable
+/// @task&apos;s #GCancellable
 /// </return>
 
 	public static MentorLake.Gio.GCancellableHandle GetCancellable(this MentorLake.Gio.GTaskHandle task)
@@ -812,7 +812,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's check-cancellable flag. See
+/// Gets @task&apos;s check-cancellable flag. See
 /// g_task_set_check_cancellable() for more details.
 /// </para>
 /// </summary>
@@ -856,7 +856,7 @@ public static class GTaskHandleExtensions
 /// at the point when @task was created).
 /// </para>
 /// <para>
-/// This will always return a non-%NULL value, even if the task's
+/// This will always return a non-%NULL value, even if the task&apos;s
 /// context is the default #GMainContext.
 /// </para>
 /// </summary>
@@ -865,7 +865,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's #GMainContext
+/// @task&apos;s #GMainContext
 /// </return>
 
 	public static MentorLake.GLib.GMainContextHandle GetContext(this MentorLake.Gio.GTaskHandle task)
@@ -895,7 +895,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's priority
+/// Gets @task&apos;s priority
 /// </para>
 /// </summary>
 
@@ -903,7 +903,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's priority
+/// @task&apos;s priority
 /// </return>
 
 	public static int GetPriority(this MentorLake.Gio.GTaskHandle task)
@@ -914,7 +914,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's return-on-cancel flag. See
+/// Gets @task&apos;s return-on-cancel flag. See
 /// g_task_set_return_on_cancel() for more details.
 /// </para>
 /// </summary>
@@ -940,7 +940,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's source object, or %NULL
+/// @task&apos;s source object, or %NULL
 /// </return>
 
 	public static MentorLake.GObject.GObjectHandle GetSourceObject(this MentorLake.Gio.GTaskHandle task)
@@ -951,7 +951,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's source tag. See g_task_set_source_tag().
+/// Gets @task&apos;s source tag. See g_task_set_source_tag().
 /// </para>
 /// </summary>
 
@@ -959,7 +959,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's source tag
+/// @task&apos;s source tag
 /// </return>
 
 	public static IntPtr GetSourceTag(this MentorLake.Gio.GTaskHandle task)
@@ -970,7 +970,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @task's `task_data`.
+/// Gets @task&apos;s `task_data`.
 /// </para>
 /// </summary>
 
@@ -978,7 +978,7 @@ public static class GTaskHandleExtensions
 /// a #GTask
 /// </param>
 /// <return>
-/// @task's `task_data`.
+/// @task&apos;s `task_data`.
 /// </return>
 
 	public static IntPtr GetTaskData(this MentorLake.Gio.GTaskHandle task)
@@ -1131,7 +1131,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @result and completes the task (see
+/// Sets @task&apos;s result to @result and completes the task (see
 /// g_task_return_pointer() for more discussion of exactly what this
 /// means).
 /// </para>
@@ -1153,7 +1153,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @error (which @task assumes ownership of)
+/// Sets @task&apos;s result to @error (which @task assumes ownership of)
 /// and completes the task (see g_task_return_pointer() for more
 /// discussion of exactly what this means).
 /// </para>
@@ -1186,8 +1186,8 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Checks if @task's #GCancellable has been cancelled, and if so, sets
-/// @task's error accordingly and completes the task (see
+/// Checks if @task&apos;s #GCancellable has been cancelled, and if so, sets
+/// @task&apos;s error accordingly and completes the task (see
 /// g_task_return_pointer() for more discussion of exactly what this
 /// means).
 /// </para>
@@ -1208,7 +1208,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @result and completes the task (see
+/// Sets @task&apos;s result to @result and completes the task (see
 /// g_task_return_pointer() for more discussion of exactly what this
 /// means).
 /// </para>
@@ -1230,7 +1230,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to a new #GError created from @domain, @code,
+/// Sets @task&apos;s result to a new #GError created from @domain, @code,
 /// @format, and the remaining arguments, and completes the task (see
 /// g_task_return_pointer() for more discussion of exactly what this
 /// means).
@@ -1299,14 +1299,14 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @result and completes the task. If @result
+/// Sets @task&apos;s result to @result and completes the task. If @result
 /// is not %NULL, then @result_destroy will be used to free @result if
 /// the caller does not take ownership of it with
 /// g_task_propagate_pointer().
 /// </para>
 /// <para>
-/// "Completes the task" means that for an ordinary asynchronous task
-/// it will either invoke the task's callback, or else queue that
+/// &quot;Completes the task&quot; means that for an ordinary asynchronous task
+/// it will either invoke the task&apos;s callback, or else queue that
 /// callback to be invoked in the proper #GMainContext, or in the next
 /// iteration of the current #GMainContext. For a task run via
 /// g_task_run_in_thread() or g_task_run_in_thread_sync(), calling this
@@ -1342,7 +1342,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @error (which @task assumes ownership of), with
+/// Sets @task&apos;s result to @error (which @task assumes ownership of), with
 /// the message prefixed according to @format, and completes the task
 /// (see g_task_return_pointer() for more discussion of exactly what this
 /// means).
@@ -1381,7 +1381,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's result to @result (by copying it) and completes the task.
+/// Sets @task&apos;s result to @result (by copying it) and completes the task.
 /// </para>
 /// <para>
 /// If @result is %NULL then a #GValue of type %G_TYPE_POINTER
@@ -1411,8 +1411,8 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Runs @task_func in another thread. When @task_func returns, @task's
-/// #GAsyncReadyCallback will be invoked in @task's #GMainContext.
+/// Runs @task_func in another thread. When @task_func returns, @task&apos;s
+/// #GAsyncReadyCallback will be invoked in @task&apos;s #GMainContext.
 /// </para>
 /// <para>
 /// This takes a ref on @task until the task completes.
@@ -1424,7 +1424,7 @@ public static class GTaskHandleExtensions
 /// Although GLib currently rate-limits the tasks queued via
 /// g_task_run_in_thread(), you should not assume that it will always
 /// do this. If you have a very large number of tasks to run (several tens of
-/// tasks), but don't want them to all run at once, you should only queue a
+/// tasks), but don&apos;t want them to all run at once, you should only queue a
 /// limited number of them (around ten) at a time.
 /// </para>
 /// <para>
@@ -1470,7 +1470,7 @@ public static class GTaskHandleExtensions
 /// Although GLib currently rate-limits the tasks queued via
 /// g_task_run_in_thread_sync(), you should not assume that it will
 /// always do this. If you have a very large number of tasks to run,
-/// but don't want them to all run at once, you should only queue a
+/// but don&apos;t want them to all run at once, you should only queue a
 /// limited number of them at a time.
 /// </para>
 /// </summary>
@@ -1491,17 +1491,17 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or clears @task's check-cancellable flag. If this is %TRUE
+/// Sets or clears @task&apos;s check-cancellable flag. If this is %TRUE
 /// (the default), then g_task_propagate_pointer(), etc, and
-/// g_task_had_error() will check the task's #GCancellable first, and
+/// g_task_had_error() will check the task&apos;s #GCancellable first, and
 /// if it has been cancelled, then they will consider the task to have
-/// returned an "Operation was cancelled" error
+/// returned an &quot;Operation was cancelled&quot; error
 /// (%G_IO_ERROR_CANCELLED), regardless of any other error or return
 /// value the task may have had.
 /// </para>
 /// <para>
 /// If @check_cancellable is %FALSE, then the #GTask will not check the
-/// cancellable itself, and it is up to @task's owner to do this (eg,
+/// cancellable itself, and it is up to @task&apos;s owner to do this (eg,
 /// via g_task_return_error_if_cancelled()).
 /// </para>
 /// <para>
@@ -1557,7 +1557,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's priority. If you do not call this, it will default to
+/// Sets @task&apos;s priority. If you do not call this, it will default to
 /// %G_PRIORITY_DEFAULT.
 /// </para>
 /// <para>
@@ -1584,14 +1584,14 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or clears @task's return-on-cancel flag. This is only
+/// Sets or clears @task&apos;s return-on-cancel flag. This is only
 /// meaningful for tasks run via g_task_run_in_thread() or
 /// g_task_run_in_thread_sync().
 /// </para>
 /// <para>
-/// If @return_on_cancel is %TRUE, then cancelling @task's
+/// If @return_on_cancel is %TRUE, then cancelling @task&apos;s
 /// #GCancellable will immediately cause it to return, as though the
-/// task's #GTaskThreadFunc had called
+/// task&apos;s #GTaskThreadFunc had called
 /// g_task_return_error_if_cancelled() and then returned.
 /// </para>
 /// <para>
@@ -1607,12 +1607,12 @@ public static class GTaskHandleExtensions
 /// </para>
 /// <para>
 /// You can disable and re-enable this flag multiple times if you wish.
-/// If the task's #GCancellable is cancelled while return-on-cancel is
+/// If the task&apos;s #GCancellable is cancelled while return-on-cancel is
 /// %FALSE, then calling g_task_set_return_on_cancel() to set it %TRUE
 /// again will cause the task to be cancelled at that point.
 /// </para>
 /// <para>
-/// If the task's #GCancellable is already cancelled before you call
+/// If the task&apos;s #GCancellable is already cancelled before you call
 /// g_task_run_in_thread()/g_task_run_in_thread_sync(), then the
 /// #GTaskThreadFunc will still be run (for consistency), but the task
 /// will also be completed right away.
@@ -1627,7 +1627,7 @@ public static class GTaskHandleExtensions
 ///   it is cancelled.
 /// </param>
 /// <return>
-/// %TRUE if @task's return-on-cancel flag was changed to
+/// %TRUE if @task&apos;s return-on-cancel flag was changed to
 ///   match @return_on_cancel. %FALSE if @task has already been
 ///   cancelled.
 /// </return>
@@ -1640,14 +1640,14 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's source tag.
+/// Sets @task&apos;s source tag.
 /// </para>
 /// <para>
 /// You can use this to tag a task return
 /// value with a particular pointer (usually a pointer to the function
 /// doing the tagging) and then later check it using
 /// g_task_get_source_tag() (or g_async_result_is_tagged()) in the
-/// task's "finish" function, to figure out if the response came from a
+/// task&apos;s &quot;finish&quot; function, to figure out if the response came from a
 /// particular place.
 /// </para>
 /// <para>
@@ -1700,7 +1700,7 @@ public static class GTaskHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @task's task data (freeing the existing task data, if any).
+/// Sets @task&apos;s task data (freeing the existing task data, if any).
 /// </para>
 /// </summary>
 

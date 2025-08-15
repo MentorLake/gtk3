@@ -40,7 +40,7 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// Consider the following two examples that do the same thing in each
-/// style: take an existing dictionary and look up the "count" uint32
+/// style: take an existing dictionary and look up the &quot;count&quot; uint32
 /// key, adding 1 to it if it is found, or returning an error if the
 /// key is not found.  Each returns the new dictionary as a floating
 /// #GVariant.
@@ -48,37 +48,33 @@ namespace MentorLake.GLib;
 /// <para>
 /// ## Using a stack-allocated GVariantDict
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GVariant *
 ///   GVariant *
 ///   add_to_count (GVariant  *orig,
 ///                 GError   **error)
 ///   {
 ///     GVariantDict dict;
 ///     guint32 count;
-/// </para>
-/// <para>
-///     g_variant_dict_init (&dict, orig);
-///     if (!g_variant_dict_lookup (&dict, "count", "u", &count))
+/// 
+///     g_variant_dict_init (&amp;dict, orig);
+///     if (!g_variant_dict_lookup (&amp;dict, &quot;count&quot;, &quot;u&quot;, &amp;count))
 ///       {
 ///         g_set_error (...);
-///         g_variant_dict_clear (&dict);
+///         g_variant_dict_clear (&amp;dict);
 ///         return NULL;
 ///       }
-/// </para>
-/// <para>
-///     g_variant_dict_insert (&dict, "count", "u", count + 1);
-/// </para>
-/// <para>
-///     return g_variant_dict_end (&dict);
+/// 
+///     g_variant_dict_insert (&amp;dict, &quot;count&quot;, &quot;u&quot;, count + 1);
+/// 
+///     return g_variant_dict_end (&amp;dict);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Using heap-allocated GVariantDict
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GVariant *
 ///   GVariant *
 ///   add_to_count (GVariant  *orig,
 ///                 GError   **error)
@@ -86,14 +82,12 @@ namespace MentorLake.GLib;
 ///     GVariantDict *dict;
 ///     GVariant *result;
 ///     guint32 count;
-/// </para>
-/// <para>
+/// 
 ///     dict = g_variant_dict_new (orig);
-/// </para>
-/// <para>
-///     if (g_variant_dict_lookup (dict, "count", "u", &count))
+/// 
+///     if (g_variant_dict_lookup (dict, &quot;count&quot;, &quot;u&quot;, &amp;count))
 ///       {
-///         g_variant_dict_insert (dict, "count", "u", count + 1);
+///         g_variant_dict_insert (dict, &quot;count&quot;, &quot;u&quot;, count + 1);
 ///         result = g_variant_dict_end (dict);
 ///       }
 ///     else
@@ -101,15 +95,12 @@ namespace MentorLake.GLib;
 ///         g_set_error (...);
 ///         result = NULL;
 ///       }
-/// </para>
-/// <para>
+/// 
 ///     g_variant_dict_unref (dict);
-/// </para>
-/// <para>
+/// 
 ///     return result;
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GVariantDictHandle : BaseSafeHandle
@@ -158,7 +149,7 @@ public static class GVariantDictExtensions
 /// It typically only makes sense to do this on a stack-allocated
 /// #GVariantDict if you want to abort building the value part-way
 /// through.  This function need not be called if you call
-/// g_variant_dict_end() and it also doesn't need to be called on dicts
+/// g_variant_dict_end() and it also doesn&apos;t need to be called on dicts
 /// allocated with g_variant_dict_new (see g_variant_dict_unref() for
 /// that).
 /// </para>
@@ -402,7 +393,7 @@ public static class GVariantDictExtensions
 /// Increases the reference count on @dict.
 /// </para>
 /// <para>
-/// Don't call this on stack-allocated #GVariantDict instances or bad
+/// Don&apos;t call this on stack-allocated #GVariantDict instances or bad
 /// things will happen.
 /// </para>
 /// </summary>
@@ -451,7 +442,7 @@ public static class GVariantDictExtensions
 /// associated with the #GVariantDict.
 /// </para>
 /// <para>
-/// Don't call this on stack-allocated #GVariantDict instances or bad
+/// Don&apos;t call this on stack-allocated #GVariantDict instances or bad
 /// things will happen.
 /// </para>
 /// </summary>
@@ -553,7 +544,7 @@ internal class GVariantDictExterns
 /// </para>
 /// <para>
 /// Consider the following two examples that do the same thing in each
-/// style: take an existing dictionary and look up the "count" uint32
+/// style: take an existing dictionary and look up the &quot;count&quot; uint32
 /// key, adding 1 to it if it is found, or returning an error if the
 /// key is not found.  Each returns the new dictionary as a floating
 /// #GVariant.
@@ -561,37 +552,33 @@ internal class GVariantDictExterns
 /// <para>
 /// ## Using a stack-allocated GVariantDict
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GVariant *
 ///   GVariant *
 ///   add_to_count (GVariant  *orig,
 ///                 GError   **error)
 ///   {
 ///     GVariantDict dict;
 ///     guint32 count;
-/// </para>
-/// <para>
-///     g_variant_dict_init (&dict, orig);
-///     if (!g_variant_dict_lookup (&dict, "count", "u", &count))
+/// 
+///     g_variant_dict_init (&amp;dict, orig);
+///     if (!g_variant_dict_lookup (&amp;dict, &quot;count&quot;, &quot;u&quot;, &amp;count))
 ///       {
 ///         g_set_error (...);
-///         g_variant_dict_clear (&dict);
+///         g_variant_dict_clear (&amp;dict);
 ///         return NULL;
 ///       }
-/// </para>
-/// <para>
-///     g_variant_dict_insert (&dict, "count", "u", count + 1);
-/// </para>
-/// <para>
-///     return g_variant_dict_end (&dict);
+/// 
+///     g_variant_dict_insert (&amp;dict, &quot;count&quot;, &quot;u&quot;, count + 1);
+/// 
+///     return g_variant_dict_end (&amp;dict);
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Using heap-allocated GVariantDict
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   GVariant *
 ///   GVariant *
 ///   add_to_count (GVariant  *orig,
 ///                 GError   **error)
@@ -599,14 +586,12 @@ internal class GVariantDictExterns
 ///     GVariantDict *dict;
 ///     GVariant *result;
 ///     guint32 count;
-/// </para>
-/// <para>
+/// 
 ///     dict = g_variant_dict_new (orig);
-/// </para>
-/// <para>
-///     if (g_variant_dict_lookup (dict, "count", "u", &count))
+/// 
+///     if (g_variant_dict_lookup (dict, &quot;count&quot;, &quot;u&quot;, &amp;count))
 ///       {
-///         g_variant_dict_insert (dict, "count", "u", count + 1);
+///         g_variant_dict_insert (dict, &quot;count&quot;, &quot;u&quot;, count + 1);
 ///         result = g_variant_dict_end (dict);
 ///       }
 ///     else
@@ -614,15 +599,12 @@ internal class GVariantDictExterns
 ///         g_set_error (...);
 ///         result = NULL;
 ///       }
-/// </para>
-/// <para>
+/// 
 ///     g_variant_dict_unref (dict);
-/// </para>
-/// <para>
+/// 
 ///     return result;
 ///   }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public struct GVariantDict

@@ -21,7 +21,7 @@ namespace MentorLake.Gio;
 /// time.
 /// </para>
 /// <para>
-/// Before GLib 2.72, `<gio/gunixcredentialsmessage.h>` belonged to the UNIX-specific
+/// Before GLib 2.72, `&amp;lt;gio/gunixcredentialsmessage.h&amp;gt;` belonged to the UNIX-specific
 /// GIO interfaces, thus you had to use the `gio-unix-2.0.pc` pkg-config file
 /// when using it. This is no longer necessary since GLib 2.72.
 /// </para>

@@ -24,50 +24,48 @@ namespace MentorLake.Gtk;
 /// Implementations of GtkCellLayout which also implement the GtkBuildable
 /// interface (#GtkCellView, #GtkIconView, #GtkComboBox,
 /// #GtkEntryCompletion, #GtkTreeViewColumn) accept GtkCellRenderer objects
-/// as `<child>` elements in UI definitions. They support a custom `<attributes>`
-/// element for their children, which can contain multiple `<attribute>`
-/// elements. Each `<attribute>` element has a name attribute which specifies
+/// as `&amp;lt;child&amp;gt;` elements in UI definitions. They support a custom `&amp;lt;attributes&amp;gt;`
+/// element for their children, which can contain multiple `&amp;lt;attribute&amp;gt;`
+/// elements. Each `&amp;lt;attribute&amp;gt;` element has a name attribute which specifies
 /// a property of the cell renderer; the content of the element is the
 /// attribute value.
 /// </para>
 /// <para>
 /// This is an example of a UI definition fragment specifying attributes:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkCellView">
-///   <child>
-///     <object class="GtkCellRendererText"/>
-///     <attributes>
-///       <attribute name="text">0</attribute>
-///     </attributes>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkCellView&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkCellView&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkCellRendererText&quot;/&amp;gt;
+///     &amp;lt;attributes&amp;gt;
+///       &amp;lt;attribute name=&quot;text&quot;&amp;gt;0&amp;lt;/attribute&amp;gt;
+///     &amp;lt;/attributes&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// Furthermore for implementations of GtkCellLayout that use a #GtkCellArea
 /// to lay out cells (all GtkCellLayouts in GTK+ use a GtkCellArea)
 /// [cell properties][cell-properties] can also be defined in the format by
-/// specifying the custom `<cell-packing>` attribute which can contain multiple
-/// `<property>` elements defined in the normal way.
+/// specifying the custom `&amp;lt;cell-packing&amp;gt;` attribute which can contain multiple
+/// `&amp;lt;property&amp;gt;` elements defined in the normal way.
 /// </para>
 /// <para>
 /// Here is a UI definition fragment specifying cell properties:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkTreeViewColumn">
-///   <child>
-///     <object class="GtkCellRendererText"/>
-///     <cell-packing>
-///       <property name="align">True</property>
-///       <property name="expand">False</property>
-///     </cell-packing>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkTreeViewColumn&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkTreeViewColumn&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkCellRendererText&quot;/&amp;gt;
+///     &amp;lt;cell-packing&amp;gt;
+///       &amp;lt;property name=&quot;align&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///       &amp;lt;property name=&quot;expand&quot;&amp;gt;False&amp;lt;/property&amp;gt;
+///     &amp;lt;/cell-packing&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # Subclassing GtkCellLayout implementations
 /// </para>
@@ -78,11 +76,10 @@ namespace MentorLake.Gtk;
 /// The cell area is exposed as a construct-only property by these
 /// widgets. This means that it is possible to e.g. do
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// combo = g_object_new (GTK_TYPE_COMBO_BOX, "cell-area", my_cell_area, NULL);
-/// ]|
-/// </para>
+/// <code>
+/// combo = g_object_new (GTK_TYPE_COMBO_BOX, &quot;cell-area&quot;, my_cell_area, NULL);
+/// combo = g_object_new (GTK_TYPE_COMBO_BOX, &quot;cell-area&quot;, my_cell_area, NULL);
+/// </code>
 /// <para>
 /// to use a custom cell area with a combo box. But construct properties
 /// are only initialized after instance init()
@@ -92,30 +89,27 @@ namespace MentorLake.Gtk;
 /// construct property value will be ignored (with a warning, to alert
 /// you to the problem).
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// my_combo_box_init (MyComboBox *b)
 /// {
 ///   GtkCellRenderer *cell;
-/// </para>
-/// <para>
+/// 
 ///   cell = gtk_cell_renderer_pixbuf_new ();
 ///   // The following call causes the default cell area for combo boxes,
 ///   // a GtkCellAreaBox, to be instantiated
 ///   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (b), cell, FALSE);
 ///   ...
 /// }
-/// </para>
-/// <para>
+/// 
 /// GtkWidget *
 /// my_combo_box_new (GtkCellArea *area)
 /// {
 ///   // This call is going to cause a warning about area being ignored
-///   return g_object_new (MY_TYPE_COMBO_BOX, "cell-area", area, NULL);
+///   return g_object_new (MY_TYPE_COMBO_BOX, &quot;cell-area&quot;, area, NULL);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// If supporting alternative cell areas with your derived widget is
 /// not important, then this does not have to concern you. If you want

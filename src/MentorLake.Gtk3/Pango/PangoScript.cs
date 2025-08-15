@@ -492,7 +492,7 @@ public enum PangoScript
 	PANGO_SCRIPT_PHAGS_PA = 65,
 /// <summary>
 /// <para>
-/// N'Ko. Since 1.14
+/// N&apos;Ko. Since 1.14
 /// </para>
 /// </summary>
 

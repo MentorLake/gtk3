@@ -22,7 +22,7 @@ public enum GtkSpinButtonUpdatePolicy
 /// <summary>
 /// <para>
 /// When refreshing your #GtkSpinButton, the value is
-///     only displayed if it is valid within the bounds of the spin button's
+///     only displayed if it is valid within the bounds of the spin button&apos;s
 ///     adjustment
 /// </para>
 /// </summary>

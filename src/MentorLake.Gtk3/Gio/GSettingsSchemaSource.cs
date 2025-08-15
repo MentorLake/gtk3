@@ -125,11 +125,11 @@ public static class GSettingsSchemaSourceExtensions
 /// want to introspect the content of schemas.
 /// </para>
 /// <para>
-/// If the schema isn't found directly in @source and @recursive is %TRUE
+/// If the schema isn&apos;t found directly in @source and @recursive is %TRUE
 /// then the parent sources will also be checked.
 /// </para>
 /// <para>
-/// If the schema isn't found, %NULL is returned.
+/// If the schema isn&apos;t found, %NULL is returned.
 /// </para>
 /// </summary>
 

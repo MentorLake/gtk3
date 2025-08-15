@@ -117,7 +117,7 @@ public static class PangoAttrListExtensions
 /// </param>
 /// <return>
 /// %TRUE if the lists are equal, %FALSE if
-///   they aren't
+///   they aren&apos;t
 /// </return>
 
 	public static bool Equal(this MentorLake.Pango.PangoAttrListHandle list, MentorLake.Pango.PangoAttrListHandle other_list)
@@ -349,7 +349,7 @@ public static class PangoAttrListExtensions
 /// Examples:
 /// </para>
 /// <para>
-///     0 10 foreground red, 5 15 weight bold, 0 200 font-desc "Sans 10"
+///     0 10 foreground red, 5 15 weight bold, 0 200 font-desc &quot;Sans 10&quot;
 /// </para>
 /// <para>
 ///     0 -1 weight 700

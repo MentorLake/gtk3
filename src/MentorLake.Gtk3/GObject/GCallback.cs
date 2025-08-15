@@ -6,7 +6,7 @@ namespace MentorLake.GObject;
 /// signatures.
 /// </para>
 /// <para>
-/// This doesn't mean that all callback functions must take no  parameters and
+/// This doesn&apos;t mean that all callback functions must take no  parameters and
 /// return void. The required signature of a callback function is determined by
 /// the context in which is used (e.g. the signal to which it is connected).
 /// </para>

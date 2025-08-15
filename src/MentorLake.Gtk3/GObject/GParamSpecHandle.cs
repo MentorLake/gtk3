@@ -140,7 +140,7 @@ public static class GParamSpecHandleExtensions
 /// Get the name of a #GParamSpec.
 /// </para>
 /// <para>
-/// The name is always an "interned" string (as per g_intern_string()).
+/// The name is always an &quot;interned&quot; string (as per g_intern_string()).
 /// This allows for pointer-value comparisons.
 /// </para>
 /// </summary>
@@ -168,7 +168,7 @@ public static class GParamSpecHandleExtensions
 /// a #GParamSpec
 /// </param>
 /// <return>
-/// the GQuark for @pspec->name.
+/// the GQuark for @pspec-&amp;gt;name.
 /// </return>
 
 	public static MentorLake.GLib.GQuark GetNameQuark(this MentorLake.GObject.GParamSpecHandle pspec)
@@ -345,11 +345,11 @@ public static class GParamSpecHandleExtensions
 /// <para>
 /// The initial reference count of a newly created #GParamSpec is 1,
 /// even though no one has explicitly called g_param_spec_ref() on it
-/// yet. So the initial reference count is flagged as "floating", until
+/// yet. So the initial reference count is flagged as &quot;floating&quot;, until
 /// someone calls `g_param_spec_ref (pspec); g_param_spec_sink
 /// (pspec);` in sequence on it, taking over the initial
 /// reference count (thus ending up with a @pspec that has a reference
-/// count of 1 still, but is not flagged "floating" anymore).
+/// count of 1 still, but is not flagged &quot;floating&quot; anymore).
 /// </para>
 /// </summary>
 

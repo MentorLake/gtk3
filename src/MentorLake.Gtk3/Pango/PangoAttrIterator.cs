@@ -175,7 +175,7 @@ public static class PangoAttrIteratorExtensions
 /// <para>
 /// Note that the stored return values are signed, not unsigned
 /// like the values in `PangoAttribute`. To deal with this API
-/// oversight, stored return values that wouldn't fit into
+/// oversight, stored return values that wouldn&apos;t fit into
 /// a signed integer are clamped to %G_MAXINT.
 /// </para>
 /// </summary>

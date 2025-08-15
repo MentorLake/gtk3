@@ -3,7 +3,7 @@ namespace MentorLake.Gtk;
 /// <summary>
 /// <para>
 /// #GtkThemingEngine was the object used for rendering themed content
-/// in GTK+ widgets. It used to allow overriding GTK+'s default
+/// in GTK+ widgets. It used to allow overriding GTK+&apos;s default
 /// implementation of rendering functions by allowing engines to be
 /// loaded as modules.
 /// </para>
@@ -41,7 +41,7 @@ public class GtkThemingEngineHandle : GObjectHandle
 /// <para>
 /// Registers a property so it can be used in the CSS file format,
 /// on the CSS file the property will look like
-/// "-${@name_space}-${property_name}". being
+/// &quot;-${@name_space}-${property_name}&quot;. being
 /// ${property_name} the given to @pspec. @name_space will usually
 /// be the theme engine name.
 /// </para>
@@ -63,12 +63,13 @@ public class GtkThemingEngineHandle : GObjectHandle
 /// the CSS file, make sure the engine is loaded first by specifying
 /// the engine property, either in a previous rule or within the same
 /// one.
-/// |[
+/// <code>
+/// * {
 /// * {
 ///     engine: someengine;
 ///     -SomeEngine-custom-property: 2;
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

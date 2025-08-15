@@ -33,10 +33,10 @@ public enum GdkPixdataDumpType : uint
 	GDK_PIXDATA_DUMP_PIXDATA_STRUCT = 1,
 /// <summary>
 /// <para>
-/// Generate <function>*_ROWSTRIDE</function>,
-///    <function>*_WIDTH</function>, <function>*_HEIGHT</function>,
-///    <function>*_BYTES_PER_PIXEL</function> and
-///    <function>*_RLE_PIXEL_DATA</function> or <function>*_PIXEL_DATA</function>
+/// Generate &amp;lt;function&amp;gt;*_ROWSTRIDE&amp;lt;/function&amp;gt;,
+///    &amp;lt;function&amp;gt;*_WIDTH&amp;lt;/function&amp;gt;, &amp;lt;function&amp;gt;*_HEIGHT&amp;lt;/function&amp;gt;,
+///    &amp;lt;function&amp;gt;*_BYTES_PER_PIXEL&amp;lt;/function&amp;gt; and
+///    &amp;lt;function&amp;gt;*_RLE_PIXEL_DATA&amp;lt;/function&amp;gt; or &amp;lt;function&amp;gt;*_PIXEL_DATA&amp;lt;/function&amp;gt;
 ///    macro definitions for the image.
 /// </para>
 /// </summary>
@@ -74,7 +74,7 @@ public enum GdkPixdataDumpType : uint
 	GDK_PIXDATA_DUMP_CONST = 1024,
 /// <summary>
 /// <para>
-/// Provide a <function>*_RUN_LENGTH_DECODE(image_buf, rle_data, size, bpp)</function>
+/// Provide a &amp;lt;function&amp;gt;*_RUN_LENGTH_DECODE(image_buf, rle_data, size, bpp)&amp;lt;/function&amp;gt;
 ///    macro definition  to  decode  run-length encoded image data.
 /// </para>
 /// </summary>

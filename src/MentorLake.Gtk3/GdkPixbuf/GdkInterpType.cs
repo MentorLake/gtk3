@@ -7,7 +7,7 @@ namespace MentorLake.GdkPixbuf;
 /// <para>
 /// The `GDK_INTERP_NEAREST` mode is the fastest scaling method, but has
 /// horrible quality when scaling down; `GDK_INTERP_BILINEAR` is the best
-/// choice if you aren't sure what to choose, it has a good speed/quality
+/// choice if you aren&apos;t sure what to choose, it has a good speed/quality
 /// balance.
 /// </para>
 /// <para>
@@ -54,7 +54,7 @@ public enum GdkInterpType
 /// <para>
 /// This is the slowest and highest quality
 ///  reconstruction function. It is derived from the hyperbolic filters in
-///  Wolberg's "Digital Image Warping", and is formally defined as the
+///  Wolberg&apos;s &quot;Digital Image Warping&quot;, and is formally defined as the
 ///  hyperbolic-filter sampling the ideal hyperbolic-filter interpolated
 ///  image (the filter is designed to be idempotent for 1:1 pixel mapping).
 ///  **Deprecated**: this interpolation filter is deprecated, as in reality

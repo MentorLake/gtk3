@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// Data type for scripts. Each #hb_script_t's value is an #hb_tag_t corresponding
+/// Data type for scripts. Each #hb_script_t&apos;s value is an #hb_tag_t corresponding
 /// to the four-letter values defined by [ISO 15924](https://unicode.org/iso15924/).
 /// </para>
 /// <para>

@@ -221,11 +221,10 @@ public static class GtkTreeSelectionHandleExtensions
 /// <para>
 /// To free the return value, use:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-/// ]|
-/// </para>
+/// g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
+/// </code>
 /// </summary>
 
 /// <param name="selection">

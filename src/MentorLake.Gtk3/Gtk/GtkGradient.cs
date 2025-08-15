@@ -139,7 +139,7 @@ public static class GtkGradientExtensions
 /// If @gradient is resolvable, @resolved_gradient will be filled in
 /// with the resolved gradient as a cairo_pattern_t, and %TRUE will
 /// be returned. Generally, if @gradient can’t be resolved, it is
-/// due to it being defined on top of a named color that doesn't
+/// due to it being defined on top of a named color that doesn&apos;t
 /// exist in @props.
 /// </para>
 /// </summary>

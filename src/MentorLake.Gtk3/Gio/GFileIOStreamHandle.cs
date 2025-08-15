@@ -68,7 +68,7 @@ public static class GFileIOStreamHandleExtensions
 /// Can fail if the stream was already closed (with @error being set to
 /// %G_IO_ERROR_CLOSED), the stream has pending operations (with @error being
 /// set to %G_IO_ERROR_PENDING), or if querying info is not supported for
-/// the stream's interface (with @error being set to %G_IO_ERROR_NOT_SUPPORTED). I
+/// the stream&apos;s interface (with @error being set to %G_IO_ERROR_NOT_SUPPORTED). I
 /// all cases of failure, %NULL will be returned.
 /// </para>
 /// <para>

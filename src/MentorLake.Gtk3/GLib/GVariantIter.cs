@@ -122,30 +122,27 @@ public static class GVariantIterExtensions
 /// </para>
 /// <para>
 /// Here is an example for memory management with g_variant_iter_loop():
-/// |[<!-- language="C" -->
-///   // Iterates a dictionary of type 'a{sv}'
+/// <code>
+///   // Iterates a dictionary of type &apos;a{sv}&apos;
+///   // Iterates a dictionary of type &apos;a{sv}&apos;
 ///   void
 ///   iterate_dictionary (GVariant *dictionary)
 ///   {
 ///     GVariantIter iter;
 ///     GVariant *value;
 ///     gchar *key;
-/// </para>
-/// <para>
-///     g_variant_iter_init (&iter, dictionary);
-///     while (g_variant_iter_loop (&iter, "{sv}", &key, &value))
+/// 
+///     g_variant_iter_init (&amp;iter, dictionary);
+///     while (g_variant_iter_loop (&amp;iter, &quot;{sv}&quot;, &amp;key, &amp;value))
 ///       {
-///         g_print ("Item '%s' has type '%s'\n", key,
+///         g_print (&quot;Item &apos;%s&apos; has type &apos;%s&apos;\n&quot;, key,
 ///                  g_variant_get_type_string (value));
-/// </para>
-/// <para>
-///         // no need to free 'key' and 'value' here
+/// 
+///         // no need to free &apos;key&apos; and &apos;value&apos; here
 ///         // unless breaking out of this loop
 ///       }
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// For most cases you should use g_variant_iter_next().
 /// </para>
 /// <para>
@@ -156,7 +153,7 @@ public static class GVariantIterExtensions
 /// <para>
 /// For example, if you are only looping over simple integer and string
 /// types, g_variant_iter_next() is definitely preferred.  For string
-/// types, use the '&' prefix to avoid allocating any memory at all (and
+/// types, use the &apos;&amp;&apos; prefix to avoid allocating any memory at all (and
 /// thereby avoiding the need to free anything as well).
 /// </para>
 /// <para>
@@ -229,31 +226,28 @@ public static class GVariantIterExtensions
 /// </para>
 /// <para>
 /// Here is an example for memory management with g_variant_iter_next():
-/// |[<!-- language="C" -->
-///   // Iterates a dictionary of type 'a{sv}'
+/// <code>
+///   // Iterates a dictionary of type &apos;a{sv}&apos;
+///   // Iterates a dictionary of type &apos;a{sv}&apos;
 ///   void
 ///   iterate_dictionary (GVariant *dictionary)
 ///   {
 ///     GVariantIter iter;
 ///     GVariant *value;
 ///     gchar *key;
-/// </para>
-/// <para>
-///     g_variant_iter_init (&iter, dictionary);
-///     while (g_variant_iter_next (&iter, "{sv}", &key, &value))
+/// 
+///     g_variant_iter_init (&amp;iter, dictionary);
+///     while (g_variant_iter_next (&amp;iter, &quot;{sv}&quot;, &amp;key, &amp;value))
 ///       {
-///         g_print ("Item '%s' has type '%s'\n", key,
+///         g_print (&quot;Item &apos;%s&apos; has type &apos;%s&apos;\n&quot;, key,
 ///                  g_variant_get_type_string (value));
-/// </para>
-/// <para>
+/// 
 ///         // must free data for ourselves
 ///         g_variant_unref (value);
 ///         g_free (key);
 ///       }
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// For a solution that is likely to be more convenient to C programmers
 /// when dealing with loops, see g_variant_iter_loop().
 /// </para>
@@ -297,29 +291,27 @@ public static class GVariantIterExtensions
 /// </para>
 /// <para>
 /// Here is an example for iterating with g_variant_iter_next_value():
-/// |[<!-- language="C" -->
+/// <code>
+///   // recursively iterate a container
 ///   // recursively iterate a container
 ///   void
 ///   iterate_container_recursive (GVariant *container)
 ///   {
 ///     GVariantIter iter;
 ///     GVariant *child;
-/// </para>
-/// <para>
-///     g_variant_iter_init (&iter, container);
-///     while ((child = g_variant_iter_next_value (&iter)))
+/// 
+///     g_variant_iter_init (&amp;iter, container);
+///     while ((child = g_variant_iter_next_value (&amp;iter)))
 ///       {
-///         g_print ("type '%s'\n", g_variant_get_type_string (child));
-/// </para>
-/// <para>
+///         g_print (&quot;type &apos;%s&apos;\n&quot;, g_variant_get_type_string (child));
+/// 
 ///         if (g_variant_is_container (child))
 ///           iterate_container_recursive (child);
-/// </para>
-/// <para>
+/// 
 ///         g_variant_unref (child);
 ///       }
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

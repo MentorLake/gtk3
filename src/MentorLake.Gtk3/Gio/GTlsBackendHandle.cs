@@ -22,7 +22,7 @@ public static class GTlsBackendHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets the #GType of @backend's #GTlsCertificate implementation.
+/// Gets the #GType of @backend&apos;s #GTlsCertificate implementation.
 /// </para>
 /// </summary>
 
@@ -30,7 +30,7 @@ public static class GTlsBackendHandleExtensions
 /// the #GTlsBackend
 /// </param>
 /// <return>
-/// the #GType of @backend's #GTlsCertificate
+/// the #GType of @backend&apos;s #GTlsCertificate
 ///   implementation.
 /// </return>
 
@@ -42,7 +42,7 @@ public static class GTlsBackendHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the #GType of @backend's #GTlsClientConnection implementation.
+/// Gets the #GType of @backend&apos;s #GTlsClientConnection implementation.
 /// </para>
 /// </summary>
 
@@ -50,7 +50,7 @@ public static class GTlsBackendHandleExtensions
 /// the #GTlsBackend
 /// </param>
 /// <return>
-/// the #GType of @backend's #GTlsClientConnection
+/// the #GType of @backend&apos;s #GTlsClientConnection
 ///   implementation.
 /// </return>
 
@@ -122,7 +122,7 @@ public static class GTlsBackendHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the #GType of @backend's #GTlsFileDatabase implementation.
+/// Gets the #GType of @backend&apos;s #GTlsFileDatabase implementation.
 /// </para>
 /// </summary>
 
@@ -130,7 +130,7 @@ public static class GTlsBackendHandleExtensions
 /// the #GTlsBackend
 /// </param>
 /// <return>
-/// the #GType of backend's #GTlsFileDatabase implementation.
+/// the #GType of backend&apos;s #GTlsFileDatabase implementation.
 /// </return>
 
 	public static MentorLake.GObject.GType GetFileDatabaseType(this MentorLake.Gio.GTlsBackendHandle backend)
@@ -141,7 +141,7 @@ public static class GTlsBackendHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the #GType of @backend's #GTlsServerConnection implementation.
+/// Gets the #GType of @backend&apos;s #GTlsServerConnection implementation.
 /// </para>
 /// </summary>
 
@@ -149,7 +149,7 @@ public static class GTlsBackendHandleExtensions
 /// the #GTlsBackend
 /// </param>
 /// <return>
-/// the #GType of @backend's #GTlsServerConnection
+/// the #GType of @backend&apos;s #GTlsServerConnection
 ///   implementation.
 /// </return>
 
@@ -211,7 +211,7 @@ public static class GTlsBackendHandleExtensions
 /// <summary>
 /// <para>
 /// Checks if TLS is supported; if this returns %FALSE for the default
-/// #GTlsBackend, it means no "real" TLS backend is available.
+/// #GTlsBackend, it means no &quot;real&quot; TLS backend is available.
 /// </para>
 /// </summary>
 

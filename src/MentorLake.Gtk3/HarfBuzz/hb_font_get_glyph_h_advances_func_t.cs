@@ -15,6 +15,16 @@ public struct hb_font_get_glyph_h_advances_func_t
 	public MentorLake.HarfBuzz.hb_font_get_glyph_advances_func_t Value;
 }
 
+/// <summary>
+/// <para>
+/// A virtual method for the #hb_font_funcs_t of an #hb_font_t object.
+/// </para>
+/// <para>
+/// This method should retrieve the advances for a sequence of glyphs, in
+/// horizontal-direction text segments.
+/// </para>
+/// </summary>
+
 public class hb_font_get_glyph_h_advances_func_tHandle : BaseSafeHandle
 {
 }

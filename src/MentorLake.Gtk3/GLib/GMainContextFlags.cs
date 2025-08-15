@@ -20,7 +20,7 @@ public enum GMainContextFlags : uint
 /// <summary>
 /// <para>
 /// Assume that polling for events will
-/// free the thread to process other jobs. That's useful if you're using
+/// free the thread to process other jobs. That&apos;s useful if you&apos;re using
 /// `g_main_context_{prepare,query,check,dispatch}` to integrate GMainContext in
 /// other event loops.
 /// </para>

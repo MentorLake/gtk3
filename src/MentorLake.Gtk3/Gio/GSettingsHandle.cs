@@ -57,10 +57,10 @@ namespace MentorLake.Gio;
 /// Similar to GConf, the default values in GSettings schemas can be
 /// localized, but the localized values are stored in gettext catalogs
 /// and looked up with the domain that is specified in the
-/// `gettext-domain` attribute of the `<schemalist>` or `<schema>`
+/// `gettext-domain` attribute of the `&amp;lt;schemalist&amp;gt;` or `&amp;lt;schema&amp;gt;`
 /// elements and the category that is specified in the `l10n` attribute of
-/// the `<default>` element. The string which is translated includes all text in
-/// the `<default>` element, including any surrounding quotation marks.
+/// the `&amp;lt;default&amp;gt;` element. The string which is translated includes all text in
+/// the `&amp;lt;default&amp;gt;` element, including any surrounding quotation marks.
 /// </para>
 /// <para>
 /// The `l10n` attribute must be set to `messages` or `time`, and sets the
@@ -68,19 +68,19 @@ namespace MentorLake.Gio;
 /// translation](https://www.gnu.org/software/gettext/manual/html_node/Aspects.html#index-locale-categories-1).
 /// The `messages` category should be used by default; use `time` for
 /// translatable date or time formats. A translation comment can be added as an
-/// XML comment immediately above the `<default>` element — it is recommended to
+/// XML comment immediately above the `&amp;lt;default&amp;gt;` element — it is recommended to
 /// add these comments to aid translators understand the meaning and
 /// implications of the default value. An optional translation `context`
-/// attribute can be set on the `<default>` element to disambiguate multiple
+/// attribute can be set on the `&amp;lt;default&amp;gt;` element to disambiguate multiple
 /// defaults which use the same string.
 /// </para>
 /// <para>
 /// For example:
 /// ```xml
-///  <!-- Translators: A list of words which are not allowed to be typed, in
+///  &amp;lt;!-- Translators: A list of words which are not allowed to be typed, in
 ///       GVariant serialization syntax.
-///       See: https://developer.gnome.org/glib/stable/gvariant-text.html -->
-///  <default l10n='messages' context='Banned words'>['bad', 'words']</default>
+///       See: https://developer.gnome.org/glib/stable/gvariant-text.html --&amp;gt;
+///  &amp;lt;default l10n=&apos;messages&apos; context=&apos;Banned words&apos;&amp;gt;[&apos;bad&apos;, &apos;words&apos;]&amp;lt;/default&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -90,7 +90,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// GSettings uses schemas in a compact binary form that is created
-/// by the <see href="glib-compile-schemas.html">glib-compile-schemas</see>
+/// by the &amp;lt;see href=&quot;glib-compile-schemas.html&quot;&amp;gt;glib-compile-schemas&amp;lt;/see&amp;gt;
 /// utility. The input is a schema description in an XML format.
 /// </para>
 /// <para>
@@ -98,12 +98,12 @@ namespace MentorLake.Gio;
 /// [gschema.dtd](https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/gschema.dtd)
 /// </para>
 /// <para>
-/// The <see href="glib-compile-schemas.html">glib-compile-schemas</see> tool expects schema
+/// The &amp;lt;see href=&quot;glib-compile-schemas.html&quot;&amp;gt;glib-compile-schemas&amp;lt;/see&amp;gt; tool expects schema
 /// files to have the extension `.gschema.xml`.
 /// </para>
 /// <para>
 /// At runtime, schemas are identified by their ID (as specified in the
-/// `id` attribute of the `<schema>` element). The convention for schema
+/// `id` attribute of the `&amp;lt;schema&amp;gt;` element). The convention for schema
 /// IDs is to use a dotted name, similar in style to a D-Bus bus name,
 /// e.g. `org.gnome.SessionManager`. In particular, if the settings are
 /// for a specific service that owns a D-Bus bus name, the D-Bus bus name
@@ -113,8 +113,8 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// In addition to [struct@GLib.Variant] types, keys can have types that have
-/// enumerated types. These can be described by a `<choice>`,
-/// `<enum>` or `<flags>` element, as seen in the
+/// enumerated types. These can be described by a `&amp;lt;choice&amp;gt;`,
+/// `&amp;lt;enum&amp;gt;` or `&amp;lt;flags&amp;gt;` element, as seen in the
 /// second example below. The underlying type of such a key
 /// is string, but you can use [method@Gio.Settings.get_enum],
 /// [method@Gio.Settings.set_enum], [method@Gio.Settings.get_flags],
@@ -124,86 +124,86 @@ namespace MentorLake.Gio;
 /// <para>
 /// An example for default value:
 /// ```xml
-/// <schemalist>
-///   <schema id="org.gtk.Test" path="/org/gtk/Test/" gettext-domain="test">
+/// &amp;lt;schemalist&amp;gt;
+///   &amp;lt;schema id=&quot;org.gtk.Test&quot; path=&quot;/org/gtk/Test/&quot; gettext-domain=&quot;test&quot;&amp;gt;
 /// </para>
 /// <para>
-///     <key name="greeting" type="s">
-///       <default l10n="messages">"Hello, earthlings"</default>
-///       <summary>A greeting</summary>
-///       <description>
+///     &amp;lt;key name=&quot;greeting&quot; type=&quot;s&quot;&amp;gt;
+///       &amp;lt;default l10n=&quot;messages&quot;&amp;gt;&quot;Hello, earthlings&quot;&amp;lt;/default&amp;gt;
+///       &amp;lt;summary&amp;gt;A greeting&amp;lt;/summary&amp;gt;
+///       &amp;lt;description&amp;gt;
 ///         Greeting of the invading martians
-///       </description>
-///     </key>
+///       &amp;lt;/description&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///     <key name="box" type="(ii)">
-///       <default>(20,30)</default>
-///     </key>
+///     &amp;lt;key name=&quot;box&quot; type=&quot;(ii)&quot;&amp;gt;
+///       &amp;lt;default&amp;gt;(20,30)&amp;lt;/default&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///     <key name="empty-string" type="s">
-///       <default>""</default>
-///       <summary>Empty strings have to be provided in GVariant form</summary>
-///     </key>
+///     &amp;lt;key name=&quot;empty-string&quot; type=&quot;s&quot;&amp;gt;
+///       &amp;lt;default&amp;gt;&quot;&quot;&amp;lt;/default&amp;gt;
+///       &amp;lt;summary&amp;gt;Empty strings have to be provided in GVariant form&amp;lt;/summary&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///   </schema>
-/// </schemalist>
+///   &amp;lt;/schema&amp;gt;
+/// &amp;lt;/schemalist&amp;gt;
 /// ```
 /// </para>
 /// <para>
 /// An example for ranges, choices and enumerated types:
 /// ```xml
-/// <schemalist>
+/// &amp;lt;schemalist&amp;gt;
 /// </para>
 /// <para>
-///   <enum id="org.gtk.Test.myenum">
-///     <value nick="first" value="1"/>
-///     <value nick="second" value="2"/>
-///   </enum>
+///   &amp;lt;enum id=&quot;org.gtk.Test.myenum&quot;&amp;gt;
+///     &amp;lt;value nick=&quot;first&quot; value=&quot;1&quot;/&amp;gt;
+///     &amp;lt;value nick=&quot;second&quot; value=&quot;2&quot;/&amp;gt;
+///   &amp;lt;/enum&amp;gt;
 /// </para>
 /// <para>
-///   <flags id="org.gtk.Test.myflags">
-///     <value nick="flag1" value="1"/>
-///     <value nick="flag2" value="2"/>
-///     <value nick="flag3" value="4"/>
-///   </flags>
+///   &amp;lt;flags id=&quot;org.gtk.Test.myflags&quot;&amp;gt;
+///     &amp;lt;value nick=&quot;flag1&quot; value=&quot;1&quot;/&amp;gt;
+///     &amp;lt;value nick=&quot;flag2&quot; value=&quot;2&quot;/&amp;gt;
+///     &amp;lt;value nick=&quot;flag3&quot; value=&quot;4&quot;/&amp;gt;
+///   &amp;lt;/flags&amp;gt;
 /// </para>
 /// <para>
-///   <schema id="org.gtk.Test">
+///   &amp;lt;schema id=&quot;org.gtk.Test&quot;&amp;gt;
 /// </para>
 /// <para>
-///     <key name="key-with-range" type="i">
-///       <range min="1" max="100"/>
-///       <default>10</default>
-///     </key>
+///     &amp;lt;key name=&quot;key-with-range&quot; type=&quot;i&quot;&amp;gt;
+///       &amp;lt;range min=&quot;1&quot; max=&quot;100&quot;/&amp;gt;
+///       &amp;lt;default&amp;gt;10&amp;lt;/default&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///     <key name="key-with-choices" type="s">
-///       <choices>
-///         <choice value='Elisabeth'/>
-///         <choice value='Annabeth'/>
-///         <choice value='Joe'/>
-///       </choices>
-///       <aliases>
-///         <alias value='Anna' target='Annabeth'/>
-///         <alias value='Beth' target='Elisabeth'/>
-///       </aliases>
-///       <default>'Joe'</default>
-///     </key>
+///     &amp;lt;key name=&quot;key-with-choices&quot; type=&quot;s&quot;&amp;gt;
+///       &amp;lt;choices&amp;gt;
+///         &amp;lt;choice value=&apos;Elisabeth&apos;/&amp;gt;
+///         &amp;lt;choice value=&apos;Annabeth&apos;/&amp;gt;
+///         &amp;lt;choice value=&apos;Joe&apos;/&amp;gt;
+///       &amp;lt;/choices&amp;gt;
+///       &amp;lt;aliases&amp;gt;
+///         &amp;lt;alias value=&apos;Anna&apos; target=&apos;Annabeth&apos;/&amp;gt;
+///         &amp;lt;alias value=&apos;Beth&apos; target=&apos;Elisabeth&apos;/&amp;gt;
+///       &amp;lt;/aliases&amp;gt;
+///       &amp;lt;default&amp;gt;&apos;Joe&apos;&amp;lt;/default&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///     <key name='enumerated-key' enum='org.gtk.Test.myenum'>
-///       <default>'first'</default>
-///     </key>
+///     &amp;lt;key name=&apos;enumerated-key&apos; enum=&apos;org.gtk.Test.myenum&apos;&amp;gt;
+///       &amp;lt;default&amp;gt;&apos;first&apos;&amp;lt;/default&amp;gt;
+///     &amp;lt;/key&amp;gt;
 /// </para>
 /// <para>
-///     <key name='flags-key' flags='org.gtk.Test.myflags'>
-///       <default>["flag1","flag2"]</default>
-///     </key>
-///   </schema>
-/// </schemalist>
+///     &amp;lt;key name=&apos;flags-key&apos; flags=&apos;org.gtk.Test.myflags&apos;&amp;gt;
+///       &amp;lt;default&amp;gt;[&quot;flag1&quot;,&quot;flag2&quot;]&amp;lt;/default&amp;gt;
+///     &amp;lt;/key&amp;gt;
+///   &amp;lt;/schema&amp;gt;
+/// &amp;lt;/schemalist&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -214,14 +214,14 @@ namespace MentorLake.Gio;
 /// an application. Sometimes, it is necessary for a vendor or distributor
 /// to adjust these defaults. Since patching the XML source for the schema
 /// is inconvenient and error-prone,
-/// <see href="glib-compile-schemas.html">glib-compile-schemas</see> reads so-called ‘vendor
+/// &amp;lt;see href=&quot;glib-compile-schemas.html&quot;&amp;gt;glib-compile-schemas&amp;lt;/see&amp;gt; reads so-called ‘vendor
 /// override’ files. These are keyfiles in the same directory as the XML
 /// schema sources which can override default values. The schema ID serves
 /// as the group name in the key file, and the values are expected in
 /// serialized [struct@GLib.Variant] form, as in the following example:
 /// ```
 /// [org.gtk.Example]
-/// key1='string'
+/// key1=&apos;string&apos;
 /// key2=1.5
 /// ```
 /// </para>
@@ -253,7 +253,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// A relocatable schema is one with no `path` attribute specified on its
-/// `<schema>` element. By using [ctor@Gio.Settings.new_with_path], a `GSettings`
+/// `&amp;lt;schema&amp;gt;` element. By using [ctor@Gio.Settings.new_with_path], a `GSettings`
 /// object can be instantiated for a relocatable schema, assigning a path to the
 /// instance. Paths passed to [ctor@Gio.Settings.new_with_path] will typically be
 /// constructed dynamically from a constant prefix plus some form of instance
@@ -267,11 +267,11 @@ namespace MentorLake.Gio;
 /// `org.foo.MyApp.Window`, it could be instantiated for paths
 /// `/org/foo/MyApp/main/`, `/org/foo/MyApp/document-1/`,
 /// `/org/foo/MyApp/document-2/`, etc. If any of the paths are well-known
-/// they can be specified as `<child>` elements in the parent schema, e.g.:
+/// they can be specified as `&amp;lt;child&amp;gt;` elements in the parent schema, e.g.:
 /// ```xml
-/// <schema id="org.foo.MyApp" path="/org/foo/MyApp/">
-///   <child name="main" schema="org.foo.MyApp.Window"/>
-/// </schema>
+/// &amp;lt;schema id=&quot;org.foo.MyApp&quot; path=&quot;/org/foo/MyApp/&quot;&amp;gt;
+///   &amp;lt;child name=&quot;main&quot; schema=&quot;org.foo.MyApp.Window&quot;/&amp;gt;
+/// &amp;lt;/schema&amp;gt;
 /// ```
 /// </para>
 /// <para>
@@ -281,7 +281,7 @@ namespace MentorLake.Gio;
 /// ### Meson
 /// </para>
 /// <para>
-/// GSettings is natively supported by Meson's [GNOME module](https://mesonbuild.com/Gnome-module.html).
+/// GSettings is natively supported by Meson&apos;s [GNOME module](https://mesonbuild.com/Gnome-module.html).
 /// </para>
 /// <para>
 /// You can install the schemas as any other data file:
@@ -289,8 +289,8 @@ namespace MentorLake.Gio;
 /// <para>
 /// ```
 /// install_data(
-///   'org.foo.MyApp.gschema.xml',
-///   install_dir: get_option('datadir') / 'glib-2.0/schemas',
+///   &apos;org.foo.MyApp.gschema.xml&apos;,
+///   install_dir: get_option(&apos;datadir&apos;) / &apos;glib-2.0/schemas&apos;,
 /// )
 /// ```
 /// </para>
@@ -300,7 +300,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// ```
-/// gnome = import('gnome')
+/// gnome = import(&apos;gnome&apos;)
 /// gnome.post_install(
 ///   glib_compile_schemas: true,
 /// )
@@ -308,7 +308,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// If an enumerated type defined in a C header file is to be used in a GSettings
-/// schema, it can either be defined manually using an `<enum>` element in the
+/// schema, it can either be defined manually using an `&amp;lt;enum&amp;gt;` element in the
 /// schema XML, or it can be extracted automatically from the C header. This
 /// approach is preferred, as it ensures the two representations are always
 /// synchronised. To do so, you will need to use the `gnome.mkenums()` function
@@ -316,16 +316,16 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// ```
-/// schemas_enums = gnome.mkenums('org.foo.MyApp.enums.xml',
-///   comments: '<!-- @comment@ -->',
-///   fhead: '<schemalist>',
-///   vhead: '  <@type@ id="org.foo.MyApp.@EnumName@">',
-///   vprod: '    <value nick="@valuenick@" value="@valuenum@"/>',
-///   vtail: '  </@type@>',
-///   ftail: '</schemalist>',
+/// schemas_enums = gnome.mkenums(&apos;org.foo.MyApp.enums.xml&apos;,
+///   comments: &apos;&amp;lt;!-- @comment@ --&amp;gt;&apos;,
+///   fhead: &apos;&amp;lt;schemalist&amp;gt;&apos;,
+///   vhead: &apos;  &amp;lt;@type@ id=&quot;org.foo.MyApp.@EnumName@&quot;&amp;gt;&apos;,
+///   vprod: &apos;    &amp;lt;value nick=&quot;@valuenick@&quot; value=&quot;@valuenum@&quot;/&amp;gt;&apos;,
+///   vtail: &apos;  &amp;lt;/@type@&amp;gt;&apos;,
+///   ftail: &apos;&amp;lt;/schemalist&amp;gt;&apos;,
 ///   sources: enum_sources,
 ///   install_header: true,
-///   install_dir: get_option('datadir') / 'glib-2.0/schemas',
+///   install_dir: get_option(&apos;datadir&apos;) / &apos;glib-2.0/schemas&apos;,
 /// )
 /// ```
 /// </para>
@@ -335,9 +335,9 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// ```
-/// test('validate-schema',
-///   find_program('glib-compile-schemas'),
-///   args: ['--strict', '--dry-run', meson.current_source_dir()],
+/// test(&apos;validate-schema&apos;,
+///   find_program(&apos;glib-compile-schemas&apos;),
+///   args: [&apos;--strict&apos;, &apos;--dry-run&apos;, meson.current_source_dir()],
 /// )
 /// ```
 /// </para>
@@ -375,7 +375,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// If an enumerated type defined in a C header file is to be used in a GSettings
-/// schema, it can either be defined manually using an `<enum>` element in the
+/// schema, it can either be defined manually using an `&amp;lt;enum&amp;gt;` element in the
 /// schema XML, or it can be extracted automatically from the C header. This
 /// approach is preferred, as it ensures the two representations are always
 /// synchronised. To do so, add the following to the relevant `Makefile.am`:
@@ -411,8 +411,8 @@ namespace MentorLake.Gio;
 /// ```
 /// </para>
 /// <para>
-/// GSettings will use gettext to look up translations for the `<summary>` and
-/// `<description>` elements, and also any `<default>` elements which have a
+/// GSettings will use gettext to look up translations for the `&amp;lt;summary&amp;gt;` and
+/// `&amp;lt;description&amp;gt;` elements, and also any `&amp;lt;default&amp;gt;` elements which have a
 /// `l10n` attribute set.
 /// </para>
 /// <para>
@@ -514,7 +514,7 @@ public class GSettingsHandle : GObjectHandle
 /// <para>
 /// Creating a #GSettings object with a different backend allows accessing
 /// settings from a database other than the usual one. For example, it may make
-/// sense to pass a backend corresponding to the "defaults" settings database on
+/// sense to pass a backend corresponding to the &quot;defaults&quot; settings database on
 /// the system to get a settings object that modifies the system default
 /// settings instead of the settings for this user.
 /// </para>
@@ -571,8 +571,8 @@ public class GSettingsHandle : GObjectHandle
 /// </para>
 /// <para>
 /// You only need to do this if you want to directly create a settings
-/// object with a schema that doesn't have a specified path of its own.
-/// That's quite rare.
+/// object with a schema that doesn&apos;t have a specified path of its own.
+/// That&apos;s quite rare.
 /// </para>
 /// <para>
 /// It is a programmer error to call this function for a schema that
@@ -580,7 +580,7 @@ public class GSettingsHandle : GObjectHandle
 /// </para>
 /// <para>
 /// It is a programmer error if @path is not a valid path.  A valid path
-/// begins and ends with '/' and does not contain two consecutive '/'
+/// begins and ends with &apos;/&apos; and does not contain two consecutive &apos;/&apos;
 /// characters.
 /// </para>
 /// </summary>
@@ -685,11 +685,11 @@ public static class GSettingsHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The "change-event" signal is emitted once per change event that
+/// The &quot;change-event&quot; signal is emitted once per change event that
 /// affects this settings object.  You should connect to this signal
 /// only if you are interested in viewing groups of changes before they
-/// are split out into multiple emissions of the "changed" signal.
-/// For most use cases it is more appropriate to use the "changed" signal.
+/// are split out into multiple emissions of the &quot;changed&quot; signal.
+/// For most use cases it is more appropriate to use the &quot;changed&quot; signal.
 /// </para>
 /// <para>
 /// In the event that the change event applies to one or more specified
@@ -699,7 +699,7 @@ public static class GSettingsHandleSignalExtensions
 /// be %NULL and @n_keys will be 0.
 /// </para>
 /// <para>
-/// The default handler for this signal invokes the "changed" signal
+/// The default handler for this signal invokes the &quot;changed&quot; signal
 /// for each affected key.  If any other connected handler returns
 /// %TRUE then this default functionality will be suppressed.
 /// </para>
@@ -735,14 +735,14 @@ public static class GSettingsHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "changed" signal is emitted when a key has potentially changed.
+/// The &quot;changed&quot; signal is emitted when a key has potentially changed.
 /// You should call one of the g_settings_get() calls to check the new
 /// value.
 /// </para>
 /// <para>
 /// This signal supports detailed connections.  You can connect to the
-/// detailed signal "changed::x" in order to only receive callbacks
-/// when key "x" changes.
+/// detailed signal &quot;changed::x&quot; in order to only receive callbacks
+/// when key &quot;x&quot; changes.
 /// </para>
 /// <para>
 /// Note that @settings only emits this signal if you have read @key at
@@ -780,12 +780,12 @@ public static class GSettingsHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "writable-change-event" signal is emitted once per writability
+/// The &quot;writable-change-event&quot; signal is emitted once per writability
 /// change event that affects this settings object.  You should connect
 /// to this signal if you are interested in viewing groups of changes
 /// before they are split out into multiple emissions of the
-/// "writable-changed" signal.  For most use cases it is more
-/// appropriate to use the "writable-changed" signal.
+/// &quot;writable-changed&quot; signal.  For most use cases it is more
+/// appropriate to use the &quot;writable-changed&quot; signal.
 /// </para>
 /// <para>
 /// In the event that the writability change applies only to a single
@@ -794,8 +794,8 @@ public static class GSettingsHandleSignalExtensions
 /// @key will be 0.
 /// </para>
 /// <para>
-/// The default handler for this signal invokes the "writable-changed"
-/// and "changed" signals for each affected key.  This is done because
+/// The default handler for this signal invokes the &quot;writable-changed&quot;
+/// and &quot;changed&quot; signals for each affected key.  This is done because
 /// changes in writability might also imply changes in value (if for
 /// example, a new mandatory setting is introduced).  If any other
 /// connected handler returns %TRUE then this default functionality
@@ -833,14 +833,14 @@ public static class GSettingsHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "writable-changed" signal is emitted when the writability of a
+/// The &quot;writable-changed&quot; signal is emitted when the writability of a
 /// key has potentially changed.  You should call
 /// g_settings_is_writable() in order to determine the new status.
 /// </para>
 /// <para>
 /// This signal supports detailed connections.  You can connect to the
-/// detailed signal "writable-changed::x" in order to only receive
-/// callbacks when the writability of "x" changes.
+/// detailed signal &quot;writable-changed::x&quot; in order to only receive
+/// callbacks when the writability of &quot;x&quot; changes.
 /// </para>
 /// </summary>
 
@@ -882,8 +882,7 @@ public class ChangeEventSignal
 
 	public MentorLake.Gio.GSettingsHandle Self;
 /// <summary>
-/// <para>
-/// </para>
+/// 
 /// <para>
 ///        an array of #GQuarks for the changed keys, or %NULL
 /// </para>
@@ -968,11 +967,11 @@ public static class GSettingsHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The "change-event" signal is emitted once per change event that
+/// The &quot;change-event&quot; signal is emitted once per change event that
 /// affects this settings object.  You should connect to this signal
 /// only if you are interested in viewing groups of changes before they
-/// are split out into multiple emissions of the "changed" signal.
-/// For most use cases it is more appropriate to use the "changed" signal.
+/// are split out into multiple emissions of the &quot;changed&quot; signal.
+/// For most use cases it is more appropriate to use the &quot;changed&quot; signal.
 /// </para>
 /// <para>
 /// In the event that the change event applies to one or more specified
@@ -982,7 +981,7 @@ public static class GSettingsHandleSignalDelegates
 /// be %NULL and @n_keys will be 0.
 /// </para>
 /// <para>
-/// The default handler for this signal invokes the "changed" signal
+/// The default handler for this signal invokes the &quot;changed&quot; signal
 /// for each affected key.  If any other connected handler returns
 /// %TRUE then this default functionality will be suppressed.
 /// </para>
@@ -1010,14 +1009,14 @@ public delegate bool change_event([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 
 /// <summary>
 /// <para>
-/// The "changed" signal is emitted when a key has potentially changed.
+/// The &quot;changed&quot; signal is emitted when a key has potentially changed.
 /// You should call one of the g_settings_get() calls to check the new
 /// value.
 /// </para>
 /// <para>
 /// This signal supports detailed connections.  You can connect to the
-/// detailed signal "changed::x" in order to only receive callbacks
-/// when key "x" changes.
+/// detailed signal &quot;changed::x&quot; in order to only receive callbacks
+/// when key &quot;x&quot; changes.
 /// </para>
 /// <para>
 /// Note that @settings only emits this signal if you have read @key at
@@ -1039,12 +1038,12 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 
 /// <summary>
 /// <para>
-/// The "writable-change-event" signal is emitted once per writability
+/// The &quot;writable-change-event&quot; signal is emitted once per writability
 /// change event that affects this settings object.  You should connect
 /// to this signal if you are interested in viewing groups of changes
 /// before they are split out into multiple emissions of the
-/// "writable-changed" signal.  For most use cases it is more
-/// appropriate to use the "writable-changed" signal.
+/// &quot;writable-changed&quot; signal.  For most use cases it is more
+/// appropriate to use the &quot;writable-changed&quot; signal.
 /// </para>
 /// <para>
 /// In the event that the writability change applies only to a single
@@ -1053,8 +1052,8 @@ public delegate void changed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTy
 /// @key will be 0.
 /// </para>
 /// <para>
-/// The default handler for this signal invokes the "writable-changed"
-/// and "changed" signals for each affected key.  This is done because
+/// The default handler for this signal invokes the &quot;writable-changed&quot;
+/// and &quot;changed&quot; signals for each affected key.  This is done because
 /// changes in writability might also imply changes in value (if for
 /// example, a new mandatory setting is introduced).  If any other
 /// connected handler returns %TRUE then this default functionality
@@ -1080,14 +1079,14 @@ public delegate bool writable_change_event([MarshalAs(UnmanagedType.CustomMarsha
 
 /// <summary>
 /// <para>
-/// The "writable-changed" signal is emitted when the writability of a
+/// The &quot;writable-changed&quot; signal is emitted when the writability of a
 /// key has potentially changed.  You should call
 /// g_settings_is_writable() in order to determine the new status.
 /// </para>
 /// <para>
 /// This signal supports detailed connections.  You can connect to the
-/// detailed signal "writable-changed::x" in order to only receive
-/// callbacks when the writability of "x" changes.
+/// detailed signal &quot;writable-changed::x&quot; in order to only receive
+/// callbacks when the writability of &quot;x&quot; changes.
 /// </para>
 /// </summary>
 
@@ -1110,7 +1109,7 @@ public static class GSettingsHandleExtensions
 /// <summary>
 /// <para>
 /// Applies any changes that have been made to the settings.  This
-/// function does nothing unless @settings is in 'delay-apply' mode;
+/// function does nothing unless @settings is in &apos;delay-apply&apos; mode;
 /// see g_settings_delay().  In the normal case settings are always
 /// applied immediately.
 /// </para>
@@ -1143,7 +1142,7 @@ public static class GSettingsHandleExtensions
 /// <para>
 /// Unless the @flags include %G_SETTINGS_BIND_NO_SENSITIVITY, this
 /// function also establishes a binding between the writability of
-/// @key and the "sensitive" property of @object (if @object has
+/// @key and the &quot;sensitive&quot; property of @object (if @object has
 /// a boolean property by that name). See g_settings_bind_writable()
 /// for more details about writable bindings.
 /// </para>
@@ -1274,7 +1273,7 @@ public static class GSettingsHandleExtensions
 /// <para>
 /// Create a binding between the writability of @key in the
 /// @settings object and the property @property of @object.
-/// The property must be boolean; "sensitive" or "visible"
+/// The property must be boolean; &quot;sensitive&quot; or &quot;visible&quot;
 /// properties of widgets are the most likely candidates.
 /// </para>
 /// <para>
@@ -1308,7 +1307,7 @@ public static class GSettingsHandleExtensions
 /// the name of a boolean property to bind
 /// </param>
 /// <param name="inverted">
-/// whether to 'invert' the value
+/// whether to &apos;invert&apos; the value
 /// </param>
 
 	public static T BindWritable<T>(this T settings, string key, MentorLake.GObject.GObjectHandle @object, string property, bool inverted) where T : GSettingsHandle
@@ -1358,7 +1357,7 @@ public static class GSettingsHandleExtensions
 
 /// <summary>
 /// <para>
-/// Changes the #GSettings object into 'delay-apply' mode. In this
+/// Changes the #GSettings object into &apos;delay-apply&apos; mode. In this
 /// mode, changes to @settings are not immediately propagated to the
 /// backend, but kept locally until g_settings_apply() is called.
 /// </para>
@@ -1384,7 +1383,7 @@ public static class GSettingsHandleExtensions
 /// g_variant_get().
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or for the #GVariantType of @format to mismatch
 /// the type given in the schema.
 /// </para>
@@ -1418,7 +1417,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for booleans.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a boolean type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1447,7 +1446,7 @@ public static class GSettingsHandleExtensions
 /// </para>
 /// <para>
 /// The schema for the child settings object must have been declared
-/// in the schema of @settings using a `<child>` element.
+/// in the schema of @settings using a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// The created child settings object will inherit the #GSettings:delay-apply
@@ -1462,7 +1461,7 @@ public static class GSettingsHandleExtensions
 /// the name of the child schema
 /// </param>
 /// <return>
-/// a 'child' settings object
+/// a &apos;child&apos; settings object
 /// </return>
 
 	public static MentorLake.Gio.GSettingsHandle GetChild(this MentorLake.Gio.GSettingsHandle settings, string name)
@@ -1473,7 +1472,7 @@ public static class GSettingsHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the "default value" of a key.
+/// Gets the &quot;default value&quot; of a key.
 /// </para>
 /// <para>
 /// This is the value that would be read if g_settings_reset() were to be
@@ -1489,7 +1488,7 @@ public static class GSettingsHandleExtensions
 /// g_settings_get_value() is not sufficient for determining if a value
 /// has been set because the user may have explicitly set the value to
 /// something that happens to be equal to the default.  The difference
-/// here is that if the default changes in the future, the user's key
+/// here is that if the default changes in the future, the user&apos;s key
 /// will still be set.
 /// </para>
 /// <para>
@@ -1497,7 +1496,7 @@ public static class GSettingsHandleExtensions
 /// the default value was before the user set it.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings.
 /// </para>
 /// </summary>
@@ -1526,8 +1525,8 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for doubles.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
-/// having a 'double' type in the schema for @settings.
+/// It is a programmer error to give a @key that isn&apos;t specified as
+/// having a &apos;double&apos; type in the schema for @settings.
 /// </para>
 /// </summary>
 
@@ -1557,7 +1556,7 @@ public static class GSettingsHandleExtensions
 /// and it must be marked in the schema file as an enumerated type.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or is not marked as an enumerated type.
 /// </para>
 /// <para>
@@ -1593,7 +1592,7 @@ public static class GSettingsHandleExtensions
 /// of strings and it must be marked in the schema file as a flags type.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or is not marked as a flags type.
 /// </para>
 /// <para>
@@ -1622,7 +1621,7 @@ public static class GSettingsHandleExtensions
 /// <summary>
 /// <para>
 /// Returns whether the #GSettings object has any unapplied
-/// changes.  This can only be the case if it is in 'delayed-apply' mode.
+/// changes.  This can only be the case if it is in &apos;delayed-apply&apos; mode.
 /// </para>
 /// </summary>
 
@@ -1647,7 +1646,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for 32-bit integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a int32 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1676,7 +1675,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for 64-bit integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a int64 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1710,11 +1709,11 @@ public static class GSettingsHandleExtensions
 /// for example) then the mapping is tried again with another value.
 /// </para>
 /// <para>
-/// This allows a robust 'fall back to defaults' behaviour to be
+/// This allows a robust &apos;fall back to defaults&apos; behaviour to be
 /// implemented somewhat automatically.
 /// </para>
 /// <para>
-/// The first value that is tried is the user's setting for the key.  If
+/// The first value that is tried is the user&apos;s setting for the key.  If
 /// the mapping function fails to map this value, other values may be
 /// tried in an unspecified order (system or site defaults, translated
 /// schema default values, untranslated schema default values, etc).
@@ -1784,7 +1783,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for strings.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a string type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1810,7 +1809,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_get() for string arrays.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having an array of strings type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1842,7 +1841,7 @@ public static class GSettingsHandleExtensions
 /// integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a uint32 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1872,7 +1871,7 @@ public static class GSettingsHandleExtensions
 /// integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a uint64 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -1895,7 +1894,7 @@ public static class GSettingsHandleExtensions
 
 /// <summary>
 /// <para>
-/// Checks the "user value" of a key, if there is one.
+/// Checks the &quot;user value&quot; of a key, if there is one.
 /// </para>
 /// <para>
 /// The user value of a key is the last value that was set by the user.
@@ -1909,14 +1908,14 @@ public static class GSettingsHandleExtensions
 /// It is possible that g_settings_get_value() will return a different
 /// value than this function.  This can happen in the case that the user
 /// set a value for a key that was subsequently locked down by the system
-/// administrator -- this function will return the user's old value.
+/// administrator -- this function will return the user&apos;s old value.
 /// </para>
 /// <para>
-/// This function may be useful for adding a "reset" option to a UI or
+/// This function may be useful for adding a &quot;reset&quot; option to a UI or
 /// for providing indication that a particular value has been changed.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings.
 /// </para>
 /// </summary>
@@ -1928,7 +1927,7 @@ public static class GSettingsHandleExtensions
 /// the key to get the user value for
 /// </param>
 /// <return>
-/// the user's value, if set
+/// the user&apos;s value, if set
 /// </return>
 
 	public static MentorLake.GLib.GVariantHandle GetUserValue(this MentorLake.Gio.GSettingsHandle settings, string key)
@@ -1942,7 +1941,7 @@ public static class GSettingsHandleExtensions
 /// Gets the value that is stored in @settings for @key.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings.
 /// </para>
 /// </summary>
@@ -1994,7 +1993,7 @@ public static class GSettingsHandleExtensions
 /// to call g_settings_get_child().
 /// </para>
 /// <para>
-/// There is little reason to call this function from "normal" code, since
+/// There is little reason to call this function from &quot;normal&quot; code, since
 /// you should already know what children are in your schema. This function
 /// may still be useful there for introspection reasons, however.
 /// </para>
@@ -2023,7 +2022,7 @@ public static class GSettingsHandleExtensions
 /// Introspects the list of keys on @settings.
 /// </para>
 /// <para>
-/// You should probably not be calling this function from "normal" code
+/// You should probably not be calling this function from &quot;normal&quot; code
 /// (since you should already know what keys are in your schema).  This
 /// function is intended for introspection reasons.
 /// </para>
@@ -2101,7 +2100,7 @@ public static class GSettingsHandleExtensions
 /// <summary>
 /// <para>
 /// Reverts all non-applied changes to the settings.  This function
-/// does nothing unless @settings is in 'delay-apply' mode; see
+/// does nothing unless @settings is in &apos;delay-apply&apos; mode; see
 /// g_settings_delay().  In the normal case settings are always applied
 /// immediately.
 /// </para>
@@ -2130,7 +2129,7 @@ public static class GSettingsHandleExtensions
 /// g_variant_new().
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or for the #GVariantType of @format to mismatch
 /// the type given in the schema.
 /// </para>
@@ -2167,7 +2166,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_set() for booleans.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a boolean type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2200,8 +2199,8 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_set() for doubles.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
-/// having a 'double' type in the schema for @settings.
+/// It is a programmer error to give a @key that isn&apos;t specified as
+/// having a &apos;double&apos; type in the schema for @settings.
 /// </para>
 /// </summary>
 
@@ -2231,13 +2230,13 @@ public static class GSettingsHandleExtensions
 /// within @settings.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or is not marked as an enumerated type, or for
 /// @value not to be a valid value for the named type.
 /// </para>
 /// <para>
 /// After performing the write, accessing @key directly with
-/// g_settings_get_string() will return the 'nick' associated with
+/// g_settings_get_string() will return the &apos;nick&apos; associated with
 /// @value.
 /// </para>
 /// </summary>
@@ -2268,13 +2267,13 @@ public static class GSettingsHandleExtensions
 /// @settings.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or is not marked as a flags type, or for @value
 /// to contain any bits that are not value for the named type.
 /// </para>
 /// <para>
 /// After performing the write, accessing @key directly with
-/// g_settings_get_strv() will return an array of 'nicks'; one for each
+/// g_settings_get_strv() will return an array of &apos;nicks&apos;; one for each
 /// bit in @value.
 /// </para>
 /// </summary>
@@ -2306,7 +2305,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_set() for 32-bit integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a int32 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2339,7 +2338,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_set() for 64-bit integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a int64 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2372,7 +2371,7 @@ public static class GSettingsHandleExtensions
 /// A convenience variant of g_settings_set() for strings.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a string type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2406,7 +2405,7 @@ public static class GSettingsHandleExtensions
 /// @value is %NULL, then @key is set to be the empty array.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having an array of strings type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2440,7 +2439,7 @@ public static class GSettingsHandleExtensions
 /// integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a uint32 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2474,7 +2473,7 @@ public static class GSettingsHandleExtensions
 /// integers.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't specified as
+/// It is a programmer error to give a @key that isn&apos;t specified as
 /// having a uint64 type in the schema for @settings.
 /// </para>
 /// </summary>
@@ -2504,7 +2503,7 @@ public static class GSettingsHandleExtensions
 /// Sets @key in @settings to @value.
 /// </para>
 /// <para>
-/// It is a programmer error to give a @key that isn't contained in the
+/// It is a programmer error to give a @key that isn&apos;t contained in the
 /// schema for @settings or for @value to have the incorrect type, per
 /// the schema.
 /// </para>

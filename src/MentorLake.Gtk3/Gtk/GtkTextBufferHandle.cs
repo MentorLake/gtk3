@@ -1197,7 +1197,7 @@ public static class GtkTextBufferHandleExtensions
 /// be another mark in the buffer with the same name.
 /// </para>
 /// <para>
-/// Emits the #GtkTextBuffer::mark-set signal as notification of the mark's
+/// Emits the #GtkTextBuffer::mark-set signal as notification of the mark&apos;s
 /// initial placement.
 /// </para>
 /// </summary>
@@ -1351,7 +1351,7 @@ public static class GtkTextBufferHandleExtensions
 /// <para>
 /// The “interactive” buffer mutation functions, such as
 /// gtk_text_buffer_insert_interactive(), automatically call begin/end
-/// user action around the buffer operations they perform, so there's
+/// user action around the buffer operations they perform, so there&apos;s
 /// no need to add extra calls if you user action consists solely of a
 /// single call to one of those functions.
 /// </para>
@@ -1433,7 +1433,7 @@ public static class GtkTextBufferHandleExtensions
 /// away when the buffer does.
 /// </para>
 /// <para>
-/// Emits the #GtkTextBuffer::mark-set signal as notification of the mark's
+/// Emits the #GtkTextBuffer::mark-set signal as notification of the mark&apos;s
 /// initial placement.
 /// </para>
 /// </summary>
@@ -2497,7 +2497,7 @@ public static class GtkTextBufferHandleExtensions
 /// results from a user action (is interactive).
 /// </para>
 /// <para>
-/// @default_editable indicates the editability of text that doesn't
+/// @default_editable indicates the editability of text that doesn&apos;t
 /// have a tag affecting editability applied to it. Typically the
 /// result of gtk_text_view_get_editable() is appropriate here.
 /// </para>
@@ -2534,7 +2534,7 @@ public static class GtkTextBufferHandleExtensions
 /// position.
 /// </para>
 /// <para>
-/// @default_editable indicates the editability of text that doesn't
+/// @default_editable indicates the editability of text that doesn&apos;t
 /// have a tag affecting editability applied to it. Typically the
 /// result of gtk_text_view_get_editable() is appropriate here.
 /// </para>

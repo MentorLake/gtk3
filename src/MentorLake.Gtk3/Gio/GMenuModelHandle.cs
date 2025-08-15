@@ -53,10 +53,10 @@ namespace MentorLake.Gio;
 /// ## A menu example
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="menu-model-dark.svg" media="(prefers-color-scheme: dark)">
-///   <img src="menu-model-light.svg" alt="menu model">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;menu-model-dark.svg&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img src=&quot;menu-model-light.svg&quot; alt=&quot;menu model&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// <para>
 /// Notice that the separators visible in the [example](#an-example-menu)
@@ -94,7 +94,7 @@ namespace MentorLake.Gio;
 /// identifies an action in an action group. Which action group(s) provide
 /// actions depends on the context in which the menu model is used.
 /// E.g. when the model is exported as the application menu of a
-/// <see href="https://docs.gtk.org/gtk4/class.Application.html">GtkApplication</see>,
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.Application.html&quot;&amp;gt;GtkApplication&amp;lt;/see&amp;gt;,
 /// actions can be application-wide or window-specific (and thus come from
 /// two different action groups). By convention, the application-wide actions
 /// have names that start with `app.`, while the names of window-specific
@@ -318,7 +318,7 @@ public static class GMenuModelHandleExtensions
 /// g_variant_get(), followed by a g_variant_unref().  As such,
 /// @format_string must make a complete copy of the data (since the
 /// #GVariant may go away after the call to g_variant_unref()).  In
-/// particular, no '&' characters are allowed in @format_string.
+/// particular, no &apos;&amp;&apos; characters are allowed in @format_string.
 /// </para>
 /// </summary>
 
@@ -453,7 +453,7 @@ public static class GMenuModelHandleExtensions
 /// a #GMenuModel
 /// </param>
 /// <return>
-/// %TRUE if the model is mutable (ie: "items-changed" may be
+/// %TRUE if the model is mutable (ie: &quot;items-changed&quot; may be
 ///     emitted).
 /// </return>
 

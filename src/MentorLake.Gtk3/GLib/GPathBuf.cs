@@ -11,16 +11,16 @@ namespace MentorLake.GLib;
 /// g_auto (GPathBuf) path;
 /// </para>
 /// <para>
-/// g_path_buf_init (&path);
+/// g_path_buf_init (&amp;path);
 /// </para>
 /// <para>
-/// g_path_buf_push (&path, "usr");
-/// g_path_buf_push (&path, "bin");
-/// g_path_buf_push (&path, "echo");
+/// g_path_buf_push (&amp;path, &quot;usr&quot;);
+/// g_path_buf_push (&amp;path, &quot;bin&quot;);
+/// g_path_buf_push (&amp;path, &quot;echo&quot;);
 /// </para>
 /// <para>
-/// g_autofree char *echo = g_path_buf_to_path (&path);
-/// g_assert_cmpstr (echo, ==, "/usr/bin/echo");
+/// g_autofree char *echo = g_path_buf_to_path (&amp;path);
+/// g_assert_cmpstr (echo, ==, &quot;/usr/bin/echo&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -31,15 +31,15 @@ namespace MentorLake.GLib;
 /// g_auto (GPathBuf) path;
 /// </para>
 /// <para>
-/// g_path_buf_init_from_path (&path, "/usr/bin/echo");
+/// g_path_buf_init_from_path (&amp;path, &quot;/usr/bin/echo&quot;);
 /// </para>
 /// <para>
-/// g_path_buf_pop (&path);
-/// g_path_buf_push (&path, "sh");
+/// g_path_buf_pop (&amp;path);
+/// g_path_buf_push (&amp;path, &quot;sh&quot;);
 /// </para>
 /// <para>
-/// g_autofree char *sh = g_path_buf_to_path (&path);
-/// g_assert_cmpstr (sh, ==, "/usr/bin/sh");
+/// g_autofree char *sh = g_path_buf_to_path (&amp;path);
+/// g_assert_cmpstr (sh, ==, &quot;/usr/bin/sh&quot;);
 /// ```
 /// </para>
 /// </summary>
@@ -208,29 +208,24 @@ public static class GPathBufExtensions
 /// Unix-like operating systems or the drive on Windows systems), it will
 /// not be removed and %FALSE will be returned instead.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GPathBuf buf, cmp;
-/// </para>
-/// <para>
-/// g_path_buf_init_from_path (&buf, "/bin/sh");
-/// </para>
-/// <para>
-/// g_path_buf_pop (&buf);
-/// g_path_buf_init_from_path (&cmp, "/bin");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp));
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_pop (&buf);
-/// g_path_buf_init_from_path (&cmp, "/");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp));
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_clear (&buf);
-/// ]|
-/// </para>
+/// GPathBuf buf, cmp;
+/// 
+/// g_path_buf_init_from_path (&amp;buf, &quot;/bin/sh&quot;);
+/// 
+/// g_path_buf_pop (&amp;buf);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/bin&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp));
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_pop (&amp;buf);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp));
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_clear (&amp;buf);
+/// </code>
 /// </summary>
 
 /// <param name="buf">
@@ -262,27 +257,23 @@ public static class GPathBufExtensions
 /// directory separators. On other platforms, %G_DIR_SEPARATOR_S is the
 /// only directory separator.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GPathBuf buf, cmp;
-/// </para>
-/// <para>
-/// g_path_buf_init_from_path (&buf, "/tmp");
-/// g_path_buf_push (&buf, ".X11-unix/X0");
-/// g_path_buf_init_from_path (&cmp, "/tmp/.X11-unix/X0");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp));
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_push (&buf, "/etc/locale.conf");
-/// g_path_buf_init_from_path (&cmp, "/etc/locale.conf");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp));
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_clear (&buf);
-/// ]|
-/// </para>
+/// GPathBuf buf, cmp;
+/// 
+/// g_path_buf_init_from_path (&amp;buf, &quot;/tmp&quot;);
+/// g_path_buf_push (&amp;buf, &quot;.X11-unix/X0&quot;);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/tmp/.X11-unix/X0&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp));
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_push (&amp;buf, &quot;/etc/locale.conf&quot;);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/etc/locale.conf&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp));
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_clear (&amp;buf);
+/// </code>
 /// </summary>
 
 /// <param name="buf">
@@ -348,29 +339,24 @@ public static class GPathBufExtensions
 /// popping the path buffer and pushing @file_name, creating a
 /// sibling of the original path.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GPathBuf buf, cmp;
-/// </para>
-/// <para>
-/// g_path_buf_init_from_path (&buf, "/");
-/// </para>
-/// <para>
-/// g_path_buf_set_filename (&buf, "bar");
-/// g_path_buf_init_from_path (&cmp, "/bar");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp));
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_set_filename (&buf, "baz.txt");
-/// g_path_buf_init_from_path (&cmp, "/baz.txt");
-/// g_assert_true (g_path_buf_equal (&buf, &cmp);
-/// g_path_buf_clear (&cmp);
-/// </para>
-/// <para>
-/// g_path_buf_clear (&buf);
-/// ]|
-/// </para>
+/// GPathBuf buf, cmp;
+/// 
+/// g_path_buf_init_from_path (&amp;buf, &quot;/&quot;);
+/// 
+/// g_path_buf_set_filename (&amp;buf, &quot;bar&quot;);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/bar&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp));
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_set_filename (&amp;buf, &quot;baz.txt&quot;);
+/// g_path_buf_init_from_path (&amp;cmp, &quot;/baz.txt&quot;);
+/// g_assert_true (g_path_buf_equal (&amp;buf, &amp;cmp);
+/// g_path_buf_clear (&amp;cmp);
+/// 
+/// g_path_buf_clear (&amp;buf);
+/// </code>
 /// </summary>
 
 /// <param name="buf">
@@ -487,16 +473,16 @@ internal class GPathBufExterns
 /// g_auto (GPathBuf) path;
 /// </para>
 /// <para>
-/// g_path_buf_init (&path);
+/// g_path_buf_init (&amp;path);
 /// </para>
 /// <para>
-/// g_path_buf_push (&path, "usr");
-/// g_path_buf_push (&path, "bin");
-/// g_path_buf_push (&path, "echo");
+/// g_path_buf_push (&amp;path, &quot;usr&quot;);
+/// g_path_buf_push (&amp;path, &quot;bin&quot;);
+/// g_path_buf_push (&amp;path, &quot;echo&quot;);
 /// </para>
 /// <para>
-/// g_autofree char *echo = g_path_buf_to_path (&path);
-/// g_assert_cmpstr (echo, ==, "/usr/bin/echo");
+/// g_autofree char *echo = g_path_buf_to_path (&amp;path);
+/// g_assert_cmpstr (echo, ==, &quot;/usr/bin/echo&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -507,15 +493,15 @@ internal class GPathBufExterns
 /// g_auto (GPathBuf) path;
 /// </para>
 /// <para>
-/// g_path_buf_init_from_path (&path, "/usr/bin/echo");
+/// g_path_buf_init_from_path (&amp;path, &quot;/usr/bin/echo&quot;);
 /// </para>
 /// <para>
-/// g_path_buf_pop (&path);
-/// g_path_buf_push (&path, "sh");
+/// g_path_buf_pop (&amp;path);
+/// g_path_buf_push (&amp;path, &quot;sh&quot;);
 /// </para>
 /// <para>
-/// g_autofree char *sh = g_path_buf_to_path (&path);
-/// g_assert_cmpstr (sh, ==, "/usr/bin/sh");
+/// g_autofree char *sh = g_path_buf_to_path (&amp;path);
+/// g_assert_cmpstr (sh, ==, &quot;/usr/bin/sh&quot;);
 /// ```
 /// </para>
 /// </summary>

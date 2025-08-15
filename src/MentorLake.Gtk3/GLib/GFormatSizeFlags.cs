@@ -19,16 +19,16 @@ public enum GFormatSizeFlags : uint
 /// <summary>
 /// <para>
 /// include the exact number of bytes as part
-///     of the returned string.  For example, "45.6 kB (45,612 bytes)".
+///     of the returned string.  For example, &quot;45.6 kB (45,612 bytes)&quot;.
 /// </para>
 /// </summary>
 
 	G_FORMAT_SIZE_LONG_FORMAT = 1,
 /// <summary>
 /// <para>
-/// use IEC (base 1024) units with "KiB"-style
+/// use IEC (base 1024) units with &quot;KiB&quot;-style
 ///     suffixes. IEC units should only be used for reporting things with
-///     a strong "power of 2" basis, like RAM sizes or RAID stripe sizes.
+///     a strong &quot;power of 2&quot; basis, like RAM sizes or RAID stripe sizes.
 ///     Network and storage sizes should be reported in the normal SI units.
 /// </para>
 /// </summary>

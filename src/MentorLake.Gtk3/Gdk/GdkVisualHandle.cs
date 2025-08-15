@@ -170,7 +170,7 @@ public static class GdkVisualHandleExtensions
 /// Obtains values that are needed to calculate blue pixel values in TrueColor
 /// and DirectColor. The “mask” is the significant bits within the pixel.
 /// The “shift” is the number of bits left we must shift a primary for it
-/// to be in position (according to the "mask"). Finally, "precision" refers
+/// to be in position (according to the &quot;mask&quot;). Finally, &quot;precision&quot; refers
 /// to how much precision the pixel value contains for a particular primary.
 /// </para>
 /// </summary>
@@ -265,7 +265,7 @@ public static class GdkVisualHandleExtensions
 /// Obtains values that are needed to calculate green pixel values in TrueColor
 /// and DirectColor. The “mask” is the significant bits within the pixel.
 /// The “shift” is the number of bits left we must shift a primary for it
-/// to be in position (according to the "mask"). Finally, "precision" refers
+/// to be in position (according to the &quot;mask&quot;). Finally, &quot;precision&quot; refers
 /// to how much precision the pixel value contains for a particular primary.
 /// </para>
 /// </summary>
@@ -295,7 +295,7 @@ public static class GdkVisualHandleExtensions
 /// Obtains values that are needed to calculate red pixel values in TrueColor
 /// and DirectColor. The “mask” is the significant bits within the pixel.
 /// The “shift” is the number of bits left we must shift a primary for it
-/// to be in position (according to the "mask"). Finally, "precision" refers
+/// to be in position (according to the &quot;mask&quot;). Finally, &quot;precision&quot; refers
 /// to how much precision the pixel value contains for a particular primary.
 /// </para>
 /// </summary>

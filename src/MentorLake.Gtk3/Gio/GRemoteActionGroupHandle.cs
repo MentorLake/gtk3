@@ -47,7 +47,7 @@ public static class GRemoteActionGroupHandleExtensions
 /// </para>
 /// <para>
 /// This is the same as g_action_group_activate_action() except that it
-/// allows for provision of "platform data" to be sent along with the
+/// allows for provision of &quot;platform data&quot; to be sent along with the
 /// activation request.  This typically contains details such as the user
 /// interaction timestamp or startup notification information.
 /// </para>
@@ -83,7 +83,7 @@ public static class GRemoteActionGroupHandleExtensions
 /// </para>
 /// <para>
 /// This is the same as g_action_group_change_action_state() except that
-/// it allows for provision of "platform data" to be sent along with the
+/// it allows for provision of &quot;platform data&quot; to be sent along with the
 /// state change request.  This typically contains details such as the
 /// user interaction timestamp or startup notification information.
 /// </para>

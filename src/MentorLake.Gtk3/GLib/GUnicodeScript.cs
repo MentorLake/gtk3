@@ -489,7 +489,7 @@ public enum GUnicodeScript
 	G_UNICODE_SCRIPT_PHAGS_PA = 65,
 /// <summary>
 /// <para>
-/// N'Ko
+/// N&apos;Ko
 /// </para>
 /// </summary>
 

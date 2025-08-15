@@ -36,27 +36,24 @@ namespace MentorLake.Gdk;
 /// Here’s an example of how the terminal example would be implemented, assuming
 /// a terminal area widget called “terminal” and a toplevel window “toplevel”:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// 	GdkGeometry hints;
-/// </para>
-/// <para>
-/// 	hints.base_width = terminal->char_width;
-///         hints.base_height = terminal->char_height;
-///         hints.min_width = terminal->char_width;
-///         hints.min_height = terminal->char_height;
-///         hints.width_inc = terminal->char_width;
-///         hints.height_inc = terminal->char_height;
-/// </para>
-/// <para>
+/// 	GdkGeometry hints;
+/// 
+/// 	hints.base_width = terminal-&amp;gt;char_width;
+///         hints.base_height = terminal-&amp;gt;char_height;
+///         hints.min_width = terminal-&amp;gt;char_width;
+///         hints.min_height = terminal-&amp;gt;char_height;
+///         hints.width_inc = terminal-&amp;gt;char_width;
+///         hints.height_inc = terminal-&amp;gt;char_height;
+/// 
 ///  gtk_window_set_geometry_hints (GTK_WINDOW (toplevel),
 ///                                 GTK_WIDGET (terminal),
-///                                 &hints,
+///                                 &amp;hints,
 ///                                 GDK_HINT_RESIZE_INC |
 ///                                 GDK_HINT_MIN_SIZE |
 ///                                 GDK_HINT_BASE_SIZE);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The other useful fields are the @min_aspect and @max_aspect fields; these
 /// contain a width/height ratio as a floating point number. If a geometry widget
@@ -117,27 +114,24 @@ internal class GdkGeometryExterns
 /// Here’s an example of how the terminal example would be implemented, assuming
 /// a terminal area widget called “terminal” and a toplevel window “toplevel”:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// 	GdkGeometry hints;
-/// </para>
-/// <para>
-/// 	hints.base_width = terminal->char_width;
-///         hints.base_height = terminal->char_height;
-///         hints.min_width = terminal->char_width;
-///         hints.min_height = terminal->char_height;
-///         hints.width_inc = terminal->char_width;
-///         hints.height_inc = terminal->char_height;
-/// </para>
-/// <para>
+/// 	GdkGeometry hints;
+/// 
+/// 	hints.base_width = terminal-&amp;gt;char_width;
+///         hints.base_height = terminal-&amp;gt;char_height;
+///         hints.min_width = terminal-&amp;gt;char_width;
+///         hints.min_height = terminal-&amp;gt;char_height;
+///         hints.width_inc = terminal-&amp;gt;char_width;
+///         hints.height_inc = terminal-&amp;gt;char_height;
+/// 
 ///  gtk_window_set_geometry_hints (GTK_WINDOW (toplevel),
 ///                                 GTK_WIDGET (terminal),
-///                                 &hints,
+///                                 &amp;hints,
 ///                                 GDK_HINT_RESIZE_INC |
 ///                                 GDK_HINT_MIN_SIZE |
 ///                                 GDK_HINT_BASE_SIZE);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The other useful fields are the @min_aspect and @max_aspect fields; these
 /// contain a width/height ratio as a floating point number. If a geometry widget

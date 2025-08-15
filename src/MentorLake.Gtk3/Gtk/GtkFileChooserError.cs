@@ -34,7 +34,7 @@ public enum GtkFileChooserError
 	GTK_FILE_CHOOSER_ERROR_ALREADY_EXISTS = 2,
 /// <summary>
 /// <para>
-/// Indicates an incomplete hostname (e.g. "http://foo" without a slash after that).
+/// Indicates an incomplete hostname (e.g. &quot;http://foo&quot; without a slash after that).
 /// </para>
 /// </summary>
 

@@ -60,7 +60,7 @@ namespace MentorLake.Gtk;
 /// recursive allocation process it’s important to note that request cycles
 /// will be recursively executed while container widgets allocate their children.
 /// Each container widget, once allocated a size, will go on to first share the
-/// space in one orientation among its children and then request each child's
+/// space in one orientation among its children and then request each child&apos;s
 /// height for its target allocated width or its width for allocated height,
 /// depending. In this way a #GtkWidget will typically be requested its size
 /// a number of times before actually being allocated a size. The size a
@@ -94,8 +94,8 @@ namespace MentorLake.Gtk;
 /// generally deals with width-for-height requests, for #GtkWidgetClass.get_preferred_height()
 /// it will do:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_widget_get_preferred_height (GtkWidget *widget,
 ///                                  gint *min_height,
@@ -104,12 +104,11 @@ namespace MentorLake.Gtk;
 ///    if (i_am_in_height_for_width_mode)
 ///      {
 ///        gint min_width, nat_width;
-/// </para>
-/// <para>
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget,
-///                                                            &min_width,
-///                                                            &nat_width);
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_height_for_width
+/// 
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_width (widget,
+///                                                            &amp;min_width,
+///                                                            &amp;nat_width);
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_height_for_width
 ///                                                           (widget,
 ///                                                            min_width,
 ///                                                            min_height,
@@ -122,12 +121,12 @@ namespace MentorLake.Gtk;
 ///         natural height for the rotated label here.
 ///      }
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// And in #GtkWidgetClass.get_preferred_width_for_height() it will simply return
 /// the minimum and natural width:
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_widget_get_preferred_width_for_height (GtkWidget *widget,
 ///                                            gint for_height,
@@ -136,7 +135,7 @@ namespace MentorLake.Gtk;
 /// {
 ///    if (i_am_in_height_for_width_mode)
 ///      {
-///        GTK_WIDGET_GET_CLASS (widget)->get_preferred_width (widget,
+///        GTK_WIDGET_GET_CLASS (widget)-&amp;gt;get_preferred_width (widget,
 ///                                                            min_width,
 ///                                                            nat_width);
 ///      }
@@ -147,22 +146,19 @@ namespace MentorLake.Gtk;
 ///         ahead and do its real width for height calculation here.
 ///      }
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Often a widget needs to get its own request during size request or
 /// allocation. For example, when computing height it may need to also
 /// compute width. Or when deciding how to use an allocation, the widget
 /// may need to know its natural size. In these cases, the widget should
 /// be careful to call its virtual methods directly, like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// GTK_WIDGET_GET_CLASS(widget)->get_preferred_width (widget,
-///                                                    &min,
-///                                                    &natural);
-/// ]|
-/// </para>
+/// <code>
+/// GTK_WIDGET_GET_CLASS(widget)-&amp;gt;get_preferred_width (widget,
+/// GTK_WIDGET_GET_CLASS(widget)-&amp;gt;get_preferred_width (widget,
+///                                                    &amp;min,
+///                                                    &amp;natural);
+/// </code>
 /// <para>
 /// It will not work to use the wrapper functions, such as
 /// gtk_widget_get_preferred_width() inside your own size request
@@ -226,21 +222,20 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkWidget implementation of the GtkBuildable interface supports a
-/// custom `<accelerator>` element, which has attributes named ”key”, ”modifiers”
+/// custom `&amp;lt;accelerator&amp;gt;` element, which has attributes named ”key”, ”modifiers”
 /// and ”signal” and allows to specify accelerators.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment specifying an accelerator:
 /// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkButton&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkButton&quot;&amp;gt;
+///   &amp;lt;accelerator key=&quot;q&quot; modifiers=&quot;GDK_CONTROL_MASK&quot; signal=&quot;clicked&quot;/&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkButton">
-///   <accelerator key="q" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
-/// </object>
-/// ]|
-/// </para>
-/// <para>
-/// In addition to accelerators, GtkWidget also support a custom `<accessible>`
+/// In addition to accelerators, GtkWidget also support a custom `&amp;lt;accessible&amp;gt;`
 /// element, which supports actions and relations. Properties on the accessible
 /// implementation of an object can be set by accessing the internal child
 /// “accessible” of a #GtkWidget.
@@ -248,38 +243,36 @@ namespace MentorLake.Gtk;
 /// <para>
 /// An example of a UI definition fragment specifying an accessible:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkLabel" id="label1"/>
-///   <property name="label">I am a Label for a Button</property>
-/// </object>
-/// <object class="GtkButton" id="button1">
-///   <accessibility>
-///     <action action_name="click" translatable="yes">Click the button.</action>
-///     <relation target="label1" type="labelled-by"/>
-///   </accessibility>
-///   <child internal-child="accessible">
-///     <object class="AtkObject" id="a11y-button1">
-///       <property name="accessible-name">Clickable Button</property>
-///     </object>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;label1&quot;/&amp;gt;
+/// &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;label1&quot;/&amp;gt;
+///   &amp;lt;property name=&quot;label&quot;&amp;gt;I am a Label for a Button&amp;lt;/property&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// &amp;lt;object class=&quot;GtkButton&quot; id=&quot;button1&quot;&amp;gt;
+///   &amp;lt;accessibility&amp;gt;
+///     &amp;lt;action action_name=&quot;click&quot; translatable=&quot;yes&quot;&amp;gt;Click the button.&amp;lt;/action&amp;gt;
+///     &amp;lt;relation target=&quot;label1&quot; type=&quot;labelled-by&quot;/&amp;gt;
+///   &amp;lt;/accessibility&amp;gt;
+///   &amp;lt;child internal-child=&quot;accessible&quot;&amp;gt;
+///     &amp;lt;object class=&quot;AtkObject&quot; id=&quot;a11y-button1&quot;&amp;gt;
+///       &amp;lt;property name=&quot;accessible-name&quot;&amp;gt;Clickable Button&amp;lt;/property&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// Finally, GtkWidget allows style information such as style classes to
-/// be associated with widgets, using the custom `<style>` element:
+/// be associated with widgets, using the custom `&amp;lt;style&amp;gt;` element:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkButton" id="button1">
-///   <style>
-///     <class name="my-special-button-class"/>
-///     <class name="dark-button"/>
-///   </style>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkButton&quot; id=&quot;button1&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkButton&quot; id=&quot;button1&quot;&amp;gt;
+///   &amp;lt;style&amp;gt;
+///     &amp;lt;class name=&quot;my-special-button-class&quot;/&amp;gt;
+///     &amp;lt;class name=&quot;dark-button&quot;/&amp;gt;
+///   &amp;lt;/style&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # Building composite widgets from template XML ## {#composite-templates}
 /// </para>
@@ -299,8 +292,8 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// Unlike regular interface descriptions, gtk_widget_class_set_template() will
-/// expect a `<template>` tag as a direct child of the toplevel `<interface>`
-/// tag. The `<template>` tag must specify the “class” attribute which must be
+/// expect a `&amp;lt;template&amp;gt;` tag as a direct child of the toplevel `&amp;lt;interface&amp;gt;`
+/// tag. The `&amp;lt;template&amp;gt;` tag must specify the “class” attribute which must be
 /// the type name of the widget. Optionally, the “parent” attribute may be
 /// specified to specify the direct parent type of the widget type, this is
 /// ignored by the GtkBuilder but required for Glade to introspect what kind
@@ -308,75 +301,71 @@ namespace MentorLake.Gtk;
 /// type does not exist.
 /// </para>
 /// <para>
-/// The XML which is contained inside the `<template>` tag behaves as if it were
-/// added to the `<object>` tag defining "widget" itself. You may set properties
-/// on @widget by inserting `<property>` tags into the `<template>` tag, and also
-/// add `<child>` tags to add children and extend "widget" in the normal way you
-/// would with `<object>` tags.
+/// The XML which is contained inside the `&amp;lt;template&amp;gt;` tag behaves as if it were
+/// added to the `&amp;lt;object&amp;gt;` tag defining &quot;widget&quot; itself. You may set properties
+/// on @widget by inserting `&amp;lt;property&amp;gt;` tags into the `&amp;lt;template&amp;gt;` tag, and also
+/// add `&amp;lt;child&amp;gt;` tags to add children and extend &quot;widget&quot; in the normal way you
+/// would with `&amp;lt;object&amp;gt;` tags.
 /// </para>
 /// <para>
-/// Additionally, `<object>` tags can also be added before and after the initial
-/// `<template>` tag in the normal way, allowing one to define auxiliary objects
+/// Additionally, `&amp;lt;object&amp;gt;` tags can also be added before and after the initial
+/// `&amp;lt;template&amp;gt;` tag in the normal way, allowing one to define auxiliary objects
 /// which might be referenced by other widgets declared as children of the
-/// `<template>` tag.
+/// `&amp;lt;template&amp;gt;` tag.
 /// </para>
 /// <para>
 /// An example of a GtkBuilder Template Definition:
 /// </para>
+/// <code>
+/// &amp;lt;interface&amp;gt;
+/// &amp;lt;interface&amp;gt;
+///   &amp;lt;template class=&quot;FooWidget&quot; parent=&quot;GtkBox&quot;&amp;gt;
+///     &amp;lt;property name=&quot;orientation&quot;&amp;gt;GTK_ORIENTATION_HORIZONTAL&amp;lt;/property&amp;gt;
+///     &amp;lt;property name=&quot;spacing&quot;&amp;gt;4&amp;lt;/property&amp;gt;
+///     &amp;lt;child&amp;gt;
+///       &amp;lt;object class=&quot;GtkButton&quot; id=&quot;hello_button&quot;&amp;gt;
+///         &amp;lt;property name=&quot;label&quot;&amp;gt;Hello World&amp;lt;/property&amp;gt;
+///         &amp;lt;signal name=&quot;clicked&quot; handler=&quot;hello_button_clicked&quot; object=&quot;FooWidget&quot; swapped=&quot;yes&quot;/&amp;gt;
+///       &amp;lt;/object&amp;gt;
+///     &amp;lt;/child&amp;gt;
+///     &amp;lt;child&amp;gt;
+///       &amp;lt;object class=&quot;GtkButton&quot; id=&quot;goodbye_button&quot;&amp;gt;
+///         &amp;lt;property name=&quot;label&quot;&amp;gt;Goodbye World&amp;lt;/property&amp;gt;
+///       &amp;lt;/object&amp;gt;
+///     &amp;lt;/child&amp;gt;
+///   &amp;lt;/template&amp;gt;
+/// &amp;lt;/interface&amp;gt;
+/// </code>
 /// <para>
-/// |[<!-- language="xml" -->
-/// <interface>
-///   <template class="FooWidget" parent="GtkBox">
-///     <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
-///     <property name="spacing">4</property>
-///     <child>
-///       <object class="GtkButton" id="hello_button">
-///         <property name="label">Hello World</property>
-///         <signal name="clicked" handler="hello_button_clicked" object="FooWidget" swapped="yes"/>
-///       </object>
-///     </child>
-///     <child>
-///       <object class="GtkButton" id="goodbye_button">
-///         <property name="label">Goodbye World</property>
-///       </object>
-///     </child>
-///   </template>
-/// </interface>
-/// ]|
-/// </para>
-/// <para>
-/// Typically, you'll place the template fragment into a file that is
+/// Typically, you&apos;ll place the template fragment into a file that is
 /// bundled with your project, using #GResource. In order to load the
 /// template, you need to call gtk_widget_class_set_template_from_resource()
 /// from the class initialization of your #GtkWidget type:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_widget_class_init (FooWidgetClass *klass)
 /// {
 ///   // ...
-/// </para>
-/// <para>
+/// 
 ///   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass),
-///                                                "/com/example/ui/foowidget.ui");
+///                                                &quot;/com/example/ui/foowidget.ui&quot;);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// You will also need to call gtk_widget_init_template() from the instance
 /// initialization function:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// foo_widget_init (FooWidget *self)
 /// {
 ///   // ...
 ///   gtk_widget_init_template (GTK_WIDGET (self));
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// You can access widgets defined in the template using the
 /// gtk_widget_get_template_child() function, but you will typically declare
@@ -384,65 +373,58 @@ namespace MentorLake.Gtk;
 /// name as the widget in the template definition, and call
 /// gtk_widget_class_bind_template_child_private() with that name, e.g.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct {
 /// typedef struct {
 ///   GtkWidget *hello_button;
 ///   GtkWidget *goodbye_button;
 /// } FooWidgetPrivate;
-/// </para>
-/// <para>
+/// 
 /// G_DEFINE_TYPE_WITH_PRIVATE (FooWidget, foo_widget, GTK_TYPE_BOX)
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_widget_class_init (FooWidgetClass *klass)
 /// {
 ///   // ...
 ///   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass),
-///                                                "/com/example/ui/foowidget.ui");
+///                                                &quot;/com/example/ui/foowidget.ui&quot;);
 ///   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass),
 ///                                                 FooWidget, hello_button);
 ///   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass),
 ///                                                 FooWidget, goodbye_button);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_widget_init (FooWidget *widget)
 /// {
-/// </para>
-/// <para>
+/// 
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// You can also use gtk_widget_class_bind_template_callback() to connect a signal
 /// callback defined in the template with a function visible in the scope of the
 /// class, e.g.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// // the signal handler has the instance and user data swapped
-/// // because of the swapped="yes" attribute in the template XML
+/// // the signal handler has the instance and user data swapped
+/// // because of the swapped=&quot;yes&quot; attribute in the template XML
 /// static void
 /// hello_button_clicked (FooWidget *self,
 ///                       GtkButton *button)
 /// {
-///   g_print ("Hello, world!\n");
+///   g_print (&quot;Hello, world!\n&quot;);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// foo_widget_class_init (FooWidgetClass *klass)
 /// {
 ///   // ...
 ///   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass),
-///                                                "/com/example/ui/foowidget.ui");
+///                                                &quot;/com/example/ui/foowidget.ui&quot;);
 ///   gtk_widget_class_bind_template_callback (GTK_WIDGET_CLASS (klass), hello_button_clicked);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GtkWidgetHandle : GInitiallyUnownedHandle, AtkImplementorIfaceHandle, GtkBuildableHandle
@@ -451,7 +433,7 @@ public class GtkWidgetHandle : GInitiallyUnownedHandle, AtkImplementorIfaceHandl
 /// <para>
 /// This is a convenience function for creating a widget and setting
 /// its properties in one go. For example you might write:
-/// `gtk_widget_new (GTK_TYPE_LABEL, "label", "Hello World", "xalign",
+/// `gtk_widget_new (GTK_TYPE_LABEL, &quot;label&quot;, &quot;Hello World&quot;, &quot;xalign&quot;,
 /// 0.0, NULL)` to create a left-aligned label. Equivalent to
 /// g_object_new(), but returns a widget so you don’t have to
 /// cast the object yourself.
@@ -716,7 +698,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <para>
 /// The ::child-notify signal is emitted for each
 /// [child property][child-properties]  that has
-/// changed on an object. The signal's detail holds the property name.
+/// changed on an object. The signal&apos;s detail holds the property name.
 /// </para>
 /// </summary>
 
@@ -787,7 +769,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::configure-event signal will be emitted when the size, position or
-/// stacking of the @widget's window has changed.
+/// stacking of the @widget&apos;s window has changed.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -1060,7 +1042,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// The ::drag-data-delete signal is emitted on the drag source when a drag
 /// with the action %GDK_ACTION_MOVE is successfully completed. The signal
 /// handler is responsible for deleting the data that has been dropped. What
-/// "delete" means depends on the context of the drag operation.
+/// &quot;delete&quot; means depends on the context of the drag operation.
 /// </para>
 /// </summary>
 
@@ -1151,7 +1133,8 @@ public static class GtkWidgetHandleSignalExtensions
 /// gdk_drag_context_get_selected_action() before calling
 /// gtk_drag_finish(), e.g. to implement %GDK_ACTION_ASK as
 /// shown in the following example:
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// drag_data_received (GtkWidget          *widget,
 ///                     GdkDragContext     *context,
@@ -1161,44 +1144,39 @@ public static class GtkWidgetHandleSignalExtensions
 ///                     guint               info,
 ///                     guint               time)
 /// {
-///   if ((data->length >= 0) && (data->format == 8))
+///   if ((data-&amp;gt;length &amp;gt;= 0) &amp;&amp; (data-&amp;gt;format == 8))
 ///     {
 ///       GdkDragAction action;
-/// </para>
-/// <para>
+/// 
 ///       // handle data here
-/// </para>
-/// <para>
+/// 
 ///       action = gdk_drag_context_get_selected_action (context);
 ///       if (action == GDK_ACTION_ASK)
 ///         {
 ///           GtkWidget *dialog;
 ///           gint response;
-/// </para>
-/// <para>
+/// 
 ///           dialog = gtk_message_dialog_new (NULL,
 ///                                            GTK_DIALOG_MODAL |
 ///                                            GTK_DIALOG_DESTROY_WITH_PARENT,
 ///                                            GTK_MESSAGE_INFO,
 ///                                            GTK_BUTTONS_YES_NO,
-///                                            "Move the data ?\n");
+///                                            &quot;Move the data ?\n&quot;);
 ///           response = gtk_dialog_run (GTK_DIALOG (dialog));
 ///           gtk_widget_destroy (dialog);
-/// </para>
-/// <para>
+/// 
 ///           if (response == GTK_RESPONSE_YES)
 ///             action = GDK_ACTION_MOVE;
 ///           else
 ///             action = GDK_ACTION_COPY;
 ///          }
-/// </para>
-/// <para>
+/// 
 ///       gtk_drag_finish (context, TRUE, action == GDK_ACTION_MOVE, time);
 ///     }
 ///   else
 ///     gtk_drag_finish (context, FALSE, FALSE, time);
 ///  }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1314,7 +1292,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// The ::drag-failed signal is emitted on the drag source when a drag has
 /// failed. The signal handler may hook custom code to handle a failed DnD
 /// operation based on the type of error, it returns %TRUE is the failure has
-/// been already handled (not showing the default "drag operation failed"
+/// been already handled (not showing the default &quot;drag operation failed&quot;
 /// animation), otherwise it returns %FALSE.
 /// </para>
 /// </summary>
@@ -1354,8 +1332,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// undo things done in #GtkWidget::drag-motion, e.g. undo highlighting
 /// with gtk_drag_unhighlight().
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// Likewise, the #GtkWidget::drag-leave signal is also emitted before the
 /// ::drag-drop signal, for instance to allow cleaning up of a preview item
@@ -1402,7 +1379,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// displaying feedback to the user, by calling gdk_drag_status().
 /// </para>
 /// <para>
-/// If the decision whether the drop will be accepted or rejected can't be
+/// If the decision whether the drop will be accepted or rejected can&apos;t be
 /// made based solely on the cursor position and the type of the data, the
 /// handler may inspect the dragged data by calling gtk_drag_get_data() and
 /// defer the gdk_drag_status() call to the #GtkWidget::drag-data-received
@@ -1414,9 +1391,10 @@ public static class GtkWidgetHandleSignalExtensions
 /// Also note that there is no drag-enter signal. The drag receiver has to
 /// keep track of whether he has received any drag-motion signals since the
 /// last #GtkWidget::drag-leave and if not, treat the drag-motion signal as
-/// an "enter" signal. Upon an "enter", the handler will typically highlight
+/// an &quot;enter&quot; signal. Upon an &quot;enter&quot;, the handler will typically highlight
 /// the drop site with gtk_drag_highlight().
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// drag_motion (GtkWidget      *widget,
 ///              GdkDragContext *context,
@@ -1425,33 +1403,28 @@ public static class GtkWidgetHandleSignalExtensions
 ///              guint           time)
 /// {
 ///   GdkAtom target;
-/// </para>
-/// <para>
+/// 
 ///   PrivateData *private_data = GET_PRIVATE_DATA (widget);
-/// </para>
-/// <para>
-///   if (!private_data->drag_highlight)
+/// 
+///   if (!private_data-&amp;gt;drag_highlight)
 ///    {
-///      private_data->drag_highlight = 1;
+///      private_data-&amp;gt;drag_highlight = 1;
 ///      gtk_drag_highlight (widget);
 ///    }
-/// </para>
-/// <para>
+/// 
 ///   target = gtk_drag_dest_find_target (widget, context, NULL);
 ///   if (target == GDK_NONE)
 ///     gdk_drag_status (context, 0, time);
 ///   else
 ///    {
-///      private_data->pending_status
+///      private_data-&amp;gt;pending_status
 ///         = gdk_drag_context_get_suggested_action (context);
 ///      gtk_drag_get_data (widget, context, target, time);
 ///    }
-/// </para>
-/// <para>
+/// 
 ///   return TRUE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// drag_data_received (GtkWidget        *widget,
 ///                     GdkDragContext   *context,
@@ -1462,25 +1435,22 @@ public static class GtkWidgetHandleSignalExtensions
 ///                     guint             time)
 /// {
 ///   PrivateData *private_data = GET_PRIVATE_DATA (widget);
-/// </para>
-/// <para>
-///   if (private_data->suggested_action)
+/// 
+///   if (private_data-&amp;gt;suggested_action)
 ///    {
-///      private_data->suggested_action = 0;
-/// </para>
-/// <para>
+///      private_data-&amp;gt;suggested_action = 0;
+/// 
 ///      // We are getting this data due to a request in drag_motion,
 ///      // rather than due to a request in drag_drop, so we are just
 ///      // supposed to call gdk_drag_status(), not actually paste in
 ///      // the data.
-/// </para>
-/// <para>
+/// 
 ///      str = gtk_selection_data_get_text (selection_data);
 ///      if (!data_is_acceptable (str))
 ///        gdk_drag_status (context, 0, time);
 ///      else
 ///        gdk_drag_status (context,
-///                         private_data->suggested_action,
+///                         private_data-&amp;gt;suggested_action,
 ///                         time);
 ///    }
 ///   else
@@ -1488,7 +1458,7 @@ public static class GtkWidgetHandleSignalExtensions
 ///      // accept the drop
 ///    }
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1523,20 +1493,20 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// This signal is emitted when a widget is supposed to render itself.
-/// The @widget's top left corner must be painted at the origin of
+/// The @widget&apos;s top left corner must be painted at the origin of
 /// the passed in context and be sized to the values returned by
 /// gtk_widget_get_allocated_width() and
 /// gtk_widget_get_allocated_height().
 /// </para>
 /// <para>
 /// Signal handlers connected to this signal can modify the cairo
-/// context passed as @cr in any way they like and don't need to
+/// context passed as @cr in any way they like and don&apos;t need to
 /// restore it. The signal emission takes care of calling cairo_save()
 /// before and cairo_restore() after invoking the handler.
 /// </para>
 /// <para>
 /// The signal handler will get a @cr with a clip region already set to the
-/// widget's dirty region, i.e. to the area that needs repainting.  Complicated
+/// widget&apos;s dirty region, i.e. to the area that needs repainting.  Complicated
 /// widgets that want to avoid redrawing themselves completely can get the full
 /// extents of the clip region with gdk_cairo_get_clip_rectangle(), or they can
 /// get a finer-grained representation of the dirty region with
@@ -1575,7 +1545,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::enter-notify-event will be emitted when the pointer enters
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -1720,7 +1690,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::focus-in-event signal will be emitted when the keyboard focus
-/// enters the @widget's window.
+/// enters the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -1759,7 +1729,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::focus-out-event signal will be emitted when the keyboard focus
-/// leaves the @widget's window.
+/// leaves the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -2100,7 +2070,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::leave-notify-event will be emitted when the pointer leaves
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -2184,7 +2154,7 @@ public static class GtkWidgetHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The ::map-event signal will be emitted when the @widget's window is
+/// The ::map-event signal will be emitted when the @widget&apos;s window is
 /// mapped. A window is mapped when it becomes visible on the screen.
 /// </para>
 /// <para>
@@ -2260,7 +2230,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::motion-notify-event signal is emitted when the pointer moves
-/// over the widget's #GdkWindow.
+/// over the widget&apos;s #GdkWindow.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget
@@ -2406,7 +2376,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::property-notify-event signal will be emitted when a property on
-/// the @widget's window has been changed or deleted.
+/// the @widget&apos;s window has been changed or deleted.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -2521,7 +2491,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// Emitted when #GtkWidget:has-tooltip is %TRUE and the hover timeout
-/// has expired with the cursor hovering "above" @widget; or emitted when @widget got
+/// has expired with the cursor hovering &quot;above&quot; @widget; or emitted when @widget got
 /// focus in keyboard mode.
 /// </para>
 /// <para>
@@ -2682,7 +2652,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::selection-clear-event signal will be emitted when the
-/// the @widget's window has lost ownership of a selection.
+/// the @widget&apos;s window has lost ownership of a selection.
 /// </para>
 /// </summary>
 
@@ -2805,7 +2775,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <para>
 /// The ::selection-request-event signal will be emitted when
 /// another client requests ownership of the selection owned by
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// </summary>
 
@@ -3044,7 +3014,7 @@ public static class GtkWidgetHandleSignalExtensions
 /// <summary>
 /// <para>
 /// The ::style-updated signal is a convenience signal that is emitted when the
-/// #GtkStyleContext::changed signal is emitted on the @widget's associated
+/// #GtkStyleContext::changed signal is emitted on the @widget&apos;s associated
 /// #GtkStyleContext as returned by gtk_widget_get_style_context().
 /// </para>
 /// <para>
@@ -3152,7 +3122,7 @@ public static class GtkWidgetHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The ::unmap-event signal will be emitted when the @widget's window is
+/// The ::unmap-event signal will be emitted when the @widget&apos;s window is
 /// unmapped. A window is unmapped when it becomes invisible on the screen.
 /// </para>
 /// <para>
@@ -3229,7 +3199,7 @@ public static class GtkWidgetHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The ::visibility-notify-event will be emitted when the @widget's
+/// The ::visibility-notify-event will be emitted when the @widget&apos;s
 /// window is obscured or unobscured.
 /// </para>
 /// <para>
@@ -4314,7 +4284,7 @@ public class QueryTooltipSignal
 /// <summary>
 /// <para>
 /// the x coordinate of the cursor position where the request has
-///     been emitted, relative to @widget's left side
+///     been emitted, relative to @widget&apos;s left side
 /// </para>
 /// </summary>
 
@@ -4322,7 +4292,7 @@ public class QueryTooltipSignal
 /// <summary>
 /// <para>
 /// the y coordinate of the cursor position where the request has
-///     been emitted, relative to @widget's top
+///     been emitted, relative to @widget&apos;s top
 /// </para>
 /// </summary>
 
@@ -4791,7 +4761,7 @@ public delegate bool can_activate_accel([MarshalAs(UnmanagedType.CustomMarshaler
 /// <para>
 /// The ::child-notify signal is emitted for each
 /// [child property][child-properties]  that has
-/// changed on an object. The signal's detail holds the property name.
+/// changed on an object. The signal&apos;s detail holds the property name.
 /// </para>
 /// </summary>
 
@@ -4827,7 +4797,7 @@ public delegate void composited_changed([MarshalAs(UnmanagedType.CustomMarshaler
 /// <summary>
 /// <para>
 /// The ::configure-event signal will be emitted when the size, position or
-/// stacking of the @widget's window has changed.
+/// stacking of the @widget&apos;s window has changed.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -5002,7 +4972,7 @@ public delegate void drag_begin([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 /// The ::drag-data-delete signal is emitted on the drag source when a drag
 /// with the action %GDK_ACTION_MOVE is successfully completed. The signal
 /// handler is responsible for deleting the data that has been dropped. What
-/// "delete" means depends on the context of the drag operation.
+/// &quot;delete&quot; means depends on the context of the drag operation.
 /// </para>
 /// </summary>
 
@@ -5071,7 +5041,8 @@ public delegate void drag_data_get([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 /// gdk_drag_context_get_selected_action() before calling
 /// gtk_drag_finish(), e.g. to implement %GDK_ACTION_ASK as
 /// shown in the following example:
-/// |[<!-- language="C" -->
+/// <code>
+/// void
 /// void
 /// drag_data_received (GtkWidget          *widget,
 ///                     GdkDragContext     *context,
@@ -5081,44 +5052,39 @@ public delegate void drag_data_get([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 ///                     guint               info,
 ///                     guint               time)
 /// {
-///   if ((data->length >= 0) && (data->format == 8))
+///   if ((data-&amp;gt;length &amp;gt;= 0) &amp;&amp; (data-&amp;gt;format == 8))
 ///     {
 ///       GdkDragAction action;
-/// </para>
-/// <para>
+/// 
 ///       // handle data here
-/// </para>
-/// <para>
+/// 
 ///       action = gdk_drag_context_get_selected_action (context);
 ///       if (action == GDK_ACTION_ASK)
 ///         {
 ///           GtkWidget *dialog;
 ///           gint response;
-/// </para>
-/// <para>
+/// 
 ///           dialog = gtk_message_dialog_new (NULL,
 ///                                            GTK_DIALOG_MODAL |
 ///                                            GTK_DIALOG_DESTROY_WITH_PARENT,
 ///                                            GTK_MESSAGE_INFO,
 ///                                            GTK_BUTTONS_YES_NO,
-///                                            "Move the data ?\n");
+///                                            &quot;Move the data ?\n&quot;);
 ///           response = gtk_dialog_run (GTK_DIALOG (dialog));
 ///           gtk_widget_destroy (dialog);
-/// </para>
-/// <para>
+/// 
 ///           if (response == GTK_RESPONSE_YES)
 ///             action = GDK_ACTION_MOVE;
 ///           else
 ///             action = GDK_ACTION_COPY;
 ///          }
-/// </para>
-/// <para>
+/// 
 ///       gtk_drag_finish (context, TRUE, action == GDK_ACTION_MOVE, time);
 ///     }
 ///   else
 ///     gtk_drag_finish (context, FALSE, FALSE, time);
 ///  }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -5214,7 +5180,7 @@ public delegate void drag_end([MarshalAs(UnmanagedType.CustomMarshaler, MarshalT
 /// The ::drag-failed signal is emitted on the drag source when a drag has
 /// failed. The signal handler may hook custom code to handle a failed DnD
 /// operation based on the type of error, it returns %TRUE is the failure has
-/// been already handled (not showing the default "drag operation failed"
+/// been already handled (not showing the default &quot;drag operation failed&quot;
 /// animation), otherwise it returns %FALSE.
 /// </para>
 /// </summary>
@@ -5244,8 +5210,7 @@ public delegate bool drag_failed([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// undo things done in #GtkWidget::drag-motion, e.g. undo highlighting
 /// with gtk_drag_unhighlight().
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// Likewise, the #GtkWidget::drag-leave signal is also emitted before the
 /// ::drag-drop signal, for instance to allow cleaning up of a preview item
@@ -5279,7 +5244,7 @@ public delegate void drag_leave([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 /// displaying feedback to the user, by calling gdk_drag_status().
 /// </para>
 /// <para>
-/// If the decision whether the drop will be accepted or rejected can't be
+/// If the decision whether the drop will be accepted or rejected can&apos;t be
 /// made based solely on the cursor position and the type of the data, the
 /// handler may inspect the dragged data by calling gtk_drag_get_data() and
 /// defer the gdk_drag_status() call to the #GtkWidget::drag-data-received
@@ -5291,9 +5256,10 @@ public delegate void drag_leave([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 /// Also note that there is no drag-enter signal. The drag receiver has to
 /// keep track of whether he has received any drag-motion signals since the
 /// last #GtkWidget::drag-leave and if not, treat the drag-motion signal as
-/// an "enter" signal. Upon an "enter", the handler will typically highlight
+/// an &quot;enter&quot; signal. Upon an &quot;enter&quot;, the handler will typically highlight
 /// the drop site with gtk_drag_highlight().
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// drag_motion (GtkWidget      *widget,
 ///              GdkDragContext *context,
@@ -5302,33 +5268,28 @@ public delegate void drag_leave([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 ///              guint           time)
 /// {
 ///   GdkAtom target;
-/// </para>
-/// <para>
+/// 
 ///   PrivateData *private_data = GET_PRIVATE_DATA (widget);
-/// </para>
-/// <para>
-///   if (!private_data->drag_highlight)
+/// 
+///   if (!private_data-&amp;gt;drag_highlight)
 ///    {
-///      private_data->drag_highlight = 1;
+///      private_data-&amp;gt;drag_highlight = 1;
 ///      gtk_drag_highlight (widget);
 ///    }
-/// </para>
-/// <para>
+/// 
 ///   target = gtk_drag_dest_find_target (widget, context, NULL);
 ///   if (target == GDK_NONE)
 ///     gdk_drag_status (context, 0, time);
 ///   else
 ///    {
-///      private_data->pending_status
+///      private_data-&amp;gt;pending_status
 ///         = gdk_drag_context_get_suggested_action (context);
 ///      gtk_drag_get_data (widget, context, target, time);
 ///    }
-/// </para>
-/// <para>
+/// 
 ///   return TRUE;
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// drag_data_received (GtkWidget        *widget,
 ///                     GdkDragContext   *context,
@@ -5339,25 +5300,22 @@ public delegate void drag_leave([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 ///                     guint             time)
 /// {
 ///   PrivateData *private_data = GET_PRIVATE_DATA (widget);
-/// </para>
-/// <para>
-///   if (private_data->suggested_action)
+/// 
+///   if (private_data-&amp;gt;suggested_action)
 ///    {
-///      private_data->suggested_action = 0;
-/// </para>
-/// <para>
+///      private_data-&amp;gt;suggested_action = 0;
+/// 
 ///      // We are getting this data due to a request in drag_motion,
 ///      // rather than due to a request in drag_drop, so we are just
 ///      // supposed to call gdk_drag_status(), not actually paste in
 ///      // the data.
-/// </para>
-/// <para>
+/// 
 ///      str = gtk_selection_data_get_text (selection_data);
 ///      if (!data_is_acceptable (str))
 ///        gdk_drag_status (context, 0, time);
 ///      else
 ///        gdk_drag_status (context,
-///                         private_data->suggested_action,
+///                         private_data-&amp;gt;suggested_action,
 ///                         time);
 ///    }
 ///   else
@@ -5365,7 +5323,7 @@ public delegate void drag_leave([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 ///      // accept the drop
 ///    }
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -5396,20 +5354,20 @@ public delegate bool drag_motion([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// <summary>
 /// <para>
 /// This signal is emitted when a widget is supposed to render itself.
-/// The @widget's top left corner must be painted at the origin of
+/// The @widget&apos;s top left corner must be painted at the origin of
 /// the passed in context and be sized to the values returned by
 /// gtk_widget_get_allocated_width() and
 /// gtk_widget_get_allocated_height().
 /// </para>
 /// <para>
 /// Signal handlers connected to this signal can modify the cairo
-/// context passed as @cr in any way they like and don't need to
+/// context passed as @cr in any way they like and don&apos;t need to
 /// restore it. The signal emission takes care of calling cairo_save()
 /// before and cairo_restore() after invoking the handler.
 /// </para>
 /// <para>
 /// The signal handler will get a @cr with a clip region already set to the
-/// widget's dirty region, i.e. to the area that needs repainting.  Complicated
+/// widget&apos;s dirty region, i.e. to the area that needs repainting.  Complicated
 /// widgets that want to avoid redrawing themselves completely can get the full
 /// extents of the clip region with gdk_cairo_get_clip_rectangle(), or they can
 /// get a finer-grained representation of the dirty region with
@@ -5436,7 +5394,7 @@ public delegate bool draw([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeR
 /// <summary>
 /// <para>
 /// The ::enter-notify-event will be emitted when the pointer enters
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -5531,7 +5489,7 @@ public delegate bool focus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalType
 /// <summary>
 /// <para>
 /// The ::focus-in-event signal will be emitted when the keyboard focus
-/// enters the @widget's window.
+/// enters the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -5559,7 +5517,7 @@ public delegate bool focus_in_event([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// <summary>
 /// <para>
 /// The ::focus-out-event signal will be emitted when the keyboard focus
-/// leaves the @widget's window.
+/// leaves the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -5774,7 +5732,7 @@ public delegate bool keynav_failed([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 /// <summary>
 /// <para>
 /// The ::leave-notify-event will be emitted when the pointer leaves
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -5828,7 +5786,7 @@ public delegate void map([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRe
 
 /// <summary>
 /// <para>
-/// The ::map-event signal will be emitted when the @widget's window is
+/// The ::map-event signal will be emitted when the @widget&apos;s window is
 /// mapped. A window is mapped when it becomes visible on the screen.
 /// </para>
 /// <para>
@@ -5880,7 +5838,7 @@ public delegate bool mnemonic_activate([MarshalAs(UnmanagedType.CustomMarshaler,
 /// <summary>
 /// <para>
 /// The ::motion-notify-event signal is emitted when the pointer moves
-/// over the widget's #GdkWindow.
+/// over the widget&apos;s #GdkWindow.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget
@@ -5967,7 +5925,7 @@ public delegate bool popup_menu([MarshalAs(UnmanagedType.CustomMarshaler, Marsha
 /// <summary>
 /// <para>
 /// The ::property-notify-event signal will be emitted when a property on
-/// the @widget's window has been changed or deleted.
+/// the @widget&apos;s window has been changed or deleted.
 /// </para>
 /// <para>
 /// To receive this signal, the #GdkWindow associated to the widget needs
@@ -6049,7 +6007,7 @@ public delegate bool proximity_out_event([MarshalAs(UnmanagedType.CustomMarshale
 /// <summary>
 /// <para>
 /// Emitted when #GtkWidget:has-tooltip is %TRUE and the hover timeout
-/// has expired with the cursor hovering "above" @widget; or emitted when @widget got
+/// has expired with the cursor hovering &quot;above&quot; @widget; or emitted when @widget got
 /// focus in keyboard mode.
 /// </para>
 /// <para>
@@ -6069,11 +6027,11 @@ public delegate bool proximity_out_event([MarshalAs(UnmanagedType.CustomMarshale
 /// </param>
 /// <param name="x">
 /// the x coordinate of the cursor position where the request has
-///     been emitted, relative to @widget's left side
+///     been emitted, relative to @widget&apos;s left side
 /// </param>
 /// <param name="y">
 /// the y coordinate of the cursor position where the request has
-///     been emitted, relative to @widget's top
+///     been emitted, relative to @widget&apos;s top
 /// </param>
 /// <param name="keyboard_mode">
 /// %TRUE if the tooltip was triggered using the keyboard
@@ -6163,7 +6121,7 @@ public delegate bool scroll_event([MarshalAs(UnmanagedType.CustomMarshaler, Mars
 /// <summary>
 /// <para>
 /// The ::selection-clear-event signal will be emitted when the
-/// the @widget's window has lost ownership of a selection.
+/// the @widget&apos;s window has lost ownership of a selection.
 /// </para>
 /// </summary>
 
@@ -6233,7 +6191,7 @@ public delegate void selection_received([MarshalAs(UnmanagedType.CustomMarshaler
 /// <para>
 /// The ::selection-request-event signal will be emitted when
 /// another client requests ownership of the selection owned by
-/// the @widget's window.
+/// the @widget&apos;s window.
 /// </para>
 /// </summary>
 
@@ -6367,7 +6325,7 @@ public delegate void style_set([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 /// <summary>
 /// <para>
 /// The ::style-updated signal is a convenience signal that is emitted when the
-/// #GtkStyleContext::changed signal is emitted on the @widget's associated
+/// #GtkStyleContext::changed signal is emitted on the @widget&apos;s associated
 /// #GtkStyleContext as returned by gtk_widget_get_style_context().
 /// </para>
 /// <para>
@@ -6420,7 +6378,7 @@ public delegate void unmap([MarshalAs(UnmanagedType.CustomMarshaler, MarshalType
 
 /// <summary>
 /// <para>
-/// The ::unmap-event signal will be emitted when the @widget's window is
+/// The ::unmap-event signal will be emitted when the @widget&apos;s window is
 /// unmapped. A window is unmapped when it becomes invisible on the screen.
 /// </para>
 /// <para>
@@ -6466,7 +6424,7 @@ public delegate void unrealize([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 
 /// <summary>
 /// <para>
-/// The ::visibility-notify-event will be emitted when the @widget's
+/// The ::visibility-notify-event will be emitted when the @widget&apos;s
 /// window is obscured or unobscured.
 /// </para>
 /// <para>
@@ -6529,7 +6487,7 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// For widgets that can be “activated” (buttons, menu items, etc.)
 /// this function activates them. Activation is what happens when you
-/// press Enter on a widget during key navigation. If @widget isn't
+/// press Enter on a widget during key navigation. If @widget isn&apos;t
 /// activatable, the function returns %FALSE.
 /// </para>
 /// </summary>
@@ -6679,7 +6637,7 @@ public static class GtkWidgetHandleExtensions
 /// </para>
 /// <para>
 /// This is a more convenient alternative to connecting directly to the
-/// #GdkFrameClock::update signal of #GdkFrameClock, since you don't
+/// #GdkFrameClock::update signal of #GdkFrameClock, since you don&apos;t
 /// have to worry about when a #GdkFrameClock is assigned to a widget.
 /// </para>
 /// </summary>
@@ -6737,7 +6695,7 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// This function is used by custom widget implementations; if you're
+/// This function is used by custom widget implementations; if you&apos;re
 /// writing an app, you’d use gtk_widget_grab_focus() to move the focus
 /// to a particular widget, and gtk_container_set_focus_chain() to
 /// change the focus tab order. So you may want to investigate those
@@ -6938,20 +6896,20 @@ public static class GtkWidgetHandleExtensions
 ///  of top level widgets that GTK+ maintains internally
 /// </para>
 /// <para>
-/// It's expected that all references held on the widget will also
+/// It&apos;s expected that all references held on the widget will also
 /// be released; you should connect to the #GtkWidget::destroy signal
 /// if you hold a reference to @widget and you wish to remove it when
 /// this function is called. It is not necessary to do so if you are
-/// implementing a #GtkContainer, as you'll be able to use the
+/// implementing a #GtkContainer, as you&apos;ll be able to use the
 /// #GtkContainerClass.remove() virtual function for that.
 /// </para>
 /// <para>
-/// It's important to notice that gtk_widget_destroy() will only cause
+/// It&apos;s important to notice that gtk_widget_destroy() will only cause
 /// the @widget to be finalized if no additional references, acquired
 /// using g_object_ref(), are held on it. In case additional references
-/// are in place, the @widget will be in an "inert" state after calling
+/// are in place, the @widget will be in an &quot;inert&quot; state after calling
 /// this function; @widget will still point to valid memory, allowing you
-/// to release the references you hold, but you may not query the widget's
+/// to release the references you hold, but you may not query the widget&apos;s
 /// own state.
 /// </para>
 /// <para>
@@ -7329,7 +7287,8 @@ public static class GtkWidgetHandleExtensions
 /// There’s no way to set a default action here, you can use the
 /// #GtkWidget::drag-motion callback for that. Here’s an example which selects
 /// the action to use depending on whether the control key is pressed or not:
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// drag_motion (GtkWidget *widget,
 ///              GdkDragContext *context,
@@ -7338,16 +7297,15 @@ public static class GtkWidgetHandleExtensions
 ///              guint time)
 /// {
 ///   GdkModifierType mask;
-/// </para>
-/// <para>
+/// 
 ///   gdk_window_get_pointer (gtk_widget_get_window (widget),
-///                           NULL, NULL, &mask);
-///   if (mask & GDK_CONTROL_MASK)
+///                           NULL, NULL, &amp;mask);
+///   if (mask &amp; GDK_CONTROL_MASK)
 ///     gdk_drag_status (context, GDK_ACTION_COPY, time);
 ///   else
 ///     gdk_drag_status (context, GDK_ACTION_MOVE, time);
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -7825,7 +7783,7 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// Ensures that @widget has a style (@widget->style).
+/// Ensures that @widget has a style (@widget-&amp;gt;style).
 /// </para>
 /// <para>
 /// Not a very useful function; most of the time, if you
@@ -8210,21 +8168,21 @@ public static class GtkWidgetHandleExtensions
 /// <summary>
 /// <para>
 /// This function is only for use in widget implementations. Obtains
-/// @widget->requisition, unless someone has forced a particular
+/// @widget-&amp;gt;requisition, unless someone has forced a particular
 /// geometry on the widget (e.g. with gtk_widget_set_size_request()),
-/// in which case it returns that geometry instead of the widget's
+/// in which case it returns that geometry instead of the widget&apos;s
 /// requisition.
 /// </para>
 /// <para>
 /// This function differs from gtk_widget_size_request() in that
-/// it retrieves the last size request value from @widget->requisition,
-/// while gtk_widget_size_request() actually calls the "size_request" method
-/// on @widget to compute the size request and fill in @widget->requisition,
-/// and only then returns @widget->requisition.
+/// it retrieves the last size request value from @widget-&amp;gt;requisition,
+/// while gtk_widget_size_request() actually calls the &quot;size_request&quot; method
+/// on @widget to compute the size request and fill in @widget-&amp;gt;requisition,
+/// and only then returns @widget-&amp;gt;requisition.
 /// </para>
 /// <para>
 /// Because this function does not call the “size_request” method, it
-/// can only be used when you know that @widget->requisition is
+/// can only be used when you know that @widget-&amp;gt;requisition is
 /// up-to-date, that is, gtk_widget_size_request() has been called
 /// since the last time a resize was queued. In general, only container
 /// implementations have this information; applications should use
@@ -8276,7 +8234,7 @@ public static class GtkWidgetHandleExtensions
 /// Retrieves the widget’s clip area.
 /// </para>
 /// <para>
-/// The clip area is the area in which all of @widget's drawing will
+/// The clip area is the area in which all of @widget&apos;s drawing will
 /// happen. Other toolkits call it the bounding box.
 /// </para>
 /// <para>
@@ -9068,9 +9026,9 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// Obtains the location of the mouse pointer in widget coordinates.
 /// Widget coordinates are a bit odd; for historical reasons, they are
-/// defined as @widget->window coordinates for widgets that return %TRUE for
-/// gtk_widget_get_has_window(); and are relative to @widget->allocation.x,
-/// @widget->allocation.y otherwise.
+/// defined as @widget-&amp;gt;window coordinates for widgets that return %TRUE for
+/// gtk_widget_get_has_window(); and are relative to @widget-&amp;gt;allocation.x,
+/// @widget-&amp;gt;allocation.y otherwise.
 /// </para>
 /// </summary>
 
@@ -9608,7 +9566,7 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// Simply an accessor function that returns @widget->style.
+/// Simply an accessor function that returns @widget-&amp;gt;style.
 /// </para>
 /// </summary>
 
@@ -9782,9 +9740,10 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// To reliably find the toplevel #GtkWindow, use
 /// gtk_widget_get_toplevel() and call GTK_IS_WINDOW()
-/// on the result. For instance, to get the title of a widget's toplevel
+/// on the result. For instance, to get the title of a widget&apos;s toplevel
 /// window, one might use:
-/// |[<!-- language="C" -->
+/// <code>
+/// static const char *
 /// static const char *
 /// get_widget_toplevel_title (GtkWidget *widget)
 /// {
@@ -9793,11 +9752,10 @@ public static class GtkWidgetHandleExtensions
 ///     {
 ///       return gtk_window_get_title (GTK_WINDOW (toplevel));
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   return NULL;
 /// }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -9824,7 +9782,7 @@ public static class GtkWidgetHandleExtensions
 /// %GTK_ALIGN_BASELINE, but instead it will convert it to
 /// %GTK_ALIGN_FILL. If your widget want to support baseline aligned
 /// children it must use gtk_widget_get_valign_with_baseline(), or
-/// `g_object_get (widget, "valign", &value, NULL)`, which will
+/// `g_object_get (widget, &quot;valign&quot;, &amp;value, NULL)`, which will
 /// also report the true value.
 /// </para>
 /// </summary>
@@ -10026,7 +9984,7 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// Causes @widget to have the keyboard focus for the #GtkWindow it's
+/// Causes @widget to have the keyboard focus for the #GtkWindow it&apos;s
 /// inside. @widget must be a focusable widget, such as a #GtkEntry;
 /// something like #GtkFrame won’t work.
 /// </para>
@@ -10637,7 +10595,7 @@ public static class GtkWidgetHandleExtensions
 /// <summary>
 /// <para>
 /// Retrieves a %NULL-terminated array of strings containing the prefixes of
-/// #GActionGroup's available to @widget.
+/// #GActionGroup&apos;s available to @widget.
 /// </para>
 /// </summary>
 
@@ -10734,15 +10692,15 @@ public static class GtkWidgetHandleExtensions
 /// and #GtkTextView. See also gtk_widget_modify_style().
 /// </para>
 /// <para>
-/// > Note that “no window” widgets (which have the %GTK_NO_WINDOW
-/// > flag set) draw on their parent container’s window and thus may
-/// > not draw any background themselves. This is the case for e.g.
-/// > #GtkLabel.
-/// >
-/// > To modify the background of such widgets, you have to set the
-/// > base color on their parent; if you want to set the background
-/// > of a rectangular area around a label, try placing the label in
-/// > a #GtkEventBox widget and setting the base color on that.
+/// &amp;gt; Note that “no window” widgets (which have the %GTK_NO_WINDOW
+/// &amp;gt; flag set) draw on their parent container’s window and thus may
+/// &amp;gt; not draw any background themselves. This is the case for e.g.
+/// &amp;gt; #GtkLabel.
+/// &amp;gt;
+/// &amp;gt; To modify the background of such widgets, you have to set the
+/// &amp;gt; base color on their parent; if you want to set the background
+/// &amp;gt; of a rectangular area around a label, try placing the label in
+/// &amp;gt; a #GtkEventBox widget and setting the base color on that.
 /// </para>
 /// </summary>
 
@@ -10774,15 +10732,15 @@ public static class GtkWidgetHandleExtensions
 /// See also gtk_widget_modify_style().
 /// </para>
 /// <para>
-/// > Note that “no window” widgets (which have the %GTK_NO_WINDOW
-/// > flag set) draw on their parent container’s window and thus may
-/// > not draw any background themselves. This is the case for e.g.
-/// > #GtkLabel.
-/// >
-/// > To modify the background of such widgets, you have to set the
-/// > background color on their parent; if you want to set the background
-/// > of a rectangular area around a label, try placing the label in
-/// > a #GtkEventBox widget and setting the background color on that.
+/// &amp;gt; Note that “no window” widgets (which have the %GTK_NO_WINDOW
+/// &amp;gt; flag set) draw on their parent container’s window and thus may
+/// &amp;gt; not draw any background themselves. This is the case for e.g.
+/// &amp;gt; #GtkLabel.
+/// &amp;gt;
+/// &amp;gt; To modify the background of such widgets, you have to set the
+/// &amp;gt; background color on their parent; if you want to set the background
+/// &amp;gt; of a rectangular area around a label, try placing the label in
+/// &amp;gt; a #GtkEventBox widget and setting the background color on that.
 /// </para>
 /// </summary>
 
@@ -11177,7 +11135,7 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// Flags the widget for a rerun of the GtkWidgetClass::size_allocate
 /// function. Use this function instead of gtk_widget_queue_resize()
-/// when the @widget's size request didn't change but it wants to
+/// when the @widget&apos;s size request didn&apos;t change but it wants to
 /// reposition its contents.
 /// </para>
 /// <para>
@@ -11244,9 +11202,9 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// The region here is specified in widget coordinates.
 /// Widget coordinates are a bit odd; for historical reasons, they are
-/// defined as @widget->window coordinates for widgets that return %TRUE for
-/// gtk_widget_get_has_window(), and are relative to @widget->allocation.x,
-/// @widget->allocation.y otherwise.
+/// defined as @widget-&amp;gt;window coordinates for widgets that return %TRUE for
+/// gtk_widget_get_has_window(), and are relative to @widget-&amp;gt;allocation.x,
+/// @widget-&amp;gt;allocation.y otherwise.
 /// </para>
 /// <para>
 /// @width or @height may be 0, in this case this function does
@@ -11355,7 +11313,7 @@ public static class GtkWidgetHandleExtensions
 /// <summary>
 /// <para>
 /// Creates the GDK (windowing system) resources associated with a
-/// widget.  For example, @widget->window will be created when a widget
+/// widget.  For example, @widget-&amp;gt;window will be created when a widget
 /// is realized.  Normally realization happens implicitly; if you show
 /// a widget and all its parent containers, then the widget will be
 /// realized and mapped automatically.
@@ -11401,9 +11359,9 @@ public static class GtkWidgetHandleExtensions
 /// </param>
 /// <param name="region">
 /// a #cairo_region_t, in the same coordinate system as
-///          @widget->allocation. That is, relative to @widget->window
+///          @widget-&amp;gt;allocation. That is, relative to @widget-&amp;gt;window
 ///          for widgets which return %FALSE from gtk_widget_get_has_window();
-///          relative to the parent window of @widget->window otherwise.
+///          relative to the parent window of @widget-&amp;gt;window otherwise.
 /// </param>
 /// <return>
 /// A newly allocated region holding the intersection of @widget
@@ -11707,24 +11665,20 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// An example of its usage is:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   GdkEvent *fevent = gdk_event_new (GDK_FOCUS_CHANGE);
-/// </para>
-/// <para>
-///   fevent->focus_change.type = GDK_FOCUS_CHANGE;
-///   fevent->focus_change.in = TRUE;
-///   fevent->focus_change.window = _gtk_widget_get_window (widget);
-///   if (fevent->focus_change.window != NULL)
-///     g_object_ref (fevent->focus_change.window);
-/// </para>
-/// <para>
+///   GdkEvent *fevent = gdk_event_new (GDK_FOCUS_CHANGE);
+/// 
+///   fevent-&amp;gt;focus_change.type = GDK_FOCUS_CHANGE;
+///   fevent-&amp;gt;focus_change.in = TRUE;
+///   fevent-&amp;gt;focus_change.window = _gtk_widget_get_window (widget);
+///   if (fevent-&amp;gt;focus_change.window != NULL)
+///     g_object_ref (fevent-&amp;gt;focus_change.window);
+/// 
 ///   gtk_widget_send_focus_change (widget, fevent);
-/// </para>
-/// <para>
+/// 
 ///   gdk_event_free (event);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="widget">
@@ -11828,7 +11782,7 @@ public static class GtkWidgetHandleExtensions
 /// This is a hint to the widget and does not affect the behavior of
 /// the GTK+ core; many widgets ignore this flag entirely. For widgets
 /// that do pay attention to the flag, such as #GtkEventBox and #GtkWindow,
-/// the effect is to suppress default themed drawing of the widget's
+/// the effect is to suppress default themed drawing of the widget&apos;s
 /// background. (Children of the widget will still be drawn.) The application
 /// is then entirely responsible for drawing the widget background.
 /// </para>
@@ -11943,11 +11897,11 @@ public static class GtkWidgetHandleExtensions
 /// </para>
 /// <para>
 /// The clip set should be the area that @widget draws on. If @widget is a
-/// #GtkContainer, the area must contain all children's clips.
+/// #GtkContainer, the area must contain all children&apos;s clips.
 /// </para>
 /// <para>
 /// If this function is not called by @widget during a ::size-allocate handler,
-/// the clip will be set to @widget's allocation.
+/// the clip will be set to @widget&apos;s allocation.
 /// </para>
 /// </summary>
 
@@ -12086,7 +12040,7 @@ public static class GtkWidgetHandleExtensions
 /// to turn off the buffering. “Double buffered” simply means that
 /// gdk_window_begin_draw_frame() and gdk_window_end_draw_frame() are called
 /// automatically around expose events sent to the
-/// widget. gdk_window_begin_draw_frame() diverts all drawing to a widget's
+/// widget. gdk_window_begin_draw_frame() diverts all drawing to a widget&apos;s
 /// window to an offscreen buffer, and gdk_window_end_draw_frame() draws the
 /// buffer to the screen. The result is that users see the window
 /// update in one smooth step, and don’t see individual graphics
@@ -12386,7 +12340,7 @@ public static class GtkWidgetHandleExtensions
 /// Marks the widget as being mapped.
 /// </para>
 /// <para>
-/// This function should only ever be called in a derived widget's
+/// This function should only ever be called in a derived widget&apos;s
 /// “map” or “unmap” implementation.
 /// </para>
 /// </summary>
@@ -12540,7 +12494,7 @@ public static class GtkWidgetHandleExtensions
 /// </para>
 /// <para>
 /// Note that the CSS syntax has certain special characters to delimit
-/// and represent elements in a selector (period, #, >, *...), so using
+/// and represent elements in a selector (period, #, &amp;gt;, *...), so using
 /// these will make your widget impossible to match by name. Any combination
 /// of alphanumeric symbols, dashes and underscores will suffice.
 /// </para>
@@ -12681,7 +12635,7 @@ public static class GtkWidgetHandleExtensions
 /// and registered.
 /// </para>
 /// <para>
-/// This function should only ever be called in a derived widget's
+/// This function should only ever be called in a derived widget&apos;s
 /// “realize” or “unrealize” implementation.
 /// </para>
 /// </summary>
@@ -12740,7 +12694,7 @@ public static class GtkWidgetHandleExtensions
 /// the widget will not even redraw if its position changes; this is to
 /// allow containers that don’t draw anything to avoid excess
 /// invalidations. If you set this flag on a widget with no window that
-/// does draw on @widget->window, you are
+/// does draw on @widget-&amp;gt;window, you are
 /// responsible for invalidating both the old and new allocation of the
 /// widget when the widget is moved and responsible for invalidating
 /// regions newly when the widget increases size.
@@ -12803,7 +12757,7 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// Note the inherent danger of setting any fixed size - themes,
 /// translations into other languages, different fonts, and user action
-/// can all change the appropriate size for a given widget. So, it's
+/// can all change the appropriate size for a given widget. So, it&apos;s
 /// basically impossible to hardcode a size that will always be
 /// correct.
 /// </para>
@@ -12872,7 +12826,7 @@ public static class GtkWidgetHandleExtensions
 /// </para>
 /// <para>
 /// This function accepts the values %GTK_STATE_FLAG_DIR_LTR and
-/// %GTK_STATE_FLAG_DIR_RTL but ignores them. If you want to set the widget's
+/// %GTK_STATE_FLAG_DIR_RTL but ignores them. If you want to set the widget&apos;s
 /// direction, use gtk_widget_set_direction().
 /// </para>
 /// <para>
@@ -12904,7 +12858,7 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// Used to set the #GtkStyle for a widget (@widget->style). Since
+/// Used to set the #GtkStyle for a widget (@widget-&amp;gt;style). Since
 /// GTK 3, this function does nothing, the passed in style is ignored.
 /// </para>
 /// </summary>
@@ -13313,7 +13267,7 @@ public static class GtkWidgetHandleExtensions
 /// will be forced to a 1x1 minimum size, and the
 /// adjust_size_allocation virtual and adjust_baseline_allocation
 /// methods on the child will be used to adjust the allocation and
-/// baseline. Standard adjustments include removing the widget's
+/// baseline. Standard adjustments include removing the widget&apos;s
 /// margins, and applying the widget’s #GtkWidget:halign and
 /// #GtkWidget:valign properties.
 /// </para>
@@ -13375,17 +13329,16 @@ public static class GtkWidgetHandleExtensions
 
 /// <summary>
 /// <para>
-/// This function attaches the widget’s #GtkStyle to the widget's
+/// This function attaches the widget’s #GtkStyle to the widget&apos;s
 /// #GdkWindow. It is a replacement for
 /// </para>
-/// <para>
-/// |[
-/// widget->style = gtk_style_attach (widget->style, widget->window);
-/// ]|
-/// </para>
+/// <code>
+/// widget-&amp;gt;style = gtk_style_attach (widget-&amp;gt;style, widget-&amp;gt;window);
+/// widget-&amp;gt;style = gtk_style_attach (widget-&amp;gt;style, widget-&amp;gt;window);
+/// </code>
 /// <para>
 /// and should only ever be called in a derived widget’s “realize”
-/// implementation which does not chain up to its parent class'
+/// implementation which does not chain up to its parent class&apos;
 /// “realize” implementation, because one of the parent classes
 /// (finally #GtkWidget) would attach the style itself.
 /// </para>
@@ -13594,7 +13547,7 @@ public static class GtkWidgetHandleExtensions
 /// <para>
 /// This function is only useful in widget implementations.
 /// Causes a widget to be unrealized (frees all GDK resources
-/// associated with the widget, such as @widget->window).
+/// associated with the widget, such as @widget-&amp;gt;window).
 /// </para>
 /// </summary>
 

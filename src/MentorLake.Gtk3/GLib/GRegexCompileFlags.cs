@@ -20,7 +20,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Letters in the pattern match both upper- and
 ///     lowercase letters. This option can be changed within a pattern
-///     by a "(?i)" option setting.
+///     by a &quot;(?i)&quot; option setting.
 /// </para>
 /// </summary>
 
@@ -29,14 +29,14 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// By default, GRegex treats the strings as consisting
 ///     of a single line of characters (even if it actually contains
-///     newlines). The "start of line" metacharacter ("^") matches only
-///     at the start of the string, while the "end of line" metacharacter
-///     ("$") matches only at the end of the string, or before a terminating
+///     newlines). The &quot;start of line&quot; metacharacter (&quot;^&quot;) matches only
+///     at the start of the string, while the &quot;end of line&quot; metacharacter
+///     (&quot;$&quot;) matches only at the end of the string, or before a terminating
 ///     newline (unless %G_REGEX_DOLLAR_ENDONLY is set). When
-///     %G_REGEX_MULTILINE is set, the "start of line" and "end of line"
+///     %G_REGEX_MULTILINE is set, the &quot;start of line&quot; and &quot;end of line&quot;
 ///     constructs match immediately following or immediately before any
 ///     newline in the string, respectively, as well as at the very start
-///     and end. This can be changed within a pattern by a "(?m)" option
+///     and end. This can be changed within a pattern by a &quot;(?m)&quot; option
 ///     setting.
 /// </para>
 /// </summary>
@@ -44,9 +44,9 @@ public enum GRegexCompileFlags : uint
 	G_REGEX_MULTILINE = 2,
 /// <summary>
 /// <para>
-/// A dot metacharacter (".") in the pattern matches all
+/// A dot metacharacter (&quot;.&quot;) in the pattern matches all
 ///     characters, including newlines. Without it, newlines are excluded.
-///     This option can be changed within a pattern by a ("?s") option setting.
+///     This option can be changed within a pattern by a (&quot;?s&quot;) option setting.
 /// </para>
 /// </summary>
 
@@ -56,19 +56,19 @@ public enum GRegexCompileFlags : uint
 /// Whitespace data characters in the pattern are
 ///     totally ignored except when escaped or inside a character class.
 ///     Whitespace does not include the VT character (code 11). In addition,
-///     characters between an unescaped "#" outside a character class and
+///     characters between an unescaped &quot;#&quot; outside a character class and
 ///     the next newline character, inclusive, are also ignored. This can
-///     be changed within a pattern by a "(?x)" option setting.
+///     be changed within a pattern by a &quot;(?x)&quot; option setting.
 /// </para>
 /// </summary>
 
 	G_REGEX_EXTENDED = 8,
 /// <summary>
 /// <para>
-/// The pattern is forced to be "anchored", that is,
+/// The pattern is forced to be &quot;anchored&quot;, that is,
 ///     it is constrained to match only at the first matching point in the
 ///     string that is being searched. This effect can also be achieved by
-///     appropriate constructs in the pattern itself such as the "^"
+///     appropriate constructs in the pattern itself such as the &quot;^&quot;
 ///     metacharacter.
 /// </para>
 /// </summary>
@@ -76,7 +76,7 @@ public enum GRegexCompileFlags : uint
 	G_REGEX_ANCHORED = 16,
 /// <summary>
 /// <para>
-/// A dollar metacharacter ("$") in the pattern
+/// A dollar metacharacter (&quot;$&quot;) in the pattern
 ///     matches only at the end of the string. Without this option, a
 ///     dollar also matches immediately before the final character if
 ///     it is a newline (but not before any other newlines). This option
@@ -87,9 +87,9 @@ public enum GRegexCompileFlags : uint
 	G_REGEX_DOLLAR_ENDONLY = 32,
 /// <summary>
 /// <para>
-/// Inverts the "greediness" of the quantifiers so that
-///     they are not greedy by default, but become greedy if followed by "?".
-///     It can also be set by a "(?U)" option setting within the pattern.
+/// Inverts the &quot;greediness&quot; of the quantifiers so that
+///     they are not greedy by default, but become greedy if followed by &quot;?&quot;.
+///     It can also be set by a &quot;(?U)&quot; option setting within the pattern.
 /// </para>
 /// </summary>
 
@@ -106,7 +106,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Disables the use of numbered capturing
 ///     parentheses in the pattern. Any opening parenthesis that is not
-///     followed by "?" behaves as if it were followed by "?:" but named
+///     followed by &quot;?&quot; behaves as if it were followed by &quot;?:&quot; but named
 ///     parentheses can still be used for capturing (and they acquire numbers
 ///     in the usual way).
 /// </para>
@@ -148,7 +148,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Usually any newline character or character sequence is
 ///     recognized. If this option is set, the only recognized newline character
-///     is '\r'.
+///     is &apos;\r&apos;.
 /// </para>
 /// </summary>
 
@@ -157,7 +157,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Usually any newline character or character sequence is
 ///     recognized. If this option is set, the only recognized newline character
-///     is '\n'.
+///     is &apos;\n&apos;.
 /// </para>
 /// </summary>
 
@@ -166,7 +166,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Usually any newline character or character sequence is
 ///     recognized. If this option is set, the only recognized newline character
-///     sequence is '\r\n'.
+///     sequence is &apos;\r\n&apos;.
 /// </para>
 /// </summary>
 
@@ -175,7 +175,7 @@ public enum GRegexCompileFlags : uint
 /// <para>
 /// Usually any newline character or character sequence
 ///     is recognized. If this option is set, the only recognized newline character
-///     sequences are '\r', '\n', and '\r\n'. Since: 2.34
+///     sequences are &apos;\r&apos;, &apos;\n&apos;, and &apos;\r\n&apos;. Since: 2.34
 /// </para>
 /// </summary>
 
@@ -183,8 +183,8 @@ public enum GRegexCompileFlags : uint
 /// <summary>
 /// <para>
 /// Usually any newline character or character sequence
-///     is recognised. If this option is set, then "\R" only recognizes the newline
-///    characters '\r', '\n' and '\r\n'. Since: 2.34
+///     is recognised. If this option is set, then &quot;\R&quot; only recognizes the newline
+///    characters &apos;\r&apos;, &apos;\n&apos; and &apos;\r\n&apos;. Since: 2.34
 /// </para>
 /// </summary>
 

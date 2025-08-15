@@ -2,7 +2,7 @@ namespace MentorLake.GObject;
 
 /// <summary>
 /// <para>
-/// Initializes the value contents by setting the fields of the `value->data`
+/// Initializes the value contents by setting the fields of the `value-&amp;gt;data`
 /// array.
 /// </para>
 /// <para>
@@ -11,11 +11,10 @@ namespace MentorLake.GObject;
 /// For example, in the case of a string value that may never be %NULL, the
 /// implementation might look like:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// value->data[0].v_pointer = g_strdup ("");
-/// ]|
-/// </para>
+/// <code>
+/// value-&amp;gt;data[0].v_pointer = g_strdup (&quot;&quot;);
+/// value-&amp;gt;data[0].v_pointer = g_strdup (&quot;&quot;);
+/// </code>
 /// </summary>
 
 /// <param name="value">

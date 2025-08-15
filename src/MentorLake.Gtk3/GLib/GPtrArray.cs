@@ -185,7 +185,7 @@ public uint len;
 /// </para>
 /// <para>
 /// @func, as a #GCopyFunc, takes two arguments, the data to be copied
-/// and a @user_data pointer. On common processor architectures, it's safe to
+/// and a @user_data pointer. On common processor architectures, it&apos;s safe to
 /// pass %NULL as @user_data if the copy function takes only one argument. You
 /// may get compiler warnings from this though if compiling with GCC’s
 /// `-Wcast-function-type` warning.
@@ -227,7 +227,7 @@ public uint len;
 /// </para>
 /// <para>
 /// @func, as a #GCopyFunc, takes two arguments, the data to be copied
-/// and a @user_data pointer. On common processor architectures, it's safe to
+/// and a @user_data pointer. On common processor architectures, it&apos;s safe to
 /// pass %NULL as @user_data if the copy function takes only one argument. You
 /// may get compiler warnings from this though if compiling with GCC’s
 /// `-Wcast-function-type` warning.
@@ -615,7 +615,7 @@ public uint len;
 /// terminated.
 /// </para>
 /// <para>
-/// Note that if the @array's length is zero and currently no
+/// Note that if the @array&apos;s length is zero and currently no
 /// data array is allocated, then pdata will still be %NULL.
 /// %GPtrArray will only %NULL terminate pdata, if an actual
 /// array is allocated. It does not guarantee that an array
@@ -983,7 +983,7 @@ public uint len;
 /// greater than second arg).
 /// </para>
 /// <para>
-/// Note that the comparison function for g_ptr_array_sort() doesn't
+/// Note that the comparison function for g_ptr_array_sort() doesn&apos;t
 /// take the pointers from the array as arguments, it takes pointers to
 /// the pointers in the array.
 /// </para>
@@ -991,36 +991,31 @@ public uint len;
 /// Use g_ptr_array_sort_values() if you want to use normal
 /// #GCompareFuncs, otherwise here is a full example of use:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct
 /// typedef struct
 /// {
 ///   gchar *name;
 ///   gint size;
 /// } FileListEntry;
-/// </para>
-/// <para>
+/// 
 /// static gint
 /// sort_filelist (gconstpointer a, gconstpointer b)
 /// {
 ///   const FileListEntry *entry1 = *((FileListEntry **) a);
 ///   const FileListEntry *entry2 = *((FileListEntry **) b);
-/// </para>
-/// <para>
-///   return g_ascii_strcasecmp (entry1->name, entry2->name);
+/// 
+///   return g_ascii_strcasecmp (entry1-&amp;gt;name, entry2-&amp;gt;name);
 /// }
-/// </para>
-/// <para>
+/// 
 /// …
 /// g_autoptr (GPtrArray) file_list = NULL;
-/// </para>
-/// <para>
+/// 
 /// // initialize file_list array and load with many FileListEntry entries
 /// ...
 /// // now sort it with
 /// g_ptr_array_sort (file_list, sort_filelist);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This is guaranteed to be a stable sort since version 2.32.
 /// </para>
@@ -1094,25 +1089,23 @@ public uint len;
 /// </para>
 /// <para>
 /// Note that the comparison function for g_ptr_array_sort_with_data()
-/// doesn't take the pointers from the array as arguments, it takes
+/// doesn&apos;t take the pointers from the array as arguments, it takes
 /// pointers to the pointers in the array.
 /// </para>
 /// <para>
 /// Use g_ptr_array_sort_values_with_data() if you want to use normal
 /// #GCompareDataFuncs, otherwise here is a full example of use:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// typedef enum { SORT_NAME, SORT_SIZE } SortMode;
-/// </para>
-/// <para>
+/// typedef enum { SORT_NAME, SORT_SIZE } SortMode;
+/// 
 /// typedef struct
 /// {
 ///   gchar *name;
 ///   gint size;
 /// } FileListEntry;
-/// </para>
-/// <para>
+/// 
 /// static gint
 /// sort_filelist (gconstpointer a, gconstpointer b, gpointer user_data)
 /// {
@@ -1120,15 +1113,14 @@ public uint len;
 ///   const SortMode sort_mode = GPOINTER_TO_INT (user_data);
 ///   const FileListEntry *entry1 = *((FileListEntry **) a);
 ///   const FileListEntry *entry2 = *((FileListEntry **) b);
-/// </para>
-/// <para>
+/// 
 ///   switch (sort_mode)
 ///     {
 ///     case SORT_NAME:
-///       order = g_ascii_strcasecmp (entry1->name, entry2->name);
+///       order = g_ascii_strcasecmp (entry1-&amp;gt;name, entry2-&amp;gt;name);
 ///       break;
 ///     case SORT_SIZE:
-///       order = entry1->size - entry2->size;
+///       order = entry1-&amp;gt;size - entry2-&amp;gt;size;
 ///       break;
 ///     default:
 ///       order = 0;
@@ -1136,13 +1128,11 @@ public uint len;
 ///     }
 ///   return order;
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
 /// g_autoptr (GPtrArray) file_list = NULL;
 /// SortMode sort_mode;
-/// </para>
-/// <para>
+/// 
 /// // initialize file_list array and load with many FileListEntry entries
 /// ...
 /// // now sort it with
@@ -1150,8 +1140,7 @@ public uint len;
 /// g_ptr_array_sort_with_data (file_list,
 ///                             sort_filelist,
 ///                             GINT_TO_POINTER (sort_mode));
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This is guaranteed to be a stable sort since version 2.32.
 /// </para>
@@ -1190,44 +1179,38 @@ public uint len;
 /// </para>
 /// <para>
 /// An example of use:
-/// |[<!-- language="C" -->
+/// <code>
 /// g_autoptr(GPtrArray) chunk_buffer = g_ptr_array_new_with_free_func (g_bytes_unref);
-/// </para>
-/// <para>
+/// g_autoptr(GPtrArray) chunk_buffer = g_ptr_array_new_with_free_func (g_bytes_unref);
+/// 
 /// // Some part of your application appends a number of chunks to the pointer array.
-/// g_ptr_array_add (chunk_buffer, g_bytes_new_static ("hello", 5));
-/// g_ptr_array_add (chunk_buffer, g_bytes_new_static ("world", 5));
-/// </para>
-/// <para>
+/// g_ptr_array_add (chunk_buffer, g_bytes_new_static (&quot;hello&quot;, 5));
+/// g_ptr_array_add (chunk_buffer, g_bytes_new_static (&quot;world&quot;, 5));
+/// 
 /// …
-/// </para>
-/// <para>
+/// 
 /// // Periodically, the chunks need to be sent as an array-and-length to some
 /// // other part of the program.
 /// GBytes **chunks;
 /// gsize n_chunks;
-/// </para>
-/// <para>
-/// chunks = g_ptr_array_steal (chunk_buffer, &n_chunks);
-/// for (gsize i = 0; i < n_chunks; i++)
+/// 
+/// chunks = g_ptr_array_steal (chunk_buffer, &amp;n_chunks);
+/// for (gsize i = 0; i &amp;lt; n_chunks; i++)
 ///   {
 ///     // Do something with each chunk here, and then free them, since
 ///     // g_ptr_array_steal() transfers ownership of all the elements and the
 ///     // array to the caller.
 ///     …
-/// </para>
-/// <para>
+/// 
 ///     g_bytes_unref (chunks[i]);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// g_free (chunks);
-/// </para>
-/// <para>
+/// 
 /// // After calling g_ptr_array_steal(), the pointer array can be reused for the
 /// // next set of chunks.
-/// g_assert (chunk_buffer->len == 0);
-/// ]|
+/// g_assert (chunk_buffer-&amp;gt;len == 0);
+/// </code>
 /// </para>
 /// </summary>
 

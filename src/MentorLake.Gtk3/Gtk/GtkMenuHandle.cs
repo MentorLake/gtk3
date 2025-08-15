@@ -24,64 +24,57 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Connecting the popup signal handler.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   // connect our handler which will popup the menu
-///   g_signal_connect_swapped (window, "button_press_event",
+///   // connect our handler which will popup the menu
+///   g_signal_connect_swapped (window, &quot;button_press_event&quot;,
 /// G_CALLBACK (my_popup_handler), menu);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Signal handler which displays a popup menu.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gint
 /// static gint
 /// my_popup_handler (GtkWidget *widget, GdkEvent *event)
 /// {
 ///   GtkMenu *menu;
 ///   GdkEventButton *event_button;
-/// </para>
-/// <para>
+/// 
 ///   g_return_val_if_fail (widget != NULL, FALSE);
 ///   g_return_val_if_fail (GTK_IS_MENU (widget), FALSE);
 ///   g_return_val_if_fail (event != NULL, FALSE);
-/// </para>
-/// <para>
-///   // The "widget" is the menu that was supplied when
+/// 
+///   // The &quot;widget&quot; is the menu that was supplied when
 ///   // g_signal_connect_swapped() was called.
 ///   menu = GTK_MENU (widget);
-/// </para>
-/// <para>
-///   if (event->type == GDK_BUTTON_PRESS)
+/// 
+///   if (event-&amp;gt;type == GDK_BUTTON_PRESS)
 ///     {
 ///       event_button = (GdkEventButton *) event;
-///       if (event_button->button == GDK_BUTTON_SECONDARY)
+///       if (event_button-&amp;gt;button == GDK_BUTTON_SECONDARY)
 ///         {
 ///           gtk_menu_popup (menu, NULL, NULL, NULL, NULL,
-///                           event_button->button, event_button->time);
+///                           event_button-&amp;gt;button, event_button-&amp;gt;time);
 ///           return TRUE;
 ///         }
 ///     }
-/// </para>
-/// <para>
+/// 
 ///   return FALSE;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// menu
 /// menu
 /// ├── arrow.top
-/// ├── <child>
+/// ├── &amp;lt;child&amp;gt;
 /// ┊
-/// ├── <child>
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── arrow.bottom
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The main CSS node of GtkMenu has name menu, and there are two subnodes
 /// with name arrow, for scrolling menu arrows. These subnodes get the
@@ -118,7 +111,7 @@ public class GtkMenuHandle : GtkMenuShellHandle, AtkImplementorIfaceHandle, GtkB
 /// that is contained within the #GtkApplicationWindows widget hierarchy.
 /// </para>
 /// <para>
-/// Actions can also be added using gtk_widget_insert_action_group() on the menu's
+/// Actions can also be added using gtk_widget_insert_action_group() on the menu&apos;s
 /// attach widget or on any of its parent widgets.
 /// </para>
 /// </summary>
@@ -208,7 +201,7 @@ public static class GtkMenuHandleSignalExtensions
 /// ![](popup-slide.png)
 /// </para>
 /// <para>
-/// The blue menu is @menu's ideal position, the green menu is @flipped_rect,
+/// The blue menu is @menu&apos;s ideal position, the green menu is @flipped_rect,
 /// and the red menu is @final_rect.
 /// </para>
 /// <para>
@@ -274,7 +267,7 @@ public class PoppedUpSignal
 /// <summary>
 /// <para>
 /// the position of @menu after any possible
-///                flipping or %NULL if the backend can't obtain it
+///                flipping or %NULL if the backend can&apos;t obtain it
 /// </para>
 /// </summary>
 
@@ -282,7 +275,7 @@ public class PoppedUpSignal
 /// <summary>
 /// <para>
 /// the final position of @menu or %NULL if the
-///              backend can't obtain it
+///              backend can&apos;t obtain it
 /// </para>
 /// </summary>
 
@@ -343,7 +336,7 @@ public delegate void move_scroll([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// ![](popup-slide.png)
 /// </para>
 /// <para>
-/// The blue menu is @menu's ideal position, the green menu is @flipped_rect,
+/// The blue menu is @menu&apos;s ideal position, the green menu is @flipped_rect,
 /// and the red menu is @final_rect.
 /// </para>
 /// <para>
@@ -358,11 +351,11 @@ public delegate void move_scroll([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// </param>
 /// <param name="flipped_rect">
 /// the position of @menu after any possible
-///                flipping or %NULL if the backend can't obtain it
+///                flipping or %NULL if the backend can&apos;t obtain it
 /// </param>
 /// <param name="final_rect">
 /// the final position of @menu or %NULL if the
-///              backend can't obtain it
+///              backend can&apos;t obtain it
 /// </param>
 /// <param name="flipped_x">
 /// %TRUE if the anchors were flipped horizontally
@@ -759,7 +752,7 @@ public static class GtkMenuHandleExtensions
 /// </param>
 /// <param name="trigger_event">
 /// the #GdkEvent that initiated this request or
-///                 %NULL if it's the current event
+///                 %NULL if it&apos;s the current event
 /// </param>
 
 	public static T PopupAtPointer<T>(this T menu, MentorLake.Gdk.GdkEventHandle trigger_event) where T : GtkMenuHandle
@@ -806,14 +799,14 @@ public static class GtkMenuHandleExtensions
 /// the #GdkRectangle to align @menu with
 /// </param>
 /// <param name="rect_anchor">
-/// the point on @rect to align with @menu's anchor point
+/// the point on @rect to align with @menu&apos;s anchor point
 /// </param>
 /// <param name="menu_anchor">
-/// the point on @menu to align with @rect's anchor point
+/// the point on @menu to align with @rect&apos;s anchor point
 /// </param>
 /// <param name="trigger_event">
 /// the #GdkEvent that initiated this request or
-///                 %NULL if it's the current event
+///                 %NULL if it&apos;s the current event
 /// </param>
 
 	public static T PopupAtRect<T>(this T menu, MentorLake.Gdk.GdkWindowHandle rect_window, MentorLake.Gdk.GdkRectangleHandle rect, MentorLake.Gdk.GdkGravity rect_anchor, MentorLake.Gdk.GdkGravity menu_anchor, MentorLake.Gdk.GdkEventHandle trigger_event) where T : GtkMenuHandle
@@ -860,14 +853,14 @@ public static class GtkMenuHandleExtensions
 /// the #GtkWidget to align @menu with
 /// </param>
 /// <param name="widget_anchor">
-/// the point on @widget to align with @menu's anchor point
+/// the point on @widget to align with @menu&apos;s anchor point
 /// </param>
 /// <param name="menu_anchor">
-/// the point on @menu to align with @widget's anchor point
+/// the point on @menu to align with @widget&apos;s anchor point
 /// </param>
 /// <param name="trigger_event">
 /// the #GdkEvent that initiated this request or
-///                 %NULL if it's the current event
+///                 %NULL if it&apos;s the current event
 /// </param>
 
 	public static T PopupAtWidget<T>(this T menu, MentorLake.Gtk.GtkWidgetHandle widget, MentorLake.Gdk.GdkGravity widget_anchor, MentorLake.Gdk.GdkGravity menu_anchor, MentorLake.Gdk.GdkEventHandle trigger_event) where T : GtkMenuHandle
@@ -1028,9 +1021,9 @@ public static class GtkMenuHandleExtensions
 /// </para>
 /// <para>
 /// For example, a menu containing menu items “New” and “Exit”, will, after
-/// `gtk_menu_set_accel_path (menu, "<Gnumeric-Sheet>/File");` has been
-/// called, assign its items the accel paths: `"<Gnumeric-Sheet>/File/New"`
-/// and `"<Gnumeric-Sheet>/File/Exit"`.
+/// `gtk_menu_set_accel_path (menu, &quot;&amp;lt;Gnumeric-Sheet&amp;gt;/File&quot;);` has been
+/// called, assign its items the accel paths: `&quot;&amp;lt;Gnumeric-Sheet&amp;gt;/File/New&quot;`
+/// and `&quot;&amp;lt;Gnumeric-Sheet&amp;gt;/File/Exit&quot;`.
 /// </para>
 /// <para>
 /// Assigning accel paths to menu items then enables the user to change

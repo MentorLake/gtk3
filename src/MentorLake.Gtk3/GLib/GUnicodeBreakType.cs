@@ -67,7 +67,7 @@ public enum GUnicodeBreakType
 	G_UNICODE_BREAK_INSEPARABLE = 6,
 /// <summary>
 /// <para>
-/// Non-breaking ("Glue") (GL)
+/// Non-breaking (&quot;Glue&quot;) (GL)
 /// </para>
 /// </summary>
 

@@ -337,7 +337,7 @@ public static class GtkSelectionDataExtensions
 /// <para>
 /// Sets the contents of the selection from a #GdkPixbuf
 /// The pixbuf is converted to the form determined by
-/// @selection_data->target.
+/// @selection_data-&amp;gt;target.
 /// </para>
 /// </summary>
 
@@ -362,7 +362,7 @@ public static class GtkSelectionDataExtensions
 /// <para>
 /// Sets the contents of the selection from a UTF-8 encoded string.
 /// The string is converted to the form determined by
-/// @selection_data->target.
+/// @selection_data-&amp;gt;target.
 /// </para>
 /// </summary>
 
@@ -390,7 +390,7 @@ public static class GtkSelectionDataExtensions
 /// <para>
 /// Sets the contents of the selection from a list of URIs.
 /// The string is converted to the form determined by
-/// @selection_data->target.
+/// @selection_data-&amp;gt;target.
 /// </para>
 /// <para>
 /// Since 3.24.37, this may involve using the FileTransfer

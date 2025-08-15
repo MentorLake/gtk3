@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// Data type for the "General_Category" (gc) property from
+/// Data type for the &quot;General_Category&quot; (gc) property from
 /// the Unicode Character Database.
 /// </para>
 /// </summary>

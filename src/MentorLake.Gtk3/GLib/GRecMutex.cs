@@ -64,21 +64,18 @@ public static class GRecMutexExtensions
 /// It is not necessary to initialise a recursive mutex that has been
 /// statically allocated.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   typedef struct {
 ///   typedef struct {
 ///     GRecMutex m;
 ///     ...
 ///   } Blob;
-/// </para>
-/// <para>
+/// 
 /// Blob *b;
-/// </para>
-/// <para>
+/// 
 /// b = g_new (Blob, 1);
-/// g_rec_mutex_init (&b->m);
-/// ]|
-/// </para>
+/// g_rec_mutex_init (&amp;b-&amp;gt;m);
+/// </code>
 /// <para>
 /// Calling g_rec_mutex_init() on an already initialized #GRecMutex
 /// leads to undefined behaviour.
@@ -104,7 +101,7 @@ public static class GRecMutexExtensions
 /// Locks @rec_mutex. If @rec_mutex is already locked by another
 /// thread, the current thread will block until @rec_mutex is
 /// unlocked by the other thread. If @rec_mutex is already locked
-/// by the current thread, the 'lock count' of @rec_mutex is increased.
+/// by the current thread, the &apos;lock count&apos; of @rec_mutex is increased.
 /// The mutex will only become available again when it is unlocked
 /// as many times as it has been locked.
 /// </para>

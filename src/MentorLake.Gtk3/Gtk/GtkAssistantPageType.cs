@@ -2,7 +2,7 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// An enum for determining the page role inside the #GtkAssistant. It's
+/// An enum for determining the page role inside the #GtkAssistant. It&apos;s
 /// used to handle buttons sensitivity and visibility.
 /// </para>
 /// <para>

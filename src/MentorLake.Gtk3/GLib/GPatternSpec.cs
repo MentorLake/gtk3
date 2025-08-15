@@ -11,7 +11,7 @@ namespace MentorLake.GLib;
 /// possibly empty, string, `?` matches an arbitrary character.
 /// </para>
 /// <para>
-/// Note that in contrast to <see href="man:glob(3">glob()</see>), the `/` character can be
+/// Note that in contrast to &amp;lt;see href=&quot;man:glob(3&quot;&amp;gt;glob()&amp;lt;/see&amp;gt;), the `/` character can be
 /// matched by the wildcards, there are no `[…]` character ranges and `*` and `?`
 /// can not be escaped to include them literally in a pattern.
 /// </para>
@@ -222,7 +222,7 @@ internal class GPatternSpecExterns
 /// possibly empty, string, `?` matches an arbitrary character.
 /// </para>
 /// <para>
-/// Note that in contrast to <see href="man:glob(3">glob()</see>), the `/` character can be
+/// Note that in contrast to &amp;lt;see href=&quot;man:glob(3&quot;&amp;gt;glob()&amp;lt;/see&amp;gt;), the `/` character can be
 /// matched by the wildcards, there are no `[…]` character ranges and `*` and `?`
 /// can not be escaped to include them literally in a pattern.
 /// </para>

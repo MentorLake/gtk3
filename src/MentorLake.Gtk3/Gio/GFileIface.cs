@@ -233,14 +233,14 @@ public IntPtr find_enclosing_mount_finish;
 public IntPtr set_display_name;
 	/// <summary>
 /// <para>
-/// Asynchronously sets a #GFile's display name.
+/// Asynchronously sets a #GFile&apos;s display name.
 /// </para>
 /// </summary>
 
 public IntPtr set_display_name_async;
 	/// <summary>
 /// <para>
-/// Finishes asynchronously setting a #GFile's display name.
+/// Finishes asynchronously setting a #GFile&apos;s display name.
 /// </para>
 /// </summary>
 
@@ -303,14 +303,14 @@ public IntPtr set_attribute;
 public IntPtr set_attributes_from_info;
 	/// <summary>
 /// <para>
-/// Asynchronously sets a file's attributes.
+/// Asynchronously sets a file&apos;s attributes.
 /// </para>
 /// </summary>
 
 public IntPtr set_attributes_async;
 	/// <summary>
 /// <para>
-/// Finishes setting a file's attributes asynchronously.
+/// Finishes setting a file&apos;s attributes asynchronously.
 /// </para>
 /// </summary>
 

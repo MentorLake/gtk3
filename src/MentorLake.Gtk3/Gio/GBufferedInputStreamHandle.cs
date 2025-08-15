@@ -6,18 +6,18 @@ namespace MentorLake.Gio;
 /// for buffered reads.
 /// </para>
 /// <para>
-/// By default, `GBufferedInputStream`'s buffer size is set at 4 kilobytes.
+/// By default, `GBufferedInputStream`&apos;s buffer size is set at 4 kilobytes.
 /// </para>
 /// <para>
 /// To create a buffered input stream, use [ctor@Gio.BufferedInputStream.new],
-/// or [ctor@Gio.BufferedInputStream.new_sized] to specify the buffer's size at
+/// or [ctor@Gio.BufferedInputStream.new_sized] to specify the buffer&apos;s size at
 /// construction.
 /// </para>
 /// <para>
 /// To get the size of a buffer within a buffered input stream, use
 /// [method@Gio.BufferedInputStream.get_buffer_size]. To change the size of a
-/// buffered input stream's buffer, use [method@Gio.BufferedInputStream.set_buffer_size].
-/// Note that the buffer's size cannot be reduced below the size of the data within the buffer.
+/// buffered input stream&apos;s buffer, use [method@Gio.BufferedInputStream.set_buffer_size].
+/// Note that the buffer&apos;s size cannot be reduced below the size of the data within the buffer.
 /// </para>
 /// </summary>
 
@@ -114,7 +114,7 @@ public static class GBufferedInputStreamHandleExtensions
 /// optional [class@Gio.Cancellable] object, `NULL` to ignore
 /// </param>
 /// <return>
-/// the number of bytes read into @stream's buffer, up to @count,
+/// the number of bytes read into @stream&apos;s buffer, up to @count,
 ///     or `-1` on error.
 /// </return>
 
@@ -128,7 +128,7 @@ public static class GBufferedInputStreamHandleExtensions
 
 /// <summary>
 /// <para>
-/// Reads data into @stream's buffer asynchronously, up to @count size.
+/// Reads data into @stream&apos;s buffer asynchronously, up to @count size.
 /// @io_priority can be used to prioritize reads. For the synchronous
 /// version of this function, see [method@Gio.BufferedInputStream.fill].
 /// </para>
@@ -288,7 +288,7 @@ public static class GBufferedInputStreamHandleExtensions
 /// </para>
 /// <para>
 /// On success, the byte read from the stream is returned. On end of stream
-/// `-1` is returned but it's not an exceptional error and @error is not set.
+/// `-1` is returned but it&apos;s not an exceptional error and @error is not set.
 /// </para>
 /// <para>
 /// If @cancellable is not `NULL`, then the operation can be cancelled by

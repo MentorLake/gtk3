@@ -36,7 +36,7 @@ public enum GtkPolicyType
 	GTK_POLICY_NEVER = 2,
 /// <summary>
 /// <para>
-/// Don't show a scrollbar, but don't force the
+/// Don&apos;t show a scrollbar, but don&apos;t force the
 ///  size to follow the content. This can be used e.g. to make multiple
 ///  scrolled windows share a scrollbar. Since: 3.16
 /// </para>

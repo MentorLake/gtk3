@@ -21,7 +21,7 @@ namespace MentorLake.Gtk;
 /// Coordinate systems in GtkTreeView API:
 /// </para>
 /// <para>
-/// - Widget coordinates: Coordinates relative to the widget (usually `widget->window`).
+/// - Widget coordinates: Coordinates relative to the widget (usually `widget-&amp;gt;window`).
 /// </para>
 /// <para>
 /// - Bin window coordinates: Coordinates relative to the window that GtkTreeView renders to.
@@ -43,53 +43,51 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkTreeView implementation of the GtkBuildable interface accepts
-/// #GtkTreeViewColumn objects as `<child>` elements and exposes the internal
+/// #GtkTreeViewColumn objects as `&amp;lt;child&amp;gt;` elements and exposes the internal
 /// #GtkTreeSelection in UI definitions.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with GtkTreeView:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkTreeView" id="treeview">
-///   <property name="model">liststore1</property>
-///   <child>
-///     <object class="GtkTreeViewColumn" id="test-column">
-///       <property name="title">Test</property>
-///       <child>
-///         <object class="GtkCellRendererText" id="test-renderer"/>
-///         <attributes>
-///           <attribute name="text">1</attribute>
-///         </attributes>
-///       </child>
-///     </object>
-///   </child>
-///   <child internal-child="selection">
-///     <object class="GtkTreeSelection" id="selection">
-///       <signal name="changed" handler="on_treeview_selection_changed"/>
-///     </object>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkTreeView&quot; id=&quot;treeview&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkTreeView&quot; id=&quot;treeview&quot;&amp;gt;
+///   &amp;lt;property name=&quot;model&quot;&amp;gt;liststore1&amp;lt;/property&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkTreeViewColumn&quot; id=&quot;test-column&quot;&amp;gt;
+///       &amp;lt;property name=&quot;title&quot;&amp;gt;Test&amp;lt;/property&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkCellRendererText&quot; id=&quot;test-renderer&quot;/&amp;gt;
+///         &amp;lt;attributes&amp;gt;
+///           &amp;lt;attribute name=&quot;text&quot;&amp;gt;1&amp;lt;/attribute&amp;gt;
+///         &amp;lt;/attributes&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child internal-child=&quot;selection&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkTreeSelection&quot; id=&quot;selection&quot;&amp;gt;
+///       &amp;lt;signal name=&quot;changed&quot; handler=&quot;on_treeview_selection_changed&quot;/&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// treeview.view
 /// treeview.view
 /// ├── header
-/// │   ├── <column header>
+/// │   ├── &amp;lt;column header&amp;gt;
 /// ┊   ┊
-/// │   ╰── <column header>
+/// │   ╰── &amp;lt;column header&amp;gt;
 /// │
 /// ╰── [rubberband]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkTreeView has a main CSS node with name treeview and style class .view.
 /// It has a subnode with name header, which is the parent for all the column
-/// header widgets' CSS nodes.
+/// header widgets&apos; CSS nodes.
 /// For rubberband selection, a subnode with name rubberband is used.
 /// </para>
 /// </summary>
@@ -274,11 +272,11 @@ public static class GtkTreeViewHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The "row-activated" signal is emitted when the method
+/// The &quot;row-activated&quot; signal is emitted when the method
 /// gtk_tree_view_row_activated() is called, when the user double
-/// clicks a treeview row with the "activate-on-single-click"
+/// clicks a treeview row with the &quot;activate-on-single-click&quot;
 /// property set to %FALSE, or when the user single clicks a row when
-/// the "activate-on-single-click" property set to %TRUE. It is also
+/// the &quot;activate-on-single-click&quot; property set to %TRUE. It is also
 /// emitted when a non-editable row is selected and one of the keys:
 /// Space, Shift+Space, Return or Enter is pressed.
 /// </para>
@@ -980,11 +978,11 @@ public delegate bool move_cursor([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 
 /// <summary>
 /// <para>
-/// The "row-activated" signal is emitted when the method
+/// The &quot;row-activated&quot; signal is emitted when the method
 /// gtk_tree_view_row_activated() is called, when the user double
-/// clicks a treeview row with the "activate-on-single-click"
+/// clicks a treeview row with the &quot;activate-on-single-click&quot;
 /// property set to %FALSE, or when the user single clicks a row when
-/// the "activate-on-single-click" property set to %TRUE. It is also
+/// the &quot;activate-on-single-click&quot; property set to %TRUE. It is also
 /// emitted when a non-editable row is selected and one of the keys:
 /// Space, Shift+Space, Return or Enter is pressed.
 /// </para>
@@ -1631,7 +1629,7 @@ public static class GtkTreeViewHandleExtensions
 /// <summary>
 /// <para>
 /// Returns the window that @tree_view renders to.
-/// This is used primarily to compare to `event->window`
+/// This is used primarily to compare to `event-&amp;gt;window`
 /// to confirm that the event on @tree_view is on the right window.
 /// </para>
 /// </summary>
@@ -2079,7 +2077,7 @@ public static class GtkTreeViewHandleExtensions
 /// Finds the path at the point (@x, @y), relative to bin_window coordinates
 /// (please see gtk_tree_view_get_bin_window()).
 /// That is, @x and @y are relative to an events coordinates. @x and @y must
-/// come from an event on the @tree_view only where `event->window ==
+/// come from an event on the @tree_view only where `event-&amp;gt;window ==
 /// gtk_tree_view_get_bin_window ()`. It is primarily for
 /// things like popup menus. If @path is non-%NULL, then it will be filled
 /// with the #GtkTreePath at that point.  This path should be freed with
@@ -2588,7 +2586,7 @@ public static class GtkTreeViewHandleExtensions
 /// <para>
 /// The @x and @y coordinate that are provided must be relative to bin_window
 /// coordinates.  That is, @x and @y must come from an event on @tree_view
-/// where `event->window == gtk_tree_view_get_bin_window ()`.
+/// where `event-&amp;gt;window == gtk_tree_view_get_bin_window ()`.
 /// </para>
 /// <para>
 /// For converting widget coordinates (eg. the ones you get from
@@ -2827,7 +2825,7 @@ public static class GtkTreeViewHandleExtensions
 /// Scrolls the tree view such that the top-left corner of the visible
 /// area is @tree_x, @tree_y, where @tree_x and @tree_y are specified
 /// in tree coordinates.  The @tree_view must be realized before
-/// this function is called.  If it isn't, you probably want to be
+/// this function is called.  If it isn&apos;t, you probably want to be
 /// using gtk_tree_view_scroll_to_cell().
 /// </para>
 /// <para>
@@ -3042,7 +3040,7 @@ public static class GtkTreeViewHandleExtensions
 /// <summary>
 /// <para>
 /// If @enable_search is set, then the user can type in text to search through
-/// the tree interactively (this is sometimes called "typeahead find").
+/// the tree interactively (this is sometimes called &quot;typeahead find&quot;).
 /// </para>
 /// <para>
 /// Note that even if this is %FALSE, the user can still initiate a search
@@ -3394,7 +3392,7 @@ public static class GtkTreeViewHandleExtensions
 /// <summary>
 /// <para>
 /// Sets a hint for the theme to draw even/odd rows in the @tree_view
-/// with different colors, also known as "zebra striping".
+/// with different colors, also known as &quot;zebra striping&quot;.
 /// </para>
 /// <para>
 /// This function tells the GTK+ theme that the user interface for your
@@ -3616,7 +3614,7 @@ public static class GtkTreeViewHandleExtensions
 /// </para>
 /// <para>
 /// Note that the signal handler sets the text with gtk_tooltip_set_markup(),
-/// so &, <, etc have to be escaped in the text.
+/// so &amp;, &amp;lt;, etc have to be escaped in the text.
 /// </para>
 /// </summary>
 

@@ -9,7 +9,7 @@ namespace MentorLake.cairo;
 /// <para>
 /// Using this callback the user-font has full control on glyphs and their
 /// positions.  That means, it allows for features like ligatures and kerning,
-/// as well as complex <firstterm>shaping</firstterm> required for scripts like
+/// as well as complex &amp;lt;firstterm&amp;gt;shaping&amp;lt;/firstterm&amp;gt; required for scripts like
 /// Arabic and Indic.
 /// </para>
 /// <para>
@@ -21,7 +21,7 @@ namespace MentorLake.cairo;
 /// @num_glyphs should contain the number of generated glyphs.  If the value
 /// @glyphs points at has changed after the call, the caller will free the
 /// allocated glyph array using cairo_glyph_free().  The caller will also free
-/// the original value of @glyphs, so the callback shouldn't do so.
+/// the original value of @glyphs, so the callback shouldn&apos;t do so.
 /// The callback should populate the glyph indices and positions (in font space)
 /// assuming that the text is to be shown at the origin.
 /// </para>

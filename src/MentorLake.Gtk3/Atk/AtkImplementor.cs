@@ -10,7 +10,7 @@ public static class AtkImplementorExtensions
 {
 /// <summary>
 /// <para>
-/// Gets a reference to an object's #AtkObject implementation, if
+/// Gets a reference to an object&apos;s #AtkObject implementation, if
 /// the object implements #AtkObjectIface
 /// </para>
 /// </summary>
@@ -20,7 +20,7 @@ public static class AtkImplementorExtensions
 /// if a non-null return value is required.
 /// </param>
 /// <return>
-/// a reference to an object's #AtkObject
+/// a reference to an object&apos;s #AtkObject
 /// implementation
 /// </return>
 

@@ -44,8 +44,8 @@ public enum AtkTextBoundary
 /// <summary>
 /// <para>
 /// Boundary is the last (terminal)
-/// character in a sentence; in languages which use "sentence stop"
-/// punctuation such as English, the boundary is thus the '.', '?', or
+/// character in a sentence; in languages which use &quot;sentence stop&quot;
+/// punctuation such as English, the boundary is thus the &apos;.&apos;, &apos;?&apos;, or
 /// similar terminal punctuation character.
 /// </para>
 /// </summary>

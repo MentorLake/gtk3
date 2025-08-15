@@ -70,8 +70,8 @@ public IntPtr command_line;
 public IntPtr local_command_line;
 	/// <summary>
 /// <para>
-/// invoked on the primary instance before 'activate', 'open',
-///     'command-line' or any action invocation, gets the 'platform data' from
+/// invoked on the primary instance before &apos;activate&apos;, &apos;open&apos;,
+///     &apos;command-line&apos; or any action invocation, gets the &apos;platform data&apos; from
 ///     the calling instance
 /// </para>
 /// </summary>
@@ -79,8 +79,8 @@ public IntPtr local_command_line;
 public IntPtr before_emit;
 	/// <summary>
 /// <para>
-/// invoked on the primary instance after 'activate', 'open',
-///     'command-line' or any action invocation, gets the 'platform data' from
+/// invoked on the primary instance after &apos;activate&apos;, &apos;open&apos;,
+///     &apos;command-line&apos; or any action invocation, gets the &apos;platform data&apos; from
 ///     the calling instance
 /// </para>
 /// </summary>
@@ -88,7 +88,7 @@ public IntPtr before_emit;
 public IntPtr after_emit;
 	/// <summary>
 /// <para>
-/// invoked (locally) to add 'platform data' to be sent to
+/// invoked (locally) to add &apos;platform data&apos; to be sent to
 ///     the primary instance when activating, opening or invoking actions
 /// </para>
 /// </summary>

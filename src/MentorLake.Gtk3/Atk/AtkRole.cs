@@ -6,7 +6,7 @@ namespace MentorLake.Atk;
 /// </para>
 /// <para>
 /// These are the built-in enumerated roles that UI components can have
-/// in ATK.  Other roles may be added at runtime, so an AtkRole >=
+/// in ATK.  Other roles may be added at runtime, so an AtkRole &amp;gt;=
 /// %ATK_ROLE_LAST_DEFINED is not necessarily an error.
 /// </para>
 /// </summary>
@@ -533,7 +533,7 @@ public enum AtkRole
 	ATK_ROLE_RULER = 72,
 /// <summary>
 /// <para>
-/// The object is an application object, which may contain @ATK_ROLE_FRAME objects or other types of accessibles.  The root accessible of any application's ATK hierarchy should have ATK_ROLE_APPLICATION.   (Since: 1.1.4)
+/// The object is an application object, which may contain @ATK_ROLE_FRAME objects or other types of accessibles.  The root accessible of any application&apos;s ATK hierarchy should have ATK_ROLE_APPLICATION.   (Since: 1.1.4)
 /// </para>
 /// </summary>
 
@@ -554,7 +554,7 @@ public enum AtkRole
 	ATK_ROLE_EDITBAR = 75,
 /// <summary>
 /// <para>
-/// The object is an embedded container within a document or panel.  This role is a grouping "hint" indicating that the contained objects share a context.  (Since: 1.7.2)
+/// The object is an embedded container within a document or panel.  This role is a grouping &quot;hint&quot; indicating that the contained objects share a context.  (Since: 1.7.2)
 /// </para>
 /// </summary>
 
@@ -589,7 +589,7 @@ public enum AtkRole
 	ATK_ROLE_DOCUMENT_FRAME = 80,
 /// <summary>
 /// <para>
-/// The object serves as a heading for content which follows it in a document. The 'heading level' of the heading, if availabe, may be obtained by querying the object's attributes.
+/// The object serves as a heading for content which follows it in a document. The &apos;heading level&apos; of the heading, if availabe, may be obtained by querying the object&apos;s attributes.
 /// </para>
 /// </summary>
 
@@ -603,7 +603,7 @@ public enum AtkRole
 	ATK_ROLE_PAGE = 82,
 /// <summary>
 /// <para>
-/// The object is a containing instance of document content which constitutes a particular 'logical' section of the document. The type of content within a section, and the nature of the section division itself, may be obtained by querying the object's attributes. Sections may be nested. (Since: 1.11)
+/// The object is a containing instance of document content which constitutes a particular &apos;logical&apos; section of the document. The type of content within a section, and the nature of the section division itself, may be obtained by querying the object&apos;s attributes. Sections may be nested. (Since: 1.11)
 /// </para>
 /// </summary>
 
@@ -627,8 +627,8 @@ public enum AtkRole
 	ATK_ROLE_FORM = 85,
 /// <summary>
 /// <para>
-/// The object is a hypertext anchor, i.e. a "link" in a
-/// hypertext document.  Such objects are distinct from 'inline'
+/// The object is a hypertext anchor, i.e. a &quot;link&quot; in a
+/// hypertext document.  Such objects are distinct from &apos;inline&apos;
 /// content which may also use the Hypertext/Hyperlink interfaces
 /// to indicate the range/location within a text object where
 /// an inline or embedded object lies.  (Since: 1.12.1)
@@ -639,8 +639,8 @@ public enum AtkRole
 /// <summary>
 /// <para>
 /// The object is a window or similar viewport
-/// which is used to allow composition or input of a 'complex character',
-/// in other words it is an "input method window." (Since: 1.12.1)
+/// which is used to allow composition or input of a &apos;complex character&apos;,
+/// in other words it is an &quot;input method window.&quot; (Since: 1.12.1)
 /// </para>
 /// </summary>
 

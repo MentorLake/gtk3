@@ -16,8 +16,8 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Using GtkPrintContext in a #GtkPrintOperation::draw-page callback
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// draw_page (GtkPrintOperation *operation,
 /// 	   GtkPrintContext   *context,
@@ -26,62 +26,50 @@ namespace MentorLake.Gtk;
 ///   cairo_t *cr;
 ///   PangoLayout *layout;
 ///   PangoFontDescription *desc;
-/// </para>
-/// <para>
+/// 
 ///   cr = gtk_print_context_get_cairo_context (context);
-/// </para>
-/// <para>
+/// 
 ///   // Draw a red rectangle, as wide as the paper (inside the margins)
 ///   cairo_set_source_rgb (cr, 1.0, 0, 0);
 ///   cairo_rectangle (cr, 0, 0, gtk_print_context_get_width (context), 50);
-/// </para>
-/// <para>
+/// 
 ///   cairo_fill (cr);
-/// </para>
-/// <para>
+/// 
 ///   // Draw some lines
 ///   cairo_move_to (cr, 20, 10);
 ///   cairo_line_to (cr, 40, 20);
 ///   cairo_arc (cr, 60, 60, 20, 0, M_PI);
 ///   cairo_line_to (cr, 80, 20);
-/// </para>
-/// <para>
+/// 
 ///   cairo_set_source_rgb (cr, 0, 0, 0);
 ///   cairo_set_line_width (cr, 5);
 ///   cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
 ///   cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
-/// </para>
-/// <para>
+/// 
 ///   cairo_stroke (cr);
-/// </para>
-/// <para>
+/// 
 ///   // Draw some text
 ///   layout = gtk_print_context_create_pango_layout (context);
-///   pango_layout_set_text (layout, "Hello World! Printing is easy", -1);
-///   desc = pango_font_description_from_string ("sans 28");
+///   pango_layout_set_text (layout, &quot;Hello World! Printing is easy&quot;, -1);
+///   desc = pango_font_description_from_string (&quot;sans 28&quot;);
 ///   pango_layout_set_font_description (layout, desc);
 ///   pango_font_description_free (desc);
-/// </para>
-/// <para>
+/// 
 ///   cairo_move_to (cr, 30, 20);
 ///   pango_cairo_layout_path (cr, layout);
-/// </para>
-/// <para>
+/// 
 ///   // Font Outline
 ///   cairo_set_source_rgb (cr, 0.93, 1.0, 0.47);
 ///   cairo_set_line_width (cr, 0.5);
 ///   cairo_stroke_preserve (cr);
-/// </para>
-/// <para>
+/// 
 ///   // Font Fill
 ///   cairo_set_source_rgb (cr, 0, 0.0, 1.0);
 ///   cairo_fill (cr);
-/// </para>
-/// <para>
+/// 
 ///   g_object_unref (layout);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Printing support was added in GTK+ 2.10.
 /// </para>

@@ -9,7 +9,7 @@ namespace MentorLake.Gio;
 /// than any SSL or TLS protocol version. The protocol version may be
 /// %G_TLS_PROTOCOL_VERSION_UNKNOWN if the TLS backend supports a newer
 /// protocol version that GLib does not yet know about. This means that
-/// it's possible for an unknown DTLS protocol version to compare less
+/// it&apos;s possible for an unknown DTLS protocol version to compare less
 /// than the TLS protocol versions.
 /// </para>
 /// </summary>

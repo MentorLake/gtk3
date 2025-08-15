@@ -19,41 +19,36 @@ namespace MentorLake.GObject;
 /// returning a newly allocated string describing an error condition. To
 /// complete the string example:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// gchar **string_p = collect_values[0].v_pointer;
 /// gchar **string_p = collect_values[0].v_pointer;
 /// g_return_val_if_fail (string_p != NULL,
-///   g_strdup ("string location passed as NULL"));
-/// </para>
-/// <para>
-/// if (collect_flags & G_VALUE_NOCOPY_CONTENTS)
-///   *string_p = value->data[0].v_pointer;
+///   g_strdup (&quot;string location passed as NULL&quot;));
+/// 
+/// if (collect_flags &amp; G_VALUE_NOCOPY_CONTENTS)
+///   *string_p = value-&amp;gt;data[0].v_pointer;
 /// else
-///   *string_p = g_strdup (value->data[0].v_pointer);
-/// ]|
-/// </para>
+///   *string_p = g_strdup (value-&amp;gt;data[0].v_pointer);
+/// </code>
 /// <para>
 /// And an illustrative version of this function for reference-counted
 /// types:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GObject **object_p = collect_values[0].v_pointer;
 /// GObject **object_p = collect_values[0].v_pointer;
 /// g_return_val_if_fail (object_p != NULL,
-///   g_strdup ("object location passed as NULL"));
-/// </para>
-/// <para>
-/// if (value->data[0].v_pointer == NULL)
+///   g_strdup (&quot;object location passed as NULL&quot;));
+/// 
+/// if (value-&amp;gt;data[0].v_pointer == NULL)
 ///   *object_p = NULL;
-/// else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) // always honour
-///   *object_p = value->data[0].v_pointer;
+/// else if (collect_flags &amp; G_VALUE_NOCOPY_CONTENTS) // always honour
+///   *object_p = value-&amp;gt;data[0].v_pointer;
 /// else
-///   *object_p = g_object_ref (value->data[0].v_pointer);
-/// </para>
-/// <para>
+///   *object_p = g_object_ref (value-&amp;gt;data[0].v_pointer);
+/// 
 /// return NULL;
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="value">

@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<NoWarn>CS0612</NoWarn>
+		<NoWarn>CS0612;CS1591;CS8981</NoWarn>
 		<PackageId>MentorLake.Gtk3</PackageId>
 		<Authors>MentorLake</Authors>
 		<Company>MentorLake</Company>
@@ -17,11 +17,13 @@
 		<Copyright>Copyright (c) 2023-$([System.DateTime]::Now.ToString(yyyy)) MentorLake</Copyright>
 		<RootNamespace>MentorLake.Gtk3.Bindings</RootNamespace>
 		<IsAotCompatible>true</IsAotCompatible>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
 		<None Include="..\..\LICENSE.md" Pack="true" PackagePath="\"/>
+		<None Include="bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml" Pack="true" PackagePath="lib\$(TargetFramework)" />
 	</ItemGroup>
 
 	<ItemGroup>

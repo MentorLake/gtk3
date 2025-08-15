@@ -39,7 +39,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// This example shows a #GtkShortcutsWindow that has been configured to show only
-/// the shortcuts relevant to the "stopwatch" view.
+/// the shortcuts relevant to the &quot;stopwatch&quot; view.
 /// </para>
 /// <para>
 /// The .ui file for this example can be found [here](https://git.gnome.org/browse/gtk+/tree/demos/gtk-demo/shortcuts-clocks.ui).
@@ -51,8 +51,8 @@ namespace MentorLake.Gtk;
 /// ![](builder-shortcuts.png)
 /// </para>
 /// <para>
-/// This example shows a #GtkShortcutsWindow with two sections, "Editor Shortcuts"
-/// and "Terminal Shortcuts".
+/// This example shows a #GtkShortcutsWindow with two sections, &quot;Editor Shortcuts&quot;
+/// and &quot;Terminal Shortcuts&quot;.
 /// </para>
 /// <para>
 /// The .ui file for this example can be found [here](https://git.gnome.org/browse/gtk+/tree/demos/gtk-demo/shortcuts-builder.ui).

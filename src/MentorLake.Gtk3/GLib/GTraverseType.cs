@@ -10,33 +10,33 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// - In order: A, B, C, D, E, F, G, H, I
-///   <picture>
-///     <source srcset="Sorted_binary_tree_inorder-dark.svg"
-///      media="(prefers-color-scheme: dark)">
-///     <img src="Sorted_binary_tree_inorder.svg"
-///      alt="Sorted binary tree, in-order traversal">
-///   </picture>
+///   &amp;lt;picture&amp;gt;
+///     &amp;lt;source srcset=&quot;Sorted_binary_tree_inorder-dark.svg&quot;
+///      media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///     &amp;lt;img src=&quot;Sorted_binary_tree_inorder.svg&quot;
+///      alt=&quot;Sorted binary tree, in-order traversal&quot;&amp;gt;
+///   &amp;lt;/picture&amp;gt;
 /// - Pre order: F, B, A, D, C, E, G, I, H
-///   <picture>
-///     <source srcset="Sorted_binary_tree_preorder-dark.svg"
-///      media="(prefers-color-scheme: dark)">
-///     <img src="Sorted_binary_tree_preorder.svg"
-///      alt="Sorted binary tree, pre-order traversal">
-///   </picture>
+///   &amp;lt;picture&amp;gt;
+///     &amp;lt;source srcset=&quot;Sorted_binary_tree_preorder-dark.svg&quot;
+///      media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///     &amp;lt;img src=&quot;Sorted_binary_tree_preorder.svg&quot;
+///      alt=&quot;Sorted binary tree, pre-order traversal&quot;&amp;gt;
+///   &amp;lt;/picture&amp;gt;
 /// - Post order: A, C, E, D, B, H, I, G, F
-///   <picture>
-///     <source srcset="Sorted_binary_tree_postorder-dark.svg"
-///      media="(prefers-color-scheme: dark)">
-///     <img src="Sorted_binary_tree_postorder.svg"
-///      alt="Sorted binary tree, post-order traversal">
-///   </picture>
+///   &amp;lt;picture&amp;gt;
+///     &amp;lt;source srcset=&quot;Sorted_binary_tree_postorder-dark.svg&quot;
+///      media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///     &amp;lt;img src=&quot;Sorted_binary_tree_postorder.svg&quot;
+///      alt=&quot;Sorted binary tree, post-order traversal&quot;&amp;gt;
+///   &amp;lt;/picture&amp;gt;
 /// - Level order: F, B, G, A, D, I, C, E, H
-///   <picture>
-///     <source srcset="Sorted_binary_tree_breadth-first_traversal-dark.svg"
-///      media="(prefers-color-scheme: dark)">
-///     <img src="Sorted_binary_tree_breadth-first_traversal.svg"
-///      alt="Sorted binary tree, breadth-first level order traversal">
-///   </picture>
+///   &amp;lt;picture&amp;gt;
+///     &amp;lt;source srcset=&quot;Sorted_binary_tree_breadth-first_traversal-dark.svg&quot;
+///      media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///     &amp;lt;img src=&quot;Sorted_binary_tree_breadth-first_traversal.svg&quot;
+///      alt=&quot;Sorted binary tree, breadth-first level order traversal&quot;&amp;gt;
+///   &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 
@@ -45,7 +45,7 @@ public enum GTraverseType
 {
 /// <summary>
 /// <para>
-/// vists a node's left child first, then the node itself,
+/// vists a node&apos;s left child first, then the node itself,
 ///              then its right child. This is the one to use if you
 ///              want the output sorted according to the compare
 ///              function.
@@ -62,7 +62,7 @@ public enum GTraverseType
 	G_PRE_ORDER = 1,
 /// <summary>
 /// <para>
-/// visits the node's children, then the node itself.
+/// visits the node&apos;s children, then the node itself.
 /// </para>
 /// </summary>
 

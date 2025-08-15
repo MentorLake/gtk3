@@ -51,12 +51,12 @@ public static class GProxyResolverHandleExtensions
 /// <para>
 /// Looks into the system proxy configuration to determine what proxy,
 /// if any, to use to connect to @uri. The returned proxy URIs are of
-/// the form `<protocol>://[user[:password]@]host[:port]` or
-/// `direct://`, where `<protocol>` could be http, rtsp, socks
+/// the form `&amp;lt;protocol&amp;gt;://[user[:password]@]host[:port]` or
+/// `direct://`, where `&amp;lt;protocol&amp;gt;` could be http, rtsp, socks
 /// or other proxying protocol.
 /// </para>
 /// <para>
-/// If you don't know what network protocol is being used on the
+/// If you don&apos;t know what network protocol is being used on the
 /// socket, you should use `none` as the URI protocol.
 /// In this case, the resolver might still return a generic proxy type
 /// (such as SOCKS), but would not return protocol-specific proxy types

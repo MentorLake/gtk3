@@ -8,7 +8,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// `GIcon` does not provide the actual pixmap for the icon as this is out
-/// of GIO's scope, however implementations of `GIcon` may contain the name
+/// of GIO&apos;s scope, however implementations of `GIcon` may contain the name
 /// of an icon (see [class@Gio.ThemedIcon]), or the path to an icon
 /// (see [iface@Gio.LoadableIcon]).
 /// </para>
@@ -27,7 +27,7 @@ namespace MentorLake.Gio;
 /// be prepared to handle at least the three following cases:
 /// [iface@Gio.LoadableIcon], [class@Gio.ThemedIcon] and [class@Gio.EmblemedIcon].
 /// It may also make sense to have fast-paths for other cases (like handling
-/// <see href="https://docs.gtk.org/gdk-pixbuf/class.Pixbuf.html">GdkPixbuf</see> directly,
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gdk-pixbuf/class.Pixbuf.html&quot;&amp;gt;GdkPixbuf&amp;lt;/see&amp;gt; directly,
 /// for example) but all compliant `GIcon` implementations outside of GIO must
 /// implement [iface@Gio.LoadableIcon].
 /// </para>
@@ -147,7 +147,7 @@ public static class GIconHandleExtensions
 /// </param>
 /// <return>
 /// An allocated NUL-terminated UTF8 string or
-/// %NULL if @icon can't be serialized. Use g_free() to free.
+/// %NULL if @icon can&apos;t be serialized. Use g_free() to free.
 /// </return>
 
 	public static string ToString(this MentorLake.Gio.GIconHandle icon)

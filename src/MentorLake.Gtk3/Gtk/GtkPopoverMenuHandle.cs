@@ -13,71 +13,70 @@ namespace MentorLake.Gtk;
 /// To add a child as a submenu, set the #GtkPopoverMenu:submenu
 /// child property to the name of the submenu. To let the user open
 /// this submenu, add a #GtkModelButton whose #GtkModelButton:menu-name
-/// property is set to the name you've given to the submenu.
+/// property is set to the name you&apos;ve given to the submenu.
 /// </para>
 /// <para>
 /// By convention, the first child of a submenu should be a #GtkModelButton
 /// to switch back to the parent menu. Such a button should use the
 /// #GtkModelButton:inverted and #GtkModelButton:centered properties
 /// to achieve a title-like appearance and place the submenu indicator
-/// at the opposite side. To switch back to the main menu, use "main"
+/// at the opposite side. To switch back to the main menu, use &quot;main&quot;
 /// as the menu name.
 /// </para>
 /// <para>
 /// # Example
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkPopoverMenu">
-///   <child>
-///     <object class="GtkBox">
-///       <property name="visible">True</property>
-///       <property name="margin">10</property>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">win.frob</property>
-///           <property name="text" translatable="yes">Frob</property>
-///         </object>
-///       </child>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="menu-name">more</property>
-///           <property name="text" translatable="yes">More</property>
-///         </object>
-///       </child>
-///     </object>
-///   </child>
-///   <child>
-///     <object class="GtkBox">
-///       <property name="visible">True</property>
-///       <property name="margin">10</property>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">win.foo</property>
-///           <property name="text" translatable="yes">Foo</property>
-///         </object>
-///       </child>
-///       <child>
-///         <object class="GtkModelButton">
-///           <property name="visible">True</property>
-///           <property name="action-name">win.bar</property>
-///           <property name="text" translatable="yes">Bar</property>
-///         </object>
-///       </child>
-///     </object>
-///     <packing>
-///       <property name="submenu">more</property>
-///     </packing>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkPopoverMenu&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkPopoverMenu&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkBox&quot;&amp;gt;
+///       &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///       &amp;lt;property name=&quot;margin&quot;&amp;gt;10&amp;lt;/property&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;win.frob&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Frob&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;menu-name&quot;&amp;gt;more&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;More&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkBox&quot;&amp;gt;
+///       &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///       &amp;lt;property name=&quot;margin&quot;&amp;gt;10&amp;lt;/property&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;win.foo&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Foo&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkModelButton&quot;&amp;gt;
+///           &amp;lt;property name=&quot;visible&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;action-name&quot;&amp;gt;win.bar&amp;lt;/property&amp;gt;
+///           &amp;lt;property name=&quot;text&quot; translatable=&quot;yes&quot;&amp;gt;Bar&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///     &amp;lt;packing&amp;gt;
+///       &amp;lt;property name=&quot;submenu&quot;&amp;gt;more&amp;lt;/property&amp;gt;
+///     &amp;lt;/packing&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// Just like normal popovers created using gtk_popover_new_from_model,
-/// #GtkPopoverMenu instances have a single css node called "popover"
+/// #GtkPopoverMenu instances have a single css node called &quot;popover&quot;
 /// and get the .menu style class.
 /// </para>
 /// </summary>
@@ -108,7 +107,7 @@ public static class GtkPopoverMenuHandleExtensions
 /// Opens a submenu of the @popover. The @name
 /// must be one of the names given to the submenus
 /// of @popover with #GtkPopoverMenu:submenu, or
-/// "main" to switch back to the main menu.
+/// &quot;main&quot; to switch back to the main menu.
 /// </para>
 /// <para>
 /// #GtkModelButton will open submenus automatically

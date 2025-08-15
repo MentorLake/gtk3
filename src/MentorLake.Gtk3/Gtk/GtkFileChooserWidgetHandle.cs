@@ -46,7 +46,7 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show the user's Desktop
+/// This is used to make the file chooser show the user&apos;s Desktop
 /// folder in the file list.
 /// </para>
 /// <para>
@@ -91,8 +91,8 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// This is used to make the file chooser go to a child of the current folder
 /// in the file hierarchy. The subfolder that will be used is displayed in the
 /// path bar widget of the file chooser. For example, if the path bar is showing
-/// "/foo/bar/baz", with bar currently displayed, then this will cause the file
-/// chooser to switch to the "baz" subfolder.
+/// &quot;/foo/bar/baz&quot;, with bar currently displayed, then this will cause the file
+/// chooser to switch to the &quot;baz&quot; subfolder.
 /// </para>
 /// <para>
 /// The default binding for this signal is `Alt + Down`.
@@ -133,7 +133,7 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show the user's home
+/// This is used to make the file chooser show the user&apos;s home
 /// folder in the file list.
 /// </para>
 /// <para>
@@ -175,14 +175,14 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show a "Location" prompt which
+/// This is used to make the file chooser show a &quot;Location&quot; prompt which
 /// the user can use to manually type the name of the file he wishes to select.
 /// </para>
 /// <para>
 /// The default bindings for this signal are `Control + L` with a @path string
-/// of "" (the empty string).  It is also bound to `/` with a @path string of
-/// "`/`" (a slash):  this lets you type `/` and immediately type a path name.
-/// On Unix systems, this is bound to `~` (tilde) with a @path string of "~"
+/// of &quot;&quot; (the empty string).  It is also bound to `/` with a @path string of
+/// &quot;`/`&quot; (a slash):  this lets you type `/` and immediately type a path name.
+/// On Unix systems, this is bound to `~` (tilde) with a @path string of &quot;~&quot;
 /// itself for access to home directories.
 /// </para>
 /// </summary>
@@ -221,7 +221,7 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show a "Location" prompt when the user
+/// This is used to make the file chooser show a &quot;Location&quot; prompt when the user
 /// pastes into a #GtkFileChooserWidget.
 /// </para>
 /// <para>
@@ -263,7 +263,7 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to toggle the visibility of a "Location" prompt which the user
+/// This is used to toggle the visibility of a &quot;Location&quot; prompt which the user
 /// can use to manually type the name of the file he wishes to select.
 /// </para>
 /// <para>
@@ -584,17 +584,15 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -604,26 +602,20 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 	public static IObservable<GtkFileChooserWidgetHandleSignalStructs.ConfirmOverwriteSignal> Signal_ConfirmOverwrite(this GtkFileChooserWidgetHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
@@ -704,7 +696,7 @@ public static class GtkFileChooserWidgetHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>
@@ -1028,7 +1020,7 @@ public static class GtkFileChooserWidgetHandleSignalDelegates
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show the user's Desktop
+/// This is used to make the file chooser show the user&apos;s Desktop
 /// folder in the file list.
 /// </para>
 /// <para>
@@ -1054,8 +1046,8 @@ public delegate void desktop_folder([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// This is used to make the file chooser go to a child of the current folder
 /// in the file hierarchy. The subfolder that will be used is displayed in the
 /// path bar widget of the file chooser. For example, if the path bar is showing
-/// "/foo/bar/baz", with bar currently displayed, then this will cause the file
-/// chooser to switch to the "baz" subfolder.
+/// &quot;/foo/bar/baz&quot;, with bar currently displayed, then this will cause the file
+/// chooser to switch to the &quot;baz&quot; subfolder.
 /// </para>
 /// <para>
 /// The default binding for this signal is `Alt + Down`.
@@ -1077,7 +1069,7 @@ public delegate void down_folder([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show the user's home
+/// This is used to make the file chooser show the user&apos;s home
 /// folder in the file list.
 /// </para>
 /// <para>
@@ -1100,14 +1092,14 @@ public delegate void home_folder([MarshalAs(UnmanagedType.CustomMarshaler, Marsh
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show a "Location" prompt which
+/// This is used to make the file chooser show a &quot;Location&quot; prompt which
 /// the user can use to manually type the name of the file he wishes to select.
 /// </para>
 /// <para>
 /// The default bindings for this signal are `Control + L` with a @path string
-/// of "" (the empty string).  It is also bound to `/` with a @path string of
-/// "`/`" (a slash):  this lets you type `/` and immediately type a path name.
-/// On Unix systems, this is bound to `~` (tilde) with a @path string of "~"
+/// of &quot;&quot; (the empty string).  It is also bound to `/` with a @path string of
+/// &quot;`/`&quot; (a slash):  this lets you type `/` and immediately type a path name.
+/// On Unix systems, this is bound to `~` (tilde) with a @path string of &quot;~&quot;
 /// itself for access to home directories.
 /// </para>
 /// </summary>
@@ -1130,7 +1122,7 @@ public delegate void location_popup([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to make the file chooser show a "Location" prompt when the user
+/// This is used to make the file chooser show a &quot;Location&quot; prompt when the user
 /// pastes into a #GtkFileChooserWidget.
 /// </para>
 /// <para>
@@ -1153,7 +1145,7 @@ public delegate void location_popup_on_paste([MarshalAs(UnmanagedType.CustomMars
 /// which gets emitted when the user asks for it.
 /// </para>
 /// <para>
-/// This is used to toggle the visibility of a "Location" prompt which the user
+/// This is used to toggle the visibility of a &quot;Location&quot; prompt which the user
 /// can use to manually type the name of the file he wishes to select.
 /// </para>
 /// <para>
@@ -1344,17 +1336,15 @@ public delegate void up_folder([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -1364,26 +1354,20 @@ public delegate void up_folder([MarshalAs(UnmanagedType.CustomMarshaler, Marshal
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="self">
@@ -1430,7 +1414,7 @@ public delegate void current_folder_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>

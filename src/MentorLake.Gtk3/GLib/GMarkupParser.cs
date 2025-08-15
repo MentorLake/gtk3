@@ -43,7 +43,7 @@ public struct GMarkupParser
 	/// <summary>
 /// <para>
 /// Callback to invoke when the opening tag of an element
-///     is seen. The callback's @attribute_names and @attribute_values parameters
+///     is seen. The callback&apos;s @attribute_names and @attribute_values parameters
 ///     are %NULL-terminated.
 /// </para>
 /// </summary>
@@ -53,7 +53,7 @@ public IntPtr start_element;
 /// <para>
 /// Callback to invoke when the closing tag of an element
 ///     is seen. Note that this is also called for empty tags like
-///     `<empty/>`.
+///     `&amp;lt;empty/&amp;gt;`.
 /// </para>
 /// </summary>
 
@@ -72,7 +72,7 @@ public IntPtr text;
 	/// <summary>
 /// <para>
 /// Callback to invoke for comments, processing instructions
-///     and doctype declarations; if you're re-writing the parsed document,
+///     and doctype declarations; if you&apos;re re-writing the parsed document,
 ///     write the passthrough text back out in the same position. If the
 ///     %G_MARKUP_TREAT_CDATA_AS_TEXT flag is not set, this function is also
 ///     called for CDATA marked sections.

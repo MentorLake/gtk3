@@ -68,8 +68,8 @@ public struct GUnixPipe
 /// As a result, it is safe to call this function or use `g_auto(GUnixPipe)`
 /// (on compilers that support it) in a signal handler or a
 /// #GSpawnChildSetupFunc, as long as those conditions are ensured to be true.
-/// See <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>) for more details.
+/// See &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;) for more details.
 /// </para>
 /// <para>
 /// This function preserves the value of `errno`.
@@ -100,8 +100,8 @@ public struct GUnixPipe
 /// member of @fds is either negative or a valid open file descriptor.
 /// This makes it safe to call from a signal handler or a #GSpawnChildSetupFunc
 /// under those conditions.
-/// See <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>) for more details.
+/// See &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;) for more details.
 /// </para>
 /// <para>
 /// To close both file descriptors and ignore any errors, use
@@ -131,8 +131,8 @@ public struct GUnixPipe
 /// Return one of the ends of the pipe. It remains owned by @self.
 /// </para>
 /// <para>
-/// This function is async-signal safe (see <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>)), making it safe to call from a
+/// This function is async-signal safe (see &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;)), making it safe to call from a
 /// signal handler or a #GSpawnChildSetupFunc.
 /// </para>
 /// <para>
@@ -188,8 +188,8 @@ public struct GUnixPipe
 /// similar to g_steal_fd().
 /// </para>
 /// <para>
-/// This function is async-signal safe (see <see href="man:signal(7">signal(7)</see>) and
-/// <see href="man:signal-safety(7">signal-safety(7)</see>)), making it safe to call from a
+/// This function is async-signal safe (see &amp;lt;see href=&quot;man:signal(7&quot;&amp;gt;signal(7)&amp;lt;/see&amp;gt;) and
+/// &amp;lt;see href=&quot;man:signal-safety(7&quot;&amp;gt;signal-safety(7)&amp;lt;/see&amp;gt;)), making it safe to call from a
 /// signal handler or a #GSpawnChildSetupFunc.
 /// </para>
 /// <para>

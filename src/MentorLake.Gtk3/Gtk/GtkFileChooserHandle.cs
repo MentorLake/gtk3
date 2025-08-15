@@ -75,23 +75,20 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// ## Example: Using a Preview Widget ## {#gtkfilechooser-preview}
-/// |[<!-- language="C" -->
+/// <code>
+/// {
 /// {
 ///   GtkImage *preview;
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
+/// 
 ///   preview = gtk_image_new ();
-/// </para>
-/// <para>
+/// 
 ///   gtk_file_chooser_set_preview_widget (my_file_chooser, preview);
-///   g_signal_connect (my_file_chooser, "update-preview",
+///   g_signal_connect (my_file_chooser, &quot;update-preview&quot;,
 /// 		    G_CALLBACK (update_preview_cb), preview);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 /// {
@@ -99,27 +96,21 @@ namespace MentorLake.Gtk;
 ///   char *filename;
 ///   GdkPixbuf *pixbuf;
 ///   gboolean have_preview;
-/// </para>
-/// <para>
+/// 
 ///   preview = GTK_WIDGET (data);
 ///   filename = gtk_file_chooser_get_preview_filename (file_chooser);
-/// </para>
-/// <para>
+/// 
 ///   pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
 ///   have_preview = (pixbuf != NULL);
 ///   g_free (filename);
-/// </para>
-/// <para>
+/// 
 ///   gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
 ///   if (pixbuf)
 ///     g_object_unref (pixbuf);
-/// </para>
-/// <para>
+/// 
 ///   gtk_file_chooser_set_preview_widget_active (file_chooser, have_preview);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// # Adding Extra Widgets
 /// </para>
 /// <para>
@@ -132,22 +123,18 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// An example for adding extra widgets:
-/// |[<!-- language="C" -->
-/// </para>
-/// <para>
+/// <code>
+/// 
+/// 
 ///   GtkWidget *toggle;
-/// </para>
-/// <para>
+/// 
 ///   ...
-/// </para>
-/// <para>
-///   toggle = gtk_check_button_new_with_label ("Open file read-only");
+/// 
+///   toggle = gtk_check_button_new_with_label (&quot;Open file read-only&quot;);
 ///   gtk_widget_show (toggle);
 ///   gtk_file_chooser_set_extra_widget (my_file_chooser, toggle);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// If you want to set more than one extra widget in the file
 /// chooser, you can a container such as a #GtkBox or a #GtkGrid
 /// and include your widgets in it.  Then, set the container as
@@ -169,7 +156,7 @@ public static class GtkFileChooserHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Adds a 'choice' to the file chooser. This is typically implemented
+/// Adds a &apos;choice&apos; to the file chooser. This is typically implemented
 /// as a combobox or, for boolean choices, as a checkbutton. You can select
 /// a value using gtk_file_chooser_set_choice() before the dialog is shown,
 /// and you can obtain the user-selected value in the ::response signal handler
@@ -307,7 +294,7 @@ public static class GtkFileChooserHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the currently selected option in the 'choice' with the given ID.
+/// Gets the currently selected option in the &apos;choice&apos; with the given ID.
 /// </para>
 /// </summary>
 
@@ -354,10 +341,10 @@ public static class GtkFileChooserHandleExtensions
 /// </para>
 /// <para>
 /// Note that this is the folder that the file chooser is currently displaying
-/// (e.g. "/home/username/Documents"), which is not the same
+/// (e.g. &quot;/home/username/Documents&quot;), which is not the same
 /// as the currently-selected folder if the chooser is in
 /// %GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER mode
-/// (e.g. "/home/username/Documents/selected-folder/".  To get the
+/// (e.g. &quot;/home/username/Documents/selected-folder/&quot;.  To get the
 /// currently-selected folder in that mode, use gtk_file_chooser_get_uri() as the
 /// usual way to get the selection.
 /// </para>
@@ -408,10 +395,10 @@ public static class GtkFileChooserHandleExtensions
 /// </para>
 /// <para>
 /// Note that this is the folder that the file chooser is currently displaying
-/// (e.g. "file:///home/username/Documents"), which is not the same
+/// (e.g. &quot;file:///home/username/Documents&quot;), which is not the same
 /// as the currently-selected folder if the chooser is in
 /// %GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER mode
-/// (e.g. "file:///home/username/Documents/selected-folder/".  To get the
+/// (e.g. &quot;file:///home/username/Documents/selected-folder/&quot;.  To get the
 /// currently-selected folder in that mode, use gtk_file_chooser_get_uri() as the
 /// usual way to get the selection.
 /// </para>
@@ -549,7 +536,7 @@ public static class GtkFileChooserHandleExtensions
 /// </param>
 /// <return>
 /// The currently selected filename,
-///  or %NULL if no file is selected, or the selected file can't
+///  or %NULL if no file is selected, or the selected file can&apos;t
 ///  be represented with a local filename. Free with g_free().
 /// </return>
 
@@ -932,7 +919,7 @@ public static class GtkFileChooserHandleExtensions
 
 /// <summary>
 /// <para>
-/// Removes a 'choice' that has been added with gtk_file_chooser_add_choice().
+/// Removes a &apos;choice&apos; that has been added with gtk_file_chooser_add_choice().
 /// </para>
 /// </summary>
 
@@ -1142,9 +1129,9 @@ public static class GtkFileChooserHandleExtensions
 
 /// <summary>
 /// <para>
-/// Selects an option in a 'choice' that has been added with
+/// Selects an option in a &apos;choice&apos; that has been added with
 /// gtk_file_chooser_add_choice(). For a boolean choice, the
-/// possible options are "true" and "false".
+/// possible options are &quot;true&quot; and &quot;false&quot;.
 /// </para>
 /// </summary>
 
@@ -1379,19 +1366,20 @@ public static class GtkFileChooserHandleExtensions
 /// a file name already — for example, if the user just created a new
 /// file and is saving it for the first time, do not call this function.
 /// Instead, use something similar to this:
-/// |[<!-- language="C" -->
+/// <code>
+/// if (document_is_new)
 /// if (document_is_new)
 ///   {
 ///     // the user just created a new document
 ///     gtk_file_chooser_set_current_folder_file (chooser, default_file_for_saving);
-///     gtk_file_chooser_set_current_name (chooser, "Untitled document");
+///     gtk_file_chooser_set_current_name (chooser, &quot;Untitled document&quot;);
 ///   }
 /// else
 ///   {
 ///     // the user edited an existing document
 ///     gtk_file_chooser_set_file (chooser, existing_file);
 ///   }
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1433,20 +1421,19 @@ public static class GtkFileChooserHandleExtensions
 /// a modified version.  If you don’t have a file name already — for
 /// example, if the user just created a new file and is saving it for the first
 /// time, do not call this function.  Instead, use something similar to this:
-/// |[<!-- language="C" -->
+/// <code>
+/// if (document_is_new)
 /// if (document_is_new)
 ///   {
 ///     // the user just created a new document
-///     gtk_file_chooser_set_current_name (chooser, "Untitled document");
+///     gtk_file_chooser_set_current_name (chooser, &quot;Untitled document&quot;);
 ///   }
 /// else
 ///   {
 ///     // the user edited an existing document
 ///     gtk_file_chooser_set_filename (chooser, existing_filename);
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// In the first case, the file chooser will present the user with useful suggestions
 /// as to where to save his new file.  In the second case, the file’s existing location
 /// is already known, so the file chooser will use it.
@@ -1645,20 +1632,19 @@ public static class GtkFileChooserHandleExtensions
 /// modified version.  If you don’t have a file name already — for example,
 /// if the user just created a new file and is saving it for the first time, do
 /// not call this function.  Instead, use something similar to this:
-/// |[<!-- language="C" -->
+/// <code>
+/// if (document_is_new)
 /// if (document_is_new)
 ///   {
 ///     // the user just created a new document
-///     gtk_file_chooser_set_current_name (chooser, "Untitled document");
+///     gtk_file_chooser_set_current_name (chooser, &quot;Untitled document&quot;);
 ///   }
 /// else
 ///   {
 ///     // the user edited an existing document
 ///     gtk_file_chooser_set_uri (chooser, existing_uri);
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// </para>
 /// <para>
 /// In the first case, the file chooser will present the user with useful suggestions

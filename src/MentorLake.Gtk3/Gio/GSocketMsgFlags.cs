@@ -37,7 +37,7 @@ public enum GSocketMsgFlags : uint
 	G_SOCKET_MSG_PEEK = 2,
 /// <summary>
 /// <para>
-/// Don't use a gateway to send out the packet,
+/// Don&apos;t use a gateway to send out the packet,
 ///     only send to hosts on directly connected networks.
 /// </para>
 /// </summary>

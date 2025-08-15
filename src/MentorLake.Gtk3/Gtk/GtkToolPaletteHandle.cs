@@ -14,22 +14,19 @@ namespace MentorLake.Gtk;
 /// to a #GtkToolPalette. To add a #GtkToolItemGroup to a #GtkToolPalette,
 /// use gtk_container_add().
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GtkWidget *palette, *group;
 /// GtkWidget *palette, *group;
 /// GtkToolItem *item;
-/// </para>
-/// <para>
+/// 
 /// palette = gtk_tool_palette_new ();
-/// group = gtk_tool_item_group_new (_("Test Category"));
+/// group = gtk_tool_item_group_new (_(&quot;Test Category&quot;));
 /// gtk_container_add (GTK_CONTAINER (palette), group);
-/// </para>
-/// <para>
-/// item = gtk_tool_button_new (NULL, _("_Open"));
-/// gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (item), "document-open");
+/// 
+/// item = gtk_tool_button_new (NULL, _(&quot;_Open&quot;));
+/// gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (item), &quot;document-open&quot;);
 /// gtk_tool_item_group_insert (GTK_TOOL_ITEM_GROUP (group), item, -1);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The easiest way to use drag and drop with #GtkToolPalette is to call
 /// gtk_tool_palette_add_drag_dest() with the desired drag source @palette
@@ -37,8 +34,8 @@ namespace MentorLake.Gtk;
 /// can be used to get the dragged item in the #GtkWidget::drag-data-received
 /// signal handler of the drag target.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// passive_canvas_drag_data_received (GtkWidget        *widget,
 ///                                    GdkDragContext   *context,
@@ -51,35 +48,29 @@ namespace MentorLake.Gtk;
 /// {
 ///   GtkWidget *palette;
 ///   GtkWidget *item;
-/// </para>
-/// <para>
+/// 
 ///   // Get the dragged item
 ///   palette = gtk_widget_get_ancestor (gtk_drag_get_source_widget (context),
 ///                                      GTK_TYPE_TOOL_PALETTE);
 ///   if (palette != NULL)
 ///     item = gtk_tool_palette_get_drag_item (GTK_TOOL_PALETTE (palette),
 ///                                            selection);
-/// </para>
-/// <para>
+/// 
 ///   // Do something with item
 /// }
-/// </para>
-/// <para>
+/// 
 /// GtkWidget *target, palette;
-/// </para>
-/// <para>
+/// 
 /// palette = gtk_tool_palette_new ();
 /// target = gtk_drawing_area_new ();
-/// </para>
-/// <para>
-/// g_signal_connect (G_OBJECT (target), "drag-data-received",
+/// 
+/// g_signal_connect (G_OBJECT (target), &quot;drag-data-received&quot;,
 ///                   G_CALLBACK (passive_canvas_drag_data_received), NULL);
 /// gtk_tool_palette_add_drag_dest (GTK_TOOL_PALETTE (palette), target,
 ///                                 GTK_DEST_DEFAULT_ALL,
 ///                                 GTK_TOOL_PALETTE_DRAG_ITEMS,
 ///                                 GDK_ACTION_COPY);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>

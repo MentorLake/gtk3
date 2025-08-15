@@ -6,10 +6,10 @@ namespace MentorLake.Atk;
 /// </para>
 /// <para>
 /// An interface used for objects which implement linking between
-/// multiple resource or content locations, or multiple 'markers'
+/// multiple resource or content locations, or multiple &apos;markers&apos;
 /// within a single document.  A Hypertext instance is associated with
 /// one or more Hyperlinks, which are associated with particular
-/// offsets within the Hypertext's included content.  While this
+/// offsets within the Hypertext&apos;s included content.  While this
 /// interface is derived from Text, there is no requirement that
 /// Hypertext instances have textual content; they may implement Image
 /// as well, and Hyperlinks need not have non-zero text offsets.

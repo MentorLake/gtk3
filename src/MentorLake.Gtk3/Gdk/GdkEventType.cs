@@ -376,7 +376,7 @@ public enum GdkEventType
 	GDK_PAD_BUTTON_RELEASE = 44,
 /// <summary>
 /// <para>
-/// A tablet pad axis event from a "ring". This event type was
+/// A tablet pad axis event from a &quot;ring&quot;. This event type was
 ///   added in 3.22.
 /// </para>
 /// </summary>
@@ -384,7 +384,7 @@ public enum GdkEventType
 	GDK_PAD_RING = 45,
 /// <summary>
 /// <para>
-/// A tablet pad axis event from a "strip". This event type was
+/// A tablet pad axis event from a &quot;strip&quot;. This event type was
 ///   added in 3.22.
 /// </para>
 /// </summary>

@@ -34,7 +34,7 @@ public static class GZlibDecompressorHandleExtensions
 /// <summary>
 /// <para>
 /// Retrieves the #GFileInfo constructed from the GZIP header data
-/// of compressed data processed by @compressor, or %NULL if @decompressor's
+/// of compressed data processed by @compressor, or %NULL if @decompressor&apos;s
 /// #GZlibDecompressor:format property is not %G_ZLIB_COMPRESSOR_FORMAT_GZIP,
 /// or the header data was not fully processed yet, or it not present in the
 /// data stream at all.

@@ -52,7 +52,7 @@ public static class GDBusMethodInvocationHandleExtensions
 /// <para>
 /// If this method call is a property Get, Set or GetAll call that has
 /// been redirected to the method call handler then
-/// "org.freedesktop.DBus.Properties" will be returned.  See
+/// &quot;org.freedesktop.DBus.Properties&quot; will be returned.  See
 /// #GDBusInterfaceVTable for more information.
 /// </para>
 /// </summary>
@@ -437,26 +437,22 @@ public static class GDBusMethodInvocationHandleExtensions
 /// single out-parameter, it must be contained in a tuple. If the method has no
 /// out-parameters, @parameters may be %NULL or an empty tuple.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GDBusMethodInvocation *invocation = some_invocation;
 /// GDBusMethodInvocation *invocation = some_invocation;
 /// g_autofree gchar *result_string = NULL;
 /// g_autoptr (GError) error = NULL;
-/// </para>
-/// <para>
-/// result_string = calculate_result (&error);
-/// </para>
-/// <para>
+/// 
+/// result_string = calculate_result (&amp;error);
+/// 
 /// if (error != NULL)
 ///   g_dbus_method_invocation_return_gerror (invocation, error);
 /// else
 ///   g_dbus_method_invocation_return_value (invocation,
-///                                          g_variant_new ("(s)", result_string));
-/// </para>
-/// <para>
+///                                          g_variant_new (&quot;(s)&quot;, result_string));
+/// 
 /// // Do not free @invocation here; returning a value does that
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This method will take ownership of @invocation. See
 /// #GDBusInterfaceVTable for more information about the ownership of

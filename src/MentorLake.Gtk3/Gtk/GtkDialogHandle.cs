@@ -58,45 +58,39 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// An example for simple GtkDialog usage:
-/// |[<!-- language="C" -->
+/// <code>
+/// // Function to open a dialog box with a message
 /// // Function to open a dialog box with a message
 /// void
 /// quick_message (GtkWindow *parent, gchar *message)
 /// {
 ///  GtkWidget *dialog, *label, *content_area;
 ///  GtkDialogFlags flags;
-/// </para>
-/// <para>
+/// 
 ///  // Create the widgets
 ///  flags = GTK_DIALOG_DESTROY_WITH_PARENT;
-///  dialog = gtk_dialog_new_with_buttons ("Message",
+///  dialog = gtk_dialog_new_with_buttons (&quot;Message&quot;,
 ///                                        parent,
 ///                                        flags,
-///                                        _("_OK"),
+///                                        _(&quot;_OK&quot;),
 ///                                        GTK_RESPONSE_NONE,
 ///                                        NULL);
 ///  content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
 ///  label = gtk_label_new (message);
-/// </para>
-/// <para>
+/// 
 ///  // Ensure that the dialog box is destroyed when the user responds
-/// </para>
-/// <para>
+/// 
 ///  g_signal_connect_swapped (dialog,
-///                            "response",
+///                            &quot;response&quot;,
 ///                            G_CALLBACK (gtk_widget_destroy),
 ///                            dialog);
-/// </para>
-/// <para>
+/// 
 ///  // Add the label, and show everything we’ve added
-/// </para>
-/// <para>
+/// 
 ///  gtk_container_add (GTK_CONTAINER (content_area), label);
 ///  gtk_widget_show_all (dialog);
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// # GtkDialog as GtkBuildable
 /// </para>
 /// <para>
@@ -105,41 +99,40 @@ namespace MentorLake.Gtk;
 /// “action_area”.
 /// </para>
 /// <para>
-/// GtkDialog supports a custom `<action-widgets>` element, which can contain
-/// multiple `<action-widget>` elements. The “response” attribute specifies a
+/// GtkDialog supports a custom `&amp;lt;action-widgets&amp;gt;` element, which can contain
+/// multiple `&amp;lt;action-widget&amp;gt;` elements. The “response” attribute specifies a
 /// numeric response, and the content of the element is the id of widget
 /// (which should be a child of the dialogs @action_area). To mark a response
-/// as default, set the “default“ attribute of the `<action-widget>` element
+/// as default, set the “default“ attribute of the `&amp;lt;action-widget&amp;gt;` element
 /// to true.
 /// </para>
 /// <para>
 /// GtkDialog supports adding action widgets by specifying “action“ as
-/// the “type“ attribute of a `<child>` element. The widget will be added
+/// the “type“ attribute of a `&amp;lt;child&amp;gt;` element. The widget will be added
 /// either to the action area or the headerbar of the dialog, depending
 /// on the “use-header-bar“ property. The response id has to be associated
-/// with the action widget using the `<action-widgets>` element.
+/// with the action widget using the `&amp;lt;action-widgets&amp;gt;` element.
 /// </para>
 /// <para>
 /// An example of a #GtkDialog UI definition fragment:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkDialog" id="dialog1">
-///   <child type="action">
-///     <object class="GtkButton" id="button_cancel"/>
-///   </child>
-///   <child type="action">
-///     <object class="GtkButton" id="button_ok">
-///       <property name="can-default">True</property>
-///     </object>
-///   </child>
-///   <action-widgets>
-///     <action-widget response="cancel">button_cancel</action-widget>
-///     <action-widget response="ok" default="true">button_ok</action-widget>
-///   </action-widgets>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkDialog&quot; id=&quot;dialog1&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkDialog&quot; id=&quot;dialog1&quot;&amp;gt;
+///   &amp;lt;child type=&quot;action&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkButton&quot; id=&quot;button_cancel&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child type=&quot;action&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkButton&quot; id=&quot;button_ok&quot;&amp;gt;
+///       &amp;lt;property name=&quot;can-default&quot;&amp;gt;True&amp;lt;/property&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;action-widgets&amp;gt;
+///     &amp;lt;action-widget response=&quot;cancel&quot;&amp;gt;button_cancel&amp;lt;/action-widget&amp;gt;
+///     &amp;lt;action-widget response=&quot;ok&quot; default=&quot;true&quot;&amp;gt;button_ok&amp;lt;/action-widget&amp;gt;
+///   &amp;lt;/action-widgets&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkDialogHandle : GtkWindowHandle, AtkImplementorIfaceHandle, GtkBuildableHandle
@@ -185,19 +178,20 @@ public class GtkDialogHandle : GtkWindowHandle, AtkImplementorIfaceHandle, GtkBu
 /// </para>
 /// <para>
 /// Here’s a simple example:
-/// |[<!-- language="C" -->
+/// <code>
+///  GtkWidget *main_app_window; // Window the dialog should show up on
 ///  GtkWidget *main_app_window; // Window the dialog should show up on
 ///  GtkWidget *dialog;
 ///  GtkDialogFlags flags = GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT;
-///  dialog = gtk_dialog_new_with_buttons ("My dialog",
+///  dialog = gtk_dialog_new_with_buttons (&quot;My dialog&quot;,
 ///                                        main_app_window,
 ///                                        flags,
-///                                        _("_OK"),
+///                                        _(&quot;_OK&quot;),
 ///                                        GTK_RESPONSE_ACCEPT,
-///                                        _("_Cancel"),
+///                                        _(&quot;_Cancel&quot;),
 ///                                        GTK_RESPONSE_REJECT,
 ///                                        NULL);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -625,11 +619,11 @@ public static class GtkDialogHandleExtensions
 /// </para>
 /// <para>
 /// Typical usage of this function might be:
-/// |[<!-- language="C" -->
+/// <code>
+///   GtkWidget *dialog = gtk_dialog_new ();
 ///   GtkWidget *dialog = gtk_dialog_new ();
 ///   // Set up dialog...
-/// </para>
-/// <para>
+/// 
 ///   int result = gtk_dialog_run (GTK_DIALOG (dialog));
 ///   switch (result)
 ///     {
@@ -641,9 +635,7 @@ public static class GtkDialogHandleExtensions
 ///          break;
 ///     }
 ///   gtk_widget_destroy (dialog);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Note that even though the recursive main loop gives the effect of a
 /// modal dialog (it prevents the user from interacting with other
 /// windows in the same window group while the dialog is run), callbacks
@@ -684,33 +676,28 @@ public static class GtkDialogHandleExtensions
 /// Use this function after adding all the buttons to your dialog, as the
 /// following example shows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
-///                                        _("_Cancel"),
+/// cancel_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
+///                                        _(&quot;_Cancel&quot;),
 ///                                        GTK_RESPONSE_CANCEL);
-/// </para>
-/// <para>
+/// 
 /// ok_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
-///                                    _("_OK"),
+///                                    _(&quot;_OK&quot;),
 ///                                    GTK_RESPONSE_OK);
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_grab_default (ok_button);
-/// </para>
-/// <para>
+/// 
 /// help_button = gtk_dialog_add_button (GTK_DIALOG (dialog),
-///                                      _("_Help"),
+///                                      _(&quot;_Help&quot;),
 ///                                      GTK_RESPONSE_HELP);
-/// </para>
-/// <para>
+/// 
 /// gtk_dialog_set_alternative_button_order (GTK_DIALOG (dialog),
 ///                                          GTK_RESPONSE_OK,
 ///                                          GTK_RESPONSE_CANCEL,
 ///                                          GTK_RESPONSE_HELP,
 ///                                          -1);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="dialog">

@@ -24,7 +24,7 @@ public enum GTestSubprocessFlags : uint
 /// <summary>
 /// <para>
 /// If this flag is given, the child
-///   process will inherit the parent's stdin. Otherwise, the child's
+///   process will inherit the parent&apos;s stdin. Otherwise, the child&apos;s
 ///   stdin is redirected to `/dev/null`.
 /// </para>
 /// </summary>
@@ -33,7 +33,7 @@ public enum GTestSubprocessFlags : uint
 /// <summary>
 /// <para>
 /// If this flag is given, the child
-///   process will inherit the parent's stdout. Otherwise, the child's
+///   process will inherit the parent&apos;s stdout. Otherwise, the child&apos;s
 ///   stdout will not be visible, but it will be captured to allow
 ///   later tests with [func@GLib.test_trap_assert_stdout].
 /// </para>
@@ -43,7 +43,7 @@ public enum GTestSubprocessFlags : uint
 /// <summary>
 /// <para>
 /// If this flag is given, the child
-///   process will inherit the parent's stderr. Otherwise, the child's
+///   process will inherit the parent&apos;s stderr. Otherwise, the child&apos;s
 ///   stderr will not be visible, but it will be captured to allow
 ///   later tests with [func@GLib.test_trap_assert_stderr].
 /// </para>

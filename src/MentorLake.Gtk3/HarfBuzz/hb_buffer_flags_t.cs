@@ -63,7 +63,7 @@ public enum hb_buffer_flags_t : uint
 /// <para>
 /// flag indicating that a dotted circle should
 ///                      not be inserted in the rendering of incorrect
-///                      character sequences (such at <0905 093E>). Since: 2.4.0
+///                      character sequences (such at &amp;lt;0905 093E&amp;gt;). Since: 2.4.0
 /// </para>
 /// </summary>
 

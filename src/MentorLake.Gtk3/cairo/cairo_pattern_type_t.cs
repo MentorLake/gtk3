@@ -8,7 +8,7 @@ namespace MentorLake.cairo;
 /// The type of a pattern is determined by the function used to create
 /// it. The cairo_pattern_create_rgb() and cairo_pattern_create_rgba()
 /// functions create SOLID patterns. The remaining
-/// cairo_pattern_create<!-- --> functions map to pattern types in obvious
+/// cairo_pattern_create&amp;lt;!-- --&amp;gt; functions map to pattern types in obvious
 /// ways.
 /// </para>
 /// <para>

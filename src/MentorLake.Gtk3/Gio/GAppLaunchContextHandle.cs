@@ -14,7 +14,7 @@ public class GAppLaunchContextHandle : GObjectHandle
 /// <para>
 /// Creates a new application launch context. This is not normally used,
 /// instead you instantiate a subclass of this, such as
-/// <see href="https://docs.gtk.org/gdk4/class.AppLaunchContext.html">GdkAppLaunchContext</see>.
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gdk4/class.AppLaunchContext.html&quot;&amp;gt;GdkAppLaunchContext&amp;lt;/see&amp;gt;.
 /// </para>
 /// </summary>
 

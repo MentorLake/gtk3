@@ -11,7 +11,7 @@ namespace MentorLake.GObject;
 /// </param>
 /// <param name="return_value">
 /// a #GValue to store the return
-///  value. May be %NULL if the callback of @closure doesn't return a
+///  value. May be %NULL if the callback of @closure doesn&apos;t return a
 ///  value.
 /// </param>
 /// <param name="n_param_values">

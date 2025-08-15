@@ -2,7 +2,7 @@ namespace MentorLake.GLib;
 
 /// <summary>
 /// <para>
-/// The type of functions that are used to 'duplicate' an object.
+/// The type of functions that are used to &apos;duplicate&apos; an object.
 /// What this means depends on the context, it could just be
 /// incrementing the reference count, if @data is a ref-counted
 /// object.

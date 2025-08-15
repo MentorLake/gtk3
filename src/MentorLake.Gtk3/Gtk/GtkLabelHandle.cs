@@ -9,15 +9,14 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// label
 /// label
 /// ├── [selection]
 /// ├── [link]
 /// ┊
 /// ╰── [link]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkLabel has a single CSS node with the name label. A wide variety
 /// of style classes may be applied to labels, such as .title, .subtitle,
@@ -37,24 +36,23 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkLabel implementation of the GtkBuildable interface supports a
-/// custom `<attributes>` element, which supports any number of `<attribute>`
-/// elements. The `<attribute>` element has attributes named “name“, “value“,
+/// custom `&amp;lt;attributes&amp;gt;` element, which supports any number of `&amp;lt;attribute&amp;gt;`
+/// elements. The `&amp;lt;attribute&amp;gt;` element has attributes named “name“, “value“,
 /// “start“ and “end“ and allows you to specify #PangoAttribute values for
 /// this label.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment specifying Pango attributes:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkLabel">
-///   <attributes>
-///     <attribute name="weight" value="PANGO_WEIGHT_BOLD"/>
-///     <attribute name="background" value="red" start="5" end="10"/>
-///   </attributes>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkLabel&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkLabel&quot;&amp;gt;
+///   &amp;lt;attributes&amp;gt;
+///     &amp;lt;attribute name=&quot;weight&quot; value=&quot;PANGO_WEIGHT_BOLD&quot;/&amp;gt;
+///     &amp;lt;attribute name=&quot;background&quot; value=&quot;red&quot; start=&quot;5&quot; end=&quot;10&quot;/&amp;gt;
+///   &amp;lt;/attributes&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// The start and end attributes specify the range of characters to which the
 /// Pango attribute applies. If start and end are not specified, the attribute is
@@ -69,7 +67,7 @@ namespace MentorLake.Gtk;
 /// Labels may contain “mnemonics”. Mnemonics are
 /// underlined characters in the label, used for keyboard navigation.
 /// Mnemonics are created by providing a string with an underscore before
-/// the mnemonic character, such as `"_File"`, to the
+/// the mnemonic character, such as `&quot;_File&quot;`, to the
 /// functions gtk_label_new_with_mnemonic() or
 /// gtk_label_set_text_with_mnemonic().
 /// </para>
@@ -80,37 +78,34 @@ namespace MentorLake.Gtk;
 /// using gtk_label_set_mnemonic_widget(). Here’s a simple example where
 /// the label is inside a button:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   // Pressing Alt+H will activate this button
 ///   // Pressing Alt+H will activate this button
 ///   GtkWidget *button = gtk_button_new ();
-///   GtkWidget *label = gtk_label_new_with_mnemonic ("_Hello");
+///   GtkWidget *label = gtk_label_new_with_mnemonic (&quot;_Hello&quot;);
 ///   gtk_container_add (GTK_CONTAINER (button), label);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// There’s a convenience function to create buttons with a mnemonic label
 /// already inside:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   // Pressing Alt+H will activate this button
-///   GtkWidget *button = gtk_button_new_with_mnemonic ("_Hello");
-/// ]|
-/// </para>
+///   // Pressing Alt+H will activate this button
+///   GtkWidget *button = gtk_button_new_with_mnemonic (&quot;_Hello&quot;);
+/// </code>
 /// <para>
 /// To create a mnemonic for a widget alongside the label, such as a
 /// #GtkEntry, you have to point the label at the entry with
 /// gtk_label_set_mnemonic_widget():
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   // Pressing Alt+H will focus the entry
 ///   // Pressing Alt+H will focus the entry
 ///   GtkWidget *entry = gtk_entry_new ();
-///   GtkWidget *label = gtk_label_new_with_mnemonic ("_Hello");
+///   GtkWidget *label = gtk_label_new_with_mnemonic (&quot;_Hello&quot;);
 ///   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # Markup (styled text)
 /// </para>
@@ -121,18 +116,17 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// Here’s how to create a label with a small font:
-/// |[<!-- language="C" -->
+/// <code>
 ///   GtkWidget *label = gtk_label_new (NULL);
-///   gtk_label_set_markup (GTK_LABEL (label), "<small>Small text</small>");
-/// ]|
-/// </para>
-/// <para>
+///   GtkWidget *label = gtk_label_new (NULL);
+///   gtk_label_set_markup (GTK_LABEL (label), &quot;&amp;lt;small&amp;gt;Small text&amp;lt;/small&amp;gt;&quot;);
+/// </code>
 /// (See [complete documentation][PangoMarkupFormat] of available
 /// tags in the Pango manual.)
 /// </para>
 /// <para>
 /// The markup passed to gtk_label_set_markup() must be valid; for example,
-/// literal <, > and & characters must be escaped as &lt;, &gt;, and &amp;.
+/// literal &amp;lt;, &amp;gt; and &amp; characters must be escaped as &amp;lt;, &amp;gt;, and &amp;amp;.
 /// If you pass text obtained from the user, file, or a network to
 /// gtk_label_set_markup(), you’ll want to escape it with
 /// g_markup_escape_text() or g_markup_printf_escaped().
@@ -196,23 +190,22 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Since 2.18, GTK+ supports markup for clickable hyperlinks in addition
 /// to regular Pango markup. The markup for links is borrowed from HTML,
-/// using the `<a>` with “href“ and “title“ attributes. GTK+ renders links
+/// using the `&amp;lt;a&amp;gt;` with “href“ and “title“ attributes. GTK+ renders links
 /// similar to the way they appear in web browsers, with colored, underlined
 /// text. The “title“ attribute is displayed as a tooltip on the link.
 /// </para>
 /// <para>
 /// An example looks like this:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// const gchar *text =
-/// "Go to the"
-/// "<a href=\"http://www.gtk.org title=\"&lt;i&gt;Our&lt;/i&gt; website\">"
-/// "GTK+ website</a> for more...";
+/// const gchar *text =
+/// &quot;Go to the&quot;
+/// &quot;&amp;lt;a href=\&quot;http://www.gtk.org title=\&quot;&amp;lt;i&amp;gt;Our&amp;lt;/i&amp;gt; website\&quot;&amp;gt;&quot;
+/// &quot;GTK+ website&amp;lt;/a&amp;gt; for more...&quot;;
 /// GtkWidget *label = gtk_label_new (NULL);
 /// gtk_label_set_markup (GTK_LABEL (label), text);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// It is possible to implement custom handling for links and their tooltips with
 /// the #GtkLabel::activate-link signal and the gtk_label_get_current_uri() function.
@@ -247,7 +240,7 @@ public class GtkLabelHandle : GtkMiscHandle, AtkImplementorIfaceHandle, GtkBuild
 /// <para>
 /// If characters in @str are preceded by an underscore, they are
 /// underlined. If you need a literal underscore character in a label, use
-/// '__' (two underscores). The first underlined character represents a
+/// &apos;__&apos; (two underscores). The first underlined character represents a
 /// keyboard accelerator called a mnemonic. The mnemonic key can be used
 /// to activate another widget, chosen automatically, or explicitly using
 /// gtk_label_set_mnemonic_widget().
@@ -1308,7 +1301,7 @@ public static class GtkLabelHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the mode used to ellipsize (add an ellipsis: "...") to the text
+/// Sets the mode used to ellipsize (add an ellipsis: &quot;...&quot;) to the text
 /// if there is not enough space to render the entire string.
 /// </para>
 /// </summary>
@@ -1459,19 +1452,17 @@ public static class GtkLabelHandleExtensions
 /// If the @str is external data, you may need to escape it with
 /// g_markup_escape_text() or g_markup_printf_escaped():
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkWidget *label = gtk_label_new (NULL);
-/// const char *str = "some text";
-/// const char *format = "<span style=\"italic\">\%s</span>";
+/// GtkWidget *label = gtk_label_new (NULL);
+/// const char *str = &quot;some text&quot;;
+/// const char *format = &quot;&amp;lt;span style=\&quot;italic\&quot;&amp;gt;\%s&amp;lt;/span&amp;gt;&quot;;
 /// char *markup;
-/// </para>
-/// <para>
+/// 
 /// markup = g_markup_printf_escaped (format, str);
 /// gtk_label_set_markup (GTK_LABEL (label), markup);
 /// g_free (markup);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This function will set the #GtkLabel:use-markup property to %TRUE as
 /// a side effect.

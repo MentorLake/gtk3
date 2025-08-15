@@ -18,7 +18,7 @@ public enum GSpawnFlags : uint
 	G_SPAWN_DEFAULT = 0,
 /// <summary>
 /// <para>
-/// the parent's open file descriptors will
+/// the parent&apos;s open file descriptors will
 ///     be inherited by the child; otherwise all descriptors except stdin,
 ///     stdout and stderr will be closed before calling exec() in the child.
 /// </para>
@@ -37,30 +37,30 @@ public enum GSpawnFlags : uint
 /// <summary>
 /// <para>
 /// `argv[0]` need not be an absolute path, it will be
-///     looked for in the user's `PATH`.
+///     looked for in the user&apos;s `PATH`.
 /// </para>
 /// </summary>
 
 	G_SPAWN_SEARCH_PATH = 4,
 /// <summary>
 /// <para>
-/// the child's standard output will be discarded,
-///     instead of going to the same location as the parent's standard output.
+/// the child&apos;s standard output will be discarded,
+///     instead of going to the same location as the parent&apos;s standard output.
 /// </para>
 /// </summary>
 
 	G_SPAWN_STDOUT_TO_DEV_NULL = 8,
 /// <summary>
 /// <para>
-/// the child's standard error will be discarded.
+/// the child&apos;s standard error will be discarded.
 /// </para>
 /// </summary>
 
 	G_SPAWN_STDERR_TO_DEV_NULL = 16,
 /// <summary>
 /// <para>
-/// the child will inherit the parent's standard
-///     input (by default, the child's standard input is attached to `/dev/null`).
+/// the child will inherit the parent&apos;s standard
+///     input (by default, the child&apos;s standard input is attached to `/dev/null`).
 /// </para>
 /// </summary>
 
@@ -94,21 +94,21 @@ public enum GSpawnFlags : uint
 	G_SPAWN_CLOEXEC_PIPES = 256,
 /// <summary>
 /// <para>
-/// The child will inherit the parent's standard output.
+/// The child will inherit the parent&apos;s standard output.
 /// </para>
 /// </summary>
 
 	G_SPAWN_CHILD_INHERITS_STDOUT = 512,
 /// <summary>
 /// <para>
-/// The child will inherit the parent's standard error.
+/// The child will inherit the parent&apos;s standard error.
 /// </para>
 /// </summary>
 
 	G_SPAWN_CHILD_INHERITS_STDERR = 1024,
 /// <summary>
 /// <para>
-/// The child's standard input is attached to `/dev/null`.
+/// The child&apos;s standard input is attached to `/dev/null`.
 /// </para>
 /// </summary>
 

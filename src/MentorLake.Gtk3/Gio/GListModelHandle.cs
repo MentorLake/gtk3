@@ -70,10 +70,10 @@ namespace MentorLake.Gio;
 /// <para>
 /// ```c
 /// properties[PROP_ITEM_TYPE] =
-///   g_param_spec_gtype ("item-type", NULL, NULL, G_TYPE_OBJECT,
+///   g_param_spec_gtype (&quot;item-type&quot;, NULL, NULL, G_TYPE_OBJECT,
 ///                       G_PARAM_CONSTRUCT_ONLY | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 /// properties[PROP_N_ITEMS] =
-///   g_param_spec_uint ("n-items", NULL, NULL, 0, G_MAXUINT, 0,
+///   g_param_spec_uint (&quot;n-items&quot;, NULL, NULL, 0, G_MAXUINT, 0,
 ///                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 /// ```
 /// </para>

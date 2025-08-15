@@ -141,7 +141,7 @@ public static class GdkMonitorHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the name or PNP ID of the monitor's manufacturer, if available.
+/// Gets the name or PNP ID of the monitor&apos;s manufacturer, if available.
 /// </para>
 /// <para>
 /// Note that this value might also vary depending on actual

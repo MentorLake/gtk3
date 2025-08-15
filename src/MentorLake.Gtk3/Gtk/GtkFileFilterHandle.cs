@@ -25,29 +25,28 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkFileFilter implementation of the GtkBuildable interface
-/// supports adding rules using the `<mime-types>`, `<patterns>` and
-/// `<applications>` elements and listing the rules within. Specifying
-/// a `<mime-type>` or `<pattern>` has the same effect as as calling
+/// supports adding rules using the `&amp;lt;mime-types&amp;gt;`, `&amp;lt;patterns&amp;gt;` and
+/// `&amp;lt;applications&amp;gt;` elements and listing the rules within. Specifying
+/// a `&amp;lt;mime-type&amp;gt;` or `&amp;lt;pattern&amp;gt;` has the same effect as as calling
 /// gtk_file_filter_add_mime_type() or gtk_file_filter_add_pattern().
 /// </para>
 /// <para>
 /// An example of a UI definition fragment specifying GtkFileFilter
 /// rules:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkFileFilter">
-///   <mime-types>
-///     <mime-type>text/plain</mime-type>
-///     <mime-type>image/ *</mime-type>
-///   </mime-types>
-///   <patterns>
-///     <pattern>*.txt</pattern>
-///     <pattern>*.png</pattern>
-///   </patterns>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkFileFilter&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkFileFilter&quot;&amp;gt;
+///   &amp;lt;mime-types&amp;gt;
+///     &amp;lt;mime-type&amp;gt;text/plain&amp;lt;/mime-type&amp;gt;
+///     &amp;lt;mime-type&amp;gt;image/ *&amp;lt;/mime-type&amp;gt;
+///   &amp;lt;/mime-types&amp;gt;
+///   &amp;lt;patterns&amp;gt;
+///     &amp;lt;pattern&amp;gt;*.txt&amp;lt;/pattern&amp;gt;
+///     &amp;lt;pattern&amp;gt;*.png&amp;lt;/pattern&amp;gt;
+///   &amp;lt;/patterns&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkFileFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
@@ -60,10 +59,11 @@ public class GtkFileFilterHandle : GInitiallyUnownedHandle, GtkBuildableHandle
 /// gtk_file_filter_add_mime_type(), gtk_file_filter_add_pattern(),
 /// or gtk_file_filter_add_custom(). To create a filter
 /// that accepts any file, use:
-/// |[<!-- language="C" -->
+/// <code>
 /// GtkFileFilter *filter = gtk_file_filter_new ();
-/// gtk_file_filter_add_pattern (filter, "*");
-/// ]|
+/// GtkFileFilter *filter = gtk_file_filter_new ();
+/// gtk_file_filter_add_pattern (filter, &quot;*&quot;);
+/// </code>
 /// </para>
 /// </summary>
 

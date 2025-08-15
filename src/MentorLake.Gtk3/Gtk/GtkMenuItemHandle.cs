@@ -18,46 +18,42 @@ namespace MentorLake.Gtk;
 /// <para>
 /// An example for setting markup and accelerator on a MenuItem:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// GtkWidget *menu_item = gtk_menu_item_new_with_label ("Example Menu Item");
-/// </para>
-/// <para>
+/// <code>
+/// GtkWidget *menu_item = gtk_menu_item_new_with_label (&quot;Example Menu Item&quot;);
+/// GtkWidget *menu_item = gtk_menu_item_new_with_label (&quot;Example Menu Item&quot;);
+/// 
 /// GtkWidget *child = gtk_bin_get_child (GTK_BIN (menu_item));
-/// gtk_label_set_markup (GTK_LABEL (child), "<i>new label</i> with <b>markup</b>");
+/// gtk_label_set_markup (GTK_LABEL (child), &quot;&amp;lt;i&amp;gt;new label&amp;lt;/i&amp;gt; with &amp;lt;b&amp;gt;markup&amp;lt;/b&amp;gt;&quot;);
 /// gtk_accel_label_set_accel (GTK_ACCEL_LABEL (child), GDK_KEY_1, 0);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # GtkMenuItem as GtkBuildable
 /// </para>
 /// <para>
 /// The GtkMenuItem implementation of the #GtkBuildable interface supports
 /// adding a submenu by specifying “submenu” as the “type” attribute of
-/// a `<child>` element.
+/// a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// An example of UI definition fragment with submenus:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkMenuItem">
-///   <child type="submenu">
-///     <object class="GtkMenu"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkMenuItem&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkMenuItem&quot;&amp;gt;
+///   &amp;lt;child type=&quot;submenu&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkMenu&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
 /// menuitem
-/// ├── <child>
+/// menuitem
+/// ├── &amp;lt;child&amp;gt;
 /// ╰── [arrow.right]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkMenuItem has a single CSS node with name menuitem. If the menuitem
 /// has a submenu, it gets another CSS node with name arrow, which has

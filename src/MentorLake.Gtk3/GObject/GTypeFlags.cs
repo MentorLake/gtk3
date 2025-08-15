@@ -27,7 +27,7 @@ public enum GTypeFlags : uint
 /// <summary>
 /// <para>
 /// Indicates an abstract value type, i.e. a type
-///  that introduces a value table, but can't be used for
+///  that introduces a value table, but can&apos;t be used for
 ///  g_value_init()
 /// </para>
 /// </summary>

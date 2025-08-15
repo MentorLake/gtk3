@@ -140,8 +140,8 @@ public static class GSequenceExtensions
 
 /// <summary>
 /// <para>
-/// Returns the positive length (>= 0) of @seq. Note that this method is
-/// O(h) where `h' is the height of the tree. It is thus more efficient
+/// Returns the positive length (&amp;gt;= 0) of @seq. Note that this method is
+/// O(h) where `h&apos; is the height of the tree. It is thus more efficient
 /// to use g_sequence_is_empty() when comparing the length to zero.
 /// </para>
 /// </summary>

@@ -11,13 +11,13 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// `GSeekable` on fixed-sized streams is approximately the same as POSIX
-/// <see href="man:lseek(2">lseek()</see>) on a block device (for example: attempting to seek
+/// &amp;lt;see href=&quot;man:lseek(2&quot;&amp;gt;lseek()&amp;lt;/see&amp;gt;) on a block device (for example: attempting to seek
 /// past the end of the device is an error).  Fixed streams typically cannot be
 /// truncated.
 /// </para>
 /// <para>
 /// `GSeekable` on resizable streams is approximately the same as POSIX
-/// <see href="man:lseek(2">lseek()</see>) on a normal file.  Seeking past the end and writing
+/// &amp;lt;see href=&quot;man:lseek(2&quot;&amp;gt;lseek()&amp;lt;/see&amp;gt;) on a normal file.  Seeking past the end and writing
 /// data will usually cause the stream to resize by introducing zero bytes.
 /// </para>
 /// </summary>
@@ -145,7 +145,7 @@ public static class GSeekableHandleExtensions
 /// <para>
 /// Sets the length of the stream to @offset. If the stream was previously
 /// larger than @offset, the extra data is discarded. If the stream was
-/// previously shorter than @offset, it is extended with NUL ('\0') bytes.
+/// previously shorter than @offset, it is extended with NUL (&apos;\0&apos;) bytes.
 /// </para>
 /// <para>
 /// If @cancellable is not %NULL, then the operation can be cancelled by

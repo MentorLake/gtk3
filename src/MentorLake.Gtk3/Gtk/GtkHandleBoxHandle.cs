@@ -2,8 +2,8 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// The #GtkHandleBox widget allows a portion of a window to be "torn
-/// off". It is a bin widget which displays its child and a handle that
+/// The #GtkHandleBox widget allows a portion of a window to be &quot;torn
+/// off&quot;. It is a bin widget which displays its child and a handle that
 /// the user can drag to tear off a separate window (the “float
 /// window”) containing the child widget. A thin
 /// “ghost” is drawn in the original location of the
@@ -22,14 +22,14 @@ namespace MentorLake.Gtk;
 /// as possible to the user, it is important to set the snap edge so that
 /// the snap edge does not move when the handlebox is deattached. For
 /// instance, if the handlebox is packed at the bottom of a VBox, then
-/// when the handlebox is detached, the bottom edge of the handlebox's
+/// when the handlebox is detached, the bottom edge of the handlebox&apos;s
 /// allocation will remain fixed as the height of the handlebox shrinks,
 /// so the snap edge should be set to %GTK_POS_BOTTOM.
 /// </para>
 /// <para>
-/// > #GtkHandleBox has been deprecated. It is very specialized, lacks features
-/// > to make it useful and most importantly does not fit well into modern
-/// > application design. Do not use it. There is no replacement.
+/// &amp;gt; #GtkHandleBox has been deprecated. It is very specialized, lacks features
+/// &amp;gt; to make it useful and most importantly does not fit well into modern
+/// &amp;gt; application design. Do not use it. There is no replacement.
 /// </para>
 /// </summary>
 

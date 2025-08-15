@@ -35,13 +35,13 @@ public static class PangoLanguageExtensions
 /// </para>
 /// <para>
 /// If Pango does not have a sample string for @language, the classic
-/// "The quick brown fox..." is returned.  This can be detected by
+/// &quot;The quick brown fox...&quot; is returned.  This can be detected by
 /// comparing the returned pointer value to that returned for (non-existent)
-/// language code "xx".  That is, compare to:
+/// language code &quot;xx&quot;.  That is, compare to:
 /// </para>
 /// <para>
 /// ```
-/// pango_language_get_sample_string (pango_language_from_string ("xx"))
+/// pango_language_get_sample_string (pango_language_from_string (&quot;xx&quot;))
 /// ```
 /// </para>
 /// </summary>
@@ -123,7 +123,7 @@ public static class PangoLanguageExtensions
 /// far as Pango knows, @script might be used to write @language.
 /// </para>
 /// <para>
-/// This routine is used in Pango's itemization process when
+/// This routine is used in Pango&apos;s itemization process when
 /// determining if a supplied language tag is relevant to
 /// a particular section of text. It probably is not useful
 /// for applications in most circumstances.
@@ -158,19 +158,19 @@ public static class PangoLanguageExtensions
 /// </para>
 /// <para>
 /// A language tag is considered to match a range in the list if the
-/// range is '*', the range is exactly the tag, or the range is a prefix
-/// of the tag, and the character after it in the tag is '-'.
+/// range is &apos;*&apos;, the range is exactly the tag, or the range is a prefix
+/// of the tag, and the character after it in the tag is &apos;-&apos;.
 /// </para>
 /// </summary>
 
 /// <param name="language">
 /// a language tag (see [func@Pango.Language.from_string]),
-///   %NULL is allowed and matches nothing but '*'
+///   %NULL is allowed and matches nothing but &apos;*&apos;
 /// </param>
 /// <param name="range_list">
-/// a list of language ranges, separated by ';', ':',
-///   ',', or space characters.
-///   Each element must either be '*', or a RFC 3066 language range
+/// a list of language ranges, separated by &apos;;&apos;, &apos;:&apos;,
+///   &apos;,&apos;, or space characters.
+///   Each element must either be &apos;*&apos;, or a RFC 3066 language range
 ///   canonicalized as by [func@Pango.Language.from_string]
 /// </param>
 /// <return>
@@ -261,8 +261,8 @@ public struct PangoLanguage
 /// </para>
 /// <para>
 /// This function first canonicalizes the string by converting it to
-/// lowercase, mapping '_' to '-', and stripping all characters other
-/// than letters and '-'.
+/// lowercase, mapping &apos;_&apos; to &apos;-&apos;, and stripping all characters other
+/// than letters and &apos;-&apos;.
 /// </para>
 /// <para>
 /// Use [func@Pango.Language.get_default] if you want to get the
@@ -298,17 +298,17 @@ public struct PangoLanguage
 /// </para>
 /// <para>
 /// On Windows, the C library does not use any such environment
-/// variables, and setting them won't affect the behavior of functions
+/// variables, and setting them won&apos;t affect the behavior of functions
 /// like ctime(). The user sets the locale through the Regional Options
 /// in the Control Panel. The C library (in the setlocale() function)
 /// does not use country and language codes, but country and language
 /// names spelled out in English.
 /// However, this function does check the above environment
 /// variables, and does return a Unix-style locale string based on
-/// either said environment variables or the thread's current locale.
+/// either said environment variables or the thread&apos;s current locale.
 /// </para>
 /// <para>
-/// Your application should call `setlocale(LC_ALL, "")` for the user
+/// Your application should call `setlocale(LC_ALL, &quot;&quot;)` for the user
 /// settings to take effect. GTK does this in its initialization
 /// functions automatically (by calling gtk_set_locale()).
 /// See the setlocale() manpage for more details.

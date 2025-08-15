@@ -386,7 +386,7 @@ public static class GdkDeviceHandleExtensions
 /// <summary>
 /// <para>
 /// Determines whether the pointer follows device motion.
-/// This is not meaningful for keyboard devices, which don't have a pointer.
+/// This is not meaningful for keyboard devices, which don&apos;t have a pointer.
 /// </para>
 /// </summary>
 
@@ -486,7 +486,7 @@ public static class GdkDeviceHandleExtensions
 /// that have been received so far from the display server. If another application
 /// has a pointer grab, or this application has a grab with owner_events = %FALSE,
 /// %NULL may be returned even if the pointer is physically over one of this
-/// application's windows.
+/// application&apos;s windows.
 /// </para>
 /// </summary>
 
@@ -611,7 +611,7 @@ public static class GdkDeviceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the current location of @device in double precision. As a slave device's
+/// Gets the current location of @device in double precision. As a slave device&apos;s
 /// coordinates are those of its master pointer, this function
 /// may not be called on devices of type %GDK_DEVICE_TYPE_SLAVE,
 /// unless there is an ongoing grab on them. See gdk_device_grab().
@@ -641,7 +641,7 @@ public static class GdkDeviceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Returns the product ID of this device, or %NULL if this information couldn't
+/// Returns the product ID of this device, or %NULL if this information couldn&apos;t
 /// be obtained. This ID is retrieved from the device, and is thus constant for
 /// it. See gdk_device_get_vendor_id() for more information.
 /// </para>
@@ -731,7 +731,7 @@ public static class GdkDeviceHandleExtensions
 
 /// <summary>
 /// <para>
-/// Returns the vendor ID of this device, or %NULL if this information couldn't
+/// Returns the vendor ID of this device, or %NULL if this information couldn&apos;t
 /// be obtained. This ID is retrieved from the device, and is thus constant for
 /// it.
 /// </para>
@@ -739,8 +739,8 @@ public static class GdkDeviceHandleExtensions
 /// This function, together with gdk_device_get_product_id(), can be used to eg.
 /// compose #GSettings paths to store settings for this device.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///  static GSettings *
 ///  static GSettings *
 ///  get_device_settings (GdkDevice *device)
 ///  {
@@ -748,21 +748,17 @@ public static class GdkDeviceHandleExtensions
 ///    GSettings *settings;
 ///    GdkDevice *device;
 ///    gchar *path;
-/// </para>
-/// <para>
+/// 
 ///    vendor = gdk_device_get_vendor_id (device);
 ///    product = gdk_device_get_product_id (device);
-/// </para>
-/// <para>
-///    path = g_strdup_printf ("/org/example/app/devices/%s:%s/", vendor, product);
+/// 
+///    path = g_strdup_printf (&quot;/org/example/app/devices/%s:%s/&quot;, vendor, product);
 ///    settings = g_settings_new_with_path (DEVICE_SCHEMA, path);
 ///    g_free (path);
-/// </para>
-/// <para>
+/// 
 ///    return settings;
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="device">

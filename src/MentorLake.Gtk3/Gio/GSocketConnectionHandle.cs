@@ -118,7 +118,7 @@ public static class GSocketConnectionHandleExtensions
 /// Asynchronously connect @connection to the specified remote address.
 /// </para>
 /// <para>
-/// This clears the #GSocket:blocking flag on @connection's underlying
+/// This clears the #GSocket:blocking flag on @connection&apos;s underlying
 /// socket if it is currently set.
 /// </para>
 /// <para>
@@ -209,8 +209,8 @@ public static class GSocketConnectionHandleExtensions
 /// g_socket_client_connect_async(), during emission of
 /// %G_SOCKET_CLIENT_CONNECTING, this function will return the remote
 /// address that will be used for the connection.  This allows
-/// applications to print e.g. "Connecting to example.com
-/// (10.42.77.3)...".
+/// applications to print e.g. &quot;Connecting to example.com
+/// (10.42.77.3)...&quot;.
 /// </para>
 /// </summary>
 
@@ -254,7 +254,7 @@ public static class GSocketConnectionHandleExtensions
 /// <summary>
 /// <para>
 /// Checks if @connection is connected. This is equivalent to calling
-/// g_socket_is_connected() on @connection's underlying #GSocket.
+/// g_socket_is_connected() on @connection&apos;s underlying #GSocket.
 /// </para>
 /// </summary>
 

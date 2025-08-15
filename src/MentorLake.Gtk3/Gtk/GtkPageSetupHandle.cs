@@ -25,34 +25,28 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## A page setup dialog
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkPrintSettings *settings = NULL;
 /// static GtkPrintSettings *settings = NULL;
 /// static GtkPageSetup *page_setup = NULL;
-/// </para>
-/// <para>
+/// 
 /// static void
 /// do_page_setup (void)
 /// {
 ///   GtkPageSetup *new_page_setup;
-/// </para>
-/// <para>
+/// 
 ///   if (settings == NULL)
 ///     settings = gtk_print_settings_new ();
-/// </para>
-/// <para>
+/// 
 ///   new_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),
 ///                                                     page_setup, settings);
-/// </para>
-/// <para>
+/// 
 ///   if (page_setup)
 ///     g_object_unref (page_setup);
-/// </para>
-/// <para>
+/// 
 ///   page_setup = new_page_setup;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Printing support was added in GTK+ 2.10.
 /// </para>

@@ -15,10 +15,10 @@ namespace MentorLake.Pango;
 /// For an overview of the most important metrics, see:
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="fontmetrics-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Font metrics" src="fontmetrics-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;fontmetrics-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Font metrics&quot; src=&quot;fontmetrics-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 
@@ -334,10 +334,10 @@ internal class PangoFontMetricsExterns
 /// For an overview of the most important metrics, see:
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="fontmetrics-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Font metrics" src="fontmetrics-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;fontmetrics-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Font metrics&quot; src=&quot;fontmetrics-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 

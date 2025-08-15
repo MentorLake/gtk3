@@ -267,17 +267,17 @@ public static class GtkStyleContextHandleExtensions
 /// In the CSS file format, a #GtkEntry defining a “search”
 /// class, would be matched by:
 /// </para>
-/// <para>
-/// |[ <!-- language="CSS" -->
+/// <code>
 /// entry.search { ... }
-/// ]|
-/// </para>
+/// entry.search { ... }
+/// </code>
 /// <para>
 /// While any widget defining a “search” class would be
 /// matched by:
-/// |[ <!-- language="CSS" -->
+/// <code>
 /// .search { ... }
-/// ]|
+/// .search { ... }
+/// </code>
 /// </para>
 /// </summary>
 
@@ -341,20 +341,18 @@ public static class GtkStyleContextHandleExtensions
 /// In the CSS file format, a #GtkTreeView defining a “row”
 /// region, would be matched by:
 /// </para>
-/// <para>
-/// |[ <!-- language="CSS" -->
+/// <code>
 /// treeview row { ... }
-/// ]|
-/// </para>
+/// treeview row { ... }
+/// </code>
 /// <para>
 /// Pseudo-classes are used for matching @flags, so the two
 /// following rules:
-/// |[ <!-- language="CSS" -->
+/// <code>
+/// treeview row:nth-child(even) { ... }
 /// treeview row:nth-child(even) { ... }
 /// treeview row:nth-child(odd) { ... }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// would apply to even and odd rows, respectively.
 /// </para>
 /// <para>
@@ -422,30 +420,26 @@ public static class GtkStyleContextHandleExtensions
 /// For the property name / return value pairs, it works similarly as
 /// g_object_get(). Example:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GdkRGBA *background_color = NULL;
 /// GdkRGBA *background_color = NULL;
 /// PangoFontDescription *font_desc = NULL;
 /// gint border_radius = 0;
-/// </para>
-/// <para>
+/// 
 /// gtk_style_context_get (style_context,
 ///                        gtk_style_context_get_state (style_context),
-///                        GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &background_color,
-///                        GTK_STYLE_PROPERTY_FONT, &font_desc,
-///                        GTK_STYLE_PROPERTY_BORDER_RADIUS, &border_radius,
+///                        GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &amp;background_color,
+///                        GTK_STYLE_PROPERTY_FONT, &amp;font_desc,
+///                        GTK_STYLE_PROPERTY_BORDER_RADIUS, &amp;border_radius,
 ///                        NULL);
-/// </para>
-/// <para>
+/// 
 /// // Do something with the property values.
-/// </para>
-/// <para>
+/// 
 /// if (background_color != NULL)
 ///   gdk_rgba_free (background_color);
 /// if (font_desc != NULL)
 ///   pango_font_description_free (font_desc);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="context">
@@ -471,7 +465,7 @@ public static class GtkStyleContextHandleExtensions
 /// </para>
 /// <para>
 /// This function is far less useful than it seems, and it should not be used in
-/// newly written code. CSS has no concept of "background color", as a background
+/// newly written code. CSS has no concept of &quot;background color&quot;, as a background
 /// can be an image, or a gradient, or any other pattern including solid colors.
 /// </para>
 /// <para>
@@ -1165,29 +1159,26 @@ public static class GtkStyleContextHandleExtensions
 /// <para>
 /// As a practical example, a #GtkButton notifying a state transition on
 /// the prelight state:
-/// |[ <!-- language="C" -->
+/// <code>
+/// gtk_style_context_notify_state_change (context,
 /// gtk_style_context_notify_state_change (context,
 ///                                        gtk_widget_get_window (widget),
 ///                                        NULL,
 ///                                        GTK_STATE_PRELIGHT,
-///                                        button->in_button);
-/// ]|
-/// </para>
-/// <para>
+///                                        button-&amp;gt;in_button);
+/// </code>
 /// Can be handled in the CSS file like this:
-/// |[ <!-- language="CSS" -->
+/// <code>
+/// button {
 /// button {
 ///     background-color: #f00
 /// }
-/// </para>
-/// <para>
+/// 
 /// button:hover {
 ///     background-color: #fff;
 ///     transition: 200ms linear
 /// }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// This combination will animate the button background from red to white
 /// if a pointer enters the button, and back to red if the pointer leaves
 /// the button.

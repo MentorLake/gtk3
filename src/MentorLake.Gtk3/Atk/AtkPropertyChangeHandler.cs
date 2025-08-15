@@ -3,7 +3,7 @@ namespace MentorLake.Atk;
 /// <summary>
 /// <para>
 /// An AtkPropertyChangeHandler is a function which is executed when an
-/// AtkObject's property changes value. It is specified in a call to
+/// AtkObject&apos;s property changes value. It is specified in a call to
 /// atk_object_connect_property_change_handler().
 /// </para>
 /// </summary>

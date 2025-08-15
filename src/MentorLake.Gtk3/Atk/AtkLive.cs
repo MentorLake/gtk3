@@ -4,7 +4,7 @@ namespace MentorLake.Atk;
 /// <para>
 /// Enumeration used to indicate a type of live region and how assertive it
 /// should be in terms of speaking notifications. Currently, this is only used
-/// for "notification" events, but it may be used for additional purposes
+/// for &quot;notification&quot; events, but it may be used for additional purposes
 /// in the future.
 /// </para>
 /// </summary>

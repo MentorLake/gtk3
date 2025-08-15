@@ -25,7 +25,7 @@ public static class PangoGlyphItemExtensions
 /// on an attribute list.
 /// </para>
 /// <para>
-/// The idea is that if you have attributes that don't affect shaping,
+/// The idea is that if you have attributes that don&apos;t affect shaping,
 /// such as color or underline, to avoid affecting shaping, you filter
 /// them out ([method@Pango.AttrList.filter]), apply the shaping process
 /// and then reapply them to the result using this function.
@@ -35,7 +35,7 @@ public static class PangoGlyphItemExtensions
 /// to that cluster; for instance, if half of a cluster is underlined
 /// and the other-half strikethrough, then the cluster will end
 /// up with both underline and strikethrough attributes. In these
-/// cases, it may happen that @item->extra_attrs for some of the
+/// cases, it may happen that @item-&amp;gt;extra_attrs for some of the
 /// result items can have multiple attributes of the same type.
 /// </para>
 /// <para>
@@ -120,12 +120,12 @@ public static class PangoGlyphItemExtensions
 /// </param>
 /// <param name="text">
 /// text that @glyph_item corresponds to
-///   (glyph_item->item->offset is an offset from the
+///   (glyph_item-&amp;gt;item-&amp;gt;offset is an offset from the
 ///   start of @text)
 /// </param>
 /// <param name="logical_widths">
 /// an array whose length is the number of
-///   characters in glyph_item (equal to glyph_item->item->num_chars)
+///   characters in glyph_item (equal to glyph_item-&amp;gt;item-&amp;gt;num_chars)
 ///   to be filled in with the resulting character widths.
 /// </param>
 
@@ -147,7 +147,7 @@ public static class PangoGlyphItemExtensions
 /// </param>
 /// <param name="text">
 /// text that @glyph_item corresponds to
-///   (glyph_item->item->offset is an offset from the
+///   (glyph_item-&amp;gt;item-&amp;gt;offset is an offset from the
 ///   start of @text)
 /// </param>
 /// <param name="log_attrs">
@@ -177,7 +177,7 @@ public static class PangoGlyphItemExtensions
 /// You can think of @split_index as the length of the returned item.
 /// @split_index may not be 0, and it may not be greater than or equal
 /// to the length of @orig (that is, there must be at least one byte
-/// assigned to each item, you can't create a zero-length item).
+/// assigned to each item, you can&apos;t create a zero-length item).
 /// </para>
 /// <para>
 /// This function is similar in function to pango_item_split() (and uses

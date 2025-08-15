@@ -36,8 +36,8 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue", G_URI_FLAGS_ENCODED, &err);
-/// g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue");
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;, G_URI_FLAGS_ENCODED, &amp;err);
+/// g_assert_cmpstr (g_uri_get_query (uri), ==, &quot;query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -45,8 +45,8 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue", G_URI_FLAGS_NONE, &err);
-/// g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http://host/path?param=value");
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;, G_URI_FLAGS_NONE, &amp;err);
+/// g_assert_cmpstr (g_uri_get_query (uri), ==, &quot;query=http://host/path?param=value&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -55,7 +55,7 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fbad%3D%00alue", G_URI_FLAGS_NONE, &err);
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fbad%3D%00alue&quot;, G_URI_FLAGS_NONE, &amp;err);
 /// g_assert_error (err, G_URI_ERROR, G_URI_ERROR_BAD_QUERY);
 /// ```
 /// </para>
@@ -72,7 +72,7 @@ namespace MentorLake.GLib;
 /// <para>
 /// Note that the scope of `GUri` is to help manipulate URIs in various applications,
 /// following [RFC 3986](https://tools.ietf.org/html/rfc3986). In particular,
-/// it doesn't intend to cover web browser needs, and doesn’t implement the
+/// it doesn&apos;t intend to cover web browser needs, and doesn’t implement the
 /// [WHATWG URL](https://url.spec.whatwg.org/) standard. No APIs are provided to
 /// help prevent
 /// [homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack), so
@@ -208,7 +208,7 @@ public static class GUriExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @uri's authentication parameters, which may contain
+/// Gets @uri&apos;s authentication parameters, which may contain
 /// `%`-encoding, depending on the flags with which @uri was created.
 /// (If @uri was not created with %G_URI_FLAGS_HAS_AUTH_PARAMS then this will
 /// be %NULL.)
@@ -223,7 +223,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's authentication parameters.
+/// @uri&apos;s authentication parameters.
 /// </return>
 
 	public static string GetAuthParams(this MentorLake.GLib.GUriHandle uri)
@@ -234,7 +234,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's flags set upon construction.
+/// Gets @uri&apos;s flags set upon construction.
 /// </para>
 /// </summary>
 
@@ -242,7 +242,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's flags.
+/// @uri&apos;s flags.
 /// </return>
 
 	public static MentorLake.GLib.GUriFlags GetFlags(this MentorLake.GLib.GUriHandle uri)
@@ -253,7 +253,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's fragment, which may contain `%`-encoding, depending on
+/// Gets @uri&apos;s fragment, which may contain `%`-encoding, depending on
 /// the flags with which @uri was created.
 /// </para>
 /// </summary>
@@ -262,7 +262,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's fragment.
+/// @uri&apos;s fragment.
 /// </return>
 
 	public static string GetFragment(this MentorLake.GLib.GUriHandle uri)
@@ -273,7 +273,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's host. This will never have `%`-encoded characters,
+/// Gets @uri&apos;s host. This will never have `%`-encoded characters,
 /// unless it is non-UTF-8 (which can only be the case if @uri was
 /// created with %G_URI_FLAGS_NON_DNS).
 /// </para>
@@ -290,7 +290,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's host.
+/// @uri&apos;s host.
 /// </return>
 
 	public static string GetHost(this MentorLake.GLib.GUriHandle uri)
@@ -301,7 +301,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's password, which may contain `%`-encoding, depending on
+/// Gets @uri&apos;s password, which may contain `%`-encoding, depending on
 /// the flags with which @uri was created. (If @uri was not created
 /// with %G_URI_FLAGS_HAS_PASSWORD then this will be %NULL.)
 /// </para>
@@ -311,7 +311,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's password.
+/// @uri&apos;s password.
 /// </return>
 
 	public static string GetPassword(this MentorLake.GLib.GUriHandle uri)
@@ -322,7 +322,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's path, which may contain `%`-encoding, depending on the
+/// Gets @uri&apos;s path, which may contain `%`-encoding, depending on the
 /// flags with which @uri was created.
 /// </para>
 /// </summary>
@@ -331,7 +331,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's path.
+/// @uri&apos;s path.
 /// </return>
 
 	public static string GetPath(this MentorLake.GLib.GUriHandle uri)
@@ -342,7 +342,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's port.
+/// Gets @uri&apos;s port.
 /// </para>
 /// </summary>
 
@@ -350,7 +350,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's port, or `-1` if no port was specified.
+/// @uri&apos;s port, or `-1` if no port was specified.
 /// </return>
 
 	public static int GetPort(this MentorLake.GLib.GUriHandle uri)
@@ -361,7 +361,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's query, which may contain `%`-encoding, depending on the
+/// Gets @uri&apos;s query, which may contain `%`-encoding, depending on the
 /// flags with which @uri was created.
 /// </para>
 /// <para>
@@ -374,7 +374,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's query.
+/// @uri&apos;s query.
 /// </return>
 
 	public static string GetQuery(this MentorLake.GLib.GUriHandle uri)
@@ -385,7 +385,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's scheme. Note that this will always be all-lowercase,
+/// Gets @uri&apos;s scheme. Note that this will always be all-lowercase,
 /// regardless of the string or strings that @uri was created from.
 /// </para>
 /// </summary>
@@ -394,7 +394,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's scheme.
+/// @uri&apos;s scheme.
 /// </return>
 
 	public static string GetScheme(this MentorLake.GLib.GUriHandle uri)
@@ -405,7 +405,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets the ‘username’ component of @uri's userinfo, which may contain
+/// Gets the ‘username’ component of @uri&apos;s userinfo, which may contain
 /// `%`-encoding, depending on the flags with which @uri was created.
 /// If @uri was not created with %G_URI_FLAGS_HAS_PASSWORD or
 /// %G_URI_FLAGS_HAS_AUTH_PARAMS, this is the same as g_uri_get_userinfo().
@@ -416,7 +416,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's user.
+/// @uri&apos;s user.
 /// </return>
 
 	public static string GetUser(this MentorLake.GLib.GUriHandle uri)
@@ -427,7 +427,7 @@ public static class GUriExtensions
 
 /// <summary>
 /// <para>
-/// Gets @uri's userinfo, which may contain `%`-encoding, depending on
+/// Gets @uri&apos;s userinfo, which may contain `%`-encoding, depending on
 /// the flags with which @uri was created.
 /// </para>
 /// </summary>
@@ -436,7 +436,7 @@ public static class GUriExtensions
 /// a #GUri
 /// </param>
 /// <return>
-/// @uri's userinfo.
+/// @uri&apos;s userinfo.
 /// </return>
 
 	public static string GetUserinfo(this MentorLake.GLib.GUriHandle uri)
@@ -750,8 +750,8 @@ internal class GUriExterns
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue", G_URI_FLAGS_ENCODED, &err);
-/// g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue");
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;, G_URI_FLAGS_ENCODED, &amp;err);
+/// g_assert_cmpstr (g_uri_get_query (uri), ==, &quot;query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -759,8 +759,8 @@ internal class GUriExterns
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue", G_URI_FLAGS_NONE, &err);
-/// g_assert_cmpstr (g_uri_get_query (uri), ==, "query=http://host/path?param=value");
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fparam%3Dvalue&quot;, G_URI_FLAGS_NONE, &amp;err);
+/// g_assert_cmpstr (g_uri_get_query (uri), ==, &quot;query=http://host/path?param=value&quot;);
 /// ```
 /// </para>
 /// <para>
@@ -769,7 +769,7 @@ internal class GUriExterns
 /// </para>
 /// <para>
 /// ```c
-/// g_autoptr(GUri) uri = g_uri_parse ("http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fbad%3D%00alue", G_URI_FLAGS_NONE, &err);
+/// g_autoptr(GUri) uri = g_uri_parse (&quot;http://host/path?query=http%3A%2F%2Fhost%2Fpath%3Fbad%3D%00alue&quot;, G_URI_FLAGS_NONE, &amp;err);
 /// g_assert_error (err, G_URI_ERROR, G_URI_ERROR_BAD_QUERY);
 /// ```
 /// </para>
@@ -786,7 +786,7 @@ internal class GUriExterns
 /// <para>
 /// Note that the scope of `GUri` is to help manipulate URIs in various applications,
 /// following [RFC 3986](https://tools.ietf.org/html/rfc3986). In particular,
-/// it doesn't intend to cover web browser needs, and doesn’t implement the
+/// it doesn&apos;t intend to cover web browser needs, and doesn’t implement the
 /// [WHATWG URL](https://url.spec.whatwg.org/) standard. No APIs are provided to
 /// help prevent
 /// [homograph attacks](https://en.wikipedia.org/wiki/IDN_homograph_attack), so
@@ -921,7 +921,7 @@ public struct GUri
 /// </para>
 /// <para>
 /// See also g_uri_build_with_user(), which allows specifying the
-/// components of the "userinfo" separately.
+/// components of the &quot;userinfo&quot; separately.
 /// </para>
 /// </summary>
 
@@ -1061,10 +1061,10 @@ public struct GUri
 /// Escapes a string for use in a URI.
 /// </para>
 /// <para>
-/// Normally all characters that are not "unreserved" (i.e. ASCII
+/// Normally all characters that are not &quot;unreserved&quot; (i.e. ASCII
 /// alphanumerical characters plus dash, dot, underscore and tilde) are
 /// escaped. But if you specify characters in @reserved_chars_allowed
-/// they are not escaped. This is useful for the "reserved" characters
+/// they are not escaped. This is useful for the &quot;reserved&quot; characters
 /// in the URI specification, since those are allowed unescaped in some
 /// portions of a URI.
 /// </para>
@@ -1304,7 +1304,7 @@ public struct GUri
 /// </para>
 /// <para>
 /// If %G_URI_PARAMS_CASE_INSENSITIVE is passed to @flags, attributes will be
-/// compared case-insensitively, so a params string `attr=123&Attr=456` will only
+/// compared case-insensitively, so a params string `attr=123&amp;Attr=456` will only
 /// return a single attribute–value pair, `Attr=456`. Case will be preserved in
 /// the returned attributes.
 /// </para>
@@ -1323,8 +1323,8 @@ public struct GUri
 /// </param>
 /// <param name="separators">
 /// the separator byte character set between parameters. (usually
-///   `&`, but sometimes `;` or both `&;`). Note that this function works on
-///   bytes not characters, so it can't be used to delimit UTF-8 strings for
+///   `&amp;`, but sometimes `;` or both `&amp;;`). Note that this function works on
+///   bytes not characters, so it can&apos;t be used to delimit UTF-8 strings for
 ///   anything but ASCII characters. You may pass an empty set, in which case
 ///   no splitting will occur.
 /// </param>
@@ -1349,10 +1349,10 @@ public struct GUri
 /// Gets the scheme portion of a URI string.
 /// [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
 /// as:
-/// |[
-/// URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-/// ]|
-/// Common schemes include `file`, `https`, `svn+ssh`, etc.
+/// <code>
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1374,10 +1374,10 @@ public struct GUri
 /// Gets the scheme portion of a URI string.
 /// [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) decodes the scheme
 /// as:
-/// |[
-/// URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-/// ]|
-/// Common schemes include `file`, `https`, `svn+ssh`, etc.
+/// <code>
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// </code>
 /// </para>
 /// <para>
 /// Unlike g_uri_parse_scheme(), the returned scheme is normalized to
@@ -1437,7 +1437,7 @@ public struct GUri
 /// <para>
 /// Parses @uri_ref (which can be an
 /// [absolute or relative URI](#relative-and-absolute-uris)) according to @flags, and
-/// returns the pieces. Any component that doesn't appear in @uri_ref will be
+/// returns the pieces. Any component that doesn&apos;t appear in @uri_ref will be
 /// returned as %NULL (but note that all URIs always have a path component,
 /// though it may be the empty string).
 /// </para>
@@ -1547,7 +1547,7 @@ public struct GUri
 /// <para>
 /// Parses @uri_ref (which can be an
 /// [absolute or relative URI](#relative-and-absolute-uris)) according to @flags, and
-/// returns the pieces. Any component that doesn't appear in @uri_ref will be
+/// returns the pieces. Any component that doesn&apos;t appear in @uri_ref will be
 /// returned as %NULL (but note that all URIs always have a path component,
 /// though it may be the empty string).
 /// </para>

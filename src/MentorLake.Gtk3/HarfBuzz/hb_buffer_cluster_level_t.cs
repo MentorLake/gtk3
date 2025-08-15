@@ -2,7 +2,7 @@ namespace MentorLake.HarfBuzz;
 
 /// <summary>
 /// <para>
-/// Data type for holding HarfBuzz's clustering behavior options. The cluster level
+/// Data type for holding HarfBuzz&apos;s clustering behavior options. The cluster level
 /// dictates one aspect of how HarfBuzz will treat non-base characters
 /// during shaping.
 /// </para>
@@ -44,7 +44,7 @@ public enum hb_buffer_cluster_level_t
 	HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = 1,
 /// <summary>
 /// <para>
-/// Don't group cluster values.
+/// Don&apos;t group cluster values.
 /// </para>
 /// </summary>
 

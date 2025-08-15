@@ -14,13 +14,12 @@ namespace MentorLake.Gtk;
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// menuitem
 /// menuitem
 /// ├── check.left
-/// ╰── <child>
-/// ]|
-/// </para>
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkCheckMenuItem has a main CSS node with name menuitem, and a subnode
 /// with name check, which gets the .left or .right style class.

@@ -13,20 +13,19 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkTextTagTable implementation of the GtkBuildable interface
 /// supports adding tags by specifying “tag” as the “type” attribute
-/// of a `<child>` element.
+/// of a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment specifying tags:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkTextTagTable">
-///  <child type="tag">
-///    <object class="GtkTextTag"/>
-///  </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkTextTagTable&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkTextTagTable&quot;&amp;gt;
+///  &amp;lt;child type=&quot;tag&quot;&amp;gt;
+///    &amp;lt;object class=&quot;GtkTextTag&quot;/&amp;gt;
+///  &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkTextTagTableHandle : GObjectHandle, GtkBuildableHandle

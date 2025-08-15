@@ -21,13 +21,13 @@ public static class GTlsConnectionHandleSignalExtensions
 /// <summary>
 /// <para>
 /// Emitted during the TLS handshake after the peer certificate has
-/// been received. You can examine @peer_cert's certification path by
+/// been received. You can examine @peer_cert&apos;s certification path by
 /// calling g_tls_certificate_get_issuer() on it.
 /// </para>
 /// <para>
-/// For a client-side connection, @peer_cert is the server's
+/// For a client-side connection, @peer_cert is the server&apos;s
 /// certificate, and the signal will only be emitted if the
-/// certificate was not acceptable according to @conn's
+/// certificate was not acceptable according to @conn&apos;s
 /// #GTlsClientConnection:validation_flags. If you would like the
 /// certificate to be accepted despite @errors, return %TRUE from the
 /// signal handler. Otherwise, if no handler accepts the certificate,
@@ -45,7 +45,7 @@ public static class GTlsConnectionHandleSignalExtensions
 /// </para>
 /// <para>
 /// For a server-side connection, @peer_cert is the certificate
-/// presented by the client, if this was requested via the server's
+/// presented by the client, if this was requested via the server&apos;s
 /// #GTlsServerConnection:authentication_mode. On the server side,
 /// the signal is always emitted when the client presents a
 /// certificate, and the certificate will only be accepted if a
@@ -109,7 +109,7 @@ public class AcceptCertificateSignal
 	public MentorLake.Gio.GTlsConnectionHandle Self;
 /// <summary>
 /// <para>
-/// the peer's #GTlsCertificate
+/// the peer&apos;s #GTlsCertificate
 /// </para>
 /// </summary>
 
@@ -142,13 +142,13 @@ public static class GTlsConnectionHandleSignalDelegates
 /// <summary>
 /// <para>
 /// Emitted during the TLS handshake after the peer certificate has
-/// been received. You can examine @peer_cert's certification path by
+/// been received. You can examine @peer_cert&apos;s certification path by
 /// calling g_tls_certificate_get_issuer() on it.
 /// </para>
 /// <para>
-/// For a client-side connection, @peer_cert is the server's
+/// For a client-side connection, @peer_cert is the server&apos;s
 /// certificate, and the signal will only be emitted if the
-/// certificate was not acceptable according to @conn's
+/// certificate was not acceptable according to @conn&apos;s
 /// #GTlsClientConnection:validation_flags. If you would like the
 /// certificate to be accepted despite @errors, return %TRUE from the
 /// signal handler. Otherwise, if no handler accepts the certificate,
@@ -166,7 +166,7 @@ public static class GTlsConnectionHandleSignalDelegates
 /// </para>
 /// <para>
 /// For a server-side connection, @peer_cert is the certificate
-/// presented by the client, if this was requested via the server's
+/// presented by the client, if this was requested via the server&apos;s
 /// #GTlsServerConnection:authentication_mode. On the server side,
 /// the signal is always emitted when the client presents a
 /// certificate, and the certificate will only be accepted if a
@@ -194,7 +194,7 @@ public static class GTlsConnectionHandleSignalDelegates
 /// <param name="self">
 /// </param>
 /// <param name="peer_cert">
-/// the peer's #GTlsCertificate
+/// the peer&apos;s #GTlsCertificate
 /// </param>
 /// <param name="errors">
 /// the problems with @peer_cert.
@@ -227,7 +227,7 @@ public static class GTlsConnectionHandleExtensions
 /// a #GTlsConnection
 /// </param>
 /// <param name="peer_cert">
-/// the peer's #GTlsCertificate
+/// the peer&apos;s #GTlsCertificate
 /// </param>
 /// <param name="errors">
 /// the problems with @peer_cert
@@ -245,7 +245,7 @@ public static class GTlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's certificate, as set by
+/// Gets @conn&apos;s certificate, as set by
 /// g_tls_connection_set_certificate().
 /// </para>
 /// </summary>
@@ -254,7 +254,7 @@ public static class GTlsConnectionHandleExtensions
 /// a #GTlsConnection
 /// </param>
 /// <return>
-/// @conn's certificate, or %NULL
+/// @conn&apos;s certificate, or %NULL
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetCertificate(this MentorLake.Gio.GTlsConnectionHandle conn)
@@ -378,7 +378,7 @@ public static class GTlsConnectionHandleExtensions
 /// </para>
 /// <para>
 /// If the peer did not use the ALPN extension, or did not advertise a
-/// protocol that matched one of @conn's protocols, or the TLS backend
+/// protocol that matched one of @conn&apos;s protocols, or the TLS backend
 /// does not support ALPN, then this will be %NULL. See
 /// g_tls_connection_set_advertised_protocols().
 /// </para>
@@ -399,7 +399,7 @@ public static class GTlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's peer's certificate after the handshake has completed
+/// Gets @conn&apos;s peer&apos;s certificate after the handshake has completed
 /// or failed. (It is not set during the emission of
 /// #GTlsConnection::accept-certificate.)
 /// </para>
@@ -409,7 +409,7 @@ public static class GTlsConnectionHandleExtensions
 /// a #GTlsConnection
 /// </param>
 /// <return>
-/// @conn's peer's certificate, or %NULL
+/// @conn&apos;s peer&apos;s certificate, or %NULL
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateHandle GetPeerCertificate(this MentorLake.Gio.GTlsConnectionHandle conn)
@@ -420,7 +420,7 @@ public static class GTlsConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the errors associated with validating @conn's peer's
+/// Gets the errors associated with validating @conn&apos;s peer&apos;s
 /// certificate, after the handshake has completed or failed. (It is
 /// not set during the emission of #GTlsConnection::accept-certificate.)
 /// </para>
@@ -433,7 +433,7 @@ public static class GTlsConnectionHandleExtensions
 /// a #GTlsConnection
 /// </param>
 /// <return>
-/// @conn's peer's certificate errors
+/// @conn&apos;s peer&apos;s certificate errors
 /// </return>
 
 	public static MentorLake.Gio.GTlsCertificateFlags GetPeerCertificateErrors(this MentorLake.Gio.GTlsConnectionHandle conn)
@@ -533,7 +533,7 @@ public static class GTlsConnectionHandleExtensions
 /// <para>
 /// On the client side, it is never necessary to call this method;
 /// although the connection needs to perform a handshake after
-/// connecting (or after sending a "STARTTLS"-type command),
+/// connecting (or after sending a &quot;STARTTLS&quot;-type command),
 /// #GTlsConnection will handle this for you automatically when you try
 /// to send or receive data on the connection. You can call
 /// g_tls_connection_handshake() manually if you want to know whether
@@ -662,7 +662,7 @@ public static class GTlsConnectionHandleExtensions
 /// </param>
 /// <param name="protocols">
 /// a %NULL-terminated
-///   array of ALPN protocol names (eg, "http/1.1", "h2"), or %NULL
+///   array of ALPN protocol names (eg, &quot;http/1.1&quot;, &quot;h2&quot;), or %NULL
 /// </param>
 
 	public static T SetAdvertisedProtocols<T>(this T conn, string[] protocols) where T : GTlsConnectionHandle
@@ -690,7 +690,7 @@ public static class GTlsConnectionHandleExtensions
 /// </para>
 /// <para>
 /// (It is also possible that a server will allow the connection with
-/// or without a certificate; in that case, if you don't provide a
+/// or without a certificate; in that case, if you don&apos;t provide a
 /// certificate, you can tell that the server requested one by the fact
 /// that g_tls_client_connection_get_accepted_cas() will return
 /// non-%NULL.)
@@ -809,7 +809,7 @@ public static class GTlsConnectionHandleExtensions
 /// redundant and sometimes omitted. (TLS 1.1 explicitly allows this;
 /// in TLS 1.0 it is technically an error, but often done anyway.) You
 /// can use g_tls_connection_set_require_close_notify() to tell @conn
-/// to allow an "unannounced" connection close, in which case the close
+/// to allow an &quot;unannounced&quot; connection close, in which case the close
 /// will show up as a 0-length read, as in a non-TLS
 /// #GSocketConnection, and it is up to the application to check that
 /// the data has been fully received.
@@ -819,7 +819,7 @@ public static class GTlsConnectionHandleExtensions
 /// connection; when the application calls g_io_stream_close() itself
 /// on @conn, this will send a close notification regardless of the
 /// setting of this property. If you explicitly want to do an unclean
-/// close, you can close @conn's #GTlsConnection:base-io-stream rather
+/// close, you can close @conn&apos;s #GTlsConnection:base-io-stream rather
 /// than closing @conn itself, but note that this may only be done when no other
 /// operations are pending on @conn or the base I/O stream.
 /// </para>

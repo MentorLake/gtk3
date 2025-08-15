@@ -23,19 +23,17 @@ namespace MentorLake.Gtk;
 /// its expansion state. You should watch this property with a signal
 /// connection as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static void
 /// static void
 /// expander_callback (GObject    *object,
 ///                    GParamSpec *param_spec,
 ///                    gpointer    user_data)
 /// {
 ///   GtkExpander *expander;
-/// </para>
-/// <para>
+/// 
 ///   expander = GTK_EXPANDER (object);
-/// </para>
-/// <para>
+/// 
 ///   if (gtk_expander_get_expanded (expander))
 ///     {
 ///       // Show or create widgets
@@ -45,56 +43,51 @@ namespace MentorLake.Gtk;
 ///       // Hide or destroy widgets
 ///     }
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// create_expander (void)
 /// {
-///   GtkWidget *expander = gtk_expander_new_with_mnemonic ("_More Options");
-///   g_signal_connect (expander, "notify::expanded",
+///   GtkWidget *expander = gtk_expander_new_with_mnemonic (&quot;_More Options&quot;);
+///   g_signal_connect (expander, &quot;notify::expanded&quot;,
 ///                     G_CALLBACK (expander_callback), NULL);
-/// </para>
-/// <para>
+/// 
 ///   // ...
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// # GtkExpander as GtkBuildable
 /// </para>
 /// <para>
 /// The GtkExpander implementation of the GtkBuildable interface supports
 /// placing a child in the label position by specifying “label” as the
-/// “type” attribute of a `<child>` element. A normal content child can be
-/// specified without specifying a `<child>` type attribute.
+/// “type” attribute of a `&amp;lt;child&amp;gt;` element. A normal content child can be
+/// specified without specifying a `&amp;lt;child&amp;gt;` type attribute.
 /// </para>
 /// <para>
 /// An example of a UI definition fragment with GtkExpander:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkExpander">
-///   <child type="label">
-///     <object class="GtkLabel" id="expander-label"/>
-///   </child>
-///   <child>
-///     <object class="GtkEntry" id="expander-content"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkExpander&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkExpander&quot;&amp;gt;
+///   &amp;lt;child type=&quot;label&quot;&amp;gt;
+///     &amp;lt;object class=&quot;GtkLabel&quot; id=&quot;expander-label&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkEntry&quot; id=&quot;expander-content&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// expander
 /// expander
 /// ├── title
 /// │   ├── arrow
-/// │   ╰── <label widget>
-/// ╰── <child>
-/// ]|
-/// </para>
+/// │   ╰── &amp;lt;label widget&amp;gt;
+/// ╰── &amp;lt;child&amp;gt;
+/// </code>
 /// <para>
 /// GtkExpander has three CSS nodes, the main node with the name expander,
 /// a subnode with name title and node below it with name arrow. The arrow of an

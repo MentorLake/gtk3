@@ -12,6 +12,13 @@ public struct hb_codepoint_t
 	public uint Value;
 }
 
+/// <summary>
+/// <para>
+/// Data type for holding Unicode codepoints. Also
+/// used to hold glyph IDs.
+/// </para>
+/// </summary>
+
 public class hb_codepoint_tHandle : BaseSafeHandle
 {
 }

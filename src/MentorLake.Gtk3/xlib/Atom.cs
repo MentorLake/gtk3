@@ -6,6 +6,7 @@ public struct Atom
 	public ulong Value;
 }
 
+
 public class AtomHandle : BaseSafeHandle
 {
 }

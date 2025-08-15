@@ -345,33 +345,28 @@ public static class GtkFontChooserHandleExtensions
 /// A custom font map can be used to present application-specific
 /// fonts instead of or in addition to the normal system fonts.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// FcConfig *config;
 /// FcConfig *config;
 /// PangoFontMap *fontmap;
-/// </para>
-/// <para>
+/// 
 /// config = FcInitLoadConfigAndFonts ();
 /// FcConfigAppFontAddFile (config, my_app_font_file);
-/// </para>
-/// <para>
+/// 
 /// fontmap = pango_cairo_font_map_new_for_font_type (CAIRO_FONT_TYPE_FT);
 /// pango_fc_font_map_set_config (PANGO_FC_FONT_MAP (fontmap), config);
-/// </para>
-/// <para>
+/// 
 /// gtk_font_chooser_set_font_map (font_chooser, fontmap);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that other GTK+ widgets will only be able to use the application-specific
 /// font if it is present in the font map they use:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// context = gtk_widget_get_pango_context (label);
 /// context = gtk_widget_get_pango_context (label);
 /// pango_context_set_font_map (context, fontmap);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="fontchooser">

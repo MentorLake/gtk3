@@ -9,7 +9,7 @@ namespace MentorLake.Gio;
 /// to doing asynchronous I/O in another thread.)
 /// </para>
 /// <para>
-/// Note that `<gio/gunixoutputstream.h>` belongs to the UNIX-specific GIO
+/// Note that `&amp;lt;gio/gunixoutputstream.h&amp;gt;` belongs to the UNIX-specific GIO
 /// interfaces, thus you have to use the `gio-unix-2.0.pc` pkg-config file
 /// file or the `GioUnix-2.0` GIR namespace when using it.
 /// </para>

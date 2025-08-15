@@ -307,7 +307,7 @@ public static class GtkStackHandleExtensions
 /// <para>
 /// Sets the #GtkStack to be horizontally homogeneous or not.
 /// If it is homogeneous, the #GtkStack will request the same
-/// width for all its children. If it isn't, the stack
+/// width for all its children. If it isn&apos;t, the stack
 /// may change width when a different child becomes visible.
 /// </para>
 /// </summary>
@@ -330,7 +330,7 @@ public static class GtkStackHandleExtensions
 /// <para>
 /// Sets the #GtkStack to be homogeneous or not. If it
 /// is homogeneous, the #GtkStack will request the same
-/// size for all its children. If it isn't, the stack
+/// size for all its children. If it isn&apos;t, the stack
 /// may change size when a different child becomes visible.
 /// </para>
 /// <para>
@@ -359,7 +359,7 @@ public static class GtkStackHandleExtensions
 /// Sets whether or not @stack will interpolate its size when
 /// changing the visible child. If the #GtkStack:interpolate-size
 /// property is set to %TRUE, @stack will interpolate its size between
-/// the current one and the one it'll take after changing the
+/// the current one and the one it&apos;ll take after changing the
 /// visible child, according to the set transition duration.
 /// </para>
 /// </summary>
@@ -430,7 +430,7 @@ public static class GtkStackHandleExtensions
 /// <para>
 /// Sets the #GtkStack to be vertically homogeneous or not.
 /// If it is homogeneous, the #GtkStack will request the same
-/// height for all its children. If it isn't, the stack
+/// height for all its children. If it isn&apos;t, the stack
 /// may change height when a different child becomes visible.
 /// </para>
 /// </summary>

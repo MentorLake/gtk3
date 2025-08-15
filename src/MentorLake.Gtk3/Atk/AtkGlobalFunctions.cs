@@ -29,12 +29,12 @@ public class AtkGlobalFunctions
 /// </para>
 /// <para>
 /// The format of event_type is the following:
-///  "ATK:&lt;atk_type&gt;:&lt;atk_event&gt;:&lt;atk_event_detail&gt;
+///  &quot;ATK:&amp;lt;atk_type&amp;gt;:&amp;lt;atk_event&amp;gt;:&amp;lt;atk_event_detail&amp;gt;
 /// </para>
 /// <para>
-/// Where "ATK" works as the namespace, &lt;atk_interface&gt; is the name of
-/// the ATK type (interface or object), &lt;atk_event&gt; is the name of the
-/// signal defined on that interface and &lt;atk_event_detail&gt; is the
+/// Where &quot;ATK&quot; works as the namespace, &amp;lt;atk_interface&amp;gt; is the name of
+/// the ATK type (interface or object), &amp;lt;atk_event&amp;gt; is the name of the
+/// signal defined on that interface and &amp;lt;atk_event_detail&amp;gt; is the
 /// gsignal detail of that signal. You can find more info about gsignal
 /// details here:
 /// http://developer.gnome.org/gobject/stable/gobject-Signals.html

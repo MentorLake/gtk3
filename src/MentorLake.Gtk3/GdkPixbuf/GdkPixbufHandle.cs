@@ -5,7 +5,7 @@ namespace MentorLake.GdkPixbuf;
 /// A pixel buffer.
 /// </para>
 /// <para>
-/// `GdkPixbuf` contains information about an image's pixel data,
+/// `GdkPixbuf` contains information about an image&apos;s pixel data,
 /// its color space, bits per sample, width and height, and the
 /// rowstride (the number of bytes between the start of one row
 /// and the start of the next).
@@ -72,7 +72,7 @@ namespace MentorLake.GdkPixbuf;
 /// There may be padding at the end of a row.
 /// </para>
 /// <para>
-/// The "rowstride" value of a pixbuf, as returned by [`method@GdkPixbuf.Pixbuf.get_rowstride`],
+/// The &quot;rowstride&quot; value of a pixbuf, as returned by [`method@GdkPixbuf.Pixbuf.get_rowstride`],
 /// indicates the number of bytes between rows.
 /// </para>
 /// <para>
@@ -123,8 +123,8 @@ namespace MentorLake.GdkPixbuf;
 /// </para>
 /// <para>
 ///   // Ensure that the coordinates are in a valid range
-///   g_assert (x >= 0 && x < width);
-///   g_assert (y >= 0 && y < height);
+///   g_assert (x &amp;gt;= 0 &amp;&amp; x &amp;lt; width);
+///   g_assert (y &amp;gt;= 0 &amp;&amp; y &amp;lt; height);
 /// </para>
 /// <para>
 ///   int rowstride = gdk_pixbuf_get_rowstride (pixbuf);
@@ -195,10 +195,10 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// Number of bits per color sample
 /// </param>
 /// <param name="width">
-/// Width of image in pixels, must be > 0
+/// Width of image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="height">
-/// Height of image in pixels, must be > 0
+/// Height of image in pixels, must be &amp;gt; 0
 /// </param>
 /// <return>
 /// A newly-created pixel buffer
@@ -235,10 +235,10 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// Number of bits per sample
 /// </param>
 /// <param name="width">
-/// Width of the image in pixels, must be > 0
+/// Width of the image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="height">
-/// Height of the image in pixels, must be > 0
+/// Height of the image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="rowstride">
 /// Distance in bytes between row starts
@@ -284,16 +284,16 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// Number of bits per sample
 /// </param>
 /// <param name="width">
-/// Width of the image in pixels, must be > 0
+/// Width of the image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="height">
-/// Height of the image in pixels, must be > 0
+/// Height of the image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="rowstride">
 /// Distance in bytes between row starts
 /// </param>
 /// <param name="destroy_fn">
-/// Function used to free the data when the pixbuf's reference count
+/// Function used to free the data when the pixbuf&apos;s reference count
 /// drops to zero, or %NULL if the data should not be freed
 /// </param>
 /// <param name="destroy_fn_data">
@@ -320,7 +320,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 ///  - the file could not be opened
-///  - there is no loader for the file's format
+///  - there is no loader for the file&apos;s format
 ///  - there is not enough memory to allocate the image buffer
 ///  - the image buffer contains invalid data
 /// </para>
@@ -356,7 +356,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 ///  - the file could not be opened
-///  - there is no loader for the file's format
+///  - there is no loader for the file&apos;s format
 ///  - there is not enough memory to allocate the image buffer
 ///  - the image buffer contains invalid data
 /// </para>
@@ -365,7 +365,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// The image will be scaled to fit in the requested size, optionally preserving
-/// the image's aspect ratio.
+/// the image&apos;s aspect ratio.
 /// </para>
 /// <para>
 /// When preserving the aspect ratio, a `width` of -1 will cause the image
@@ -388,7 +388,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// The height the image should have or -1 to not constrain the height
 /// </param>
 /// <param name="preserve_aspect_ratio">
-/// `TRUE` to preserve the image's aspect ratio
+/// `TRUE` to preserve the image&apos;s aspect ratio
 /// </param>
 /// <return>
 /// A newly-created pixbuf
@@ -413,7 +413,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 ///  - the file could not be opened
-///  - there is no loader for the file's format
+///  - there is no loader for the file&apos;s format
 ///  - there is not enough memory to allocate the image buffer
 ///  - the image buffer contains invalid data
 /// </para>
@@ -422,7 +422,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// The image will be scaled to fit in the requested size, preserving
-/// the image's aspect ratio. Note that the returned pixbuf may be smaller
+/// the image&apos;s aspect ratio. Note that the returned pixbuf may be smaller
 /// than `width` x `height`, if the aspect ratio requires it. To load
 /// and image at the requested size, regardless of aspect ratio, use
 /// [ctor@GdkPixbuf.Pixbuf.new_from_file_at_scale].
@@ -456,7 +456,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// storing as inline data in a program.
 /// </para>
 /// <para>
-/// This is useful if you want to ship a program with images, but don't want
+/// This is useful if you want to ship a program with images, but don&apos;t want
 /// to depend on any external files.
 /// </para>
 /// <para>
@@ -474,14 +474,14 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// For the typical case where the inline pixbuf is read-only static data,
-/// you don't need to copy the pixel data unless you intend to write to
+/// you don&apos;t need to copy the pixel data unless you intend to write to
 /// it, so you can pass `FALSE` for `copy_pixels`. If you pass `--rle` to
 /// `gdk-pixbuf-csource`, a copy will be made even if `copy_pixels` is `FALSE`,
 /// so using this option is generally a bad idea.
 /// </para>
 /// <para>
 /// If you create a pixbuf from const inline data compiled into your
-/// program, it's probably safe to ignore errors and disable length checks,
+/// program, it&apos;s probably safe to ignore errors and disable length checks,
 /// since things will always succeed:
 /// </para>
 /// <para>
@@ -553,7 +553,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// The image will be scaled to fit in the requested size, optionally
-/// preserving the image's aspect ratio. When preserving the aspect ratio,
+/// preserving the image&apos;s aspect ratio. When preserving the aspect ratio,
 /// a @width of -1 will cause the image to be scaled to the exact given
 /// height, and a @height of -1 will cause the image to be scaled to the
 /// exact given width. When not preserving aspect ratio, a @width or
@@ -574,7 +574,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// The height the image should have or -1 to not constrain the height
 /// </param>
 /// <param name="preserve_aspect_ratio">
-/// `TRUE` to preserve the image's aspect ratio
+/// `TRUE` to preserve the image&apos;s aspect ratio
 /// </param>
 /// <return>
 /// A newly-created pixbuf
@@ -638,7 +638,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// The image will be scaled to fit in the requested size, optionally
-/// preserving the image's aspect ratio.
+/// preserving the image&apos;s aspect ratio.
 /// </para>
 /// <para>
 /// When preserving the aspect ratio, a `width` of -1 will cause the image to be
@@ -666,7 +666,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// The height the image should have or -1 to not constrain the height
 /// </param>
 /// <param name="preserve_aspect_ratio">
-/// `TRUE` to preserve the image's aspect ratio
+/// `TRUE` to preserve the image&apos;s aspect ratio
 /// </param>
 /// <param name="cancellable">
 /// optional `GCancellable` object, `NULL` to ignore
@@ -709,7 +709,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// </para>
 /// <para>
 /// This data is commonly the result of including an XPM file into a
-/// program's C source.
+/// program&apos;s C source.
 /// </para>
 /// </summary>
 
@@ -746,10 +746,10 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// Number of bits per color sample
 /// </param>
 /// <param name="width">
-/// Width of image in pixels, must be > 0
+/// Width of image in pixels, must be &amp;gt; 0
 /// </param>
 /// <param name="height">
-/// Height of image in pixels, must be > 0
+/// Height of image in pixels, must be &amp;gt; 0
 /// </param>
 /// <return>
 /// the rowstride for the given values, or -1 in case of error.
@@ -952,7 +952,7 @@ public class GdkPixbufHandle : GObjectHandle, GIconHandle, GLoadableIconHandle
 /// the height the image should have or -1 to not constrain the height
 /// </param>
 /// <param name="preserve_aspect_ratio">
-/// `TRUE` to preserve the image's aspect ratio
+/// `TRUE` to preserve the image&apos;s aspect ratio
 /// </param>
 /// <param name="cancellable">
 /// optional `GCancellable` object, `NULL` to ignore
@@ -1043,7 +1043,7 @@ public static class GdkPixbufHandleExtensions
 /// <summary>
 /// <para>
 /// Takes an existing pixbuf and checks for the presence of an
-/// associated "orientation" option.
+/// associated &quot;orientation&quot; option.
 /// </para>
 /// <para>
 /// The orientation option may be provided by the JPEG loader (which
@@ -1332,8 +1332,8 @@ public static class GdkPixbufHandleExtensions
 /// </para>
 /// <para>
 /// This is useful to keep original metadata after having manipulated
-/// a file. However be careful to remove metadata which you've already
-/// applied, such as the "orientation" option after rotating the image.
+/// a file. However be careful to remove metadata which you&apos;ve already
+/// applied, such as the &quot;orientation&quot; option after rotating the image.
 /// </para>
 /// </summary>
 
@@ -1356,10 +1356,10 @@ public static class GdkPixbufHandleExtensions
 /// <summary>
 /// <para>
 /// Clears a pixbuf to the given RGBA value, converting the RGBA value into
-/// the pixbuf's pixel format.
+/// the pixbuf&apos;s pixel format.
 /// </para>
 /// <para>
-/// The alpha component will be ignored if the pixbuf doesn't have an alpha
+/// The alpha component will be ignored if the pixbuf doesn&apos;t have an alpha
 /// channel.
 /// </para>
 /// </summary>
@@ -1523,16 +1523,16 @@ public static class GdkPixbufHandleExtensions
 /// function using gdk_pixbuf_set_option().
 /// </para>
 /// <para>
-/// For instance, the ANI loader provides "Title" and "Artist" options.
-/// The ICO, XBM, and XPM loaders provide "x_hot" and "y_hot" hot-spot
+/// For instance, the ANI loader provides &quot;Title&quot; and &quot;Artist&quot; options.
+/// The ICO, XBM, and XPM loaders provide &quot;x_hot&quot; and &quot;y_hot&quot; hot-spot
 /// options for cursor definitions. The PNG loader provides the tEXt ancillary
 /// chunk key/value pairs as options. Since 2.12, the TIFF and JPEG loaders
-/// return an "orientation" option string that corresponds to the embedded
+/// return an &quot;orientation&quot; option string that corresponds to the embedded
 /// TIFF/Exif orientation tag (if present). Since 2.32, the TIFF loader sets
-/// the "multipage" option string to "yes" when a multi-page TIFF is loaded.
-/// Since 2.32 the JPEG and PNG loaders set "x-dpi" and "y-dpi" if the file
+/// the &quot;multipage&quot; option string to &quot;yes&quot; when a multi-page TIFF is loaded.
+/// Since 2.32 the JPEG and PNG loaders set &quot;x-dpi&quot; and &quot;y-dpi&quot; if the file
 /// contains image density information in dots per inch.
-/// Since 2.36.6, the JPEG loader sets the "comment" option with the comment
+/// Since 2.36.6, the JPEG loader sets the &quot;comment&quot; option with the comment
 /// EXIF tag.
 /// </para>
 /// </summary>
@@ -1593,7 +1593,7 @@ public static class GdkPixbufHandleExtensions
 /// A pixbuf.
 /// </param>
 /// <return>
-/// A pointer to the pixbuf's pixel data.
+/// A pointer to the pixbuf&apos;s pixel data.
 /// </return>
 
 	public static byte[] GetPixels(this MentorLake.GdkPixbuf.GdkPixbufHandle pixbuf)
@@ -1623,7 +1623,7 @@ public static class GdkPixbufHandleExtensions
 /// The length of the binary data.
 /// </param>
 /// <return>
-/// A pointer to the pixbuf's
+/// A pointer to the pixbuf&apos;s
 /// pixel data.
 /// </return>
 
@@ -1843,7 +1843,7 @@ public static class GdkPixbufHandleExtensions
 /// The `src` and `dest` arguments may be the same pixbuf with no ill effects.
 /// </para>
 /// <para>
-/// If `saturation` is 1.0 then saturation is not changed. If it's less than 1.0,
+/// If `saturation` is 1.0 then saturation is not changed. If it&apos;s less than 1.0,
 /// saturation is reduced (the image turns toward grayscale); if greater than
 /// 1.0, saturation is increased (the image gets more vivid colors).
 /// </para>
@@ -1875,8 +1875,8 @@ public static class GdkPixbufHandleExtensions
 
 /// <summary>
 /// <para>
-/// Saves pixbuf to a file in format @type. By default, "jpeg", "png", "ico"
-/// and "bmp" are possible file formats to save in, but more formats may be
+/// Saves pixbuf to a file in format @type. By default, &quot;jpeg&quot;, &quot;png&quot;, &quot;ico&quot;
+/// and &quot;bmp&quot; are possible file formats to save in, but more formats may be
 /// installed. The list of all writable formats can be determined in the
 /// following way:
 /// </para>
@@ -1891,7 +1891,7 @@ public static class GdkPixbufHandleExtensions
 /// <para>
 /// GSList *formats = gdk_pixbuf_get_formats ();
 /// GSList *writable_formats = NULL;
-/// g_slist_foreach (formats, add_if_writable, &writable_formats);
+/// g_slist_foreach (formats, add_if_writable, &amp;writable_formats);
 /// g_slist_free (formats);
 /// ```
 /// </para>
@@ -1907,27 +1907,27 @@ public static class GdkPixbufHandleExtensions
 /// </para>
 /// <para>
 /// ```c
-/// gdk_pixbuf_save (pixbuf, handle, "jpeg", &error, "quality", "100", NULL);
+/// gdk_pixbuf_save (pixbuf, handle, &quot;jpeg&quot;, &amp;error, &quot;quality&quot;, &quot;100&quot;, NULL);
 /// ```
 /// </para>
 /// <para>
 /// Currently only few parameters exist.
 /// </para>
 /// <para>
-/// JPEG images can be saved with a "quality" parameter; its value should be
+/// JPEG images can be saved with a &quot;quality&quot; parameter; its value should be
 /// in the range `[0, 100]`. JPEG and PNG density can be set by setting the
-/// "x-dpi" and "y-dpi" parameters to the appropriate values in dots per inch.
+/// &quot;x-dpi&quot; and &quot;y-dpi&quot; parameters to the appropriate values in dots per inch.
 /// </para>
 /// <para>
 /// Text chunks can be attached to PNG images by specifying parameters of
-/// the form "tEXt::key", where key is an ASCII string of length 1-79.
+/// the form &quot;tEXt::key&quot;, where key is an ASCII string of length 1-79.
 /// The values are UTF-8 encoded strings. The PNG compression level can
-/// be specified using the "compression" parameter; it's value is in an
+/// be specified using the &quot;compression&quot; parameter; it&apos;s value is in an
 /// integer in the range of `[0, 9]`.
 /// </para>
 /// <para>
 /// ICC color profiles can also be embedded into PNG, JPEG and TIFF images.
-/// The "icc-profile" value should be the complete ICC profile encoded
+/// The &quot;icc-profile&quot; value should be the complete ICC profile encoded
 /// into base64.
 /// </para>
 /// <para>
@@ -1937,30 +1937,30 @@ public static class GdkPixbufHandleExtensions
 /// </para>
 /// <para>
 /// // icm_path is set elsewhere
-/// g_file_get_contents (icm_path, &contents, &length, NULL);
+/// g_file_get_contents (icm_path, &amp;contents, &amp;length, NULL);
 /// </para>
 /// <para>
 /// char *contents_encode = g_base64_encode ((const guchar *) contents, length);
 /// </para>
 /// <para>
-/// gdk_pixbuf_save (pixbuf, handle, "png", &error, "icc-profile", contents_encode, NULL);
+/// gdk_pixbuf_save (pixbuf, handle, &quot;png&quot;, &amp;error, &quot;icc-profile&quot;, contents_encode, NULL);
 /// ```
 /// </para>
 /// <para>
 /// TIFF images recognize:
 /// </para>
 /// <para>
-///  1. a "bits-per-sample" option (integer) which can be either 1 for saving
+///  1. a &quot;bits-per-sample&quot; option (integer) which can be either 1 for saving
 ///     bi-level CCITTFAX4 images, or 8 for saving 8-bits per sample
-///  2. a "compression" option (integer) which can be 1 for no compression,
+///  2. a &quot;compression&quot; option (integer) which can be 1 for no compression,
 ///     2 for Huffman, 5 for LZW, 7 for JPEG and 8 for DEFLATE (see the libtiff
 ///     documentation and tiff.h for all supported codec values)
-///  3. an "icc-profile" option (zero-terminated string) containing a base64
+///  3. an &quot;icc-profile&quot; option (zero-terminated string) containing a base64
 ///     encoded ICC color profile.
 /// </para>
 /// <para>
-/// ICO images can be saved in depth 16, 24, or 32, by using the "depth"
-/// parameter. When the ICO saver is given "x_hot" and "y_hot" parameters,
+/// ICO images can be saved in depth 16, 24, or 32, by using the &quot;depth&quot;
+/// parameter. When the ICO saver is given &quot;x_hot&quot; and &quot;y_hot&quot; parameters,
 /// it produces a CUR instead of an ICO.
 /// </para>
 /// </summary>
@@ -1992,8 +1992,8 @@ public static class GdkPixbufHandleExtensions
 
 /// <summary>
 /// <para>
-/// Saves pixbuf to a new buffer in format `type`, which is currently "jpeg",
-/// "png", "tiff", "ico" or "bmp".
+/// Saves pixbuf to a new buffer in format `type`, which is currently &quot;jpeg&quot;,
+/// &quot;png&quot;, &quot;tiff&quot;, &quot;ico&quot; or &quot;bmp&quot;.
 /// </para>
 /// <para>
 /// This is a convenience function that uses `gdk_pixbuf_save_to_callback()`
@@ -2047,8 +2047,8 @@ public static class GdkPixbufHandleExtensions
 /// Vector version of `gdk_pixbuf_save_to_buffer()`.
 /// </para>
 /// <para>
-/// Saves pixbuf to a new buffer in format @type, which is currently "jpeg",
-/// "tiff", "png", "ico" or "bmp".
+/// Saves pixbuf to a new buffer in format @type, which is currently &quot;jpeg&quot;,
+/// &quot;tiff&quot;, &quot;png&quot;, &quot;ico&quot; or &quot;bmp&quot;.
 /// </para>
 /// <para>
 /// See [method@GdkPixbuf.Pixbuf.save_to_buffer] for more details.
@@ -2139,8 +2139,8 @@ public static class GdkPixbufHandleExtensions
 /// Vector version of `gdk_pixbuf_save_to_callback()`.
 /// </para>
 /// <para>
-/// Saves pixbuf to a callback in format @type, which is currently "jpeg",
-/// "png", "tiff", "ico" or "bmp".
+/// Saves pixbuf to a callback in format @type, which is currently &quot;jpeg&quot;,
+/// &quot;png&quot;, &quot;tiff&quot;, &quot;ico&quot; or &quot;bmp&quot;.
 /// </para>
 /// <para>
 /// If @error is set, `FALSE` will be returned.
@@ -2186,8 +2186,8 @@ public static class GdkPixbufHandleExtensions
 /// Saves `pixbuf` to an output stream.
 /// </para>
 /// <para>
-/// Supported file formats are currently "jpeg", "tiff", "png", "ico" or
-/// "bmp". See `gdk_pixbuf_save_to_buffer()` for more details.
+/// Supported file formats are currently &quot;jpeg&quot;, &quot;tiff&quot;, &quot;png&quot;, &quot;ico&quot; or
+/// &quot;bmp&quot;. See `gdk_pixbuf_save_to_buffer()` for more details.
 /// </para>
 /// <para>
 /// The `cancellable` can be used to abort the operation from another
@@ -2280,8 +2280,8 @@ public static class GdkPixbufHandleExtensions
 /// Saves `pixbuf` to an output stream.
 /// </para>
 /// <para>
-/// Supported file formats are currently "jpeg", "tiff", "png", "ico" or
-/// "bmp".
+/// Supported file formats are currently &quot;jpeg&quot;, &quot;tiff&quot;, &quot;png&quot;, &quot;ico&quot; or
+/// &quot;bmp&quot;.
 /// </para>
 /// <para>
 /// See [method@GdkPixbuf.Pixbuf.save_to_stream] for more details.
@@ -2373,7 +2373,7 @@ public static class GdkPixbufHandleExtensions
 /// Vector version of `gdk_pixbuf_save()`.
 /// </para>
 /// <para>
-/// Saves pixbuf to a file in `type`, which is currently "jpeg", "png", "tiff", "ico" or "bmp".
+/// Saves pixbuf to a file in `type`, which is currently &quot;jpeg&quot;, &quot;png&quot;, &quot;tiff&quot;, &quot;ico&quot; or &quot;bmp&quot;.
 /// </para>
 /// <para>
 /// If @error is set, `FALSE` will be returned.
@@ -2421,7 +2421,7 @@ public static class GdkPixbufHandleExtensions
 /// <para>
 /// Try to use gdk_pixbuf_scale_simple() first; this function is
 /// the industrial-strength power tool you can fall back to, if
-/// gdk_pixbuf_scale_simple() isn't powerful enough.
+/// gdk_pixbuf_scale_simple() isn&apos;t powerful enough.
 /// </para>
 /// <para>
 /// If the source rectangle overlaps the destination rectangle on the

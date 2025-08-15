@@ -82,7 +82,7 @@ public struct GDBusPropertyInfo
 public int ref_count;
 	/// <summary>
 /// <para>
-/// The name of the D-Bus property, e.g. "SupportedFilesystems".
+/// The name of the D-Bus property, e.g. &quot;SupportedFilesystems&quot;.
 /// </para>
 /// </summary>
 

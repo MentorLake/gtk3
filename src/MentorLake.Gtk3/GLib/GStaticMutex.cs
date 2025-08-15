@@ -6,33 +6,30 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// Prior to GLib 2.32, GStaticMutex had the significant advantage
-/// that it doesn't need to be created at run-time, but can be defined
+/// that it doesn&apos;t need to be created at run-time, but can be defined
 /// at compile-time. Since 2.32, #GMutex can be statically allocated
 /// as well, and GStaticMutex has been deprecated.
 /// </para>
 /// <para>
 /// Here is a version of our give_me_next_number() example using
 /// a GStaticMutex:
-/// |[
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static int current_number = 0;
 ///     int ret_val;
 ///     static GStaticMutex mutex = G_STATIC_MUTEX_INIT;
-/// </para>
-/// <para>
-///     g_static_mutex_lock (&mutex);
+/// 
+///     g_static_mutex_lock (&amp;mutex);
 ///     ret_val = current_number = calc_next_number (current_number);
-///     g_static_mutex_unlock (&mutex);
-/// </para>
-/// <para>
+///     g_static_mutex_unlock (&amp;mutex);
+/// 
 ///     return ret_val;
 ///   }
-/// ]|
-/// </para>
-/// <para>
-/// Sometimes you would like to dynamically create a mutex. If you don't
+/// </code>
+/// Sometimes you would like to dynamically create a mutex. If you don&apos;t
 /// want to require prior calling to g_thread_init(), because your code
 /// should also be usable in non-threaded programs, you are not able to
 /// use g_mutex_new() and thus #GMutex, as that requires a prior call to
@@ -71,8 +68,8 @@ public static class GStaticMutexExtensions
 /// Releases all resources allocated to @mutex.
 /// </para>
 /// <para>
-/// You don't have to call this functions for a #GStaticMutex with an
-/// unbounded lifetime, i.e. objects declared 'static', but if you have
+/// You don&apos;t have to call this functions for a #GStaticMutex with an
+/// unbounded lifetime, i.e. objects declared &apos;static&apos;, but if you have
 /// a #GStaticMutex as a member of a structure and the structure is
 /// freed, you should also free the #GStaticMutex.
 /// </para>
@@ -142,33 +139,30 @@ internal class GStaticMutexExterns
 /// </para>
 /// <para>
 /// Prior to GLib 2.32, GStaticMutex had the significant advantage
-/// that it doesn't need to be created at run-time, but can be defined
+/// that it doesn&apos;t need to be created at run-time, but can be defined
 /// at compile-time. Since 2.32, #GMutex can be statically allocated
 /// as well, and GStaticMutex has been deprecated.
 /// </para>
 /// <para>
 /// Here is a version of our give_me_next_number() example using
 /// a GStaticMutex:
-/// |[
+/// <code>
+///   int
 ///   int
 ///   give_me_next_number (void)
 ///   {
 ///     static int current_number = 0;
 ///     int ret_val;
 ///     static GStaticMutex mutex = G_STATIC_MUTEX_INIT;
-/// </para>
-/// <para>
-///     g_static_mutex_lock (&mutex);
+/// 
+///     g_static_mutex_lock (&amp;mutex);
 ///     ret_val = current_number = calc_next_number (current_number);
-///     g_static_mutex_unlock (&mutex);
-/// </para>
-/// <para>
+///     g_static_mutex_unlock (&amp;mutex);
+/// 
 ///     return ret_val;
 ///   }
-/// ]|
-/// </para>
-/// <para>
-/// Sometimes you would like to dynamically create a mutex. If you don't
+/// </code>
+/// Sometimes you would like to dynamically create a mutex. If you don&apos;t
 /// want to require prior calling to g_thread_init(), because your code
 /// should also be usable in non-threaded programs, you are not able to
 /// use g_mutex_new() and thus #GMutex, as that requires a prior call to

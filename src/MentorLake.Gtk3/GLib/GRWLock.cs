@@ -8,10 +8,10 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// The difference to a mutex is that a reader-writer lock discriminates
-/// between read-only ('reader') and full ('writer') access. While only
-/// one thread at a time is allowed write access (by holding the 'writer'
+/// between read-only (&apos;reader&apos;) and full (&apos;writer&apos;) access. While only
+/// one thread at a time is allowed write access (by holding the &apos;writer&apos;
 /// lock via g_rw_lock_writer_lock()), multiple threads can gain
-/// simultaneous read-only access (by holding the 'reader' lock via
+/// simultaneous read-only access (by holding the &apos;reader&apos; lock via
 /// g_rw_lock_reader_lock()).
 /// </para>
 /// <para>
@@ -21,50 +21,42 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// Here is an example for an array with access functions:
-/// |[<!-- language="C" -->
+/// <code>
+///   GRWLock lock;
 ///   GRWLock lock;
 ///   GPtrArray *array;
-/// </para>
-/// <para>
+/// 
 ///   gpointer
 ///   my_array_get (guint index)
 ///   {
 ///     gpointer retval = NULL;
-/// </para>
-/// <para>
+/// 
 ///     if (!array)
 ///       return NULL;
-/// </para>
-/// <para>
-///     g_rw_lock_reader_lock (&lock);
-///     if (index < array->len)
+/// 
+///     g_rw_lock_reader_lock (&amp;lock);
+///     if (index &amp;lt; array-&amp;gt;len)
 ///       retval = g_ptr_array_index (array, index);
-///     g_rw_lock_reader_unlock (&lock);
-/// </para>
-/// <para>
+///     g_rw_lock_reader_unlock (&amp;lock);
+/// 
 ///     return retval;
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   void
 ///   my_array_set (guint index, gpointer data)
 ///   {
-///     g_rw_lock_writer_lock (&lock);
-/// </para>
-/// <para>
+///     g_rw_lock_writer_lock (&amp;lock);
+/// 
 ///     if (!array)
 ///       array = g_ptr_array_new ();
-/// </para>
-/// <para>
-///     if (index >= array->len)
+/// 
+///     if (index &amp;gt;= array-&amp;gt;len)
 ///       g_ptr_array_set_size (array, index+1);
 ///     g_ptr_array_index (array, index) = data;
-/// </para>
-/// <para>
-///     g_rw_lock_writer_unlock (&lock);
+/// 
+///     g_rw_lock_writer_unlock (&amp;lock);
 ///   }
-///  ]|
-/// This example shows an array which can be accessed by many readers
+/// </code>
 /// (the my_array_get() function) simultaneously, whereas the writers
 /// (the my_array_set() function) will only be allowed one at a time
 /// and only if no readers currently access the array. This is because
@@ -122,21 +114,18 @@ public static class GRWLockExtensions
 /// necessary to initialise a reader-writer lock that has been statically
 /// allocated.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   typedef struct {
 ///   typedef struct {
 ///     GRWLock l;
 ///     ...
 ///   } Blob;
-/// </para>
-/// <para>
+/// 
 /// Blob *b;
-/// </para>
-/// <para>
+/// 
 /// b = g_new (Blob, 1);
-/// g_rw_lock_init (&b->l);
-/// ]|
-/// </para>
+/// g_rw_lock_init (&amp;b-&amp;gt;l);
+/// </code>
 /// <para>
 /// To undo the effect of g_rw_lock_init() when a lock is no longer
 /// needed, use g_rw_lock_clear().
@@ -333,10 +322,10 @@ internal class GRWLockExterns
 /// </para>
 /// <para>
 /// The difference to a mutex is that a reader-writer lock discriminates
-/// between read-only ('reader') and full ('writer') access. While only
-/// one thread at a time is allowed write access (by holding the 'writer'
+/// between read-only (&apos;reader&apos;) and full (&apos;writer&apos;) access. While only
+/// one thread at a time is allowed write access (by holding the &apos;writer&apos;
 /// lock via g_rw_lock_writer_lock()), multiple threads can gain
-/// simultaneous read-only access (by holding the 'reader' lock via
+/// simultaneous read-only access (by holding the &apos;reader&apos; lock via
 /// g_rw_lock_reader_lock()).
 /// </para>
 /// <para>
@@ -346,50 +335,42 @@ internal class GRWLockExterns
 /// </para>
 /// <para>
 /// Here is an example for an array with access functions:
-/// |[<!-- language="C" -->
+/// <code>
+///   GRWLock lock;
 ///   GRWLock lock;
 ///   GPtrArray *array;
-/// </para>
-/// <para>
+/// 
 ///   gpointer
 ///   my_array_get (guint index)
 ///   {
 ///     gpointer retval = NULL;
-/// </para>
-/// <para>
+/// 
 ///     if (!array)
 ///       return NULL;
-/// </para>
-/// <para>
-///     g_rw_lock_reader_lock (&lock);
-///     if (index < array->len)
+/// 
+///     g_rw_lock_reader_lock (&amp;lock);
+///     if (index &amp;lt; array-&amp;gt;len)
 ///       retval = g_ptr_array_index (array, index);
-///     g_rw_lock_reader_unlock (&lock);
-/// </para>
-/// <para>
+///     g_rw_lock_reader_unlock (&amp;lock);
+/// 
 ///     return retval;
 ///   }
-/// </para>
-/// <para>
+/// 
 ///   void
 ///   my_array_set (guint index, gpointer data)
 ///   {
-///     g_rw_lock_writer_lock (&lock);
-/// </para>
-/// <para>
+///     g_rw_lock_writer_lock (&amp;lock);
+/// 
 ///     if (!array)
 ///       array = g_ptr_array_new ();
-/// </para>
-/// <para>
-///     if (index >= array->len)
+/// 
+///     if (index &amp;gt;= array-&amp;gt;len)
 ///       g_ptr_array_set_size (array, index+1);
 ///     g_ptr_array_index (array, index) = data;
-/// </para>
-/// <para>
-///     g_rw_lock_writer_unlock (&lock);
+/// 
+///     g_rw_lock_writer_unlock (&amp;lock);
 ///   }
-///  ]|
-/// This example shows an array which can be accessed by many readers
+/// </code>
 /// (the my_array_get() function) simultaneously, whereas the writers
 /// (the my_array_set() function) will only be allowed one at a time
 /// and only if no readers currently access the array. This is because

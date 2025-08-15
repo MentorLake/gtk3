@@ -205,7 +205,7 @@ public static class AtkHyperlinkHandleExtensions
 /// <para>
 /// Indicates whether the link currently displays some or all of its
 ///           content inline.  Ordinary HTML links will usually return
-///           %FALSE, but an inline &lt;src&gt; HTML element will return
+///           %FALSE, but an inline &amp;lt;src&amp;gt; HTML element will return
 ///           %TRUE.
 /// </para>
 /// </summary>

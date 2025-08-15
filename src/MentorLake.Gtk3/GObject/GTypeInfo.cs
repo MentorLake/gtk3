@@ -3,7 +3,7 @@ namespace MentorLake.GObject;
 /// <summary>
 /// <para>
 /// This structure is used to provide the type system with the information
-/// required to initialize and destruct (finalize) a type's class and
+/// required to initialize and destruct (finalize) a type&apos;s class and
 /// its instances.
 /// </para>
 /// <para>
@@ -32,7 +32,7 @@ internal class GTypeInfoExterns
 /// <summary>
 /// <para>
 /// This structure is used to provide the type system with the information
-/// required to initialize and destruct (finalize) a type's class and
+/// required to initialize and destruct (finalize) a type&apos;s class and
 /// its instances.
 /// </para>
 /// <para>

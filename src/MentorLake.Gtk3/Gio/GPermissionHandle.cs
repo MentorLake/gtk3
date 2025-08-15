@@ -132,7 +132,7 @@ public static class GPermissionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the value of the 'allowed' property.  This property is %TRUE if
+/// Gets the value of the &apos;allowed&apos; property.  This property is %TRUE if
 /// the caller currently has permission to perform the action that
 /// @permission represents the permission to perform.
 /// </para>
@@ -142,7 +142,7 @@ public static class GPermissionHandleExtensions
 /// a #GPermission instance
 /// </param>
 /// <return>
-/// the value of the 'allowed' property
+/// the value of the &apos;allowed&apos; property
 /// </return>
 
 	public static bool GetAllowed(this MentorLake.Gio.GPermissionHandle permission)
@@ -153,7 +153,7 @@ public static class GPermissionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the value of the 'can-acquire' property.  This property is %TRUE
+/// Gets the value of the &apos;can-acquire&apos; property.  This property is %TRUE
 /// if it is generally possible to acquire the permission by calling
 /// g_permission_acquire().
 /// </para>
@@ -163,7 +163,7 @@ public static class GPermissionHandleExtensions
 /// a #GPermission instance
 /// </param>
 /// <return>
-/// the value of the 'can-acquire' property
+/// the value of the &apos;can-acquire&apos; property
 /// </return>
 
 	public static bool GetCanAcquire(this MentorLake.Gio.GPermissionHandle permission)
@@ -174,7 +174,7 @@ public static class GPermissionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the value of the 'can-release' property.  This property is %TRUE
+/// Gets the value of the &apos;can-release&apos; property.  This property is %TRUE
 /// if it is generally possible to release the permission by calling
 /// g_permission_release().
 /// </para>
@@ -184,7 +184,7 @@ public static class GPermissionHandleExtensions
 /// a #GPermission instance
 /// </param>
 /// <return>
-/// the value of the 'can-release' property
+/// the value of the &apos;can-release&apos; property
 /// </return>
 
 	public static bool GetCanRelease(this MentorLake.Gio.GPermissionHandle permission)
@@ -208,13 +208,13 @@ public static class GPermissionHandleExtensions
 /// a #GPermission instance
 /// </param>
 /// <param name="allowed">
-/// the new value for the 'allowed' property
+/// the new value for the &apos;allowed&apos; property
 /// </param>
 /// <param name="can_acquire">
-/// the new value for the 'can-acquire' property
+/// the new value for the &apos;can-acquire&apos; property
 /// </param>
 /// <param name="can_release">
-/// the new value for the 'can-release' property
+/// the new value for the &apos;can-release&apos; property
 /// </param>
 
 	public static T ImplUpdate<T>(this T permission, bool allowed, bool can_acquire, bool can_release) where T : GPermissionHandle

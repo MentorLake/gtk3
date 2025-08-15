@@ -5,7 +5,7 @@ namespace MentorLake.Atk;
 /// Describes the layer of a component
 /// </para>
 /// <para>
-/// These enumerated "layer values" are used when determining which UI
+/// These enumerated &quot;layer values&quot; are used when determining which UI
 /// rendering layer a component is drawn into, which can help in making
 /// determinations of when components occlude one another.
 /// </para>

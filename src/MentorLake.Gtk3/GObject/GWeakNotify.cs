@@ -7,7 +7,7 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// Since the object is already being disposed when the #GWeakNotify is called,
-/// there's not much you could do with the object, apart from e.g. using its
+/// there&apos;s not much you could do with the object, apart from e.g. using its
 /// address as hash-index or the like.
 /// </para>
 /// <para>

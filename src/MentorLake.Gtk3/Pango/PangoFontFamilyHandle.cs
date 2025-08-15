@@ -139,7 +139,7 @@ public static class PangoFontFamilyHandleExtensions
 /// </param>
 /// <param name="name">
 /// the name of a face. If the name is %NULL,
-///   the family's default face (fontconfig calls it "Regular")
+///   the family&apos;s default face (fontconfig calls it &quot;Regular&quot;)
 ///   will be returned.
 /// </param>
 /// <return>

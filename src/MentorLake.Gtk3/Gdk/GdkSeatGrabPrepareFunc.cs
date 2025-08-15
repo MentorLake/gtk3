@@ -4,7 +4,7 @@ namespace MentorLake.Gdk;
 /// <para>
 /// Type of the callback used to set up @window so it can be
 /// grabbed. A typical action would be ensuring the window is
-/// visible, although there's room for other initialization
+/// visible, although there&apos;s room for other initialization
 /// actions.
 /// </para>
 /// </summary>

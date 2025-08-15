@@ -22,14 +22,14 @@ namespace MentorLake.cairo;
 /// @scaled_font.
 /// </para>
 /// <para>
-/// The @extents argument is preset to have <literal>x_bearing</literal>,
-/// <literal>width</literal>, and <literal>y_advance</literal> of zero,
-/// <literal>y_bearing</literal> set to <literal>-font_extents.ascent</literal>,
-/// <literal>height</literal> to <literal>font_extents.ascent+font_extents.descent</literal>,
-/// and <literal>x_advance</literal> to <literal>font_extents.max_x_advance</literal>.
+/// The @extents argument is preset to have &amp;lt;literal&amp;gt;x_bearing&amp;lt;/literal&amp;gt;,
+/// &amp;lt;literal&amp;gt;width&amp;lt;/literal&amp;gt;, and &amp;lt;literal&amp;gt;y_advance&amp;lt;/literal&amp;gt; of zero,
+/// &amp;lt;literal&amp;gt;y_bearing&amp;lt;/literal&amp;gt; set to &amp;lt;literal&amp;gt;-font_extents.ascent&amp;lt;/literal&amp;gt;,
+/// &amp;lt;literal&amp;gt;height&amp;lt;/literal&amp;gt; to &amp;lt;literal&amp;gt;font_extents.ascent+font_extents.descent&amp;lt;/literal&amp;gt;,
+/// and &amp;lt;literal&amp;gt;x_advance&amp;lt;/literal&amp;gt; to &amp;lt;literal&amp;gt;font_extents.max_x_advance&amp;lt;/literal&amp;gt;.
 /// The only field user needs to set in majority of cases is
-/// <literal>x_advance</literal>.
-/// If the <literal>width</literal> field is zero upon the callback returning
+/// &amp;lt;literal&amp;gt;x_advance&amp;lt;/literal&amp;gt;.
+/// If the &amp;lt;literal&amp;gt;width&amp;lt;/literal&amp;gt; field is zero upon the callback returning
 /// (which is its preset value), the glyph extents are automatically computed
 /// based on the drawings done to @cr.  This is in most cases exactly what the
 /// desired behavior is.  However, if for any reason the callback sets the

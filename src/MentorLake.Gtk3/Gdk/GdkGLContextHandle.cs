@@ -23,7 +23,7 @@ namespace MentorLake.Gdk;
 /// can fail, returning %NULL context.
 /// </para>
 /// <para>
-/// A #GdkGLContext has to be made "current" in order to start using
+/// A #GdkGLContext has to be made &quot;current&quot; in order to start using
 /// it, otherwise any OpenGL call will be ignored.
 /// </para>
 /// <para>
@@ -53,11 +53,10 @@ namespace MentorLake.Gdk;
 /// contexts, so you always need to ensure that the one which you
 /// want to draw with is the current one before issuing commands:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 ///   gdk_gl_context_make_current (context);
-/// ]|
-/// </para>
+///   gdk_gl_context_make_current (context);
+/// </code>
 /// <para>
 /// You can now perform your drawing using OpenGL commands.
 /// </para>

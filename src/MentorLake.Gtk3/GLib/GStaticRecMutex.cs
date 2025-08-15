@@ -36,8 +36,8 @@ public static class GStaticRecMutexExtensions
 /// Releases all resources allocated to a #GStaticRecMutex.
 /// </para>
 /// <para>
-/// You don't have to call this functions for a #GStaticRecMutex with an
-/// unbounded lifetime, i.e. objects declared 'static', but if you have
+/// You don&apos;t have to call this functions for a #GStaticRecMutex with an
+/// unbounded lifetime, i.e. objects declared &apos;static&apos;, but if you have
 /// a #GStaticRecMutex as a member of a structure and the structure is
 /// freed, you should also free the #GStaticRecMutex.
 /// </para>

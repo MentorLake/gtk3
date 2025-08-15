@@ -49,7 +49,7 @@ public static class GDtlsClientConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's expected server identity
+/// Gets @conn&apos;s expected server identity
 /// </para>
 /// </summary>
 
@@ -70,7 +70,7 @@ public static class GDtlsClientConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @conn's validation flags
+/// Gets @conn&apos;s validation flags
 /// </para>
 /// <para>
 /// This function does not work as originally designed and is impossible
@@ -94,7 +94,7 @@ public static class GDtlsClientConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @conn's expected server identity, which is used both to tell
+/// Sets @conn&apos;s expected server identity, which is used both to tell
 /// servers on virtual hosts which certificate to present, and also
 /// to let @conn know what name to look for in the certificate when
 /// performing %G_TLS_CERTIFICATE_BAD_IDENTITY validation, if enabled.
@@ -117,7 +117,7 @@ public static class GDtlsClientConnectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets @conn's validation flags, to override the default set of
+/// Sets @conn&apos;s validation flags, to override the default set of
 /// checks performed when validating a server certificate. By default,
 /// %G_TLS_CERTIFICATE_VALIDATE_ALL is used.
 /// </para>

@@ -433,12 +433,12 @@ public static class GScannerExtensions
 
 /// <summary>
 /// <para>
-/// Outputs a message through the scanner's msg_handler,
+/// Outputs a message through the scanner&apos;s msg_handler,
 /// resulting from an unexpected token in the input stream.
 /// Note that you should not call g_scanner_peek_next_token()
 /// followed by g_scanner_unexp_token() without an intermediate
 /// call to g_scanner_get_next_token(), as g_scanner_unexp_token()
-/// evaluates the scanner's current token (not the peeked token)
+/// evaluates the scanner&apos;s current token (not the peeked token)
 /// to construct part of the message.
 /// </para>
 /// </summary>
@@ -450,19 +450,19 @@ public static class GScannerExtensions
 /// the expected token
 /// </param>
 /// <param name="identifier_spec">
-/// a string describing how the scanner's user
-///     refers to identifiers (%NULL defaults to "identifier").
+/// a string describing how the scanner&apos;s user
+///     refers to identifiers (%NULL defaults to &quot;identifier&quot;).
 ///     This is used if @expected_token is %G_TOKEN_IDENTIFIER or
 ///     %G_TOKEN_IDENTIFIER_NULL.
 /// </param>
 /// <param name="symbol_spec">
-/// a string describing how the scanner's user refers
-///     to symbols (%NULL defaults to "symbol"). This is used if
+/// a string describing how the scanner&apos;s user refers
+///     to symbols (%NULL defaults to &quot;symbol&quot;). This is used if
 ///     @expected_token is %G_TOKEN_SYMBOL or any token value greater
 ///     than %G_TOKEN_LAST.
 /// </param>
 /// <param name="symbol_name">
-/// the name of the symbol, if the scanner's current
+/// the name of the symbol, if the scanner&apos;s current
 ///     token is a symbol.
 /// </param>
 /// <param name="message">

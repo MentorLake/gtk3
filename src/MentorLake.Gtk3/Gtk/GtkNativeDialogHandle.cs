@@ -2,7 +2,7 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// Native dialogs are platform dialogs that don't use #GtkDialog or
+/// Native dialogs are platform dialogs that don&apos;t use #GtkDialog or
 /// #GtkWindow. They are used in order to integrate better with a
 /// platform, by looking the same as other native applications and
 /// supporting platform specific features.
@@ -265,7 +265,8 @@ public static class GtkNativeDialogHandleExtensions
 /// </para>
 /// <para>
 /// Typical usage of this function might be:
-/// |[<!-- language="C" -->
+/// <code>
+///   gint result = gtk_native_dialog_run (GTK_NATIVE_DIALOG (dialog));
 ///   gint result = gtk_native_dialog_run (GTK_NATIVE_DIALOG (dialog));
 ///   switch (result)
 ///     {
@@ -277,9 +278,7 @@ public static class GtkNativeDialogHandleExtensions
 ///          break;
 ///     }
 ///   g_object_unref (dialog);
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// Note that even though the recursive main loop gives the effect of a
 /// modal dialog (it prevents the user from interacting with other
 /// windows in the same window group while the dialog is run), callbacks

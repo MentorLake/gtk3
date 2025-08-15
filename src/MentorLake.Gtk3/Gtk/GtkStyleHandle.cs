@@ -6,8 +6,8 @@ namespace MentorLake.Gtk;
 /// feel for a widget.
 /// </para>
 /// <para>
-/// > In GTK+ 3.0, GtkStyle has been deprecated and replaced by
-/// > #GtkStyleContext.
+/// &amp;gt; In GTK+ 3.0, GtkStyle has been deprecated and replaced by
+/// &amp;gt; #GtkStyleContext.
 /// </para>
 /// <para>
 /// Each #GtkWidget has an associated #GtkStyle object that is used when
@@ -233,7 +233,7 @@ public static class GtkStyleHandleExtensions
 /// <return>
 /// Either @style, or a newly-created #GtkStyle.
 ///   If the style is newly created, the style parameter
-///   will be unref'ed, and the new style will have
+///   will be unref&apos;ed, and the new style will have
 ///   a reference count belonging to the caller.
 /// </return>
 

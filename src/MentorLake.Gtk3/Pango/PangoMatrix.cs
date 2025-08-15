@@ -10,8 +10,8 @@ namespace MentorLake.Pango;
 /// </para>
 /// <para>
 /// ```
-/// x_device = x_user * matrix->xx + y_user * matrix->xy + matrix->x0;
-/// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
+/// x_device = x_user * matrix-&amp;gt;xx + y_user * matrix-&amp;gt;xy + matrix-&amp;gt;x0;
+/// y_device = x_user * matrix-&amp;gt;yx + y_user * matrix-&amp;gt;yy + matrix-&amp;gt;y0;
 /// ```
 /// </para>
 /// </summary>
@@ -261,7 +261,7 @@ public static class PangoMatrixExtensions
 /// <para>
 /// For better accuracy, you should use [method@Pango.Matrix.transform_rectangle]
 /// on original rectangle in Pango units and convert to pixels afterward
-/// using [func@extents_to_pixels]'s first argument.
+/// using [func@extents_to_pixels]&apos;s first argument.
 /// </para>
 /// </summary>
 
@@ -420,8 +420,8 @@ internal class PangoMatrixExterns
 /// </para>
 /// <para>
 /// ```
-/// x_device = x_user * matrix->xx + y_user * matrix->xy + matrix->x0;
-/// y_device = x_user * matrix->yx + y_user * matrix->yy + matrix->y0;
+/// x_device = x_user * matrix-&amp;gt;xx + y_user * matrix-&amp;gt;xy + matrix-&amp;gt;x0;
+/// y_device = x_user * matrix-&amp;gt;yx + y_user * matrix-&amp;gt;yy + matrix-&amp;gt;y0;
 /// ```
 /// </para>
 /// </summary>

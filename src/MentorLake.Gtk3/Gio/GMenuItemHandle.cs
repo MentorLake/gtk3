@@ -14,12 +14,12 @@ public class GMenuItemHandle : GObjectHandle
 /// Creates a new #GMenuItem.
 /// </para>
 /// <para>
-/// If @label is non-%NULL it is used to set the "label" attribute of the
+/// If @label is non-%NULL it is used to set the &quot;label&quot; attribute of the
 /// new item.
 /// </para>
 /// <para>
-/// If @detailed_action is non-%NULL it is used to set the "action" and
-/// possibly the "target" attribute of the new item.  See
+/// If @detailed_action is non-%NULL it is used to set the &quot;action&quot; and
+/// possibly the &quot;target&quot; attribute of the new item.  See
 /// g_menu_item_set_detailed_action() for more information.
 /// </para>
 /// </summary>
@@ -85,54 +85,54 @@ public class GMenuItemHandle : GObjectHandle
 /// menu.
 /// </para>
 /// <para>
-/// As a simple example, consider a typical "Edit" menu from a simple
-/// program.  It probably contains an "Undo" and "Redo" item, followed by
-/// a separator, followed by "Cut", "Copy" and "Paste".
+/// As a simple example, consider a typical &quot;Edit&quot; menu from a simple
+/// program.  It probably contains an &quot;Undo&quot; and &quot;Redo&quot; item, followed by
+/// a separator, followed by &quot;Cut&quot;, &quot;Copy&quot; and &quot;Paste&quot;.
 /// </para>
 /// <para>
 /// This would be accomplished by creating three #GMenu instances.  The
-/// first would be populated with the "Undo" and "Redo" items, and the
-/// second with the "Cut", "Copy" and "Paste" items.  The first and
+/// first would be populated with the &quot;Undo&quot; and &quot;Redo&quot; items, and the
+/// second with the &quot;Cut&quot;, &quot;Copy&quot; and &quot;Paste&quot; items.  The first and
 /// second menus would then be added as submenus of the third.  In XML
 /// format, this would look something like the following:
-/// |[
-/// <menu id='edit-menu'>
-///   <section>
-///     <item label='Undo'/>
-///     <item label='Redo'/>
-///   </section>
-///   <section>
-///     <item label='Cut'/>
-///     <item label='Copy'/>
-///     <item label='Paste'/>
-///   </section>
-/// </menu>
-/// ]|
-/// </para>
-/// <para>
+/// <code>
+/// &amp;lt;menu id=&apos;edit-menu&apos;&amp;gt;
+/// &amp;lt;menu id=&apos;edit-menu&apos;&amp;gt;
+///   &amp;lt;section&amp;gt;
+///     &amp;lt;item label=&apos;Undo&apos;/&amp;gt;
+///     &amp;lt;item label=&apos;Redo&apos;/&amp;gt;
+///   &amp;lt;/section&amp;gt;
+///   &amp;lt;section&amp;gt;
+///     &amp;lt;item label=&apos;Cut&apos;/&amp;gt;
+///     &amp;lt;item label=&apos;Copy&apos;/&amp;gt;
+///     &amp;lt;item label=&apos;Paste&apos;/&amp;gt;
+///   &amp;lt;/section&amp;gt;
+/// &amp;lt;/menu&amp;gt;
+/// </code>
 /// The following example is exactly equivalent.  It is more illustrative
 /// of the exact relationship between the menus and items (keeping in
-/// mind that the 'link' element defines a new menu that is linked to the
+/// mind that the &apos;link&apos; element defines a new menu that is linked to the
 /// containing one).  The style of the second example is more verbose and
 /// difficult to read (and therefore not recommended except for the
 /// purpose of understanding what is really going on).
-/// |[
-/// <menu id='edit-menu'>
-///   <item>
-///     <link name='section'>
-///       <item label='Undo'/>
-///       <item label='Redo'/>
-///     </link>
-///   </item>
-///   <item>
-///     <link name='section'>
-///       <item label='Cut'/>
-///       <item label='Copy'/>
-///       <item label='Paste'/>
-///     </link>
-///   </item>
-/// </menu>
-/// ]|
+/// <code>
+/// &amp;lt;menu id=&apos;edit-menu&apos;&amp;gt;
+/// &amp;lt;menu id=&apos;edit-menu&apos;&amp;gt;
+///   &amp;lt;item&amp;gt;
+///     &amp;lt;link name=&apos;section&apos;&amp;gt;
+///       &amp;lt;item label=&apos;Undo&apos;/&amp;gt;
+///       &amp;lt;item label=&apos;Redo&apos;/&amp;gt;
+///     &amp;lt;/link&amp;gt;
+///   &amp;lt;/item&amp;gt;
+///   &amp;lt;item&amp;gt;
+///     &amp;lt;link name=&apos;section&apos;&amp;gt;
+///       &amp;lt;item label=&apos;Cut&apos;/&amp;gt;
+///       &amp;lt;item label=&apos;Copy&apos;/&amp;gt;
+///       &amp;lt;item label=&apos;Paste&apos;/&amp;gt;
+///     &amp;lt;/link&amp;gt;
+///   &amp;lt;/item&amp;gt;
+/// &amp;lt;/menu&amp;gt;
+/// </code>
 /// </para>
 /// </summary>
 
@@ -273,19 +273,19 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or unsets the "action" and "target" attributes of @menu_item.
+/// Sets or unsets the &quot;action&quot; and &quot;target&quot; attributes of @menu_item.
 /// </para>
 /// <para>
-/// If @action is %NULL then both the "action" and "target" attributes
+/// If @action is %NULL then both the &quot;action&quot; and &quot;target&quot; attributes
 /// are unset (and @format_string is ignored along with the positional
 /// parameters).
 /// </para>
 /// <para>
-/// If @action is non-%NULL then the "action" attribute is set.
+/// If @action is non-%NULL then the &quot;action&quot; attribute is set.
 /// @format_string is then inspected.  If it is non-%NULL then the proper
 /// position parameters are collected to create a #GVariant instance to
 /// use as the target value.  If it is %NULL then the positional
-/// parameters are ignored and the "target" attribute is unset.
+/// parameters are ignored and the &quot;target&quot; attribute is unset.
 /// </para>
 /// <para>
 /// See also g_menu_item_set_action_and_target_value() for an equivalent
@@ -321,28 +321,28 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or unsets the "action" and "target" attributes of @menu_item.
+/// Sets or unsets the &quot;action&quot; and &quot;target&quot; attributes of @menu_item.
 /// </para>
 /// <para>
-/// If @action is %NULL then both the "action" and "target" attributes
+/// If @action is %NULL then both the &quot;action&quot; and &quot;target&quot; attributes
 /// are unset (and @target_value is ignored).
 /// </para>
 /// <para>
-/// If @action is non-%NULL then the "action" attribute is set.  The
-/// "target" attribute is then set to the value of @target_value if it is
+/// If @action is non-%NULL then the &quot;action&quot; attribute is set.  The
+/// &quot;target&quot; attribute is then set to the value of @target_value if it is
 /// non-%NULL or unset otherwise.
 /// </para>
 /// <para>
 /// Normal menu items (ie: not submenu, section or other custom item
-/// types) are expected to have the "action" attribute set to identify
+/// types) are expected to have the &quot;action&quot; attribute set to identify
 /// the action that they are associated with.  The state type of the
 /// action help to determine the disposition of the menu item.  See
 /// #GAction and #GActionGroup for an overview of actions.
 /// </para>
 /// <para>
 /// In general, clicking on the menu item will result in activation of
-/// the named action with the "target" attribute given as the parameter
-/// to the action invocation.  If the "target" attribute is not set then
+/// the named action with the &quot;target&quot; attribute given as the parameter
+/// to the action invocation.  If the &quot;target&quot; attribute is not set then
 /// the action is invoked with no parameter.
 /// </para>
 /// <para>
@@ -352,13 +352,13 @@ public static class GMenuItemHandleExtensions
 /// <para>
 /// If the action has a boolean state then the menu item is usually drawn
 /// as a toggle menu item (ie: with a checkmark or equivalent
-/// indication).  The item should be marked as 'toggled' or 'checked'
+/// indication).  The item should be marked as &apos;toggled&apos; or &apos;checked&apos;
 /// when the boolean state is %TRUE.
 /// </para>
 /// <para>
 /// If the action has a string state then the menu item is usually drawn
 /// as a radio menu item (ie: with a radio bullet or equivalent
-/// indication).  The item should be marked as 'selected' when the string
+/// indication).  The item should be marked as &apos;selected&apos; when the string
 /// state is equal to the value of the @target property.
 /// </para>
 /// <para>
@@ -395,8 +395,8 @@ public static class GMenuItemHandleExtensions
 /// %G_MENU_ATTRIBUTE_ACTION, %G_MENU_ATTRIBUTE_TARGET, or a custom
 /// attribute name.
 /// Attribute names are restricted to lowercase characters, numbers
-/// and '-'. Furthermore, the names must begin with a lowercase character,
-/// must not end with a '-', and must not contain consecutive dashes.
+/// and &apos;-&apos;. Furthermore, the names must begin with a lowercase character,
+/// must not end with a &apos;-&apos;, and must not contain consecutive dashes.
 /// </para>
 /// <para>
 /// If @format_string is non-%NULL then the proper position parameters
@@ -440,12 +440,12 @@ public static class GMenuItemHandleExtensions
 /// %G_MENU_ATTRIBUTE_ACTION, %G_MENU_ATTRIBUTE_TARGET, or a custom
 /// attribute name.
 /// Attribute names are restricted to lowercase characters, numbers
-/// and '-'. Furthermore, the names must begin with a lowercase character,
-/// must not end with a '-', and must not contain consecutive dashes.
+/// and &apos;-&apos;. Furthermore, the names must begin with a lowercase character,
+/// must not end with a &apos;-&apos;, and must not contain consecutive dashes.
 /// </para>
 /// <para>
 /// must consist only of lowercase
-/// ASCII characters, digits and '-'.
+/// ASCII characters, digits and &apos;-&apos;.
 /// </para>
 /// <para>
 /// If @value is non-%NULL then it is used as the new value for the
@@ -477,7 +477,7 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the "action" and possibly the "target" attribute of @menu_item.
+/// Sets the &quot;action&quot; and possibly the &quot;target&quot; attribute of @menu_item.
 /// </para>
 /// <para>
 /// The format of @detailed_action is the same format parsed by
@@ -498,7 +498,7 @@ public static class GMenuItemHandleExtensions
 /// a #GMenuItem
 /// </param>
 /// <param name="detailed_action">
-/// the "detailed" action string
+/// the &quot;detailed&quot; action string
 /// </param>
 
 	public static T SetDetailedAction<T>(this T menu_item, string detailed_action) where T : GMenuItemHandle
@@ -518,10 +518,10 @@ public static class GMenuItemHandleExtensions
 /// %G_MENU_ATTRIBUTE_ICON.
 /// </para>
 /// <para>
-/// This API is only intended for use with "noun" menu items; things like
-/// bookmarks or applications in an "Open With" menu.  Don't use it on
-/// menu items corresponding to verbs (eg: stock icons for 'Save' or
-/// 'Quit').
+/// This API is only intended for use with &quot;noun&quot; menu items; things like
+/// bookmarks or applications in an &quot;Open With&quot; menu.  Don&apos;t use it on
+/// menu items corresponding to verbs (eg: stock icons for &apos;Save&apos; or
+/// &apos;Quit&apos;).
 /// </para>
 /// <para>
 /// If @icon is %NULL then the icon is unset.
@@ -544,7 +544,7 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or unsets the "label" attribute of @menu_item.
+/// Sets or unsets the &quot;label&quot; attribute of @menu_item.
 /// </para>
 /// <para>
 /// If @label is non-%NULL it is used as the label for the menu item.  If
@@ -577,8 +577,8 @@ public static class GMenuItemHandleExtensions
 /// is used to create a section. Other types of link can be used, but there
 /// is no guarantee that clients will be able to make sense of them.
 /// Link types are restricted to lowercase characters, numbers
-/// and '-'. Furthermore, the names must begin with a lowercase character,
-/// must not end with a '-', and must not contain consecutive dashes.
+/// and &apos;-&apos;. Furthermore, the names must begin with a lowercase character,
+/// must not end with a &apos;-&apos;, and must not contain consecutive dashes.
 /// </para>
 /// </summary>
 
@@ -601,7 +601,7 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or unsets the "section" link of @menu_item to @section.
+/// Sets or unsets the &quot;section&quot; link of @menu_item to @section.
 /// </para>
 /// <para>
 /// The effect of having one menu appear as a section of another is
@@ -628,7 +628,7 @@ public static class GMenuItemHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets or unsets the "submenu" link of @menu_item to @submenu.
+/// Sets or unsets the &quot;submenu&quot; link of @menu_item to @submenu.
 /// </para>
 /// <para>
 /// If @submenu is non-%NULL, it is linked to.  If it is %NULL then the

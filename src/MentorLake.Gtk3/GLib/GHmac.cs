@@ -39,7 +39,7 @@ public class GHmacHandle : BaseSafeHandle
 /// hexadecimal string; or g_hmac_get_digest(), which will return a
 /// array of raw bytes. Once either g_hmac_get_string() or
 /// g_hmac_get_digest() have been called on a #GHmac, the HMAC
-/// will be closed and it won't be possible to call g_hmac_update()
+/// will be closed and it won&apos;t be possible to call g_hmac_update()
 /// on it anymore.
 /// </para>
 /// <para>

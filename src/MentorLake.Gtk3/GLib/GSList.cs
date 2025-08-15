@@ -146,7 +146,7 @@ public struct GSList
 {
 	/// <summary>
 /// <para>
-/// holds the element's data, which can be a pointer to any kind
+/// holds the element&apos;s data, which can be a pointer to any kind
 ///        of data, or any integer value using the
 ///        [Type Conversion Macros][glib-Type-Conversion-Macros]
 /// </para>
@@ -191,22 +191,19 @@ public IntPtr next;
 /// elements. A common idiom to avoid the inefficiency is to prepend
 /// the elements and reverse the list when all elements have been added.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Notice that these are initialized to the empty list.
 /// // Notice that these are initialized to the empty list.
 /// GSList *list = NULL, *number_list = NULL;
-/// </para>
-/// <para>
+/// 
 /// // This is a list of strings.
-/// list = g_slist_append (list, "first");
-/// list = g_slist_append (list, "second");
-/// </para>
-/// <para>
+/// list = g_slist_append (list, &quot;first&quot;);
+/// list = g_slist_append (list, &quot;second&quot;);
+/// 
 /// // This is a list of integers.
 /// number_list = g_slist_append (number_list, GINT_TO_POINTER (27));
 /// number_list = g_slist_append (number_list, GINT_TO_POINTER (14));
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="list">
@@ -252,9 +249,9 @@ public IntPtr next;
 /// Copies a #GSList.
 /// </para>
 /// <para>
-/// Note that this is a "shallow" copy. If the list elements
+/// Note that this is a &quot;shallow&quot; copy. If the list elements
 /// consist of pointers to data, the pointers are copied but
-/// the actual data isn't. See g_slist_copy_deep() if you need
+/// the actual data isn&apos;t. See g_slist_copy_deep() if you need
 /// to copy the data as well.
 /// </para>
 /// </summary>
@@ -281,22 +278,22 @@ public IntPtr next;
 /// </para>
 /// <para>
 /// @func, as a #GCopyFunc, takes two arguments, the data to be copied
-/// and a @user_data pointer. On common processor architectures, it's safe to
+/// and a @user_data pointer. On common processor architectures, it&apos;s safe to
 /// pass %NULL as @user_data if the copy function takes only one argument. You
 /// may get compiler warnings from this though if compiling with GCC’s
 /// `-Wcast-function-type` warning.
 /// </para>
 /// <para>
 /// For instance, if @list holds a list of GObjects, you can do:
-/// |[<!-- language="C" -->
+/// <code>
 /// another_list = g_slist_copy_deep (list, (GCopyFunc) g_object_ref, NULL);
-/// ]|
-/// </para>
-/// <para>
+/// another_list = g_slist_copy_deep (list, (GCopyFunc) g_object_ref, NULL);
+/// </code>
 /// And, to entirely free the new list, you could do:
-/// |[<!-- language="C" -->
+/// <code>
 /// g_slist_free_full (another_list, g_object_unref);
-/// ]|
+/// g_slist_free_full (another_list, g_object_unref);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -377,7 +374,7 @@ public IntPtr next;
 /// find the desired element. It iterates over the list, calling
 /// the given function which should return 0 when the desired
 /// element is found. The function takes two #gconstpointer arguments,
-/// the #GSList element's data as the first argument and the
+/// the #GSList element&apos;s data as the first argument and the
 /// given user data.
 /// </para>
 /// </summary>
@@ -415,7 +412,7 @@ public IntPtr next;
 /// a #GSList
 /// </param>
 /// <param name="func">
-/// the function to call with each element's data
+/// the function to call with each element&apos;s data
 /// </param>
 /// <param name="user_data">
 /// user data to pass to the function
@@ -439,10 +436,11 @@ public IntPtr next;
 /// <para>
 /// It can be combined with g_steal_pointer() to ensure the list head pointer
 /// is not left dangling:
-/// |[<!-- language="C" -->
-/// GSList *list_of_borrowed_things = …;  /<!-- -->* (transfer container) *<!-- -->/
-/// g_slist_free (g_steal_pointer (&list_of_borrowed_things));
-/// ]|
+/// <code>
+/// GSList *list_of_borrowed_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer container) *&amp;lt;!-- --&amp;gt;/
+/// GSList *list_of_borrowed_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer container) *&amp;lt;!-- --&amp;gt;/
+/// g_slist_free (g_steal_pointer (&amp;list_of_borrowed_things));
+/// </code>
 /// </para>
 /// </summary>
 
@@ -474,7 +472,7 @@ public IntPtr next;
 /// <summary>
 /// <para>
 /// Convenience method, which frees all the memory used by a #GSList, and
-/// calls the specified destroy function on every element's data.
+/// calls the specified destroy function on every element&apos;s data.
 /// </para>
 /// <para>
 /// @free_func must not modify the list (eg, by removing the freed
@@ -485,10 +483,11 @@ public IntPtr next;
 /// is not left dangling ­— this also has the nice property that the head pointer
 /// is cleared before any of the list elements are freed, to prevent double frees
 /// from @free_func:
-/// |[<!-- language="C" -->
-/// GSList *list_of_owned_things = …;  /<!-- -->* (transfer full) (element-type GObject) *<!-- -->/
-/// g_slist_free_full (g_steal_pointer (&list_of_owned_things), g_object_unref);
-/// ]|
+/// <code>
+/// GSList *list_of_owned_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer full) (element-type GObject) *&amp;lt;!-- --&amp;gt;/
+/// GSList *list_of_owned_things = …;  /&amp;lt;!-- --&amp;gt;* (transfer full) (element-type GObject) *&amp;lt;!-- --&amp;gt;/
+/// g_slist_free_full (g_steal_pointer (&amp;list_of_owned_things), g_object_unref);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -496,7 +495,7 @@ public IntPtr next;
 /// the first link of a #GSList
 /// </param>
 /// <param name="free_func">
-/// the function to be called to free each element's data
+/// the function to be called to free each element&apos;s data
 /// </param>
 
 	public static void FreeFull(MentorLake.GLib.GSListHandle list, MentorLake.GLib.GDestroyNotify free_func)
@@ -593,7 +592,7 @@ public IntPtr next;
 /// </param>
 /// <param name="func">
 /// the function to compare elements in the list.
-///     It should return a number > 0 if the first parameter
+///     It should return a number &amp;gt; 0 if the first parameter
 ///     comes after the second parameter in the sort order.
 /// </param>
 /// <return>
@@ -620,7 +619,7 @@ public IntPtr next;
 /// </param>
 /// <param name="func">
 /// the function to compare elements in the list.
-///     It should return a number > 0 if the first parameter
+///     It should return a number &amp;gt; 0 if the first parameter
 ///     comes after the second parameter in the sort order.
 /// </param>
 /// <param name="user_data">
@@ -715,7 +714,7 @@ public IntPtr next;
 /// the position of the element
 /// </param>
 /// <return>
-/// the element's data, or %NULL if the position
+/// the element&apos;s data, or %NULL if the position
 ///     is off the end of the #GSList
 /// </return>
 
@@ -762,14 +761,13 @@ public IntPtr next;
 /// The return value is the new start of the list, which
 /// may have changed, so make sure you store the new value.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Notice that it is initialized to the empty list.
 /// // Notice that it is initialized to the empty list.
 /// GSList *list = NULL;
-/// list = g_slist_prepend (list, "last");
-/// list = g_slist_prepend (list, "first");
-/// ]|
-/// </para>
+/// list = g_slist_prepend (list, &quot;last&quot;);
+/// list = g_slist_prepend (list, &quot;first&quot;);
+/// </code>
 /// </summary>
 
 /// <param name="list">
@@ -846,7 +844,7 @@ public IntPtr next;
 /// <summary>
 /// <para>
 /// Removes an element from a #GSList, without
-/// freeing the element. The removed element's next
+/// freeing the element. The removed element&apos;s next
 /// link is set to %NULL, so that it becomes a
 /// self-contained list with one element.
 /// </para>

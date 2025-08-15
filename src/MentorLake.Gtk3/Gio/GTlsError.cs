@@ -43,7 +43,7 @@ public enum GTlsError
 /// <summary>
 /// <para>
 /// The TLS handshake failed because the
-///   peer's certificate was not acceptable.
+///   peer&apos;s certificate was not acceptable.
 /// </para>
 /// </summary>
 

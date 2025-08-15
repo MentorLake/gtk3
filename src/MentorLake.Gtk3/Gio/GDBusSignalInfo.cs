@@ -82,7 +82,7 @@ public struct GDBusSignalInfo
 public int ref_count;
 	/// <summary>
 /// <para>
-/// The name of the D-Bus signal, e.g. "NameOwnerChanged".
+/// The name of the D-Bus signal, e.g. &quot;NameOwnerChanged&quot;.
 /// </para>
 /// </summary>
 

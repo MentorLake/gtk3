@@ -13,11 +13,10 @@ namespace MentorLake.GObject;
 /// into @dest_value in a way, that even after @src_value has been freed, the
 /// contents of @dest_value remain valid. String type example:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// dest_value->data[0].v_pointer = g_strdup (src_value->data[0].v_pointer);
-/// ]|
-/// </para>
+/// <code>
+/// dest_value-&amp;gt;data[0].v_pointer = g_strdup (src_value-&amp;gt;data[0].v_pointer);
+/// dest_value-&amp;gt;data[0].v_pointer = g_strdup (src_value-&amp;gt;data[0].v_pointer);
+/// </code>
 /// </summary>
 
 /// <param name="src_value">

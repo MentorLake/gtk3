@@ -631,7 +631,7 @@ public static class GtkMenuShellHandleExtensions
 
 /// <summary>
 /// <para>
-/// Adds a new #GtkMenuItem to the end of the menu shell's
+/// Adds a new #GtkMenuItem to the end of the menu shell&apos;s
 /// item list.
 /// </para>
 /// </summary>
@@ -859,7 +859,7 @@ public static class GtkMenuShellHandleExtensions
 
 /// <summary>
 /// <para>
-/// Adds a new #GtkMenuItem to the beginning of the menu shell's
+/// Adds a new #GtkMenuItem to the beginning of the menu shell&apos;s
 /// item list.
 /// </para>
 /// </summary>

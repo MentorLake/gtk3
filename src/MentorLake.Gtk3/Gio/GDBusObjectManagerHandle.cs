@@ -4,7 +4,7 @@ namespace MentorLake.Gio;
 /// <para>
 /// The `GDBusObjectManager` type is the base type for service- and
 /// client-side implementations of the standardized
-/// <see href="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager">org.freedesktop.DBus.ObjectManager</see>
+/// &amp;lt;see href=&quot;http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager&quot;&amp;gt;org.freedesktop.DBus.ObjectManager&amp;lt;/see&amp;gt;
 /// interface.
 /// </para>
 /// <para>

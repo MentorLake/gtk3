@@ -122,7 +122,7 @@ public static class graphene_triangle_tExtensions
 /// point is not coplanar, the result of this function is undefined.
 /// </para>
 /// <para>
-/// If we place the origin in the coordinates of the triangle's A point,
+/// If we place the origin in the coordinates of the triangle&apos;s A point,
 /// the barycentric coordinates are `u`, which is on the AC vector; and `v`
 /// which is on the AB vector:
 /// </para>

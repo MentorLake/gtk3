@@ -84,7 +84,7 @@ public IntPtr values_cmp;
 /// <para>
 /// Checks if contents of @value comply with the specifications
 ///   set out by this type, without modifying the value. This vfunc is optional.
-///   If it isn't set, GObject will use @value_validate. Since 2.74
+///   If it isn&apos;t set, GObject will use @value_validate. Since 2.74
 /// </para>
 /// </summary>
 

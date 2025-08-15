@@ -71,7 +71,7 @@ public static class GSocketControlMessageHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Returns the "level" (i.e. the originating protocol) of the control message.
+/// Returns the &quot;level&quot; (i.e. the originating protocol) of the control message.
 /// This is often SOL_SOCKET.
 /// </para>
 /// </summary>

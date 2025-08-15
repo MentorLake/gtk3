@@ -13,6 +13,14 @@ public struct PangoOTTag
 	public uint Value;
 }
 
+/// <summary>
+/// <para>
+/// The `PangoOTTag` typedef is used to represent TrueType and OpenType
+/// four letter tags inside Pango. Use PANGO_OT_TAG_MAKE()
+/// or PANGO_OT_TAG_MAKE_FROM_STRING() macros to create PangoOTTags manually.
+/// </para>
+/// </summary>
+
 public class PangoOTTagHandle : BaseSafeHandle
 {
 }

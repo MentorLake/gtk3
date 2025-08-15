@@ -34,17 +34,16 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkListBox implementation of the #GtkBuildable interface supports
 /// setting a child as the placeholder by specifying “placeholder” as the “type”
-/// attribute of a `<child>` element. See gtk_list_box_set_placeholder() for info.
+/// attribute of a `&amp;lt;child&amp;gt;` element. See gtk_list_box_set_placeholder() for info.
 /// </para>
 /// <para>
 /// # CSS nodes
 /// </para>
-/// <para>
-/// |[<!-- language="plain" -->
+/// <code>
+/// list
 /// list
 /// ╰── row[.activatable]
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// GtkListBox uses a single CSS node named list. Each GtkListBoxRow uses
 /// a single CSS node named row. The row nodes get the .activatable
@@ -1124,7 +1123,7 @@ public static class GtkListBoxHandleExtensions
 /// <summary>
 /// <para>
 /// Sets the placeholder widget that is shown in the list when
-/// it doesn't display any visible children.
+/// it doesn&apos;t display any visible children.
 /// </para>
 /// </summary>
 

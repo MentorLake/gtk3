@@ -8,7 +8,7 @@ namespace MentorLake.Gtk;
 /// It is also possible to select a different color with the
 /// single-color editor. To enter the single-color editing mode,
 /// use the context menu of any color of the palette, or use the
-/// '+' button to add a new custom color.
+/// &apos;+&apos; button to add a new custom color.
 /// </para>
 /// <para>
 /// The chooser automatically remembers the last selection, as well

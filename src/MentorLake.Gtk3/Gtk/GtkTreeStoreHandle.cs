@@ -15,24 +15,23 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkTreeStore implementation of the #GtkBuildable interface allows
-/// to specify the model columns with a `<columns>` element that may contain
-/// multiple `<column>` elements, each specifying one model column. The “type”
+/// to specify the model columns with a `&amp;lt;columns&amp;gt;` element that may contain
+/// multiple `&amp;lt;column&amp;gt;` elements, each specifying one model column. The “type”
 /// attribute specifies the data type for the column.
 /// </para>
 /// <para>
 /// An example of a UI Definition fragment for a tree store:
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkTreeStore">
-///   <columns>
-///     <column type="gchararray"/>
-///     <column type="gchararray"/>
-///     <column type="gint"/>
-///   </columns>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkTreeStore&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkTreeStore&quot;&amp;gt;
+///   &amp;lt;columns&amp;gt;
+///     &amp;lt;column type=&quot;gchararray&quot;/&amp;gt;
+///     &amp;lt;column type=&quot;gchararray&quot;/&amp;gt;
+///     &amp;lt;column type=&quot;gint&quot;/&amp;gt;
+///   &amp;lt;/columns&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkTreeStoreHandle : GObjectHandle, GtkBuildableHandle, GtkTreeDragDestHandle, GtkTreeDragSourceHandle, GtkTreeModelHandle, GtkTreeSortableHandle
@@ -757,11 +756,11 @@ public static class GtkTreeStoreHandleExtensions
 /// Calling
 /// `gtk_tree_store_insert_with_values (tree_store, iter, position, ...)`
 /// has the same effect as calling
-/// |[<!-- language="C" -->
+/// <code>
+/// gtk_tree_store_insert (tree_store, iter, position);
 /// gtk_tree_store_insert (tree_store, iter, position);
 /// gtk_tree_store_set (tree_store, iter, ...);
-/// ]|
-/// with the different that the former will only emit a row_inserted signal,
+/// </code>
 /// while the latter will emit row_inserted, row_changed and if the tree store
 /// is sorted, rows_reordered.  Since emitting the rows_reordered signal
 /// repeatedly can affect the performance of the program,
@@ -1042,7 +1041,7 @@ public static class GtkTreeStoreHandleExtensions
 /// each column number followed by the value to be set.
 /// The list is terminated by a -1. For example, to set column 0 with type
 /// %G_TYPE_STRING to “Foo”, you would write
-/// `gtk_tree_store_set (store, iter, 0, "Foo", -1)`.
+/// `gtk_tree_store_set (store, iter, 0, &quot;Foo&quot;, -1)`.
 /// </para>
 /// <para>
 /// The value will be referenced by the store if it is a %G_TYPE_OBJECT, and it

@@ -56,29 +56,29 @@ namespace MentorLake.Gtk;
 /// [RELAX NG Compact Syntax](https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/gtkbuilder.rnc)
 /// </para>
 /// <para>
-/// The toplevel element is `<interface>`. It optionally takes a “domain”
+/// The toplevel element is `&amp;lt;interface&amp;gt;`. It optionally takes a “domain”
 /// attribute, which will make the builder look for translated strings
 /// using dgettext() in the domain specified. This can also be done by
 /// calling gtk_builder_set_translation_domain() on the builder.
-/// Objects are described by `<object>` elements, which can contain
-/// `<property>` elements to set properties, `<signal>` elements which
-/// connect signals to handlers, and `<child>` elements, which describe
+/// Objects are described by `&amp;lt;object&amp;gt;` elements, which can contain
+/// `&amp;lt;property&amp;gt;` elements to set properties, `&amp;lt;signal&amp;gt;` elements which
+/// connect signals to handlers, and `&amp;lt;child&amp;gt;` elements, which describe
 /// child objects (most often widgets inside a container, but also e.g.
-/// actions in an action group, or columns in a tree model). A `<child>`
-/// element contains an `<object>` element which describes the child object.
-/// The target toolkit version(s) are described by `<requires>` elements,
+/// actions in an action group, or columns in a tree model). A `&amp;lt;child&amp;gt;`
+/// element contains an `&amp;lt;object&amp;gt;` element which describes the child object.
+/// The target toolkit version(s) are described by `&amp;lt;requires&amp;gt;` elements,
 /// the “lib” attribute specifies the widget library in question (currently
 /// the only supported value is “gtk+”) and the “version” attribute specifies
-/// the target version in the form `<major>.<minor>`. The builder will error
+/// the target version in the form `&amp;lt;major&amp;gt;.&amp;lt;minor&amp;gt;`. The builder will error
 /// out if the version requirements are not met.
 /// </para>
 /// <para>
-/// Typically, the specific kind of object represented by an `<object>`
+/// Typically, the specific kind of object represented by an `&amp;lt;object&amp;gt;`
 /// element is specified by the “class” attribute. If the type has not
 /// been loaded yet, GTK+ tries to find the `get_type()` function from the
 /// class name by applying heuristics. This works in most cases, but if
 /// necessary, it is possible to specify the name of the get_type() function
-/// explictly with the "type-func" attribute. As a special case, GtkBuilder
+/// explictly with the &quot;type-func&quot; attribute. As a special case, GtkBuilder
 /// allows to use an object that has been constructed by a #GtkUIManager in
 /// another part of the UI definition by specifying the id of the #GtkUIManager
 /// in the “constructor” attribute and the name of the object in the “id”
@@ -93,7 +93,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// Setting properties of objects is pretty straightforward with the
-/// `<property>` element: the “name” attribute specifies the name of the
+/// `&amp;lt;property&amp;gt;` element: the “name” attribute specifies the name of the
 /// property, and the content of the element specifies the value.
 /// If the “translatable” attribute is set to a true value, GTK+ uses
 /// gettext() (or dgettext() if the builder has a translation domain set)
@@ -127,16 +127,16 @@ namespace MentorLake.Gtk;
 /// be used as the value of a construct-only property.
 /// </para>
 /// <para>
-/// It is also possible to bind a property value to another object's
+/// It is also possible to bind a property value to another object&apos;s
 /// property value using the attributes
-/// "bind-source" to specify the source object of the binding,
-/// "bind-property" to specify the source property and optionally
-/// "bind-flags" to specify the binding flags.
+/// &quot;bind-source&quot; to specify the source object of the binding,
+/// &quot;bind-property&quot; to specify the source property and optionally
+/// &quot;bind-flags&quot; to specify the binding flags.
 /// Internally builder implements this using GBinding objects.
 /// For more information see g_object_bind_property()
 /// </para>
 /// <para>
-/// Signal handlers are set up with the `<signal>` element. The “name”
+/// Signal handlers are set up with the `&amp;lt;signal&amp;gt;` element. The “name”
 /// attribute specifies the name of the signal, and the “handler” attribute
 /// specifies the function to connect to the signal. By default, GTK+ tries
 /// to find the handler using g_module_symbol(), but this can be changed by
@@ -153,58 +153,57 @@ namespace MentorLake.Gtk;
 /// been constructed by GTK+ as part of a composite widget, to set
 /// properties on them or to add further children (e.g. the @vbox of
 /// a #GtkDialog). This can be achieved by setting the “internal-child”
-/// property of the `<child>` element to a true value. Note that GtkBuilder
-/// still requires an `<object>` element for the internal child, even if it
+/// property of the `&amp;lt;child&amp;gt;` element to a true value. Note that GtkBuilder
+/// still requires an `&amp;lt;object&amp;gt;` element for the internal child, even if it
 /// has already been constructed.
 /// </para>
 /// <para>
 /// A number of widgets have different places where a child can be added
 /// (e.g. tabs vs. page content in notebooks). This can be reflected in
-/// a UI definition by specifying the “type” attribute on a `<child>`
+/// a UI definition by specifying the “type” attribute on a `&amp;lt;child&amp;gt;`
 /// The possible values for the “type” attribute are described in the
 /// sections describing the widget-specific portions of UI definitions.
 /// </para>
 /// <para>
 /// # A GtkBuilder UI Definition
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <interface>
-///   <object class="GtkDialog" id="dialog1">
-///     <child internal-child="vbox">
-///       <object class="GtkBox" id="vbox1">
-///         <property name="border-width">10</property>
-///         <child internal-child="action_area">
-///           <object class="GtkButtonBox" id="hbuttonbox1">
-///             <property name="border-width">20</property>
-///             <child>
-///               <object class="GtkButton" id="ok_button">
-///                 <property name="label">gtk-ok</property>
-///                 <property name="use-stock">TRUE</property>
-///                 <signal name="clicked" handler="ok_button_clicked"/>
-///               </object>
-///             </child>
-///           </object>
-///         </child>
-///       </object>
-///     </child>
-///   </object>
-/// </interface>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;interface&amp;gt;
+/// &amp;lt;interface&amp;gt;
+///   &amp;lt;object class=&quot;GtkDialog&quot; id=&quot;dialog1&quot;&amp;gt;
+///     &amp;lt;child internal-child=&quot;vbox&quot;&amp;gt;
+///       &amp;lt;object class=&quot;GtkBox&quot; id=&quot;vbox1&quot;&amp;gt;
+///         &amp;lt;property name=&quot;border-width&quot;&amp;gt;10&amp;lt;/property&amp;gt;
+///         &amp;lt;child internal-child=&quot;action_area&quot;&amp;gt;
+///           &amp;lt;object class=&quot;GtkButtonBox&quot; id=&quot;hbuttonbox1&quot;&amp;gt;
+///             &amp;lt;property name=&quot;border-width&quot;&amp;gt;20&amp;lt;/property&amp;gt;
+///             &amp;lt;child&amp;gt;
+///               &amp;lt;object class=&quot;GtkButton&quot; id=&quot;ok_button&quot;&amp;gt;
+///                 &amp;lt;property name=&quot;label&quot;&amp;gt;gtk-ok&amp;lt;/property&amp;gt;
+///                 &amp;lt;property name=&quot;use-stock&quot;&amp;gt;TRUE&amp;lt;/property&amp;gt;
+///                 &amp;lt;signal name=&quot;clicked&quot; handler=&quot;ok_button_clicked&quot;/&amp;gt;
+///               &amp;lt;/object&amp;gt;
+///             &amp;lt;/child&amp;gt;
+///           &amp;lt;/object&amp;gt;
+///         &amp;lt;/child&amp;gt;
+///       &amp;lt;/object&amp;gt;
+///     &amp;lt;/child&amp;gt;
+///   &amp;lt;/object&amp;gt;
+/// &amp;lt;/interface&amp;gt;
+/// </code>
 /// <para>
 /// Beyond this general structure, several object classes define their
 /// own XML DTD fragments for filling in the ANY placeholders in the DTD
-/// above. Note that a custom element in a `<child>` element gets parsed by
+/// above. Note that a custom element in a `&amp;lt;child&amp;gt;` element gets parsed by
 /// the custom tag handler of the parent object, while a custom element in
-/// an `<object>` element gets parsed by the custom tag handler of the object.
+/// an `&amp;lt;object&amp;gt;` element gets parsed by the custom tag handler of the object.
 /// </para>
 /// <para>
 /// These XML fragments are explained in the documentation of the
 /// respective objects.
 /// </para>
 /// <para>
-/// Additionally, since 3.10 a special `<template>` tag has been added
+/// Additionally, since 3.10 a special `&amp;lt;template&amp;gt;` tag has been added
 /// to the format allowing one to define a widget class’s components.
 /// See the [GtkWidget documentation][composite-templates] for details.
 /// </para>

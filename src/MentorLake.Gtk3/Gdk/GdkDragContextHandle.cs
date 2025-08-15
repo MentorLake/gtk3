@@ -515,7 +515,7 @@ public static class GdkDragContextHandleExtensions
 /// - The #GdkDragContext::dnd-finished signal after the drag and drop
 ///   operation concludes (after all #GdkSelection transfers happen).
 /// - The #GdkDragContext::cancel signal if the drag and drop operation is
-///   finished but doesn't happen over an accepting destination, or is
+///   finished but doesn&apos;t happen over an accepting destination, or is
 ///   cancelled through other means.
 /// </para>
 /// </summary>

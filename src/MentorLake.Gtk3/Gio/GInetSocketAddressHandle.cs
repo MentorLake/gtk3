@@ -7,7 +7,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// In UNIX terms, `GInetSocketAddress` corresponds to a
-/// <see href="man:sockaddr(3type">struct sockaddr_in` or `struct sockaddr_in6</see>).
+/// &amp;lt;see href=&quot;man:sockaddr(3type&quot;&amp;gt;struct sockaddr_in` or `struct sockaddr_in6&amp;lt;/see&amp;gt;).
 /// </para>
 /// </summary>
 
@@ -66,7 +66,7 @@ public static class GInetSocketAddressHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Gets @address's #GInetAddress.
+/// Gets @address&apos;s #GInetAddress.
 /// </para>
 /// </summary>
 
@@ -75,7 +75,7 @@ public static class GInetSocketAddressHandleExtensions
 /// </param>
 /// <return>
 /// the #GInetAddress for @address, which must be
-/// g_object_ref()'d if it will be stored
+/// g_object_ref()&apos;d if it will be stored
 /// </return>
 
 	public static MentorLake.Gio.GInetAddressHandle GetAddress(this MentorLake.Gio.GInetSocketAddressHandle address)
@@ -106,7 +106,7 @@ public static class GInetSocketAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets @address's port.
+/// Gets @address&apos;s port.
 /// </para>
 /// </summary>
 

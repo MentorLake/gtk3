@@ -10,7 +10,7 @@ public class GtkButtonBoxHandle : GtkBoxHandle, AtkImplementorIfaceHandle, GtkBu
 /// </summary>
 
 /// <param name="orientation">
-/// the box's orientation.
+/// the box&apos;s orientation.
 /// </param>
 /// <return>
 /// a new #GtkButtonBox.

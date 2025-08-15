@@ -11,7 +11,7 @@ public enum GThreadError
 {
 /// <summary>
 /// <para>
-/// a thread couldn't be created due to resource
+/// a thread couldn&apos;t be created due to resource
 ///                        shortage. Try again later.
 /// </para>
 /// </summary>

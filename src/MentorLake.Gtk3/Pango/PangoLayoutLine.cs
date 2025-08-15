@@ -220,7 +220,7 @@ public static class PangoLayoutLineExtensions
 /// </param>
 /// <param name="trailing">
 /// an integer indicating the edge of the grapheme to retrieve
-///   the position of. If > 0, the trailing edge of the grapheme,
+///   the position of. If &amp;gt; 0, the trailing edge of the grapheme,
 ///   if 0, the leading of the grapheme
 /// </param>
 /// <param name="x_pos">
@@ -400,7 +400,7 @@ public struct PangoLayoutLine
 public IntPtr layout;
 	/// <summary>
 /// <para>
-/// start of line as byte index into layout->text
+/// start of line as byte index into layout-&amp;gt;text
 /// </para>
 /// </summary>
 

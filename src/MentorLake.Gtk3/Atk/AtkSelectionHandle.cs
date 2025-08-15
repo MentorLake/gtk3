@@ -13,7 +13,7 @@ namespace MentorLake.Atk;
 /// selectable lists.
 /// </para>
 /// <para>
-/// Note that other types of "selection" (for instance text selection)
+/// Note that other types of &quot;selection&quot; (for instance text selection)
 /// are accomplished a other ATK interfaces - #AtkSelection is limited
 /// to the selection/deselection of children.
 /// </para>
@@ -34,7 +34,7 @@ public static class AtkSelectionHandleExtensions
 /// <summary>
 /// <para>
 /// Adds the specified accessible child of the object to the
-/// object's selection.
+/// object&apos;s selection.
 /// </para>
 /// </summary>
 
@@ -157,7 +157,7 @@ public static class AtkSelectionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Removes the specified child of the object from the object's selection.
+/// Removes the specified child of the object from the object&apos;s selection.
 /// </para>
 /// </summary>
 

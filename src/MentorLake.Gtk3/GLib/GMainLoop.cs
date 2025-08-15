@@ -120,7 +120,7 @@ public static class GMainLoopExtensions
 /// <summary>
 /// <para>
 /// Runs a main loop until [method@GLib.MainLoop.quit] is called on the loop.
-/// If this is called for the thread of the loop's #GMainContext,
+/// If this is called for the thread of the loop&apos;s #GMainContext,
 /// it will process events from the loop, otherwise it will
 /// simply wait.
 /// </para>

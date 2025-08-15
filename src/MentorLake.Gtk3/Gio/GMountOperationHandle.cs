@@ -16,7 +16,7 @@ namespace MentorLake.Gio;
 /// <para>
 /// Users should instantiate a subclass of this that implements all the
 /// various callbacks to show the required dialogs, such as
-/// <see href="https://docs.gtk.org/gtk4/class.MountOperation.html">GtkMountOperation</see>.
+/// &amp;lt;see href=&quot;https://docs.gtk.org/gtk4/class.MountOperation.html&quot;&amp;gt;GtkMountOperation&amp;lt;/see&amp;gt;.
 /// If no user interaction is desired (for example when automounting
 /// filesystems at login time), usually `NULL` can be passed, see each method
 /// taking a `GMountOperation` for details.
@@ -667,8 +667,8 @@ public static class GMountOperationHandleExtensions
 /// a #GMountOperation.
 /// </param>
 /// <return>
-/// an integer containing an index of the user's choice from
-/// the choice's list, or `0`.
+/// an integer containing an index of the user&apos;s choice from
+/// the choice&apos;s list, or `0`.
 /// </return>
 
 	public static int GetChoice(this MentorLake.Gio.GMountOperationHandle op)
@@ -874,7 +874,7 @@ public static class GMountOperationHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the mount operation's domain.
+/// Sets the mount operation&apos;s domain.
 /// </para>
 /// </summary>
 
@@ -934,7 +934,7 @@ public static class GMountOperationHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the mount operation's password to @password.
+/// Sets the mount operation&apos;s password to @password.
 /// </para>
 /// </summary>
 
@@ -974,7 +974,7 @@ public static class GMountOperationHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets the mount operation's PIM to @pim.
+/// Sets the mount operation&apos;s PIM to @pim.
 /// </para>
 /// </summary>
 

@@ -19,7 +19,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Alignments of #GtkCellRenderers rendered in adjacent rows can be
 /// configured by configuring the #GtkCellAreaBox align child cell property
-/// with gtk_cell_area_cell_set_property() or by specifying the "align"
+/// with gtk_cell_area_cell_set_property() or by specifying the &quot;align&quot;
 /// argument to gtk_cell_area_box_pack_start() and gtk_cell_area_box_pack_end().
 /// </para>
 /// </summary>

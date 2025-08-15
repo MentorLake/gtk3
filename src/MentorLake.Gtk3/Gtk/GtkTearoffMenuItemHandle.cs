@@ -18,8 +18,8 @@ namespace MentorLake.Gtk;
 /// menu window.
 /// </para>
 /// <para>
-/// > #GtkTearoffMenuItem is deprecated and should not be used in newly
-/// > written code. Menus are not meant to be torn around.
+/// &amp;gt; #GtkTearoffMenuItem is deprecated and should not be used in newly
+/// &amp;gt; written code. Menus are not meant to be torn around.
 /// </para>
 /// </summary>
 

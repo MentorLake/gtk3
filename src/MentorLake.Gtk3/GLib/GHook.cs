@@ -27,7 +27,7 @@ public static class GHookExtensions
 /// a #GHook to compare with @new_hook
 /// </param>
 /// <return>
-/// a value <= 0 if the id of @sibling is >= the id of @new_hook
+/// a value &amp;lt;= 0 if the id of @sibling is &amp;gt;= the id of @new_hook
 /// </return>
 
 	public static int CompareIds(this MentorLake.GLib.GHookHandle new_hook, MentorLake.GLib.GHookHandle sibling)

@@ -3,7 +3,7 @@ namespace MentorLake.Gio;
 /// <summary>
 /// <para>
 /// Represents a scope for loading IO modules. A scope can be used for blocking
-/// duplicate modules, or blocking a module you don't want to load.
+/// duplicate modules, or blocking a module you don&apos;t want to load.
 /// </para>
 /// <para>
 /// The scope can be used with g_io_modules_load_all_in_directory_with_scope()
@@ -75,7 +75,7 @@ internal class GIOModuleScopeExterns
 /// <summary>
 /// <para>
 /// Represents a scope for loading IO modules. A scope can be used for blocking
-/// duplicate modules, or blocking a module you don't want to load.
+/// duplicate modules, or blocking a module you don&apos;t want to load.
 /// </para>
 /// <para>
 /// The scope can be used with g_io_modules_load_all_in_directory_with_scope()
@@ -88,7 +88,7 @@ public struct GIOModuleScope
 /// <summary>
 /// <para>
 /// Create a new scope for loading of IO modules. A scope can be used for
-/// blocking duplicate modules, or blocking a module you don't want to load.
+/// blocking duplicate modules, or blocking a module you don&apos;t want to load.
 /// </para>
 /// <para>
 /// Specify the %G_IO_MODULE_SCOPE_BLOCK_DUPLICATES flag to block modules

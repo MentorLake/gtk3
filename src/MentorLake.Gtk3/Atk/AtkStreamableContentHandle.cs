@@ -107,7 +107,7 @@ public static class AtkStreamableContentHandleExtensions
 /// <summary>
 /// <para>
 /// Get a string representing a URI in IETF standard format
-/// (see http://www.ietf.org/rfc/rfc2396.txt) from which the object's content
+/// (see http://www.ietf.org/rfc/rfc2396.txt) from which the object&apos;s content
 /// may be streamed in the specified mime-type, if one is available.
 /// If mime_type is NULL, the URI for the default (and possibly only) mime-type is
 /// returned.

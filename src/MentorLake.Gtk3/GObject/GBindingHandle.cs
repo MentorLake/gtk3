@@ -11,15 +11,15 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// ```c
-///   g_object_bind_property (object1, "property-a",
-///                           object2, "property-b",
+///   g_object_bind_property (object1, &quot;property-a&quot;,
+///                           object2, &quot;property-b&quot;,
 ///                           G_BINDING_DEFAULT);
 /// ```
 /// </para>
 /// <para>
-/// will cause the property named "property-b" of @object2 to be updated
+/// will cause the property named &quot;property-b&quot; of @object2 to be updated
 /// every time [method@GObject.set] or the specific accessor changes the value of
-/// the property "property-a" of @object1.
+/// the property &quot;property-a&quot; of @object1.
 /// </para>
 /// <para>
 /// It is possible to create a bidirectional binding between two properties
@@ -28,8 +28,8 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// ```c
-///   g_object_bind_property (object1, "property-a",
-///                           object2, "property-b",
+///   g_object_bind_property (object1, &quot;property-a&quot;,
+///                           object2, &quot;property-b&quot;,
 ///                           G_BINDING_BIDIRECTIONAL);
 /// ```
 /// </para>
@@ -44,8 +44,8 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// ```c
-///   g_object_bind_property_full (adjustment1, "value",
-///                                adjustment2, "value",
+///   g_object_bind_property_full (adjustment1, &quot;value&quot;,
+///                                adjustment2, &quot;value&quot;,
 ///                                G_BINDING_BIDIRECTIONAL,
 ///                                celsius_to_fahrenheit,
 ///                                fahrenheit_to_celsius,
@@ -53,15 +53,15 @@ namespace MentorLake.GObject;
 /// ```
 /// </para>
 /// <para>
-/// will keep the "value" property of the two adjustments in sync; the
-/// @celsius_to_fahrenheit function will be called whenever the "value"
+/// will keep the &quot;value&quot; property of the two adjustments in sync; the
+/// @celsius_to_fahrenheit function will be called whenever the &quot;value&quot;
 /// property of @adjustment1 changes and will transform the current value
-/// of the property before applying it to the "value" property of @adjustment2.
+/// of the property before applying it to the &quot;value&quot; property of @adjustment2.
 /// </para>
 /// <para>
 /// Vice versa, the @fahrenheit_to_celsius function will be called whenever
-/// the "value" property of @adjustment2 changes, and will transform the
-/// current value of the property before applying it to the "value" property
+/// the &quot;value&quot; property of @adjustment2 changes, and will transform the
+/// current value of the property before applying it to the &quot;value&quot; property
 /// of @adjustment1.
 /// </para>
 /// <para>
@@ -69,9 +69,9 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// ```
-///   object1:propertyA -> object2:propertyB
-///   object2:propertyB -> object3:propertyC
-///   object3:propertyC -> object1:propertyA
+///   object1:propertyA -&amp;gt; object2:propertyB
+///   object2:propertyB -&amp;gt; object3:propertyC
+///   object3:propertyC -&amp;gt; object1:propertyA
 /// ```
 /// </para>
 /// <para>

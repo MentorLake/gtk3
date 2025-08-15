@@ -18,7 +18,7 @@ namespace MentorLake.Pango;
 /// and set of attributes for that string. Once that is done, the set of
 /// formatted lines can be extracted from the object, the layout can be
 /// rendered, and conversion between logical character positions within
-/// the layout's text, and the physical position of the resulting glyphs
+/// the layout&apos;s text, and the physical position of the resulting glyphs
 /// can be made.
 /// </para>
 /// <para>
@@ -27,10 +27,10 @@ namespace MentorLake.Pango;
 /// (on the left) and font metrics (on the right):
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="layout-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Pango Layout Parameters" src="layout-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;layout-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Pango Layout Parameters&quot; src=&quot;layout-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// <para>
 /// The following images demonstrate the effect of alignment and
@@ -43,8 +43,7 @@ namespace MentorLake.Pango;
 /// | ![align=center](align-center.png) | ![align=center, justify](align-center-justify.png) |
 /// | ![align=right](align-right.png) | ![align=right, justify](align-right-justify.png) |
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// It is possible, as well, to ignore the 2-D setup,
 /// and simply treat the results of a `PangoLayout` as a list of lines.
@@ -113,7 +112,7 @@ public static class PangoLayoutHandleExtensions
 /// <summary>
 /// <para>
 /// Forces recomputation of any state in the `PangoLayout` that
-/// might depend on the layout's context.
+/// might depend on the layout&apos;s context.
 /// </para>
 /// <para>
 /// This function should be called if you make changes to the context
@@ -209,7 +208,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <return>
 /// %TRUE if the bidirectional base direction
-///   is computed from the layout's contents, %FALSE otherwise
+///   is computed from the layout&apos;s contents, %FALSE otherwise
 /// </return>
 
 	public static bool GetAutoDir(this MentorLake.Pango.PangoLayoutHandle layout)
@@ -248,10 +247,10 @@ public static class PangoLayoutHandleExtensions
 /// it returns.
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="caret-metrics-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Caret metrics" src="caret-metrics-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;caret-metrics-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Caret metrics&quot; src=&quot;caret-metrics-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// </summary>
 
@@ -325,10 +324,10 @@ public static class PangoLayoutHandleExtensions
 /// with the height of the run extents.
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="cursor-positions-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Cursor positions" src="cursor-positions-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;cursor-positions-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Cursor positions&quot; src=&quot;cursor-positions-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// <para>
 /// The strong cursor location is the location where characters of the
@@ -340,15 +339,15 @@ public static class PangoLayoutHandleExtensions
 /// The following example shows text with both a strong and a weak cursor.
 /// </para>
 /// <para>
-/// <picture>
-///   <source srcset="split-cursor-dark.png" media="(prefers-color-scheme: dark)">
-///   <img alt="Strong and weak cursors" src="split-cursor-light.png">
-/// </picture>
+/// &amp;lt;picture&amp;gt;
+///   &amp;lt;source srcset=&quot;split-cursor-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&amp;gt;
+///   &amp;lt;img alt=&quot;Strong and weak cursors&quot; src=&quot;split-cursor-light.png&quot;&amp;gt;
+/// &amp;lt;/picture&amp;gt;
 /// </para>
 /// <para>
 /// The strong cursor has a little arrow pointing to the right, the weak
-/// cursor to the left. Typing a 'c' in this situation will insert the
-/// character after the 'b', and typing another Hebrew character, like 'ג',
+/// cursor to the left. Typing a &apos;c&apos; in this situation will insert the
+/// character after the &apos;b&apos;, and typing another Hebrew character, like &apos;ג&apos;,
 /// will insert it at the end.
 /// </para>
 /// </summary>
@@ -468,8 +467,8 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <return>
 /// a pointer to the
-///   layout's font description, or %NULL if the font description
-///   from the layout's context is inherited.
+///   layout&apos;s font description, or %NULL if the font description
+///   from the layout&apos;s context is inherited.
 /// </return>
 
 	public static MentorLake.Pango.PangoFontDescriptionHandle GetFontDescription(this MentorLake.Pango.PangoLayoutHandle layout)
@@ -601,7 +600,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <return>
 /// the requested `PangoLayoutLine`,
-///   or %NULL if the index is out of range. This layout line can be ref'ed
+///   or %NULL if the index is out of range. This layout line can be ref&apos;ed
 ///   and retained, but will become invalid if changes are made to the
 ///   `PangoLayout`.
 /// </return>
@@ -651,7 +650,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <return>
 /// the requested `PangoLayoutLine`,
-///   or %NULL if the index is out of range. This layout line can be ref'ed
+///   or %NULL if the index is out of range. This layout line can be ref&apos;ed
 ///   and retained, but will become invalid if changes are made to the
 ///   `PangoLayout`. No changes should be made to the line.
 /// </return>
@@ -698,7 +697,7 @@ public static class PangoLayoutHandleExtensions
 /// a `GSList`
 ///   containing the lines in the layout. This points to internal data of the
 ///   `PangoLayout` and must be used with care. It will become invalid on any
-///   change to the layout's text or properties.
+///   change to the layout&apos;s text or properties.
 /// </return>
 
 	public static MentorLake.GLib.GSListHandle GetLines(this MentorLake.Pango.PangoLayoutHandle layout)
@@ -725,7 +724,7 @@ public static class PangoLayoutHandleExtensions
 /// a `GSList`
 ///   containing the lines in the layout. This points to internal data of the
 ///   `PangoLayout` and must be used with care. It will become invalid on any
-///   change to the layout's text or properties. No changes should be made to
+///   change to the layout&apos;s text or properties. No changes should be made to
 ///   the lines.
 /// </return>
 
@@ -869,7 +868,7 @@ public static class PangoLayoutHandleExtensions
 /// when a new layout is created and is increased whenever the layout is
 /// changed using any of the setter functions, or the `PangoContext` it
 /// uses has changed. The serial may wrap, but will never have the value 0.
-/// Since it can wrap, never compare it with "less than", always use "not equals".
+/// Since it can wrap, never compare it with &quot;less than&quot;, always use &quot;not equals&quot;.
 /// </para>
 /// <para>
 /// This can be used to automatically detect changes to a `PangoLayout`,
@@ -1093,7 +1092,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <param name="trailing">
 /// an integer indicating the edge of the grapheme to retrieve the
-///   position of. If > 0, the trailing edge of the grapheme, if 0,
+///   position of. If &amp;gt; 0, the trailing edge of the grapheme, if 0,
 ///   the leading of the grapheme
 /// </param>
 /// <param name="line">
@@ -1118,10 +1117,10 @@ public static class PangoLayoutHandleExtensions
 /// corresponding to the grapheme at that index.
 /// </para>
 /// <para>
-/// The returns is represented as rectangle. Note that `pos->x` is
-/// always the leading edge of the grapheme and `pos->x + pos->width` the
+/// The returns is represented as rectangle. Note that `pos-&amp;gt;x` is
+/// always the leading edge of the grapheme and `pos-&amp;gt;x + pos-&amp;gt;width` the
 /// trailing edge of the grapheme. If the directionality of the grapheme
-/// is right-to-left, then `pos->width` will be negative.
+/// is right-to-left, then `pos-&amp;gt;width` will be negative.
 /// </para>
 /// </summary>
 
@@ -1229,7 +1228,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <param name="old_trailing">
 /// if 0, the cursor was at the leading edge of the
-///   grapheme indicated by @old_index, if > 0, the cursor
+///   grapheme indicated by @old_index, if &amp;gt; 0, the cursor
 ///   was at the trailing edge.
 /// </param>
 /// <param name="direction">
@@ -1350,7 +1349,7 @@ public static class PangoLayoutHandleExtensions
 /// </para>
 /// <para>
 /// When %FALSE, the choice between left-to-right and right-to-left
-/// layout is done according to the base direction of the layout's
+/// layout is done according to the base direction of the layout&apos;s
 /// `PangoContext`. (See [method@Pango.Context.set_base_dir]).
 /// </para>
 /// <para>
@@ -1365,7 +1364,7 @@ public static class PangoLayoutHandleExtensions
 /// </param>
 /// <param name="auto_dir">
 /// if %TRUE, compute the bidirectional base direction
-///   from the layout's contents
+///   from the layout&apos;s contents
 /// </param>
 
 	public static T SetAutoDir<T>(this T layout, bool auto_dir) where T : PangoLayoutHandle
@@ -1419,7 +1418,7 @@ public static class PangoLayoutHandleExtensions
 /// </para>
 /// <para>
 /// If no font description is set on the layout, the
-/// font description from the layout's context is used.
+/// font description from the layout&apos;s context is used.
 /// </para>
 /// </summary>
 
@@ -1641,7 +1640,7 @@ public static class PangoLayoutHandleExtensions
 /// </para>
 /// <para>
 /// This is the same as [method@Pango.Layout.set_markup_with_accel],
-/// but the markup text isn't scanned for accelerators.
+/// but the markup text isn&apos;t scanned for accelerators.
 /// </para>
 /// </summary>
 

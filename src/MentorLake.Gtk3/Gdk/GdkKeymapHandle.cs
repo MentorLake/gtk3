@@ -571,42 +571,40 @@ public static class GdkKeymapHandleExtensions
 /// @consumed_modifiers gives modifiers that should be masked outfrom @state
 /// when comparing this key press to a hot key. For instance, on a US keyboard,
 /// the `plus` symbol is shifted, so when comparing a key press to a
-/// `<Control>plus` accelerator `<Shift>` should be masked out.
+/// `&amp;lt;Control&amp;gt;plus` accelerator `&amp;lt;Shift&amp;gt;` should be masked out.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // We want to ignore irrelevant modifiers like ScrollLock
 /// // We want to ignore irrelevant modifiers like ScrollLock
 /// #define ALL_ACCELS_MASK (GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK)
-/// gdk_keymap_translate_keyboard_state (keymap, event->hardware_keycode,
-///                                      event->state, event->group,
-///                                      &keyval, NULL, NULL, &consumed);
-/// if (keyval == GDK_PLUS &&
-///     (event->state & ~consumed & ALL_ACCELS_MASK) == GDK_CONTROL_MASK)
+/// gdk_keymap_translate_keyboard_state (keymap, event-&amp;gt;hardware_keycode,
+///                                      event-&amp;gt;state, event-&amp;gt;group,
+///                                      &amp;keyval, NULL, NULL, &amp;consumed);
+/// if (keyval == GDK_PLUS &amp;&amp;
+///     (event-&amp;gt;state &amp; ~consumed &amp; ALL_ACCELS_MASK) == GDK_CONTROL_MASK)
 ///   // Control was pressed
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// An older interpretation @consumed_modifiers was that it contained
 /// all modifiers that might affect the translation of the key;
 /// this allowed accelerators to be stored with irrelevant consumed
 /// modifiers, by doing:
-/// |[<!-- language="C" -->
+/// <code>
 /// // XXX Don’t do this XXX
-/// if (keyval == accel_keyval &&
-///     (event->state & ~consumed & ALL_ACCELS_MASK) == (accel_mods & ~consumed))
+/// // XXX Don’t do this XXX
+/// if (keyval == accel_keyval &amp;&amp;
+///     (event-&amp;gt;state &amp; ~consumed &amp; ALL_ACCELS_MASK) == (accel_mods &amp; ~consumed))
 ///   // Accelerator was pressed
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// However, this did not work if multi-modifier combinations were
-/// used in the keymap, since, for instance, `<Control>` would be
-/// masked out even if only `<Control><Alt>` was used in the keymap.
+/// used in the keymap, since, for instance, `&amp;lt;Control&amp;gt;` would be
+/// masked out even if only `&amp;lt;Control&amp;gt;&amp;lt;Alt&amp;gt;` was used in the keymap.
 /// To support this usage as well as well as possible, all single
 /// modifier combinations that could affect the key for any combination
 /// of modifiers will be returned in @consumed_modifiers; multi-modifier
 /// combinations are returned only when actually found in @state. When
 /// you store accelerators, you should always store them with consumed
-/// modifiers removed. Store `<Control>plus`, not `<Control><Shift>plus`,
+/// modifiers removed. Store `&amp;lt;Control&amp;gt;plus`, not `&amp;lt;Control&amp;gt;&amp;lt;Shift&amp;gt;plus`,
 /// </para>
 /// </summary>
 

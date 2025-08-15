@@ -16,7 +16,7 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The accelerator path must consist of
-/// “<WINDOWTYPE>/Category1/Category2/.../Action”, where WINDOWTYPE
+/// “&amp;lt;WINDOWTYPE&amp;gt;/Category1/Category2/.../Action”, where WINDOWTYPE
 /// should be a unique application-specific identifier that corresponds
 /// to the kind of window the accelerator is being used in, e.g.
 /// “Gimp-Image”, “Abiword-Document” or “Gnumeric-Settings”.
@@ -24,7 +24,7 @@ namespace MentorLake.Gtk;
 /// the action the accelerator triggers, i.e. for accelerators on menu
 /// items, choose the item’s menu path, e.g. “File/Save As”,
 /// “Image/View/Zoom” or “Edit/Select All”. So a full valid accelerator
-/// path may look like: “<Gimp-Toolbox>/File/Dialogs/Tool Options...”.
+/// path may look like: “&amp;lt;Gimp-Toolbox&amp;gt;/File/Dialogs/Tool Options...”.
 /// </para>
 /// <para>
 /// All accelerators are stored inside one global #GtkAccelMap that can

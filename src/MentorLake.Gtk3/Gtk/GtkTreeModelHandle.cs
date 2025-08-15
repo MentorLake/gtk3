@@ -91,37 +91,33 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Acquiring a #GtkTreeIter-struct
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // Three ways of getting the iter pointing to the location
 /// // Three ways of getting the iter pointing to the location
 /// GtkTreePath *path;
 /// GtkTreeIter iter;
 /// GtkTreeIter parent_iter;
-/// </para>
-/// <para>
+/// 
 /// // get the iterator from a string
 /// gtk_tree_model_get_iter_from_string (model,
-///                                      &iter,
-///                                      "3:2:5");
-/// </para>
-/// <para>
+///                                      &amp;iter,
+///                                      &quot;3:2:5&quot;);
+/// 
 /// // get the iterator from a path
-/// path = gtk_tree_path_new_from_string ("3:2:5");
-/// gtk_tree_model_get_iter (model, &iter, path);
+/// path = gtk_tree_path_new_from_string (&quot;3:2:5&quot;);
+/// gtk_tree_model_get_iter (model, &amp;iter, path);
 /// gtk_tree_path_free (path);
-/// </para>
-/// <para>
+/// 
 /// // walk the tree to find the iterator
-/// gtk_tree_model_iter_nth_child (model, &iter,
+/// gtk_tree_model_iter_nth_child (model, &amp;iter,
 ///                                NULL, 3);
 /// parent_iter = iter;
-/// gtk_tree_model_iter_nth_child (model, &iter,
-///                                &parent_iter, 2);
+/// gtk_tree_model_iter_nth_child (model, &amp;iter,
+///                                &amp;parent_iter, 2);
 /// parent_iter = iter;
-/// gtk_tree_model_iter_nth_child (model, &iter,
-///                                &parent_iter, 5);
-/// ]|
-/// </para>
+/// gtk_tree_model_iter_nth_child (model, &amp;iter,
+///                                &amp;parent_iter, 5);
+/// </code>
 /// <para>
 /// This second example shows a quick way of iterating through a list
 /// and getting a string and an integer from each row. The
@@ -132,66 +128,56 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## Reading data from a #GtkTreeModel
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// enum
 /// enum
 /// {
 ///   STRING_COLUMN,
 ///   INT_COLUMN,
 ///   N_COLUMNS
 /// };
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// GtkTreeModel *list_store;
 /// GtkTreeIter iter;
 /// gboolean valid;
 /// gint row_count = 0;
-/// </para>
-/// <para>
+/// 
 /// // make a new list_store
 /// list_store = gtk_list_store_new (N_COLUMNS,
 ///                                  G_TYPE_STRING,
 ///                                  G_TYPE_INT);
-/// </para>
-/// <para>
+/// 
 /// // Fill the list store with data
 /// populate_model (list_store);
-/// </para>
-/// <para>
+/// 
 /// // Get the first iter in the list, check it is valid and walk
 /// // through the list, reading each row.
-/// </para>
-/// <para>
+/// 
 /// valid = gtk_tree_model_get_iter_first (list_store,
-///                                        &iter);
+///                                        &amp;iter);
 /// while (valid)
 ///  {
 ///    gchar *str_data;
 ///    gint   int_data;
-/// </para>
-/// <para>
+/// 
 ///    // Make sure you terminate calls to gtk_tree_model_get() with a “-1” value
-///    gtk_tree_model_get (list_store, &iter,
-///                        STRING_COLUMN, &str_data,
-///                        INT_COLUMN, &int_data,
+///    gtk_tree_model_get (list_store, &amp;iter,
+///                        STRING_COLUMN, &amp;str_data,
+///                        INT_COLUMN, &amp;int_data,
 ///                        -1);
-/// </para>
-/// <para>
+/// 
 ///    // Do something with the data
-///    g_print ("Row %d: (%s,%d)\n",
+///    g_print (&quot;Row %d: (%s,%d)\n&quot;,
 ///             row_count, str_data, int_data);
 ///    g_free (str_data);
-/// </para>
-/// <para>
+/// 
 ///    valid = gtk_tree_model_iter_next (list_store,
-///                                      &iter);
+///                                      &amp;iter);
 ///    row_count++;
 ///  }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// The #GtkTreeModel interface contains two methods for reference
 /// counting: gtk_tree_model_ref_node() and gtk_tree_model_unref_node().
@@ -298,7 +284,7 @@ public static class GtkTreeModelHandleExtensions
 /// each column number followed by a place to store the value being
 /// retrieved.  The list is terminated by a -1. For example, to get a
 /// value from column 0 with type %G_TYPE_STRING, you would
-/// write: `gtk_tree_model_get (model, iter, 0, &place_string_here, -1)`,
+/// write: `gtk_tree_model_get (model, iter, 0, &amp;place_string_here, -1)`,
 /// where `place_string_here` is a #gchararray
 /// to be filled with the string.
 /// </para>
@@ -402,7 +388,7 @@ public static class GtkTreeModelHandleExtensions
 /// <summary>
 /// <para>
 /// Initializes @iter with the first iterator in the tree
-/// (the one at the path "0") and returns %TRUE. Returns
+/// (the one at the path &quot;0&quot;) and returns %TRUE. Returns
 /// %FALSE if the tree is empty.
 /// </para>
 /// </summary>

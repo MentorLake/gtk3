@@ -62,7 +62,7 @@ public uint is_white;
 /// <para>
 /// if set, cursor can appear in front of character.
 ///   i.e. this is a grapheme boundary, or the first character in the text.
-///   This flag implements Unicode's
+///   This flag implements Unicode&apos;s
 ///   [Grapheme Cluster Boundaries](http://www.unicode.org/reports/tr29/)
 ///   semantics.
 /// </para>
@@ -91,7 +91,7 @@ public uint is_word_end;
 ///   There are two ways to divide sentences. The first assigns all
 ///   inter-sentence whitespace/control/format chars to some sentence,
 ///   so all chars are in some sentence; @is_sentence_boundary denotes
-///   the boundaries there. The second way doesn't assign
+///   the boundaries there. The second way doesn&apos;t assign
 ///   between-sentence spaces, etc. to any sentence, so
 ///   @is_sentence_start/@is_sentence_end mark the boundaries of those sentences.
 /// </para>
@@ -142,7 +142,7 @@ public uint is_expandable_space;
 ///   More specifically, means that this is not a position in the middle of a word.
 ///   For example, both sides of a punctuation mark are considered word boundaries.
 ///   This flag is particularly useful when selecting text word-by-word. This flag
-///   implements Unicode's [Word Boundaries](http://www.unicode.org/reports/tr29/)
+///   implements Unicode&apos;s [Word Boundaries](http://www.unicode.org/reports/tr29/)
 ///   semantics. (Since: 1.22)
 /// </para>
 /// </summary>

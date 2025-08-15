@@ -20,7 +20,7 @@ namespace MentorLake.Gio;
 ///  - Run a garbage collection cycle
 ///  - Try and compress fragmented allocations
 ///  - Exit on idle if the process has no reason to stay around
-///  - Call <see href="man:malloc_trim(3">malloc_trim(3)</see>) to return cached heap pages to
+///  - Call &amp;lt;see href=&quot;man:malloc_trim(3&quot;&amp;gt;malloc_trim(3)&amp;lt;/see&amp;gt;) to return cached heap pages to
 ///    the kernel (if supported by your libc)
 /// </para>
 /// <para>
@@ -38,8 +38,8 @@ namespace MentorLake.Gio;
 /// static void
 /// warning_cb (GMemoryMonitor *m, GMemoryMonitorWarningLevel level)
 /// {
-///   g_debug ("Warning level: %d", level);
-///   if (warning_level > G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
+///   g_debug (&quot;Warning level: %d&quot;, level);
+///   if (warning_level &amp;gt; G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
 ///     drop_caches ();
 /// }
 /// </para>
@@ -49,7 +49,7 @@ namespace MentorLake.Gio;
 /// {
 ///   GMemoryMonitor *m;
 ///   m = g_memory_monitor_dup_default ();
-///   g_signal_connect (G_OBJECT (m), "low-memory-warning",
+///   g_signal_connect (G_OBJECT (m), &quot;low-memory-warning&quot;,
 ///                     G_CALLBACK (warning_cb), NULL);
 ///   return m;
 /// }

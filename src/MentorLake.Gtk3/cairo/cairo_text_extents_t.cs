@@ -6,9 +6,9 @@ namespace MentorLake.cairo;
 /// glyph or a string of glyphs in user-space coordinates. Because text
 /// extents are in user-space coordinates, they are mostly, but not
 /// entirely, independent of the current transformation matrix. If you call
-/// <literal>cairo_scale(cr, 2.0, 2.0)</literal>, text will
+/// &amp;lt;literal&amp;gt;cairo_scale(cr, 2.0, 2.0)&amp;lt;/literal&amp;gt;, text will
 /// be drawn twice as big, but the reported text extents will not be
-/// doubled. They will change slightly due to hinting (so you can't
+/// doubled. They will change slightly due to hinting (so you can&apos;t
 /// assume that metrics are independent of the transformation matrix),
 /// but otherwise will remain unchanged.
 /// </para>
@@ -34,9 +34,9 @@ internal class cairo_text_extents_tExterns
 /// glyph or a string of glyphs in user-space coordinates. Because text
 /// extents are in user-space coordinates, they are mostly, but not
 /// entirely, independent of the current transformation matrix. If you call
-/// <literal>cairo_scale(cr, 2.0, 2.0)</literal>, text will
+/// &amp;lt;literal&amp;gt;cairo_scale(cr, 2.0, 2.0)&amp;lt;/literal&amp;gt;, text will
 /// be drawn twice as big, but the reported text extents will not be
-/// doubled. They will change slightly due to hinting (so you can't
+/// doubled. They will change slightly due to hinting (so you can&apos;t
 /// assume that metrics are independent of the transformation matrix),
 /// but otherwise will remain unchanged.
 /// </para>

@@ -19,7 +19,7 @@ namespace MentorLake.GObject;
 /// </para>
 /// <para>
 /// One place you might want to use such a structure is with `GtkTextView` and
-/// `GtkTextBuffer`. Often times, you'll need to connect to many signals on
+/// `GtkTextBuffer`. Often times, you&apos;ll need to connect to many signals on
 /// `GtkTextBuffer` from a `GtkTextView` subclass. This allows you to create a
 /// signal group during instance construction, simply bind the
 /// `GtkTextView:buffer` property to `GSignalGroup:target` and connect
@@ -240,7 +240,7 @@ public static class GSignalGroupHandleExtensions
 /// a #GSignalGroup
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail"
+/// a string of the form &quot;signal-name::detail&quot;
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect
@@ -273,7 +273,7 @@ public static class GSignalGroupHandleExtensions
 /// a #GSignalGroup
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail"
+/// a string of the form &quot;signal-name::detail&quot;
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect
@@ -333,7 +333,7 @@ public static class GSignalGroupHandleExtensions
 /// a #GSignalGroup
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail"
+/// a string of the form &quot;signal-name::detail&quot;
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect
@@ -410,7 +410,7 @@ public static class GSignalGroupHandleExtensions
 /// a #GSignalGroup
 /// </param>
 /// <param name="detailed_signal">
-/// a string of the form "signal-name::detail"
+/// a string of the form &quot;signal-name::detail&quot;
 /// </param>
 /// <param name="c_handler">
 /// the #GCallback to connect

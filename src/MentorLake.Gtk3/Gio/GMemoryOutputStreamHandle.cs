@@ -36,7 +36,7 @@ public class GMemoryOutputStreamHandle : GOutputStreamHandle, GPollableOutputStr
 /// <para>
 /// If @realloc_fn is %NULL then the stream is fixed-sized.  Seeking to
 /// the end will seek to @size exactly.  Writing past the end will give
-/// an 'out of space' error.  Attempting to seek past the end will fail.
+/// an &apos;out of space&apos; error.  Attempting to seek past the end will fail.
 /// Unlike the resizable case, seeking to an offset within the stream and
 /// writing will preserve the bytes passed in as @data before that point
 /// and will return them as part of g_memory_output_stream_steal_data().
@@ -50,21 +50,18 @@ public class GMemoryOutputStreamHandle : GOutputStreamHandle, GPollableOutputStr
 /// @size as 0 (allowing #GMemoryOutputStream to do the initial
 /// allocation for itself).
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// // a stream that can grow
 /// // a stream that can grow
 /// stream = g_memory_output_stream_new (NULL, 0, realloc, free);
-/// </para>
-/// <para>
+/// 
 /// // another stream that can grow
 /// stream2 = g_memory_output_stream_new (NULL, 0, g_realloc, g_free);
-/// </para>
-/// <para>
+/// 
 /// // a fixed-size stream
 /// data = malloc (200);
 /// stream3 = g_memory_output_stream_new (data, 200, NULL, free);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="data">
@@ -121,7 +118,7 @@ public static class GMemoryOutputStreamHandleExtensions
 /// a #GMemoryOutputStream
 /// </param>
 /// <return>
-/// pointer to the stream's data, or %NULL if the data
+/// pointer to the stream&apos;s data, or %NULL if the data
 ///    has been stolen
 /// </return>
 
@@ -157,7 +154,7 @@ public static class GMemoryOutputStreamHandleExtensions
 /// g_memory_output_stream_get_data()).
 /// </para>
 /// <para>
-/// You probably don't want to use this function on resizable streams.
+/// You probably don&apos;t want to use this function on resizable streams.
 /// See g_memory_output_stream_get_data_size() instead.  For resizable
 /// streams the size returned by this function is an implementation
 /// detail and may be change at any time in response to operations on the
@@ -198,7 +195,7 @@ public static class GMemoryOutputStreamHandleExtensions
 /// a #GMemoryOutputStream
 /// </param>
 /// <return>
-/// the stream's data
+/// the stream&apos;s data
 /// </return>
 
 	public static MentorLake.GLib.GBytesHandle StealAsBytes(this MentorLake.Gio.GMemoryOutputStreamHandle ostream)
@@ -211,7 +208,7 @@ public static class GMemoryOutputStreamHandleExtensions
 /// <para>
 /// Gets any loaded data from the @ostream. Ownership of the data
 /// is transferred to the caller; when no longer needed it must be
-/// freed using the free function set in @ostream's
+/// freed using the free function set in @ostream&apos;s
 /// #GMemoryOutputStream:destroy-function property.
 /// </para>
 /// <para>
@@ -223,7 +220,7 @@ public static class GMemoryOutputStreamHandleExtensions
 /// a #GMemoryOutputStream
 /// </param>
 /// <return>
-/// the stream's data, or %NULL if it has previously
+/// the stream&apos;s data, or %NULL if it has previously
 ///    been stolen
 /// </return>
 

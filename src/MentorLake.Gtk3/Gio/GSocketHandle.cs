@@ -79,7 +79,7 @@ namespace MentorLake.Gio;
 /// socket = g_socket_new (…, G_SOCKET_TYPE_STREAM, …);
 /// if (socket != NULL)
 ///   {
-///     g_socket_set_option (socket, IPPROTO_TCP, TCP_NODELAY, FALSE, &local_error);
+///     g_socket_set_option (socket, IPPROTO_TCP, TCP_NODELAY, FALSE, &amp;local_error);
 ///     // handle error if needed
 ///   }
 /// ```
@@ -208,7 +208,7 @@ public static class GSocketHandleExtensions
 /// <summary>
 /// <para>
 /// When a socket is created it is attached to an address family, but it
-/// doesn't have an address in this family. g_socket_bind() assigns the
+/// doesn&apos;t have an address in this family. g_socket_bind() assigns the
 /// address (sometimes called name) of the socket.
 /// </para>
 /// <para>
@@ -306,7 +306,7 @@ public static class GSocketHandleExtensions
 /// send something to you after you close the socket but before it has
 /// finished reading all of the data you sent. There is no easy generic
 /// way to avoid this problem; the easiest fix is to design the network
-/// protocol such that the client will never send data "out of turn".
+/// protocol such that the client will never send data &quot;out of turn&quot;.
 /// Another solution is for the server to half-close the connection by
 /// calling g_socket_shutdown() with only the @shutdown_write flag set,
 /// and then wait for the client to notice this and close its side of the
@@ -381,13 +381,13 @@ public static class GSocketHandleExtensions
 /// </para>
 /// <para>
 /// If @cancellable is cancelled before the condition is met, or if
-/// @timeout_us (or the socket's #GSocket:timeout) is reached before the
+/// @timeout_us (or the socket&apos;s #GSocket:timeout) is reached before the
 /// condition is met, then %FALSE is returned and @error, if non-%NULL,
 /// is set to the appropriate value (%G_IO_ERROR_CANCELLED or
 /// %G_IO_ERROR_TIMED_OUT).
 /// </para>
 /// <para>
-/// If you don't want a timeout, use g_socket_condition_wait().
+/// If you don&apos;t want a timeout, use g_socket_condition_wait().
 /// (Alternatively, you can pass -1 for @timeout_us.)
 /// </para>
 /// <para>
@@ -654,7 +654,7 @@ public static class GSocketHandleExtensions
 /// sockets).
 /// </para>
 /// <para>
-/// If this operation isn't supported on the OS, the method fails with
+/// If this operation isn&apos;t supported on the OS, the method fails with
 /// the %G_IO_ERROR_NOT_SUPPORTED error. On Linux this is implemented
 /// by reading the %SO_PEERCRED option on the underlying socket.
 /// </para>
@@ -846,7 +846,7 @@ public static class GSocketHandleExtensions
 /// you will need to call getsockopt() directly.)
 /// </para>
 /// <para>
-/// The <see href="networking.html"><gio/gnetworking.h></see>
+/// The &amp;lt;see href=&quot;networking.html&quot;&amp;gt;&amp;lt;gio/gnetworking.h&amp;gt;&amp;lt;/see&amp;gt;
 /// header pulls in system headers that will define most of the
 /// standard/portable socket options. For unusual socket protocols or
 /// platform-dependent options, you may need to include additional
@@ -863,10 +863,10 @@ public static class GSocketHandleExtensions
 /// a #GSocket
 /// </param>
 /// <param name="level">
-/// the "API level" of the option (eg, `SOL_SOCKET`)
+/// the &quot;API level&quot; of the option (eg, `SOL_SOCKET`)
 /// </param>
 /// <param name="optname">
-/// the "name" of the option (eg, `SO_BROADCAST`)
+/// the &quot;name&quot; of the option (eg, `SO_BROADCAST`)
 /// </param>
 /// <param name="value">
 /// return location for the option value
@@ -1451,7 +1451,7 @@ public static class GSocketHandleExtensions
 /// As a special case, if @num_vectors is 0 (in which case, @vectors
 /// may of course be %NULL), then a single byte is received and
 /// discarded. This is to facilitate the common practice of sending a
-/// single '\0' byte for the purposes of transferring ancillary data.
+/// single &apos;\0&apos; byte for the purposes of transferring ancillary data.
 /// </para>
 /// <para>
 /// @messages, if non-%NULL, will be set to point to a newly-allocated
@@ -1644,7 +1644,7 @@ public static class GSocketHandleExtensions
 /// <para>
 /// This behaves exactly the same as g_socket_receive(), except that
 /// the choice of blocking or non-blocking behavior is determined by
-/// the @blocking argument rather than by @socket's properties.
+/// the @blocking argument rather than by @socket&apos;s properties.
 /// </para>
 /// </summary>
 
@@ -1821,7 +1821,7 @@ public static class GSocketHandleExtensions
 /// <para>
 /// This behaves exactly the same as g_socket_send_message(), except that
 /// the choice of timeout behavior is determined by the @timeout_us argument
-/// rather than by @socket's properties.
+/// rather than by @socket&apos;s properties.
 /// </para>
 /// <para>
 /// On error %G_POLLABLE_RETURN_FAILED is returned and @error is set accordingly, or
@@ -1994,7 +1994,7 @@ public static class GSocketHandleExtensions
 /// <para>
 /// This behaves exactly the same as g_socket_send(), except that
 /// the choice of blocking or non-blocking behavior is determined by
-/// the @blocking argument rather than by @socket's properties.
+/// the @blocking argument rather than by @socket&apos;s properties.
 /// </para>
 /// </summary>
 
@@ -2193,7 +2193,7 @@ public static class GSocketHandleExtensions
 /// you will need to call setsockopt() directly.)
 /// </para>
 /// <para>
-/// The <see href="networking.html"><gio/gnetworking.h></see>
+/// The &amp;lt;see href=&quot;networking.html&quot;&amp;gt;&amp;lt;gio/gnetworking.h&amp;gt;&amp;lt;/see&amp;gt;
 /// header pulls in system headers that will define most of the
 /// standard/portable socket options. For unusual socket protocols or
 /// platform-dependent options, you may need to include additional
@@ -2205,10 +2205,10 @@ public static class GSocketHandleExtensions
 /// a #GSocket
 /// </param>
 /// <param name="level">
-/// the "API level" of the option (eg, `SOL_SOCKET`)
+/// the &quot;API level&quot; of the option (eg, `SOL_SOCKET`)
 /// </param>
 /// <param name="optname">
-/// the "name" of the option (eg, `SO_BROADCAST`)
+/// the &quot;name&quot; of the option (eg, `SO_BROADCAST`)
 /// </param>
 /// <param name="value">
 /// the value to set the option to

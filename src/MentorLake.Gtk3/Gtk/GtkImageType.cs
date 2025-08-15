@@ -7,7 +7,7 @@ namespace MentorLake.Gtk;
 /// currently-stored representation. e.g.  if the
 /// gtk_image_get_storage_type() returns #GTK_IMAGE_PIXBUF, then you can
 /// call gtk_image_get_pixbuf() but not gtk_image_get_stock().  For empty
-/// images, you can request any storage type (call any of the "get"
+/// images, you can request any storage type (call any of the &quot;get&quot;
 /// functions), but they will all return %NULL values.
 /// </para>
 /// </summary>

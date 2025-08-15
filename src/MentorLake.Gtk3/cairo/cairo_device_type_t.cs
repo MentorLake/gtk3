@@ -3,7 +3,7 @@ namespace MentorLake.cairo;
 /// <summary>
 /// <para>
 /// #cairo_device_type_t is used to describe the type of a given
-/// device. The devices types are also known as "backends" within cairo.
+/// device. The devices types are also known as &quot;backends&quot; within cairo.
 /// </para>
 /// <para>
 /// The device type can be queried with cairo_device_get_type()
@@ -13,7 +13,7 @@ namespace MentorLake.cairo;
 /// any type, but some backends also provide type-specific functions
 /// that must only be called with a device of the appropriate
 /// type. These functions have names that begin with
-/// <literal>cairo_<emphasis>type</emphasis>_device</literal> such as
+/// &amp;lt;literal&amp;gt;cairo_&amp;lt;emphasis&amp;gt;type&amp;lt;/emphasis&amp;gt;_device&amp;lt;/literal&amp;gt; such as
 /// cairo_xcb_device_debug_cap_xrender_version().
 /// </para>
 /// <para>

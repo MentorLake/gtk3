@@ -105,25 +105,25 @@ public static class GSettingsSchemaKeyExtensions
 /// the value contained in the variant depends on the string.
 /// </para>
 /// <para>
-/// If the string is `'type'` then the variant contains an empty array.
+/// If the string is `&apos;type&apos;` then the variant contains an empty array.
 /// The element type of that empty array is the expected type of value
 /// and all values of that type are valid.
 /// </para>
 /// <para>
-/// If the string is `'enum'` then the variant contains an array
+/// If the string is `&apos;enum&apos;` then the variant contains an array
 /// enumerating the possible values. Each item in the array is
 /// a possible valid value and no other values are valid.
 /// </para>
 /// <para>
-/// If the string is `'flags'` then the variant contains an array. Each
+/// If the string is `&apos;flags&apos;` then the variant contains an array. Each
 /// item in the array is a value that may appear zero or one times in an
 /// array to be used as the value for this key. For example, if the
-/// variant contained the array `['x', 'y']` then the valid values for
-/// the key would be `[]`, `['x']`, `['y']`, `['x', 'y']` and
-/// `['y', 'x']`.
+/// variant contained the array `[&apos;x&apos;, &apos;y&apos;]` then the valid values for
+/// the key would be `[]`, `[&apos;x&apos;]`, `[&apos;y&apos;]`, `[&apos;x&apos;, &apos;y&apos;]` and
+/// `[&apos;y&apos;, &apos;x&apos;]`.
 /// </para>
 /// <para>
-/// Finally, if the string is `'range'` then the variant contains a pair
+/// Finally, if the string is `&apos;range&apos;` then the variant contains a pair
 /// of like-typed values -- the minimum and maximum permissible values
 /// for this key.
 /// </para>

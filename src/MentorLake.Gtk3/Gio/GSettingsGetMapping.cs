@@ -12,7 +12,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// If @value is %NULL then it means that the mapping function is being
-/// given a "last chance" to successfully return a valid value.  %TRUE
+/// given a &quot;last chance&quot; to successfully return a valid value.  %TRUE
 /// must be returned in this case.
 /// </para>
 /// </summary>

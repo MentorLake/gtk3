@@ -42,10 +42,10 @@ public class GSrvTargetHandle : BaseSafeHandle
 /// the port that the service is running on
 /// </param>
 /// <param name="priority">
-/// the target's priority
+/// the target&apos;s priority
 /// </param>
 /// <param name="weight">
-/// the target's weight
+/// the target&apos;s weight
 /// </param>
 /// <return>
 /// a new #GSrvTarget.
@@ -98,7 +98,7 @@ public static class GSrvTargetExtensions
 
 /// <summary>
 /// <para>
-/// Gets @target's hostname (in ASCII form; if you are going to present
+/// Gets @target&apos;s hostname (in ASCII form; if you are going to present
 /// this to the user, you should use g_hostname_is_ascii_encoded() to
 /// check if it contains encoded Unicode segments, and use
 /// g_hostname_to_unicode() to convert it if it does.)
@@ -109,7 +109,7 @@ public static class GSrvTargetExtensions
 /// a #GSrvTarget
 /// </param>
 /// <return>
-/// @target's hostname
+/// @target&apos;s hostname
 /// </return>
 
 	public static string GetHostname(this MentorLake.Gio.GSrvTargetHandle target)
@@ -120,7 +120,7 @@ public static class GSrvTargetExtensions
 
 /// <summary>
 /// <para>
-/// Gets @target's port
+/// Gets @target&apos;s port
 /// </para>
 /// </summary>
 
@@ -128,7 +128,7 @@ public static class GSrvTargetExtensions
 /// a #GSrvTarget
 /// </param>
 /// <return>
-/// @target's port
+/// @target&apos;s port
 /// </return>
 
 	public static ushort GetPort(this MentorLake.Gio.GSrvTargetHandle target)
@@ -139,7 +139,7 @@ public static class GSrvTargetExtensions
 
 /// <summary>
 /// <para>
-/// Gets @target's priority. You should not need to look at this;
+/// Gets @target&apos;s priority. You should not need to look at this;
 /// #GResolver already sorts the targets according to the algorithm in
 /// RFC 2782.
 /// </para>
@@ -149,7 +149,7 @@ public static class GSrvTargetExtensions
 /// a #GSrvTarget
 /// </param>
 /// <return>
-/// @target's priority
+/// @target&apos;s priority
 /// </return>
 
 	public static ushort GetPriority(this MentorLake.Gio.GSrvTargetHandle target)
@@ -160,7 +160,7 @@ public static class GSrvTargetExtensions
 
 /// <summary>
 /// <para>
-/// Gets @target's weight. You should not need to look at this;
+/// Gets @target&apos;s weight. You should not need to look at this;
 /// #GResolver already sorts the targets according to the algorithm in
 /// RFC 2782.
 /// </para>
@@ -170,7 +170,7 @@ public static class GSrvTargetExtensions
 /// a #GSrvTarget
 /// </param>
 /// <return>
-/// @target's weight
+/// @target&apos;s weight
 /// </return>
 
 	public static ushort GetWeight(this MentorLake.Gio.GSrvTargetHandle target)

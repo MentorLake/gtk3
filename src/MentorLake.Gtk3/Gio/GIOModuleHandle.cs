@@ -41,7 +41,7 @@ public class GIOModuleHandle : GTypeModuleHandle, GTypePluginHandle
 /// <para>
 /// This method will not be called in normal use, however it may be
 /// called when probing existing modules and recording which extension
-/// points that this model is used for. This means we won't have to
+/// points that this model is used for. This means we won&apos;t have to
 /// load and initialize this module unless its needed.
 /// </para>
 /// <para>
@@ -62,7 +62,7 @@ public class GIOModuleHandle : GTypeModuleHandle, GTypePluginHandle
 /// lazy loading.
 /// </para>
 /// <para>
-/// Since 2.56, this function should be named `g_io_<modulename>_query`, where
+/// Since 2.56, this function should be named `g_io_&amp;lt;modulename&amp;gt;_query`, where
 /// `modulename` is the plugin’s filename with the `lib` or `libgio` prefix and
 /// everything after the first dot removed, and with `-` replaced with `_`
 /// throughout. For example, `libgiognutls-helper.so` becomes `gnutls_helper`.
@@ -97,7 +97,7 @@ public static class GIOModuleHandleExtensions
 /// g_io_extension_point_implement().
 /// </para>
 /// <para>
-/// Since 2.56, this function should be named `g_io_<modulename>_load`, where
+/// Since 2.56, this function should be named `g_io_&amp;lt;modulename&amp;gt;_load`, where
 /// `modulename` is the plugin’s filename with the `lib` or `libgio` prefix and
 /// everything after the first dot removed, and with `-` replaced with `_`
 /// throughout. For example, `libgiognutls-helper.so` becomes `gnutls_helper`.
@@ -127,7 +127,7 @@ public static class GIOModuleHandleExtensions
 /// to finalize the module.
 /// </para>
 /// <para>
-/// Since 2.56, this function should be named `g_io_<modulename>_unload`, where
+/// Since 2.56, this function should be named `g_io_&amp;lt;modulename&amp;gt;_unload`, where
 /// `modulename` is the plugin’s filename with the `lib` or `libgio` prefix and
 /// everything after the first dot removed, and with `-` replaced with `_`
 /// throughout. For example, `libgiognutls-helper.so` becomes `gnutls_helper`.

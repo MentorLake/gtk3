@@ -68,8 +68,8 @@ public static class GtkIconSetExtensions
 /// without affecting the icon set.
 /// </para>
 /// <para>
-/// An example of when you’d use this function: a web browser’s "Back
-/// to Previous Page" icon might point in a different direction in
+/// An example of when you’d use this function: a web browser’s &quot;Back
+/// to Previous Page&quot; icon might point in a different direction in
 /// Hebrew and in English; it might look different when insensitive;
 /// and it might change size depending on toolbar mode (small/large
 /// icons). So a single icon set would contain all those variants of
@@ -169,8 +169,8 @@ public static class GtkIconSetExtensions
 /// gtk_widget_render_icon() is better, since it automatically provides
 /// most of the arguments from the current widget settings.  This
 /// function never returns %NULL; if the icon can’t be rendered
-/// (perhaps because an image file fails to load), a default "missing
-/// image" icon will be returned instead.
+/// (perhaps because an image file fails to load), a default &quot;missing
+/// image&quot; icon will be returned instead.
 /// </para>
 /// </summary>
 
@@ -216,8 +216,8 @@ public static class GtkIconSetExtensions
 /// gtk_widget_render_icon_pixbuf() is better, since it automatically provides
 /// most of the arguments from the current widget settings.  This
 /// function never returns %NULL; if the icon can’t be rendered
-/// (perhaps because an image file fails to load), a default "missing
-/// image" icon will be returned instead.
+/// (perhaps because an image file fails to load), a default &quot;missing
+/// image&quot; icon will be returned instead.
 /// </para>
 /// </summary>
 
@@ -248,8 +248,8 @@ public static class GtkIconSetExtensions
 /// </para>
 /// <para>
 /// This function never returns %NULL; if the icon can’t be rendered
-/// (perhaps because an image file fails to load), a default "missing
-/// image" icon will be returned instead.
+/// (perhaps because an image file fails to load), a default &quot;missing
+/// image&quot; icon will be returned instead.
 /// </para>
 /// </summary>
 

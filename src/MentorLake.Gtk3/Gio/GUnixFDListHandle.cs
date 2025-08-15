@@ -7,13 +7,13 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// It may be wrapped in a
-/// <see href="../gio-unix/class.UnixFDMessage.html">GUnixFDMessage</see> and sent over a
+/// &amp;lt;see href=&quot;../gio-unix/class.UnixFDMessage.html&quot;&amp;gt;GUnixFDMessage&amp;lt;/see&amp;gt; and sent over a
 /// [class@Gio.Socket] in the `G_SOCKET_FAMILY_UNIX` family by using
 /// [method@Gio.Socket.send_message] and received using
 /// [method@Gio.Socket.receive_message].
 /// </para>
 /// <para>
-/// Before 2.74, `<gio/gunixfdlist.h>` belonged to the UNIX-specific GIO
+/// Before 2.74, `&amp;lt;gio/gunixfdlist.h&amp;gt;` belonged to the UNIX-specific GIO
 /// interfaces, thus you had to use the `gio-unix-2.0.pc` pkg-config file when
 /// using it.
 /// </para>

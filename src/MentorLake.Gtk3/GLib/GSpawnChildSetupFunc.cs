@@ -4,7 +4,7 @@ namespace MentorLake.GLib;
 /// <para>
 /// Specifies the type of the setup function passed to g_spawn_async(),
 /// g_spawn_sync() and g_spawn_async_with_pipes(), which can, in very
-/// limited ways, be used to affect the child's execution.
+/// limited ways, be used to affect the child&apos;s execution.
 /// </para>
 /// <para>
 /// On POSIX platforms, the function is called in the child after GLib
@@ -24,7 +24,7 @@ namespace MentorLake.GLib;
 /// safely do from a #GSpawnChildSetupFunc, because any mutexes that were
 /// held by other threads in the parent process at the time of the fork()
 /// will still be locked in the child process, and they will never be
-/// unlocked (since the threads that held them don't exist in the child).
+/// unlocked (since the threads that held them don&apos;t exist in the child).
 /// POSIX allows only async-signal-safe functions (see signal(7)) to be
 /// called in the child between fork() and exec(), which drastically limits
 /// the usefulness of child setup functions.

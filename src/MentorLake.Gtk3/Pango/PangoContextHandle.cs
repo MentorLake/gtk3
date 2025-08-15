@@ -29,7 +29,7 @@ public class PangoContextHandle : GObjectHandle
 /// </para>
 /// <para>
 /// If you are using Pango as part of a higher-level system,
-/// that system may have it's own way of create a `PangoContext`.
+/// that system may have it&apos;s own way of create a `PangoContext`.
 /// For instance, the GTK toolkit has, among others,
 /// `gtk_widget_get_pango_context()`. Use those instead.
 /// </para>
@@ -56,7 +56,7 @@ public static class PangoContextHandleExtensions
 /// </para>
 /// <para>
 /// This function is only useful when implementing a new backend
-/// for Pango, something applications won't do. Backends should
+/// for Pango, something applications won&apos;t do. Backends should
 /// call this function if they have attached extra data to the context
 /// and such data is changed.
 /// </para>
@@ -127,7 +127,7 @@ public static class PangoContextHandleExtensions
 /// a `PangoContext`
 /// </param>
 /// <return>
-/// a pointer to the context's default font
+/// a pointer to the context&apos;s default font
 ///   description. This value must not be modified or freed.
 /// </return>
 
@@ -319,8 +319,8 @@ public static class PangoContextHandleExtensions
 /// when a new context is created and is increased whenever the context
 /// is changed using any of the setter functions, or the `PangoFontMap` it
 /// uses to find fonts has changed. The serial may wrap, but will never
-/// have the value 0. Since it can wrap, never compare it with "less than",
-/// always use "not equals".
+/// have the value 0. Since it can wrap, never compare it with &quot;less than&quot;,
+/// always use &quot;not equals&quot;.
 /// </para>
 /// <para>
 /// This can be used to automatically detect changes to a `PangoContext`,
@@ -573,7 +573,7 @@ public static class PangoContextHandleExtensions
 /// <para>
 /// Note that reported metrics are in the user space coordinates before
 /// the application of the matrix, not device-space coordinates after the
-/// application of the matrix. So, they don't scale with the matrix, though
+/// application of the matrix. So, they don&apos;t scale with the matrix, though
 /// they may change slightly for different matrices, depending on how the
 /// text is fit to the pixel grid.
 /// </para>
@@ -601,7 +601,7 @@ public static class PangoContextHandleExtensions
 /// in device units.
 /// </para>
 /// <para>
-/// This is useful when the renderer can't handle subpixel
+/// This is useful when the renderer can&apos;t handle subpixel
 /// positioning of glyphs.
 /// </para>
 /// <para>

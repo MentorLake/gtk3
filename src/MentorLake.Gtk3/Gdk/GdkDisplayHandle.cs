@@ -987,7 +987,7 @@ public static class GdkDisplayHandleExtensions
 /// </param>
 /// <param name="win_y">
 /// return location for y coordinate of the pointer location relative
-///  &    to the window origin, or %NULL
+///  &amp;    to the window origin, or %NULL
 /// </param>
 /// <return>
 /// the window under the mouse

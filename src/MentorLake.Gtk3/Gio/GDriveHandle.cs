@@ -322,7 +322,7 @@ public static class GDriveHandleExtensions
 /// <return>
 /// a newly allocated string containing the
 ///     requested identifier, or %NULL if the #GDrive
-///     doesn't have this kind of identifier.
+///     doesn&apos;t have this kind of identifier.
 /// </return>
 
 	public static string GetIdentifier(this MentorLake.Gio.GDriveHandle drive, string kind)
@@ -341,7 +341,7 @@ public static class GDriveHandleExtensions
 /// a #GDrive.
 /// </param>
 /// <return>
-/// a string containing @drive's name. The returned
+/// a string containing @drive&apos;s name. The returned
 ///     string should be freed when no longer needed.
 /// </return>
 

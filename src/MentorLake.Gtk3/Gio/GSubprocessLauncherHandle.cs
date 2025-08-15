@@ -102,10 +102,10 @@ public static class GSubprocessLauncherHandleExtensions
 /// </para>
 /// <para>
 /// The child setup function will be called after fork() but before
-/// exec() on the child's side.
+/// exec() on the child&apos;s side.
 /// </para>
 /// <para>
-/// @destroy_notify will not be automatically called on the child's side
+/// @destroy_notify will not be automatically called on the child&apos;s side
 /// of the fork().  It will only be called when the last reference on the
 /// #GSubprocessLauncher is dropped or when a new child setup function is
 /// given.
@@ -166,11 +166,11 @@ public static class GSubprocessLauncherHandleExtensions
 /// <summary>
 /// <para>
 /// Replace the entire environment of processes launched from this
-/// launcher with the given 'environ' variable.
+/// launcher with the given &apos;environ&apos; variable.
 /// </para>
 /// <para>
 /// Typically you will build this variable by using g_listenv() to copy
-/// the process 'environ' and using the functions g_environ_setenv(),
+/// the process &apos;environ&apos; and using the functions g_environ_setenv(),
 /// g_environ_unsetenv(), etc.
 /// </para>
 /// <para>
@@ -249,7 +249,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// </para>
 /// <para>
 /// The file will be created or truncated when the process is spawned, as
-/// would be the case if using '2>' at the shell.
+/// would be the case if using &apos;2&amp;gt;&apos; at the shell.
 /// </para>
 /// <para>
 /// If you want to send both stdout and stderr to the same file then use
@@ -320,7 +320,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// </para>
 /// <para>
 /// The file will be created or truncated when the process is spawned, as
-/// would be the case if using '>' at the shell.
+/// would be the case if using &apos;&amp;gt;&apos; at the shell.
 /// </para>
 /// <para>
 /// You may not set a stdout file path if a stdout fd is already set or
@@ -351,8 +351,8 @@ public static class GSubprocessLauncherHandleExtensions
 /// processes launched from this launcher.
 /// </para>
 /// <para>
-/// On UNIX, both the variable's name and value can be arbitrary byte
-/// strings, except that the variable's name cannot contain '='.
+/// On UNIX, both the variable&apos;s name and value can be arbitrary byte
+/// strings, except that the variable&apos;s name cannot contain &apos;=&apos;.
 /// On Windows, they should be in UTF-8.
 /// </para>
 /// </summary>
@@ -362,7 +362,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// </param>
 /// <param name="variable">
 /// the environment variable to set,
-///     must not contain '='
+///     must not contain &apos;=&apos;
 /// </param>
 /// <param name="value">
 /// the new value for the variable
@@ -523,7 +523,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// process.  It is therefore necessary that it be kept open by the
 /// caller until the subprocess is spawned.  The file descriptor will
 /// also not be explicitly closed on the child side, so it must be marked
-/// O_CLOEXEC if that's what you want.
+/// O_CLOEXEC if that&apos;s what you want.
 /// </para>
 /// <para>
 /// You may not set a stdin fd if a stdin file path is already set or if
@@ -564,7 +564,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// process.  It is therefore necessary that it be kept open by the
 /// caller until the subprocess is spawned.  The file descriptor will
 /// also not be explicitly closed on the child side, so it must be marked
-/// O_CLOEXEC if that's what you want.
+/// O_CLOEXEC if that&apos;s what you want.
 /// </para>
 /// <para>
 /// You may not set a stdout fd if a stdout file path is already set or
@@ -595,8 +595,8 @@ public static class GSubprocessLauncherHandleExtensions
 /// processes launched from this launcher.
 /// </para>
 /// <para>
-/// On UNIX, the variable's name can be an arbitrary byte string not
-/// containing '='. On Windows, it should be in UTF-8.
+/// On UNIX, the variable&apos;s name can be an arbitrary byte string not
+/// containing &apos;=&apos;. On Windows, it should be in UTF-8.
 /// </para>
 /// </summary>
 
@@ -605,7 +605,7 @@ public static class GSubprocessLauncherHandleExtensions
 /// </param>
 /// <param name="variable">
 /// the environment variable to unset,
-///     must not contain '='
+///     must not contain &apos;=&apos;
 /// </param>
 
 	public static T Unsetenv<T>(this T self, string variable) where T : GSubprocessLauncherHandle

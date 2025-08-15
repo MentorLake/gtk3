@@ -28,71 +28,61 @@ public static class GTypeClassExtensions
 /// a type and all its parent types cannot exceed 64 KiB.
 /// </para>
 /// <para>
-/// This function should be called in the type's class_init() function.
+/// This function should be called in the type&apos;s class_init() function.
 /// The private structure can be retrieved using the
 /// G_TYPE_INSTANCE_GET_PRIVATE() macro.
 /// </para>
 /// <para>
 /// The following example shows attaching a private structure
 /// MyObjectPrivate to an object MyObject defined in the standard
-/// GObject fashion in the type's class_init() function.
+/// GObject fashion in the type&apos;s class_init() function.
 /// </para>
 /// <para>
-/// Note the use of a structure member "priv" to avoid the overhead
+/// Note the use of a structure member &quot;priv&quot; to avoid the overhead
 /// of repeatedly calling MY_OBJECT_GET_PRIVATE().
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// typedef struct _MyObject        MyObject;
 /// typedef struct _MyObject        MyObject;
 /// typedef struct _MyObjectPrivate MyObjectPrivate;
-/// </para>
-/// <para>
+/// 
 /// struct _MyObject {
 ///  GObject parent;
-/// </para>
-/// <para>
+/// 
 ///  MyObjectPrivate *priv;
 /// };
-/// </para>
-/// <para>
+/// 
 /// struct _MyObjectPrivate {
 ///   int some_field;
 /// };
-/// </para>
-/// <para>
+/// 
 /// static void
 /// my_object_class_init (MyObjectClass *klass)
 /// {
 ///   g_type_class_add_private (klass, sizeof (MyObjectPrivate));
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// my_object_init (MyObject *my_object)
 /// {
-///   my_object->priv = G_TYPE_INSTANCE_GET_PRIVATE (my_object,
+///   my_object-&amp;gt;priv = G_TYPE_INSTANCE_GET_PRIVATE (my_object,
 ///                                                  MY_TYPE_OBJECT,
 ///                                                  MyObjectPrivate);
-///   // my_object->priv->some_field will be automatically initialised to 0
+///   // my_object-&amp;gt;priv-&amp;gt;some_field will be automatically initialised to 0
 /// }
-/// </para>
-/// <para>
+/// 
 /// static int
 /// my_object_get_some_field (MyObject *my_object)
 /// {
 ///   MyObjectPrivate *priv;
-/// </para>
-/// <para>
+/// 
 ///   g_return_val_if_fail (MY_IS_OBJECT (my_object), 0);
-/// </para>
-/// <para>
-///   priv = my_object->priv;
-/// </para>
-/// <para>
-///   return priv->some_field;
+/// 
+///   priv = my_object-&amp;gt;priv;
+/// 
+///   return priv-&amp;gt;some_field;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="g_class">
@@ -279,9 +269,9 @@ public struct GTypeClass
 /// <summary>
 /// <para>
 /// This function is essentially the same as g_type_class_ref(),
-/// except that the classes reference count isn't incremented.
+/// except that the classes reference count isn&apos;t incremented.
 /// As a consequence, this function may return %NULL if the class
-/// of the type passed in does not currently exist (hasn't been
+/// of the type passed in does not currently exist (hasn&apos;t been
 /// referenced before).
 /// </para>
 /// </summary>
@@ -324,7 +314,7 @@ public struct GTypeClass
 /// <summary>
 /// <para>
 /// Increments the reference count of the class structure belonging to
-/// @type. This function will demand-create the class if it doesn't
+/// @type. This function will demand-create the class if it doesn&apos;t
 /// exist already.
 /// </para>
 /// </summary>

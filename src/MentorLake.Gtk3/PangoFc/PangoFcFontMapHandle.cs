@@ -315,7 +315,7 @@ public static class PangoFcFontMapHandleExtensions
 /// </para>
 /// <para>
 /// The default value
-/// is %NULL, which causes Fontconfig to use its global "current config".
+/// is %NULL, which causes Fontconfig to use its global &quot;current config&quot;.
 /// You can create a new `FcConfig` object and use this API to attach it
 /// to a font map.
 /// </para>

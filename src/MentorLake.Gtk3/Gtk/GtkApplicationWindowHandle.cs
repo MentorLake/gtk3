@@ -47,35 +47,30 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## A GtkApplicationWindow with a menubar
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
-/// GtkApplication *app = gtk_application_new ("org.gtk.test", 0);
-/// </para>
-/// <para>
+/// <code>
+/// GtkApplication *app = gtk_application_new (&quot;org.gtk.test&quot;, 0);
+/// GtkApplication *app = gtk_application_new (&quot;org.gtk.test&quot;, 0);
+/// 
 /// GtkBuilder *builder = gtk_builder_new_from_string (
-///     "<interface>"
-///     "  <menu id='menubar'>"
-///     "    <submenu label='_Edit'>"
-///     "      <item label='_Copy' action='win.copy'/>"
-///     "      <item label='_Paste' action='win.paste'/>"
-///     "    </submenu>"
-///     "  </menu>"
-///     "</interface>",
+///     &quot;&amp;lt;interface&amp;gt;&quot;
+///     &quot;  &amp;lt;menu id=&apos;menubar&apos;&amp;gt;&quot;
+///     &quot;    &amp;lt;submenu label=&apos;_Edit&apos;&amp;gt;&quot;
+///     &quot;      &amp;lt;item label=&apos;_Copy&apos; action=&apos;win.copy&apos;/&amp;gt;&quot;
+///     &quot;      &amp;lt;item label=&apos;_Paste&apos; action=&apos;win.paste&apos;/&amp;gt;&quot;
+///     &quot;    &amp;lt;/submenu&amp;gt;&quot;
+///     &quot;  &amp;lt;/menu&amp;gt;&quot;
+///     &quot;&amp;lt;/interface&amp;gt;&quot;,
 ///     -1);
-/// </para>
-/// <para>
+/// 
 /// GMenuModel *menubar = G_MENU_MODEL (gtk_builder_get_object (builder,
-///                                                             "menubar"));
+///                                                             &quot;menubar&quot;));
 /// gtk_application_set_menubar (GTK_APPLICATION (app), menubar);
 /// g_object_unref (builder);
-/// </para>
-/// <para>
+/// 
 /// // ...
-/// </para>
-/// <para>
+/// 
 /// GtkWidget *window = gtk_application_window_new (app);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Handling fallback yourself
 /// </para>
@@ -84,45 +79,45 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The XML format understood by #GtkBuilder for #GMenuModel consists
-/// of a toplevel `<menu>` element, which contains one or more `<item>`
-/// elements. Each `<item>` element contains `<attribute>` and `<link>`
-/// elements with a mandatory name attribute. `<link>` elements have the
-/// same content model as `<menu>`. Instead of `<link name="submenu>` or
-/// `<link name="section">`, you can use `<submenu>` or `<section>`
+/// of a toplevel `&amp;lt;menu&amp;gt;` element, which contains one or more `&amp;lt;item&amp;gt;`
+/// elements. Each `&amp;lt;item&amp;gt;` element contains `&amp;lt;attribute&amp;gt;` and `&amp;lt;link&amp;gt;`
+/// elements with a mandatory name attribute. `&amp;lt;link&amp;gt;` elements have the
+/// same content model as `&amp;lt;menu&amp;gt;`. Instead of `&amp;lt;link name=&quot;submenu&amp;gt;` or
+/// `&amp;lt;link name=&quot;section&quot;&amp;gt;`, you can use `&amp;lt;submenu&amp;gt;` or `&amp;lt;section&amp;gt;`
 /// elements.
 /// </para>
 /// <para>
 /// Attribute values can be translated using gettext, like other #GtkBuilder
-/// content. `<attribute>` elements can be marked for translation with a
-/// `translatable="yes"` attribute. It is also possible to specify message
+/// content. `&amp;lt;attribute&amp;gt;` elements can be marked for translation with a
+/// `translatable=&quot;yes&quot;` attribute. It is also possible to specify message
 /// context and translator comments, using the context and comments attributes.
 /// To make use of this, the #GtkBuilder must have been given the gettext
 /// domain to use.
 /// </para>
 /// <para>
 /// The following attributes are used when constructing menu items:
-/// - "label": a user-visible string to display
-/// - "action": the prefixed name of the action to trigger
-/// - "target": the parameter to use when activating the action
-/// - "icon" and "verb-icon": names of icons that may be displayed
-/// - "submenu-action": name of an action that may be used to determine
+/// - &quot;label&quot;: a user-visible string to display
+/// - &quot;action&quot;: the prefixed name of the action to trigger
+/// - &quot;target&quot;: the parameter to use when activating the action
+/// - &quot;icon&quot; and &quot;verb-icon&quot;: names of icons that may be displayed
+/// - &quot;submenu-action&quot;: name of an action that may be used to determine
 ///      if a submenu can be opened
-/// - "hidden-when": a string used to determine when the item will be hidden.
-///      Possible values include "action-disabled", "action-missing", "macos-menubar".
+/// - &quot;hidden-when&quot;: a string used to determine when the item will be hidden.
+///      Possible values include &quot;action-disabled&quot;, &quot;action-missing&quot;, &quot;macos-menubar&quot;.
 /// </para>
 /// <para>
 /// The following attributes are used when constructing sections:
-/// - "label": a user-visible string to use as section heading
-/// - "display-hint": a string used to determine special formatting for the section.
-///     Possible values include "horizontal-buttons".
-/// - "text-direction": a string used to determine the #GtkTextDirection to use
-///     when "display-hint" is set to "horizontal-buttons". Possible values
-///     include "rtl", "ltr", and "none".
+/// - &quot;label&quot;: a user-visible string to use as section heading
+/// - &quot;display-hint&quot;: a string used to determine special formatting for the section.
+///     Possible values include &quot;horizontal-buttons&quot;.
+/// - &quot;text-direction&quot;: a string used to determine the #GtkTextDirection to use
+///     when &quot;display-hint&quot; is set to &quot;horizontal-buttons&quot;. Possible values
+///     include &quot;rtl&quot;, &quot;ltr&quot;, and &quot;none&quot;.
 /// </para>
 /// <para>
 /// The following attributes are used when constructing submenus:
-/// - "label": a user-visible string to display
-/// - "icon": icon name to display
+/// - &quot;label&quot;: a user-visible string to display
+/// - &quot;icon&quot;: icon name to display
 /// </para>
 /// </summary>
 

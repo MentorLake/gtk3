@@ -49,7 +49,7 @@ public class GDBusServerHandle : GObjectHandle, GInitableHandle
 /// incoming connections.
 /// </para>
 /// <para>
-/// The returned #GDBusServer isn't active - you have to start it with
+/// The returned #GDBusServer isn&apos;t active - you have to start it with
 /// g_dbus_server_start().
 /// </para>
 /// <para>
@@ -115,7 +115,7 @@ public static class GDBusServerHandleSignalExtensions
 /// <para>
 /// You are guaranteed that signal handlers for this signal runs
 /// before incoming messages on @connection are processed. This means
-/// that it's suitable to call g_dbus_connection_register_object() or
+/// that it&apos;s suitable to call g_dbus_connection_register_object() or
 /// similar from the signal handler.
 /// </para>
 /// </summary>
@@ -204,7 +204,7 @@ public static class GDBusServerHandleSignalDelegates
 /// <para>
 /// You are guaranteed that signal handlers for this signal runs
 /// before incoming messages on @connection are processed. This means
-/// that it's suitable to call g_dbus_connection_register_object() or
+/// that it&apos;s suitable to call g_dbus_connection_register_object() or
 /// similar from the signal handler.
 /// </para>
 /// </summary>

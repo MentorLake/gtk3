@@ -124,7 +124,7 @@ public class GdkWindowHandle : GObjectHandle
 /// </para>
 /// <para>
 /// The --gtk-debug=updates command line option passed to GTK+ programs
-/// enables this debug option at application startup time. That's
+/// enables this debug option at application startup time. That&apos;s
 /// usually more useful than calling gdk_window_set_debug_updates()
 /// yourself, though you might want to use this function to enable
 /// updates sometime after application startup time.
@@ -153,7 +153,7 @@ public static class GdkWindowHandleSignalExtensions
 /// will be used.
 /// </para>
 /// <para>
-/// Note that it is not possible to access the window's previous
+/// Note that it is not possible to access the window&apos;s previous
 /// surface from within any callback of this signal. Calling
 /// gdk_offscreen_window_get_surface() will lead to a crash.
 /// </para>
@@ -425,7 +425,7 @@ public class MovedToRectSignal
 /// <summary>
 /// <para>
 /// the position of @window after any possible
-///                flipping or %NULL if the backend can't obtain it
+///                flipping or %NULL if the backend can&apos;t obtain it
 /// </para>
 /// </summary>
 
@@ -433,7 +433,7 @@ public class MovedToRectSignal
 /// <summary>
 /// <para>
 /// the final position of @window or %NULL if the
-///              backend can't obtain it
+///              backend can&apos;t obtain it
 /// </para>
 /// </summary>
 
@@ -538,7 +538,7 @@ public static class GdkWindowHandleSignalDelegates
 /// will be used.
 /// </para>
 /// <para>
-/// Note that it is not possible to access the window's previous
+/// Note that it is not possible to access the window&apos;s previous
 /// surface from within any callback of this signal. Calling
 /// gdk_offscreen_window_get_surface() will lead to a crash.
 /// </para>
@@ -617,11 +617,11 @@ public delegate void from_embedder([MarshalAs(UnmanagedType.CustomMarshaler, Mar
 /// </param>
 /// <param name="flipped_rect">
 /// the position of @window after any possible
-///                flipping or %NULL if the backend can't obtain it
+///                flipping or %NULL if the backend can&apos;t obtain it
 /// </param>
 /// <param name="final_rect">
 /// the final position of @window or %NULL if the
-///              backend can't obtain it
+///              backend can&apos;t obtain it
 /// </param>
 /// <param name="flipped_x">
 /// %TRUE if the anchors were flipped horizontally
@@ -703,7 +703,7 @@ public static class GdkWindowHandleExtensions
 /// <para>
 /// Adds an event filter to @window, allowing you to intercept events
 /// before they reach GDK. This is a low-level operation and makes it
-/// easy to break GDK and/or GTK+, so you have to know what you're
+/// easy to break GDK and/or GTK+, so you have to know what you&apos;re
 /// doing. Pass %NULL for @window to get all events for all windows,
 /// instead of events for a specific window.
 /// </para>
@@ -1053,7 +1053,7 @@ public static class GdkWindowHandleExtensions
 /// <para>
 /// Transforms window coordinates from a parent window to a child
 /// window, where the parent window is the normal parent as returned by
-/// gdk_window_get_parent() for normal windows, and the window's
+/// gdk_window_get_parent() for normal windows, and the window&apos;s
 /// embedder as returned by gdk_offscreen_window_get_embedder() for
 /// offscreen windows.
 /// </para>
@@ -1100,7 +1100,7 @@ public static class GdkWindowHandleExtensions
 /// <para>
 /// Transforms window coordinates from a child window to its parent
 /// window, where the parent window is the normal parent as returned by
-/// gdk_window_get_parent() for normal windows, and the window's
+/// gdk_window_get_parent() for normal windows, and the window&apos;s
 /// embedder as returned by gdk_offscreen_window_get_embedder() for
 /// offscreen windows.
 /// </para>
@@ -1192,24 +1192,22 @@ public static class GdkWindowHandleExtensions
 /// an image surface capable of holding the contents of @window you can
 /// use:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+///   int scale = gdk_window_get_scale_factor (window);
 ///   int scale = gdk_window_get_scale_factor (window);
 ///   int width = gdk_window_get_width (window) * scale;
 ///   int height = gdk_window_get_height (window) * scale;
-/// </para>
-/// <para>
+/// 
 ///   // format is set elsewhere
 ///   cairo_surface_t *surface =
 ///     gdk_window_create_similar_image_surface (window,
 ///                                              format,
 ///                                              width, height,
 ///                                              scale);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that unlike cairo_surface_create_similar_image(), the new
-/// surface's device scale is set to @scale, or to the scale factor of
+/// surface&apos;s device scale is set to @scale, or to the scale factor of
 /// @window if @scale is 0.
 /// </para>
 /// </summary>
@@ -1312,7 +1310,7 @@ public static class GdkWindowHandleExtensions
 
 /// <summary>
 /// <para>
-/// Destroys the window system resources associated with @window and decrements @window's
+/// Destroys the window system resources associated with @window and decrements @window&apos;s
 /// reference count. The window system resources for all children of @window are also
 /// destroyed, but the children’s reference counts are not decremented.
 /// </para>
@@ -1480,7 +1478,7 @@ public static class GdkWindowHandleExtensions
 
 /// <summary>
 /// <para>
-/// Temporarily freezes a window and all its descendants such that it won't
+/// Temporarily freezes a window and all its descendants such that it won&apos;t
 /// receive expose events.  The window will begin receiving expose events
 /// again when gdk_window_thaw_toplevel_updates_libgtk_only() is called. If
 /// gdk_window_freeze_toplevel_updates_libgtk_only()
@@ -1988,7 +1986,7 @@ public static class GdkWindowHandleExtensions
 /// Gets the toplevel window that’s an ancestor of @window.
 /// </para>
 /// <para>
-/// Works like gdk_window_get_toplevel(), but treats an offscreen window's
+/// Works like gdk_window_get_toplevel(), but treats an offscreen window&apos;s
 /// embedder as its parent, using gdk_window_get_effective_parent().
 /// </para>
 /// <para>
@@ -3015,7 +3013,7 @@ public static class GdkWindowHandleExtensions
 /// <summary>
 /// <para>
 /// Check if the window and all ancestors of the window are
-/// mapped. (This is not necessarily "viewable" in the X sense, since
+/// mapped. (This is not necessarily &quot;viewable&quot; in the X sense, since
 /// we only check as far as we have GDK window parents, not to the root
 /// window.)
 /// </para>
@@ -3091,7 +3089,7 @@ public static class GdkWindowHandleExtensions
 /// of knowing when something paints over the GL-drawn regions.
 /// </para>
 /// <para>
-/// This is typically called automatically by GTK+ and you don't need
+/// This is typically called automatically by GTK+ and you don&apos;t need
 /// to care about this.
 /// </para>
 /// </summary>
@@ -3290,7 +3288,7 @@ public static class GdkWindowHandleExtensions
 /// <para>
 /// @rect is relative to the top-left corner of the window that @window is
 /// transient for. @rect_anchor and @window_anchor determine anchor points on
-/// @rect and @window to pin together. @rect's anchor point can optionally be
+/// @rect and @window to pin together. @rect&apos;s anchor point can optionally be
 /// offset by @rect_anchor_dx and @rect_anchor_dy, which is equivalent to
 /// offsetting the position of @window.
 /// </para>
@@ -3313,20 +3311,20 @@ public static class GdkWindowHandleExtensions
 /// the destination #GdkRectangle to align @window with
 /// </param>
 /// <param name="rect_anchor">
-/// the point on @rect to align with @window's anchor point
+/// the point on @rect to align with @window&apos;s anchor point
 /// </param>
 /// <param name="window_anchor">
-/// the point on @window to align with @rect's anchor point
+/// the point on @window to align with @rect&apos;s anchor point
 /// </param>
 /// <param name="anchor_hints">
 /// positioning hints to use when limited on space
 /// </param>
 /// <param name="rect_anchor_dx">
-/// horizontal offset to shift @window, i.e. @rect's anchor
+/// horizontal offset to shift @window, i.e. @rect&apos;s anchor
 ///                  point
 /// </param>
 /// <param name="rect_anchor_dy">
-/// vertical offset to shift @window, i.e. @rect's anchor point
+/// vertical offset to shift @window, i.e. @rect&apos;s anchor point
 /// </param>
 
 	public static T MoveToRect<T>(this T window, MentorLake.Gdk.GdkRectangleHandle rect, MentorLake.Gdk.GdkGravity rect_anchor, MentorLake.Gdk.GdkGravity window_anchor, MentorLake.Gdk.GdkAnchorHints anchor_hints, int rect_anchor_dx, int rect_anchor_dy) where T : GdkWindowHandle
@@ -3607,7 +3605,7 @@ public static class GdkWindowHandleExtensions
 /// <para>
 /// However, when using GTK+, influence the background of a widget
 /// using a style class or CSS — if you’re an application — or with
-/// gtk_style_context_set_background() — if you're implementing a
+/// gtk_style_context_set_background() — if you&apos;re implementing a
 /// custom widget.
 /// </para>
 /// </summary>
@@ -3631,8 +3629,8 @@ public static class GdkWindowHandleExtensions
 /// Sets the background of @window.
 /// </para>
 /// <para>
-/// A background of %NULL means that the window won't have any background. On the
-/// X11 backend it's also possible to inherit the background from the parent
+/// A background of %NULL means that the window won&apos;t have any background. On the
+/// X11 backend it&apos;s also possible to inherit the background from the parent
 /// window using gdk_x11_get_parent_relative_pattern().
 /// </para>
 /// <para>
@@ -4130,7 +4128,7 @@ public static class GdkWindowHandleExtensions
 /// icon by a small amount or not at all.
 /// </para>
 /// <para>
-/// Note that some platforms don't support window icons.
+/// Note that some platforms don&apos;t support window icons.
 /// </para>
 /// </summary>
 
@@ -4165,7 +4163,7 @@ public static class GdkWindowHandleExtensions
 /// gdk_window_set_title() will again update the icon title as well.
 /// </para>
 /// <para>
-/// Note that some platforms don't support window icons.
+/// Note that some platforms don&apos;t support window icons.
 /// </para>
 /// </summary>
 
@@ -4414,10 +4412,10 @@ public static class GdkWindowHandleExtensions
 /// </para>
 /// <para>
 /// If @pass_through is %TRUE then such pointer events happen as if the
-/// window wasn't there at all, and thus will be sent first to any
+/// window wasn&apos;t there at all, and thus will be sent first to any
 /// windows below @window. This is useful if the window is used in a
 /// transparent fashion. In the terminology of the web this would be called
-/// "pointer-events: none".
+/// &quot;pointer-events: none&quot;.
 /// </para>
 /// <para>
 /// Note that a window with @pass_through %TRUE can still have a subwindow
@@ -4738,7 +4736,7 @@ public static class GdkWindowHandleExtensions
 
 /// <summary>
 /// <para>
-/// Toggles whether a window needs the user's
+/// Toggles whether a window needs the user&apos;s
 /// urgent attention.
 /// </para>
 /// </summary>
@@ -4836,7 +4834,7 @@ public static class GdkWindowHandleExtensions
 /// is gdk_window_hide().
 /// </para>
 /// <para>
-/// When implementing a #GtkWidget, you should call this function on the widget's
+/// When implementing a #GtkWidget, you should call this function on the widget&apos;s
 /// #GdkWindow as part of the “map” method.
 /// </para>
 /// </summary>

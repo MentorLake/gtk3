@@ -98,7 +98,7 @@ public enum GParamFlags : uint
 /// <summary>
 /// <para>
 /// calls to g_object_set_property() for this
-///   property will not automatically result in a "notify" signal being
+///   property will not automatically result in a &quot;notify&quot; signal being
 ///   emitted: the implementation must call g_object_notify() themselves
 ///   in case the property actually changes.  Since: 2.42.
 /// </para>

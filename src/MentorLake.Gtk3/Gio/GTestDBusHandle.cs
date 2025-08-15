@@ -7,7 +7,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// Note that `GTestDBus` modifies the user’s environment, calling
-/// <see href="man:setenv(3">setenv()</see>). This is not thread-safe, so all `GTestDBus`
+/// &amp;lt;see href=&quot;man:setenv(3&quot;&amp;gt;setenv()&amp;lt;/see&amp;gt;). This is not thread-safe, so all `GTestDBus`
 /// calls should be completed before threads are spawned, or should have
 /// appropriate locking to ensure no access conflicts to environment variables
 /// shared between `GTestDBus` and other threads.
@@ -50,7 +50,7 @@ namespace MentorLake.Gio;
 /// </para>
 /// <para>
 /// ```
-/// -DTEST_SERVICES=\""$(abs_top_builddir)/tests/services"\"
+/// -DTEST_SERVICES=\&quot;&quot;$(abs_top_builddir)/tests/services&quot;\&quot;
 /// ```
 /// </para>
 /// <para>
@@ -122,7 +122,7 @@ public class GTestDBusHandle : GObjectHandle
 /// <summary>
 /// <para>
 /// Unset DISPLAY and DBUS_SESSION_BUS_ADDRESS env variables to ensure the test
-/// won't use user's session bus.
+/// won&apos;t use user&apos;s session bus.
 /// </para>
 /// <para>
 /// This is useful for unit tests that want to verify behaviour when no session
@@ -143,7 +143,7 @@ public static class GTestDBusHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Add a path where dbus-daemon will look up .service files. This can't be
+/// Add a path where dbus-daemon will look up .service files. This can&apos;t be
 /// called after g_test_dbus_up().
 /// </para>
 /// </summary>
@@ -168,7 +168,7 @@ public static class GTestDBusHandleExtensions
 /// </para>
 /// <para>
 /// This will wait for the singleton returned by g_bus_get() or g_bus_get_sync()
-/// to be destroyed. This is done to ensure that the next unit test won't get a
+/// to be destroyed. This is done to ensure that the next unit test won&apos;t get a
 /// leaked singleton from this test.
 /// </para>
 /// </summary>
@@ -229,7 +229,7 @@ public static class GTestDBusHandleExtensions
 /// Stop the session bus started by g_test_dbus_up().
 /// </para>
 /// <para>
-/// Unlike g_test_dbus_down(), this won't verify the #GDBusConnection
+/// Unlike g_test_dbus_down(), this won&apos;t verify the #GDBusConnection
 /// singleton returned by g_bus_get() or g_bus_get_sync() is destroyed. Unit
 /// tests wanting to verify behaviour after the session bus has been stopped
 /// can use this function but should still call g_test_dbus_down() when done.
@@ -257,7 +257,7 @@ public static class GTestDBusHandleExtensions
 /// g_test_dbus_down() must be called in its teardown callback.
 /// </para>
 /// <para>
-/// If this function is called from unit test's main(), then g_test_dbus_down()
+/// If this function is called from unit test&apos;s main(), then g_test_dbus_down()
 /// must be called after g_test_run().
 /// </para>
 /// </summary>

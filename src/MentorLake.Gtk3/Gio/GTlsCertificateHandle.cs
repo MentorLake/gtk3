@@ -137,7 +137,7 @@ public class GTlsCertificateHandle : GObjectHandle
 /// PEM-encoded certificate data
 /// </param>
 /// <param name="length">
-/// the length of @data, or -1 if it's 0-terminated.
+/// the length of @data, or -1 if it&apos;s 0-terminated.
 /// </param>
 /// <return>
 /// the new certificate, or %NULL if @data is invalid
@@ -161,20 +161,18 @@ public class GTlsCertificateHandle : GObjectHandle
 /// <para>
 /// Where the token’s layout is:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// Object 0:
 /// Object 0:
 ///   URL: pkcs11:model=Model;manufacturer=Manufacture;serial=1;token=My%20Client%20Certificate;id=%01;object=private%20key;type=private
 ///   Type: Private key (RSA-2048)
 ///   ID: 01
-/// </para>
-/// <para>
+/// 
 /// Object 1:
 ///   URL: pkcs11:model=Model;manufacturer=Manufacture;serial=1;token=My%20Client%20Certificate;id=%01;object=Certificate%20for%20Authentication;type=cert
 ///   Type: X.509 Certificate (RSA-2048)
 ///   ID: 01
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// In this case the certificate and private key would both be detected and used as expected.
 /// @pkcs_uri may also just reference an X.509 certificate object and then optionally
@@ -289,7 +287,7 @@ public static class GTlsCertificateHandleExtensions
 /// </param>
 /// <return>
 /// A #GPtrArray of
-/// #GBytes elements, or %NULL if it's not available.
+/// #GBytes elements, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static MentorLake.GLib.GPtrArrayHandle GetDnsNames(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -309,7 +307,7 @@ public static class GTlsCertificateHandleExtensions
 /// </param>
 /// <return>
 /// A #GPtrArray
-/// of #GInetAddress elements, or %NULL if it's not available.
+/// of #GInetAddress elements, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static MentorLake.GLib.GPtrArrayHandle GetIpAddresses(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -320,7 +318,7 @@ public static class GTlsCertificateHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the #GTlsCertificate representing @cert's issuer, if known
+/// Gets the #GTlsCertificate representing @cert&apos;s issuer, if known
 /// </para>
 /// </summary>
 
@@ -328,7 +326,7 @@ public static class GTlsCertificateHandleExtensions
 /// a #GTlsCertificate
 /// </param>
 /// <return>
-/// The certificate of @cert's issuer,
+/// The certificate of @cert&apos;s issuer,
 /// or %NULL if @cert is self-signed or signed with an unknown
 /// certificate.
 /// </return>
@@ -349,7 +347,7 @@ public static class GTlsCertificateHandleExtensions
 /// a #GTlsCertificate
 /// </param>
 /// <return>
-/// The issuer name, or %NULL if it's not available.
+/// The issuer name, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static string GetIssuerName(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -368,7 +366,7 @@ public static class GTlsCertificateHandleExtensions
 /// a #GTlsCertificate
 /// </param>
 /// <return>
-/// The not-valid-after date, or %NULL if it's not available.
+/// The not-valid-after date, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidAfter(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -387,7 +385,7 @@ public static class GTlsCertificateHandleExtensions
 /// a #GTlsCertificate
 /// </param>
 /// <return>
-/// The not-valid-before date, or %NULL if it's not available.
+/// The not-valid-before date, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static MentorLake.GLib.GDateTimeHandle GetNotValidBefore(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -406,7 +404,7 @@ public static class GTlsCertificateHandleExtensions
 /// a #GTlsCertificate
 /// </param>
 /// <return>
-/// The subject name, or %NULL if it's not available.
+/// The subject name, or %NULL if it&apos;s not available.
 /// </return>
 
 	public static string GetSubjectName(this MentorLake.Gio.GTlsCertificateHandle cert)
@@ -453,7 +451,7 @@ public static class GTlsCertificateHandleExtensions
 /// If @cert is valid, %G_TLS_CERTIFICATE_NO_FLAGS is returned.
 /// </para>
 /// <para>
-/// If @identity is not %NULL, @cert's name(s) will be compared against
+/// If @identity is not %NULL, @cert&apos;s name(s) will be compared against
 /// it, and %G_TLS_CERTIFICATE_BAD_IDENTITY will be set in the return
 /// value if it does not match. If @identity is %NULL, that bit will
 /// never be set in the return value.

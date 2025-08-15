@@ -8,7 +8,7 @@ public static class GtkScaleAccessibleHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -43,7 +43,7 @@ public static class GtkScaleAccessibleHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// The 'value-changed' signal is emitted when the current value
+/// The &apos;value-changed&apos; signal is emitted when the current value
 /// that represent the object changes. @value is the numerical
 /// representation of this new value.  @text is the human
 /// readable text alternative of @value, and can be NULL if it is
@@ -55,7 +55,7 @@ public static class GtkScaleAccessibleHandleSignalExtensions
 /// <para>
 /// Example: a password meter whose value changes as the user
 /// types their new password. Appropiate value text would be
-/// "weak", "acceptable" and "strong".
+/// &quot;weak&quot;, &quot;acceptable&quot; and &quot;strong&quot;.
 /// </para>
 /// </summary>
 
@@ -136,7 +136,7 @@ public static class GtkScaleAccessibleHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The 'bounds-changed" signal is emitted when the position or
+/// The &apos;bounds-changed&quot; signal is emitted when the position or
 /// size of the component changes.
 /// </para>
 /// </summary>
@@ -155,7 +155,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 
 /// <summary>
 /// <para>
-/// The 'value-changed' signal is emitted when the current value
+/// The &apos;value-changed&apos; signal is emitted when the current value
 /// that represent the object changes. @value is the numerical
 /// representation of this new value.  @text is the human
 /// readable text alternative of @value, and can be NULL if it is
@@ -167,7 +167,7 @@ public delegate void bounds_changed([MarshalAs(UnmanagedType.CustomMarshaler, Ma
 /// <para>
 /// Example: a password meter whose value changes as the user
 /// types their new password. Appropiate value text would be
-/// "weak", "acceptable" and "strong".
+/// &quot;weak&quot;, &quot;acceptable&quot; and &quot;strong&quot;.
 /// </para>
 /// </summary>
 

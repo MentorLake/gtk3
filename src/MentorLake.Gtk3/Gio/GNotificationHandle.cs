@@ -91,7 +91,7 @@ public static class GNotificationHandleExtensions
 /// <para>
 /// Adds a button to @notification that activates the action in
 /// @detailed_action when clicked. That action must be an
-/// application-wide action (starting with "app."). If @detailed_action
+/// application-wide action (starting with &quot;app.&quot;). If @detailed_action
 /// contains a target, the action will be activated with that target as
 /// its parameter.
 /// </para>
@@ -121,7 +121,7 @@ public static class GNotificationHandleExtensions
 /// <summary>
 /// <para>
 /// Adds a button to @notification that activates @action when clicked.
-/// @action must be an application-wide action (it must start with "app.").
+/// @action must be an application-wide action (it must start with &quot;app.&quot;).
 /// </para>
 /// <para>
 /// If @target_format is given, it is used to collect remaining
@@ -157,7 +157,7 @@ public static class GNotificationHandleExtensions
 /// <summary>
 /// <para>
 /// Adds a button to @notification that activates @action when clicked.
-/// @action must be an application-wide action (it must start with "app.").
+/// @action must be an application-wide action (it must start with &quot;app.&quot;).
 /// </para>
 /// <para>
 /// If @target is non-%NULL, @action will be activated with @target as
@@ -175,7 +175,7 @@ public static class GNotificationHandleExtensions
 /// an action name
 /// </param>
 /// <param name="target">
-/// a #GVariant to use as @action's parameter, or %NULL
+/// a #GVariant to use as @action&apos;s parameter, or %NULL
 /// </param>
 
 	public static T AddButtonWithTargetValue<T>(this T notification, string label, string action, MentorLake.GLib.GVariantHandle target) where T : GNotificationHandle
@@ -238,7 +238,7 @@ public static class GNotificationHandleExtensions
 /// </para>
 /// <para>
 /// The action in @detailed_action must be an application-wide action (it
-/// must start with "app."). If @detailed_action contains a target, the
+/// must start with &quot;app.&quot;). If @detailed_action contains a target, the
 /// given action will be activated with that target as its parameter.
 /// See g_action_parse_detailed_name() for a description of the format
 /// for @detailed_action.
@@ -267,7 +267,7 @@ public static class GNotificationHandleExtensions
 /// <para>
 /// Sets the default action of @notification to @action. This action is
 /// activated when the notification is clicked on. It must be an
-/// application-wide action (it must start with "app.").
+/// application-wide action (it must start with &quot;app.&quot;).
 /// </para>
 /// <para>
 /// If @target_format is given, it is used to collect remaining
@@ -305,7 +305,7 @@ public static class GNotificationHandleExtensions
 /// <para>
 /// Sets the default action of @notification to @action. This action is
 /// activated when the notification is clicked on. It must be an
-/// application-wide action (start with "app.").
+/// application-wide action (start with &quot;app.&quot;).
 /// </para>
 /// <para>
 /// If @target is non-%NULL, @action will be activated with @target as
@@ -324,7 +324,7 @@ public static class GNotificationHandleExtensions
 /// an action name
 /// </param>
 /// <param name="target">
-/// a #GVariant to use as @action's parameter, or %NULL
+/// a #GVariant to use as @action&apos;s parameter, or %NULL
 /// </param>
 
 	public static T SetDefaultActionAndTargetValue<T>(this T notification, string action, MentorLake.GLib.GVariantHandle target) where T : GNotificationHandle

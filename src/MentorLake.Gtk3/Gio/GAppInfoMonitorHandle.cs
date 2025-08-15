@@ -25,15 +25,15 @@ namespace MentorLake.Gio;
 ///  - [func@Gio.AppInfo.get_default_for_type]
 ///  - [func@Gio.AppInfo.get_fallback_for_type]
 ///  - [func@Gio.AppInfo.get_recommended_for_type]
-///  - <see href="../gio-unix/type_func.DesktopAppInfo.get_implementation.html">g_desktop_app_info_get_implementations()</see>
-///  - <see href="../gio-unix/ctor.DesktopAppInfo.new.html">g_desktop_app_info_new()</see>
-///  - <see href="../gio-unix/ctor.DesktopAppInfo.new_from_filename.html">g_desktop_app_info_new_from_filename()</see>
-///  - <see href="../gio-unix/ctor.DesktopAppInfo.new_from_keyfile.html">g_desktop_app_info_new_from_keyfile()</see>
-///  - <see href="../gio-unix/type_func.DesktopAppInfo.search.html">g_desktop_app_info_search()</see>
+///  - &amp;lt;see href=&quot;../gio-unix/type_func.DesktopAppInfo.get_implementation.html&quot;&amp;gt;g_desktop_app_info_get_implementations()&amp;lt;/see&amp;gt;
+///  - &amp;lt;see href=&quot;../gio-unix/ctor.DesktopAppInfo.new.html&quot;&amp;gt;g_desktop_app_info_new()&amp;lt;/see&amp;gt;
+///  - &amp;lt;see href=&quot;../gio-unix/ctor.DesktopAppInfo.new_from_filename.html&quot;&amp;gt;g_desktop_app_info_new_from_filename()&amp;lt;/see&amp;gt;
+///  - &amp;lt;see href=&quot;../gio-unix/ctor.DesktopAppInfo.new_from_keyfile.html&quot;&amp;gt;g_desktop_app_info_new_from_keyfile()&amp;lt;/see&amp;gt;
+///  - &amp;lt;see href=&quot;../gio-unix/type_func.DesktopAppInfo.search.html&quot;&amp;gt;g_desktop_app_info_search()&amp;lt;/see&amp;gt;
 /// </para>
 /// <para>
 /// The latter functions are available if using
-/// <see href="../gio-unix/class.DesktopAppInfo.html">GDesktopAppInfo</see> from
+/// &amp;lt;see href=&quot;../gio-unix/class.DesktopAppInfo.html&quot;&amp;gt;GDesktopAppInfo&amp;lt;/see&amp;gt; from
 /// `gio-unix-2.0.pc` (GIR namespace `GioUnix-2.0`).
 /// </para>
 /// <para>

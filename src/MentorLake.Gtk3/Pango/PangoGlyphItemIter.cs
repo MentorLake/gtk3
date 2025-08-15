@@ -8,7 +8,7 @@ namespace MentorLake.Pango;
 /// <para>
 /// The *forward direction* of the iterator is the logical direction of text.
 /// That is, with increasing @start_index and @start_char values. If @glyph_item
-/// is right-to-left (that is, if `glyph_item->item->analysis.level` is odd),
+/// is right-to-left (that is, if `glyph_item-&amp;gt;item-&amp;gt;analysis.level` is odd),
 /// then @start_glyph decreases as the iterator moves forward.  Moreover,
 /// in right-to-left cases, @start_glyph is greater than @end_glyph.
 /// </para>
@@ -29,10 +29,10 @@ namespace MentorLake.Pango;
 /// gboolean have_cluster;
 /// </para>
 /// <para>
-/// for (have_cluster = pango_glyph_item_iter_init_start (&cluster_iter,
+/// for (have_cluster = pango_glyph_item_iter_init_start (&amp;cluster_iter,
 ///                                                       glyph_item, text);
 ///      have_cluster;
-///      have_cluster = pango_glyph_item_iter_next_cluster (&cluster_iter))
+///      have_cluster = pango_glyph_item_iter_next_cluster (&amp;cluster_iter))
 /// {
 ///   ...
 /// }
@@ -40,7 +40,7 @@ namespace MentorLake.Pango;
 /// </para>
 /// <para>
 /// Note that @text is the start of the text for layout, which is then
-/// indexed by `glyph_item->item->offset` to get to the text of @glyph_item.
+/// indexed by `glyph_item-&amp;gt;item-&amp;gt;offset` to get to the text of @glyph_item.
 /// The @start_index and @end_index values can directly index into @text. The
 /// @start_glyph, @end_glyph, @start_char, and @end_char values however are
 /// zero-based for the @glyph_item.  For each cluster, the item pointed at by
@@ -230,7 +230,7 @@ internal class PangoGlyphItemIterExterns
 /// <para>
 /// The *forward direction* of the iterator is the logical direction of text.
 /// That is, with increasing @start_index and @start_char values. If @glyph_item
-/// is right-to-left (that is, if `glyph_item->item->analysis.level` is odd),
+/// is right-to-left (that is, if `glyph_item-&amp;gt;item-&amp;gt;analysis.level` is odd),
 /// then @start_glyph decreases as the iterator moves forward.  Moreover,
 /// in right-to-left cases, @start_glyph is greater than @end_glyph.
 /// </para>
@@ -251,10 +251,10 @@ internal class PangoGlyphItemIterExterns
 /// gboolean have_cluster;
 /// </para>
 /// <para>
-/// for (have_cluster = pango_glyph_item_iter_init_start (&cluster_iter,
+/// for (have_cluster = pango_glyph_item_iter_init_start (&amp;cluster_iter,
 ///                                                       glyph_item, text);
 ///      have_cluster;
-///      have_cluster = pango_glyph_item_iter_next_cluster (&cluster_iter))
+///      have_cluster = pango_glyph_item_iter_next_cluster (&amp;cluster_iter))
 /// {
 ///   ...
 /// }
@@ -262,7 +262,7 @@ internal class PangoGlyphItemIterExterns
 /// </para>
 /// <para>
 /// Note that @text is the start of the text for layout, which is then
-/// indexed by `glyph_item->item->offset` to get to the text of @glyph_item.
+/// indexed by `glyph_item-&amp;gt;item-&amp;gt;offset` to get to the text of @glyph_item.
 /// The @start_index and @end_index values can directly index into @text. The
 /// @start_glyph, @end_glyph, @start_char, and @end_char values however are
 /// zero-based for the @glyph_item.  For each cluster, the item pointed at by

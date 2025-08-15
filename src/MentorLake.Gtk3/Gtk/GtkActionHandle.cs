@@ -2,9 +2,9 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// > In GTK+ 3.10, GtkAction has been deprecated. Use #GAction
-/// > instead, and associate actions with #GtkActionable widgets. Use
-/// > #GMenuModel for creating menus with gtk_menu_new_from_model().
+/// &amp;gt; In GTK+ 3.10, GtkAction has been deprecated. Use #GAction
+/// &amp;gt; instead, and associate actions with #GtkActionable widgets. Use
+/// &amp;gt; #GMenuModel for creating menus with gtk_menu_new_from_model().
 /// </para>
 /// <para>
 /// Actions represent operations that the user can be perform, along with
@@ -34,8 +34,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// - a toolbar label (optional, shorter than label)
 /// </para>
-/// <para>
-/// </para>
+/// 
 /// <para>
 /// The action will also have some state information:
 /// </para>
@@ -107,7 +106,7 @@ public static class GtkActionHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// The "activate" signal is emitted when the action is activated.
+/// The &quot;activate&quot; signal is emitted when the action is activated.
 /// </para>
 /// </summary>
 
@@ -158,7 +157,7 @@ public static class GtkActionHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// The "activate" signal is emitted when the action is activated.
+/// The &quot;activate&quot; signal is emitted when the action is activated.
 /// </para>
 /// </summary>
 
@@ -177,7 +176,7 @@ public static class GtkActionHandleExtensions
 {
 /// <summary>
 /// <para>
-/// Emits the “activate” signal on the specified action, if it isn't
+/// Emits the “activate” signal on the specified action, if it isn&apos;t
 /// insensitive. This gets called by the proxy widgets when they get
 /// activated.
 /// </para>
@@ -390,7 +389,7 @@ public static class GtkActionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Returns whether @action's menu item proxies will always
+/// Returns whether @action&apos;s menu item proxies will always
 /// show their image, if available.
 /// </para>
 /// </summary>
@@ -752,7 +751,7 @@ public static class GtkActionHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sets whether @action's menu item proxies will ignore the
+/// Sets whether @action&apos;s menu item proxies will ignore the
 /// #GtkSettings:gtk-menu-images setting and always show their image, if available.
 /// </para>
 /// <para>

@@ -62,7 +62,7 @@ public IntPtr get_name;
 /// Adds a child. The @type parameter can be used to
 ///  differentiate the kind of child. #GtkContainer implements this
 ///  to add add a child widget to the container, #GtkNotebook uses
-///  the @type to distinguish between page labels (of type "page-label")
+///  the @type to distinguish between page labels (of type &quot;page-label&quot;)
 ///  and normal children.
 /// </para>
 /// </summary>
@@ -83,7 +83,7 @@ public IntPtr set_buildable_property;
 /// <para>
 /// Constructs a child of a buildable that has been
 ///  specified as “constructor” in the UI definition. #GtkUIManager implements
-///  this to reference to a widget created in a `<ui>` tag which is outside
+///  this to reference to a widget created in a `&amp;lt;ui&amp;gt;` tag which is outside
 ///  of the normal GtkBuilder UI definition hierarchy.  A reference to the
 ///  constructed object is returned and becomes owned by the caller.
 /// </para>
@@ -93,11 +93,11 @@ public IntPtr construct_child;
 	/// <summary>
 /// <para>
 /// Implement this if the buildable needs to parse
-///  content below `<child>`. To handle an element, the implementation
+///  content below `&amp;lt;child&amp;gt;`. To handle an element, the implementation
 ///  must fill in the @parser and @user_data and return %TRUE.
 ///  #GtkWidget implements this to parse keyboard accelerators specified
-///  in `<accelerator>` elements. #GtkContainer implements it to map
-///  properties defined via `<packing>` elements to child properties.
+///  in `&amp;lt;accelerator&amp;gt;` elements. #GtkContainer implements it to map
+///  properties defined via `&amp;lt;packing&amp;gt;` elements to child properties.
 ///  Note that @user_data must be freed in @custom_tag_end or @custom_finished.
 /// </para>
 /// </summary>

@@ -35,7 +35,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrColor`,
-///   or %NULL if it's not a color attribute
+///   or %NULL if it&apos;s not a color attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrColorHandle AsColor(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -58,7 +58,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrFloat`,
-///   or %NULL if it's not a floating point attribute
+///   or %NULL if it&apos;s not a floating point attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrFloatHandle AsFloat(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -81,7 +81,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrFontDesc`,
-///   or %NULL if it's not a font description attribute
+///   or %NULL if it&apos;s not a font description attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrFontDescHandle AsFontDesc(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -104,7 +104,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrFontFeatures`,
-///   or %NULL if it's not a font features attribute
+///   or %NULL if it&apos;s not a font features attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrFontFeaturesHandle AsFontFeatures(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -127,7 +127,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrInt`,
-///   or %NULL if it's not an integer attribute
+///   or %NULL if it&apos;s not an integer attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrIntHandle AsInt(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -150,7 +150,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrLanguage`,
-///   or %NULL if it's not a language attribute
+///   or %NULL if it&apos;s not a language attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrLanguageHandle AsLanguage(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -173,7 +173,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrShape`,
-///   or %NULL if it's not a shape attribute
+///   or %NULL if it&apos;s not a shape attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrShapeHandle AsShape(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -196,7 +196,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrSize`,
-///   or NULL if it's not a size attribute
+///   or NULL if it&apos;s not a size attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrSizeHandle AsSize(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -219,7 +219,7 @@ public static class PangoAttributeExtensions
 /// </param>
 /// <return>
 /// The attribute as `PangoAttrString`,
-///   or %NULL if it's not a string attribute
+///   or %NULL if it&apos;s not a string attribute
 /// </return>
 
 	public static MentorLake.Pango.PangoAttrStringHandle AsString(this MentorLake.Pango.PangoAttributeHandle attr)
@@ -294,7 +294,7 @@ public static class PangoAttributeExtensions
 
 /// <summary>
 /// <para>
-/// Initializes @attr's klass to @klass, it's start_index to
+/// Initializes @attr&apos;s klass to @klass, it&apos;s start_index to
 /// %PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING and end_index to
 /// %PANGO_ATTR_INDEX_TO_TEXT_END such that the attribute applies
 /// to the entire text by default.

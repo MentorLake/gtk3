@@ -61,7 +61,7 @@ namespace MentorLake.Gtk;
 /// This introduces a dependency from the node on its child nodes. In order
 /// to accommodate this, #GtkTreeModelFilter must make sure the necessary
 /// signals are received from the child model. This is achieved by building,
-/// for all nodes which are exposed as visible nodes to #GtkTreeModelFilter's
+/// for all nodes which are exposed as visible nodes to #GtkTreeModelFilter&apos;s
 /// clients, the child level (if any) and take a reference on the first node
 /// in this level. Furthermore, for every row-inserted, row-changed or
 /// row-deleted signal (also these which were not handled because the node
@@ -782,8 +782,8 @@ public static class GtkTreeModelFilterHandleExtensions
 /// be empty. The visible function should therefore take special care of empty
 /// rows, like in the example below.
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// visible_func (GtkTreeModel *model,
 ///               GtkTreeIter  *iter,
@@ -792,18 +792,15 @@ public static class GtkTreeModelFilterHandleExtensions
 ///   // Visible if row is non-empty and first column is “HI”
 ///   gchar *str;
 ///   gboolean visible = FALSE;
-/// </para>
-/// <para>
-///   gtk_tree_model_get (model, iter, 0, &str, -1);
-///   if (str && strcmp (str, "HI") == 0)
+/// 
+///   gtk_tree_model_get (model, iter, 0, &amp;str, -1);
+///   if (str &amp;&amp; strcmp (str, &quot;HI&quot;) == 0)
 ///     visible = TRUE;
 ///   g_free (str);
-/// </para>
-/// <para>
+/// 
 ///   return visible;
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// Note that gtk_tree_model_filter_set_visible_func() or
 /// gtk_tree_model_filter_set_visible_column() can only be called

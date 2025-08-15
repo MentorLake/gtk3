@@ -65,30 +65,26 @@ public static class GVariantBuilderExtensions
 /// <para>
 /// This function might be used as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GVariant *
 /// GVariant *
 /// make_pointless_dictionary (void)
 /// {
 ///   GVariantBuilder builder;
 ///   int i;
-/// </para>
-/// <para>
-///   g_variant_builder_init_static (&builder, G_VARIANT_TYPE_ARRAY);
-///   for (i = 0; i < 16; i++)
+/// 
+///   g_variant_builder_init_static (&amp;builder, G_VARIANT_TYPE_ARRAY);
+///   for (i = 0; i &amp;lt; 16; i++)
 ///     {
 ///       gchar buf[3];
-/// </para>
-/// <para>
-///       sprintf (buf, "%d", i);
-///       g_variant_builder_add (&builder, "{is}", i, buf);
+/// 
+///       sprintf (buf, &quot;%d&quot;, i);
+///       g_variant_builder_add (&amp;builder, &quot;{is}&quot;, i, buf);
 ///     }
-/// </para>
-/// <para>
-///   return g_variant_builder_end (&builder);
+/// 
+///   return g_variant_builder_end (&amp;builder);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="builder">
@@ -124,23 +120,21 @@ public static class GVariantBuilderExtensions
 /// <para>
 /// This function might be used as follows:
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// GVariant *
 /// GVariant *
 /// make_pointless_dictionary (void)
 /// {
 ///   GVariantBuilder builder;
 ///   int i;
-/// </para>
-/// <para>
-///   g_variant_builder_init_static (&builder, G_VARIANT_TYPE_ARRAY);
-///   g_variant_builder_add_parsed (&builder, "{'width', <%i>}", 600);
-///   g_variant_builder_add_parsed (&builder, "{'title', <%s>}", "foo");
-///   g_variant_builder_add_parsed (&builder, "{'transparency', <0.5>}");
-///   return g_variant_builder_end (&builder);
+/// 
+///   g_variant_builder_init_static (&amp;builder, G_VARIANT_TYPE_ARRAY);
+///   g_variant_builder_add_parsed (&amp;builder, &quot;{&apos;width&apos;, &amp;lt;%i&amp;gt;}&quot;, 600);
+///   g_variant_builder_add_parsed (&amp;builder, &quot;{&apos;title&apos;, &amp;lt;%s&amp;gt;}&quot;, &quot;foo&quot;);
+///   g_variant_builder_add_parsed (&amp;builder, &quot;{&apos;transparency&apos;, &amp;lt;0.5&amp;gt;}&quot;);
+///   return g_variant_builder_end (&amp;builder);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="builder">
@@ -198,7 +192,7 @@ public static class GVariantBuilderExtensions
 /// It typically only makes sense to do this on a stack-allocated
 /// #GVariantBuilder if you want to abort building the value part-way
 /// through.  This function need not be called if you call
-/// g_variant_builder_end() and it also doesn't need to be called on
+/// g_variant_builder_end() and it also doesn&apos;t need to be called on
 /// builders allocated with g_variant_builder_new() (see
 /// g_variant_builder_unref() for that).
 /// </para>
@@ -286,13 +280,13 @@ public static class GVariantBuilderExtensions
 /// <para>
 /// @type must be non-%NULL.  It specifies the type of container to
 /// construct.  It can be an indefinite type such as
-/// %G_VARIANT_TYPE_ARRAY or a definite type such as "as" or "(ii)".
+/// %G_VARIANT_TYPE_ARRAY or a definite type such as &quot;as&quot; or &quot;(ii)&quot;.
 /// Maybe, array, tuple, dictionary entry and variant-typed values may be
 /// constructed.
 /// </para>
 /// <para>
 /// If using a static type such as one of the `G_VARIANT_TYPE_*` constants
-/// or a `G_VARIANT_TYPE ("(ii)")` macro, it is more performant to use
+/// or a `G_VARIANT_TYPE (&quot;(ii)&quot;)` macro, it is more performant to use
 /// g_variant_builder_init_static() rather than g_variant_builder_init().
 /// </para>
 /// <para>
@@ -344,7 +338,7 @@ public static class GVariantBuilderExtensions
 /// This function works exactly like g_variant_builder_init() but does
 /// not make a copy of @type. Therefore, @type must remain valid for the
 /// lifetime of @builder. This is always true of type constants like
-/// `G_VARIANT_TYPE_*` or `G_VARIANT_TYPE ("(ii)")`.
+/// `G_VARIANT_TYPE_*` or `G_VARIANT_TYPE (&quot;(ii)&quot;)`.
 /// </para>
 /// </summary>
 
@@ -375,7 +369,8 @@ public static class GVariantBuilderExtensions
 /// </para>
 /// <para>
 /// Example of building a nested variant:
-/// |[<!-- language="C" -->
+/// <code>
+/// GVariantBuilder builder;
 /// GVariantBuilder builder;
 /// guint32 some_number = get_number ();
 /// g_autoptr (GHashTable) some_dict = get_dict ();
@@ -383,28 +378,24 @@ public static class GVariantBuilderExtensions
 /// const gchar *key;
 /// const GVariant *value;
 /// g_autoptr (GVariant) output = NULL;
-/// </para>
-/// <para>
-/// g_variant_builder_init (&builder, G_VARIANT_TYPE ("(ua{sv})"));
-/// g_variant_builder_add (&builder, "u", some_number);
-/// g_variant_builder_open (&builder, G_VARIANT_TYPE ("a{sv}"));
-/// </para>
-/// <para>
-/// g_hash_table_iter_init (&iter, some_dict);
-/// while (g_hash_table_iter_next (&iter, (gpointer *) &key, (gpointer *) &value))
+/// 
+/// g_variant_builder_init (&amp;builder, G_VARIANT_TYPE (&quot;(ua{sv})&quot;));
+/// g_variant_builder_add (&amp;builder, &quot;u&quot;, some_number);
+/// g_variant_builder_open (&amp;builder, G_VARIANT_TYPE (&quot;a{sv}&quot;));
+/// 
+/// g_hash_table_iter_init (&amp;iter, some_dict);
+/// while (g_hash_table_iter_next (&amp;iter, (gpointer *) &amp;key, (gpointer *) &amp;value))
 ///   {
-///     g_variant_builder_open (&builder, G_VARIANT_TYPE ("{sv}"));
-///     g_variant_builder_add (&builder, "s", key);
-///     g_variant_builder_add (&builder, "v", value);
-///     g_variant_builder_close (&builder);
+///     g_variant_builder_open (&amp;builder, G_VARIANT_TYPE (&quot;{sv}&quot;));
+///     g_variant_builder_add (&amp;builder, &quot;s&quot;, key);
+///     g_variant_builder_add (&amp;builder, &quot;v&quot;, value);
+///     g_variant_builder_close (&amp;builder);
 ///   }
-/// </para>
-/// <para>
-/// g_variant_builder_close (&builder);
-/// </para>
-/// <para>
-/// output = g_variant_builder_end (&builder);
-/// ]|
+/// 
+/// g_variant_builder_close (&amp;builder);
+/// 
+/// output = g_variant_builder_end (&amp;builder);
+/// </code>
 /// </para>
 /// </summary>
 
@@ -426,7 +417,7 @@ public static class GVariantBuilderExtensions
 /// Increases the reference count on @builder.
 /// </para>
 /// <para>
-/// Don't call this on stack-allocated #GVariantBuilder instances or bad
+/// Don&apos;t call this on stack-allocated #GVariantBuilder instances or bad
 /// things will happen.
 /// </para>
 /// </summary>
@@ -453,7 +444,7 @@ public static class GVariantBuilderExtensions
 /// associated with the #GVariantBuilder.
 /// </para>
 /// <para>
-/// Don't call this on stack-allocated #GVariantBuilder instances or bad
+/// Don&apos;t call this on stack-allocated #GVariantBuilder instances or bad
 /// things will happen.
 /// </para>
 /// </summary>

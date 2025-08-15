@@ -7,11 +7,11 @@ namespace MentorLake.Gtk;
 /// action groups.
 /// </para>
 /// <para>
-/// > GtkUIManager is deprecated since GTK+ 3.10. To construct user interfaces
-/// > from XML definitions, you should use #GtkBuilder, #GMenuModel, et al. To
-/// > work with actions, use #GAction, #GtkActionable et al. These newer classes
-/// > support richer functionality and integration with various desktop shells.
-/// > It should be possible to migrate most/all functionality from GtkUIManager.
+/// &amp;gt; GtkUIManager is deprecated since GTK+ 3.10. To construct user interfaces
+/// &amp;gt; from XML definitions, you should use #GtkBuilder, #GMenuModel, et al. To
+/// &amp;gt; work with actions, use #GAction, #GtkActionable et al. These newer classes
+/// &amp;gt; support richer functionality and integration with various desktop shells.
+/// &amp;gt; It should be possible to migrate most/all functionality from GtkUIManager.
 /// </para>
 /// <para>
 /// # UI Definitions # {#XML-UI}
@@ -21,47 +21,46 @@ namespace MentorLake.Gtk;
 /// roughly described by the following DTD.
 /// </para>
 /// <para>
-/// > Do not confuse the GtkUIManager UI Definitions described here with
-/// > the similarly named [GtkBuilder UI Definitions][BUILDER-UI].
+/// &amp;gt; Do not confuse the GtkUIManager UI Definitions described here with
+/// &amp;gt; the similarly named [GtkBuilder UI Definitions][BUILDER-UI].
 /// </para>
-/// <para>
-/// |[
-/// <!ELEMENT ui          (menubar|toolbar|popup|accelerator)* >
-/// <!ELEMENT menubar     (menuitem|separator|placeholder|menu)* >
-/// <!ELEMENT menu        (menuitem|separator|placeholder|menu)* >
-/// <!ELEMENT popup       (menuitem|separator|placeholder|menu)* >
-/// <!ELEMENT toolbar     (toolitem|separator|placeholder)* >
-/// <!ELEMENT placeholder (menuitem|toolitem|separator|placeholder|menu)* >
-/// <!ELEMENT menuitem     EMPTY >
-/// <!ELEMENT toolitem     (menu?) >
-/// <!ELEMENT separator    EMPTY >
-/// <!ELEMENT accelerator  EMPTY >
-/// <!ATTLIST menubar      name                      #IMPLIED
-///                        action                    #IMPLIED >
-/// <!ATTLIST toolbar      name                      #IMPLIED
-///                        action                    #IMPLIED >
-/// <!ATTLIST popup        name                      #IMPLIED
+/// <code>
+/// &amp;lt;!ELEMENT ui          (menubar|toolbar|popup|accelerator)* &amp;gt;
+/// &amp;lt;!ELEMENT ui          (menubar|toolbar|popup|accelerator)* &amp;gt;
+/// &amp;lt;!ELEMENT menubar     (menuitem|separator|placeholder|menu)* &amp;gt;
+/// &amp;lt;!ELEMENT menu        (menuitem|separator|placeholder|menu)* &amp;gt;
+/// &amp;lt;!ELEMENT popup       (menuitem|separator|placeholder|menu)* &amp;gt;
+/// &amp;lt;!ELEMENT toolbar     (toolitem|separator|placeholder)* &amp;gt;
+/// &amp;lt;!ELEMENT placeholder (menuitem|toolitem|separator|placeholder|menu)* &amp;gt;
+/// &amp;lt;!ELEMENT menuitem     EMPTY &amp;gt;
+/// &amp;lt;!ELEMENT toolitem     (menu?) &amp;gt;
+/// &amp;lt;!ELEMENT separator    EMPTY &amp;gt;
+/// &amp;lt;!ELEMENT accelerator  EMPTY &amp;gt;
+/// &amp;lt;!ATTLIST menubar      name                      #IMPLIED
+///                        action                    #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST toolbar      name                      #IMPLIED
+///                        action                    #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST popup        name                      #IMPLIED
 ///                        action                    #IMPLIED
-///                        accelerators (true|false) #IMPLIED >
-/// <!ATTLIST placeholder  name                      #IMPLIED
-///                        action                    #IMPLIED >
-/// <!ATTLIST separator    name                      #IMPLIED
+///                        accelerators (true|false) #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST placeholder  name                      #IMPLIED
+///                        action                    #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST separator    name                      #IMPLIED
 ///                        action                    #IMPLIED
-///                        expand       (true|false) #IMPLIED >
-/// <!ATTLIST menu         name                      #IMPLIED
+///                        expand       (true|false) #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST menu         name                      #IMPLIED
 ///                        action                    #REQUIRED
-///                        position     (top|bot)    #IMPLIED >
-/// <!ATTLIST menuitem     name                      #IMPLIED
+///                        position     (top|bot)    #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST menuitem     name                      #IMPLIED
 ///                        action                    #REQUIRED
 ///                        position     (top|bot)    #IMPLIED
-///                        always-show-image (true|false) #IMPLIED >
-/// <!ATTLIST toolitem     name                      #IMPLIED
+///                        always-show-image (true|false) #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST toolitem     name                      #IMPLIED
 ///                        action                    #REQUIRED
-///                        position     (top|bot)    #IMPLIED >
-/// <!ATTLIST accelerator  name                      #IMPLIED
-///                        action                    #REQUIRED >
-/// ]|
-/// </para>
+///                        position     (top|bot)    #IMPLIED &amp;gt;
+/// &amp;lt;!ATTLIST accelerator  name                      #IMPLIED
+///                        action                    #REQUIRED &amp;gt;
+/// </code>
 /// <para>
 /// There are some additional restrictions beyond those specified in the
 /// DTD, e.g. every toolitem must have a toolbar in its anchestry and
@@ -74,40 +73,39 @@ namespace MentorLake.Gtk;
 /// not specified either, the element name is used. The name and action
 /// attributes must not contain “/” characters after parsing (since that
 /// would mess up path lookup) and must be usable as XML attributes when
-/// enclosed in doublequotes, thus they must not “"” characters or references
-/// to the &quot; entity.
+/// enclosed in doublequotes, thus they must not “&quot;” characters or references
+/// to the &amp;quot; entity.
 /// </para>
 /// <para>
 /// # A UI definition #
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <ui>
-///   <menubar>
-///     <menu name="FileMenu" action="FileMenuAction">
-///       <menuitem name="New" action="New2Action" />
-///       <placeholder name="FileMenuAdditions" />
-///     </menu>
-///     <menu name="JustifyMenu" action="JustifyMenuAction">
-///       <menuitem name="Left" action="justify-left"/>
-///       <menuitem name="Centre" action="justify-center"/>
-///       <menuitem name="Right" action="justify-right"/>
-///       <menuitem name="Fill" action="justify-fill"/>
-///     </menu>
-///   </menubar>
-///   <toolbar action="toolbar1">
-///     <placeholder name="JustifyToolItems">
-///       <separator/>
-///       <toolitem name="Left" action="justify-left"/>
-///       <toolitem name="Centre" action="justify-center"/>
-///       <toolitem name="Right" action="justify-right"/>
-///       <toolitem name="Fill" action="justify-fill"/>
-///       <separator/>
-///     </placeholder>
-///   </toolbar>
-/// </ui>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;ui&amp;gt;
+/// &amp;lt;ui&amp;gt;
+///   &amp;lt;menubar&amp;gt;
+///     &amp;lt;menu name=&quot;FileMenu&quot; action=&quot;FileMenuAction&quot;&amp;gt;
+///       &amp;lt;menuitem name=&quot;New&quot; action=&quot;New2Action&quot; /&amp;gt;
+///       &amp;lt;placeholder name=&quot;FileMenuAdditions&quot; /&amp;gt;
+///     &amp;lt;/menu&amp;gt;
+///     &amp;lt;menu name=&quot;JustifyMenu&quot; action=&quot;JustifyMenuAction&quot;&amp;gt;
+///       &amp;lt;menuitem name=&quot;Left&quot; action=&quot;justify-left&quot;/&amp;gt;
+///       &amp;lt;menuitem name=&quot;Centre&quot; action=&quot;justify-center&quot;/&amp;gt;
+///       &amp;lt;menuitem name=&quot;Right&quot; action=&quot;justify-right&quot;/&amp;gt;
+///       &amp;lt;menuitem name=&quot;Fill&quot; action=&quot;justify-fill&quot;/&amp;gt;
+///     &amp;lt;/menu&amp;gt;
+///   &amp;lt;/menubar&amp;gt;
+///   &amp;lt;toolbar action=&quot;toolbar1&quot;&amp;gt;
+///     &amp;lt;placeholder name=&quot;JustifyToolItems&quot;&amp;gt;
+///       &amp;lt;separator/&amp;gt;
+///       &amp;lt;toolitem name=&quot;Left&quot; action=&quot;justify-left&quot;/&amp;gt;
+///       &amp;lt;toolitem name=&quot;Centre&quot; action=&quot;justify-center&quot;/&amp;gt;
+///       &amp;lt;toolitem name=&quot;Right&quot; action=&quot;justify-right&quot;/&amp;gt;
+///       &amp;lt;toolitem name=&quot;Fill&quot; action=&quot;justify-fill&quot;/&amp;gt;
+///       &amp;lt;separator/&amp;gt;
+///     &amp;lt;/placeholder&amp;gt;
+///   &amp;lt;/toolbar&amp;gt;
+/// &amp;lt;/ui&amp;gt;
+/// </code>
 /// <para>
 /// The constructed widget hierarchy is very similar to the element tree
 /// of the XML, with the exception that placeholders are merged into their
@@ -191,7 +189,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// Every action has an accelerator path. Accelerators are installed together
 /// with menuitem proxies, but they can also be explicitly added with
-/// `<accelerator>` elements in the UI definition. This makes it possible to
+/// `&amp;lt;accelerator&amp;gt;` elements in the UI definition. This makes it possible to
 /// have accelerators for actions even if they have no visible proxies.
 /// </para>
 /// <para>
@@ -207,7 +205,7 @@ namespace MentorLake.Gtk;
 /// will end up in such an unfortunate position.
 /// </para>
 /// <para>
-/// For separators in toolbars, you can set `expand="true"` to
+/// For separators in toolbars, you can set `expand=&quot;true&quot;` to
 /// turn them from a small, visible separator to an expanding, invisible one.
 /// Toolitems following an expanding separator are effectively right-aligned.
 /// </para>
@@ -234,11 +232,11 @@ namespace MentorLake.Gtk;
 /// </para>
 /// <para>
 /// The GtkUIManager implementation of the GtkBuildable interface accepts
-/// GtkActionGroup objects as `<child>` elements in UI definitions.
+/// GtkActionGroup objects as `&amp;lt;child&amp;gt;` elements in UI definitions.
 /// </para>
 /// <para>
 /// A GtkUIManager UI definition as described above can be embedded in
-/// an GtkUIManager `<object>` element in a GtkBuilder UI definition.
+/// an GtkUIManager `&amp;lt;object&amp;gt;` element in a GtkBuilder UI definition.
 /// </para>
 /// <para>
 /// The widgets that are constructed by a GtkUIManager can be embedded in
@@ -248,32 +246,31 @@ namespace MentorLake.Gtk;
 /// <para>
 /// ## An embedded GtkUIManager UI definition
 /// </para>
-/// <para>
-/// |[<!-- language="xml" -->
-/// <object class="GtkUIManager" id="uiman">
-///   <child>
-///     <object class="GtkActionGroup" id="actiongroup">
-///       <child>
-///         <object class="GtkAction" id="file">
-///           <property name="label">_File</property>
-///         </object>
-///       </child>
-///     </object>
-///   </child>
-///   <ui>
-///     <menubar name="menubar1">
-///       <menu action="file">
-///       </menu>
-///     </menubar>
-///   </ui>
-/// </object>
-/// <object class="GtkWindow" id="main-window">
-///   <child>
-///     <object class="GtkMenuBar" id="menubar1" constructor="uiman"/>
-///   </child>
-/// </object>
-/// ]|
-/// </para>
+/// <code>
+/// &amp;lt;object class=&quot;GtkUIManager&quot; id=&quot;uiman&quot;&amp;gt;
+/// &amp;lt;object class=&quot;GtkUIManager&quot; id=&quot;uiman&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkActionGroup&quot; id=&quot;actiongroup&quot;&amp;gt;
+///       &amp;lt;child&amp;gt;
+///         &amp;lt;object class=&quot;GtkAction&quot; id=&quot;file&quot;&amp;gt;
+///           &amp;lt;property name=&quot;label&quot;&amp;gt;_File&amp;lt;/property&amp;gt;
+///         &amp;lt;/object&amp;gt;
+///       &amp;lt;/child&amp;gt;
+///     &amp;lt;/object&amp;gt;
+///   &amp;lt;/child&amp;gt;
+///   &amp;lt;ui&amp;gt;
+///     &amp;lt;menubar name=&quot;menubar1&quot;&amp;gt;
+///       &amp;lt;menu action=&quot;file&quot;&amp;gt;
+///       &amp;lt;/menu&amp;gt;
+///     &amp;lt;/menubar&amp;gt;
+///   &amp;lt;/ui&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// &amp;lt;object class=&quot;GtkWindow&quot; id=&quot;main-window&quot;&amp;gt;
+///   &amp;lt;child&amp;gt;
+///     &amp;lt;object class=&quot;GtkMenuBar&quot; id=&quot;menubar1&quot; constructor=&quot;uiman&quot;/&amp;gt;
+///   &amp;lt;/child&amp;gt;
+/// &amp;lt;/object&amp;gt;
+/// </code>
 /// </summary>
 
 public class GtkUIManagerHandle : GObjectHandle, GtkBuildableHandle
@@ -864,7 +861,7 @@ public static class GtkUIManagerHandleExtensions
 /// <summary>
 /// <para>
 /// Parses a string containing a [UI definition][XML-UI] and merges it with
-/// the current contents of @manager. An enclosing `<ui>` element is added if
+/// the current contents of @manager. An enclosing `&amp;lt;ui&amp;gt;` element is added if
 /// it is missing.
 /// </para>
 /// </summary>
@@ -901,15 +898,16 @@ public static class GtkUIManagerHandleExtensions
 /// UI in an idle function. A typical example where this function is
 /// useful is to enforce that the menubar and toolbar have been added to
 /// the main window before showing it:
-/// |[<!-- language="C" -->
+/// <code>
 /// gtk_container_add (GTK_CONTAINER (window), vbox);
-/// g_signal_connect (merge, "add-widget",
+/// gtk_container_add (GTK_CONTAINER (window), vbox);
+/// g_signal_connect (merge, &quot;add-widget&quot;,
 ///                   G_CALLBACK (add_widget), vbox);
-/// gtk_ui_manager_add_ui_from_file (merge, "my-menus");
-/// gtk_ui_manager_add_ui_from_file (merge, "my-toolbars");
+/// gtk_ui_manager_add_ui_from_file (merge, &quot;my-menus&quot;);
+/// gtk_ui_manager_add_ui_from_file (merge, &quot;my-toolbars&quot;);
 /// gtk_ui_manager_ensure_update (merge);
 /// gtk_widget_show (window);
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 
@@ -1058,11 +1056,11 @@ public static class GtkUIManagerHandleExtensions
 /// Looks up a widget by following a path.
 /// The path consists of the names specified in the XML description of the UI.
 /// separated by “/”. Elements which don’t have a name or action attribute in
-/// the XML (e.g. `<popup>`) can be addressed by their XML element name
-/// (e.g. "popup"). The root element ("/ui") can be omitted in the path.
+/// the XML (e.g. `&amp;lt;popup&amp;gt;`) can be addressed by their XML element name
+/// (e.g. &quot;popup&quot;). The root element (&quot;/ui&quot;) can be omitted in the path.
 /// </para>
 /// <para>
-/// Note that the widget found by following a path that ends in a `<menu>`;
+/// Note that the widget found by following a path that ends in a `&amp;lt;menu&amp;gt;`;
 /// element is the menuitem to which the menu is attached, not the menu it
 /// manages.
 /// </para>
@@ -1164,7 +1162,7 @@ public static class GtkUIManagerHandleExtensions
 
 /// <summary>
 /// <para>
-/// Unmerges the part of @manager's content identified by @merge_id.
+/// Unmerges the part of @manager&apos;s content identified by @merge_id.
 /// </para>
 /// </summary>
 

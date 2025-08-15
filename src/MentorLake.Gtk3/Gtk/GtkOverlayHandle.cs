@@ -26,7 +26,7 @@ namespace MentorLake.Gtk;
 /// <para>
 /// The GtkOverlay implementation of the GtkBuildable interface
 /// supports placing a child as an overlay by specifying “overlay” as
-/// the “type” attribute of a `<child>` element.
+/// the “type” attribute of a `&amp;lt;child&amp;gt;` element.
 /// </para>
 /// <para>
 /// # CSS nodes
@@ -64,10 +64,10 @@ public static class GtkOverlayHandleSignalExtensions
 /// the position and size of any overlay child widgets. A
 /// handler for this signal should fill @allocation with
 /// the desired position and size for @widget, relative to
-/// the 'main' child of @overlay.
+/// the &apos;main&apos; child of @overlay.
 /// </para>
 /// <para>
-/// The default handler for this signal uses the @widget's
+/// The default handler for this signal uses the @widget&apos;s
 /// halign and valign properties to determine the position
 /// and gives the widget its natural size (except that an
 /// alignment of %GTK_ALIGN_FILL will cause the overlay to
@@ -150,10 +150,10 @@ public static class GtkOverlayHandleSignalDelegates
 /// the position and size of any overlay child widgets. A
 /// handler for this signal should fill @allocation with
 /// the desired position and size for @widget, relative to
-/// the 'main' child of @overlay.
+/// the &apos;main&apos; child of @overlay.
 /// </para>
 /// <para>
-/// The default handler for this signal uses the @widget's
+/// The default handler for this signal uses the @widget&apos;s
 /// halign and valign properties to determine the position
 /// and gives the widget its natural size (except that an
 /// alignment of %GTK_ALIGN_FILL will cause the overlay to

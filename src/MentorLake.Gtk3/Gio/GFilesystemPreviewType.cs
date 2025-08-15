@@ -20,7 +20,7 @@ public enum GFilesystemPreviewType
 	G_FILESYSTEM_PREVIEW_TYPE_IF_ALWAYS = 0,
 /// <summary>
 /// <para>
-/// Preview files if user has requested preview of "local" files.
+/// Preview files if user has requested preview of &quot;local&quot; files.
 /// </para>
 /// </summary>
 

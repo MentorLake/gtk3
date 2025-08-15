@@ -155,7 +155,7 @@ public static class GStringChunkExtensions
 /// The copy is nul-terminated.
 /// </para>
 /// <para>
-/// Since this function does not stop at nul bytes, it is the caller's
+/// Since this function does not stop at nul bytes, it is the caller&apos;s
 /// responsibility to ensure that @string has at least @len addressable
 /// bytes.
 /// </para>

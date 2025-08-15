@@ -45,7 +45,7 @@ public enum GTlsCertificateFlags : uint
 	G_TLS_CERTIFICATE_BAD_IDENTITY = 2,
 /// <summary>
 /// <para>
-/// The certificate's activation time
+/// The certificate&apos;s activation time
 ///   is still in the future
 /// </para>
 /// </summary>
@@ -61,14 +61,14 @@ public enum GTlsCertificateFlags : uint
 /// <summary>
 /// <para>
 /// The certificate has been revoked
-///   according to the #GTlsConnection's certificate revocation list.
+///   according to the #GTlsConnection&apos;s certificate revocation list.
 /// </para>
 /// </summary>
 
 	G_TLS_CERTIFICATE_REVOKED = 16,
 /// <summary>
 /// <para>
-/// The certificate's algorithm is
+/// The certificate&apos;s algorithm is
 ///   considered insecure.
 /// </para>
 /// </summary>

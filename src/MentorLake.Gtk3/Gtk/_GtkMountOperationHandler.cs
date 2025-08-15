@@ -2,7 +2,7 @@ namespace MentorLake.Gtk;
 
 /// <summary>
 /// <para>
-/// Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-Gtk-MountOperationHandler.top_of_page">org.Gtk.MountOperationHandler</link>.
+/// Abstract interface type for the D-Bus interface &amp;lt;link linkend=&quot;gdbus-interface-org-Gtk-MountOperationHandler.top_of_page&quot;&amp;gt;org.Gtk.MountOperationHandler&amp;lt;/link&amp;gt;.
 /// </para>
 /// </summary>
 
@@ -22,7 +22,7 @@ internal class _GtkMountOperationHandlerExterns
 
 /// <summary>
 /// <para>
-/// Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-org-Gtk-MountOperationHandler.top_of_page">org.Gtk.MountOperationHandler</link>.
+/// Abstract interface type for the D-Bus interface &amp;lt;link linkend=&quot;gdbus-interface-org-Gtk-MountOperationHandler.top_of_page&quot;&amp;gt;org.Gtk.MountOperationHandler&amp;lt;/link&amp;gt;.
 /// </para>
 /// </summary>
 

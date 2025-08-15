@@ -10,25 +10,20 @@ namespace MentorLake.Gdk;
 /// <para>
 /// ## Launching an application
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
 /// GdkAppLaunchContext *context;
-/// </para>
-/// <para>
+/// GdkAppLaunchContext *context;
+/// 
 /// context = gdk_display_get_app_launch_context (display);
-/// </para>
-/// <para>
+/// 
 /// gdk_app_launch_context_set_screen (screen);
-/// gdk_app_launch_context_set_timestamp (event->time);
-/// </para>
-/// <para>
-/// if (!g_app_info_launch_default_for_uri ("http://www.gtk.org", context, &error))
-///   g_warning ("Launching failed: %s\n", error->message);
-/// </para>
-/// <para>
+/// gdk_app_launch_context_set_timestamp (event-&amp;gt;time);
+/// 
+/// if (!g_app_info_launch_default_for_uri (&quot;http://www.gtk.org&quot;, context, &amp;error))
+///   g_warning (&quot;Launching failed: %s\n&quot;, error-&amp;gt;message);
+/// 
 /// g_object_unref (context);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 public class GdkAppLaunchContextHandle : GAppLaunchContextHandle
@@ -195,8 +190,8 @@ public static class GdkAppLaunchContextHandleExtensions
 /// <para>
 /// Window managers can use this information to avoid moving the
 /// focus to the newly launched application when the user is busy
-/// typing in another window. This is also known as 'focus stealing
-/// prevention'.
+/// typing in another window. This is also known as &apos;focus stealing
+/// prevention&apos;.
 /// </para>
 /// </summary>
 

@@ -4,7 +4,7 @@ namespace MentorLake.Gio;
 /// <para>
 /// `GDBusObjectManagerServer` is used to export [iface@Gio.DBusObject] instances
 /// using the standardized
-/// <see href="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager">org.freedesktop.DBus.ObjectManager</see>
+/// &amp;lt;see href=&quot;http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager&quot;&amp;gt;org.freedesktop.DBus.ObjectManager&amp;lt;/see&amp;gt;
 /// interface. For example, remote D-Bus clients can get all objects
 /// and properties in a single call. Additionally, any change in the
 /// object hierarchy is broadcast using signals. This means that D-Bus
@@ -36,7 +36,7 @@ public class GDBusObjectManagerServerHandle : GObjectHandle, GDBusObjectManagerH
 /// Creates a new #GDBusObjectManagerServer object.
 /// </para>
 /// <para>
-/// The returned server isn't yet exported on any connection. To do so,
+/// The returned server isn&apos;t yet exported on any connection. To do so,
 /// use g_dbus_object_manager_server_set_connection(). Normally you
 /// want to export all of your objects before doing so to avoid
 /// [InterfacesAdded](http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager)
@@ -411,7 +411,7 @@ public static class GDBusObjectManagerServerHandleExtensions
 /// <summary>
 /// <para>
 /// Like g_dbus_object_manager_server_export() but appends a string of
-/// the form _N (with N being a natural number) to @object's object path
+/// the form _N (with N being a natural number) to @object&apos;s object path
 /// if an object with the given path already exists. As such, the
 /// #GDBusObjectProxy:g-object-path property of @object may be modified.
 /// </para>
@@ -442,7 +442,7 @@ public static class GDBusObjectManagerServerHandleExtensions
 /// </param>
 /// <return>
 /// A #GDBusConnection object or %NULL if
-///   @manager isn't exported on a connection. The returned object should
+///   @manager isn&apos;t exported on a connection. The returned object should
 ///   be freed with g_object_unref().
 /// </return>
 

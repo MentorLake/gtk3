@@ -56,7 +56,7 @@ public IntPtr equal;
 	/// <summary>
 /// <para>
 /// Serializes a #GIcon into tokens. The tokens must not
-/// contain any whitespace. Don't implement if the #GIcon can't be
+/// contain any whitespace. Don&apos;t implement if the #GIcon can&apos;t be
 /// serialized (Since 2.20).
 /// </para>
 /// </summary>
@@ -65,7 +65,7 @@ public IntPtr to_tokens;
 	/// <summary>
 /// <para>
 /// Constructs a #GIcon from tokens. Set the #GError if
-/// the tokens are malformed. Don't implement if the #GIcon can't be
+/// the tokens are malformed. Don&apos;t implement if the #GIcon can&apos;t be
 /// serialized (Since 2.20).
 /// </para>
 /// </summary>

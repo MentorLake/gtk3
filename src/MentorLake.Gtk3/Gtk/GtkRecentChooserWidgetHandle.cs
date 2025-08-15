@@ -61,7 +61,7 @@ public static class GtkRecentChooserWidgetHandleSignalExtensions
 {
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.
@@ -160,7 +160,7 @@ public static class GtkRecentChooserWidgetHandleSignalDelegates
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a recent item
+/// This signal is emitted when the user &quot;activates&quot; a recent item
 /// in the recent chooser.  This can happen by double-clicking on an item
 /// in the recently used resources list, or by pressing
 /// `Enter`.

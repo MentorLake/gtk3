@@ -123,7 +123,7 @@ public static class GFileHandleExtensions
 /// <summary>
 /// <para>
 /// Gets an output stream for appending data to the file.
-/// If the file doesn't already exist it is created.
+/// If the file doesn&apos;t already exist it is created.
 /// </para>
 /// <para>
 /// By default files created are generally readable by everyone,
@@ -138,7 +138,7 @@ public static class GFileHandleExtensions
 /// returned.
 /// </para>
 /// <para>
-/// Some file systems don't allow all file names, and may return an
+/// Some file systems don&apos;t allow all file names, and may return an
 /// %G_IO_ERROR_INVALID_FILENAME error. If the file is a directory the
 /// %G_IO_ERROR_IS_DIRECTORY error will be returned. Other errors are
 /// possible too, and depend on what kind of filesystem the file is on.
@@ -540,7 +540,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// If a file or directory with this name already exists the
-/// %G_IO_ERROR_EXISTS error will be returned. Some file systems don't
+/// %G_IO_ERROR_EXISTS error will be returned. Some file systems don&apos;t
 /// allow all file names, and may return an %G_IO_ERROR_INVALID_FILENAME
 /// error, and if the name is to long %G_IO_ERROR_FILENAME_TOO_LONG will
 /// be returned. Other errors are possible too, and depend on what kind
@@ -661,7 +661,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// If a file or directory with this name already exists, the
-/// %G_IO_ERROR_EXISTS error will be returned. Some file systems don't
+/// %G_IO_ERROR_EXISTS error will be returned. Some file systems don&apos;t
 /// allow all file names, and may return an %G_IO_ERROR_INVALID_FILENAME
 /// error, and if the name is too long, %G_IO_ERROR_FILENAME_TOO_LONG
 /// will be returned. Other errors are possible too, and depend on what
@@ -777,19 +777,18 @@ public static class GFileHandleExtensions
 /// If @file doesn’t exist, %G_IO_ERROR_NOT_FOUND will be returned. This allows
 /// for deletion to be implemented avoiding
 /// [time-of-check to time-of-use races](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use):
-/// |[
+/// <code>
 /// g_autoptr(GError) local_error = NULL;
-/// if (!g_file_delete (my_file, my_cancellable, &local_error) &&
+/// g_autoptr(GError) local_error = NULL;
+/// if (!g_file_delete (my_file, my_cancellable, &amp;local_error) &amp;&amp;
 ///     !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
 ///   {
 ///     // deletion failed for some reason other than the file not existing:
 ///     // so report the error
-///     g_warning ("Failed to delete %s: %s",
-///                g_file_peek_path (my_file), local_error->message);
+///     g_warning (&quot;Failed to delete %s: %s&quot;,
+///                g_file_peek_path (my_file), local_error-&amp;gt;message);
 ///   }
-/// ]|
-/// </para>
-/// <para>
+/// </code>
 /// If @cancellable is not %NULL, then the operation can be cancelled by
 /// triggering the cancellable object from another thread. If the operation
 /// was cancelled, the error %G_IO_ERROR_CANCELLED will be returned.
@@ -1046,12 +1045,12 @@ public static class GFileHandleExtensions
 /// <para>
 /// The @attributes value is a string that specifies the file
 /// attributes that should be gathered. It is not an error if
-/// it's not possible to read a particular requested attribute
-/// from a file - it just won't be set. @attributes should
+/// it&apos;s not possible to read a particular requested attribute
+/// from a file - it just won&apos;t be set. @attributes should
 /// be a comma-separated list of attributes or attribute wildcards.
-/// The wildcard "*" means all attributes, and a wildcard like
-/// "standard::*" means all attributes in the standard namespace.
-/// An example attribute query be "standard::*,owner::user".
+/// The wildcard &quot;*&quot; means all attributes, and a wildcard like
+/// &quot;standard::*&quot; means all attributes in the standard namespace.
+/// An example attribute query be &quot;standard::*,owner::user&quot;.
 /// The standard attributes are available as defines, like
 /// %G_FILE_ATTRIBUTE_STANDARD_NAME. %G_FILE_ATTRIBUTE_STANDARD_NAME should
 /// always be specified if you plan to call g_file_enumerator_get_child() or
@@ -1329,7 +1328,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// string containing the #GFile's
+/// string containing the #GFile&apos;s
 ///   base name, or %NULL if given #GFile is invalid. The returned string
 ///   should be freed with g_free() when no longer needed.
 /// </return>
@@ -1358,7 +1357,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="name">
-/// string containing the child's basename
+/// string containing the child&apos;s basename
 /// </param>
 /// <return>
 /// a #GFile to a child specified by @name.
@@ -1393,7 +1392,7 @@ public static class GFileHandleExtensions
 /// </param>
 /// <return>
 /// a #GFile to the specified child, or
-///   %NULL if the display name couldn't be converted.
+///   %NULL if the display name couldn&apos;t be converted.
 ///   Free the returned object with g_object_unref().
 /// </return>
 
@@ -1457,7 +1456,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// a string containing the #GFile's parse name.
+/// a string containing the #GFile&apos;s parse name.
 ///   The returned string should be freed with g_free()
 ///   when no longer needed.
 /// </return>
@@ -1482,7 +1481,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// string containing the #GFile's path,
+/// string containing the #GFile&apos;s path,
 ///   or %NULL if no such path exists. The returned string should be freed
 ///   with g_free() when no longer needed.
 /// </return>
@@ -1510,7 +1509,7 @@ public static class GFileHandleExtensions
 /// </param>
 /// <return>
 /// string with the relative path from
-///   @descendant to @parent, or %NULL if @descendant doesn't have @parent as
+///   @descendant to @parent, or %NULL if @descendant doesn&apos;t have @parent as
 ///   prefix. The returned string should be freed with g_free() when
 ///   no longer needed.
 /// </return>
@@ -1534,7 +1533,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// a string containing the #GFile's URI. If the #GFile was constructed
+/// a string containing the #GFile&apos;s URI. If the #GFile was constructed
 ///   with an invalid URI, an invalid URI is returned.
 ///   The returned string should be freed with g_free()
 ///   when no longer needed.
@@ -1550,10 +1549,10 @@ public static class GFileHandleExtensions
 /// <para>
 /// Gets the URI scheme for a #GFile.
 /// RFC 3986 decodes the scheme as:
-/// |[
-/// URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-/// ]|
-/// Common schemes include "file", "http", "ftp", etc.
+/// <code>
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// URI = scheme &quot;:&quot; hier-part [ &quot;?&quot; query ] [ &quot;#&quot; fragment ]
+/// </code>
 /// </para>
 /// <para>
 /// The scheme can be different from the one used to construct the #GFile,
@@ -1612,7 +1611,7 @@ public static class GFileHandleExtensions
 /// Checks whether @file has the prefix specified by @prefix.
 /// </para>
 /// <para>
-/// In other words, if the names of initial elements of @file's
+/// In other words, if the names of initial elements of @file&apos;s
 /// pathname match @prefix. Only full pathname elements are matched,
 /// so a path like /foo is not considered a prefix of /foobar, only
 /// of /foo/bar.
@@ -1636,7 +1635,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// %TRUE if the @file's parent, grandparent, etc is @prefix,
+/// %TRUE if the @file&apos;s parent, grandparent, etc is @prefix,
 ///   %FALSE otherwise.
 /// </return>
 
@@ -1662,7 +1661,7 @@ public static class GFileHandleExtensions
 /// a string containing a URI scheme
 /// </param>
 /// <return>
-/// %TRUE if #GFile's backend supports the
+/// %TRUE if #GFile&apos;s backend supports the
 ///   given URI scheme, %FALSE if URI scheme is %NULL,
 ///   not supported, or #GFile is invalid.
 /// </return>
@@ -1704,7 +1703,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// A native file is one expressed in the platform-native filename format,
-/// e.g. "C:\Windows" or "/usr/bin/". This does not mean the file is local,
+/// e.g. &quot;C:\Windows&quot; or &quot;/usr/bin/&quot;. This does not mean the file is local,
 /// as it might be on a locally mounted remote filesystem.
 /// </para>
 /// <para>
@@ -1881,7 +1880,7 @@ public static class GFileHandleExtensions
 ///   or %NULL if the entity tag is not needed
 /// </param>
 /// <return>
-/// %TRUE if the @file's contents were successfully loaded.
+/// %TRUE if the @file&apos;s contents were successfully loaded.
 ///   %FALSE if there were errors.
 /// </return>
 
@@ -1895,7 +1894,7 @@ public static class GFileHandleExtensions
 
 /// <summary>
 /// <para>
-/// Starts an asynchronous load of the @file's contents.
+/// Starts an asynchronous load of the @file&apos;s contents.
 /// </para>
 /// <para>
 /// For more details, see g_file_load_contents() which is
@@ -1936,7 +1935,7 @@ public static class GFileHandleExtensions
 
 /// <summary>
 /// <para>
-/// Finishes an asynchronous load of the @file's contents.
+/// Finishes an asynchronous load of the @file&apos;s contents.
 /// The contents are placed in @contents, and @length is set to the
 /// size of the @contents string. The @contents should be freed with
 /// g_free() when no longer needed. If @etag_out is present, it will be
@@ -2064,7 +2063,7 @@ public static class GFileHandleExtensions
 /// of the immediate parent directory of the path or URI given by the #GFile.
 /// To recursively create directories, see g_file_make_directory_with_parents().
 /// This function will fail if the parent directory does not exist, setting
-/// @error to %G_IO_ERROR_NOT_FOUND. If the file system doesn't support
+/// @error to %G_IO_ERROR_NOT_FOUND. If the file system doesn&apos;t support
 /// creating directories, this function will fail, setting @error to
 /// %G_IO_ERROR_NOT_SUPPORTED.
 /// </para>
@@ -2157,7 +2156,7 @@ public static class GFileHandleExtensions
 /// <summary>
 /// <para>
 /// Creates a directory and any parent directories that may not
-/// exist similar to 'mkdir -p'. If the file system does not support
+/// exist similar to &apos;mkdir -p&apos;. If the file system does not support
 /// creating directories, this function will fail, setting @error to
 /// %G_IO_ERROR_NOT_SUPPORTED. If the directory itself already exists,
 /// this function will fail setting @error to %G_IO_ERROR_EXISTS, unlike
@@ -2295,7 +2294,7 @@ public static class GFileHandleExtensions
 /// Recursively measures the disk usage of @file.
 /// </para>
 /// <para>
-/// This is essentially an analog of the 'du' command, but it also
+/// This is essentially an analog of the &apos;du&apos; command, but it also
 /// reports the number of directories and non-directory files encountered
 /// (including things like symbolic links).
 /// </para>
@@ -2744,7 +2743,7 @@ public static class GFileHandleExtensions
 /// If the source is a directory and the target does not exist, or
 /// %G_FILE_COPY_OVERWRITE is specified and the target is a file, then
 /// the %G_IO_ERROR_WOULD_RECURSE error may be returned (if the native
-/// move operation isn't available).
+/// move operation isn&apos;t available).
 /// </para>
 /// </summary>
 
@@ -3023,7 +3022,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <return>
-/// string containing the #GFile's path,
+/// string containing the #GFile&apos;s path,
 ///   or %NULL if no such path exists. The returned string is owned by @file.
 /// </return>
 
@@ -3204,7 +3203,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// As an example of race-free checking, take the case of reading a file,
-/// and if it doesn't exist, creating it. There are two racy versions: read
+/// and if it doesn&apos;t exist, creating it. There are two racy versions: read
 /// it, and on error create it; and: check if it exists, if not create it.
 /// These can both result in two processes creating the file (with perhaps
 /// a partially written file as the result). The correct approach is to
@@ -3213,7 +3212,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// However, in many cases an existence check is useful in a user interface,
-/// for instance to make a menu item sensitive/insensitive, so that you don't
+/// for instance to make a menu item sensitive/insensitive, so that you don&apos;t
 /// have to fool users that something is possible and then just show an error
 /// dialog. If you do this, you should make sure to also handle the errors
 /// that can happen due to races when you execute the operation.
@@ -3279,13 +3278,13 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// The @attributes value is a string that specifies the attributes
-/// that should be gathered. It is not an error if it's not possible
+/// that should be gathered. It is not an error if it&apos;s not possible
 /// to read a particular requested attribute from a file - it just
-/// won't be set. @attributes should be a comma-separated list of
-/// attributes or attribute wildcards. The wildcard "*" means all
-/// attributes, and a wildcard like "filesystem::*" means all attributes
+/// won&apos;t be set. @attributes should be a comma-separated list of
+/// attributes or attribute wildcards. The wildcard &quot;*&quot; means all
+/// attributes, and a wildcard like &quot;filesystem::*&quot; means all attributes
 /// in the filesystem namespace. The standard namespace for filesystem
-/// attributes is "filesystem". Common attributes of interest are
+/// attributes is &quot;filesystem&quot;. Common attributes of interest are
 /// %G_FILE_ATTRIBUTE_FILESYSTEM_SIZE (the total size of the filesystem
 /// in bytes), %G_FILE_ATTRIBUTE_FILESYSTEM_FREE (number of bytes available),
 /// and %G_FILE_ATTRIBUTE_FILESYSTEM_TYPE (type of the filesystem).
@@ -3408,12 +3407,12 @@ public static class GFileHandleExtensions
 /// <para>
 /// The @attributes value is a string that specifies the file
 /// attributes that should be gathered. It is not an error if
-/// it's not possible to read a particular requested attribute
-/// from a file - it just won't be set. @attributes should be a
+/// it&apos;s not possible to read a particular requested attribute
+/// from a file - it just won&apos;t be set. @attributes should be a
 /// comma-separated list of attributes or attribute wildcards.
-/// The wildcard "*" means all attributes, and a wildcard like
-/// "standard::*" means all attributes in the standard namespace.
-/// An example attribute query be "standard::*,owner::user".
+/// The wildcard &quot;*&quot; means all attributes, and a wildcard like
+/// &quot;standard::*&quot; means all attributes in the standard namespace.
+/// An example attribute query be &quot;standard::*,owner::user&quot;.
 /// The standard attributes are available as defines, like
 /// %G_FILE_ATTRIBUTE_STANDARD_NAME.
 /// </para>
@@ -3544,7 +3543,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// Returns the type and full attribute name of all the attributes
-/// that can be set on this file. This doesn't mean setting it will
+/// that can be set on this file. This doesn&apos;t mean setting it will
 /// always succeed though, you might get an access failure, or some
 /// specific file may not support a specific attribute.
 /// </para>
@@ -3580,7 +3579,7 @@ public static class GFileHandleExtensions
 /// <para>
 /// Obtain the list of attribute namespaces where new attributes
 /// can be created by a user. An example of this is extended
-/// attributes (in the "xattr" namespace).
+/// attributes (in the &quot;xattr&quot; namespace).
 /// </para>
 /// <para>
 /// If @cancellable is not %NULL, then the operation can be cancelled by
@@ -3716,7 +3715,7 @@ public static class GFileHandleExtensions
 /// <summary>
 /// <para>
 /// Returns an output stream for overwriting the file, possibly
-/// creating a backup copy of the file first. If the file doesn't exist,
+/// creating a backup copy of the file first. If the file doesn&apos;t exist,
 /// it will be created.
 /// </para>
 /// <para>
@@ -3744,7 +3743,7 @@ public static class GFileHandleExtensions
 /// they differ an %G_IO_ERROR_WRONG_ETAG error is returned. This
 /// generally means that the file has been changed since you last read
 /// it. You can get the new etag from g_file_output_stream_get_etag()
-/// after you've finished writing and closed the #GFileOutputStream. When
+/// after you&apos;ve finished writing and closed the #GFileOutputStream. When
 /// you load a new file you can use g_file_input_stream_query_info() to
 /// get the etag of the file.
 /// </para>
@@ -3758,7 +3757,7 @@ public static class GFileHandleExtensions
 /// If the file is a directory the %G_IO_ERROR_IS_DIRECTORY error will
 /// be returned, and if the file is some other form of non-regular file
 /// then a %G_IO_ERROR_NOT_REGULAR_FILE error will be returned. Some
-/// file systems don't allow all file names, and may return an
+/// file systems don&apos;t allow all file names, and may return an
 /// %G_IO_ERROR_INVALID_FILENAME error, and if the name is to long
 /// %G_IO_ERROR_FILENAME_TOO_LONG will be returned. Other errors are
 /// possible too, and depend on what kind of filesystem the file is on.
@@ -3866,7 +3865,7 @@ public static class GFileHandleExtensions
 /// was cancelled, the error %G_IO_ERROR_CANCELLED will be returned.
 /// </para>
 /// <para>
-/// The returned @new_etag can be used to verify that the file hasn't
+/// The returned @new_etag can be used to verify that the file hasn&apos;t
 /// changed the next time it is saved over.
 /// </para>
 /// </summary>
@@ -3914,7 +3913,7 @@ public static class GFileHandleExtensions
 /// <summary>
 /// <para>
 /// Starts an asynchronous replacement of @file with the given
-/// @contents of @length bytes. @etag will replace the document's
+/// @contents of @length bytes. @etag will replace the document&apos;s
 /// current entity tag.
 /// </para>
 /// <para>
@@ -4080,7 +4079,7 @@ public static class GFileHandleExtensions
 /// <summary>
 /// <para>
 /// Returns an output stream for overwriting the file in readwrite mode,
-/// possibly creating a backup copy of the file first. If the file doesn't
+/// possibly creating a backup copy of the file first. If the file doesn&apos;t
 /// exist, it will be created.
 /// </para>
 /// <para>
@@ -4250,7 +4249,7 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="type">
 /// The type of the attribute
@@ -4295,10 +4294,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a string containing the attribute's new value
+/// a string containing the attribute&apos;s new value
 /// </param>
 /// <param name="flags">
 /// a #GFileQueryInfoFlags
@@ -4336,10 +4335,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a #gint32 containing the attribute's new value
+/// a #gint32 containing the attribute&apos;s new value
 /// </param>
 /// <param name="flags">
 /// a #GFileQueryInfoFlags
@@ -4377,10 +4376,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a #guint64 containing the attribute's new value
+/// a #guint64 containing the attribute&apos;s new value
 /// </param>
 /// <param name="flags">
 /// a #GFileQueryInfoFlags
@@ -4417,10 +4416,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a string containing the attribute's value
+/// a string containing the attribute&apos;s value
 /// </param>
 /// <param name="flags">
 /// #GFileQueryInfoFlags
@@ -4457,10 +4456,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a #guint32 containing the attribute's new value
+/// a #guint32 containing the attribute&apos;s new value
 /// </param>
 /// <param name="flags">
 /// a #GFileQueryInfoFlags
@@ -4498,10 +4497,10 @@ public static class GFileHandleExtensions
 /// input #GFile
 /// </param>
 /// <param name="attribute">
-/// a string containing the attribute's name
+/// a string containing the attribute&apos;s name
 /// </param>
 /// <param name="value">
-/// a #guint64 containing the attribute's new value
+/// a #guint64 containing the attribute&apos;s new value
 /// </param>
 /// <param name="flags">
 /// a #GFileQueryInfoFlags
@@ -4604,7 +4603,7 @@ public static class GFileHandleExtensions
 /// <para>
 /// If there is any error during this operation then @error will
 /// be set to the first error. Error on particular fields are flagged
-/// by setting the "status" field in the attribute value to
+/// by setting the &quot;status&quot; field in the attribute value to
 /// %G_FILE_ATTRIBUTE_STATUS_ERROR_SETTING, which means you can
 /// also detect further errors.
 /// </para>
@@ -4928,7 +4927,7 @@ public static class GFileHandleExtensions
 
 /// <summary>
 /// <para>
-/// Sends @file to the "Trashcan", if possible. This is similar to
+/// Sends @file to the &quot;Trashcan&quot;, if possible. This is similar to
 /// deleting it, but the user can recover it before emptying the trashcan.
 /// Trashing is disabled for system mounts by default (see
 /// g_unix_mount_entry_is_system_internal()), so this call can return the
@@ -5334,7 +5333,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// <para>
@@ -5369,7 +5368,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// </summary>
@@ -5403,7 +5402,7 @@ public static class GFileHandleExtensions
 /// </para>
 /// <para>
 /// @tmpl should be a string in the GLib file name encoding
-/// containing a sequence of six 'X' characters, and containing no
+/// containing a sequence of six &apos;X&apos; characters, and containing no
 /// directory components. If it is %NULL, a default template is used.
 /// </para>
 /// </summary>

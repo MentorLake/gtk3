@@ -11,7 +11,7 @@ namespace MentorLake.Atk;
 /// interface should appear on the toplevel container for the document
 /// content; however AtkDocument instances may be nested (i.e. an
 /// AtkDocument may be a descendant of another AtkDocument) in those
-/// cases where one document contains "embedded content" which can
+/// cases where one document contains &quot;embedded content&quot; which can
 /// reasonably be considered a document in its own right.
 /// </para>
 /// </summary>

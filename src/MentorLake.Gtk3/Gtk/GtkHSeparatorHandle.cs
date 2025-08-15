@@ -7,10 +7,10 @@ namespace MentorLake.Gtk;
 /// make it appear sunken into the interface.
 /// </para>
 /// <para>
-/// > The #GtkHSeparator widget is not used as a separator within menus.
-/// > To create a separator in a menu create an empty #GtkSeparatorMenuItem
-/// > widget using gtk_separator_menu_item_new() and add it to the menu with
-/// > gtk_menu_shell_append().
+/// &amp;gt; The #GtkHSeparator widget is not used as a separator within menus.
+/// &amp;gt; To create a separator in a menu create an empty #GtkSeparatorMenuItem
+/// &amp;gt; widget using gtk_separator_menu_item_new() and add it to the menu with
+/// &amp;gt; gtk_menu_shell_append().
 /// </para>
 /// <para>
 /// GtkHSeparator has been deprecated, use #GtkSeparator instead.

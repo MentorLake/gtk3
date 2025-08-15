@@ -65,8 +65,8 @@ public static class PangoScriptIterExtensions
 /// Gets information about the range to which @iter currently points.
 /// </para>
 /// <para>
-/// The range is the set of locations p where *start <= p < *end.
-/// (That is, it doesn't include the character stored at *end)
+/// The range is the set of locations p where *start &amp;lt;= p &amp;lt; *end.
+/// (That is, it doesn&apos;t include the character stored at *end)
 /// </para>
 /// <para>
 /// Note that while the type of the @script argument is declared

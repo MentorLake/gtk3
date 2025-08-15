@@ -3,7 +3,7 @@ namespace MentorLake.Gio;
 /// <summary>
 /// <para>
 /// `GSocketAddress` is the equivalent of
-/// <see href="man:sockaddr(3type">struct sockaddr</see>) and its subtypes in the BSD sockets
+/// &amp;lt;see href=&quot;man:sockaddr(3type&quot;&amp;gt;struct sockaddr&amp;lt;/see&amp;gt;) and its subtypes in the BSD sockets
 /// API. This is an abstract class; use [class@Gio.InetSocketAddress] for
 /// internet sockets, or [class@Gio.UnixSocketAddress] for UNIX domain sockets.
 /// </para>
@@ -59,7 +59,7 @@ public static class GSocketAddressHandleExtensions
 
 /// <summary>
 /// <para>
-/// Gets the size of @address's native struct sockaddr.
+/// Gets the size of @address&apos;s native struct sockaddr.
 /// You can use this to allocate memory to pass to
 /// g_socket_address_to_native().
 /// </para>

@@ -19,7 +19,7 @@ namespace MentorLake.GLib;
 /// A good hash functions should produce
 /// hash values that are evenly distributed over a fairly large range.
 /// The modulus is taken with the hash table size (a prime number) to
-/// find the 'bucket' to place each key into. The function should also
+/// find the &apos;bucket&apos; to place each key into. The function should also
 /// be very fast, since it is called for each key lookup.
 /// </para>
 /// <para>

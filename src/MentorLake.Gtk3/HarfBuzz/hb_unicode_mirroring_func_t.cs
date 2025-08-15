@@ -9,9 +9,9 @@ namespace MentorLake.HarfBuzz;
 /// code point for a specified Unicode code point.
 /// </para>
 /// <para>
-/// <note>Note: If a code point does not have a specified
+/// &amp;lt;note&amp;gt;Note: If a code point does not have a specified
 /// Bi-Directional Mirroring Glyph defined, the method should
-/// return the original code point.</note>
+/// return the original code point.&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 

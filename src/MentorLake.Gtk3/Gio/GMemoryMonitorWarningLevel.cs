@@ -7,10 +7,11 @@ namespace MentorLake.Gio;
 /// <para>
 /// Note that because new values might be added, it is recommended that applications check
 /// #GMemoryMonitorWarningLevel as ranges, for example:
-/// |[<!-- language="C" -->
-/// if (warning_level > G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
+/// <code>
+/// if (warning_level &amp;gt; G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
+/// if (warning_level &amp;gt; G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
 ///   drop_caches ();
-/// ]|
+/// </code>
 /// </para>
 /// </summary>
 

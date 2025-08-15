@@ -27,23 +27,21 @@ namespace MentorLake.Gtk;
 /// In the simplest of cases, you can the following code to use
 /// #GtkFileChooserDialog to select a file for opening:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// GtkWidget *dialog;
 /// GtkWidget *dialog;
 /// GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
 /// gint res;
-/// </para>
-/// <para>
-/// dialog = gtk_file_chooser_dialog_new ("Open File",
+/// 
+/// dialog = gtk_file_chooser_dialog_new (&quot;Open File&quot;,
 ///                                       parent_window,
 ///                                       action,
-///                                       _("_Cancel"),
+///                                       _(&quot;_Cancel&quot;),
 ///                                       GTK_RESPONSE_CANCEL,
-///                                       _("_Open"),
+///                                       _(&quot;_Open&quot;),
 ///                                       GTK_RESPONSE_ACCEPT,
 ///                                       NULL);
-/// </para>
-/// <para>
+/// 
 /// res = gtk_dialog_run (GTK_DIALOG (dialog));
 /// if (res == GTK_RESPONSE_ACCEPT)
 ///   {
@@ -53,59 +51,50 @@ namespace MentorLake.Gtk;
 ///     open_file (filename);
 ///     g_free (filename);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (dialog);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// To use a dialog for saving, you can use this:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// GtkWidget *dialog;
 /// GtkWidget *dialog;
 /// GtkFileChooser *chooser;
 /// GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_SAVE;
 /// gint res;
-/// </para>
-/// <para>
-/// dialog = gtk_file_chooser_dialog_new ("Save File",
+/// 
+/// dialog = gtk_file_chooser_dialog_new (&quot;Save File&quot;,
 ///                                       parent_window,
 ///                                       action,
-///                                       _("_Cancel"),
+///                                       _(&quot;_Cancel&quot;),
 ///                                       GTK_RESPONSE_CANCEL,
-///                                       _("_Save"),
+///                                       _(&quot;_Save&quot;),
 ///                                       GTK_RESPONSE_ACCEPT,
 ///                                       NULL);
 /// chooser = GTK_FILE_CHOOSER (dialog);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (chooser, TRUE);
-/// </para>
-/// <para>
+/// 
 /// if (user_edited_a_new_document)
 ///   gtk_file_chooser_set_current_name (chooser,
-///                                      _("Untitled document"));
+///                                      _(&quot;Untitled document&quot;));
 /// else
 ///   gtk_file_chooser_set_filename (chooser,
 ///                                  existing_filename);
-/// </para>
-/// <para>
+/// 
 /// res = gtk_dialog_run (GTK_DIALOG (dialog));
 /// if (res == GTK_RESPONSE_ACCEPT)
 ///   {
 ///     char *filename;
-/// </para>
-/// <para>
+/// 
 ///     filename = gtk_file_chooser_get_filename (chooser);
 ///     save_to_file (filename);
 ///     g_free (filename);
 ///   }
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (dialog);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// ## Setting up a file chooser dialog ## {#gtkfilechooserdialog-setting-up}
 /// </para>
@@ -147,22 +136,20 @@ namespace MentorLake.Gtk;
 /// #GTK_RESPONSE_ACCEPT and #GTK_RESPONSE_CANCEL.  For example, you
 /// could call gtk_file_chooser_dialog_new() as follows:
 /// </para>
-/// <para>
-/// |[
+/// <code>
+/// GtkWidget *dialog;
 /// GtkWidget *dialog;
 /// GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
-/// </para>
-/// <para>
-/// dialog = gtk_file_chooser_dialog_new ("Open File",
+/// 
+/// dialog = gtk_file_chooser_dialog_new (&quot;Open File&quot;,
 ///                                       parent_window,
 ///                                       action,
-///                                       _("_Cancel"),
+///                                       _(&quot;_Cancel&quot;),
 ///                                       GTK_RESPONSE_CANCEL,
-///                                       _("_Open"),
+///                                       _(&quot;_Open&quot;),
 ///                                       GTK_RESPONSE_ACCEPT,
 ///                                       NULL);
-/// ]|
-/// </para>
+/// </code>
 /// <para>
 /// This will create buttons for “Cancel” and “Open” that use stock
 /// response identifiers from #GtkResponseType.  For most dialog
@@ -259,17 +246,15 @@ public static class GtkFileChooserDialogHandleSignalExtensions
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -279,26 +264,20 @@ public static class GtkFileChooserDialogHandleSignalExtensions
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 	public static IObservable<GtkFileChooserDialogHandleSignalStructs.ConfirmOverwriteSignal> Signal_ConfirmOverwrite(this GtkFileChooserDialogHandle instance, GConnectFlags connectFlags = GConnectFlags.G_CONNECT_AFTER)
@@ -379,7 +358,7 @@ public static class GtkFileChooserDialogHandleSignalExtensions
 	}
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>
@@ -619,17 +598,15 @@ public static class GtkFileChooserDialogHandleSignalDelegates
 /// <para>
 /// ## Custom confirmation ## {#gtkfilechooser-confirmation}
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static GtkFileChooserConfirmation
 /// static GtkFileChooserConfirmation
 /// confirm_overwrite_callback (GtkFileChooser *chooser, gpointer data)
 /// {
 ///   char *uri;
-/// </para>
-/// <para>
+/// 
 ///   uri = gtk_file_chooser_get_uri (chooser);
-/// </para>
-/// <para>
+/// 
 ///   if (is_uri_read_only (uri))
 ///     {
 ///       if (user_wants_to_replace_read_only_file (uri))
@@ -639,26 +616,20 @@ public static class GtkFileChooserDialogHandleSignalDelegates
 ///     } else
 ///       return GTK_FILE_CHOOSER_CONFIRMATION_CONFIRM; // fall back to the default dialog
 /// }
-/// </para>
-/// <para>
+/// 
 /// ...
-/// </para>
-/// <para>
+/// 
 /// chooser = gtk_file_chooser_dialog_new (...);
-/// </para>
-/// <para>
+/// 
 /// gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
-/// g_signal_connect (chooser, "confirm-overwrite",
+/// g_signal_connect (chooser, &quot;confirm-overwrite&quot;,
 ///                   G_CALLBACK (confirm_overwrite_callback), NULL);
-/// </para>
-/// <para>
+/// 
 /// if (gtk_dialog_run (chooser) == GTK_RESPONSE_ACCEPT)
 ///         save_to_file (gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-/// </para>
-/// <para>
+/// 
 /// gtk_widget_destroy (chooser);
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="self">
@@ -705,7 +676,7 @@ public delegate void current_folder_changed([MarshalAs(UnmanagedType.CustomMarsh
 
 /// <summary>
 /// <para>
-/// This signal is emitted when the user "activates" a file in the file
+/// This signal is emitted when the user &quot;activates&quot; a file in the file
 /// chooser.  This can happen by double-clicking on a file in the file list, or
 /// by pressing `Enter`.
 /// </para>

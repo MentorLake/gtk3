@@ -6,9 +6,9 @@ namespace MentorLake.GLib;
 /// [func@GLib.test_build_filename].
 /// </para>
 /// <para>
-/// These two options correspond rather directly to the 'dist' and
-/// 'built' terminology that automake uses and are explicitly used to
-/// distinguish between the 'srcdir' and 'builddir' being separate. All
+/// These two options correspond rather directly to the &apos;dist&apos; and
+/// &apos;built&apos; terminology that automake uses and are explicitly used to
+/// distinguish between the &apos;srcdir&apos; and &apos;builddir&apos; being separate. All
 /// files in your project should either be dist (in the `EXTRA_DIST` or
 /// `dist_schema_DATA` sense, in which case they will always be in the
 /// srcdir) or built (in the `BUILT_SOURCES` sense, in which case they

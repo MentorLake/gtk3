@@ -6,9 +6,9 @@ namespace MentorLake.HarfBuzz;
 /// from the Unicode Character Database.
 /// </para>
 /// <para>
-/// <note>Note: newer versions of Unicode may add new values.
+/// &amp;lt;note&amp;gt;Note: newer versions of Unicode may add new values.
 /// Client programs should be ready to handle any value in the 0..254 range
-/// being returned from hb_unicode_combining_class().</note>
+/// being returned from hb_unicode_combining_class().&amp;lt;/note&amp;gt;
 /// </para>
 /// </summary>
 

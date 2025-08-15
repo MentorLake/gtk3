@@ -18,7 +18,7 @@ public enum GOptionFlags : uint
 	G_OPTION_FLAG_NONE = 0,
 /// <summary>
 /// <para>
-/// The option doesn't appear in `--help` output.
+/// The option doesn&apos;t appear in `--help` output.
 /// </para>
 /// </summary>
 

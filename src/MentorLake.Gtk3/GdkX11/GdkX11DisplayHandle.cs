@@ -49,8 +49,8 @@ public static class GdkX11DisplayHandleExtensions
 /// a #GdkDisplay
 /// </param>
 /// <param name="message_type">
-/// startup notification message type ("new", "change",
-/// or "remove")
+/// startup notification message type (&quot;new&quot;, &quot;change&quot;,
+/// or &quot;remove&quot;)
 /// </param>
 /// <param name="@__arglist">
 /// a list of key/value pairs (as strings), terminated by a
@@ -269,7 +269,7 @@ public static class GdkX11DisplayHandleExtensions
 /// being launched using exec()) it can come from other sources.
 /// </para>
 /// <para>
-/// If the ID contains the string "_TIME" then the portion following that
+/// If the ID contains the string &quot;_TIME&quot; then the portion following that
 /// string is taken to be the X11 timestamp of the event that triggered
 /// the application to be launched and the GDK current event time is set
 /// accordingly.

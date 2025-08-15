@@ -25,21 +25,21 @@ public enum AtkStateType
 	ATK_STATE_ACTIVE = 1,
 /// <summary>
 /// <para>
-/// Indicates that the object is 'armed', i.e. will be activated by if a pointer button-release event occurs within its bounds.  Buttons often enter this state when a pointer click occurs within their bounds, as a precursor to activation. ATK_STATE_ARMED has been deprecated since ATK-2.16 and should not be used in newly-written code.
+/// Indicates that the object is &apos;armed&apos;, i.e. will be activated by if a pointer button-release event occurs within its bounds.  Buttons often enter this state when a pointer click occurs within their bounds, as a precursor to activation. ATK_STATE_ARMED has been deprecated since ATK-2.16 and should not be used in newly-written code.
 /// </para>
 /// </summary>
 
 	ATK_STATE_ARMED = 2,
 /// <summary>
 /// <para>
-/// Indicates the current object is busy, i.e. onscreen representation is in the process of changing, or the object is temporarily unavailable for interaction due to activity already in progress.  This state may be used by implementors of Document to indicate that content loading is underway.  It also may indicate other 'pending' conditions; clients may wish to interrogate this object when the ATK_STATE_BUSY flag is removed.
+/// Indicates the current object is busy, i.e. onscreen representation is in the process of changing, or the object is temporarily unavailable for interaction due to activity already in progress.  This state may be used by implementors of Document to indicate that content loading is underway.  It also may indicate other &apos;pending&apos; conditions; clients may wish to interrogate this object when the ATK_STATE_BUSY flag is removed.
 /// </para>
 /// </summary>
 
 	ATK_STATE_BUSY = 3,
 /// <summary>
 /// <para>
-/// Indicates this object is currently checked, for instance a checkbox is 'non-empty'.
+/// Indicates this object is currently checked, for instance a checkbox is &apos;non-empty&apos;.
 /// </para>
 /// </summary>
 
@@ -57,7 +57,7 @@ public enum AtkStateType
 /// user can change the textual contents of this object by editing those contents
 /// directly. For an object which is expected to be editable due to its type, but
 /// which cannot be edited due to the application or platform preventing the user
-/// from doing so, that object's #AtkStateSet should lack ATK_STATE_EDITABLE and
+/// from doing so, that object&apos;s #AtkStateSet should lack ATK_STATE_EDITABLE and
 /// should contain ATK_STATE_READ_ONLY.
 /// </para>
 /// </summary>
@@ -65,7 +65,7 @@ public enum AtkStateType
 	ATK_STATE_EDITABLE = 6,
 /// <summary>
 /// <para>
-/// Indicates that this object is enabled, i.e. that it currently reflects some application state. Objects that are "greyed out" may lack this state, and may lack the STATE_SENSITIVE if direct user interaction cannot cause them to acquire STATE_ENABLED. See also: ATK_STATE_SENSITIVE
+/// Indicates that this object is enabled, i.e. that it currently reflects some application state. Objects that are &quot;greyed out&quot; may lack this state, and may lack the STATE_SENSITIVE if direct user interaction cannot cause them to acquire STATE_ENABLED. See also: ATK_STATE_SENSITIVE
 /// </para>
 /// </summary>
 
@@ -173,7 +173,7 @@ public enum AtkStateType
 /// Indicates this object is sensitive, e.g. to user interaction.
 /// STATE_SENSITIVE usually accompanies STATE_ENABLED for user-actionable controls,
 /// but may be found in the absence of STATE_ENABLED if the current visible state of the
-/// control is "disconnected" from the application state.  In such cases, direct user interaction
+/// control is &quot;disconnected&quot; from the application state.  In such cases, direct user interaction
 /// can often result in the object gaining STATE_SENSITIVE, for instance if a user makes
 /// an explicit selection using an object whose current state is ambiguous or undefined.
 /// @see STATE_ENABLED, STATE_INDETERMINATE.
@@ -183,8 +183,8 @@ public enum AtkStateType
 	ATK_STATE_SENSITIVE = 22,
 /// <summary>
 /// <para>
-/// Indicates this object, the object's parent, the object's parent's parent, and so on,
-/// are all 'shown' to the end-user, i.e. subject to "exposure" if blocking or obscuring objects do not interpose
+/// Indicates this object, the object&apos;s parent, the object&apos;s parent&apos;s parent, and so on,
+/// are all &apos;shown&apos; to the end-user, i.e. subject to &quot;exposure&quot; if blocking or obscuring objects do not interpose
 /// between this object and the top of the window stack.
 /// </para>
 /// </summary>
@@ -201,9 +201,9 @@ public enum AtkStateType
 /// <para>
 /// Indicates that the information returned for this object may no longer be
 /// synchronized with the application state.  This is implied if the object has STATE_TRANSIENT,
-/// and can also occur towards the end of the object peer's lifecycle. It can also be used to indicate that
+/// and can also occur towards the end of the object peer&apos;s lifecycle. It can also be used to indicate that
 /// the index associated with this object has changed since the user accessed the object (in lieu of
-/// "index-in-parent-changed" events).
+/// &quot;index-in-parent-changed&quot; events).
 /// </para>
 /// </summary>
 
@@ -228,11 +228,11 @@ public enum AtkStateType
 /// <para>
 /// Indicates this object is visible, e.g. has been explicitly marked for exposure to the user.
 /// **note**: %ATK_STATE_VISIBLE is no guarantee that the object is actually unobscured on the screen, only
-/// that it is 'potentially' visible, barring obstruction, being scrolled or clipped out of the
+/// that it is &apos;potentially&apos; visible, barring obstruction, being scrolled or clipped out of the
 /// field of view, or having an ancestor container that has not yet made visible.
 /// A widget is potentially onscreen if it has both %ATK_STATE_VISIBLE and %ATK_STATE_SHOWING.
 /// The absence of %ATK_STATE_VISIBLE and %ATK_STATE_SHOWING is semantically equivalent to saying
-/// that an object is 'hidden'.  See also %ATK_STATE_TRUNCATED, which applies if an object with
+/// that an object is &apos;hidden&apos;.  See also %ATK_STATE_TRUNCATED, which applies if an object with
 /// %ATK_STATE_VISIBLE and %ATK_STATE_SHOWING set lies within a viewport which means that its
 /// contents are clipped, e.g. a truncated spreadsheet cell or
 /// an image within a scrolling viewport.  Mostly useful for screen-review and magnification
@@ -243,8 +243,8 @@ public enum AtkStateType
 	ATK_STATE_VISIBLE = 28,
 /// <summary>
 /// <para>
-/// Indicates that "active-descendant-changed" event
-/// is sent when children become 'active' (i.e. are selected or navigated to onscreen).
+/// Indicates that &quot;active-descendant-changed&quot; event
+/// is sent when children become &apos;active&apos; (i.e. are selected or navigated to onscreen).
 /// Used to prevent need to enumerate all children in very large containers, like tables.
 /// The presence of STATE_MANAGES_DESCENDANTS is an indication to the client.
 /// that the children should not, and need not, be enumerated by the client.
@@ -278,7 +278,7 @@ public enum AtkStateType
 	ATK_STATE_TRUNCATED = 31,
 /// <summary>
 /// <para>
-/// Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a "web-form" interface.
+/// Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a &quot;web-form&quot; interface.
 /// </para>
 /// </summary>
 
@@ -313,17 +313,17 @@ public enum AtkStateType
 	ATK_STATE_SELECTABLE_TEXT = 35,
 /// <summary>
 /// <para>
-/// Indicates that the object is the "default" active component, i.e. the object which is activated by an end-user press of the "Enter" or "Return" key.  Typically a "close" or "submit" button.
+/// Indicates that the object is the &quot;default&quot; active component, i.e. the object which is activated by an end-user press of the &quot;Enter&quot; or &quot;Return&quot; key.  Typically a &quot;close&quot; or &quot;submit&quot; button.
 /// </para>
 /// </summary>
 
 	ATK_STATE_DEFAULT = 36,
 /// <summary>
 /// <para>
-/// Indicates that the object changes its appearance dynamically as an inherent part of its presentation.  This state may come and go if an object is only temporarily animated on the way to a 'final' onscreen presentation.
+/// Indicates that the object changes its appearance dynamically as an inherent part of its presentation.  This state may come and go if an object is only temporarily animated on the way to a &apos;final&apos; onscreen presentation.
 /// **note**: some applications, notably content viewers, may not be able to detect
 /// all kinds of animated content.  Therefore the absence of this state should not
-/// be taken as definitive evidence that the object's visual representation is
+/// be taken as definitive evidence that the object&apos;s visual representation is
 /// static; this state is advisory.
 /// </para>
 /// </summary>
@@ -331,7 +331,7 @@ public enum AtkStateType
 	ATK_STATE_ANIMATED = 37,
 /// <summary>
 /// <para>
-/// Indicates that the object (typically a hyperlink) has already been 'activated', and/or its backing data has already been downloaded, rendered, or otherwise "visited".
+/// Indicates that the object (typically a hyperlink) has already been &apos;activated&apos;, and/or its backing data has already been downloaded, rendered, or otherwise &quot;visited&quot;.
 /// </para>
 /// </summary>
 

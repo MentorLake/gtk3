@@ -6,7 +6,7 @@ namespace MentorLake.GLib;
 /// </para>
 /// <para>
 /// `GKeyFile` lets you parse, edit or create files containing groups of
-/// key-value pairs, which we call "key files" for lack of a better name.
+/// key-value pairs, which we call &quot;key files&quot; for lack of a better name.
 /// Several freedesktop.org specifications use key files now, e.g the
 /// [Desktop Entry Specification](http://freedesktop.org/Standards/desktop-entry-spec)
 /// and the [Icon Theme Specification](http://freedesktop.org/Standards/icon-theme-spec).
@@ -46,18 +46,18 @@ namespace MentorLake.GLib;
 /// ```
 /// </para>
 /// <para>
-/// Lines beginning with a '#' and blank lines are considered comments.
+/// Lines beginning with a &apos;#&apos; and blank lines are considered comments.
 /// </para>
 /// <para>
 /// Groups are started by a header line containing the group name enclosed
-/// in '[' and ']', and ended implicitly by the start of the next group or
+/// in &apos;[&apos; and &apos;]&apos;, and ended implicitly by the start of the next group or
 /// the end of the file. Each key-value pair must be contained in a group.
 /// </para>
 /// <para>
 /// Key-value pairs generally have the form `key=value`, with the exception
 /// of localized strings, which have the form `key[locale]=value`, with a
 /// locale identifier of the form `lang_COUNTRY@MODIFIER` where `COUNTRY`
-/// and `MODIFIER` are optional. Space before and after the '=' character
+/// and `MODIFIER` are optional. Space before and after the &apos;=&apos; character
 /// are ignored. Newline, tab, carriage return and backslash characters in
 /// value are escaped as `\n`, `\t`, `\r`, and `\\\\`, respectively. To preserve
 /// leading spaces in values, these can also be escaped as `\s`.
@@ -65,7 +65,7 @@ namespace MentorLake.GLib;
 /// <para>
 /// Key files can store strings (possibly with localized variants), integers,
 /// booleans and lists of these. Lists are separated by a separator character,
-/// typically ';' or ','. To use the list separator character in a value in
+/// typically &apos;;&apos; or &apos;,&apos;. To use the list separator character in a value in
 /// a list, it has to be escaped by prefixing it with a backslash.
 /// </para>
 /// <para>
@@ -73,8 +73,8 @@ namespace MentorLake.GLib;
 /// on Windows, but there are some important differences:
 /// </para>
 /// <para>
-/// - .ini files use the ';' character to begin comments,
-///   key files use the '#' character.
+/// - .ini files use the &apos;;&apos; character to begin comments,
+///   key files use the &apos;#&apos; character.
 /// </para>
 /// <para>
 /// - Key files do not allow for ungrouped keys meaning only
@@ -88,7 +88,7 @@ namespace MentorLake.GLib;
 ///   [GROUP] is a different from [group].
 /// </para>
 /// <para>
-/// - .ini files don't have a strongly typed boolean entry type,
+/// - .ini files don&apos;t have a strongly typed boolean entry type,
 ///    they only have GetProfileInt(). In key files, only
 ///    true and false (in lower case) are allowed.
 /// </para>
@@ -109,25 +109,25 @@ namespace MentorLake.GLib;
 /// g_autoptr(GKeyFile) key_file = g_key_file_new ();
 /// </para>
 /// <para>
-/// if (!g_key_file_load_from_file (key_file, "key-file.ini", flags, &error))
+/// if (!g_key_file_load_from_file (key_file, &quot;key-file.ini&quot;, flags, &amp;error))
 ///   {
 ///     if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-///       g_warning ("Error loading key file: %s", error->message);
+///       g_warning (&quot;Error loading key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// </para>
 /// <para>
-/// g_autofree gchar *val = g_key_file_get_string (key_file, "Group Name", "SomeKey", &error);
-/// if (val == NULL &&
+/// g_autofree gchar *val = g_key_file_get_string (key_file, &quot;Group Name&quot;, &quot;SomeKey&quot;, &amp;error);
+/// if (val == NULL &amp;&amp;
 ///     !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND))
 ///   {
-///     g_warning ("Error finding key in key file: %s", error->message);
+///     g_warning (&quot;Error finding key in key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// else if (val == NULL)
 ///   {
 ///     // Fall back to a default value.
-///     val = g_strdup ("default-value");
+///     val = g_strdup (&quot;default-value&quot;);
 ///   }
 /// ```
 /// </para>
@@ -141,26 +141,26 @@ namespace MentorLake.GLib;
 /// g_autoptr(GError) error = NULL;
 /// </para>
 /// <para>
-/// g_key_file_set_string (key_file, "Group Name", "SomeKey", val);
+/// g_key_file_set_string (key_file, &quot;Group Name&quot;, &quot;SomeKey&quot;, val);
 /// </para>
 /// <para>
 /// // Save as a file.
-/// if (!g_key_file_save_to_file (key_file, "key-file.ini", &error))
+/// if (!g_key_file_save_to_file (key_file, &quot;key-file.ini&quot;, &amp;error))
 ///   {
-///     g_warning ("Error saving key file: %s", error->message);
+///     g_warning (&quot;Error saving key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// </para>
 /// <para>
 /// // Or store to a GBytes for use elsewhere.
 /// gsize data_len;
-/// g_autofree guint8 *data = (guint8 *) g_key_file_to_data (key_file, &data_len, &error);
+/// g_autofree guint8 *data = (guint8 *) g_key_file_to_data (key_file, &amp;data_len, &amp;error);
 /// if (data == NULL)
 ///   {
-///     g_warning ("Error saving key file: %s", error->message);
+///     g_warning (&quot;Error saving key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
-/// g_autoptr(GBytes) bytes = g_bytes_new_take (g_steal_pointer (&data), data_len);
+/// g_autoptr(GBytes) bytes = g_bytes_new_take (g_steal_pointer (&amp;data), data_len);
 /// ```
 /// </para>
 /// </summary>
@@ -291,7 +291,7 @@ public static class GKeyFileExtensions
 /// @comment will be read from above the first group in the file.
 /// </para>
 /// <para>
-/// Note that the returned string does not include the '#' comment markers,
+/// Note that the returned string does not include the &apos;#&apos; comment markers,
 /// but does include any whitespace after them (on each line). It includes
 /// the line breaks between lines, but does not include the final line break.
 /// </para>
@@ -677,7 +677,7 @@ public static class GKeyFileExtensions
 /// </param>
 /// <return>
 /// a newly allocated %NULL-terminated string array
-///   or %NULL if the key isn't found. The string array should be freed
+///   or %NULL if the key isn&apos;t found. The string array should be freed
 ///   with g_strfreev().
 /// </return>
 
@@ -971,7 +971,7 @@ public static class GKeyFileExtensions
 /// <para>
 /// This function looks for a key file named @file in the paths
 /// returned from g_get_user_data_dir() and g_get_system_data_dirs(),
-/// loads the file into @key_file and returns the file's full path in
+/// loads the file into @key_file and returns the file&apos;s full path in
 /// @full_path.  If the file could not be loaded then an %error is
 /// set to either a #GFileError or #GKeyFileError.
 /// </para>
@@ -1006,7 +1006,7 @@ public static class GKeyFileExtensions
 /// <para>
 /// This function looks for a key file named @file in the paths
 /// specified in @search_dirs, loads the file into @key_file and
-/// returns the file's full path in @full_path.
+/// returns the file&apos;s full path in @full_path.
 /// </para>
 /// <para>
 /// If the file could not be found in any of the @search_dirs,
@@ -1279,7 +1279,7 @@ public static class GKeyFileExtensions
 /// written above the first group in the file.
 /// </para>
 /// <para>
-/// Note that this function prepends a '#' comment marker to
+/// Note that this function prepends a &apos;#&apos; comment marker to
 /// each line of @comment.
 /// </para>
 /// </summary>
@@ -1447,8 +1447,8 @@ public static class GKeyFileExtensions
 /// <summary>
 /// <para>
 /// Sets the character which is used to separate
-/// values in lists. Typically ';' or ',' are used
-/// as separators. The default list separator is ';'.
+/// values in lists. Typically &apos;;&apos; or &apos;,&apos; are used
+/// as separators. The default list separator is &apos;;&apos;.
 /// </para>
 /// </summary>
 
@@ -1866,7 +1866,7 @@ internal class GKeyFileExterns
 /// </para>
 /// <para>
 /// `GKeyFile` lets you parse, edit or create files containing groups of
-/// key-value pairs, which we call "key files" for lack of a better name.
+/// key-value pairs, which we call &quot;key files&quot; for lack of a better name.
 /// Several freedesktop.org specifications use key files now, e.g the
 /// [Desktop Entry Specification](http://freedesktop.org/Standards/desktop-entry-spec)
 /// and the [Icon Theme Specification](http://freedesktop.org/Standards/icon-theme-spec).
@@ -1906,18 +1906,18 @@ internal class GKeyFileExterns
 /// ```
 /// </para>
 /// <para>
-/// Lines beginning with a '#' and blank lines are considered comments.
+/// Lines beginning with a &apos;#&apos; and blank lines are considered comments.
 /// </para>
 /// <para>
 /// Groups are started by a header line containing the group name enclosed
-/// in '[' and ']', and ended implicitly by the start of the next group or
+/// in &apos;[&apos; and &apos;]&apos;, and ended implicitly by the start of the next group or
 /// the end of the file. Each key-value pair must be contained in a group.
 /// </para>
 /// <para>
 /// Key-value pairs generally have the form `key=value`, with the exception
 /// of localized strings, which have the form `key[locale]=value`, with a
 /// locale identifier of the form `lang_COUNTRY@MODIFIER` where `COUNTRY`
-/// and `MODIFIER` are optional. Space before and after the '=' character
+/// and `MODIFIER` are optional. Space before and after the &apos;=&apos; character
 /// are ignored. Newline, tab, carriage return and backslash characters in
 /// value are escaped as `\n`, `\t`, `\r`, and `\\\\`, respectively. To preserve
 /// leading spaces in values, these can also be escaped as `\s`.
@@ -1925,7 +1925,7 @@ internal class GKeyFileExterns
 /// <para>
 /// Key files can store strings (possibly with localized variants), integers,
 /// booleans and lists of these. Lists are separated by a separator character,
-/// typically ';' or ','. To use the list separator character in a value in
+/// typically &apos;;&apos; or &apos;,&apos;. To use the list separator character in a value in
 /// a list, it has to be escaped by prefixing it with a backslash.
 /// </para>
 /// <para>
@@ -1933,8 +1933,8 @@ internal class GKeyFileExterns
 /// on Windows, but there are some important differences:
 /// </para>
 /// <para>
-/// - .ini files use the ';' character to begin comments,
-///   key files use the '#' character.
+/// - .ini files use the &apos;;&apos; character to begin comments,
+///   key files use the &apos;#&apos; character.
 /// </para>
 /// <para>
 /// - Key files do not allow for ungrouped keys meaning only
@@ -1948,7 +1948,7 @@ internal class GKeyFileExterns
 ///   [GROUP] is a different from [group].
 /// </para>
 /// <para>
-/// - .ini files don't have a strongly typed boolean entry type,
+/// - .ini files don&apos;t have a strongly typed boolean entry type,
 ///    they only have GetProfileInt(). In key files, only
 ///    true and false (in lower case) are allowed.
 /// </para>
@@ -1969,25 +1969,25 @@ internal class GKeyFileExterns
 /// g_autoptr(GKeyFile) key_file = g_key_file_new ();
 /// </para>
 /// <para>
-/// if (!g_key_file_load_from_file (key_file, "key-file.ini", flags, &error))
+/// if (!g_key_file_load_from_file (key_file, &quot;key-file.ini&quot;, flags, &amp;error))
 ///   {
 ///     if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-///       g_warning ("Error loading key file: %s", error->message);
+///       g_warning (&quot;Error loading key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// </para>
 /// <para>
-/// g_autofree gchar *val = g_key_file_get_string (key_file, "Group Name", "SomeKey", &error);
-/// if (val == NULL &&
+/// g_autofree gchar *val = g_key_file_get_string (key_file, &quot;Group Name&quot;, &quot;SomeKey&quot;, &amp;error);
+/// if (val == NULL &amp;&amp;
 ///     !g_error_matches (error, G_KEY_FILE_ERROR, G_KEY_FILE_ERROR_KEY_NOT_FOUND))
 ///   {
-///     g_warning ("Error finding key in key file: %s", error->message);
+///     g_warning (&quot;Error finding key in key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// else if (val == NULL)
 ///   {
 ///     // Fall back to a default value.
-///     val = g_strdup ("default-value");
+///     val = g_strdup (&quot;default-value&quot;);
 ///   }
 /// ```
 /// </para>
@@ -2001,26 +2001,26 @@ internal class GKeyFileExterns
 /// g_autoptr(GError) error = NULL;
 /// </para>
 /// <para>
-/// g_key_file_set_string (key_file, "Group Name", "SomeKey", val);
+/// g_key_file_set_string (key_file, &quot;Group Name&quot;, &quot;SomeKey&quot;, val);
 /// </para>
 /// <para>
 /// // Save as a file.
-/// if (!g_key_file_save_to_file (key_file, "key-file.ini", &error))
+/// if (!g_key_file_save_to_file (key_file, &quot;key-file.ini&quot;, &amp;error))
 ///   {
-///     g_warning ("Error saving key file: %s", error->message);
+///     g_warning (&quot;Error saving key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
 /// </para>
 /// <para>
 /// // Or store to a GBytes for use elsewhere.
 /// gsize data_len;
-/// g_autofree guint8 *data = (guint8 *) g_key_file_to_data (key_file, &data_len, &error);
+/// g_autofree guint8 *data = (guint8 *) g_key_file_to_data (key_file, &amp;data_len, &amp;error);
 /// if (data == NULL)
 ///   {
-///     g_warning ("Error saving key file: %s", error->message);
+///     g_warning (&quot;Error saving key file: %s&quot;, error-&amp;gt;message);
 ///     return;
 ///   }
-/// g_autoptr(GBytes) bytes = g_bytes_new_take (g_steal_pointer (&data), data_len);
+/// g_autoptr(GBytes) bytes = g_bytes_new_take (g_steal_pointer (&amp;data), data_len);
 /// ```
 /// </para>
 /// </summary>

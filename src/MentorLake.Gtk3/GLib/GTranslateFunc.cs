@@ -3,7 +3,7 @@ namespace MentorLake.GLib;
 /// <summary>
 /// <para>
 /// The type of functions which are used to translate user-visible
-/// strings, for <option>--help</option> output.
+/// strings, for &amp;lt;option&amp;gt;--help&amp;lt;/option&amp;gt; output.
 /// </para>
 /// </summary>
 

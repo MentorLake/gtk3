@@ -137,8 +137,8 @@ public static class GtkSearchBarHandleExtensions
 /// <para>
 /// ## Showing the search bar on key presses
 /// </para>
-/// <para>
-/// |[<!-- language="C" -->
+/// <code>
+/// static gboolean
 /// static gboolean
 /// on_key_press_event (GtkWidget *widget,
 ///                     GdkEvent  *event,
@@ -147,25 +147,21 @@ public static class GtkSearchBarHandleExtensions
 ///   GtkSearchBar *bar = GTK_SEARCH_BAR (user_data);
 ///   return gtk_search_bar_handle_event (bar, event);
 /// }
-/// </para>
-/// <para>
+/// 
 /// static void
 /// create_toplevel (void)
 /// {
 ///   GtkWidget *window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 ///   GtkWindow *search_bar = gtk_search_bar_new ();
-/// </para>
-/// <para>
+/// 
 ///  // Add more widgets to the window...
-/// </para>
-/// <para>
+/// 
 ///   g_signal_connect (window,
-///                    "key-press-event",
+///                    &quot;key-press-event&quot;,
 ///                     G_CALLBACK (on_key_press_event),
 ///                     search_bar);
 /// }
-/// ]|
-/// </para>
+/// </code>
 /// </summary>
 
 /// <param name="bar">

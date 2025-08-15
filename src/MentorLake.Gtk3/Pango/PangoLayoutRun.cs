@@ -15,6 +15,16 @@ public struct PangoLayoutRun
 	public MentorLake.Pango.PangoGlyphItem Value;
 }
 
+/// <summary>
+/// <para>
+/// A `PangoLayoutRun` represents a single run within a `PangoLayoutLine`.
+/// </para>
+/// <para>
+/// It is simply an alternate name for [struct@Pango.GlyphItem].
+/// See the [struct@Pango.GlyphItem] docs for details on the fields.
+/// </para>
+/// </summary>
+
 public class PangoLayoutRunHandle : BaseSafeHandle
 {
 }

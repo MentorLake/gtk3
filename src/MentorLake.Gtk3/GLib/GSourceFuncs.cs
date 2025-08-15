@@ -9,20 +9,20 @@ namespace MentorLake.GLib;
 /// For idle sources, the prepare and check functions always return %TRUE
 /// to indicate that the source is always ready to be processed. The prepare
 /// function also returns a timeout value of 0 to ensure that the poll() call
-/// doesn't block (since that would be time wasted which could have been spent
+/// doesn&apos;t block (since that would be time wasted which could have been spent
 /// running the idle function).
 /// </para>
 /// <para>
 /// For timeout sources, the prepare and check functions both return %TRUE
 /// if the timeout interval has expired. The prepare function also returns
-/// a timeout value to ensure that the poll() call doesn't block too long
+/// a timeout value to ensure that the poll() call doesn&apos;t block too long
 /// and miss the next timeout.
 /// </para>
 /// <para>
 /// For file descriptor sources, the prepare function typically returns %FALSE,
 /// since it must wait until poll() has been called before it knows whether
 /// any events need to be processed. It sets the returned timeout to -1 to
-/// indicate that it doesn't mind how long the poll() call blocks. In the
+/// indicate that it doesn&apos;t mind how long the poll() call blocks. In the
 /// check function, it tests the results of the poll() call to see if the
 /// required condition has been met, and returns %TRUE if so.
 /// </para>
@@ -51,20 +51,20 @@ internal class GSourceFuncsExterns
 /// For idle sources, the prepare and check functions always return %TRUE
 /// to indicate that the source is always ready to be processed. The prepare
 /// function also returns a timeout value of 0 to ensure that the poll() call
-/// doesn't block (since that would be time wasted which could have been spent
+/// doesn&apos;t block (since that would be time wasted which could have been spent
 /// running the idle function).
 /// </para>
 /// <para>
 /// For timeout sources, the prepare and check functions both return %TRUE
 /// if the timeout interval has expired. The prepare function also returns
-/// a timeout value to ensure that the poll() call doesn't block too long
+/// a timeout value to ensure that the poll() call doesn&apos;t block too long
 /// and miss the next timeout.
 /// </para>
 /// <para>
 /// For file descriptor sources, the prepare function typically returns %FALSE,
 /// since it must wait until poll() has been called before it knows whether
 /// any events need to be processed. It sets the returned timeout to -1 to
-/// indicate that it doesn't mind how long the poll() call blocks. In the
+/// indicate that it doesn&apos;t mind how long the poll() call blocks. In the
 /// check function, it tests the results of the poll() call to see if the
 /// required condition has been met, and returns %TRUE if so.
 /// </para>
@@ -80,7 +80,7 @@ public struct GSourceFuncs
 ///     a @timeout_ value which should be the maximum timeout (in milliseconds)
 ///     which should be passed to the poll() call. The actual timeout used will
 ///     be -1 if all sources returned -1, or it will be the minimum of all
-///     the @timeout_ values returned which were >= 0.  Since 2.36 this may
+///     the @timeout_ values returned which were &amp;gt;= 0.  Since 2.36 this may
 ///     be %NULL, in which case the effect is as if the function always returns
 ///     %FALSE with a timeout of -1.  If @prepare returns a
 ///     timeout and the source also has a ready time set, then the

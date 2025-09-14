@@ -14,8 +14,10 @@ public class BaseSafeHandle() : SafeHandleZeroOrMinusOneIsInvalid(true)
 	{
 		if (ReferenceEquals(left, null) && ReferenceEquals(right, null))
 			return true;
-		if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
-			return false;
+		if (!ReferenceEquals(left, null) && ReferenceEquals(right, null))
+			return left.IsInvalid;
+		if (ReferenceEquals(left, null) && !ReferenceEquals(right, null))
+			return right.IsInvalid;
 
 		return left.DangerousGetHandle() == right.DangerousGetHandle();
 	}

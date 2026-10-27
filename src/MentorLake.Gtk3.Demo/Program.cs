@@ -6,6 +6,7 @@ using MentorLake.Gio;
 using MentorLake.GLib;
 using MentorLake.GObject;
 using MentorLake.Gtk;
+using MentorLake.WebKit2;
 
 namespace MentorLake.Gtk3.Demo;
 
@@ -112,6 +113,37 @@ public static class Program
 
 			window.ShowAll();
 			app.AddWindow(window);
+
+			var webViewWindow = GtkWindowHandle.New(GtkWindowType.GTK_WINDOW_TOPLEVEL)
+				.SetTitle("WebKit")
+				.SetDefaultSize(720, 480)
+				.Add(WebKitWebViewHandle.New().LoadHtml(
+					"""
+					<!doctype html>
+					<html>
+					<head>
+						<meta charset="utf-8">
+						<style>
+							body { font: 16px sans-serif; line-height: 1.6; margin: 3rem auto; max-width: 42rem; padding: 0 1.5rem; color: #243247; }
+							h1 { color: #1769aa; }
+							.card { background: #eef6fc; border-radius: 12px; padding: 1.25rem 1.5rem; }
+						</style>
+					</head>
+					<body>
+						<h1>Hello from WebKit</h1>
+						<p>This page is rendered inside a GTK window by the WebKit widget.</p>
+						<div class="card">
+							<strong>Web content, right in your app.</strong>
+							<p>HTML and CSS can be displayed alongside native GTK controls.</p>
+						</div>
+					</body>
+					</html>
+					""",
+					"about:blank"));
+
+			webViewWindow.ShowAll();
+			app.AddWindow(webViewWindow);
+
 			await Task.Delay(3000);
 			window.Destroy();
 		});

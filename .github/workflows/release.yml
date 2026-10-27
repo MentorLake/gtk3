@@ -9,6 +9,7 @@ jobs:
   build:
     permissions:
       id-token: write
+      contents: write
 
     runs-on: ubuntu-latest
     outputs:
@@ -42,12 +43,10 @@ jobs:
         name: Setup NuGet
 
       - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.nbgv.outputs.SemVer2 }}
-          release_name: ${{ steps.nbgv.outputs.SemVer2 }}
+          name: ${{ steps.nbgv.outputs.SemVer2 }}
           body: |
             ${{ steps.changelog.outputs.commitLog }}
 
